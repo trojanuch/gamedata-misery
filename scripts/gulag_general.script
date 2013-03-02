@@ -798,7 +798,6 @@ function load_job(smart)
 				while ini:section_exist(gname.."_beh_"..it) do
 
 					name = gname.."_beh_"..it
-					alun_utils.printf("behavior scheme = %s",name)
 
 					t = { 	_prior = 35,
 							job_id = { section = "logic@"..name,
@@ -1075,5 +1074,8 @@ end
 -- Dynamic ltx
 --------------------------------------------------------------------------
 function load_ltx(gname)
-		return ltx
+	--local cfg = io.open("gulag.ltx","a+")
+	--cfg:write(ltx)
+	--cfg:close()
+	return ltx
 end
