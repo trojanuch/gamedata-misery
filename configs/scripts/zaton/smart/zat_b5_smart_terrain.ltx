@@ -12,13 +12,15 @@ spawn_bandit@veteran
 spawn_bandit@hostile
 spawn_bandit@veteran_hostile
 
-spawn_bandit@advanced_sentry
-spawn_bandit@hostile_sentry
-
 spawn_merc@novice
 spawn_merc@veteran
 
-spawn_killer
+;;; unused
+
+;spawn_bandit@advanced_sentry
+;spawn_bandit@hostile_sentry
+
+;spawn_killer
 
 ; Bandit squads
 
@@ -54,19 +56,19 @@ spawn_num = {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done}
 
 ; Bandit sentry squads
 
-[spawn_bandit@advanced_sentry]
-spawn_squads = bandit_sim_squad_novice_zat_b5_smart_terrain_sentry
-spawn_num = 0 ;	{-kingpin_gained} 0, 1
+;[spawn_bandit@advanced_sentry]
+;spawn_squads = bandit_sim_squad_novice_zat_b5_smart_terrain_sentry
+;spawn_num = 0 ;	{-kingpin_gained} 0, 1
 
 ; Bandit sentry hostile squads
 
-[spawn_bandit@hostile_sentry]
-spawn_squads = bandit_sim_squad_zat_b5_smart_terrain_sentry_hostile
-spawn_num = 0 ;	{+kingpin_gained} 0, 1
+;[spawn_bandit@hostile_sentry]
+;spawn_squads = bandit_sim_squad_zat_b5_smart_terrain_sentry_hostile
+;spawn_num = 0 ;	{+kingpin_gained} 0, 1
 
-[spawn_killer]
-spawn_squads = merc_sim_squad_novice
-spawn_num = 0
+;[spawn_killer]
+;spawn_squads = merc_sim_squad_novice
+;spawn_num = 0
 
 [exclusive]
 zat_b7_bandit_boss_sultan_b5 = zaton\zat_b7_duty_illicit_dealer_b5.ltx

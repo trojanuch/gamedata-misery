@@ -4,23 +4,26 @@ max_population = 1
 respawn_params = respawn@zat_b54 
 
 [respawn@zat_b54]
-spawn@zombied
-spawn_boar
-spawn_flesh
+spawn_mutants
 
-[spawn@zombied]
+;;; unused
+
+;spawn_boar
+;spawn_flesh
+
+[spawn_mutants]
 spawn_squads = simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_zombied_1, simulation_zombied_1, simulation_snork
 spawn_num = 1
 
 ;;; unused
 
-[spawn_flesh]
-spawn_squads = simulation_boar, simulation_flesh
-spawn_num = 0
+;[spawn_flesh]
+;spawn_squads = simulation_boar, simulation_flesh
+;spawn_num = 0
 
-[spawn_boar]
-spawn_squads = simulation_boar, simulation_flesh
-spawn_num = 0
+;[spawn_boar]
+;spawn_squads = simulation_boar, simulation_flesh
+;spawn_num = 0
 
 [exclusive]
 ;please leave this for sim - stalkers only

@@ -4,13 +4,13 @@ max_population = 3
 respawn_params = respawn@pri_b306   
 
 [respawn@pri_b306]
-sim_chimera
+sim_mutants@large
 sim_poltergeist
 
-spawn_monolith
-spawn_bloodsucker
+;spawn_monolith
+;spawn_bloodsucker
 
-[sim_chimera]
+[sim_mutants@large]
 spawn_squads = simulation_chimera_pri_b306, simulation_gigant_pri_b306, simulation_gigant_pri_b306, simulation_psy_dog_pri_b306, simulation_controller_pri_b306
 spawn_num = {+pri_b306_task_end} 1, 0
 
@@ -20,13 +20,13 @@ spawn_num = {+pri_b306_task_end} 2, 0
 
 ;;; unused
 
-[spawn_monolith]
-spawn_squads = monolith_sim_squad_advanced_pripyat, monolith_sim_squad_veteran_pripyat
-spawn_num = 0	; {+pri_b306_task_end} 2, 0
+;[spawn_monolith]
+;spawn_squads = monolith_sim_squad_advanced_pripyat, monolith_sim_squad_veteran_pripyat
+;spawn_num = 0	; {+pri_b306_task_end} 2, 0
 
-[spawn_bloodsucker]
-spawn_squads = simulation_bloodsucker, simulation_bloodsucker, simulation_bloodsucker, simulation_snork
-spawn_num = 0 ; {+pri_b306_task_end} 2, 0
+;[spawn_bloodsucker]
+;spawn_squads = simulation_bloodsucker, simulation_bloodsucker, simulation_bloodsucker, simulation_snork
+;spawn_num = 0 ; {+pri_b306_task_end} 2, 0
 
 [exclusive]
 pri_b306_monolith_5_1 = pripyat\pri_b306_logic.ltx
