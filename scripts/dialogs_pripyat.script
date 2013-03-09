@@ -88,7 +88,6 @@ local medic_items_table = {
 									["drug_coagulant"] 		= 1,
 									["drug_radioprotector"]	= 1,
 									["salicidic_acid"]	= 1,
-									["amphetamine"]	= 1,
 									["marijuana"]	= 1,
 									},
 
@@ -104,7 +103,6 @@ local medic_items_table = {
 									["drug_antidot"] 		= 1,
 									["drug_psy_blockade"]	= 1,
 									["salicidic_acid"]	= 2,
-									["amphetamine"]	= 1,
 									["marijuana"]	= 1,
 									},
 
@@ -123,7 +121,6 @@ local medic_items_table = {
 									["drug_psy_blockade"]	= 2,
 									["salicidic_acid"]	= 1,
 									["morphine"]	= 1,
-									["amphetamine"]	= 1,
 									["adrenalin"]	= 1,
 									["marijuana"]	= 2,
 									},
@@ -185,9 +182,9 @@ function pri_a22_give_actor_outfit (first_speaker, second_speaker)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage")
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad")
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_coagulant")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "psy_blockade")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "psy_blockade")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "psy_blockade")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "morphine")
 end
 

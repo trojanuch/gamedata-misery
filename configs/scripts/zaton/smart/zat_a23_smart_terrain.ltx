@@ -4,16 +4,16 @@ max_population = 2
 respawn_params = respawn@zat_a23_smart_terrain
 
 [respawn@zat_a23_smart_terrain]
-spawn_duty@veteran
-spawn_duty@hunter_day
+;spawn_zombies
+;spawn_monster@psy
 
-[spawn_duty@veteran]
-spawn_squads = simulation_zombied
-spawn_num = {+zat_a23_actor_has_gauss_rifle_documentation} 1, 0
+;[spawn_zombies]
+;spawn_squads = simulation_zombied
+;spawn_num = {+zat_a23_actor_has_gauss_rifle_documentation} 1, 0
 
-[spawn_duty@hunter_day]
-spawn_squads = simulation_burer
-spawn_num = {+zat_a23_actor_has_gauss_rifle_documentation} 1, 0
+;[spawn_monster@psy]
+;spawn_squads = simulation_burer, simulation_controller, simulation_burer, simulation_controller, simulation_psy_dog, simulation_bloodsucker
+;spawn_num = {+zat_a23_actor_has_gauss_rifle_documentation} 1, 0
 
 [exclusive]
 zat_a23_zombie_01 = zaton\zat_a23_zombie.ltx
