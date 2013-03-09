@@ -181,7 +181,7 @@
 		<text>VOG-25 grenade</text>
 	</string>
 	<string id="ammo-vog-25_descr">
-		<text>Regular fragmentation grenade for the GP-25 Kastyor underbarrel grenade launcher. This round has a 5 meter kill zone. The VOG-25 grenade is also used in the OC-14 Groza complex and RG6 / 6G30 revolver-type grenade launcher.</text>
+		<text>Regular fragmentation grenade for the GP-25 Kostyor underbarrel grenade launcher. This round has a 6 meter kill zone. The VOG-25 grenade is also used in the OC-14 Groza complex and RG6 / 6G30 revolver-type grenade launcher.</text>
 	</string>
 	<string id="ammo-vog-25_s">
 		<text>VOG-25</text>
@@ -204,24 +204,24 @@
   <string id="ammo-7.62x51_ap_descr">
     <text>The 7.62x51mm NATO AP - Armour piersing ammunition for HK-417 Sniper, SAKO TRG-42 and SR-25.</text>
   </string>
-  	<string id="ammo-7.62x39_ap"> 
-	 <text>7.62x39mm AP</text> 
-	 </string> 
- 	<string id="ammo-7.62x39_ap_descr"> 
- 		<text> The 7.62x39 mm rifle cartridge was designed during World War II and first used in the SKS carbine by the Soviet Union. Use of the cartridge is widespread by both militaries and civilians. This is due primarily to the proliferation of the SKS and AK-47 pattern rifles during the 20th century..</text> 
-	 </string> 
- 	<string id="ammo-7.62x39_ap_s"> 
- 		<text>7.62x39mm AP</text> 
-	 </string> 
- 	<string id="ammo-7.62x39_fmj"> 
- 		<text>7.62x39mm FMJ</text> 
- 	</string> 
- 	<string id="ammo-7.62x39_fmj_descr"> 
- 		<text> The 7.62x39 mm rifle cartridge was designed during World War II and first used in the SKS carbine by the Soviet Union. Use of the cartridge is widespread by both militaries and civilians. This is due primarily to the proliferation of the SKS and AK-47 pattern rifles during the 20th century..</text> 
-	 </string> 
- 	<string id="ammo-7.62x39_fmj_s"> 
- 		<text>7.62x39mm</text> 
- 	</string> 
+  	<string id="ammo-7.62x39_ap">
+	 <text>7.62x39mm AP</text>
+	 </string>
+ 	<string id="ammo-7.62x39_ap_descr">
+ 		<text> The 7.62x39 mm rifle cartridge was designed during World War II and first used in the SKS carbine by the Soviet Union. Use of the cartridge is widespread by both militaries and civilians. This is due primarily to the proliferation of the SKS and AK-47 pattern rifles during the 20th century..</text>
+	 </string>
+ 	<string id="ammo-7.62x39_ap_s">
+ 		<text>7.62x39mm AP</text>
+	 </string>
+ 	<string id="ammo-7.62x39_fmj">
+ 		<text>7.62x39mm FMJ</text>
+ 	</string>
+ 	<string id="ammo-7.62x39_fmj_descr">
+ 		<text> The 7.62x39 mm rifle cartridge was designed during World War II and first used in the SKS carbine by the Soviet Union. Use of the cartridge is widespread by both militaries and civilians. This is due primarily to the proliferation of the SKS and AK-47 pattern rifles during the 20th century..</text>
+	 </string>
+ 	<string id="ammo-7.62x39_fmj_s">
+ 		<text>7.62x39mm</text>
+ 	</string>
   <string id="st_addon_acog">
     <text>ACOG Scope</text>
   </string>
@@ -256,7 +256,7 @@
 		<text>PSS-2x scope</text>
 	</string>
 	<string id="st_addon_scope_detector_descr">
-		<text>A 5.0x fixed zoom optical scope with a built-in heat visor used to identify heat sources typical of the human body. Designed for use by special forces. Attached to weapons by means of a dovetail mount.</text>
+		<text>A 5.0x fixed zoom optical scope with a built-in heat visor used to identify heat sources typical of the human body. Designed for use by Spetsnaz. Attached to weapons by means of a dovetail mount.</text>
 	</string>
 	<string id="st_addon_scope_night_vision">
 		<text>NSPU-3 scope</text>
@@ -382,7 +382,7 @@
 		<text>A defensive hand grenade, with fragments capable of piercing medium level body armor. The grenade has a 7 meter kill radius. Stalkers get F1 grenades from trading with the military, who write them off as having been used for fighting mutants.</text>
 	</string>
 	<string id="st_grenade_launcher">
-		<text>GP-25 Kastyor</text>
+		<text>GP-25 Kostyor</text>
 	</string>
 	<string id="st_grenade_launcher_descr">
 		<text>A single shot, front loaded, rifled underbarrel grenade launcher for assault rifles made in Warsaw Pact countries. The firing mechanism is self-cocking, with a manual safety catch and automatic shot prevention if incorrectly installed onto a rifle. Uses VOG-25 grenades.</text>
@@ -460,7 +460,7 @@
 		<text>AKS-74U (Camouflaged)</text>
 	</string>
 		<string id="st_wpn_ak74u_camo_descr">
-		<text>The AKS-74U was intended as a personal defense weapon for tank, gun, helicopter and other vehicle crews, and for the special operations forces, which required compact but relatively powerful individual automatic weapon. This particular model of the AKS-74U is using the Bulgarian four colour urban disruptive pattern. Used by Bulgarian Air Force and Gendarmerie serving in ISAF (Afghanistan). In use since 2004.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 5.45x39</text>
+		<text>The AKS-74U was intended as a personal defense weapon for use mainly with Spetsnaz forces, airborne infantry, rear-echelon support units and armored vehicle crews, which required compact but relatively powerful individual automatic weapon. This particular model of the AKS-74U is using the Bulgarian four colour urban disruptive pattern. Used by Bulgarian Air Force and Gendarmerie serving in ISAF (Afghanistan). In use since 2004.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 5.45x39</text>
 	</string>
 		<string id="st_wpn_ak74u_worn">
 		<text>AKS-74U (Worn)</text>
@@ -584,7 +584,7 @@
   </string>
 			<string id="st_wpn_fn2000_worn">
 		<text>FN F2000 (Slightly worn)</text>
-	</string>	
+	</string>
 	<string id="st_wpn_fort">
 		<text>Fort-12</text>
 	</string>
@@ -605,62 +605,68 @@
 	</string>
 	<string id="st_wpn_famas3">
 		<text>FAMAS G2 (Prototype)</text>
-	</string>	
+	</string>
 	<string id="st_wpn_famas3_descr">
 		<text>Developed in 1994, the G2 aligns the French Famas rifle closer to NATO standards by using the STANAG magazine and having tighter rifling than the older F1 model. The G2 also has one of the highest cyclic fire rates of any weapon in the Zone.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher m203</text>
-	</string>		
+	</string>
 		<string id="st_wpn_galil">
 		<text>IMI Galil</text>
-	</string>	
+	</string>
 	<string id="st_wpn_galil_descr">
 		<text>Formally accepted into service with the IDF in 1972, the IMI Galil is designed for operation in arid conditions and is based on the Finnish RK 62, which itself was derived from the Soviet AK-47. The Galil has a line chambered for 5.56x45mm and one for 7.62x51mm.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 7.62x51</text>
 	</string>
 	<string id="st_wpn_stg44">
 		<text>StG 44</text>
-	</string>	
+	</string>
 		<string id="st_wpn_stg44_new">
 		<text>StG 44 (Modern)</text>
-	</string>	
+	</string>
 		<string id="st_wpn_stg44_alt">
 		<text>StG 44 (Alternate)</text>
-	</string>	
+	</string>
 		<string id="st_wpn_stg44_old">
 		<text>StG 44 (Old)</text>
-	</string>	
+	</string>
 			<string id="st_wpn_stg44_worn">
 		<text>StG 44 (Worn)</text>
-	</string>	
+	</string>
 	<string id="st_wpn_stg44_descr">
-		<text>The Sturmgewehr 44 is considered by many historians to be the first modern assault rifle. It’s concept had a major impact on modern infantry small arms development. In the Zone this rifle is a popular primary weapon among novice and semi experienced Stalkers within all factions.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 5.45x39</text>
+		<text>The Sturmgewehr 44 is considered by many historians to be the first modern assault rifle. It’s concept had a major impact on modern infantry small arms development. In the Zone this rifle is a popular primary weapon among novice and semi experienced Stalkers within all factions.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 7.62x39</text>
 	</string>
 	<string id="st_wpn_m16a1">
 		<text>M16A1 (Customized)</text>
-	</string>	
+	</string>
 	<string id="st_wpn_m16a1_descr">
 		<text>The M16A1 is essentially the same weapon as the M16 with a forward assist. Although replaced in the United States by newer members of the M16 family, the M16A1 is still standard issue in many world armies. This particular weapon has a fixed telescopic sight.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]M16 Scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.56x45</text>
-	</string>	
+	</string>
 	<string id="st_wpn_sig552">
 		<text>SG 552 Commando</text>
-	</string>	
+	</string>
 	<string id="st_wpn_sig552_descr">
 		<text>The SG 552 Commando is designed for urban combat, making it the most compact member of SIG’s
 renowned SG 550 family. Enhancing it’s CQC capabilities, this SG 552 Commando comes equipped with an EOTech holographic sight.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Dot sight (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher m203</text>
 	</string>
 	<string id="st_wpn_m24">
 		<text>M24 SWS 'Green Dragon'</text>
-	</string>	
+	</string>
 	<string id="st_wpn_m24_descr">
 		<text>A sniper rifle of the US Army, the M24 Sniper Weapon System (SWS) is based on the Remington 700. Fitted with a Leupold 10x40mm scope, the M24 has a stainless steel barrel and an adjustable composite stock made from Kevlar and graphite.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]M24 Sniper scope (permanent)</text>
 	</string>
 	<string id="st_wpn_m1891snip">
 		<text>Mosin-Nagant M1891/30</text>
-	</string>	
+	</string>
 	<string id="st_wpn_m1891snip_descr">
-		<text>A sniper rifle of the US Army, the M24 Sniper Weapon System (SWS) is based on the Remington 700. Fitted with a Leupold 10x40mm scope, the M24 has a stainless steel barrel and an adjustable composite stock made from Kevlar and graphite.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes</text>
+		<text>The most prolific version of the
+Mosin-Nagant, the M1891/30 was
+produced for standard issue to all Soviet
+infantry from 1930 to 1945. It was
+extremely successful In World War II
+as a sniper rifle, when equipped with
+a 4x PE or a 3.5x PU scope..\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes</text>
 	</string>
 	<string id="st_wpn_obrez">
 		<text>Obrez</text>
-	</string>	
+	</string>
 	<string id="st_wpn_obrez_descr">
 		<text>"Obrez" is a Russian word meaning "cut". This "Obrez" is a sawn-off Mosin-Nagant M91/30. Mainly used by rebels and criminals, it still fires the original rifle cartridge. It's "classified" as a hybrid between a bolt-action pistol and a shotgun, ie: a budget hand-cannon!</text>
 	</string>
@@ -687,7 +693,7 @@ recoil-balancing mechanism, resulting in more controllable automatic fire. Small
     <text>FN FAL</text>
   </string>
   <string id="st_wpn_fnfalll_descr">
-    <text>The FAL is one of the most produced and widely used firearms in the world. Used by many NATO countries 
+    <text>The FAL is one of the most produced and widely used firearms in the world. Used by many NATO countries
 during the Cold War, it was nicknamed “The right arm of the Free World”. This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n\n%c[default]ATTACHMENTS:\n%c[255,144,50,26]• %c[default]Scopes\n%c[255,144,50,26]• %c[default]Grenadelauncher m203\n%c[255,144,50,26]• %c[default]Silencer 7.62x51</text>
   </string>
   <string id="st_wpn_fr2000">
@@ -712,7 +718,7 @@ during the Cold War, it was nicknamed “The right arm of the Free World”. This Zo
     <text>RPK-74</text>
   </string>
   <string id="st_wpn_rpk74_descr">
-    <text>The Kalashnikov RPK-74 light machine gun has been developed during mid-seventies to complement the AK-74 assault rifle a sa standard squad automatic weapon of the Soviet army. It is based on the parent AK-74 assault rifle but with extended magazine.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 5.45x39\n%c[255,238,153,26]• %c[default]Scopes</text>
+    <text>The Kalashnikov RPK-74 light machine gun has been developed during mid-seventies to complement the AK-74 assault rifle is a standard squad automatic weapon of the Soviet army. It is based on its parent, the AK-74 assault rifle but with extended magazine.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 5.45x39\n%c[255,238,153,26]• %c[default]Scopes</text>
   </string>
   <string id="st_wpn_scar">
     <text>XM8 Guerilla Camo</text>
@@ -986,7 +992,7 @@ supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close qua
 		<text>Armsel Protecta (Camouflaged)</text>
 	</string>
 		<string id="st_wpn_protecta_camo_descr">
-		<text>The uniquely designed Armsel Protecta is a rotating cylinder fed 12-gauge shotgun developed for riot control and combat. Antiquated now by the Russian Saiga-12 and the American AA-12, the Protecta was a revolutionary weapon in the 1980’s.A smoothbore combat revolver-type shotgun intended to provide extreme firepower for militarized units. The weapon benefits from a large magazine and a high effective rate of fire, but its bulkiness and considerable weight, combined with a long reload time, are the price to be paid for these advantages. Rare in the Zone and is used primarily to clear closed spaces of mutants. This particular model of the Armsel Protecta is using the widely used m81 woodland camouflage. The m81 woodland pattern has been one of the most duplicated and modified camouflage patterns ever designed, seeing service with military forces around the world and continuing to be worn today.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes</text>
+		<text>The uniquely designed Armsel Protecta is a rotating cylinder fed 12-gauge shotgun developed for riot control and combat. Antiquated now by the Russian Saiga-12 and the American AA-12, the Protecta was a revolutionary weapon in the 1980’s developed by the Apartheid government. A smoothbore combat revolver-type shotgun intended to provide extreme firepower for militarized units. The weapon benefits from a large magazine and a high effective rate of fire, but its bulkiness and considerable weight, combined with a long reload time, are the price to be paid for these advantages. Rare in the Zone and is used primarily to clear closed spaces of mutants. This particular model of the Armsel Protecta is using the widely used m81 woodland camouflage. The m81 woodland pattern has been one of the most duplicated and modified camouflage patterns ever designed, seeing service with military forces around the world and continuing to be worn today.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes</text>
 	</string>
 				<string id="st_wpn_protecta_worn">
 		<text>Armsel Protecta (Worn)</text>
@@ -1079,7 +1085,7 @@ supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close qua
 		<text>Dragunov SVD</text>
 	</string>
 	<string id="st_wpn_svd_descr">
-		<text>Originally intended for designated marksmen in every basic Soviet infantry unit, the Dragunov SVD was not designed for specialized sniper teams. Relatively light for a sniper rifle but well balanced and having semiautomatic fire, its precision is good but not exceptional.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]SVD scope (permanent)</text>
+		<text>Originally intended for designated marksmen in every basic Soviet infantry unit, the Dragunov SVD was not designed for specialized sniper teams. Relatively light for a sniper rifle but well balanced and having semiautomatic fire, its precision is good but not exceptional. It has an effective range of up to 800meters.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]SVD scope (permanent)</text>
 	</string>
 	<string id="st_wpn_svd_nimble">
 		<text>Dragunov SVD 'Lynx'</text>
@@ -1154,7 +1160,7 @@ supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close qua
 		<text>VSS 'Tide'</text>
 	</string>
 	<string id="st_wpn_vintorez_nimble_descr">
-		<text>A special variant of the famous VSS sniper rifle. This model has had extensive customization of its internal mechanism which results in increases muzzle velocity and accuracy.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Vintorez scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer (permanent)</text>
+		<text>A special variant of the famous VSS sniper rifle. This model has had extensive customization of its internal mechanism which results in increases muzzle velocity and accuracy.It has an effective range of up to 600meters. \n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Vintorez scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer (permanent)</text>
 	</string>
 	<string id="st_wpn_walther">
 		<text>Walther P99</text>
@@ -1244,7 +1250,7 @@ supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close qua
 		<text>This Soviet legacy is the most common pistol in the Zone and is one of the best compact self-defense handguns available. It is small, highly reliable, easy to use and maintain in working order. It also suffers from several drawbacks, including its short range, low firing accuracy and poor stopping power, while also losing out to modern pistols in its class in terms of weight and magazine size.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x18</text>
 	</string>
 	<string id="st_wpn_protecta_descr">
-		<text>The uniquely designed Armsel Protecta is a rotating cylinder fed 12-gauge shotgun developed for riot control and combat. Antiquated now by the Russian Saiga-12 and the American AA-12, the Protecta was a revolutionary weapon in the 1980’s.A smoothbore combat revolver-type shotgun intended to provide extreme firepower for militarized units. The weapon benefits from a large magazine and a high effective rate of fire, but its bulkiness and considerable weight, combined with a long reload time, are the price to be paid for these advantages. Rare in the Zone and is used primarily to clear closed spaces of mutants.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes</text>
+		<text>The uniquely designed Armsel Protecta is a rotating cylinder fed 12-gauge shotgun developed for riot control and combat. Antiquated now by the Russian Saiga-12 and the American AA-12, the Protecta was a revolutionary weapon in the 1980’s developed by the Apartheid Government. A smoothbore combat revolver-type shotgun intended to provide extreme firepower for militarized units. The weapon benefits from a large magazine and a high effective rate of fire, but its bulkiness and considerable weight, combined with a long reload time, are the price to be paid for these advantages. Rare in the Zone and is used primarily to clear closed spaces of mutants.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes</text>
 	</string>
 	<string id="st_wpn_rpg7_descr">
 		<text>The ruggedness, simplicity, low cost, and effectiveness of the RPG-7 has made it the most widely used anti-armor weapon in the world. Currently around 40 countries use the weapon, and it is manufactured in a number of variants by nine countries.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]RPG7 scope (permanent)</text>
@@ -1256,7 +1262,7 @@ supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close qua
 		<text>The SPAS-12 is a dual-mode shotgun, designed for combat and anti-riot measures. It is employed by many special military and police units around the world. With it’s distinctive heat shield and folding stock, the SPAS-12 is an iconic firearm. Notable for its reliability and tactical flexibility. Despite its large weight, complex mechanism and considerable cost it is in demand in the Zone due to its effectiveness against mutants.</text>
 	</string>
 	<string id="st_wpn_svu_descr">
-		<text>The OTs-03 SVU is an improved version of the SVD sniper rifle, developed for the Russian Ministry of 
+		<text>The OTs-03 SVU is an improved version of the SVD sniper rifle, developed for the Russian Ministry of
 Internal Affairs. Designed in a compact bullpup configuration, the SVU utilizes a recoil absorbing muzzle brake and an affixed sound suppressor.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]SVU scope (permanent)</text>
 	</string>
 	<string id="st_wpn_val_descr">
@@ -1287,7 +1293,10 @@ Internal Affairs. Designed in a compact bullpup configuration, the SVU utilizes 
 		<text>NR-40</text>
 	</string>
 	<string id="st_knife_nr40_descr">
-		<text>On a rare occasion a Stalker proves unique talent to his faction during missions of teamwork or lone wolf tasks. Like saving a faction leader from the certain death.Such quality and worth is seen rewarded with an Honorary NR-40. A rare Soviet military knife of high historic and symbolic value. Decorated with an iron emblem of a certain World War 2 parachute division on the wooden handle. Any Stalker holding one of these, be it novice or veteran, is highly respected anywhere in the Zone and especially within his ranks.</text>
+		<text>On a rare occasion a Stalker proves unique talent to his faction during missions of teamwork or lone wolf tasks. Like saving a faction leader from the certain death.
+
+Such quality and worth is seen rewarded with an
+Honorary NR-40. A rare Soviet military knife of high historic and symbolic value. Decorated with an iron emblem of a certain World War 2 parachute division on the wooden handle. Any Stalker holding one of these, be it novice or veteran, is highly respected anywhere in the Zone and especially within his ranks.</text>
 	</string>
 	<string id="st_knife_spetznaz">
 		<text>Speztnaz switchblade</text>
@@ -1302,10 +1311,10 @@ Internal Affairs. Designed in a compact bullpup configuration, the SVU utilizes 
 		<text>A very endurable hunting knife with a large blade of stainless steel. Ideal for handling larger animals, meat and thick hides.</text>
 	</string>
 	<string id="st_knife_needle">
-		<text>Steel knife</text>
+		<text>Soviet combat knife</text>
 	</string>
 	<string id="st_knife_needle_descr">
-		<text>A customized steel knife with a tip as sharp as a needle. The handle is enforced with rugged fabric for a good grip.</text>
+		<text>This Soviet steel knife has a 152 mm blade with a clip point, a large choil, a black wooden handle, and an S-shaped guard. The guard is "inverted" because standard Soviet Army grips called for holding the knife with the edge towards yourself. The handle is enforced with rugged fabric for a good grip.</text>
 	</string>
 	<string id="st_trg_sako">
 		<text>TRG-42</text>

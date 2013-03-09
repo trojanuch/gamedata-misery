@@ -3,16 +3,15 @@
 ; Directions [North = 0,0,-1] [East = -1,0,0] [South = 0,0,1] [West = 1,0,0]
 
 [beh@general]
+sound_idle = state
 behavior_state = beh_move
-goto_target = waypoint
+target = waypoint
 walk_dist = 100
 jog_dist = 220
-run_dist = 400
 wait_anim = guard
 walk_anim = patrol
 jog_anim = patrol
 run_anim = rush
-sprint_anim = sprint
 delay_anim = guard
 
 ;------------------------------- zat_b52
@@ -23,7 +22,11 @@ pt3 = 1360456,120000,sit_ass look:228,7,-27
 path_end = loop
 
 [zat_b52_beh_2]:beh@general
-pt1 = 1350498,0,sit_ass look:228,7,-27
+pt1 = 1358050,60000,animpoint_stay_wall animpoint:231.55517578125,6.7812156677246,-32.113494873047,1,0,0
 
 [zat_b52_beh_3]:beh@general
 pt1 = 1351748,0,sit_ass look:228,7,-27
+
+[zat_b52_beh_4]:beh@general
+pt1 = 1345528,240000,sleep
+pt2 = 1291942,60000,hide look:189,8.5,3

@@ -300,6 +300,7 @@ function move_mgr:update()
 	--printf("move_mgr:update(self.state == %s)", utils.to_str(self.state))
 	--printf("move_mgr:update(self.object:anims == %d)", self.object:animation_count())
 
+	--[[
 	local tg = time_global()
 	if (self.play_sound and self.play_sound_idle and tg > self.play_sound_idle) then
 		--alun_utils.printf("move_mgr: Playing sound")
@@ -307,6 +308,7 @@ function move_mgr:update()
 		self.play_sound = nil
 		self.play_sound_idle = nil
 	end
+	--]]
 
 	if self.syn_signal and time_global() >= self.syn_signal_set_tm then
 		if self:sync_ok() then
@@ -372,7 +374,7 @@ end
 
 function move_mgr:time_callback()
 	--printf("_bp [%s]: time_callback", self.object:name())
-	local sigtm = self.path_look_info[self.last_look_index]["sigtm"]
+	local sigtm = self.path_look_info and self.path_look_info[self.last_look_index] and self.path_look_info[self.last_look_index]["sigtm"]
 	if sigtm then
 		self:scheme_set_signal(sigtm)
 	end
@@ -400,7 +402,7 @@ function move_mgr:time_callback()
 			self.no_validation)
 	else
 		self:update_movement_state() -- идти дальше
-		local syn = self.path_look_info[self.last_look_index]["syn"]
+		local syn = self.path_look_info and self.path_look_info[self.last_look_index] and self.path_look_info[self.last_look_index]["syn"]
 		if syn then
 			abort("object '%s': path_walk '%s': syn flag used on non-terminal waypoint",
 				self.object:name(), self.path_walk)
@@ -422,7 +424,7 @@ function move_mgr:scheme_set_signal(sig)
 end
 
 function move_mgr:turn_end_callback()
-	local syn = self.path_look_info[self.last_look_index]["syn"]
+	local syn = self.path_look_info and self.path_look_info[self.last_look_index] and self.path_look_info[self.last_look_index]["syn"]
 	if syn then
 		self.syn_signal = self.path_look_info[self.last_look_index]["sig"]
 		if not self.syn_signal then
@@ -435,7 +437,7 @@ function move_mgr:turn_end_callback()
 		end
 
 	else
-		local sig = self.path_look_info[self.last_look_index]["sig"]
+		local sig = self.path_look_info and self.path_look_info[self.last_look_index] and self.path_look_info[self.last_look_index]["sig"]
 		if sig then
 			self:scheme_set_signal(sig)
 		else
@@ -598,7 +600,7 @@ function move_mgr:waypoint_callback(obj, action_type, index)
 				local new_state = _t[math.random(#_t)]
 
 				self.cur_state_standing = new_state
-				suggested_wait_time = SuggestedWaitTimes[new_state] or default_wait_time
+				suggested_wait_time = SuggestedWaitTimes[new_state] and SuggestedWaitTimes[new_state] ~= "*" and tonumber(SuggestedWaitTimes[new_state]) or default_wait_time
 				if (SoundSets[new_state]) then
 					local t = alun_utils.str_explode(SoundSets[new_state],",")
 					if (t[2] and math.random() < tonumber(t[2])) then

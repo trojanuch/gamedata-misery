@@ -10,11 +10,6 @@ spawn_freedom@veteran
 spawn_freedom@advanced_hostile
 spawn_freedom@veteran_hostile
 
-;;; unused
-
-spawn_freedom@sci
-spawn_freedom@sci_hostile
-
 ; Freedom squads
 
 [spawn_freedom@advanced]
@@ -34,18 +29,6 @@ spawn_num = {-sim_duty_help_harder} 0, {+sim_duty_help_harder +jup_b207_task_end
 [spawn_freedom@veteran_hostile]
 spawn_squads = freedom_sim_squad_advanced_veteran_hostile, freedom_sim_squad_veteran_hostile, freedom_sci_simulation_squad_hostile
 spawn_num = {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b207_task_end} 2, {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_a12_task_done} 2, {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b46_task_done} 2, {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b8_heli_4_searched} 2, {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b209_task_done} 2, {+sim_duty_help_harder +jup_b218_gather_squad_complete} 2, 0
-
-;;; unused
-
-; Freedom sci squads
-
-[spawn_freedom@sci]
-spawn_squads = freedom_sci_simulation_squad
-spawn_num = 0	; {-sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
-
-[spawn_freedom@sci_hostile]
-spawn_squads = freedom_sci_simulation_squad_hostile
-spawn_num = 0	; {+sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
 
 ;[exclusive]
 ;jup_b200_stalker = jupiter\jup_b200_stalker.ltx
