@@ -43,7 +43,7 @@
 		<text>Don't be deceived, stalker. In The Zone, dogs are no longer 'man's best friend'.</text>
 	</string>
 	<string id="ls_tip_52">
-		<text>Instead of carrying a thousand rounds, carry 150 if you're just heading out and 210 if you're thinking you'll be in a firefight. Conserve it.</text>
+		<text>Instead of carrying a thousand rounds, carry 150 if you're just heading out and 300 if you're thinking you'll be in a firefight. Conserve it.</text>
 	</string>
 	<string id="ls_tip_56">
 		<text>Some medical products have unique properties. For example, Hercules pills allow you to temporarily carry more weight, while psy-blocking drugs help you resist psy-emissions.</text>
@@ -58,16 +58,16 @@
 		<text>Vodka, a cheap alternative to antirad meds, thus a cheaper way to reduce the effects of radiation on the body.</text>
 	</string>
 	<string id="ls_tip_10">
-		<text>A Stalker may stab you in the back, a Bandit most certainly will; but a good rifle will never let you down. Take care of it and it'll take care of you.</text>
+		<text>A Stalker may stab you in the back, a Bandit most certainly will, but a good rifle will never let you down. Take care of it and it'll take care of you.</text>
 	</string>
 	<string id="ls_tip_13">
 		<text>You need a detector to search for artifacts. The best detectors make searching easier and may even detect more valuable artifacts.</text>
 	</string>
 	<string id="ls_tip_14">
-		<text>Stalkers don’t let people with their weapons out into their camps. Respect the common rules.</text>
+		<text>Stalkers don’t let people with their weapons drawn, into their camps. Respect the common rules.</text>
 	</string>
 	<string id="ls_tip_15">
-		<text>You can locate the edges of an anomaly by throwing bolts. Use them.</text>
+		<text>You can locate the edges of an anomaly by throwing bolts. Use them wisely.</text>
 	</string>
 	<string id="ls_tip_17">
 		<text>Like a wise man said, there are paths that you shouldn't take and terrains on which you shouldn't fight. Evaluate your chances before starting a skirmish.</text>
@@ -94,7 +94,7 @@
 		<text>In addition to their useful effects, artifacts are also radioactive. This can be compensated for by using artifact containers.</text>
 	</string>
 	<string id="ls_tip_29">
-		<text>Your knife is ineffective against enemies with firearms. Use it in close combat or for a stealthy kill.</text>
+		<text>Your knife is ineffective against enemies with firearms. Use it against mutants or in close combat or for a stealthy kill.</text>
 	</string>
 	<string id="ls_tip_3">
 		<text>The weight you are carrying reduces your endurance. Excess weight will restrict your mobility, while being completely overloaded will stop you from moving altogether.</text>
@@ -139,7 +139,7 @@
 		<text>Trust your ears. Sound carries over hills and through dense brush. A faint but familiar sound may be all you need to brace yourself for an unseen attack.</text>
 	</string>
 	<string id="ls_tip_47">
-		<text>Keep a small pistol and cartridge in your backpack as backup. You never know when you'll need it.</text>
+		<text>Keep a compact pistol and some ammunition in your backpack as backup. You never know when you'll need it.</text>
 	</string>
 	<string id="ls_tip_48">
 		<text>Hoard ammo. It is invaluable in the Zone and it's also a good source of money.</text>
@@ -178,7 +178,7 @@
 		<text>When out in the Zone, keep a couple of spare magazines on you - they’re bound to come in handy.</text>
 	</string>
 	<string id="ls_tip_68">
-		<text>If you hear a Bloodsucker and feel lucky, stand still and don't move. Turn towards the sound, locate it, and jump to the side when it gets close. Then fire at will.</text>
+		<text>Wearing helmets and masks reduces your sprinting capabilities.</text>
 	</string>
 	<string id="ls_tip_69">
 		<text>To use drugs appropriately it helps to know what they do. Consult drug descriptions to find out the effects of certain drugs.</text>
@@ -202,7 +202,7 @@
 		<text>In addition to weapons and ammo, enemy bodies may contain valuable items like PDAs with information on them that can be sold.</text>
 	</string>
 	<string id="ls_tip_78">
-		<text>Artifacts aren’t just valuable loot: in addition to being light and expensive, they can often have extremely useful properties.</text>
+		<text>Artifacts aren’t just valuable loot: in addition to being heavy and expensive, they can often have extremely useful properties.</text>
 	</string>
 	<string id="ls_tip_79">
 		<text>Due to the Zone’s environment, many mutants are radioactive. Approaching them without adequate radiation protection is extremely dangerous.</text>
@@ -229,7 +229,7 @@
 		<text>Run around as much as possible with your Artifact detector out. Sometimes Artifacts appear after psi storms.</text>
 	</string>
 	<string id="ls_tip_88">
-		<text>Wearing helmets and masks reduces your sprinting capabilities.</text>
+		<text>If you hear a Bloodsucker and feel lucky, stand still and don't move. Turn towards the sound, locate it, and jump to the side when it gets close. Then fire at will.</text>
 	</string>
 	<string id="ls_tip_89">
 		<text>Never advance through hostile territory with direct sunlight in your eyes.</text>
@@ -250,7 +250,7 @@
 		<text>Always carry a clip of Armour-Piercing rounds for whatever gun you have. Mutants might not wear armour, but hostile Stalkers do.</text>
 	</string>
 	<string id="ls_tip_94">
-		<text>Carry at least ONE shot of vodka at all times. When you run out of radiation meds in the middle of an anomaly patch, you'll thank yourself.</text>
+		<text>Carry at least ONE bottle of vodka at all times. When you run out of radiation meds in the middle of an anomaly patch, you'll thank yourself.</text>
 	</string>
 	<string id="ls_tip_95">
 		<text>A pack of cigarettes a day keeps the hunger at bay.</text>
@@ -283,7 +283,7 @@
 		<text>Be careful when approaching a fellow man. Men's hearts hold shadows darker than any mutant.</text>
 	</string>
 	<string id="ls_tip_55">
-		<text>Artifacts are not usually static: they tend to move within an anomalous area. Gun ho attempts to chase down an artifact will lead you into an anomaly in no time.</text>
+		<text>Artifacts are not usually static: they tend to move within an anomalous area. Gung ho attempts to chase down an artifact will lead you into an anomaly in no time.</text>
 	</string>
 	<string id="ls_tip_57">
 		<text>Some Stalkers may offer you services, such as information, exclusive goods, or give you orders for specific artifacts.</text>
@@ -295,7 +295,7 @@
 		<text>Whenever you feel depressed, stay at a campfire and listen to the guitar.</text>
 	</string>
 	<string id="ls_tip_2">
-		<text>When reparing heavily damaged weapons technicians will not only charge you for the spare parts, but his salary and the equipment that he has to discard to get the spare parts. It's really not worth it.</text>
+		<text>When reparing heavily damaged weapons, technicians will not only charge you for the spare parts, but his salary and the equipment that he has to discard to get the spare parts. It's really not worth it.</text>
 	</string>
 	<string id="ls_tip_66">
 		<text>If you want to survive, always keep track of the crackling noise made by the Geiger counter, which warns you of radiation and the anomaly danger signal, that lets you know you’re close to an anomaly.</text>
@@ -310,7 +310,7 @@
 		<text>Always explore every nook and cranny... you never know what someone may have stashed there.</text>
 	</string>
 	<string id="ls_mp_tip_11">
-		<text>Stay sharp Stalker, Death is always nearby. If you see him go for the headshot.</text>
+		<text>Stay sharp Stalker, Death is always nearby. If you see him, go for a headshot.</text>
 	</string>
 	<string id="ls_mp_tip_13">
 		<text>The left part of the buy menu contains five tabs, from the top down: pistols, main weapons, equipment, ammunition and medical supplies. Selecting the required tab shows you the range of items available at your rank.</text>

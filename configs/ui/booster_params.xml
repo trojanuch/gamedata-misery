@@ -19,7 +19,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 <!--		<texture_minus>ui_am_prop_radio_restore</texture_minus> -->
-		<value x="140" y="0" width="30" height="20" magnitude="100000">
+		<value x="140" y="0" width="30" height="20" magnitude="25000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_radiation_restore>
@@ -30,7 +30,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_satiety</texture_minus>
-		<value x="153" y="0" width="30" height="20" magnitude="1000" unit_str="st_kcal">
+		<value x="145" y="0" width="30" height="20" magnitude="1000" unit_str="st_kcal">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_satiety>
@@ -52,7 +52,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_power_restore</texture_minus>
-		<value x="172" y="0" width="30" height="20" magnitude="20000">
+		<value x="130" y="0" width="30" height="20" magnitude="200000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_power_restore>
@@ -63,7 +63,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_bleeding_restore</texture_minus>
-		<value x="210" y="0" width="30" height="20" magnitude="10000">
+		<value x="140" y="0" width="30" height="20" magnitude="2000000" show_sign="0">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_bleeding_restore>
@@ -172,7 +172,7 @@
 			<texture>ui_am_prop_time_period</texture>
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
-		<value x="140" y="0" width="30" height="20" magnitude="1" show_sign="0" unit_str="ui_inv_seconds_short">
+		<value x="130" y="0" width="30" height="20" magnitude="1" show_sign="0" unit_str="ui_inv_seconds_short">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_time>
