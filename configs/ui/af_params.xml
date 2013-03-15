@@ -19,7 +19,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 		<texture_minus>ui_am_prop_radio_restore</texture_minus>
-		<value x="130" y="0" width="30" height="20" magnitude="150000" sign_inverse="1">
+		<value x="130" y="0" width="30" height="20" magnitude="12000" sign_inverse="1" unit_str="st_msv_sec">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</radiation_restore_speed>
@@ -30,7 +30,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_satiety</texture_minus>
-		<value x="153" y="0" width="30" height="20" magnitude="100">
+		<value x="140" y="0" width="30" height="20" magnitude="100">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</satiety_restore_speed>
@@ -52,7 +52,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_bleeding_restore</texture_minus>
-		<value x="210" y="0" width="30" height="20" magnitude="15000">
+		<value x="210" y="0" width="30" height="20" magnitude="15000" sign_inverse="1" unit_str="st_kv">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</bleeding_restore_speed>
@@ -64,7 +64,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_burn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="2400">
+		<value x="140" y="0" width="30" height="20" magnitude="30000" unit_str="st_kw_m2">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</burn_immunity>
@@ -75,7 +75,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_shock_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="2000">
+		<value x="140" y="0" width="30" height="20" magnitude="8000" unit_str="st_kv">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</shock_immunity>
@@ -86,7 +86,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_radiation_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="6000">
+		<value x="140" y="0" width="30" height="20" magnitude="3000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</radiation_immunity>
@@ -97,7 +97,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_telepat_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="1200">
+		<value x="140" y="0" width="30" height="20" magnitude="7000" unit_str="st_mt">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</telepatic_immunity>
@@ -108,7 +108,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_chemburn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="2400">
+		<value x="140" y="0" width="30" height="20" magnitude="900" unit_str="st_ppm">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</chemical_burn_immunity>
@@ -119,7 +119,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_max_weight</texture_minus>
-		<value x="185" y="0" width="30" height="20" magnitude="1000" unit_str="st_g">
+		<value x="200" y="0" width="30" height="20" magnitude="1000" unit_str="st_g">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</additional_weight>
