@@ -219,7 +219,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="170" y="0" width="32" height="18" magnitude="300">
+			<static_value x="170" y="0" width="32" height="18" magnitude="350">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</burn_immunity>
@@ -237,7 +237,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="170" y="0" width="32" height="18" magnitude="200">
+			<static_value x="170" y="0" width="32" height="18" magnitude="250">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</shock_immunity>
@@ -255,7 +255,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="170" y="0" width="32" height="18" magnitude="250">
+			<static_value x="170" y="0" width="32" height="18" magnitude="300">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</chemical_burn_immunity>
@@ -273,7 +273,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="170" y="0" width="32" height="18" magnitude="150">
+			<static_value x="170" y="0" width="32" height="18" magnitude="200">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</radiation_immunity>
@@ -291,7 +291,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="170" y="0" width="32" height="18" magnitude="200">
+			<static_value x="170" y="0" width="32" height="18" magnitude="250">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</telepatic_immunity>
@@ -309,7 +309,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="170" y="0" width="32" height="18" magnitude="150">
+			<static_value x="170" y="0" width="32" height="18" magnitude="200">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</wound_immunity>
@@ -327,7 +327,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="170" y="0" width="32" height="18" magnitude="150">
+			<static_value x="170" y="0" width="32" height="18" magnitude="500">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</fire_wound_immunity>
