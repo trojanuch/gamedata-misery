@@ -4,18 +4,23 @@ max_population = 1
 respawn_params = respawn@pri_a22   
 
 [respawn@pri_a22]
+
+;;; unused
+
 spawn_freedom@veteran
 spawn_freedom@veteran_hostile
+
+;;; unused
 
 ;spawn_freedom@sci
 
 [spawn_freedom@veteran]
 spawn_squads = freedom_sim_squad_veteran, freedom_sci_simulation_squad
-spawn_num = {-sim_duty_help_harder} 1, 0
+spawn_num = 0 ; {+pri_a25_rfi_source_eliminated -sim_duty_help_harder} 1, 0
 
 [spawn_freedom@veteran_hostile]
 spawn_squads = freedom_sim_squad_veteran_hostile, freedom_sci_simulation_squad_hostile
-spawn_num = {+sim_duty_help_harder} 1, 0
+spawn_num = 0 ; {+pri_a25_rfi_source_eliminated +sim_duty_help_harder} 1, 0
 
 ;;; unused
 
