@@ -83,7 +83,7 @@ control_inertion_factor = 1.16
 
 ; NO RESISTANCE
 burn_protection 			= 0.008
-shock_protection 			= 0.12
+shock_protection 			= 0.170
 radiation_protection 			= 0.0014
 chemical_burn_protection 		= 0.0
 telepatic_protection 			= 0.0
@@ -156,8 +156,8 @@ power_loss				= 0.63
 control_inertion_factor = 1.19
 
 ; NO RESISTANCE
-burn_protection 			= 0.080
-shock_protection 			= 0.160
+burn_protection 			= 0.0280
+shock_protection 			= 0.240
 radiation_protection 			= 0.0022
 chemical_burn_protection 		= 0
 telepatic_protection 			= 0
@@ -230,8 +230,8 @@ power_loss				= 0.68
 control_inertion_factor = 1.28
 
 ; NO RESISTANCE
-burn_protection 			= 0.140
-shock_protection 			= 0.250
+burn_protection 			= 0.0330
+shock_protection 			= 1.180
 radiation_protection 			= 0.0036
 chemical_burn_protection 		= 0
 telepatic_protection 			= 0
@@ -304,7 +304,7 @@ immunities_sect		= sect_stalker_outfit_immunities
 
 ; LOW RESISTANCE
 burn_protection 				= 0.018
-shock_protection 				= 0.200
+shock_protection 				= 0.580
 radiation_protection 			= 0.0025
 chemical_burn_protection 		= 0
 telepatic_protection 			= 0
@@ -433,7 +433,7 @@ immunities_sect			= sect_svoboda_light_outfit_immunities
 
 ; LOW RESISTANCE
 burn_protection 				= 0.026
-shock_protection 				= 0.200
+shock_protection 				= 0.500
 radiation_protection 			= 0.0025
 chemical_burn_protection 		= 0.0
 telepatic_protection 			= 0.0
@@ -508,7 +508,7 @@ immunities_sect		= sect_dolg_outfit_immunities
 
 ; LOW RESISTANCE
 burn_protection 				= 0.023
-shock_protection 				= 0.225
+shock_protection 				= 0.440
 radiation_protection 			= 0.0029
 chemical_burn_protection 		= 0.0
 telepatic_protection 			= 0.0
@@ -587,8 +587,8 @@ helmet_avaliable	 	= false
 
 
 ; MEDIUM RESISTANCE
-burn_protection 			= 0.170
-shock_protection 			= 0.380
+burn_protection 			= 0.1450
+shock_protection 			= 2.010
 radiation_protection 			= 0.0320
 chemical_burn_protection 		= 0.1240
 telepatic_protection 			= 0.1250
@@ -720,8 +720,8 @@ immunities_sect			= sect_cs_heavy_outfit_immunities
 power_loss				= 0.68
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.042
-shock_protection 				= 0.300
+burn_protection 				= 0.040
+shock_protection 				= 1.260
 radiation_protection 			= 0.0055
 chemical_burn_protection 		= 0.0
 telepatic_protection 			= 0.0
@@ -795,7 +795,7 @@ immunities_sect			= sect_svoboda_heavy_outfit_immunities
 
 ; MEDIUM RESISTANCE
 burn_protection 				= 0.043
-shock_protection 				= 0.200
+shock_protection 				= 0.500
 radiation_protection 			= 0.0042
 chemical_burn_protection 		= 0.0300
 telepatic_protection 			= 0.0
@@ -869,7 +869,7 @@ immunities_sect			= sect_specops_outfit_immunities
 
 ; LOW RESISTANCE
 burn_protection 				= 0.04
-shock_protection 				= 0.100
+shock_protection 				= 0.460
 radiation_protection 			= 0.0042
 chemical_burn_protection 		= 0.0
 telepatic_protection 			= 0.0
@@ -998,7 +998,7 @@ immunities_sect			= sect_military_outfit_immunities
 
 ; MEDIUM RESISTANCE
 burn_protection 				= 0.044
-shock_protection 				= 0.200
+shock_protection 				= 0.580
 radiation_protection 			= 0.0042
 chemical_burn_protection 		= 0.0
 telepatic_protection 			= 0.0
@@ -1126,7 +1126,7 @@ immunities_sect			= sect_dolg_heavy_outfit_immunities
 
 ; MEDIUM RESISTANCE
 burn_protection 				= 0.048
-shock_protection 				= 0.145
+shock_protection 				= 0.540
 radiation_protection 			= 0.0048
 chemical_burn_protection 		= 0.0
 telepatic_protection 			= 0.0
@@ -1198,7 +1198,7 @@ immunities_sect			= sect_exo_outfit_immunities
 
 ; MEDIUM RESISTANCE
 burn_protection 			= 0.065
-shock_protection 			= 0.190
+shock_protection 			= 0.880
 radiation_protection 			= 0.0064
 chemical_burn_protection 		= 0.0
 telepatic_protection 			= 0.0
@@ -1322,9 +1322,9 @@ player_hud_section	= actor_hud_07
 
 ef_equipment_type	= 2
 
-inv_name			= "SSP-99 Ecologist"
-inv_name_short		= "SSP-99 Ecologist"
-description			= "A SSP-99 chemical protection suit specifically designed for the zones conditions. It is used primarily by scientific expeditions and the eco-stalkers who co-operate with them. It has an intergrated air filtering and conditioning system offering excellent protection against radiation and chemical exposure, includes an anomaly suppression system, and uses a fabric which offers excellent heat and electrical resistance. It isn't designed for combat, so it provides neither bullet or splinter protection. Includes a container capable of holding 2 artifacts."
+inv_name			= st_ecologist_red_outfit_name 
+inv_name_short		= st_ecologist_red_outfit_name
+description			= st_ecologist_red_outfit_descrition
 inv_weight			= 12.14
 slot				= 6
 inv_grid_width		= 2
@@ -1348,8 +1348,8 @@ additional_inventory_weight2 	= 18
 additional_inventory_weight 	= 18
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.200
-shock_protection 				= 0.360
+burn_protection 				= 1.650
+shock_protection 				= 2.450 ; 1750 kV
 radiation_protection 			= 0.0390
 chemical_burn_protection 		= 0.1360
 telepatic_protection 			= 0.1480
@@ -1357,7 +1357,7 @@ strike_protection 				= 0
 explosion_protection 			= 0.2
 wound_protection				= 0.15
 
-power_loss				= 0.88
+power_loss						= 0.88
 
 power_restore_speed				= -0.0014
 
@@ -1397,9 +1397,9 @@ player_hud_section	= actor_hud_07
 
 ef_equipment_type	= 2
 
-inv_name			= "SSP-99M Ecologist"
-inv_name_short		= "SSP-99M Ecologist"
-description			= "High quality modified SSP-99 suit. It provides increased body protection from bullet and splinter damage. It is designed for the guards working with scientific expeditions. It provides good protection from radiation and biological anomalies. It is resistant to chemically aggressive environments and other effects dangerous to the body. Includes a container capable of holding 2 artifacts."
+inv_name			= st_ecologist_green_outfit_name
+inv_name_short		= st_ecologist_green_outfit_name
+description			= st_ecologist_green_outfit_description
 inv_weight			= 12.42
 slot				= 6
 inv_grid_width		= 2
@@ -1423,8 +1423,8 @@ artefact_count          = 2
 control_inertion_factor = 1.91
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.240
-shock_protection 				= 0.360
+burn_protection 				= 1.700
+shock_protection 				= 2.650
 radiation_protection 			= 0.0390
 chemical_burn_protection 		= 0.1490
 telepatic_protection 			= 0.1620

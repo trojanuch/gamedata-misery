@@ -70,7 +70,7 @@ inv_name             	= st_helm_respirator
 inv_name_short       	= st_helm_respirator
 description			= st_helm_respirator_descr
 
-inv_weight           	= 2.28
+inv_weight           	= 1.07
 
 additional_inventory_weight2 	= 2.1
 additional_inventory_weight 	= 2.1
@@ -90,10 +90,11 @@ cost			= 15120
 immunities_sect 			= sect_helm_respirator_immunities
 bones_koeff_protection		= actor_helm_respirator
 
-telepatic_protection 		= 0.0130
+telepatic_protection 		= 0.0060
+shock_protection 			= 0.0800
 radiation_protection 		= 0.0255
 chemical_burn_protection 	= 0.0420
-burn_protection			= 0.0037
+burn_protection			= 0.0070 ; 2 kw / m2
 strike_protection 		= 0
 wound_protection		= 0.032
 explosion_protection		= 0.027
@@ -107,7 +108,7 @@ upgrade_scheme          = upgrade_scheme_helm_respirator
 [sect_helm_respirator_immunities]
 burn_immunity			= 0.70
 strike_immunity			= 0.0
-shock_immunity			= 0.025
+shock_immunity			= 0.0
 wound_immunity			= 0.87
 wound_2_immunity		= 0.87
 radiation_immunity = 0.0 ;		= 0.24
@@ -168,11 +169,11 @@ fire_wound_immunity		= 0.0
 $spawn 			= "outfit\helm_respirator_heavy"
 visual          	= dynamics\outfit\helm_respirator
 control_inertion_factor	= 1.0
-inv_name             	= st_helm_respirator
-inv_name_short       	= st_helm_respirator
-description			= st_helm_respirator_descr
+inv_name             	= st_helm_respirator_heavy
+inv_name_short       	= st_helm_respirator_heavy
+description				= st_helm_respirator_heavy_descr
 
-inv_weight           	= 5.89
+inv_weight           	= 2.93
 
 additional_inventory_weight2 	= 4.56
 additional_inventory_weight 	= 4.56
@@ -194,10 +195,11 @@ nightvision_sect	= effector_nightvision_1
 immunities_sect 			= sect_helm_respirator_heavy_immunities
 bones_koeff_protection		= actor_helm_respirator
 
-telepatic_protection 		= 0.0590
+telepatic_protection 		= 0.0085
+shock_protection 			= 0.0950
 radiation_protection 		= 0.0295
 chemical_burn_protection 	= 0.0620
-burn_protection			= 0.0135
+burn_protection			= 0.0105 ; 3 kw / m2
 strike_protection 		= 0
 wound_protection		= 0.06
 explosion_protection		= 0.04
@@ -211,7 +213,7 @@ upgrade_scheme          = upgrade_scheme_helm_respirator_heavy
 [sect_helm_respirator_heavy_immunities]
 burn_immunity			= 0.45
 strike_immunity			= 0.0
-shock_immunity			= 0.045
+shock_immunity			= 0.0
 wound_immunity			= 0.078
 wound_2_immunity		= 0.078
 radiation_immunity 		= 0.0 ;		= 0.24
@@ -280,7 +282,7 @@ inv_name             	= st_helm_hardhat
 inv_name_short       	= st_helm_hardhat
 description				= st_helm_hardhat_descr
 
-inv_weight           	= 1.68
+inv_weight           	= 2.67
 
 additional_inventory_weight2 	= 3.45
 additional_inventory_weight 	= 3.45
@@ -301,9 +303,10 @@ immunities_sect 		= sect_helm_hardhat_immunities
 bones_koeff_protection		= actor_helm_hardhat
 
 telepatic_protection 		= 0.0320
-radiation_protection 		= 0.0
-chemical_burn_protection 	= 0.0
-burn_protection			= 0.0190
+shock_protection 			= 0.0350
+radiation_protection 		= 0.0011
+chemical_burn_protection 	= 0.0026
+burn_protection			= 0.0030 ; 1 kw / m2
 wound_protection		= 0.035
 strike_protection 		= 0.0
 explosion_protection		= 0.12
@@ -315,7 +318,7 @@ upgrade_scheme          = upgrade_scheme_helm_hardhat
 [sect_helm_hardhat_immunities]
 burn_immunity			= 0.50
 strike_immunity			= 0.0
-shock_immunity			= 0.055
+shock_immunity			= 0.0
 wound_immunity			= 0.068
 wound_2_immunity		= 0.068
 radiation_immunity = 0.0 ;		= 0.15
@@ -384,7 +387,7 @@ inv_name             	= st_helm_protective
 inv_name_short       	= st_helm_protective
 description				= st_helm_protective_descr
 
-inv_weight           	= 2.46
+inv_weight           	= 10.74
 
 additional_inventory_weight2 	= 3.25
 additional_inventory_weight 	= 3.25
@@ -399,7 +402,7 @@ upgr_icon_y			= 619
 upgr_icon_width		= 119
 upgr_icon_height   	= 148
 
-cost			= 32720
+cost			= 37720
 
 nightvision_sect	= effector_nightvision_1
 
@@ -407,9 +410,10 @@ immunities_sect 			= sect_helm_protective_immunities
 bones_koeff_protection		= actor_helm_protective
 
 telepatic_protection 		= 0.1250
+shock_protection 			= 0.340
 radiation_protection 		= 0.0355
 chemical_burn_protection 	= 0.1090
-burn_protection				= 0.0330
+burn_protection				= 0.0370 ; 10 kw / m2 ; 0.0440 = 12 kw / m2
 strike_protection 			= 0
 wound_protection			= 0.02
 explosion_protection		= 0.1
@@ -421,9 +425,9 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_helm_protective
 
 [sect_helm_protective_immunities]
-burn_immunity			= 0.12
+burn_immunity			= 0.040
 strike_immunity			= 0.0
-shock_immunity			= 0.03
+shock_immunity			= 0.0
 wound_immunity			= 0.023
 wound_2_immunity		= 0.023
 radiation_immunity 		= 0.0 ;		= 0.04
@@ -492,7 +496,7 @@ inv_name             	= st_helm_tactic
 inv_name_short       	= st_helm_tactic
 description				= st_helm_tactic_descr
 
-inv_weight           	= 1.96
+inv_weight           	= 3.63
 
 additional_inventory_weight2 	= 3.5
 additional_inventory_weight 	= 3.5
@@ -515,9 +519,10 @@ immunities_sect 	= sect_helm_tactic_immunities
 bones_koeff_protection		= actor_helm_tactic
 
 telepatic_protection 		= 0.0480
+shock_protection 			= 0.220
 radiation_protection 		= 0.0255
 chemical_burn_protection 	= 0.0540
-burn_protection			= 0.0130
+burn_protection			= 0.0130 ; 4 kw / m2
 strike_protection 		= 0
 wound_protection		= 0.05
 explosion_protection		= 0.125
@@ -533,7 +538,7 @@ upgrade_scheme          = upgrade_scheme_helm_tactic
 [sect_helm_tactic_immunities]
 burn_immunity			= 0.45
 strike_immunity			= 0.0
-shock_immunity			= 0.045
+shock_immunity			= 0.0
 wound_immunity			= 0.047
 wound_2_immunity		= 0.047
 radiation_immunity = 0.0 ;		= 0.11
@@ -602,7 +607,7 @@ inv_name             	= st_helm_battle
 inv_name_short       	= st_helm_battle
 description				= st_helm_battle_descr
 
-inv_weight           	= 2.38
+inv_weight           	= 4.69
 
 additional_inventory_weight2 	= 2.12
 additional_inventory_weight 	= 2.12
@@ -619,15 +624,16 @@ upgr_icon_height   	= 143
 
 cost			= 37520
 
-nightvision_sect	= effector_nightvision_2
+nightvision_sect	= effector_nightvision_1
 
 immunities_sect 	= sect_helm_battle_immunities
 bones_koeff_protection		= actor_helm_battle
 
-telepatic_protection 		= 0.0820
+telepatic_protection 		= 0.0690
+shock_protection 			= 0.0850
 radiation_protection 		= 0.0295
 chemical_burn_protection 	= 0.0420
-burn_protection			= 0.0190
+burn_protection			= 0.0190 ; 5 kw / m2
 wound_protection		= 0.08
 strike_protection 		= 0.0
 explosion_protection		= 0.15
@@ -641,7 +647,7 @@ upgrade_scheme          = upgrade_scheme_helm_battle
 [sect_helm_battle_immunities]
 burn_immunity			= 0.40
 strike_immunity			= 0.0
-shock_immunity			= 0.037
+shock_immunity			= 0.0
 wound_immunity			= 0.036
 wound_2_immunity		= 0.036
 radiation_immunity = 0.0 ;		= 0.08
