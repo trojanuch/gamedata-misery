@@ -514,8 +514,8 @@ Some distrustful Stalkers throw in a disinfecting Akvatab into the flask to ease
 	<string id="st_itm_sleepbag_name">
 		<text>Sleeping Bag</text>
 	</string>
-	<string id="st_itm_sleepbag_desc">
-		<text>A light sleeping bag, that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route. It will not protect you from radiation!\n%c[0,204,0,51]WARNING \n \n%c[default]Sleeping in the open poses mortal risk. Use only when safety is assured.\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item</text>
+	<string id="st_itm_sleepbag_descr">
+		<text>A light sleeping bag, that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Use is also not protected from radiation.\n \n%c[0,153,255,255] • %c[0,140,140,140] sets up portable bed\n%c[0,153,255,255] • %c[0,140,140,140] multiple usages\n%c[0,153,255,255] • %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="sleep_itm_warning_blowout">
 		<text>It's not safe to sleep!</text>
@@ -766,7 +766,7 @@ As injection of inactivated toxin overally boosts users organism activity, there
 		<text>Sleeping Bag</text>
 	</string>
 	<string id="st_itm_sleepbag_desc">
-		<text>A light sleeping bag, that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Use is also not protected from radiation.\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] multiple usages</text>
+		<text>A light sleeping bag, that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Use is also not protected from radiation.\n \n%c[0,153,255,255] • %c[0,140,140,140] sets up portable bed\n%c[0,153,255,255] • %c[0,140,140,140] multiple usages\n%c[0,153,255,255] • %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="sleep_itm_warning_blowout">
 		<text>It's not safe to sleep!</text>
