@@ -41,7 +41,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_power_restore</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="30000">
+		<value x="155" y="0" width="30" height="20" magnitude="30000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</power_restore_speed>
@@ -52,7 +52,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_bleeding_restore</texture_minus>
-		<value x="210" y="0" width="30" height="20" magnitude="15000" sign_inverse="1" unit_str="st_kv">
+		<value x="135" y="0" width="30" height="20" magnitude="15000" sign_inverse="1" unit_str="st_kv">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</bleeding_restore_speed>
@@ -64,7 +64,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_burn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="30000" unit_str="st_kw_m2">
+		<value x="140" y="0" width="30" height="20" magnitude="3400" unit_str="st_kw_m2">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</burn_immunity>
@@ -97,7 +97,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_telepat_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="7000" unit_str="st_mt">
+		<value x="140" y="0" width="30" height="20" magnitude="2800" unit_str="st_mt">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</telepatic_immunity>
@@ -108,7 +108,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_chemburn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="900" unit_str="st_ppm">
+		<value x="140" y="0" width="30" height="20" magnitude="2940" unit_str="st_ppm">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</chemical_burn_immunity>

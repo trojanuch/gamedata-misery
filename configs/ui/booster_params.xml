@@ -96,7 +96,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_chemburn_protection</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="6000" unit_str="st_ppm">
+		<value x="140" y="0" width="30" height="20" magnitude="1950" unit_str="st_ppm">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_chemburn_protection>
@@ -151,7 +151,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_chemburn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="300" unit_str="st_ppm">
+		<value x="140" y="0" width="30" height="20" magnitude="1200" unit_str="st_ppm">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_chemburn_immunity>
