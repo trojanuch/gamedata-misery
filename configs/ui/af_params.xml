@@ -19,7 +19,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 		<texture_minus>ui_am_prop_radio_restore</texture_minus>
-		<value x="130" y="0" width="30" height="20" magnitude="12000" sign_inverse="1" unit_str="st_msv_sec">
+		<value x="130" y="0" width="30" height="20" magnitude="7000" sign_inverse="1" unit_str="st_msv_sec">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</radiation_restore_speed>
@@ -52,7 +52,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_bleeding_restore</texture_minus>
-		<value x="135" y="0" width="30" height="20" magnitude="15000" sign_inverse="1" unit_str="st_kv">
+		<value x="135" y="0" width="30" height="20" magnitude="15000" unit_str="st_ml_min">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</bleeding_restore_speed>
@@ -64,7 +64,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_burn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="3400" unit_str="st_kw_m2">
+		<value x="140" y="0" width="30" height="20" magnitude="64300" unit_str="st_perc">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</burn_immunity>
@@ -82,10 +82,10 @@
 
 	<radiation_immunity x="0" y="0" width="257" height="20" >
 		<caption x="0" y="0" width="257" height="20" complex_mode="0">
-			<texture>ui_am_propery_09</texture>
+			<texture>ui_am_prop_radiation_immunity</texture>
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
-			<texture_minus>ui_am_prop_radiation_immunity</texture_minus>
+			<texture_minus>ui_am_propery_09</texture_minus>
 		<value x="140" y="0" width="30" height="20" magnitude="3000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
@@ -97,7 +97,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_telepat_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="2800" unit_str="st_mt">
+		<value x="140" y="0" width="30" height="20" magnitude="4400" unit_str="st_perc">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</telepatic_immunity>
@@ -108,7 +108,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_chemburn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="2940" unit_str="st_ppm">
+		<value x="140" y="0" width="30" height="20" magnitude="14500" unit_str="st_perc">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</chemical_burn_immunity>
