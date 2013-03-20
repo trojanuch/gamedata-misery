@@ -64,7 +64,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_burn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="64300" unit_str="st_perc">
+		<value x="140" y="0" width="30" height="20" magnitude="84800" unit_str="st_perc">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</burn_immunity>
@@ -97,7 +97,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_telepat_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="4400" unit_str="st_perc">
+		<value x="140" y="0" width="30" height="20" magnitude="5800" unit_str="st_perc">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</telepatic_immunity>
@@ -108,7 +108,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_chemburn_immunity</texture_minus>
-		<value x="140" y="0" width="30" height="20" magnitude="14500" unit_str="st_perc">
+		<value x="140" y="0" width="30" height="20" magnitude="19100" unit_str="st_perc">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</chemical_burn_immunity>
