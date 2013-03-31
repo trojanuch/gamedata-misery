@@ -214,7 +214,7 @@
 		<text>Scientific medkit</text>
 	</string>
 	<string id="st_medkit_science_descr">
-		<text>A medical kit designed specifically for use in the Zone. The kit contains products for handling wounds, as well as preventing the development of radiation poisoning: and reducing accumulated radiation in the body. Contains Vikasolum, Batilolum and Naphazoline, unlike other medkits.\n \n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,204,0,51] • %c[0,140,140,140] slow usage (field kit)\n%c[0,204,0,51] • %c[0,140,140,140] prolonged body recovery time</text>
+		<text>A medical kit designed specifically for use in the Zone. The kit contains products for handling wounds, as well as preventing the development of radiation poisoning: and reducing accumulated radiation in the body. Contains Vikasolum, Batilolum and Naphazoline, unlike other medkits.\n \n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,204,0,51] • %c[0,140,140,140] slow usage (field kit)\n%c[0,204,0,51] • %c[0,140,140,140] prolonged body recovery time</text>
 	</string>
 	<string id="st_stim_impro">
 		<text>Improvised stimpack (zone produced)</text>
@@ -270,7 +270,7 @@
 	<string id="st_harmonica_descr">
 		<text>For blues and prison romance lovers.\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item</text>
 	</string>
-	<string id="st_batteries_name">
+	<string id="st_batteries">
 		<text>Battery pack</text>
 	</string>
 	<string id="st_batteries_descr">
@@ -509,7 +509,7 @@ Some distrustful Stalkers throw in a disinfecting Akvatab into the flask to ease
 		<text>Soviet cigarettes</text>
 	</string>
 	<string id="st_cigar_descr">
-		<text>A pack of strong but very low quality cigarettes with only a few left.\n%c[default] Stalkers</text>
+		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,204,0,51] • %c[0,140,140,140] slow usage (roll up)\n%c[0,153,255,255] • %c[0,140,140,140] potent alcohol sobering effect\n%c[0,204,0,51] • %c[0,140,140,140] low quality\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy</text>
 	</string>
 	<string id="st_itm_sleepbag_name">
 		<text>Sleeping Bag</text>
@@ -678,10 +678,10 @@ Many stalkers carry such tool so it may be of little value when traded.\n \n%c[0
 	</string>
 
 	<string id="st_batteries_ccell">
-		<text>Batteries</text>
+		<text>Military battery unit</text>
 	</string>
 	<string id="st_batteries_ccell_descr">
-		<text>A pack of fully charged military, batteries. Very valuable in the Zone as they are used by all factions and Stalkers of all skill. From the lowly rookies to the Master Stalkers that roam the zone. Supplied to Traders by corrupt military officers trying to earn some extra dough in the Zone.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +100%</text>
+		<text>A pack of fully charged, military battery unit. Very valuable in the Zone as they are used by all factions and Stalkers of all skill. From the lowly rookies to the Master Stalkers that roam the zone. Supplied to Traders by corrupt military officers trying to earn some extra dough in the Zone.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +100%</text>
 	</string>
 
 	<string id="st_cocaine">
@@ -890,7 +890,7 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 		<text>Mint gum (imported)</text>
 	</string>
 	<string id="st_mint_descr">
-		<text>Strong mint gum brough from the west. It is refreshing and helps cleaning of radiated particles from mouth area. It also seems to have a nice ability to fight off sleepiness for a short while.\n \n%c[0,153,255,255] • %c[0,140,140,140]mild sleepiness reduction\n%c[0,153,255,255] • %c[0,140,140,140] high quality</text>
+		<text>Strong mint gum brough from the west. It is refreshing and helps cleaning of radiated particles from mouth area. It also seems to have a nice ability to fight off sleepiness for a short while.\n \n%c[0,153,255,255] • %c[0,140,140,140] mild sleepiness reduction\n%c[0,153,255,255] • %c[0,140,140,140] high quality</text>
 	</string>
 	<string id="st_caffeine">
 		<text>Caffeine tablets (imported)</text>
@@ -898,11 +898,11 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	<string id="st_caffeine_descr">
 		<text>Caffeine and sodium benzonate which cause action to occur central nervous excitation to get rid of sleepiness for a while.\n \n%c[0,153,255,255] • %c[0,140,140,140] stimulant\n%c[0,153,255,255] • %c[0,140,140,140] potent alcohol sobering effect\n%c[0,153,255,255] • %c[0,140,140,140] large sleepiness decrease</text>
 	</string>
-	<string id="st_cigar">
+	<string id="st_cuban_cigar">
 		<text>Cuban Cigar (imported)</text>
 	</string>
-	<string id="st_cigar_descr">
-		<text>The valuable Cuban cigar can assure a blissful moment during a nice sunset. Some Stalkers talk about the joy of not having mosquitos around you when smoking strong tobacco. Cuban Cigars are considered the finest in the world. A rare commodity among The Zones many Miseries.\n \n%c[0,153,255,255] • %c[0,140,140,140] stimulant\n%c[0,153,255,255] • %c[0,140,140,140] potent alcohol sobering effect\n%c[0,153,255,255] • %c[0,140,140,140] sign. sleepiness decrease\n%c[0,153,255,255] • %c[0,140,140,140] high quality</text>
+	<string id="st_cuban_cigar_descr">
+		<text>The valuable Cuban cigar can assure a blissful moment during a nice sunset. Some Stalkers talk about the joy of not having mosquitos around you when smoking strong tobacco. Cuban Cigars are considered the finest in the world. A rare commodity among The Zones many Miseries.</text>
 	</string>
 	<string id="st_cigarettes_lucky">
 		<text>Lucky Strike (imported)</text>
@@ -939,5 +939,20 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	</string>
 	<string id="st_nuts_descr">
 		<text>Assorted peanuts, hazelnuts, cashews and almonds in a nice and popular blend. Nutrition value is quite high. Imported from South Africa.\n \n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] • %c[0,140,140,140] high quality</text>
+	</string>
+		<string id="st_upd">
+		<text>Universal Power Device (UPD)</text>
+	</string>
+	<string id="st_upd_descr">
+		<text>A Cold War era power unit about the size of a small walkie talkie that accepts almost any type of battery and makes use of whatever power that might be left in it.
+		The UPD utilizes every bit of energy from inserted batteries and supplies connected electronic devices with power in an enhanced stream through micro wires.The micro power wires adapts to anything from the simplest of 
+		items to the most advanced pieces of equipment. This lets the soldier use and handle numerous electronic devices with only 
+		a single battery of old or modern design.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] portable energy source\n%c[0,153,255,255] • %c[0,140,140,140] supports most modern devices\n%c[0,153,255,255] • %c[0,140,140,140] accepts all battery types\n%c[0,153,255,255] • %c[0,140,140,140] storage capacity %c[0,170,170,170]3 Ah (ampere-hours)</text>
+	</string>
+	<string id="st_energy">
+		<text>Ah (ampere-hours)</text>
+	</string>
+	<string id="st_energy_descr">
+		<text>Storaged energy is given in ampere-hours (Ah).</text>
 	</string>
 </string_table>

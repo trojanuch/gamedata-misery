@@ -174,7 +174,7 @@ scope_status               = 2                     ; 0 - no addon
 silencer_status            = 2                  ; 1 - permanent
 grenade_launcher_status    = 0                  ; 2 - attachable
 
-scopes_sect						= scope_saiga, scope_x2.7_saiga, scope_live_detector_saiga, scope_night_saiga
+scopes_sect						= scope_saiga, scope_saiga_worn, scope_x2.7_saiga, scope_live_detector_saiga, scope_night_saiga
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time        = 0.25
@@ -293,6 +293,11 @@ lean_hud_offset_rot        = 0,0,0
 
 [scope_saiga]
 scope_name						= wpn_addon_scope
+scope_x							= 47	; offset in inventory icon
+scope_y							= -5
+
+[scope_saiga_worn]
+scope_name						= wpn_addon_scope_worn
 scope_x							= 47	; offset in inventory icon
 scope_y							= -5
 

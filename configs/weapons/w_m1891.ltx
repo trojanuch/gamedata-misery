@@ -68,7 +68,7 @@ snd_add_cartridge		= weapons\m1891_load		;was gen_grenload
 snd_close_weapon		= weapons\m1891_close		;
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.18  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.12  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.06f
 crosshair_inertion      = 8.9
 cam_return				= 0 ;				= 1
@@ -199,3 +199,20 @@ anm_idle             	= m1891_idle
 anm_idle_aim		    = m1891_idle_aim
 anm_idle_moving 	    = m1891_idle_moving
 anm_idle_sprint		    = m1891_idle_sprint
+
+;=========================================================================================================================================
+[wpn_m1891_alt]:wpn_m1891
+
+cost					= 22240
+inv_weight		        = 4.3 
+
+inv_name		        = st_wpn_m1891alt
+inv_name_short		    = st_wpn_m1891alt
+description		        = st_wpn_m1891alt_descr
+
+crosshair_inertion      = 9.0
+
+snd_shoot		        = weapons\m1891\m1891_shot_alt
+
+fire_dispersion_base	= 0.15
+misfire_probability     = 0.007

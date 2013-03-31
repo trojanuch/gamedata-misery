@@ -2,49 +2,49 @@
 <string_table>
 	<!-- Mutant body parts -->
 	<string id="mutant_flesh_meat_description">
-		<text>A popular piece of meat in The Zone favoured over dog meals. Scientific studies have plenty samples already.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +873 mSv\n%c[0,204,0,51] • %c[0,140,140,140] toxic food</text>
+		<text>A popular piece of meat in The Zone favoured over dog meals. Scientific studies have plenty samples already.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +873 mSv</text>
 	</string>
 	<string id="mutant_flesh_meat">
 		<text>Flesh meat</text>
 	</string>
 	<string id="mutant_boar_chop_description">
-		<text>The most popular piece of meat in The Zone. Saturating and only little contaminated. Scientific studies have plenty samples already.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +965 mSv\n%c[0,204,0,51] • %c[0,140,140,140] toxic food</text>
+		<text>The most popular piece of meat in The Zone. Saturating and only little contaminated. Scientific studies have plenty samples already.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +965 mSv</text>
 	</string>
 	<string id="mutant_boar_chop">
 		<text>Boar chop</text>
 	</string>
 	<string id="mutant_dog_meat_description">
-		<text>Mutated dogs are being cooked into meals at the Skadovsk. The meat is a cheap alternative to the more popular boar. Scientific studies have plenty samples already.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +302 mSv\n%c[0,204,0,51] • %c[0,140,140,140] toxic food</text>
+		<text>Mutated dogs are being cooked into meals at the Skadovsk. The meat is a cheap alternative to the more popular boar. Scientific studies have plenty samples already.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +302 mSv</text>
 	</string>
 	<string id="mutant_dog_meat">
 		<text>Dog meat</text>
 	</string>
 	<string id="mutant_psevdodog_meat_description">
-		<text>The pseudodog is being cooked into meals just like most mutants in The Zone. A popular choice among stalkers. The meat can be sold for scientific purposes also.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +393 mSv\n%c[0,204,0,51] • %c[0,140,140,140] toxic food</text>
+		<text>The pseudodog is being cooked into meals just like most mutants in The Zone. A popular choice among stalkers. The meat can be sold for scientific purposes also.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +393 mSv</text>
 	</string>
 	<string id="mutant_psevdodog_meat">
 		<text>Pseudodog meat</text>
 	</string>
 	<string id="mutant_krovosos_meat_description">
-		<text>A stringy portion of Bloodsucker meat. Although the Bloodsucker is a fearsome beast the meat is traded at affordable costs since it is hard to cook this into anything tasty. The meat can be sold for scientific purposes also.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +808 mSv\n%c[0,204,0,51] • %c[0,140,140,140] toxic food</text>
+		<text>A stringy portion of Bloodsucker meat. Although the Bloodsucker is a fearsome beast the meat is traded at affordable costs since it is hard to cook this into anything tasty. The meat can be sold for scientific purposes also.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +808 mSv</text>
 	</string>
 	<string id="mutant_krovosos_meat">
 		<text>Bloodsucker meat</text>
 	</string>
 	<string id="mutant_snork_hand_description">
-		<text>Most men in The Zone consider it a cannibalistic and immoral act to eat any part of a Snork! In spite of this some bandits and mercenaries are actually eating roasted Snork hands to signal a baddass superiority among their faction members. The hand is most commonly sold scientific purposes.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +610 mSv\n%c[0,204,0,51] • %c[0,140,140,140] toxic food</text>
+		<text>Most men in The Zone consider it a cannibalistic and immoral act to eat any part of a Snork! In spite of this some bandits and mercenaries are actually eating roasted Snork hands to signal a baddass superiority among their faction members. The hand is most commonly sold scientific purposes.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +610 mSv</text>
 	</string>
 	<string id="mutant_snork_hand">
 		<text>Snork hand</text>
 	</string>
 	<string id="mutant_chimera_meat_description">
-		<text>A heavy chunk of Chimera meat. Since the Chimera is considered one of the most dangerous creatures the meat is traded at high prices among veteran stalkers. The Skadovsk is able to cook this meat into what is commonly known as "the masculine meal" although few claim it to be better tasting than the boar. The meat can be sold for scientific purposes also.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +995 mSv\n%c[0,204,0,51] • %c[0,140,140,140] toxic food</text>
+		<text>A heavy chunk of Chimera meat. Since the Chimera is considered one of the most dangerous creatures the meat is traded at high prices among veteran stalkers. The Skadovsk is able to cook this meat into what is commonly known as "the masculine meal" although few claim it to be better tasting than the boar. The meat can be sold for scientific purposes also.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +995 mSv</text>
 	</string>
 	<string id="mutant_chimera_meat">
 		<text>Chunk of Chimera meat</text>
 	</string>
 	<string id="mutant_tushkano_meat_description">
-		<text>A good portion of the mutated rats body. A cheap and common delicacy among stalkers that is said to strengthen your heart when cooked in open fire. The meat can be sold for scientific purposes also.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +182 mSv\n%c[0,204,0,51] • %c[0,140,140,140] toxic food</text>
+		<text>A good portion of the mutated rats body. A cheap and common delicacy among stalkers that is said to strengthen your heart when cooked in open fire. The meat can be sold for scientific purposes also.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +182 mSv</text>
 	</string>
 	<string id="mutant_tushkano_meat">
 		<text>Tushkano meat</text>
@@ -115,5 +115,11 @@
 	</string>
 	<string id="mutant_controller_hand">
 		<text>Controller hand</text>
+	</string>
+		<string id="mutant_cat_tail_description">
+		<text>Zone Cats are extremely large for their size and very dangerous predators. They sprint through bushes and grass without a sound. Carrying a Cats tail is a symbol of awareness.</text>
+	</string>
+	<string id="mutant_cat_tail">
+		<text>Cat tail</text>
 	</string>
 </string_table>

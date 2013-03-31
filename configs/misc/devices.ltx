@@ -127,3 +127,26 @@ visual = dynamics\equipments\green_box.ogf
 custom_data = scripts\treasure_inventory_box.ltx
 radius = 1
 
+;========================================
+; Environment Props
+;========================================
+
+[vertel_boar]
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn 					= "devices\inventory box"
+class					= S_INVBOX
+cform					= skeleton
+visual 					= dynamics\dead_body\vertel_boar.ogf
+script_binding      	= bind_physic_object.init
+visual_flags 			= 1
+
+[transiver_01]
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn 					= "devices\inventory box"
+class					= S_INVBOX
+cform					= skeleton
+visual 					= dynamics\el_tehnika\transiver.ogf
+script_binding      	= bind_physic_object.init
+visual_flags 			= 1
