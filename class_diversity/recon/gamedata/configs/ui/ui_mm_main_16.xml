@@ -102,10 +102,11 @@
 	    <btn name="btn_quit"        caption="ui_mm_quit2windows" />
 	</menu_main_mm>
 
-	<menu_sound random="3" >
+	<menu_sound random="4" >
 		<menu_music>music\_menu_MISERY_AtriumCarceriEraser_stereo</menu_music>
 		<menu_music>music\_menu_MISERY_EdwardArtemiev_stereo</menu_music>
 		<menu_music>music\_menu_MISERY_thriller_stereo</menu_music>
+		<menu_music>music\_menu_MISERY_bloodinthestreets_stereo</menu_music>
 	</menu_sound>
 
 	<static_version x="14" y="740" width="80" height="30">

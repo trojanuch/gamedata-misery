@@ -189,7 +189,7 @@ silencer_y						= 10
 grenade_launcher_name			= wpn_addon_grenade_launcher
 grenade_launcher_x				= 127
 grenade_launcher_y				= 18
-scopes_sect						= scope_akm, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
+scopes_sect						= scope_akm, scope_akm_worn, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
 
 ;звуки
 snd_draw					= weapons\generic\eastern_draw
@@ -296,6 +296,11 @@ scope_name						= wpn_addon_scope
 scope_x							= 43	; offset in inventory icon
 scope_y							= -3
 
+[scope_akm_worn]
+scope_name						= wpn_addon_scope_worn
+scope_x							= 43	; offset in inventory icon
+scope_y							= -3
+
 [scope_x2.7_akm]
 scope_name						= wpn_addon_scope_x2.7
 scope_x							= 43	; offset in inventory icon
@@ -357,6 +362,8 @@ visual                  = dynamics\weapons\wpn_akm\wpn_aka.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
 
+scopes_sect						= scope_akm, scope_akm_worn, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
+
 [wpn_ak47m_modern_hud]:wpn_akm_hud
 
 item_visual                = dynamics\weapons\wpn_akm\wpn_aka_hud.ogf
@@ -408,6 +415,8 @@ visual                  = dynamics\weapons\wpn_akm\wpn_akb.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
 
+scopes_sect						= scope_x2.7_akm, scope_akm, scope_akm_worn, scope_live_detector_akm, scope_night_akm
+
 [wpn_ak47m_camo_hud]:wpn_akm_hud
 
 item_visual                = dynamics\weapons\wpn_akm\wpn_akb_hud.ogf
@@ -457,6 +466,8 @@ visual                  = dynamics\weapons\wpn_akm\wpn_akc.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
 
+scopes_sect						= scope_akm, scope_akm_worn, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
+
 [wpn_ak47m_alt_hud]:wpn_akm_hud
 
 item_visual                = dynamics\weapons\wpn_akm\wpn_akc_hud.ogf
@@ -499,6 +510,8 @@ inv_grid_y						= 38
 visual                  = dynamics\weapons\wpn_akm\wpn_akd.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
+
+scopes_sect						= scope_akm_worn, scope_akm, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
 
 [wpn_ak47m_worn_hud]:wpn_akm_hud
 
@@ -544,6 +557,8 @@ inv_grid_y           	= 73
 visual                  = dynamics\weapons\wpn_akm\wpn_ake.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
+
+scopes_sect						= scope_akm_worn, scope_akm, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
 
 [wpn_ak47m_custom_hud]:wpn_akm_hud
 

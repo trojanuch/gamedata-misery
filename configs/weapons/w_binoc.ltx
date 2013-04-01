@@ -44,8 +44,6 @@ slot 			 		= 4		; // binocular
 animation_slot				= 13	; type of the animation that will be used
 default_to_ruck				= false
 sprint_allowed					= true
-control_inertion_factor		= 1
-
 
 ammo_limit		 			= 0
 ammo_current		 		= 0
@@ -68,17 +66,26 @@ inv_grid_y					= 8
 min_radius = 0 ;					= 100
 max_radius = 500 ; = 250 ;					= 150
 
-cost						= 800
+cost						= 1580
 
-cam_relax_speed				= 5.5
-cam_dispersion				= 2
-cam_max_angle				= 5
-cam_max_angle_horz			= 5.0
-cam_step_angle_horz			= 0.5
+;базовая дисперсия
+fire_dispersion_base		= 1
+control_inertion_factor		= 1.1
 
-disp_vel_factor				= 0.1
-disp_crouch_factor			= 0.75
-disp_jump_factor			= 3
+;отдача
+cam_return				= 0 ;              = 1 ;0
+cam_relax_speed         = 7		;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360
+cam_dispersion          = 1.9	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.9	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 10.0	;максимальный угол отдачи
+cam_max_angle_horz		= 10.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 1.2	;(degree) size of step camera moved in horizontal position while shooting
+
+disp_vel_factor				= 0
+disp_crouch_factor			= 0
+disp_jump_factor			= 0
 
 ph_mass						= 1
 
@@ -90,45 +97,28 @@ zoom_enabled				= true
 scope_texture				= wpn_crosshair_bino
 scope_zoom_factor			= 7.5
 
+fire_dispersion_condition_factor = 0
+misfire_start_condition		= 0
+misfire_end_condition		= 0
+misfire_start_prob	     	= 0
+misfire_end_prob	     	= 0
+condition_shot_dec      	= 0
+condition_queue_shot_dec	= 0
 
-fire_dispersion_base		= 0.1
-
-cam_relax_speed         	= 1.5
-cam_dispersion          	= 1.5
-cam_max_angle				= 7
-cam_max_angle_horz			= 10.0
-cam_step_angle_horz			= 1.5
-
-fire_dispersion_condition_factor = 0.001 ; = 5
-misfire_probability        = 0.0001 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.001
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.02
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.00001
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.00002
-
-PDM_disp_base           = 1.0
-PDM_disp_vel_factor     = 1.0
-PDM_disp_accel_factor   = 1.0
-PDM_disp_crouch         = 1.0
-PDM_disp_crouch_no_acc  = 1.0
+PDM_disp_base 				= 0.5
+PDM_disp_vel_factor 		= 1.1
+PDM_disp_accel_factor 		= 1.1
+PDM_disp_crouch	 				= 1.0
+PDM_disp_crouch_no_acc 			= 1.0
 
 hit_power                	= 0
-hit_impulse		 		 	= 1
+hit_impulse		 		 	= 0
 hit_type					= fire_wound
 
-fire_distance            	= 1
-bullet_speed		 	 	= 1
-rpm                      	= 1
-rpm_empty_click 	 		= 1
-
+fire_distance            	= 0
+bullet_speed		 	 	= 0
+rpm                      	= 0
+rpm_empty_click 	 		= 0
 
 light_color		 			= 0.6,0.5,0.3
 light_range		 			= 3.0
@@ -237,7 +227,6 @@ control_inertion_factor		= 1
 
 quest_item			= true
 
-
 ammo_limit		 			= 0
 ammo_current		 		= 0
 ammo_elapsed		 		= 0
@@ -259,13 +248,22 @@ inv_grid_y					= 8
 min_radius = 0 ;					= 100
 max_radius = 500 ; = 250 ;					= 150
 
-cost						= 800
+cost						= 1580
 
-cam_relax_speed				= 0
-cam_dispersion				= 0
-cam_max_angle				= 0
-cam_max_angle_horz			= 0
-cam_step_angle_horz			= 0
+;базовая дисперсия
+fire_dispersion_base		= 1
+control_inertion_factor		= 1.1
+
+;отдача
+cam_return				= 0 ;              = 1 ;0
+cam_relax_speed         = 7		;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360
+cam_dispersion          = 1.9	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.9	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 10.0	;максимальный угол отдачи
+cam_max_angle_horz		= 10.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 1.2	;(degree) size of step camera moved in horizontal position while shooting
 
 disp_vel_factor				= 0
 disp_crouch_factor			= 0
@@ -281,16 +279,7 @@ zoom_enabled				= true
 scope_texture				= wpn_crosshair_bino
 scope_zoom_factor			= 7.5
 
-
-fire_dispersion_base		= 0
-
-cam_relax_speed         	= 0
-cam_dispersion          	= 0
-cam_max_angle				= 0
-cam_max_angle_horz			= 0
-cam_step_angle_horz			= 0
-
-fire_dispersion_condition_factor = 0.001 ; = 0
+fire_dispersion_condition_factor = 0
 misfire_start_condition		= 0
 misfire_end_condition		= 0
 misfire_start_prob	     	= 0
@@ -298,11 +287,11 @@ misfire_end_prob	     	= 0
 condition_shot_dec      	= 0
 condition_queue_shot_dec	= 0
 
-PDM_disp_base           = 1.0
-PDM_disp_vel_factor     = 1.0
-PDM_disp_accel_factor   = 1.0
-PDM_disp_crouch         = 1.0
-PDM_disp_crouch_no_acc  = 1.0
+PDM_disp_base 				= 0.5
+PDM_disp_vel_factor 		= 1.1
+PDM_disp_accel_factor 		= 1.1
+PDM_disp_crouch	 				= 1.0
+PDM_disp_crouch_no_acc 			= 1.0
 
 hit_power                	= 0
 hit_impulse		 		 	= 0
@@ -312,7 +301,6 @@ fire_distance            	= 0
 bullet_speed		 	 	= 0
 rpm                      	= 0
 rpm_empty_click 	 		= 0
-
 
 light_color		 			= 0.6,0.5,0.3
 light_range		 			= 3.0

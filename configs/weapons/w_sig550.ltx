@@ -183,7 +183,7 @@ silencer_y              = 14
 grenade_launcher_name   = wpn_addon_grenade_launcher_m203
 grenade_launcher_x      = 109
 grenade_launcher_y      = 30
-scopes_sect				   = scope_susat_sig, scope_susat_x1.6_sig, scope_susat_custom_sig, scope_susat_dusk_sig, scope_susat_night_sig
+scopes_sect				   = scope_susat_sig, scope_susat_sig_worn, scope_susat_x1.6_sig, scope_susat_custom_sig, scope_susat_dusk_sig, scope_susat_night_sig
 
 ;звуки
 snd_draw                = weapons\generic\rifle_draw
@@ -287,6 +287,11 @@ lean_hud_offset_rot	= 0,0,0
 
 [scope_susat_sig]
 scope_name 					= wpn_addon_scope_susat
+scope_x                 = 78
+scope_y                 = 0
+
+[scope_susat_sig_worn]
+scope_name 					= wpn_addon_scope_susat_worn
 scope_x                 = 78
 scope_y                 = 0
 
@@ -445,7 +450,7 @@ hit_power				= 0.52, 0.52, 0.52, 0.52
 hit_impulse				= 34
 fire_distance           = 975
 bullet_speed            = 990
-rpm                     = 620
+rpm                     = 145
 
 hud                     = wpn_sig550_sniper_hud
 
@@ -471,6 +476,18 @@ inv_grid_height         = 2
 inv_grid_x              = 2
 inv_grid_y              = 61
 
+snd_draw                = weapons\generic\rifle_draw
+snd_holster             = weapons\generic\rifle_holster
+snd_shoot				= weapons\sig550\sig550_shot_sniper
+snd_empty               = weapons\gen_empty, 0.5
+snd_reload              = weapons\sig550\sig550_reload
+snd_shoot_grenade       = weapons\gen_grenshoot
+snd_reload_grenade      = weapons\sig550\sig550_grenload
+snd_switch              = weapons\groza_switch, 1.0, 0.5
+snd_bore				= weapons\draw_silent
+snd_bore1				= weapons\mp5_bore
+snd_silncer_shot        = weapons\silencers\silencer_556x45
+
 visual                  = dynamics\weapons\wpn_sig550_sniper\wpn_sig550_sniper.ogf
 
 scope_status            = 1
@@ -486,19 +503,6 @@ scopes_sect				   = scope_susat_sniper
 scope_name 					= wpn_addon_scope_snag
 scope_x                 = 78
 scope_y                 = 0
-
-snd_draw                = weapons\generic\rifle_draw
-snd_holster             = weapons\generic\rifle_holster
-snd_shoot		= weapons\sig550\sig550_shot
-snd_empty               = weapons\gen_empty, 0.5
-snd_reload              = weapons\sig550\sig550_reload
-snd_shoot_grenade       = weapons\gen_grenshoot
-snd_reload_grenade      = weapons\sig550\sig550_grenload
-snd_switch              = weapons\groza_switch, 1.0, 0.5
-snd_bore		= weapons\draw_silent
-snd_bore1		= weapons\mp5_bore
-snd_silncer_shot        = weapons\silencers\silencer_556x45
-
 
 [wpn_sig550_sniper_hud]:wpn_sig550_hud
 
@@ -545,6 +549,8 @@ visual                  = dynamics\weapons\wpn_sig550\wpn_sig55a.ogf
 
 snd_reload              = weapons\sig550\sig550_reload
 
+scopes_sect				   = scope_susat_x1.6_sig, scope_susat_sig, scope_susat_sig_worn, scope_susat_custom_sig, scope_susat_dusk_sig, scope_susat_night_sig
+
 [wpn_sig550_custom_hud]:wpn_sig550_hud
 
 item_visual						= dynamics\weapons\wpn_sig550\wpn_sig55a_hud
@@ -588,6 +594,8 @@ visual                  = dynamics\weapons\wpn_sig550\wpn_sig55b.ogf
 
 snd_reload              = weapons\sig550\sig550_reload
 
+scopes_sect				   = scope_susat_sig, scope_susat_sig_worn, scope_susat_x1.6_sig, scope_susat_custom_sig, scope_susat_dusk_sig, scope_susat_night_sig
+
 [wpn_sig550_alt_hud]:wpn_sig550_hud
 
 item_visual						= dynamics\weapons\wpn_sig550\wpn_sig55b_hud
@@ -630,6 +638,8 @@ inv_grid_y              = 59
 visual                  = dynamics\weapons\wpn_sig550\wpn_sig55c.ogf
 
 snd_reload              = weapons\sig550\sig550_reload
+
+scopes_sect				   = scope_susat_sig_worn, scope_susat_sig, scope_susat_x1.6_sig, scope_susat_custom_sig, scope_susat_dusk_sig, scope_susat_night_sig
 
 [wpn_sig550_worn_hud]:wpn_sig550_hud
 

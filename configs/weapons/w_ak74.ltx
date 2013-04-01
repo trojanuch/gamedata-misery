@@ -19,7 +19,7 @@ cost              	 = 24520            ; the price of the item
 weapon_class         = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
 inv_weight        = 3.316                      ; weight in inventory
 
-upgrades                = up_gr_firstab_ak74, up_gr_seconab_ak74, up_gr_thirdab_ak74, up_gr_fourtab_ak74, up_gr_fifthab_ak74, up_gr_fifthcd_ak74
+upgrades                = up_gr_firstab_ak74, up_gr_firstcd_ak74, up_gr_firstef_ak74, up_gr_seconab_ak74, up_gr_seconcd_ak74, up_gr_seconef_ak74, up_gr_thirdab_ak74, up_gr_thirdcd_ak74, up_gr_thirdef_ak74, up_gr_fourtab_ak74, up_gr_fourtcd_ak74, up_gr_fourtef_ak74, up_gr_fifthab_ak74, up_gr_fifthcd_ak74
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_ak74
 
@@ -188,7 +188,7 @@ silencer_y              = 13
 grenade_launcher_name   = wpn_addon_grenade_launcher
 grenade_launcher_x      = 116
 grenade_launcher_y      = 18
-scopes_sect		= scope_ak74, scope_x2.7_ak74, scope_live_detector_ak74, scope_night_ak74
+scopes_sect		= scope_ak74, scope_ak74_worn, scope_x2.7_ak74, scope_live_detector_ak74, scope_night_ak74
 
 ;звуки
 snd_draw                = weapons\generic\eastern_draw
@@ -286,6 +286,11 @@ scope_name 					= wpn_addon_scope
 scope_x              	= 47                 ; offset in inventory icon
 scope_y                 = 0
 
+[scope_ak74_worn]
+scope_name 					= wpn_addon_scope_worn
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
 [scope_x2.7_ak74]
 scope_name 					= wpn_addon_scope_x2.7
 scope_x              	= 47                 ; offset in inventory icon
@@ -317,10 +322,6 @@ ammo_class           = ammo_5.45x39_ap, ammo_5.45x39_fmj   ; name of the ltx-sec
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_ak74, up_gr_seconab_ak74, up_gr_thirdab_ak74, up_gr_fourtab_ak74, up_gr_fifthab_ak74, up_gr_fifthcd_ak74
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_ak74
-
 ;=====================================================================================================================================================
 [wpn_ak74_custom1]:wpn_ak74
 
@@ -329,7 +330,9 @@ inv_weight        = 3.132
 inv_name          = st_wpn_ak74_alt
 inv_name_short    = st_wpn_ak74_alt
 
-installed_upgrades      = up_thirda_ak74
+upgrades                = up_gr_firstab_ak74_modern, up_gr_firstcd_ak74_modern, up_gr_firstef_ak74_modern, up_gr_seconab_ak74_modern, up_gr_seconcd_ak74_modern, up_gr_seconef_ak74_modern, up_gr_thirdab_ak74_modern, up_gr_thirdcd_ak74_modern, up_gr_thirdef_ak74_modern, up_gr_fourtab_ak74_modern, up_gr_fourtcd_ak74_modern, up_gr_fourtef_ak74_modern, up_gr_fifthab_ak74_modern, up_gr_fifthcd_ak74_modern
+installed_upgrades      = up_thirda_ak74_modern
+upgrade_scheme          = upgrade_scheme_ak74
 
 hit_power            	= 0.52, 0.52, 0.52, 0.52
 hit_impulse          	= 37 
@@ -361,6 +364,8 @@ visual                  = dynamics\weapons\wpn_ak74\wpn_ak7a.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
+scopes_sect		= scope_ak74, scope_ak74_worn, scope_x2.7_ak74, scope_live_detector_ak74, scope_night_ak74
+
 [wpn_ak74_custom1_hud]:wpn_ak74_hud
 
 item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7a_hud.ogf
@@ -372,7 +377,9 @@ inv_weight        = 3.074
 inv_name          = st_wpn_ak74_custom
 inv_name_short    = st_wpn_ak74_custom
 
-installed_upgrades      = up_firsta_ak74, up_secona_ak74, up_thirda_ak74
+upgrades                = up_gr_firstab_ak74_modern, up_gr_firstcd_ak74_modern, up_gr_firstef_ak74_modern, up_gr_seconab_ak74_modern, up_gr_seconcd_ak74_modern, up_gr_seconef_ak74_modern, up_gr_thirdab_ak74_modern, up_gr_thirdcd_ak74_modern, up_gr_thirdef_ak74_modern, up_gr_fourtab_ak74_modern, up_gr_fourtcd_ak74_modern, up_gr_fourtef_ak74_modern, up_gr_fifthab_ak74_modern, up_gr_fifthcd_ak74_modern
+installed_upgrades      = up_firsta_ak74_modern, up_secona_ak74_modern, up_thirda_ak74_modern
+upgrade_scheme          = upgrade_scheme_ak74
 
 hit_power            	= 0.52, 0.52, 0.52, 0.52
 hit_impulse          	= 37 
@@ -403,6 +410,8 @@ inv_grid_y           = 65
 visual                  = dynamics\weapons\wpn_ak74\wpn_ak7b.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
+
+scopes_sect		= scope_x2.7_ak74, scope_ak74, scope_ak74_worn, scope_live_detector_ak74, scope_night_ak74
 
 [wpn_ak74_custom2_hud]:wpn_ak74_hud
 
@@ -445,6 +454,8 @@ visual                  = dynamics\weapons\wpn_ak74\wpn_ak7c.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
+scopes_sect		= scope_ak74, scope_x2.7_ak74, scope_ak74_worn, scope_live_detector_ak74, scope_night_ak74
+
 [wpn_ak74_alt_hud]:wpn_ak74_hud
 
 item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7c_hud.ogf
@@ -457,7 +468,9 @@ inv_name          = st_wpn_ak74_camo
 inv_name_short    = st_wpn_ak74_camo
 description       = st_wpn_ak74_camo_descr
 
-installed_upgrades      = up_secona_ak74, up_thirda_ak74, up_firsta_ak74, up_fiftha_ak74
+upgrades                = up_gr_firstab_ak74_modern, up_gr_firstcd_ak74_modern, up_gr_firstef_ak74_modern, up_gr_seconab_ak74_modern, up_gr_seconcd_ak74_modern, up_gr_seconef_ak74_modern, up_gr_thirdab_ak74_modern, up_gr_thirdcd_ak74_modern, up_gr_thirdef_ak74_modern, up_gr_fourtab_ak74_modern, up_gr_fourtcd_ak74_modern, up_gr_fourtef_ak74_modern, up_gr_fifthab_ak74_modern, up_gr_fifthcd_ak74_modern
+installed_upgrades      = up_secona_ak74_modern, up_thirda_ak74_modern, up_firsta_ak74_modern, up_fiftha_ak74_modern
+upgrade_scheme          = upgrade_scheme_ak74
 
 hit_power            	= 0.52, 0.52, 0.52, 0.52
 hit_impulse          	= 37 
@@ -489,6 +502,8 @@ visual                  = dynamics\weapons\wpn_ak74\wpn_ak7d.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
+scopes_sect		= scope_x2.7_ak74, scope_ak74_worn, scope_ak74, scope_live_detector_ak74, scope_night_ak74
+
 [wpn_ak74_camo_hud]:wpn_ak74_hud
 
 item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7d_hud.ogf
@@ -499,6 +514,10 @@ cost              	 = 20780
 inv_weight        = 3.392
 inv_name          = st_wpn_ak74_worn
 inv_name_short    = st_wpn_ak74_worn
+
+upgrades                = up_gr_firstab_ak74_worn, up_gr_firstcd_ak74_worn, up_gr_firstef_ak74_worn, up_gr_seconab_ak74_worn, up_gr_seconcd_ak74_worn, up_gr_seconef_ak74_worn, up_gr_thirdab_ak74_worn, up_gr_thirdcd_ak74_worn, up_gr_thirdef_ak74_worn, up_gr_fourtab_ak74_worn, up_gr_fourtcd_ak74_worn, up_gr_fourtef_ak74_worn, up_gr_fifthab_ak74_worn, up_gr_fifthcd_ak74_worn
+installed_upgrades      = 
+upgrade_scheme          = upgrade_scheme_ak74
 
 hit_power            	= 0.52, 0.52, 0.52, 0.52
 hit_impulse          	= 37 
@@ -530,6 +549,8 @@ visual                  = dynamics\weapons\wpn_ak74\wpn_ak7e.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
+scopes_sect		= scope_ak74_worn, scope_x2.7_ak74, scope_ak74, scope_live_detector_ak74, scope_night_ak74
+
 [wpn_ak74_worn_hud]:wpn_ak74_hud
 
 item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7e_hud.ogf
@@ -540,6 +561,10 @@ cost              	 = 14060
 inv_weight        = 3.408
 inv_name          = st_wpn_ak74_rusty
 inv_name_short    = st_wpn_ak74_rusty
+
+upgrades                = up_gr_firstab_ak74_rusty, up_gr_firstcd_ak74_rusty, up_gr_firstef_ak74_rusty, up_gr_seconab_ak74_rusty, up_gr_seconcd_ak74_rusty, up_gr_seconef_ak74_rusty, up_gr_thirdab_ak74_rusty, up_gr_thirdcd_ak74_rusty, up_gr_thirdef_ak74_rusty, up_gr_fourtab_ak74_rusty, up_gr_fourtcd_ak74_rusty, up_gr_fourtef_ak74_rusty, up_gr_fifthab_ak74_rusty, up_gr_fifthcd_ak74_rusty
+installed_upgrades      = 
+upgrade_scheme          = upgrade_scheme_ak74
 
 hit_power            	= 0.52, 0.52, 0.52, 0.52
 hit_impulse          	= 37 
@@ -570,6 +595,8 @@ inv_grid_y           = 57
 visual                  = dynamics\weapons\wpn_ak74\wpn_ak7f.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
+
+scopes_sect		= scope_ak74_worn, scope_x2.7_ak74, scope_ak74, scope_live_detector_ak74, scope_night_ak74
 
 [wpn_ak74_rusty_hud]:wpn_ak74_hud
 

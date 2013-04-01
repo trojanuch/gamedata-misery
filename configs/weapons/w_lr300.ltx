@@ -187,7 +187,7 @@ silencer_y                 = 9
 grenade_launcher_name      = wpn_addon_grenade_launcher_m203; section name for the attachable grenade launcher
 grenade_launcher_x         = 128                ; offset in inventory icon
 grenade_launcher_y         = 28
-scopes_sect				   = scope_susat_lr, scope_susat_x1.6_lr, scope_susat_custom_lr, scope_susat_dusk_lr, scope_susat_night_lr
+scopes_sect				   = scope_susat_lr, scope_susat_lr_worn, scope_susat_x1.6_lr, scope_susat_custom_lr, scope_susat_dusk_lr, scope_susat_night_lr
 
 ;звуки
 snd_draw                = weapons\generic\rifle_draw
@@ -289,6 +289,11 @@ scope_name 					= wpn_addon_scope_susat
 scope_x 					= 75
 scope_y 					= -5
 
+[scope_susat_lr_worn]
+scope_name 					= wpn_addon_scope_susat
+scope_x 					= 75
+scope_y 					= -5
+
 [scope_susat_x1.6_lr]
 scope_name 					= wpn_addon_scope_susat_x1.6
 scope_x 					= 75
@@ -370,6 +375,8 @@ visual                     = dynamics\weapons\wpn_lr300\wpn_lr301.ogf
 
 snd_reload              = weapons\lr300\lr300_reload, 0.7
 
+scopes_sect				   = scope_susat_dusk_lr, scope_susat_x1.6_lr, scope_susat_lr, scope_susat_lr_worn, scope_susat_custom_lr, scope_susat_night_lr
+
 [wpn_lr300_custom_hud]:wpn_lr300_hud
 
 item_visual                = dynamics\weapons\wpn_lr300\wpn_lr301_hud.ogf
@@ -411,6 +418,8 @@ inv_grid_y				= 73
 visual                     = dynamics\weapons\wpn_lr300\wpn_lr302.ogf
 
 snd_reload              = weapons\lr300\lr300_reload, 0.7
+
+scopes_sect				   = scope_susat_lr, scope_susat_lr_worn, scope_susat_x1.6_lr, scope_susat_custom_lr, scope_susat_dusk_lr, scope_susat_night_lr
 
 [wpn_lr300_alt_hud]:wpn_lr300_hud
 
@@ -457,6 +466,8 @@ visual                     = dynamics\weapons\wpn_lr300\wpn_lr303.ogf
 
 snd_reload              = weapons\lr300\lr300_reload, 0.7
 
+scopes_sect				   = scope_susat_lr, scope_susat_lr_worn, scope_susat_x1.6_lr, scope_susat_custom_lr, scope_susat_dusk_lr, scope_susat_night_lr
+
 [wpn_lr300_camo_hud]:wpn_lr300_hud
 
 item_visual                = dynamics\weapons\wpn_lr300\wpn_lr303_hud.ogf
@@ -499,6 +510,8 @@ inv_grid_y				= 69
 visual                     = dynamics\weapons\wpn_lr300\wpn_lr304.ogf
 
 snd_reload              = weapons\lr300\lr300_reload, 0.7
+
+scopes_sect				   = scope_susat_lr_worn, scope_susat_lr, scope_susat_x1.6_lr, scope_susat_custom_lr, scope_susat_dusk_lr, scope_susat_night_lr
 
 [wpn_lr300_worn_hud]:wpn_lr300_hud
 

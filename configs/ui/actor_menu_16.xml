@@ -296,23 +296,23 @@
 	    <snd_item_use>interface\inv_slot</snd_item_use>
 	</action_sounds>
 
-	<hint_wnd x="0" y="0" width="210" height="100">
-	    <background x="0" y="0" width="210" height="100">
+	<hint_wnd x="0" y="0" width="446" height="170">
+	    <background x="0" y="0" width="446" height="170">
 		    <texture>ui_inGame2_hint_wnd_main_window</texture>
 	    </background>
-	    <text x="20" y="20" width="190" height="100">
-	    	<text font="letterica16" color="ui_6" complex_mode="1" align="l" vert_align="t"/>
-	    </text>
+	    <text x="16" y="20" width="402" height="130" always_show_scroll="0" fit_to_height="1" complex_mode="1">
+			<font font="letterica16" r="170" g="170" b="170" align="l" vert_align="t"/>
+		</text>
 	</hint_wnd>
 
 	<actor_state_info x="375" y="539" width="274" height="190">
-	    <hint_wnd x="0" y="0" width="168" height="100">
-	        <background x="0" y="0" width="168" height="100">
+	    <hint_wnd x="0" y="0" width="446" height="170">
+	        <background x="0" y="0" width="446" height="170">
 		        <texture>ui_inGame2_hint_wnd_main_window</texture>
 	        </background>
-	        <text x="16" y="20" width="136" height="100" complex_mode="1" >
-		        <text font="letterica16" r="170" g="170" b="170" align="l" vert_align="t"/>
-	        </text>
+	        <text x="16" y="20" width="402" height="130" always_show_scroll="0" fit_to_height="1" complex_mode="1">
+				<font font="letterica16" r="170" g="170" b="170" align="l" vert_align="t"/>
+			</text>
 	    </hint_wnd>
 
 	    <health_state x="11" y="31" width="171" height="16">
@@ -351,7 +351,7 @@
 	    </radiation_state>
 
 	    <radia_sensor x="12" y="72" width="116" height="18">
-	        <hint_text delay="800">ui_inv_outfit_radiation_protection</hint_text>
+	        <hint_text delay="800">ui_inv_radiation_protection</hint_text>
 	        <icon x="0" y="0" width="14" height="18" magnitude="200" stretch="1">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
@@ -363,7 +363,7 @@
 	    </radia_sensor>
 
 	    <acid_sensor x="12" y="100" width="116" height="18">
-	        <hint_text delay="800">ui_inv_outfit_chemical_burn_protection</hint_text>
+	        <hint_text delay="800">ui_inv_chemical_burn_protection</hint_text>
 	        <icon x="0" y="0" width="14" height="18" magnitude="200" stretch="1">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
@@ -375,7 +375,7 @@
 	    </acid_sensor>
 
 	    <shock_sensor x="12" y="128" width="116" height="18">
-	        <hint_text delay="800">ui_inv_outfit_shock_protection</hint_text>
+	        <hint_text delay="800">ui_inv_shock_protection</hint_text>
 	        <icon x="0" y="0" width="14" height="18" magnitude="200" stretch="1">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
@@ -387,7 +387,7 @@
 	    </shock_sensor>
 
 	    <fire_sensor x="12" y="156" width="116" height="18">
-	        <hint_text delay="800">ui_inv_outfit_burn_protection</hint_text>
+	        <hint_text delay="800">ui_inv_burn_protection</hint_text>
 	        <icon x="0" y="0" width="14" height="18" magnitude="200" stretch="1">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
@@ -399,7 +399,7 @@
 	    </fire_sensor>
 
 	    <psi_sensor x="139" y="72" width="116" height="18">
-	        <hint_text delay="800">ui_inv_outfit_telepatic_protection</hint_text>
+	        <hint_text delay="800">ui_inv_telepatic_protection</hint_text>
 	        <icon x="0" y="0" width="14" height="18" magnitude="200" stretch="1">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
@@ -411,7 +411,7 @@
 	    </psi_sensor>
 
 	    <wound_sensor x="139" y="100" width="116" height="18">
-	        <hint_text delay="800">ui_inv_outfit_wound_protection</hint_text>
+	        <hint_text delay="800">ui_inv_wound_protection</hint_text>
 	        <icon x="0" y="0" width="14" height="18" magnitude="15" stretch="1">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
@@ -423,7 +423,7 @@
 	    </wound_sensor>
 
 	    <fire_wound_sensor x="139" y="128" width="116" height="18">
-	        <hint_text delay="800">ui_inv_outfit_fire_wound_protection</hint_text>
+	        <hint_text delay="800">ui_inv_fire_wound_protection</hint_text>
 	        <icon x="0" y="0" width="14" height="18" magnitude="120" stretch="1">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
@@ -435,7 +435,7 @@
 	    </fire_wound_sensor>
 
 	    <power_sensor x="139" y="156" width="116" height="18">
-	        <hint_text delay="800">ui_inv_outfit_power_restore</hint_text>
+	        <hint_text delay="800">ui_inv_power_restore</hint_text>
 	        <icon x="0" y="0" width="14" height="18" magnitude="65" stretch="1">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>

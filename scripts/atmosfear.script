@@ -313,6 +313,8 @@ function CAtmosFear:loadDefaultConsoleSettings()
 	console:execute("rs_c_brightness 1.")
 	console:execute("rs_c_contrast 1.")
 	console:execute("rs_c_gamma 1.")
+	console:execute("hud_info off")
+	console:execute("hud_crosshair_dist off")
 end
 
 function str_to_bool(str)
