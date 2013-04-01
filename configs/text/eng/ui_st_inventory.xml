@@ -60,6 +60,9 @@
 	<string id="st_eat">
 		<text>eat</text>
 	</string>
+	<string id="st_perc">
+		<text>%</text>
+	</string>
 	<string id="st_kg">
 		<text>kg</text>
 	</string>
@@ -68,6 +71,36 @@
 	</string>
 	<string id="st_kcal">
 		<text>kcal eq.</text>
+	</string>
+	<string id="st_kcal_sec">
+		<text>kcal / sec eq.</text>
+	</string>
+	<string id="st_msv">
+		<text>mSv</text>
+	</string>
+	<string id="st_msv_sec">
+		<text>mSv / sec</text>
+	</string>
+	<string id="st_microg">
+		<text>µg of adren.</text>
+	</string>
+	<string id="st_microg_sec">
+		<text>µg of adren. / sec</text>
+	</string>
+	<string id="st_ml_min">
+		<text>ml / min</text>
+	</string>
+	<string id="st_kw_m2">
+		<text>kW/m2</text>
+	</string>
+	<string id="st_kv">
+		<text>kV</text>
+	</string>
+	<string id="st_mt">
+		<text>mT</text>
+	</string>
+	<string id="st_ppm">
+		<text>C1 ppm eq.</text>
 	</string>
 	<string id="st_move_on_belt">
 		<text>attach to belt</text>
@@ -94,7 +127,7 @@
 		<text>Armor condition</text>
 	</string>
 	<string id="st_ui_main_sensor">
-		<text>Radioactive contamination</text>
+		<text>Radioactive poisoning\n \n%c[0,170,170,170]Exposure to ionizing radiation poses an extremely high risk to USS operator and thus radiation levels managing becomes a key element for his operational effectivness within Chernobyl Exclusion Zone.\n \n%c[0,170,170,170]For the purpose of such operations ionizing radiation scale is measured in milisiverts (%c[0,210,210,210]mSv%c[0,170,170,170]). Attaining radiation level of approximately %c[0,210,210,210]8000 mSv %c[0,170,170,170]is usually lethal without chance for recovery. Radiation levels up to above threshold gradually reduce USS operative's performance capabilities. For this reason, in case of exposure it is strongly advised to administer radiation cleansing agent of appropriate potency as soon as possible. Table 3.2 presents radiation ammounts chart with typical symptoms:\n \n%c[0,102,255,0]250 – 1000 mSv: %c[0,140,140,140]Symptoms are unnoticable. Long term consequences are neglectable.\n \n%c[0,255,255,0]1000 – 3000 mSv: %c[0,140,140,140]Noticable moderate to strong sickness, lightheadedness, skin taints. Long-term symptoms are mild. Full recovery is feasible.\n \n%c[0,255,122,0]3000 – 6000 mSv: %c[0,140,140,140]Very strong sickness, confusion and dizziness. Complete cease of nutrition craving, bleeding (including internal), taint, diarrhea, slough skin. Permanent loss of reproductin ability. Short-term operational capableness can be restored but full recovery will not be possible.\n \n%c[0,204,0,51]6000 – 10000 mSv: %c[0,140,140,140]Increase in all above symptoms potency. Additionally permanent damage to central nervous system. Almost full certainty of premature death.\n \n%c[0,204,0,51]10000 mSv and above: %c[0,140,140,140]Imminent death. Often after rapid loss of consciousness.\n \n%c[0,153,255,255] • %c[0,140,140,140] unit: %c[0,210,210,210]mSv (milisivert)\n%c[0,153,255,255] • %c[0,140,140,140] imminent lethal radiation: %c[0,210,210,210]~8000 mSv\n%c[0,153,255,255] • %c[0,140,140,140] av. outside rad. hot-spots potency: %c[0,210,210,210]~900 mSv / min\n \n \n</text>
 	</string>
 	<string id="st_undress_outfit">
 		<text>remove suit</text>
@@ -121,7 +154,7 @@
 		<text>Buy rifle ammo (W)</text>
 	</string>
 	<string id="ui_inv_bleeding">
-		<text>Damage / bleeding reduction</text>
+		<text>Bleeding red.</text>
 	</string>
 	<string id="ui_inv_cancel">
 		<text>Cancel</text>
@@ -181,28 +214,52 @@
 		<text>Weight carried</text>
 	</string>
 	<string id="ui_inv_outfit_burn_protection">
-		<text>Flame / Acid prot.</text>
+		<text>Thermal / acid</text>
 	</string>
 	<string id="ui_inv_outfit_chemical_burn_protection">
-		<text>Toxic prot.</text>
+		<text>Toxicity res.</text>
 	</string>
 	<string id="ui_inv_outfit_fire_wound_protection">
 		<text>Armor</text>
 	</string>
 	<string id="ui_inv_outfit_radiation_protection">
-		<text>Radiation prot.</text>
+		<text>Radiation res.</text>
 	</string>
 	<string id="ui_inv_outfit_shock_protection">
-		<text>Electrical prot.</text>
+		<text>Electricity res.</text>
 	</string>
 	<string id="ui_inv_outfit_telepatic_protection">
-		<text>Psy prot.</text>
+		<text>Psy protecion</text>
 	</string>
 	<string id="ui_inv_outfit_wound_protection">
-		<text>Impact neg.</text>
+		<text>Rupture</text>
+	</string>
+	<string id="ui_inv_burn_protection">
+		<text>1. THERMAL RADIATION:\n \n%c[0,170,170,170]Typical flame anomaly in Chernobyl Exclusion Zone is consisted of two distinct elements: %c[0,210,210,210]a hemisphere-shaped thermal radiation field -%c[0,170,170,170] producing constant flux of approx. %c[0,210,210,210]50 kW / m2%c[0,170,170,170] density, inducing temperatures of up to %c[0,210,210,210]430 °C%c[0,170,170,170] and %c[0,210,210,210]'burner anomalies' -%c[0,170,170,170] air-immolating emmisions of flames with up to %c[0,210,210,210]1000 °C%c[0,170,170,170] temperature launching upwards from a singular point usually located apporox. %c[0,210,210,210]50 mm%c[0,170,170,170] above the ground. Mechanism thru which emmisions of this type are triggered is not yet understood, but fact is that outburst occurs whenever any solid matters moves within its approximately %c[0,210,210,210]0,5 meters-wide%c[0,170,170,170] 'activation field'.\n \n%c[0,170,170,170]For assesment of potency of Exlusion Zone's flame anomalies and available counter-measures a %c[0,210,210,210]kW/m2%c[0,170,170,170] (for kilowatts per square meter) scale is being used. This unit indicates a density of heat flux generated by an anomaly and thus the power which affects objects placed in it.\n \n%c[0,153,255,255] • %c[0,140,140,140] inside of an average campfire: %c[0,210,210,210]500 °C or 29 kW/m2\n%c[0,153,255,255] • %c[0,140,140,140] average thermal rad. field flux: %c[0,210,210,210]620 °C or 51,5 kW/m2\n \n%c[0,153,255,255] • %c[0,140,140,140] average burner outburst: %c[0,210,210,210]1000 °C or 212 kW/m2\n \n%c[0,153,255,255] • %c[0,140,140,140] approx. unprotected surival time: %c[0,210,210,210]RF: 1,5 min / BU: 0,5 sec\n%c[0,153,255,255] • %c[0,140,140,140] approx. complete armor degr. time: %c[0,210,210,210]RF: 10 min / BU: 6 sec\n \n%c[0,140,140,140]RF = radiation field ; BU = 'burner anomaly'\n \n%c[0,210,210,210]2. ACID:\n \n%c[0,170,170,170]It is known that concentrations of highly potent acidic substance (commonly known as 'fruit punch anomalies') can materialize withing Exlusion Zone's high-toxicity areas (often in form, which is invisible to bare eye). These gravitationally sustained 'tanks' are not stable and loose integrity momentarly on contact with any solid matter. This produces an outburst of up to %c[0,210,210,210]0,5 liters%c[0,170,170,170] of liquid rapidly-oxidizing agent of potency equivalent to %c[0,210,210,210]50%%c[0,170,170,170] concentration of sulfuric acid. Substance is spreaded in a form of droplets which launch upwards from ground-level ejection points. Effect is similar to a multi-sourced 'fountain' of approximately %c[0,210,210,210]2 meter%c[0,170,170,170] diameter.\n \n%c[0,170,170,170]Highly corrosive substance delivered at this density, affects the human body and equipment in similar way to strong thermal radiation. For this reason potency of acidic hazards is usually measured in thermal radiation scale of %c[0,210,210,210]kW / m2%c[0,170,170,170] equivalents.\n \n%c[0,153,255,255] • %c[0,140,140,140] Average 'Fruit punch' anomaly potency: %c[0,210,210,210]120 °C or 1,9 kW/m2 eq.\n \n \n</text> 
+	</string>
+	<string id="ui_inv_chemical_burn_protection">
+		<text>Toxicity\n \n%c[0,170,170,170]Due to yet not fully understood nature of substances concentrated inside '%c[0,210,210,210]anomalies type T'%c[0,170,170,170], danger assesment of these areas needs to be performed accordingly to general %c[0,210,210,210]LC50 (human)%c[0,170,170,170] standard.\n \n%c[0,170,170,170]This standard measures overall toxicity of gasous agents in accordnance to level of concentration which is required to kill %c[0,210,210,210]50%%c[0,170,170,170] of any random human 'test group' during exposure lasting %c[0,210,210,210]1 hour%c[0,170,170,170].\n \n%c[0,170,170,170]As in most cases it only takes around 10 parts per milion (%c[0,210,210,210]ppm%c[0,170,170,170]) concentration of Exlusion Zone's anomalous, bio-chemical agents to exceed %c[0,210,210,210]50% / 1 h%c[0,170,170,170] mortality rate, they rightfully belong to the most potent, %c[0,210,210,210]Class I (C1) group%c[0,170,170,170] of toxic substances known to science. Exlusion Zone's anomalous anomalous toxicity-concentration areas, have been proven to have up to around %c[0,210,210,210]200 ppm%c[0,170,170,170] concentration level of such substances, which makes them one of the most hostile envirnoments on planet - capable of killing an average, unprotected human in about %c[0,210,210,210]3 minutes%c[0,170,170,170].\n \n%c[0,170,170,170]For convenient risk assesment both: anomalous areas potency and gear effectivity is graded by ammount of parts per milion (%c[0,210,210,210]ppm eq.%c[0,170,170,170]) concentration of %c[0,210,210,210]Class I (C1)%c[0,170,170,170] toxic substance. In case of equipment the %c[0,210,210,210]C1 ppm eq.%c[0,170,170,170] rating indicates the C1 concentration which certain item is able to protect from.\n \n%c[0,170,170,170]Reconnaissance data attained so far indicates that in case of mission requiring venture into one of the Exclusion Zone's toxicity concentration areas, it is adivsed to locally-aquired equipment, desinged specifically for 'artifacts extortions' - common activity among E.Z. 'inhabitants'. However, even when appropriate protection to one's health is assured, it is still strongly advised to avoid prolonged exposure to such envirnoments due to their proven equipment damaging, corrosive properties.\n \n%c[0,153,255,255] • %c[0,140,140,140] av. toxic anomaly potency: %c[0,210,210,210]~200 C1 ppm eq.\n%c[0,153,255,255] • %c[0,140,140,140] av. unprot. survival time: %c[0,210,210,210]~3 min \n%c[0,153,255,255] • %c[0,140,140,140] av. time for compl. suit degr.: %c[0,210,210,210]~25 min\n \n%c[0,204,0,51]IMPORTANT:\n \n%c[0,170,170,170]Exlusion Zone's toxic fields are very often accompanied with localized acidic concentrations (commonly known as 'fruit punch anomalies') which are capable of producing outbursts of highly potent oxidizing agents. Refer to 'Chapter 5: Flame / acid' of USS Field Manual for detailed risk assesment.\n \n \n</text>
+	</string>
+	<string id="ui_inv_fire_wound_protection">
+		<text>Armor protection level\n \n%c[0,170,170,170]Armor protection level indicates %c[0,210,210,210]anti-ballistic%c[0,170,170,170] properties of certain piece of body armor. The most commonly-recognized gradation scale which is used to indicate protection measures effectivity, is one published by American National Institute of Justice (NIJ) which gradates protective clothing based on ammount of firearm projectile energy which is required to pierce thru it. As this energy is in most cases constant for specific caliber and type of round, NIJ scale can be easly connected with exact munition CLASSs encountered in operational area. Table 2.1 presents NIJ armor classes in accordnance to munition CLASSs known to be in use within Chernobyl Exclusion Zone.\n \n%c[0,210,210,210]ARMOR GRADATION CHART:\n \n%c[0,210,210,210]CLASS I:%c[0,170,170,170] 12x70 shot, grenade shrapnel\n \n%c[0,210,210,210]CLASS IIA and II:%c[0,170,170,170] 9x18 mm, 9x18 mm +P+, 9x19 mm FMJ, 9x19 JHP, 45 ACP\n \n%c[0,210,210,210]CLASS IIIA:%c[0,170,170,170] 357 HP, 45 Hydro, 5.56x45 mm FNJ\n \n%c[0,210,210,210]CLASS III%c[0,170,170,170] 9x18 mm AP, 9x19 mm AP, 7.62x39 mm FMJ, 7.92x33 mm FMJ,  5.45x39 mm FNJ, 12x76 slug\n \n%c[0,210,210,210]CLASS IV:%c[0,170,170,170] 9x39 mm SP-5, 7.62x51 mm NATO, .300 Win Mag, 45 AP, 7.92x33 mm AP\n \n%c[0,210,210,210]CLASS V (exoskeleton):%c[0,170,170,170] 5.45x39 AP, 5.56x45 AP, 7.62x39 mm AP, 7.62x51 mm NATO AP, 7.62x54 PP, 9x39 mm SP-6, 7.62x54 mm 7H1\n \n%c[0,204,0,51]IMPORTANT:\n \n%c[0,170,170,170]Above-mentioned protection levels only indicate to anti-piercing properties of amor. Bullet impact, even if it does not manage to bypass the armor is still capable of inflicting fatal damage thru blunt trauma caused by its kinetic energy. Futhermore, if such trauma is extensive, it can lead to open bone fractures which in turn are able to produce a bleeding wound even thou the projectile itself has not gone thru. Metalized armors and protection layers are able to significantly reduce this effect.\n \n \n</text>
+	</string>
+	<string id="ui_inv_radiation_protection">
+		<text>Outside radiation\n \n%c[0,170,170,170]Current readings indicate the radiation which can be encountered in the Exclusion Zone is mostly carried by solid %c[0,210,210,210]alpha %c[0,170,170,170]particles which are present in dirt, sand, water and thus in all living beings present in the area. Such radiation cannot penetrate skin and only becomes effective when particles carrying it are direclty injected into the living organism - for example thru blood contamination, inhaling dust or eating radiated food. For this reason it is strongly advised to operate around the Exclusion Zone wearing filtered breathing apparatus of even the most simplistic desing and avoid reliance on local nutrition sources.\n \nAs to penetrating %c[0,210,210,210]beta %c[0,170,170,170]radiation - it is still mostly concentrated around the CPP Unit 4 sarcophagus and remnants of melted fuel within it. However it has been recently confirmed that certain species of creatures within Exclusion Zone emit penetrating ionizing radiadion field at close range. For yet unknown reasons most of this field 'deactivates' with creature's decease.\n \n%c[0,170,170,170]Ionizing radiation within the Exclusion Zone can also be encountered during surge emmisions, thru the course of which %c[0,210,210,210]gamma%c[0,170,170,170] blasts of variated potency have been detected.\n \n%c[0,153,255,255] • %c[0,140,140,140]cloth mask protection rate: %c[0,210,210,210]45%\n%c[0,153,255,255] • %c[0,140,140,140]breathing filters protection rate: %c[0,210,210,210]90%\n%c[0,153,255,255] • %c[0,140,140,140]envirnomental suit protection rate.: %c[0,210,210,210]100%\n \n \n</text>
+	</string>
+	<string id="ui_inv_shock_protection">
+		<text>Electricity\n \n%c[0,170,170,170]Exlusion Zone's electrical anomalies are certainly one of its potentialy most benefitial creations. Powerfull and constant electric arcs which are stretched seemingly in thin air, when harnessed could provide enormous ammounts of clean energy. Unfortunately all attempts to drain electricity from these sources have failed as whatever reality warp have caused their appearance, it is extremely sensitive to contact with any solid matter resulting in massive outbursts of energy. During these both voltage and current rise so enormously and erraticaly to be able to burn any capaciting circuit known to modern science.\n \n%c[0,170,170,170]Voltage peaks produced during the outburst often reach up to %c[0,210,210,210]4,0 megavolts (MV)%c[0,170,170,170] which allows the current to about %c[0,210,210,210]3,5 meters%c[0,170,170,170] in thin air. Since the outburst's times are roughly around %c[0,210,210,210]50 miliseconds%c[0,170,170,170], energy produced inside the body remains in often survivable limits. Still, extensive health damage and severe trauma should be expected and the second outburst (which is very likely to occur if field is not exited promptly) is in most cases fatal.\n \n%c[0,170,170,170]As with all static electrical discharges the main way of protection is increasing of electrical resistance of the body. This can be achieved in many ways, primarly by wearing protective, non-conductive clothing. There are also military and civilian grade surge supressors available on the market. It is also known that certain 'artifacts' found in Exlusion Zone are very potent electrical resistors.\n \n%c[0,170,170,170]For the purpose of USS operations in Exlusion Zone effectivity of all electricy-protecting means and combat armors is counted in kilovolts (%c[0,210,210,210]kV%c[0,170,170,170]), which certain piece of equipment is able to supress during a single %c[0,210,210,210]3000 kV%c[0,170,170,170] / %c[0,210,210,210]50 ms%c[0,170,170,170] outburst of electrical anomaly.\n \n%c[0,153,255,255] • %c[0,140,140,140] av. electrical anomaly power: %c[0,210,210,210]~3 MV\n%c[0,153,255,255] • %c[0,140,140,140] single outburst dam. rate to unprot. body: %c[0,210,210,210] 95%\n \n \n</text>
+	</string>
+	<string id="ui_inv_telepatic_protection">
+		<text>Psy influence\n \n%c[0,170,170,170]Scientific data regarding origin and nature of so called 'psy fields' found inside Chernobyl Exlusion Zone is %c[0,204,0,51]classified%c[0,170,170,170] and not relevant to this mission.\n \n%c[0,170,170,170]What is essential for any USS operative is that these influences pose an extreme danger to any human being getting in range of various emission sources. Such fields, which often have a shape of hemi-sphere surrounding the source, are able to either immediately kill or induce an unrecoverable coma within seconds of exposure. While this is usually not the case when being at the edge of the field, potency when getting closer to the source increases at geometric rate.\n \n%c[0,170,170,170]It has been detected that beside the main psy influence, each field also produces a faint, low frequency (%c[0,210,210,210]50-60 Hz%c[0,170,170,170]) magnetic field which althou harmless, can be easly detected and measured allowing for assesment of main psy field's strenght. For this reason potency of psy fields (and effectivity of counter-measures) is given in militeslas (%c[0,210,210,210]mT%c[0,170,170,170]) which indicate intensity of accompanying magnetic field.\n \n%c[0,210,210,210]KNOWN SOURCES:\n \n%c[0,153,255,255] • %c[0,140,140,140] surge emssion: %c[0,210,210,210]35 mT (constant flux) ; 660 mT (blowout wave) \n%c[0,153,255,255] • %c[0,140,140,140] average psy anomaly: %c[0,210,210,210]E 3mT ; C 45 mT\n%c[0,153,255,255] • %c[0,140,140,140] controller mutant: %c[0,210,210,210]E 5 mT ; C 75 mT ; R 33 m\n%c[0,153,255,255] • %c[0,140,140,140] poltergeist mutant: %c[0,210,210,210]E 8 mT ; C 90 mT ; R 52 m\n%c[0,153,255,255] • %c[0,140,140,140] burer mutant: %c[0,210,210,210]E 2 mT ; C 50 mT ; R 26 m\n%c[0,153,255,255] • %c[0,140,140,140] psy-dog mutant: %c[0,210,210,210]E 0.1 mT ; C 15 mT ; R 23 m\n%c[0,153,255,255] • %c[0,140,140,140] Yantar complex (inactive): %c[0,210,210,210]E 160 mT ; C 180 mT (est.) ; R ~400 m\n%c[0,153,255,255] • %c[0,140,140,140] 'Brain scorcher' (inactive): %c[0,210,210,210]E 0.001 mT ; C 6500 mT (est.) ; R ~20 km\n \n%c[0,140,140,140]E = edge of the field\n%c[0,140,140,140]C = epicenter of the field\n%c[0,140,140,140]R = range\n \n \n</text>
+	</string>
+	<string id="ui_inv_wound_protection">
+		<text>Rupture protection\n \n%c[0,170,170,170]Melee protection remains a significant factor when operating within Chernobyl Exclusion Zone. Main reason for this is often extremely aggressive fauna which has evolved in the area at greatly increased rate.\n \n%c[0,170,170,170]So called %c[0,210,210,210]'mutants'%c[0,170,170,170] which are results of this evolution, represent a great variety of species and - what's connected with it - ways of defending themselves or killing their victims. Commonly exhibited types of attacks include bites, claw cuts, fang stabs, charges and limb-projected kicks and punches.\n \n%c[0,170,170,170]The most obvious way of protection against this kind of risk is using clothing elements difficult to penetrate by melee attacks and capable of dispersing the kinetic energy they produce. Althou even a thick layer of dense material can make difference, only the usage of specially desinged anti-stab protection layers is a viable option in context of USS presence within the Exclusion Zone.\n \n%c[0,170,170,170]In modern times such layers are being integrated by default into almost anti-ballistic personal armor set. It is also common that melee protection potential of certain armor piece is directly related to its anti-ballistic protection class. This is especially pronounced in NIJ %c[0,210,210,210]Class AIII (and higher)%c[0,170,170,170] protective elements, as they have increasingly large number of %c[0,210,210,210]metalized plates%c[0,170,170,170] integrated into them. Usage of such material is by far the most effective method of protecting oneself from melee damage.\n \n%c[0,204,0,51]IMPORTANT:\n \n%c[0,170,170,170]Even thou resistant and thick enough clothing can very significantly reduce damage inflicted by firearm projectiles or melee attacks of all kinds, the clothing itself is not indestructible. It will slowly get degraded, gradually decreasing its envirnomantal and physical protection capabilities.\n \n%c[0,170,170,170]Futhermore the rate at which armor piece degrades %c[0,210,210,210]is not a constant value%c[0,170,170,170] but rather will speed-up with condition loss, making %c[0,204,0,51]already damaged equipment getting more damaged at faster rate%c[0,170,170,170].\n \n%c[0,170,170,170]For this reason it is %c[0,210,210,210]strongly advised%c[0,170,170,170] to maintain outfit and headgear at frequent rate and avoid allowing it to attain severe, structural damage.\n \n \n</text>
 	</string>
 	<string id="ui_inv_power">
-		<text>Energy recovery</text>
+		<text>Stamina recovery</text>
+	</string>
+	<string id="ui_inv_power_restore">
+		<text>Stamina recovery\n \n%c[0,210,210,210]FACTS:\n</text>
 	</string>
 	<string id="ui_inv_preset1(F1)">
 		<text>Loadout 1 (F1)</text>
@@ -277,13 +334,13 @@
 		<text>drink</text>
 	</string>
 	<string id="ui_inv_outfit_power_restore">
-		<text>Energy recovery</text>
+		<text>Ergonom.</text>
 	</string>
 	<string id="st_ui_bleeding_sensor">
-		<text>Bleeding</text>
+		<text>Bleeding\n \n%c[0,170,170,170]Bleeding can drain vital power from organism at very fast rate if not treated promtly. Bleeding wounds can appear whenever external, physical force of any type penetrates thru body armor and raptures skin possibly reaching internal organs. It can also be a result of open bone fractures caused by blunt trauma.\n \n%c[0,170,170,170]Averege USS operator can survive up to approximately %c[0,210,210,210]2,7 liter %c[0,170,170,170]blood volume loss to remain self-sustaining. Extremely serious (or a large number of smaller) wounds can make body loose this ammount in %c[0,210,210,210]10 to 5 minutes%c[0,170,170,170]. Bandages or field wound sewing kits are effective at treating bleeding wounds instanously, while blood density or coagulation speed increasing agents can be used to reduce its overall rate.\n \n%c[0,153,255,255] • %c[0,140,140,140] body blood volume: %c[0,210,210,210]~5,5 liters\n%c[0,153,255,255] • %c[0,140,140,140] mortal blood loss: %c[0,210,210,210]~2,7 liters\n \n%c[0,170,170,170]Rates chart:\n \n%c[0,102,255,0]0 - 50 ml / min: %c[0,140,140,140] mild\n \n%c[0,255,255,0]50 - 150 ml / min: %c[0,140,140,140]significant\n \n%c[0,255,122,0]150 - 300 ml / min: %c[0,140,140,140] severe\n \n%c[0,204,0,51]300+ ml / min: %c[0,140,140,140]critical\n \n \n</text>
 	</string>
 	<string id="ui_inv_weight">
-		<text>Max. conv. encumbrance</text>
+		<text>Conv. encumbrance</text>
 	</string>
 	<string id="st_ui_health_sensor">
 		<text>Health</text>
@@ -296,6 +353,9 @@
 	</string>
 	<string id="ui_inv_seconds_short">
 		<text>sec</text>
+	</string>
+	<string id="ui_inv_seconds">
+		<text>seconds</text>
 	</string>
 	<string id="ui_inv_survive_surge">
 		<text>Allows you to survive an emission</text>

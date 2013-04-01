@@ -46,7 +46,34 @@ inv_grid_width		= 2
 inv_grid_height		= 1
 inv_grid_x		= 18
 inv_grid_y		= 2
-scope_texture		= wpn_crosshair_pso1
+scope_texture		= wpn_crosshair_pu9130
+scope_zoom_factor	= 36	; x2.7
+
+;scope_nightvision	= scope_brighten
+
+[wpn_addon_scope_worn]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope"
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch		= 32
+description		= st_addon_scope_x2.7_worn_descr
+cost			= 690
+
+holder_range_modifier	= 1.25
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_x2.7_worn
+inv_name_short	= st_addon_scope_x2.7_worn
+inv_weight		= 0.69
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 18
+inv_grid_y		= 2
+scope_texture		= wpn_crosshair_pu9130_scratched
 scope_zoom_factor	= 36	; x2.7
 
 ;scope_nightvision	= scope_brighten
@@ -60,7 +87,7 @@ cform           = skeleton
 visual          = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
 $prefetch 		= 32
 description		= st_addon_scope_descr
-cost			= 4760
+cost			= 1860
 
 holder_range_modifier	= 1.55
 holder_fov_modifier		= 1.0
@@ -157,6 +184,35 @@ inv_grid_x		= 11
 inv_grid_y		= 18
 scope_texture		= wpn_crosshair_susat
 scope_zoom_factor	= 42	; x1.6
+
+;scope_nightvision	= scope_brighten
+
+[wpn_addon_scope_susat_worn]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+description		= st_addon_scope_susat_x1.6_worn_descr
+slot			= -1
+
+cost			= 840
+
+holder_range_modifier	= 1.2
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_susat_x1.6_worn
+inv_name_short	= st_addon_scope_susat_x1.6_worn
+inv_weight		= 0.417
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 11
+inv_grid_y		= 18
+scope_texture		= wpn_crosshair_susat_moist
+scope_zoom_factor	= 42	; x1.6
+
 ;scope_nightvision	= scope_brighten
 
 [wpn_addon_scope_susat_x1.6]:identity_immunities
@@ -170,7 +226,7 @@ description		= st_addon_scope_susat_descr
 slot = -1
 ;$prefetch 		= 64
 
-cost			= 5650
+cost			= 1930
 
 holder_range_modifier	= 1.50
 holder_fov_modifier		= 1.0

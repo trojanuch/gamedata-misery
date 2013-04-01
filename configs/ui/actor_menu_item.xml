@@ -1,14 +1,14 @@
 <w>
-	<main_frame x="10" y="300" width="320" height="170" delay="810"/>
-	<background_frame x="0" y="0" width="320" height="170">
+	<main_frame x="10" y="300" width="370" height="170" delay="810"/>
+	<background_frame x="0" y="0" width="370" height="170">
 		<texture>ui_inGame2_hint_wnd_main_window</texture>
 	</background_frame>
 
-	<static_name x="20" y="20" width="280" height="20" stretch="1" complex_desc="0">
+	<static_name x="20" y="20" width="330" height="20" stretch="1" complex_desc="0">
 		<text font="letterica18" complex_mode="0" align="c" vert_align="c"/>
 	</static_name>
 
-	<static_weight x="20" y="40" width="280" height="20">
+	<static_weight x="20" y="40" width="330" height="20">
 		<text align="l" font="letterica18" r="210" g="210" b="210"/>
 	</static_weight>
 
@@ -16,14 +16,14 @@
 		<text font="letterica18" align="r" r="210" g="210" b="210"/>
 	</static_cost>
 
-	<static_no_trade x="20" y="60" width="280" height="20">
+	<static_no_trade x="20" y="60" width="338" height="20">
 		<text align="l" font="letterica16" complex_mode="1"/>
 	</static_no_trade>
 
-	<descr_list x="20" y="60" width="265" height="130" always_show_scroll="0" fit_to_height="1">
+	<descr_list x="20" y="60" width="356" height="130" always_show_scroll="0" fit_to_height="1">
 		<font font="letterica16" r="170" g="170" b="170"/>
 	</descr_list>
-	<description_line x="20" y="50" width="260" height="9" stretch="1">
+	<description_line x="20" y="50" width="322" height="9" stretch="1">
 		<texture>ui_inGame2_hint_wnd_Information</texture>
 	</description_line>
 <!--
@@ -44,8 +44,8 @@
 		</progress_state>
 	</condition_params>
 -->
-	<wpn_params x="0" y="0" width="265" height="170">
-		<prop_line x="0" y="0" width="260" height="9" stretch="1">
+	<wpn_params x="0" y="0" width="276" height="170">
+		<prop_line x="0" y="0" width="276" height="9" stretch="1">
 			<texture>ui_inGame2_hint_wnd_Properties</texture>
 		</prop_line>
 		<static_accuracy x="0" y="10" width="18" height="18" stretch="1">
@@ -63,7 +63,6 @@
 		<static_ammo x="0" y="82" width="18" height="18" stretch="1">
 			<texture>ui_wp_propery_07</texture>
 		</static_ammo>
-
 		<cap_accuracy x="22" y="12" width="100" height="8">
 			<text font="letterica16" r="170" g="170" b="170" align="l">ui_inv_accuracy</text>
 		</cap_accuracy>
@@ -77,7 +76,7 @@
 			<text font="letterica16" r="170" g="170" b="170" align="l">ui_inv_rate_of_fire</text>
 		</cap_rpm>
 
-		<progress_accuracy x="130" y="14" width="128" height="9" horz="1">
+		<progress_accuracy x="170" y="14" width="128" height="9" horz="1">
 			<progress>
 				<texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 			</progress>
@@ -87,7 +86,7 @@
 			<color_less color="pda_red"  />
 			<color_more color="pda_green"/>
 		</progress_accuracy>
-		<progress_handling x="130" y="32" width="128" height="9" horz="1">
+		<progress_handling x="170" y="32" width="128" height="9" horz="1">
 			<progress>
 				<texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 			</progress>
@@ -97,7 +96,7 @@
 			<color_less color="pda_red"  />
 			<color_more color="pda_green"/>
 		</progress_handling>
-		<progress_damage x="130" y="50" width="128" height="9" horz="1">
+		<progress_damage x="170" y="50" width="128" height="9" horz="1">
 			<progress>
 				<texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 			</progress>
@@ -107,7 +106,7 @@
 			<color_less color="pda_red"  />
 			<color_more color="pda_green"/>
 		</progress_damage>
-		<progress_rpm x="130" y="68" width="128" height="9" horz="1">
+		<progress_rpm x="170" y="68" width="128" height="9" horz="1">
 			<progress>
 				<texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 			</progress>
@@ -210,7 +209,7 @@
 		<burn_immunity x="0" y="0" width="18" height="18" stretch="1">
 			<texture>ui_am_prop_thermo</texture>
 			<text font="letterica16" x="22" y="0" r="170" g="170" b="170" align="l" vert_align="c"/>
-			<progress_immunity x="130" y="4" width="128" height="9" horz="1">
+			<progress_immunity x="170" y="4" width="128" height="9" horz="1">
 				<progress>
 	                <texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 	            </progress>
@@ -220,7 +219,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="225" y="0" width="40" height="18" magnitude="300">
+			<static_value x="225" y="0" width="40" height="18" magnitude="350">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</burn_immunity>
@@ -228,25 +227,7 @@
 		<shock_immunity x="0" y="0" width="18" height="18" stretch="1">
 			<texture>ui_am_prop_electro</texture>
 			<text font="letterica16" x="22" y="0" r="170" g="170" b="170" align="l" vert_align="c"/>
-			<progress_immunity x="130" y="4" width="128" height="9" horz="1">
-				<progress>
-	                <texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
-	            </progress>
-	            <background>
-	                <texture>ui_inGame2_hint_wnd_bar</texture>
-	            </background>
-				<color_less color="pda_red"  />
-				<color_more color="pda_green"/>
-			</progress_immunity>
-			<static_value x="225" y="0" width="40" height="18" magnitude="200">
-				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
-			</static_value>
-		</shock_immunity>
-
-		<chemical_burn_immunity x="0" y="0" width="18" height="18" stretch="1">
-			<texture>ui_am_prop_chem</texture>
-			<text font="letterica16" x="22" y="0" r="170" g="170" b="170" align="l" vert_align="c"/>
-			<progress_immunity x="130" y="4" width="128" height="9" horz="1">
+			<progress_immunity x="170" y="4" width="128" height="9" horz="1">
 				<progress>
 	                <texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 	            </progress>
@@ -259,12 +240,12 @@
 			<static_value x="225" y="0" width="40" height="18" magnitude="250">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
-		</chemical_burn_immunity>
+		</shock_immunity>
 
-		<radiation_immunity x="0" y="0" width="18" height="18" stretch="1">
-			<texture>ui_am_propery_09</texture>
+		<chemical_burn_immunity x="0" y="0" width="18" height="18" stretch="1">
+			<texture>ui_am_prop_chem</texture>
 			<text font="letterica16" x="22" y="0" r="170" g="170" b="170" align="l" vert_align="c"/>
-			<progress_immunity x="130" y="4" width="128" height="9" horz="1">
+			<progress_immunity x="170" y="4" width="128" height="9" horz="1">
 				<progress>
 	                <texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 	            </progress>
@@ -274,15 +255,15 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="225" y="0" width="40" height="18" magnitude="150">
+			<static_value x="225" y="0" width="40" height="18" magnitude="300">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
-		</radiation_immunity>
+		</chemical_burn_immunity>
 
-		<telepatic_immunity x="0" y="0" width="18" height="18" stretch="1">
-			<texture>ui_am_propery_11</texture>
+		<radiation_immunity x="0" y="0" width="18" height="18" stretch="1">
+			<texture>ui_am_propery_09</texture>
 			<text font="letterica16" x="22" y="0" r="170" g="170" b="170" align="l" vert_align="c"/>
-			<progress_immunity x="130" y="4" width="128" height="9" horz="1">
+			<progress_immunity x="170" y="4" width="128" height="9" horz="1">
 				<progress>
 	                <texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 	            </progress>
@@ -295,12 +276,12 @@
 			<static_value x="225" y="0" width="40" height="18" magnitude="200">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
-		</telepatic_immunity>
+		</radiation_immunity>
 
-		<wound_immunity x="0" y="0" width="18" height="18" stretch="1">
-			<texture>ui_am_prop_damage</texture>
+		<telepatic_immunity x="0" y="0" width="18" height="18" stretch="1">
+			<texture>ui_am_propery_11</texture>
 			<text font="letterica16" x="22" y="0" r="170" g="170" b="170" align="l" vert_align="c"/>
-			<progress_immunity x="130" y="4" width="128" height="9" horz="1">
+			<progress_immunity x="170" y="4" width="128" height="9" horz="1">
 				<progress>
 	                <texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 	            </progress>
@@ -310,7 +291,25 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="225" y="0" width="40" height="18" magnitude="150">
+			<static_value x="225" y="0" width="40" height="18" magnitude="250">
+				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
+			</static_value>
+		</telepatic_immunity>
+
+		<wound_immunity x="0" y="0" width="18" height="18" stretch="1">
+			<texture>ui_am_prop_damage</texture>
+			<text font="letterica16" x="22" y="0" r="170" g="170" b="170" align="l" vert_align="c"/>
+			<progress_immunity x="170" y="4" width="128" height="9" horz="1">
+				<progress>
+	                <texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
+	            </progress>
+	            <background>
+	                <texture>ui_inGame2_hint_wnd_bar</texture>
+	            </background>
+				<color_less color="pda_red"  />
+				<color_more color="pda_green"/>
+			</progress_immunity>
+			<static_value x="225" y="0" width="40" height="18" magnitude="200">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</wound_immunity>
@@ -318,7 +317,7 @@
 		<fire_wound_immunity x="0" y="0" width="18" height="18" stretch="1">
 			<texture>ui_am_propery_01</texture>
 			<text font="letterica16" x="22" y="0" r="170" g="170" b="170" align="l" vert_align="c"/>
-			<progress_immunity x="130" y="4" width="128" height="9" horz="1">
+			<progress_immunity x="170" y="4" width="128" height="9" horz="1">
 				<progress>
 	                <texture a="150">ui_inGame2_hint_wnd_bar_alfa_line</texture>
 	            </progress>
@@ -328,7 +327,7 @@
 				<color_less color="pda_red"  />
 				<color_more color="pda_green"/>
 			</progress_immunity>
-			<static_value x="225" y="0" width="40" height="18" magnitude="150">
+			<static_value x="225" y="0" width="40" height="18" magnitude="500">
 				<text font="letterica16" color="ui_6" align="r" vert_align="c"/>
 			</static_value>
 		</fire_wound_immunity>

@@ -271,7 +271,7 @@ function dynamic_actor_loadout()
 			create_items("medkit_army",2)
 			create_items("stimpack_army")
 
-			create_items("wpn_m1891")
+			create_items("wpn_m1891_alt")
 			create_items("wpn_bm16")
            	create_ammunition("ammo_12x70_buck",5)
 			create_ammunition("ammo_7.62x39_fmj",3)

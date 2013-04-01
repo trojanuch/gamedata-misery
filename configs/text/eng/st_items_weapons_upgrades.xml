@@ -1081,7 +1081,7 @@
 		<text>Reinforced respirator for extreme conditions</text>
 	</string>
 	<string id="st_up_resp_a1_descr">
-		<text>Standard-issue 1PN93-1 Russian Military Forces night vision device modified for mounting on combat helmet. Offers generation 2+ image intensifying for operations at night or in reduced lightning conditions. After removal of battery compartment and replacing it with UPD imput, total weight has been established at usable ~1,5 kg. Purchased and delivered as complete isntallation kit it also features mounting interface, allowing easy updating to better device in future. Device depletes UPD at medium rate.</text>
+		<text>Standard-issue 1PN93-1 Russian Military Forces night vision device modified for mounting on combat helmet. Offers generation 2+ image intensifying for operations at night or in reduced lightning conditions. After removal of battery compartment and replacing it with UPD imput, total weight with mounting grid has been established at usable ~1,5 kg. Purchased and delivered as complete isntallation kit it also features mounting interface, allowing easy updating to better device in future. Device depletes UPD at medium rate.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
 	</string>
 	<string id="st_up_resp_a1_name">
 		<text>1PN93-1 night vision device</text>
@@ -1096,7 +1096,7 @@
 		<text>Steam purification & respiration mask</text>
 	</string>
 	<string id="st_up_resp_b1_descr">
-		<text>Modern-day, IIT generation 3 PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. It's specifically desinged to be head-mounted. Installation on combat helmet greatly enhances possibilities of operations in complete darkness. It features an advanced image processing software which transforms typical green night-vision view to more convenient greyscale one. Requires base mounting grid to be present on helmet to allow integration. Weighting about 270 grams it is lighter than 1PN58 nvd giving back about 400 grams on installation. There is a upgrade kit present on the market which replaces lens to better ones and contains an update to image-processing software. Device depletes UPD at medium rate.</text>
+		<text>Modern-day, IIT generation 3 PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. It's specifically desinged to be head-mounted. Installation on combat helmet greatly enhances possibilities of operations in complete darkness. It features an advanced image processing software which transforms typical green night-vision view to more convenient greyscale one. Requires base mounting grid to be present on helmet to allow integration. Weighting about 270 grams it is lighter than 1PN58 nvd giving back about 400 grams on installation. There is a upgrade kit present on the market which replaces lens to better ones and contains an update to image-processing software.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
 	</string>
 	<string id="st_up_resp_b1_name">
 		<text>PN21KL night vision device</text>
@@ -2006,6 +2006,15 @@
 	</string>
 	<string id="st_upgr_parents">
 		<text>preceding modifications required</text>
+	</string>
+	<string id="st_upgr_rusty_profile">
+		<text>weapon is rusty, no modifications are possible</text>
+	</string>
+	<string id="st_upgr_worn_profile">
+		<text>weapon is worn, only rough work modifications are possible</text>
+	</string>
+	<string id="st_upgr_standard_profile">
+		<text>modernized weapon required to perform modification</text>
 	</string>
 	<string id="st_up_arm_c9_name">
 		<text>Armadillo protective coating based on sapphire crystals</text>

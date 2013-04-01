@@ -82,11 +82,11 @@ power_loss				= 0.58
 control_inertion_factor = 1.16
 
 ; NO RESISTANCE
-burn_protection 			= 0.008
-shock_protection 			= 0.12
+burn_protection 			= 0.011 ; 3,5 kW / m2
+shock_protection 			= 0.660 ; 597 kV
 radiation_protection 			= 0.0014
-chemical_burn_protection 		= 0.0
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.008 ; 26 C1 ppm eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.075
 wound_protection			= 0.185
@@ -156,11 +156,11 @@ power_loss				= 0.63
 control_inertion_factor = 1.19
 
 ; NO RESISTANCE
-burn_protection 			= 0.080
-shock_protection 			= 0.160
+burn_protection 			= 0.0290 ; 9 kW / m2
+shock_protection 			= 0.840 ; 760 kV
 radiation_protection 			= 0.0022
-chemical_burn_protection 		= 0
-telepatic_protection 			= 0
+chemical_burn_protection 		= 0.014 ; 46 C1 ppm eq.
+telepatic_protection 			= 0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.12
 wound_protection			= 0.275
@@ -230,11 +230,11 @@ power_loss				= 0.68
 control_inertion_factor = 1.28
 
 ; NO RESISTANCE
-burn_protection 			= 0.140
-shock_protection 			= 0.250
+burn_protection 			= 0.0370 ; 12 kW / m2
+shock_protection 			= 1.180 ; 1065 kV
 radiation_protection 			= 0.0036
-chemical_burn_protection 		= 0
-telepatic_protection 			= 0
+chemical_burn_protection 		= 0.015 ; 50 C1 ppm eq.
+telepatic_protection 			= 0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.18
 wound_protection			= 0.38
@@ -279,7 +279,7 @@ inv_name			= stalker_outfit_name
 inv_name_short		= stalker_outfit_name
 description			= stalker_outfit_description
 
-inv_weight			= 13
+inv_weight			= 15.2
 
 inv_grid_width		= 2
 inv_grid_height		= 3
@@ -297,17 +297,17 @@ full_scale_icon		= 14,11			;иконка сталкера в костюме в полный рост
 
 additional_inventory_weight2		= 16		; +40kg
 additional_inventory_weight	= 16		;	+max_walk_weight
-artefact_count                  = 3 ; 1
+artefact_count                  = 2 ; 1
 
 default_to_ruck     = false
 immunities_sect		= sect_stalker_outfit_immunities
 
 ; LOW RESISTANCE
-burn_protection 				= 0.018
-shock_protection 				= 0.200
+burn_protection 				= 0.018 ; 6 kW / m2
+shock_protection 				= 0.890 ; 802 kV
 radiation_protection 			= 0.0025
-chemical_burn_protection 		= 0
-telepatic_protection 			= 0
+chemical_burn_protection 		= 0.013 ; 44 C1 ppm. eq.
+telepatic_protection 			= 0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.24
 wound_protection			= 0.50
@@ -432,11 +432,11 @@ full_scale_icon		= 10,11			;иконка сталкера в костюме в полный рост
 immunities_sect			= sect_svoboda_light_outfit_immunities
 
 ; LOW RESISTANCE
-burn_protection 				= 0.026
-shock_protection 				= 0.200
+burn_protection 				= 0.022 ; 7,5 kW / m2
+shock_protection 				= 0.960 ; 866 kV
 radiation_protection 			= 0.0025
-chemical_burn_protection 		= 0.0
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.015 ; 45 C1 ppm eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.24
 wound_protection			= 0.50
@@ -445,7 +445,7 @@ fire_wound_protection  			= 0.08
 hit_fraction_actor				= 0.4
 bones_koeff_protection 			= actor_armor_light
 
-artefact_count          = 1
+artefact_count          = 2
 control_inertion_factor = 1.18
 power_loss				= 0.57
 
@@ -507,11 +507,11 @@ full_scale_icon		= 8,11			;иконка сталкера в костюме в полный рост
 immunities_sect		= sect_dolg_outfit_immunities
 
 ; LOW RESISTANCE
-burn_protection 				= 0.023
-shock_protection 				= 0.225
+burn_protection 				= 0.018 ; 6 kW / m2
+shock_protection 				= 0.870 ; 767 kW
 radiation_protection 			= 0.0029
-chemical_burn_protection 		= 0.0
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.013 ; 38 C1 ppm eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.33
 wound_protection				= 0.585
@@ -520,7 +520,7 @@ fire_wound_protection  			= 0.35
 hit_fraction_actor				= 0.38
 bones_koeff_protection 			= actor_armor_light
 
-artefact_count          = 1
+artefact_count          = 2
 control_inertion_factor = 1.27
 power_loss				= 0.67
 
@@ -587,11 +587,11 @@ helmet_avaliable	 	= false
 
 
 ; MEDIUM RESISTANCE
-burn_protection 			= 0.170
-shock_protection 			= 0.380
+burn_protection 			= 0.1450 ; 178 kW / m2 (4x prot. suit multiplier)
+shock_protection 			= 2.010 ; 1590 kV
 radiation_protection 			= 0.0320
-chemical_burn_protection 		= 0.1240
-telepatic_protection 			= 0.1250
+chemical_burn_protection 		= 0.1240 ; 380 C1 ppm eq.
+telepatic_protection 			= 0.1250 ; 57 mT
 strike_protection 			= 0
 explosion_protection 			= 0.32
 wound_protection			= 0.585
@@ -720,11 +720,11 @@ immunities_sect			= sect_cs_heavy_outfit_immunities
 power_loss				= 0.68
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.042
-shock_protection 				= 0.300
+burn_protection 				= 0.040 ; 14 kW / m2
+shock_protection 				= 1.260 ; 988 kV
 radiation_protection 			= 0.0055
-chemical_burn_protection 		= 0.0
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.015 ; 46 C1 ppm eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.35
 wound_protection				= 0.62
@@ -794,11 +794,11 @@ power_loss				= 0.64
 immunities_sect			= sect_svoboda_heavy_outfit_immunities
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.043
-shock_protection 				= 0.200
+burn_protection 				= 0.028 ; 11 kW / m2
+shock_protection 				= 0.500 ; 392 kV
 radiation_protection 			= 0.0042
-chemical_burn_protection 		= 0.0300
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.012 ; 37 C1 ppm eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.45
 wound_protection				= 0.68
@@ -868,11 +868,11 @@ power_loss				= 0.68
 immunities_sect			= sect_specops_outfit_immunities
 
 ; LOW RESISTANCE
-burn_protection 				= 0.04
-shock_protection 				= 0.100
+burn_protection 				= 0.023 ; 8,5 kW / m2
+shock_protection 				= 0.460 ; 363 kV
 radiation_protection 			= 0.0042
-chemical_burn_protection 		= 0.0
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.01 ; 30 C1 ppm. eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.5
 wound_protection				= 0.68
@@ -997,11 +997,11 @@ power_loss				= 0.70
 immunities_sect			= sect_military_outfit_immunities
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.044
-shock_protection 				= 0.200
+burn_protection 				= 0.030 ; 13 kW / m2
+shock_protection 				= 0.580 ; 458 kV
 radiation_protection 			= 0.0042
-chemical_burn_protection 		= 0.0
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.011 ; 34 C1 ppm eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.65
 wound_protection				= 0.74
@@ -1125,11 +1125,11 @@ full_scale_icon		= 8,6		;иконка сталкера в костюме в полный рост
 immunities_sect			= sect_dolg_heavy_outfit_immunities
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.048
-shock_protection 				= 0.145
+burn_protection 				= 0.032 ; 13 kW / m2
+shock_protection 				= 0.540 ; 423 kV
 radiation_protection 			= 0.0048
-chemical_burn_protection 		= 0.0
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.011 ; 34 C1 ppm eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.70
 wound_protection				= 0.80
@@ -1197,11 +1197,11 @@ full_scale_icon		= 2,11			;иконка сталкера в костюме в полный рост
 immunities_sect			= sect_exo_outfit_immunities
 
 ; MEDIUM RESISTANCE
-burn_protection 			= 0.065
-shock_protection 			= 0.190
+burn_protection 			= 0.055 ; 29 kW / m2
+shock_protection 			= 1.380 ; 1083 kV
 radiation_protection 			= 0.0064
-chemical_burn_protection 		= 0.0
-telepatic_protection 			= 0.0
+chemical_burn_protection 		= 0.013 ; 54 C1 ppm eq.
+telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 			= 0.55
 explosion_protection 			= 0.95
 wound_protection			= 0.885
@@ -1322,9 +1322,9 @@ player_hud_section	= actor_hud_07
 
 ef_equipment_type	= 2
 
-inv_name			= "SSP-99 Ecologist"
-inv_name_short		= "SSP-99 Ecologist"
-description			= "A SSP-99 chemical protection suit specifically designed for the zones conditions. It is used primarily by scientific expeditions and the eco-stalkers who co-operate with them. It has an intergrated air filtering and conditioning system offering excellent protection against radiation and chemical exposure, includes an anomaly suppression system, and uses a fabric which offers excellent heat and electrical resistance. It isn't designed for combat, so it provides neither bullet or splinter protection. Includes a container capable of holding 2 artifacts."
+inv_name			= st_ecologist_red_outfit_name
+inv_name_short		= st_ecologist_red_outfit_name
+description			= st_ecologist_red_outfit_description
 inv_weight			= 12.14
 slot				= 6
 inv_grid_width		= 2
@@ -1348,16 +1348,16 @@ additional_inventory_weight2 	= 18
 additional_inventory_weight 	= 18
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.200
-shock_protection 				= 0.360
+burn_protection 				= 1.650 ; 202 kW / m2 (4x prot. suit multiplier)
+shock_protection 				= 2.450 ; 1750 kV
 radiation_protection 			= 0.0390
-chemical_burn_protection 		= 0.1360
-telepatic_protection 			= 0.1480
+chemical_burn_protection 		= 0.1490 ; 460 C1 ppm eq.
+telepatic_protection 			= 0.1620 ; 74 mT
 strike_protection 				= 0
 explosion_protection 			= 0.2
 wound_protection				= 0.15
 
-power_loss				= 0.88
+power_loss						= 0.88
 
 power_restore_speed				= -0.0014
 
@@ -1397,9 +1397,9 @@ player_hud_section	= actor_hud_07
 
 ef_equipment_type	= 2
 
-inv_name			= "SSP-99M Ecologist"
-inv_name_short		= "SSP-99M Ecologist"
-description			= "High quality modified SSP-99 suit. It provides increased body protection from bullet and splinter damage. It is designed for the guards working with scientific expeditions. It provides good protection from radiation and biological anomalies. It is resistant to chemically aggressive environments and other effects dangerous to the body. Includes a container capable of holding 2 artifacts."
+inv_name			= st_ecologist_green_outfit_name
+inv_name_short		= st_ecologist_green_outfit_name
+description			= st_ecologist_green_outfit_description
 inv_weight			= 12.42
 slot				= 6
 inv_grid_width		= 2
@@ -1423,11 +1423,11 @@ artefact_count          = 2
 control_inertion_factor = 1.91
 
 ; MEDIUM RESISTANCE
-burn_protection 				= 0.240
-shock_protection 				= 0.360
+burn_protection 				= 1.900 ; 231 kW / m2 (4x prot. suit multiplier)
+shock_protection 				= 2.650 ; 2024 kV
 radiation_protection 			= 0.0390
-chemical_burn_protection 		= 0.1490
-telepatic_protection 			= 0.1620
+chemical_burn_protection 		= 0.1490 ; 348 C1 ppm. eq.
+telepatic_protection 			= 0.1620 ; 74 mT
 strike_protection 				= 0
 explosion_protection 			= 0.3
 wound_protection				= 0.2

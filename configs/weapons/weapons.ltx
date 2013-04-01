@@ -5,7 +5,12 @@
 #include "addon_silencers.ltx"
 
 #include "upgrades\w_abakan_up.ltx"
+
 #include "upgrades\w_ak74_up.ltx"
+#include "upgrades\w_ak74_modern_up.ltx"
+#include "upgrades\w_ak74_worn_up.ltx"
+#include "upgrades\w_ak74_rusty_up.ltx"
+
 #include "upgrades\w_ak74u_up.ltx"
 #include "upgrades\w_beretta_up.ltx"
 #include "upgrades\w_bm16_up.ltx"
@@ -971,11 +976,11 @@ inv_grid_y			= 19
 
 
 k_dist			= 1
-k_disp			= 0.66
+k_disp			= 1.52
 k_hit			= 1
-k_impulse		= 1
-k_pierce		= 0.25
-k_ap		= 0.25
+k_impulse		= 1.5
+k_pierce		= 1.45
+k_ap			= 1.25
 impair			= 1.15
 buck_shot		= 0
 tracer			= off        ;  off
@@ -1547,17 +1552,17 @@ inv_weight			= 0
 
 cost				= 150
 
-blast				= 4.0 ;3.0
-blast_r				= 5 ;4
-blast_impulse		= 200 ;100
+blast				= 5.0 ;3.0
+blast_r				= 2.5 ;4
+blast_impulse		= 140 ;100
 ;delete
 blast_impulse_factor = 1
 
 
-frags				= 15 ;10
-frags_r				= 15 ;10
-frag_hit			= 1.5 ;0.50
-frag_hit_impulse	= 100 ;50
+frags				= 85 ;10
+frags_r				= 20 ;10
+frag_hit			= 0.05 ;0.50
+frag_hit_impulse	=  25 ;50
 
 hit_type_blast		= explosion
 hit_type_frag		= fire_wound
@@ -1584,7 +1589,7 @@ jump_height = 0.1 ;0
 wm_size         = 0.05
 
 ;трассы от осколков
-fragment_speed				= 100
+fragment_speed				= 175
 
 explode_duration		 = 5		;подолжительность взрыва (с)
 
@@ -1624,17 +1629,17 @@ inv_weight			= 0
 
 cost				= 150
 
-blast				= 3.0 ;2.00;150
-blast_r				= 6 ;4
-blast_impulse		= 250 ;350
+blast				= 5.0 ;3.0
+blast_r				= 2.5 ;4
+blast_impulse		= 140 ;100
 ;delete
 blast_impulse_factor = 1
 
 
-frags				= 20 ;15
+frags				= 80 ;10
 frags_r				= 20 ;10
-frag_hit			= 1.0 ;0.50
-frag_hit_impulse	= 100 ;50
+frag_hit			= 0.05 ;0.50
+frag_hit_impulse	=  25 ;50
 
 hit_type_blast		= explosion
 hit_type_frag		= fire_wound
@@ -1658,7 +1663,7 @@ ph_mass			 = 5
 jump_height = 1
 
 ;трассы от осколков
-fragment_speed		= 100
+fragment_speed		= 175
 
 wm_size         	= 0.05
 ;wallmarks
@@ -1704,17 +1709,17 @@ inv_weight			= 0
 
 cost				= 150
 
-blast				= 5 ;3.0;150
-blast_r				= 5.5 ;4
-blast_impulse		= 200 ;100
+blast				= 5.5 ;3.0
+blast_r				= 3 ;4
+blast_impulse		= 165 ;100
 ;delete
 blast_impulse_factor = 1
 
 
-frags				= 15 ;10
-frags_r				= 15 ;10
-frag_hit			= 1.5 ;0.50
-frag_hit_impulse	= 200 ;50
+frags				= 95 ;10
+frags_r				= 25 ;10
+frag_hit			= 0.05 ;0.50
+frag_hit_impulse	=  32 ;50
 
 hit_type_blast		= explosion
 hit_type_frag		= fire_wound
@@ -2485,7 +2490,7 @@ $spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Knife
+description		= Melee
 slot 			= -1
 $prefetch 		= 64
 
@@ -2493,14 +2498,14 @@ cost			= 0
 
 box_size		= 1 ;50
 
-inv_name		= Knife
-inv_name_short		= Knife
+inv_name			= Melee
+inv_name_short		= Melee
 inv_weight		= .1 ;.24
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x		= 100
-inv_grid_y		= 100
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 18
+inv_grid_y         = 49
 
 k_dist			= 1
 k_disp			= 0.66
@@ -2521,7 +2526,7 @@ $spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Knife
+description		= Melee
 slot 			= -1
 $prefetch 		= 64
 
@@ -2529,14 +2534,14 @@ cost			= 0
 
 box_size		= 1 ;50
 
-inv_name		= Knife
-inv_name_short		= Knife
+inv_name			= Melee
+inv_name_short		= Melee
 inv_weight		= .1 ;.24
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x		= 100
-inv_grid_y		= 100
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 18
+inv_grid_y         = 51
 
 k_dist			= 1
 k_disp			= 0.66
@@ -2557,7 +2562,7 @@ $spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Knife
+description		= Melee
 slot 			= -1
 $prefetch 		= 64
 
@@ -2565,14 +2570,14 @@ cost			= 0
 
 box_size		= 1 ;50
 
-inv_name		= Knife
-inv_name_short		= Knife
+inv_name		= Melee
+inv_name_short		= Melee
 inv_weight		= .1 ;.24
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x		= 100
-inv_grid_y		= 100
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 18
+inv_grid_y         = 52
 
 k_dist			= 1
 k_disp			= 0.66
@@ -2593,7 +2598,7 @@ $spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Knife
+description		= Melee
 slot 			= -1
 $prefetch 		= 64
 
@@ -2601,14 +2606,14 @@ cost			= 0
 
 box_size		= 1 ;50
 
-inv_name		= Knife
-inv_name_short		= Knife
+inv_name		= Melee
+inv_name_short		= Melee
 inv_weight		= .1 ;.24
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x		= 100
-inv_grid_y		= 100
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 18
+inv_grid_y         = 48
 
 k_dist			= 1
 k_disp			= 0.66
@@ -2629,7 +2634,7 @@ $spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Knife
+description		= Melee
 slot 			= -1
 $prefetch 		= 64
 
@@ -2637,14 +2642,14 @@ cost			= 0
 
 box_size		= 1 ;50
 
-inv_name		= Knife
-inv_name_short		= Knife
+inv_name		= Melee
+inv_name_short		= Melee
 inv_weight		= .1 ;.24
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x		= 100
-inv_grid_y		= 100
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 18
+inv_grid_y         = 50
 
 k_dist			= 1
 k_disp			= 0.1
@@ -2658,17 +2663,15 @@ tracer			= off        ;  off
 wm_size         	= 0.0105
 k_air_resistance 	= 1.5
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;END;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;;;;;;;;;;;;;;;;;;;;;;;Binoc AMMO;;;;;;;;;;;;;;;;;;;;;;;
 [ammo_binoc]:ammo_base
 GroupControlSection	= spawn_group
 discovery_dependency 	=
 $spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
 class			= AMMO_S
-cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Binoculars
+cform                  = skeleton
+visual                 = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
+description		= none
 slot 			= -1
 $prefetch 		= 64
 
@@ -2676,25 +2679,135 @@ cost			= 0
 
 box_size		= 1 ;50
 
-inv_name		= Binoculars
-inv_name_short		= Binoculars
+inv_name		= none
+inv_name_short	= none
 inv_weight		= 0
+
+inv_grid_width				= 2
+inv_grid_height				= 1
+inv_grid_x					= 16
+inv_grid_y					= 8
+
+k_dist			= 1
+k_disp			= 1
+k_hit			= 1
+k_impulse		= 1
+k_pierce		= 1
+k_ap			= 1
+impair			= 1
+buck_shot		= 1
+tracer			= off
+wm_size         	= 0.001
+k_air_resistance 	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;DUMMY BATTERY AMMO;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[ammo_batteries]:ammo_base	; dummy ammo section to be diplayed in UPD UI
+GroupControlSection	= spawn_group
+discovery_dependency 	=
+$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
+class			= AMMO_S
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
+description		= st_energy_descr ; st_batteries_descr
+slot 			= -1
+$prefetch 		= 64
+
+cost			= 0
+
+box_size		= 1
+
+inv_name		= st_energy ; st_batteries
+inv_name_short	= st_energy ; st_batteries
+inv_weight		= 0.01
 
 inv_grid_width		= 1
 inv_grid_height		= 1
-inv_grid_x		= 100
-inv_grid_y		= 100
+inv_grid_x			= 11
+inv_grid_y			= 17
 
-k_dist			= 1
-k_disp			= 0.66
-k_hit			= 1
-k_impulse		= 1
-k_pierce		= 0.15
-k_ap			= 0.15
-impair			= 1
-buck_shot		= 1
-tracer			= off        ;  off
-wm_size         	= 0.05
-k_air_resistance 	= 1.5
+k_dist				= 1
+k_disp				= 1
+k_hit				= 1
+k_impulse			= 1
+k_pierce			= 1
+k_ap				= 1
+impair				= 1
+buck_shot			= 1
+tracer				= off
+wm_size         	= 1
+k_air_resistance 	= 1
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;END;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[ammo_batteries_dead]:ammo_base	; dummy ammo section to be diplayed in UPD UI
+GroupControlSection	= spawn_group
+discovery_dependency 	=
+$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
+class			= AMMO_S
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
+description		= st_energy_descr ; st_batteries_dead_descr
+slot 			= -1
+$prefetch 		= 64
+
+cost			= 0
+
+box_size		= 1 ;50
+
+inv_name		= st_energy ; st_batteries_dead
+inv_name_short	= st_energy ; st_batteries_dead
+inv_weight		= .1 ;.24
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 12
+inv_grid_y			= 19
+
+k_dist				= 1
+k_disp				= 1
+k_hit				= 1
+k_impulse			= 1
+k_pierce			= 1
+k_ap				= 1
+impair				= 1
+buck_shot			= 1
+tracer				= off
+wm_size         	= 1
+k_air_resistance 	= 1
+
+[ammo_batteries_ccell]:ammo_base	; dummy ammo section to be diplayed in UPD UI
+GroupControlSection	= spawn_group
+discovery_dependency 	=
+$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
+class			= AMMO_S
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
+description		= st_energy_descr ; st_batteries_ccell_descr
+slot 			= -1
+$prefetch 		= 64
+
+cost			= 0
+
+box_size		= 1 ;50
+
+inv_name		= st_energy ; st_batteries_ccell
+inv_name_short	= st_energy ; st_batteries_ccell
+inv_weight		= .1 ;.24
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 17
+
+k_dist				= 1
+k_disp				= 1
+k_hit				= 1
+k_impulse			= 1
+k_pierce			= 1
+k_ap				= 1
+impair				= 1
+buck_shot			= 1
+tracer				= off
+wm_size         	= 1
+k_air_resistance 	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;DUMMY BATTERY AMMO;;;;;;;;;;;;;;;;;;;;;;;;;;;
