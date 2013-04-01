@@ -97,10 +97,11 @@
 	    <btn name="btn_quit"        caption="ui_mm_quit2windows" />
 	</menu_main_mm>
 
-	<menu_sound random="3" >
+	<menu_sound random="4" >
 		<menu_music>music\_menu_MISERY_Emanation_stereo</menu_music>
 		<menu_music>music\_menu_MISERY_NIN_CoronaRadiata_stereo</menu_music>
 		<menu_music>music\_menu_MISERY_HitWithoutWarning_stereo</menu_music>
+		<menu_music>music\_menu_MISERY_bloodinthestreets_stereo</menu_music>
         </menu_sound>
 
 	<static_version x="15" y="740" width="100" height="30">
