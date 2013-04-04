@@ -39,6 +39,43 @@ eat_sleepiness				= 0.019
 
 use_sound			= interface\inv_drink_flask_effect
 
+[vodka2]:booster
+$spawn 				= "food and drugs\vodka"
+cform				= skeleton
+visual				= dynamics\devices\dev_vodka\dev_vodka2.ogf
+description			= st_vodka2_descr
+
+inv_name			= st_vodka2
+inv_name_short		= st_vodka2
+inv_weight			= 0.463
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 16
+cost				= 1372
+
+attach_angle_offset		= 0.000000, 0.000000, 0.000000
+attach_position_offset	= 0.087266, -0.078540, 0.052360
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+break_particles		= destroy_fx\destroy_bottle
+break_sound			= material\bottle\collide\bottle_break_1
+
+boost_time				= 40
+boost_radiation_restore	= 0.00192
+
+eat_alcohol				= 0.172
+eat_satiety				= 0.042
+eat_sleepiness				= 0.045
+
+use_sound			= interface\inv_drink_flask_effect
+
 [vodka_quality]:booster
 $spawn 				= "food and drugs\vodka"
 cform				= skeleton

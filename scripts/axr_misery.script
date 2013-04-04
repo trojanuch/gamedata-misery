@@ -226,9 +226,7 @@ function dynamic_actor_loadout()
 			create_items("wpn_knife_inv")
 
 			create_items("flask",3)
-			create_items("breadold",2)
-			create_items("conserva",2)
-			create_items("beans",1)
+			create_items("ration_ukr")
 
 			create_items("bandage",3)
 			create_items("antirad")
@@ -259,9 +257,7 @@ function dynamic_actor_loadout()
 			create_items("wpn_knife_inv_3")
 
 			create_items("flask",3)
-			create_items("breadold",3)
-			create_items("kolbasa")
-			create_items("conserva",2)
+			create_items("ration_ukr")
 
 			create_items("bandage",3)
 			create_items("tetanus")
@@ -290,9 +286,8 @@ function dynamic_actor_loadout()
 			create_items("wpn_knife_inv_3")
 
 			create_items("flask",3)
-			create_items("breadold",4)
+			create_items("ration_ukr")
 			create_items("cigar2")
-			create_items("sausage")
 
 			create_items("bandage",4)
 			create_items("antirad",2)

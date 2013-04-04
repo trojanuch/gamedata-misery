@@ -13,7 +13,7 @@
 		<text>A normal elastic bandage used to stop bleeding and prevent infection of wounds. For regular bleeding, carefully apply the bandage to the wound. For arterial bleeding, urgently tie the bandage around the affected area.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medical item\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (adhesive plaster)\n%c[0,153,255,255] Х %c[0,140,140,140] max. bleed. stop: %c[0,140,140,140]120 ml / min</text>
 	</string>
 	<string id="st_binocular_descr">
-		<text>Standard Ukrainian issue military binoculars with a maximum of x7.5 magnification. Useful in the Zone in that they allow its owner to observe things from a distance.</text>
+		<text>Standard Ukrainian issue military binoculars with a maximum of x7.5 magnification. Useful in the Zone in that they allow its owner to observe things from a distance. Very durable.</text>
 	</string>
 	<string id="st_binocular_name">
 		<text>Military Binoculars</text>
@@ -22,7 +22,7 @@
 		<text>Bread Loaf</text>
 	</string>
 	<string id="st_bread_descr">
-		<text>A fine bread loaf baked by Nimble's wife who lives outside the Zone, this was the first item Nimble started to sell in the Zone. Now days he provide the Bar keepers with this fine bread instead of selling it him self as in the past, after all he has bigger things on his mind now.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>A fine bread loaf baked by Nimble's wife who lives outside the Zone, this was the first item Nimble started to sell in the Zone. Now days he provide the Bar keepers with this fine bread instead of selling it himself as in the past, after all he has bigger things on his mind now.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_breadold">
 		<text>Bread Loaf leftover</text>
@@ -112,7 +112,7 @@
 		<text>Roasted Snork hand.</text>
 	</string>
 	<string id="st_meat_snork_descr">
-		<text>Grilled snork hand. Somehow feels even more grouse than fresh one.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +332 mSv</text>
+		<text>The cut Snork hand has been grilled over open fire. WARNING: Most men in The Zone consider it a cannibalistic and immoral act to eat any part of a Snork! In spite of this some bandits and mercenaries are actually eating roasted Snork hands to signal a baddass superiority among their faction members.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +332 mSv</text>
 	</string>
 		<string id="st_meat_chimera">
 		<text>The Masculine Meal</text>
@@ -244,10 +244,17 @@
 		<text>PDA</text>
 	</string>
 	<string id="st_vodka">
-		<text>A shot of Vodka (imported)</text>
+		<text>Nemiroff Vodka (imported)</text>
 	</string>
 	<string id="st_vodka_descr">
-		<text>Cossacks Vodka imported to the zone. Goes down easy and considerably lowers the effects of radiation. Should be enjoyed in moderation. The bottles are used to shots of vodka and a often either refilled or emptied completely at stalker camps.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
+		<text>Nemiroff is a Ukrainian producer of alcoholic beverages, specializing, vodkas and other spirits, based in the town of Nemyriv, which is located in the Vinnytska oblast. The Nemiroff Company was founded in 1992 by Stepan Glus, and has grown to become a popular spirit world wide and as such, now exports to over 50 countries. The company cited growth rates of over 40% in the years 2003 and 2004, earning the designation of International Fastest Growing Alcohol Brand from the International Millionaires Club. In 2006 Nemiroff became the second largest vodka producer in the world, the first being Smirnoff.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
+	</string>
+	<string id="st_vodka2">
+		<text>Putinka Vodka (imported)</text>
+	</string>
+	<string id="st_vodka2_descr">
+		<text>It has long since been tradition to name a vodka brand after a Russian leader. The arrival of Russian President Vladimir Putin, has led to the emergence of this vodka brand called Putinka. Prepared in Russia from the finest grain alcohol and crystal clear water from Siberian springs, triple purification, it's smooth, with unique taste. Putinka Vodka is noted for its unique aroma and smooth taste. It was awarded a gold medal as the "best vodka" at the International Competition in Moscow in 2010. This vodka is of the finest quality. Printed on the bottle are the words Уƒл€ ¬ашего здоровь€!Ф.
+(To your health!).\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
 	</string>
 	<string id="st_detector2_descr">
 		<text>This last generation anomalous activity detector can be used to locate anomalous formations and has a color diode panel, which not only indicates the direction of artifacts, but also measures the distance to them. To switch to artifact search mode, open the device's front cover. Unfortunately, the device is programmed with a somewhat outdated list of detectable artifacts.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
@@ -884,7 +891,7 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 		<text>Russian Chocolate (imported)</text>
 	</string>
 	<string id="st_chocolate_descr">
-		<text>Russian chocolate. It is quite hard to obtain in the Zone though it is nothing special outside of the Zone.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Russian chocolate. It is quite hard to obtain in the Zone though it is nothing special outside of the Zone. Many fond childhood memories spring to stalkers minds when they get to eat such a delicacy in the harsh and unforgiving conditions of the Zone.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
 	</string>
 	<string id="st_mint">
 		<text>Mint gum (imported)</text>
@@ -917,22 +924,22 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 		<text>The cheapest pack of cigarettes in the Zone. A russian budget brand.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleeiness decrease\n%c[0,204,0,51] Х %c[0,140,140,140] low quality</text>
 	</string>
 	<string id="st_cigar1">
-		<text>Ukrainian brand cigarretes (imported)</text>
+		<text>Soviet cigarretes (imported)</text>
 	</string>
 	<string id="st_cigar1_descr">
-		<text>Almost depleted pack of filtered cigarretes of one of many brands available in Ukraine. Moderate price and quality.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
+		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
 	</string>
 	<string id="st_cigar2">
-		<text>Ukrainian brand cigarretes (imported)</text>
+		<text>Soviet cigarretes (imported)</text>
 	</string>
 	<string id="st_cigar2_descr">
-		<text>Almost depleted pack of filtered cigarretes of one of many brands available in Ukraine. Moderate price and quality.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
+		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
 	</string>
 	<string id="st_cigar3">
-		<text>Ukrainian brand cigarretes (imported)</text>
+		<text>Soviet cigarretes (imported)</text>
 	</string>
 	<string id="st_cigar3_descr">
-		<text>Almost depleted pack of filtered cigarretes of one of many brands available in Ukraine. Moderate price and quality.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
+		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
 	</string>
 	<string id="st_nuts">
 		<text>Mixed Nuts (imported)</text>
@@ -954,5 +961,25 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	</string>
 	<string id="st_energy_descr">
 		<text>Storaged energy is given in ampere-hours (Ah).</text>
+	</string>
+	<string id="st_mre">
+		<text>MRE</text>
+	</string>
+	<string id="st_mre_descr">
+		<text>The Meal, Ready-to-Eat (commonly known as the MRE) is a self-contained, individual field ration in lightweight packaging bought by the United States military for its service members for use in combat or other field conditions where organized food facilities are not available. 
+One MRE is one meal. The packaging of an MRE is designed to withstand rough conditions and exposure to the elements. Inside each MRE bag is an entree and a variety of other food and drink items. 
+While the entrees and sides are fine to eat cold, they usually taste much better when heated up with the included Flameless Ration Heater (FRH, a water-activated exothermic reaction product that emits heat).\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] contains multiple portions</text>
+	</string>
+	<string id="st_ration_ru">
+		<text>Russian IRP-B combat ration</text>
+	</string>
+	<string id="st_ration_ru_descr">
+		<text>Breakfast, lunch and dinner all in one package. That is what the IRP-B Russian combat ration pack includes. This particular ration pack includes 2 apple sauce packages, 4 cleaning cloths, 1 vitamin drink (tastes like apricots and has a yellowish color), 1 package with 2 vitamin pills in, 4 flimsy plastic spoons, 4 biscuit packages (10 biscuits in 1 pack),  3 bags containing 20 grams of sugar each,1 square tin of meat (УTushonkaФ - "тушЄнка"), 2 square tins of puffed wheat ("каша") with meat (УKashaФ and УTushonkaФ), 1 can of cheese, 1 rectangular tin of fish (says: УNatural fish meatФ on tin), 1 laminated pack containing 6 matches and a striker, 1 tin of canned mixed vegetables, 1 bag of sault, 3 packets of tea (black tea), 1 plastic packet containing 3 matches with striker; 3 firelighter tablets with metal frame to place metal tin on top (can cook for a total of 3 times for 3 tins of meat), 6 napkins. The polymeric box that the rations come in has 3 sections, for breakfast, lunch and dinner. Can protect the ingredients inside from, radioactive, chemical and biological agents.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] contains multiple portions</text>
+	</string>
+	<string id="st_ration_ukr">
+		<text>Ukrainian combat ration</text>
+	</string>
+	<string id="st_ration_ukr_descr">
+		<text>The Ukrainian combat ration is based on a previous Russian version, consisting of commercially available cans and dried foods packed together in a sectioned box (resembles a takeout tray) made of very thin green plastic. Inside are: two 250 g mmin Meal cans (boiled buckwheat groats and buckwheat with beef); two 100 g cans of meat spread (liver pate and beef in lard); a 160 g can of herring or mackerel; six 50 g packages small, hard crackers (resemble oyster crackers); two foil pouches (20 g each) of jam or jelly; six boiled sweets two tea bags; an envelope of instant cherry juice powder; a chicken flavour bouillon cube; two packets of sugar; and three dining packets, each with a plastic spoon, a napkin, and a moist towelette.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] contains multiple portions</text>
 	</string>
 </string_table>

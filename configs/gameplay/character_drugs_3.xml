@@ -1,9 +1,3 @@
-wpn_knife_inv					= 1, prob=0.001 \n
-wpn_knife_inv_2					= 1, prob=0.066 \n
-wpn_knife_inv_5					= 1, prob=0.033 \n
-wpn_knife_inv_3					= 1, prob=0.025 \n
-wpn_knife_inv_4					= 1, prob=0.01 \n
-
 bandage					= 2, prob=0.75 \n
 medkit					= 3, prob=0.75 \n
 medkit_army				= 2, prob=0.33 \n
@@ -58,6 +52,7 @@ cigarettes_russian		= 1, prob=0.002 \n
 beer					= 1, prob=0.002 \n
 
 vodka					= 1, prob=0.010 \n
+vodka2					= 1, prob=0.004 \n
 tea						= 1, prob=0.020 \n
 
 bottle_metal			= 3, prob=0.020 \n
@@ -168,3 +163,7 @@ mutant_part_psevdodog_meat = 2, prob=0.01 \n
 mutant_part_krovosos_meat = 1, prob=0.003 \n
 mutant_part_snork_hand = 2, prob=0.01 \n
 mutant_part_tushkano_meat = 2, prob=0.004 \n
+
+mre = 2, prob=0.003
+ration_ru = 1, prob=0.001
+ration ukr = 1, prob=0.002
