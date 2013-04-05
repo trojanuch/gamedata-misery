@@ -1621,7 +1621,7 @@
 
   <specific_character id="sim_default_duty_hunter_day_1_default_0" team_default = "1">
     <name>GENERATE_NAME_lieutenant</name>
-    <icon>ui_inGame2_Dolg_2</icon>
+    <icon>ui_inGame2_soldier_4</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -1632,7 +1632,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2_mask</visual>
+    <visual>actors\stalker_soldier\stalker_soldier_4</visual>
     <supplies>
       [spawn] \n
 
@@ -1651,7 +1651,7 @@
 
   <specific_character id="sim_default_duty_hunter_day_1_default_1" team_default = "1">
     <name>GENERATE_NAME_lieutenant</name>
-    <icon>ui_inGame2_Dolg_2</icon>
+    <icon>ui_inGame2_soldier_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -1662,7 +1662,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
     <supplies>
       [spawn] \n
 
@@ -1742,7 +1742,7 @@
 
   <specific_character id="sim_default_duty_hunter_day_1_default_4" team_default = "1">
     <name>GENERATE_NAME_lieutenant</name>
-    <icon>ui_inGame2_Dolg_2</icon>
+    <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -1753,7 +1753,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+    <visual>actors\stalker_dolg\stalker_dolg3b</visual>
     <supplies>
       [spawn] \n
 
@@ -1886,7 +1886,7 @@
 
   <specific_character id="sim_default_duty_hunter_day_1_default_9" team_default = "1">
     <name>GENERATE_NAME_private</name>
-    <icon>ui_inGame2_Dolg_2</icon>
+    <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -1897,7 +1897,7 @@
     <rank>35</rank>
     <reputation>0</reputation>
 	<money min="1000" max="3000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+    <visual>actors\stalker_dolg\stalker_dolg3b</visual>
     <supplies>
       [spawn] \n
 
@@ -2556,7 +2556,7 @@
 
   <specific_character id="sim_default_duty_hunter_day_2_default_10" team_default = "1">
     <name>GENERATE_NAME_captain</name>
-    <icon>ui_inGame2_Dolg_4</icon>
+    <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -2620,7 +2620,7 @@
 
   <specific_character id="sim_default_duty_hunter_day_2_default_12" team_default = "1">
     <name>GENERATE_NAME_captain</name>
-    <icon>ui_inGame2_Dolg_2</icon>
+    <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -2631,7 +2631,7 @@
     <rank>60</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg2a</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
     <supplies>
       [spawn] \n
 
@@ -2652,7 +2652,7 @@
 
   <specific_character id="sim_default_duty_hunter_day_2_default_13" team_default = "1">
     <name>GENERATE_NAME_captain</name>
-    <icon>ui_inGame2_Dolg_2</icon>
+    <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -2663,7 +2663,7 @@
     <rank>60</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolggas_2</visual>
+    <visual>actors\stalker_dolg\stalker_dolg3b</visual>
     <supplies>
       [spawn] \n
 
