@@ -119,7 +119,15 @@ bip01_r_foot	 	 		= 1.2, 0.68
 ;***************************************************************
 ; HEAD SECTIONS
 ;***************************************************************
-[head_damage_1]; respirator, cloth mask ; NO PROTECTION
+[head_damage_0]; cloth mask ; NO PROTECTION
+bip01_neck 			 		= 1.0, 0.0
+bip01_head 			 		= 1.0, 0.0
+eyelid_1 			 		= 1.0, 0.0
+eye_left 			 		= 1.0, 0.0
+eye_right 			 		= 1.0, 0.0
+jaw_1 		 		 		= 1.0, 0.0
+
+[head_damage_1]; respirator
 bip01_neck 			 		= 1.05, 0.3
 bip01_head 			 		= 1.1,  0.3
 eyelid_1 			 		= 1.08, 0.2
@@ -553,12 +561,12 @@ jaw_1 		 		 		= 0.0, 0.0
 ; ACTOR HEAD SECTIONS
 ;***************************************************************
 [actor_head_damage_absent]; NO PROTECTION
-bip01_neck 			 		= 0, 0 ; NO PROTECTION
-bip01_head 			 		= 0, 0 ; NO PROTECTION
-eyelid_1 			 		= 0, 0 ; NO PROTECTION
-eye_left 			 		= 0, 0 ; NO PROTECTION
-eye_right 			 		= 0, 0 ; NO PROTECTION
-jaw_1 		 		 		= 0, 0 ; NO PROTECTION
+bip01_neck 			 		= 1, 0 ; NO PROTECTION
+bip01_head 			 		= 1, 0 ; NO PROTECTION
+eyelid_1 			 		= 1, 0 ; NO PROTECTION
+eye_left 			 		= 1, 0 ; NO PROTECTION
+eye_right 			 		= 1, 0 ; NO PROTECTION
+jaw_1 		 		 		= 1, 0 ; NO PROTECTION
 
 [actor_head_damage_respirator]; NO PROTECTION
 bip01_neck 			 		= 1.05, 0.05 ; NO PROTECTION
@@ -630,6 +638,8 @@ jaw_1 		 		 		= 1.3, 0.75 ; CLASS III
 ;***************************************************************
 ; ACTOR HELM SECTIONS
 ;***************************************************************
+[actor_helm_absent]:actor_head_damage_absent
+
 [actor_helm_respirator]:actor_head_damage_respirator
 
 [actor_helm_protective]:actor_head_damage_protective

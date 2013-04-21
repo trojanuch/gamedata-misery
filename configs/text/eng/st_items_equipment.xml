@@ -196,7 +196,7 @@
 		<text>Pack of old meat</text>
 	</string>
 	<string id="st_kolbasa_descr">
-		<text>A package containing a mixture of old bread and some smelly pork meat wrapped in brown paper. The look and smell of this signals that some of it is rotten.\n \n%c[0,204,0,51] • %c[0,140,140,140] dirty food</text>
+		<text>A package containing a mixture of old bread and some smelly pork meat wrapped in brown paper. The look and smell of this signals that some of it is rotten.\n \n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food</text>
 	</string>
 	<string id="st_medkit">
 		<text>First-aid kit</text>
@@ -281,7 +281,7 @@
 		<text>Battery pack</text>
 	</string>
 	<string id="st_batteries_descr">
-		<text>A pack of medium charged batteries that are already half drained for the use of your flashlight, PDA, nightvision goggles and other electronic devices. Remember to change regularly.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +66%</text>
+		<text>A pack of medium charged batteries that are already half drained for the use of your flashlight, PDA, nightvision goggles and other electronic devices. Remember to change regularly.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +52%</text>
 	</string>
 	<string id="st_tea">
 		<text>Beards tea</text>
@@ -578,7 +578,13 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 		<text>Dead batteries</text>
 	</string>
 	<string id="st_batteries_dead_descr">
-		<text>One out of ten batteries found in Zaton and Jupiter still carry some juice. Stalkers seem to throw them everywhere when they run dead. It is almost impossible to find a battery recharger as some men would kill for such equipment. Their outer layer of corrotion and dirt is a strong indication that these are almost dead.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +16%</text>
+		<text>One out of ten batteries found in Zaton and Jupiter still carry some juice. Stalkers seem to throw them everywhere when they run dead. It is almost impossible to find a battery recharger as some men would kill for such equipment. Their outer layer of corrotion and dirt is a strong indication that they are far below their nominal power output. Still - as everything in the Zone they also have their purpose - they should prove usefull for frequent UPD recharges.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +14%</text>
+	</string>
+	<string id="st_batteries_empty">
+		<text>Emptied batteries</text>
+	</string>
+	<string id="st_batteries_dead_descr">
+		<text>These batteries have been completely drained of whatever energy the was stored in them. Their only value is weight of the metal they are being made of.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +0,1%</text>
 	</string>
 	<string id="st_marijuana">
 		<text>Marijuana (Zone-produced)</text>
@@ -688,7 +694,7 @@ Many stalkers carry such tool so it may be of little value when traded.\n \n%c[0
 		<text>Military battery unit</text>
 	</string>
 	<string id="st_batteries_ccell_descr">
-		<text>A pack of fully charged, military battery unit. Very valuable in the Zone as they are used by all factions and Stalkers of all skill. From the lowly rookies to the Master Stalkers that roam the zone. Supplied to Traders by corrupt military officers trying to earn some extra dough in the Zone.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +100%</text>
+		<text>A pack of fully charged, military battery unit. Very valuable in the Zone as they are used by all factions and Stalkers of all skill. From the lowly rookies to the Master Stalkers that roam the zone. Supplied to Traders by corrupt military officers trying to earn some extra dough in the Zone.\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] UPD charge +93%</text>
 	</string>
 
 	<string id="st_cocaine">

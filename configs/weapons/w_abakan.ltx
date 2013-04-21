@@ -128,10 +128,10 @@ inv_grid_height      = 2    ; all icons are on the texture ui_icon_equipment.dds
 inv_grid_x           = 6  ; position and size are in terms of 64x64 squares
 inv_grid_y           = 2
 
-upgr_icon_x			= 591
-upgr_icon_y			= 748
-upgr_icon_width		= 291
-upgr_icon_height   	= 115
+upgr_icon_x			= 1724 ; 591
+upgr_icon_y			= 802 ; 748
+upgr_icon_width		= 167 ; 291
+upgr_icon_height   	= 159 ; 115
 
 kill_msg_x        = 119
 kill_msg_y        = 199
@@ -325,10 +325,6 @@ ammo_class           = ammo_5.45x39_ap, ammo_5.45x39_fmj   ; name of the ltx-sec
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_abakan, up_gr_seconab_abakan, up_gr_thirdab_abakan, up_gr_fourtab_abakan, up_gr_fifthab_abakan
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_abakan
-
 ;==================================================================================================================================================
 [wpn_abakan_custom]:wpn_abakan
 
@@ -337,6 +333,7 @@ inv_weight           = 3.611
 inv_name             = st_wpn_abakan_custom
 inv_name_short       = st_wpn_abakan_custom
 
+upgrades                = up_gr_firstab_abakan_custom, up_gr_seconab_abakan_custom, up_gr_thirdab_abakan_custom, up_gr_fourtab_abakan_custom, up_gr_fifthab_abakan_custom
 installed_upgrades      = up_secona_abakan, up_fiftha_abakan
 
 hit_power               = 0.57, 0.57, 0.57, 0.57
@@ -386,6 +383,8 @@ inv_weight           = 3.773
 inv_name             = st_wpn_abakan_alt
 inv_name_short       = st_wpn_abakan_alt
 
+upgrades                = up_gr_firstab_abakan_alt, up_gr_seconab_abakan_alt, up_gr_thirdab_abakan_alt, up_gr_fourtab_abakan_alt, up_gr_fifthab_abakan_alt
+
 hit_power            	= 0.57, 0.57, 0.57, 0.57
 hit_impulse          	= 37  
 fire_distance           = 940
@@ -433,6 +432,7 @@ inv_weight           = 3.794
 inv_name             = st_wpn_abakan_camo
 inv_name_short       = st_wpn_abakan_camo
 
+upgrades                = up_gr_firstab_abakan_camo, up_gr_seconab_abakan_camo, up_gr_thirdab_abakan_camo, up_gr_fourtab_abakan_camo, up_gr_fifthab_abakan_camo
 installed_upgrades      = up_firsta_abakan, up_fiftha_abakan, up_secona_abakan, up_fourta_abakan
 
 hit_power            	= 0.57, 0.57, 0.57, 0.57
@@ -482,6 +482,8 @@ inv_weight           = 3.922
 inv_name             = st_wpn_abakan_worn
 inv_name_short       = st_wpn_abakan_worn
 
+upgrades                = up_gr_firstab_abakan_worn, up_gr_seconab_abakan_worn, up_gr_thirdab_abakan_worn, up_gr_fourtab_abakan_worn, up_gr_fifthab_abakan_worn
+
 hit_power            	= 0.57, 0.57, 0.57, 0.57
 hit_impulse          	= 37  
 fire_distance           = 930
@@ -524,6 +526,8 @@ item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka4_hud.ogf
 ;==================================================================================================================================================
 [wpn_abakan_rusty]:wpn_abakan
 
+upgrades                = up_gr_firstab_abakan_rusty, up_gr_seconab_abakan_rusty, up_gr_thirdab_abakan_rusty, up_gr_fourtab_abakan_rusty, up_gr_fifthab_abakan_rusty
+
 cost				 = 18360
 inv_weight           = 4.048
 inv_name             = st_wpn_abakan_rusty
@@ -534,7 +538,6 @@ hit_impulse          	= 37
 fire_distance           = 920
 bullet_speed            = 880 
 rpm                     = 580 
-
 
 hud                     = wpn_abakan_rusty_hud
 

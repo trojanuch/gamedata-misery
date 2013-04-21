@@ -22,6 +22,7 @@ inv_weight				= 2.708								; weight in inventory
 upgrades                = up_gr_firstab_ak74u, up_gr_seconab_ak74u, up_gr_thirdab_ak74u, up_gr_fourtab_ak74u, up_gr_fifthab_ak74u
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_ak74u
+
 ;-““’---------------------------------------------------------------------------
 
 hit_power            = 0.45, 0.45, 0.45, 0.45
@@ -126,10 +127,10 @@ inv_grid_height		= 2	 ; all icons are on the texture ui_icon_equipment.dds,
 inv_grid_x			= 0  ; position and size are in terms of 64x64 squares
 inv_grid_y			= 16
 
-upgr_icon_x			= 300
-upgr_icon_y			= 129
-upgr_icon_width		= 258
-upgr_icon_height   	= 138
+upgr_icon_x			= 1724 ; 300
+upgr_icon_y			= 802 ; 129
+upgr_icon_width		= 167 ; 258
+upgr_icon_height   	= 159 ; 138
 
 kill_msg_x			= 0
 kill_msg_y			= 123
@@ -287,10 +288,6 @@ ammo_class           = ammo_5.45x39_ap, ammo_5.45x39_fmj,   ; name of the ltx-se
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_ak74u, up_gr_seconab_ak74u, up_gr_thirdab_ak74u, up_gr_fourtab_ak74u, up_gr_fifthab_ak74u
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_ak74u
-
 ;=========================================================================================================================================
 [wpn_ak74u_custom]:wpn_ak74u
 
@@ -299,7 +296,8 @@ inv_weight				= 2.541
 inv_name          	= st_wpn_ak74u_custom
 inv_name_short      = st_wpn_ak74u_custom
 
-installed_upgrades      = up_firsta_ak74u
+upgrades                = up_gr_firstab_ak74u_custom, up_gr_seconab_ak74u_custom, up_gr_thirdab_ak74u_custom, up_gr_fourtab_ak74u_custom, up_gr_fifthab_ak74u_custom
+installed_upgrades      = up_firsta_ak74u_custom
 
 hit_power            	= 0.455, 0.455, 0.455, 0.455
 hit_impulse          	= 33 
@@ -343,6 +341,7 @@ inv_name          	= st_wpn_ak74u_camo
 inv_name_short      = st_wpn_ak74u_camo
 description          = st_wpn_ak74u_camo_descr
 
+upgrades                = up_gr_firstab_ak74u_camo, up_gr_seconab_ak74u_camo, up_gr_thirdab_ak74u_camo, up_gr_fourtab_ak74u_camo, up_gr_fifthab_ak74u_camo
 installed_upgrades      = up_firsta_ak74u, up_secona_ak74u, up_fiftha_ak74u
 
 hit_power            	= 0.455, 0.455, 0.455, 0.455
@@ -386,6 +385,8 @@ inv_weight				= 2.617
 inv_name          	= st_wpn_ak74u_worn
 inv_name_short      = st_wpn_ak74u_worn
 
+upgrades                = up_gr_firstab_ak74u_worn, up_gr_seconab_ak74u_worn, up_gr_thirdab_ak74u_worn, up_gr_fourtab_ak74u_worn, up_gr_fifthab_ak74u_worn
+
 hit_power            	= 0.455, 0.455, 0.455, 0.455
 hit_impulse          	= 33 
 fire_distance           = 520
@@ -424,9 +425,10 @@ item_visual						= dynamics\weapons\wpn_ak74u\wpn_ak743_hud.ogf
 
 cost              		= 11520
 inv_weight				= 2.684
-
 inv_name          	= st_wpn_ak74u_rusty
 inv_name_short      = st_wpn_ak74u_rusty
+
+upgrades                = up_gr_firstab_ak74u_rusty, up_gr_seconab_ak74u_rusty, up_gr_thirdab_ak74u_rusty, up_gr_fourtab_ak74u_rusty, up_gr_fifthab_ak74u_rusty
 
 hit_power            	= 0.455, 0.455, 0.455, 0.455
 hit_impulse          	= 33 

@@ -311,13 +311,14 @@
 	    </hint_wnd>
 
 	    <health_state x="14" y="31" width="214" height="16">
-	        <hint_text delay="800">st_ui_health_sensor</hint_text>
+	        <hint_text delay="800">st_ui_health_sensor_inv</hint_text>
 	        <state_progress x="0" y="0" width="214" height="16" horz="1" min="0" max="1" pos="0">
 	    	    <progress>
 	        		<texture r="194" g="8" b="8" a="200">ui_inGame2_inventory_health_bar</texture>
 		        </progress>
 	        </state_progress>
 	    </health_state>
+		
 
 	    <bleeding_state x="238" y="6" width="45" height="45">
 	        <hint_text delay="800">st_ui_bleeding_sensor</hint_text>

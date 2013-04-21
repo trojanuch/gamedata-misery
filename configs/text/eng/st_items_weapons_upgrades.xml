@@ -1965,6 +1965,9 @@
 	<string id="st_prop_durability">
 		<text>Suit durability</text>
 	</string>
+	<string id="st_prop_not_available">
+		<text>Required weapon tier:</text>
+	</string>
 	<string id="st_gauss_cannot_be_repaired">
 		<text>It’s not clear how the weapon works. It can’t be repaired without additional information about its design.</text>
 	</string>
@@ -2008,7 +2011,7 @@
 		<text>preceding modifications required</text>
 	</string>
 	<string id="st_upgr_rusty_profile">
-		<text>weapon is rusty, no modifications are possible</text>
+		<text>weapon is rusty, no mechanical modifications are possible</text>
 	</string>
 	<string id="st_upgr_worn_profile">
 		<text>weapon is worn, only rough work modifications are possible</text>
@@ -2027,5 +2030,11 @@
 	</string>
 	<string id="st_up_kom_a5_name">
 		<text>Rubberized cloth underlayer</text>
+	</string>
+	<string id="st_up_upgrade_not_available_name">
+		<text>Upgrade not available</text>
+	</string>
+	<string id="st_up_upgrade_not_available_descr">
+		<text>This upgrade option is not available for this weapon profile.</text>
 	</string>
 </string_table>

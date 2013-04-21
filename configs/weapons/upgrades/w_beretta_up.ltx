@@ -295,24 +295,21 @@ icon                    = ui_inGame2_upgrade_Marta_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_beretta
-property                = prop_autofire
+section                 = up_sect_empty_tier_3 ; up_sect_firste_beretta
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_zatp_c6_name
-description             = st_up_zatp_c6_descr
-icon                    = ui_inGame2_upgrade_Marta_4
-
-
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_secona_beretta]
 scheme_index            = 0, 1
@@ -376,28 +373,25 @@ name                    = st_up_barp_b1_name
 description             = st_up_barp_b1_descr
 icon                    = ui_inGame2_upgrade_Marta_7
 
-
 [up_secone_beretta]
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_beretta
-property                = prop_rpm
+section                 = up_sect_empty_tier_3 ; up_sect_secone_beretta
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_barp_c1_name
-description             = st_up_barp_c1_descr
-icon                    = ui_inGame2_upgrade_Marta_8
-
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirda_beretta]
 scheme_index            = 0, 2
@@ -479,7 +473,6 @@ name                    = st_up_usmp_b1_name
 description             = st_up_usmp_b1_descr
 icon                    = ui_inGame2_upgrade_Marta_12
 
-
 [up_fourtc_beretta]
 scheme_index            = 1, 6
 known                   = 1
@@ -500,14 +493,12 @@ name                    = st_up_usmp_b4_name
 description             = st_up_usmp_b4_descr
 icon                    = ui_inGame2_upgrade_Marta_13
 
-
 [up_fiftha_beretta]
 scheme_index            = 0, 4
 known                   = 1
 effects                 =
 section                 = up_sect_fiftha_beretta
 property                = prop_silencer
-
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -530,7 +521,6 @@ effects                 =
 section                 = up_sect_fifthc_beretta
 property                = prop_calibre
 
-
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
 
@@ -544,7 +534,6 @@ prereq_params           =
 name                    = st_up_add_b3_name
 description             = st_up_add_b3_descr
 icon                    = ui_inGame2_upgrade_Marta_15
-
 
 [up_gr_firstab_beretta]
 elements                = up_firsta_beretta

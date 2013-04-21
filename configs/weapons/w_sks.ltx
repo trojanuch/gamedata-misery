@@ -38,9 +38,9 @@ condition_queue_shot_dec	= 0.0008
 reload_dof				= 0.0, 0.5, 5, 1.7
 ;-------------------------------------------------------------------------------
 
-upgrades                = up_gr_firstab_svd, up_gr_seconab_svd, up_gr_thirdab_svd, up_gr_fourtab_svd, up_gr_fourtcd_svd, up_gr_fourtef_svd
+upgrades                = up_gr_firstab_toz34, up_gr_seconab_toz34, up_gr_thirdab_toz34
 installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_svd
+upgrade_scheme          = upgrade_scheme_toz34
 
 ;--- scope weapons -----------------------------------------------------------------
 holder_range_modifier	= 1.0               ; во сколько раз увеличивается eye_range
@@ -70,6 +70,11 @@ inv_grid_width     = 5
 inv_grid_height    = 1
 inv_grid_x         = 15
 inv_grid_y         = 24
+
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 kill_msg_x				= 259
 kill_msg_y				= 293
@@ -254,7 +259,7 @@ anm_close					= sks_reload_end
 cost					= 43960
 inv_weight			= 3.622
 
-;installed_upgrades      = up_secona_svd, up_thirda_svd
+installed_upgrades      =
 
 misfire_start_condition		= 0.6
 misfire_end_condition		= 0.05

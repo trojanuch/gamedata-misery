@@ -63,6 +63,11 @@ inv_grid_height				= 1
 inv_grid_x					= 16
 inv_grid_y					= 8
 
+upgr_icon_x			= 1724 ; 304
+upgr_icon_y			= 802 ; 627
+upgr_icon_width		= 167 ; 295
+upgr_icon_height   	= 159 ; 110
+
 min_radius = 0 ;					= 100
 max_radius = 500 ; = 250 ;					= 150
 
@@ -185,15 +190,19 @@ $npc						= on							; option for Level Editor
 $prefetch 					= 8
 scheduled					= off							; option for ALife Simulator
 cform						= skeleton
-class						= WP_BINOC
-hud						= wpn_binoc_hud_inv
+class                   	= WP_SVD ; WP_BINOC
+hud							= wpn_binoc_hud_inv
 
-ef_main_weapon_type			= 5
 ef_weapon_type				= 0
 
 ;---DOF-------------------------------------------------------------------------
 ;zoom_dof					= -1.0, 10.0, 350
 reload_dof				= 0.0, 0.5, 5, 1.7
+;-------------------------------------------------------------------------------
+
+;--- scope weapons -------------------------------------------------------------
+holder_range_modifier			= 2.0
+holder_fov_modifier			= 0.7
 ;-------------------------------------------------------------------------------
 
 flame_particles		   		= weapons\generic_weapon05
@@ -212,20 +221,22 @@ orientation					= 0 , -90, 70
 attach_angle_offset			= 3.080506,-1.493053,-1.202040   ;устанавливается в радианах Angle*PI/180
 attach_position_offset		= 0.080000,0.021273,0.100000
 attach_bone_name			= bip01_r_hand
-auto_attach					= false
+
+; auto_attach					= false
 
 visual						= dynamics\devices\dev_binoculars\dev_binoculars.ogf
 description					= st_binocular_descr
 hand_dependence		 		= 1
 single_handed				= 0
 
-slot 			 		= 4		; // binocular
-animation_slot				= 13	; type of the animation that will be used
-default_to_ruck				= true
+slot 			 			= 2 ; // uquipable ; 4 ; // binocular
+animation_slot				= 2	; type of the animation that will be used
+default_to_ruck				= false
 sprint_allowed					= true
-control_inertion_factor		= 1
+control_inertion_factor		= 1.09
 
-quest_item			= true
+quest_item			= false
+can_trade			= true
 
 ammo_limit		 			= 0
 ammo_current		 		= 0
@@ -269,7 +280,7 @@ disp_vel_factor				= 0
 disp_crouch_factor			= 0
 disp_jump_factor			= 0
 
-ph_mass						= 1
+ph_mass						= 3
 
 scope_status				= 1
 silencer_status				= 0

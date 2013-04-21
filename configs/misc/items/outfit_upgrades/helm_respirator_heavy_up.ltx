@@ -23,6 +23,15 @@ radiation_protection 			= 0.0054 ;0.01
 
 immunities_sect_add = sect_helm_respirator_heavy_immunities_radiation_add
 
+[up_sect_secona_helm_respirator_heavy]
+cost 		= 6850
+inv_weight 				= +0.16
+value		= +25
+
+power_restore_speed				= 0.0007
+
+inv_weight 				= 0.1
+
 [up_sect_seconc_helm_respirator_heavy]
 inv_weight 				= -0.041
 cost 		= 8280
@@ -99,6 +108,26 @@ name                    = st_up_res_b3_name
 description             = st_up_res_b3_descr
 icon                    = ui_inGame2_upgrade_helm_respirator_3
 
+[up_secona_helm_respirator_heavy]
+scheme_index            = 0, 1
+known                   = 1
+effects                 = ;  up_gr_seconcd_helm_respirator_heavy
+section                 = up_sect_secona_helm_respirator_heavy
+property                = prop_power
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_a3_name
+description             = st_up_res_a3_descr
+icon                    = ui_inGame2_upgrade_helm_tactic_6
+
 [up_seconc_helm_respirator_heavy]
 scheme_index            = 1, 2
 known                   = 1
@@ -144,6 +173,9 @@ elements                = up_firsta_helm_respirator_heavy
 
 [up_gr_firstcd_helm_respirator_heavy]
 elements                = up_firstc_helm_respirator_heavy, up_firstd_helm_respirator_heavy
+
+[up_gr_seconab_helm_respirator_heavy]
+elements                = up_secona_helm_respirator_heavy
 
 [up_gr_seconcd_helm_respirator_heavy]
 elements                = up_seconc_helm_respirator_heavy

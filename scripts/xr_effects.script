@@ -210,8 +210,8 @@ function enable_ui_lite(actor, npc, p)
 	level.enable_input()
 	level.show_weapon(true)
 	level.show_indicators()
-	enable_actor_nightvision(nil,nil)
-	enable_actor_torch(nil,nil)
+--	enable_actor_nightvision(nil,nil)
+--	enable_actor_torch(nil,nil)
 end
 
 function enable_nv_and_imput(actor, npc, p)
@@ -1579,6 +1579,11 @@ function play_sound_on_actor(actor,obj,p)
 		--snd:play_at_pos(db.actor,db.actor:position(),0,sound_object.s3d)
 		snd:play(db.actor, 0, sound_object.s2d)
 	end
+end
+
+function play_repair_sound()
+	local snd_obj = sound_object("interface\\inv_kit_use_2p8")
+	snd_obj:play(db.actor,0,sound_object.s2d)
 end
 
 function play_sound(actor, obj, p)

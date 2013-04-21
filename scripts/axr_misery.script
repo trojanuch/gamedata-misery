@@ -211,8 +211,8 @@ function dynamic_actor_loadout()
 	-- Items all classes should have
 	create_items("device_flashlight")
 	create_items("device_torch")
-	create_items("wpn_binoc_inv")
-	create_items("wpn_binoc")
+--	create_items("wpn_binoc_inv")
+--	create_items("wpn_binoc")
 
 	-- Class specific items
 	if (ActorClass == "assaulter") then
@@ -266,6 +266,8 @@ function dynamic_actor_loadout()
 			create_items("drug_sleepingpills",2)
 			create_items("medkit_army",2)
 			create_items("stimpack_army")
+			
+			create_items("helm_cloth_mask",2)
 
 			create_items("wpn_m1891_alt")
 			create_items("wpn_bm16")
@@ -281,6 +283,7 @@ function dynamic_actor_loadout()
 			create_items("wpn_knife_inv_4")
 		else
 			create_items("wpn_upd")
+			create_items("wpn_binoc_inv")
 			create_items("roubles",2)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")

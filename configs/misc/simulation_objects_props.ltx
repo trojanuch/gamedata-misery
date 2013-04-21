@@ -223,9 +223,9 @@ sim_avail = {+zat_b5_task_start +zat_b5_task_end} true, {-zat_b5_task_start -zat
 territory = 2
 territory_monolith = 1
 hunting_ground 	= 2
-lair = 1
-lair_night = 2
-base_duty = 1
+;lair = 2
+;lair_night = 2
+base_duty = 2
 base = 1
 sim_avail = {+zat_b106_chimera_dead} true, {-zat_b106_gonta_accept_actor} true, false
 
@@ -241,6 +241,7 @@ sim_avail = {+zat_b52_actor_go_offline} true, {-zat_b52_port_bandits_spawn} true
 [zat_b103_merc_smart]:default
 surge = 2
 base_hostile = 2
+base_hostile_safe = 2
 territory_monolith = 1
 territory_hostile = 1
 sim_avail = {+zat_b103_lost_merc_leader_bunker_guards_work} true, {+zat_b103_merc_fight} true, {+zat_b103_merc_task_done} true, {+zat_b103_merc_gone} true, false
@@ -266,13 +267,13 @@ lair_night = 2
 sim_avail = {+zat_b53_go_nil} true, {+zat_b53_actor_enemy} true, {+zat_b53_thanks_dialog} true, false
 
 [zat_b12]:default
-territory = 2
+;territory = 2
 base_hostile = 2
 base_hostile_safe = 2
-territory_hostile = 1
+territory_hostile = 2
 territory_monolith = 2
-lair = 1
-lair_night = 1
+;lair = 1
+;lair_night = 1
 ;base = 1
 sim_avail = true
 
@@ -282,14 +283,14 @@ resource	= 2
 territory_monolith = 2
 resource_monolith = 2
 territory_hostile = 2
-base_hostile = 1
-base_hostile_safe = 1
-lair_night = 1
+base_hostile = 2
+base_hostile_safe = 2
+;lair_night = 1
 ;base = 1
 sim_avail = true
 
 [zat_b55]:default
-territory_hostile = 1
+territory_hostile = 2
 territory = 2
 resource_monolith = 2
 resource_hard = 2
@@ -299,6 +300,7 @@ sim_avail = true
 [zat_b100]:default
 surge		= 1
 base_hostile = 2
+base_hostile_safe = 2
 territory_hostile = 1
 territory = 2
 lair_night = 1
@@ -320,6 +322,7 @@ sim_avail = true
 [zat_a1]:default
 lair = 2
 lair_night = 2
+hunting_ground 	= 2
 sim_avail = true ; {+zat_a1_simulation_start} true, false
 
 ;---------	SIMULATION	--------
@@ -332,7 +335,7 @@ sim_avail = true ; {+zat_b53_go_nil} true, {+zat_b53_actor_enemy} true, {+zat_b5
 
 [zat_sim_2]:default
 lair = 2
-hunting_ground 	= 1
+hunting_ground 	= 2
 lair_night = 1
 sim_avail =  true
 
@@ -378,19 +381,20 @@ sim_avail =  true
 [zat_sim_10]:default
 lair_night = 2
 lair = 1
-hunting_ground 	= 2
+;hunting_ground 	= 2
 ;territory_monolith = 1
 ;territory_hostile = 1
 sim_avail = {+zat_b40_merc_gone} true, {+zat_b40_find_information_complete} true, false
 
 [zat_sim_11]:default
-base_hostile = 1
-territory = 2
 sim_avail =  true
+base_hostile = 2
+base_hostile_safe = 2
+territory = 2
 territory_monolith = 2
 territory_hostile = 2
-lair_night = 1
-base = 1
+;lair_night = 1
+base = 2
 
 [zat_sim_12]:default
 territory_hostile = 2
@@ -417,7 +421,7 @@ sim_avail =  true
 
 [zat_sim_16]:default
 lair = 1
-lair_night = 1
+lair_night = 2
 sim_avail =  true
 
 [zat_sim_17]:default
@@ -466,10 +470,11 @@ lair_night = 2
 sim_avail =  true
 
 [zat_sim_25]:default
-territory = 1
+territory = 2
 territory_hostile = 2
 territory_monolith = 1
 base_hostile = 2
+base_hostile_safe = 2
 ;lair = 1
 sim_avail =  true
 
@@ -525,19 +530,19 @@ lair_night = 1
 sim_avail = true
 
 [zaton_smrter_sim_4]:default
-lair = 1
-lair_night = 1
+lair = 2
+lair_night = 2
 lair_night_rest = 2
 sim_avail = true
 
 [zaton_smrter_sim_5]:default
 lair = 2
-lair_night = 1
+lair_night = 2
 sim_avail = true
 
 [zaton_smrter_sim_6]:default
 lair = 2
-lair_night = 1
+lair_night = 2
 sim_avail = true
 
 [zaton_smrter_sim_7]:default
@@ -547,6 +552,8 @@ sim_avail = true
 
 [zaton_smrter_sim_8]:default
 sim_avail = true
+lair = 1
+lair_night = 2
 
 [zaton_smrter_sim_9]:default
 sim_avail = {+zat_b40_find_information_complete} true, {+zat_b40_find_information_complete} true, false
@@ -568,8 +575,8 @@ sim_avail = true
 sim_avail = {+zat_b103_lost_merc_leader_bunker_guards_work} true, {+zat_b103_merc_fight} true, {+zat_b103_merc_task_done} true, {+zat_b103_merc_gone} true, false
 
 [zaton_smrter_sim_13]:default
-lair = 1
-lair_night = 1
+lair = 2
+lair_night = 2
 sim_avail = true
 
 [zaton_smrter_sim_14]:default
@@ -580,7 +587,7 @@ sim_avail = true
 
 [zaton_smrter_sim_15]:default
 lair = 2
-lair_night = 1
+lair_night = 2
 sim_avail = true
 
 [zaton_smrter_sim_16]:default
