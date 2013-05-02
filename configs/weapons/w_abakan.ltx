@@ -40,19 +40,12 @@ base_dispersioned_bullets_speed	= 600          ;начальная скорость пуль, выстрел
 
 hud                     = wpn_abakan_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.5
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.0037
-;шанс осечки при изношености больше чем misfireEndCondition
+misfire_start_condition		= 0.55
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0030
 misfire_end_prob	     	= 0.05
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0012
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.001
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0011
 
 ammo_elapsed        = 30           ; obsolete
 ammo_mag_size        = 30           ; clip (magazine) size
@@ -190,7 +183,7 @@ silencer_y              = 9
 grenade_launcher_name      = wpn_addon_grenade_launcher; section name for the attachable grenade launcher
 grenade_launcher_x         = 126                ; offset in inventory icon
 grenade_launcher_y         = 24
-scopes_sect				= scope_abakan, scope_abakan_worn, scope_x2.7_abakan, scope_live_detector_abakan, scope_night_abakan
+scopes_sect				= scope_abakan, scope_abakan_moist, scope_abakan_worn, scope_x2.7_abakan, scope_live_detector_abakan, scope_night_abakan
 
 ;звуки
 snd_draw                = weapons\generic\eastern_draw
@@ -294,6 +287,11 @@ scope_name 					= wpn_addon_scope_worn
 scope_x              	= 47                 ; offset in inventory icon
 scope_y                 = 0
 
+[scope_abakan_moist]
+scope_name 					= wpn_addon_scope_moist
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
 [scope_x2.7_abakan]
 scope_name 					= wpn_addon_scope_x2.7
 scope_x              	= 47                 ; offset in inventory icon
@@ -336,20 +334,19 @@ inv_name_short       = st_wpn_abakan_custom
 upgrades                = up_gr_firstab_abakan_custom, up_gr_seconab_abakan_custom, up_gr_thirdab_abakan_custom, up_gr_fourtab_abakan_custom, up_gr_fifthab_abakan_custom
 installed_upgrades      = up_secona_abakan, up_fiftha_abakan
 
-hit_power               = 0.57, 0.57, 0.57, 0.57
-hit_impulse             = 37    
+hit_power            	= 0.585, 0.585, 0.585, 0.585
+hit_impulse          	= 38  
 fire_distance           = 940
-bullet_speed            = 900
-rpm                     = 600
-
+bullet_speed            = 910
+rpm                     = 600 
 
 hud                     = wpn_abakan_custom_hud
 
-misfire_start_condition		= 0.5
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0037
+misfire_start_condition		= 0.55
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0025
 misfire_end_prob	     	= 0.05
-condition_shot_dec      	= 0.0012
+condition_shot_dec      	= 0.0014
 condition_queue_shot_dec	= 0.001
 
 ammo_mag_size        = 30
@@ -360,7 +357,6 @@ grenade_class        = ammo_vog-25
 
 fire_dispersion_base    = 0.195
 
-
 inv_grid_width       = 5
 inv_grid_height      = 2
 inv_grid_x           = 0
@@ -370,7 +366,7 @@ visual                  = dynamics\weapons\wpn_abakan\wpn_abaka1.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
-scopes_sect				= scope_x2.7_abakan, scope_abakan, scope_abakan_worn, scope_live_detector_abakan, scope_night_abakan
+scopes_sect				= scope_x2.7_abakan, scope_abakan_moist, scope_abakan, scope_abakan_worn, scope_live_detector_abakan, scope_night_abakan
 
 [wpn_abakan_custom_hud]:wpn_abakan_hud
 
@@ -394,12 +390,12 @@ rpm                     = 600
 
 hud                     = wpn_abakan_alt_hud
 
-misfire_start_condition		= 0.5
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0037
+misfire_start_condition		= 0.55
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0030
 misfire_end_prob	     	= 0.05
-condition_shot_dec      	= 0.0012
-condition_queue_shot_dec	= 0.001
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0011
 
 ammo_mag_size        = 30           
 
@@ -419,7 +415,7 @@ visual                  = dynamics\weapons\wpn_abakan\wpn_abaka2.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
-scopes_sect				= scope_x2.7_abakan, scope_abakan, scope_abakan_worn, scope_live_detector_abakan, scope_night_abakan
+scopes_sect				= scope_x2.7_abakan, scope_abakan_moist, scope_abakan, scope_abakan_worn, scope_live_detector_abakan, scope_night_abakan
 
 [wpn_abakan_alt_hud]:wpn_abakan_hud
 
@@ -435,18 +431,17 @@ inv_name_short       = st_wpn_abakan_camo
 upgrades                = up_gr_firstab_abakan_camo, up_gr_seconab_abakan_camo, up_gr_thirdab_abakan_camo, up_gr_fourtab_abakan_camo, up_gr_fifthab_abakan_camo
 installed_upgrades      = up_firsta_abakan, up_fiftha_abakan, up_secona_abakan, up_fourta_abakan
 
-hit_power            	= 0.57, 0.57, 0.57, 0.57
-hit_impulse          	= 37  
-fire_distance           = 940
-bullet_speed            = 900 
+hit_power            	= 0.61, 0.61, 0.61, 0.61
+hit_impulse          	= 41  
+fire_distance           = 970
+bullet_speed            = 930 
 rpm                     = 600 
-
 
 hud                     = wpn_abakan_camo_hud
 
-misfire_start_condition		= 0.5
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0037
+misfire_start_condition		= 0.55
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0025
 misfire_end_prob	     	= 0.05
 condition_shot_dec      	= 0.0012
 condition_queue_shot_dec	= 0.001
@@ -457,8 +452,7 @@ fire_modes           = 1, 2
 ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
 grenade_class        = ammo_vog-25
 
-fire_dispersion_base    = 0.195
-
+fire_dispersion_base    = 0.165
 
 inv_grid_width       = 5
 inv_grid_height      = 2
@@ -469,7 +463,7 @@ visual                  = dynamics\weapons\wpn_abakan\wpn_abaka3.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
-scopes_sect				= scope_x2.7_abakan, scope_abakan_worn, scope_abakan, scope_live_detector_abakan, scope_night_abakan
+scopes_sect				= scope_x2.7_abakan, scope_abakan_moist, scope_abakan_worn, scope_abakan, scope_live_detector_abakan, scope_night_abakan
 
 [wpn_abakan_camo_hud]:wpn_abakan_hud
 
@@ -484,21 +478,20 @@ inv_name_short       = st_wpn_abakan_worn
 
 upgrades                = up_gr_firstab_abakan_worn, up_gr_seconab_abakan_worn, up_gr_thirdab_abakan_worn, up_gr_fourtab_abakan_worn, up_gr_fifthab_abakan_worn
 
-hit_power            	= 0.57, 0.57, 0.57, 0.57
+hit_power            	= 0.535, 0.535, 0.535, 0.535
 hit_impulse          	= 37  
-fire_distance           = 930
-bullet_speed            = 890 
+fire_distance           = 880
+bullet_speed            = 850 
 rpm                     = 590 
-
 
 hud                     = wpn_abakan_worn_hud
 
-misfire_start_condition		= 0.7
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0037
-misfire_end_prob	     	= 0.05
-condition_shot_dec      	= 0.0012
-condition_queue_shot_dec	= 0.001
+misfire_start_condition		= 0.75
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0030
+misfire_end_prob	     	= 0.01
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0015
 
 ammo_mag_size        = 30           
 
@@ -506,8 +499,7 @@ fire_modes           = 1, 2
 ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
 grenade_class        = ammo_vog-25
 
-fire_dispersion_base    = 0.205
-
+fire_dispersion_base    = 0.245
 
 inv_grid_width       = 5
 inv_grid_height      = 2
@@ -518,7 +510,7 @@ visual                  = dynamics\weapons\wpn_abakan\wpn_abaka4.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
-scopes_sect				= scope_abakan_worn, scope_x2.7_abakan, scope_abakan, scope_live_detector_abakan, scope_night_abakan
+scopes_sect				= scope_abakan_moist, scope_abakan_worn, scope_x2.7_abakan, scope_abakan, scope_live_detector_abakan, scope_night_abakan
 
 [wpn_abakan_worn_hud]:wpn_abakan_hud
 
@@ -533,27 +525,27 @@ inv_weight           = 4.048
 inv_name             = st_wpn_abakan_rusty
 inv_name_short       = st_wpn_abakan_rusty
 
-hit_power            	= 0.57, 0.57, 0.57, 0.57
-hit_impulse          	= 37  
-fire_distance           = 920
-bullet_speed            = 880 
-rpm                     = 580 
+hit_power            	= 0.515, 0.515, 0.515, 0.515
+hit_impulse          	= 34  
+fire_distance           = 810
+bullet_speed            = 800 
+rpm                     = 560 
 
 hud                     = wpn_abakan_rusty_hud
 
-misfire_start_condition		= 0.9
+misfire_start_condition		= 0.95
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0037
-misfire_end_prob	     	= 0.05
-condition_shot_dec      	= 0.0012
-condition_queue_shot_dec	= 0.001
+misfire_start_prob	     	= 0.0030
+misfire_end_prob	     	= 0.01
+condition_shot_dec      	= 0.0024
+condition_queue_shot_dec	= 0.002
 
 ammo_mag_size        = 30           
 
 fire_modes           = 1, 2
 ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
 
-fire_dispersion_base    = 0.21
+fire_dispersion_base    = 0.32
 
 inv_grid_width       = 5
 inv_grid_height      = 2
@@ -564,7 +556,7 @@ visual                  = dynamics\weapons\wpn_abakan\wpn_abaka5.ogf
 
 snd_reload              = weapons\generic\type1_reload, 0.7
 
-scopes_sect				= scope_abakan_worn, scope_x2.7_abakan, scope_abakan, scope_live_detector_abakan, scope_night_abakan
+scopes_sect				= scope_abakan_worn, scope_abakan_moist, scope_x2.7_abakan, scope_abakan, scope_live_detector_abakan, scope_night_abakan
 
 [wpn_abakan_rusty_hud]:wpn_abakan_hud
 

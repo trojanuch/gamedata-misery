@@ -36,7 +36,7 @@ fire_modes		        = 1
 ammo_class           	= ammo_7.92x33_fmj, ammo_7.92x33_ap ; name of the ltx-section of used ammo
 
 ;-------------[Модернизация]-------------------;
-upgrades                = up_gr_firstab_toz34, up_gr_seconab_toz34, up_gr_thirdab_toz34
+upgrades                = up_gr_firstab_k98, up_gr_seconab_k98, up_gr_thirdab_k98
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_toz34
 
@@ -45,11 +45,9 @@ silencer_status		= 2
 grenade_launcher_status	= 0
 zoom_enabled		= true
 zoom_rotate_time	= 0.25
-scope_zoom_factor       = 58.6 ; 	= 85
-scope_name              = wpn_addon_scope_zf4
+scopes_sect           = scope_zf4_k98_moist, scope_zf4_k98, scope_zf4_k98_worn
+scope_zoom_factor	= 58.6
 scope_texture		= wpn_crosshair_zf9
-scope_x              	= 70                 
-scope_y                 = -22
 silencer_name           = wpn_addon_silencer_762x39 ; section name for the attachable silencer
 silencer_x              = 270		; offset in inventory icon
 silencer_y              = -18
@@ -235,3 +233,18 @@ gl_hud_offset_rot_16x9	= 0,0,0
 
 lean_hud_offset_pos		= 0,0,0
 lean_hud_offset_rot		= 0,0,0
+
+[scope_zf4_k98]
+scope_name 					= wpn_addon_scope_zf4
+scope_x              	= 70                 
+scope_y                 = -22
+
+[scope_zf4_k98_moist]
+scope_name 					= wpn_addon_scope_zf4_moist
+scope_x              	= 70                 
+scope_y                 = -22
+
+[scope_zf4_k98_worn]
+scope_name 					= wpn_addon_scope_zf4_worn
+scope_x              	= 70                 
+scope_y                 = -22

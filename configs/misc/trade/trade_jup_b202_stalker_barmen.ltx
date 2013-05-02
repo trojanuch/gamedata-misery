@@ -59,6 +59,7 @@ mutant_part_dog_tail						= 0.65, 0.75
 mutant_part_flesh_eye						= 0.65, 0.75
 mutant_part_psevdodog_tail					= 0.65, 0.75
 mutant_part_snork_leg						= 0.65, 0.75
+mutant_part_snork_mask						= 0.65, 0.75
 mutant_part_tushkano_head					= 0.65, 0.75
 
 mutant_part_flesh_meat					= 0.75, 0.85
@@ -386,11 +387,22 @@ wpn_addon_scope_zf4				= 0.18, 0.08
 wpn_addon_scope_ww2				= 0.18, 0.08
 wpn_addon_scope_vsk				= 0.18, 0.08
 wpn_addon_scope_acog			= 0.18, 0.08
+wpn_addon_scope_acog_trijicon	= 0.18, 0.08
+wpn_addon_scope_acog_night		= 0.18, 0.08
 
-; worn scopes
+; moist-covered scopes
 
-wpn_addon_scope_worn			= 0.09, 0.05
-wpn_addon_scope_susat_worn		= 0.09, 0.05
+wpn_addon_scope_moist			= 0.16, 0.065
+wpn_addon_scope_susat_moist		= 0.16, 0.065
+wpn_addon_scope_ww2_moist		= 0.16, 0.065
+wpn_addon_scope_zf4_moist		= 0.16, 0.065
+
+; broken scopes
+
+wpn_addon_scope_worn			= 0.13, 0.05
+wpn_addon_scope_susat_worn		= 0.13, 0.05
+wpn_addon_scope_ww2_worn		= 0.13, 0.05
+wpn_addon_scope_zf4_worn		= 0.13, 0.05
 
 ; silencers
 
@@ -821,6 +833,7 @@ mutant_part_dog_tail						= 1.2, 2
 mutant_part_flesh_eye						= 1.2, 2
 mutant_part_psevdodog_tail					= 1.2, 2
 mutant_part_snork_leg						= 1.2, 2
+mutant_part_snork_mask						= 1.2, 2
 mutant_part_tushkano_head					= 1.2, 2
 
 mutant_part_flesh_meat					= 1.2, 2
@@ -1147,11 +1160,22 @@ wpn_addon_scope_zf4				= 1.0, 2
 wpn_addon_scope_ww2				= 1.0, 2
 wpn_addon_scope_vsk				= 1.0, 2
 wpn_addon_scope_acog			= 1.0, 2
+wpn_addon_scope_acog_trijicon	= 1.0, 2
+wpn_addon_scope_acog_night		= 1.0, 2
 
-; worn scopes
+; moist-covered scopes
 
-wpn_addon_scope_worn			= 0.85, 1.7
-wpn_addon_scope_susat_worn		= 0.85, 1.7
+wpn_addon_scope_moist			= 0.85, 1.8
+wpn_addon_scope_susat_moist		= 0.85, 1.8
+wpn_addon_scope_ww2_moist		= 0.85, 1.8
+wpn_addon_scope_zf4_moist		= 0.85, 1.8
+
+; broken scopes
+
+wpn_addon_scope_worn			= 0.65, 1.6
+wpn_addon_scope_susat_worn		= 0.65, 1.6
+wpn_addon_scope_ww2_worn		= 0.65, 1.6
+wpn_addon_scope_zf4_worn		= 0.65, 1.6
 
 ; silencers
 
@@ -1534,6 +1558,13 @@ toolkit_r5							= 1, 0.55
 toolkit_r7							= 1, 0.55
 toolkit_u							= 1, 0.35
 
+grooming						= 3, 0.55
+cutlery							= 4, 0.55
+hammer_inv						= 2, 0.55
+crowbar							= 2, 0.55
+swiss							= 5, 0.55
+;kit_hunt						= 3, 0.55
+
 wpn_upd							= 3, 0.95
 batteries						= 5, 0.95
 batteries_dead					= 4, 0.95
@@ -1702,7 +1733,13 @@ wpn_obrez				= 1,	1
 wpn_k98					= 1,	1
 wpn_g43					= 1,	1
 
-wpn_addon_scope_ww2			= 2,	1
+wpn_addon_scope_ww2				= 2,	0.45
+wpn_addon_scope_zf4				= 2,	0.45
+
+wpn_addon_scope_moist			= 1,	0.45
+wpn_addon_scope_susat_moist		= 1,	0.33
+wpn_addon_scope_ww2_moist		= 1,	0.45
+wpn_addon_scope_zf4_moist		= 1,	0.45
 
 wpn_abakan_rusty				= 1,	0.06
 wpn_ak74_rusty					= 1,	0.1
@@ -1791,6 +1828,13 @@ toolkit_s							= 2, 0.55
 toolkit_r5							= 2, 0.55
 toolkit_r7							= 2, 0.55
 toolkit_u							= 1, 0.35
+
+grooming						= 4, 0.55
+cutlery							= 5, 0.55
+hammer_inv						= 3, 0.55
+crowbar							= 3, 0.55
+swiss							= 6, 0.55
+;kit_hunt						= 4, 0.55
 
 wpn_upd							= 3, 0.95
 batteries						= 6, 0.95
@@ -1994,6 +2038,14 @@ drug_psy_blockade		= 3, 0.45
 
 helm_cloth_mask					= 3, 0.95
 
+wpn_addon_scope_ww2				= 3,	0.45
+wpn_addon_scope_zf4				= 3,	0.45
+
+wpn_addon_scope_moist			= 2,	0.45
+wpn_addon_scope_susat_moist		= 2,	0.33
+wpn_addon_scope_ww2_moist		= 2,	0.45
+wpn_addon_scope_zf4_moist		= 2,	0.45
+
 [supplies_tier_2]:supplies_generic
 gun_oil									= 10, 0.55
 cleaning_kit_p							= 6, 0.55
@@ -2006,6 +2058,13 @@ toolkit_s							= 2, 0.55
 toolkit_r5							= 2, 0.55
 toolkit_r7							= 2, 0.55
 toolkit_u							= 1, 0.55
+
+grooming						= 4, 0.55
+cutlery							= 5, 0.55
+hammer_inv						= 3, 0.55
+crowbar							= 3, 0.55
+swiss							= 6, 0.55
+;kit_hunt						= 4, 0.55
 
 wpn_upd							= 4, 0.95
 batteries						= 8, 0.95
@@ -2206,6 +2265,14 @@ drug_psy_blockade		= 4, 0.45
 
 helm_cloth_mask					= 4, 0.95
 
+wpn_addon_scope_ww2				= 4,	0.45
+wpn_addon_scope_zf4				= 4,	0.45
+
+wpn_addon_scope_moist			= 3,	0.45
+wpn_addon_scope_susat_moist		= 3,	0.33
+wpn_addon_scope_ww2_moist		= 3,	0.45
+wpn_addon_scope_zf4_moist		= 3,	0.45
+
 [supplies_tier_3]:supplies_generic
 gun_oil									= 12, 0.75
 cleaning_kit_p							= 8, 0.75
@@ -2218,6 +2285,13 @@ toolkit_s							= 3, 0.75
 toolkit_r5							= 3, 0.75
 toolkit_r7							= 3, 0.75
 toolkit_u							= 2, 0.75
+
+grooming						= 5, 0.55
+cutlery							= 6, 0.55
+hammer_inv						= 4, 0.55
+crowbar							= 4, 0.55
+swiss							= 7, 0.55
+;kit_hunt						= 5, 0.55
 
 wpn_upd							= 5, 0.95
 batteries						= 9, 0.95
@@ -2341,6 +2415,14 @@ drug_psy_blockade		= 4, 0.45
 
 helm_cloth_mask					= 5, 0.95
 
+wpn_addon_scope_ww2				= 3,	0.65
+wpn_addon_scope_zf4				= 3,	0.65
+
+wpn_addon_scope_moist			= 2,	0.65
+wpn_addon_scope_susat_moist		= 2,	0.55
+wpn_addon_scope_ww2_moist		= 2,	0.65
+wpn_addon_scope_zf4_moist		= 2,	0.65
+
 [supplies_tier_4]:supplies_generic
 gun_oil									= 14, 0.75
 cleaning_kit_p							= 10, 0.75
@@ -2353,6 +2435,13 @@ toolkit_s							= 4, 0.75
 toolkit_r5							= 4, 0.75
 toolkit_r7							= 4, 0.75
 toolkit_u							= 2, 0.75
+
+grooming						= 7, 0.75
+cutlery							= 8, 0.75
+hammer_inv						= 6, 0.75
+crowbar							= 6, 0.75
+swiss							= 9, 0.75
+;kit_hunt						= 7, 0.75
 
 wpn_upd							= 8, 0.95
 batteries						= 12, 0.95
@@ -2545,6 +2634,14 @@ helm_cloth_mask					= 8, 0.95
 
 helm_respirator			= 5,	1
 helm_respirator_heavy	= 3,	1
+
+wpn_addon_scope_ww2				= 3,	0.85
+wpn_addon_scope_zf4				= 3,	0.85
+
+wpn_addon_scope_moist			= 2,	0.75
+wpn_addon_scope_susat_moist		= 2,	0.65
+wpn_addon_scope_ww2_moist		= 2,	0.75
+wpn_addon_scope_zf4_moist		= 2,	0.75
 
 ;Бустеры
 drug_booster			= 6, 0.75

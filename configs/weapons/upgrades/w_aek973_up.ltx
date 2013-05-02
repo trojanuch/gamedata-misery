@@ -4,14 +4,15 @@
 cost		      		= 3480
 value                   = -10
 
-cam_dispersion              = -0.16     ;0.5
+cam_dispersion              = -0.1     ;0.5
 cam_dispersion_inc          = -0.06     ;0.5
-cam_step_angle_horz         = -0.02     ;1.5 [0.73 в остатке]
+cam_step_angle_horz         = -0.03     ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion         = -0.12     ;0.5 [0.093 в остатке]
+zoom_cam_dispersion         = -0.08     ;0.5 [0.093 в остатке]
 zoom_cam_dispersion_inc     = -0.07     ;0.5
 zoom_cam_step_angle_horz    = -0.02     ;1.0 [0.505 в остатке]
-inv_weight			= +0.25
+
+inv_weight			= +0.242
 
 [up_sect_firstc_aek973]
 ;Надежность(2)15%
@@ -533,11 +534,11 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_15
 scheme_index            = 0, 4
 known                   = 1
 effects                 = 
-section                 = up_sect_fiftha_aek973
-property                = prop_scope_attach
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -545,9 +546,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_add_a2_name
-description             = st_up_add_a2_descr
-icon                    = ui_inGame2_upgrade_AKM_74_2_16
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fifthc_aek973]
 scheme_index            = 1, 6

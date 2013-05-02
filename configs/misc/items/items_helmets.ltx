@@ -64,26 +64,26 @@ bones_koeff_protection		= actor_helm_respirator
 
 [helm_cloth_mask]:helmet
 $spawn 			= "outfit\helm_respirator"
-visual          	= dynamics\outfit\helm_respirator
+visual				= dynamics\outfit\cloth_mask.ogf
 control_inertion_factor	= 1.0
-inv_name             	= Mask
-inv_name_short       	= Mask
-description				= wip
+inv_name             	= st_helm_cloth_mask
+inv_name_short       	= st_helm_cloth_mask
+description				= st_helm_cloth_mask_descr
 
-inv_weight           	= 0.21
+inv_weight           	= 0.224
 
 additional_inventory_weight2 	= 0.18
 additional_inventory_weight 	= 0.18
 
-inv_grid_width       	= 1
-inv_grid_height      	= 1
-inv_grid_x				= 5
-inv_grid_y				= 35
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 20
+inv_grid_y			= 0
 
-upgr_icon_x			= 814 ; 20
-upgr_icon_y			= 579 ; 619
-upgr_icon_width		= 159 ; 106
-upgr_icon_height   	= 137 ; 149
+upgr_icon_x			= 90 ; 20
+upgr_icon_y			= 818 ; 619
+upgr_icon_width		= 185 ; 106
+upgr_icon_height   	= 140 ; 149
 
 cost			= 940
 
@@ -101,9 +101,7 @@ explosion_protection		= 0.004
 
 power_restore_speed				= -0.00024
 
-;upgrades                = up_gr_firstab_helm_respirator, up_gr_firstcd_helm_respirator, up_gr_seconab_helm_respirator, up_gr_seconcd_helm_respirator, up_gr_seconef_helm_respirator
-;installed_upgrades      =
-;upgrade_scheme          = upgrade_scheme_helm_respirator
+repair_part_bonus	 	= 0.03
 
 [sect_helm_cloth_mask_immunities]
 burn_immunity			= 1.28

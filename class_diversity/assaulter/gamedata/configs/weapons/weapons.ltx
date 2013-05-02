@@ -4,13 +4,10 @@
 #include "addon_scopes.ltx"
 #include "addon_silencers.ltx"
 
+#include "upgrades\empty_upgrade.ltx"
+
 #include "upgrades\w_abakan_up.ltx"
-
 #include "upgrades\w_ak74_up.ltx"
-#include "upgrades\w_ak74_modern_up.ltx"
-#include "upgrades\w_ak74_worn_up.ltx"
-#include "upgrades\w_ak74_rusty_up.ltx"
-
 #include "upgrades\w_ak74u_up.ltx"
 #include "upgrades\w_beretta_up.ltx"
 #include "upgrades\w_bm16_up.ltx"
@@ -40,6 +37,142 @@
 #include "upgrades\w_walther_up.ltx"
 #include "upgrades\w_wincheaster1300_up.ltx"
 
+#include "upgrades\w_abakan_alt_up.ltx"
+#include "upgrades\w_abakan_camo_up.ltx"
+#include "upgrades\w_abakan_custom_up.ltx"
+#include "upgrades\w_abakan_worn_up.ltx"
+#include "upgrades\w_abakan_rusty_up.ltx"
+#include "upgrades\w_ak47m_alt_up.ltx"
+#include "upgrades\w_ak47m_camo_up.ltx"
+#include "upgrades\w_ak47m_custom_up.ltx"
+#include "upgrades\w_ak47m_modern_up.ltx"
+#include "upgrades\w_ak47m_worn_up.ltx"
+#include "upgrades\w_ak74_alt_up.ltx"
+#include "upgrades\w_ak74_camo_up.ltx"
+#include "upgrades\w_ak74_custom1_up.ltx"
+#include "upgrades\w_ak74_custom2_up.ltx"
+#include "upgrades\w_ak74_worn_up.ltx"
+#include "upgrades\w_ak74_rusty_up.ltx"
+#include "upgrades\w_ak74u_camo_up.ltx"
+#include "upgrades\w_ak74u_custom_up.ltx"
+#include "upgrades\w_ak74u_rusty_up.ltx"
+#include "upgrades\w_ak74u_worn_up.ltx"
+#include "upgrades\w_beretta_alt_up.ltx"
+#include "upgrades\w_beretta_camo_up.ltx"
+#include "upgrades\w_beretta_custom_up.ltx"
+#include "upgrades\w_beretta_worn_up.ltx"
+#include "upgrades\w_bm16_gold_up.ltx"
+#include "upgrades\w_bm16_rusty_up.ltx"
+#include "upgrades\w_bm16_silver_up.ltx"
+#include "upgrades\w_bm16_worn_up.ltx"
+#include "upgrades\w_colt1911_alt1_up.ltx"
+#include "upgrades\w_colt1911_alt2_up.ltx"
+#include "upgrades\w_colt1911_camo_up.ltx"
+#include "upgrades\w_colt1911_worn_up.ltx"
+#include "upgrades\w_desert_eagle_alt_up.ltx"
+#include "upgrades\w_desert_eagle_camo_up.ltx"
+#include "upgrades\w_desert_eagle_custom_up.ltx"
+#include "upgrades\w_desert_eagle_worn_up.ltx"
+#include "upgrades\w_fn2000_alt1_up.ltx"
+#include "upgrades\w_fn2000_alt2_up.ltx"
+#include "upgrades\w_fn2000_alt3_up.ltx"
+#include "upgrades\w_fn2000_custom_up.ltx"
+#include "upgrades\w_fn2000_worn_up.ltx"
+#include "upgrades\w_fort_camo_up.ltx"
+#include "upgrades\w_fort_custom_up.ltx"
+#include "upgrades\w_fort_rusty_up.ltx"
+#include "upgrades\w_fort_worn_up.ltx"
+#include "upgrades\w_hpsa_custom_up.ltx"
+#include "upgrades\w_hpsa_alt_up.ltx"
+#include "upgrades\w_hpsa_camo_up.ltx"
+#include "upgrades\w_hpsa_worn_up.ltx"
+#include "upgrades\w_l85_camo_up.ltx"
+#include "upgrades\w_l85_custom_up.ltx"
+#include "upgrades\w_l85_worn_up.ltx"
+#include "upgrades\w_lr300_alt_up.ltx"
+#include "upgrades\w_lr300_camo_up.ltx"
+#include "upgrades\w_lr300_custom_up.ltx"
+#include "upgrades\w_lr300_worn_up.ltx"
+#include "upgrades\w_m1891_alt_up.ltx"
+#include "upgrades\w_mp5_alt_up.ltx"
+#include "upgrades\w_mp5_custom_up.ltx"
+#include "upgrades\w_mp5_worn_up.ltx"
+#include "upgrades\w_pm_alt_up.ltx"
+#include "upgrades\w_pm_custom_up.ltx"
+#include "upgrades\w_pm_worn_up.ltx"
+#include "upgrades\w_ppsh41_new_up.ltx"
+#include "upgrades\w_ppsh41_worn_up.ltx"
+#include "upgrades\w_protecta_camo_up.ltx"
+#include "upgrades\w_protecta_custom_up.ltx"
+#include "upgrades\w_protecta_worn_up.ltx"
+#include "upgrades\w_sig220_camo_up.ltx"
+#include "upgrades\w_sig220_custom_up.ltx"
+#include "upgrades\w_sig220_rusty_up.ltx"
+#include "upgrades\w_sig220_worn_up.ltx"
+#include "upgrades\w_sig550_alt_up.ltx"
+#include "upgrades\w_sig550_custom_up.ltx"
+#include "upgrades\w_sig550_sniper_up.ltx"
+#include "upgrades\w_sig550_worn_up.ltx"
+#include "upgrades\w_sks_modern_up.ltx"
+#include "upgrades\w_spas12_alt_up.ltx"
+#include "upgrades\w_spas12_custom_up.ltx"
+#include "upgrades\w_spas12_worn_up.ltx"
+#include "upgrades\w_stg44_alt_up.ltx"
+#include "upgrades\w_stg44_new_up.ltx"
+#include "upgrades\w_stg44_old_up.ltx"
+#include "upgrades\w_stg44_worn_up.ltx"
+#include "upgrades\w_toz34_alt_up.ltx"
+#include "upgrades\w_toz34_decor_up.ltx"
+#include "upgrades\w_toz34_new_up.ltx"
+#include "upgrades\w_toz34_worn_up.ltx"
+#include "upgrades\w_usp45_alt_up.ltx"
+#include "upgrades\w_usp45_custom_up.ltx"
+#include "upgrades\w_usp45_worn_up.ltx"
+#include "upgrades\w_walther_alt_up.ltx"
+#include "upgrades\w_walther_custom_up.ltx"
+#include "upgrades\w_walther_worn_up.ltx"
+#include "upgrades\w_wincheaster1300_alt_up.ltx"
+#include "upgrades\w_wincheaster1300_camo_up.ltx"
+#include "upgrades\w_wincheaster1300_rusty_up.ltx"
+#include "upgrades\w_wincheaster1300_worn_up.ltx"
+
+#include "upgrades\w_stg44_up.ltx"
+#include "upgrades\w_famas3_up.ltx"
+#include "upgrades\w_galil_up.ltx"
+#include "upgrades\w_m16a1_up.ltx"
+#include "upgrades\w_gp100_up.ltx"
+#include "upgrades\w_m24_up.ltx"
+#include "upgrades\w_sig552_up.ltx"
+#include "upgrades\w_m1891_up.ltx"
+#include "upgrades\w_aek973_up.ltx"
+#include "upgrades\w_aks74_cobra_up.ltx"
+#include "upgrades\w_fnfal_up.ltx"
+#include "upgrades\w_m21_up.ltx"
+#include "upgrades\w_fr2000_up.ltx"
+#include "upgrades\w_rpk74_up.ltx"
+#include "upgrades\w_xm8_up.ltx"
+#include "upgrades\w_vsk94_up.ltx"
+#include "upgrades\w_sks_up.ltx"
+#include "upgrades\w_aps_up.ltx"
+#include "upgrades\w_gsh18_up.ltx"
+#include "upgrades\w_scorpion_up.ltx"
+#include "upgrades\w_mossberg_up.ltx"
+#include "upgrades\w_g43_up.ltx"
+#include "upgrades\w_ump45_up.ltx"
+#include "upgrades\w_ppsh41_up.ltx"
+#include "upgrades\w_far15_up.ltx"
+#include "upgrades\w_m4a1_up.ltx"
+#include "upgrades\w_bm16_full_up.ltx"
+#include "upgrades\w_obrez_up.ltx"
+#include "upgrades\w_k98_up.ltx"
+#include "upgrades\w_ak47m_up.ltx"
+#include "upgrades\w_ak105_up.ltx"
+#include "upgrades\w_saiga_up.ltx"
+#include "upgrades\w_oc33_up.ltx"
+#include "upgrades\w_tt33_up.ltx"
+#include "upgrades\w_fnfallelcan_up.ltx"
+#include "upgrades\w_trg_up.ltx"
+
 #include "w_upd.ltx"
 
 #include "w_ak74.ltx"
@@ -53,12 +186,10 @@
 #include "w_rgd5.ltx"
 #include "w_gd5.ltx"
 #include "w_rg6.ltx"
-
 #include "w_vintorez.ltx"
 #include "w_lr300.ltx"
 #include "w_mp5.ltx"
 #include "w_val.ltx"
-
 #include "w_gauss.ltx"
 #include "w_groza.ltx"
 #include "w_hpsa.ltx"
@@ -1469,7 +1600,7 @@ visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
 description		= ammo-357_hp_mag_descr
 $prefetch 		= 64
 
-cost			= 1190
+cost			= 1590
 
 box_size		= 13
 
@@ -1484,9 +1615,9 @@ inv_grid_y         = 53
 
 k_dist			= 1.0
 k_disp			= 0.66
-k_hit			= 2.65
+k_hit			= 3.34
 k_impulse		= 0.67
-k_pierce		= 0.46
+k_pierce		= 0.37
 k_ap			= 0.11
 impair			= 1.1
 buck_shot		= 1
@@ -1510,7 +1641,7 @@ visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
 description		= 357 AP ammo ; ammo-357_hp_mag_descr
 $prefetch 		= 64
 
-cost			= 1960
+cost			= 2420
 
 box_size		= 13
 
@@ -1525,10 +1656,10 @@ inv_grid_y         = 54
 
 k_dist			= 1.0
 k_disp			= 0.66
-k_hit			= 2.15
+k_hit			= 2.77
 k_impulse		= 0.58
 k_pierce		= 0.98
-k_ap			= 0.75
+k_ap			= 0.79
 impair			= 1.1
 buck_shot		= 1
 tracer			= off        ;  off

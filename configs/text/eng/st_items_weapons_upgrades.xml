@@ -606,6 +606,12 @@
 	<string id="st_up_bard_c5_name">
 		<text>Addition of an active counter-weight to the barrel jacket</text>
 	</string>
+	<string id="st_up_bard_c6_descr">
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+	</string>
+	<string id="st_up_bard_c6_name">
+		<text>Change of caliber to 7.62x54</text>
+	</string>
 	<string id="st_up_barp_a1_descr">
 		<text>Replacement of a regular barrel with a longer one improves accuracy and flatness, but reduces the rate of fire.</text>
 	</string>
@@ -1968,6 +1974,9 @@
 	<string id="st_prop_not_available">
 		<text>Required weapon tier:</text>
 	</string>
+	<string id="st_prop_not_available_no_reason">
+		<text>Upgrade not supported by this weapon</text>
+	</string>
 	<string id="st_gauss_cannot_be_repaired">
 		<text>It’s not clear how the weapon works. It can’t be repaired without additional information about its design.</text>
 	</string>
@@ -2014,10 +2023,13 @@
 		<text>weapon is rusty, no mechanical modifications are possible</text>
 	</string>
 	<string id="st_upgr_worn_profile">
-		<text>weapon is worn, only rough work modifications are possible</text>
+		<text>corrosion prevents modifications above basic level</text>
 	</string>
 	<string id="st_upgr_standard_profile">
 		<text>modernized weapon required to perform modification</text>
+	</string>
+	<string id="st_upgr_no_reason">
+		<text>weapon desing does not allow this modification</text>
 	</string>
 	<string id="st_up_arm_c9_name">
 		<text>Armadillo protective coating based on sapphire crystals</text>

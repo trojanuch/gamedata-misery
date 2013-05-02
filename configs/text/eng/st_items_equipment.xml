@@ -4,13 +4,13 @@
 		<text>Anti-radiation drugs</text>
 	</string>
 	<string id="st_antirad_descr">
-		<text>Mexaminum radiation protection drugs are common in the Zone. When used, this drug induces contraction of peripheral blood vessels and oxygen deprivation, which serves to treat and prevent radiation exposure. The drug does not have severe side effects, although isolated cases of mild nausea, dizziness, cramps and stomach pain have been reported.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,204,0,51] Х %c[0,140,140,140] severly unhealthy</text>
+		<text>Mexaminum radiation protection drugs are common in the Zone. When used, this drug induces contraction of peripheral blood vessels and oxygen deprivation, which serves to treat and prevent radiation exposure. The drug does not have severe side effects, although isolated cases of mild nausea, dizziness, cramps and stomach pain have been reported.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,204,0,51] Х %c[0,140,140,140] severly unhealthy</text>
 	</string>
 	<string id="st_bandage">
 		<text>Bandage</text>
 	</string>
 	<string id="st_bandage_descr">
-		<text>A normal elastic bandage used to stop bleeding and prevent infection of wounds. For regular bleeding, carefully apply the bandage to the wound. For arterial bleeding, urgently tie the bandage around the affected area.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medical item\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (adhesive plaster)\n%c[0,153,255,255] Х %c[0,140,140,140] max. bleed. stop: %c[0,140,140,140]120 ml / min</text>
+		<text>A normal elastic bandage used to stop bleeding and prevent infection of wounds. For regular bleeding, carefully apply the bandage to the wound. For arterial bleeding, urgently tie the bandage around the affected area.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medical item\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (adhesive plaster)\n%c[0,153,255,255] Х %c[0,140,140,140] max. bleed. stop: %c[0,140,140,140]120 ml / min</text>
 	</string>
 	<string id="st_binocular_descr">
 		<text>Standard Ukrainian issue military binoculars with a maximum of x7.5 magnification. Useful in the Zone in that they allow its owner to observe things from a distance. Very durable.</text>
@@ -22,109 +22,109 @@
 		<text>Bread Loaf</text>
 	</string>
 	<string id="st_bread_descr">
-		<text>A fine bread loaf baked by Nimble's wife who lives outside the Zone, this was the first item Nimble started to sell in the Zone. Now days he provide the Bar keepers with this fine bread instead of selling it himself as in the past, after all he has bigger things on his mind now.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>A fine bread loaf baked by Nimble's wife who lives outside the Zone, this was the first item Nimble started to sell in the Zone. Now days he provide the Bar keepers with this fine bread instead of selling it himself as in the past, after all he has bigger things on his mind now.\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_breadold">
 		<text>Bread Loaf leftover</text>
 	</string>
 		<string id="st_breadold_descr">
-		<text>A bread loaf baked outside the Zone.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>A bread loaf baked outside the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_porn">
 		<text>Porn magazine</text>
 	</string>
 	<string id="st_porn_descr">
-		<text>100 pages of prime russian girls. A popular way of mentally getting away from The Zone for a moment. The western men in the Zone joke about this Russian porn magazine saying "From Russia with love".\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>100 pages of prime russian girls. A popular way of mentally getting away from The Zone for a moment. The western men in the Zone joke about this Russian porn magazine saying "From Russia with love".\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+2%)</text>
 	</string>
 	<string id="st_joint">
 		<text>Cannabis joint (zone produced)</text>
 	</string>
 	<string id="st_joint_descr">
-		<text>A joint calms and relaxes your mind in a very pleasant way with a soothing effect if you have alcohol in your blood. It also makes you hungry very fast. Joints are valuable in The Zone.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
+		<text>A joint calms and relaxes your mind in a very pleasant way with a soothing effect if you have alcohol in your blood. It also makes you hungry very fast. Joints are valuable in The Zone.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
 	</string>
 	<string id="st_cigarettes">
 		<text>Pack of Marlboro cigarettes (imported)</text>
 	</string>
 	<string id="st_cigarettes_descr">
-		<text>Pack of imported, western cigarettes with only few left. Smoking tobacco calms your nerves when you need to settle your mental state and fight your hunger in an alternative way. They are rare in The Zone and quite valuable.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
+		<text>Pack of imported, western cigarettes with only few left. Smoking tobacco calms your nerves when you need to settle your mental state and fight your hunger in an alternative way. They are rare in The Zone and quite valuable.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
 	</string>
 	<string id="st_survivalguide">
 		<text>Ukranian Special Forces Survival Guide</text>
 	</string>
 	<string id="st_survivalguide_descr">
-		<text>You have studied this survival guide many times and believe that the only use now is some quick cash as stalkers might want to have this book when exploring this area.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>You have studied this survival guide many times and believe that the only use now is some quick cash as stalkers might want to have this book when exploring this area.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_protein">
 		<text>Chocolate protein bar (imported)</text>
 	</string>
 	<string id="st_protein_descr">
-		<text>Protein bars of this type are healthy and good meals when your body is in a constant active state. You can keep them for many days before they loose their chewy consistency.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Protein bars of this type are healthy and good meals when your body is in a constant active state. You can keep them for many days before they loose their chewy consistency.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
 	</string>
 	<string id="st_rebirth">
 		<text>Axyltallisal "The Rebirth"</text>
 	</string>
 	<string id="st_rebirth_descr">
-		<text>Warning! Do not use in combination with ANY other drug. This powerful mixture packed in a small syringe knocks you down. But when you wake up (IF you wake up) you will feel reborn. Inject the syringe into your thigh when sitting down.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,204,0,51] Х %c[0,140,140,140] causes temporary blackout</text>
+		<text>Warning! Do not use in combination with ANY other drug. This powerful mixture packed in a small syringe knocks you down. But when you wake up (IF you wake up) you will feel reborn. Inject the syringe into your thigh when sitting down.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,204,0,51] Х %c[0,140,140,140] causes temporary blackout</text>
 	</string>
 		<string id="st_conserva">
 		<text>Can of tuna fish (imported)</text>
 	</string>
 	<string id="st_conserva_descr">
-		<text>The date on the tin can indicates that you should expect the tuna fish inside to be rather unappetizing.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>The date on the tin can indicates that you should expect the tuna fish inside to be rather unappetizing.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_meat_tushkano">
 		<text>Rat skewers</text>
 	</string>
 	<string id="st_meat_tushkano_descr">
-		<text>2 small skewers of flame grilled Tushkano meat flavored with salt and chili pepper. This is the cheapest hot meal that is cooked in the The Zone. Served in a slice of thick brown paper.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +61 mSv</text>
+		<text>2 small skewers of flame grilled Tushkano meat flavored with salt and chili pepper. This is the cheapest hot meal that is cooked in the The Zone. Served in a slice of thick brown paper.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +41 mSv</text>
 	</string>
 		<string id="st_meat_dog">
 		<text>Dog chops</text>
 	</string>
 	<string id="st_meat_dog_descr">
-		<text>A small but hot meal of cooked dog chops blended with garlic, peppers and mushrooms. Served in an old tin box. A cheap alternative to the more popular boar beef.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +202 mSv</text>
+		<text>A small but hot meal of cooked dog chops blended with garlic, peppers and mushrooms. Served in an old tin box. A cheap alternative to the more popular boar beef.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +136 mSv</text>
 	</string>
 		<string id="st_meat_pseudodog">
 		<text>Pseudodog meat</text>
 	</string>
 	<string id="st_meat_pseudodog_descr">
-		<text>Portion of cooked psuedodog meat chops. Good nutrition value due to dense muscle mass of the animal.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +265 mSv</text>
+		<text>Portion of cooked psuedodog meat chops. Good nutrition value due to dense muscle mass of the animal.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +177 mSv</text>
 	</string>
 		<string id="st_meat_flesh">
 		<text>Fat bacon</text>
 	</string>
 	<string id="st_meat_flesh_descr">
-		<text>2 slices of fat and greasy bacon made from mutated pigs commonly known as Flesh. Served in a slice of thick brown paper.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +570 mSv</text>
+		<text>2 slices of fat and greasy bacon made from mutated pigs commonly known as Flesh. Served in a slice of thick brown paper.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +385 mSv</text>
 	</string>
 		<string id="st_meat_boar">
 		<text>Boar beef</text>
 	</string>
 	<string id="st_meat_boar_descr">
-		<text>A small flame grilled beef with added salt and peppers. The most popular meal among stalkers. Served in brown paper.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +595 mSv</text>
+		<text>A small flame grilled beef with added salt and peppers. The most popular meal among stalkers. Served in brown paper.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +394 mSv</text>
 	</string>
 		<string id="st_meat_bloodsucker">
 		<text>Bloodsucker Goulash</text>
 	</string>
 	<string id="st_meat_bloodsucker_descr">
-		<text>A small but hot meal made from Bloodsucker flesh spiced with chilies and added mushrooms. Served in a tin box.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +530 mSv</text>
+		<text>A small but hot meal made from Bloodsucker flesh spiced with chilies and added mushrooms. Served in a tin box.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +356 mSv</text>
 	</string>
 	<string id="st_meat_snork">
 		<text>Roasted Snork hand.</text>
 	</string>
 	<string id="st_meat_snork_descr">
-		<text>The cut Snork hand has been grilled over open fire. WARNING: Most men in The Zone consider it a cannibalistic and immoral act to eat any part of a Snork! In spite of this some bandits and mercenaries are actually eating roasted Snork hands to signal a baddass superiority among their faction members.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +332 mSv</text>
+		<text>The cut Snork hand has been grilled over open fire. WARNING: Most men in The Zone consider it a cannibalistic and immoral act to eat any part of a Snork! In spite of this some bandits and mercenaries are actually eating roasted Snork hands to signal a baddass superiority among their faction members.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +224 mSv</text>
 	</string>
 		<string id="st_meat_chimera">
 		<text>The Masculine Meal</text>
 	</string>
 	<string id="st_meat_chimera_descr">
-		<text>A portion of Chimera beef cooked with mushrooms and spices. An expensive meal that is eaten by veteran stalkers only to celebrate succes and survival in The Zone.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +660 mSv</text>
+		<text>A portion of Chimera beef cooked with mushrooms and spices. An expensive meal that is eaten by veteran stalkers only to celebrate succes and survival in The Zone.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +447 mSv</text>
 	</string>
 	<string id="st_detector1">
 		<text>Echo detector</text>
 	</string>
 	<string id="st_detector1_descr">
-		<text>This dated anomalous activity detector produces an alarm signal when anomalous particles enter a special chamber as you approach an anomaly. It can also register the presence of artifacts and measure the distance to the nearest one. The distance is indicated by the frequency of the sound the detector emits. To switch to artifact search mode, open the device's front cover. Due to its simple design, Echo can only be used to locate the most common artifacts.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
+		<text>This dated anomalous activity detector produces an alarm signal when anomalous particles enter a special chamber as you approach an anomaly. It can also register the presence of artifacts and measure the distance to the nearest one. The distance is indicated by the frequency of the sound the detector emits. To switch to artifact search mode, open the device's front cover. Due to its simple design, Echo can only be used to locate the most common artifacts.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_detector2">
 		<text>Detector "Bear"</text>
@@ -133,16 +133,16 @@
 		<text>Veles detector</text>
 	</string>
 	<string id="st_detector3_descr">
-		<text>A next generation scientific detection scanner. Thanks to three modernized detection chambers, the position of artifacts is shown on a special display screen. When closed, the device registers only radiation and anomalies. To switch to artifact search mode, open the front LED display. When in search mode, the detector is capable of locating all artifacts known to science.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
+		<text>A next generation scientific detection scanner. Thanks to three modernized detection chambers, the position of artifacts is shown on a special display screen. When closed, the device registers only radiation and anomalies. To switch to artifact search mode, open the front LED display. When in search mode, the detector is capable of locating all artifacts known to science.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_detector4">
 		<text>Svarog detector prototype</text>
 	</string>
 	<string id="st_detector4_descr">
-		<text>A prototype of an expanded functionality anomalous frequency scanner. This device comes with a program used to identify static areas of anomalous activity stored in its database, while retaining the ability to locate artifacts. The position of anomalous areas and artifacts is displayed on a special screen. The artifact search mode, which can be activated by opening the front LED display, has been modified to detect anomalous formations currently unknown to science.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
+		<text>A prototype of an expanded functionality anomalous frequency scanner. This device comes with a program used to identify static areas of anomalous activity stored in its database, while retaining the ability to locate artifacts. The position of anomalous areas and artifacts is displayed on a special screen. The artifact search mode, which can be activated by opening the front LED display, has been modified to detect anomalous formations currently unknown to science.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_device_torch_descr">
-		<text>A standard head-mounted flashlight in fully working order. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] moderate UPD consumption</text>
+		<text>A standard head-mounted flashlight in fully working order. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] moderate UPD consumption</text>
 	</string>
 	<string id="st_device_torch_name">
 		<text>Head lamp</text>
@@ -154,7 +154,7 @@
 		<text>Antidote</text>
 	</string>
 	<string id="st_drug_antidot_descr">
-		<text>The IP2 antitoxin is a complex drug comprising several antidotes, including metoclopramidum, pyridoxine, thiamine, riboxin and other pharmaceuticals. The drug is used to inject a range of antibiotics to neutralize natural poisons, together with synthetic poison absorbers, into the bloodstream. IP2 is not particularly popular in the Zone, as most stalkers rely on a gas mask and a protective suit, there are still those who have a pack of this antidote stashed away. The effects of the drug are long-lasting.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] causes dizzyness\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
+		<text>The IP2 antitoxin is a complex drug comprising several antidotes, including metoclopramidum, pyridoxine, thiamine, riboxin and other pharmaceuticals. The drug is used to inject a range of antibiotics to neutralize natural poisons, together with synthetic poison absorbers, into the bloodstream. IP2 is not particularly popular in the Zone, as most stalkers rely on a gas mask and a protective suit, there are still those who have a pack of this antidote stashed away. The effects of the drug are long-lasting.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] causes dizzyness\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
 	</string>
 	<string id="st_drug_booster">
 		<text>Hercules</text>
@@ -163,13 +163,13 @@
 		<text>Vinca</text>
 	</string>
 	<string id="st_drug_coagulant_descr">
-		<text>Ukrainian Vikasolum - an artificial equivalent of vitamin K. The main purpose of this drug is to increase blood coagulation speed. In great demand among stalkers who want slow-healing wounds and lacerations inflicted by mutants to close up faster. The effects of the drug are long-lasting.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] causes dizzyness\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
+		<text>Ukrainian Vikasolum - an artificial equivalent of vitamin K. The main purpose of this drug is to increase blood coagulation speed. In great demand among stalkers who want slow-healing wounds and lacerations inflicted by mutants to close up faster. The effects of the drug are long-lasting.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] causes dizzyness\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
 	</string>
 	<string id="st_drug_psy_blockade">
 		<text>Psy-block</text>
 	</string>
 	<string id="st_drug_psy_blockade_descr">
-		<text>A drug that blocks avalanche-like nerve impulses. Consumption induces short-term loss of all emotion. Used exclusively in the Zone to counteract the effects of anomalous psy-fields. The effects of the drug are long-lasting.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] causes extreme dizzyness\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase</text>
+		<text>A drug that blocks avalanche-like nerve impulses. Consumption induces short-term loss of all emotion. Used exclusively in the Zone to counteract the effects of anomalous psy-fields. The effects of the drug are long-lasting.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] causes extreme dizzyness\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase</text>
 	</string>
 	<string id="st_drug_radioprotector">
 		<text>Radioprotectant</text>
@@ -178,16 +178,16 @@
 		<text>Sparkling Water (imported)</text>
 	</string>
 	<string id="st_water_drink_descr">
-		<text>Sparkling water for the thirsty Stalker, it has some exhilarated effect when you are tired.\n \n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] slight sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Sparkling water for the thirsty Stalker, it has some exhilarated effect when you are tired.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] slight sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] cleaning kits (+1%)</text>
 	</string>
 	<string id="st_energy_drink">
 		<text>Strong energy drink</text>
 	</string>
 	<string id="st_energy_drink_descr">
-		<text>Often used by stalkers on long trips, due to it's exhilarated effect when you are getting tired. The drink have also some "sobering up" effect if you have looked to deep in to the Vodka bottle as well it stimulate the release of adrenaline into the bloodstream. Do not overdose.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] large sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Often used by stalkers on long trips, due to it's exhilarated effect when you are getting tired. The drink have also some "sobering up" effect if you have looked to deep in to the Vodka bottle as well it stimulate the release of adrenaline into the bloodstream. Do not overdose.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] large sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_guitar_descr">
-		<text>A trusty guitar.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A trusty guitar.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="st_guitar_name">
 		<text>Guitar</text>
@@ -196,7 +196,7 @@
 		<text>Pack of old meat</text>
 	</string>
 	<string id="st_kolbasa_descr">
-		<text>A package containing a mixture of old bread and some smelly pork meat wrapped in brown paper. The look and smell of this signals that some of it is rotten.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food</text>
+		<text>A package containing a mixture of old bread and some smelly pork meat wrapped in brown paper. The look and smell of this signals that some of it is rotten.\n \n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] Х %c[0,140,140,140] low quality</text>
 	</string>
 	<string id="st_medkit">
 		<text>First-aid kit</text>
@@ -208,37 +208,37 @@
 		<text>Army medkit</text>
 	</string>
 	<string id="st_medkit_army_descr">
-		<text>A specialized medical kit for providing first aid to combat casualties. The kit includes blood coagulants based on menadione, painkillers, antibiotics and immunostimulants, as well as a kit for removing bullets and fragments from the body. This medkit is issued primarily to army personnel such as Spetsnaz units embedded deep within the Zone and is popular among Duty forces.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (field kit)\n%c[0,204,0,51] Х %c[0,140,140,140] prolonged body recovery time</text>
+		<text>A specialized medical kit for providing first aid to combat casualties. The kit includes blood coagulants based on menadione, painkillers, antibiotics and immunostimulants, as well as a kit for removing bullets and fragments from the body. This medkit is issued primarily to army personnel such as Spetsnaz units embedded deep within the Zone and is popular among Duty forces.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (field kit)\n%c[0,204,0,51] Х %c[0,140,140,140] prolonged body recovery time</text>
 	</string>
 	<string id="st_medkit_science">
 		<text>Scientific medkit</text>
 	</string>
 	<string id="st_medkit_science_descr">
-		<text>A medical kit designed specifically for use in the Zone. The kit contains products for handling wounds, as well as preventing the development of radiation poisoning: and reducing accumulated radiation in the body. Contains Vikasolum, Batilolum and Naphazoline, unlike other medkits.\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (field kit)\n%c[0,204,0,51] Х %c[0,140,140,140] prolonged body recovery time</text>
+		<text>A medical kit designed specifically for use in the Zone. The kit contains products for handling wounds, as well as preventing the development of radiation poisoning: and reducing accumulated radiation in the body. Contains Vikasolum, Batilolum and Naphazoline, unlike other medkits.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (field kit)\n%c[0,204,0,51] Х %c[0,140,140,140] prolonged body recovery time</text>
 	</string>
 	<string id="st_stim_impro">
 		<text>Improvised stimpack (zone produced)</text>
 	</string>
 	<string id="st_stim_impro_descr">
-		<text>Improvised stimpacks are popular among novice Zone Men as they are easily attainable and withing reach in therms of costs. They are produced from commonly available contents, locally in the Zone often without proper composition and purification of the mixture. This leads to many side effects when they are infected intramusculary into the thigh. These include headache, paraesthesia and considerable increase in nutrition demand.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] moderate body recovery time\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
+		<text>Improvised stimpacks are popular among novice Zone Men as they are easily attainable and withing reach in therms of costs. They are produced from commonly available contents, locally in the Zone often without proper composition and purification of the mixture. This leads to many side effects when they are infected intramusculary into the thigh. These include headache, paraesthesia and considerable increase in nutrition demand.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] moderate body recovery time\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
 	</string>
 	<string id="st_stim_military">
 		<text>Military stimpack</text>
 	</string>
 	<string id="st_stim_military_descr">
-		<text>Military stims are part of a standard issue soldier equipment for field operation within the Zone. Easily attainable on the market, they are not too cheap and are popular among experienced Stalkers. They are siginificantly more potent and faster working than their improvised conterparts, allowing for much more rapid and often life-saving stabilization. Army specifications did not take into consideration user's pleasure though, thus extremely high density and raw nature of healing agents often cause shock, extreme dizziness and extensive hunger episodes.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] fast body recovery time\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase</text>
+		<text>Military stims are part of a standard issue soldier equipment for field operation within the Zone. Easily attainable on the market, they are not too cheap and are popular among experienced Stalkers. They are siginificantly more potent and faster working than their improvised conterparts, allowing for much more rapid and often life-saving stabilization. Army specifications did not take into consideration user's pleasure though, thus extremely high density and raw nature of healing agents often cause shock, extreme dizziness and extensive hunger episodes.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] fast body recovery time\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase</text>
 	</string>
 	<string id="st_stim_scientic">
 		<text>Scientific stimpack</text>
 	</string>
 	<string id="st_stim_scientic_descr">
-		<text>Created by chemical department of the same Kiev defence research institute wich developed SEVA, this state-of-art mixture constitutes the highest level of rapidly-working health stabilizers available in the Zone. Best quality ingredients and perfected formula allow for almost instant health restorative effect and high rate radiation cleansing. Side effects are minimized. Extremely high cost practically limits regular users of this grade of medicaments to a small group of the most skillfull and succesfull Zone explorers.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] rapid body recovery time\n%c[0,204,0,51] Х %c[0,140,140,140] slight sleepiness increase</text>
+		<text>Created by chemical department of the same Kiev defence research institute wich developed SEVA, this state-of-art mixture constitutes the highest level of rapidly-working health stabilizers available in the Zone. Best quality ingredients and perfected formula allow for almost instant health restorative effect and high rate radiation cleansing. Side effects are minimized. Extremely high cost practically limits regular users of this grade of medicaments to a small group of the most skillfull and succesfull Zone explorers.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] rapid body recovery time\n%c[0,204,0,51] Х %c[0,140,140,140] slight sleepiness increase</text>
 	</string>
 	<string id="st_sleepingpills_descr">
-		<text>A package of small white sleeping pills that will imediately slow and ease your stressed mind. Eat or drink 5 min before you want to rest and use water in combination for maximum effect.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] immed. sleepiness induction</text>
+		<text>A package of small white sleeping pills that will imediately slow and ease your stressed mind. Eat or drink 5 min before you want to rest and use water in combination for maximum effect.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] immed. sleepiness induction</text>
 	</string>
 	<string id="st_pda_descr">
-		<text>PDA with information about the Zone, digital logs and detailed maps over the Zone and it's anomaly's. Trading value could be high for this if you find the right person.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] low UPD consumption</text>
+		<text>PDA with information about the Zone, digital logs and detailed maps over the Zone and it's anomaly's. Trading value could be high for this if you find the right person.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] low UPD consumption</text>
 	</string>
 	<string id="st_pda_name">
 		<text>PDA</text>
@@ -247,144 +247,181 @@
 		<text>Nemiroff Vodka (imported)</text>
 	</string>
 	<string id="st_vodka_descr">
-		<text>Nemiroff is a Ukrainian producer of alcoholic beverages, specializing, vodkas and other spirits, based in the town of Nemyriv, which is located in the Vinnytska oblast. The Nemiroff Company was founded in 1992 by Stepan Glus, and has grown to become a popular spirit world wide and as such, now exports to over 50 countries. The company cited growth rates of over 40% in the years 2003 and 2004, earning the designation of International Fastest Growing Alcohol Brand from the International Millionaires Club. In 2006 Nemiroff became the second largest vodka producer in the world, the first being Smirnoff.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
+		<text>Nemiroff is a Ukrainian producer of alcoholic beverages, specializing, vodkas and other spirits, based in the town of Nemyriv, which is located in the Vinnytska oblast. The Nemiroff Company was founded in 1992 by Stepan Glus, and has grown to become a popular spirit world wide and as such, now exports to over 50 countries. The company cited growth rates of over 40% in the years 2003 and 2004, earning the designation of International Fastest Growing Alcohol Brand from the International Millionaires Club. In 2006 Nemiroff became the second largest vodka producer in the world, the first being Smirnoff.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] cleaning kits (+3%)</text>
 	</string>
 	<string id="st_vodka2">
 		<text>Putinka Vodka (imported)</text>
 	</string>
 	<string id="st_vodka2_descr">
-		<text>It has long since been tradition to name a vodka brand after a Russian leader. The arrival of Russian President Vladimir Putin, has led to the emergence of this vodka brand called Putinka. Prepared in Russia from the finest grain alcohol and crystal clear water from Siberian springs, triple purification, it's smooth, with unique taste. Putinka Vodka is noted for its unique aroma and smooth taste. It was awarded a gold medal as the "best vodka" at the International Competition in Moscow in 2010. This vodka is of the finest quality. Printed on the bottle are the words Уƒл€ ¬ашего здоровь€!Ф.
-(To your health!).\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase</text>
+		<text>It has long since been tradition to name a vodka brand after a Russian leader. The arrival of Russian President Vladimir Putin, has led to the emergence of this vodka brand called Putinka. Prepared in Russia from the finest grain alcohol and crystal clear water from Siberian springs, triple purification, it's smooth, with unique taste. Putinka Vodka is noted for its unique aroma and smooth taste. It was awarded a gold medal as the "best vodka" at the International Competition in Moscow in 2010. This vodka is of the finest quality. Printed on the bottle are the words Уƒл€ ¬ашего здоровь€!Ф ("To your health!").\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] cleaning kits (+3%)</text>
 	</string>
 	<string id="st_detector2_descr">
-		<text>This last generation anomalous activity detector can be used to locate anomalous formations and has a color diode panel, which not only indicates the direction of artifacts, but also measures the distance to them. To switch to artifact search mode, open the device's front cover. Unfortunately, the device is programmed with a somewhat outdated list of detectable artifacts.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
+		<text>This last generation anomalous activity detector can be used to locate anomalous formations and has a color diode panel, which not only indicates the direction of artifacts, but also measures the distance to them. To switch to artifact search mode, open the device's front cover. Unfortunately, the device is programmed with a somewhat outdated list of detectable artifacts.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_drug_anabiotic_descr">
-		<text>An experimental drug developed by Professor Ozersky for scientific research teams working in the Zone. At its core, the drug contains tetrodotoxin, known colloquially as "zombie powder," which causes a complete shutdown of the body's central nervous system that may allow people to survive emissions outside cover. The drug has not undergone clinical or field testing, which puts its effectiveness in doubt and raises the issue of possible side effects.%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] causes temporary blackout\n</text>
+		<text>An experimental drug developed by Professor Ozersky for scientific research teams working in the Zone. At its core, the drug contains tetrodotoxin, known colloquially as "zombie powder," which causes a complete shutdown of the body's central nervous system that may allow people to survive emissions outside cover. The drug has not undergone clinical or field testing, which puts its effectiveness in doubt and raises the issue of possible side effects.%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] causes temporary blackout</text>
 	</string>
 	<string id="st_bolt">
 		<text>Bolt</text>
 	</string>
 	<string id="st_drug_booster_descr">
-		<text>The main component of this product is an anabolic androgen, an artificial steroid, the chemical composition of which resembles testosterone. Often used by stalkers during long raids to reduce muscle fatigue. Significantly increases weight-carrying capacity. The effects of the drug are long-lasting.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n \n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase</text>
+		<text>The main component of this product is an anabolic androgen, an artificial steroid, the chemical composition of which resembles testosterone. Often used by stalkers during long raids to reduce muscle fatigue. Significantly increases weight-carrying capacity. The effects of the drug are long-lasting.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n \n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase</text>
 	</string>
 	<string id="st_drug_radioprotector_descr">
-		<text>B190 Indraline radioprotectant, included in medkits issued to nuclear power plant personnel. Used in the Zone instead of the excessively toxic PC1 cystamine hydrochloride, repeated use of which often caused death. Reduces the effects of gamma radiation on live tissue. Best consumed before exposure, as effects are not instant. The effects of the drug are long-lasting.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase\n%c[0,204,0,51] Х %c[0,140,140,140] mild dizziness</text>
+		<text>B190 Indraline radioprotectant, included in medkits issued to nuclear power plant personnel. Used in the Zone instead of the excessively toxic PC1 cystamine hydrochloride, repeated use of which often caused death. Reduces the effects of gamma radiation on live tissue. Best consumed before exposure, as effects are not instant. The effects of the drug are long-lasting.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase\n%c[0,204,0,51] Х %c[0,140,140,140] mild dizziness</text>
 	</string>
 	<string id="st_harmonica_name">
 		<text>Harmonica</text>
 	</string>
 	<string id="st_harmonica_descr">
-		<text>For blues and prison romance lovers.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>For blues and prison romance lovers.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="st_batteries">
 		<text>Battery pack</text>
 	</string>
 	<string id="st_batteries_descr">
-		<text>A pack of medium charged batteries that are already half drained for the use of your flashlight, PDA, nightvision goggles and other electronic devices. Remember to change regularly.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] UPD charge +52%</text>
+		<text>A pack of medium charged batteries that are already half drained for the use of your flashlight, PDA, nightvision goggles and other electronic devices. Remember to change regularly.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] UPD charge +52%</text>
 	</string>
 	<string id="st_tea">
-		<text>Beards tea</text>
+		<text>Beards tea (Zone produced)</text>
 	</string>
 	<string id="st_tea_descr">
-		<text>Beards popular hot tea made from a mixture of sugar, harmless dried mushrooms and boiled water that is said to be cleansed from radiation. Stalkers who are able to pay the price are buying this drink for long trips in The Zone. It's a good and healthy way to stay alert when you are getting tired or exploring during cold nights.\n \n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Beards popular hot tea made from a mixture of sugar, harmless dried mushrooms and boiled water that is said to be cleansed from radiation. Stalkers who are able to pay the price are buying this drink for long trips in The Zone. It's a good and healthy way to stay alert when you are getting tired or exploring during cold nights.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,204,0,51] Х %c[0,140,140,140] moderate sleepiness increase\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+	</string>
+	<string id="st_gun_oil">
+		<text>"Brunox Gun Care" spray lubricant</text>
+	</string>
+	<string id="st_gun_oil_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for all weapons\n \n%c[0,170,170,170]Can of spray oil which can be used for fast and effective lubrication of accesible elements of fire-arm. Helpful in maintaining weapon in good shape at constant rate. Frequant usages are advisable. Can utilise light tools to increase accesibility to inner mechanisms of weapon or small portions of paper or textile tissue to improve spread of the substance. The special additive TUBOLINE increases the gliding quality of all movable parts. Ensures the function of repeat and automatic guns even at temperatures up to -55 ∞C. It has a flash point of 78∞C.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] spray lubricant\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]90%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]4%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] light tools %c[0,170,170,170]+2-5%\n%c[255,238,153,26] Х %c[0,140,140,140] paper %c[0,170,170,170]+1-2%\n%c[255,238,153,26] Х %c[0,140,140,140] cloth %c[0,170,170,170]+2-4%\n%c[255,238,153,26] Х %c[0,140,140,140] textile %c[0,170,170,170]+2-4%</text>
+	</string>
+	<string id="st_cleaning_kit_p">
+		<text>"Progress" handgun cleaning kit </text>
+	</string>
+	<string id="st_cleaning_kit_p_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for 9mm, .45 and .357 cal. weapons\n \n%c[0,170,170,170]Pack of specialized brushes which can be used to clean the barrel and accesible mechanisms of weapon from dirt, sand, moist, lubricant residues and other congesting particles. Kits like that are commonly used within the Zone due to harsh conditions found within it. Can utilise common tools for greater accesibility to inner mechanisms of weapon or alcohol to increase oil residue dissolving effect when cleaning. Can also be used to improve spread of applied gun oil but it is also known that experienced Stalkers use animal fat, which they place on brushes as an alternative lubrication solution. This particular pack fits typical handgun calibers.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[255,238,153,26] Х %c[0,140,140,140] suited for 9mm, .45 and .357 caliber weapons\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]85%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]6%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] light tools %c[0,170,170,170]+2-5%\n%c[255,238,153,26] Х %c[0,140,140,140] cleaning solvent %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] steel wool %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] alcohol %c[0,170,170,170]+2-4%\n%c[255,238,153,26] Х %c[0,140,140,140] animal fat %c[0,170,170,170]+1-4%\n%c[255,238,153,26] Х %c[0,140,140,140] water %c[0,170,170,170]+1%</text>
+	</string>
+	<string id="st_cleaning_kit_s">
+		<text>"Aurora A108/12" 12ga cleaning kit</text>
+	</string>
+	<string id="st_cleaning_kit_s_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for 12ga cal. weapons\n \n%c[0,170,170,170]Pack of specialized brushes which can be used to clean the barrel and accesible mechanisms of weapon from dirt, sand, moist, lubricant residues and other congesting particles. Kits like that are commonly used within the Zone due to harsh conditions found within it. Can utilise common tools for greater accesibility to inner mechanisms of weapon or alcohol to increase oil residue dissolving effect when cleaning. Can also be used to improve spread of applied gun oil but it is also known that experienced Stalkers use animal fat, which they place on brushes as an alternative lubrication solution. This particular pack fits 12ga shotgun caliber. "Aurora" kit comes with three selectable brush types, each one being specialized in after-fire cleaning, lubricant spreading and rust removal. Its a very practical kit, usefull in keeping shotguns at constantly good shape.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]85%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]6%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] light tools %c[0,170,170,170]+2-5%\n%c[255,238,153,26] Х %c[0,140,140,140] cleaning solvent %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] steel wool %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] alcohol %c[0,170,170,170]+2-4%\n%c[255,238,153,26] Х %c[0,140,140,140] animal fat %c[0,170,170,170]+1-4%\n%c[255,238,153,26] Х %c[0,140,140,140] water %c[0,170,170,170]+1%</text>
+	</string>
+	<string id="st_cleaning_kit_r5">
+		<text>"ValuPro III" gun cleaning kit</text>
+	</string>
+	<string id="st_cleaning_kit_r5_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for 5.45 and 5.56 cal. weapons\n \n%c[0,170,170,170]Western-made pack of specialized brushes which can be used to clean the barrel and accesible mechanisms of weapon from dirt, sand, moist, lubricant residues and other congesting particles. Kits like that are commonly used within the Zone due to harsh conditions found within it. Can utilise common tools for greater accesibility to inner mechanisms of weapon or alcohol to increase oil residue dissolving effect when cleaning. Can also be used to improve spread of applied gun oil but it is also known that experienced Stalkers use animal fat, which they place on brushes as an alternative lubrication solution. This particular pack fits medium-caliber rifles with long barrels and comes in a hard plastic, reusable container. The Tetra Gun ValuPro III Gun Cleaning Kit gives you all the tools and technology you need in one handy, portable kit to keep your battle rifle looking and working like new. Long-therm agreement with Ukrainian government has made these kits standard-issue in military and law-enforcement forces. Thus extensive popularity of those kits within the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]85%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]6%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] light tools %c[0,170,170,170]+2-5%\n%c[255,238,153,26] Х %c[0,140,140,140] cleaning solvent %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] steel wool %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] alcohol %c[0,170,170,170]+2-4%\n%c[255,238,153,26] Х %c[0,140,140,140] animal fat %c[0,170,170,170]+1-4%\n%c[255,238,153,26] Х %c[0,140,140,140] water %c[0,170,170,170]+1%</text>
+	</string>
+	<string id="st_cleaning_kit_r7">
+		<text>Sniper rifle cleaning brushes kit</text>
+	</string>
+	<string id="st_cleaning_kit_r7_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for 7.62, 7.92, 9x39 and .300 cal. weapons\n \n%c[0,170,170,170]Pack of specialized brushes which can be used to clean the barrel and accesible mechanisms of weapon from dirt, sand, moist, lubricant residues and other congesting particles. Kits like that are commonly used within the Zone due to harsh conditions found within it. Can utilise common tools for greater accesibility to inner mechanisms of weapon or alcohol to increase oil residue dissolving effect when cleaning. Can also be used to improve spread of applied gun oil but it is also known that experienced Stalkers use animal fat, which they place on brushes as an alternative lubrication solution. This particular pack fits large-caliber rifles and very long barrels. This kit is of unknown manufacture but its crude desing and construction and yet very high quality of materials indicate military, presumably special-forces origin.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]85%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]6%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] light tools %c[0,170,170,170]+2-5%\n%c[255,238,153,26] Х %c[0,140,140,140] cleaning solvent %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] steel wool %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] alcohol %c[0,170,170,170]+2-4%\n%c[255,238,153,26] Х %c[0,140,140,140] animal fat %c[0,170,170,170]+1-4%\n%c[255,238,153,26] Х %c[0,140,140,140] water %c[0,170,170,170]+1%</text>
+	</string>
+	<string id="st_cleaning_kit_u">
+		<text>Universal weapon cleaning kit</text>
+	</string>
+	<string id="st_cleaning_kit_u_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for all weapons\n \n%c[0,170,170,170]Advanced gun cleaning kit fitting all common weapon calibers. Beside versatility it also offers expanded functionality allowing recovering weapon from more severe levels of damage than typical cleaning kits. Beside brushes it comes with a small portion of efficient lubricant and cleanining solvent, as well as some light tools to improve accesibility to weapon's inner mechanisms. Already enhanced effectivity can be futher improved by utilizing additional materials. The kit can also be used in combination with repair sets to provide proper cleaning of weapon during advanced maintenance.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]80%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]11%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] light tools %c[0,170,170,170]+2-5%\n%c[255,238,153,26] Х %c[0,140,140,140] cleaning solvent %c[0,170,170,170]+5%\n%c[255,238,153,26] Х %c[0,140,140,140] steel wool %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] alcohol %c[0,170,170,170]+2-4%\n%c[255,238,153,26] Х %c[0,140,140,140] animal fat %c[0,170,170,170]+1-4%\n%c[255,238,153,26] Х %c[0,140,140,140] water %c[0,170,170,170]+1%</text>
+	</string>
+	<string id="st_repair_kit_p">
+		<text>Handgun fixing kit</text>
+	</string>
+	<string id="st_repair_kit_p_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for 9mm, .45 and .357 cal. weapons\n \n%c[0,170,170,170]This kit contains oils, basic cleaning equipment and advanced mechanical and in addition a set common weapon spare parts. In short - all equipment pieces essential to fix a broken weapon to a functioning condition if you know your way around weapon mechanics. It's a heavy kit but it can be very helpful when exploring deep into The Zone with basic equipment as it can be used to recover weapon from even severe damage. Due to differences in weapon construction, this particular set can only be used for initial dissasembly of weapons with handgun calibers but additional meterials or advanced cleaning capabilities of other kits can be used to increase effectivity of single maintenance session.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]45%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]18%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] other toolkits %c[0,170,170,170]+12%\n%c[255,238,153,26] Х %c[0,140,140,140] spare part sets %c[0,170,170,170]+10%\n%c[255,238,153,26] Х %c[0,140,140,140] advanced cleaning kits %c[0,170,170,170]+8%\n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] heavy tools %c[0,170,170,170]+4-5%</text>
+	</string>
+	<string id="st_repair_kit_s">
+		<text>Shotgun fixing kit</text>
+	</string>
+	<string id="st_repair_kit_s_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for 12ga cal. weapons\n \n%c[0,170,170,170]This kit contains oils, basic cleaning equipment and advanced mechanical tools and in addition a set common weapon spare parts. In short - all equipment pieces essential to fix a broken weapon to a functioning condition if you know your way around weapon mechanics. It's a heavy kit but it can be very helpful when exploring deep into The Zone with basic equipment as it can be used to recover weapon from even severe damage. Due to differences in weapon construction, this particular set can only be used for initial dissasembly of weapons with 12ga shotgun caliber but additional meterials or advanced cleaning capabilities of other kits can be used to increase effectivity of single maintenance session.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]45%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]18%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] other toolkits %c[0,170,170,170]+12%\n%c[255,238,153,26] Х %c[0,140,140,140] spare part sets %c[0,170,170,170]+10%\n%c[255,238,153,26] Х %c[0,140,140,140] advanced cleaning kits %c[0,170,170,170]+8%\n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] heavy tools %c[0,170,170,170]+4-5%</text>
+	</string>
+	<string id="st_repair_kit_r5">
+		<text>Rifle fixing kit</text>
+	</string>
+	<string id="st_repair_kit_r5_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for 5.45 and 5.56 cal. weapons\n \n%c[0,170,170,170]This kit contains oils, basic cleaning equipment and advanced mechanical tools and in addition a set common weapon spare parts. In short - all equipment pieces essential to fix a broken weapon to a functioning condition if you know your way around weapon mechanics. It's a heavy kit but it can be very helpful when exploring deep into The Zone with basic equipment as it can be used to recover weapon from even severe damage. Due to differences in weapon construction, this particular set can only be used for initial dissasembly of weapons with  calibers and auto-fire mechanisms but additional meterials or advanced cleaning capabilities of other kits can be used to increase effectivity of single maintenance session.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]45%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]18%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] other toolkits %c[0,170,170,170]+12%\n%c[255,238,153,26] Х %c[0,140,140,140] spare part sets %c[0,170,170,170]+10%\n%c[255,238,153,26] Х %c[0,140,140,140] advanced cleaning kits %c[0,170,170,170]+8%\n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] heavy tools %c[0,170,170,170]+4-5%</text>
+	</string>
+	<string id="st_repair_kit_r7">
+		<text>Large-caliber rifle fixing kit</text>
+	</string>
+	<string id="st_repair_kit_r7_descr">
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for 7.62, 7.92, 9x39 and .300 cal. weapons\n \n%c[0,170,170,170]This kit contains oils, basic cleaning equipment and advanced mechanical tools used for proffesional maintenance and in addition a set common weapon spare parts. In short - all equipment pieces essential to fix a broken weapon to a functioning condition if you know your way around weapon mechanics. It's a heavy kit but it can be very helpful when exploring deep into The Zone with basic equipment as it can be used to recover weapon from even severe damage. Due to differences in weapon construction, this particular set can only be used for initial dissasembly of large-caliber rifles but but additional meterials or advanced cleaning capabilities of other kits can be used to increase effectivity of single maintenance session.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]45%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]18%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] other toolkits %c[0,170,170,170]+12%\n%c[255,238,153,26] Х %c[0,140,140,140] spare part sets %c[0,170,170,170]+10%\n%c[255,238,153,26] Х %c[0,140,140,140] advanced cleaning kits %c[0,170,170,170]+8%\n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] heavy tools %c[0,170,170,170]+4-5%</text>
 	</string>
 	<string id="st_repair_kit">
-		<text>Fixing kit</text>
+		<text>Universal weapon fixing kit</text>
 	</string>
 	<string id="st_repair_kit_descr">
-		<text>This kit contains oils, mechanical tools used for basic maintaining and some small weapon spare parts.
-All metal items required to fix a broken weapon or suit to a functioning condition if you know your way around weapon mechanics.
-It's a heavy kit but it can be very helpful when exploring deep into The Zone with basic equipment.
-1 use = +35% condition (but anything above 85% requires a real mechanic / workshop).</text>
+		<text>\n \n%c[0,170,170,170]COMPATIBILITY:\n \n%c[255,238,153,26] Х %c[0,140,140,140] suited for all weapons\n \n%c[0,170,170,170]This universal, high quality repair kit contains oils, universal cleaning equipment, advanced mechanical tools and large selection of weapon spare parts. In short - all equipment pieces essential to fix a broken weapon to a functioning condition if you know your way around weapon mechanics. It's a heavy kit but it can be very helpful when exploring deep into The Zone with basic equipment as it can be used to recover weapon from even very severe damage. This is an universal set, meaning that any weapon type can be disassembled using it and is supported at maximum effectivity, still additional materials, advanced cleaning sets and specialized spare parts from other repair kits can prove usefull.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[255,238,153,26] Х %c[0,140,140,140] usable for repairing equipment\n%c[0,140,140,140]\n%c[255,238,153,26] Х %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]35%\n%c[255,238,153,26] Х %c[0,140,140,140] base condition gain: %c[0,170,170,170]28%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n \n%c[255,238,153,26] Х %c[0,140,140,140] other toolkits %c[0,170,170,170]+12%\n%c[255,238,153,26] Х %c[0,140,140,140] spare part sets %c[0,170,170,170]+10%\n%c[255,238,153,26] Х %c[0,140,140,140] advanced cleaning kits %c[0,170,170,170]+8%\n%c[255,238,153,26] Х %c[0,140,140,140] gun oil %c[0,170,170,170]+4%\n%c[255,238,153,26] Х %c[0,140,140,140] heavy tools %c[0,170,170,170]+4-5%</text>
 	</string>
 	<string id="st_identity_card_descr">
-		<text>This is your personal ID card which reveals your true identity (keep it hidden). As a USS Assaulter you are specialized in assault rifles, shotguns and heavy weapons. You are also specialized in the control of weapon recoil. Slow sprinting speed.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings</text>
+		<text>This is your personal ID card which reveals your true identity (keep it hidden). As a USS Assaulter you are specialized in assault rifles, shotguns and heavy weapons. You are also specialized in the control of weapon recoil. Slow sprinting speed.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings</text>
 	</string>
 	<string id="st_roubles">
 		<text>100-rouble coins</text>
 	</string>
 	<string id="st_roubles_descr">
-		<text>Trade in The Zone is mainly done through electronic transactions for safety and managing reasons. But many stalkers keep at least a few coins on them to be able to buy smaller things like cigarettes off each other. This minimizes economy management and conserves battery life.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[0,153,255,255] Х %c[0,140,140,140] physical currency unit\n%c[0,153,255,255] Х %c[0,140,140,140] univerally recognized value</text>
+		<text>Trade in The Zone is mainly done through electronic transactions for safety and managing reasons. But many stalkers keep at least a few coins on them to be able to buy smaller things like cigarettes off each other. This minimizes economy management and conserves battery life.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[0,153,255,255] Х %c[0,140,140,140] physical currency unit\n%c[0,153,255,255] Х %c[0,140,140,140] universally recognized value</text>
 	</string>
 	<string id="st_clearsky_fp">
 		<text>Clear Sky faction patch</text>
 	</string>
 	<string id="st_clearsky_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_freedom_fp">
 		<text>Freedom faction patch</text>
 	</string>
 	<string id="st_freedom_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_stalker_fp">
 		<text>Stalker faction patch</text>
 	</string>
 	<string id="st_stalker_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_renegade_fp">
 		<text>Renegade faction patch</text>
 	</string>
 	<string id="st_renegade_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_bandit_fp">
 		<text>Bandit faction patch</text>
 	</string>
 	<string id="st_bandit_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_dolg_fp">
 		<text>Duty faction patch</text>
 	</string>
 	<string id="st_dolg_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_monolith_fp">
 		<text>Monolith faction patch</text>
 	</string>
 	<string id="st_monolith_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_duty_fp">
 		<text>Military faction patch</text>
 	</string>
 	<string id="st_duty_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_merc_fp">
 		<text>Mercenary faction patch</text>
 	</string>
 	<string id="st_merc_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
-They are proof that you are ready to take a life in achieving your goals.
-For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valueable item</text>
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone. They are proof that you are ready to take a life in achieving your goals. For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valueable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 	<string id="st_flask">
 		<text>Cleansed zone water</text>
 	</string>
 	<string id="st_flask_descr">
-		<text>Military flasks are used for small sips of water. Medics and scientist are boiling portions of zone water with a special type of alcohol at very high temperatures. After that it is cooled down for a refreshing spark. This process results in a limited supply offered to each stalker at a price. The water is a little more expensive at medics since they pay for using other peoples primitive or improvised power supplies. The end result is clean refreshing water that has no remnants of radiation at all. Just what the doctor ordered when you are gaging of thirst.
-Some distrustful Stalkers throw in a disinfecting Akvatab into the flask to ease their paranoia of this once radioactive Zone water.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Military flasks are used for small sips of water. Medics and scientist are boiling portions of zone water with a special type of alcohol at very high temperatures. After that it is cooled down for a refreshing spark. This process results in a limited supply offered to each stalker at a price. The water is a little more expensive at medics since they pay for using other peoples primitive or improvised power supplies. The end result is clean refreshing water that has no remnants of radiation at all. Just what the doctor ordered when you are gaging of thirst. Some distrustful Stalkers throw in a disinfecting Akvatab into the flask to ease their paranoia of this once radioactive Zone water.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] cleaning kits (+1%)</text>
 	</string>
 	<string id="st_akvatab">
 		<text>Akvatabs</text>
@@ -396,73 +433,73 @@ Some distrustful Stalkers throw in a disinfecting Akvatab into the flask to ease
 		<text>Metal shovel</text>
 	</string>
 	<string id="st_shovel_old_descr">
-		<text>An old metal shovel used for various field purposes. Few people actually keep shovels with them as they are a common found in The Zone. Especially around industrial areas.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>An old metal shovel used for various field purposes. Few people actually keep shovels with them as they are a common found in The Zone. Especially around industrial areas.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="st_shovel_mili">
 		<text>Military field shovel</text>
 	</string>
 	<string id="st_shovel_mili_descr">
-		<text>Black military shovel of high quality used for numorous field purposes. In the combat training of Spetsnaz soldiers, great attention is paid in their ability to engage in hand-to-hand combat and to use hand-held weapons. One famous example is the entrenching shovel. Firstly it is part of the regular equipment to a solider, and secondly, it is a formidable weapon in close combat when used by a Spetsnaz operator.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
+		<text>Black military shovel of high quality used for numorous field purposes. In the combat training of Spetsnaz soldiers, great attention is paid in their ability to engage in hand-to-hand combat and to use hand-held weapons. One famous example is the entrenching shovel. Firstly it is part of the regular equipment to a solider, and secondly, it is a formidable weapon in close combat when used by a Spetsnaz operator.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
 	</string>
 	<string id="st_ied_rpg">
 		<text>IED</text>
 	</string>
 	<string id="st_ied_rpg_descr">
-		<text>Improvised Explosive Device based on an RPG7 grenade and parts from a cars battery. It looks like it has been carried around for quite a while and could go off any second...\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
+		<text>Improvised Explosive Device based on an RPG7 grenade and parts from a cars battery. It looks like it has been carried around for quite a while and could go off any second...\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
 	</string>
 	<string id="st_ied">
 		<text>IED</text>
 	</string>
 	<string id="st_ied_descr">
-		<text>Improvised Explosive Device based on various chemical substances. It has a very strong chemical reek which may attract or repel mutants. It looks like it has been carried around for quite a while and could go off at any second...\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
+		<text>Improvised Explosive Device based on various chemical substances. It has a very strong chemical reek which may attract or repel mutants. It looks like it has been carried around for quite a while and could go off at any second...\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
 	</string>
 	<string id="st_meinkampf">
 		<text>Mein Kampf</text>
 	</string>
 	<string id="st_meinkampf_descr">
-		<text>Heil Hitler! Adolf Hitlers strategic memoires gathered in a single book. The book and all that it stands for is hated by many making this an item of high symbolic value. Adolf Hitler (20 April 1889 Ц 30 April 1945) was an Austrian-born German politician and the leader of the National Socialist German Workers Party (German: Nationalsozialistische Deutsche Arbeiterpartei (NSDAP), commonly referred to as the Nazi Party). He was chancellor of Germany from 1933 to 1945 and dictator of Nazi Germany (as Fьhrer und Reichskanzler) from 1934 to 1945. Hitler was at the centre of the founding of Nazism, the start of World War II, and the Holocaust.\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings</text>
+		<text>Heil Hitler! Adolf Hitlers strategic memoires gathered in a single book. The book and all that it stands for is hated by many making this an item of high symbolic value. Adolf Hitler (20 April 1889 Ц 30 April 1945) was an Austrian-born German politician and the leader of the National Socialist German Workers Party (German: Nationalsozialistische Deutsche Arbeiterpartei (NSDAP), commonly referred to as the Nazi Party). He was chancellor of Germany from 1933 to 1945 and dictator of Nazi Germany (as Fьhrer und Reichskanzler) from 1934 to 1945. Hitler was at the centre of the founding of Nazism, the start of World War II, and the Holocaust.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+2%)</text>
 	</string>
 	<string id="st_jar">
 		<text>Plastic jar</text>
 	</string>
 	<string id="st_jar_descr">
-		<text>A handful of gold teeth in a small plastic jar filled with sand and leaves to make it silent when running with this special item. There is a favored practice among bandits to liberate a fallen stalker of their teeth, with gold filaments, when they will no longer be of any use to them anymore.\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>A handful of gold teeth in a small plastic jar filled with sand and leaves to make it silent when running with this special item. There is a favored practice among bandits to liberate a fallen stalker of their teeth, with gold filaments, when they will no longer be of any use to them anymore.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
 	</string>
 	<string id="st_grooming">
 		<text>Grooming kit</text>
 	</string>
 	<string id="st_grooming_descr">
-		<text>Grooming kit that packs a ballistic nylon travel case with a beard & mustache comb and Detail Facial Scissors, constructed with man-sized finger rings, ultra-sharp Stainless Steel 420 cutting blades, non-slip rubberized grip, and a precision trimming tip.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>Grooming kit that packs a ballistic nylon travel case with a beard & mustache comb and Detail Facial Scissors, constructed with man-sized finger rings, ultra-sharp Stainless Steel 420 cutting blades, non-slip rubberized grip, and a precision trimming tip.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils, cleaning kits (+2%)</text>
 	</string>
 	<string id="st_journal">
 		<text>Personal journal</text>
 	</string>
 	<string id="st_journal_descr">
-		<text>Personal journal with a few primitive maps and notations in a leather binding. Simple survival tips for the common man and not of much value.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings</text>
+		<text>Personal journal with a few primitive maps and notations in a leather binding. Simple survival tips for the common man and not of much value.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+2%)</text>
 	</string>
 	<string id="st_maps_kit">
 		<text>Mapmaking kit</text>
 	</string>
 	<string id="st_maps_kit_descr">
-		<text>Mapmaking kit containing a collection of pens and measurement instruments. All wrapped up in a rainproof and camouflaged cover of high quality. Used and issued to Ukrainian artillery personnel. Some maps have been started on but not yet completed. Your PDA is a much better tool than any of this.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
+		<text>Mapmaking kit containing a collection of pens and measurement instruments. All wrapped up in a rainproof and camouflaged cover of high quality. Used and issued to Ukrainian artillery personnel. Some maps have been started on but not yet completed. Your PDA is a much better tool than any of this.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
 	</string>
 	<string id="st_bottle_metal">
 		<text>Metal bottle</text>
 	</string>
 	<string id="st_bottle_metal_descr">
-		<text>Metal bottle containing a small portion of what seems to be zone produced vodka. It doesn't smell right and the fumes are strong.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong, low quality alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] significant sleepiness incr.</text>
+		<text>Metal bottle containing a small portion of what seems to be zone produced vodka. It doesn't smell right and the fumes are strong.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong, low quality alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] significant sleepiness incr.\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] cleaning kits (+2%)</text>
 	</string>
 	<string id="st_geiger_dead">
 		<text>Dead Geiger Counter</text>
 	</string>
 	<string id="st_geiger_dead_descr">
-		<text>Dead geiger counter that may have served its purpose. A Geiger counter is a type of particle detector that measures ionizing radiation. They detect the emission of nuclear radiation: alpha particles, beta particles or gamma rays. A Geiger counter detects radiation by ionization produced in a low-pressure gas in a tube. Invented in 1908, Geiger counters remain popular instruments used for measurements in health, physics, industry, geology and other fields, because they can be made with simple electronic circuits.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
+		<text>Dead geiger counter that may have served its purpose. A Geiger counter is a type of particle detector that measures ionizing radiation. They detect the emission of nuclear radiation: alpha particles, beta particles or gamma rays. A Geiger counter detects radiation by ionization produced in a low-pressure gas in a tube. Invented in 1908, Geiger counters remain popular instruments used for measurements in health, physics, industry, geology and other fields, because they can be made with simple electronic circuits.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
 	</string>
 	<string id="st_welding_goggles">
 		<text>Welding goggles</text>
 	</string>
 	<string id="st_welding_goggles_descr">
-		<text>Old and corroded  pair of welding goggles with a broken leather band. Welding goggles are designed to provide protection for certain types of gas welding or oxygen cuttinge. But these are useless in their current state and of little or no value now.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>Old and corroded  pair of welding goggles with a broken leather band. Welding goggles are designed to provide protection for certain types of gas welding or oxygen cuttinge. But these are useless in their current state and of little or no value now.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="st_survival_kit">
 		<text>Small surviving kit</text>
@@ -474,43 +511,43 @@ Some distrustful Stalkers throw in a disinfecting Akvatab into the flask to ease
 		<text>Decorated jewelry box</text>
 	</string>
 	<string id="st_jewelry_box_descr">
-		<text>Small box of some womans jewelry. It seems rather valuable but these items are not very popular among stalkers as they indicate a simple raiders moral.\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Small box of some womans jewelry. It seems rather valuable but these items are not very popular among stalkers as they indicate a simple raiders moral.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
 	</string>
 	<string id="st_cooking">
 		<text>Field cooking kit</text>
 	</string>
 	<string id="st_cooking_descr">
-		<text>A field cooking travel kit for providing cooking accessories for use in camping and traveling situations. The field cooking travel kit comprises a plurality of cooking utensils. A noisy and large kit to carry for one person but very popular among larger groups of stalkers.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A field cooking travel kit for providing cooking accessories for use in camping and traveling situations. The field cooking travel kit comprises a plurality of cooking utensils. A noisy and large kit to carry for one person but very popular among larger groups of stalkers.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="st_book1">
 		<text>Book of mechanics</text>
 	</string>
 	<string id="st_book1_descr">
-		<text>Book about mechanical engineering. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>Book about mechanical engineering. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+2%)</text>
 	</string>
 	<string id="st_book2">
 		<text>Book of engineering</text>
 	</string>
 	<string id="st_book2_descr">
-		<text>Book about industrial engineering. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>Book about industrial engineering. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+2%)</text>
 	</string>
 	<string id="st_drugnotes">
 		<text>Drug distribution notes</text>
 	</string>
 	<string id="st_drugnotes_descr">
-		<text>This notebook describes various drug deals in detail. Specific nick names, locations and time of meeting. Some deals are executed through equipment exchanges and some deals are payed in large amounts of rubles. When running through the pages it becomes clear that Freedom faction are the main distributors of natural drugs like marihuana and plant substances. Bandits are producers and distributors of the more powerful (and dangerous) synthetic drugs like salicidic acid and cocaine. Apparently these drugs are being traded with every faction to some extent. Especially Monolith faction seems to be taking in large amounts drugs in exhange for the more expensive types of ammunition and equipment.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>This notebook describes various drug deals in detail. Specific nick names, locations and time of meeting. Some deals are executed through equipment exchanges and some deals are payed in large amounts of rubles. When running through the pages it becomes clear that Freedom faction are the main distributors of natural drugs like marihuana and plant substances. Bandits are producers and distributors of the more powerful (and dangerous) synthetic drugs like salicidic acid and cocaine. Apparently these drugs are being traded with every faction to some extent. Especially Monolith faction seems to be taking in large amounts drugs in exhange for the more expensive types of ammunition and equipment.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[0,153,255,255] Х %c[0,140,140,140] valuable item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+2%)</text>
 	</string>
 	<string id="st_picture_woman">
 		<text>Picture of a woman</text>
 	</string>
 	<string id="st_picture_woman_descr">
-		<text>The small picture wrapped in plastic displays a beautiful woman with black hair. At the bottom of the picture a name is crossed out.\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings</text>
+		<text>The small picture wrapped in plastic displays a beautiful woman with black hair. At the bottom of the picture a name is crossed out.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+1%)</text>
 	</string>
 	<string id="st_drugs_kit">
 		<text>Kit for making drugs</text>
 	</string>
 	<string id="st_drugs_kit_descr">
-		<text>Small cases and various metal items form a kit for managing and producing drugs. Some plastic bags contain pills and herbs.\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
+		<text>Small cases and various metal items form a kit for managing and producing drugs. Some plastic bags contain pills and herbs.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] valuable item</text>
 	</string>
 	<string id="st_cigar">
 		<text>Soviet cigarettes</text>
@@ -522,7 +559,7 @@ Some distrustful Stalkers throw in a disinfecting Akvatab into the flask to ease
 		<text>Sleeping Bag</text>
 	</string>
 	<string id="st_itm_sleepbag_descr">
-		<text>A light sleeping bag, that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Use is also not protected from radiation.\n \n%c[0,153,255,255] Х %c[0,140,140,140] sets up portable bed\n%c[0,153,255,255] Х %c[0,140,140,140] multiple usages\n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A light sleeping bag, that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Use is also not protected from radiation.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] sets up portable bed\n%c[0,153,255,255] Х %c[0,140,140,140] multiple usages\n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="sleep_itm_warning_blowout">
 		<text>It's not safe to sleep!</text>
@@ -531,32 +568,27 @@ Some distrustful Stalkers throw in a disinfecting Akvatab into the flask to ease
 		<text>Quick Release System</text>
 	</string>
 	<string id="st_itm_backpack_desc">
-		<text>In The Zone you are most likely to be caught by surprise in terrible situations.
-With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item.
-Push the hotkey to activate the emergency release that instantly drops your
-backpack (and everything inside it) to free yourself from its weight.
-Your equipped weapon(s), ammunition, armour and armour attachments
-remain equipped so you are ready for fighting. Retrieve your backpack afterwards.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
+		<text>In The Zone you are most likely to be caught by surprise in terrible situations. With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item. Push the hotkey to activate the emergency release that instantly drops your backpack (and everything inside it) to free yourself from its weight. Your equipped weapon(s), ammunition, armour and armour attachments remain equipped so you are ready for fighting. Retrieve your backpack afterwards.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
 	</string>
 	<string id="st_kit_hunt">
 		<text>Hunters kit</text>
 	</string>
 	<string id="st_kit_hunt_descr">
-		<text>A whole bag full of hooks, knives and equipment for handling animals hides and meat. Few stalkers are carrying professional equipment for mutant hunting. That is probably the reason why most stalkers become sick after eating cooked mutant meals\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A whole bag full of hooks, knives and equipment for handling animals hides and meat. Few stalkers are carrying professional equipment for mutant hunting. That is probably the reason why most stalkers become sick after eating cooked mutant meals\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils, cleaning kits (+4%)</text>
 	</string>
 
 	<string id="st_porn2">
 		<text>Porn magazine</text>
 	</string>
 	<string id="st_porn2_descr">
-		<text>A magazine full of glossy spreads of tattooed girls. A popular find among Zone men that need a psychological escape on a daily basis.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A magazine full of glossy spreads of tattooed girls. A popular find among Zone men that need a psychological escape on a daily basis.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+2%)</text>
 	</string>
 
 	<string id="st_boots">
 		<text>Leather boots</text>
 	</string>
 	<string id="st_boots_descr">
-		<text>Everyone knows about the importance of good gear. Having an extra set of boots is an extremely satisfying thing is a place like this. But many are lacking good gear so it is important to keep such items in the dark or at the bottom of your backpack.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings</text>
+		<text>Everyone knows about the importance of good gear. Having an extra set of boots is an extremely satisfying thing is a place like this. But many are lacking good gear so it is important to keep such items in the dark or at the bottom of your backpack.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings</text>
 	</string>
 
 	<string id="st_crowbar">
@@ -564,7 +596,7 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	</string>
 	<string id="st_crowbar_descr">
 		<text>The best tool for opening locked doors and entering buildings. A common find in the industrial areas but some stalkers are keeping a crowbar in their inventories in spite of its weight. Little value. 
-		There is a famouse stalker who carried a unique crobar around with him however. What made this particular crowbar so importand however was that it had the words УProperty of Black MesaФ imprinted into it. Stalkers look for this crowbar like some stalkers look for rare and valuable artifacts.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		There is a famouse stalker who carried a unique crobar around with him however. What made this particular crowbar so importand however was that it had the words УProperty of Black MesaФ imprinted into it. Stalkers look for this crowbar like some stalkers look for rare and valuable artifacts.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] repair kits (+5%)</text>
 	</string>
 
 	<string id="st_tobacco">
@@ -573,213 +605,200 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	<string id="st_tobacco_descr">
 		<text>Cigarrettes are expensive and rare in The Zone. So having raw tobacco enables you to generate your own at a lower cost. This tin is sealed and ensures that the tobacco will stay fresh for days or weeks depending on Zone conditions.\n \n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (roll up)\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,204,0,51] Х %c[0,140,140,140] low quality\n%c[0,204,0,51] Х %c[0,140,140,140] unhealthy</text>
 	</string>
-
 	<string id="st_batteries_dead">
 		<text>Dead batteries</text>
 	</string>
 	<string id="st_batteries_dead_descr">
-		<text>One out of ten batteries found in Zaton and Jupiter still carry some juice. Stalkers seem to throw them everywhere when they run dead. It is almost impossible to find a battery recharger as some men would kill for such equipment. Their outer layer of corrotion and dirt is a strong indication that they are far below their nominal power output. Still - as everything in the Zone they also have their purpose - they should prove usefull for frequent UPD recharges.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] UPD charge +14%</text>
+		<text>One out of ten batteries found in Zaton and Jupiter still carry some juice. Stalkers seem to throw them everywhere when they run dead. It is almost impossible to find a battery recharger as some men would kill for such equipment. Their outer layer of corrotion and dirt is a strong indication that they are far below their nominal power output. Still - as everything in the Zone they also have their purpose - they should prove usefull for frequent UPD recharges.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] UPD charge +14%</text>
 	</string>
 	<string id="st_batteries_empty">
 		<text>Emptied batteries</text>
 	</string>
-	<string id="st_batteries_dead_descr">
-		<text>These batteries have been completely drained of whatever energy the was stored in them. Their only value is weight of the metal they are being made of.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] UPD charge +0,1%</text>
+	<string id="st_batteries_empty_descr">
+		<text>These batteries have been completely drained of whatever energy the was stored in them. Their only value is weight of the metal they are being made of.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] UPD charge +1%</text>
 	</string>
 	<string id="st_marijuana">
 		<text>Marijuana (Zone-produced)</text>
 	</string>
 	<string id="st_marijuana_descr">
-		<text>Self-grown cannabis smoking is popular in this place and especially within the Freedom fighter faction. Such marijuana bags are traded here and there by the Freedom faction as they believe that the drug is a helpful tool for mind struggling to find its balance.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (prolonged inhalation)\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase</text>
+		<text>Self-grown cannabis smoking is popular in this place and especially within the Freedom fighter faction. Such marijuana bags are traded here and there by the Freedom faction as they believe that the drug is a helpful tool for mind struggling to find its balance.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (prolonged inhalation)\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase</text>
 	</string>
 	<string id="st_flashlight_old">
 		<text>Wind-up flashlight</text>
 	</string>
 	<string id="st_flashlight_old_descr">
-		<text>An old-school and very durable flashlight showing sings of intense usage. By twisting the back part of the flashlight for a few seconds the power is winded and stored in its internal cells. It is an essential tool for Zone exploration for extended periods of time, unfortunately it allows for simultaneus usage of only a single-handed equipment.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
+		<text>An old-school and very durable flashlight showing sings of intense usage. By twisting the back part of the flashlight for a few seconds the power is winded and stored in its internal cells. It is an essential tool for Zone exploration for extended periods of time, unfortunately it allows for simultaneus usage of only a single-handed equipment.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_flashlight_broken">
 		<text>Broken flashlight</text>
 	</string>
 	<string id="st_flashlight_broken_descr">
-		<text>The handle is broken and not even duck tape would be able to keep the batteries in place.
-This is no longer of any value.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
+		<text>The handle is broken and not even duck tape would be able to keep the batteries in place. This is no longer of any value.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
 	</string>
 	<string id="st_underwear">
 		<text>Soaked underwear</text>
 	</string>
 	<string id="st_underwear_descr">
-		<text>An extra pair of socks, shirt and underwear might work wonders. But not is this soaked and bloody condition. There is little chance that any stalker would pay for such spare clothes.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings</text>
+		<text>An extra pair of socks, shirt and underwear might work wonders. But not is this soaked and bloody condition. There is little chance that any stalker would pay for such spare clothes.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[0,153,255,255] Х %c[0,140,140,140] personal belongings\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 
 	<string id="st_wpn_spareparts">
 		<text>Weapon spare parts</text>
 	</string>
 	<string id="st_wpn_spareparts_descr">
-		<text>Spare parts for what looks to be an AKM assault rifle. The wooden parts are not in a very good condition and only novices would be interested in buying such weapon parts. There are stalkers who replace certain weapon parts when finding a new weapon out in the open. They do this to avoid the possibility of being hunted down for stash theft.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
+		<text>Spare parts for what looks to be an AKM assault rifle. The wooden parts are not in a very good condition and only novices would be interested in buying such weapon parts. There are stalkers who replace certain weapon parts when finding a new weapon out in the open. They do this to avoid the possibility of being hunted down for stash theft.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] repair kits (+10%)</text>
 	</string>
 
 	<string id="st_beadspread">
 		<text>Bed spread</text>
 	</string>
 	<string id="st_beadspread_descr">
-		<text>A comforting item that gives you that extra 10 percent chance of a night sleep.
-Few actual beds are found in the areas of Zaton and Jupiter so having a bed spread and a sleeping bag in your inventory is almost obligatory according to many stalker. Some military units are used a bed spread standard with their equipment.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A comforting item that gives you that extra 10 percent chance of a night sleep. Few actual beds are found in the areas of Zaton and Jupiter so having a bed spread and a sleeping bag in your inventory is almost obligatory according to many stalker. Some military units are used a bed spread standard with their equipment.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 
 	<string id="st_walkie">
 		<text>Walkie talkie</text>
 	</string>
 	<string id="st_walkie_descr">
-		<text>The display is dead and there is a constant hiss from the speaker indicating that this is of no use. Has what appears to be mutant teeth marks on it.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
+		<text>The display is dead and there is a constant hiss from the speaker indicating that this is of no use. Has what appears to be mutant teeth marks on it.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
 	</string>
 
 	<string id="st_cards">
 		<text>Deck of cards</text>
 	</string>
 	<string id="st_cards_descr">
-		<text>It is important to have your mindset focus on other things than the Chernobyl disaster and its consequenses. So a deck of cards are popular for killing time but also used for sorting special trades and other unsual matters. Moscow is depicted on these cards as a proud architectural design.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>It is important to have your mindset focus on other things than the Chernobyl disaster and its consequenses. So a deck of cards are popular for killing time but also used for sorting special trades and other unsual matters. Moscow is depicted on these cards as a proud architectural design.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 
 	<string id="st_vodka_quality">
-		<text>Vodka (imported)</text>
+		<text>Stolichnaya Vodka (imported)</text>
 	</string>
 	<string id="st_vodka_quality_descr">
-		<text>Stolichnaya Vodka. A favorite amongst Russians and many people the world over. This is Russian vodka of high quality.
-It is often seen that drinks and liquids are carried in military containers and flasks to avoid a glass bottle from being destroyed.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] very strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>A favorite amongst Russians and many people the world over. This is Russian vodka of high quality. It is often seen that drinks and liquids are carried in military containers and flasks to avoid a glass bottle from being destroyed.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] strong alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] large sleepiness increase\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] cleaning kits (+4%)</text>
 	</string>
 
 	<string id="st_ammo_bad">
 		<text>Bad ammo</text>
 	</string>
 	<string id="st_ammo_bad_descr">
-		<text>Every stalker knows about the importance of reliable weaponry.
-That is the reason why a daily and thorough analysis of your ammunition is important also.
-Stalkers often count their ammo and clean it to perfection as a weapon jam in the heat of battle may cost your life.
-This ammo has a bad standard and should be discarded.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
+		<text>Every stalker knows about the importance of reliable weaponry. That is the reason why a daily and thorough analysis of your ammunition is important also. Stalkers often count their ammo and clean it to perfection as a weapon jam in the heat of battle may cost your life. This ammo has a bad standard and should be discarded.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
 	</string>
 
 	<string id="st_mili_maps">
 		<text>Military maps</text>
 	</string>
 	<string id="st_mili_maps_descr">
-		<text>These maps indicate the location of military camps around the Zone.
-But everyone with a PDA has already marked these well known locations.
-So this is of little use to anyone with a functioning PDA.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
+		<text>These maps indicate the location of military camps around the Zone. But everyone with a PDA has already marked these well known locations. So this is of little use to anyone with a functioning PDA.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 
 	<string id="st_swiss">
 		<text>Swiss knife</text>
 	</string>
 	<string id="st_swiss_descr">
-		<text>Opening cans of food, keeping your mechanical gear tightened, cutting ropes and sparpening your best bullets. The swiss knife serves many purposes and it a powerful tool packed in a very little container.
-Many stalkers carry such tool so it may be of little value when traded.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>Opening cans of food, keeping your mechanical gear tightened, material cutting or meal preparation. The swiss knife serves many purposes and it a powerful tool packed in a very little container. Many stalkers carry such tool so it may be of little value when traded.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils, cleaning kits (+4%)</text>
 	</string>
 
 	<string id="st_headlamp">
 		<text>Old head lamp</text>
 	</string>
 	<string id="st_headlamp_descr">
-		<text>Although few men dare to explore The Zone during the night there are circumstances where a head lamp is crucial. Everyone keeps some sort of light source close to him. You never know if you have to move from one place to another during the night if faction assaults are executed.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] moderate UPD consumption rate</text>
+		<text>Although few men dare to explore The Zone during the night there are circumstances where a head lamp is crucial. Everyone keeps some sort of light source close to him. You never know if you have to move from one place to another during the night if faction assaults are executed.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] moderate UPD consumption rate</text>
 	</string>
 
 	<string id="st_mirror">
-		<text>Mirror</text>
+		<text>Telescopic mirror</text>
 	</string>
 	<string id="st_mirror_descr">
-		<text>Small mirror mounted on a telescopic iron tube. A handy item used by those skilled in the arts of urban combat as it allows to peek around corners without getting shot.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
+		<text>Small mirror mounted on a telescopic iron tube. A handy item used by those skilled in the arts of urban combat as it allows to peek around corners without getting shot.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
 	</string>
 
 	<string id="st_batteries_ccell">
 		<text>Military battery unit</text>
 	</string>
 	<string id="st_batteries_ccell_descr">
-		<text>A pack of fully charged, military battery unit. Very valuable in the Zone as they are used by all factions and Stalkers of all skill. From the lowly rookies to the Master Stalkers that roam the zone. Supplied to Traders by corrupt military officers trying to earn some extra dough in the Zone.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] UPD charge +93%</text>
+		<text>A pack of fully charged, military battery unit. Very valuable in the Zone as they are used by all factions and Stalkers of all skill. From the lowly rookies to the Master Stalkers that roam the zone. Supplied to Traders by corrupt military officers trying to earn some extra dough in the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] UPD charge +93%</text>
 	</string>
 
 	<string id="st_cocaine">
-		<text>Cocaine (zone produced)</text>
+		<text>Cocaine (Zone produced)</text>
 	</string>
 	<string id="st_cocaine_descr">
-		<text>Small aluminium case containing cocaine and the tools for its use.
-Cocaine is a powerful nervous system stimulant. Its effects can last from 15Ц30 minutes to an hour, depending on the route of administration. Cocaine increases alertness, feelings of well-being and euphoria, energy and motor activity, feelings of competence and sexuality. Athletic performance may be enhanced in sports where sustained attention and endurance is required. Anxiety, paranoia and restlessness are also frequent. With excessive dosage, tremors, convulsions and increased body temperature are observed. Occasional cocaine use does not typically lead to severe or even minor physical or social problems.
-Bandits are know for making use of such drugs right before launching an assault or ambush.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (sniffer)\n%c[0,153,255,255] Х %c[0,140,140,140] very potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] very large sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] slight health restoration on usage\n%c[0,153,255,255] Х %c[0,140,140,140] slight damage resistance bonus</text>
+		<text>Small aluminium case containing cocaine and the tools for its use. Cocaine is a powerful nervous system stimulant. Its effects can last from 15Ц30 minutes to an hour, depending on the route of administration. Cocaine increases alertness, feelings of well-being and euphoria, energy and motor activity, feelings of competence and sexuality. Athletic performance may be enhanced in sports where sustained attention and endurance is required. Anxiety, paranoia and restlessness are also frequent. With excessive dosage, tremors, convulsions and increased body temperature are observed. Occasional cocaine use does not typically lead to severe or even minor physical or social problems. Bandits are know for making use of such drugs right before launching an assault or ambush.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] very potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] very large sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] slight health restoration on usage\n%c[0,153,255,255] Х %c[0,140,140,140] slight damage resistance bonus</text>
 	</string>
 
 	<string id="st_hammer">
 		<text>Old hammer</text>
 	</string>
 	<string id="st_hammer_descr">
-		<text>These wooden and iron hammers are a common sight in the industrial areas of The Zone. Although, they are counted for as heavy items for a backpack they are often saved in a stalkers inventory for their versatile use.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>These wooden and iron hammers are a common sight in the industrial areas of The Zone. Although, they are counted for as heavy items for a backpack they are often saved in a stalkers inventory for their versatile use.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] repair kits (+4%)</text>
 	</string>
 
 	<string id="st_tetanus">
-		<text>Tetanus vaccine</text>
+		<text>Tetanus vaccine (imported)</text>
 	</string>
 	<string id="st_tetanus_descr">
-		<text>Tetanus vaccine is composed of inactivated tetanus toxin and is used to prevent an individual from contracting tetanus. Tetanus, also known as lockjaw, is a disease caused by the bacteria Clostridium tetani which enters the body through open wounds and releases a poison called tetanospasmin. This is a potentially deadly disease because the poison attacks the nervous system blocking nerve signals from the spinal cord to and from the muscles. Animals of the Zone have a high likehood of carrying the Teranus disease and it spreads easily through bites.
-As injection of inactivated toxin overally boosts users organism activity, there are several positive side-effects of usage can be experienced. Morever in this particular case the mixture has been enhanced by several additional anti-toxins making the vaccine usable beyond its original purpose.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,204,0,51] Х %c[0,140,140,140] slight sleepiness increase</text>
+		<text>Tetanus vaccine is composed of inactivated tetanus toxin and is used to prevent an individual from contracting tetanus. Tetanus, also known as lockjaw, is a disease caused by the bacteria Clostridium tetani which enters the body through open wounds and releases a poison called tetanospasmin. This is a potentially deadly disease because the poison attacks the nervous system blocking nerve signals from the spinal cord to and from the muscles. Animals of the Zone have a high likehood of carrying the Teranus disease and it spreads easily through bites. As injection of inactivated toxin overally boosts users organism activity, there are several positive side-effects of usage can be experienced. Morever in this particular case the mixture has been enhanced by several additional anti-toxins making the vaccine usable beyond its original purpose.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,204,0,51] Х %c[0,140,140,140] slight sleepiness increase</text>
 	</string>
 	<string id="st_tarpaulin">
 		<text>Camouflaged tarpaulin</text>
 	</string>
 	<string id="st_tarpaulin_descr">
-		<text>A tarpauling (or hootch) is a large sheet of strong, flexible, water-resistant or waterproof material, often cloth such as canvas or polyester coated with urethane. Or made of plastics such as polyethylene. They often have reinforced grommets at the corners and along the sides to form attachment points for rope, allowing them to tied down or suspended between trees. A good tool for several purposes. It is mainly used for creating small and simple tent like hideouts for resting. Trading value is low as alternatives are found many places in industrial areas.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item</text>
+		<text>A tarpauling (or hootch) is a large sheet of strong, flexible, water-resistant or waterproof material, often cloth such as canvas or polyester coated with urethane. Or made of plastics such as polyethylene. They often have reinforced grommets at the corners and along the sides to form attachment points for rope, allowing them to tied down or suspended between trees. A good tool for several purposes. It is mainly used for creating small and simple tent like hideouts for resting. Trading value is low as alternatives are found many places in industrial areas.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils (+3%)</text>
 	</string>
 
 	<string id="st_rope">
 		<text>Rope</text>
 	</string>
 	<string id="st_rope_descr">
-		<text>A good rope serves many purposes in a place such as this. Many stalkers can put this to good use which generates a rather high trading value. The length of this is about 10 meters.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A good rope serves many purposes in a place such as this. Many stalkers can put this to good use which generates a rather high trading value. The length of this is about 10 meters.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 
 	<string id="st_synthrope">
 		<text>2 Synthetic ropes</text>
 	</string>
 	<string id="st_synthrope_descr">
-		<text>Synthetic ropes are common items of military inventories. But for some reason few military stalkers actually carry them. A good rope serves many purposes in a place such as this. Many stalkers can put this to good use which generates a rather high trading value. The length of these ropes is about 5 meters each.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>Synthetic ropes are common items of military inventories. But for some reason few military stalkers actually carry them. A good rope serves many purposes in a place such as this. Many stalkers can put this to good use which generates a rather high trading value. The length of these ropes is about 5 meters each.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 
 	<string id="st_cutlery">
 		<text>Field cutlery</text>
 	</string>
 	<string id="st_cutlery_descr">
-		<text>Spoon, knife and fork made of heavy steel form a robust and reasonably light cutlery set ideal for backpacking and field exploration trips. The cutlery is held together by a cord and stopper. If corrotion and dirt were to be cleaned off this set it could be safe to use.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>Spoon, knife and fork made of heavy steel form a robust and reasonably light cutlery set ideal for backpacking and field exploration trips. The cutlery is held together by a cord and stopper. If corrotion and dirt were to be cleaned off this set it could be safe to use.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] gun oils, cleaning kits (+2%)</text>
 	</string>
 
 	<string id="st_adrenalin">
 		<text>Epinephrine shot</text>
 	</string>
 	<string id="st_adrenalin_descr">
-		<text>Epinephrine (also known as adrenalin) is a hormone and a neurotransmitter. Epinephrine has many functions in the body, instantly regulating heart rate, blood vessel and air passage diameters, and metabolic shifts. Epinephrine release is a crucial component of the fight-or-flight response of the sympathetic nervous system. The effects lead to increased blood glucose and fatty acids, providing substrates for instant energy production within cells throughout the body.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] very potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] very large sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] slight health restoration on usage\n%c[0,153,255,255] Х %c[0,140,140,140] significant damage resistance bonus</text>
+		<text>Epinephrine (also known as adrenalin) is a hormone and a neurotransmitter. Epinephrine has many functions in the body, instantly regulating heart rate, blood vessel and air passage diameters, and metabolic shifts. Epinephrine release is a crucial component of the fight-or-flight response of the sympathetic nervous system. The effects lead to increased blood glucose and fatty acids, providing substrates for instant energy production within cells throughout the body.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] very potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] very large sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] slight health restoration on usage\n%c[0,153,255,255] Х %c[0,140,140,140] significant damage resistance bonus</text>
 	</string>
 
 	<string id="st_radio">
 		<text>Small radio</text>
 	</string>
 	<string id="st_radio_descr">
-		<text>Music is a good way to calm your nerves. But with a broken antenna such as this there is little use of a radio such as this. Moisture and dirt has also damaged this item.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
+		<text>Music is a good way to calm your nerves. But with a broken antenna such as this there is little use of a radio such as this. Moisture and dirt has also damaged this item.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
 	</string>
 
 	<string id="st_radio2">
 		<text>Broken radio</text>
 	</string>
 	<string id="st_radio2_descr">
-		<text>A small radio in poor condition with signs of moisture and dirt everywhere. The interiors seem to be damaged as the radio rattle when moved around. Little or no value.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
+		<text>A small radio in poor condition with signs of moisture and dirt everywhere. The interiors seem to be damaged as the radio rattle when moved around. Little or no value.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,204,0,51] Х %c[0,140,140,140] unusable</text>
 	</string>
 
 	<string id="st_fieldcooker">
 		<text>Hexamine field cooker</text>
 	</string>
 	<string id="st_fieldcooker_descr">
-		<text>A lightweight, strong and compact solid fuel stove supplied with two small Hexene fuel tabs. Hexi solid fuel tablets burn without odour and ignite easily with a match - 4 small fuel tablets will bring to the boil 2.5 cups of water in approximately 5 minutes. On opening the cooker, it can be used in several ways. The hinged openers can be angled to concentrate the heat to a pinpointed area, for direct heat, or, used at 90 deg angle for regular cooking, or the cooker can be inverted, (Spikes down) placing the fuel blocks closer to the mess tin. Whichever way you use it, the Hexi Cooker is a reliable field cooker that will never let you down. It will work in all weathers, and heat water and food quickly.\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A lightweight, strong and compact solid fuel stove supplied with two small Hexene fuel tabs. Hexi solid fuel tablets burn without odour and ignite easily with a match - 4 small fuel tablets will bring to the boil 2.5 cups of water in approximately 5 minutes. On opening the cooker, it can be used in several ways. The hinged openers can be angled to concentrate the heat to a pinpointed area, for direct heat, or, used at 90 deg angle for regular cooking, or the cooker can be inverted, (Spikes down) placing the fuel blocks closer to the mess tin. Whichever way you use it, the Hexi Cooker is a reliable field cooker that will never let you down. It will work in all weathers, and heat water and food quickly.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="st_itm_sleepbag_name">
 		<text>Sleeping Bag</text>
 	</string>
 	<string id="st_itm_sleepbag_desc">
-		<text>A light sleeping bag, that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Use is also not protected from radiation.\n \n%c[0,153,255,255] Х %c[0,140,140,140] sets up portable bed\n%c[0,153,255,255] Х %c[0,140,140,140] multiple usages\n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
+		<text>A light sleeping bag, that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Use is also not protected from radiation.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] sets up portable bed\n%c[0,153,255,255] Х %c[0,140,140,140] multiple usages\n%c[0,153,255,255] Х %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="sleep_itm_warning_blowout">
 		<text>It's not safe to sleep!</text>
@@ -788,26 +807,16 @@ As injection of inactivated toxin overally boosts users organism activity, there
 		<text>Quick Release System</text>
 	</string>
 	<string id="st_itm_actor_backpack_descr">
-		<text>In The Zone you are most likely to be caught by surprise in terrible situations.
-With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item.
-Push the hotkey to activate the emergency release that instantly drops your
-backpack (and everything inside it) to free yourself from its weight.
-Your equipped weapon(s), ammunition, armour and armour attachments
-remain equipped so you are ready for fighting. Retrieve your backpack afterwards.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,153,255,255] Х %c[0,140,140,140] build in GPS\n%c[0,153,255,255] Х %c[0,140,140,140] very fast usage (release clamp)\n%c[0,153,255,255] Х %c[0,140,140,140] combat gear remains with user</text>
+		<text>In The Zone you are most likely to be caught by surprise in terrible situations. With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item. Push the hotkey to activate the emergency release that instantly drops your backpack (and everything inside it) to free yourself from its weight. Your equipped weapon(s), ammunition, armour and armour attachments remain equipped so you are ready for fighting. Retrieve your backpack afterwards.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,153,255,255] Х %c[0,140,140,140] build in GPS\n%c[0,153,255,255] Х %c[0,140,140,140] very fast usage (release clamp)\n%c[0,153,255,255] Х %c[0,140,140,140] combat gear remains with user</text>
 	</string>
 	<string id="st_itm_backpack_desc">
-		<text>In The Zone you are most likely to be caught by surprise in terrible situations.
-With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item.
-Push the hotkey to activate the emergency release that instantly drops your
-backpack (and everything inside it) to free yourself from its weight.
-Your equipped weapon(s), ammunition, armour and armour attachments
-remain equipped so you are ready for fighting. Retrieve your backpack afterwards.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,153,255,255] Х %c[0,140,140,140] build in GPS\n%c[0,153,255,255] Х %c[0,140,140,140] very fast usage (release clamp)\n%c[0,153,255,255] Х %c[0,140,140,140] combat gear remains with user</text>
+		<text>In The Zone you are most likely to be caught by surprise in terrible situations. With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item. Push the hotkey to activate the emergency release that instantly drops your backpack (and everything inside it) to free yourself from its weight. Your equipped weapon(s), ammunition, armour and armour attachments remain equipped so you are ready for fighting. Retrieve your backpack afterwards.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,153,255,255] Х %c[0,140,140,140] build in GPS\n%c[0,153,255,255] Х %c[0,140,140,140] very fast usage (release clamp)\n%c[0,153,255,255] Х %c[0,140,140,140] combat gear remains with user</text>
 	</string>
 	<string id="st_itm_backpack_stash_name">
 		<text>PDA marked backpack</text>
 	</string>
 	<string id="st_itm_backpack_stash_desc">
-		<text>An extremely durable backpack with implemented GPS electronical devices. You will synchronize this device with your PDA once dropped to generate a stash that is marked on your PDA. The backpack is made of strong and durable materials that will keep your equipment safe and dry even in very humid environments. The camouflaged design makes sure that it doesn't stand out from the surroundings.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,153,255,255] Х %c[0,140,140,140] build in GPS\n%c[0,204,0,51] Х %c[0,140,140,140] single usage</text>
+		<text>An extremely durable backpack with implemented GPS electronical devices. You will synchronize this device with your PDA once dropped to generate a stash that is marked on your PDA. The backpack is made of strong and durable materials that will keep your equipment safe and dry even in very humid environments. The camouflaged design makes sure that it doesn't stand out from the surroundings.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military item\n%c[0,153,255,255] Х %c[0,140,140,140] build in GPS\n%c[0,204,0,51] Х %c[0,140,140,140] single usage</text>
 	</string>
 	<string id="st_identity_card">
 		<text>Personal USS identity card</text>
@@ -825,133 +834,133 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 		<text>Morphine ampoule (imported)</text>
 	</string>
 	<string id="st_morphine_descr">
-		<text>An iron ampoule designed as field equipment for military field personel for instant pain reduction. This ampoule contains a powerful dosis of Morphine. In clinical medicine, morphine is regarded as the gold standard, or benchmark, of opioid analgesics used to relieve severe or agonizing pain and suffering. Like other opioids, such as oxycodone, hydromorphone, and diacetylmorphine (heroin), morphine acts directly on the central nervous system (CNS) to relieve pain. Injected to arm or thigh.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] significant damage resistance bonus\n%c[0,153,255,255] Х %c[0,140,140,140] moderate health restoration on usage</text>
+		<text>An iron ampoule designed as field equipment for military field personel for instant pain reduction. This ampoule contains a powerful dosis of Morphine. In clinical medicine, morphine is regarded as the gold standard, or benchmark, of opioid analgesics used to relieve severe or agonizing pain and suffering. Like other opioids, such as oxycodone, hydromorphone, and diacetylmorphine (heroin), morphine acts directly on the central nervous system (CNS) to relieve pain. Injected to arm or thigh.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] significant damage resistance bonus\n%c[0,153,255,255] Х %c[0,140,140,140] moderate health restoration on usage</text>
 	</string>
 	<string id="st_salicidic_acid">
-		<text>Salicidic Acid ampoule (zone produced)</text>
+		<text>Salicidic Acid ampoule (imported)</text>
 	</string>
 	<string id="st_salicidic_acid_descr">
-		<text>An iron ampoule designed as field equipment for military field personel for instant pain reduction. This ampoule contains a powerful dosis of Salicylic acid. Salicylic acid is known for its ability to ease aches and pains and reduce fevers. These medicinal properties, particularly fever relief, have been known since ancient times, and it is used as an anti-inflammatory drug.Some researchers believe that salicylate is an essential micronutrient in the human diet, potentially qualifying as a vitamin, namely Vitamin S. Injected to arm or thigh.\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] moderate damage resistance bonus\n%c[0,153,255,255] Х %c[0,140,140,140] small health restoration on usage</text>
+		<text>An iron ampoule designed as field equipment for military field personel for instant pain reduction. This ampoule contains a powerful dosis of Salicylic acid. Salicylic acid is known for its ability to ease aches and pains and reduce fevers. These medicinal properties, particularly fever relief, have been known since ancient times, and it is used as an anti-inflammatory drug.Some researchers believe that salicylate is an essential micronutrient in the human diet, potentially qualifying as a vitamin, namely Vitamin S. Injected to arm or thigh.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] medicine\n%c[0,153,255,255] Х %c[0,140,140,140] fast usage (syringe)\n%c[0,153,255,255] Х %c[0,140,140,140] moderate damage resistance bonus\n%c[0,153,255,255] Х %c[0,140,140,140] small health restoration on usage</text>
 	</string>
 	<string id="st_tomato">
 		<text>Canned tomatoes (imported)</text>
 	</string>
 	<string id="st_tomato_descr">
-		<text>Canned sliced and diced tomatoes are brought to the Zone on regular basis. The date on the bottom tells you that this should be alright to eat.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Canned sliced and diced tomatoes are brought to the Zone on regular basis. The date on the bottom tells you that this should be alright to eat.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_sausage">
 		<text>Smoked sausage (imported)</text>
 	</string>
 	<string id="st_sausage_descr">
-		<text>Made of beef and pork. Smoked and vacuum packaged it can be preserved for a long periods. This particular product of smoked sausage is imported from the Russian Federation. Famous among certain Russian mafia leaders for its exceptional flavor and taste.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Made of beef and pork. Smoked and vacuum packaged it can be preserved for a long periods. This particular product of smoked sausage is imported from the Russian Federation. Famous among certain Russian mafia leaders for its exceptional flavor and taste.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
         <string id="st_corn">
 		<text>Canned corn (imported)</text>
 	</string>
 	<string id="st_corn_descr">
-		<text>Canned sweet corn brought from the outside. Can be eaten as it is, but there are some who cook soup with it.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Canned sweet corn brought from the outside. Can be eaten as it is, but there are some who cook soup with it.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
         <string id="st_mineral_water">
 		<text>Mineral water (imported)</text>
 	</string>
 	<string id="st_mineral_water_descr">
-		<text>Spring water from the Ukrainian mountains with added carbohydrates and calcium.\n \n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Spring water from the Ukrainian mountains with added carbohydrates and calcium.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[255,238,153,26] Х %c[0,140,140,140] provides repair material for:%c[0,170,170,170] cleaning kits (+1%)</text>
 	</string>
         <string id="st_hand_rolling_tobacco">
 		<text>Hand rolling tobacco (imported)</text>
 	</string>
 	<string id="st_hand_rolling_tobacco_descr">
-		<text>Precious hand rolling tobacco which was brought from the west side. Since there are no additives with this brand, it is posible to enjoy the original taste of tobacco leaf itself.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (roll up)\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] large sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Precious hand rolling tobacco which was brought from the west side. Since there are no additives with this brand, it is posible to enjoy the original taste of tobacco leaf itself.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] slow usage (roll up)\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] large sleepiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
 	</string>
 	<string id="st_beer">
 		<text>Ukrainian Beer (imported)</text>
 	</string>
 	<string id="st_beer_descr">
-		<text>Ukrainian beer. Not only vodka, but also beer is popular within every faction.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] light alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] slight sleepiness increase\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Ukrainian beer. Not only vodka, but also beer is popular within every faction.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] drink\n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] light alcohol\n%c[0,204,0,51] Х %c[0,140,140,140] slight sleepiness increase\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
 	</string>
 	<string id="st_beans">
 		<text>Baked beans (imported)</text>
 	</string>
 	<string id="st_beans_descr">
-		<text>Canned baked beans brought from west. The kidney beans with tomato sauce may bring back some memories for some people in certain areas.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Canned baked beans brought from west. The kidney beans with tomato sauce may bring back some memories for some people in certain areas.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_chili">
 		<text>Chili beans (imported)</text>
 	</string>
 	<string id="st_chili_descr">
-		<text>Canned chili beans brought from the outside are popular as incredients in cooked mutant meals.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
+		<text>Canned chili beans brought from the outside are popular as incredients in cooked mutant meals.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_salmon">
 		<text>Smoked salmon (imported)</text>
 	</string>
 	<string id="st_salmon_descr">
-		<text>Ukrainian smoked salmon. These valuable packages are often traded and consumed within a few days after they've been brought to the Zone.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Ukrainian smoked salmon. These valuable packages are often traded and consumed within a few days after they've been brought to the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_raisins">
 		<text>Raisins (imported)</text>
 	</string>
 	<string id="st_raisins_descr">
-		<text>A pack of raisins are a rich and instant nutrition source for balancing the sugar balance in the blood.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source.</text>
+		<text>A pack of raisins are a rich and instant nutrition source for balancing the sugar balance in the blood.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source.</text>
 	</string>
 	<string id="st_chocolate">
 		<text>Russian Chocolate (imported)</text>
 	</string>
 	<string id="st_chocolate_descr">
-		<text>Russian chocolate. It is quite hard to obtain in the Zone though it is nothing special outside of the Zone. Many fond childhood memories spring to stalkers minds when they get to eat such a delicacy in the harsh and unforgiving conditions of the Zone.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Russian chocolate. It is quite hard to obtain in the Zone though it is nothing special outside of the Zone. Many fond childhood memories spring to stalkers minds when they get to eat such a delicacy in the harsh and unforgiving conditions of the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_mint">
 		<text>Mint gum (imported)</text>
 	</string>
 	<string id="st_mint_descr">
-		<text>Strong mint gum brough from the west. It is refreshing and helps cleaning of radiated particles from mouth area. It also seems to have a nice ability to fight off sleepiness for a short while.\n \n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness reduction\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Strong mint gum brough from the west. It is refreshing and helps cleaning of radiated particles from mouth area. It also seems to have a nice ability to fight off sleepiness for a short while.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness reduction</text>
 	</string>
 	<string id="st_caffeine">
 		<text>Caffeine tablets (imported)</text>
 	</string>
 	<string id="st_caffeine_descr">
-		<text>Caffeine and sodium benzonate which cause action to occur central nervous excitation to get rid of sleepiness for a while.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] large sleepiness decrease</text>
+		<text>Caffeine and sodium benzonate which cause action to occur central nervous excitation to get rid of sleepiness for a while.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] potent alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] large sleepiness decrease</text>
 	</string>
 	<string id="st_cuban_cigar">
 		<text>Cuban Cigar (imported)</text>
 	</string>
 	<string id="st_cuban_cigar_descr">
-		<text>The valuable Cuban cigar can assure a blissful moment during a nice sunset. Some Stalkers talk about the joy of not having mosquitos around you when smoking strong tobacco. Cuban Cigars are considered the finest in the world. A rare commodity among The Zones many Miseries.</text>
+		<text>The valuable Cuban cigar can assure a blissful moment during a nice sunset. Some Stalkers talk about the joy of not having mosquitos around you when smoking strong tobacco. Cuban Cigars are considered the finest in the world. A rare commodity among The Zones many Miseries.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] valuable\n%c[0,153,255,255] Х %c[0,140,140,140] strong alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] sign. sleepiness decrease</text>
 	</string>
 	<string id="st_cigarettes_lucky">
 		<text>Lucky Strike (imported)</text>
 	</string>
 	<string id="st_cigarettes_lucky_descr">
-		<text>Cigarettes brought from the west. Some Stalkers use these packages to trade a few rounds of ammo within their faction.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] sign. sleeiness decrease\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Cigarettes brought from the west. Some Stalkers use these packages to trade a few rounds of ammo within their faction.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] sign. sleeiness decrease</text>
 	</string>
 	<string id="st_cigarettes_russian">
 		<text>Russian brand Cigarettes (imported)</text>
 	</string>
 	<string id="st_cigarettes_russian_descr">
-		<text>The cheapest pack of cigarettes in the Zone. A russian budget brand.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleeiness decrease\n%c[0,204,0,51] Х %c[0,140,140,140] low quality</text>
+		<text>The cheapest pack of cigarettes in the Zone. A russian budget brand.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,204,0,51] Х %c[0,140,140,140] low quality\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleeiness decrease</text>
 	</string>
 	<string id="st_cigar1">
 		<text>Soviet cigarretes (imported)</text>
 	</string>
 	<string id="st_cigar1_descr">
-		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
+		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
 	</string>
 	<string id="st_cigar2">
 		<text>Soviet cigarretes (imported)</text>
 	</string>
 	<string id="st_cigar2_descr">
-		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
+		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
 	</string>
 	<string id="st_cigar3">
 		<text>Soviet cigarretes (imported)</text>
 	</string>
 	<string id="st_cigar3_descr">
-		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
+		<text>A pack of budget, strong and very low quality cigarettes with only a few left. Genuine USSR flavor has been carefully preserved.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] stimulant\n%c[0,153,255,255] Х %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] Х %c[0,140,140,140] mild sleepiness decrease</text>
 	</string>
 	<string id="st_nuts">
 		<text>Mixed Nuts (imported)</text>
 	</string>
 	<string id="st_nuts_descr">
-		<text>Assorted peanuts, hazelnuts, cashews and almonds in a nice and popular blend. Nutrition value is quite high. Imported from South Africa.\n \n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] high quality</text>
+		<text>Assorted peanuts, hazelnuts, cashews and almonds in a nice and popular blend. Nutrition value is quite high. Imported from South Africa.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] food\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source</text>
 	</string>
 		<string id="st_upd">
 		<text>Universal Power Device (UPD)</text>
@@ -960,10 +969,10 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 		<text>A Cold War era power unit about the size of a small walkie talkie that accepts almost any type of battery and makes use of whatever power that might be left in it.
 		The UPD utilizes every bit of energy from inserted batteries and supplies connected electronic devices with power in an enhanced stream through micro wires.The micro power wires adapts to anything from the simplest of 
 		items to the most advanced pieces of equipment. This lets the soldier use and handle numerous electronic devices with only 
-		a single battery of old or modern design.\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] portable energy source\n%c[0,153,255,255] Х %c[0,140,140,140] supports most modern devices\n%c[0,153,255,255] Х %c[0,140,140,140] accepts all battery types\n%c[0,153,255,255] Х %c[0,140,140,140] storage capacity %c[0,170,170,170]3 Ah (ampere-hours)</text>
+		a single battery of old or modern design.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] technological item\n%c[0,153,255,255] Х %c[0,140,140,140] portable energy source\n%c[0,153,255,255] Х %c[0,140,140,140] supports most modern devices\n%c[0,153,255,255] Х %c[0,140,140,140] accepts all battery types\n%c[0,153,255,255] Х %c[0,140,140,140] storage capacity %c[0,170,170,170]3 Ah (ampere-hours)</text>
 	</string>
 	<string id="st_energy">
-		<text>Ah (ampere-hours)</text>
+		<text>none</text>
 	</string>
 	<string id="st_energy_descr">
 		<text>Storaged energy is given in ampere-hours (Ah).</text>
@@ -972,20 +981,18 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 		<text>MRE</text>
 	</string>
 	<string id="st_mre_descr">
-		<text>The Meal, Ready-to-Eat (commonly known as the MRE) is a self-contained, individual field ration in lightweight packaging bought by the United States military for its service members for use in combat or other field conditions where organized food facilities are not available. 
-One MRE is one meal. The packaging of an MRE is designed to withstand rough conditions and exposure to the elements. Inside each MRE bag is an entree and a variety of other food and drink items. 
-While the entrees and sides are fine to eat cold, they usually taste much better when heated up with the included Flameless Ration Heater (FRH, a water-activated exothermic reaction product that emits heat).\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] contains multiple portions</text>
+		<text>The Meal, Ready-to-Eat (commonly known as the MRE) is a self-contained, individual field ration in lightweight packaging bought by the United States military for its service members for use in combat or other field conditions where organized food facilities are not available. One MRE is one meal. The packaging of an MRE is designed to withstand rough conditions and exposure to the elements. Inside each MRE bag is an entree and a variety of other food and drink items. While the entrees and sides are fine to eat cold, they usually taste much better when heated up with the included Flameless Ration Heater (FRH, a water-activated exothermic reaction product that emits heat).\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n\n%c[0,153,255,255] Х %c[0,140,140,140] high quality\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] sold in one-time eatable portions</text>
 	</string>
 	<string id="st_ration_ru">
 		<text>Russian IRP-B combat ration</text>
 	</string>
 	<string id="st_ration_ru_descr">
-		<text>Breakfast, lunch and dinner all in one package. That is what the IRP-B Russian combat ration pack includes. This particular ration pack includes 2 apple sauce packages, 4 cleaning cloths, 1 vitamin drink (tastes like apricots and has a yellowish color), 1 package with 2 vitamin pills in, 4 flimsy plastic spoons, 4 biscuit packages (10 biscuits in 1 pack),  3 bags containing 20 grams of sugar each,1 square tin of meat (УTushonkaФ - "тушЄнка"), 2 square tins of puffed wheat ("каша") with meat (УKashaФ and УTushonkaФ), 1 can of cheese, 1 rectangular tin of fish (says: УNatural fish meatФ on tin), 1 laminated pack containing 6 matches and a striker, 1 tin of canned mixed vegetables, 1 bag of sault, 3 packets of tea (black tea), 1 plastic packet containing 3 matches with striker; 3 firelighter tablets with metal frame to place metal tin on top (can cook for a total of 3 times for 3 tins of meat), 6 napkins. The polymeric box that the rations come in has 3 sections, for breakfast, lunch and dinner. Can protect the ingredients inside from, radioactive, chemical and biological agents.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] contains multiple portions</text>
+		<text>Breakfast, lunch and dinner all in one package. That is what the IRP-B Russian combat ration pack includes. This particular ration pack includes 2 apple sauce packages, 4 cleaning cloths, 1 vitamin drink (tastes like apricots and has a yellowish color), 1 package with 2 vitamin pills in, 4 flimsy plastic spoons, 4 biscuit packages (10 biscuits in 1 pack),  3 bags containing 20 grams of sugar each,1 square tin of meat (УTushonkaФ - "тушЄнка"), 2 square tins of puffed wheat ("каша") with meat (УKashaФ and УTushonkaФ), 1 can of cheese, 1 rectangular tin of fish (says: УNatural fish meatФ on tin), 1 laminated pack containing 6 matches and a striker, 1 tin of canned mixed vegetables, 1 bag of sault, 3 packets of tea (black tea), 1 plastic packet containing 3 matches with striker; 3 firelighter tablets with metal frame to place metal tin on top (can cook for a total of 3 times for 3 tins of meat), 6 napkins. The polymeric box that the rations come in has 3 sections, for breakfast, lunch and dinner. Can protect the ingredients inside from, radioactive, chemical and biological agents.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] sold in one-time eatable portions</text>
 	</string>
 	<string id="st_ration_ukr">
 		<text>Ukrainian combat ration</text>
 	</string>
 	<string id="st_ration_ukr_descr">
-		<text>The Ukrainian combat ration is based on a previous Russian version, consisting of commercially available cans and dried foods packed together in a sectioned box (resembles a takeout tray) made of very thin green plastic. Inside are: two 250 g mmin Meal cans (boiled buckwheat groats and buckwheat with beef); two 100 g cans of meat spread (liver pate and beef in lard); a 160 g can of herring or mackerel; six 50 g packages small, hard crackers (resemble oyster crackers); two foil pouches (20 g each) of jam or jelly; six boiled sweets two tea bags; an envelope of instant cherry juice powder; a chicken flavour bouillon cube; two packets of sugar; and three dining packets, each with a plastic spoon, a napkin, and a moist towelette.\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] contains multiple portions</text>
+		<text>The Ukrainian combat ration is based on a previous Russian version, consisting of commercially available cans and dried foods packed together in a sectioned box (resembles a takeout tray) made of very thin green plastic. Inside are: two 250 g mmin Meal cans (boiled buckwheat groats and buckwheat with beef); two 100 g cans of meat spread (liver pate and beef in lard); a 160 g can of herring or mackerel; six 50 g packages small, hard crackers (resemble oyster crackers); two foil pouches (20 g each) of jam or jelly; six boiled sweets two tea bags; an envelope of instant cherry juice powder; a chicken flavour bouillon cube; two packets of sugar; and three dining packets, each with a plastic spoon, a napkin, and a moist towelette.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] Х %c[0,140,140,140] military ration\n%c[0,153,255,255] Х %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] Х %c[0,140,140,140] sold in one-time eatable portions</text>
 	</string>
 </string_table>

@@ -11,7 +11,6 @@ condition_shot_dec      	= -0.0005 ;0.0011
 
 inv_weight              = +0.2
 
-
 [up_sect_firstc_k98]
 ;Настильность(2)20%
 ;------------------
@@ -55,17 +54,19 @@ PDM_disp_accel_factor 		= -0.5
 inv_weight              = +0.1
 
 [up_sect_firstf_k98]
-;Точность(3)30%
+;Смена калибра
 ;---------------
-cost		      		= 1870
-value					= +15
+cost		      		= 7970
+value					= "7.62x54"
 
-fire_dispersion_base				= -0.1
-fire_dispersion_condition_factor    = -0.7 ;15
+condition_queue_shot_dec	= 0.00015 ;0.0013
+condition_shot_dec      	= 0.00015 ;0.0011
+misfire_start_prob	     	= 0.0006
+misfire_end_prob	     	= 0.008 ;0.03
 
-ammo_class		 	    = ammo_12x76_zhekan
+ammo_class		        = ammo_7.62x54_7h1, ammo_7.62x54_7h14
 
-inv_weight              = +0.2
+inv_weight              = +0.26
 
 [up_sect_secona_k98]
 ;Уменьшение веса
@@ -189,21 +190,20 @@ scheme_index            = 1, 0
 known                   = 1
 effects                 = up_gr_firstef_k98
 section                 = up_sect_empty_tier_2 ; up_sect_firstc_k98
-property                = prop_bullet_speed
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bard_b3_name
-description             = st_up_bard_b3_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_2
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_firstd_k98]
@@ -211,21 +211,20 @@ scheme_index            = 1, 1
 known                   = 1
 effects                 = up_gr_firstef_k98
 section                 = up_sect_empty_tier_2 ; up_sect_firstd_k98
-property                = prop_recoil
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bard_b4_name
-description             = st_up_bard_b4_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_3
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_firste_k98]
@@ -233,43 +232,40 @@ scheme_index            = 2, 0
 known                   = 1
 effects                 =
 section                 = up_sect_empty_tier_3 ; up_sect_firste_k98
-property                = prop_inertion
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bard_c1_name
-description             = st_up_bard_c1_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_4
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_firstf_k98]
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
 section                 = up_sect_empty_tier_3 ; up_sect_firstf_k98
-property                = prop_dispersion, prop_no_buck
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bard_c2_name
-description             = st_up_bard_c2_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_5
-
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_secona_k98]
 scheme_index            = 0, 1
@@ -290,13 +286,13 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_stvd_a2_name
 description             = st_up_stvd_a2_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_6
+icon                    = ui_inGame2_upgrade_Hunting_rifle_6
 
 [up_seconc_k98]
 scheme_index            = 1, 2
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_2 ; up_sect_seconc_k98
+section                 = up_sect_seconc_k98
 property                = prop_inertion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -311,14 +307,14 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_stvd_b4_name
 description             = st_up_stvd_b4_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_7
+icon                    = ui_inGame2_upgrade_Hunting_rifle_7
 
 
 [up_second_k98]
 scheme_index            = 1, 3
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_2 ; up_sect_second_k98
+section                 = up_sect_second_k98
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -333,8 +329,7 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           =
 name                    = st_up_stvd_c1_name
 description             = st_up_stvd_c1_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_8
-
+icon                    = ui_inGame2_upgrade_Hunting_rifle_8
 
 [up_thirda_k98]
 scheme_index            = 0, 2
@@ -357,70 +352,65 @@ name                    = st_up_autd_a2_name
 description             = st_up_autd_a2_descr
 icon                    = ui_inGame2_upgrade_Hunting_rifle_9
 
-
 [up_thirdc_k98]
 scheme_index            = 1, 4
 known                   = 1
 effects                 = up_gr_thirdef_k98
 section                 = up_sect_empty_tier_2 ; up_sect_thirdc_k98
-property                = prop_recoil
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_autd_b1_name
-description             = st_up_autd_b1_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_10
-
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirde_k98]
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
 section                 = up_sect_empty_tier_3 ; up_sect_thirde_k98
-property                = prop_reliability
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_autd_c1_name
-description             = st_up_autd_c1_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_11
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirdf_k98]
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
 section                 = up_sect_empty_tier_3 ; up_sect_thirdf_k98
-property                = prop_bullet_speed
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_autd_c2_name
-description             = st_up_autd_c2_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_Hunting_rifle_12
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_gr_firstab_k98]
 elements                = up_firsta_k98

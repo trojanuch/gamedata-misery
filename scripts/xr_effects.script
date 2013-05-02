@@ -228,6 +228,18 @@ function enable_nv_and_imput(actor, npc, p)
 	enable_actor_torch(nil,nil)
 end
 
+function enable_imput(actor, npc, p)
+	--db.actor:restore_weapon()
+
+	if not p or (p and p[1] ~= "true") then
+		if ui_active_slot ~= 0 and db.actor:item_in_slot(ui_active_slot) ~= nil then
+			db.actor:activate_slot(ui_active_slot)
+		end
+	end
+
+	level.enable_input()
+end
+
 function enable_nv(actor, npc, p)
 	--db.actor:restore_weapon()
 
@@ -1581,10 +1593,51 @@ function play_sound_on_actor(actor,obj,p)
 	end
 end
 
-function play_repair_sound()
-	local snd_obj = sound_object("interface\\inv_kit_use_2p8")
+--'-----------------------------------------------------------------------------------
+--' Play repair item sounds
+--'-----------------------------------------------------------------------------------
+
+function play_inv_repair_spray_oil()
+	local snd_obj = sound_object("interface\\inv_repair_spray_oil")
 	snd_obj:play(db.actor,0,sound_object.s2d)
 end
+
+function play_inv_repair_brushes()
+	local snd_obj = sound_object("interface\\inv_repair_brushes")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_kit()
+	local snd_obj = sound_object("interface\\inv_repair_kit")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_kit_with_brushes()
+	local snd_obj = sound_object("interface\\inv_repair_kit_with_brushes")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_kit_use_fast()
+	local snd_obj = sound_object("interface\\inv_repair_kit_use_fast")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_kit_use_fast_2p8()
+	local snd_obj = sound_object("interface\\inv_repair_kit_use_fast_2p8")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_sewing_kit()
+	local snd_obj = sound_object("interface\\inv_repair_sewing_kit")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_sewing_kit_fast()
+	local snd_obj = sound_object("interface\\inv_repair_sewing_kit_fast")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+--'-----------------------------------------------------------------------------------
 
 function play_sound(actor, obj, p)
 	local theme = p[1]

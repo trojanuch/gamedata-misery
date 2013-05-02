@@ -1,177 +1,172 @@
 [up_sect_firsta_stg44]
-;Надежность(1)10%
-;---------------
-cost		      		= 1480
-value					= +10
+;Отдача(1)-10%
+;------------
+cost		      		= 3480
+value                   = -10
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0005 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0005 ;0.0011
+cam_dispersion              = -0.1     ;0.5
+cam_dispersion_inc          = -0.06     ;0.5
+cam_step_angle_horz         = -0.03     ;1.5 [0.73 в остатке]
 
-inv_weight              = +0.2
+zoom_cam_dispersion         = -0.08     ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc     = -0.07     ;0.5
+zoom_cam_step_angle_horz    = -0.02     ;1.0 [0.505 в остатке]
 
 
 [up_sect_firstc_stg44]
-;Настильность(2)20%
-;------------------
-cost		      		= 1640
-value					= +10
-
-bullet_speed            = +60
-fire_distance           = +60
-hit_impulse    			= +5
-
-inv_weight              = +0.15
-
-[up_sect_firstd_stg44]
-;Отдача(2)-20%
-;------------
-cost		      		= 1460
-value                   = -20
-
-cam_dispersion              = -1        ;0.7
-cam_dispersion_inc          = -1        ;0.7
-cam_step_angle_horz         = -0.2      ;0.7
-
-zoom_cam_dispersion          = -0.7     ;0.6
-zoom_cam_dispersion_inc      = -0.7 ;0.6
-zoom_cam_step_angle_horz     = -0.2 ;0.6
-
-inv_weight              = +0.1
-
-[up_sect_firste_stg44]
-;Удобство(3)25%
-;--------------
-cost		      		= 1340
-value					= +25
-
-crosshair_inertion			= -0.5
-
-PDM_disp_base 				= -0.1
-PDM_disp_vel_factor 		= -0.5
-PDM_disp_accel_factor 		= -0.5
-
-inv_weight              = +0.1
-
-[up_sect_firstf_stg44]
-;Точность(3)30%
+;Надежность(2)15%
 ;---------------
-cost		      		= 1870
+cost		      		= 2850
 value					= +15
 
-fire_dispersion_base				= -0.1
-fire_dispersion_condition_factor    = -0.7 ;15
+;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor    = -1.5 ;15
+;увеличение изношености при выстреле очередью
+condition_queue_shot_dec	= -0.0001 ;0.0013
+;увеличение изношености при одиночном выстреле
+condition_shot_dec      	= -0.0001 ;0.0011
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= -0.0015
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= -0.015 ;0.03
 
-ammo_class		 	    = ammo_12x76_zhekan
+inv_weight			= +0.15
 
-inv_weight              = +0.2
+[up_sect_firstd_stg44]
+;Отдача(3)-20%
+;------------
+cost		      		= 3920
+value                   = -20
+
+cam_dispersion              = -0.2      ;0.5
+cam_dispersion_inc          = -0.11     ;0.5
+cam_step_angle_horz         = -0.09     ;1.5 [0.73 в остатке]
+
+zoom_cam_dispersion         = -0.22     ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc     = -0.11     ;0.5
+zoom_cam_step_angle_horz    = -0.08     ;1.0 [0.505 в остатке]
+
+inv_weight			= +0.2
+
+[up_sect_firste_stg44]
+;Точность(3)30%
+;---------------
+cost		      		= 2750
+value					= +10
+
+fire_dispersion_base	= -0.02 ;0.7
+fire_dispersion_condition_factor    = -1 ;15
+
+inv_weight			= +0.15
+
+[up_sect_firstf_stg44]
+;Настильность(3)30%
+;------------------
+cost		      		= 3650
+value					= +30
+
+bullet_speed            = +110
+fire_dispersion_base	= -0.02 ;0.7
+
+inv_weight			= +0.3
 
 [up_sect_secona_stg44]
 ;Уменьшение веса
 ;---------------
 cost		      		= 2860
-value					= -0.7
+value					= -3
 
-inv_weight				= -0.7
-crosshair_inertion			= -0.25
+cam_dispersion              = -0.168		;0.5
+cam_dispersion_inc         	= -0.006		;0.5
+cam_step_angle_horz        	= -0.009		;1.5 [0.73 в остатке]
 
-PDM_disp_vel_factor 		= -0.05
-PDM_disp_accel_factor 		= -0.05
+zoom_cam_dispersion         = -0.07		;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc     = -0.008		;0.5
+zoom_cam_step_angle_horz    = -0.003 	;1.0 [0.505 в остатке]
+
+inv_weight			= +0.15
 
 [up_sect_seconc_stg44]
-;Удобство(2)15%
-;--------------
-cost		      		= 1220
-value					= +15
+;Точность(2)20%
+;---------------
+cost		      		= 2850
+value					= +10
 
-crosshair_inertion			= -0.5
-
-PDM_disp_base 				= -0.05
-PDM_disp_vel_factor 		= -0.2
-PDM_disp_accel_factor 		= -0.2
-
-inv_weight              = +0.05
+fire_dispersion_base	= -0.02 ;0.7
+fire_dispersion_condition_factor    = -1 ;15
 
 [up_sect_second_stg44]
-;Отдача(2)-20%
-;------------
-cost		      		= 1520
-value                   = -20
+;Скорострельность(2)15%
+;----------------------
+cost		      		= 4150
+value					= +15
 
-cam_dispersion              = -1        ;0.7
-cam_dispersion_inc          = -1        ;0.7
-cam_step_angle_horz         = -0.2      ;0.7
+rpm                     = +75
 
-zoom_cam_dispersion          = -0.7     ;0.6
-zoom_cam_dispersion_inc      = -0.7 ;0.6
-zoom_cam_step_angle_horz     = -0.2 ;0.6
-
-inv_weight              = +0.1
+inv_weight			= +0.25
 
 [up_sect_thirda_stg44]
 ;Надежность(1)10%
 ;---------------
-cost		      		= 1560
+cost		      		= 3650
 value					= +10
 
+;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0005 ;0.0013
+condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0005 ;0.0011
+condition_shot_dec      	= -0.0001 ;0.0011
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= -0.0005
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= -0.01 ;0.03
 
-inv_weight              = +0.15
+inv_weight			= +0.15
 
 [up_sect_thirdc_stg44]
-;Отдача(2)-20%
-;------------
-cost		      		= 2240
-value                   = -20
+;Настильность(2)20%
+;------------------
+cost		      		= 3950
+value					= +20
 
-cam_dispersion              = -1        ;0.7
-cam_dispersion_inc          = -1        ;0.7
-cam_step_angle_horz         = -0.2      ;0.7
+bullet_speed            = +75
+fire_dispersion_base	= -0.02 ;0.7
 
-zoom_cam_dispersion          = -0.7     ;0.6
-zoom_cam_dispersion_inc      = -0.7 ;0.6
-zoom_cam_step_angle_horz     = -0.2 ;0.6
-
-inv_weight              = +0.2
+inv_weight			= +0.15
 
 [up_sect_thirde_stg44]
-;Надежность(3)25%
-;---------------
-cost		      		= 1870
-value					= +25
+;Скорострельность(3)25%
+;----------------------
+cost		      		= 4950
+value					= +10
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0005 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0005 ;0.0011
+rpm                     = +75
+
+inv_weight			= +0.15
 
 
 [up_sect_thirdf_stg44]
-;Настильность(3)30%
-;------------------
-cost		      		= 2340
+;Удобство(3)25%
+;--------------
+cost		      		= 4250
 value					= +25
 
-fire_distance           = +160
-bullet_speed            = +150
-
-hit_impulse    			= +5
-
-inv_weight              = +0.25
+crosshair_inertion		   = -1.25
+ 
+PDM_disp_base 				= -0.15 ;0.5
+PDM_disp_vel_factor 		= -0.4 ;1.5
+PDM_disp_accel_factor 		= -0.4 ;1.5
 
 [up_firsta_stg44]
 scheme_index            = 0, 0
 known                   = 1
 effects                 = up_gr_firstcd_stg44
 section                 = up_sect_firsta_stg44
-property                = prop_reliability
+property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = on_weapon_upgrade_something_here
@@ -180,30 +175,30 @@ effect_parameter        = on_weapon_upgrade_something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bard_a1_name
-description             = st_up_bard_a1_descr
-icon                    = ui_inGame2_upgrade_Hunting_rifle_1
+name                    = st_up_auto_a1_name
+description             = st_up_auto_a1_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_1
 
 [up_firstc_stg44]
 scheme_index            = 1, 0
 known                   = 1
 effects                 = up_gr_firstef_stg44
 section                 = up_sect_firstc_stg44
-property                = prop_bullet_speed
+property                = prop_reliability
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
 ; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bard_b3_name
-description             = st_up_bard_b3_descr
-icon                    = ui_inGame2_upgrade_Hunting_rifle_2
+name                    = st_up_auto_b1_name
+description             = st_up_auto_b1_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_2
 
 
 [up_firstd_stg44]
@@ -214,25 +209,24 @@ section                 = up_sect_firstd_stg44
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bard_b4_name
-description             = st_up_bard_b4_descr
-icon                    = ui_inGame2_upgrade_Hunting_rifle_3
+name                    = st_up_auto_c1_name
+description             = st_up_auto_c1_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_4
 
 
 [up_firste_stg44]
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_firste_stg44
+section                 = up_sect_empty_tier_3 ; up_sect_thirde_stg44
 property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -252,7 +246,7 @@ icon                    = ui_inGame2_upgrade_unavailable
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_firstf_stg44
+section                 = up_sect_empty_tier_3 ; up_sect_thirde_stg44
 property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -274,42 +268,41 @@ scheme_index            = 0, 1
 known                   = 1
 effects                 = up_gr_seconcd_stg44
 section                 = up_sect_secona_stg44
-property                = prop_weight
+property                = prop_inertion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
 ; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stvd_a2_name
-description             = st_up_stvd_a2_descr
-icon                    = ui_inGame2_upgrade_Hunting_rifle_6
+name                    = st_up_ret_a2_name
+description             = st_up_ret_a2_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_5
 
 [up_seconc_stg44]
 scheme_index            = 1, 2
 known                   = 1
 effects                 =
 section                 = up_sect_seconc_stg44
-property                = prop_inertion
+property                = prop_dispersion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stvd_b4_name
-description             = st_up_stvd_b4_descr
-icon                    = ui_inGame2_upgrade_Hunting_rifle_7
+name                    = st_up_ret_b3_name
+description             = st_up_ret_b3_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_6
 
 
 [up_second_stg44]
@@ -317,21 +310,22 @@ scheme_index            = 1, 3
 known                   = 1
 effects                 =
 section                 = up_sect_second_stg44
-property                = prop_recoil
+property                = prop_rpm
+
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
 ; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_stvd_c1_name
-description             = st_up_stvd_c1_descr
-icon                    = ui_inGame2_upgrade_Hunting_rifle_8
+prereq_params           = 
+name                    = st_up_ret_b2_name
+description             = st_up_ret_b2_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_7
 
 
 [up_thirda_stg44]
@@ -342,18 +336,17 @@ section                 = up_sect_thirda_stg44
 property                = prop_reliability
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_autd_a2_name
-description             = st_up_autd_a2_descr
-icon                    = ui_inGame2_upgrade_Hunting_rifle_9
+prereq_params           =
+name                    = st_up_zat_a1_name
+description             = st_up_zat_a1_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_9
 
 
 [up_thirdc_stg44]
@@ -361,21 +354,22 @@ scheme_index            = 1, 4
 known                   = 1
 effects                 = up_gr_thirdef_stg44
 section                 = up_sect_thirdc_stg44
-property                = prop_recoil
+property                = prop_bullet_speed
+
+known                   = 1
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_autd_b1_name
-description             = st_up_autd_b1_descr
-icon                    = ui_inGame2_upgrade_Hunting_rifle_10
+name                    = st_up_zat_b5_name
+description             = st_up_zat_b5_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_10
 
 
 [up_thirde_stg44]
@@ -402,7 +396,7 @@ icon                    = ui_inGame2_upgrade_unavailable
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_thirdf_stg44
+section                 = up_sect_empty_tier_3
 property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

@@ -77,6 +77,7 @@ mutant_part_dog_tail						= 0.85, 0.86
 mutant_part_flesh_eye						= 0.85, 0.86
 mutant_part_psevdodog_tail					= 0.85, 0.86
 mutant_part_snork_leg						= 0.85, 0.86
+mutant_part_snork_mask						= 0.85, 0.86
 mutant_part_tushkano_head					= 0.85, 0.86
 
 mutant_part_flesh_meat					= 0.85, 0.86
@@ -404,11 +405,22 @@ wpn_addon_scope_zf4				= 0.2,	0.1
 wpn_addon_scope_ww2				= 0.2,	0.1
 wpn_addon_scope_vsk				= 0.2,	0.1
 wpn_addon_scope_acog			= 0.2,	0.1
+wpn_addon_scope_acog_trijicon	= 0.2,	0.1
+wpn_addon_scope_acog_night		= 0.2,	0.1
 
-; worn scopes
+; moist-covered scopes
+
+wpn_addon_scope_moist			; NO TRADE
+wpn_addon_scope_susat_moist		; NO TRADE
+wpn_addon_scope_ww2_moist		; NO TRADE
+wpn_addon_scope_zf4_moist		; NO TRADE
+
+; broken scopes
 
 wpn_addon_scope_worn			; NO TRADE
 wpn_addon_scope_susat_worn		; NO TRADE
+wpn_addon_scope_ww2_worn		; NO TRADE
+wpn_addon_scope_zf4_worn		; NO TRADE
 
 ; silencers
 
@@ -843,6 +855,7 @@ mutant_part_dog_tail						= 1.2, 2
 mutant_part_flesh_eye						= 1.2, 2
 mutant_part_psevdodog_tail					= 1.2, 2
 mutant_part_snork_leg						= 1.2, 2
+mutant_part_snork_mask						= 1.2, 2
 mutant_part_tushkano_head					= 1.2, 2
 
 mutant_part_flesh_meat					= 1.2, 2
@@ -1170,11 +1183,22 @@ wpn_addon_scope_zf4				= 1,	2
 wpn_addon_scope_ww2				= 1,	2
 wpn_addon_scope_vsk				= 1,	2
 wpn_addon_scope_acog			= 1,	2
+wpn_addon_scope_acog_trijicon	= 1,	2
+wpn_addon_scope_acog_night		= 1,	2
 
-; worn scopes
+; moist-covered scopes
 
-wpn_addon_scope_worn			= 0.7,	1.65
-wpn_addon_scope_susat_worn		= 0.7,	1.65
+wpn_addon_scope_moist			= 0.95,	1.9
+wpn_addon_scope_susat_moist		= 0.95,	1.9
+wpn_addon_scope_ww2_moist		= 0.95,	1.9
+wpn_addon_scope_zf4_moist		= 0.95,	1.9
+
+; broken scopes
+
+wpn_addon_scope_worn			; NO TRADE
+wpn_addon_scope_susat_worn		; NO TRADE
+wpn_addon_scope_ww2_worn		; NO TRADE
+wpn_addon_scope_zf4_worn		; NO TRADE
 
 ; silencers
 
@@ -1189,7 +1213,7 @@ wpn_addon_silencer_762x51		= 1,	2
 wpn_addon_silencer_762x54		= 1,	2
 wpn_addon_silencer_1143x23		= 1,	2
 
-; worn scopes
+; broken scopes
 
 wpn_addon_scope_worn			= 0.8,	1.6
 wpn_addon_scope_susat_worn		= 0.8,	1.6
@@ -1578,6 +1602,10 @@ toolkit_r5				= 2, 0.5
 toolkit_r7				= 2, 0.5
 toolkit_u				= 1, 0.5
 
+spareparts				= 2, 0.85
+swiss					= 3, 0.85
+;kit_hunt				= 2, 0.85
+
 wpn_upd							= 2, 0.95
 batteries						= 3, 0.95
 batteries_dead					= 2, 0.95
@@ -1854,15 +1882,21 @@ wpn_addon_grenade_launcher				= 1,	1
 wpn_addon_grenade_launcher_m203			= 1,	1
 
 wpn_addon_scope  		= 2,	1
-wpn_addon_scope_susat	= 1,	1
+wpn_addon_scope_susat	= 2,	1
 
 wpn_addon_scope_x2.7		= 1,	1
 wpn_addon_grenade_launcher	= 1,	1
 wpn_addon_scope_susat_x1.6	= 1,	1
 
+wpn_addon_scope_susat_night	= 1,	1
+wpn_addon_scope_night		= 1,	1
+
 wpn_addon_scope_ww2	 		= 1, 	1
 wpn_addon_scope_zf4	 		= 2, 	1
 wpn_addon_scope_vsk	 		= 1, 	1
+
+wpn_addon_scope_acog			= 1,	1
+wpn_addon_scope_acog_night		= 1,	1
 
 ;Предметы
 detector_simple		= 6,	1
@@ -1884,6 +1918,10 @@ toolkit_s				= 3, 0.5
 toolkit_r5				= 3, 0.5
 toolkit_r7				= 3, 0.5
 toolkit_u				= 2, 0.5
+
+spareparts				= 3, 0.85
+swiss					= 4, 0.85
+;kit_hunt				= 3, 0.85
 
 wpn_upd							= 2, 0.95
 batteries						= 5, 0.95
@@ -1955,6 +1993,8 @@ drug_coagulant			= 2, 0.75
 drug_antidot			= 1, 0.75
 drug_radioprotector		= 1, 0.75
 drug_psy_blockade		= 1, 0.75
+
+wpn_addon_scope_acog_trijicon		= 1,	1
 
 ;;;; Duty tier 1 ;;;
 
@@ -2058,8 +2098,6 @@ wpn_addon_silencer_556x45 		= 1, 	1
 wpn_addon_silencer_762x39 		= 2, 	1
 wpn_addon_silencer_762x54 		= 1, 	1
 
-wpn_addon_scope_ww2	 		= 1, 	1
-wpn_addon_scope_zf4	 		= 2, 	1
 wpn_addon_scope_vsk	 		= 1, 	1
 
 ;Броники
@@ -2188,10 +2226,6 @@ wpn_addon_silencer_556x45 		= 1, 	1
 
 wpn_addon_silencer_762x39 		= 2, 	1
 wpn_addon_silencer_762x54 		= 1, 	1
-
-wpn_addon_scope_ww2	 		= 1, 	1
-
-wpn_addon_scope_zf4	 		= 2, 	1
 
 wpn_addon_scope_vsk	 		= 1, 	1
 
@@ -2326,10 +2360,6 @@ wpn_addon_silencer_556x45 		= 1, 	1
 wpn_addon_silencer_762x39 		= 2, 	1
 wpn_addon_silencer_762x54 		= 1, 	1
 
-wpn_addon_scope_ww2	 		= 1, 	1
-
-wpn_addon_scope_zf4	 		= 2, 	1
-
 wpn_addon_scope_vsk	 		= 1, 	1
 
 ;Броники
@@ -2454,10 +2484,6 @@ wpn_addon_silencer_556x45 		= 1, 	1
 wpn_addon_silencer_762x39 		= 2, 	1
 wpn_addon_silencer_762x54 		= 1, 	1
 
-wpn_addon_scope_ww2	 		= 1, 	1
-
-wpn_addon_scope_zf4	 		= 2, 	1
-
 wpn_addon_scope_vsk	 		= 1, 	1
 
 ;Броники
@@ -2482,17 +2508,21 @@ af_aac		= 1, 1
 ;;; Common tier 2 ;;;
 
 [supplies_tier_2]:supplies_tier_1_final
-gun_oil					= 7, 0.75
-cleaning_kit_p			= 4, 0.75
-cleaning_kit_s			= 4, 0.75
-cleaning_kit_r5			= 4, 0.75
-cleaning_kit_r7			= 4, 0.75
-cleaning_kit_u			= 4, 0.75
-toolkit_p				= 3, 0.75
-toolkit_s				= 3, 0.75
-toolkit_r5				= 3, 0.75
-toolkit_r7				= 3, 0.75
-toolkit_u				= 2, 0.75
+gun_oil					= 7, 0.85
+cleaning_kit_p			= 4, 0.85
+cleaning_kit_s			= 4, 0.85
+cleaning_kit_r5			= 4, 0.85
+cleaning_kit_r7			= 4, 0.85
+cleaning_kit_u			= 4, 0.85
+toolkit_p				= 3, 0.85
+toolkit_s				= 3, 0.85
+toolkit_r5				= 3, 0.85
+toolkit_r7				= 3, 0.85
+toolkit_u				= 2, 0.85
+
+spareparts				= 4, 0.85
+swiss					= 5, 0.85
+;kit_hunt				= 4, 0.85
 
 wpn_upd							= 4, 0.95
 batteries						= 8, 0.95
@@ -2933,6 +2963,10 @@ toolkit_s				= 4, 0.75
 toolkit_r5				= 4, 0.75
 toolkit_r7				= 4, 0.75
 toolkit_u				= 3, 0.75
+
+spareparts				= 4, 0.85
+swiss					= 5, 0.85
+;kit_hunt				= 4, 0.85
 
 wpn_upd							= 6, 0.95
 batteries						= 12, 0.95

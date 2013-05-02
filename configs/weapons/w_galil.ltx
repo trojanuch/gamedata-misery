@@ -19,7 +19,7 @@ cost              	 = 35580            ; the price of the item
 weapon_class         = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
 inv_weight        = 3.953                      ; weight in inventory
 
-upgrades                = up_gr_firstab_l85, up_gr_seconab_l85, up_gr_thirdab_l85, up_gr_fourtab_l85, up_gr_fourtcd_l85, up_gr_fourtef_l85, up_gr_fifthab_l85, up_gr_fifthcd_l85
+upgrades                = up_gr_firstab_galil, up_gr_seconab_galil, up_gr_thirdab_galil, up_gr_fourtab_galil, up_gr_fourtcd_galil, up_gr_fourtef_galil, up_gr_fifthab_galil, up_gr_fifthcd_galil
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_l85
 
@@ -189,7 +189,7 @@ silencer_y              = 10
 grenade_launcher_name   = wpn_addon_grenade_launcher
 grenade_launcher_x      = 126
 grenade_launcher_y      = 24
-scopes_sect		= scope_galil
+scopes_sect				= scope_susat_galil, scope_susat_galil_moist, scope_susat_galil_worn, scope_susat_x1.6_galil, scope_susat_custom_galil, scope_susat_dusk_galil, scope_susat_night_galil
 
 snd_draw                = weapons\generic\generic_draw
 snd_holster    		= weapons\generic\generic_holster
@@ -287,7 +287,37 @@ gl_hud_offset_rot_16x9            = 0,0,0;0.052500,0.045000,-0.010000
 lean_hud_offset_pos        = 0,0,0
 lean_hud_offset_rot        = 0,0,0
 
-[scope_galil]
-scope_name 					= wpn_addon_scope_acog
+[scope_susat_galil]
+scope_name 					= wpn_addon_scope_susat
+scope_x              	= 72                 ; offset in inventory icon
+scope_y                 = -2
+
+[scope_susat_galil_moist]
+scope_name 					= wpn_addon_scope_susat_moist
+scope_x              	= 72                 ; offset in inventory icon
+scope_y                 = -2
+
+[scope_susat_galil_worn]
+scope_name 					= wpn_addon_scope_susat_worn
+scope_x              	= 72                 ; offset in inventory icon
+scope_y                 = -2
+
+[scope_susat_x1.6_galil]
+scope_name 					= wpn_addon_scope_susat_x1.6
+scope_x              	= 72                 ; offset in inventory icon
+scope_y                 = -2
+
+[scope_susat_custom_galil]
+scope_name 					= wpn_addon_scope_susat_custom
+scope_x              	= 72                 ; offset in inventory icon
+scope_y                 = -2
+
+[scope_susat_dusk_galil]
+scope_name 					= wpn_addon_scope_susat_dusk
+scope_x              	= 72                 ; offset in inventory icon
+scope_y                 = -2
+
+[scope_susat_night_galil]
+scope_name 					= wpn_addon_scope_susat_night
 scope_x              	= 72                 ; offset in inventory icon
 scope_y                 = -2

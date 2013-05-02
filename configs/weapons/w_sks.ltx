@@ -38,7 +38,7 @@ condition_queue_shot_dec	= 0.0008
 reload_dof				= 0.0, 0.5, 5, 1.7
 ;-------------------------------------------------------------------------------
 
-upgrades                = up_gr_firstab_toz34, up_gr_seconab_toz34, up_gr_thirdab_toz34
+upgrades                = up_gr_firstab_sks, up_gr_seconab_sks, up_gr_thirdab_sks
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_toz34
 
@@ -171,9 +171,11 @@ light_time 		 			= 0.2
 ph_mass			 			= 3
 
 ;addons
-scope_status			= 0
+scope_status			= 2
 silencer_status			= 2
 grenade_launcher_status		= 0
+
+scopes_sect 		        = scope_ww2_sks_moist, scope_ww2_sks, scope_ww2_sks_worn
 silencer_name           	= wpn_addon_silencer_762x39    ; section name for the attachable silencer
 silencer_x                  = 232		; offset in inventory icon
 silencer_y                  = -9
@@ -187,11 +189,6 @@ silencer_smoke_particles   = weapons\generic_shoot_00
 zoom_enabled				= true
 zoom_rotate_time			= 0.25
 scope_zoom_factor       = 58.6 ; 			= 85; 67.5; 10 ;15		;œ—Œ-1 4X
-
-scope_texture				= wpn_crosshair_acog
-scope_name 				= wpn_addon_scope_acog
-scope_x 				= 62
-scope_y 				= -1
 
 ;Á‚ÛÍË
 snd_draw		= weapons\sks\sks_draw
@@ -253,12 +250,28 @@ anm_open						= sks_reload_start
 anm_add_cartridge			= sks_reload
 anm_close					= sks_reload_end
 
+[scope_ww2_sks]
+scope_name 					= wpn_addon_scope_ww2
+scope_x 				= 62
+scope_y 				= -1
+
+[scope_ww2_sks_moist]
+scope_name 					= wpn_addon_scope_ww2_moist
+scope_x 				= 62
+scope_y 				= -1
+
+[scope_ww2_sks_worn]
+scope_name 					= wpn_addon_scope_ww2_worn
+scope_x 				= 62
+scope_y 				= -1
+
 ;==============================================================================================================================
 [wpn_sks_modern]:wpn_sks
 
 cost					= 43960
 inv_weight			= 3.622
 
+upgrades                = up_gr_firstab_sks_modern, up_gr_seconab_sks_modern, up_gr_thirdab_sks_modern
 installed_upgrades      =
 
 misfire_start_condition		= 0.6
@@ -282,7 +295,6 @@ inv_grid_y         = 48
 fire_dispersion_base    = 0.13
 rpm_empty_click 			= 200
 
-
 ; ttc
 hit_power           	= 0.53, 0.53, 0.53, 0.53
 hit_impulse		        = 37
@@ -304,6 +316,13 @@ snd_open_weapon         = weapons\sks\sks_open
 snd_add_cartridge	= weapons\sks\sks_load
 snd_close_weapon        = weapons\sks\sks_close
 snd_silncer_shot        = weapons\silencers\silencer_762x39
+
+scope_texture			= wpn_crosshair_pu9130
+scope_name 				= wpn_addon_scope_ww2
+scope_x 				= 62
+scope_y 				= -1
+
+scope_sect 		        = scope_ww2_sks, scope_ww2_sks_moist, scope_ww2_sks_worn
 
 [wpn_sks_modern_hud]:wpn_sks_hud
 

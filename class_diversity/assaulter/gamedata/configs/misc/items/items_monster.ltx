@@ -103,6 +103,19 @@ inv_grid_x         = 17
 inv_grid_y         = 48
 cost				= 990
 
+[mutant_part_snork_mask]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_snork_leg"
+visual				= dynamics\repair\snork_mask.ogf
+inv_weight			= 0.798
+inv_name			= mutant_snork_mask
+inv_name_short		= mutant_snork_mask
+description			= mutant_snork_mask_description
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 22
+inv_grid_y			= 0
+cost				= 1340
+
 [mutant_part_tushkano_head]:mutant_part_general
 $spawn 				= "devices\monster_items\mutant_tushkano_head"
 visual				= dynamics\equipments\item_tushkano_head.ogf
@@ -123,7 +136,7 @@ inv_name_short		= mutant_pseudogigant_hand
 description			= mutant_pseudogigant_hand_description
 inv_grid_x         = 17
 inv_grid_y         = 44
-cost				= 5490
+cost				= 2490
 
 [mutant_part_pseudogigant_eye]:mutant_part_general
 $spawn 				= "devices\monster_items\mutant_pseudogigant_hand"
@@ -145,7 +158,7 @@ inv_name_short		= mutant_part_controller_brain_tissue
 description			= mutant_part_controller_brain_tissue
 inv_grid_x         = 19
 inv_grid_y         = 47
-cost				= 7390
+cost				= 6390
 
 [mutant_part_controller_hand]:mutant_part_general
 $spawn 				= "devices\monster_items\mutant_controller_glas"
@@ -156,7 +169,7 @@ inv_name_short		= mutant_controller_glass
 description			= mutant_controller_glass_description
 inv_grid_x         = 17
 inv_grid_y         = 44
-cost				= 5790
+cost				= 3720
 
 [mutant_part_burer_hand]:mutant_part_general
 $spawn 				= "devices\monster_items\mutant_burer_hand"
@@ -167,7 +180,7 @@ inv_name_short		= mutant_burer_hand
 description			= mutant_burer_hand_description
 inv_grid_x         = 19
 inv_grid_y         = 46
-cost				= 5574
+cost				= 2784
 
 [mutant_part_cat_tail]:mutant_part_general
 $spawn              = "devices\monster_items\mutant_psevdodog_tail"
@@ -232,7 +245,7 @@ eat_sleepiness				= 0.026
 
 eat_health			= -0.07
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
 
 [mutant_part_flesh_meat]:mutant_part_general_meat
 $spawn 				= "devices\monster_items\mutant_flesh_meat"
@@ -253,7 +266,9 @@ eat_sleepiness				= 0.0209
 
 eat_health			= -0.082
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
+
+repair_part_bonus	 	= 0.03
 
 [mutant_part_boar_chop]:mutant_part_general_meat
 $spawn 				= "devices\monster_items\mutant_boar_chop"
@@ -274,7 +289,9 @@ eat_sleepiness				= 0.0238
 
 eat_health			= -0.092
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
+
+repair_part_bonus	 	= 0.02
 
 [mutant_part_dog_meat]:mutant_part_general_meat
 $spawn 				= "devices\monster_items\mutant_dog_meat"
@@ -295,7 +312,9 @@ eat_sleepiness				= 0.0099
 
 eat_health			= -0.034
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
+
+repair_part_bonus	 	= 0.01
 
 [mutant_part_psevdodog_meat]:mutant_part_general_meat
 $spawn 				= "devices\monster_items\mutant_psevdodog_meat"
@@ -316,7 +335,9 @@ eat_sleepiness				= 0.0132
 
 eat_health			= -0.046
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
+
+repair_part_bonus	 	= 0.01
 
 [mutant_part_krovosos_meat]:mutant_part_general_meat
 $spawn 				= "devices\monster_items\mutant_krovosos_meat"
@@ -337,7 +358,9 @@ eat_sleepiness				= 0.0195
 
 eat_health			= -0.063
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
+
+repair_part_bonus	 	= 0.01
 
 [mutant_part_snork_hand]:mutant_part_general_meat
 $spawn 				= "devices\monster_items\mutant_snork_hand"
@@ -358,7 +381,7 @@ eat_sleepiness				= 0.0076
 
 eat_health			= -0.049
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
 
 [mutant_part_chimera_meat]:mutant_part_general_meat
 $spawn 				= "devices\monster_items\mutant_chimera_meat"
@@ -379,7 +402,9 @@ eat_sleepiness				= 0.031
 
 eat_health			= -0.095
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
+
+repair_part_bonus	 	= 0.04
 
 [mutant_part_tushkano_meat]:mutant_part_general_meat
 $spawn 				= "devices\monster_items\mutant_tushkano_meat"
@@ -400,7 +425,7 @@ eat_sleepiness				= 0.054
 
 eat_health			= -0.018
 
-use_sound			= interface\inv_eat_paperwrap_2
+use_sound			= interface\inv_eat_mutant_food
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

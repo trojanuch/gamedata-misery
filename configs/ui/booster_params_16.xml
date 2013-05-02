@@ -19,7 +19,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
 <!--		<texture_minus>ui_am_prop_radio_restore</texture_minus> -->
-		<value x="117" y="0" width="30" height="20" magnitude="25000" unit_str="st_msv_sec">
+		<value x="117" y="0" width="30" height="20" magnitude="17000" unit_str="st_msv_sec">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_radiation_restore>
