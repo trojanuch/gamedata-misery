@@ -24,36 +24,27 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svd
 
 ;------TTX------------------------------------------------------------------------
-hit_power           		= 0.67, 0.67, 0.67, 0.67
+hit_power           		= 0.792, 0.792, 0.792, 0.792
 hit_impulse				= 58
 hit_type 		        = fire_wound
-fire_distance           = 1000
-bullet_speed		    = 790	;начальная скорость пули
+fire_distance           = 1015
+bullet_speed		    = 795	;начальная скорость пули
 rpm                     = 20
 rpm_empty_click         = 200
-;silencer_hit_power      = 0.88, 0.88, 0.88, 0.88
-;silencer_hit_impulse    = 120
-;silencer_fire_distance  = 300
-;silencer_bullet_speed   = 550
+
 launch_speed            = 0
 use_aim_bullet		    = false		;Поддерживается ли первая суппер пуля
 time_to_aim		        = 1.0
 
 hud                     = wpn_m24_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.9
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.0055
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.055
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0029
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0014
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.87
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0081
+misfire_end_prob	     	= 0.058
+condition_shot_dec      	= 0.0024
+condition_queue_shot_dec	= 0.0013
 
 ammo_elapsed			= 10
 ammo_mag_size			= 10
@@ -65,7 +56,7 @@ single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.10	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.04	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.82f
 crosshair_inertion      = 11.2
 
@@ -95,7 +86,7 @@ zoom_cam_max_angle      = 10.0
 zoom_cam_max_angle_horz = 5.0
 zoom_cam_step_angle_horz= 0.25
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 8	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 8	
 
 ;---DOF-------------------------------------------------------------------------
 ;zoom_dof				= 0.5, 1.0, 350

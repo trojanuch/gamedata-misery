@@ -16,7 +16,7 @@ sprint_allowed       	= true
 control_inertion_factor = 1.0
 
 ;-------------------------------------------------------------------------------
-cost              		= 40920
+cost              		= 38920
 weapon_class          	= assault_rifle
 inv_weight              = 3.676
 
@@ -25,7 +25,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_fn2000
 
 ;--TTX----------------------------------------------------------------------------
-hit_power					= 0.445, 0.445, 0.445, 0.445
+hit_power					= 0.475, 0.475, 0.475, 0.475
 hit_impulse					= 35
 hit_type						= fire_wound
 fire_distance           = 895
@@ -40,19 +40,13 @@ time_to_aim             = 1.0
 
 hud                      = wpn_fn2000_hud
 
-misfire_probability        = 0.0047 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.5
-;изношеность при которой шанс осечки становится константным
+misfire_probability        = 0.005
+misfire_start_condition		= 0.92
 misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.005
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.06
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0010
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0010
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0009
 
 ammo_elapsed           	= 30
 ammo_mag_size          	= 30
@@ -65,7 +59,7 @@ launch_speed         	= 32
 
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base       = 0.215    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       = 0.18    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    = 1.52f
 crosshair_inertion			= 6.30
 
@@ -119,7 +113,6 @@ animation_slot        	= 2     ; type of the animation that will be used
 
 inv_name             	= st_wpn_fn2000
 inv_name_short         	= st_wpn_fn2000
-
 
 inv_grid_width          = 4
 inv_grid_height         = 2
@@ -215,12 +208,10 @@ silencer_light_var_color= 0.05
 silencer_light_var_range= 0.5
 silencer_light_time     = 0.2
 
-
 [wpn_fn2000_hud]:hud_base
 zoom_hide_crosshair	= true
 attach_place_idx	= 0
 item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2000_hud.ogf
-
 
 hands_position				= -0.081500,-0.204000,0.288000
 hands_orientation			= 0.250001,0.649990,1.849998
@@ -228,15 +219,12 @@ hands_orientation			= 0.250001,0.649990,1.849998
 hands_position_16x9				= -0.032000,-0.214499,0.299498
 hands_orientation_16x9			= 2.149999,0.250000,1.399999
 
-
 item_position				= 0.005280,0.016463,-0.003394
 item_orientation			= -16.844534,-2.475593,361.820557
-
 
 shell_point					= 0.037,0.063,0.118
 shell_dir               = 0.0, 1.0, 0.0
 shell_bone					= wpn_body
-
 
 fire_point		= 0,0.054,0.358
 fire_bone      	      = wpn_body
@@ -276,7 +264,6 @@ anm_idle_sprint_g				= fn_2000_idle_sprint_gl
 anm_idle_moving_g				= fn_2000_idle_moving_gl
 anm_bore_g					= fn_2000_idle_bore_gl
 
-
 aim_hud_offset_pos				= -0.112000, 0.029500,-0.318000
 aim_hud_offset_rot				=  0.010000, 0.002500,-0.010000
 
@@ -296,14 +283,6 @@ gl_hud_offset_rot_16x9			= -0.170000, 0.030000, 0.000000
 ; Уникальнvе
 ;-----------------------------------------------------------------------------
 
-[wpn_fn2000_nimble]:wpn_fn2000
-$spawn               = "weapons\wpn_fn2000_nimble"   ; name and section in level editor
-
-cost              		= 20000
-
-inv_grid_x              = 5
-inv_grid_y              = 9
-
 ;---------------------------
 ;AP Weapon Section for NPCs
 ;---------------------------
@@ -319,32 +298,32 @@ ammo_class              = ammo_5.56x45_ap, ammo_5.56x45_ss190
 ;=================================================================================================
 [wpn_fn2000_custom]:wpn_fn2000
 
-cost              		= 49260
+cost              		= 48260
 inv_weight              = 3.582
 
 upgrades                = up_gr_firstab_fn2000_custom, up_gr_seconab_fn2000_custom, up_gr_thirdab_fn2000_custom, up_gr_fourtab_fn2000_custom, up_gr_fourtcd_fn2000_custom, up_gr_fourtef_fn2000_custom
-installed_upgrades      =
+installed_upgrades      = up_secona_fn2000_custom, up_seconc_fn2000_custom
 
-hit_power				= 0.445, 0.445, 0.445, 0.445
+hit_power				= 0.52, 0.52, 0.52, 0.52
 hit_impulse				= 35
 fire_distance           = 895
 bullet_speed         	= 900
-rpm                     = 850
+rpm                     = 865
 
 hud                      = wpn_fn2000_custom_hud
 
-misfire_start_condition		= 0.5
+misfire_start_condition		= 0.86
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.005
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0010
-condition_queue_shot_dec	= 0.0010
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.00075
+condition_queue_shot_dec	= 0.00075
 
 ammo_mag_size          	= 30
 ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
 fire_modes              = 1, 3, -1
 
-fire_dispersion_base       = 0.215
+fire_dispersion_base       = 0.145
 
 inv_name             	= st_wpn_fn2000_custom
 inv_name_short         	= st_wpn_fn2000_custom
@@ -364,32 +343,32 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2001_hud.ogf
 ;=================================================================================================
 [wpn_fn2000_alt1]:wpn_fn2000
 
-cost              		= 43280
+cost              		= 44480
 inv_weight              = 3.546
 
 upgrades                = up_gr_firstab_fn2000_alt1, up_gr_seconab_fn2000_alt1, up_gr_thirdab_fn2000_alt1, up_gr_fourtab_fn2000_alt1, up_gr_fourtcd_fn2000_alt1, up_gr_fourtef_fn2000_alt1
-installed_upgrades      =
+installed_upgrades      = up_firsta_fn2000_alt1
 
-hit_power				= 0.445, 0.445, 0.445, 0.445
+hit_power				= 0.49, 0.49, 0.49, 0.49
 hit_impulse				= 35
-fire_distance           = 895
-bullet_speed         	= 910
-rpm                     = 845
+fire_distance           = 920
+bullet_speed         	= 940
+rpm                     = 855
 
 hud                      = wpn_fn2000_alt1_hud
 
-misfire_start_condition		= 0.5
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.005
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0010
-condition_queue_shot_dec	= 0.0010
+misfire_start_condition		= 0.89
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0009
 
 ammo_mag_size          	= 30
 ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
 fire_modes              = 1, 3, -1
 
-fire_dispersion_base       = 0.215
+fire_dispersion_base       = 0.175
 
 inv_name             	= st_wpn_fn2000_alt
 inv_name_short         	= st_wpn_fn2000_alt
@@ -409,35 +388,61 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2002_hud.ogf
 ;=================================================================================================
 [wpn_fn2000_alt2]:wpn_fn2000
 
-cost              		= 44260
-inv_weight              = 3.522
+cost              		= 40260
+inv_weight              = 3.264
 
 upgrades                = up_gr_firstab_fn2000_alt2, up_gr_seconab_fn2000_alt2, up_gr_thirdab_fn2000_alt2, up_gr_fourtab_fn2000_alt2, up_gr_fourtcd_fn2000_alt2, up_gr_fourtef_fn2000_alt2
-installed_upgrades      =
+installed_upgrades      = up_thirda_fn2000_alt2, up_thirdd_fn2000_alt2, up_thirdf_fn2000_alt2
 
-hit_power				= 0.445, 0.445, 0.445, 0.445
+hit_power				= 0.45, 0.45, 0.45, 0.45
 hit_impulse				= 35
-fire_distance           = 895
-bullet_speed         	= 900
-rpm                     = 850
+fire_distance           = 880
+bullet_speed         	= 870
+rpm                     = 740
 
 hud                      = wpn_fn2000_alt2_hud
 
-misfire_start_condition		= 0.5
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.005
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0010
-condition_queue_shot_dec	= 0.0010
+misfire_start_condition		= 0.89
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0011
+condition_queue_shot_dec	= 0.0011
 
 ammo_mag_size          	= 30
 ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, 3, -1
+fire_modes              = 1
 
-fire_dispersion_base       = 0.21
+fire_dispersion_base       = 0.085
 
-inv_name             	= st_wpn_fn2000_alt
-inv_name_short         	= st_wpn_fn2000_alt
+;отдача
+cam_return				= 0 ; 				= 0
+cam_relax_speed         = 5    		;скорость возврата в исходное положение
+cam_relax_speed_ai     	= 120.75
+cam_dispersion	         	= 0.95
+cam_dispersion_inc         	= 0.65
+cam_dispersion_frac     = 1.0 		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle           = 50.0		;максимальный угол отдачи
+cam_max_angle_horz      = 50.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.02 		;(degree) size of step camera moved in horizontal position while shooting
+
+PDM_disp_base 				= 0.87
+PDM_disp_vel_factor 		= 2.2
+PDM_disp_accel_factor 		= 2.2
+PDM_disp_crouch	 			= 0.6
+PDM_disp_crouch_no_acc 		= 0.4
+
+zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          	= 0.7
+zoom_cam_dispersion_inc      	= 0.42
+zoom_cam_dispersion_frac     = 0.92
+zoom_cam_max_angle           = 50.0
+zoom_cam_max_angle_horz      = 50.0
+zoom_cam_step_angle_horz     = 0.84
+
+inv_name             	= st_wpn_fn2000_civilian
+inv_name_short         	= st_wpn_fn2000_civilian
 
 inv_grid_width          = 4
 inv_grid_height         = 2
@@ -454,32 +459,32 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2003_hud.ogf
 ;=================================================================================================
 [wpn_fn2000_alt3]:wpn_fn2000
 
-cost              		= 50920
+cost              		= 51920
 inv_weight              = 3.106
 
 upgrades                = up_gr_firstab_fn2000_alt3, up_gr_seconab_fn2000_alt3, up_gr_thirdab_fn2000_alt3, up_gr_fourtab_fn2000_alt3, up_gr_fourtcd_fn2000_alt3, up_gr_fourtef_fn2000_alt3
-installed_upgrades      =
+installed_upgrades      = up_secona_fn2000_alt3, up_seconc_fn2000_alt3, up_seconf_fn2000_alt3
 
-hit_power				= 0.445, 0.445, 0.445, 0.445
+hit_power				= 0.545, 0.545, 0.545, 0.545
 hit_impulse				= 35
-fire_distance           = 895
-bullet_speed         	= 900
-rpm                     = 850
+fire_distance           = 930
+bullet_speed         	= 915
+rpm                     = 865
 
 hud                      = wpn_fn2000_alt3_hud
 
-misfire_start_condition		= 0.5
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.005
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0010
-condition_queue_shot_dec	= 0.0010
+misfire_start_condition		= 0.86
+misfire_end_condition		= 0.09
+misfire_start_prob	     	= 0.0025
+misfire_end_prob	     	= 0.04
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0007
 
 ammo_mag_size          	= 30
 ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
 fire_modes              = 1, 3, -1
 
-fire_dispersion_base       = 0.21
+fire_dispersion_base       = 0.160
 
 inv_name             	= st_wpn_fn2000_camo
 inv_name_short         	= st_wpn_fn2000_camo
@@ -500,32 +505,33 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2004_hud.ogf
 ;=================================================================================================
 [wpn_fn2000_worn]:wpn_fn2000
 
-cost              		= 40920
+cost              		= 36920
 inv_weight              = 3.55
 
 upgrades                = up_gr_firstab_fn2000_worn, up_gr_seconab_fn2000_worn, up_gr_thirdab_fn2000_worn, up_gr_fourtab_fn2000_worn, up_gr_fourtcd_fn2000_worn, up_gr_fourtef_fn2000_worn
-installed_upgrades      =
 
-hit_power				= 0.445, 0.445, 0.445, 0.445
+hit_power				= 0.425, 0.425, 0.425, 0.425
 hit_impulse				= 35
-fire_distance           = 895
-bullet_speed         	= 890
-rpm                     = 840
+fire_distance           = 861
+bullet_speed         	= 854
+rpm                     = 832
 
 hud                      = wpn_fn2000_worn_hud
 
-misfire_start_condition		= 0.6
+misfire_start_condition		= 0.96
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.005
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0010
-condition_queue_shot_dec	= 0.0010
+misfire_start_prob	     	= 0.0056
+misfire_end_prob	     	= 0.068
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0013
+
+silencer_status         = 0
 
 ammo_mag_size          	= 30
 ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
 fire_modes              = 1, 3, -1
 
-fire_dispersion_base       = 0.22
+fire_dispersion_base       = 0.345
 
 inv_name             	= st_wpn_fn2000_worn
 inv_name_short         	= st_wpn_fn2000_worn
@@ -542,3 +548,10 @@ snd_reload        	= weapons\fn2000\fn2000_reload
 [wpn_fn2000_worn_hud]:wpn_fn2000_hud
 
 item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2005_hud.ogf
+
+;=================================================================================================
+[wpn_fn2000_nimble]:wpn_fn2000_alt2
+$spawn               = "weapons\wpn_fn2000_nimble"   ; name and section in level editor
+
+inv_grid_x              = 5
+inv_grid_y              = 9

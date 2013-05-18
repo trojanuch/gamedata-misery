@@ -15,7 +15,7 @@ default_to_ruck         = false
 sprint_allowed       	= true
 
 ;-------------------------------------------------------------------------------
-cost                    = 45720
+cost                    = 38940
 weapon_class            = sniper_rifle        ; Type of the weapon
 inv_weight              = 2.597
 
@@ -24,31 +24,25 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_vintorez
 
 ;-TTX-----------------------------------------------------------------------------
-hit_power				= 0.505, 0.505, 0.505, 0.505
-hit_impulse				= 34
+hit_power				= 0.424, 0.424, 0.424, 0.424
+hit_impulse				= 37
 hit_type				= fire_wound
-fire_distance           = 390
-bullet_speed            = 590
-rpm                     = 850
+fire_distance           = 394
+bullet_speed            = 598
+rpm                     = 857
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
 time_to_aim             = 1.0
 ;-------------------------------------------------------------------------------
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.005
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.063
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0012
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0014
+misfire_probability       	= 0.005
+misfire_start_condition		= 0.85
+misfire_end_condition		= 0.14
+misfire_start_prob	     	= 0.0072
+misfire_end_prob	     	= 0.076
+condition_shot_dec      	= 0.0011
+condition_queue_shot_dec	= 0.0013
 
 ammo_elapsed            = 10
 ammo_mag_size           = 10
@@ -62,7 +56,7 @@ single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.17      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.14      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.18f
 crosshair_inertion		= 5.10
 

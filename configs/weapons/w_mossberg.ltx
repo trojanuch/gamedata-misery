@@ -12,7 +12,7 @@ ef_main_weapon_type			= 1
 ef_weapon_type				= 7
 
 ;----------------------------------------------------------------------------
-cost					 	= 21640
+cost					 	= 17640
 weapon_class			 	= shotgun
 inv_weight					= 2.672
 
@@ -21,8 +21,8 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_wincheaster1300
 
 ;--TTX----------------------------------------------------------------------------
-hit_power        			= 0.705, 0.705, 0.705, 0.705
-hit_impulse      			= 68 ;60 ;125
+hit_power        			= 0.65, 0.65, 0.65, 0.65
+hit_impulse      			= 56
 hit_type 					= fire_wound
 fire_distance            	= 320
 bullet_speed			 	= 375			;начальная скорость пули
@@ -30,19 +30,13 @@ rpm                      	= 50            ;60 = 1 секунда
 
 hud                      	= wpn_m3_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.004
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0025
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.89
+misfire_end_condition		= 0.18
+misfire_start_prob	     	= 0.0075
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0018
 
 tri_state_reload			= on
 
@@ -83,7 +77,7 @@ zoom_cam_max_angle			= 15.0
 zoom_cam_max_angle_horz		= 15.0
 zoom_cam_step_angle_horz	= 3.0
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 2.5	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 2.5	
 
 ;---DOF-------------------------------------------------------------------------
 zoom_dof					= 0.5, 1.0, 180

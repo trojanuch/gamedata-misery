@@ -169,16 +169,17 @@ mre = 2, prob=0.003
 ration_ru = 1, prob=0.001
 ration ukr = 1, prob=0.002
 
-gun_oil = 2, prob=0.009
-cleaning_kit_p = 1, prob=0.009
-cleaning_kit_s = 1, prob=0.009
-cleaning_kit_r5 = 1, prob=0.009
-cleaning_kit_r7 = 1, prob=0.009
-cleaning_kit_u = 1, prob=0.007
-toolkit_p = 1, prob=0.005
-toolkit_s = 1, prob=0.005
-toolkit_r5 = 1, prob=0.005
-toolkit_r7 = 1, prob=0.005
-toolkit_u = 1, prob=0.002
+gun_oil = 2, prob=0.013
+cleaning_kit_p = 1, prob=0.013
+cleaning_kit_s = 1, prob=0.013
+cleaning_kit_r5 = 1, prob=0.013
+cleaning_kit_r7 = 1, prob=0.013
+cleaning_kit_u = 1, prob=0.013
+toolkit_p = 1, prob=0.007
+toolkit_s = 1, prob=0.007
+toolkit_r5 = 1, prob=0.007
+toolkit_r7 = 1, prob=0.007
+toolkit_u = 1, prob=0.005
 
-wpn_binoc_inv = 1, prob=0.005
+wpn_binoc_inv = 1, prob=0.006
+wpn_upd = 1, prob=0.006

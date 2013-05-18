@@ -949,6 +949,151 @@
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"
   </specific_character>
+  
+  <specific_character id="sim_default_duty_3_default_8" team_default = "1">
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_Dolg_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_duty_3</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
+
+    <rank>55</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_duty_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_duty_3_default_9" team_default = "1">
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_Dolg_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_duty_3</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
+
+    <rank>55</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_duty_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_duty_3_default_10" team_default = "1">
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_Dolg_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_duty_3</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
+
+    <rank>55</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_duty_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_duty_3_default_11" team_default = "1">
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_Dolg_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_duty_3</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
+
+    <rank>55</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_duty_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_duty_3_default_12" team_default = "1">
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_Dolg_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_duty_3</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
+
+    <rank>55</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_duty_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
 
 		<!--  duty master  -->
 
@@ -1629,7 +1774,7 @@
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_03\dolg\</snd_config>
 
-    <rank>55</rank>
+    <rank>45</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
     <visual>actors\stalker_soldier\stalker_soldier_4</visual>
@@ -1659,7 +1804,7 @@
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\dolg\</snd_config>
 
-    <rank>55</rank>
+    <rank>45</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
     <visual>actors\stalker_soldier\stalker_soldier_3</visual>
@@ -1687,9 +1832,9 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\dolg\</snd_config>
+    <snd_config>characters_voice\human_02\dolg\</snd_config>
 
-    <rank>55</rank>
+    <rank>45</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolg3b</visual>
@@ -1720,7 +1865,7 @@
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_03\dolg\</snd_config>
 
-    <rank>55</rank>
+    <rank>45</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolg_2_mask</visual>
@@ -1750,7 +1895,7 @@
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\dolg\</snd_config>
 
-    <rank>55</rank>
+    <rank>45</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolg3b</visual>
@@ -1779,7 +1924,7 @@
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_03\dolg\</snd_config>
 
-    <rank>55</rank>
+    <rank>45</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolggas_2</visual>
@@ -1835,9 +1980,9 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\dolg\</snd_config>
+    <snd_config>characters_voice\human_01\dolg\</snd_config>
 
-    <rank>55</rank>
+    <rank>45</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolg2a</visual>
@@ -1865,7 +2010,7 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>35</rank>
     <reputation>0</reputation>
@@ -1892,7 +2037,7 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>35</rank>
     <reputation>0</reputation>
@@ -1919,7 +2064,7 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>35</rank>
     <reputation>0</reputation>
@@ -1975,7 +2120,7 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>45</rank>
     <reputation>0</reputation>
@@ -2061,7 +2206,7 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>45</rank>
     <reputation>0</reputation>
@@ -2092,7 +2237,7 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>45</rank>
     <reputation>0</reputation>
@@ -2121,7 +2266,7 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>45</rank>
     <reputation>0</reputation>
@@ -2211,9 +2356,9 @@
 
     <class>sim_default_duty_hunter_day_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
-    <rank>45</rank>
+    <rank>35</rank>
     <reputation>0</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolg_2_mask</visual>
@@ -2947,7 +3092,7 @@
 
     <class>sim_default_duty_hunter_night</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>60</rank>
     <reputation>0</reputation>
@@ -3043,7 +3188,7 @@
 
     <class>sim_default_duty_hunter_night</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>60</rank>
     <reputation>0</reputation>
@@ -3107,7 +3252,7 @@
 
     <class>sim_default_duty_hunter_night</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>60</rank>
     <reputation>0</reputation>
@@ -3139,7 +3284,7 @@
 
     <class>sim_default_duty_hunter_night</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>60</rank>
     <reputation>0</reputation>
@@ -4954,6 +5099,180 @@ hand_radio = 1 \n
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
     <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_freedom_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_freedom_3_default_14" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_freedom_3</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_02\freedom\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_freedom_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_freedom_3_default_15" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_freedom_3</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_02\freedom\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_freedom_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_freedom_3_default_16" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_freedom_3</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_02\freedom\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_freedom_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_freedom_3_default_17" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_freedom_3</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_02\freedom\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_freedom_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_freedom_3_default_18" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_freedom_3</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_02\freedom\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_freedom_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_freedom_3_default_19" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_freedom_3</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_02\freedom\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
     <supplies>
       [spawn] \n
 
@@ -11795,6 +12114,216 @@ hand_radio = 1 \n
 #include "gameplay\character_drugs_2.xml"
 #include "gameplay\character_drugs_neutral_3.xml"
 
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_stalker_3_default_11" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Soldier_4</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_stalker_3</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+	<money min="2500" max="5000" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_soldier\stalker_soldier_4</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_neutral_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_stalker_3_default_12" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Soldier_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_stalker_3</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+	<money min="2500" max="5000" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_neutral_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_stalker_3_default_13" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Soldier_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_stalker_3</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+	<money min="2500" max="5000" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_neutral_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_stalker_3_default_14" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Soldier_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_stalker_3</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+	<money min="2500" max="5000" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_neutral_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_stalker_3_default_15" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_stalker_3</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+	<money min="5000" max="10000" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_neutral\stalker_neutral_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_neutral_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_stalker_3_default_16" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_stalker_3</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+	<money min="5000" max="10000" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_neutral\stalker_neutral_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_neutral_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_stalker_3_default_17" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_stalker_3</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+	<money min="5000" max="10000" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_neutral\stalker_neutral_3</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_neutral_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
     </supplies>
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"

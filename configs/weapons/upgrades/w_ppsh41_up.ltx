@@ -1,46 +1,46 @@
 [up_sect_firsta_ppsh41]
 ;ќтдача(1)-10%
 ;------------
-cost		      		= 3480
+cost		      		= 2480
 value                   = -10
 
-cam_dispersion              = -0.1     ;0.5
-cam_dispersion_inc          = -0.06     ;0.5
-cam_step_angle_horz         = -0.03     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.13    ;0.5
+cam_dispersion_inc          = -0.12     ;0.5
+cam_step_angle_horz         = -0.08     ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion         = -0.08     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.07     ;0.5
-zoom_cam_step_angle_horz    = -0.02     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.13     ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc     = -0.08     ;0.5
+zoom_cam_step_angle_horz    = -0.07     ;1.0 [0.505 в остатке]
 
 
 [up_sect_firstc_ppsh41]
 ;Ќадежность(2)15%
 ;---------------
-cost		      		= 2850
+cost		      		= 1850
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1.5 ;15
+
+;fire_dispersion_condition_factor    = -1.5 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= -0.0015
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.015 ;0.03
+
+misfire_start_prob	     	= -0.0006
+
+misfire_end_prob	     	= -0.006 ;0.03
 
 inv_weight			= +0.15
 
 [up_sect_firstd_ppsh41]
 ;ќтдача(3)-20%
 ;------------
-cost		      		= 3920
+cost		      		= 2920
 value                   = -20
 
-cam_dispersion              = -0.2      ;0.5
-cam_dispersion_inc          = -0.11     ;0.5
-cam_step_angle_horz         = -0.09     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.24      ;0.5
+cam_dispersion_inc          = -0.22     ;0.5
+cam_step_angle_horz         = -0.14     ;1.5 [0.73 в остатке]
 
 zoom_cam_dispersion         = -0.22     ;0.5 [0.093 в остатке]
 zoom_cam_dispersion_inc     = -0.11     ;0.5
@@ -51,97 +51,97 @@ inv_weight			= +0.2
 [up_sect_firste_ppsh41]
 ;“очность(3)30%
 ;---------------
-cost		      		= 2750
+cost		      		= 1750
 value					= +10
 
-fire_dispersion_base	= -0.02 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.06 ;0.7
+;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight			= +0.15
 
 [up_sect_firstf_ppsh41]
 ;Ќастильность(3)30%
 ;------------------
-cost		      		= 3650
+cost		      		= 2650
 value					= +30
 
 bullet_speed            = +110
-fire_dispersion_base	= -0.02 ;0.7
+fire_dispersion_base	= -0.04 ;0.7
 
 inv_weight			= +0.3
 
 [up_sect_secona_ppsh41]
 ;”меньшение веса
 ;---------------
-cost		      		= 2860
-value					= -3
+cost		      		= 1860
+value					= -10
 
-cam_dispersion              = -0.168		;0.5
-cam_dispersion_inc         	= -0.006		;0.5
-cam_step_angle_horz        	= -0.009		;1.5 [0.73 в остатке]
+cam_dispersion              = -0.13    ;0.5
+cam_dispersion_inc          = -0.12     ;0.5
+cam_step_angle_horz         = -0.08     ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion         = -0.07		;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.008		;0.5
-zoom_cam_step_angle_horz    = -0.003 	;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.13     ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc     = -0.08     ;0.5
+zoom_cam_step_angle_horz    = -0.07     ;1.0 [0.505 в остатке]
 
 inv_weight			= +0.15
 
 [up_sect_seconc_ppsh41]
 ;“очность(2)20%
 ;---------------
-cost		      		= 2850
+cost		      		= 1850
 value					= +10
 
-fire_dispersion_base	= -0.02 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.06 ;0.7
+;fire_dispersion_condition_factor    = -1 ;15
 
 [up_sect_second_ppsh41]
 ;—корострельность(2)15%
 ;----------------------
-cost		      		= 4150
-value					= +15
+cost		      		= 3150
+value					= +10
 
-rpm                     = +75
+rpm                     = +90
 
 inv_weight			= +0.25
 
 [up_sect_thirda_ppsh41]
 ;Ќадежность(1)10%
 ;---------------
-cost		      		= 3650
+cost		      		= 2650
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+
 misfire_start_prob	     	= -0.0005
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.01 ;0.03
+
+misfire_end_prob	     	= -0.005 ;0.03
 
 inv_weight			= +0.15
 
 [up_sect_thirdc_ppsh41]
 ;Ќастильность(2)20%
 ;------------------
-cost		      		= 3950
-value					= +20
+cost		      		= 2950
+value					= +10
 
-bullet_speed            = +75
-fire_dispersion_base	= -0.02 ;0.7
+bullet_speed            = +50
+fire_dispersion_base	= -0.05 ;0.7
 
 inv_weight			= +0.15
 
 [up_sect_thirde_ppsh41]
 ;—корострельность(3)25%
 ;----------------------
-cost		      		= 4950
+cost		      		= 3950
 value					= +10
 
-rpm                     = +75
+rpm                     = +90
 
 inv_weight			= +0.15
 
@@ -149,7 +149,7 @@ inv_weight			= +0.15
 [up_sect_thirdf_ppsh41]
 ;”добство(3)25%
 ;--------------
-cost		      		= 4250
+cost		      		= 3250
 value					= +25
 
 crosshair_inertion		   = -1.25

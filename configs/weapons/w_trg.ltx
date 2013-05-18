@@ -24,11 +24,11 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svd
 
 ;------TTX------------------------------------------------------------------------
-hit_power           	= 0.615, 0.615, 0.615, 0.615
-hit_impulse		= 20
+hit_power           	= 0.734, 0.734, 0.734, 0.734
+hit_impulse			= 44
 hit_type 		= fire_wound
-fire_distance           = 1050
-bullet_speed		= 820 ;830	;начальная скорость пули
+fire_distance           = 1058
+bullet_speed		= 824 ;830	;начальная скорость пули
 rpm                     = 23
 rpm_empty_click         = 200
 
@@ -37,19 +37,13 @@ time_to_aim		= 1.0
 
 hud                     = wpn_trg_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.0055
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.055
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.00030
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.00016
+misfire_probability        = 0.005
+misfire_start_condition		= 0.93
+misfire_end_condition		= 0.14
+misfire_start_prob	     	= 0.0083
+misfire_end_prob	     	= 0.064
+condition_shot_dec      	= 0.0028
+condition_queue_shot_dec	= 0.0016
 
 ammo_elapsed			= 0
 
@@ -61,7 +55,7 @@ single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.1	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.06	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.94f
 crosshair_inertion      = 11.8
 

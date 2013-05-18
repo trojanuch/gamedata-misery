@@ -13,15 +13,15 @@ inv_weight			= +0.15
 cost		      		= 2560
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+
 misfire_start_prob	     	= -0.0007
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.011 ;0.03
 
 inv_weight			= +0.2
@@ -32,28 +32,31 @@ inv_weight			= +0.2
 cost	      	     	= 3290
 value                   = -20
 
-cam_dispersion              = -0.18     ;1.2
-cam_dispersion_inc          = -0.09     ;0.6
-cam_step_angle_horz         = -0.22         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.1     ;1.2
+cam_dispersion_inc          = -0.02     ;0.6
+cam_step_angle_horz         = -0.2         ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion          = -0.05    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.075   ;0.5
+zoom_cam_dispersion          = -0.06    ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc      = -0.02   ;0.5
 zoom_cam_step_angle_horz     = -0.2     ;1.0 [0.505 в остатке]
+
+inv_weight			= +0.12
 
 ;Отдача(3)-30%
 ;------------
 [up_sect_firste_scorpion]
 cost		      		= 1720
-value                   = -30
+value                   = -10
 
-cam_dispersion              = -0.27     ;0.5
-cam_dispersion_inc          = -0.12     ;0.5
-cam_step_angle_horz         = -0.32         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.05     ;0.5
+cam_dispersion_inc          = -0.01     ;0.5
+cam_step_angle_horz         = -0.1         ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion          = -0.25    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.125   ;0.5
-zoom_cam_step_angle_horz     = -0.25    ;1.0 [0.505 в остатке]
-inv_weight			= +0.2
+zoom_cam_dispersion          = -0.03    ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc      = -0.01   ;0.5
+zoom_cam_step_angle_horz     = -0.1    ;1.0 [0.505 в остатке]
+
+inv_weight			= +0.14
 
 ;Отдача(1)-10%
 ;------------
@@ -61,77 +64,82 @@ inv_weight			= +0.2
 cost		      		= 1840
 value                   = -10
 
-cam_dispersion              = -0.08     ;0.5
-cam_dispersion_inc          = -0.03     ;0.5
-cam_step_angle_horz         = -0.12         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.05     ;0.5
+cam_dispersion_inc          = -0.01     ;0.5
+cam_step_angle_horz         = -0.1         ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion          = -0.05    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.035   ;0.5
-zoom_cam_step_angle_horz     = -0.05    ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.03    ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc      = -0.01   ;0.5
+zoom_cam_step_angle_horz     = -0.1    ;1.0 [0.505 в остатке]
 
 ;Надежность(2)15%
 ;---------------
 [up_sect_seconc_scorpion]
 cost		      		= 2760
-value					= +15
+value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+
 misfire_start_prob	     	= -0.0007
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.011 ;0.03
 
-inv_weight			= +0.2
+inv_weight			= +0.13
 
 ;Отдача(3)-30%
 ;------------
 [up_sect_secone_scorpion]
 cost		      		= 3560
-value                   = -30
+value                   = -20
 
-cam_dispersion              = -0.27     ;0.5
-cam_dispersion_inc          = -0.12     ;0.5
-cam_step_angle_horz         = -0.32     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.1     ;1.2
+cam_dispersion_inc          = -0.02     ;0.6
+cam_step_angle_horz         = -0.2         ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion          = -0.25    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.125   ;0.5
-zoom_cam_step_angle_horz     = -0.25    ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.06    ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc      = -0.02   ;0.5
+zoom_cam_step_angle_horz     = -0.2     ;1.0 [0.505 в остатке]
 
 ;Удобство(3)25%
 ;--------------
 [up_sect_seconf_scorpion]
-cost		      		= 3550
-value					= -1
+cost		      		= 1620
+value					= -0.38
 
-crosshair_inertion		   = -0.5
+crosshair_inertion		   = -0.4
  
-inv_weight			= -1
+inv_weight			= -0.38
 
 ;Отдача(1)-10%
 ;------------
 [up_sect_thirda_scorpion]
-cost		      		= 4290
+cost		      		= 3110
 value                   = -10
 
-cam_dispersion              = -0.08     ;0.5
-cam_dispersion_inc          = -0.03     ;0.5
-cam_step_angle_horz         = -0.12         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.05     ;0.5
+cam_dispersion_inc          = -0.01     ;0.5
+cam_step_angle_horz         = -0.1         ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion          = -0.05    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.035   ;0.5
-zoom_cam_step_angle_horz     = -0.05    ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.03    ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc      = -0.01   ;0.5
+zoom_cam_step_angle_horz     = -0.1    ;1.0 [0.505 в остатке]
+
+inv_weight			= +0.09
+
 ;Скорострельность(2)15%
 ;----------------------
 [up_sect_thirdc_scorpion]
 cost		      		= 2890
-value					= +15
+value					= +10
 
 rpm                     = +90 ;600
+
+inv_weight			= +0.09
 
 ;Надежность(2)15%
 ;---------------
@@ -139,16 +147,18 @@ rpm                     = +90 ;600
 cost		      		= 1650
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+
 misfire_start_prob	     	= -0.0007
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.011 ;0.03
+
+inv_weight			= +0.11
 
 ;Удобство(3)25%
 ;--------------
@@ -156,11 +166,13 @@ misfire_end_prob	     	= -0.011 ;0.03
 cost		      		= 1900
 value					= +25
 
-crosshair_inertion		   = -0.5
+crosshair_inertion		   = -0.54
  
 PDM_disp_base 				= -0.1 ;0.5
 PDM_disp_vel_factor 		= -0.3 ;1.5
 PDM_disp_accel_factor 		= -0.3 ;1.5
+
+inv_weight			= -0.06
 
 ;Отдача(1)10%
 ;------------
@@ -168,13 +180,15 @@ PDM_disp_accel_factor 		= -0.3 ;1.5
 cost		      		= 4940
 value                   = -10
 
-cam_dispersion              = -0.08     ;0.5
-cam_dispersion_inc          = -0.03     ;0.5
-cam_step_angle_horz         = -0.12         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.05     ;0.5
+cam_dispersion_inc          = -0.01     ;0.5
+cam_step_angle_horz         = -0.1         ;1.5 [0.73 в остатке]
 
-zoom_cam_dispersion          = -0.05    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.035   ;0.5
-zoom_cam_step_angle_horz     = -0.05    ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.03    ;0.5 [0.093 в остатке]
+zoom_cam_dispersion_inc      = -0.01   ;0.5
+zoom_cam_step_angle_horz     = -0.1    ;1.0 [0.505 в остатке]
+
+inv_weight			= +0.12
 
 ;Скорострельность(2)15%
 ;----------------------
@@ -182,24 +196,30 @@ zoom_cam_step_angle_horz     = -0.05    ;1.0 [0.505 в остатке]
 cost		      		= 1650
 value					= +5
 
-rpm                     = +30 ;600
+rpm                     = +45 ;600
+
+inv_weight			= +0.14
 
 ;Скорострельность(3)25%
 ;----------------------
 [up_sect_fourte_scorpion]
-cost		      		= 1900
+cost		      		= 1830
 value					= +5
 
-rpm                     = +30 ;600
+rpm                     = +45 ;600
+
+inv_weight			= +0.13
 
 ;Объем магазина +10
 ;--------------------
 [up_sect_fiftha_scorpion]
-cost		      		= 1800
-value					= +10
-ammo_mag_size        	= 10
-;--------END----------
+cost		      		= 928
+value					= +5
+ammo_mag_size        	= 5
 
+inv_weight			= +0.05
+
+;--------END----------
 
 [up_firsta_scorpion]
 scheme_index            = 0, 0

@@ -11,7 +11,7 @@ description					= st_wpn_colt1911_descr
 ef_weapon_type					= 5
 
 ;-----------------------------------------------------------------------------
-cost					= 12260
+cost					= 8160
 inv_weight				= 1.316
 
 upgrades                = up_gr_firstab_colt1911, up_gr_seconab_colt1911, up_gr_thirdab_colt1911, up_gr_fourtab_colt1911, up_gr_fifthab_colt1911
@@ -32,19 +32,13 @@ time_to_aim					= 1.0
 
 hud                      	= wpn_colt1911_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.007
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.07
-;увеличение изношености при одиночном выстреле
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.87
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0074
+misfire_end_prob	     	= 0.079
 condition_shot_dec      	= 0.0018
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0018
+condition_queue_shot_dec	= 0.0020
 
 ammo_elapsed		 	= 7
 ammo_mag_size		 	= 7
@@ -58,7 +52,7 @@ reload_dof				= 0.0, 0.5, 5, 1.7
 
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.52 ;0.15	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.76 ; 0.15	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.0 ; = 0.88
 crosshair_inertion		= 3.45
 
@@ -264,31 +258,31 @@ inv_name			= st_wpn_colt1911_camo
 inv_name_short			= st_wpn_colt1911_camo
 description			= st_wpn_colt1911_camo_descr
 
-cost					= 16260
+cost					= 13860
 inv_weight				= 1.25
 
 upgrades                = up_gr_firstab_colt1911_camo, up_gr_seconab_colt1911_camo, up_gr_thirdab_colt1911_camo, up_gr_fourtab_colt1911_camo, up_gr_fifthab_colt1911_camo
-installed_upgrades      =
+installed_upgrades      = up_thirda_colt1911_camo, up_thirdc_colt1911_camo, up_fiftha_colt1911_camo, up_firsta_colt1911_camo
 
-hit_power           		= 0.38, 0.38, 0.38, 0.38
+hit_power           		= 0.44, 0.44, 0.44, 0.44
 hit_impulse		 			= 40
-fire_distance       		= 590
-bullet_speed				= 390
-rpm                     	= 415
+fire_distance       		= 640
+bullet_speed				= 430
+rpm                     	= 435
 
 hud                      	= wpn_colt1911_camo_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.007
-misfire_end_prob	     	= 0.07
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0018
+misfire_start_condition		= 0.83
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0062
+misfire_end_prob	     	= 0.067
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0014
 
 ammo_mag_size		 	= 7
 ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
 
-fire_dispersion_base	= 0.51
+fire_dispersion_base	= 0.54
 
 inv_grid_width			= 2
 inv_grid_height			= 1
@@ -307,30 +301,31 @@ item_visual						= dynamics\weapons\wpn_colt1911\wpn_colt191a_hud.ogf
 inv_name				= st_wpn_colt1911_alt
 inv_name_short			= st_wpn_colt1911_alt
 
-cost					= 14440
+cost					= 11840
 inv_weight				= 1.193
 
 upgrades                = up_gr_firstab_colt1911_alt1, up_gr_seconab_colt1911_alt1, up_gr_thirdab_colt1911_alt1, up_gr_fourtab_colt1911_alt1, up_gr_fifthab_colt1911_alt1
+installed_upgrades      = up_fourta_colt1911_alt1, up_fourtc_colt1911_alt1
 
-hit_power           		= 0.38, 0.38, 0.38, 0.38
+hit_power           		= 0.437, 0.437, 0.437, 0.437
 hit_impulse		 			= 40
-fire_distance       		= 590
-bullet_speed				= 390
-rpm                     	= 415
+fire_distance       		= 636
+bullet_speed				= 433
+rpm                     	= 441
 
 hud                      	= wpn_colt1911_alt1_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.007
-misfire_end_prob	     	= 0.07
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0018
+misfire_start_condition		= 0.84
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0066
+misfire_end_prob	     	= 0.069
+condition_shot_dec      	= 0.0015
+condition_queue_shot_dec	= 0.0016
 
 ammo_mag_size		 	= 7
 ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
 
-fire_dispersion_base	= 0.52
+fire_dispersion_base	= 0.68
 
 inv_grid_width			= 2
 inv_grid_height			= 1
@@ -347,32 +342,31 @@ item_visual						= dynamics\weapons\wpn_colt1911\wpn_colt191b_hud.ogf
 ;===========================================================================================
 [wpn_colt1911_alt2]:wpn_colt1911
 
-cost					= 15580
+cost					= 9220
 inv_weight				= 1.333
 
 upgrades                = up_gr_firstab_colt1911_alt2, up_gr_seconab_colt1911_alt2, up_gr_thirdab_colt1911_alt2, up_gr_fourtab_colt1911_alt2, up_gr_fifthab_colt1911_alt2
-installed_upgrades      =
+installed_upgrades      = up_thirda_colt1911_alt2, up_thirdc_colt1911_alt2
 
-hit_power           		= 0.38, 0.38, 0.38, 0.38
+hit_power           		= 0.42, 0.42, 0.42, 0.42
 hit_impulse		 			= 40
-fire_distance       		= 590
-bullet_speed				= 390
-rpm                     	= 415
+fire_distance       		= 624
+bullet_speed				= 427
+rpm                     	= 431
 
 hud                      	= wpn_colt1911_alt2_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.007
-misfire_end_prob	     	= 0.07
-condition_shot_dec      	= 0.0018
+misfire_start_condition		= 0.82
+misfire_end_condition		= 0.09
+misfire_start_prob	     	= 0.0061
+misfire_end_prob	     	= 0.066
+condition_shot_dec      	= 0.0017
 condition_queue_shot_dec	= 0.0018
 
 ammo_mag_size		 	= 7
 ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
 
-fire_dispersion_base	= 0.52
-
+fire_dispersion_base	= 0.58
 
 inv_name				= st_wpn_colt1911_alt
 inv_name_short			= st_wpn_colt1911_alt
@@ -394,31 +388,32 @@ item_visual						= dynamics\weapons\wpn_colt1911\wpn_colt191c_hud.ogf
 inv_name				= st_wpn_colt1911_worn
 inv_name_short			= st_wpn_colt1911_worn
 
-cost					= 10660
+cost					= 5210
 inv_weight				= 1.349
 
 upgrades                = up_gr_firstab_colt1911_worn, up_gr_seconab_colt1911_worn, up_gr_thirdab_colt1911_worn, up_gr_fourtab_colt1911_worn, up_gr_fifthab_colt1911_worn
-installed_upgrades      =
 
-hit_power           		= 0.38, 0.38, 0.38, 0.38
+hit_power           		= 0.382, 0.382, 0.382, 0.382
 hit_impulse		 			= 40
-fire_distance       		= 590
-bullet_speed				= 390
-rpm                     	= 415
+fire_distance       		= 584
+bullet_speed				= 384
+rpm                     	= 409
 
 hud                      	= wpn_colt1911_worn_hud
 
-misfire_start_condition		= 0.7
+misfire_start_condition		= 0.90
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.007
-misfire_end_prob	     	= 0.07
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0018
+misfire_start_prob	     	= 0.009
+misfire_end_prob	     	= 0.09
+condition_shot_dec      	= 0.0028
+condition_queue_shot_dec	= 0.0026
+
+silencer_status				= 0
 
 ammo_mag_size		 	= 7
 ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
 
-fire_dispersion_base	= 0.54
+fire_dispersion_base	= 0.81
 
 inv_grid_width			= 2
 inv_grid_height			= 1

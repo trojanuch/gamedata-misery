@@ -25,12 +25,12 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_g36
 
 ;--TTX----------------------------------------------------------------------------
-hit_power			= 0.485, 0.485, 0.485, 0.485
+hit_power			= 0.526, 0.526, 0.526, 0.526
 hit_impulse       = 34 ;50 ;100
 hit_type				= fire_wound
-fire_distance           = 880
-bullet_speed            = 920 ;начальная скорость пули
-rpm                     = 750
+fire_distance           = 907
+bullet_speed            = 929 ;начальная скорость пули
+rpm                     = 758
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -38,19 +38,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_scar_hud
 
-misfire_probability        = 0.004 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.4
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.004
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.05
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0006
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0007
+misfire_probability        = 0.004
+misfire_start_condition		= 0.86
+misfire_end_condition		= 0.08
+misfire_start_prob	     	= 0.0041
+misfire_end_prob	     	= 0.046
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0005
 
 
 ammo_elapsed            = 30
@@ -68,9 +62,9 @@ reload_dof					= 0.0, 0.5, 5, 2
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	   = 0.17   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor    = 1.42f
-crosshair_inertion	= 5.10
+fire_dispersion_base	   = 0.16   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor    = 1.47f
+crosshair_inertion	= 5.74
 
 ;отдача
 cam_return				= 0 ; 			   = 0

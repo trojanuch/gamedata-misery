@@ -15,7 +15,7 @@ default_to_ruck         = false
 sprint_allowed       	= true
 
 ;-------------------------------------------------------------------------------
-cost					= 51700
+cost					= 46420
 weapon_class			= sniper_rifle
 inv_weight				= 6.809
 
@@ -24,12 +24,12 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svd
 
 ;------TTX------------------------------------------------------------------------
-hit_power           	= 0.595, 0.595, 0.595, 0.595
+hit_power           	= 0.648, 0.648, 0.648, 0.648
 hit_impulse		 		= 55
 hit_type 				= fire_wound
 fire_distance           = 985
-bullet_speed		= 830 ;830	;начальная скорость пули
-rpm                     = 45
+bullet_speed			= 830 ;830	;начальная скорость пули
+rpm                     = 48
 rpm_empty_click         = 200
 
 use_aim_bullet				= false		;Поддерживается ли первая суппер пуля
@@ -37,19 +37,13 @@ time_to_aim					= 1.0
 
 hud                     = wpn_svd_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.9
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.0055
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.055
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0032
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0021
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.87
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0052
+misfire_end_prob	     	= 0.03
+condition_shot_dec      	= 0.0017
+condition_queue_shot_dec	= 0.0007
 
 ammo_elapsed			= 10
 
@@ -61,9 +55,9 @@ single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.09;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.10	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.48f
-crosshair_inertion      = 9
+crosshair_inertion      = 9.12
 
 ;отдача
 cam_return				= 0 ;				= 1
@@ -256,16 +250,16 @@ cost					= 53780
 inv_weight				= 6.809
 
 upgrades                = up_gr_firstab_svd, up_gr_seconab_svd, up_gr_thirdab_svd, up_gr_fourtab_svd, up_gr_fourtcd_svd, up_gr_fourtef_svd
-installed_upgrades      = up_thirda_svd
+installed_upgrades      = up_thirda_svd, up_firstc_svd
 upgrade_scheme          = upgrade_scheme_svd
 
 ;------TTX------------------------------------------------------------------------
-hit_power           	= 0.555, 0.555, 0.555, 0.555
-hit_impulse		 		= 55
+hit_power           	= 0.684, 0.684, 0.684, 0.684
+hit_impulse		 		= 58
 hit_type 				= fire_wound
-fire_distance           = 1070
-bullet_speed			= 920
-rpm                     = 145
+fire_distance           = 1002
+bullet_speed			= 861 ;830	;начальная скорость пули
+rpm                     = 48
 rpm_empty_click         = 200
 
 inv_grid_width			= 6
@@ -274,6 +268,16 @@ inv_grid_x			= 0
 inv_grid_y			= 0
 
 hud                     = wpn_swd_hud
+
+misfire_start_condition		= 0.84
+misfire_end_condition		= 0.08
+misfire_start_prob	     	= 0.0046
+misfire_end_prob	     	= 0.027
+condition_shot_dec      	= 0.0015
+condition_queue_shot_dec	= 0.0005
+
+fire_dispersion_base	= 0.07
+
 visual                  = dynamics\weapons\wpn_swd\wpn_swd.ogf
 
 [wpn_swd_hud]:hud_base

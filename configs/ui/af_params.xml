@@ -41,7 +41,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_power_restore</texture_minus>
-		<value x="155" y="0" width="30" height="20" magnitude="30000">
+		<value x="155" y="0" width="30" height="20" magnitude="30000 unit_str="st_perc">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</power_restore_speed>

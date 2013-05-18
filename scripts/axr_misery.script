@@ -205,7 +205,7 @@ function dynamic_actor_loadout()
 		create_items("wpn_pm",4)
 		create_items("wpn_fort",4)
 		create_items("wpn_lr300",4)
-		create_items("itm_gunsmith_toolkit",4)
+--		create_items("itm_gunsmith_toolkit",4)
 	end
 
 	-- Items all classes should have
@@ -224,6 +224,11 @@ function dynamic_actor_loadout()
 			create_items("roubles",7)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv")
+			
+			create_items("gun_oil")
+			create_items("cleaning_kit_r7")
+			
+			create_items("swiss")
 
 			create_items("flask",3)
 			create_items("ration_ukr")
@@ -255,6 +260,11 @@ function dynamic_actor_loadout()
 			create_items("roubles",3)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
+			
+			create_items("gun_oil")
+			create_items("cleaning_kit_r7")
+			
+			create_items("swiss")
 
 			create_items("flask",3)
 			create_items("ration_ukr")
@@ -287,6 +297,11 @@ function dynamic_actor_loadout()
 			create_items("roubles",2)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
+			
+			create_items("gun_oil")
+			create_items("cleaning_kit_pe")
+			
+			create_items("swiss",2)
 
 			create_items("flask",3)
 			create_items("ration_ukr")

@@ -11,7 +11,7 @@ description					= st_wpn_aps_descr
 ef_weapon_type          = 6;5
 
 ;-----------------------------------------------------------------------------
-cost					= 11780
+cost					= 9180
 inv_weight				= 1.22
 weapon_class      = assault_rifle
 
@@ -33,22 +33,18 @@ time_to_aim					= 1.0
 
 hud                     	= wpn_aps_hud
 
-misfire_start_condition		= 0.64
-
-misfire_end_condition		= 0.05
-
-misfire_start_prob	     	= 0.007
-
-misfire_end_prob	     	= 0.07
-
-condition_shot_dec      	= 0.001
-
-condition_queue_shot_dec	= 0.0011
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.88
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0048
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0021
 
 ammo_elapsed		 	= 20
 ammo_mag_size		 	= 20
 ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
-fire_modes		  	= 1, 3, -1
+fire_modes		  	= 1, -1
 hand_dependence		 	= 1
 single_handed			= 1
 
@@ -57,9 +53,9 @@ zoom_dof					= -1000, 1.0, 1000
 reload_dof				= 0.0, 0.5, 5, 1.7
 
 ;---Fire--------------------------------------------------------------------------
-fire_dispersion_base	= 0.25 ;0.19
+fire_dispersion_base	= 0.75 ;0.19
 control_inertion_factor = 1.11
-crosshair_inertion	= 3.12
+crosshair_inertion		= 3.12
 
 cam_return				= 0 ;				= 0
 cam_relax_speed         = 8

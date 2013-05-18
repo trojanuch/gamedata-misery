@@ -4,11 +4,8 @@
 cost		      		= 3660
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;шанс осечки при изношености больше чем misfireStartCondition
+;fire_dispersion_condition_factor    = -1 ;15
 misfire_start_prob	     	= -0.0004
-;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.007 ;0.03
 
 inv_weight			= +0.2
@@ -33,15 +30,10 @@ inv_weight			= +0.1
 cost		      		= 4040
 value					= +25
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
+;fire_dispersion_condition_factor    = -1 ;15
 condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.00015 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.0018
-;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.02 ;0.03
 
 inv_weight			= +0.2
@@ -61,7 +53,7 @@ inv_weight			= +0.1
 cost		      		= 4240
 value					= +10
 fire_dispersion_base    = -0.018 ;0.07
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight			= +0.1
 
@@ -85,15 +77,10 @@ inv_weight			= +0.15
 cost		      		= 4180
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
+;fire_dispersion_condition_factor    = -1 ;15
 condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.001
-;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.013 ;0.03
 
 inv_weight			= +0.15
@@ -104,15 +91,10 @@ inv_weight			= +0.15
 cost		      		= 4260
 value					= +25
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
+;fire_dispersion_condition_factor    = -1 ;15
 condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.00015 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.0018
-;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.02 ;0.03
 
 inv_weight			= +0.2
@@ -160,7 +142,7 @@ cost		      		= 4860
 value					= +5
 
 fire_dispersion_base    = -0.08 ;0.07
-fire_dispersion_condition_factor    = -0.5 ;15
+;fire_dispersion_condition_factor    = -0.5 ;15
 
 inv_weight			= +0.05
 
@@ -175,23 +157,23 @@ cost		      		= 3150
 scope_nightvision = scope_contrast
 
 [up_sect_fourte_l85]
-cost		      		= 3750
+cost		      		= 5750
 
 scope_dynamic_zoom = on
-
 
 [up_sect_fiftha_l85]
 ;Глушитель
 ;----------
-cost		      		= 2900
+cost		      		= 1460
 ;value					= +30
 silencer_status			= 2
-silencer_name  			= wpn_addon_silencer
-silencer_x 				= 196
-silencer_y 				= 11
-snd_silncer_shot        = weapons\w_ak74_shot1
 
-inv_weight			= +0.15
+silencer_name  				= wpn_addon_silencer
+silencer_x 					= 196
+silencer_y 					= 11
+snd_silncer_shot        = weapons\silencers\silencer_556x45
+
+inv_weight			= +0.02
 
 [up_sect_fifthc_l85]
 ;Смена калибра
@@ -204,9 +186,9 @@ ammo_class           	= ammo_5.45x39_fmj, ammo_5.45x39_ap
 condition_queue_shot_dec	= 0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= 0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+
 misfire_start_prob	     	= 0.0005
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= 0.005 ;0.03
 
 inv_weight			= +0.25

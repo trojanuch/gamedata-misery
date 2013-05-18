@@ -16,7 +16,7 @@ sprint_allowed       	= true
 control_inertion_factor = 1.0
 
 ;-------------------------------------------------------------------------------
-cost                 	= 19240
+cost                 	= 39240
 weapon_class            = assault_rifle        ; Type of the weapon
 inv_weight              = 3.638
 
@@ -25,7 +25,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_g36
 
 ;--TTX----------------------------------------------------------------------------
-hit_power               = 0.49, 0.49, 0.49, 0.49
+hit_power               = 0.494, 0.494, 0.494, 0.494
 hit_impulse             = 34
 hit_type				= fire_wound
 fire_distance           = 880 
@@ -38,19 +38,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_g36_hud
 
-misfire_probability        = 0.004 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.4
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.004
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.05
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0008
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0008
+misfire_probability        = 0.005
+misfire_start_condition		= 0.92
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0048
+misfire_end_prob	     	= 0.066
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0007
 
 ammo_elapsed            = 30
 ammo_mag_size           = 30
@@ -67,9 +61,9 @@ reload_dof					= 0.0, 0.5, 5, 2
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	   = 0.22   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	   = 0.184   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    = 1.47f
-crosshair_inertion		   = 5.80
+crosshair_inertion		   = 5.84
 
 ;отдача
 cam_return				= 0 ;              = 0 ;0
@@ -286,27 +280,6 @@ gl_hud_offset_rot_16x9	= 0,0,0;-0.145000,0.000000,0.000000
 lean_hud_offset_pos	= 0,0,0
 lean_hud_offset_rot	= 0,0,0
 
-;-----------------------------------------------------------------------------
-; Уникальные
-;-----------------------------------------------------------------------------
-[wpn_g36_nimble]:wpn_g36
-$spawn                  = "weapons\wpn_g36_nimble"      ; option for Level Editor
-
-cost                 	= 24680
-
-upgrades                = up_gr_firstab_g36, up_gr_seconab_g36, up_gr_thirdab_g36, up_gr_fourtab_g36, up_gr_fourtcd_g36, up_gr_fourtef_g36
-installed_upgrades      = up_gr_firstab_g36
-upgrade_scheme          = upgrade_scheme_g36
-
-;--TTX----------------------------------------------------------------------------
-hit_power               = 0.51, 0.51, 0.51, 0.51
-hit_impulse             = 38
-hit_type				= fire_wound
-fire_distance           = 940 
-bullet_speed            = 980 ;начальная скорость пули
-rpm                     = 770
-rpm_empty_click         = 200
-
 ;---------------------------
 ;AP Weapon Section for NPCs
 ;---------------------------
@@ -322,25 +295,25 @@ ammo_class              = ammo_5.56x45_ap, ammo_5.56x45_ss190
 ;================================================================================================================================================
 [wpn_g36_custom]:wpn_g36
 
-cost                 	= 44720
+cost                 	= 42720
 inv_weight              = 3.574
 
-installed_upgrades      =
+installed_upgrades      = up_thirda_g36, up_thirdc_g36
 
-hit_power               = 0.495, 0.495, 0.495, 0.495
+hit_power               = 0.508, 0.508, 0.508, 0.508
 hit_impulse             = 34
-fire_distance           = 880 
-bullet_speed            = 920
-rpm                     = 755
+fire_distance           = 892 
+bullet_speed            = 937
+rpm                     = 772
 
 hud                     = wpn_g36_custom_hud
 
-misfire_start_condition		= 0.4
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.004
-misfire_end_prob	     	= 0.05
+misfire_start_condition		= 0.88
+misfire_end_condition		= 0.09
+misfire_start_prob	     	= 0.0044
+misfire_end_prob	     	= 0.055
 condition_shot_dec      	= 0.0008
-condition_queue_shot_dec	= 0.0008
+condition_queue_shot_dec	= 0.0006
 
 ammo_mag_size           = 30
 ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
@@ -363,3 +336,18 @@ snd_reload              = weapons\g36\g36_reload2
 [wpn_g36_custom_hud]:wpn_g36_hud
 
 item_visual		= dynamics\weapons\wpn_g36\wpn_g3a_hud.ogf
+
+;================================================================================================================================================
+;-----------------------------------------------------------------------------
+; Уникальные
+;-----------------------------------------------------------------------------
+[wpn_g36_nimble]:wpn_g36_custom
+$spawn                  = "weapons\wpn_g36_nimble"      ; option for Level Editor
+
+cost                 	= 45680
+
+upgrades                = up_gr_firstab_g36, up_gr_seconab_g36, up_gr_thirdab_g36, up_gr_fourtab_g36, up_gr_fourtcd_g36, up_gr_fourtef_g36
+installed_upgrades      = up_thirda_g36, up_thirdc_g36, up_thirdf_g36
+upgrade_scheme          = upgrade_scheme_g36
+
+;================================================================================================================================================

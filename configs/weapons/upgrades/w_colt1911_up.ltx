@@ -4,9 +4,9 @@
 cost		      		= 1860
 value					= +10
 
-rpm						= +12
+rpm						= +25
 
-inv_weight			= +0.1
+inv_weight			= +0.09
 
 [up_sect_firstc_colt1911]
 ;Ќастильность(2)20%
@@ -19,7 +19,7 @@ fire_distance       		= +40
 
 fire_dispersion_base	= -0.04
 
-inv_weight			= +0.15
+inv_weight			= +0.11
 
 [up_sect_firstd_colt1911]
 ;ќтдача(2)-20%
@@ -32,7 +32,7 @@ cam_dispersion_inc      = -0.45     ;1.2
 cam_step_angle_horz     = -0.3      ;1.2
 
 
-inv_weight			= +0.1
+inv_weight			= +0.12
 
 [up_sect_firste_colt1911]
 ;“очность(3)30%
@@ -41,9 +41,9 @@ cost		      		= 2480
 value					= +15
 
 fire_dispersion_base			= -0.03
-fire_dispersion_condition_factor    = -1
+;fire_dispersion_condition_factor    = -1
 
-inv_weight			= +0.1
+inv_weight			= +0.09
 
 [up_sect_secona_colt1911]
 ;—корострельность(3)25%
@@ -51,9 +51,9 @@ inv_weight			= +0.1
 cost		      		= 2860
 value					= +10
 
-rpm						= +12
+rpm						= +38
 
-inv_weight			= +0.15
+inv_weight			= +0.11
 
 [up_sect_seconc_colt1911]
 ;ќтдача(2)-20%
@@ -65,8 +65,7 @@ cam_dispersion          = -0.45     ;1.2
 cam_dispersion_inc      = -0.45     ;1.2
 cam_step_angle_horz     = -0.3      ;1.2
 
-
-inv_weight			= +0.1
+inv_weight			= +0.11
 
 [up_sect_second_colt1911]
 ;Ќадежность(2)15%
@@ -74,18 +73,18 @@ inv_weight			= +0.1
 cost		      		= 2480
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.001 ;0.0013
+condition_queue_shot_dec	= -0.00014 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.00014 ;0.0011
+
 misfire_start_prob	     	= -0.0015
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.015 ;0.03
 
-inv_weight			= +0.15
+inv_weight			= +0.12
 
 [up_sect_secone_colt1911]
 ;—корострельность(3)25%
@@ -95,15 +94,15 @@ value					= +10
 
 rpm						= +12
 
-inv_weight			= +0.15
+inv_weight			= +0.09
 
 [up_sect_thirda_colt1911]
 ;¬ес
 ;------------------
 cost		      		= 3480
-value					= -0.4
+value					= -0.44
 
-inv_weight              = -0.4
+inv_weight              = -0.44
 
 crosshair_inertion			= -0.3
 
@@ -123,7 +122,7 @@ PDM_disp_base 				= -0.15
 PDM_disp_vel_factor 		= -0.35
 PDM_disp_accel_factor 		= -0.35
 
-inv_weight			= +0.05
+inv_weight			= -0.09
 
 [up_sect_thirdd_colt1911]
 ;ќтдача(2)-20%
@@ -135,7 +134,7 @@ cam_dispersion          = -0.45     ;1.2
 cam_dispersion_inc      = -0.45     ;1.2
 cam_step_angle_horz     = -0.3      ;1.2
 
-inv_weight			= +0.1
+inv_weight			= +0.08
 
 [up_sect_fourta_colt1911]
 ;“очность(1)10%
@@ -144,7 +143,7 @@ cost		      		= 2460
 value					= +10
 
 fire_dispersion_base		= -0.03
-fire_dispersion_condition_factor    = -1
+;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.1
 
@@ -154,15 +153,15 @@ inv_weight			= +0.1
 cost		      		= 2380
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.001 ;0.0013
+condition_queue_shot_dec	= -0.00014 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.00014 ;0.0011
+
 misfire_start_prob	     	= -0.001
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.01 ;0.03
 
 inv_weight			= +0.1
@@ -175,7 +174,7 @@ value					= +4
 
 ammo_mag_size		 	= +4
 
-inv_weight			= +0.1
+inv_weight			= +0.11
 
 [up_firsta_colt1911]
 scheme_index            = 0, 0

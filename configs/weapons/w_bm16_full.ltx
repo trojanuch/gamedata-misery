@@ -21,28 +21,22 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_bm16
 
 ;---TTX-------------------------------------------------------------------------
-hit_power       = 0.92, 0.92, 0.92, 0.92
+hit_power       = 0.985, 0.985, 0.985, 0.985
 hit_impulse     = 83
 hit_type 		= fire_wound
-fire_distance           = 510
-bullet_speed         	= 420 ;начальная скорость пули
+fire_distance           = 525
+bullet_speed         	= 425 ;начальная скорость пули
 rpm                     = 1000
 
 hud                      		= wpn_bm16_full_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
+misfire_probability        = 0.005
+misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.09
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0048
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0013
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.06
+condition_shot_dec      	= 0.0021
+condition_queue_shot_dec	= 0.0011
 
 
 ammo_elapsed		 	= 2
@@ -56,7 +50,7 @@ zoom_dof			    = 0.5, 1.0, 180
 ;reload_dof           = 0.0, 0.5, 5, 1.7
 ;----дисперсия--------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.60  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.82  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.55f
 crosshair_inertion		= 7.5
 
@@ -86,7 +80,7 @@ zoom_cam_max_angle          = 5.0
 zoom_cam_max_angle_horz     = 5.0
 zoom_cam_step_angle_horz    = 3.5
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 2	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 2	
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier	= 1.0     ; во сколько раз увеличивается eye_range

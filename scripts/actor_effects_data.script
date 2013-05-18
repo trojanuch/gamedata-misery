@@ -27,11 +27,11 @@ options = {
 	},
 	health = {
 		-- health level for heavy injuring sounds
-		level1 = 0.17,
+		level1 = 0.08,
 		-- health level for light injuring sounds
 		level2 = 0.33,
 		-- little hit effect (played on every hit > little_delta)
-		little_delta = 5,
+		little_delta = 4,
 		little_ppe = "amk_shoot.ppe",
 		-- middle hit effect (played in addition of little effect, anm and snd randomly chosen)
 		middle_delta = 20,
@@ -1376,213 +1376,213 @@ wpn_fx = {
 
 item_fx = {
 	gun_oil_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_spray_oil()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	cleaning_kit_p_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	cleaning_kit_s_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	cleaning_kit_r5_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	cleaning_kit_r7_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	cleaning_kit_u_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	toolkit_p_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	toolkit_s_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	toolkit_r5_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	toolkit_r7_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
-	toolkit_u_dummy = {
-		[0] = "actor_effects.use_weapon(0)",
-		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
-		[2] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
-		[3] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+	itm_gunsmith_toolkit_dummy = {
+		[0] = "xr_effects.play_repair_sound()",
+		[1] = "actor_effects.use_weapon(0)",
+		[2] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[3] = "level.add_pp_effector('slow_fade.ppe', 8023, false)",
 		[378] = "actor_effects.use_helmet(0)",
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
-		[551] = "xr_effects.play_inv_repair_kit()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8025, false,'')",
 		[3502] = "_G.mus_vol = math.max(get_console():get_float('snd_volume_music'),_G.mus_vol or 0) _G.amb_vol = math.max(get_console():get_float('snd_volume_eff'),_G.amb_vol or 0) get_console():execute('snd_volume_music 0') get_console():execute('snd_volume_eff 0')",
 --		[3503] = "xr_effects.disable_ui_only(db.actor, nil)",
---		[6500] = "level.change_game_time(0,0,5)",
+		--[6500] = "level.change_game_time(0,0,5)",
 		[10300] = "get_console():execute('snd_volume_music '..tostring(_G.mus_vol)) get_console():execute('snd_volume_eff '..tostring(_G.amb_vol))",
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
     drug_callback = {
 		[0] = "actor_effects.use_weapon(1)",
@@ -1593,25 +1593,25 @@ item_fx = {
 		[0] = "actor_effects.use_weapon(0)",
 		[30] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[31] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[1220] = "actor_effects.use_weapon(1)",
+		[1220] = "actor_effects.use_weapon(1)"
 	},
 	itm_backpack = {
 		[0] = "actor_effects.use_weapon(0)",
 		[30] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[31] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[1220] = "actor_effects.use_weapon(1)",
+		[1220] = "actor_effects.use_weapon(1)"
 	},
 	itm_sleepbag = {
 		[0] = "actor_effects.use_weapon(0)",
 		[30] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[31] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[1220] = "actor_effects.use_weapon(1)",
+		[1220] = "actor_effects.use_weapon(1)"
 	},
 	bandage = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[1] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8050, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)",
+		[4150] = "actor_effects.use_weapon(1)"
 	},
 	survival_kit = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1629,7 +1629,7 @@ item_fx = {
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	medkit = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1647,7 +1647,7 @@ item_fx = {
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	medkit_army = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1665,7 +1665,7 @@ item_fx = {
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	medkit_scientic = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1683,28 +1683,28 @@ item_fx = {
 		[10301] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[12800] = "actor_effects.use_weapon(1)",
+		[12800] = "actor_effects.use_weapon(1)"
 	},
 	stimpack = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4750] = "actor_effects.use_weapon(1)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	stimpack_army = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4750] = "actor_effects.use_weapon(1)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	stimpack_scientic = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4750] = "actor_effects.use_weapon(1)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	rebirth = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1731,28 +1731,28 @@ item_fx = {
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4750] = "actor_effects.use_weapon(1)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	salicidic_acid = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4750] = "actor_effects.use_weapon(1)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	morphine = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4750] = "actor_effects.use_weapon(1)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	adrenalin = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4750] = "actor_effects.use_weapon(1)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	drug_booster = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1765,7 +1765,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	drug_coagulant = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1777,7 +1777,7 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	drug_psy_blockade = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1789,7 +1789,7 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	drug_antidot = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1801,7 +1801,7 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	drug_radioprotector = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1813,7 +1813,7 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	drug_sleepingpills = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1825,7 +1825,7 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	drug_anabiotic = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1837,14 +1837,14 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	antirad = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4750] = "actor_effects.use_weapon(1)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	vodka = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1857,7 +1857,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	vodka2 = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1870,7 +1870,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	vodka_quality = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1883,7 +1883,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	water_drink = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1895,7 +1895,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	energy_drink = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1907,7 +1907,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	flask = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1919,7 +1919,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	mineral_water = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1931,7 +1931,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	caffeine = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1943,7 +1943,7 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	beer = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1955,7 +1955,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	akvatab = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1967,7 +1967,7 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	mint = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1979,7 +1979,7 @@ item_fx = {
 		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[4780] = "actor_effects.use_helmet(1)",
 		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)",
+		[5980] = "actor_effects.use_weapon(1)"
 	},
 	bottle_metal = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -1992,7 +1992,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	tea = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2004,7 +2004,7 @@ item_fx = {
 		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[5150] = "actor_effects.use_helmet(1)",
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[6350] = "actor_effects.use_weapon(1)",
+		[6350] = "actor_effects.use_weapon(1)"
 	},
 	conserva = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2013,11 +2013,11 @@ item_fx = {
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8063, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[3520] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
-		[8181] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[8980] = "actor_effects.use_helmet(1)",
-		[9580] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[10180] = "actor_effects.use_weapon(1)",
+		[3020] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
+		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
+		[8480] = "actor_effects.use_helmet(1)",
+		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	kolbasa = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2030,7 +2030,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	protein = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2043,7 +2043,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	bread = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2056,7 +2056,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	breadold = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2069,7 +2069,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	tomato = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2082,7 +2082,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	sausage = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2095,7 +2095,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	corn = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2108,7 +2108,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	beans = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2117,11 +2117,11 @@ item_fx = {
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8063, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[3520] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
-		[8181] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[8980] = "actor_effects.use_helmet(1)",
-		[9580] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[10180] = "actor_effects.use_weapon(1)",
+		[3020] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
+		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
+		[8480] = "actor_effects.use_helmet(1)",
+		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	chili = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2130,11 +2130,11 @@ item_fx = {
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8063, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[3520] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
-		[8181] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[8980] = "actor_effects.use_helmet(1)",
-		[9580] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[10180] = "actor_effects.use_weapon(1)",
+		[3020] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
+		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
+		[8480] = "actor_effects.use_helmet(1)",
+		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	salmon = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2147,7 +2147,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	raisins = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2160,7 +2160,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	chocolate = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2173,7 +2173,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	nuts = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2186,7 +2186,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mre = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2199,7 +2199,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	ration_ru = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2212,7 +2212,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	ration_ukr = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2225,7 +2225,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	meat_tushkano = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2238,7 +2238,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	meat_dog = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2251,7 +2251,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	meat_pseudodog = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2264,7 +2264,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	meat_flesh = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2277,7 +2277,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	meat_boar = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2290,7 +2290,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	meat_bloodsucker = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2303,7 +2303,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	meat_snork = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2316,7 +2316,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	meat_chimera = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2329,7 +2329,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mutant_part_boar_meat = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2342,7 +2342,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mutant_part_flesh_meat = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2355,7 +2355,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mutant_part_dog_meat = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2368,7 +2368,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mutant_part_psevdodog_meat = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2381,7 +2381,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mutant_part_krovosos_meat = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2394,7 +2394,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mutant_part_snork_meat = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2407,7 +2407,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mutant_part_tushkano_meat = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2420,7 +2420,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	mutant_part_chimera_meat = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2433,7 +2433,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	cigarettes = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2446,7 +2446,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	cigar1 = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2459,7 +2459,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	cigar2 = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2472,7 +2472,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	cigar3 = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2485,7 +2485,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	cigar = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2498,7 +2498,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	cigarettes_lucky = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2511,7 +2511,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	cigarettes_russian = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2524,7 +2524,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	joint = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2537,7 +2537,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	marijuana = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2550,7 +2550,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	tobacco = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2563,7 +2563,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	hand_rolling_tobacco = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2576,7 +2576,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},	
 	cocaine = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2589,7 +2589,7 @@ item_fx = {
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 		[8480] = "actor_effects.use_helmet(1)",
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[9680] = "actor_effects.use_weapon(1)",
+		[9680] = "actor_effects.use_weapon(1)"
 	},
 	helm_respirator = {
 		[30] = "level.add_pp_effector(\"helm_respirator.ppe\",3000,true)",

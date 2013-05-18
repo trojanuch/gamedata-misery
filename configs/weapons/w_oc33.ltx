@@ -11,7 +11,7 @@ description						= st_wpn_oc33_descr
 ef_weapon_type					= 5
 
 ;-----------------------------------------------------------------------------
-cost							= 9240
+cost							= 8840
 inv_weight						= 1.157
 
 upgrades						= up_gr_firstab_oc33, up_gr_seconab_oc33, up_gr_thirdab_oc33, up_gr_fourtab_oc33, up_gr_fifthab_oc33, up_gr_fifthcd_oc33
@@ -19,7 +19,7 @@ installed_upgrades				=
 upgrade_scheme					= upgrade_scheme_pm
 
 ;-TTX-----------------------------------------------------------------------------
-hit_power           				= 0.235, 0.235, 0.235, 0.235
+hit_power           				= 0.22, 0.22, 0.22, 0.22
 hit_impulse						= 10
 hit_type						= fire_wound
 fire_distance					= 375
@@ -32,17 +32,12 @@ time_to_aim						= 1.0
 
 hud								= wpn_oc_hud
 
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.007
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.07
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0017
-;увеличение изношености при выстреле очередью
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.84
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0043
+misfire_end_prob	     	= 0.032
+condition_shot_dec      	= 0.0015
 condition_queue_shot_dec	= 0.0016
 
 ammo_elapsed					= 30
@@ -82,7 +77,7 @@ PDM_disp_accel_factor 		= 1.65
 PDM_disp_crouch	 				= 0.9
 PDM_disp_crouch_no_acc 			= 0.65
 
-fire_dispersion_condition_factor = 0.001 ;= 0.01 ; 12	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ;= 0.01 ; 12	
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier			= 1.0	; во сколько раз увеличивается eye_range

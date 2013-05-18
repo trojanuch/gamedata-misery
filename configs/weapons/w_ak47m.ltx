@@ -37,19 +37,13 @@ time_to_aim						= 3.0
 
 hud								= wpn_akm_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.043
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0004
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0006
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.75
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0052
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.0008
 
 ammo_elapsed					= 30			; obsolete
 ammo_mag_size					= 30			; clip (magazine) size
@@ -68,7 +62,7 @@ reload_dof						= 0.0, 0.5, 5, 2;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       	= 0.55    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.45    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    	= 1.84f
 crosshair_inertion			= 5.79
 
@@ -98,7 +92,7 @@ PDM_disp_accel_factor			= 2.0
 PDM_disp_crouch					= 1.0
 PDM_disp_crouch_no_acc			= 1.0
 
-fire_dispersion_condition_factor = 0.001 ;= 0.01 ; 18	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ;= 0.01 ; 18	
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier			= 1.0	; во сколько раз увеличивается eye_range
@@ -169,9 +163,9 @@ light_time						= 0.2
 ph_mass							= 4
 
 ;addons
-scope_status				= 0		; 0 - no addon
+scope_status				= 0		; 0 - no addon ; UPGRADABLE
 silencer_status				= 2		; 1 - permanent
-grenade_launcher_status			= 2		; 2 - attachable
+grenade_launcher_status		= 2		; 2 - attachable
 
 zoom_enabled					= true	; (on,off)zoom mode (right mouse button)
 zoom_rotate_time				= 0.25
@@ -310,6 +304,31 @@ scope_name						= wpn_addon_scope_night
 scope_x							= 43	; offset in inventory icon
 scope_y							= -3
 
+[scope_ak47m]
+scope_name						= wpn_addon_scope
+scope_x							= 43	; offset in inventory icon
+scope_y							= -3
+
+[scope_ak47m_worn]
+scope_name						= wpn_addon_scope_worn
+scope_x							= 43	; offset in inventory icon
+scope_y							= -3
+
+[scope_x2.7_ak47m]
+scope_name						= wpn_addon_scope_x2.7
+scope_x							= 43	; offset in inventory icon
+scope_y							= -3
+
+[scope_live_detector_ak47m]
+scope_name						= wpn_addon_scope_detector
+scope_x							= 43	; offset in inventory icon
+scope_y							= -3
+
+[scope_night_ak47m]
+scope_name						= wpn_addon_scope_night
+scope_x							= 43	; offset in inventory icon
+scope_y							= -3
+
 ;-----------------------------------------------------------------------------
 ; Уникальные
 ;-----------------------------------------------------------------------------
@@ -324,29 +343,28 @@ inv_name          = st_wpn_ak47m_modern
 inv_name_short    = st_wpn_ak47m_modern
 
 upgrades						= up_gr_firstab_ak47m_modern, up_gr_seconab_ak47m_modern, up_gr_thirdab_ak47m_modern, up_gr_fourtab_ak47m_modern, up_gr_fifthab_ak47m_modern, up_gr_fifthcd_ak47m_modern
-installed_upgrades				= up_thirda_ak74
+installed_upgrades				= up_fourta_ak47m_modern, up_fiftha_ak47m_modern
 
-hit_power           		= 0.47, 0.47, 0.47, 0.47
+hit_power           			= 0.50, 0.50, 0.50, 0.50
 hit_impulse						= 40			; size of physic impulse by bullet
 hit_type						= fire_wound	; [] type of the wound
-fire_distance					= 850	;1000	; maximum fire distance that bullet can fly
-bullet_speed					= 720			; starting bullet speed
-rpm						= 610			; max round per minute
+fire_distance					= 870	;1000	; maximum fire distance that bullet can fly
+bullet_speed					= 735			; starting bullet speed
+rpm								= 610			; max round per minute
 
 hud                     = wpn_ak47m_modern_hud
 
-misfire_probability        = 0.004
-misfire_start_condition		= 0.5
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.003
-misfire_end_prob	     	= 0.043
-condition_shot_dec      	= 0.0004
-condition_queue_shot_dec	= 0.0006
+misfire_start_condition		= 0.73
+misfire_end_condition		= 0.04
+misfire_start_prob	     	= 0.0052
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0007
 
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
 
-fire_dispersion_base       	= 0.55    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.40    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 
 inv_grid_width          = 5
 inv_grid_height         = 2
@@ -357,14 +375,12 @@ visual                  = dynamics\weapons\wpn_akm\wpn_aka.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
 
-scopes_sect						= scope_akm, scope_akm_worn, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
-
 [wpn_ak47m_modern_hud]:wpn_akm_hud
 
 item_visual                = dynamics\weapons\wpn_akm\wpn_aka_hud.ogf
 ;=====================================================================================================================================================
 [wpn_ak47m_camo]:wpn_ak47m
-cost							= 29780
+cost							= 35780
 
 inv_weight						= 5.17
 
@@ -372,35 +388,28 @@ inv_name          = st_wpn_ak47m_camo
 inv_name_short    = st_wpn_ak47m_camo
 
 upgrades						= up_gr_firstab_ak47m_camo, up_gr_seconab_ak47m_camo, up_gr_thirdab_ak47m_camo, up_gr_fourtab_ak47m_camo, up_gr_fifthab_ak47m_camo, up_gr_fifthcd_ak47m_camo
-installed_upgrades				= up_secona_ak47m, up_thirda_ak47m, up_fiftha_ak47m, up_fourta_ak74
+installed_upgrades				= up_secona_ak47m_camo, up_thirda_ak47m_camo, up_fiftha_ak47m_camo, up_fourta_ak47m_camo, up_fiftha_ak47m_camo
 
-hit_power           		= 0.47, 0.47, 0.47, 0.47
+hit_power           			= 0.55, 0.55, 0.55, 0.55
 hit_impulse						= 40			; size of physic impulse by bullet
 hit_type						= fire_wound	; [] type of the wound
-fire_distance					= 840	;1000	; maximum fire distance that bullet can fly
-bullet_speed					= 715			; starting bullet speed
-rpm						= 600			; max round per minute
+fire_distance					= 910	;1000	; maximum fire distance that bullet can fly
+bullet_speed					= 755			; starting bullet speed
+rpm								= 610			; max round per minute
 
 hud                     = wpn_ak47m_camo_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.043
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0004
-;увеличение изношености при выстреле очередью
+misfire_start_condition		= 0.70
+misfire_end_condition		= 0.03
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.035
+condition_shot_dec      	= 0.0006
 condition_queue_shot_dec	= 0.0006
 
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
 
-fire_dispersion_base       	= 0.55    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.33    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 
 inv_grid_width          = 5
 inv_grid_height         = 2
@@ -410,8 +419,6 @@ inv_grid_y           	= 75
 visual                  = dynamics\weapons\wpn_akm\wpn_akb.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
-
-scopes_sect						= scope_x2.7_akm, scope_akm, scope_akm_worn, scope_live_detector_akm, scope_night_akm
 
 [wpn_ak47m_camo_hud]:wpn_akm_hud
 
@@ -426,29 +433,23 @@ inv_name          = st_wpn_ak47m_alt
 inv_name_short    = st_wpn_ak47m_alt
 
 upgrades						= up_gr_firstab_ak47m_alt, up_gr_seconab_ak47m_alt, up_gr_thirdab_ak47m_alt, up_gr_fourtab_ak47m_alt, up_gr_fifthab_ak47m_alt, up_gr_fifthcd_ak47m_alt
+installed_upgrades				= up_fiftha_ak47m_alt
 
 hit_power           		= 0.47, 0.47, 0.47, 0.47
 hit_impulse						= 40			; size of physic impulse by bullet
 hit_type						= fire_wound	; [] type of the wound
 fire_distance					= 840	;1000	; maximum fire distance that bullet can fly
 bullet_speed					= 715			; starting bullet speed
-rpm						= 610			; max round per minute
+rpm								= 600			; max round per minute
 
 hud                     = wpn_ak47m_alt_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.043
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0004
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0006
+misfire_start_condition		= 0.75
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0052
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.0008
 
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
@@ -464,8 +465,6 @@ visual                  = dynamics\weapons\wpn_akm\wpn_akc.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
 
-scopes_sect						= scope_akm, scope_akm_worn, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
-
 [wpn_ak47m_alt_hud]:wpn_akm_hud
 
 item_visual                = dynamics\weapons\wpn_akm\wpn_akc_hud.ogf
@@ -480,27 +479,26 @@ inv_name_short    = st_wpn_ak47m_worn
 
 upgrades						= up_gr_firstab_ak47m_worn, up_gr_seconab_ak47m_worn, up_gr_thirdab_ak47m_worn, up_gr_fourtab_ak47m_worn, up_gr_fifthab_ak47m_worn, up_gr_fifthcd_ak47m_worn
 
-hit_power           			= 0.47, 0.47, 0.47, 0.47
+hit_power           			= 0.425, 0.425, 0.425, 0.425
 hit_impulse						= 40			; size of physic impulse by bullet
 hit_type						= fire_wound	; [] type of the wound
-fire_distance					= 830	;1000	; maximum fire distance that bullet can fly
-bullet_speed					= 705			; starting bullet speed
-rpm								= 590			; max round per minute
+fire_distance					= 760	;1000	; maximum fire distance that bullet can fly
+bullet_speed					= 648			; starting bullet speed
+rpm								= 572			; max round per minute
 
 hud                     		= wpn_ak47m_worn_hud
 
-misfire_probability        = 0.01
-misfire_start_condition		= 0.8
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.003
-misfire_end_prob	     	= 0.043
-condition_shot_dec      	= 0.0004
-condition_queue_shot_dec	= 0.0006
+misfire_start_condition		= 0.85
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0082
+misfire_end_prob	     	= 0.077
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0009
 
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
 
-fire_dispersion_base       	= 0.55    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.75    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 
 inv_grid_width					= 5	; position and size of the icon that will be used to display weapon in the inventory menu
 inv_grid_height					= 2	; all icons are on the texture ui_icon_equipment.dds,
@@ -511,14 +509,12 @@ visual                  = dynamics\weapons\wpn_akm\wpn_akd.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
 
-scopes_sect						= scope_akm_worn, scope_akm, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
-
 [wpn_ak47m_worn_hud]:wpn_akm_hud
 
 item_visual                = dynamics\weapons\wpn_akm\wpn_akd_hud.ogf
 ;=====================================================================================================================================================
 [wpn_ak47m_custom]:wpn_ak47m
-cost							= 28240
+cost							= 32240
 
 inv_weight						= 5.12
 
@@ -526,29 +522,30 @@ inv_name          = st_wpn_ak47m_custom
 inv_name_short    = st_wpn_ak47m_custom
 
 upgrades						= up_gr_firstab_ak47m_custom, up_gr_seconab_ak47m_custom, up_gr_thirdab_ak47m_custom, up_gr_fourtab_ak47m_custom, up_gr_fifthab_ak47m_custom, up_gr_fifthcd_ak47m_custom
-installed_upgrades				= up_thirda_ak47m, up_fiftha_ak74
+installed_upgrades				= up_thirda_ak47m_custom, up_thirdc_ak47m_custom, up_fourta_ak47m_custom, up_fiftha_ak47m_custom
 
-hit_power           		= 0.47, 0.47, 0.47, 0.47
+hit_power           		= 0.53, 0.53, 0.53, 0.53
 hit_impulse						= 40			; size of physic impulse by bullet
 hit_type						= fire_wound	; [] type of the wound
-fire_distance					= 840	;1000	; maximum fire distance that bullet can fly
-bullet_speed					= 715			; starting bullet speed
+fire_distance					= 890	;1000	; maximum fire distance that bullet can fly
+bullet_speed					= 765			; starting bullet speed
 rpm								= 610			; max round per minute
 
 hud                     	= wpn_ak47m_custom_hud
 
-misfire_probability        = 0.005
-misfire_start_condition		= 0.6
+misfire_start_condition		= 0.7
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.003
-misfire_end_prob	     	= 0.043
-condition_shot_dec      	= 0.0004
-condition_queue_shot_dec	= 0.0006
+misfire_start_prob	     	= 0.0042
+misfire_end_prob	     	= 0.038
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.0007
+
+silencer_status            = 0
 
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
 
-fire_dispersion_base       	= 0.55    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.35    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 
 inv_grid_width          = 5
 inv_grid_height         = 2
@@ -558,8 +555,6 @@ inv_grid_y           	= 73
 visual                  = dynamics\weapons\wpn_akm\wpn_ake.ogf
 
 snd_reload					= weapons\ak47m\ak_reload_right
-
-scopes_sect						= scope_akm_worn, scope_akm, scope_x2.7_akm, scope_live_detector_akm, scope_night_akm
 
 [wpn_ak47m_custom_hud]:wpn_akm_hud
 

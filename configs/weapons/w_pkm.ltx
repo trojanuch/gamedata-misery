@@ -26,7 +26,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_pkm
 
 ;--TTX----------------------------------------------------------------------------
-hit_power              = 0.64, 0.64, 0.64, 0.64
+hit_power              = 0.665, 0.665, 0.665, 0.665
 hit_impulse            = 65
 hit_type               = fire_wound
 fire_distance           = 900
@@ -39,18 +39,12 @@ time_to_aim             = 5.0
 
 hud                     = wpn_pkm_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.03
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.001
-;увеличение изношености при выстреле очередью
+misfire_probability        = 0.005
+misfire_start_condition		= 0.83
+misfire_end_condition		= 0.16
+misfire_start_prob	     	= 0.0068
+misfire_end_prob	     	= 0.068
+condition_shot_dec      	= 0.0014
 condition_queue_shot_dec	= 0.0012
 
 ammo_elapsed            = 100
@@ -65,7 +59,7 @@ single_handed           = 0
 
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.46       ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.48       ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 2.74f ; 2.2f
 crosshair_inertion		= 7.70
 

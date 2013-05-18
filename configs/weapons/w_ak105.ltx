@@ -15,15 +15,16 @@ default_to_ruck					= false
 sprint_allowed					= true
 
 ;-------------------------------------------------------------------------------
-cost							= 29980			; the price of the item
+cost							= 26980			; the price of the item
 weapon_class					= assault_rifle	; the type of the box that will be used in buy-menu in multiplayer mode
 inv_weight						= 3.0			; weight in inventory
 
 upgrades                = up_gr_firstab_ak105, up_gr_seconab_ak105, up_gr_thirdab_ak105, up_gr_fourtab_ak105, up_gr_fifthab_ak105
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_ak74u
+
 ;-ТТХ---------------------------------------------------------------------------
-hit_power            				= 0.48, 0.48, 0.48, 0.48
+hit_power            			= 0.48 0.48, 0.48, 0.48
 hit_impulse						= 36			; size of physic impulse by bullet
 hit_type						= fire_wound	; [] type of the wound
 fire_distance					= 640	; maximum fire distance that bullet can fly
@@ -31,30 +32,18 @@ bullet_speed					= 800			; starting bullet speed
 rpm								= 650			; max round per minute
 rpm_empty_click					= 200
 
-;настройки для глушителя
-;silencer_hit_power				= 0.37, 0.37, 0.37, 0.37
-;silencer_hit_impulse			= 20
-;silencer_fire_distance			= 500
-;silencer_bullet_speed			= 710
-
 use_aim_bullet					= false			;Поддерживается ли первая суппер пуля
 time_to_aim						= 1.0 ; 3.0
 
 hud								= wpn_ak105_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.047
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0009
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0008
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.73
+misfire_end_condition		= 0.08
+misfire_start_prob	     	= 0.0057
+misfire_end_prob	     	= 0.055
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.00075
 
 ammo_elapsed					= 30			; obsolete
 ammo_mag_size					= 30			; clip (magazine) size
@@ -73,7 +62,7 @@ reload_dof						= 0.0, 0.5, 5, 2;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       = 0.34 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       = 0.40 	;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.4f
 crosshair_inertion	= 6.85
 
@@ -103,7 +92,7 @@ PDM_disp_accel_factor 		= 2.0
 PDM_disp_crouch	 			= 0.6
 PDM_disp_crouch_no_acc 		= 0.4
 
-fire_dispersion_condition_factor = 0.001 ;= 0.01 ; 18	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ;= 0.01 ; 18	
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier			= 1.0	; во сколько раз увеличивается eye_range

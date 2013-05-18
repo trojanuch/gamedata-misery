@@ -130,7 +130,7 @@ wound_immunity				= 1.18
 radiation_immunity 			= 1.2
 telepatic_immunity 			= 3.33
 chemical_burn_immunity 			= 2.15
-explosion_immunity 			= 0.64
+explosion_immunity 			= 0.84
 fire_wound_immunity  			= 0.59
 
 [actor_immunities_gd_stalker]
@@ -141,7 +141,7 @@ wound_immunity				= 1.18
 radiation_immunity 			= 1.2
 telepatic_immunity 			= 3.33
 chemical_burn_immunity 			= 2.15
-explosion_immunity 			= 0.64
+explosion_immunity 			= 0.84
 fire_wound_immunity  			= 0.59
 
 [actor_immunities_gd_veteran]
@@ -152,7 +152,7 @@ wound_immunity				= 1.18
 radiation_immunity 			= 1.2
 telepatic_immunity 			= 3.33
 chemical_burn_immunity 			= 2.15
-explosion_immunity 			= 0.64
+explosion_immunity 			= 0.84
 fire_wound_immunity  			= 0.59
 
 [actor_immunities_gd_master]
@@ -163,7 +163,7 @@ wound_immunity				= 1.18
 radiation_immunity 			= 1.2
 telepatic_immunity 			= 3.33
 chemical_burn_immunity 			= 2.15
-explosion_immunity 			= 0.64
+explosion_immunity 			= 0.84
 fire_wound_immunity  			= 0.59
 
 [actor_condition]
@@ -172,20 +172,20 @@ radiation_v				= 0.00002	;скорость уменьшения радиации
 satiety_power_v			= 0.00425		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.0001    ;увеличение здоровья при уменьшении сытости
 satiety_critical		= 0.1       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
-radiation_health_v		= 0.0009	;0.002     ;уменьшение здоровья при воздействии радиации
+radiation_health_v		= 0.0018	;0.002     ;уменьшение здоровья при воздействии радиации
 morale_v				= 0.0001	;скорость восстановления морали
 psy_health_v			= 0.002 ;0.001		;скорость восстановления psy-здоровья
 alcohol_v				= -0.0008
 health_hit_part			= 1.0		;процент хита, уходящий на отнимание здоровья
 power_hit_part			= 0.04		;процент хита, уходящий на отнимание силы
-max_power_leak_speed	= 0.000001		;накопление усталости (макс граница, до которой восстанавливается сила) в секунду игрового времени
+max_power_leak_speed	= 0 ; 0.000001		;накопление усталости (макс граница, до которой восстанавливается сила) в секунду игрового времени
 max_walk_weight			= 150 ; 950 ; wpn_test ; 150 ; 55 ;50 ;490 ;90
 health_restore_v              = 0
 
 bleeding_v 				= 0.0106	 ;0.0005	;потеря крови при номинальной ране в секунду
 
 wound_incarnation_v		= 0.0042 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления раны
-min_wound_size 			= 0.0075	;минимальный размер раны, после которого она считается зажившей
+min_wound_size 			= 0.0085	;минимальный размер раны, после которого она считается зажившей
 
 ;--when actor in sleep
 satiety_v_sleep          	= 0.0000135
@@ -311,11 +311,11 @@ bip01_r_finger2	 	 	 	= 0.01, -1, 0.01
 bip01_r_finger21	 		= 0.01, -1, 0.01
 bip01_r_finger22	 		= 0.01, -1, 0.01
 
-bip01_l_thigh	 	 		= 0.3, 4, 1.8
+bip01_l_thigh	 	 		= 0.3, 4, 1.45
 bip01_l_calf	 	 		= 0.17, 4, 0.85
 bip01_l_foot	 	 		= 0.05, 4, 0.09
 bip01_l_toe0	 	 		= 0.01, -1, 0.12
-bip01_r_thigh	 	 		= 0.3, 4, 1.8
+bip01_r_thigh	 	 		= 0.3, 4, 1.45
 bip01_r_calf	 	 		= 0.17, 4, 0.85
 bip01_r_foot	 	 		= 0.05, 4, 0.09
 bip01_r_toe0	 	 		= 0.01, -1, 0.12
@@ -331,17 +331,17 @@ r_strafe_yaw                	= 0
 
 
 [actor_hit_snds]
-burn                 =actor\pain1,actor\pain2,actor\pain3;  ,actor\hurt4
-shock                =actor\pain1,actor\pain2,actor\pain3; ,actor\hurt4
-strike               =actor\pain1,actor\pain2,actor\pain3; ,actor\hurt4
-wound                =actor\pain1,actor\pain2,actor\pain3; ,actor\hurt4
-radiation            =monsters\biting\def_0; actor\hurt1,actor\hurt2,actor\hurt3,actor\hurt4
-telepatic            =actor\pain1,actor\pain2,actor\pain3;  ,actor\hurt4
+burn                 =actor\pain1,actor\pain2,actor\pain3,actor\pain4,actor\pain5,actor\pain6,actor\pain7,actor\pain8 ;  ,actor\hurt4
+shock                =actor\pain1,actor\pain2,actor\pain3,actor\pain4,actor\pain5,actor\pain6,actor\pain7,actor\pain8 ; ,actor\hurt4
+strike               =actor\drop1,actor\drop2,actor\drop3,actor\drop4 ; ,actor\hurt4
+wound                =actor\hurt1,actor\hurt2,actor\hurt3,actor\hurt4,actor\hurt5,actor\hurt6,actor\hurt7 ; ,actor\hurt4
+radiation            =monsters\biting\def_0 ; actor\hurt1,actor\hurt2,actor\hurt3,actor\hurt4
+telepatic            =actor\pain1,actor\pain2,actor\pain3,actor\pain4,actor\pain5,actor\pain6,actor\pain7,actor\pain8 ;  ,actor\hurt4
 fire_wound           =actor\bullet_hit_1,actor\bullet_hit_2,actor\bullet_hit_3,actor\bullet_hit_4
-chemical_burn        =actor\pain1,actor\pain2,actor\pain3;  ,actor\hurt4
+chemical_burn        =actor\pain1,actor\pain2,actor\pain3,actor\pain4,actor\pain5,actor\pain6,actor\pain7,actor\pain8 ;  ,actor\hurt4
 explosion            =affects\tinnitus3a
-wound_2              =actor\hurt1,actor\hurt2,actor\hurt3,actor\hurt4
-light_burn           =actor\pain1,actor\pain2,actor\pain3
+wound_2              =actor\pain1,actor\pain2,actor\pain3,actor\pain4,actor\pain5,actor\pain6,actor\pain7,actor\pain8
+light_burn           =actor\pain1,actor\pain2,actor\pain3,actor\pain4,actor\pain5,actor\pain6,actor\pain7,actor\pain8
 
 [actor_hud]
 visual         			= dynamics\weapons\wpn_hand\wpn_hand_01

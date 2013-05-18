@@ -24,7 +24,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_ak74u
 
 ;----TTX--------------------------------------------------------------------------
-hit_power           = 0.17, 0.17, 0.17, 0.17
+hit_power           = 0.185, 0.185, 0.185, 0.185
 hit_impulse          = 15    ; size of physic impulse by bullet
 hit_type             = fire_wound            ; [] type of the wound
 fire_distance           = 440                  ; maximum fire distance that bullet can fly
@@ -37,23 +37,17 @@ time_to_aim             = 3.0
 
 hud                     = wpn_scorpion_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.55
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.004
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.057
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0004
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0005
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.84
+misfire_end_condition		= 0.16
+misfire_start_prob	     	= 0.0079
+misfire_end_prob	     	= 0.0588
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0012
 
 ammo_elapsed      = 20
 ammo_mag_size     = 20           ; clip (magazine) size
-fire_modes		  = 1, 3, -1
+fire_modes		  = 1, -1
 ammo_class		  = ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
 grenade_class     = ammo_vog-25         ; name of the ltx-section of used grenades
 
@@ -67,8 +61,8 @@ reload_dof           = 0.0, 0.5, 5, 2
 
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.50  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.0f
+fire_dispersion_base    = 0.58  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.02f
 crosshair_inertion   	= 4.05
 
 ;отдача
@@ -97,7 +91,7 @@ zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 50.0
 zoom_cam_step_angle_horz    = 1.5
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9        
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range

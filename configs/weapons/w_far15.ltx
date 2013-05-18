@@ -15,21 +15,21 @@ default_to_ruck         = false
 sprint_allowed          = true
 
 ;-------------------------------------------------------------------------------
-cost                 	= 26700
+cost                 	= 33960
 weapon_class            = assault_rifle
 inv_weight              = 3.748
 
 upgrades                = up_gr_firstab_far15, up_gr_seconab_far15, up_gr_thirdab_far15, up_gr_fourtab_far15, up_gr_fifthab_far15
 installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_sig550
+upgrade_scheme          = upgrade_scheme_lr300
 
 ;--TTX----------------------------------------------------------------------------
-hit_power				= 0.465, 0.465, 0.465, 0.465
+hit_power         = 0.558, 0.558, 0.558, 0.558
 hit_impulse             = 36
 hit_type                = fire_wound
-fire_distance           = 900
-bullet_speed            = 975 ;начальная скорость пули
-rpm                     = 800
+fire_distance           = 913
+bullet_speed            = 981 ;начальная скорость пули
+rpm                     = 808
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -37,19 +37,13 @@ time_to_aim             = 2.0
 
 hud                     = wpn_racer445_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.5
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.045
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0009
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0008
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.86
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0059
+misfire_end_prob	     	= 0.044
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0009
 
 ammo_elapsed            = 30
 ammo_mag_size        	= 30           ; clip (magazine) size
@@ -69,9 +63,9 @@ reload_dof              = 0.0, 0.5, 5, 2
 
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.25        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.41f
-crosshair_inertion	= 5.85
+fire_dispersion_base    = 0.16        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.38f
+crosshair_inertion	= 5.04
 
 ;отдача
 cam_return				= 0 ;				= 0
@@ -99,7 +93,7 @@ zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 10.0
 zoom_cam_step_angle_horz    = 2
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 7        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 7        
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
