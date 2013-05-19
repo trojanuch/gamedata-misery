@@ -318,8 +318,6 @@
 		        </progress>
 	        </state_progress>
 	    </health_state>
-		
-
 	    <bleeding_state x="238" y="6" width="45" height="45">
 	        <hint_text delay="800">st_ui_bleeding_sensor</hint_text>
 	        <icon x="0" y="0" width="45" height="45" light_anim="ui_slow_blinking" la_cyclic="1" la_texture="1" la_text="0" la_alpha="1" stretch="1">
