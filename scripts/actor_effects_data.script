@@ -29,7 +29,7 @@ options = {
 		-- health level for heavy injuring sounds
 		level1 = 0.08,
 		-- health level for light injuring sounds
-		level2 = 0.33,
+		level2 = 0.28,
 		-- little hit effect (played on every hit > little_delta)
 		little_delta = 4,
 		little_ppe = "amk_shoot.ppe",

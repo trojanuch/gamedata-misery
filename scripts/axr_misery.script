@@ -214,7 +214,7 @@ function dynamic_actor_loadout()
 --	create_items("wpn_binoc_inv")
 --	create_items("wpn_binoc")
 
-	-- Class specific items
+	---- Class specific items
 	if (ActorClass == "assaulter") then
 		create_items("identity_card_assaulter")
 		if (MiseryBlackRoad) then
