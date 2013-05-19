@@ -29,7 +29,6 @@ quick_slot = slot_4					;Slot forced if actor_backpack_always_have is true
 [repair_mod]
 enable = true
 
-
 [repair_mod_tools]   ;Add sections that will open repair ui
 ;------Lubricants-----
 gun_oil 				; Universal gun lubricant
@@ -59,7 +58,7 @@ device_flashlight
 [mutant_loot_mod]
 enable = true
 enable_ui = true
-decay_time = 2700            ;Seconds until cannot loot decayed corpse
+decay_time = 2100            ;Seconds until cannot loot decayed corpse
 
 [mutant_loot_drop_sections]
 bloodsucker
@@ -79,9 +78,17 @@ fracture
 zombie
 crow
 
-;--------------------------- Mutant Loot Sections  [section,amount,chance]
+;;------;------;------;--------- Mutant Loot Sections  [section,amount,chance]
 [crow]
-batteries, 1, 0.001
+joint, 1, 0.02
+picture_woman, 1, 0.006
+ammo_bad, 1, 0.02
+swiss, 1, 0.006
+mirror, 1, 0.006
+batteries, 1, 0.006
+batteries_dead, 1, 0.006
+cutlery, 1, 0.006
+roubles, 2, 0.02
 
 [bloodsucker]
 mutant_part_krovosos_jaw, 1, 0.66
@@ -334,6 +341,7 @@ mutant_part_psevdodog_meat, 2, 0.66
 [snork]
 mutant_part_snork_leg, 2, 0.45
 mutant_part_snork_hand, 2, 0.33
+mutant_part_snork_mask, 1, 0.33
 
 [tushkano]
 mutant_part_tushkano_head, 1, 0.5
@@ -444,7 +452,7 @@ adrenalin, 1, 0.002
 salicidic_acid, 2, 0.006
 morphine, 1, 0.004
 
-;--------------------------- Actor Backpack Keep Items
+;;------;------;------;--------- Actor Backpack Keep Items
 [actor_backpack_keep_items]
 identity_card_assaulter
 identity_card_recon
