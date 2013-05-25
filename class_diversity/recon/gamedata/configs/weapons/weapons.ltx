@@ -4,12 +4,10 @@
 #include "addon_scopes.ltx"
 #include "addon_silencers.ltx"
 
+#include "upgrades\empty_upgrade.ltx"
+
 #include "upgrades\w_abakan_up.ltx"
 #include "upgrades\w_ak74_up.ltx"
-#include "upgrades\w_ak74_modern_up.ltx"
-#include "upgrades\w_ak74_worn_up.ltx"
-#include "upgrades\w_ak74_rusty_up.ltx"
-
 #include "upgrades\w_ak74u_up.ltx"
 #include "upgrades\w_beretta_up.ltx"
 #include "upgrades\w_bm16_up.ltx"
@@ -39,6 +37,142 @@
 #include "upgrades\w_walther_up.ltx"
 #include "upgrades\w_wincheaster1300_up.ltx"
 
+#include "upgrades\w_abakan_alt_up.ltx"
+#include "upgrades\w_abakan_camo_up.ltx"
+#include "upgrades\w_abakan_custom_up.ltx"
+#include "upgrades\w_abakan_worn_up.ltx"
+#include "upgrades\w_abakan_rusty_up.ltx"
+#include "upgrades\w_ak47m_alt_up.ltx"
+#include "upgrades\w_ak47m_camo_up.ltx"
+#include "upgrades\w_ak47m_custom_up.ltx"
+#include "upgrades\w_ak47m_modern_up.ltx"
+#include "upgrades\w_ak47m_worn_up.ltx"
+#include "upgrades\w_ak74_alt_up.ltx"
+#include "upgrades\w_ak74_camo_up.ltx"
+#include "upgrades\w_ak74_custom1_up.ltx"
+#include "upgrades\w_ak74_custom2_up.ltx"
+#include "upgrades\w_ak74_worn_up.ltx"
+#include "upgrades\w_ak74_rusty_up.ltx"
+#include "upgrades\w_ak74u_camo_up.ltx"
+#include "upgrades\w_ak74u_custom_up.ltx"
+#include "upgrades\w_ak74u_rusty_up.ltx"
+#include "upgrades\w_ak74u_worn_up.ltx"
+#include "upgrades\w_beretta_alt_up.ltx"
+#include "upgrades\w_beretta_camo_up.ltx"
+#include "upgrades\w_beretta_custom_up.ltx"
+#include "upgrades\w_beretta_worn_up.ltx"
+#include "upgrades\w_bm16_gold_up.ltx"
+#include "upgrades\w_bm16_rusty_up.ltx"
+#include "upgrades\w_bm16_silver_up.ltx"
+#include "upgrades\w_bm16_worn_up.ltx"
+#include "upgrades\w_colt1911_alt1_up.ltx"
+#include "upgrades\w_colt1911_alt2_up.ltx"
+#include "upgrades\w_colt1911_camo_up.ltx"
+#include "upgrades\w_colt1911_worn_up.ltx"
+#include "upgrades\w_desert_eagle_alt_up.ltx"
+#include "upgrades\w_desert_eagle_camo_up.ltx"
+#include "upgrades\w_desert_eagle_custom_up.ltx"
+#include "upgrades\w_desert_eagle_worn_up.ltx"
+#include "upgrades\w_fn2000_alt1_up.ltx"
+#include "upgrades\w_fn2000_alt2_up.ltx"
+#include "upgrades\w_fn2000_alt3_up.ltx"
+#include "upgrades\w_fn2000_custom_up.ltx"
+#include "upgrades\w_fn2000_worn_up.ltx"
+#include "upgrades\w_fort_camo_up.ltx"
+#include "upgrades\w_fort_custom_up.ltx"
+#include "upgrades\w_fort_rusty_up.ltx"
+#include "upgrades\w_fort_worn_up.ltx"
+#include "upgrades\w_hpsa_custom_up.ltx"
+#include "upgrades\w_hpsa_alt_up.ltx"
+#include "upgrades\w_hpsa_camo_up.ltx"
+#include "upgrades\w_hpsa_worn_up.ltx"
+#include "upgrades\w_l85_camo_up.ltx"
+#include "upgrades\w_l85_custom_up.ltx"
+#include "upgrades\w_l85_worn_up.ltx"
+#include "upgrades\w_lr300_alt_up.ltx"
+#include "upgrades\w_lr300_camo_up.ltx"
+#include "upgrades\w_lr300_custom_up.ltx"
+#include "upgrades\w_lr300_worn_up.ltx"
+#include "upgrades\w_m1891_alt_up.ltx"
+#include "upgrades\w_mp5_alt_up.ltx"
+#include "upgrades\w_mp5_custom_up.ltx"
+#include "upgrades\w_mp5_worn_up.ltx"
+#include "upgrades\w_pm_alt_up.ltx"
+#include "upgrades\w_pm_custom_up.ltx"
+#include "upgrades\w_pm_worn_up.ltx"
+#include "upgrades\w_ppsh41_new_up.ltx"
+#include "upgrades\w_ppsh41_worn_up.ltx"
+#include "upgrades\w_protecta_camo_up.ltx"
+#include "upgrades\w_protecta_custom_up.ltx"
+#include "upgrades\w_protecta_worn_up.ltx"
+#include "upgrades\w_sig220_camo_up.ltx"
+#include "upgrades\w_sig220_custom_up.ltx"
+#include "upgrades\w_sig220_rusty_up.ltx"
+#include "upgrades\w_sig220_worn_up.ltx"
+#include "upgrades\w_sig550_alt_up.ltx"
+#include "upgrades\w_sig550_custom_up.ltx"
+#include "upgrades\w_sig550_sniper_up.ltx"
+#include "upgrades\w_sig550_worn_up.ltx"
+#include "upgrades\w_sks_modern_up.ltx"
+#include "upgrades\w_spas12_alt_up.ltx"
+#include "upgrades\w_spas12_custom_up.ltx"
+#include "upgrades\w_spas12_worn_up.ltx"
+#include "upgrades\w_stg44_alt_up.ltx"
+#include "upgrades\w_stg44_new_up.ltx"
+#include "upgrades\w_stg44_old_up.ltx"
+#include "upgrades\w_stg44_worn_up.ltx"
+#include "upgrades\w_toz34_alt_up.ltx"
+#include "upgrades\w_toz34_decor_up.ltx"
+#include "upgrades\w_toz34_new_up.ltx"
+#include "upgrades\w_toz34_worn_up.ltx"
+#include "upgrades\w_usp45_alt_up.ltx"
+#include "upgrades\w_usp45_custom_up.ltx"
+#include "upgrades\w_usp45_worn_up.ltx"
+#include "upgrades\w_walther_alt_up.ltx"
+#include "upgrades\w_walther_custom_up.ltx"
+#include "upgrades\w_walther_worn_up.ltx"
+#include "upgrades\w_wincheaster1300_alt_up.ltx"
+#include "upgrades\w_wincheaster1300_camo_up.ltx"
+#include "upgrades\w_wincheaster1300_rusty_up.ltx"
+#include "upgrades\w_wincheaster1300_worn_up.ltx"
+
+#include "upgrades\w_stg44_up.ltx"
+#include "upgrades\w_famas3_up.ltx"
+#include "upgrades\w_galil_up.ltx"
+#include "upgrades\w_m16a1_up.ltx"
+#include "upgrades\w_gp100_up.ltx"
+#include "upgrades\w_m24_up.ltx"
+#include "upgrades\w_sig552_up.ltx"
+#include "upgrades\w_m1891_up.ltx"
+#include "upgrades\w_aek973_up.ltx"
+#include "upgrades\w_aks74_cobra_up.ltx"
+#include "upgrades\w_fnfal_up.ltx"
+#include "upgrades\w_m21_up.ltx"
+#include "upgrades\w_fr2000_up.ltx"
+#include "upgrades\w_rpk74_up.ltx"
+#include "upgrades\w_xm8_up.ltx"
+#include "upgrades\w_vsk94_up.ltx"
+#include "upgrades\w_sks_up.ltx"
+#include "upgrades\w_aps_up.ltx"
+#include "upgrades\w_gsh18_up.ltx"
+#include "upgrades\w_scorpion_up.ltx"
+#include "upgrades\w_mossberg_up.ltx"
+#include "upgrades\w_g43_up.ltx"
+#include "upgrades\w_ump45_up.ltx"
+#include "upgrades\w_ppsh41_up.ltx"
+#include "upgrades\w_far15_up.ltx"
+#include "upgrades\w_m4a1_up.ltx"
+#include "upgrades\w_bm16_full_up.ltx"
+#include "upgrades\w_obrez_up.ltx"
+#include "upgrades\w_k98_up.ltx"
+#include "upgrades\w_ak47m_up.ltx"
+#include "upgrades\w_ak105_up.ltx"
+#include "upgrades\w_saiga_up.ltx"
+#include "upgrades\w_oc33_up.ltx"
+#include "upgrades\w_tt33_up.ltx"
+#include "upgrades\w_fnfallelcan_up.ltx"
+#include "upgrades\w_trg_up.ltx"
+
 #include "w_upd.ltx"
 
 #include "w_ak74.ltx"
@@ -52,12 +186,10 @@
 #include "w_rgd5.ltx"
 #include "w_gd5.ltx"
 #include "w_rg6.ltx"
-
 #include "w_vintorez.ltx"
 #include "w_lr300.ltx"
 #include "w_mp5.ltx"
 #include "w_val.ltx"
-
 #include "w_gauss.ltx"
 #include "w_groza.ltx"
 #include "w_hpsa.ltx"
@@ -279,11 +411,11 @@ inv_grid_x         = 2
 inv_grid_y         = 54
 
 k_dist			= 1
-k_disp			= 0.66; 3
+k_disp			= 0.66 ; 3
 k_hit			= 1.87
 k_impulse		= 0.48
 k_pierce		= 1.26
-k_ap			= 0.72
+k_ap			= 0.86
 impair			= 1.0
 buck_shot		= 1
 tracer			= off        ;  off
@@ -396,7 +528,7 @@ k_disp			= 0.66; 2.9
 k_hit			= 1.95
 k_impulse		= 0.36
 k_pierce		= 1.38
-k_ap			= 0.77
+k_ap			= 0.92
 impair			= 1.0
 buck_shot		= 1
 tracer			= off        ;  off
@@ -507,7 +639,7 @@ k_disp			= 0.66; 3
 k_hit			= 2.05
 k_impulse		= 0.55
 k_pierce		= 1.34
-k_ap			= 0.82
+k_ap			= 0.88
 impair			= 0.8
 buck_shot		= 1
 tracer			= off        ;  off
@@ -708,7 +840,7 @@ k_air_resistance = 1.8
 
 [ammo_7.62x54_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency	= 
+discovery_dependency	=
 $spawn			= "weapons\ammo\ammo_7.62x54_ap" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -975,11 +1107,11 @@ inv_grid_y			= 19
 
 
 k_dist			= 1
-k_disp			= 0.66
+k_disp			= 1.52
 k_hit			= 1
-k_impulse		= 1
-k_pierce		= 0.25
-k_ap		= 0.25
+k_impulse		= 1.5
+k_pierce		= 1.45
+k_ap			= 1.25
 impair			= 1.15
 buck_shot		= 0
 tracer			= off        ;  off
@@ -1082,11 +1214,11 @@ fake_grenade_name = wpn_fake_missile2
 
 [ammo_7.62x39_fmj]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency = 
+discovery_dependency =
 ;$spawn			= "weapons\ammo\ammo_7.62x39_fmj" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_762x39_fmj.ogf 
+visual                  = dynamics\weapons\wpn_ammo\ammo_762x39_fmj.ogf
 description		= ammo-7.62x39_fmj_descr
 $prefetch 		= 64
 
@@ -1120,7 +1252,7 @@ explosive		= off
 
 [ammo_7.62x39_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency = 
+discovery_dependency =
 ;$spawn			= "weapons\ammo\ammo_7.62x39_ap" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
@@ -1158,11 +1290,11 @@ explosive		= off
 
 [ammo_7.92x33_fmj]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency = 
+discovery_dependency =
 ;$spawn			= "weapons\ammo\ammo_7.62x39_fmj" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_762x39_fmj.ogf 
+visual                  = dynamics\weapons\wpn_ammo\ammo_762x39_fmj.ogf
 description		= ammo-7.62x39_fmj_descr
 $prefetch 		= 64
 
@@ -1196,7 +1328,7 @@ explosive		= off
 
 [ammo_7.92x33_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency = 
+discovery_dependency =
 ;$spawn			= "weapons\ammo\ammo_7.62x39_ap" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
@@ -1222,7 +1354,7 @@ k_disp			= 0.75 ; 15
 k_hit			= 1.38
 k_impulse		= 0
 k_pierce		= 1.48
-k_ap		    = 0.74
+k_ap		    = 0.78
 impair			= 1.3
 buck_shot		= 1
 tracer			= off        ;  on
@@ -1234,7 +1366,7 @@ explosive		= off
 
 [ammo_7.62x51_fmj]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency = 
+discovery_dependency =
 $spawn			= "weapons\ammo\ammo_7.62x51_fmj" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1273,7 +1405,7 @@ explosive		= off
 
 [ammo_7.62x51_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency = 
+discovery_dependency =
 $spawn			= "weapons\ammo\ammo_7.62x51_ap" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1297,10 +1429,10 @@ inv_grid_y         = 54
 k_hit_critical         = 1.0
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 1.41
+k_hit			= 1.45
 k_impulse		= 0
 k_pierce		= 1.56
-k_ap		    = 0.92
+k_ap		    = 0.95
 impair			= 1.0
 buck_shot		= 1
 tracer			= off        ;  on
@@ -1335,7 +1467,7 @@ inv_grid_y         = 9
 
 k_dist			= 1
 k_disp			= 0.66	; 3.2
-k_hit			= 1.65
+k_hit			= 1.78
 k_impulse		= 0.8
 k_pierce		= 1.5
 k_ap			= 1.05
@@ -1349,7 +1481,7 @@ explosive		= off
 
 [ammo_7.62x54_7h14]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency	= 
+discovery_dependency	=
 $spawn			= "weapons\ammo\ammo_7.62x54_7h14" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1372,7 +1504,7 @@ inv_grid_y         = 9
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 1.55
+k_hit			= 1.59
 k_impulse		= 0.74
 k_pierce		= 2.94
 k_ap			= 1.62
@@ -1409,10 +1541,10 @@ inv_grid_y         = 53
 
 k_dist			= 1
 k_disp			= 0.66	; 3.2
-k_hit			= 1.88
+k_hit			= 1.94
 k_impulse		= 0.92
 k_pierce		= 0.86
-k_ap			= 0.33
+k_ap			= 0.38
 impair			= 0.95
 buck_shot		= 1
 tracer			= off        ;  off
@@ -1423,7 +1555,7 @@ explosive		= off
 
 [ammo_magnum_300_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency	= 
+discovery_dependency	=
 $spawn			= "weapons\ammo\ammo_7.62x54_7h14" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1446,7 +1578,7 @@ inv_grid_y         = 54
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 1.32
+k_hit			= 1.44
 k_impulse		= 0.78
 k_pierce		= 2.24
 k_ap			= 1.18
@@ -1460,7 +1592,7 @@ explosive		= off
 
 [ammo_357_hp_mag]:identity_immunities,default_weapon_params
 GroupControlSection	= spawn_group
-discovery_dependency = 
+discovery_dependency =
 $spawn			= "weapons\wpn_ammo\ammo_357_hp_mag" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1468,9 +1600,9 @@ visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
 description		= ammo-357_hp_mag_descr
 $prefetch 		= 64
 
-cost			= 1190
+cost			= 1590
 
-box_size		= 13	
+box_size		= 13
 
 inv_name		= ammo-357_hp_mag
 inv_name_short		= ammo-357_hp_mag_s
@@ -1483,9 +1615,9 @@ inv_grid_y         = 53
 
 k_dist			= 1.0
 k_disp			= 0.66
-k_hit			= 2.65
+k_hit			= 3.34
 k_impulse		= 0.67
-k_pierce		= 0.46
+k_pierce		= 0.37
 k_ap			= 0.11
 impair			= 1.1
 buck_shot		= 1
@@ -1501,7 +1633,7 @@ explosive			= false
 
 [ammo_357_hp_mag_ap]:identity_immunities,default_weapon_params
 GroupControlSection	= spawn_group
-discovery_dependency = 
+discovery_dependency =
 $spawn			= "weapons\wpn_ammo\ammo_357_hp_mag" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1509,9 +1641,9 @@ visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
 description		= 357 AP ammo ; ammo-357_hp_mag_descr
 $prefetch 		= 64
 
-cost			= 1960
+cost			= 2420
 
-box_size		= 13	
+box_size		= 13
 
 inv_name			= 357 AP ammo ; ammo-357_hp_mag
 inv_name_short		= 357 AP ammo ; ammo-357_hp_mag_s
@@ -1524,10 +1656,10 @@ inv_grid_y         = 54
 
 k_dist			= 1.0
 k_disp			= 0.66
-k_hit			= 2.15
+k_hit			= 2.77
 k_impulse		= 0.58
 k_pierce		= 0.98
-k_ap			= 0.75
+k_ap			= 0.79
 impair			= 1.1
 buck_shot		= 1
 tracer			= off        ;  off
@@ -1551,17 +1683,17 @@ inv_weight			= 0
 
 cost				= 150
 
-blast				= 4.0 ;3.0
-blast_r				= 5 ;4
-blast_impulse		= 200 ;100
+blast				= 5.0 ;3.0
+blast_r				= 2.5 ;4
+blast_impulse		= 140 ;100
 ;delete
 blast_impulse_factor = 1
 
 
-frags				= 15 ;10
-frags_r				= 15 ;10
-frag_hit			= 1.5 ;0.50
-frag_hit_impulse	= 100 ;50
+frags				= 85 ;10
+frags_r				= 20 ;10
+frag_hit			= 0.05 ;0.50
+frag_hit_impulse	=  25 ;50
 
 hit_type_blast		= explosion
 hit_type_frag		= fire_wound
@@ -1588,7 +1720,7 @@ jump_height = 0.1 ;0
 wm_size         = 0.05
 
 ;трассы от осколков
-fragment_speed				= 100
+fragment_speed				= 175
 
 explode_duration		 = 5		;подолжительность взрыва (с)
 
@@ -1628,17 +1760,17 @@ inv_weight			= 0
 
 cost				= 150
 
-blast				= 3.0 ;2.00;150
-blast_r				= 6 ;4
-blast_impulse		= 250 ;350
+blast				= 5.0 ;3.0
+blast_r				= 2.5 ;4
+blast_impulse		= 140 ;100
 ;delete
 blast_impulse_factor = 1
 
 
-frags				= 20 ;15
+frags				= 80 ;10
 frags_r				= 20 ;10
-frag_hit			= 1.0 ;0.50
-frag_hit_impulse	= 100 ;50
+frag_hit			= 0.05 ;0.50
+frag_hit_impulse	=  25 ;50
 
 hit_type_blast		= explosion
 hit_type_frag		= fire_wound
@@ -1662,7 +1794,7 @@ ph_mass			 = 5
 jump_height = 1
 
 ;трассы от осколков
-fragment_speed		= 100
+fragment_speed		= 175
 
 wm_size         	= 0.05
 ;wallmarks
@@ -1708,17 +1840,17 @@ inv_weight			= 0
 
 cost				= 150
 
-blast				= 5 ;3.0;150
-blast_r				= 5.5 ;4
-blast_impulse		= 200 ;100
+blast				= 5.5 ;3.0
+blast_r				= 3 ;4
+blast_impulse		= 165 ;100
 ;delete
 blast_impulse_factor = 1
 
 
-frags				= 15 ;10
-frags_r				= 15 ;10
-frag_hit			= 1.5 ;0.50
-frag_hit_impulse	= 200 ;50
+frags				= 95 ;10
+frags_r				= 25 ;10
+frag_hit			= 0.05 ;0.50
+frag_hit_impulse	=  32 ;50
 
 hit_type_blast		= explosion
 hit_type_frag		= fire_wound
@@ -1852,7 +1984,7 @@ fire_wound_immunity		= 0.7
 
 [explosive_gaz_balon]:explosive_fuelcan
 $spawn                        = "weapons\explosive\gaz_balon"
-visual                        = dynamics\balon\gaz_balon.ogf 
+visual                        = dynamics\balon\gaz_balon.ogf
 
 
 [explosive_tank]:identity_immunities,delayed_action_fuse,default_weapon_params
@@ -2457,7 +2589,7 @@ inv_grid_width		= 2
 inv_grid_height		= 1
 inv_grid_x			= 18
 inv_grid_y			= 0
-grenade_vel 		= 48	;32	;55
+grenade_vel 		= 77	;32	;55
 
 [wpn_addon_grenade_launcher_m203]:identity_immunities
 GroupControlSection	= spawn_group
@@ -2478,8 +2610,7 @@ inv_grid_width		= 2
 inv_grid_height		= 1
 inv_grid_x			= 17
 inv_grid_y			= 3
-grenade_vel 		= 48	;32	;76
-
+grenade_vel 		= 76	;32	;76
 
 ;;;;;;;;;;;;;;;;;;;;;;;KNIFE AMMO;;;;;;;;;;;;;;;;;;;;;;;
 [ammo_knife]:ammo_base
@@ -2508,7 +2639,7 @@ inv_grid_y         = 49
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 2.0
+k_hit			= 6.4
 k_impulse		= 1.1
 k_pierce		= 0.01
 k_ap			= 0.15
@@ -2544,7 +2675,7 @@ inv_grid_y         = 51
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 2.2
+k_hit			= 6.4
 k_impulse		= 1.2
 k_pierce		= 0.01
 k_ap			= 0.75
@@ -2580,7 +2711,7 @@ inv_grid_y         = 52
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 2.4
+k_hit			= 6.4
 k_impulse		= 1.2
 k_pierce		= 0.01
 k_ap			= 0.85
@@ -2616,7 +2747,7 @@ inv_grid_y         = 48
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 3.3
+k_hit			= 6.4
 k_impulse		= 1.2
 k_pierce		= 0.01
 k_ap			= 0.30
@@ -2652,7 +2783,7 @@ inv_grid_y         = 50
 
 k_dist			= 1
 k_disp			= 0.1
-k_hit			= 3.1
+k_hit			= 6.4
 k_impulse		= 1.0
 k_pierce		= 0.01
 k_ap			= 0.25

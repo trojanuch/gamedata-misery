@@ -31,13 +31,54 @@ break_particles		= destroy_fx\destroy_bottle
 break_sound			= material\bottle\collide\bottle_break_1
 
 boost_time				= 35
-boost_radiation_restore	= 0.00139
+boost_radiation_restore	= 0.00034
 
 eat_alcohol				= 0.092
 eat_satiety				= 0.022
 eat_sleepiness				= 0.032
 
 use_sound			= interface\inv_drink_flask_effect
+
+repair_part_bonus	 	= 0.03
+
+[vodka2]:booster
+$spawn 				= "food and drugs\vodka"
+cform				= skeleton
+visual				= dynamics\devices\dev_vodka\dev_vodka2.ogf
+description			= st_vodka2_descr
+
+inv_name			= st_vodka2
+inv_name_short		= st_vodka2
+inv_weight			= 0.463
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 16
+cost				= 1372
+
+attach_angle_offset		= 0.000000, 0.000000, 0.000000
+attach_position_offset	= 0.087266, -0.078540, 0.052360
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+break_particles		= destroy_fx\destroy_bottle
+break_sound			= material\bottle\collide\bottle_break_1
+
+boost_time				= 40
+boost_radiation_restore	= 0.00038
+
+eat_alcohol				= 0.132
+eat_satiety				= 0.042
+eat_sleepiness				= 0.039
+
+use_sound			= interface\inv_drink_flask_effect
+
+repair_part_bonus	 	= 0.03
 
 [vodka_quality]:booster
 $spawn 				= "food and drugs\vodka"
@@ -68,13 +109,15 @@ break_particles		= destroy_fx\destroy_bottle
 break_sound			= material\bottle\collide\bottle_break_1
 
 boost_time				= 38
-boost_radiation_restore	= 0.00178
+boost_radiation_restore	= 0.00044
 
 eat_alcohol				= 0.124
 eat_satiety				= 0.028
 eat_sleepiness				= 0.054
 
 use_sound			= interface\inv_drink_flask_effect
+
+repair_part_bonus	 	= 0.04
 
 [beer]:booster
 $spawn 				= "food and drugs\vodka"
@@ -105,13 +148,13 @@ break_particles		= destroy_fx\destroy_bottle
 break_sound			= material\bottle\collide\bottle_break_1
 
 boost_time				= 36
-boost_radiation_restore	= 0.00096
+boost_radiation_restore	= 0.00026
 
 eat_alcohol				= 0.032
 eat_satiety 			= 0.247
 eat_sleepiness				= 0.018
 
-use_sound			= interface\inv_drink_flask_effect
+use_sound			= interface\inv_drink_flask_beer
 
 [vodka_script]:vodka ; не использовать
 $spawn 				= "food and drugs\vodka_script"
@@ -138,7 +181,7 @@ auto_attach				= false
 
 boost_time			= 280
 boost_max_weight	= 1.554
-boost_radiation_restore		= 0.00007
+boost_radiation_restore		= 0.00002
 
 boost_power_restore		= 0.0014
 
@@ -168,13 +211,15 @@ attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
 boost_time			= 32
-boost_radiation_restore		= 0.00068
+boost_radiation_restore		= 0.00021
 
 eat_alcohol			= -0.14
 eat_satiety 			= 0.112
 eat_sleepiness			= -0.06
 
 use_sound			= interface\inv_drink_can2
+
+repair_part_bonus	 	= 0.01
 
 [mineral_water]:vodka
 $spawn 				= "food and drugs\energy_drink"
@@ -196,13 +241,15 @@ attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
 boost_time			= 34
-boost_radiation_restore		= 0.00077
+boost_radiation_restore		= 0.00023
 
 eat_alcohol			= -0.16
 eat_satiety 			= 0.127
 eat_sleepiness			= -0.082
 
 use_sound			= interface\inv_drink_flask
+
+repair_part_bonus	 	= 0.01
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; ZONE-PRODUCED DRINK ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -228,7 +275,7 @@ attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
 boost_time				= 34
-boost_radiation_restore	= 0.00119
+boost_radiation_restore	= 0.00035
 
 eat_alcohol				= 0.144
 eat_satiety				= 0.018
@@ -237,6 +284,8 @@ eat_sleepiness				= 0.065
 eat_health			= -0.036
 
 use_sound			= interface\inv_drink_flask_effect
+
+repair_part_bonus	 	= 0.02
 
 [tea]:vodka
 $spawn 				= "food and drugs\energy_drink"
@@ -258,7 +307,7 @@ attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
 boost_time				= 38
-boost_radiation_restore	= 0.00134
+boost_radiation_restore	= 0.00044
 
 eat_alcohol				= -0.274
 eat_satiety				= 0.226
@@ -266,7 +315,7 @@ eat_sleepiness				= -0.105
 
 eat_health			= -0.029
 
-use_sound			= interface\inv_drink_flask_effect
+use_sound			= interface\inv_drink_tea
 
 [flask]:vodka
 $spawn 				= "food and drugs\energy_drink"
@@ -288,13 +337,15 @@ attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
 boost_time			= 31
-boost_radiation_restore		= 0.00049
+boost_radiation_restore		= 0.00019
 
 eat_alcohol			= -0.079
 eat_satiety 			= 0.066
 eat_sleepiness			= -0.06
 
-use_sound			= interface\inv_drink_flask
+use_sound			= interface\inv_drink_flask_2
+
+repair_part_bonus	 	= 0.01
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; ZONE-PRODUCED SMOKES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -404,7 +455,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 16
-boost_radiation_restore			= 0.00073
+boost_radiation_restore			= 0.00046
 
 eat_alcohol				= -0.052
 eat_satiety				= 0.029
@@ -441,7 +492,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 18
-boost_radiation_restore			= 0.00088
+boost_radiation_restore			= 0.00044
 
 eat_alcohol				= -0.0585
 eat_satiety				= 0.031
@@ -478,7 +529,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 20
-boost_radiation_restore			= 0.00102
+boost_radiation_restore			= 0.00051
 
 eat_alcohol				= -0.066
 eat_satiety				= 0.026
@@ -515,7 +566,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 22
-boost_radiation_restore			= 0.00121
+boost_radiation_restore			= 0.00061
 
 eat_alcohol				= -0.0725
 eat_satiety				= 0.023
@@ -552,7 +603,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 28
-boost_radiation_restore			= 0.00162
+boost_radiation_restore			= 0.00081
 
 eat_alcohol				= -0.0765
 eat_satiety				= 0.058
@@ -588,7 +639,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 22
-boost_radiation_restore			= 0.00194
+boost_radiation_restore			= 0.00097
 
 eat_alcohol				= -0.0876
 eat_satiety				= 0.072
@@ -624,7 +675,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 24
-boost_radiation_restore			= 0.00132
+boost_radiation_restore			= 0.00066
 
 eat_alcohol				= -0.066
 eat_satiety				= 0.032
@@ -660,7 +711,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time			= 54
-boost_radiation_restore		= 0.00143
+boost_radiation_restore		= 0.00072
 eat_satiety			= 0.014
 eat_sleepiness			= -0.032
 
@@ -695,7 +746,7 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 14
-boost_radiation_restore			= 0.00054
+boost_radiation_restore			= 0.00037
 
 eat_alcohol				= -0.036
 eat_satiety				= 0.032

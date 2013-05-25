@@ -62,6 +62,59 @@ bones_koeff_protection		= actor_helm_respirator
 ;		œ–Œ“»¬Œ√¿«
 ;---------------------------------------------------------------------------------------------
 
+[helm_cloth_mask]:helmet
+$spawn 			= "outfit\helm_respirator"
+visual				= dynamics\outfit\cloth_mask.ogf
+control_inertion_factor	= 1.0
+inv_name             	= st_helm_cloth_mask
+inv_name_short       	= st_helm_cloth_mask
+description				= st_helm_cloth_mask_descr
+
+inv_weight           	= 0.224
+
+additional_inventory_weight2 	= 0.18
+additional_inventory_weight 	= 0.18
+
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 20
+inv_grid_y			= 0
+
+upgr_icon_x			= 90 ; 20
+upgr_icon_y			= 818 ; 619
+upgr_icon_width		= 185 ; 106
+upgr_icon_height   	= 140 ; 149
+
+cost			= 940
+
+immunities_sect 			= sect_helm_cloth_mask_immunities
+bones_koeff_protection		= actor_helm_absent
+
+telepatic_protection 		= 0 ; 0 mT
+shock_protection 			= 0.0080 ; 6 kV
+radiation_protection 		= 0.0184
+chemical_burn_protection 	= 0.0095 ; 28 C1 ppm eq.
+burn_protection			= 0.0023 ; 1 kw / m2
+strike_protection 		= 0
+wound_protection		= 0.006
+explosion_protection		= 0.004
+
+power_restore_speed				= -0.00014
+
+repair_part_bonus	 	= 0.03
+
+[sect_helm_cloth_mask_immunities]
+burn_immunity			= 1.28
+strike_immunity			= 0.0
+shock_immunity			= 0.0
+wound_immunity			= 0.13
+wound_2_immunity		= 0.13
+radiation_immunity 		= 0.74
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 0.295
+explosion_immunity		= 0.38
+fire_wound_immunity		= 0.17
+
 [helm_respirator]:helmet
 $spawn 			= "outfit\helm_respirator"
 visual          	= dynamics\outfit\helm_respirator

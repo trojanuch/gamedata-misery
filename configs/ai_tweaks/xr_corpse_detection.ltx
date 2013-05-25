@@ -1,7 +1,7 @@
 [settings]
 death_time_danger 			= 78000		;Miliseconds a fresh friendly body causes a danger reaction
-always_detect_dist_free		= 1200			;dist that NPCs will always detect corpses
-always_detect_dist_danger 	= 125			;dist NPCs will always detect fresh friendly bodies that cause danger reaction
+always_detect_dist_free		= 900			;dist that NPCs will always detect corpses
+always_detect_dist_danger 	= 225			;dist NPCs will always detect fresh friendly bodies that cause danger reaction
 state_run 					= rush
 state_walk 					= patrol
 enable_mutant_looting 		= true
@@ -55,6 +55,21 @@ monolith
 ;bandit_elite_hostile 					;MSO behavior type
 
 [lootable]
+gun_oil
+cleaning_kit_p
+cleaning_kit_s
+cleaning_kit_r5
+cleaning_kit_r7
+cleaning_kit_u
+toolkit_p
+toolkit_s
+toolkit_r5
+toolkit_r7
+toolkit_u
+
+wpn_binoc_inv
+wpn_upd
+
 csky_patch
 freedom_patch
 stalker_patch
@@ -374,19 +389,30 @@ wpn_ak74u_snag
 wpn_fort_snag
 
 ; Аддоны
-wpn_addon_scope
-wpn_addon_scope_x2.7
+wpn_addon_scope			
+wpn_addon_scope_x2.7	
 wpn_addon_scope_detector
-wpn_addon_scope_night
-wpn_addon_scope_susat
+wpn_addon_scope_night	
+wpn_addon_scope_susat	
 wpn_addon_scope_susat_x1.6
 wpn_addon_scope_susat_custom
 wpn_addon_scope_susat_dusk
 wpn_addon_scope_susat_night
+wpn_addon_scope_zf4		
+wpn_addon_scope_ww2		
+wpn_addon_scope_vsk		
+wpn_addon_scope_acog	
+wpn_addon_scope_acog_trijicon
+wpn_addon_scope_acog_night
+wpn_addon_scope_moist
+wpn_addon_scope_susat_moist
+wpn_addon_scope_ww2_moist
+wpn_addon_scope_zf4_moist
+wpn_addon_scope_worn
+wpn_addon_scope_susat_worn
+wpn_addon_scope_ww2_worn
+wpn_addon_scope_zf4_worn
 wpn_addon_silencer
-wpn_addon_grenade_launcher
-wpn_addon_grenade_launcher_m203
-
 wpn_addon_silencer_9x18
 wpn_addon_silencer_9x19
 wpn_addon_silencer_9x39
@@ -396,10 +422,8 @@ wpn_addon_silencer_762x39
 wpn_addon_silencer_762x51
 wpn_addon_silencer_762x54
 wpn_addon_silencer_1143x23
-wpn_addon_scope_zf4
-wpn_addon_scope_ww2
-wpn_addon_scope_vsk
-wpn_addon_scope_acog
+wpn_addon_grenade_launcher
+wpn_addon_grenade_launcher_m203
 
 ; Броники
 novice_outfit
@@ -422,6 +446,7 @@ coat_outfit
 coat_heavy_outfit
 
 ;Шлемы
+helm_cloth_mask
 helm_battle
 helm_hardhat
 helm_protective
@@ -475,6 +500,7 @@ cigarettes_russian
 beer
 
 vodka
+vodka2
 energy_drink
 
 meat_tushkano
@@ -579,6 +605,7 @@ mutant_part_dog_tail
 mutant_part_flesh_eye
 mutant_part_psevdodog_tail
 mutant_part_snork_leg
+mutant_part_snork_mask
 mutant_part_tushkano_head
 
 mutant_part_flesh_meat
@@ -589,6 +616,10 @@ mutant_part_krovosos_meat
 mutant_part_snork_hand
 mutant_part_tushkano_meat
 mutant_part_chimera_meat
+
+mre
+ration_ru
+ration_ukr
 
 ;Sleeping Bag
 sleep_bag

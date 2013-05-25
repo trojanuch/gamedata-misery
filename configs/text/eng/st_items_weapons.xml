@@ -444,13 +444,16 @@
 	<string id="st_wpn_ak74">
 		<text>AKS-74</text>
 	</string>
-		<string id="st_wpn_ak74_custom">
+	<string id="st_wpn_ak74_alt">
 		<text>AKS-74 (Alternative)</text>
 	</string>
-		<string id="st_wpn_ak74_alt">
+	<string id="st_wpn_ak74_custom">
+		<text>AKS-74 (Customize)</text>
+	</string>
+	<string id="st_wpn_ak74_modern">
 		<text>AKS-74 (Modern)</text>
 	</string>
-		<string id="st_wpn_ak74_camo">
+	<string id="st_wpn_ak74_camo">
 		<text>AKS-74 (Camouflaged)</text>
 	</string>
 			<string id="st_wpn_ak74_camo_descr">
@@ -466,7 +469,7 @@
 		<text>AKS-74U</text>
 	</string>
 		<string id="st_wpn_ak74u_custom">
-		<text>AKS-74U (Customized)</text>
+		<text>AKS-74U (Modern)</text>
 	</string>
 		<string id="st_wpn_ak74u_camo">
 		<text>AKS-74U (Camouflaged)</text>
@@ -588,7 +591,10 @@
 		<string id="st_wpn_fn2000_alt">
 		<text>FN F2000 (Alternate)</text>
 	</string>
-			<string id="st_wpn_fn2000_camo">
+		<string id="st_wpn_fn2000_civilian">
+		<text>FN F2000 (Civilian)</text>
+	</string>
+		<string id="st_wpn_fn2000_camo">
 		<text>FN F2000 (Camouflaged)</text>
 	</string>
 	  <string id="st_wpn_fn2000_camo_descr">
@@ -668,28 +674,25 @@ renowned SG 550 family. Enhancing it’s CQC capabilities, this SG 552 Commando co
 		<text>Mosin-Nagant M1891/30</text>
 	</string>
 	<string id="st_wpn_m1891snip_descr">
-		<text>The most prolific version of the Mosin-Nagant, the M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was
-extremely successful In World War II as a sniper rifle, when equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[255,238,153,26]• %c[0,140,140,140]Scopes</text>
+		<text>The most prolific version of the Mosin-Nagant, the M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was extremely successful In World War II as a sniper rifle, when equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[255,238,153,26]• %c[0,140,140,140]Scopes</text>
 	</string>
 		<string id="st_wpn_m1891alt">
 		<text>Mosin-Nagant M1891/30 (Alternate)</text>
 	</string>
 	<string id="st_wpn_m1891alt_descr">
-		<text>A personalized version of the Mosin-Nagant with slightly worn interiors. The M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was
-extremely successful In World War II as a sniper rifle, when equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[255,238,153,26]• %c[0,140,140,140]Scopes</text>
+		<text>A personalized version of the Mosin-Nagant with slightly worn interiors. The M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was extremely successful In World War II as a sniper rifle, when equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[255,238,153,26]• %c[0,140,140,140]Scopes</text>
 	</string>
 	<string id="st_wpn_obrez">
-		<text>Obrez</text>
+		<text>"Obrez" Mosin-Nagant M1891/30 (Sawn off)</text>
 	</string>
 	<string id="st_wpn_obrez_descr">
-		<text>"Obrez" is a Russian word meaning "cut". This "Obrez" is a sawn-off Mosin-Nagant M91/30. Mainly used by rebels and criminals, it still fires the original rifle cartridge. It's "classified" as a hybrid between a bolt-action pistol and a shotgun, ie: a budget hand-cannon!</text>
+		<text>"Obrez" is a Russian word meaning "cut". This "Obrez" is a sawn-off Mosin-Nagant M1891/30. Mainly used by rebels and criminals, it still fires the original rifle cartridge. It's "classified" as a hybrid between a bolt-action pistol and a shotgun, ie: a budget hand-cannon!</text>
 	</string>
   <string id="st_wpn_aek973">
     <text>AEK-971</text>
   </string>
   <string id="st_wpn_aek973_descr">
-    <text>Based on previous AK rifles in internal design and layout, the AEK-971 is also equipped with a
-recoil-balancing mechanism, resulting in more controllable automatic fire. Small batches of this rifle were manufactured for the Russian MVD.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Scopes\n%c[0,153,255,255] • %c[0,140,140,140] Silencer 7.62x39\n%c[0,153,255,255] • %c[0,140,140,140] Grenadelauncher</text>
+    <text>Based on previous AK rifles in internal design and layout, the AEK-971 is also equipped with a recoil-balancing mechanism, resulting in more controllable automatic fire. Small batches of this rifle were manufactured for the Russian MVD.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Scopes\n%c[0,153,255,255] • %c[0,140,140,140] Silencer 7.62x39\n%c[0,153,255,255] • %c[0,140,140,140] Grenadelauncher</text>
   </string>
   <string id="st_wpn_ak74cobra ">
     <text>AKS-74 (Camouflaged)</text>
@@ -707,8 +710,7 @@ recoil-balancing mechanism, resulting in more controllable automatic fire. Small
     <text>FN FAL</text>
   </string>
   <string id="st_wpn_fnfalll_descr">
-    <text>The FAL is one of the most produced and widely used firearms in the world. Used by many NATO countries
-during the Cold War, it was nicknamed “The right arm of the Free World”. This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] Scopes\n%c[255,144,50,26]• %c[0,140,140,140] Grenadelauncher m203\n%c[255,144,50,26]• %c[0,140,140,140] Silencer 7.62x51</text>
+    <text>The FAL is one of the most produced and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed “The right arm of the Free World”. This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] Scopes\n%c[255,144,50,26]• %c[0,140,140,140] Grenadelauncher m203\n%c[255,144,50,26]• %c[0,140,140,140] Silencer 7.62x51</text>
   </string>
   <string id="st_wpn_fr2000">
     <text>FN FS2000</text>
@@ -867,8 +869,7 @@ during the Cold War, it was nicknamed “The right arm of the Free World”. This Zo
     <text>AK-105</text>
   </string>
   <string id="st_wpn_ak105_descr">
-    <text>The AK-105 is a shortened carbine version of the AK-74M (AK-74 modernized) rifle. The AK-105 is
-supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close quarters combat), it’s not intended for long range combat.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 5.45x39\n%c[0,153,255,255] • %c[0,140,140,140] Grenadelauncher</text>
+    <text>The AK-105 is a shortened carbine version of the AK-74M (AK-74 modernized) rifle. The AK-105 is supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close quarters combat), it’s not intended for long range combat.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 5.45x39\n%c[0,153,255,255] • %c[0,140,140,140] Grenadelauncher</text>
   </string>
   <string id="st_wpn_k98">
     <text>Karabiner 98 Kurz</text>
@@ -901,7 +902,7 @@ supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close qua
 		<text>Inglis Hi-Power</text>
 	</string>
 		<string id="st_wpn_hpsa_custom">
-		<text>Browning Hi-Power</text>
+		<text>Browning Hi-Power (Customized)</text>
 	</string>
 			<string id="st_wpn_hpsa_alt">
 		<text>Browning Hi-Power (Alternate)</text>
@@ -1240,7 +1241,7 @@ supplementing AKS-74U carbines in Russian Army service. Ideal for CQC (close qua
 		<text>The M1911 became the standard issue side arm for the U.S. military from 1911 to 1985. An extremely reliable and robust weapon, it’s been adopted for military, police and civilian use around the world and remains a very popular firearm to this day.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 11.43x23</text>
 	</string>
 	<string id="st_wpn_eagle_descr">
-		<text>Designed by Magnum Research, US, the Desert Eagle uses a gas-operated mechanism normally found in rifles. This allows the pistol to use far more powerful rounds than traditional semi-automatic pistol designs. The drawback to this weapon is it’s size and weight.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 11.43x23</text>
+		<text>Designed by Magnum Research, US, the Desert Eagle uses a gas-operated mechanism normally found in rifles. This allows the pistol to use far more powerful rounds than traditional semi-automatic pistol designs. The drawback to this weapon is it’s size and weight. For reason unknown DE units found within Exlusion Zone are all chambered with .357 Magnum rounds.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 11.43x23</text>
 	</string>
 	<string id="st_wpn_fn2000_descr">
 		<text>This futuristic-looking weapon with a bullpup layout is actually a mass produced modular system, comprising a rifle & grenade complex with a computerized fire control system and a 40-mm grenade launcher. Despite its bulky appearance, the weapon is highly ergonomic, easy to use and benefits from good technical characteristics.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Scope (permanent)\n%c[0,153,255,255] • %c[0,140,140,140] Silencer 5.56x45\n%c[0,153,255,255] • %c[0,140,140,140] Grenadelauncher (permanent)</text>
@@ -1307,10 +1308,7 @@ Internal Affairs. Designed in a compact bullpup configuration, the SVU utilizes 
 		<text>NR-40</text>
 	</string>
 	<string id="st_knife_nr40_descr">
-		<text>On a rare occasion a Stalker proves unique talent to his faction during missions of teamwork or lone wolf tasks. Like saving a faction leader from the certain death.
-
-Such quality and worth is seen rewarded with an
-Honorary NR-40. A rare Soviet military knife of high historic and symbolic value. Decorated with an iron emblem of a certain World War 2 parachute division on the wooden handle. Any Stalker holding one of these, be it novice or veteran, is highly respected anywhere in the Zone and especially within his ranks.</text>
+		<text>On a rare occasion a Stalker proves unique talent to his faction during missions of teamwork or lone wolf tasks. Like saving a faction leader from the certain death. Such quality and worth is seen rewarded with an Honorary NR-40. A rare Soviet military knife of high historic and symbolic value. Decorated with an iron emblem of a certain World War 2 parachute division on the wooden handle. Any Stalker holding one of these, be it novice or veteran, is highly respected anywhere in the Zone and especially within his ranks.</text>
 	</string>
 	<string id="st_knife_spetznaz">
 		<text>Speztnaz switchblade</text>

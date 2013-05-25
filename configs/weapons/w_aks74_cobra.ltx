@@ -27,11 +27,12 @@ reload_dof           = 0.0, 0.5, 5, 1.7
 holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
 holder_fov_modifier     = 0.7              ; во сколько раз увеличивается eye_fov
 ;-------------------------------------------------------------------------------
-upgrades                = up_gr_firstab_ak74u, up_gr_seconab_ak74u, up_gr_thirdab_ak74u, up_gr_fourtab_ak74u, up_gr_fifthab_ak74u
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_ak74u
 
-cost              	 = 26460            ; the price of the item
+upgrades                = up_gr_firstab_aks74_cobra, up_gr_seconab_aks74_cobra, up_gr_thirdab_aks74_cobra, up_gr_fourtab_aks74_cobra, up_gr_fifthab_aks74_cobra, up_gr_fifthcd_aks74_cobra
+installed_upgrades      = up_fourta_aks74_cobra, up_firsta_aks74_cobra
+upgrade_scheme          = upgrade_scheme_ak74
+
+cost              	 = 29450            ; the price of the item
 weapon_class         = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
 
 ammo_limit           = 210          ; obsolete
@@ -54,10 +55,10 @@ inv_name          		= AKS-74 Cobra                 ; name in inventory
 inv_name_short    		= AKS-74 Cobra
 inv_weight        = 2.74                      ; weight in inventory
 
-upgr_icon_x						= 1473
-upgr_icon_y						= 1460
-upgr_icon_width					= 241
-upgr_icon_height				= 193
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 inv_grid_width       = 5    ; position and size of the icon that will be used to display weapon in the inventory menu
 inv_grid_height      = 2    ; all icons are on the texture ui_icon_equipment.dds,
@@ -71,23 +72,17 @@ kill_msg_height      = 28
 
 ;-------------------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       = 0.37 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       = 0.30 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    = 1.28
 crosshair_inertion	= 5.75
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.7
 misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.047
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.001
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0011
+misfire_start_prob	     	= 0.0075
+misfire_end_prob	     	= 0.04
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0008
 
 ;отдача
 cam_relax_speed             = 8		;скорость возврата в исходное положение
@@ -108,13 +103,11 @@ zoom_cam_max_angle           = 10.0
 zoom_cam_max_angle_horz      = 5.0
 zoom_cam_step_angle_horz     = 0.6
 
-fire_dispersion_condition_factor = 0.001 ;    = 0.01 ; 15         ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ;    = 0.01 ; 15         
 misfire_probability     = 0.0001  ;вероятность осечки при максимальном износе
 misfire_condition_k     = 0.05
 condition_shot_dec         = 0.0001 ;увеличение износа при каждом выстреле
 ;-------------------------------------------------------------------------------
-
-
 
 position                = -0.026, -0.175, 0.0
 orientation             = 0, 0, 0
@@ -138,12 +131,12 @@ PDM_disp_crouch_no_acc 		= 0.4
 
 ; ttc
 
-hit_power            = 0.485, 0.485, 0.485, 0.485
-hit_impulse          	= 33    ; size of physic impulse by bullet
+hit_power            	= 0.60, 0.60, 0.60, 0.60
+hit_impulse          	= 37 
 hit_type            	= fire_wound            ; [] type of the wound
-fire_distance           = 540    ; maximum fire distance that bullet can fly
-bullet_speed            = 725    ; starting bullet speed
-rpm                     = 650   ; max round per minute
+fire_distance           = 880
+bullet_speed            = 900
+rpm                     = 650
 rpm_empty_click         = 200
 
 hit_probability_gd_novice = 1.00 ;  = 1

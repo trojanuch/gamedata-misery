@@ -2,11 +2,11 @@
 ;Скорострельность(1)10%
 ;----------------------
 cost		      		= 1480
-value					= +5
+value					= +10
 
-rpm						= +16
+rpm						= +35
 
-inv_weight			= +0.1
+inv_weight			= +0.08
 
 [up_sect_firstc_beretta]
 ;Надежность(2)15%
@@ -14,18 +14,18 @@ inv_weight			= +0.1
 cost		      		= 1860
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0008 ;0.0013
+condition_queue_shot_dec	= -0.00014 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0008 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.00014 ;0.0011
+
 misfire_start_prob	     	= -0.0013
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.013 ;0.03
 
-inv_weight			= +0.15
+inv_weight			= +0.09
 
 [up_sect_firstd_beretta]
 ;Отдача(2)-20%
@@ -41,37 +41,37 @@ zoom_cam_dispersion         = -0.05
 zoom_cam_dispersion_inc     = -0.2
 zoom_cam_step_angle_horz    = -0.3
 
-inv_weight			= +0.05
+inv_weight			= +0.04
 
 [up_sect_firste_beretta]
 ;Режим полностью автоматического огня
 ;---------------
-cost		      		= 5980
+cost		      		= 4680
 ;value					= +20
 
 fire_modes		  = 1, -1
 
-rpm               = 440
+rpm               = 780
 
-cam_dispersion         		= -0.3		;0.5
-cam_dispersion_inc			= -0.3		;0.5
-cam_step_angle_horz			= -0.1;    ;1.0
+cam_dispersion         		= +0.38		;0.5
+cam_dispersion_inc			= +0.34		;0.5
+cam_step_angle_horz			= +0.12;    ;1.0
 
-zoom_cam_dispersion         = -0.05
-zoom_cam_dispersion_inc     = -0.15
-zoom_cam_step_angle_horz    = -0.5
+zoom_cam_dispersion         = +0.12
+zoom_cam_dispersion_inc     = +0.18
+zoom_cam_step_angle_horz    = +0.07
 
-inv_weight			= +0.35
+inv_weight			= +0.23
 
 [up_sect_secona_beretta]
 ;Скорострельность(1)10%
 ;----------------------
-cost		      		= 1480
-value					= +5
+cost		      		= 2180
+value					= +10
 
-rpm						= +17
+rpm						= +34
 
-inv_weight			= +0.1
+inv_weight			= +0.09
 
 [up_sect_seconc_beretta]
 ;Настильность(2)20%
@@ -84,7 +84,7 @@ fire_distance           	= +40
 
 fire_dispersion_base	= -0.035 
 
-inv_weight			= +0.15
+inv_weight			= +0.11
 
 [up_sect_second_beretta]
 ;Надежность(2)15%
@@ -92,18 +92,18 @@ inv_weight			= +0.15
 cost		      		= 1890
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0008 ;0.0013
+condition_queue_shot_dec	= -0.00014 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0008 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.00014 ;0.0011
+
 misfire_start_prob	     	= -0.0013
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.013 ;0.03
 
-inv_weight			= +0.1
+inv_weight			= +0.08
 
 [up_sect_secone_beretta]
 ;Скорострельность(3)25%
@@ -111,9 +111,9 @@ inv_weight			= +0.1
 cost		      		= 2490
 value					= +5
 
-rpm						= +17
+rpm						= +21
 
-inv_weight			= +0.05
+inv_weight			= +0.06
 
 [up_sect_thirda_beretta]
 ;Надежность(1)10%
@@ -121,18 +121,18 @@ inv_weight			= +0.05
 cost		      		= 1560
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0005 ;0.0013
+condition_queue_shot_dec	= -0.00014 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0005 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.00014 ;0.0011
+
 misfire_start_prob	     	= -0.0006
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.006 ;0.03
 
-inv_weight			= +0.1
+inv_weight			= +0.13
 
 [up_sect_thirdc_beretta]
 ;Удобство(2)15%
@@ -146,7 +146,7 @@ PDM_disp_base 				= -0.2
 PDM_disp_vel_factor 		= -0.35
 PDM_disp_accel_factor 		= -0.35
 
-inv_weight			= -0.3
+inv_weight			= -0.32
 
 [up_sect_thirdd_beretta]
 ;Отдача(2)-20%
@@ -162,7 +162,7 @@ zoom_cam_dispersion         = -0.05
 zoom_cam_dispersion_inc     = -0.2
 zoom_cam_step_angle_horz    = -0.3
 
-inv_weight			= -0.15
+inv_weight			= -0.07
 
 [up_sect_fourta_beretta]
 ;Точность(1)10%
@@ -173,7 +173,7 @@ value					= +10
 fire_dispersion_base	= -0.03
 fire_dispersion_condition_factor  = -1
 
-inv_weight			= -0.3
+inv_weight			= -0.08
 
 [up_sect_fourtc_beretta]
 ;Надежность(2)15%
@@ -181,23 +181,23 @@ inv_weight			= -0.3
 cost		      		= 1860
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0008 ;0.0013
+condition_queue_shot_dec	= -0.00014 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0008 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.00014 ;0.0011
+
 misfire_start_prob	     	= -0.0013
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.013 ;0.03
 
-inv_weight			= +0.15
+inv_weight			= +0.11
 
 [up_sect_fiftha_beretta]
 ;Нанесение наружной резьбы на ствол
 ;---------------
-cost		      		= 2280
+cost		      		= 1380
 ;value					= +20
 
 snd_silncer_shot			= weapons\silencers\silencer_9x19
@@ -206,7 +206,7 @@ silencer_name  				= wpn_addon_silencer_9x19		; section name for the attachable 
 silencer_x 					= 56					; offset in inventory icon
 silencer_y 					= -15
 
-inv_weight			= +0.1
+inv_weight			= +0.07
 
 [up_sect_fifthc_beretta]
 ;Смена калибра на 9х18
@@ -217,15 +217,15 @@ value					= "9x18"
 ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
 
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0001 ;0.0013
+condition_queue_shot_dec	= 0.00014 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= 0.00014 ;0.0011
+
 misfire_start_prob	     	= 0.0008
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= 0.008 ;0.03
 
-inv_weight			= +0.15
+inv_weight			= +0.11
 
 [up_firsta_beretta]
 scheme_index            = 0, 0
@@ -295,24 +295,21 @@ icon                    = ui_inGame2_upgrade_Marta_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_beretta
-property                = prop_autofire
+section                 = up_sect_empty_tier_3 ; up_sect_firste_beretta
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_zatp_c6_name
-description             = st_up_zatp_c6_descr
-icon                    = ui_inGame2_upgrade_Marta_4
-
-
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_secona_beretta]
 scheme_index            = 0, 1
@@ -376,28 +373,25 @@ name                    = st_up_barp_b1_name
 description             = st_up_barp_b1_descr
 icon                    = ui_inGame2_upgrade_Marta_7
 
-
 [up_secone_beretta]
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_beretta
-property                = prop_rpm
+section                 = up_sect_empty_tier_3 ; up_sect_secone_beretta
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_barp_c1_name
-description             = st_up_barp_c1_descr
-icon                    = ui_inGame2_upgrade_Marta_8
-
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirda_beretta]
 scheme_index            = 0, 2
@@ -479,7 +473,6 @@ name                    = st_up_usmp_b1_name
 description             = st_up_usmp_b1_descr
 icon                    = ui_inGame2_upgrade_Marta_12
 
-
 [up_fourtc_beretta]
 scheme_index            = 1, 6
 known                   = 1
@@ -500,14 +493,12 @@ name                    = st_up_usmp_b4_name
 description             = st_up_usmp_b4_descr
 icon                    = ui_inGame2_upgrade_Marta_13
 
-
 [up_fiftha_beretta]
 scheme_index            = 0, 4
 known                   = 1
 effects                 =
 section                 = up_sect_fiftha_beretta
 property                = prop_silencer
-
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -530,7 +521,6 @@ effects                 =
 section                 = up_sect_fifthc_beretta
 property                = prop_calibre
 
-
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
 
@@ -544,7 +534,6 @@ prereq_params           =
 name                    = st_up_add_b3_name
 description             = st_up_add_b3_descr
 icon                    = ui_inGame2_upgrade_Marta_15
-
 
 [up_gr_firstab_beretta]
 elements                = up_firsta_beretta

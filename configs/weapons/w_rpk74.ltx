@@ -15,47 +15,35 @@ default_to_ruck					= false
 sprint_allowed					= true
 
 ;-------------------------------------------------------------------------------
-cost							= 43500			; the price of the item
+cost							= 37260			; the price of the item
 weapon_class					= assault_rifle	; the type of the box that will be used in buy-menu in multiplayer mode
-inv_weight						= 4.727			; weight in inventory
+inv_weight						= 5.492			; weight in inventory
 
-upgrades						= up_gr_firstab_ak74, up_gr_seconab_ak74, up_gr_thirdab_ak74, up_gr_fourtab_ak74, up_gr_fifthab_ak74, up_gr_fifthcd_ak74
-installed_upgrades				=
-upgrade_scheme					= upgrade_scheme_ak74
+upgrades                = up_gr_firstab_rpk74, up_gr_seconab_rpk74, up_gr_thirdab_rpk74, up_gr_fourtab_rpk74, up_gr_fifthab_rpk74
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_pkm
 
 ;-ТТХ---------------------------------------------------------------------------
-hit_power            = 0.585, 0.585, 0.585, 0.585
+hit_power            = 0.697, 0.697, 0.697, 0.697
 hit_impulse          = 43 ;50 ;100			; size of physic impulse by bullet
 hit_type						= fire_wound	; [] type of the wound
-fire_distance					= 1000	; maximum fire distance that bullet can fly
+fire_distance					= 1050	; maximum fire distance that bullet can fly
 bullet_speed					= 960			; starting bullet speed
-rpm						= 650			; max round per minute
-rpm_empty_click					= 200
-
-;настройки для глушителя
-;silencer_hit_power				= 0.61, 0.61, 0.61, 0.61
-;silencer_hit_impulse			= 10
-;silencer_fire_distance			= 600
-;silencer_bullet_speed			= 700
+rpm								= 650			; max round per minute
+rpm_empty_click					= 200	
 
 use_aim_bullet					= false			;Поддерживается ли первая суппер пуля
 time_to_aim						= 3.0
 
 hud								= wpn_rpk74_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.043
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0010
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0009
+misfire_probability        = 0.005
+misfire_start_condition		= 0.82
+misfire_end_condition		= 0.14
+misfire_start_prob	     	= 0.0064
+misfire_end_prob	     	= 0.068
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0012
 
 ammo_elapsed					= 40			; obsolete
 ammo_mag_size					= 40			; clip (magazine) size
@@ -74,9 +62,9 @@ reload_dof						= 0.0, 0.5, 5, 2;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base			= 0.2	;0.016угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base			= 0.37	;0.016угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor			= 1.89f
-crosshair_inertion			= 7.4
+crosshair_inertion			= 7.82
 
 ;отдача
 cam_return				= 0 ;						= 0
@@ -104,7 +92,7 @@ PDM_disp_accel_factor 		= 2.2
 PDM_disp_crouch	 			= 0.5
 PDM_disp_crouch_no_acc 		= 0.25
 
-fire_dispersion_condition_factor = 0.001 ;= 0.01 ; 18	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ;= 0.01 ; 18	
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier			= 1.0	; во сколько раз увеличивается eye_range
@@ -145,10 +133,10 @@ inv_grid_height			= 2	; all icons are on the texture ui_icon_equipment.dds,
 inv_grid_x			= 14	; position and size are in terms of 64x64 squares
 inv_grid_y			= 30
 
-upgr_icon_x						= 304
-upgr_icon_y						= 627
-upgr_icon_width					= 295
-upgr_icon_height				= 110
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 kill_msg_x						= 0
 kill_msg_y						= 28
@@ -189,7 +177,7 @@ silencer_y						= 2
 grenade_launcher_name			= wpn_addon_grenade_launcher
 grenade_launcher_x				= 120
 grenade_launcher_y				= 9
-scopes_sect						= scope_rpk74, scope_x2.7_rpk74, scope_live_detector_rpk74, scope_night_rpk74
+scopes_sect						= scope_rpk74_moist, scope_rpk74, scope_rpk74_worn, scope_x2.7_rpk74, scope_live_detector_rpk74, scope_night_rpk74
 
 ;звуки
 snd_draw                = weapons\rpk74\rpk74_draw
@@ -293,6 +281,16 @@ gl_hud_offset_rot_16x9			= -0.150000, 0.000000, 0.000000
 
 [scope_rpk74]
 scope_name						= wpn_addon_scope
+scope_x							= 60	; offset in inventory icon
+scope_y							= -8
+
+[scope_rpk74_worn]
+scope_name 					= wpn_addon_scope_worn
+scope_x							= 60	; offset in inventory icon
+scope_y							= -8
+
+[scope_rpk74_moist]
+scope_name 					= wpn_addon_scope_moist
 scope_x							= 60	; offset in inventory icon
 scope_y							= -8
 

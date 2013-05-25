@@ -1,34 +1,40 @@
 [up_sect_firsta_usp]
 ;—корострельность(1)10%
 ;----------------------
-cost		      		= 1600
-value					= +5
+cost		      		= 1570
+value					= +10
 
-rpm						= +15
+rpm						= +20
+
+inv_weight			= +0.07
 
 [up_sect_firstc_usp]
 ;ќтдача(2)-20%
 ;------------
-cost		      		= 2000
+cost		      		= 2120
 value					= -20
 
 cam_dispersion          = -0.25		;1.2
 cam_dispersion_inc		= -0.25		;1.2
 cam_step_angle_horz		= -0.2		;1.2
 
+inv_weight			= +0.09
+
 [up_sect_firstd_usp]
 ;Ќастильность(2)20%
 ;------------------
-cost		      		= 2000
+cost		      		= 1960
 value					= +20
 
 bullet_speed		 	= +60
-fire_dispersion_base	= -0.01 
+fire_dispersion_base	= -0.06 
+
+inv_weight			= +0.12
 
 [up_sect_firste_usp]
 ;–ежим полностью автоматического огн€
 ;------------------
-cost		      		= 4000
+cost		      		= 3680
 ;value					= +20
 
 fire_modes		  = 1, -1
@@ -39,68 +45,80 @@ cam_dispersion          = -0.35		;1.2
 cam_dispersion_inc		= -0.35		;1.2
 cam_step_angle_horz		= -0.15		;1.2
 
+inv_weight			= +0.09
+
 [up_sect_secona_usp]
 ;Ќастильность(1)10%
 ;------------------
-cost		      		= 1600
+cost		      		= 1820
 value					= +10
 
 bullet_speed		 	= +40
 
+inv_weight			= +0.08
+
 [up_sect_seconc_usp]
 ;—корострельность(2)15%
 ;----------------------
-cost		      		= 2000
+cost		      		= 1760
 value					= +15
 
 rpm						= +35
 
+inv_weight			= +0.13
+
 [up_sect_second_usp]
 ;Ќадежность(2)15%
 ;---------------
-cost		      		= 2000
+cost		      		= 1870
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0006 ;0.0013
+condition_queue_shot_dec	= -0.0002 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0006 ;0.0011
+condition_shot_dec      	= -0.0002 ;0.0011
 ;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.0015
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.015 ;0.03
 
+inv_weight			= +0.16
+
 [up_sect_secone_usp]
 ;—корострельность(3)25%
 ;----------------------
-cost		      		= 2400
-value					= +15
+cost		      		= 2640
+value					= +20
 
-rpm						= +35
+rpm						= +45
+
+inv_weight			= +0.09
 
 [up_sect_thirda_usp]
 ;Ќадежность(1)10%
 ;---------------
-cost		      		= 1600
+cost		      		= 1630
 value					= +10
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0003 ;0.0013
+condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0003 ;0.0011
+condition_shot_dec      	= -0.0001 ;0.0011
 ;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.001
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.01 ;0.03
 
+inv_weight			= +0.14
+
 [up_sect_thirdc_usp]
 ;”добство(2)15%
 ;--------------
-cost		      		= 2000
+cost		      		= 1940
 value					= +15
 
 crosshair_inertion			= -1
@@ -109,69 +127,80 @@ PDM_disp_base 				= -0.25
 PDM_disp_vel_factor 		= -0.55
 PDM_disp_accel_factor 		= -0.55
 
+inv_weight			= -0.08
+
 [up_sect_thirdd_usp]
 ;ќтдача(2)-20%
 ;------------
-cost		      		= 2000
+cost		      		= 2120
 value					= -20
 
 cam_dispersion          = -0.25		;1.2
 cam_dispersion_inc		= -0.25		;1.2
 cam_step_angle_horz		= -0.2		;1.2
 
+inv_weight			= +0.06
 
 [up_sect_thirde_usp]
 ;ќтдача(3)-30%
 ;------------
-cost		      		= 2400
+cost		      		= 2560
 value					= -30
 
 cam_dispersion          = -0.45		;1.2
 cam_dispersion_inc		= -0.45		;1.2
 cam_step_angle_horz		= -0.3		;1.2
 
+inv_weight			= +0.08
+
 [up_sect_fourta_usp]
 ;“очность(1)10%
 ;---------------
-cost		      		= 1600
+cost		      		= 1760
 value					= +10
 
 fire_dispersion_base	= -0.02
-fire_dispersion_condition_factor    = -1
+;fire_dispersion_condition_factor    = -1
+
+inv_weight			= +0.11
 
 [up_sect_fourtc_usp]
 ;Ќадежность(2)15%
 ;---------------
-cost		      		= 2000
+cost		      		= 2340
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0006 ;0.0013
+condition_queue_shot_dec	= -0.0002 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0006 ;0.0011
+condition_shot_dec      	= -0.0002 ;0.0011
 ;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.0015
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.015 ;0.03
 
+inv_weight			= +0.13
+
 [up_sect_fourte_usp]
 ;“очность(3)30%
 ;---------------
-cost		      		= 2400
+cost		      		= 2320
 value					= +30
 
 fire_dispersion_base	= -0.02
-fire_dispersion_condition_factor    = -1
+;fire_dispersion_condition_factor    = -1
+
+inv_weight			= +0.05
 
 [up_sect_fiftha_usp]
 ;”величенный объем магазина
 ;---------------
-cost		      		= 2500
+cost		      		= 1840
 value					= +4
 
-ammo_mag_size		 	= +4
+ammo_mag_size		 	= +42
 
 [up_firsta_usp]
 scheme_index            = 0, 0
@@ -241,22 +270,21 @@ icon                    = ui_inGame2_upgrade_UDP_compact_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_usp
-property                = prop_autofire
+section                 = up_sect_empty_tier_3 ; up_sect_firste_usp
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_zatp_c6_name
-description             = st_up_zatp_c6_descr
-icon                    = ui_inGame2_upgrade_UDP_compact_4
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 
@@ -327,22 +355,21 @@ icon                    = ui_inGame2_upgrade_UDP_compact_7
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_usp
-property                = prop_rpm
+section                 = up_sect_empty_tier_3 ; up_sect_secone_usp
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_barp_c1_name
-description             = st_up_barp_c1_descr
-icon                    = ui_inGame2_upgrade_UDP_compact_8
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_thirda_usp]
@@ -410,11 +437,11 @@ icon                    = ui_inGame2_upgrade_UDP_compact_11
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_thirde_usp
-property                = prop_recoil
+section                 = up_sect_empty_tier_3 ; up_sect_thirde_usp
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -422,9 +449,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stvp_c2_name
-description             = st_up_stvp_c2_descr
-icon                    = ui_inGame2_upgrade_UDP_compact_12
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fourta_usp]
 scheme_index            = 0, 3
@@ -471,11 +498,11 @@ icon                    = ui_inGame2_upgrade_UDP_compact_14
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_fourte_usp
-property                = prop_dispersion
+section                 = up_sect_empty_tier_3 ; up_sect_fourte_usp
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -483,9 +510,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_usmp_c1_name
-description             = st_up_usmp_c1_descr
-icon                    = ui_inGame2_upgrade_UDP_compact_15
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_fiftha_usp]

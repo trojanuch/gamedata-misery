@@ -31,19 +31,12 @@ rpm                 	= 1000
 
 hud                      		= wpn_bm16_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
+misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.03
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0058
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0018
+misfire_start_prob	     	= 0.008
+misfire_end_prob	     	= 0.08
+condition_shot_dec      	= 0.0031
+condition_queue_shot_dec	= 0.0016
 
 ammo_elapsed		 	= 2
 ammo_mag_size		 	= 2
@@ -56,7 +49,7 @@ zoom_dof			    = 0.5, 1.0, 180
 ;reload_dof           = 0.0, 0.5, 5, 1.7
 ;----дисперсия--------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.78  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 0.80  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.0f ;		= 0.96f
 crosshair_inertion			= 4.7
 
@@ -80,7 +73,7 @@ zoom_cam_max_angle          = 5.0
 zoom_cam_max_angle_horz     = 5.0
 zoom_cam_step_angle_horz    = 3.5
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 2	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 2	
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier	= 1.0     ; во сколько раз увеличивается eye_range
@@ -106,10 +99,10 @@ inv_grid_height			= 1
 inv_grid_x				= 6
 inv_grid_y				= 1
 
-upgr_icon_x			= 599
-upgr_icon_y			= 559
-upgr_icon_width		= 272
-upgr_icon_height   	= 54
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 kill_msg_x				= 0
 kill_msg_y		  		= 104
@@ -247,39 +240,34 @@ lean_hud_offset_rot				= 0,0,0
 
 ;======================================================================================================
 [wpn_bm16_gold]:wpn_bm16
+inv_name				= st_wpn_bm16_gold
+inv_name_short			= st_wpn_bm16_gold
 
-cost					= 15780
+cost					= 14780
 inv_weight				= 3.942
 
-installed_upgrades      = up_secona_bm16, up_thirda_bm16, up_secona_bm16, up_firsta_bm16
+upgrades                = up_gr_firstab_bm16_gold, up_gr_seconab_bm16_gold, up_gr_thirdab_bm16_gold
+installed_upgrades      = up_secona_bm16_gold, up_second_bm16_gold
 
-hit_power       = 0.92, 0.92, 0.92, 0.92
+hit_power       = 1.01, 1.01, 1.01, 1.01
 hit_impulse     = 60
 hit_type 		= fire_wound
-fire_distance       	= 420
-bullet_speed			= 360
-rpm                 	= 1010
+fire_distance       	= 460
+bullet_speed			= 384
+rpm                 	= 1000
 
 hud                      		= wpn_bm16_gold_hud
 
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.03
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0058
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0018
+misfire_start_condition		= 0.84
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0052
+misfire_end_prob	     	= 0.063
+condition_shot_dec      	= 0.0024
+condition_queue_shot_dec	= 0.0008
 
 ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
-fire_dispersion_base		= 0.77 
-
-inv_name				= st_wpn_bm16_gold
-inv_name_short			= st_wpn_bm16_gold
+fire_dispersion_base		= 0.70
 
 inv_grid_width          = 3
 inv_grid_height         = 1
@@ -296,37 +284,33 @@ item_visual               		= dynamics\weapons\wpn_bm16\wpn_bm1a_hud.ogf
 
 ;======================================================================================================
 [wpn_bm16_worn]:wpn_bm16
+inv_name				= st_wpn_bm16_worn
+inv_name_short			= st_wpn_bm16_worn
 
-cost					= 8940
+cost					= 8640
 inv_weight				= 3.142
 
-hit_power       = 0.92, 0.92, 0.92, 0.92
+upgrades                = up_gr_firstab_bm16_worn, up_gr_seconab_bm16_worn, up_gr_thirdab_bm16_worn
+
+hit_power       = 0.81, 0.81, 0.81, 0.81
 hit_impulse     = 60
 hit_type 		= fire_wound
-fire_distance       	= 420
-bullet_speed			= 360
+fire_distance       	= 391
+bullet_speed			= 332
 rpm                 	= 990
 
 hud                      		= wpn_bm16_worn_hud
 
-misfire_start_condition		= 0.65
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.03
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0058
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0018
+misfire_start_condition		= 0.91
+misfire_end_condition		= 0.15
+misfire_start_prob	     	= 0.0074
+misfire_end_prob	     	= 0.071
+condition_shot_dec      	= 0.0044
+condition_queue_shot_dec	= 0.0019
 
 ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
-fire_dispersion_base		= 0.79 
-
-inv_name				= st_wpn_bm16_worn
-inv_name_short			= st_wpn_bm16_worn
+fire_dispersion_base		= 1.02
 
 inv_grid_width          = 3
 inv_grid_height         = 1
@@ -343,38 +327,34 @@ item_visual               		= dynamics\weapons\wpn_bm16\wpn_bm1b_hud.ogf
 
 ;======================================================================================================
 [wpn_bm16_rusty]:wpn_bm16
+inv_name				= st_wpn_bm16_rusty
+inv_name_short			= st_wpn_bm16_rusty
+description				= st_wpn_bm16_irishrampage_descr
 
 cost					= 6240
 inv_weight				= 3.168
 
-hit_power       = 0.92, 0.92, 0.92, 0.92
+upgrades                = up_gr_firstab_bm16_rusty, up_gr_seconab_bm16_rusty, up_gr_thirdab_bm16_rusty
+
+hit_power       = 0.76, 0.76, 0.76, 0.76
 hit_impulse     = 60
 hit_type 		= fire_wound
-fire_distance       	= 420
-bullet_speed			= 360
-rpm                 	= 900
+fire_distance       	= 374
+bullet_speed			= 317
+rpm                 	= 990
 
 hud                      		= wpn_bm16_rusty_hud
 
-misfire_start_condition		= 0.7
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.03
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0058
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0018
+misfire_start_condition		= 0.95
+misfire_end_condition		= 0.14
+misfire_start_prob	     	= 0.0083
+misfire_end_prob	     	= 0.076
+condition_shot_dec      	= 0.0052
+condition_queue_shot_dec	= 0.0026
 
 ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
-fire_dispersion_base		= 0.79 
-
-inv_name				= st_wpn_bm16_rusty
-inv_name_short			= st_wpn_bm16_rusty
-description				= st_wpn_bm16_irishrampage_descr
+fire_dispersion_base		= 1.11 
 
 inv_grid_width          = 3
 inv_grid_height         = 1
@@ -395,32 +375,28 @@ item_visual               		= dynamics\weapons\wpn_bm16\wpn_bm1c_hud.ogf
 cost					= 12320
 inv_weight				= 3.114
 
-installed_upgrades      = up_firsta_bm16
+upgrades                = up_gr_firstab_bm16_silver, up_gr_seconab_bm16_silver, up_gr_thirdab_bm16_silver
+installed_upgrades      = up_firsta_bm16_silver, up_firstc_bm16_silver
 
-hit_power       = 0.92, 0.92, 0.92, 0.92
+hit_power       = 0.97, 0.97, 0.97, 0.97
 hit_impulse     = 60
 hit_type 		= fire_wound
-fire_distance       	= 420
-bullet_speed			= 360
-rpm                 	= 1010
+fire_distance       	= 430
+bullet_speed			= 371
+rpm                 	= 1000
 
 hud                      		= wpn_bm16_silver_hud
 
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
+misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.03
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0058
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0018
+misfire_start_prob	     	= 0.007
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.005
+condition_queue_shot_dec	= 0.001
 
 ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
-fire_dispersion_base		= 0.77 
+fire_dispersion_base		= 0.65 
 
 inv_name				= st_wpn_bm16_silver
 inv_name_short			= st_wpn_bm16_silver

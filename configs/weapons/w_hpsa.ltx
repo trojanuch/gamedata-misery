@@ -19,12 +19,12 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_hpsa
 
 ;-TTX-----------------------------------------------------------------------------
-hit_power           		= 0.27, 0.27, 0.27, 0.27
+hit_power           		= 0.288, 0.288, 0.288, 0.288
 hit_impulse	 		 		= 20
 hit_type 					= fire_wound
-fire_distance           	= 460
-bullet_speed		 		= 410
-rpm                     	= 220
+fire_distance           	= 464
+bullet_speed		 		= 424
+rpm                     	= 228
 rpm_empty_click 	 		= 120
 
 use_aim_bullet				= false		;Поддерживается ли первая суппер пуля
@@ -32,19 +32,13 @@ time_to_aim					= 1.0
 
 hud                     	= wpn_hpsa_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.9
 misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.0075
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.075
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0024
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0020
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0025
+condition_queue_shot_dec	= 0.0028
 
 ammo_elapsed		 	= 13
 ammo_mag_size		 	= 13
@@ -58,7 +52,7 @@ reload_dof				= 0.0, 0.5, 5, 1.7
 
 ;-дисперсия-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.56 ;0.18 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.68 ;0.18 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.0 ; = 0.82
 crosshair_inertion		= 3.65
 
@@ -118,10 +112,10 @@ inv_grid_height			= 1
 inv_grid_x				= 5
 inv_grid_y				= 26
 
-upgr_icon_x			= 600
-upgr_icon_y			= 614
-upgr_icon_width		= 192
-upgr_icon_height   	= 122
+upgr_icon_x			= 1724 ; 600
+upgr_icon_y			= 802 ; 614
+upgr_icon_width		= 167 ; 192
+upgr_icon_height   	= 159 ; 122
 
 kill_msg_x				= 126
 kill_msg_y				= 154
@@ -273,32 +267,29 @@ ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_hpsa, up_gr_seconab_hpsa, up_gr_thirdab_hpsa, up_gr_fourtab_hpsa, up_gr_fifthab_hpsa, up_gr_fifthcd_hpsa
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_hpsa
-
 ;===========================================================================================================
 [wpn_hpsa_custom]:wpn_hpsa
 
 cost					= 10220
 inv_weight				= 0.862
 
-installed_upgrades      = up_firsta_hpsa, up_thirda_hpsa
+upgrades                = up_gr_firstab_hpsa_custom, up_gr_seconab_hpsa_custom, up_gr_thirdab_hpsa_custom, up_gr_fourtab_hpsa_custom, up_gr_fifthab_hpsa_custom, up_gr_fifthcd_hpsa_custom
+installed_upgrades      = up_fiftha_hpsa_custom, up_secona_hpsa_custom, up_seconc_hpsa_custom
 
-hit_power           		= 0.27, 0.27, 0.27, 0.27
+hit_power           		= 0.33, 0.33, 0.33, 0.33
 hit_impulse	 		 		= 20
-fire_distance           	= 460
-bullet_speed		 		= 410
-rpm                     	= 220
+fire_distance           	= 495
+bullet_speed		 		= 435
+rpm                     	= 245
 
 hud                     	= wpn_hpsa_custom_hud
 
-misfire_start_condition		= 0.6
+misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0075
-misfire_end_prob	     	= 0.075
-condition_shot_dec      	= 0.0024
-condition_queue_shot_dec	= 0.0020
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0022
+condition_queue_shot_dec	= 0.0024
 
 ammo_mag_size		 	= 13
 ammo_class		 	= ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
@@ -311,7 +302,7 @@ inv_name_short			= st_wpn_hpsa_custom
 inv_grid_width			= 2
 inv_grid_height			= 1
 inv_grid_x				= 5
-inv_grid_y				= 71
+inv_grid_y				= 74
 
 visual                  	= dynamics\weapons\wpn_hpsa\wpn_hps1.ogf
 
@@ -323,28 +314,31 @@ item_visual						= dynamics\weapons\wpn_hpsa\wpn_hps1_hud.ogf
 ;===========================================================================================================
 [wpn_hpsa_alt]:wpn_hpsa
 
-cost					= 9160
+cost					= 10460
 inv_weight				= 0.889
 
-hit_power           		= 0.27, 0.27, 0.27, 0.27
+upgrades                = up_gr_firstab_hpsa_alt, up_gr_seconab_hpsa_alt, up_gr_thirdab_hpsa_alt, up_gr_fourtab_hpsa_alt, up_gr_fifthab_hpsa_alt, up_gr_fifthcd_hpsa_alt
+installed_upgrades      = up_thirda_hpsa_alt
+
+hit_power           		= 0.308, 0.308, 0.308, 0.308
 hit_impulse	 		 		= 20
-fire_distance           	= 460
-bullet_speed		 		= 410
-rpm                     	= 230
+fire_distance           	= 495
+bullet_speed		 		= 420
+rpm                     	= 245
 
 hud                     	= wpn_hpsa_alt_hud
 
-misfire_start_condition		= 0.6
+misfire_start_condition		= 0.9
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0075
-misfire_end_prob	     	= 0.075
-condition_shot_dec      	= 0.0024
-condition_queue_shot_dec	= 0.0020
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0025
+condition_queue_shot_dec	= 0.0028
 
 ammo_mag_size		 	= 13
 ammo_class		 	= ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.54
+fire_dispersion_base	= 0.68
 
 inv_name				= st_wpn_hpsa_alt
 inv_name_short			= st_wpn_hpsa_alt
@@ -352,7 +346,7 @@ inv_name_short			= st_wpn_hpsa_alt
 inv_grid_width			= 2
 inv_grid_height			= 1
 inv_grid_x				= 5
-inv_grid_y				= 74
+inv_grid_y				= 71
 
 visual                  	= dynamics\weapons\wpn_hpsa\wpn_hps2.ogf
 
@@ -364,30 +358,31 @@ item_visual						= dynamics\weapons\wpn_hpsa\wpn_hps2_hud.ogf
 ;===========================================================================================================
 [wpn_hpsa_camo]:wpn_hpsa
 
-cost					= 11460
+cost					= 13460
 inv_weight				= 0.847
 
-installed_upgrades      = up_firsta_hpsa, up_fourta_hpsa, up_fiftha_hpsa
+upgrades                = up_gr_firstab_hpsa_camo, up_gr_seconab_hpsa_camo, up_gr_thirdab_hpsa_camo, up_gr_fourtab_hpsa_camo, up_gr_fifthab_hpsa_camo, up_gr_fifthcd_hpsa_camo
+installed_upgrades      = up_thirda_hpsa_camo, up_firsta_hpsa_camo, up_firstd_hpsa_camo, up_firste_hpsa_camo
 
-hit_power           		= 0.27, 0.27, 0.27, 0.27
+hit_power           		= 0.355, 0.355, 0.355, 0.355
 hit_impulse	 		 		= 20
-fire_distance           	= 460
-bullet_speed		 		= 410
-rpm                     	= 220
+fire_distance           	= 520
+bullet_speed		 		= 445
+rpm                     	= 250
 
 hud                     	= wpn_hpsa_camo_hud
 
-misfire_start_condition		= 0.6
+misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0075
-misfire_end_prob	     	= 0.075
-condition_shot_dec      	= 0.0024
-condition_queue_shot_dec	= 0.0020
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.04
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0021
 
 ammo_mag_size		 	= 13
 ammo_class		 	= ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.54
+fire_dispersion_base	= 0.52
 
 inv_name			= st_wpn_hpsa_camo
 inv_name_short			= st_wpn_hpsa_camo
@@ -411,25 +406,29 @@ item_visual						= dynamics\weapons\wpn_hpsa\wpn_hps3_hud.ogf
 cost					= 7116
 inv_weight				= 0.909
 
-hit_power           		= 0.27, 0.27, 0.27, 0.27
+upgrades                = up_gr_firstab_hpsa_worn, up_gr_seconab_hpsa_worn, up_gr_thirdab_hpsa_worn, up_gr_fourtab_hpsa_worn, up_gr_fifthab_hpsa_worn, up_gr_fifthcd_hpsa_worn
+
+hit_power           		= 0.235, 0.235, 0.235, 0.235
 hit_impulse	 		 		= 20
-fire_distance           	= 460
-bullet_speed		 		= 410
-rpm                     	= 220
+fire_distance           	= 432
+bullet_speed		 		= 379
+rpm                     	= 198
 
 hud                     	= wpn_hpsa_worn_hud
 
-misfire_start_condition		= 0.7
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0075
-misfire_end_prob	     	= 0.075
-condition_shot_dec      	= 0.0024
-condition_queue_shot_dec	= 0.0020
+misfire_start_condition		= 0.95
+misfire_end_condition		= 0.14
+misfire_start_prob	     	= 0.008
+misfire_end_prob	     	= 0.064
+condition_shot_dec      	= 0.0030
+condition_queue_shot_dec	= 0.0032
+
+silencer_status				= 0
 
 ammo_mag_size		 	= 13
 ammo_class		 	= ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.58
+fire_dispersion_base	= 0.86
 
 inv_name				= st_wpn_hpsa_worn
 inv_name_short			= st_wpn_hpsa_worn

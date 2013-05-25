@@ -16,21 +16,20 @@ default_to_ruck         = false
 sprint_allowed          = true
 
 ;-------------------------------------------------------------------------------
-cost              		= 26520            ; the price of the item
+cost              		= 31150           ; the price of the item
 weapon_class            = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
 inv_weight				= 3.5								; weight in inventory
 
-upgrades		= up_gr_firstab_ak74u, up_gr_seconab_ak74u, up_gr_thirdab_ak74u, up_gr_fourtab_ak74u, up_gr_fifthab_ak74u
-installed_upgrades      = up_fiftha_ak74u
-upgrade_scheme          = upgrade_scheme_ak74u
-;-ТТХ---------------------------------------------------------------------------
+upgrades                = up_gr_firstab_ak74u_custom, up_gr_seconab_ak74u_custom, up_gr_thirdab_ak74u_custom, up_gr_fourtab_ak74u_custom, up_gr_fifthab_ak74u_custom
+installed_upgrades      = up_firsta_ak74u, up_firstd_ak74u, up_firste_ak74u 
 
-hit_power            = 0.45, 0.45, 0.45, 0.45
-hit_impulse          	= 33    ; size of physic impulse by bullet
+;-ТТХ---------------------------------------------------------------------------
+hit_power            	= 0.52, 0.52, 0.52, 0.52
+hit_impulse          	= 33 
 hit_type            	= fire_wound            ; [] type of the wound
-fire_distance           = 520    ; maximum fire distance that bullet can fly
-bullet_speed            = 715    ; starting bullet speed
-rpm                     = 650   ; max round per minute
+fire_distance           = 600
+bullet_speed            = 750
+rpm                     = 660
 rpm_empty_click         = 200
 
 use_aim_bullet          = false
@@ -38,18 +37,12 @@ time_to_aim             = 1.0
 
 hud                     = wpn_ak74u_snag_hud   	; name of the section of the hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.047
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0005
-;увеличение изношености при выстреле очередью
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.7
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0052
+misfire_end_prob	     	= 0.052
+condition_shot_dec      	= 0.00075
 condition_queue_shot_dec	= 0.0007
 
 ammo_elapsed            	= 30	; obsolete
@@ -68,7 +61,7 @@ zoom_dof             		= 0.5, 1.0, 180
 reload_dof           		= 0.0, 0.5, 5, 2
 
 ;----Дисперсия---------------------------------------------------------------------------
-fire_dispersion_base       = 0.42 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       = 0.30 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    = 1.08
 crosshair_inertion		   = 5.10
 
@@ -122,8 +115,8 @@ inv_grid_height			= 2
 inv_grid_x			= 5
 inv_grid_y			= 32
 
-upgr_icon_x			= 300
-upgr_icon_y			= 129
+upgr_icon_x			= 1724 ; 300
+upgr_icon_y			= 802 ; 129
 upgr_icon_width			= 258
 upgr_icon_height   		= 138
 

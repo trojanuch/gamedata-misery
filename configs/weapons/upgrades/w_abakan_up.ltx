@@ -18,16 +18,12 @@ zoom_cam_step_angle_horz    = -0.09     ;1.0 [0.505 в остатке]
 cost		      		= 3050
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
+;fire_dispersion_condition_factor    = -1 ;15
+
 condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.0015
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.02 ;0.03
+misfire_end_prob	     	= -0.03 ;0.03
 
 [up_sect_firste_abakan]
 ;—корострельность(3)25%
@@ -65,16 +61,16 @@ bullet_speed			= +100 	;550
 inv_weight              	= +0.2
 
 [up_sect_seconc_abakan]
-;“очность(2)20%
+;“очность(2)5%
 ;---------------
 cost		      		= 2850
 value					= +5
 
 fire_dispersion_base    		= -0.025 ;0.07
-fire_dispersion_condition_factor 	= -1 ;15
+;fire_dispersion_condition_factor 	= -1 ;15
 
 [up_sect_second_abakan]
-;—корострельность(2)15%
+;—корострельность(2)5%
 ;----------------------
 cost		      		= 3450
 value					= +5
@@ -84,7 +80,7 @@ rpm                     = +30 ;650
 inv_weight              	= +0.15
 
 [up_sect_secone_abakan]
-;Ќастильность(3)30%
+;Ќастильность(3)10%
 ;------------------
 cost		      		= 3300
 value					= +10
@@ -100,12 +96,9 @@ inv_weight              	= +0.25
 cost		      		= 2700
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= -0.001
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.01 ;0.03
+;fire_dispersion_condition_factor    = -1 ;15
+misfire_start_prob	     	= -0.0015
+misfire_end_prob	     	= -0.015 ;0.03
 
 inv_weight              	= +0.2
 
@@ -141,7 +134,7 @@ cost		      		= 3820
 value					= +10
 
 fire_dispersion_base    = -0.02 ;0.07
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight              	= +0.15
 
@@ -163,7 +156,7 @@ value					= +15
 
 crosshair_inertion		   = -0.5
 fire_dispersion_base    = -0.025 		;0.07
-fire_dispersion_condition_factor    = -1 	;15
+;fire_dispersion_condition_factor    = -1 	;15
 	
 inv_weight              	= +0.1
 
@@ -186,12 +179,12 @@ zoom_cam_step_angle_horz     = -0.052	;0.5
 inv_weight              	= +0.25
 
 [up_sect_fourtf_abakan]
-;Ќастильность(3)30%
+;Ќастильность(3)10%
 ;------------------
 cost		      		= 4800
-value					= +30
+value					= +10
 bullet_speed			= +90 ;550
-fire_dispersion_base    = -0.03 
+fire_dispersion_base    = -0.02
 
 inv_weight              	= +0.1
 
@@ -205,7 +198,7 @@ grenade_launcher_name   = wpn_addon_grenade_launcher
 grenade_launcher_x      = 126
 grenade_launcher_y      = 24
 
-inv_weight              	= +0.35
+;inv_weight              	= +0.35
 
 [up_firsta_abakan]
 scheme_index            = 0, 0
@@ -253,8 +246,8 @@ icon                    = ui_inGame2_upgrade_AS96_2_2
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_abakan
-property                = prop_rpm
+section                 = up_sect_empty_tier_3 ; up_sect_firste_abakan
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -265,16 +258,16 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_auto_c3_name
-description             = st_up_auto_c3_descr
-icon                    = ui_inGame2_upgrade_AS96_2_3
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_firstf_abakan]
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_firstf_abakan
-property                = prop_recoil
+section                 = up_sect_empty_tier_3 ; up_sect_firstf_abakan
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -282,13 +275,12 @@ precondition_parameter  = a & b
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_auto_c2_name
-description             = st_up_auto_c2_descr
-icon                    = ui_inGame2_upgrade_AS96_2_4
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_secona_abakan]
 scheme_index            = 0, 1
@@ -357,21 +349,21 @@ icon                    = ui_inGame2_upgrade_AS96_2_7
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_secone_abakan
-property                = prop_bullet_speed
+section                 = up_sect_empty_tier_3 ; up_sect_secone_abakan
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here_h
+effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_ret_c1_name
-description             = st_up_ret_c1_descr
-icon                    = ui_inGame2_upgrade_AS96_2_8
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirda_abakan]
 scheme_index            = 0, 2
@@ -439,8 +431,8 @@ icon                    = ui_inGame2_upgrade_AS96_2_11
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_thirde_abakan
-property                = prop_dispersion
+section                 = up_sect_empty_tier_3 ; up_sect_thirde_abakan
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -448,13 +440,12 @@ precondition_parameter  = a & b
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_zat_c5_name
-description             = st_up_zat_c5_descr
-icon                    = ui_inGame2_upgrade_AS96_2_12
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fourta_abakan]
 scheme_index            = 0, 3
@@ -501,10 +492,10 @@ icon                    = ui_inGame2_upgrade_AS96_2_14
 [up_fourte_abakan]
 scheme_index            = 2, 4
 effects                 =
-section                 = up_sect_fourte_abakan
-property                = prop_inertion
+section                 = up_sect_empty_tier_3 ; up_sect_fourte_abakan
+property                = prop_not_available
 
-known                   = 1
+known					= 1
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -515,17 +506,17 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stk_c3_name
-description             = st_up_stk_c3_descr
-icon                    = ui_inGame2_upgrade_AS96_2_15
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fourtf_abakan]
 scheme_index            = 2, 5
 effects                 =
-section                 = up_sect_fourtf_abakan
-property                = prop_bullet_speed
+section                 = up_sect_empty_tier_3 ; up_sect_fourtf_abakan
+property                = prop_not_available
 
-known                   = 1
+known					= 1
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true
@@ -536,9 +527,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stk_c2_name
-description             = st_up_stk_c2_descr
-icon                    = ui_inGame2_upgrade_AS96_2_16
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fiftha_abakan]
 scheme_index            = 0, 4
@@ -560,7 +551,6 @@ prereq_params           =
 name                    = st_up_add_a3_name
 description             = st_up_add_a3_descr
 icon                    = ui_inGame2_upgrade_AS96_2_17
-
 
 
 [up_gr_firstab_abakan]

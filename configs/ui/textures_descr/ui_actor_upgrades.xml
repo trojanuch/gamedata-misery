@@ -1,15 +1,15 @@
 <w>
     <file name="ui\ui_actor_upgrades_1">
 
-        <texture id="ui_inGame2_upgrade_on_icon_lamp_green_upgraded" x="820" y="0" width="5" height="38" />
+    <texture id="ui_inGame2_upgrade_on_icon_lamp_green_upgraded" x="820" y="0" width="5" height="38" />
 	<texture id="ui_inGame2_upgrade_on_icon_lamp_red_disabled" x="825" y="0" width="5" height="38" />
 	<texture id="ui_inGame2_upgrade_on_icon_lamp_yellow_highlighted" x="830" y="0" width="5" height="38" />
 
-	<texture id="ui_inGame2_upgrade_on_weapon_lamp_empty" x="842" y="3" width="12" height="12" />
-	<texture id="ui_inGame2_upgrade_on_weapon_lamp_green_upgraded" x="855" y="3" width="12" height="12" />
-	<texture id="ui_inGame2_upgrade_on_weapon_lamp_red_disabled" x="868" y="3" width="12" height="12" />
-	<texture id="ui_inGame2_upgrade_on_weapon_lamp_yellow_highlighted" x="858" y="19" width="14" height="14" />
-	<texture id="ui_inGame2_upgrade_on_weapon_lamp_empty_highlighted" x="842" y="19" width="14" height="14" />
+	<texture id="ui_inGame2_upgrade_on_weapon_lamp_empty" x="842" y="100" width="12" height="12" />
+	<texture id="ui_inGame2_upgrade_on_weapon_lamp_green_upgraded" x="855" y="100" width="12" height="12" />
+	<texture id="ui_inGame2_upgrade_on_weapon_lamp_red_disabled" x="868" y="100" width="12" height="12" />
+	<texture id="ui_inGame2_upgrade_on_weapon_lamp_yellow_highlighted" x="858" y="100" width="14" height="14" />
+	<texture id="ui_inGame2_upgrade_on_weapon_lamp_empty_highlighted" x="842" y="100" width="14" height="14" />
 
 	<texture id="ui_inGame2_upgrade_AS96_2_1" x="0" y="0" width="90" height="44" />
 	<texture id="ui_inGame2_upgrade_AS96_2_2" x="90" y="0" width="90" height="44" />
@@ -512,74 +512,56 @@
     <texture id="ui_inGame2_upgrade_Protecta_14" x="90" y="968" width="90" height="44" />
 
   </file>
-	<file name="ui\ui_actor_weapons">
+	<file name="ui\ui_actor_armor">
 
-	<texture id="ui_inGame2_upgrade_weapon_AS96_2" x="591" y="748" width="291" height="115" />
-	<texture id="ui_inGame2_upgrade_weapon_AKM74_2" x="304" y="627" width="295" height="110" />
-	<texture id="ui_inGame2_upgrade_weapon_AKM74_2U" x="300" y="129" width="258" height="138" />
-	<texture id="ui_inGame2_upgrade_weapon_Vintar_VS" x="8" y="395" width="290" height="78" />
-	<texture id="ui_inGame2_upgrade_weapon_Volker_P9M" x="569" y="8" width="249" height="117" />
-	<texture id="ui_inGame2_upgrade_weapon_Gadyuka_5" x="561" y="129" width="292" height="114" />
-	<texture id="ui_inGame2_upgrade_weapon_GP37" x="275" y="8" width="292" height="120" />
-	<texture id="ui_inGame2_upgrade_weapon_Grom_S14" x="8" y="128" width="291" height="107" />
-	<texture id="ui_inGame2_upgrade_weapon_IL86" x="303" y="515" width="294" height="110" />
-	<texture id="ui_inGame2_upgrade_weapon_Kora_919" x="268" y="270" width="192" height="123" />
-	<texture id="ui_inGame2_upgrade_weapon_Marta" x="8" y="8" width="265" height="98" />
-	<texture id="ui_inGame2_upgrade_weapon_Obrez" x="599" y="559" width="272" height="54" />
-	<texture id="ui_inGame2_upgrade_weapon_Hunting_rifle" x="9" y="815" width="286" height="95" />
-	<texture id="ui_inGame2_upgrade_weapon_PB1s" x="462" y="270" width="255" height="101" />
-	<texture id="ui_inGame2_upgrade_weapon_PMm" x="830" y="8" width="133" height="118" />
-	<texture id="ui_inGame2_upgrade_weapon_RP74" x="8" y="593" width="294" height="83" />
-	<texture id="ui_inGame2_upgrade_weapon_SA_Lavina" x="297" y="739" width="292" height="99" />
-	<texture id="ui_inGame2_upgrade_weapon_SVD_M2" x="8" y="677" width="287" height="135" />
-	<texture id="ui_inGame2_upgrade_weapon_SVU_mk2" x="594" y="395" width="294" height="80" />
-	<texture id="ui_inGame2_upgrade_weapon_SGI_5K" x="598" y="476" width="296" height="81" />
-	<texture id="ui_inGame2_upgrade_weapon_SIP_t_M200" x="8" y="270" width="257" height="100" />
-	<texture id="ui_inGame2_upgrade_weapon_SPSA_14" x="8" y="475" width="290" height="57" />
-	<texture id="ui_inGame2_upgrade_weapon_TRs_301" x="297" y="840" width="292" height="98" />
-	<texture id="ui_inGame2_upgrade_weapon_UDP_compact" x="720" y="270" width="255" height="109" />
-	<texture id="ui_inGame2_upgrade_weapon_Fora_12" x="855" y="129" width="161" height="120" />
-	<texture id="ui_inGame2_upgrade_weapon_FT200_M" x="300" y="395" width="292" height="118" />
-	<texture id="ui_inGame2_upgrade_weapon_HPSS_1M" x="600" y="614" width="192" height="122" />
-	<texture id="ui_inGame2_upgrade_weapon_Cheyser_13" x="8" y="533" width="293" height="59" />
-	<texture id="ui_inGame2_upgrade_weapon_Black_hawk" x="794" y="614" width="203" height="132" />
-	<texture id="ui_inGame2_upgrade_weapon_Gauss" x="298" y="939" width="297" height="81" />
-	<texture id="ui_inGame2_upgrade_weapon_RG6" x="596" y="864" width="290" height="141" />
-	<texture id="ui_inGame2_upgrade_weapon_Granade_F1" x="924" y="383" width="60" height="132" />
-	<texture id="ui_inGame2_upgrade_weapon_Granade_RGD5" x="918" y="856" width="68" height="129" />
-	<texture id="ui_inGame2_upgrade_weapon_Knife" x="875" y="556" width="148" height="52" />
+	<texture id="ui_inGame2_upgrade_weapon_AS96_2" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_AKM74_2" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_AKM74_2U" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Vintar_VS" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Volker_P9M" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Gadyuka_5" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_GP37" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Grom_S14" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_IL86" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Kora_919" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Marta" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Obrez" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Hunting_rifle" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_PB1s" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_PMm" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_RP74" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_SA_Lavina" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_SVD_M2" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_SVU_mk2" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_SGI_5K" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_SIP_t_M200" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_SPSA_14" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_TRs_301" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_UDP_compact" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Fora_12" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_FT200_M" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_HPSS_1M" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Cheyser_13" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Black_hawk" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Gauss" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_RG6" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Granade_F1" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Granade_RGD5" x="812" y="338" width="277" height="234" />
+	<texture id="ui_inGame2_upgrade_weapon_Knife" x="812" y="338" width="277" height="234" />
 
 
 </file>
+
 	<file name="ui\ui_actor_armor">
 
 	<texture id="ui_inGame2_upgrade_weapon_RPG" x="29" y="811" width="290" height="124" />
 
-   </file>
+    </file>
+   
+    <file name="ui\ui_actor_newsmanager_icons">
+
+	<texture id="ui_inGame2_upgrade_unavailable" x="332" y="846" width="90" height="44" />
+	
+	</file>
+   
 </w>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

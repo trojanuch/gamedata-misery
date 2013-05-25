@@ -15,7 +15,7 @@ sprint_allowed          = true
 control_inertion_factor = 1.0 ; = 1.0
 
 ;-------------------------------------------------------------------------------
-cost              = 13120            ; the price of the item
+cost              = 13340            ; the price of the item
 inv_weight        = 0.721
 
 upgrades                = up_gr_firstab_sig220, up_gr_seconab_sig220, up_gr_thirdab_sig220, up_gr_fourtab_sig220, up_gr_fifthab_sig220
@@ -23,11 +23,11 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_sig220
 
 ;----TTX--------------------------------------------------------------------------
-hit_power           		= 0.44, 0.44, 0.44, 0.44
-hit_impulse	 		 		= 88
+hit_power           		= 0.424, 0.424, 0.424, 0.424
+hit_impulse	 		 		= 44
 hit_type 					= fire_wound
 fire_distance           	= 630
-bullet_speed		 		= 670
+bullet_speed		 		= 672
 rpm                     	= 195
 rpm_empty_click 	 		= 120
 
@@ -36,19 +36,13 @@ time_to_aim					= 1.0
 
 hud                     = wpn_sig220_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.5
-;изношеность при которой шанс осечки становится константным
+misfire_probability        = 0.005
+misfire_start_condition		= 0.82
 misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.007
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.07
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0020
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0020
+misfire_start_prob	     	= 0.0067
+misfire_end_prob	     	= 0.072
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0014
 
 ammo_elapsed		 	= 7
 ammo_mag_size		 	= 7        ; clip (magazine) size
@@ -66,7 +60,7 @@ reload_dof						= 0.0, 0.5, 5, 1.7
 
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.6 ;0.8    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.47 ;0.8    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.0 ; = 0.55
 crosshair_inertion   	= 3.10
 
@@ -96,7 +90,7 @@ zoom_cam_max_angle          = 5.0
 zoom_cam_max_angle_horz     = 10.0
 zoom_cam_step_angle_horz    = 1.5
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9        
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
@@ -121,10 +115,10 @@ inv_grid_height			= 1
 inv_grid_x				= 2
 inv_grid_y				= 26
 
-upgr_icon_x			= 8
-upgr_icon_y			= 270
-upgr_icon_width		= 257
-upgr_icon_height   	= 100
+upgr_icon_x			= 1724 ; 8
+upgr_icon_y			= 802 ; 270
+upgr_icon_width		= 167 ; 257
+upgr_icon_height   	= 159 ; 100
 
 kill_msg_x				= 72
 kill_msg_y				= 177
@@ -275,7 +269,7 @@ inv_name				= st_wpn_sig220_nimble
 description					= st_wpn_sig220_nimble_descr
 
 inv_weight        = 0.703
-cost              = 14780
+cost              = 19230
 
 inv_grid_width			= 2	 
 inv_grid_height			= 1	  
@@ -284,21 +278,30 @@ inv_grid_y				= 28
 
 ammo_mag_size		 	= 12
 
-upgrades                = up_gr_firstab_sig220, up_gr_seconab_sig220, up_gr_thirdab_sig220, up_gr_fourtab_sig220, up_gr_fifthab_sig220
-installed_upgrades      = up_firsta_sig220, up_thirda_sig220
+upgrades                = up_gr_firstab_sig220_custom, up_gr_seconab_sig220_custom, up_gr_thirdab_sig220_custom, up_gr_fourtab_sig220_custom, up_gr_fifthab_sig220_custom
+installed_upgrades      = up_firsta_sig220_custom, up_firstc_sig220_custom, up_thirda_sig220_custom
 upgrade_scheme          = upgrade_scheme_sig220
 
 ;----TTX--------------------------------------------------------------------------
-hit_power           		= 0.47, 0.47, 0.47, 0.47
+hit_power           		= 0.529, 0.529, 0.529, 0.529
 hit_impulse	 		 		= 88
 hit_type 					= fire_wound
-fire_distance           	= 665
-bullet_speed		 		= 710
-rpm                     	= 220
+fire_distance           	= 669
+bullet_speed		 		= 702
+rpm                     	= 219
 rpm_empty_click 	 		= 120
 
-
 hud                     = wpn_sig221_hud
+
+misfire_start_condition		= 0.76
+misfire_end_condition		= 0.08
+misfire_start_prob	     	= 0.0051
+misfire_end_prob	     	= 0.058
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0010
+
+fire_dispersion_base		= 0.39
+
 visual                  = dynamics\weapons\wpn_sig221\wpn_sig221.ogf
 
 silencer_x 						= 58						
@@ -377,32 +380,29 @@ ammo_class		 		= ammo_11.43x23_ap, ammo_11.43x23_hydro, ammo_11.43x23_fmj
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_sig220, up_gr_seconab_sig220, up_gr_thirdab_sig220, up_gr_fourtab_sig220, up_gr_fifthab_sig220
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_sig220
-
 ;==================================================================================================
 [wpn_sig220_custom]:wpn_sig220
 
-cost              = 13940           ; the price of the item
+cost              = 16940           ; the price of the item
 inv_weight        = 0.662
 
-installed_upgrades      = up_thirda_sig220
+upgrades                = up_gr_firstab_sig220_custom, up_gr_seconab_sig220_custom, up_gr_thirdab_sig220_custom, up_gr_fourtab_sig220_custom, up_gr_fifthab_sig220_custom
+installed_upgrades      = up_fiftha_sig220_custom, up_thirda_sig220_custom, up_thirdc_sig220_custom
 
-hit_power           		= 0.44, 0.44, 0.44, 0.44
-hit_impulse	 		 		= 88
-fire_distance           	= 630
-bullet_speed		 		= 670
-rpm                     	= 195
+hit_power           		= 0.494, 0.494, 0.494, 0.494
+hit_impulse	 		 		= 44
+fire_distance           	= 653
+bullet_speed		 		= 698
+rpm                     	= 209
 
 hud                     = wpn_sig220_custom_hud
 
-misfire_start_condition		= 0.5
+misfire_start_condition		= 0.82
 misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.007
-misfire_end_prob	     	= 0.07
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0020
+misfire_start_prob	     	= 0.0067
+misfire_end_prob	     	= 0.072
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0014
 
 ammo_mag_size		 	= 7      
 fire_modes		  = 1
@@ -428,25 +428,26 @@ item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22a_hud.ogf
 ;==================================================================================================
 [wpn_sig220_camo]:wpn_sig220
 
-cost              = 16260            ; the price of the item
+cost              = 17890            ; the price of the item
 inv_weight        = 0.654
 
-installed_upgrades      = up_fourta_sig220, up_firsta_sig220, up_thirda_sig220
+upgrades                = up_gr_firstab_sig220_camo, up_gr_seconab_sig220_camo, up_gr_thirdab_sig220_camo, up_gr_fourtab_sig220_camo, up_gr_fifthab_sig220_camo
+installed_upgrades      = up_thirda_sig220_camo
 
-hit_power           		= 0.44, 0.44, 0.44, 0.44
+hit_power           		= 0.507, 0.507, 0.507, 0.507
 hit_impulse	 		 		= 88
-fire_distance           	= 630
-bullet_speed		 		= 670
-rpm                     	= 200
+fire_distance           	= 656
+bullet_speed		 		= 698
+rpm                     	= 219
 
 hud                     = wpn_sig220_camo_hud
 
-misfire_start_condition		= 0.5
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.007
-misfire_end_prob	     	= 0.07
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0020
+misfire_start_condition		= 0.76
+misfire_end_condition		= 0.06
+misfire_start_prob	     	= 0.0061
+misfire_end_prob	     	= 0.064
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0010
 
 ammo_mag_size		 	= 7      
 fire_modes		  		= 1
@@ -472,31 +473,31 @@ item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22b_hud.ogf
 ;==================================================================================================
 [wpn_sig220_worn]:wpn_sig220
 
-cost              = 13680            ; the price of the item
+cost              = 8790            ; the price of the item
 inv_weight        = 0.7
 
-installed_upgrades      = up_firsta_sig220
+upgrades                = up_gr_firstab_sig220_worn, up_gr_seconab_sig220_worn, up_gr_thirdab_sig220_worn, up_gr_fourtab_sig220_worn, up_gr_fifthab_sig220_worn
 
-hit_power           		= 0.44, 0.44, 0.44, 0.44
+hit_power           		= 0.418, 0.418, 0.418, 0.418
 hit_impulse	 		 		= 88
-fire_distance           	= 630
-bullet_speed		 		= 670
-rpm                     	= 195
+fire_distance           	= 617
+bullet_speed		 		= 652
+rpm                     	= 177
 
 hud                     = wpn_sig220_worn_hud
 
-misfire_start_condition		= 0.75
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.007
-misfire_end_prob	     	= 0.07
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0020
+misfire_start_condition		= 0.88
+misfire_end_condition		= 0.14
+misfire_start_prob	     	= 0.0079
+misfire_end_prob	     	= 0.084
+condition_shot_dec      	= 0.0017
+condition_queue_shot_dec	= 0.0019
 
 ammo_mag_size		 	= 7      
 fire_modes		  = 1
 ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
 
-fire_dispersion_base	= 0.65
+fire_dispersion_base	= 0.66
 
 inv_name          = st_wpn_sig220_worn            
 inv_name_short    = st_wpn_sig220_worn
@@ -516,33 +517,31 @@ item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22c_hud.ogf
 ;==================================================================================================
 [wpn_sig220_rusty]:wpn_sig220
 
-cost              = 8260            ; the price of the item
+cost              = 5870            ; the price of the item
 inv_weight        = 0.867
 
-upgrades                = up_gr_firstab_sig220, up_gr_seconab_sig220, up_gr_thirdab_sig220, up_gr_fourtab_sig220, up_gr_fifthab_sig220
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_sig220
+upgrades                = up_gr_firstab_sig220_rusty, up_gr_seconab_sig220_rusty, up_gr_thirdab_sig220_rusty, up_gr_fourtab_sig220_rusty, up_gr_fifthab_sig220_rusty
 
-hit_power           		= 0.44, 0.44, 0.44, 0.44
+hit_power           		= 0.368, 0.368, 0.368, 0.368
 hit_impulse	 		 		= 88
-fire_distance           	= 630
-bullet_speed		 		= 670
-rpm                     	= 195
+fire_distance           	= 602
+bullet_speed		 		= 631
+rpm                     	= 166
 
 hud                     = wpn_sig220_rusty_hud
 
-misfire_start_condition		= 0.9
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.007
-misfire_end_prob	     	= 0.07
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0020
+misfire_start_condition		= 0.95
+misfire_end_condition		= 0.18
+misfire_start_prob	     	= 0.0083
+misfire_end_prob	     	= 0.088
+condition_shot_dec      	= 0.0019
+condition_queue_shot_dec	= 0.0022
 
 ammo_mag_size		 	= 7      
 fire_modes		  = 1
 ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
 
-fire_dispersion_base	= 0.7
+fire_dispersion_base	= 0.83
 
 inv_name          = st_wpn_sig220_rusty             
 inv_name_short    = st_wpn_sig220_rusty

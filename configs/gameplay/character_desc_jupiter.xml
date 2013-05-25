@@ -262,7 +262,7 @@
     <community>killer</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_03\killer\</snd_config>
 
-	<rank>45</rank>
+	<rank>65</rank>
 	<reputation>0</reputation>
 
     <visual>actors\stalker_merc\stalker_merc_7</visual>
@@ -413,7 +413,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\bandit\</snd_config>
 
-		<rank>35</rank>
+		<rank>65</rank>
 		<reputation>0</reputation>
 		<money min="10000" max="10000" infinitive="0" />
 		<visual>actors\stalker_bandit\stalker_bandit5c</visual>
@@ -493,11 +493,11 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_leader_monolith_skin</class>
-		<community>stalker</community>
+		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
-		<rank>38</rank>
+		<rank>100</rank>
 		<reputation>0</reputation>
 		<money min="10000" max="10000" infinitive="0" />
 	    <visual>actors\stalker_monolith\stalker_monolith_1_face_1</visual>
@@ -534,7 +534,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
-		<rank>85</rank>
+		<rank>100</rank>
 		<reputation>0</reputation>
 		<money min="10000" max="10000" infinitive="0" />
 	    <visual>actors\stalker_dolg\stalker_dolg_2_face_1</visual>
@@ -572,7 +572,7 @@
     <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\stalker\</snd_config>
 
-    <rank>85</rank>
+    <rank>100</rank>
     <reputation>0</reputation>
 	<money min="1500" max="2500" infinitive="0"/>
     <visual>actors\stalker_freedom\stalker_freedom_2_face_1</visual>
@@ -612,7 +612,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
-		<rank>85</rank>
+		<rank>100</rank>
 		<reputation>0</reputation>
 		<money min="10000" max="10000" infinitive="0" />
 	    <visual>actors\stalker_monolith\stalker_monolith_1_face_1</visual>
@@ -687,11 +687,11 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_1_monolith_skin</class>
-		<community>stalker</community>
+		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\monolith\</snd_config>
 
-		<rank>35</rank>
+		<rank>70</rank>
 		<reputation>0</reputation>
 		<money min="10000" max="10000" infinitive="0" />
 	    <visual>actors\stalker_monolith\stalker_monolith_3</visual>
@@ -781,7 +781,7 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_2_monolith_skin</class>
-		<community>stalker</community>
+		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\monolith\</snd_config>
 
@@ -875,11 +875,11 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_3_monolith_skin</class>
-		<community>stalker</community>
+		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\monolith\</snd_config>
 
-		<rank>35</rank>
+		<rank>55</rank>
 		<reputation>0</reputation>
 		<money min="10000" max="10000" infinitive="0" />
 	    <visual>actors\stalker_monolith\stalker_monolith_3</visual>
@@ -969,7 +969,7 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_4_monolith_skin</class>
-		<community>stalker</community>
+		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\monolith\</snd_config>
 
@@ -1065,7 +1065,7 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_5_monolith_skin</class>
-		<community>stalker</community>
+		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\monolith\</snd_config>
 
@@ -1161,7 +1161,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
     <class>jup_b4_freedom_help</class>
-    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_01\freedom\</snd_config>
 
     <rank>35</rank>
@@ -1191,7 +1191,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
     <class>jup_b4_duty_help</class>
-    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\dolg\</snd_config>
 
     <rank>35</rank>
@@ -1636,7 +1636,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
-		<rank>35</rank>
+		<rank>50</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral_3</visual>
@@ -1687,7 +1687,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
-		<rank>35</rank>
+		<rank>50</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_soldier\stalker_soldier_3</visual>
@@ -1729,7 +1729,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-		<rank>30</rank>
+		<rank>40</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral2a</visual>
@@ -1771,7 +1771,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
-		<rank>25</rank>
+		<rank>40</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral2c_mask</visual>

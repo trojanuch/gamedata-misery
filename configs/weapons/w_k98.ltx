@@ -5,16 +5,16 @@ $npc			        = on
 $prefetch 		        = 8
 scheduled               = off
 cform                   = skeleton
-class                   = WP_SVD
+class                	= WP_AK74 ; WP_SVD
 
 ef_main_weapon_type 	= 3
 ef_weapon_type	     	= 8
 
 default_to_ruck         = false
 sprint_allowed       	= true
-weapon_class		    = sniper_rifle
+weapon_class		    = assault_rifle ; sniper_rifle
 ;-----------[Главные параметры]----------------;
-cost					= 27780
+cost					= 25290
 inv_weight		        = 3.726
 inv_name		        = st_wpn_k98
 inv_name_short		    = st_wpn_k98
@@ -25,44 +25,42 @@ inv_grid_height		    = 1
 inv_grid_x		        = 2
 inv_grid_y		        = 40
 
-upgr_icon_x			    = 1214
-upgr_icon_y			    = 0
-upgr_icon_width		    = 296
-upgr_icon_height   	    = 149
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 ammo_elapsed	        = 5
 ammo_mag_size		= 5
 fire_modes		        = 1
 ammo_class           	= ammo_7.92x33_fmj, ammo_7.92x33_ap ; name of the ltx-section of used ammo
+grenade_class        	= ammo_vog-25         ; name of the ltx-section of used grenades
+
 ;-------------[Модернизация]-------------------;
-upgrades                = up_gr_firstab_svd, up_gr_seconab_svd, up_gr_thirdab_svd, up_gr_fourtab_svd, up_gr_fourtcd_svd, up_gr_fourtef_svd
+upgrades                = up_gr_firstab_k98, up_gr_seconab_k98, up_gr_thirdab_k98
 installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_svd
+upgrade_scheme          = upgrade_scheme_toz34
+
 scope_status		= 2
 silencer_status		= 2
 grenade_launcher_status	= 0
 zoom_enabled		= true
 zoom_rotate_time	= 0.25
-scope_zoom_factor       = 58.6 ; 	= 85
-scope_name              = wpn_addon_scope_zf4
+scopes_sect           = scope_zf4_k98_moist, scope_zf4_k98, scope_zf4_k98_worn
+scope_zoom_factor	= 58.6
 scope_texture		= wpn_crosshair_zf9
-scope_x              	= 70                 
-scope_y                 = -22
 silencer_name           = wpn_addon_silencer_762x39 ; section name for the attachable silencer
 silencer_x              = 270		; offset in inventory icon
 silencer_y              = -18
 --------------[Убойность]---------------------;
-hit_power           	= 0.595, 0.595, 0.595, 0.595
+hit_power           	= 0.685, 0.685, 0.685, 0.685
 hit_impulse		 	= 40 ;60 ;125
 hit_type 	         	= fire_wound
 fire_distance           = 750
 bullet_speed	     	= 760
 rpm                     = 28
 rpm_empty_click         = 200
-;silencer_hit_power      = 1.3, 1.3, 1.3, 1.3
-;silencer_hit_impulse    = 100
-;silencer_fire_distance  = 150
-;silencer_bullet_speed   = 325
+launch_speed            = 0
 ;---------------[Озвучка]----------------------;
 snd_draw		= weapons\generic\rifle_historic_draw
 snd_holster		= weapons\generic\rifle_historic_holster
@@ -79,7 +77,7 @@ snd_silncer_shot        = weapons\k98\kar98k_shoot_sil
 silencer_smoke_particles = weapons\generic_shoot_00
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.10  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.15  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 1.81f
 crosshair_inertion      = 8.0
 
@@ -117,19 +115,13 @@ use_aim_bullet		    = false
 time_to_aim		        = 1.0
 hud                     = wpn_k98_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.8
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.0055
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.055
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0019
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0012
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.88
+misfire_end_condition		= 0.14
+misfire_start_prob	     	= 0.009
+misfire_end_prob	     	= 0.03
+condition_shot_dec      	= 0.0031
+condition_queue_shot_dec	= 0.0015
 
 hand_dependence         = 1
 single_handed           = 0
@@ -161,6 +153,7 @@ fire_point           	= 0.0, 0.149, 0.742
 fire_point2             = 0.0, 0.149, 0.742
 ;flame_particles			= weapons\generic_weapon06
 smoke_particles         = amik\weapons\smoke_particles\smoke_particles_pump_01
+grenade_flame_particles = weapons\generic_weapon01
 rpm_empty_click 	    = 200
 shell_point		 		= 0.0, 0.129, 0.192
 shell_dir		 		= 0.0, 0.0, 0.44
@@ -233,3 +226,18 @@ gl_hud_offset_rot_16x9	= 0,0,0
 
 lean_hud_offset_pos		= 0,0,0
 lean_hud_offset_rot		= 0,0,0
+
+[scope_zf4_k98]
+scope_name 					= wpn_addon_scope_zf4
+scope_x              	= 70                 
+scope_y                 = -22
+
+[scope_zf4_k98_moist]
+scope_name 					= wpn_addon_scope_zf4_moist
+scope_x              	= 70                 
+scope_y                 = -22
+
+[scope_zf4_k98_worn]
+scope_name 					= wpn_addon_scope_zf4_worn
+scope_x              	= 70                 
+scope_y                 = -22

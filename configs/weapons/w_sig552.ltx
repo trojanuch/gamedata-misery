@@ -15,21 +15,21 @@ default_to_ruck         = false
 sprint_allowed       	= true
 
 ;-------------------------------------------------------------------------------
-cost                    = 35160
+cost                    = 28890
 weapon_class            = assault_rifle        ; Type of the weapon
 inv_weight              = 3.212
 
-upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
+upgrades                = up_gr_firstab_sig552, up_gr_seconab_sig552, up_gr_thirdab_sig552, up_gr_fourtab_sig552, up_gr_fifthab_sig552
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_sig550
 
 ;-------TTX-----------------------------------------------------------------------
-hit_power				= 0.42, 0.42, 0.42, 0.42
+hit_power				= 0.408, 0.408, 0.408, 0.408
 hit_impulse				= 100
 hit_type				= fire_wound
-fire_distance           = 710
-bullet_speed            = 725         ;начальная скорость пули
-rpm                     = 700
+fire_distance           = 712
+bullet_speed            = 726         ;начальная скорость пули
+rpm                     = 703
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -37,20 +37,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_sig552_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.75
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.045
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0010
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0012
-
+misfire_probability        = 0.005
+misfire_start_condition		= 0.81
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0044
+misfire_end_prob	     	= 0.028
+condition_shot_dec      	= 0.0011
+condition_queue_shot_dec	= 0.0009
 
 ammo_elapsed            = 30
 ammo_mag_size           = 30
@@ -65,8 +58,8 @@ single_handed           = 0
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
 fire_dispersion_base    = 0.29        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.34f
-crosshair_inertion	= 6.4
+control_inertion_factor = 1.29f
+crosshair_inertion	= 6.34
 
 ;отдача
 cam_return				= 0 ;				= 0
@@ -122,10 +115,10 @@ inv_grid_height         = 2
 inv_grid_x              = 10
 inv_grid_y              = 34
 
-upgr_icon_x			= 598
-upgr_icon_y			= 476
-upgr_icon_width		= 296
-upgr_icon_height   	= 81
+upgr_icon_x			= 1724 ; 598
+upgr_icon_y			= 802 ; 476
+upgr_icon_width		= 167 ; 296
+upgr_icon_height   	= 159 ; 81
 
 kill_msg_x              = 80
 kill_msg_y              = 59

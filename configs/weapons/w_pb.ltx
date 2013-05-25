@@ -10,7 +10,7 @@ description					= st_wpn_pb_descr
 ef_weapon_type				= 5
 
 ;-------------------------------------------------------------------------------
-cost					= 8980
+cost					= 6980
 inv_weight				= 0.697
 
 upgrades                = up_gr_firstab_pb, up_gr_seconab_pb, up_gr_thirdab_pb, up_gr_fourtab_pb, up_gr_fifthab_pb
@@ -18,7 +18,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_pb
 
 ;--TTX---------------------------------------------------------------------------
-hit_power           		= 0.185, 0.185, 0.185, 0.185
+hit_power           		= 0.155, 0.155, 0.155, 0.155
 hit_impulse	 		 		= 16
 hit_type 					= fire_wound
 fire_distance           	= 160
@@ -31,18 +31,12 @@ time_to_aim						= 1.0
 
 hud                     	= wpn_pb_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.0085
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.085
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0022
-;увеличение изношености при выстреле очередью
+misfire_probability        = 0.005
+misfire_start_condition		= 0.89
+misfire_end_condition		= 0.16
+misfire_start_prob	     	= 0.009
+misfire_end_prob	     	= 0.072
+condition_shot_dec      	= 0.0017
 condition_queue_shot_dec	= 0.0020
 
 ammo_elapsed		 	= 8
@@ -53,7 +47,7 @@ single_handed			= 1
 
 ;---дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.64 ;0.15 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.84 ;0.15 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.0 ; = 0.80
 crosshair_inertion		= 2.65
 
@@ -61,8 +55,8 @@ crosshair_inertion		= 2.65
 cam_return				= 0 ;              = 1 ;0
 cam_relax_speed         = 8				;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion          = 0.55				;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.55				;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          = 0.46				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.46				;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac		= 1.1				;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle			= 5.0			;максимальный угол отдачи
 cam_max_angle_horz		= 5.0			;(degree) maximum shot horizontal degree
@@ -74,7 +68,7 @@ PDM_disp_accel_factor 		= 1.6
 PDM_disp_crouch	 				= 0.9
 PDM_disp_crouch_no_acc 			= 0.65
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9		;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9		
 
 ;---DOF-------------------------------------------------------------------------
 zoom_dof					= -1000, 1.0, 1000
@@ -108,10 +102,10 @@ inv_grid_height			= 1
 inv_grid_x				= 15
 inv_grid_y				= 6
 
-upgr_icon_x			= 462
-upgr_icon_y			= 270
-upgr_icon_width		= 255
-upgr_icon_height   	= 101
+upgr_icon_x			= 1724 ; 462
+upgr_icon_y			= 802 ; 270
+upgr_icon_width		= 167 ; 255
+upgr_icon_height   	= 159 ; 101
 
 kill_msg_x				= 80
 kill_msg_y				= 154

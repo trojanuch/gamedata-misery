@@ -16,7 +16,7 @@
 
 [simulation_stalker]:online_offline_group
 faction = stalker
-npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3
 npc_in_squad = 3, 4
 
 [simulation_stalker_1]:online_offline_group
@@ -38,29 +38,29 @@ npc_in_squad = 2, 4
 
 [stalker_sim_squad_novice]:online_offline_group
 faction = stalker
-npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2,sim_default_stalker_3
 npc_in_squad = 3, 4
 
 [stalker_sim_squad_advanced]:online_offline_group
 faction = stalker
-npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3
 npc_in_squad = 3, 4
 
 [stalker_sim_squad_advanced_zat_stalker_base_smart]:online_offline_group
 faction = stalker
-npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3
 npc_in_squad = 3, 4
 target_smart = zat_stalker_base_smart
 
 [stalker_sim_squad_advanced_zat_stalker_base_smart_sentry]:online_offline_group
 faction = stalker
-npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3
 npc_in_squad = 3, 4
 target_smart = zat_stalker_base_smart:zat_b7:loop
 
 [stalker_sim_squad_advanced_jup_a6_sentry]:online_offline_group
 faction = stalker
-npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3
 npc_in_squad = 3, 4
 target_smart = jup_a6
 
@@ -129,18 +129,18 @@ npc_in_squad = 3, 4
 
 [stalker_hunter_day_simulation_squad]:online_offline_group
 faction = stalker_hunter_day
-npc_random = sim_default_stalker_hunter_day
+npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 3, 4
 
 [stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad]:online_offline_group
 faction = stalker_hunter_day
-npc_random = sim_default_stalker_hunter_day
+npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 2, 3
 target_smart = {=is_dark_night} nil, zat_sim_4
 
 [stalker_hunter_day_zat_sim_10_assault_simulation_squad]:online_offline_group
 faction = stalker_hunter_day
-npc_random = sim_default_stalker_hunter_day
+npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 3, 4
 target_smart = {=is_dark_night} nil, zat_sim_10
 
@@ -178,7 +178,7 @@ npc = sim_default_stalker_guide, sim_default_stalker_4, sim_default_stalker_4
 [simulation_stalker_hostile]:online_offline_group
 faction = stalker_hostile
 relationship = enemy
-npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3
 npc_in_squad = 3, 4
 
 [simulation_stalker_1_hostile]:online_offline_group
@@ -204,13 +204,13 @@ npc_in_squad = 3, 4
 [stalker_sim_squad_novice_hostile]:online_offline_group
 faction = stalker_hostile
 relationship = enemy
-npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3
 npc_in_squad = 3, 4
 
 [stalker_sim_squad_advanced_hostile]:online_offline_group
 faction = stalker_hostile
 relationship = enemy
-npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3
 npc_in_squad = 3, 4
 
 [stalker_sim_squad_advanced_veteran_hostile]:online_offline_group
@@ -247,20 +247,20 @@ npc_in_squad = 3, 4
 [stalker_hunter_day_simulation_squad_hostile]:online_offline_group
 faction = stalker_hunter_day_hostile
 relationship = enemy
-npc_random = sim_default_stalker_hunter_day
+npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 3, 4
 
 [stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad_hostile]:online_offline_group
 faction = stalker_hunter_day_hostile
 relationship = enemy
-npc_random = sim_default_stalker_hunter_day
+npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 2, 3
 target_smart = {=is_dark_night} nil, zat_sim_4
 
 [stalker_hunter_day_zat_sim_10_assault_simulation_squad_hostile]:online_offline_group
 faction = stalker_hunter_day_hostile
 relationship = enemy
-npc_random = sim_default_stalker_hunter_night
+npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 2, 3
 target_smart = {=is_dark_night} nil, zat_sim_10
 
@@ -298,12 +298,12 @@ target_smart = {=is_dark_night} zat_b38, nil
 [simulation_bandit]:online_offline_group
 faction = bandit
 relationship = neutral
-npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3
 npc_in_squad = 3, 4
 
 [simulation_bandit_1]:online_offline_group
 faction = bandit
-npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_3
 npc_in_squad = 3, 4
 
 [simulation_bandit_2]:online_offline_group
@@ -321,33 +321,33 @@ npc_in_squad = 3, 4
 [bandit_sim_squad_novice]:online_offline_group
 faction = bandit
 relationship = neutral
-npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3
 npc_in_squad = 3, 4
 
 [bandit_sim_squad_novice_zat_b5_smart_terrain_sentry]:online_offline_group
 faction = bandit
 relationship = neutral
-npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_3
 npc_in_squad = 3, 4
 ;target_smart = zat_b12
 
 [bandit_sim_squad_advanced]:online_offline_group
 faction = bandit
 relationship = neutral
-npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
 npc_in_squad = 3, 4
 
 [bandit_sim_squad_advanced_zat_b5_smart_terrain_sentry]:online_offline_group
 faction = bandit
 relationship = neutral
-npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
 npc_in_squad = 4, 4
 target_smart = zat_b5_smart_terrain
 
 [bandit_sim_squad_advanced_zat_sim_25]:online_offline_group
 faction = bandit
 relationship = neutral
-npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
 npc_in_squad = 4, 4
 target_smart = zat_sim_25
 
@@ -366,33 +366,33 @@ npc_in_squad = 3, 4
 [bandit_sim_squad_hostile]:online_offline_group
 faction = bandit
 relationship = enemy
-npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3
 npc_in_squad = 3, 4
 
 [bandit_sim_squad_zat_b5_smart_terrain_sentry_hostile]:online_offline_group
 faction = bandit
 relationship = enemy
-npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_3
 npc_in_squad = 3, 4
 ;target_smart = zat_b12
 
 [bandit_sim_squad_advanced_hostile]:online_offline_group
 faction = bandit
 relationship = enemy
-npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
 npc_in_squad = 3, 4
 
 [bandit_sim_squad_advanced_zat_b5_smart_terrain_sentry_hostile]:online_offline_group
 faction = bandit
 relationship = enemy
-npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
 npc_in_squad = 4, 4
 target_smart = zat_b5_smart_terrain
 
 [bandit_sim_squad_advanced_zat_sim_25_hostile]:online_offline_group
 faction = bandit
 relationship = enemy
-npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
 npc_in_squad = 4, 4
 target_smart = zat_sim_25
 
@@ -410,35 +410,35 @@ npc_in_squad = 3, 4
 
 [simulation_killer]:online_offline_group
 faction = killer
-npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 3, 4
 
 [simulation_killer_jup_a12]:online_offline_group
 faction = killer
-npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 4, 4
 target_smart = jup_a12
 
 [merc_sim_squad_novice]:online_offline_group
 faction = killer
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 2, 4
 
 [merc_sim_squad_novice_jup_a12]:online_offline_group
 faction = killer
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 4, 4
 target_smart = jup_a12
 
 [merc_sim_squad_novice_zat_sim_25_sentry]:online_offline_group
 faction = killer
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 4, 4
 target_smart = zat_sim_25
 
 [merc_sim_squad_novice_zat_b5_smart_terrain_sentry]:online_offline_group
 faction = killer
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 2, 4
 ;target_smart = zat_b12
 
@@ -494,40 +494,40 @@ target_smart = {=is_dark_night} jup_sim_19, nil
 [simulation_killer_neutral]:online_offline_group
 faction = killer
 relationship = neutral
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 2, 4
 
 [simulation_killer_neutral_jup_a12]:online_offline_group
 faction = killer
 relationship = neutral
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 4, 4
 target_smart = jup_a12
 
 [merc_sim_squad_novice_neutral]:online_offline_group
 faction = killer
 relationship = neutral
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 2, 4
 
 [merc_sim_squad_novice_jup_a12_neutral]:online_offline_group
 faction = killer
 relationship = neutral
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 4, 4
 target_smart = jup_a12
 
 [merc_sim_squad_novice_zat_sim_25_sentry_neutral]:online_offline_group
 faction = killer
 relationship = neutral
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 4, 4
 target_smart = zat_sim_25
 
 [merc_sim_squad_novice_zat_b5_smart_terrain_sentry_neutral]:online_offline_group
 faction = killer
 relationship = neutral
-npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2
+npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 4, 4
 ;target_smart = zat_b12
 
@@ -591,43 +591,43 @@ target_smart = {=is_dark_night} jup_sim_19, nil
 
 [simulation_duty]:online_offline_group
 faction = dolg
-npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [simulation_duty_1]:online_offline_group
 faction = dolg
-npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [simulation_duty_2]:online_offline_group
 faction = dolg
-npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [simulation_duty_3]:online_offline_group
 faction = dolg
-npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [duty_sim_squad_novice]:online_offline_group
 faction = dolg
-npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [duty_sim_squad_advanced]:online_offline_group
 faction = dolg
-npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [duty_sim_squad_advanced_zat_b101]:online_offline_group
 faction = dolg
-npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
 npc_in_squad = 3, 4
 ;target_smart = zat_b101
 
 [duty_sim_squad_advanced_jup_b46_sentry]:online_offline_group
 faction = dolg
-npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
 npc_in_squad = 3, 4
 target_smart = jup_b46
 
@@ -690,7 +690,7 @@ target_smart = {=is_dark_night} zat_b103_merc_smart, nil
 
 [duty_hunter_day_simulation_squad_novice]:online_offline_group
 faction = dolg_hunter_day
-npc_random = sim_default_duty_hunter_day_1
+npc_random = sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_2
 npc_in_squad = 3, 4
 
 [duty_hunter_day_simulation_squad]:online_offline_group
@@ -708,50 +708,50 @@ npc_in_squad = 2, 4
 [simulation_duty_hostile]:online_offline_group
 faction = dolg_hostile
 relationship = enemy
-npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [simulation_duty_1_hostile]:online_offline_group
 faction = dolg_hostile
 relationship = enemy
-npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [simulation_duty_2_hostile]:online_offline_group
 faction = dolg_hostile
 relationship = enemy
-npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [simulation_duty_3_hostile]:online_offline_group
 faction = dolg_hostile
 relationship = enemy
-npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [duty_sim_squad_novice_hostile]:online_offline_group
 faction = dolg_hostile
 relationship = enemy
-npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [duty_sim_squad_advanced_hostile]:online_offline_group
 faction = dolg_hostile
 relationship = enemy
-npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
 npc_in_squad = 3, 4
 
 [duty_sim_squad_advanced_zat_b101_hostile]:online_offline_group
 faction = dolg_hostile
 relationship = enemy
-npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
 npc_in_squad = 3, 4
 ;target_smart = zat_b101
 
 [duty_sim_squad_advanced_jup_b46_sentry_hostile]:online_offline_group
 faction = dolg_hostile
 relationship = enemy
-npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2
+npc_random = sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
 npc_in_squad = 3, 4
 target_smart = jup_b46
 
@@ -821,8 +821,9 @@ target_smart = {=is_dark_night} zat_b103_merc_smart, nil
 ;--------------- duty_hunter squads -----------------------
 
 [duty_hunter_day_simulation_squad_novice_hostile]:online_offline_group
-faction = dolg_hunter_day
-npc_random = sim_default_duty_hunter_day_1
+faction = dolg_hunter_day_hostile
+relationship = enemy
+npc_random = sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_1, sim_default_duty_hunter_day_2
 npc_in_squad = 3, 4
 
 [duty_hunter_day_simulation_squad_hostile]:online_offline_group
@@ -843,37 +844,37 @@ npc_in_squad = 2, 4
 
 [simulation_freedom]:online_offline_group
 faction = freedom
-npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [simulation_freedom_1]:online_offline_group
 faction = freedom
-npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [simulation_freedom_2]:online_offline_group
 faction = freedom
-npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [simulation_freedom_3]:online_offline_group
 faction = freedom
-npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [freedom_sim_squad_novice]:online_offline_group
 faction = freedom
-npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2
+npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [freedom_sim_squad_advanced]:online_offline_group
 faction = freedom
-npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2
+npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [freedom_sim_squad_advanced_jup_b200]:online_offline_group
 faction = freedom
-npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2
+npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 target_smart = jup_b200
 
@@ -939,43 +940,43 @@ npc_in_squad = 3, 4
 [simulation_freedom_hostile]:online_offline_group
 faction = freedom_hostile
 relationship = enemy
-npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [simulation_freedom_1_hostile]:online_offline_group
 faction = freedom_hostile
 relationship = enemy
-npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [simulation_freedom_2_hostile]:online_offline_group
 faction = freedom_hostile
 relationship = enemy
-npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [simulation_freedom_3_hostile]:online_offline_group
 faction = freedom_hostile
 relationship = enemy
-npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [freedom_sim_squad_novice_hostile]:online_offline_group
 faction = freedom_hostile
 relationship = enemy
-npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2
+npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [freedom_sim_squad_advanced_hostile]:online_offline_group
 faction = freedom_hostile
 relationship = enemy
-npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2
+npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 
 [freedom_sim_squad_advanced_jup_b200_hostile]:online_offline_group
 faction = freedom_hostile
 relationship = enemy
-npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2
+npc_random = sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
 npc_in_squad = 3, 4
 target_smart = jup_b200
 
@@ -1050,13 +1051,13 @@ npc_in_squad = 3, 4
 [simulation_monolith_squad]:online_offline_group
 faction = monolith
 relationship = enemy
-npc_random = sim_default_monolith_0, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2
+npc_random = sim_default_monolith_0, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_3
 npc_in_squad = 3, 4
 
 [monolith_sim_squad_novice]:online_offline_group
 faction = monolith
 relationship = enemy
-npc_random = sim_default_monolith_0, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2
+npc_random = sim_default_monolith_0, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_3
 npc_in_squad = 3, 4
 
 [monolith_sim_squad_advanced]:online_offline_group
@@ -1136,7 +1137,7 @@ npc_in_squad = 3, 4
 [monolith_sim_squad_novice_pripyat]:online_offline_group
 faction = monolith
 relationship = enemy
-npc_random = sim_default_monolith_0, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2
+npc_random = sim_default_monolith_0, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_3
 npc_in_squad = 3, 4
 
 [monolith_sim_squad_advanced_pripyat]:online_offline_group
@@ -1174,9 +1175,9 @@ npc_random 		= sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied
 npc_in_squad = 1, 5
 
 [simulation_zombied_1_jupiter]:online_offline_group
-faction 		= monolith
+faction 		= zombied
 npc_random 		= sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
-npc_in_squad = 5, 6
+npc_in_squad = 5, 7
 
 [simulation_zombied_1_jup_b205_smart_terrain]:online_offline_group
 faction 		= zombied
@@ -1364,6 +1365,12 @@ faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
 target_smart = {=is_dark_night} nil, zat_sim_8
+
+[simulation_bloodsucker_jup_sim_18]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
+npc_in_squad = 1, 3
+target_smart = {=is_dark_night} nil, jup_sim_18
 
 [simulation_bloodsucker_zat_sim_26]:online_offline_group
 faction = monster_predatory_night
@@ -1610,17 +1617,17 @@ npc_in_squad = 3, 6
 ;;;;;;;;;;;;;;;;;;;;;;
 
 [simulation_snork]:online_offline_group
-faction = monster_predatory_day
+faction = monster_predatory_night
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 1, 4
 
 [simulation_snork_jupiter]:online_offline_group
-faction = monster_predatory_day
+faction = monster_predatory_night
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 1, 3
 
 [simulation_snork_pripyat]:online_offline_group
-faction = monster_predatory_day
+faction = monster_predatory_night
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 5
 
@@ -1660,6 +1667,12 @@ npc_random = snork_normal, snork_strong
 npc_in_squad = 4, 4
 target_smart = {=is_dark_night} nil, zaton_smrter_sim_1
 
+[simulation_snork_jupiter_smrter_sim_4]:online_offline_group
+faction = monster_predatory_night
+npc_random = snork_normal, snork_strong
+npc_in_squad = 5, 6
+target_smart = {=is_dark_night} nil, jup_sim_19
+
 [simulation_snork_jup_b205_smart_terrain]:online_offline_group
 faction = monster_predatory_night
 npc_random = snork_normal, snork_normal, snork_strong
@@ -1683,6 +1696,12 @@ faction = monster_predatory_night
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 4
 target_smart = {=is_dark_night} nil, jup_b208
+
+[simulation_snork_jup_b209]:online_offline_group
+faction = monster_predatory_night
+npc_random = snork_normal, snork_normal, snork_strong
+npc_in_squad = 2, 5
+target_smart = {=is_dark_night} nil, jup_b209
 
 [simulation_snork_pri_b306]:online_offline_group
 faction = monster_predatory_night
@@ -2170,6 +2189,12 @@ npc_random = chimera_normal
 npc_in_squad = 1, 2
 target_smart = jup_b219
 
+[simulation_chimera_jup_b209]:online_offline_group
+faction = monster_predatory_night
+npc_random = chimera_normal
+npc_in_squad = 1, 2
+target_smart = {=is_dark_night} nil, jup_b209
+
 [simulation_chimera_jup_b4]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
@@ -2369,6 +2394,12 @@ npc_random = psy_dog_normal
 npc_in_squad = 2, 4
 target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
 
+[simulation_psy_dog_jup_b209]:online_offline_group
+faction = monster_predatory_night
+npc_random = psy_dog_normal
+npc_in_squad = 1, 2
+target_smart = {=is_dark_night} nil, jup_b209
+
 [simulation_psy_dog_zat_b38u]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
@@ -2560,6 +2591,12 @@ faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 2
 target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
+
+[simulation_gigant_jup_b209]:online_offline_group
+faction = monster_predatory_night
+npc_random = gigant_normal
+npc_in_squad = 1, 2
+target_smart = {=is_dark_night} nil, jup_b209
 
 [simulation_gigant_jup_sim_18]:online_offline_group
 faction = monster_predatory_night
@@ -2764,172 +2801,172 @@ npc_in_squad = 3, 5
 target_smart = {=is_dark_night} nil, pri_b307
 
 [simulation_zombi_night]:online_offline_group
-faction = monster_zombied_night
+faction = monster_predatory_night
 npc_random = zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2, zombie_1_ghost, zombie_2_ghost, zombie_3_ghost
 npc_in_squad = 4, 5
 
 [simulation_zombi_day]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2, zombie_1_ghost, zombie_2_ghost, zombie_3_ghost
 npc_in_squad = 4, 5
 
 [simulation_zombi_pripyat]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 2
 
 [simulation_zombi_jup_b8_smart_terrain]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = jup_b8_smart_terrain
 
 [simulation_zombi_jup_b219]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = jup_b219
 
 [simulation_zombi_jup_b212]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, jup_b212
 
 [simulation_zombi_jup_b4]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, jup_b4
 
 [simulation_zombi_jup_sim_2]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, jup_sim_2
 
 [simulation_zombi_jup_sim_20]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, jup_sim_20
 
 [simulation_zombi_jup_sim_12]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, jup_sim_12
 
 [simulation_zombi_zat_sim_6]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, zat_sim_6
 
 [simulation_zombi_jupiter_smrter_sim_8]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 4, 6
 target_smart = jupiter_smrter_sim_8
 
 [simulation_zombi_zat_sim_7]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, zat_sim_7
 
 [simulation_zombi_zat_sim_8]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, zat_sim_8
 
 [simulation_zombi_zat_sim_10]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, zat_sim_10
 
 [simulation_zombi_zat_b28]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = zat_b28
 
-[simulation_zombi_zat_b104_monster_zombied_day]:online_offline_group
-faction = monster_zombied_day
+[simulation_zombi_zat_b104_monster_predatory_night]:online_offline_group
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = zat_b104_monster_zombied_day
+target_smart = zat_b104_monster_predatory_night
 
 [simulation_zombi_zat_b100]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 5, 6
 target_smart = zat_b100
 
 [simulation_zombi_zaton_smrter_sim_11]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, zat_b38
 
 [simulation_zombi_zaton_smrter_sim_13]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, zaton_smrter_sim_13
 
 [simulation_zombi_zaton_smrter_sim_3]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, zat_sim_4
 
 [simulation_zombi_jup_b205_smart_terrain]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
 
 [simulation_zombi_jup_sim_18]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = jup_sim_18
 
 [simulation_zombi_jup_sim_16]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 4, 6
 target_smart = jup_sim_16
 
 [simulation_zombi_pri_b301]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, pri_b301
 
 [simulation_zombi_pri_b303]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, pri_b303
 
 [simulation_zombi_pri_a25]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, pri_a25
 
 [simulation_zombi_pri_b306]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, pri_b306
 
 [simulation_zombi_pri_b307]:online_offline_group
-faction = monster_zombied_day
+faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
 target_smart = {=is_dark_night} nil, pri_b307

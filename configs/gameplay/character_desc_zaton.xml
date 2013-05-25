@@ -163,7 +163,7 @@
 
 	<specific_character id="zat_b14_stalker_1" team_default="1">
 		<name>zat_b14_stalker_1_name</name>
-		<icon>ui_inGame2_neutral_1</icon>
+		<icon>ui_inGame2_bandit_3</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -194,7 +194,7 @@
 
 	<specific_character id="zat_b14_stalker_2" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_soldier_3</icon>
+		<icon>ui_inGame2_neutral_3</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -248,7 +248,7 @@
 
 	<specific_character id="zat_a2_stalker_nimble" team_default="1">
 		<name>st_zat_a2_stalker_nimble_name</name>
-		<icon>ui_inGame2_nebo_1</icon>
+		<icon>ui_inGame2_nebo_2</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -419,7 +419,7 @@
 
 	<specific_character id="zat_b5_dealer_assistant_1" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_dolg_4</icon>
+		<icon>ui_inGame2_dolg_2_mask</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -450,7 +450,7 @@
 
 	<specific_character id="zat_b5_dealer_assistant_2" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_dolg_3</icon>
+		<icon>ui_inGame2_dolg_1</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -639,7 +639,7 @@
 
 	<specific_character id="zat_b7_bandit_boss_dead" team_default="1">
 		<name>GENERATE_NAME_bandit</name>
-		<icon>ui_inGame2_bandit_3</icon>
+		<icon>ui_inGame2_bandit_4</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -766,7 +766,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
-		<rank>35</rank>
+		<rank>55</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral_3</visual>
@@ -805,7 +805,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-		<rank>30</rank>
+		<rank>45</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral2dmask1</visual>
@@ -1083,7 +1083,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>35</rank>
+		<rank>65</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc2c</visual>
 		<supplies>
@@ -1121,7 +1121,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>30</rank>
+		<rank>45</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc_2</visual>
 		<supplies>
@@ -1207,7 +1207,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>30</rank>
+		<rank>45</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_bandit\stalker_bandit2a_mask</visual>
 		<supplies>
@@ -1282,7 +1282,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>40</rank>
+		<rank>45</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc_7</visual>
 		<supplies>
@@ -1312,7 +1312,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
 
-		<rank>35</rank>
+		<rank>55</rank>
 		<money min="1500" max="3500" infinitive="0"/>
 		<reputation>0</reputation>
 
@@ -1340,7 +1340,7 @@
 
 	<specific_character id="zat_b7_stalker_raider_1" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_merc_2</icon>
+		<icon>ui_inGame2_bandit_3</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1350,11 +1350,11 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
     	<snd_config>characters_voice\human_02\stalker\</snd_config>
 
-    	<rank>30</rank>
+    	<rank>45</rank>
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
-    	<visual>actors\stalker_merc\stalker_merc_2</visual>
+    	<visual>actors\stalker_bandit\stalker_bandit_3</visual>
    		<supplies>
       	[spawn] \n
 
@@ -1444,7 +1444,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
-		<rank>35</rank>
+		<rank>55</rank>
 		<money min="1500" max="3500" infinitive="0"/>
 		<reputation>0</reputation>
 
@@ -1488,7 +1488,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
-		<rank>45</rank>
+		<rank>55</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral2b_mask</visual>

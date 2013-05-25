@@ -15,7 +15,7 @@ sprint_allowed          = true
 control_inertion_factor = 1.0 ; = 1.0
 
 ;-------------------------------------------------------------------------------
-cost              = 9120            ; the price of the item
+cost              = 7120            ; the price of the item
 inv_weight        = 0.9
 
 upgrades                = up_gr_firstab_beretta, up_gr_seconab_beretta, up_gr_thirdab_beretta, up_gr_fourtab_beretta, up_gr_fifthab_beretta, up_gr_fifthcd_beretta
@@ -23,7 +23,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_beretta
 
 ;----TTX--------------------------------------------------------------------------
-hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_power           		= 0.255, 0.255, 0.255, 0.255
 hit_impulse	 		 		= 20
 hit_type 					= fire_wound
 fire_distance           	= 460
@@ -36,18 +36,12 @@ hud                     	= wpn_beretta_hud
 use_aim_bullet				= false		;Поддерживается ли первая суппер пуля
 time_to_aim					= 1.0
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.0085
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.085
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0021
-;увеличение изношености при выстреле очередью
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.89
+misfire_end_condition		= 0.14
+misfire_start_prob	     	= 0.0062
+misfire_end_prob	     	= 0.066
+condition_shot_dec      	= 0.0017
 condition_queue_shot_dec	= 0.0019
 
 ammo_elapsed		 	= 15
@@ -65,7 +59,7 @@ zoom_dof					= -1000, 1.0, 1000
 reload_dof					= 0.0, 0.5, 5, 1.7
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.52 ;0.18 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.51 ;0.18 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.0 ; = 0.52
 crosshair_inertion   	= 3.25
 
@@ -95,7 +89,7 @@ zoom_cam_max_angle          = 5.0
 zoom_cam_max_angle_horz     = 10.0
 zoom_cam_step_angle_horz    = 1.5
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 12        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 12        
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
@@ -120,10 +114,10 @@ inv_grid_height			= 1
 inv_grid_x				= 4
 inv_grid_y				= 25
 
-upgr_icon_x			= 8
-upgr_icon_y			= 8
-upgr_icon_width		= 265
-upgr_icon_height   	= 98
+upgr_icon_x			= 1724 ; 8
+upgr_icon_y			= 802 ; 8
+upgr_icon_width		= 167 ; 265
+upgr_icon_height   	= 159 ; 98
 
 kill_msg_x				= 200
 kill_msg_y				= 153
@@ -276,40 +270,37 @@ ammo_class		 		= ammo_9x19_pbp, ammo_9x19_fmj, ammo_9x19_ap
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_beretta, up_gr_seconab_beretta, up_gr_thirdab_beretta, up_gr_fourtab_beretta, up_gr_fifthab_beretta, up_gr_fifthcd_beretta
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_beretta
-
 ;=====================================================================================================================================================
 [wpn_beretta_custom]:wpn_beretta
 
-cost              = 11260
+cost              = 9690
 inv_weight        = 0.962
 inv_name          = st_wpn_beretta_custom
 inv_name_short    = st_wpn_beretta_custom
 
-installed_upgrades      = up_firsta_beretta, up_fiftha_beretta
+upgrades                = up_gr_firstab_beretta_custom, up_gr_seconab_beretta_custom, up_gr_thirdab_beretta_custom, up_gr_fourtab_beretta_custom, up_gr_fifthab_beretta_custom, up_gr_fifthcd_beretta_custom
+installed_upgrades      = up_fiftha_beretta_custom, up_firsta_beretta_custom, up_firstd_beretta_custom, up_firste_beretta_custom
 
-hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_power           		= 0.292, 0.292, 0.292, 0.292
 hit_impulse	 		 		= 20
-fire_distance           	= 460
-bullet_speed		 		= 380
-rpm                     	= 270
+fire_distance           	= 488
+bullet_speed		 		= 394
+rpm                     	= 284
 
 hud                     	= wpn_beretta_custom_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0085
-misfire_end_prob	     	= 0.085
-condition_shot_dec      	= 0.0021
-condition_queue_shot_dec	= 0.0019
+misfire_start_condition		= 0.84
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0056
+misfire_end_prob	     	= 0.060
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0014
 
 ammo_mag_size		 	= 15
 fire_modes		  = 1;, -1
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.51
+fire_dispersion_base	= 0.41
 
 inv_grid_width			= 2
 inv_grid_height			= 1
@@ -326,31 +317,34 @@ item_visual						= dynamics\weapons\wpn_beretta92fs\wpn_beretta92f1_hud
 ;=====================================================================================================================================================
 [wpn_beretta_alt]:wpn_beretta
 
-cost              = 9780
+cost              = 7880
 inv_weight        = 0.918
 inv_name          = st_wpn_beretta_alt
 inv_name_short    = st_wpn_beretta_alt
 
-hit_power           		= 0.25, 0.25, 0.25, 0.25
+upgrades                = up_gr_firstab_beretta_alt, up_gr_seconab_beretta_alt, up_gr_thirdab_beretta_alt, up_gr_fourtab_beretta_alt, up_gr_fifthab_beretta_alt, up_gr_fifthcd_beretta_alt
+installed_upgrades      = up_fiftha_beretta_alt
+
+hit_power           		= 0.275, 0.275, 0.275, 0.275
 hit_impulse	 		 		= 20
-fire_distance           	= 460
-bullet_speed		 		= 380
-rpm                     	= 270
+fire_distance           	= 472
+bullet_speed		 		= 394
+rpm                     	= 278
 
 hud                     	= wpn_beretta_alt_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0085
-misfire_end_prob	     	= 0.085
-condition_shot_dec      	= 0.0021
-condition_queue_shot_dec	= 0.0019
+misfire_start_condition		= 0.91
+misfire_end_condition		= 0.15
+misfire_start_prob	     	= 0.0068
+misfire_end_prob	     	= 0.074
+condition_shot_dec      	= 0.0019
+condition_queue_shot_dec	= 0.0022
 
 ammo_mag_size		 	= 15
 fire_modes		  = 1;, -1
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.5
+fire_dispersion_base	= 0.46
 
 inv_grid_width			= 2
 inv_grid_height			= 1
@@ -374,28 +368,29 @@ inv_name          = st_wpn_beretta_camo
 inv_name_short    = st_wpn_beretta_camo
 description       = st_wpn_beretta_camo_descr
 
-installed_upgrades      = up_thirda_beretta, up_fourta_beretta, up_secona_beretta, up_fiftha_beretta
+upgrades                = up_gr_firstab_beretta_camo, up_gr_seconab_beretta_camo, up_gr_thirdab_beretta_camo, up_gr_fourtab_beretta_camo, up_gr_fifthab_beretta_camo, up_gr_fifthcd_beretta_camo
+installed_upgrades      = up_fiftha_beretta_camo, up_thirda_beretta_camo, up_thirdd_beretta_camo, up_firsta_beretta_camo
 
-hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_power           		= 0.315, 0.315, 0.315, 0.315
 hit_impulse	 		 		= 20
-fire_distance           	= 460
-bullet_speed		 		= 380
-rpm                     	= 270
+fire_distance           	= 496
+bullet_speed		 		= 403
+rpm                     	= 291
 
 hud                     	= wpn_beretta_camo_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0085
-misfire_end_prob	     	= 0.085
-condition_shot_dec      	= 0.0021
-condition_queue_shot_dec	= 0.0019
+misfire_start_condition		= 0.80
+misfire_end_condition		= 0.10
+misfire_start_prob	     	= 0.0052
+misfire_end_prob	     	= 0.054
+condition_shot_dec      	= 0.0011
+condition_queue_shot_dec	= 0.0010
 
 ammo_mag_size		 	= 15
 fire_modes		  = 1;, -1
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.52
+fire_dispersion_base	= 0.37
 
 inv_grid_width			= 2
 inv_grid_height			= 1
@@ -413,31 +408,33 @@ item_visual						= dynamics\weapons\wpn_beretta92fs\wpn_beretta92f3_hud
 ;=====================================================================================================================================================
 [wpn_beretta_worn]:wpn_beretta
 
-cost              = 7960
+cost              = 4560
 inv_weight        = 0.904
 inv_name          = st_wpn_beretta_worn
 inv_name_short    = st_wpn_beretta_worn
 
-hit_power           		= 0.25, 0.25, 0.25, 0.25
+upgrades                = up_gr_firstab_beretta_worn, up_gr_seconab_beretta_worn, up_gr_thirdab_beretta_worn, up_gr_fourtab_beretta_worn, up_gr_fifthab_beretta_worn, up_gr_fifthcd_beretta_worn
+
+hit_power           		= 0.232, 0.232, 0.232, 0.232
 hit_impulse	 		 		= 20
-fire_distance           	= 460
-bullet_speed		 		= 380
-rpm                     	= 270
+fire_distance           	= 436
+bullet_speed		 		= 357
+rpm                     	= 251
 
 hud                     	= wpn_beretta_worn_hud
 
-misfire_start_condition		= 0.7
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.0085
-misfire_end_prob	     	= 0.085
+misfire_start_condition		= 0.93
+misfire_end_condition		= 0.17
+misfire_start_prob	     	= 0.0074
+misfire_end_prob	     	= 0.088
 condition_shot_dec      	= 0.0021
-condition_queue_shot_dec	= 0.0019
+condition_queue_shot_dec	= 0.0023
 
 ammo_mag_size		 	= 15
 fire_modes		  = 1;, -1
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.55
+fire_dispersion_base	= 0.69
 
 inv_grid_width			= 2
 inv_grid_height			= 1

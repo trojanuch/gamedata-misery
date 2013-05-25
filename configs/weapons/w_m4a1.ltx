@@ -19,12 +19,12 @@ cost                 	= 27780
 weapon_class            = assault_rifle
 inv_weight              = 3.113
 
-upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
+upgrades                = up_gr_firstab_m4a1, up_gr_seconab_m4a1, up_gr_thirdab_m4a1, up_gr_fourtab_m4a1, up_gr_fifthab_m4a1
 installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_sig550
+upgrade_scheme          = upgrade_scheme_lr300
 
 ;--TTX----------------------------------------------------------------------------
-hit_power         = 0.415, 0.415, 0.415, 0.415
+hit_power         = 0.43, 0.43, 0.43, 0.43
 hit_impulse       = 30 ;50 ;100
 hit_type                = fire_wound
 fire_distance           = 820
@@ -34,12 +34,6 @@ rpm_empty_click         = 200
 
 grenade_vel             = 32 ;76
 
-;настройки для глушителя
-;silencer_hit_power         = 0.61, 0.61, 0.61, 0.61
-;silencer_hit_impulse    = 40
-;silencer_fire_distance  = 350
-;silencer_bullet_speed   = 700
-
 hit_power_critical      = 0.0
 use_first_bullet        = false
 
@@ -48,20 +42,13 @@ time_to_aim             = 2.0
 
 hud                     = wpn_m4a1_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.5
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.045
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0007
-;увеличение изношености при выстреле очередью
+misfire_probability        	= 0.004
+misfire_start_condition		= 0.88
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0058
+misfire_end_prob	     	= 0.048
+condition_shot_dec      	= 0.0013
 condition_queue_shot_dec	= 0.0009
-
 
 ammo_elapsed            = 30
 ammo_mag_size        	= 30           ; clip (magazine) size
@@ -108,7 +95,7 @@ zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 10.0
 zoom_cam_step_angle_horz    = 2
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 5        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 5        
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier       = 1.0                       ; во сколько раз увеличивается eye_range
@@ -134,10 +121,10 @@ inv_grid_height		= 2
 inv_grid_x		= 13
 inv_grid_y		= 32
 
-upgr_icon_x		= 280
-upgr_icon_y		= 1590
-upgr_icon_width		= 280
-upgr_icon_height   	= 110
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 kill_msg_x		= 175
 kill_msg_y		= 0
@@ -188,10 +175,7 @@ zoom_enabled                = true                                              
 zoom_rotate_time            = 0.25
 scope_zoom_factor       = 58.6 ;            = 85
 
-scope_texture	            = wpn_crosshair_acog
-scope_name 		    	= wpn_addon_scope_acog
-scope_x 	            = 80
-scope_y 	            = -12
+scopes_sect				   = scope_acog_m4a1, scope_acog_trijicon_m4a1, scope_acog_night_m4a1
 silencer_name               = wpn_addon_silencer_556x45         ; section name for the attachable silencer
 silencer_x                  = 210                               ; offset in inventory icon
 silencer_y                  = -1
@@ -291,3 +275,18 @@ gl_hud_offset_rot_16x9  = 0,0,0
 
 lean_hud_offset_pos     = 0,0,0
 lean_hud_offset_rot     = 0,0,0
+
+[scope_acog_m4a1]
+scope_name 					= wpn_addon_scope_acog
+scope_x 	            = 80
+scope_y 	            = -12
+
+[scope_acog_trijicon_m4a1]
+scope_name 					= wpn_addon_scope_acog_trijicon
+scope_x 				= 84
+scope_y 				= -12
+
+[scope_acog_night_m4a1]
+scope_name 					= wpn_addon_scope_acog_night
+scope_x 	            = 80
+scope_y 	            = -12

@@ -4,10 +4,8 @@
 cost		      		= 2150
 value					= +10
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0003 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0003 ;0.0011
+condition_queue_shot_dec	= -0.0003
+condition_shot_dec      	= -0.0003
 
 inv_weight 					= +0.2
 
@@ -48,17 +46,17 @@ cost		      		= 2460
 value					= +20
 
 fire_dispersion_base	= -0.07
-fire_dispersion_condition_factor    = -0.5
+;fire_dispersion_condition_factor    = -0.5
 
 inv_weight 					= +0.1
 
 [up_sect_secona_wincheaster1300]
 ;Уменьшение веса
 ;---------------
-cost		      		= 3460
-value					= -0.7
+cost		      		= 1880
+value					= -0.62
 
-inv_weight 					= -0.7
+inv_weight 					= -0.62
 crosshair_inertion			= -0.5
 
 PDM_disp_vel_factor 		= -0.2
@@ -84,9 +82,9 @@ inv_weight 					= +0.05
 cost		      		= 2640
 value					= +15
 
-;увеличение изношености при выстреле очередью
+
 condition_queue_shot_dec	= -0.0005 ;0.0013
-;увеличение изношености при одиночном выстреле
+
 condition_shot_dec      	= -0.0005 ;0.0011
 
 inv_weight 					= +0.25
@@ -113,9 +111,9 @@ inv_weight 					= +0.15
 cost		      		= 2350
 value					= +10
 
-;увеличение изношености при выстреле очередью
+
 condition_queue_shot_dec	= -0.0003 ;0.0013
-;увеличение изношености при одиночном выстреле
+
 condition_shot_dec      	= -0.0003 ;0.0011
 
 inv_weight 					= +0.2
@@ -127,7 +125,7 @@ cost		      		= 2340
 value					= +20
 
 fire_dispersion_base	= -0.04
-fire_dispersion_condition_factor    = -0.2
+;fire_dispersion_condition_factor    = -0.2
 
 inv_weight 					= +0.05
 
@@ -153,9 +151,9 @@ inv_weight 					= +0.1
 cost		      		= 2840
 value					= +30
 
-;увеличение изношености при выстреле очередью
+
 condition_queue_shot_dec	= -0.0007 ;0.0013
-;увеличение изношености при одиночном выстреле
+
 condition_shot_dec      	= -0.0007 ;0.0011
 
 inv_weight 					= +0.3
@@ -174,7 +172,7 @@ inv_weight 					= +0.25
 [up_sect_fourta_wincheaster1300]
 ;Расширенный объем магазина
 ;----------------------
-cost		      		= 2460
+cost		      		= 1960
 value					= +2
 
 ammo_mag_size		 		= 2
@@ -250,22 +248,21 @@ icon                    = ui_inGame2_upgrade_Cheyser_13_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_wincheaster1300
-property                = prop_dispersion
+section                 = up_sect_empty_tier_3 ; up_sect_firste_wincheaster1300
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bard_c3_name
-description             = st_up_bard_c3_descr
-icon                    = ui_inGame2_upgrade_Cheyser_13_4
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_secona_wincheaster1300]
 scheme_index            = 0, 1
@@ -337,22 +334,21 @@ icon                    = ui_inGame2_upgrade_Cheyser_13_7
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_wincheaster1300
-property                = prop_recoil
+section                 = up_sect_empty_tier_3 ; up_sect_secone_wincheaster1300
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stvd_c2_name
-description             = st_up_stvd_c2_descr
-icon                    = ui_inGame2_upgrade_Cheyser_13_8
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_thirda_wincheaster1300]
@@ -425,43 +421,41 @@ icon                    = ui_inGame2_upgrade_Cheyser_13_11
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_thirde_wincheaster1300
-property                = prop_reliability
+section                 = up_sect_empty_tier_3 ; up_sect_thirde_wincheaster1300
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_autd_c1_name
-description             = st_up_autd_c1_descr
-icon                    = ui_inGame2_upgrade_Cheyser_13_12
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirdf_wincheaster1300]
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_thirdf_wincheaster1300
-property                = prop_rpm, prop_autofire
+section                 = up_sect_empty_tier_3 ; up_sect_thirdf_wincheaster1300
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = on_weapon_upgrade_something_here
+effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_autd_c3_name
-description             = st_up_autd_c3_descr
-icon                    = ui_inGame2_upgrade_Cheyser_13_13
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_fourta_wincheaster1300]
