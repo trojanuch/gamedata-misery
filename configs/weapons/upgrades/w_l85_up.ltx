@@ -4,11 +4,8 @@
 cost		      		= 3660
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;шанс осечки при изношености больше чем misfireStartCondition
+;fire_dispersion_condition_factor    = -1 ;15
 misfire_start_prob	     	= -0.0004
-;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.007 ;0.03
 
 inv_weight			= +0.2
@@ -33,15 +30,10 @@ inv_weight			= +0.1
 cost		      		= 4040
 value					= +25
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
+;fire_dispersion_condition_factor    = -1 ;15
 condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.00015 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.0018
-;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.02 ;0.03
 
 inv_weight			= +0.2
@@ -61,7 +53,7 @@ inv_weight			= +0.1
 cost		      		= 4240
 value					= +10
 fire_dispersion_base    = -0.018 ;0.07
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight			= +0.1
 
@@ -85,15 +77,10 @@ inv_weight			= +0.15
 cost		      		= 4180
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
+;fire_dispersion_condition_factor    = -1 ;15
 condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.001
-;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.013 ;0.03
 
 inv_weight			= +0.15
@@ -104,15 +91,10 @@ inv_weight			= +0.15
 cost		      		= 4260
 value					= +25
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
+;fire_dispersion_condition_factor    = -1 ;15
 condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= -0.00015 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.0018
-;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.02 ;0.03
 
 inv_weight			= +0.2
@@ -160,7 +142,7 @@ cost		      		= 4860
 value					= +5
 
 fire_dispersion_base    = -0.08 ;0.07
-fire_dispersion_condition_factor    = -0.5 ;15
+;fire_dispersion_condition_factor    = -0.5 ;15
 
 inv_weight			= +0.05
 
@@ -175,23 +157,23 @@ cost		      		= 3150
 scope_nightvision = scope_contrast
 
 [up_sect_fourte_l85]
-cost		      		= 3750
+cost		      		= 5750
 
 scope_dynamic_zoom = on
-
 
 [up_sect_fiftha_l85]
 ;Глушитель
 ;----------
-cost		      		= 2900
+cost		      		= 1460
 ;value					= +30
 silencer_status			= 2
-silencer_name  			= wpn_addon_silencer
-silencer_x 				= 196
-silencer_y 				= 11
-snd_silncer_shot        = weapons\w_ak74_shot1
 
-inv_weight			= +0.15
+silencer_name  				= wpn_addon_silencer
+silencer_x 					= 196
+silencer_y 					= 11
+snd_silncer_shot        = weapons\silencers\silencer_556x45
+
+inv_weight			= +0.02
 
 [up_sect_fifthc_l85]
 ;Смена калибра
@@ -204,9 +186,9 @@ ammo_class           	= ammo_5.45x39_fmj, ammo_5.45x39_ap
 condition_queue_shot_dec	= 0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
 condition_shot_dec      	= 0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+
 misfire_start_prob	     	= 0.0005
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= 0.005 ;0.03
 
 inv_weight			= +0.25
@@ -259,11 +241,11 @@ icon                    = ui_inGame2_upgrade_IL86_2
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_l85
-property                = prop_reliability
+section                 = up_sect_empty_tier_3 ; up_sect_firste_l85
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -271,31 +253,29 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stk_c1_name
-description             = st_up_stk_c1_descr
-icon                    = ui_inGame2_upgrade_IL86_3
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_firstf_l85]
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_firstf_l85
-property                = prop_bullet_speed
-
+section                 = up_sect_empty_tier_3 ; up_sect_firstf_l85
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stk_c2_name
-description             = st_up_stk_c2_descr
-icon                    = ui_inGame2_upgrade_IL86_4
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_secona_l85]
 scheme_index            = 0, 1
@@ -363,21 +343,21 @@ icon                    = ui_inGame2_upgrade_IL86_7
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_secone_l85
-property                = prop_reliability
+section                 = up_sect_empty_tier_3 ; up_sect_secone_l85
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here_h
+effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_usm_c1_name
-description             = st_up_usm_c1_descr
-icon                    = ui_inGame2_upgrade_IL86_8
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirda_l85]
 scheme_index            = 0, 2
@@ -424,43 +404,41 @@ icon                    = ui_inGame2_upgrade_IL86_10
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_thirde_l85
-property                = prop_bullet_speed
+section                 = up_sect_empty_tier_3 ; up_sect_thirde_l85
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bar_c1_name
-description             = st_up_bar_c1_descr
-icon                    = ui_inGame2_upgrade_IL86_11
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirdf_l85]
 scheme_index            = 2, 4
 known                   = 1
 effects                 =
-section                 = up_sect_thirdf_l85
-property                = prop_dispersion
+section                 = up_sect_empty_tier_3 ; up_sect_thirdf_l85
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bar_c3_name
-description             = st_up_bar_c3_descr
-icon                    = ui_inGame2_upgrade_IL86_12
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fourta_l85]
 scheme_index            = 0, 3
@@ -547,11 +525,11 @@ icon                    = ui_inGame2_upgrade_IL86_16
 scheme_index            = 1, 5
 known                   = 1
 effects                 =
-section                 = up_sect_fifthc_l85
-property                = prop_calibre
+section                 = up_sect_empty_tier_3
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -559,9 +537,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_add_b1_name
-description             = st_up_add_b1_descr
-icon                    = ui_inGame2_upgrade_IL86_17
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_gr_firstab_l85]

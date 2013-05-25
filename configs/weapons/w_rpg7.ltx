@@ -29,18 +29,18 @@ hit_power       		= 3.00
 hit_impulse				= 100
 hit_type 				= explosion
 fire_distance           = 1000
-bullet_speed			= 100 ;300			;начальная скорость пули
+bullet_speed			= 121 ;300			;начальная скорость пули
 rpm                     = 200
 
 hud                     = wpn_rpg7_hud
 
-misfire_probability        	= 0.02
-misfire_start_condition		= 0.95
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.01
-misfire_end_prob	     	= 0.10
-condition_shot_dec      	= 0.0025
-condition_queue_shot_dec	= 0.0025
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.82
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.078
+misfire_end_prob	     	= 0.084
+condition_shot_dec      	= 0.0062
+condition_queue_shot_dec	= 0.0062
 
 ammo_limit		 		= 120
 ammo_current		 	= 96
@@ -54,12 +54,13 @@ single_handed			= 0
 
 ;---дисперсия-------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base			= 1.5   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-crosshair_inertion   	= 10
+fire_dispersion_base			= 0.44   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor			= 1.92f
+crosshair_inertion   	= 9.84
 
 PDM_disp_base           = 1.0
-PDM_disp_vel_factor     = 1.0
-PDM_disp_accel_factor   = 1.0
+PDM_disp_vel_factor     = 3.0
+PDM_disp_accel_factor   = 3.0
 PDM_disp_crouch         = 1.0
 PDM_disp_crouch_no_acc  = 1.0
 
@@ -70,7 +71,7 @@ cam_dispersion          = 8.0	;увеличения угла (в градусах) с каждым выстрелом
 cam_max_angle			= 15		;максимальный угол отдачи
 cam_max_angle_horz		= 15	;(degree) maximum shot horizontal degree
 cam_step_angle_horz		= 0.5	;(degree) size of step camera moved in horizontal position while shooting
-fire_dispersion_condition_factor = 0.001 ; 	= 0.01 ; 5	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; 	= 0.01 ; 5	
 
 misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
 
@@ -88,7 +89,7 @@ max_radius = 500 ; = 250 ;               	= 150
 slot 				 	= 2
 animation_slot		 	= 4		; type of the animation that will be used
 
-launch_speed			= 5
+launch_speed			= 121
 
 inv_name				= st_wpn_rpg7
 inv_name_short			= st_wpn_rpg7
@@ -99,10 +100,10 @@ inv_grid_height				= 1
 inv_grid_x				= 6
 inv_grid_y				= 0
 
-upgr_icon_x 			= 29
-upgr_icon_y 			= 811
-upgr_icon_width 		= 290
-upgr_icon_height 		= 124
+upgr_icon_x			= 1724 ; 304
+upgr_icon_y			= 802 ; 627
+upgr_icon_width		= 167 ; 295
+upgr_icon_height   	= 159 ; 110
 
 kill_msg_x				= 0
 kill_msg_y				= 85

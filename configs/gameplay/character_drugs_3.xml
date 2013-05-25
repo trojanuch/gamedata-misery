@@ -1,9 +1,3 @@
-wpn_knife_inv					= 1, prob=0.001 \n
-wpn_knife_inv_2					= 1, prob=0.066 \n
-wpn_knife_inv_5					= 1, prob=0.033 \n
-wpn_knife_inv_3					= 1, prob=0.025 \n
-wpn_knife_inv_4					= 1, prob=0.01 \n
-
 bandage					= 2, prob=0.75 \n
 medkit					= 3, prob=0.75 \n
 medkit_army				= 2, prob=0.33 \n
@@ -58,6 +52,7 @@ cigarettes_russian		= 1, prob=0.002 \n
 beer					= 1, prob=0.002 \n
 
 vodka					= 1, prob=0.010 \n
+vodka2					= 1, prob=0.004 \n
 tea						= 1, prob=0.020 \n
 
 bottle_metal			= 3, prob=0.020 \n
@@ -153,11 +148,12 @@ af_electra_flash = 1, prob=0.001 \n
 af_dummy_battery = 1, prob=0.001 \n
 af_dummy_dummy = 1, prob=0.001 \n
 
-mutant_part_boar_leg = 2, prob=0.02 \n
-mutant_part_dog_tail = 2, prob=0.02 \n
+mutant_part_boar_leg = 3, prob=0.02 \n
+mutant_part_dog_tail = 3, prob=0.02 \n
 mutant_part_flesh_eye = 2, prob=0.02 \n
 mutant_part_psevdodog_tail = 2, prob=0.01 \n
-mutant_part_snork_leg = 1, prob=0.01 \n
+mutant_part_snork_leg = 2, prob=0.01 \n
+mutant_part_snork_mask = 1, prob=0.01 \n
 mutant_part_tushkano_head = 1, prob=0.004 \n
 mutant_part_krovosos_jaw = 1, prob=0.003 \n
 
@@ -168,3 +164,22 @@ mutant_part_psevdodog_meat = 2, prob=0.01 \n
 mutant_part_krovosos_meat = 1, prob=0.003 \n
 mutant_part_snork_hand = 2, prob=0.01 \n
 mutant_part_tushkano_meat = 2, prob=0.004 \n
+
+mre = 2, prob=0.003
+ration_ru = 1, prob=0.001
+ration ukr = 1, prob=0.002
+
+gun_oil = 2, prob=0.013
+cleaning_kit_p = 1, prob=0.013
+cleaning_kit_s = 1, prob=0.013
+cleaning_kit_r5 = 1, prob=0.013
+cleaning_kit_r7 = 1, prob=0.013
+cleaning_kit_u = 1, prob=0.013
+toolkit_p = 1, prob=0.007
+toolkit_s = 1, prob=0.007
+toolkit_r5 = 1, prob=0.007
+toolkit_r7 = 1, prob=0.007
+toolkit_u = 1, prob=0.005
+
+wpn_binoc_inv = 1, prob=0.006
+wpn_upd = 1, prob=0.006

@@ -20,12 +20,12 @@ cost                    = 14840
 weapon_class            = assault_rifle
 inv_weight              = 3.636
 
-upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_mp5
+upgrades                = up_gr_firstab_ppsh41, up_gr_seconab_ppsh41, up_gr_thirdab_ppsh41
+installed_upgrades      = 
+upgrade_scheme          = upgrade_scheme_bm16
 
 ;-----------------------------------------------------------------------------------------
-hit_power           	= 0.26, 0.26, 0.26, 0.26
+hit_power           	= 0.275, 0.275, 0.275, 0.275
 hit_impulse             = 110
 hit_type                = fire_wound 
 fire_distance           = 590      
@@ -38,19 +38,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_ppsh41_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.004
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.057
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0004
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0005
+misfire_probability        = 0.005
+misfire_start_condition		= 0.78
+misfire_end_condition		= 0.07
+misfire_start_prob	     	= 0.0042
+misfire_end_prob	     	= 0.042
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0009
 
 ;silencer_hit_power      = 0.54, 0.54, 0.54, 0.54
 ;silencer_hit_impulse    = 140
@@ -72,7 +66,7 @@ zoom_dof                = 0.5, 1.0, 180
 reload_dof              = 0.0, 0.5, 5, 2
 
 ;-----------------------------------------------------------------------------------------
-fire_dispersion_base    = 0.57  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.62  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.38f
 crosshair_inertion   	= 5.45
 
@@ -139,13 +133,13 @@ inv_name_short          = st_wpn_ppsh41
 
 inv_grid_width          = 4
 inv_grid_height         = 1
-inv_grid_x              = 15
-inv_grid_y              = 4
+inv_grid_x              = 16
+inv_grid_y              = 61
 
-upgr_icon_x	        	= 1030
-upgr_icon_y	         	= 970
-upgr_icon_width	    	= 280
-upgr_icon_height     	= 100
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 kill_msg_x         	= 72
 kill_msg_y         	= 82
@@ -159,7 +153,7 @@ strap_bone0             = bip01_spine2
 strap_bone1             = bip01_spine1
 
 startup_ammo            = 90
-visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh41.ogf
+visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh4b.ogf
 
 light_disabled          = false
 light_color             = 0.6,0.5,0.3
@@ -207,7 +201,7 @@ snd_bore1		= weapons\ppsh41\ppsh41_bore
 [wpn_ppsh41_hud]
 zoom_hide_crosshair     = true
 attach_place_idx        = 0
-item_visual             = dynamics\weapons\wpn_ppsh41\wpn_ppsh41_hud.ogf
+item_visual             = dynamics\weapons\wpn_ppsh41\wpn_ppsh4d_hud.ogf
 
 hands_position	    	= -0.1065,-0.102,0.113
 hands_orientation   	= -6.7,-0.8,-0.4
@@ -261,49 +255,45 @@ ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_mp5
-
 ;=====================================================================================================================================================
 [wpn_ppsh41_woodnew]:wpn_ppsh41
 
-installed_upgrades      = up_thirda_mp5, up_fourta_mp5
+upgrades                = up_gr_firstab_ppsh41_new, up_gr_seconab_ppsh41_new, up_gr_thirdab_ppsh41_new
+installed_upgrades      = ; up_thirda_ppsh41_new, up_thirdc_ppsh41_new
 
-cost                    = 15780
-inv_weight              = 3.724
+cost                    = 17180
+inv_weight              = 3.646
 inv_name                = st_wpn_ppsh41_new
 inv_name_short          = st_wpn_ppsh41_new
 
-hit_power           	= 0.26, 0.26, 0.26, 0.26
+hit_power           	= 0.308, 0.308, 0.308, 0.308
 hit_impulse             = 110
 hit_type                = fire_wound 
-fire_distance           = 590      
-bullet_speed            = 490
-rpm                     = 910
+fire_distance           = 613      
+bullet_speed            = 614
+rpm                     = 929
 
 hud                     = wpn_ppsh41_woodnew_hud
 
-misfire_probability        = 0.005
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.004
-misfire_end_prob	     	= 0.057
-condition_shot_dec      	= 0.0004
-condition_queue_shot_dec	= 0.0005
+misfire_start_condition		= 0.74
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0036
+misfire_end_prob	     	= 0.036
+condition_shot_dec      	= 0.0005
+condition_queue_shot_dec	= 0.0006
 
 ammo_mag_size           = 71 
 fire_modes	        	= 1, -1
 ammo_class	            = ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
 
-fire_dispersion_base    = 0.54
+fire_dispersion_base    = 0.53
 
 inv_grid_width          = 4
 inv_grid_height         = 1
 inv_grid_x              = 16
-inv_grid_y              = 62
+inv_grid_y              = 61
 
-visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh4a.ogf
+visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh4c.ogf
 
 snd_reload              = weapons\ppsh41\ppsh41_reload
 
@@ -314,77 +304,82 @@ item_visual             = dynamics\weapons\wpn_ppsh41\wpn_ppsh4a_hud.ogf
 ;=====================================================================================================================================================
 [wpn_ppsh41_woodworn]:wpn_ppsh41
 
-cost                    = 13880
+cost                    = 10220 
 inv_weight              = 3.913
 inv_name                = st_wpn_ppsh41_worn
 inv_name_short          = st_wpn_ppsh41_worn
 
-hit_power           	= 0.26, 0.26, 0.26, 0.26
+upgrades                = up_gr_firstab_ppsh41_worn, up_gr_seconab_ppsh41_worn, up_gr_thirdab_ppsh41_worn
+
+hit_power           	= 0.232, 0.232, 0.232, 0.232
 hit_impulse             = 110
 hit_type                = fire_wound 
-fire_distance           = 590      
-bullet_speed            = 490
-rpm                     = 890
+fire_distance           = 543      
+bullet_speed            = 448
+rpm                     = 851
 
 hud                     = wpn_ppsh41_woodworn_hud
 
-misfire_start_condition		= 0.75
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.004
-misfire_end_prob	     	= 0.057
-condition_shot_dec      	= 0.0004
-condition_queue_shot_dec	= 0.0005
+misfire_start_condition		= 0.86
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0058
+misfire_end_prob	     	= 0.058
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0013
+
+silencer_status         = 0
 
 ammo_mag_size           = 71 
 fire_modes	        	= 1, -1
 ammo_class	            = ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
 
-fire_dispersion_base    = 0.61
+fire_dispersion_base    = 0.79
 
 inv_grid_width          = 4
 inv_grid_height         = 1
-inv_grid_x              = 16
-inv_grid_y              = 62
+inv_grid_x              = 15
+inv_grid_y              = 4
 
-visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh4b.ogf
+visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh41.ogf
 
 snd_reload              = weapons\ppsh41\ppsh41_reload
 
 [wpn_ppsh41_woodworn_hud]:wpn_ppsh41_hud
 
-item_visual             = dynamics\weapons\wpn_ppsh41\wpn_ppsh4b_hud.ogf
+item_visual             = dynamics\weapons\wpn_ppsh41\wpn_ppsh41_hud.ogf
 
 ;=====================================================================================================================================================
 [wpn_ppsh41_rednew]:wpn_ppsh41
 
-installed_upgrades      = up_firsta_mp5, up_thirda_mp5, up_fourta_mp5
-
-cost                    = 17360 
+cost                    = 17180
 inv_weight              = 3.646
 inv_name                = st_wpn_ppsh41_new
 inv_name_short          = st_wpn_ppsh41_new
 
-hit_power           	= 0.26, 0.26, 0.26, 0.26
+upgrades                = up_gr_firstab_ppsh41_new, up_gr_seconab_ppsh41_new, up_gr_thirdab_ppsh41_new
+installed_upgrades      = ; up_thirda_ppsh41_new, up_thirdc_ppsh41_new
+
+hit_power           	= 0.308, 0.308, 0.308, 0.308
 hit_impulse             = 110
 hit_type                = fire_wound 
-fire_distance           = 590      
-bullet_speed            = 490
-rpm                     = 910
+fire_distance           = 613      
+bullet_speed            = 514
+rpm                     = 929
 
 hud                     = wpn_ppsh41_rednew_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.004
-misfire_end_prob	     	= 0.057
-condition_shot_dec      	= 0.0004
-condition_queue_shot_dec	= 0.0005
+misfire_start_condition		= 0.74
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0036
+misfire_end_prob	     	= 0.036
+condition_shot_dec      	= 0.0005
+condition_queue_shot_dec	= 0.0006
 
 ammo_mag_size           = 71 
 fire_modes	        	= 1, -1
 ammo_class	            = ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
 
-fire_dispersion_base    = 0.55
+fire_dispersion_base    = 0.53
 
 inv_grid_width          = 4
 inv_grid_height         = 1
@@ -402,39 +397,43 @@ item_visual             = dynamics\weapons\wpn_ppsh41\wpn_ppsh4c_hud.ogf
 ;=====================================================================================================================================================
 [wpn_ppsh41_redworn]:wpn_ppsh41
 
-cost                    = 14220 
+cost                    = 10220 
 inv_weight              = 3.783
 inv_name                = st_wpn_ppsh41_worn
 inv_name_short          = st_wpn_ppsh41_worn
 
-hit_power           	= 0.26, 0.26, 0.26, 0.26
+upgrades                = up_gr_firstab_ppsh41_worn, up_gr_seconab_ppsh41_worn, up_gr_thirdab_ppsh41_worn
+
+hit_power           	= 0.232, 0.232, 0.232, 0.232
 hit_impulse             = 110
 hit_type                = fire_wound 
-fire_distance           = 590      
-bullet_speed            = 490
-rpm                     = 900
+fire_distance           = 543      
+bullet_speed            = 448
+rpm                     = 851
 
 hud                     = wpn_ppsh41_redworn_hud
 
-misfire_start_condition		= 0.75
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.004
-misfire_end_prob	     	= 0.057
-condition_shot_dec      	= 0.0004
-condition_queue_shot_dec	= 0.0005
+misfire_start_condition		= 0.86
+misfire_end_condition		= 0.11
+misfire_start_prob	     	= 0.0058
+misfire_end_prob	     	= 0.058
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0013
 
-ammo_mag_size           = 71 
+silencer_status         = 0
+
+ammo_mag_size           = 79 
 fire_modes	        	= 1, -1
 ammo_class	            = ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
 
-fire_dispersion_base    = 0.6
+fire_dispersion_base    = 0.79
 
 inv_grid_width          = 4
 inv_grid_height         = 1
-inv_grid_x              = 16
-inv_grid_y              = 61
+inv_grid_x              = 15
+inv_grid_y              = 4
 
-visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh4d.ogf
+visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh41.ogf
 
 snd_reload              = weapons\ppsh41\ppsh41_reload
 

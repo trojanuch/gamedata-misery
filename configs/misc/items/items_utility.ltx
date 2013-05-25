@@ -1,3 +1,9 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; UTILITY ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; PLACEABLE STASH ;;;
+
 [itm_backpack]:identity_immunities
 GroupControlSection = spawn_group
 discovery_dependency =
@@ -14,7 +20,7 @@ inv_grid_width = 2
 inv_grid_height = 2
 inv_grid_x         = 9
 inv_grid_y         = 45
-cost = 4560
+cost = 1560
 eat_health = 0
 eat_satiety = 0
 eat_power = 0
@@ -31,6 +37,23 @@ slot = -1
 visual = dynamics\devices\dev_rukzak\dev_rukzak.ogf
 custom_data = scripts\treasure_inventory_box.ltx
 radius = 1
+
+;;; QUICK RELEASE SYSTEM ;;;
+
+[itm_actor_backpack]:itm_backpack
+inv_name = st_itm_actor_backpack_name
+inv_name_short = st_itm_actor_backpack_name
+description			= st_itm_actor_backpack_descr
+cost = 3740
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x         = 9
+inv_grid_y         = 44
+;use_sound			= interface\inv_open
+
+[inv_actor_backpack]:inv_backpack
+
+;;; SLEEP BAG ;;;
 
 [itm_sleepbag]:identity_immunities
 GroupControlSection = spawn_group
@@ -73,46 +96,7 @@ script_binding			= bind_physic_object.init
 custom_data 		    = models\objects\ignore_static.ltx
 fixed_bones = bone01_(1),bone01_(2),bone01_(3),bone02_(1),bone02_(2),bone02_(3),bone03
 
-[itm_actor_backpack]:itm_backpack
-inv_name = st_itm_actor_backpack_name
-inv_name_short = st_itm_actor_backpack_name
-description			= st_itm_actor_backpack_descr
-cost = 8740
-inv_grid_width = 1
-inv_grid_height = 1
-inv_grid_x         = 9
-inv_grid_y         = 44
-;use_sound			= interface\inv_open
-
-[inv_actor_backpack]:inv_backpack
-
-
-[itm_gunsmith_toolkit]:booster
-$spawn 				= "devices\repair_kit_10"
-description			= st_repair_kit_descr
-inv_name			= st_repair_kit
-inv_name_short		= st_repair_kit
-can_trade			= true
-quest_item      	= false
-cost				= 5800
-inv_weight			= 3.65
-visual				= dynamics\devices\dev_instrument_1\dev_instrument_1.ogf
-inv_grid_width		= 2
-inv_grid_height		= 2
-inv_grid_x			= 10
-inv_grid_y			= 25
-
-repair_min_condition 	= 0.05		;Min required condition to use
-repair_max_condition 	= 0.65		;Max required condition to use
-repair_add_condition 	= 0.20		;Amount of condition added to repaired item
-repair_part_bonus	 	= 0.15		;Amount bonus to add_condition if parts are used
-repair_use_parts	 	= true		;Allows the use of lesser conditioned weapons to be used for parts to add overall bonus to repair
-repair_type			 	= weapon	;weapon or outfit
-repair_refuse			=           ;Add sections separated by commas that cannot be repaired by this item
-repair_only				=           ;Add sections separated by commas that exclude all sections but these
-repair_parts_include    = 			;Add sections of items to include to be considered repair parts
-repair_parts_exclude	=			;Add sections of items to exclude from being considered repair parts
-repair_use_actor_effects= true      ;Uses actor_effects script. Setup a *_dummy section for the item in actor_effects_data.script
+;;; TEST FLASHLIGHT ;;;
 
 [test_flashlight]:detector_simple
 visual				= dynamics\equipments\trade\torch.ogf
@@ -185,3 +169,6 @@ attach_bone_name		= bip01_l_hand
 auto_attach				= false
 snd_draw                = weapons\ak74_draw
 snd_holster             = weapons\generic_holster
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

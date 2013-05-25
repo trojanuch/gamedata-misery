@@ -1,7 +1,7 @@
 [main] ;Drain amount every 1 second of use
-pda_drain_speed = 0.00001
-nv_drain_speed	= 0.00002
-fl_drain_speed	= 0.00001
+pda_drain_speed = 0.000004
+nv_drain_speed	= 0.000016
+fl_drain_speed	= 0.000009
 
 [battery_sections]
 batteries_ccell
@@ -9,17 +9,16 @@ batteries
 batteries_dead
 batteries_empty
 
-
 [batteries_ccell]
-power = 0.99									; 0.99 because condition is never 1.0, it's 0.999e+
+power = 0.93									; 0.99 because condition is never 1.0, it's 0.999e+
 
 [batteries]
-power = 0.66
+power = 0.52
 
 [batteries_dead]
-power = 0.165
+power = 0.14
 
 [batteries_empty]
-power = 0
+power = 0.001
 
 

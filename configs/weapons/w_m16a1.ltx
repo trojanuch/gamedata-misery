@@ -19,40 +19,34 @@ cost                 	= 29800
 weapon_class            = assault_rifle
 inv_weight              = 3.478
 
-upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
+upgrades                = up_gr_firstab_m16a1, up_gr_seconab_m16a1, up_gr_thirdab_m16a1, up_gr_fourtab_m16a1, up_gr_fifthab_m16a1
 installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_sig550
+upgrade_scheme          = upgrade_scheme_lr300
 
 ;--TTX----------------------------------------------------------------------------
 
-hit_power         = 0.54, 0.54, 0.54, 0.54
-hit_impulse       = 38 ;50 ;100
+hit_power         = 0.528, 0.528, 0.528, 0.528
+hit_impulse       = 42 ;50 ;100
 hit_type          = fire_wound
 fire_distance        = 920
 bullet_speed         = 950 ;начальная скорость пули
 rpm                  = 750
 rpm_empty_click      = 200
 
-grenade_vel             = 32 ;76
+grenade_vel             = 76
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
 time_to_aim             = 2.0
 
 hud                        = wpn_m16a1_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.5
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.045
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0011
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0008
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.91
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0064
+misfire_end_prob	     	= 0.050
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0011
 
 ammo_elapsed            = 20
 ammo_mag_size        	= 20           ; clip (magazine) size
@@ -102,7 +96,7 @@ zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 10.0
 zoom_cam_step_angle_horz    = 2
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 17        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 17        
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
@@ -125,10 +119,10 @@ inv_grid_height			= 2
 inv_grid_x			= 9
 inv_grid_y			= 30
 
-upgr_icon_x			= 297
-upgr_icon_y			= 840
-upgr_icon_width		= 292
-upgr_icon_height   	= 98
+upgr_icon_x			= 1724 ; 297
+upgr_icon_y			= 802 ; 840
+upgr_icon_width		= 167 ; 292
+upgr_icon_height   	= 159 ; 98
 
 kill_msg_x				= 175
 kill_msg_y				= 0
@@ -180,7 +174,7 @@ grenade_launcher_status    = 0                   ; 2 - attachable
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time        = 0.25
-scope_zoom_factor       = 35 ;        = 13                                                ; fov for zoom mode
+scope_zoom_factor       = 30 ; x2       = 13                                                ; fov for zoom mode
 scope_texture				= wpn_crosshair_m16a1
 
 silencer_name              = wpn_addon_silencer_556x45    ; section name for the attachable silencer

@@ -21,7 +21,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_protecta
 
 ;--TTX---------------------------------------------------------------------------
-hit_power        			= 0.68, 0.68, 0.68, 0.68
+hit_power        			= 0.745, 0.745, 0.745, 0.745
 hit_impulse      			= 68
 hit_type 					= fire_wound
 fire_distance            	= 410
@@ -30,18 +30,12 @@ rpm                      	= 155           ;60 = 1 секунда
 
 hud                      	= wpn_protecta_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0
-;увеличение изношености при одиночном выстреле
+misfire_probability        = 0.005
+misfire_start_condition		= 0.87
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0068
+misfire_end_prob	     	= 0.068
 condition_shot_dec      	= 0.0014
-;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= 0.0014
 
 tri_state_reload			= on
@@ -57,7 +51,7 @@ fire_modes					= 1
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
 fire_dispersion_base		= 0.58  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor		= 1.68f
+control_inertion_factor		= 1.41f
 crosshair_inertion		= 6.45
 
 ;отдача
@@ -86,7 +80,7 @@ zoom_cam_max_angle			= 10.0
 zoom_cam_max_angle_horz		= 10.0
 zoom_cam_step_angle_horz	= 3.0
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 3	;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 3	
 
 ;---DOF-------------------------------------------------------------------------
 zoom_dof					= 0.5, 1.0, 180
@@ -124,10 +118,10 @@ inv_grid_height				= 1
 inv_grid_x					= 12
 inv_grid_y					= 69
 
-upgr_icon_x			= 0
-upgr_icon_y			= 909
-upgr_icon_width		= 297
-upgr_icon_height   	= 113
+upgr_icon_x			= 1724 ; 0
+upgr_icon_y			= 802 ; 909
+upgr_icon_width		= 167 ; 297
+upgr_icon_height   	= 159 ; 113
 
 kill_msg_x			= 258
 kill_msg_y			= 3
@@ -160,7 +154,7 @@ ph_mass			 			= 3
 scope_status			= 2
 silencer_status			= 0
 grenade_launcher_status		= 0
-scopes_sect				   = scope_susat_proecta, scope_susat_x1.6_proecta, scope_susat_custom_proecta, scope_susat_dusk_proecta, scope_susat_night_proecta
+scopes_sect				   = scope_susat_proecta_moist, scope_susat_proecta, scope_susat_proecta_worn, scope_susat_x1.6_proecta, scope_susat_custom_proecta, scope_susat_dusk_proecta, scope_susat_night_proecta
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time		= 0.25
@@ -229,6 +223,16 @@ scope_name 					= wpn_addon_scope_susat
 scope_x 					= 50
 scope_y 					= -30
 
+[scope_susat_proecta_moist]
+scope_name 					= wpn_addon_scope_susat_moist
+scope_x 					= 50
+scope_y 					= -30
+
+[scope_susat_proecta_worn]
+scope_name 					= wpn_addon_scope_susat_worn
+scope_x 					= 50
+scope_y 					= -30
+
 [scope_susat_x1.6_proecta]
 scope_name 					= wpn_addon_scope_susat_x1.6
 scope_x 					= 50
@@ -249,18 +253,6 @@ scope_name 					= wpn_addon_scope_susat_night
 scope_x 					= 50
 scope_y 					= -30
 
-;-----------------------------------------------------------------------------
-; Уникальнvе
-;-----------------------------------------------------------------------------
-
-[wpn_protecta_nimble]:wpn_protecta
-$spawn          = "weapons\wpn_protecta_nimble"   ; name and section in level editor
-
-cost					 	= 39020
-inv_weight					= 4.471
-
-hit_power        			= 0.72, 0.72, 0.72, 0.72
-
 ;---------------------------
 ;AP Weapon Section for NPCs
 ;---------------------------
@@ -273,38 +265,35 @@ ammo_class		 			= ammo_12x76_zhekan, ammo_12x70_buck
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_protecta, up_gr_seconab_protecta, up_gr_thirdab_protecta, up_gr_fourtab_protecta
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_protecta
-
 ;================================================================================================
 [wpn_protecta_custom]:wpn_protecta
 
 cost					 	= 37320
 inv_weight					= 4.446
 
-installed_upgrades      = up_fourta_protecta
+upgrades                = up_gr_firstab_protecta_custom, up_gr_seconab_protecta_custom, up_gr_thirdab_protecta_custom, up_gr_fourtab_protecta_custom
+installed_upgrades      = up_thirda_protecta_custom, up_thirdd_protecta_custom
 
-hit_power        			= 0.68, 0.68, 0.68, 0.68
+hit_power        			= 0.777, 0.777, 0.777, 0.777
 hit_impulse      			= 68
-fire_distance            	= 410
-bullet_speed			 	= 420			
-rpm                      	= 160          
+fire_distance            	= 438
+bullet_speed			 	= 433			
+rpm                      	= 169          
 
 hud                      	= wpn_protecta_custom_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0
-misfire_end_prob	     	= 0
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0014
+misfire_start_condition		= 0.83
+misfire_end_condition		= 0.10
+misfire_start_prob	     	= 0.0063
+misfire_end_prob	     	= 0.060
+condition_shot_dec      	= 0.0011
+condition_queue_shot_dec	= 0.0012
 
 ammo_mag_size		 		= 12
 ammo_class		 			= ammo_12x70_buck, ammo_12x76_zhekan
 fire_modes					= 1
 
-fire_dispersion_base		= 0.55
+fire_dispersion_base		= 0.46
 
 inv_name				= st_wpn_protecta_custom
 inv_name_short				= st_wpn_protecta_custom
@@ -324,25 +313,26 @@ item_visual                   	= dynamics\weapons\wpn_protecta\wpn_protect1_hud
 ;================================================================================================
 [wpn_protecta_camo]:wpn_protecta
 
-cost					 	= 39060
+cost					 	= 39460
 inv_weight					= 4.412
 
-installed_upgrades      = up_firsta_protecta, up_fourta_protecta
+upgrades                = up_gr_firstab_protecta_camo, up_gr_seconab_protecta_camo, up_gr_thirdab_protecta_camo, up_gr_fourtab_protecta_camo
+installed_upgrades      = up_firsta_protecta_camo, up_firstd_protecta_camo, up_firstf_protecta_camo
 
-hit_power        			= 0.68, 0.68, 0.68, 0.68
+hit_power        			= 0.801, 0.801, 0.801, 0.801
 hit_impulse      			= 68
-fire_distance            	= 410
-bullet_speed			 	= 420			
-rpm                      	= 160          
+fire_distance            	= 458
+bullet_speed			 	= 443			
+rpm                      	= 176          
 
 hud                      	= wpn_protecta_camo_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0
-misfire_end_prob	     	= 0
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0014
+misfire_start_condition		= 0.79
+misfire_end_condition		= 0.09
+misfire_start_prob	     	= 0.0051
+misfire_end_prob	     	= 0.056
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0011
 
 scope_x 					= 30
 scope_y 					= -30
@@ -351,7 +341,7 @@ ammo_mag_size		 		= 12
 ammo_class		 			= ammo_12x70_buck, ammo_12x76_zhekan
 fire_modes					= 1
 
-fire_dispersion_base		= 0.56
+fire_dispersion_base		= 0.41
 
 inv_name				= st_wpn_protecta_camo
 inv_name_short				= st_wpn_protecta_camo
@@ -375,20 +365,22 @@ item_visual                   	= dynamics\weapons\wpn_protecta\wpn_protect2_hud
 cost					 	= 31680
 inv_weight					= 4.587
 
-hit_power        			= 0.68, 0.68, 0.68, 0.68
+upgrades                = up_gr_firstab_protecta_worn, up_gr_seconab_protecta_worn, up_gr_thirdab_protecta_worn, up_gr_fourtab_protecta_worn
+
+hit_power        			= 0.671, 0.671, 0.671, 0.671
 hit_impulse      			= 68
-fire_distance            	= 410
-bullet_speed			 	= 420			
-rpm                      	= 155          
+fire_distance            	= 388
+bullet_speed			 	= 401			
+rpm                      	= 136          
 
 hud                      	= wpn_protecta_worn_hud
 
-misfire_start_condition		= 0.7
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0
-misfire_end_prob	     	= 0
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0014
+misfire_start_condition		= 0.92
+misfire_end_condition		= 0.16
+misfire_start_prob	     	= 0.0077
+misfire_end_prob	     	= 0.082
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0019
 
 scope_x 					= 20
 scope_y 					= -20
@@ -397,7 +389,7 @@ ammo_mag_size		 		= 12
 ammo_class		 			= ammo_12x70_buck, ammo_12x76_zhekan
 fire_modes					= 1
 
-fire_dispersion_base		= 0.6
+fire_dispersion_base		= 0.71
 
 inv_name					= st_wpn_protecta_worn
 inv_name_short				= st_wpn_protecta_worn
@@ -407,6 +399,8 @@ inv_grid_height				= 1
 inv_grid_x					= 12
 inv_grid_y					= 67
 
+scopes_sect				   = scope_susat_proecta_moist, scope_susat_proecta, scope_susat_proecta_worn, scope_susat_x1.6_proecta, scope_susat_custom_proecta, scope_susat_dusk_proecta, scope_susat_night_proecta
+
 visual                   	= dynamics\weapons\wpn_protecta\wpn_protect3
 
 snd_reload		= weapons\protecta\protecta_reload_end
@@ -414,3 +408,17 @@ snd_reload		= weapons\protecta\protecta_reload_end
 [wpn_protecta_worn_hud]:wpn_protecta_hud
 
 item_visual                   	= dynamics\weapons\wpn_protecta\wpn_protect3_hud
+
+;-----------------------------------------------------------------------------
+; Уникальнvе
+;-----------------------------------------------------------------------------
+
+[wpn_protecta_nimble]:wpn_protecta_custom
+$spawn          = "weapons\wpn_protecta_nimble"   ; name and section in level editor
+
+cost					 	= 38220
+inv_weight					= 4.446
+
+installed_upgrades      = up_thirda_protecta_custom, up_thirdd_protecta_custom, up_fourta_protecta_custom
+
+;================================================================================================

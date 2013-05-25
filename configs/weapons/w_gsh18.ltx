@@ -15,10 +15,10 @@ sprint_allowed          = true
 control_inertion_factor = 1.0 ; = 1.0
 
 ;-------------------------------------------------------------------------------
-cost					= 9980           ; the price of the item
+cost					= 8980           ; the price of the item
 inv_weight				= 0.476
 
-upgrades                = up_gr_firstab_walther, up_gr_seconab_walther, up_gr_thirdab_walther, up_gr_fourtab_walther, up_gr_fifthab_walther
+upgrades                = up_gr_firstab_gsh18, up_gr_seconab_gsh18, up_gr_thirdab_gsh18, up_gr_fourtab_gsh18, up_gr_fifthab_gsh18
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_walther
 
@@ -38,7 +38,7 @@ hud                     = wpn_gsh18_hud
 
 ammo_elapsed      = 18
 ammo_mag_size     = 18           ; clip (magazine) size
-fire_modes		  = = 1
+fire_modes		  = 1
 
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 grenade_class     = ammo_vog-25         ; name of the ltx-section of used grenades
@@ -47,20 +47,13 @@ launch_speed      = 0
 hand_dependence   = 1
 single_handed     = 1
 
-misfire_probability        = 0.005 
-
-misfire_start_condition		= 0.6
-
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
-
-misfire_start_prob	     	= 0.0085
-
-misfire_end_prob	     	= 0.085
-
-condition_shot_dec      	= 0.0017
-
-condition_queue_shot_dec	= 0.0015
-
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.04
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0020
 
 ;---DOF-------------------------------------------------------------------------
 zoom_dof             = 0.5, 1.0, 180
@@ -120,6 +113,11 @@ inv_grid_width			= 2
 inv_grid_height			= 1
 inv_grid_x			= 18
 inv_grid_y			= 40
+
+upgr_icon_x			= 1724 ; 304
+upgr_icon_y			= 802 ; 627
+upgr_icon_width		= 167 ; 295
+upgr_icon_height   	= 159 ; 110
 
 kill_msg_x			= 168
 kill_msg_y			= 178

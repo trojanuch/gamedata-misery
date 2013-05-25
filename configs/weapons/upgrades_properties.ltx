@@ -25,9 +25,6 @@ prop_3xfire                 ;; Режим автоматической стрельбы по три выстрела
 prop_nightvision			;; Установка ПНВ
 prop_no_buck				;; Не стреляет дробью
 
-
-
-
 prop_armor					;;Броня
 prop_damage					;;Повреждение
 prop_durability				;;Износостойкость (прочность)
@@ -49,8 +46,19 @@ prop_autolock               ;;Автозахват цели
 prop_sprint                 ;;Бег в экзоскелете
 prop_scanner                ;;Инфракрасный сканер
 
+prop_not_available			;; generic prop for blocked upgrades
 
+[prop_not_available]
+name     = st_prop_not_available
+icon     = ui_wp_prop_not_available
+functor  = inventory_upgrades.property_functor_c
+params   = hit_power, rpm, cost
 
+[prop_not_available_no_reason]
+name     = st_prop_not_available_no_reason
+icon     = ui_wp_prop_not_available
+functor  = inventory_upgrades.property_functor_c
+params   = hit_power, rpm, cost
 
 [prop_weight]
 name     = st_prop_weight

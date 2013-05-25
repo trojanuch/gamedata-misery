@@ -11,11 +11,11 @@ description					= st_wpn_gp100_descr
 
 ef_weapon_type					= 5
 
-cost					= 12268
+cost					= 9628
 inv_weight				= 1.317
 
 ;-----------------------------------------------------------------------------
-upgrades                = up_gr_firstab_desert_eagle, up_gr_seconab_desert_eagle, up_gr_thirdab_desert_eagle, up_gr_fourtab_desert_eagle, up_gr_fifthab_desert_eagle
+upgrades                = up_gr_firstab_gp100, up_gr_seconab_gp100, up_gr_thirdab_gp100, up_gr_fourtab_gp100, up_gr_fifthab_gp100
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_desert_eagle
 
@@ -37,17 +37,12 @@ hud                     	= wpn_gp100_hud
 
 ;-----------------------------------------------------------------------------
 
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.01
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.1
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0023
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0021
+misfire_start_condition		= 0.83
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0074
+misfire_end_prob	     	= 0.078
+condition_shot_dec      	= 0.0019
+condition_queue_shot_dec	= 0.0017
 
 ammo_limit		 		= 120
 ammo_current		 	= 90
@@ -115,10 +110,10 @@ inv_grid_height			= 1
 inv_grid_x			= 16
 inv_grid_y			= 23
 
-upgr_icon_x			= 1019
-upgr_icon_y			= 4
-upgr_icon_width			= 187
-upgr_icon_height   		= 134
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 kill_msg_x			= 194
 kill_msg_y			= 123

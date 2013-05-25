@@ -19,8 +19,8 @@ cost                    = 45640
 weapon_class            = assault_rifle        ; Type of the weapon
 inv_weight              = 4.483
 
-upgrades                = up_gr_firstab_l85, up_gr_seconab_l85, up_gr_thirdab_l85, up_gr_fourtab_l85, up_gr_fourtcd_l85, up_gr_fourtef_l85, up_gr_fifthab_l85, up_gr_fifthcd_l85
-installed_upgrades      =
+upgrades                = up_gr_firstab_fnfallelcan, up_gr_seconab_fnfallelcan, up_gr_thirdab_fnfallelcan, up_gr_fourtab_fnfallelcan, up_gr_fourtcd_fnfallelcan, up_gr_fourtef_fnfallelcan, up_gr_fifthab_fnfallelcan, up_gr_fifthcd_fnfallelcan
+installed_upgrades      = up_thirda_fnfallelcan, up_thirde_fnfallelcan, up_thirdf_fnfallelcan, up_firsta_fnfallelcan
 upgrade_scheme          = upgrade_scheme_l85
 
 ;-------TTX-----------------------------------------------------------------------
@@ -39,19 +39,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_fnfallelcan_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.045
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.007
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.009
+misfire_probability        = 0.005
+misfire_start_condition		= 0.7
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0025
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.001
 
 ammo_elapsed            = 20
 ammo_mag_size           = 20
@@ -123,10 +117,10 @@ inv_grid_height         = 2
 inv_grid_x              = 0
 inv_grid_y              = 42
 
-upgr_icon_x			= 1321
-upgr_icon_y			= 1109
-upgr_icon_width		= 334
-upgr_icon_height   	= 114
+upgr_icon_x			= 1724 ; 1321
+upgr_icon_y			= 802 ; 1109
+upgr_icon_width		= 167 ; 334
+upgr_icon_height   	= 159 ; 114
 
 kill_msg_x              = 80
 kill_msg_y              = 59
@@ -174,11 +168,10 @@ ph_mass                 = 4
 scope_status            = 2
 silencer_status         = 2
 grenade_launcher_status = 2
-scope_texture		= wpn_crosshair_elcan
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
-zoom_rotate_time		= 0.25
-scope_zoom_factor       = 72                                                ; fov for zoom mode
+zoom_rotate_time		= 0.25                                               ; fov for zoom mode
+scope_zoom_factor       = 58.6
 
 silencer_name           = wpn_addon_silencer_762x51
 silencer_x              = 258
@@ -186,8 +179,7 @@ silencer_y              = 18
 grenade_launcher_name   = wpn_addon_grenade_launcher_m203
 grenade_launcher_x      = 135
 grenade_launcher_y      = 33
-
-scopes_sect				   = scope_susat_fal, scope_susat_x1.6_fal, scope_susat_fal_worn, scope_susat_custom_fal, scope_susat_dusk_fal, scope_susat_night_fal
+scopes_sect				= scope_susat_fal, scope_susat_x1.6_fal, scope_susat_moist_fal, scope_susat_broken_fal, scope_susat_custom_fal, scope_susat_dusk_fal, scope_susat_night_fal
 
 ;звуки
 snd_draw		= weapons\generic\rifle_draw
@@ -297,8 +289,13 @@ scope_name 					= wpn_addon_scope_susat
 scope_x 					= 83
 scope_y 					= 9
 
-[scope_susat_fal_worn]
-scope_name 					= wpn_addon_scope_susat_worn
+[scope_susat_moist_fal]
+scope_name 					= wpn_addon_scope_susat_moist
+scope_x 					= 83
+scope_y 					= 9
+
+[scope_susat_broken_fal]
+scope_name 					= wpn_addon_scope_susat_broken
 scope_x 					= 83
 scope_y 					= 9
 

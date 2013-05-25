@@ -19,7 +19,7 @@ cost                    = 39700
 weapon_class            = assault_rifle        ; Type of the weapon
 inv_weight              = 4.296
 
-upgrades                = up_gr_firstab_l85, up_gr_seconab_l85, up_gr_thirdab_l85, up_gr_fourtab_l85, up_gr_fourtcd_l85, up_gr_fourtef_l85, up_gr_fifthab_l85, up_gr_fifthcd_l85
+upgrades                = up_gr_firstab_fnfal, up_gr_seconab_fnfal, up_gr_thirdab_fnfal, up_gr_fourtab_fnfal, up_gr_fourtcd_fnfal, up_gr_fourtef_fnfal, up_gr_fifthab_fnfal, up_gr_fifthcd_fnfal
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_l85
 
@@ -39,19 +39,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_fnfal_hud
 
-misfire_probability        = 0.0005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.006
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.077
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0007
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0008
+misfire_probability        = 0.005
+misfire_start_condition		= 0.7
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.002
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.001
 
 ammo_elapsed            = 20
 ammo_mag_size           = 20
@@ -95,7 +89,7 @@ zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
 zoom_cam_step_angle_horz     = 1.3
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 7        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 7        
 ;---DOF-------------------------------------------------------------------------
 zoom_dof				= 0.5, 1.0, 180
 reload_dof				= 0.0, 0.5, 5, 2
@@ -123,10 +117,10 @@ inv_grid_height         = 2
 inv_grid_x              = 6
 inv_grid_y              = 36
 
-upgr_icon_x			= 1503
-upgr_icon_y			= 1356
-upgr_icon_width		= 289
-upgr_icon_height   	= 101
+upgr_icon_x			= 1724 ; 1503
+upgr_icon_y			= 802 ; 1356
+upgr_icon_width		= 167 ; 289
+upgr_icon_height   	= 159 ; 101
 
 kill_msg_x              = 80
 kill_msg_y              = 59
@@ -174,11 +168,12 @@ ph_mass                 = 4
 scope_status            = 1
 silencer_status         = 2
 grenade_launcher_status = 2
-scope_texture		= wpn_crosshair_l85
+scope_texture		= wpn_crosshair_fn2000
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time		= 0.25
-scope_zoom_factor       = 58.6 ;        = 30                                                ; fov for zoom mode
+scopes_sect				= scope_acog_fnfal, scope_acog_trijicon_fnfal, scope_acog_night_fnfal
+scope_zoom_factor       = 40 ; 58.6 ; 										; fov for zoom mode
 
 silencer_name           = wpn_addon_silencer_762x51
 silencer_x              = 227
@@ -186,8 +181,6 @@ silencer_y              = 17
 grenade_launcher_name   = wpn_addon_grenade_launcher_m203
 grenade_launcher_x      = 130
 grenade_launcher_y      = 28
-
-scopes_sect		= scope_susat_fnfal, scope_susat_x1.6_fnfal, scope_susat_custom_fnfal, scope_susat_dusk_fnfal, scope_susat_night_fnfal
 
 ;звуки
 snd_draw                = weapons\generic\rifle_draw
@@ -295,27 +288,17 @@ gl_hud_offset_rot_16x9            = -0.162500,-0.040000,0.000000
 lean_hud_offset_pos	= 0,0,0
 lean_hud_offset_rot	= 0,0,0
 
-[scope_susat_fnfal]
-scope_name 					= wpn_addon_scope_susat
+[scope_acog_fnfal]
+scope_name 					= wpn_addon_scope_acog
 scope_x 					= 83
 scope_y 					= 9
 
-[scope_susat_x1.6_fnfal]
-scope_name 					= wpn_addon_scope_susat_x1.6
+[scope_acog_trijicon_fnfal]
+scope_name 					= wpn_addon_scope_acog_trijicon
 scope_x 					= 83
 scope_y 					= 9
 
-[scope_susat_custom_fnfal]
-scope_name 					= wpn_addon_scope_susat_custom
-scope_x 					= 83
-scope_y 					= 9
-
-[scope_susat_dusk_fnfal]
-scope_name 					= wpn_addon_scope_susat_dusk
-scope_x 					= 83
-scope_y 					= 9
-
-[scope_susat_night_fnfal]
-scope_name 					= wpn_addon_scope_susat_night
+[scope_acog_night_fnfal]
+scope_name 					= wpn_addon_scope_acog_night
 scope_x 					= 83
 scope_y 					= 9

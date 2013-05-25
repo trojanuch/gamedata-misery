@@ -1,7 +1,7 @@
 [up_sect_firsta_hpsa]
 ;—корострельность(1)10%
 ;----------------------
-cost		      		= 800
+cost		      		= 1280
 value					= +5
 
 rpm						= +17
@@ -9,7 +9,7 @@ rpm						= +17
 [up_sect_firstc_hpsa]
 ;Ќастильность(2)20%
 ;------------------
-cost		      		= 1000
+cost		      		= 1420
 value					= +20
 
 bullet_speed		 	= +50
@@ -18,7 +18,7 @@ fire_dispersion_base	= -0.01
 [up_sect_firstd_hpsa]
 ;ќтдача(2)-20%
 ;------------
-cost		      		= 1000
+cost		      		= 1580
 value					= -20
 
 cam_dispersion          = -0.2 	;0.6
@@ -28,7 +28,7 @@ cam_step_angle_horz		= -0.2		;1.0
 [up_sect_firste_hpsa]
 ;ќтдача(3)-30%
 ;------------
-cost		      		= 1900
+cost		      		= 1720
 value					= -30
 
 cam_dispersion          = -0.25		;0.6
@@ -38,7 +38,7 @@ cam_step_angle_horz		= -0.25		;1.0
 [up_sect_secona_hpsa]
 ;Ќастильность(1)10%
 ;------------------
-cost		      		= 1300
+cost		      		= 1340
 value					= +10
 
 bullet_speed		 	= +30
@@ -46,24 +46,24 @@ bullet_speed		 	= +30
 [up_sect_seconc_hpsa]
 ;Ќадежность(2)15%
 ;---------------
-cost		      		= 1600
+cost		      		= 1730
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+
+;fire_dispersion_condition_factor    = -1 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.001 ;0.0013
+condition_queue_shot_dec	= -0.00013 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.00014 ;0.0011
+
 misfire_start_prob	     	= -0.002
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= -0.02 ;0.03
 
 [up_sect_secone_hpsa]
 ;—корострельность(3)25%
 ;----------------------
-cost		      		= 1900
+cost		      		= 1820
 value					= +25
 
 rpm						= +75
@@ -71,7 +71,7 @@ rpm						= +75
 [up_sect_seconf_hpsa]
 ;Ќастильность(1)10%
 ;------------------
-cost		      		= 1900
+cost		      		= 1790
 value					= +30
 
 bullet_speed		 	= +30
@@ -79,10 +79,10 @@ bullet_speed		 	= +30
 [up_sect_thirda_hpsa]
 ;¬ес
 ;------------------
-cost		      		= 300
-value					= -0.35
+cost		      		= 1120
+value					= -0.34
 
-inv_weight              = -0.35
+inv_weight              = -0.34
 
 crosshair_inertion			= -0.3
 
@@ -93,7 +93,7 @@ PDM_disp_accel_factor 		= -0.1
 [up_sect_thirdc_hpsa]
 ;”добство(2)15%
 ;--------------
-cost		      		= 1600
+cost		      		= 1720
 value					= +15
 
 crosshair_inertion			= -0.7
@@ -105,7 +105,7 @@ PDM_disp_accel_factor 		= -0.3
 [up_sect_thirdd_hpsa]
 ;ќтдача(2)-20%
 ;------------
-cost		      		= 1600
+cost		      		= 1630
 value					= -20
 
 cam_dispersion          = -0.2		;0.6
@@ -115,33 +115,28 @@ cam_step_angle_horz		= -0.2		;1.0
 [up_sect_fourta_hpsa]
 ;“очность(1)10%
 ;---------------
-cost		      		= 1300
+cost		      		= 1360
 value					= +10
 
 fire_dispersion_base	= -0.02
-fire_dispersion_condition_factor    = -1
+;fire_dispersion_condition_factor    = -1
 
 [up_sect_fourtc_hpsa]
 ;Ќадежность(2)15%
 ;---------------
-cost		      		= 1600
+cost		      		= 1590
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+;fire_dispersion_condition_factor    = -1
+condition_queue_shot_dec	= -0.00013
+condition_shot_dec      	= -0.00014
 misfire_start_prob	     	= -0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.02 ;0.03
+misfire_end_prob	     	= -0.02
 
 [up_sect_fourte_hpsa]
 ;”добство(3)25%
 ;--------------
-cost		      		= 2000
+cost		      		= 1740
 value					= +25
 
 crosshair_inertion			= -1
@@ -153,7 +148,7 @@ PDM_disp_accel_factor 		= -0.4
 [up_sect_fiftha_hpsa]
 ;”величенный объем магазина
 ;---------------
-cost		      		= 1800
+cost		      		= 1580
 value					= +4
 
 ammo_mag_size		 	= +4
@@ -161,18 +156,18 @@ ammo_mag_size		 	= +4
 [up_sect_fifthc_hpsa]
 ;—мена калибра на 9х18
 ;---------------
-cost		      		= 1500
+cost		      		= 2260
 value					= "9x18"
 
 ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
 
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0001 ;0.0013
+condition_queue_shot_dec	= 0.00018 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= 0.00014 ;0.0011
+
 misfire_start_prob	     	= 0.0008
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= 0.008 ;0.03
 
 [up_firsta_hpsa]
@@ -243,7 +238,7 @@ icon                    = ui_inGame2_upgrade_HPSS_1m_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_hpsa
+section                 = up_sect_empty_tier_3 ; up_sect_firste_hpsa
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -258,7 +253,7 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_zatp_c5_name
 description             = st_up_zatp_c5_descr
-icon                    = ui_inGame2_upgrade_HPSS_1m_4
+icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_HPSS_1m_4
 
 
 
@@ -307,7 +302,7 @@ icon                    = ui_inGame2_upgrade_HPSS_1m_6
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_hpsa
+section                 = up_sect_empty_tier_3 ; up_sect_secone_hpsa
 property                = prop_rpm
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -322,13 +317,13 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_barp_c1_name
 description             = st_up_barp_c1_descr
-icon                    = ui_inGame2_upgrade_HPSS_1m_7
+icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_HPSS_1m_7
 
 [up_seconf_hpsa]
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_seconf_hpsa
+section                 = up_sect_empty_tier_3 ; up_sect_seconf_hpsa
 property                = prop_bullet_speed
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -343,7 +338,7 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_barp_c2_name
 description             = st_up_barp_c2_descr
-icon                    = ui_inGame2_upgrade_HPSS_1m_8
+icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_HPSS_1m_8
 
 
 [up_thirda_hpsa]
@@ -451,7 +446,7 @@ icon                    = ui_inGame2_upgrade_HPSS_1m_13
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_fourte_hpsa
+section                 = up_sect_empty_tier_3 ; up_sect_fourte_hpsa
 property                = prop_inertion 
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -465,7 +460,7 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_usmp_c2_name
 description             = st_up_usmp_c2_descr
-icon                    = ui_inGame2_upgrade_HPSS_1m_14
+icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_HPSS_1m_14
 
 
 [up_fiftha_hpsa]

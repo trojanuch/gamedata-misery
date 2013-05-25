@@ -24,7 +24,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_mp5
 
 ;----TTX--------------------------------------------------------------------------
-hit_power            = 0.22, 0.22, 0.22, 0.22
+hit_power            = 0.224, 0.224, 0.224, 0.224
 hit_impulse          = 18    ; size of physic impulse by bullet
 hit_type             = fire_wound            ; [] type of the wound
 fire_distance           = 540                  ; maximum fire distance that bullet can fly
@@ -37,19 +37,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_mp5_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.004
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.057
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0007
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0008
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.86
+misfire_end_condition		= 0.16
+misfire_start_prob	     	= 0.0055
+misfire_end_prob	     	= 0.060
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0011
 
 ammo_elapsed      = 30
 ammo_mag_size     = 30           ; clip (magazine) size
@@ -97,7 +91,7 @@ zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 50.0
 zoom_cam_step_angle_horz    = 1.5
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9        
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
@@ -122,10 +116,10 @@ inv_grid_height   = 1
 inv_grid_x        = 6
 inv_grid_y        = 27
 
-upgr_icon_x		= 561
-upgr_icon_y		= 129
-upgr_icon_width		= 292
-upgr_icon_height   	= 114
+upgr_icon_x			= 1724 ; 304
+upgr_icon_y			= 802 ; 627
+upgr_icon_width		= 167 ; 295
+upgr_icon_height   	= 159 ; 110
 
 kill_msg_x        = 72
 kill_msg_y        = 82
@@ -289,7 +283,7 @@ $spawn                  	= "weapons\wpn_mp5_nimble"		; option for Level Editor
 inv_name				= st_wpn_mp5_nimble
 description					= st_wpn_mp5_nimble_descr
 
-cost              = 30900
+cost              = 25240
 inv_weight        = 2.667
 
 inv_grid_width			= 3
@@ -297,27 +291,33 @@ inv_grid_height			= 1
 inv_grid_x			= 6
 inv_grid_y			= 27
 
-upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
-installed_upgrades      = up_secona_mp5
-upgrade_scheme          = upgrade_scheme_mp5
+upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5
+installed_upgrades      = up_fourta_mp5, up_fourtc_mp5, up_fourtf_mp5, up_thirda_mp5
+upgrade_scheme          = upgrade_scheme_mp5_nimble
 
 ;----TTX--------------------------------------------------------------------------
-hit_power            = 0.18, 0.18, 0.18, 0.18
-hit_impulse          = 18    ; size of physic impulse by bullet
+hit_power            = 0.294, 0.294, 0.294, 0.294
+hit_impulse          = 24    ; size of physic impulse by bullet
 hit_type             = fire_wound            ; [] type of the wound
-fire_distance           = 510                  ; maximum fire distance that bullet can fly
-bullet_speed            = 385             ; starting bullet speed
-rpm                     = 690
+fire_distance           = 583                  ; maximum fire distance that bullet can fly
+bullet_speed            = 652             ; starting bullet speed
+rpm                     = 818
 rpm_empty_click         = 200
 
 ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro
 fire_modes		  = 1, -1
 
-upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5
-installed_upgrades      = up_fourta_mp5, up_secona_mp5
-upgrade_scheme          = upgrade_scheme_mp5_nimble
-
 hud                     = wpn_mp6_hud
+
+misfire_start_condition		= 0.78
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.0046
+misfire_end_prob	     	= 0.048
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+fire_dispersion_base    = 0.46
+
 visual                  = dynamics\weapons\wpn_mp6\wpn_mp6.ogf
 hands_position				= -0.106500,-0.162000,0.113001
 hands_orientation			= -6.700007,-0.800001,-5.400002
@@ -415,32 +415,29 @@ ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_mp5
-
 ;=====================================================================================
 [wpn_mp5_custom]:wpn_mp5
 
-cost              = 21780
+cost              = 23980
 inv_weight        = 2.669
 
-installed_upgrades      = up_secona_mp5, up_firsta_mp5
+upgrades                = up_gr_firstab_mp5_custom, up_gr_seconab_mp5_custom, up_gr_thirdab_mp5_custom, up_gr_fourtab_mp5_custom, up_gr_fifthab_mp5_custom, up_gr_fifthcd_mp5_custom
+installed_upgrades      = up_thirda_mp5_custom, up_thirdc_mp5_custom, up_thirde_mp5_custom, up_fiftha_mp5_custom
 
-hit_power            = 0.22, 0.22, 0.22, 0.22
+hit_power            = 0.268, 0.268, 0.268, 0.268
 hit_impulse          = 18
-fire_distance           = 540
-bullet_speed            = 425
-rpm                     = 800
+fire_distance           = 568
+bullet_speed            = 439
+rpm                     = 811
 
 hud                     = wpn_mp5_custom_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.004
-misfire_end_prob	     	= 0.057
-condition_shot_dec      	= 0.0007
-condition_queue_shot_dec	= 0.0008
+misfire_start_condition		= 0.81
+misfire_end_condition		= 0.13
+misfire_start_prob	     	= 0.0050
+misfire_end_prob	     	= 0.054
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.0009
 
 ammo_mag_size     = 30
 fire_modes	  = 1, -1
@@ -466,23 +463,26 @@ item_visual             = dynamics\weapons\wpn_mp5\wpn_mpa_hud.ogf
 ;=====================================================================================
 [wpn_mp5_alt]:wpn_mp5
 
-cost              = 18520
-inv_weight        = 2.744
+cost              = 19520
+inv_weight        = 2.621
 
-hit_power            = 0.22, 0.22, 0.22, 0.22
+upgrades                = up_gr_firstab_mp5_alt, up_gr_seconab_mp5_alt, up_gr_thirdab_mp5_alt, up_gr_fourtab_mp5_alt, up_gr_fifthab_mp5_alt, up_gr_fifthcd_mp5_alt
+installed_upgrades      = up_firsta_mp5_alt
+
+hit_power            = 0.242, 0.242, 0.242, 0.242
 hit_impulse          = 18
-fire_distance           = 540
-bullet_speed            = 425
-rpm                     = 805
+fire_distance           = 558
+bullet_speed            = 433
+rpm                     = 808
 
 hud                     = wpn_mp5_alt_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.004
-misfire_end_prob	     	= 0.057
+misfire_start_condition		= 0.83
+misfire_end_condition		= 0.13
+misfire_start_prob	     	= 0.0051
+misfire_end_prob	     	= 0.056
 condition_shot_dec      	= 0.0007
-condition_queue_shot_dec	= 0.0008
+condition_queue_shot_dec	= 0.0010
 
 ammo_mag_size     = 30
 fire_modes	  = 1, -1
@@ -511,20 +511,24 @@ item_visual             = dynamics\weapons\wpn_mp5\wpn_mpb_hud.ogf
 cost              = 15240
 inv_weight        = 2.787
 
-hit_power            = 0.22, 0.22, 0.22, 0.22
+upgrades                = up_gr_firstab_mp5_worn, up_gr_seconab_mp5_worn, up_gr_thirdab_mp5_worn, up_gr_fourtab_mp5_worn, up_gr_fifthab_mp5_worn, up_gr_fifthcd_mp5_worn
+
+hit_power            = 0.182, 0.182, 0.182, 0.182
 hit_impulse          = 18
-fire_distance           = 540
-bullet_speed            = 425
-rpm                     = 800
+fire_distance           = 502
+bullet_speed            = 399
+rpm                     = 763
 
 hud                     = wpn_mp5_worn_hud
 
-misfire_start_condition		= 0.8
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.004
-misfire_end_prob	     	= 0.057
-condition_shot_dec      	= 0.0007
-condition_queue_shot_dec	= 0.0008
+misfire_start_condition		= 0.92
+misfire_end_condition		= 0.19
+misfire_start_prob	     	= 0.0087
+misfire_end_prob	     	= 0.087
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.0015
+
+silencer_status            = 0 
 
 ammo_mag_size     = 30
 fire_modes	  = 1, -1

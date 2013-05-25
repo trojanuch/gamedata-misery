@@ -91,6 +91,6 @@ end
 
 function GetAccuracy(wpn_section, upgr_sections) --' точность
     local fire_dispersion_base  = read_float(wpn_section, upgr_sections, "fire_dispersion_base")
-  fire_dispersion_base = 0.9 - fire_dispersion_base
-  return normalize(fire_dispersion_base, 0.1, 1.05)
+  fire_dispersion_base = 1.1 - fire_dispersion_base
+  return normalize(fire_dispersion_base, 0.01, 1.15)
 end

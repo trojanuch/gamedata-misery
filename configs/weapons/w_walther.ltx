@@ -15,7 +15,7 @@ sprint_allowed          = true
 control_inertion_factor = 1.0 ; = 1.0
 
 ;-------------------------------------------------------------------------------
-cost					= 7580           ; the price of the item
+cost					= 4720           ; the price of the item
 inv_weight				= 0.694
 
 upgrades                = up_gr_firstab_walther, up_gr_seconab_walther, up_gr_thirdab_walther, up_gr_fourtab_walther, up_gr_fifthab_walther
@@ -23,12 +23,12 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_walther
 
 ;----TTX--------------------------------------------------------------------------
-hit_power           			= 0.24, 0.24, 0.24, 0.24
+hit_power           			= 0.267, 0.267, 0.267, 0.267
 hit_impulse	 		 			= 22
 hit_type 						= fire_wound
-fire_distance           	= 410
-bullet_speed		 		= 370
-rpm                     	= 225
+fire_distance           	= 414
+bullet_speed		 		= 378
+rpm                     	= 227
 rpm_empty_click 	 		= 120
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -36,19 +36,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_walther_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.006
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.06
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0020
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0020
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.87
+misfire_end_condition		= 0.09
+misfire_start_prob	     	= 0.0057
+misfire_end_prob	     	= 0.054
+condition_shot_dec      	= 0.0024
+condition_queue_shot_dec	= 0.0022
 
 ammo_elapsed      = 16
 ammo_mag_size     = 16           ; clip (magazine) size
@@ -67,7 +61,7 @@ reload_dof           = 0.0, 0.5, 5, 1.7
 
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.62 ;0.15 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.74 ;0.15 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.0 ; = 0.79
 crosshair_inertion   	= 3.15
 
@@ -122,10 +116,10 @@ inv_grid_height			= 1
 inv_grid_x				= 0
 inv_grid_y				= 26
 
-upgr_icon_x			= 569
-upgr_icon_y			= 8
-upgr_icon_width		= 249
-upgr_icon_height   	= 117
+upgr_icon_x			= 1724 ; 569
+upgr_icon_y			= 802 ; 8
+upgr_icon_width		= 167 ; 249
+upgr_icon_height   	= 159 ; 117
 
 kill_msg_x				= 168
 kill_msg_y				= 178
@@ -286,38 +280,35 @@ ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
 ;End of AP section
 ;---------------------------
 
-upgrades                = up_gr_firstab_walther, up_gr_seconab_walther, up_gr_thirdab_walther, up_gr_fourtab_walther, up_gr_fifthab_walther
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_walther
-
 ;================================================================================================================
 [wpn_walther_custom]:wpn_walther
 
-cost					= 9240
-inv_weight				= 0.526
+cost					= 9740
+inv_weight				= 0.497
 
-installed_upgrades      = up_firsta_walther, up_secona_walther, up_firsta_walther
+upgrades                = up_gr_firstab_walther_custom, up_gr_seconab_walther_custom, up_gr_thirdab_walther_custom, up_gr_fourtab_walther_custom, up_gr_fifthab_walther_custom
+installed_upgrades      = up_fiftha_walther_custom, up_firsta_walther_custom, up_firstd_walther_custom
 
-hit_power           			= 0.24, 0.24, 0.24, 0.24
+hit_power           			= 0.303, 0.303, 0.303, 0.303
 hit_impulse	 		 			= 22
-fire_distance           	= 410
-bullet_speed		 		= 370
-rpm                     	= 225
+fire_distance           	= 432
+bullet_speed		 		= 388
+rpm                     	= 234
 
 hud                     = wpn_walther_custom_hud
 
-misfire_start_condition		= 0.55
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.006
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0020
+misfire_start_condition		= 0.83
+misfire_end_condition		= 0.08
+misfire_start_prob	     	= 0.0052
+misfire_end_prob	     	= 0.048
+condition_shot_dec      	= 0.0019
+condition_queue_shot_dec	= 0.0016
 
 ammo_mag_size     = 16
 fire_modes		  = 1
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.61
+fire_dispersion_base	= 0.57
 
 inv_name				= st_wpn_walther_custom
 inv_name_short			= st_wpn_walther_custom
@@ -337,31 +328,32 @@ item_visual						= dynamics\weapons\wpn_walter99\wpn_walter9a_hud.ogf
 ;================================================================================================================
 [wpn_walther_alt1]:wpn_walther
 
-cost					= 7680
+cost					= 6280
 inv_weight				= 0.594
 
-installed_upgrades      = up_thirda_walther
+upgrades                = up_gr_firstab_walther_alt, up_gr_seconab_walther_alt, up_gr_thirdab_walther_alt, up_gr_fourtab_walther_alt, up_gr_fifthab_walther_alt
+installed_upgrades      = up_fiftha_walther_alt, up_thirda_walther_alt
 
-hit_power           			= 0.24, 0.24, 0.24, 0.24
+hit_power           			= 0.289, 0.289, 0.289, 0.289
 hit_impulse	 		 			= 22
-fire_distance           	= 410
-bullet_speed		 		= 370
-rpm                     	= 225
+fire_distance           	= 422
+bullet_speed		 		= 384
+rpm                     	= 231
 
 hud                     = wpn_walther_alt1_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.006
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0020
+misfire_start_condition		= 0.85
+misfire_end_condition		= 0.09
+misfire_start_prob	     	= 0.0056
+misfire_end_prob	     	= 0.050
+condition_shot_dec      	= 0.0022
 condition_queue_shot_dec	= 0.0020
 
 ammo_mag_size     = 16
 fire_modes		  = 1
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.61
+fire_dispersion_base	= 0.63
 
 inv_name				= st_wpn_walther_alt1
 inv_name_short			= st_wpn_walther_alt1
@@ -381,29 +373,32 @@ item_visual						= dynamics\weapons\wpn_walter99\wpn_walter9b_hud.ogf
 ;================================================================================================================
 [wpn_walther_alt2]:wpn_walther
 
-cost					= 7840
+cost					= 5690
 inv_weight				= 0.661
 
-hit_power           			= 0.24, 0.24, 0.24, 0.24
-hit_impulse	 		 			= 22
-fire_distance           	= 410
-bullet_speed		 		= 370
-rpm                     	= 225
+upgrades                = up_gr_firstab_walther_alt, up_gr_seconab_walther_alt, up_gr_thirdab_walther_alt, up_gr_fourtab_walther_alt, up_gr_fifthab_walther_alt
+installed_upgrades      = up_fiftha_walther_alt
+
+hit_power           			= 0.289, 0.289, 0.289, 0.289
+hit_impulse	 		 			= 23
+fire_distance           	= 422
+bullet_speed		 		= 384
+rpm                     	= 231
 
 hud                     = wpn_walther_alt2_hud
 
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.006
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0020
+misfire_start_condition		= 0.86
+misfire_end_condition		= 0.08
+misfire_start_prob	     	= 0.0054
+misfire_end_prob	     	= 0.052
+condition_shot_dec      	= 0.0023
+condition_queue_shot_dec	= 0.0021
 
 ammo_mag_size     = 16
 fire_modes		  = 1
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.6
+fire_dispersion_base	= 0.68
 
 inv_name				= st_wpn_walther_alt2
 inv_name_short			= st_wpn_walther_alt2
@@ -423,29 +418,31 @@ item_visual						= dynamics\weapons\wpn_walter99\wpn_walter9c_hud.ogf
 ;================================================================================================================
 [wpn_walther_worn]:wpn_walther
 
-cost					= 6180
+cost					= 3280
 inv_weight				= 0.703
 
-hit_power           			= 0.24, 0.24, 0.24, 0.24
-hit_impulse	 		 			= 22
-fire_distance           	= 410
-bullet_speed		 		= 370
-rpm                     	= 215
+upgrades                = up_gr_firstab_walther_worn, up_gr_seconab_walther_worn, up_gr_thirdab_walther_worn, up_gr_fourtab_walther_worn, up_gr_fifthab_walther_worn
+
+hit_power           			= 0.236, 0.236, 0.236, 0.236
+hit_impulse	 		 			= 19
+fire_distance           	= 402
+bullet_speed		 		= 344
+rpm                     	= 201
 
 hud                     = wpn_walther_worn_hud
 
-misfire_start_condition		= 0.8
-misfire_end_condition		= 0.1
-misfire_start_prob	     	= 0.006
-misfire_end_prob	     	= 0.06
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0020
+misfire_start_condition		= 0.93
+misfire_end_condition		= 0.13
+misfire_start_prob	     	= 0.0069
+misfire_end_prob	     	= 0.057
+condition_shot_dec      	= 0.0027
+condition_queue_shot_dec	= 0.0029
 
 ammo_mag_size     = 16
 fire_modes		  = 1
 ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
 
-fire_dispersion_base	= 0.65
+fire_dispersion_base	= 0.89
 
 inv_name				= st_wpn_walther_worn
 inv_name_short			= st_wpn_walther_worn

@@ -9,20 +9,20 @@ only_use_pistols = false		;Will use only pistols when killing victim
 
 random_state_run = false		;Will randomly use either move.standing or move.crouch when in running distance (False is always move.standing)
 random_state_walk = false		;Will randomly use either move.standing or move.crouch when in walking distance (False is always move.standing)
-state_run_min_distance = 8		;Distance greater then to use running state
+state_run_min_distance = 6		;Distance greater then to use running state
 
-min_timer = 1500				;Amount of time (milliseconds) before pulling the trigger after reaching target position.
-max_timer = 4500
-surrender_min_timer = 8000		;Amount of time (milliseconds) before pulling the trigger if victim is playing prisoner animation.
-surrender_max_timer = 10000
+min_timer = 600				;Amount of time (milliseconds) before pulling the trigger after reaching target position.
+max_timer = 900
+surrender_min_timer = 2500		;Amount of time (milliseconds) before pulling the trigger if victim is playing prisoner animation.
+surrender_max_timer = 5500
 
 min_distance = 2.5				;Distance in which to search for an accessible vertex nearest victim
-max_distance = 5
+max_distance = 8
 
 min_vector_rotate_y = 1			; The min rotation to randomly circle around victim
 max_vector_rotate_y = 95		; The max rotation to randomly circle around victim
 
-chance_to_play_sound = 0.33		;Chance in which a stalker will say the "kill_wounded" sound
+chance_to_play_sound = 0.66		;Chance in which a stalker will say the "kill_wounded" sound
 chance_to_play_surrender = 0.33 ;Chance for wounded victim to play prisoner animation
 
 ;Communities that can cause the prisoner animation

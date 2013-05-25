@@ -19,13 +19,12 @@ cost                    = 44900
 weapon_class            = assault_rifle        ; Type of the weapon
 inv_weight           	= 3.789
 
-upgrades                = up_gr_firstab_g36, up_gr_seconab_g36, up_gr_thirdab_g36, up_gr_fourtab_g36, up_gr_fourtcd_g36, up_gr_fourtef_g36
-;, up_gr_fifthab_g36
+upgrades                = up_gr_firstab_famas3, up_gr_seconab_famas3, up_gr_thirdab_famas3, up_gr_fourtab_famas3, up_gr_fourtcd_famas3, up_gr_fourtef_famas3
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_g36
 
 ;--TTX--------------------------------------------------------------------------
-hit_power		= 0.465, 0.465, 0.465, 0.465
+hit_power		= 0.473, 0.473, 0.473, 0.473
 hit_impulse             = 25 ;50 ;100
 hit_type		= fire_wound
 fire_distance           = 885
@@ -38,19 +37,13 @@ time_to_aim             = 3.0
 
 hud                     = wpn_famas3_hud
 
-misfire_probability        = 0.004 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.4
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.004
-;шанс осечки при изношености больше чем misfireEndCondition
+misfire_probability        = 0.004
+misfire_start_condition		= 0.82
+misfire_end_condition		= 0.08
+misfire_start_prob	     	= 0.0053
 misfire_end_prob	     	= 0.05
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0009
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0010
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0008
 
 ammo_elapsed            = 30
 ammo_mag_size           = 30
@@ -94,7 +87,7 @@ zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
 zoom_cam_step_angle_horz     = 1.8
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 11        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 11        
 
 ;---DOF-------------------------------------------------------------------------
 zoom_dof						= 0.5, 1.0, 180
@@ -124,10 +117,10 @@ inv_grid_height         = 2
 inv_grid_x           	= 6
 inv_grid_y           	= 34
 
-upgr_icon_x			= 303
-upgr_icon_y			= 515
-upgr_icon_width		= 294
-upgr_icon_height   	= 110
+upgr_icon_x			= 1724 ; 303
+upgr_icon_y			= 802 ; 515
+upgr_icon_width		= 167 ; 294
+upgr_icon_height   	= 159 ; 110
 
 kill_msg_x           	= 84
 kill_msg_y           	= 28
@@ -180,9 +173,7 @@ scope_zoom_factor       = 58.6 ;        = 85                                    
 
 scope_texture				= wpn_crosshair_acog
 
-scopes_sect				   = scope_susat_lr, scope_susat_x1.6_lr, scope_susat_custom_lr, scope_susat_dusk_lr, scope_susat_night_lr
-scope_x 				= 84
-scope_y 				= -12
+scopes_sect				   = scope_acog_famas3, scope_acog_trijicon_famas3, scope_acog_night_famas3
 silencer_name  				= wpn_addon_silencer_556x45
 silencer_x 				= 176
 silencer_y 				= 10
@@ -286,3 +277,17 @@ gl_hud_offset_rot_16x9			= 0,0,0;-0.145000,0.000000,0.000000
 lean_hud_offset_pos		= 0,0,0
 lean_hud_offset_rot		= 0,0,0
 
+[scope_acog_famas3]
+scope_name 					= wpn_addon_scope_acog
+scope_x 				= 84
+scope_y 				= -12
+
+[scope_acog_trijicon_famas3]
+scope_name 					= wpn_addon_scope_acog_trijicon
+scope_x 				= 84
+scope_y 				= -12
+
+[scope_acog_night_famas3]
+scope_name 					= wpn_addon_scope_acog_night
+scope_x 				= 84
+scope_y 				= -12

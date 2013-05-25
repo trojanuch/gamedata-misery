@@ -15,46 +15,35 @@ default_to_ruck         = false
 sprint_allowed          = true
 
 ;-------------------------------------------------------------------
-cost                    = 20480
+cost                    = 27160
 weapon_class            = assault_rifle
 inv_weight              = 2.521
 
-upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
+upgrades                = up_gr_firstab_ump45, up_gr_seconab_ump45, up_gr_thirdab_ump45, up_gr_fourtab_ump45, up_gr_fifthab_ump45, up_gr_fifthcd_ump45
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_mp5
 
 ;---------------------------------------------------------------------
-hit_power           	= 0.18, 0.18, 0.18, 0.18
+hit_power           	= 0.348, 0.348, 0.348, 0.348
 hit_impulse             = 28
 hit_type                = fire_wound
-fire_distance           = 460
-bullet_speed            = 375
-rpm                     = 650
+fire_distance           = 467
+bullet_speed            = 486
+rpm                     = 654
 rpm_empty_click         = 200
-
-;silencer_hit_power      = 0.82, 0.82, 0.82, 0.82
-;silencer_hit_impulse    = 120
-;silencer_fire_distance  = 160
-;silencer_bullet_speed   = 515
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
 time_to_aim             = 3.0
 
 hud                     = wpn_ump45_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
-;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
-;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.004
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.057
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0014
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0011
+misfire_probability        = 0.005
+misfire_start_condition		= 0.85
+misfire_end_condition		= 0.17
+misfire_start_prob	     	= 0.0056
+misfire_end_prob	     	= 0.062
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.00011
 
 ammo_elapsed            = 25
 ammo_mag_size           = 25
@@ -125,10 +114,10 @@ inv_grid_height         = 2
 inv_grid_x              = 16
 inv_grid_y              = 38
 
-upgr_icon_x	        	= 870
-upgr_icon_y	        	= 1460
-upgr_icon_width	    	= 200
-upgr_icon_height     	= 122
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
 
 kill_msg_x	        	= 0
 kill_msg_y	        	= 123
