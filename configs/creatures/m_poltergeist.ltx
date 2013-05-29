@@ -48,10 +48,10 @@ fire_quadratic_factor		=	0
 pp_effector_name			= 	postprocess_thermal
 pp_highest_at				= 	0
 
-psy_linear_factor		=	2.0
-psy_quadratic_factor	=	0.048
+psy_linear_factor		=	1.8
+psy_quadratic_factor	=	0.039
 psy_max_distance		=	52.0
-psy_max_power			=	7.5
+psy_max_power			=	7.05
 psy_sound				=	anomaly\psy_voices_1_l		;monsters\controller\controller_presence_l
 psy_pp_effector_name	= 	psy_antenna 				;postprocess_psi
 psy_pp_highest_at		= 	0.2
@@ -376,15 +376,15 @@ stand_run_dmg_0			=		1,		0.2,      1,	  	0.25,    1,		 0.7,	 1,			0.75,		1
 ; IMMUNITIES
 ;===========================================================================
 [poltergeist_immunities]
-burn_immunity = 3.0 ; 		= 0.0					;коэффициенты иммунитета
+burn_immunity = 0.0 ; 		= 0.0					;коэффициенты иммунитета
 strike_immunity 	= 0.5
-shock_immunity = 3.0 ; 		= 0.0
-wound_immunity 		= 0.5
+shock_immunity = 0.0 ; 		= 0.0
+wound_immunity 		= 0.3
 radiation_immunity 	= 0.0
 telepatic_immunity 	= 0.0
-chemical_burn_immunity = 5.5 ; = 3.0 ; 	= 0.0
+chemical_burn_immunity = 0.0 ; = 3.0 ; 	= 0.0
 explosion_immunity 	= 0.5
-fire_wound_immunity 	= 0.5
+fire_wound_immunity 	= 0.9
 
 ;===========================================================================
 ; TELE
@@ -418,13 +418,13 @@ Tele_Object_Max_Mass			= 5000
 Tele_Object_Count				= 7 ;7
 Tele_Hold_Time					= 0360
 Tele_Wait_Time					= 0535
-Tele_Delay_Between_Objects_Time	= 0260
-Tele_Distance					= 75
-Tele_Object_Height				= 1.5
+Tele_Delay_Between_Objects_Time	= 0390
+Tele_Distance					= 95
+Tele_Object_Height				= 1.6
 Tele_Time_Object_Keep			= 7320
-Tele_Raise_Speed				= 14
-Tele_Delay_Between_Objects_Raise_Time	= 310
-Tele_Collision_Damage				= 0.15
+Tele_Raise_Speed				= 10
+Tele_Delay_Between_Objects_Raise_Time	= 390
+Tele_Collision_Damage				= 0.10
 
 
 Particles_Damage				= monsters\polter_damage
@@ -444,15 +444,15 @@ sound_tele_hold					= monsters\burer\burer_tele_hold
 sound_tele_throw				= monsters\burer\burer_tele_throw
 
 [poltergeist_tele_immunities]
-burn_immunity = 0.0 3.0 ; 		= 0.0					;коэффициенты иммунитета
-strike_immunity 	= 0.0 ; 0.5
-shock_immunity = 0.0 ; 3.0 ; 		= 0.0
-wound_immunity 		= 0.5
+burn_immunity = 0.0 ; 		= 0.0					;коэффициенты иммунитета
+strike_immunity 	= 0.5
+shock_immunity = 0.0 ; 		= 0.0
+wound_immunity 		= 0.3
 radiation_immunity 	= 0.0
 telepatic_immunity 	= 0.0
-chemical_burn_immunity = 0.0 ; 5.5 ; = 3.0 ; 	= 0.0
+chemical_burn_immunity = 0.0 ; = 3.0 ; 	= 0.0
 explosion_immunity 	= 0.5
-fire_wound_immunity 	= 0.5
+fire_wound_immunity 	= 0.9
 
 ;===========================================================================
 ; FLAMER
@@ -527,10 +527,10 @@ fire_quadratic_factor		=	0.01
 pp_effector_name			= 	postprocess_thermal
 pp_highest_at				= 	0.02
 
-psy_linear_factor		=	1.5
-psy_quadratic_factor	=	0.032
-psy_max_distance		=	43.0
-psy_max_power			=	5.4
+psy_linear_factor		=	1.3
+psy_quadratic_factor	=	0.025
+psy_max_distance		=	38.0
+psy_max_power			=	4.8
 psy_sound				=	anomaly\psy_voices_1_l		;monsters\controller\controller_presence_l
 psy_pp_effector_name	= 	psy_antenna 				;postprocess_psi
 psy_pp_highest_at		= 	0.2
@@ -540,15 +540,15 @@ Hidden_Particles				= monsters\polter_linza_00	;monsters\polter_hidden
 Sound_Idle						= monsters\poltergeist\fire_idle_0
 
 [poltergeist_flame_immunities]
-burn_immunity = 0 ; 3.0 ; 		= 0.0					;коэффициенты иммунитета
-strike_immunity 	= 0 ; 0.5
-shock_immunity = 0 ; 3.0 ; 		= 0.0
-wound_immunity 		= 0.5
+burn_immunity = 0.0 ; 		= 0.0					;коэффициенты иммунитета
+strike_immunity 	= 0.5
+shock_immunity = 0.0 ; 		= 0.0
+wound_immunity 		= 0.3
 radiation_immunity 	= 0.0
 telepatic_immunity 	= 0.0
-chemical_burn_immunity = 0 ; 5.5 ; = 3.0 ; 	= 0.0
+chemical_burn_immunity = 0.0 ; = 3.0 ; 	= 0.0
 explosion_immunity 	= 0.5
-fire_wound_immunity 	= 0.5
+fire_wound_immunity 	= 0.9
 
 
 
