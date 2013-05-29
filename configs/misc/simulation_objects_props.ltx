@@ -1809,7 +1809,7 @@ territory_monolith = 1
 territory_hostile = 1
 base_hostile = 2
 lair_night = 1
-sim_avail = true ; {+jup_b204_wachman_dead} true, false
+sim_avail = false ; {+jup_b204_wachman_dead} true, false ; suspected to cause state_mgr ctd!
 
 [jup_b205_smart_terrain]:default
 sim_avail = {+jup_b205_evacuation_visited} true, false
@@ -1870,11 +1870,12 @@ territory_hostile = 1
 territory = 2
 
 [jup_b4]:default_lair_night
-sim_avail = {+jup_b4_task_end} true, false
-hunting_ground 	= 2
-territory_hostile = 1
-territory = 1
+sim_avail = {+jup_b4_monolith_squad_out} true, {+jup_b4_task_end} true, false
+hunting_ground 	= 1
+;territory_hostile = 1
+;territory = 1
 lair = 1
+lair_night = 1
 
 [jup_b41]:default_base
 sim_avail = false
@@ -1882,6 +1883,8 @@ surge		= 1
 
 [jup_b46]:default
 sim_avail = true
+base_duty = 2
+territory = 1
 
 [jup_b47]:default
 sim_avail = {+jup_b47_products_info_complite} true, {+jup_b47_all_merc_dead} true, false
@@ -2028,9 +2031,12 @@ lair_night = 1
 ;resource = 2
 
 [jup_sim_18]:default
-sim_avail = false ; true ; suspected to cause state_mgr ctd!
-lair_night_rest = 2
-lair = 2
+sim_avail = true ; suspected to cause state_mgr ctd!
+;lair_night_rest = 2
+;lair = 2
+territory_monolith = 1
+territory_hostile = 1
+base_hostile = 2
 
 [jup_sim_19]:default
 base_monolith = 2

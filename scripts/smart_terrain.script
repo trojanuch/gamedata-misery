@@ -1,5 +1,5 @@
 local DEATH_IDLE_TIME = 140*60 -- секунд
-local RESPAWN_IDLE = 2900 -- секунд игрового времени
+local RESPAWN_IDLE = 2700 -- секунд игрового времени
 local RESPAWN_RADIUS = 100 -- радиус респауна(если актер ближе, то не спаунить)
 SMART_TERRAIN_SECT = "smart_terrain"
 smart_terrains_by_name = {}

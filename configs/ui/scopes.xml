@@ -208,6 +208,12 @@
       <texture>wpn_crosshair_gauss</texture>
     </auto_static>
   </wpn_crosshair_gauss>
+  
+    <wpn_crosshair_findot x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_findot</texture>
+    </auto_static>
+  </wpn_crosshair_findot>
 
 </w>
 
