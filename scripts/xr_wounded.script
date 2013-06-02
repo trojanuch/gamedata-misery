@@ -63,6 +63,21 @@ function action_wounded:execute()
 	action_base.execute (self)
 	local npc = self.object
 	local wound_manager = self.a.wound_manager
+	
+	-- Swartz
+	local obj_community = self.object:character_community()
+	if obj_community == "monolith" then
+	   local posit = self.object:position()
+	   local enemy = db.actor
+	   if enemy and posit:distance_to(enemy:position()) < 2.5 and self.object:see(enemy) then
+        rnd = math.random(1,4)
+        if rnd == 3 then
+        monolith_suicide.monolith_die()
+	      monolith_suicide.monolith_explode(self.object)
+	      end
+	   end
+	end	
+  -- Swartz	
 
 	-- Проверяем возможность скушать аптечку.
 	if self.a.autoheal == true then

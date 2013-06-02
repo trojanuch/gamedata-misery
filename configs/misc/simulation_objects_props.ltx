@@ -1,5 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; M.S.O. (Massive Simulation Overhaul) MISERY v2 Edition ;;;;;;;;
+;;;;;;;; 30.03.2013 trojanuch ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [default]
@@ -328,7 +329,7 @@ sim_avail = true ; {+zat_a1_simulation_start} true, false
 hunting_ground 	= 1
 lair_night = 1
 lair = 2
-sim_avail = true ; {+zat_b53_go_nil} true, {+zat_b53_actor_enemy} true, {+zat_b53_thanks_dialog} true, false
+sim_avail = {+zat_b53_go_nil} true, {+zat_b53_actor_enemy} true, {+zat_b53_thanks_dialog} true, false
 
 [zat_sim_2]:default
 lair = 2
@@ -381,7 +382,7 @@ lair = 1
 ;hunting_ground 	= 2
 ;territory_monolith = 1
 ;territory_hostile = 1
-sim_avail = {+zat_b40_merc_gone} true, {+zat_b40_find_information_complete} true, false
+sim_avail = true ; {+zat_b40_merc_gone} true, {+zat_b40_find_information_complete} true, false
 
 [zat_sim_11]:default
 sim_avail =  true
@@ -430,7 +431,7 @@ sim_avail = true
 [zat_sim_18]:default_lair
 hunting_ground 	= 1
 lair_night = 1
-sim_avail =  true ; {+zat_b53_go_nil} true, {+zat_b53_actor_enemy} true, {+zat_b53_thanks_dialog} true, false
+sim_avail = {+zat_b53_go_nil} true, {+zat_b53_actor_enemy} true, {+zat_b53_thanks_dialog} true, false
 
 [zat_sim_19]:default
 lair = 2
@@ -459,7 +460,7 @@ lair_night = 2
 ;hunting_ground 	= 1
 ;lair = 1
 lair_night = 2
-sim_avail =  true
+sim_avail = {+zat_b18_noah_dead} true, false
 
 [zat_sim_24]:default
 lair = 2
@@ -507,14 +508,12 @@ lair = 2
 
 [zaton_smrter_sim_1]:default
 lair = 1
-;lair_night = 2
-;lair = 2
+lair_night = 2
 ;base_hostile = 1
 ;territory_hostile = 1
-;territory_monolith = 1
+territory_monolith = 1
 ;base_monolith = 2
-;sim_avail = {+zat_b40_merc_gone} true, {+zat_b40_find_information_complete} true, false
-sim_avail = true
+sim_avail = {+zat_b40_merc_gone} true, {+zat_b40_find_information_complete} true, false
 
 [zaton_smrter_sim_2]:default
 lair = 2
@@ -2279,7 +2278,7 @@ base_monolith = 2
 territory_zombied = 2
 
 [pri_b307]:default_resource_hard
-sim_avail = true
+sim_avail = {+pri_a25_rfi_source_eliminated} true, false
 resource_monolith = 1
 lair_night = 2
 lair = 2
@@ -2336,7 +2335,7 @@ lair = 2
 territory_zombied = 1
 
 [pri_sim_3]:default
-sim_avail = true
+sim_avail = {+pri_a25_rfi_source_eliminated} true, false
 lair_night = 2
 lair = 1
 ;hunting_ground 	= 1
@@ -2351,7 +2350,7 @@ base_hostile = 1
 territory_zombied = 1
 
 [pri_sim_5]:default
-sim_avail = true
+sim_avail = {+pri_a25_rfi_source_eliminated} true, false
 lair_night = 1
 lair = 2
 ;hunting_ground 	= 1
@@ -2378,7 +2377,7 @@ lair = 1
 territory_zombied = 1
 
 [pri_sim_9]:default
-sim_avail = true
+sim_avail = {+pri_a25_rfi_source_eliminated} true, false
 lair_night = 1
 lair = 1
 hunting_ground 	= 1
@@ -2488,7 +2487,7 @@ territory = 1
 territory_zombied = 1
 
 [pripyat_smrter_sim_9]:default
-sim_avail = true
+sim_avail = {+pri_a25_rfi_source_eliminated} true, false
 lair_night = 2
 lair = 1
 territory_zombied = 1

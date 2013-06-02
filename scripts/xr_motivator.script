@@ -425,7 +425,9 @@ function motivator_binder:update(delta)
 
 	if (object_alive) then
 		stalker_generic.update_invulnerability(self.object)
-
+		-- Swartz
+    if (m_mines) then m_mines.chek_target(object, self) end
+    -- Swartz
 		if self.st.state_mgr then
 			self.st.state_mgr:update()
 			if not self.st.state_mgr.combat and not self.st.state_mgr.alife then

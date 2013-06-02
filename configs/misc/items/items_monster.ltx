@@ -1,5 +1,7 @@
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;; NON-EATABLE MONSTER ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; NON-EATABLE MONSTER PARTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [mutant_part_general]:identity_immunities
@@ -114,7 +116,9 @@ inv_grid_width		= 2
 inv_grid_height		= 2
 inv_grid_x			= 22
 inv_grid_y			= 0
-cost				= 1340
+cost				= 1540
+
+repair_part_bonus	 	= 0.06
 
 [mutant_part_tushkano_head]:mutant_part_general
 $spawn 				= "devices\monster_items\mutant_tushkano_head"
@@ -215,8 +219,19 @@ inv_grid_x          = 15
 inv_grid_y          = 44
 cost                = 940
 
+[mutant_part_crow_beak]:mutant_part_general
+$spawn              = "devices\monster_items\mutant_crow_beak"
+visual				= dynamics\equipments\crow_beak.ogf
+inv_name            = Crow_beak ; mutant_zombi_hand
+inv_name_short      = Crow_beak ; mutant_zombi_hand
+description         = Crow_beak ; mutant_zombi_hand_description
+inv_weight          = 0.023
+inv_grid_x			= 37
+inv_grid_y			= 0
+cost                = 2330
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;; EATABLE MONSTER ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; EATABLE MONSTER PARTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [mutant_part_general_meat]:booster
@@ -426,6 +441,140 @@ eat_sleepiness				= 0.054
 eat_health			= -0.018
 
 use_sound			= interface\inv_eat_mutant_food
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; MONSTER SKINS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[hide_chimera]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_chimera_cogot"
+visual				= dynamics\repair\hide_chimera.ogf
+inv_grid_x			= 27
+inv_grid_y			= 0
+inv_weight			= 0.324
+inv_name			= Chimera_hide ; mutant_krovosos_jaw
+inv_name_short		= Chimera_hide ; mutant_krovosos_jaw
+description			= Chimera_hide ; mutant_krovosos_jaw_description
+cost				= 1960
+
+repair_part_bonus	 	= 0.12
+
+[powder_poltergeist]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_controller_glas"
+visual				= dynamics\repair\powder_poltergeist.ogf
+inv_grid_x			= 28
+inv_grid_y			= 0
+inv_weight			= 0.324
+inv_name			= Pltergeist_dust ; mutant_krovosos_jaw
+inv_name_short		= Pltergeist_dust ; mutant_krovosos_jaw
+description			= Pltergeist_dust ; mutant_krovosos_jaw_description
+cost				= 1660
+
+repair_part_bonus	 	= 0.04
+
+[hide_pseudogiant]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_pseudogigant_hand"
+visual				= dynamics\repair\hide_pseudogiant.ogf
+inv_grid_x			= 29
+inv_grid_y			= 0
+inv_weight			= 0.324
+inv_name			= Giant_hide ; mutant_krovosos_jaw
+inv_name_short		= Giant_hide ; mutant_krovosos_jaw
+description			= Giant_hide ; mutant_krovosos_jaw_description
+cost				= 2840
+
+repair_part_bonus	 	= 0.14
+
+[hide_psy_dog]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_psevdodog_tail"
+visual				= dynamics\repair\hide_psy_dog.ogf
+inv_grid_x			= 30
+inv_grid_y			= 0
+inv_weight			= 0.324
+inv_name			= Pseudodog_hide ; mutant_krovosos_jaw
+inv_name_short		= Pseudodog_hide ; mutant_krovosos_jaw
+description			= Pseudodog_hide ; mutant_krovosos_jaw_description
+cost				= 1680
+
+repair_part_bonus	 	= 0.07
+
+[hide_pseudodog]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_psevdodog_tail"
+visual				= dynamics\repair\hide_pseudodog.ogf
+inv_grid_x			= 31
+inv_grid_y			= 0
+inv_weight			= 1.893
+inv_name			= Pseudodog_hide ; mutant_krovosos_jaw
+inv_name_short		= Pseudodog_hide ; mutant_krovosos_jaw
+description			= Pseudodog_hide ; mutant_krovosos_jaw_description
+cost				= 860
+
+repair_part_bonus	 	= 0.04
+
+[hide_burer]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_burer_hand"
+visual				= dynamics\repair\hide_burer.ogf
+inv_grid_x			= 32
+inv_grid_y			= 0
+inv_weight			= 2.661
+inv_name			= Burer_hide ; mutant_krovosos_jaw
+inv_name_short		= Burer_hide ; mutant_krovosos_jaw
+description			= Burer_hide ; mutant_krovosos_jaw_description
+cost				= 2230
+
+repair_part_bonus	 	= 0.06
+
+[hide_controller]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_controller_glas"
+visual				= dynamics\repair\hide_controller.ogf
+inv_grid_x			= 33
+inv_grid_y			= 0
+inv_weight			= 2.366
+inv_name			= Controller_hide ; mutant_krovosos_jaw
+inv_name_short		= Controller_hide ; mutant_krovosos_jaw
+description			= Controller_hide ; mutant_krovosos_jaw_description
+cost				= 1980
+
+repair_part_bonus	 	= 0.05
+
+[hide_bloodsucker]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_krovosos_jaw"
+visual				= dynamics\repair\hide_bloodsucker.ogf
+inv_grid_x			= 34
+inv_grid_y			= 0
+inv_weight			= 2.124
+inv_name			= Bloodsucker_hide ; mutant_krovosos_jaw
+inv_name_short		= Bloodsucker_hide ; mutant_krovosos_jaw
+description			= Bloodsucker_hide ; mutant_krovosos_jaw_description
+cost				= 1460
+
+repair_part_bonus	 	= 0.05
+
+[hide_boar]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_boar_leg"
+visual				= dynamics\repair\hide_boar.ogf
+inv_grid_x			= 35
+inv_grid_y			= 0
+inv_weight			= 2.898
+inv_name			= Boar_hide ; mutant_krovosos_jaw
+inv_name_short		= Boar_hide ; mutant_krovosos_jaw
+description			= Boar_hide ; mutant_krovosos_jaw_description
+cost				= 890
+
+repair_part_bonus	 	= 0.04
+
+[hide_flesh]:mutant_part_general
+$spawn 				= "devices\monster_items\mutant_flesh_eye"
+visual				= dynamics\repair\hide_flesh.ogf
+inv_grid_x			= 36
+inv_grid_y			= 0
+inv_weight			= 3.698
+inv_name			= Flesh_hide ; mutant_krovosos_jaw
+inv_name_short		= Flesh_hide ; mutant_krovosos_jaw
+description			= Flesh_hide ; mutant_krovosos_jaw_description
+cost				= 640
+
+repair_part_bonus	 	= 0.03
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

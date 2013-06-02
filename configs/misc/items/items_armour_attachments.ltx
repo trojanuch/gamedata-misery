@@ -2,6 +2,8 @@
 ;;;;;;;; ARMOUR ATTACHEMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+; 'Artificial' artifacts system. 30.05.2013 N.Aaroe (concept & text), r_populik (GFX), trojanuch (gameplay implementation)
+
 [aa_base]:identity_immunities
 GroupControlSection		= spawn_group
 cform           		= skeleton
@@ -328,7 +330,7 @@ inv_grid_y			= 44
 inv_grid_width			= 1
 inv_grid_height			= 1
 
-cost				= 4580 ; 6200
+cost				= 4380 ; 6200
 
 jump_height			= 0.0
 ;particles		        = artefact\af_thermal_idle
@@ -357,6 +359,8 @@ additional_inventory_weight	= 1.26
 additional_inventory_weight2	= 1.26
 
 artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.12
 
 [af_kevlar_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
@@ -414,6 +418,8 @@ additional_inventory_weight	= 1.58
 additional_inventory_weight2	= 1.58
 
 artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.18
 
 [af_plates_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета

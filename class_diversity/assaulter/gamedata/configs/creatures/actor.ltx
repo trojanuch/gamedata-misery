@@ -203,7 +203,12 @@ wound_incarnation_v_sleep     	= 0.0
 max_power_leak_speed_sleep    	= -0.00001
 health_restore_v              	= 0.0		;0.0001
 
-;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LINEAR WEIGHT SYSTEM ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Shift of values to make entire stamina consumption lineary depended on weight, with very long sprint times with low or no encumbrance. Works in coherence with max weight limits. 30.05.2013 trojanuch
+
 ;actor_condition only
 
 jump_power 				= 0.018 ;умешьшение силы с прыжком без учета веса ноши
@@ -216,6 +221,8 @@ walk_weight_power       = 0.0050  ;0.0001;                        ;Reduction of 
 overweight_walk_k       = 1.04			;9        ;10                                ;Factor influence of an overload of a burden (it is multiplied on walk_weight_power)
 accel_k                 = 1.7			;5                                        ;Factor on run (it is multiplied walk_power, walk_weight_power)
 sprint_k                = 3.8 ;75        ;коэффициент на "sprint" бег (умножается walk_power, walk_weight_power)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; хромота
 limping_health_begin =        0.04                ;порог здоровья меньше которого актер начинает хромать

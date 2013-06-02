@@ -50,7 +50,7 @@ ammo_current		 		= 0
 ammo_elapsed		 		= 0
 
 ammo_mag_size		 		= 0
-ammo_class		 			= ammo_9x19_fmj
+ammo_class		 			= ammo_binoc
 
 inv_name		 			= st_binocular_name
 inv_name_short				= st_binocular_name
@@ -181,6 +181,10 @@ gl_hud_offset_rot				= 0,0,0
 lean_hud_offset_pos			= 0,0,0
 lean_hud_offset_rot			= 0,0,0
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; EQUIPABLE BINOCULARS ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 [wpn_binoc_inv]:identity_immunities,weapon_probability,default_weapon_params
 GroupControlSection			= spawn_group
@@ -233,7 +237,7 @@ slot 			 			= 2 ; // uquipable ; 4 ; // binocular
 animation_slot				= 2	; type of the animation that will be used
 default_to_ruck				= false
 sprint_allowed					= true
-control_inertion_factor		= 1.09
+control_inertion_factor		= 1.28
 
 quest_item			= false
 can_trade			= true
@@ -266,9 +270,19 @@ max_radius = 500 ; = 250 ;					= 150
 
 cost						= 1580
 
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; BINOCULARS UPGRADE ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+upgrades                = up_gr_firstab_binoc, up_gr_firstcd_binoc, up_gr_seconab_binoc
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_binoculars
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;базовая дисперсия
 fire_dispersion_base		= 1
-control_inertion_factor		= 1.1
+control_inertion_factor		= 1.26f
 
 ;отдача
 cam_return				= 0 ;              = 1 ;0
@@ -293,7 +307,10 @@ grenade_launcher_status		= 0
 
 zoom_enabled				= true
 scope_texture				= wpn_crosshair_bino
-scope_zoom_factor			= 7.5
+scope_zoom_factor			= 44
+
+;new
+scope_dynamic_zoom = off
 
 fire_dispersion_condition_factor = 0
 misfire_start_condition		= 0

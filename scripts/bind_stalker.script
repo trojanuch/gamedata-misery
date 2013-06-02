@@ -156,6 +156,9 @@ function actor_binder:on_trade (item, sell_bye, money)
 	-- End Alundaio
 end
 ----------------------------------------------------------------------------------------------------------------------
+function actor_binder:article_callback(npc, group, name)
+end
+----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_take (obj)
 	printf("on_item_take [%s]", obj:name())
 	if isArtefact(obj) then
@@ -199,6 +202,9 @@ function actor_binder:use_inventory_item(obj)
 		-- Alundaio
 		if (axr_main) then axr_main.actor_on_item_use(obj) end
 		-- End Alundaio
+		if (s_obj) and (s_obj:section_name() == "mine") then
+		  alife():create("mine_blow", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id())
+		end
 	end
 end
 

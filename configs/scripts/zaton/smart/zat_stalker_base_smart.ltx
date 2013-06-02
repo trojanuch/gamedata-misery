@@ -19,11 +19,10 @@ spawn_stalker@master
 
 spawn_stalker@advanced
 
+;;; unused
 
 spawn_stalker@novice_base_sentry
 spawn_stalker@advanced_base_sentry
-
-;;; unused
 
 ;spawn_stalker@novice_base_guard
 ;spawn_stalker@advanced_base_guard
@@ -67,17 +66,19 @@ spawn_num = {+kingpin_gained } 0, {-kingpin_gained +jup_b207_task_end} 2, {-king
 spawn_squads = stalker_sim_squad_novice
 spawn_num = {+zat_b7_victims_disappeared} 0, {+zat_b7_task_end} 0, 1
 
+;;; unused
+
 ; Stalker base sentry squads
+
+; moved to zat_b7
 
 [spawn_stalker@novice_base_sentry]
 spawn_squads = stalker_sim_squad_advanced_zat_stalker_base_smart_sentry
-spawn_num = {+jup_b207_task_end -jup_b218_gather_squad_complete} 0, {+jup_a12_task_done -jup_b218_gather_squad_complete} 0, {+jup_b46_task_done -jup_b218_gather_squad_complete} 0, {+jup_b8_heli_4_searched -jup_b218_gather_squad_complete} 0, {+jup_b209_task_done -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete} 0, 1
+spawn_num = 0 ; {+jup_b207_task_end -jup_b218_gather_squad_complete} 0, {+jup_a12_task_done -jup_b218_gather_squad_complete} 0, {+jup_b46_task_done -jup_b218_gather_squad_complete} 0, {+jup_b8_heli_4_searched -jup_b218_gather_squad_complete} 0, {+jup_b209_task_done -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete} 0, 1
 
 [spawn_stalker@advanced_base_sentry]
 spawn_squads = stalker_sim_squad_advanced_veteran_zat_stalker_base_smart_sentry, stalker_sim_squad_veteran_zat_stalker_base_smart_sentry
-spawn_num = {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done} 1, {+jup_b8_heli_4_searched} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
-
-;;; unused
+spawn_num = 0 ; {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done} 1, {+jup_b8_heli_4_searched} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
 
 ; Stalker base guard squads
 

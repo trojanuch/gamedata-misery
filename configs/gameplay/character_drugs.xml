@@ -137,21 +137,53 @@ mutant_part_dog_meat = 3, prob=0.01 \n
 mutant_part_psevdodog_meat = 2, prob=0.005 \n
 mutant_part_tushkano_meat = 2, prob=0.002 \n
 
-mre = 1, prob=0.002
-ration_ru = 1, prob=0.001
-ration ukr = 1, prob=0.001
+mre = 1, prob=0.002 \n
+ration_ru = 1, prob=0.001 \n
+ration ukr = 1, prob=0.001 \n
 
-gun_oil = 2, prob=0.008
-cleaning_kit_p = 1, prob=0.008
-cleaning_kit_s = 1, prob=0.008
-cleaning_kit_r5 = 1, prob=0.008
-cleaning_kit_r7 = 1, prob=0.008
-cleaning_kit_u = 1, prob=0.006
-toolkit_p = 1, prob=0.004
-toolkit_s = 1, prob=0.004
-toolkit_r5 = 1, prob=0.004
-toolkit_r7 = 1, prob=0.004
-toolkit_u = 1, prob=0.003
+gun_oil = 1, prob=0.008 \n
+cleaning_kit_p = 1, prob=0.008 \n
+cleaning_kit_s = 1, prob=0.008 \n
+cleaning_kit_r5 = 1, prob=0.008 \n
+cleaning_kit_r7 = 1, prob=0.008 \n
+cleaning_kit_u = 1, prob=0.006 \n
+toolkit_p = 1, prob=0.004 \n
+toolkit_s = 1, prob=0.004 \n
+toolkit_r5 = 1, prob=0.004 \n
+toolkit_r7 = 1, prob=0.004 \n
+toolkit_u = 1, prob=0.003 \n
+sharpening_stones = 2, prob=0.008 \n
+gun_oil_ru_d = 3, prob=0.008 \n
+gun_oil_ru = 3, prob=0.008 \n
+solvent = 1, prob=0.008 \n
+grease = 2, prob=0.008 \n
+steel_wool = 2, prob=0.008 \n
+glue_b = 1, prob=0.008 \n
+glue_a = 1, prob=0.006 \n
+glue_e = 1, prob=0.004 \n
+sewing_kit_b = 1, prob=0.008 \n
+sewing_kit_a = 1, prob=0.006 \n
+sewing_kit_h = 1, prob=0.004 \n
+armor_repair_fa = 1, prob=0.002 \n
+armor_repair_pro = 1, prob=0.002 \n
+textile_patch_b = 2, prob=0.008 \n
+textile_patch_m = 2, prob=0.006 \n
+textile_patch_e = 2, prob=0.004 \n
+
+hide_pseudodog = 1, prob=0.005 \n
+hide_bloodsucker = 1, prob=0.005 \n
+hide_boar = 2, prob=0.005 \n
+hide_flesh = 2, prob=0.005 \n
+
+tushonka	= 2, prob=0.001 \n
+glucose		= 1, prob=0.003 \n
+glucose_s	= 1, prob=0.005 \n
+
+explo_jerrycan_fuel	= 1, prob=0.002 \n
+explo_metalcan_powder	= 1, prob=0.002 \n
+explo_balon_gas	= 1, prob=0.002 \n
+
+mine	= 2, prob=0.002 \n
 
 wpn_binoc_inv = 1, prob=0.003
 wpn_upd = 1, prob=0.003

@@ -1,3 +1,10 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; New Ordnance MISERY v2 Edition ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; 30.03.2013 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; _xXxTWiST3DxXx_ (concept & weapon GFX assets) ;;;;;;;;;;;;;;;;;
+;;;;;;;; N.Aaroe, trojanuch (gameplay implementation) ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 #include "delayed_action_fuse.ltx"
 #include "upgrades_properties.ltx"
 
@@ -36,6 +43,12 @@
 #include "upgrades\w_vintorez_up.ltx"
 #include "upgrades\w_walther_up.ltx"
 #include "upgrades\w_wincheaster1300_up.ltx"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 'EMPTY' UPGRADE MODULE ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Individual upgrade configs for each weapon profile allow for easy customization of upgrade possibilities and reducing options for lower tiers of same weapon (standard, worn, rusty). It also allows to easly define common restrictions on mechanic level and display and proper UI. 30.05.2013 trojanuch
 
 #include "upgrades\w_abakan_alt_up.ltx"
 #include "upgrades\w_abakan_camo_up.ltx"
@@ -173,7 +186,15 @@
 #include "upgrades\w_fnfallelcan_up.ltx"
 #include "upgrades\w_trg_up.ltx"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; UNIVERSAL POWER DEVICE ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Adds the upd (essential part of power consumption system) which technically is a weapon. Scripted by alundaio
+
 #include "w_upd.ltx"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 #include "w_ak74.ltx"
 #include "w_ak74u.ltx"

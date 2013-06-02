@@ -19,7 +19,7 @@
 		<text>4x optical scope</text>
 	</string>
 	<string id="st_prop_silencer">
-		<text>Silencer</text>
+		<text>Silencer affinity</text>
 	</string>
 	<string id="st_prop_underbarrel_slot">
 		<text>underbarrel mount</text>
@@ -926,6 +926,42 @@
 	</string>
 	<string id="st_up_opt_c3_name">
 		<text>Adjustable range-finder sight</text>
+	</string>
+	<string id="st_up_opt_binoc1_descr">
+		<text>Contrast-enhancing filters integration into the binoculars lens for improved visibility in urban areas and twilight lighting conditions.</text>
+	</string>
+	<string id="st_up_opt_binoc1_name">
+		<text>Contrast-enhancing sight overlay</text>
+	</string>
+	<string id="st_up_opt_binoc2_descr">
+		<text>Replacement of binocular lens with better zooming ones. Sigh magnification improved to 5.0x</text>
+	</string>
+	<string id="st_up_opt_binoc2_name">
+		<text>5.0x zoom increas</text>
+	</string>
+	<string id="st_up_opt_binoc3_descr">
+		<text>Replacement of optical apparatus of binoculars to allow adjustable zoom. Slight increase in weight due to installation of more complex mechanism.</text>
+	</string>
+	<string id="st_up_opt_binoc3_name">
+		<text>Adjustable zoom lens</text>
+	</string>
+	<string id="st_up_stk_binoc1_descr">
+		<text>Replacement of metalized grip with polymer one, resulting in significant reduction of weight.</text>
+	</string>
+	<string id="st_up_stk_binoc1_name">
+		<text>Polymer grip</text>
+	</string>
+	<string id="st_up_stk_binoc2_descr">
+		<text>Replacement of steel body of binoculars with aluminium one. Lowers equipment's weight and thus significantly boosts usage convenience.</text>
+	</string>
+	<string id="st_up_stk_binoc2_name">
+		<text>Aluminium frame</text>
+	</string>
+	<string id="st_up_stk_binoc3_descr">
+		<text>Replacement of moving parts with titanium counter-parts. Futher weight lowering and functionality increase.</text>
+	</string>
+	<string id="st_up_stk_binoc3_name">
+		<text>Titanium-based mechanical apparatus</text>
 	</string>
 	<string id="st_up_pri_a1_descr">
 		<text>A pneumatic stock is used to reduce recoil during burst fire.</text>

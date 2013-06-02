@@ -1583,7 +1583,7 @@ end
 
 function play_repair_sound()
 	local snd_obj = sound_object("interface\\inv_kit_use_2p8")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	snd_obj:play_no_feedback(db.actor,vector():set(0,0,0), 0, sound_object.s2d)
 end
 
 function play_sound(actor, obj, p)
