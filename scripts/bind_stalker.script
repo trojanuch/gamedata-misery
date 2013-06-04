@@ -195,6 +195,9 @@ end
 
 function actor_binder:use_inventory_item(obj)
 	if(obj) then
+	-- Swartz: This is what screwed it up, this needed to be added.
+	local s_obj = alife():object(obj:id())
+	-- Swartz
 		actor_effects.use_item(alife():object(obj:id()):section_name())
 		if postproces_mod then
 			postproces_mod.use_obj(obj)
@@ -202,9 +205,13 @@ function actor_binder:use_inventory_item(obj)
 		-- Alundaio
 		if (axr_main) then axr_main.actor_on_item_use(obj) end
 		-- End Alundaio
-		if (s_obj) and (s_obj:section_name() == "mine") then
-		  alife():create("mine_blow", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id())
-		end
+		
+		-- Swartz
+		if(s_obj)and(s_obj:section_name()=="mine")then
+      alife():create("mine_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+    end
+    -- Swartz
+    	
 	end
 end
 
