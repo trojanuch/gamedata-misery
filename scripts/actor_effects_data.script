@@ -27,18 +27,18 @@ options = {
 	},
 	health = {
 		-- health level for heavy injuring sounds
-		level1 = 0.12,
+		level1 = 0.08,
 		-- health level for light injuring sounds
-		level2 = 0.33,
+		level2 = 0.28,
 		-- little hit effect (played on every hit > little_delta)
-		little_delta = 6,
+		little_delta = 4,
 		little_ppe = "amk_shoot.ppe",
 		-- middle hit effect (played in addition of little effect, anm and snd randomly chosen)
-		middle_delta = 27,
+		middle_delta = 20,
 		middle_anm = {"shell_shock","hit_front","hit_right","hit_back","hit_left","hit_front_left","hit_back_left","hit_front_right","hit_back_right"},
 		middle_snd = {"pain_2","pain_3","pain_5","pain_6","pain_7","pain_8"},
 		-- huge hit effect (played in addition of little effect, anm and snd randomly chosen)
-		huge_delta = 53,
+		huge_delta = 45,
 		huge_ppe = "total_recall.ppe",
 		huge_anm = {"head_shot","fusker"},
 		huge_snd = {"pain_4","pain_1","hit_5","hit_6"},
@@ -1101,7 +1101,7 @@ wpn_fx = {
 		e = { {2,0}, {2,0}, {3,1}, {5,0}, {7,0}, {5,1} },
 		p = {black = 0.3, blur = 0},
 	},
-	
+
 	wpn_sks_modern = {
 		s = {5},
 		r = 0,
@@ -1914,6 +1914,13 @@ item_fx = {
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[12800] = "actor_effects.use_weapon(1)"
+	},
+	mine = {
+		[0] = "actor_effects.use_weapon(0)",
+--		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
+		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	stimpack = {
 		[0] = "actor_effects.use_weapon(0)",

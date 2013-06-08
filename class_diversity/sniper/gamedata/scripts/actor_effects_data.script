@@ -1101,6 +1101,13 @@ wpn_fx = {
 		e = { {2,0}, {2,0}, {3,1}, {5,0}, {7,0}, {5,1} },
 		p = {black = 0.3, blur = 0},
 	},
+	
+	wpn_sks_modern = {
+		s = {5},
+		r = 0,
+		e = { {2,0}, {2,0}, {3,1}, {5,0}, {7,0}, {5,1} },
+		p = {black = 0.3, blur = 0},
+	},
 
 	wpn_g43 = {
 		s = {5},
@@ -1907,6 +1914,13 @@ item_fx = {
 		[11600] = "actor_effects.use_helmet(1)",
 		[12200] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[12800] = "actor_effects.use_weapon(1)"
+	},
+	mine = {
+		[0] = "actor_effects.use_weapon(0)",
+--		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
+		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
+		[4750] = "actor_effects.use_weapon(1)"
 	},
 	stimpack = {
 		[0] = "actor_effects.use_weapon(0)",
