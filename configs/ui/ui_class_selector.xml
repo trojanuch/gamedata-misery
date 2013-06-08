@@ -77,14 +77,14 @@
 		</button>
 	</tab>
 
-	<btn_accept x="610" y="695" width="131" height="25">
+	<btn_accept x="610" y="675" width="131" height="25">
 		<text font="letterica18" align="c">Accept</text>
 		<text_color>
 			<e r="50" g="50" b="50"/>
 		</text_color>
 	</btn_accept>
 
-	<btn_back x="710" y="695" width="131" height="25">
+	<btn_back x="710" y="675" width="131" height="25">
 		<text font="letterica18" align="c">Back</text>
 		<text_color>
 			<e r="20" g="20" b="20"/>
