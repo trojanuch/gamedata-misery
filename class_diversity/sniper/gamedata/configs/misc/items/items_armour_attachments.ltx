@@ -323,14 +323,14 @@ visual = dynamics\equipments\aa\kevlar
 description			= st_af_kevlar_descr
 inv_name			= st_af_kevlar_name
 inv_name_short			= st_af_kevlar_name
-inv_weight			= 1.74
+inv_weight			= 1.743
 
 inv_grid_x			= 10
 inv_grid_y			= 44
 inv_grid_width			= 1
 inv_grid_height			= 1
 
-cost				= 4480 ; 6200
+cost				= 3380 ; 6200
 
 jump_height			= 0.0
 ;particles		        = artefact\af_thermal_idle
@@ -360,16 +360,18 @@ additional_inventory_weight2	= 1.26
 
 artefact_activation_seq		= af_activation_bold
 
+repair_part_bonus	 	= 0.12
+
 [af_kevlar_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
 strike_immunity 		= 0
 shock_immunity 			= 0
-wound_immunity 			= 0.088
+wound_immunity 			= 0.098
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
 chemical_burn_immunity 		= 0
-explosion_immunity 			= 0.152
-fire_wound_immunity  		= 0.152
+explosion_immunity 			= 0.224 ; 23 sheets of kevlar eq.
+fire_wound_immunity  		= 0.224 ; 23 sheets of kevlar eq.
 
 ;------------------------------------------------------------------------------------------
 
@@ -380,14 +382,14 @@ visual = dynamics\equipments\aa\plates
 description			= st_af_plates_descr
 inv_name			= st_af_plates_name
 inv_name_short			= st_af_plates_name
-inv_weight			= 2.82
+inv_weight			= 2.826
 
 inv_grid_x			= 10
 inv_grid_y			= 42
 inv_grid_width			= 1
 inv_grid_height			= 1
 
-cost				= 6740 ; 6200
+cost				= 4860 ; 6200
 
 jump_height			= 0.0
 ;particles		        = artefact\af_thermal_idle
@@ -417,16 +419,18 @@ additional_inventory_weight2	= 1.58
 
 artefact_activation_seq		= af_activation_bold
 
+repair_part_bonus	 	= 0.18
+
 [af_plates_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
 strike_immunity 		= 0
 shock_immunity 			= -0.063
-wound_immunity 			= 0.156
+wound_immunity 			= 0.188
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
 chemical_burn_immunity 		= 0
-explosion_immunity 			= 0.278
-fire_wound_immunity  		= 0.278
+explosion_immunity 			= 0.339 ; 35 sheets of kevlar eq.
+fire_wound_immunity  		= 0.339 ; 35 sheets of kevlar eq.
 
 ;------------------------------------------------------------------------------------------
 
@@ -474,6 +478,8 @@ additional_inventory_weight	= 1.22
 additional_inventory_weight2	= 1.22
 
 artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.08
 
 [af_camelbak_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета

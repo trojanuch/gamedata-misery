@@ -1,4 +1,4 @@
-[wpn_trg]:identity_immunities,weapon_probability,default_weapon_params
+[wpn_ksvk]:identity_immunities,weapon_probability,default_weapon_params
 GroupControlSection		= spawn_group
 $spawn                  = "weapons\svd"		; option for Level Editor
 $npc			 		= on				; option for Level Editor
@@ -6,7 +6,7 @@ $prefetch 		 		= 8
 scheduled               = off              	; option for ALife Simulator
 cform                   = skeleton
 class                   = WP_SVD
-description				= st_wpn_trg_descr
+description				= st_wpn_ksvk_descr
 
 ef_main_weapon_type		= 3
 ef_weapon_type			= 11
@@ -15,27 +15,27 @@ default_to_ruck         = false
 sprint_allowed       	= true
 
 ;-------------------------------------------------------------------------------
-cost					= 61840
+cost					= 94520
 weapon_class			= sniper_rifle
-inv_weight				= 5.103
+inv_weight				= 12.5
 
-upgrades                = up_gr_firstab_trg, up_gr_seconab_trg, up_gr_thirdab_trg, up_gr_fourtab_trg, up_gr_fourtcd_trg, up_gr_fourtef_trg
+upgrades                = ;up_gr_firstab_trg, up_gr_seconab_trg, up_gr_thirdab_trg, up_gr_fourtab_trg, up_gr_fourtcd_trg, up_gr_fourtef_trg
 installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_svd
+upgrade_scheme          = ;upgrade_scheme_svd
 
 ;------TTX------------------------------------------------------------------------
-hit_power           	= 0.734, 0.734, 0.734, 0.734
+hit_power           	= 2.4, 2.4, 2.4, 2.4
 hit_impulse			= 44
 hit_type 		= fire_wound
-fire_distance           = 1058
-bullet_speed		= 824 ;830	;начальная скорость пули
-rpm                     = 23
+fire_distance           = 1500
+bullet_speed		= 860	;начальная скорость пули
+rpm                     = 43
 rpm_empty_click         = 200
 
 use_aim_bullet		= false		;Поддерживается ли первая суппер пуля
 time_to_aim		= 1.0
 
-hud                     = wpn_trg_hud
+hud                     = wpn_ksvk_hud
 
 misfire_probability        = 0.005
 misfire_start_condition		= 0.93
@@ -47,15 +47,15 @@ condition_queue_shot_dec	= 0.0016
 
 ammo_elapsed			= 0
 
-ammo_mag_size			= 10
+ammo_mag_size			= 5
 fire_modes		  = 1;
-ammo_class				= ammo_magnum_300, ammo_magnum_300_ap
+ammo_class				= ammo_12.7x108_fmj, ammo_12.7x108_ap
 hand_dependence         = 1
 single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.06	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.08	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.94f
 crosshair_inertion      = 11.8
 
@@ -96,7 +96,7 @@ holder_range_modifier	= 2.15               ; во сколько раз увеличивается eye_ra
 holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
 
 min_radius              = 0
-max_radius              = 100
+max_radius              = 500
 
 hit_probability_gd_novice	= 1
 hit_probability_gd_stalker	= 1
@@ -107,8 +107,8 @@ hit_probability_gd_master	= 1
 slot                    = 2                ; // secondary
 animation_slot          = 2                ; type of the animation that will be used
 
-inv_name				= st_trg_sako
-inv_name_short			= st_trg_sako
+inv_name				= st_ksvk
+inv_name_short			= st_ksvk
 
 inv_grid_width     = 6
 inv_grid_height    = 1
@@ -139,7 +139,7 @@ rpm_empty_click 		= 200
 
 shell_point		 	= 0.0, 0.129, 0.192
 shell_dir		 	= 0.0, 0.0, 0.4
-shell_particles	 		= weapons\generic_shells
+shell_particles	 		= ;weapons\generic_shells
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
@@ -148,8 +148,8 @@ strap_orientation      	= -25,-189,65				; (3rd person view in degrees)
 strap_bone0					= bip01_spine2
 strap_bone1					= bip01_spine1
 
-startup_ammo            = 10
-visual                  = dynamics\weapons\wpn_trg\wpn_trg.ogf
+startup_ammo            = 5
+visual                  = dynamics\weapons\wpn_ksvk\wpn_ksvk.ogf
 
 light_disabled				= false
 light_color		 			= 0.6,0.5,0.3
@@ -162,14 +162,14 @@ ph_mass			 			= 3
 
 ;addons
 scope_status			= 1
-silencer_status			= 2
+silencer_status			= 0
 grenade_launcher_status		= 0
 
 zoom_enabled				= true
 zoom_rotate_time			= 0.25
-scope_zoom_factor			= 30	;ПСО-1 4X
+scope_zoom_factor			= 14	;ПСО-1 4X
 
-scope_texture				= wpn_crosshair_findot
+scope_texture				= wpn_crosshair_pso1
 scope_name 					= wpn_addon_scope
 scope_x 						= 60
 scope_y 						= -2
@@ -190,56 +190,52 @@ silencer_light_time 			= 0.2
 ;звуки
 snd_draw				= weapons\trg\trg42_draw
 snd_holster				= weapons\generic\rifle_holster
-snd_shoot				= weapons\trg\trg42_shoot
+snd_shoot				= weapons\ksvk\ksvk_shoot
 snd_empty				= weapons\generic\rifle_modern_empty, 0.5
-snd_reload				= weapons\trg\trg42_reload
+snd_reload				= weapons\ksvk\ksvk_reload
 snd_close				= weapons\generic_close
 snd_bore				= weapons\draw_silent
 snd_bore1				= weapons\mp5_bore
 
-[wpn_trg_hud]:hud_base
+[wpn_ksvk_hud]:hud_base
 zoom_hide_crosshair		= true
 attach_place_idx			= 0
-item_visual					= dynamics\weapons\wpn_trg\wpn_trg_hud
+item_visual					= dynamics\weapons\wpn_ksvk\wpn_ksvk_hud
 
+hands_position			= -0.044500,-0.209998,0.40000
+hands_orientation		= 1.800001,-0.600001,0.200002
 
-hands_position				= -0.063500,-0.150999,0.099000
-hands_orientation			= -0.049999,0.750000,1.550001
+hands_position_16x9		= 0.005000,-0.227498,0.332498
+hands_orientation_16x9  = 3.649998,2.150000,-0.250000
 
-hands_position_16x9				= -0.058500,-0.165999,0.045000
-hands_orientation_16x9			= 0.650000,1.200000,0.800001
+item_position			= 0,0,-0.02
+item_orientation		= 0,0,0
 
-;hands_position_16x9				= -0.045500,-0.161499,-0.026500
-;hands_orientation_16x9			= 3.299998,4.249998,0.800001
+shell_point				= 0.025,0.08,0.150
+shell_dir           	= 0.0, 1.0, 0.0
+shell_bone				= wpn_body
 
-item_position				= 0,0,0
-item_orientation			= 0,0,0
-
-shell_point					= 0.025,0.055,0.221
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone					= wpn_body
-
-fire_point		= -0.021,0.051,1.021
+fire_point              = 0.0,0.043,0.795
 fire_bone               = wpn_body
 
-aim_hud_offset_pos				= -0.052500,0.016499,-0.123000
-aim_hud_offset_rot				= 0.000000,0.000000,0.000000
+aim_hud_offset_pos		= -0.071000,0.031999,-0.103000
+aim_hud_offset_rot		= -0.002500,0.020000,0.000000
 
-aim_hud_offset_pos_16x9				= -0.053500,0.024000,-0.055500
-aim_hud_offset_rot_16x9				= 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9 = -0.143500,0.024000,-0.120500
+aim_hud_offset_rot_16x9	= -0.005000,-0.005000,0.000000
 
-gl_hud_offset_pos			= 0,0,0
-gl_hud_offset_rot			= 0,0,0
+gl_hud_offset_pos		= 0,0,0
+gl_hud_offset_rot		= 0,0,0
 
 lean_hud_offset_pos		= 0,0,0
 lean_hud_offset_rot		= 0,0,0
 
-anm_show		= svd_draw
-anm_hide             	= svd_holster
-anm_shots		= trg_shoot
-anm_reload		= trg_reload
-anm_bore		= svd_idle_bore
-anm_idle             	= svd_idle
-anm_idle_aim		= trg_idle_aim
-anm_idle_moving 	= trg_idle_sprint
-anm_idle_sprint		= trg_idle_sprint
+anm_show				= ksvk_draw
+anm_hide   	        	= ksvk_holster
+anm_shots				= ksvk_shoot
+anm_reload				= ksvk_reload
+anm_bore				= ksvk_idle_bore
+anm_idle   	        	= ksvk_idle
+anm_idle_aim			= ksvk_idle_aim
+anm_idle_moving			= ksvk_idle_moving
+anm_idle_sprint			= ksvk_idle_sprint

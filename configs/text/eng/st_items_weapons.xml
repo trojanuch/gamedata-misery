@@ -250,7 +250,7 @@
 		<text>PSO-1m scope</text>
 	</string>
 	<string id="st_addon_scope_descr">
-		<text>A common Soviet-made 5.0x fixed zoom optical scope with a range scale. Attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.</text>
+		<text>A Soviet-made 5.0x fixed zoom optical scope with a range scale. Usable mainly for combat at long ranges. Attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.</text>
 	</string>
 	<string id="st_addon_scope_detector">
 		<text>PSS-2x scope</text>
@@ -262,7 +262,7 @@
 		<text>NSPU-3 scope</text>
 	</string>
 	<string id="st_addon_scope_night_vision_descr">
-		<text>An image intensifier night vision 5.0x fixed zoom scope for combat in darkness. Attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>An image intensifier night vision 2.6x fixed zoom scope for medium range combat in darkness. Attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_susat">
 		<text>SUSAT 4x scope</text>
@@ -280,10 +280,10 @@
 		<text>An optical SUSAT 1.6x higher contrast scope for combat in reduced lighting conditions. Attached to weapons by means of the NATO-standard Picatinny rail.</text>
 	</string>
 	<string id="st_addon_scope_susat_night_vision">
-		<text>SUSAT Night x4 scope</text>
+		<text>SUSAT Night x1.6 scope</text>
 	</string>
 	<string id="st_addon_scope_susat_night_vision_descr">
-		<text>A 4.0x fixed zoom scope with a night vision device for long range combat in darkness. Attached to weapons by means of the NATO-standard Picatinny rail.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>A 1.6x fixed zoom scope with a night vision device for long range combat in darkness. Attached to weapons by means of the NATO-standard Picatinny rail.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6">
 		<text>SUSAT 1.6x scope</text>
@@ -295,31 +295,31 @@
 		<text>SUSAT 1.6x scope (damaged)</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_worn_descr">
-		<text>An optical SUSAT 1.6x scope for combat at short to medium range. Attached to weapons by means of the NATO-standard Picatinny rail.\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, severly decreasing its usability.</text>
+		<text>An optical SUSAT 1.6x scope for combat at short to medium range. Attached to weapons by means of the NATO-standard Picatinny rail. This unit's optics have been severly damaged.\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, severly decreasing its usability.</text>
 	</string>
 	<string id="st_addon_scope_x2.7">
 		<text>PSU-1 scope</text>
 	</string>
 	<string id="st_addon_scope_x2.7_descr">
-		<text>A 2.7x optical scope for urban combat at medium range. Attached to weapons by means of a dovetail mount.</text>
+		<text>A 2.6x optical scope for urban combat at medium range. Attached to weapons by means of a dovetail mount.</text>
 	</string>
 	<string id="st_addon_scope_x2.7_worn">
 		<text>PSU-1 scope (damaged)</text>
 	</string>
 	<string id="st_addon_scope_x2.7_worn_descr">
-		<text>A 2.7x optical scope for urban combat at medium range. Attached to weapons by means of a dovetail mount.\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, severly decreasing its usability.</text>
+		<text>A 2.6x optical scope for urban combat at medium range. Attached to weapons by means of a dovetail mount. This unit's optics have been severly damaged.\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, severly decreasing its usability.</text>
 	</string>
 	<string id="st_addon_scope_zf4">
 		<text>ZF-4 scope</text>
 	</string>
 	<string id="st_addon_scope_zf4_descr">
-		<text>An old and worn optic scope with 4x zoom used for specific weapon models of World War 2.</text>
+		<text>An old and worn optic scope with 2x zoom used for specific weapon models of World War 2.</text>
 	</string>
 	<string id="st_addon_scope_ww2">
 		<text>PU Scope</text>
 	</string>
 	<string id="st_addon_scope_ww2_descr">
-		<text>An old and worn optic scope with 4x zoom used for specific weapon models of World War 2.</text>
+		<text>An old and worn optic scope with 2x zoom used for specific weapon models of World War 2.</text>
 	</string>
 	<string id="st_addon_scope_vsk">
 		<text>VSK-94 scope</text>

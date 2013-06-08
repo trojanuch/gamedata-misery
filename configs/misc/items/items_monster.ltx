@@ -1,5 +1,4 @@
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; NON-EATABLE MONSTER PARTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -446,135 +445,531 @@ use_sound			= interface\inv_eat_mutant_food
 ;;;;;;;; MONSTER SKINS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[hide_chimera]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_chimera_cogot"
-visual				= dynamics\repair\hide_chimera.ogf
-inv_grid_x			= 27
-inv_grid_y			= 0
-inv_weight			= 0.324
-inv_name			= Chimera_hide ; mutant_krovosos_jaw
-inv_name_short		= Chimera_hide ; mutant_krovosos_jaw
-description			= Chimera_hide ; mutant_krovosos_jaw_description
-cost				= 1960
-
-repair_part_bonus	 	= 0.12
-
 [powder_poltergeist]:mutant_part_general
 $spawn 				= "devices\monster_items\mutant_controller_glas"
 visual				= dynamics\repair\powder_poltergeist.ogf
 inv_grid_x			= 28
 inv_grid_y			= 0
 inv_weight			= 0.324
-inv_name			= Pltergeist_dust ; mutant_krovosos_jaw
-inv_name_short		= Pltergeist_dust ; mutant_krovosos_jaw
-description			= Pltergeist_dust ; mutant_krovosos_jaw_description
-cost				= 1660
+inv_name			= st_powder_poltergeist
+inv_name_short		= st_powder_poltergeist
+description			= st_powder_poltergeist_descr
+cost				= 660
 
 repair_part_bonus	 	= 0.04
 
-[hide_pseudogiant]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_pseudogigant_hand"
+[hide_chimera]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
+visual				= dynamics\repair\hide_chimera.ogf
+description			= st_af_kevlar_descr
+inv_name			= st_af_kevlar_name
+inv_name_short			= st_af_kevlar_name
+inv_weight			= 2.861
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 27
+inv_grid_y			= 0
+
+cost				= 2384 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00076
+hit_absorbation_sect		= hide_chimera_absorbation
+
+additional_inventory_weight	= 0.946
+additional_inventory_weight2	= 0.946
+
+artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.12
+
+[hide_chimera_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.164
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.206
+fire_wound_immunity  		= 0.206
+
+[hide_pseudogiant]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_pseudogiant.ogf
+description				= st_hide_pseudogiant_descr
+inv_name				= st_hide_pseudogiant_name
+inv_name_short			= st_hide_pseudogiant_name
+inv_weight			= 3.384
+
+inv_grid_width		= 1
+inv_grid_height		= 1
 inv_grid_x			= 29
 inv_grid_y			= 0
-inv_weight			= 0.324
-inv_name			= Giant_hide ; mutant_krovosos_jaw
-inv_name_short		= Giant_hide ; mutant_krovosos_jaw
-description			= Giant_hide ; mutant_krovosos_jaw_description
-cost				= 2840
+
+cost				= 2992 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00094
+hit_absorbation_sect		= hide_pseudogiant_absorbation
+
+additional_inventory_weight	= 1.022
+additional_inventory_weight2	= 1.022
+
+artefact_activation_seq		= af_activation_bold
 
 repair_part_bonus	 	= 0.14
 
-[hide_psy_dog]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_psevdodog_tail"
+[hide_pseudogiant_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.202
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.294
+fire_wound_immunity  		= 0.294
+
+[hide_psy_dog]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_psy_dog.ogf
+description				= st_hide_psy_dog_descr
+inv_name				= st_hide_psy_dog_name
+inv_name_short			= st_hide_psy_dog_name
+inv_weight			= 1.321
+
+inv_grid_width		= 1
+inv_grid_height		= 1
 inv_grid_x			= 30
 inv_grid_y			= 0
-inv_weight			= 0.324
-inv_name			= Pseudodog_hide ; mutant_krovosos_jaw
-inv_name_short		= Pseudodog_hide ; mutant_krovosos_jaw
-description			= Pseudodog_hide ; mutant_krovosos_jaw_description
-cost				= 1680
+
+cost				= 1470 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00064
+hit_absorbation_sect		= hide_psy_dog_absorbation
+
+additional_inventory_weight	= 0.367
+additional_inventory_weight2	= 0.367
+
+artefact_activation_seq		= af_activation_bold
 
 repair_part_bonus	 	= 0.07
 
-[hide_pseudodog]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_psevdodog_tail"
+[hide_psy_dog_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.084
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.138
+fire_wound_immunity  		= 0.138
+
+[hide_pseudodog]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_pseudodog.ogf
+description				= st_hide_pseudodog_descr
+inv_name				= st_hide_pseudodog_name
+inv_name_short			= st_hide_pseudodog_name
+inv_weight			= 1.221
+
+inv_grid_width		= 1
+inv_grid_height		= 1
 inv_grid_x			= 31
 inv_grid_y			= 0
-inv_weight			= 1.893
-inv_name			= Pseudodog_hide ; mutant_krovosos_jaw
-inv_name_short		= Pseudodog_hide ; mutant_krovosos_jaw
-description			= Pseudodog_hide ; mutant_krovosos_jaw_description
-cost				= 860
 
-repair_part_bonus	 	= 0.04
+cost				= 742 ; 6200
 
-[hide_burer]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_burer_hand"
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00048
+hit_absorbation_sect		= hide_pseudodog_absorbation
+
+additional_inventory_weight	= 0.312
+additional_inventory_weight2	= 0.312
+
+artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.07
+
+[hide_pseudodog_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.066
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.092
+fire_wound_immunity  		= 0.092
+
+[hide_burer]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_burer.ogf
+description				= st_hide_burer_descr
+inv_name				= st_hide_burer_name
+inv_name_short			= st_hide_burer_name
+inv_weight			= 1.762
+
+inv_grid_width		= 1
+inv_grid_height		= 1
 inv_grid_x			= 32
 inv_grid_y			= 0
-inv_weight			= 2.661
-inv_name			= Burer_hide ; mutant_krovosos_jaw
-inv_name_short		= Burer_hide ; mutant_krovosos_jaw
-description			= Burer_hide ; mutant_krovosos_jaw_description
-cost				= 2230
+
+cost				= 2343 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00038
+hit_absorbation_sect		= hide_burer_absorbation
+
+additional_inventory_weight	= 0.53
+additional_inventory_weight2	= 0.53
+
+artefact_activation_seq		= af_activation_bold
 
 repair_part_bonus	 	= 0.06
 
-[hide_controller]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_controller_glas"
+[hide_burer_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.053
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.066
+fire_wound_immunity  		= 0.066
+
+[hide_controller]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_controller.ogf
+description				= st_hide_controller_descr
+inv_name				= st_hide_controller_name
+inv_name_short			= st_hide_controller_name
+inv_weight			= 1.523
+
+inv_grid_width		= 1
+inv_grid_height		= 1
 inv_grid_x			= 33
 inv_grid_y			= 0
-inv_weight			= 2.366
-inv_name			= Controller_hide ; mutant_krovosos_jaw
-inv_name_short		= Controller_hide ; mutant_krovosos_jaw
-description			= Controller_hide ; mutant_krovosos_jaw_description
-cost				= 1980
 
-repair_part_bonus	 	= 0.05
+cost				= 2343 ; 6200
 
-[hide_bloodsucker]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_krovosos_jaw"
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00033
+hit_absorbation_sect		= hide_controller_absorbation
+
+additional_inventory_weight	= 0.42
+additional_inventory_weight2	= 0.42
+
+artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.06
+
+[hide_controller_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.037
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.055
+fire_wound_immunity  		= 0.055
+
+[hide_bloodsucker]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_bloodsucker.ogf
+description				= st_hide_bloodsucker_descr
+inv_name				= st_hide_bloodsucker_name
+inv_name_short			= st_hide_bloodsucker_name
+inv_weight			= 1.344
+
+inv_grid_width		= 1
+inv_grid_height		= 1
 inv_grid_x			= 34
 inv_grid_y			= 0
-inv_weight			= 2.124
-inv_name			= Bloodsucker_hide ; mutant_krovosos_jaw
-inv_name_short		= Bloodsucker_hide ; mutant_krovosos_jaw
-description			= Bloodsucker_hide ; mutant_krovosos_jaw_description
-cost				= 1460
+
+cost				= 1224 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00065
+hit_absorbation_sect		= hide_bloodsucker_absorbation
+
+additional_inventory_weight	= 0.36
+additional_inventory_weight2	= 0.36
+
+artefact_activation_seq		= af_activation_bold
 
 repair_part_bonus	 	= 0.05
 
-[hide_boar]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_boar_leg"
+[hide_bloodsucker_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.081
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.118
+fire_wound_immunity  		= 0.118
+
+[hide_boar]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_boar.ogf
+description				= st_hide_boar_descr
+inv_name				= st_hide_boar_name
+inv_name_short			= st_hide_boar_name
+inv_weight			= 2.344
+
+inv_grid_width		= 1
+inv_grid_height		= 1
 inv_grid_x			= 35
 inv_grid_y			= 0
-inv_weight			= 2.898
-inv_name			= Boar_hide ; mutant_krovosos_jaw
-inv_name_short		= Boar_hide ; mutant_krovosos_jaw
-description			= Boar_hide ; mutant_krovosos_jaw_description
-cost				= 890
 
-repair_part_bonus	 	= 0.04
+cost				= 686 ; 6200
 
-[hide_flesh]:mutant_part_general
-$spawn 				= "devices\monster_items\mutant_flesh_eye"
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00065
+hit_absorbation_sect		= hide_boar_absorbation
+
+additional_inventory_weight	= 0.661
+additional_inventory_weight2	= 0.661
+
+artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.05
+
+[hide_boar_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.066
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.044
+fire_wound_immunity  		= 0.044
+
+[hide_flesh]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_flesh.ogf
-inv_grid_x			= 36
+description				= st_hide_flesh_descr
+inv_name				= st_hide_flesh_name
+inv_name_short			= st_hide_flesh_name
+inv_weight			= 2.966
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 35
 inv_grid_y			= 0
-inv_weight			= 3.698
-inv_name			= Flesh_hide ; mutant_krovosos_jaw
-inv_name_short		= Flesh_hide ; mutant_krovosos_jaw
-description			= Flesh_hide ; mutant_krovosos_jaw_description
-cost				= 640
+
+cost				= 486 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0 ; 0.00014
+hit_absorbation_sect		= hide_flesh_absorbation
+
+additional_inventory_weight	= 0.343
+additional_inventory_weight2	= 0.343
+
+artefact_activation_seq		= af_activation_bold
 
 repair_part_bonus	 	= 0.03
+
+[hide_flesh_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.018
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.026
+fire_wound_immunity  		= 0.026
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

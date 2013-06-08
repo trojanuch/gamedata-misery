@@ -278,7 +278,8 @@
 #include "w_tt33.ltx"
 #include "w_fnfallelcan.ltx"
 #include "w_trg.ltx"
-
+#include "w_sako.ltx"
+#include "w_ksvk.ltx"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Огнестрельное оружие
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1609,6 +1610,78 @@ impair			= 1.5 ; 1.01
 buck_shot		= 1
 tracer			= off       ;  on
 wm_size         = 0.006
+explosive		= off
+
+[ammo_12.7x108_fmj]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
+class			= AMMO_S
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
+description		= ammo-12.7x108_fmj_descr
+$prefetch 		= 64
+
+cost			= 2050
+
+box_size		= 5
+
+inv_name		= ammo-12.7x108_fmj
+inv_name_short		= ammo-12.7x108_fmj_s
+inv_weight		= .161
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 4
+inv_grid_y         = 53
+
+k_dist			= 1
+k_disp			= 0.66	; 3.2
+k_hit			= 1.94
+k_impulse		= 0.92
+k_pierce		= 1.86
+k_ap			= 1.46
+impair			= 1.5 ; 0.95
+buck_shot		= 1
+tracer			= off        ;  off
+wm_size         = 0.0076
+explosive		= off
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[ammo_12.7x108_ap]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\ammo\ammo_7.62x54_7h14" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = dynamics\weapons\wpn_ammo\ammo_762x54_ap.ogf
+description		= ammo-12.7x108_ap_descr
+$prefetch 		= 64
+
+cost					 = 3060
+
+box_size		= 5
+
+inv_name		= ammo-12.7x108_ap
+inv_name_short		= ammo-12.7x108_ap
+inv_weight		= .185
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 4
+inv_grid_y         = 54
+
+k_dist			= 1
+k_disp			= 0.66
+k_hit			= 1.44
+k_impulse		= 1.78
+k_pierce		= 2.24
+k_ap			= 1     
+impair			= 1.5 ; 1.01
+buck_shot		= 1
+tracer			= off       ;  on
+wm_size         = 0.0076
 explosive		= off
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
