@@ -454,18 +454,18 @@ inv_weight			= 0.324
 inv_name			= st_powder_poltergeist
 inv_name_short		= st_powder_poltergeist
 description			= st_powder_poltergeist_descr
-cost				= 660
+cost				= 3660
 
-repair_part_bonus	 	= 0.04
+repair_part_bonus	 	= 0.28
 
 [hide_chimera]:aa_base
 $spawn				= "artefacts\af_kevlar"
 class				= SCRPTART  	; будет подпрыгивать
 visual				= dynamics\repair\hide_chimera.ogf
-description			= st_af_kevlar_descr
-inv_name			= st_af_kevlar_name
-inv_name_short			= st_af_kevlar_name
-inv_weight			= 3.771
+description				= st_hide_chimera_descr
+inv_name				= st_hide_chimera_name
+inv_name_short			= st_hide_chimera_name
+inv_weight			= 2.771
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -507,13 +507,13 @@ repair_part_bonus	 	= 0.12
 [hide_chimera_absorbation]
 burn_immunity 			= 0.00011				;коэффициенты иммунитета
 strike_immunity 		= 0
-shock_immunity 			= -0.0131
+shock_immunity 			= -0.0331
 wound_immunity 			= 0.184
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
 chemical_burn_immunity 		= 0.00002
-explosion_immunity 			= 0.226
-fire_wound_immunity  		= 0.226
+explosion_immunity 			= 0.226 ; 14 sheets of kevlar
+fire_wound_immunity  		= 0.226 ; 14 sheets of kevlar
 
 [hide_pseudogiant]:aa_base
 $spawn				= "artefacts\af_kevlar"
@@ -566,11 +566,11 @@ burn_immunity 			= 0.00048				;коэффициенты иммунитета
 strike_immunity 		= 0
 shock_immunity 			= 0.0046
 wound_immunity 			= 0.222
-radiation_immunity 		= -0.0042
+radiation_immunity 		= 0.0042
 telepatic_immunity 		= 0
-chemical_burn_immunity 		= 0.00001
-explosion_immunity 			= 0.299
-fire_wound_immunity  		= 0.299
+chemical_burn_immunity 		= 0.00023
+explosion_immunity 			= 0.299 ; 20 sheets of kevlar
+fire_wound_immunity  		= 0.299 ; 20 sheets of kevlar
 
 [hide_psy_dog]:aa_base
 $spawn				= "artefacts\af_kevlar"
@@ -616,7 +616,7 @@ additional_inventory_weight2	= 0.367
 
 artefact_activation_seq		= af_activation_bold
 
-repair_part_bonus	 	= 0.07
+repair_part_bonus	 	= 0.09
 
 [hide_psy_dog_absorbation]
 burn_immunity 			= 0.00036				;коэффициенты иммунитета
@@ -624,10 +624,10 @@ strike_immunity 		= 0
 shock_immunity 			= 0.0126
 wound_immunity 			= 0.084
 radiation_immunity 		= 0
-telepatic_immunity 		= 0.00011
+telepatic_immunity 		= 0.00028
 chemical_burn_immunity 		= 0.00004
-explosion_immunity 			= 0.138
-fire_wound_immunity  		= 0.138
+explosion_immunity 			= 0.138 ; 11 sheets of kevlar
+fire_wound_immunity  		= 0.138 ; 11 sheets of kevlar
 
 [hide_pseudodog]:aa_base
 $spawn				= "artefacts\af_kevlar"
@@ -683,8 +683,8 @@ wound_immunity 			= 0.066
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
 chemical_burn_immunity 		= 0.00004
-explosion_immunity 			= 0.092
-fire_wound_immunity  		= 0.092
+explosion_immunity 			= 0.092 ; 7 sheets of kevlar
+fire_wound_immunity  		= 0.092 ; 7 sheets of kevlar
 
 [hide_burer]:aa_base
 $spawn				= "artefacts\af_kevlar"
@@ -730,18 +730,18 @@ additional_inventory_weight2	= 0.53
 
 artefact_activation_seq		= af_activation_bold
 
-repair_part_bonus	 	= 0.07
+repair_part_bonus	 	= 0.05
 
 [hide_burer_absorbation]
 burn_immunity 			= 0.00034			;коэффициенты иммунитета
 strike_immunity 		= 0
-shock_immunity 			= 0.0074
+shock_immunity 			= -0.0223
 wound_immunity 			= 0.058
 radiation_immunity 		= 0
-telepatic_immunity 		= 0.00018
+telepatic_immunity 		= 0.00044
 chemical_burn_immunity 		= 0.00011
-explosion_immunity 			= 0.072
-fire_wound_immunity  		= 0.072
+explosion_immunity 			= 0.072 ; 5 sheets of kevlar
+fire_wound_immunity  		= 0.072 ; 5 sheets of kevlar
 
 [hide_controller]:aa_base
 $spawn				= "artefacts\af_kevlar"
@@ -787,18 +787,18 @@ additional_inventory_weight2	= 0.42
 
 artefact_activation_seq		= af_activation_bold
 
-repair_part_bonus	 	= 0.06
+repair_part_bonus	 	= 0.05
 
 [hide_controller_absorbation]
 burn_immunity 			= 0.00022			;коэффициенты иммунитета
 strike_immunity 		= 0
-shock_immunity 			= 0.0102
+shock_immunity 			= -0.0302
 wound_immunity 			= 0.037
 radiation_immunity 		= 0
-telepatic_immunity 		= 0.00027
+telepatic_immunity 		= 0.00057
 chemical_burn_immunity 		= 0.00005
-explosion_immunity 			= 0.055
-fire_wound_immunity  		= 0.055
+explosion_immunity 			= 0.05 ; 4 sheets of kevlar
+fire_wound_immunity  		= 0.05 ; 4 sheets of kevlar
 
 [hide_bloodsucker]:aa_base
 $spawn				= "artefacts\af_kevlar"
@@ -844,7 +844,7 @@ additional_inventory_weight2	= 0.36
 
 artefact_activation_seq		= af_activation_bold
 
-repair_part_bonus	 	= 0.05
+repair_part_bonus	 	= 0.06
 
 [hide_bloodsucker_absorbation]
 burn_immunity 			= 0.00026				;коэффициенты иммунитета
@@ -854,8 +854,8 @@ wound_immunity 			= 0.081
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
 chemical_burn_immunity 		= 0.00008
-explosion_immunity 			= 0.118
-fire_wound_immunity  		= 0.118
+explosion_immunity 			= 0.118 ; 8 sheets of kevlar
+fire_wound_immunity  		= 0.118 ; 8 sheets of kevlar
 
 [hide_boar]:aa_base
 $spawn				= "artefacts\af_kevlar"
@@ -910,9 +910,9 @@ shock_immunity 			= 0.0272
 wound_immunity 			= 0.078
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
-chemical_burn_immunity 		= 0.00004
-explosion_immunity 			= 0.048
-fire_wound_immunity  		= 0.048
+chemical_burn_immunity 		= 0.00002
+explosion_immunity 			= 0.048 ; 3 sheets of kevlar
+fire_wound_immunity  		= 0.048 ; 3 sheets of kevlar
 
 [hide_flesh]:aa_base
 $spawn				= "artefacts\af_kevlar"
@@ -925,7 +925,7 @@ inv_weight			= 4.366
 
 inv_grid_width		= 1
 inv_grid_height		= 1
-inv_grid_x			= 35
+inv_grid_x			= 36
 inv_grid_y			= 0
 
 cost				= 486 ; 6200
@@ -958,7 +958,7 @@ additional_inventory_weight2	= 0.343
 
 artefact_activation_seq		= af_activation_bold
 
-repair_part_bonus	 	= 0.03
+repair_part_bonus	 	= 0.04
 
 [hide_flesh_absorbation]
 burn_immunity 			= 0.00032				;коэффициенты иммунитета
@@ -967,9 +967,9 @@ shock_immunity 			= 0.0326
 wound_immunity 			= 0.018
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
-chemical_burn_immunity 		= 0.00006
-explosion_immunity 			= 0.026
-fire_wound_immunity  		= 0.026
+chemical_burn_immunity 		= 0.00013
+explosion_immunity 			= 0.026 ; 1 sheet of kevlar
+fire_wound_immunity  		= 0.026 ; 1 sheet of kevlar
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -14,9 +14,9 @@ weapon_class            = assault_rifle ; sniper_rifle
 ;-----------[Главные параметры]----------------;
 cost					= 24240
 inv_weight		        = 4.217 
-inv_name		        = st_wpn_m1891snip
-inv_name_short		    = st_wpn_m1891snip
-description		        = st_wpn_m1891snip_descr
+inv_name		        = st_wpn_m1891
+inv_name_short		    = st_wpn_m1891
+description		        = st_wpn_m1891_descr
 
 inv_grid_width		    = 6
 inv_grid_height		    = 1
@@ -214,6 +214,8 @@ scope_y 		        = -24
 ;=========================================================================================================================================
 [wpn_m1891_alt]:wpn_m1891
 
+visual                  = dynamics\weapons\wpn_m1891_30\wpn_m1892.ogf
+
 cost					= 23240
 inv_weight		        = 4.101
 
@@ -236,14 +238,24 @@ condition_queue_shot_dec	= 0.0014
 upgrades                = up_gr_firstab_m1891_alt, up_gr_seconab_m1891_alt, up_gr_thirdab_m1891_alt
 installed_upgrades      = up_firsta_m1891_alt
 
-inv_name		        = st_wpn_m1891alt
-inv_name_short		    = st_wpn_m1891alt
-description		        = st_wpn_m1891alt_descr
+inv_grid_width		    = 6
+inv_grid_height		    = 1
+inv_grid_x		    = 20
+inv_grid_y		    = 27
+
+inv_name		        = st_wpn_m1891honorary
+inv_name_short		    = st_wpn_m1891honorary
+description		        = st_wpn_m1891honorary_descr
 
 crosshair_inertion      = 8.7
 
 snd_shoot		        = weapons\m1891\m1891_shot_alt
 
-fire_dispersion_base	= 0.07
+fire_dispersion_base	= 0.066
+
+hud                     = wpn_m1892snip_hud
+
+[wpn_m1892snip_hud]:wpn_m1891snip_hud
+item_visual		        = dynamics\weapons\wpn_m1891_30\wpn_m1892_hud.ogf
 
 scope_sect 		        = scope_ww2_m1891, scope_ww2_m1891_moist, scope_ww2_m1891_worn

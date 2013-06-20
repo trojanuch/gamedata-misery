@@ -111,8 +111,8 @@ inv_name_short 	= st_wpn_toz34
 
 inv_grid_width  = 6
 inv_grid_height	= 1
-inv_grid_x	= 0
-inv_grid_y      = 75
+inv_grid_x		= 0
+inv_grid_y      = 77
 
 upgr_icon_x			= 1724 ; 9
 upgr_icon_y			= 802 ; 815
@@ -155,14 +155,13 @@ zoom_enabled				= true
 scope_zoom_factor       = 58.6 ; 	    	= 85
 
 ;звуки
-snd_draw			= weapons\generic\rifle_historic_draw
-snd_holster			= weapons\generic\rifle_historic_holster
+snd_draw				= weapons\generic\generic_draw
+snd_holster				= weapons\generic\generic_holster
 snd_shoot         		= weapons\toz34\toz34_shot
-snd_empty			= weapons\generic\rifle_historic_empty
-snd_reload			= weapons\toz34\toz34_reload
-snd_shoot_duplet  		= weapons\toz34\toz34_shot
-snd_shoot_1             	= weapons\toz34\toz34_shot
-snd_reload_1            	= weapons\toz34\toz34_reload_one
+snd_shoot_duplet  		= weapons\toz34\toz34_shot_both
+snd_empty				= weapons\generic\rifle_modern_empty
+snd_reload				= weapons\toz34\toz34_reload
+snd_reload_1            = weapons\toz34\toz34_reload_one
 snd_close_weapon		= weapons\spas12_close
 snd_add_cartridge		= weapons\w1300_load		;was gen_grenload
 snd_open_weapon			= weapons\spas12_close
@@ -269,17 +268,11 @@ inv_grid_y      = 76
 
 visual                   	= dynamics\weapons\wpn_toz34\wpn_toz3a.ogf
 
-snd_reload			= weapons\toz34\toz34_reload
-snd_reload_1            	= weapons\toz34\toz34_reload_one
-snd_close_weapon		= weapons\spas12_close
-snd_add_cartridge		= weapons\w1300_load		;was gen_grenload
-snd_open_weapon			= weapons\spas12_close
-
 [wpn_toz34_new_hud]:wpn_toz34_hud
 
 item_visual               		= dynamics\weapons\wpn_toz34\wpn_toz3a_hud.ogf
 ;======================================================================================================
-[wpn_toz34_alt]:wpn_toz34
+[wpn_toz34_worn]:wpn_toz34
 
 cost            = 14580
 inv_weight     	= 3.592
@@ -293,7 +286,7 @@ fire_distance           = 640
 bullet_speed         	= 580
 rpm                     = 1000
 
-hud                        = wpn_toz34_alt_hud
+hud                        = wpn_toz34_worn_hud
 
 misfire_start_condition		= 0.62
 misfire_end_condition		= 0.05
@@ -316,13 +309,7 @@ inv_grid_y      = 79
 
 visual                   	= dynamics\weapons\wpn_toz34\wpn_toz3b.ogf
 
-snd_reload			= weapons\toz34\toz34_reload
-snd_reload_1            	= weapons\toz34\toz34_reload_one
-snd_close_weapon		= weapons\spas12_close
-snd_add_cartridge		= weapons\w1300_load		;was gen_grenload
-snd_open_weapon			= weapons\spas12_close
-
-[wpn_toz34_alt_hud]:wpn_toz34_hud
+[wpn_toz34_worn_hud]:wpn_toz34_hud
 
 item_visual               		= dynamics\weapons\wpn_toz34\wpn_toz3b_hud.ogf
 ;======================================================================================================
@@ -363,17 +350,11 @@ inv_grid_y      = 78
 
 visual                   	= dynamics\weapons\wpn_toz34\wpn_toz3c.ogf
 
-snd_reload			= weapons\toz34\toz34_reload
-snd_reload_1            	= weapons\toz34\toz34_reload_one
-snd_close_weapon		= weapons\spas12_close
-snd_add_cartridge		= weapons\w1300_load		;was gen_grenload
-snd_open_weapon			= weapons\spas12_close
-
 [wpn_toz34_decor_hud]:wpn_toz34_hud
 
 item_visual               		= dynamics\weapons\wpn_toz34\wpn_toz3c_hud.ogf
 ;======================================================================================================
-[wpn_toz34_worn]:wpn_toz34
+[wpn_toz34_alt]:wpn_toz34
 
 cost            = 12040
 inv_weight     	= 3.621
@@ -386,7 +367,10 @@ fire_distance           = 640
 bullet_speed         	= 580
 rpm                     = 1000
 
-hud                        = wpn_toz34_worn_hud
+hud                        = wpn_toz34_alt_hud
+
+control_inertion_factor = 1.0f ;		= 0.96f
+crosshair_inertion			= 4.7
 
 misfire_start_condition		= 0.7
 misfire_end_condition		= 0.05
@@ -399,23 +383,21 @@ ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
 fire_dispersion_base    = 0.69
 
-inv_name    	= st_wpn_toz34_worn
-inv_name_short 	= st_wpn_toz34_worn
+inv_name    	= st_wpn_toz34_alt
+inv_name_short 	= st_wpn_toz34_alt
+description     = st_wpn_toz34_alt_descr
 
-inv_grid_width  = 6
+inv_grid_width  = 3
 inv_grid_height	= 1
-inv_grid_x	= 0
-inv_grid_y      = 77
+inv_grid_x	= 3
+inv_grid_y      = 75
+
+snd_shoot         		= weapons\toz34\toz34_shot_sawnoff
+snd_shoot_duplet  		= weapons\toz34\toz34_shot_sawnoff_both
 
 visual                   	= dynamics\weapons\wpn_toz34\wpn_toz3d.ogf
 
-snd_reload			= weapons\toz34\toz34_reload
-snd_reload_1            	= weapons\toz34\toz34_reload_one
-snd_close_weapon		= weapons\spas12_close
-snd_add_cartridge		= weapons\w1300_load		;was gen_grenload
-snd_open_weapon			= weapons\spas12_close
-
-[wpn_toz34_worn_hud]:wpn_toz34_hud
+[wpn_toz34_alt_hud]:wpn_toz34_hud
 
 item_visual               		= dynamics\weapons\wpn_toz34\wpn_toz3d_hud.ogf
 ;======================================================================================================

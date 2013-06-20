@@ -485,6 +485,8 @@ attach_position_offset		= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
+repair_part_bonus	 	= 0.04
+
 [maps_kit]:identity_immunities
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
@@ -1419,15 +1421,15 @@ attach_position_offset	= 0.110,-0.019,0.000
 
 attach_bone_name		= bip01_l_hand
 auto_attach				= false
-snd_draw                = weapons\ak74_draw
-snd_holster             = weapons\generic_holster
+snd_draw                = flashlight\flashlight_draw
+snd_holster             = flashlight\flashlight_holster
 
 hud						= device_flashlight_hud
 
 [device_flashlight_hud]:detector_base_hud
 
-item_position			= -0.072424,0.030392,-0.012213
-item_orientation		= 322,-183,-220  ;324.640503,-189.627350,-183.009415
+item_position			= -0.055,0.03,0.012213
+item_orientation		= 180,-190,-220  ;324.640503,-189.627350,-183.009415
 
 item_visual             = dynamics\devices\dev_flashlight\dev_flashlight_hud
 
@@ -1444,13 +1446,13 @@ anm_idle				= dev_detector_1_idle
 anm_idle_moving			= dev_detector_1_idle_moving
 anm_idle_sprint			= dev_detector_1_idle_moving
 
-anm_show_16x9			= dev_detector_1_draw_ws, dev_detector_1_draw
-anm_show_fast_16x9		= dev_detector_1_draw_ws	;_quick
-anm_hide_16x9			= dev_detector_1_holster_ws, dev_detector_1_holster
-anm_hide_fast_16x9		= dev_detector_1_holster_ws_quick
-anm_idle_16x9			= dev_detector_1_idle_ws, dev_detector_1_idle
-anm_idle_moving_16x9	= dev_detector_1_idle_moving_ws, dev_detector_1_idle_moving
-anm_idle_sprint_16x9	= dev_detector_1_idle_moving_ws, dev_detector_1_idle_moving
+anm_show_16x9			= flash_draw, draw
+anm_show_fast_16x9		= flash_draw, draw
+anm_hide_16x9			= flash_holster, holster
+anm_hide_fast_16x9		= flash_holster, holster
+anm_idle_16x9			= flash_idle, idle_f
+anm_idle_moving_16x9	= flash_idle_moving, moving
+anm_idle_sprint_16x9	= flash_idle_sprint, sprint
 
 flash_light_range		= 0
 onoff_light_range		= 0

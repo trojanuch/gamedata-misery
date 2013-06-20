@@ -2,7 +2,8 @@
 ;;;;;;;; New Ordnance MISERY v2 Edition ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; 30.03.2013 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; _xXxTWiST3DxXx_ (concept & weapon GFX assets) ;;;;;;;;;;;;;;;;;
-;;;;;;;; N.Aaroe, trojanuch (gameplay implementation) ;;;;;;;;;;;;;;;;;;
+;;;;;;;; N.Aaroe (scripting) ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; trojanuch (loadout configs) ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 #include "delayed_action_fuse.ltx"
@@ -48,7 +49,7 @@
 ;; 'EMPTY' UPGRADE MODULE ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; Individual upgrade configs for each weapon profile allow for easy customization of upgrade possibilities and reducing options for lower tiers of same weapon (standard, worn, rusty). It also allows to easly define common restrictions on mechanic level and display and proper UI. 30.05.2013 trojanuch
+; Individual upgrade configs for each weapon profile allow for easy customization of upgrade possibilities and reducing upgrade options for lower tiers of same weapon (standard, worn, rusty). It also allows to easly define common restrictions on mechanic level and display and proper UI. 30.05.2013 trojanuch
 
 #include "upgrades\w_abakan_alt_up.ltx"
 #include "upgrades\w_abakan_camo_up.ltx"
@@ -158,6 +159,7 @@
 #include "upgrades\w_sig552_up.ltx"
 #include "upgrades\w_m1891_up.ltx"
 #include "upgrades\w_aek973_up.ltx"
+#include "upgrades\w_sako95_up.ltx"
 #include "upgrades\w_aks74_cobra_up.ltx"
 #include "upgrades\w_fnfal_up.ltx"
 #include "upgrades\w_m21_up.ltx"
@@ -279,7 +281,7 @@
 #include "w_fnfallelcan.ltx"
 #include "w_trg.ltx"
 #include "w_sako.ltx"
-#include "w_ksvk.ltx"
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Огнестрельное оружие
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -289,9 +291,9 @@ tracer_shader					= effects\bullet_tracer ;hud\default
 tracer_texture					= fx\fx_tracer_weapons
 fire_circle_k					= 2.0f ; means tracer_width*2
 
-tracer_width					= 0.07
-tracer_length_max				= 6.5	;24.0 ;14.0
-tracer_length_min				= 3.5		;0.2
+tracer_width					= 0.02
+tracer_length_max				= 1.23	;24.0 ;14.0	
+tracer_length_min				= 1.66		;0.2
 
 ;расстояние после которого учитывается hit_probabilty полностью
 hit_probability_max_dist		= 3;
@@ -305,7 +307,7 @@ time_step						= 33
 ;минимальная скорость (м/с), на которой пуля еще считается и показывается
 min_bullet_speed				= 3.0
 ;cколько процентов энергии потеряет пуля при столкновении с материалом (при падении под прямым углом)
-collision_energy_min			= 0.80 ;0.75; 0.90
+collision_energy_min			= 0.65 ;0.75; 0.90
 ;сколько процентов энергии останется у пули при любом столкновении
 collision_energy_max			= 0.5 ;0.7;0.50
 
@@ -417,15 +419,15 @@ $spawn			= "weapons\ammo\ammo_9x18_fmj" ; option for Level Editor
 class			= AMMO_S
 cform           = skeleton
 visual          = dynamics\weapons\wpn_ammo\ammo_9x18_fmj.ogf
-description		= ammo-9x18-fmj_descr
+description		= ammo-9x18-ap_descr
 $prefetch 		= 64
 
 cost			= 1380
 
 box_size		= 15
 
-inv_name		= 9x18mm AP round ; ammo-9x18-fmj
-inv_name_short	= 9x18mm AP round ; ammo-9x18-fmj_s
+inv_name		= ammo-9x18-ap
+inv_name_short	= ammo-9x18-ap_s
 
 inv_weight		= .066
 
@@ -530,7 +532,7 @@ $spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= 9x19mm AP round ; ammo-9x19-fmj_descr
+description		= ammo-9x19-ap_descr
 slot = -1
 $prefetch 		= 64
 
@@ -538,8 +540,8 @@ cost			= 1590
 
 box_size		= 15
 
-inv_name		= 9x19mm AP round ; ammo-9x19-fmj
-inv_name_short	= 9x19mm AP round ; ammo-9x19-fmj_s
+inv_name		= ammo-9x19-ap
+inv_name_short	= ammo-9x19-ap_s
 inv_weight		= .07
 
 inv_grid_width     = 1
@@ -642,15 +644,15 @@ $spawn			= "weapons\ammo\ammo_11.43x23_fmj" ; option for Level Editor
 class			= AMMO_S
 cform           = skeleton
 visual          = dynamics\weapons\wpn_ammo\ammo_1143x23_fmj.ogf
-description		= 11.43x23mm AP round ; ammo-11.43x23-fmj_descr
+description		= ammo-11.43x23-ap_descr
 $prefetch 		= 64
 
 cost			= 1860
 
 box_size		= 13
 
-inv_name		= 11.43x23mm AP round ; ammo-11.43x23-fmj
-inv_name_short	= 11.43x23mm AP round ; ammo-11.43x23-fmj_s
+inv_name		= ammo-11.43x23-ap
+inv_name_short	= ammo-11.43x23-ap_s
 inv_weight		= .125 ;
 
 inv_grid_width     = 2
@@ -864,7 +866,7 @@ k_air_resistance = 1.8
 
 [ammo_7.62x54_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency	=
+discovery_dependency	= 
 $spawn			= "weapons\ammo\ammo_7.62x54_ap" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1238,11 +1240,11 @@ fake_grenade_name = wpn_fake_missile2
 
 [ammo_7.62x39_fmj]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency =
+discovery_dependency = 
 ;$spawn			= "weapons\ammo\ammo_7.62x39_fmj" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_762x39_fmj.ogf
+visual                  = dynamics\weapons\wpn_ammo\ammo_762x39_fmj.ogf 
 description		= ammo-7.62x39_fmj_descr
 $prefetch 		= 64
 
@@ -1276,7 +1278,7 @@ explosive		= off
 
 [ammo_7.62x39_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency =
+discovery_dependency = 
 ;$spawn			= "weapons\ammo\ammo_7.62x39_ap" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
@@ -1314,19 +1316,19 @@ explosive		= off
 
 [ammo_7.92x33_fmj]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency =
+discovery_dependency = 
 ;$spawn			= "weapons\ammo\ammo_7.62x39_fmj" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_762x39_fmj.ogf
-description		= ammo-7.62x39_fmj_descr
+visual                  = dynamics\weapons\wpn_ammo\ammo_762x39_fmj.ogf 
+description		= ammo-7.92x33_fmj_descr
 $prefetch 		= 64
 
 cost			= 1190
 box_size		= 15
 
-inv_name		= ammo-7.62x39_fmj
-inv_name_short	        = ammo-7.62x39_fmj_s
+inv_name		= ammo-7.92x33_fmj
+inv_name_short	        = ammo-7.92x33_fmj_s
 inv_weight		= .17
 
 inv_grid_width     = 2
@@ -1352,19 +1354,19 @@ explosive		= off
 
 [ammo_7.92x33_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency =
+discovery_dependency = 
 ;$spawn			= "weapons\ammo\ammo_7.62x39_ap" ; option for Level Editor
 class			= AMMO_S
 cform                   = skeleton
 visual          = dynamics\weapons\wpn_ammo\ammo_762x39_ap.ogf
-description		= ammo-7.62x39_ap_descr
+description		= ammo-7.92x33_ap_descr
 $prefetch 		= 64
 
 cost			= 2120
 box_size		= 15
 
-inv_name		= ammo-7.62x39_ap
-inv_name_short	        = ammo-7.62x39_ap_s
+inv_name		= ammo-7.92x33_ap
+inv_name_short	        = ammo-7.92x33_ap_s
 inv_weight		= .17
 
 inv_grid_width     = 2
@@ -1390,7 +1392,7 @@ explosive		= off
 
 [ammo_7.62x51_fmj]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency =
+discovery_dependency = 
 $spawn			= "weapons\ammo\ammo_7.62x51_fmj" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1403,7 +1405,7 @@ cost					 = 1690
 box_size		= 15
 
 inv_name		= ammo-7.62x51_fmj
-inv_name_short		= ammo-7.62x51_fmj
+inv_name_short		= ammo-7.62x51_fmj_s
 inv_weight		= .18
 
 inv_grid_width     = 2
@@ -1429,7 +1431,7 @@ explosive		= off
 
 [ammo_7.62x51_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency =
+discovery_dependency = 
 $spawn			= "weapons\ammo\ammo_7.62x51_ap" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
@@ -1473,15 +1475,15 @@ $spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
 class			= AMMO_S
 cform           = skeleton
 visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
-description		= ammo-7.62x54-7h14_descr
+description		= ammo-7.62x54-7n1_descr
 $prefetch 		= 64
 
 cost			= 2420
 
 box_size		= 10
 
-inv_name		= ammo-7.62x54-7h14
-inv_name_short		= ammo-7.62x54-7h14_s
+inv_name		= ammo-7.62x54-7n1
+inv_name_short		= ammo-7.62x54-7n1_s
 inv_weight		= .15
 
 inv_grid_width     = 2
@@ -1505,20 +1507,20 @@ explosive		= off
 
 [ammo_7.62x54_7h14]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency	=
+discovery_dependency	= 
 $spawn			= "weapons\ammo\ammo_7.62x54_7h14" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_762x54_ap.ogf
-description		= 7.62 7H14 Armor Piercing Sniper Ammunition ; ammo-7.62x54-ap_descr
+description		= ammo-7.62x54_7n14_descr
 $prefetch 		= 64
 
 cost					 = 4760
 
 box_size		= 10
 
-inv_name		= 7.62 7H14 Armor Piercing Sniper Ammunition ; ammo-7.62x54-ap
-inv_name_short		= 7.62 7H14 Ammo ; ammo-7.62x54-ap
+inv_name		= ammo-7.62x54_7n14
+inv_name_short		= ammo-7.62x54_7n14_s
 inv_weight		= .23
 
 inv_grid_width     = 2
@@ -1547,15 +1549,15 @@ $spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
 class			= AMMO_S
 cform           = skeleton
 visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
-description		= ammo-7.62x54-7h14_descr
+description		= ammo-338-lapua_descr
 $prefetch 		= 64
 
-cost			= 1880
+cost			= 2580
 
 box_size		= 10
 
-inv_name		= ammo-7.62x54-7h14
-inv_name_short		= ammo-7.62x54-7h14_s
+inv_name		= ammo-338-lapua
+inv_name_short		= ammo-338-lapua_s
 inv_weight		= .161
 
 inv_grid_width     = 2
@@ -1565,7 +1567,7 @@ inv_grid_y         = 53
 
 k_dist			= 1
 k_disp			= 0.66	; 3.2
-k_hit			= 1.94
+k_hit			= 2.44
 k_impulse		= 0.92
 k_pierce		= 0.86
 k_ap			= 0.38
@@ -1579,20 +1581,20 @@ explosive		= off
 
 [ammo_magnum_300_ap]:ammo_base
 GroupControlSection	= spawn_group
-discovery_dependency	=
+discovery_dependency	= 
 $spawn			= "weapons\ammo\ammo_7.62x54_7h14" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_762x54_ap.ogf
-description		= 7.62 7H14 Armor Piercing Sniper Ammunition ; ammo-7.62x54-ap_descr
+description		= ammo-338-du_descr
 $prefetch 		= 64
 
-cost					 = 2860
+cost					 = 3980
 
 box_size		= 10
 
-inv_name		= 7.62 7H14 Armor Piercing Sniper Ammunition ; ammo-7.62x54-ap
-inv_name_short		= 7.62 7H14 Ammo ; ammo-7.62x54-ap
+inv_name		= ammo-338-du
+inv_name_short		= ammo-338-du_s
 inv_weight		= .256
 
 inv_grid_width     = 2
@@ -1602,7 +1604,7 @@ inv_grid_y         = 54
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 1.44
+k_hit			= 1.88
 k_impulse		= 0.78
 k_pierce		= 2.24
 k_ap			= 1.18
@@ -1612,96 +1614,24 @@ tracer			= off       ;  on
 wm_size         = 0.006
 explosive		= off
 
-[ammo_12.7x108_fmj]:ammo_base
-GroupControlSection	= spawn_group
-discovery_dependency =
-$spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
-class			= AMMO_S
-cform           = skeleton
-visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
-description		= ammo-12.7x108_fmj_descr
-$prefetch 		= 64
-
-cost			= 2050
-
-box_size		= 5
-
-inv_name		= ammo-12.7x108_fmj
-inv_name_short		= ammo-12.7x108_fmj_s
-inv_weight		= .161
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 4
-inv_grid_y         = 53
-
-k_dist			= 1
-k_disp			= 0.66	; 3.2
-k_hit			= 1.94
-k_impulse		= 0.92
-k_pierce		= 1.86
-k_ap			= 1.46
-impair			= 1.5 ; 0.95
-buck_shot		= 1
-tracer			= off        ;  off
-wm_size         = 0.0076
-explosive		= off
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[ammo_12.7x108_ap]:ammo_base
-GroupControlSection	= spawn_group
-discovery_dependency	=
-$spawn			= "weapons\ammo\ammo_7.62x54_7h14" ; option for Level Editor
-class			= AMMO
-cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_762x54_ap.ogf
-description		= ammo-12.7x108_ap_descr
-$prefetch 		= 64
-
-cost					 = 3060
-
-box_size		= 5
-
-inv_name		= ammo-12.7x108_ap
-inv_name_short		= ammo-12.7x108_ap
-inv_weight		= .185
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 4
-inv_grid_y         = 54
-
-k_dist			= 1
-k_disp			= 0.66
-k_hit			= 1.44
-k_impulse		= 1.78
-k_pierce		= 2.24
-k_ap			= 1     
-impair			= 1.5 ; 1.01
-buck_shot		= 1
-tracer			= off       ;  on
-wm_size         = 0.0076
-explosive		= off
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ammo_357_hp_mag]:identity_immunities,default_weapon_params
 GroupControlSection	= spawn_group
-discovery_dependency =
+discovery_dependency = 
 $spawn			= "weapons\wpn_ammo\ammo_357_hp_mag" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
-description		= ammo-357_hp_mag_descr
+description		= ammo-357-hp_descr
 $prefetch 		= 64
 
 cost			= 1590
 
-box_size		= 13
+box_size		= 13	
 
-inv_name		= ammo-357_hp_mag
-inv_name_short		= ammo-357_hp_mag_s
+inv_name		= ammo-357-hp
+inv_name_short		= ammo-357-hp_s
 inv_weight		= 0.11
 
 inv_grid_width     = 1
@@ -1729,20 +1659,20 @@ explosive			= false
 
 [ammo_357_hp_mag_ap]:identity_immunities,default_weapon_params
 GroupControlSection	= spawn_group
-discovery_dependency =
+discovery_dependency = 
 $spawn			= "weapons\wpn_ammo\ammo_357_hp_mag" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
-description		= 357 AP ammo ; ammo-357_hp_mag_descr
+description		= ammo-357-incendiary_descr
 $prefetch 		= 64
 
-cost			= 2420
+cost			= 2820
 
-box_size		= 13
+box_size		= 13	
 
-inv_name			= 357 AP ammo ; ammo-357_hp_mag
-inv_name_short		= 357 AP ammo ; ammo-357_hp_mag_s
+inv_name			= ammo-357-incendiary
+inv_name_short		= ammo-357-incendiary_s
 inv_weight		= 0.11
 
 inv_grid_width     = 1
@@ -1752,13 +1682,13 @@ inv_grid_y         = 54
 
 k_dist			= 1.0
 k_disp			= 0.66
-k_hit			= 2.77
+k_hit			= 3.88
 k_impulse		= 0.58
 k_pierce		= 0.98
-k_ap			= 0.79
+k_ap			= 0.62
 impair			= 1.5 ; 1.1
 buck_shot		= 1
-tracer			= off        ;  off
+tracer			= on        ;  off
 wm_size        		= 0.006
 k_air_resistance = 2.3
 
@@ -2080,7 +2010,7 @@ fire_wound_immunity		= 0.7
 
 [explosive_gaz_balon]:explosive_fuelcan
 $spawn                        = "weapons\explosive\gaz_balon"
-visual                        = dynamics\balon\gaz_balon.ogf
+visual                        = dynamics\balon\gaz_balon.ogf 
 
 
 [explosive_tank]:identity_immunities,delayed_action_fuse,default_weapon_params
