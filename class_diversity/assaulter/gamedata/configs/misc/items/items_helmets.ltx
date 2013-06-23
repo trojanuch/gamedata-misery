@@ -473,9 +473,9 @@ shock_protection 			= 0.340 ; 205 kV
 radiation_protection 		= 0.0355
 chemical_burn_protection 	= 0.1090 ; 335 C1 ppm eq.
 burn_protection				= 0.0370 ; 13 kw / m2 ; 0.0440 = 16 kw / m2 = +50% time
-strike_protection 			= 0
-wound_protection			= 0.02
-explosion_protection		= 0.1
+wound_protection		= 0.046
+strike_protection 		= 0.0
+explosion_protection		= 0.17
 
 power_restore_speed				= -0.00066
 
@@ -486,16 +486,15 @@ upgrade_scheme          = upgrade_scheme_helm_protective
 repair_part_bonus	 	= 0.22
 
 [sect_helm_protective_immunities]
-burn_immunity			= 0.040
-strike_immunity			= 0.0
-shock_immunity			= 0.0
-wound_immunity			= 0.023
-wound_2_immunity		= 0.023
-radiation_immunity 		= 0.0 ;		= 0.04
-telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.03
-explosion_immunity		= 0.35
-fire_wound_immunity		= 0.25
+burn_immunity				= 0.040		;коэффициенты иммунитета самого костюма
+strike_immunity				= 0
+shock_immunity				= 0.004
+wound_immunity				= 0.024
+radiation_immunity = 0.0 ;			= 0.07
+telepatic_immunity			= 0.0
+chemical_burn_immunity		= 0.007
+explosion_immunity			= 0.034
+fire_wound_immunity			= 0.024
 
 [sect_helm_protective_immunities_burn_add]
 burn_immunity			= 0.026
