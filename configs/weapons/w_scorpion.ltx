@@ -180,8 +180,8 @@ grenade_launcher_name   = wpn_addon_grenade_launcher; section name for the attac
 grenade_launcher_x      = 126                ; offset in inventory icon
 grenade_launcher_y      = 24
 
-snd_draw                = weapons\generic\pistol_draw
-snd_holster    		= weapons\generic\pistol_holster, 0.4
+snd_draw                = weapons\generic\rifle_draw_03
+snd_holster             = weapons\generic\rifle_holster_02
 snd_shoot               = weapons\scorpion\scorpion_shot
 snd_empty               = weapons\generic\pistol_empty
 snd_reload              = weapons\scorpion\scorpion_reload, 0.8
@@ -228,10 +228,10 @@ fire_bone2                = wpn_body
 
 anm_show                     = scorpion_draw
 anm_hide                     = scorpion_holster
-anm_idle                     = scorpion_idle
-anm_idle_sprint         = scorpion_idle_moving
-anm_idle_moving         = scorpion_idle_moving
-anm_shots               = scorpion_shoot
+anm_idle                     = svu_idle
+anm_idle_sprint         = svu_idle_sprint
+anm_idle_moving         = svu_idle_sprint
+anm_shots               = mp5_shoot
 anm_reload              = scorpion_reload
 anm_idle_aim            = scorpion_idle_aim
 anm_bore                = scorpion_idle_bore
@@ -275,3 +275,34 @@ gl_hud_offset_rot_16x9    	= 0,0,0;0.052500,0.045000,-0.010000
 lean_hud_offset_pos        = 0,0,0
 lean_hud_offset_rot        = 0,0,0
 
+;==================================================================================================================================================
+[wpn_scorpion_camo]:wpn_scorpion
+
+cost              	= 19900
+inv_weight        = 1.150
+inv_name          = st_wpn_scorpion_camo               ; name in inventory
+inv_name_short    = st_wpn_scorpion_camo
+description          	= st_wpn_scorpion_camo_descr
+
+upgrades                = up_gr_firstab_scorpion, up_gr_seconab_scorpion, up_gr_thirdab_scorpion, up_gr_fourtab_scorpion, up_gr_fifthab_scorpion
+installed_upgrades      =
+
+hit_power           = 0.19, 0.19, 0.19, 0.19
+hit_impulse          = 16
+fire_distance           = 450
+bullet_speed            = 330
+rpm                     = 910
+
+hud                     = wpn_scorpion_camo_hud
+
+inv_grid_width    = 2
+inv_grid_height   = 1
+inv_grid_x        = 20
+inv_grid_y        = 23
+
+visual                  = dynamics\weapons\wpn_scorpion\wpn_scorpio2.ogf
+
+[wpn_scorpion_camo_hud]:wpn_scorpion_hud
+
+item_visual             = dynamics\weapons\wpn_scorpion\wpn_scorpio2_hud.ogf
+;==================================================================================================================================================

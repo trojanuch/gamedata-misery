@@ -138,9 +138,7 @@ sim_avail = true
 sim_avail = false
 
 [zat_b7_stalker_raider]:default
-territory = 1
-lair = 1
-sim_avail = {+zat_b7_victims_disappeared} true, {+zat_b7_task_end} true, false
+sim_avail = false
 
 ;technical, but with sim available, surge too
 [zat_b33]:default
@@ -1869,7 +1867,7 @@ territory_hostile = 1
 territory = 2
 
 [jup_b4]:default_lair_night
-sim_avail = {+jup_b4_monolith_squad_out} true, {+jup_b4_task_end} true, false
+sim_avail = {+jup_b4_monolith_squad_out +jup_a12_task_done} true, {+jup_b4_task_end +jup_a12_task_done} true, false
 hunting_ground 	= 1
 ;territory_hostile = 1
 ;territory = 1
@@ -1938,7 +1936,7 @@ sim_avail =  true
 base_hostile = 2
 base_hostile_safe = 2
 territory = 1
-lair_night = 1
+;lair_night = 1
 
 [jup_sim_3]:default
 sim_avail =  true
@@ -1983,7 +1981,7 @@ sim_avail =  false
 ;lair_night = 2
 
 [jup_sim_10]:default_lair
-sim_avail =  true
+sim_avail = {+jup_a12_task_done} true, false
 lair_night = 1
 lair = 1
 ;territory_zombied = 1

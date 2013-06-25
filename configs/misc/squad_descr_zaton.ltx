@@ -113,7 +113,7 @@ story_id = zat_b22_medic
 faction = killer
 relationship = neutral;friend
 sympathy = 0
-npc = zat_b103_lost_merc_leader, zat_b103_lost_merc_1, zat_b103_lost_merc_2, zat_b103_lost_merc_3, zat_b103_lost_merc_4, zat_b103_lost_merc_5, zat_b103_lost_merc_6, zat_b103_lost_merc_7
+npc = zat_b103_lost_merc_leader, zat_b103_lost_merc_1, zat_b103_lost_merc_2, zat_b103_lost_merc_3, zat_b103_lost_merc_4, zat_b103_lost_merc_5, zat_b103_lost_merc_6, zat_b103_lost_merc_7  
 target_smart = zat_b103_merc_smart
 spawn_point = zat_b103_merc_smart_lost_merc_leader_walk
 story_id = zat_b103_lost_merc_squad1
@@ -122,7 +122,7 @@ story_id = zat_b103_lost_merc_squad1
 sympathy = 0
 faction = stalker
 npc = zat_b7_stalker_raider_leader, zat_b7_stalker_raider_1, zat_b7_stalker_raider_2, zat_b7_stalker_raider_3
-target_smart = {-zat_b7_stalkers_raiders_attack_started +zat_b7_task_fail} zat_stalker_base_smart, {-zat_b7_task_end -zat_b7_actor_help_bandits -zat_b7_stalkers_raiders_attack} zat_stalker_base_smart, {-actor_is_sleeping +zat_b7_stalkers_raiders_attack -zat_b7_task_end -zat_b7_actor_help_bandits} zat_b7_stalker_raider, {+actor_is_sleeping +zat_b7_stalker_teleported} zat_b7_stalker_raider, {+zat_b7_task_end -zat_b7_actor_killed_victims_self =squad_exist(zat_b7_stalkers_victims_1)} zat_b7_stalker_raider, {+zat_b7_task_end -zat_b7_actor_killed_victims_self !squad_exist(zat_b7_stalkers_victims_1)} zat_b7, {+zat_b7_task_end +zat_b7_actor_killed_victims_self} zat_stalker_base_smart, {+zat_b7_actor_help_bandits} zat_b7
+target_smart = {-zat_b7_stalkers_raiders_attack_started +zat_b7_task_fail} zat_stalker_base_smart, {-zat_b7_task_end -zat_b7_actor_help_bandits -zat_b7_stalkers_raiders_attack} zat_stalker_base_smart, {-actor_is_sleeping +zat_b7_stalkers_raiders_attack -zat_b7_task_end -zat_b7_actor_help_bandits} zat_b7_stalker_raider, {+actor_is_sleeping +zat_b7_stalker_teleported} zat_b7_stalker_raider, {+zat_b7_task_end -zat_b7_actor_killed_victims_self =squad_exist(zat_b7_stalkers_victims_1)} zat_b7_stalker_raider, {+zat_b7_task_end -zat_b7_actor_killed_victims_self !squad_exist(zat_b7_stalkers_victims_1)} zat_b7, {+zat_b7_task_end +zat_b7_actor_killed_victims_self} zat_stalker_base_smart, {+zat_b7_actor_help_bandits} zat_b7 
 spawn_point = zat_b7_stalkers_raiders_spawn
 story_id = zat_b7_stalkers_raiders
 always_arrived = true
@@ -130,8 +130,8 @@ always_arrived = true
 [zat_b7_stalkers_victims_1]:online_offline_group
 sympathy = 0
 faction = stalker
-npc = zat_b7_stalker_victim_1, sim_default_stalker_2, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0
-target_smart = {+zat_b7_task_end} nil, zat_b7
+npc = zat_b7_stalker_victim_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_0, sim_default_stalker_0
+target_smart = zat_b7
 spawn_point = zat_b7_stalkers_victims_spawn_1
 story_id = zat_b7_stalkers_victims_1
 

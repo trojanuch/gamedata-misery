@@ -867,7 +867,13 @@
 		<text>Skorpion vz. 68</text>
 	</string>
 	<string id="st_wpn_scorpion_descr">
-		<text>Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, full production of the 9x19mm Skorpion vz. 68 never occurred. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 9x19</text>
+		<text>Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, full production of the 9x19mm Skorpion vz. 68 never occurred. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 9x18</text>
+	</string>
+		<string id="st_wpn_scorpion_camo">
+		<text>Skorpion vz. 68 (Camouflaged)</text>
+	</string>
+	<string id="st_wpn_scorpion_camo_descr">
+		<text>A unique Spetsnaz Skorpion vz 68 with a camouflaged chassis of lightweight titanium. Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, full production of the 9x19mm Skorpion vz. 68 never occurred. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 9x18</text>
 	</string>
 	<string id="st_wpn_ppsh41">
 		<text>PPSh-41</text>
@@ -1034,11 +1040,14 @@
 		<string id="st_wpn_mp5_alt">
 		<text>MP5A3 (Alternate)</text>
 	</string>
-				<string id="st_wpn_mp5_worn">
+		<string id="st_wpn_mp5_worn">
 		<text>MP5A3 (Worn)</text>
 	</string>
 	<string id="st_wpn_mp5_descr">
 		<text>The MP5’s compactness, accuracy and reliability have made it a favorite of numerous military, law enforcement, Intelligence and security organizations the world over. The MP5A3 is fitted with a retractable metal stock. This submachine gun has gained popularity around the world thanks to its reliability, ease of use and accuracy. Not surprisingly, having flooded the global black markets, it eventually made its way to the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,153,255,255] • %c[0,140,140,140] Silencer 9x19</text>
+	</string>
+		<string id="st_wpn_mp5_descr">
+		<text>An older version MP5A3 fitted with a retractable metal stock. This submachine gun has gained popularity around the world thanks to its reliability, ease of use and accuracy. Not surprisingly, having flooded the global black markets, it eventually made its way to the Zone.</text>
 	</string>
 	<string id="st_wpn_mp5_nimble">
 		<text>MP5A3 'Frasier'</text>
