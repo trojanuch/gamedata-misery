@@ -1804,9 +1804,9 @@ lair_night = 1
 [jup_b204]:default
 territory_monolith = 1
 territory_hostile = 1
-base_hostile = 2
+base_hostile = 1
 lair_night = 1
-sim_avail = false ; {+jup_b204_wachman_dead} true, false ; suspected to cause state_mgr ctd!
+sim_avail = {+jup_b204_wachman_dead} true, false ; suspected to cause state_mgr ctd!
 
 [jup_b205_smart_terrain]:default
 sim_avail = {+jup_b205_evacuation_visited} true, false
@@ -1906,10 +1906,10 @@ territory = 1
 sim_avail = false
 
 [jup_b219]:default
-sim_avail = {+pri_a17_actor_has_gauss_rifle} true, false
+sim_avail = false ; {+pri_a17_actor_has_gauss_rifle} true, false
 
 [jup_b8_smart_terrain]:default
-sim_avail = {+pri_a17_actor_has_gauss_rifle} true, false ; false ; true ; {+jup_b8_heli_4_searched} true, {+zat_b101_both_heli_info} true, false
+sim_avail = false ; {+pri_a17_actor_has_gauss_rifle} true, false ; false ; true ; {+jup_b8_heli_4_searched} true, {+zat_b101_both_heli_info} true, false
 
 [jup_b205_smart_terrain_tushkano]:default
 sim_avail = false
@@ -2043,7 +2043,6 @@ lair = 1
 territory_zombied = 2
 sim_avail = true
 
-
 [jup_sim_20]:default
 sim_avail =  true
 ;hunting_ground 	= 2
@@ -2105,6 +2104,7 @@ lair = 1
 lair_night = 1
 territory_zombied = 2
 territory = 1
+base_monolith = 1
 sim_avail = true
 
 [jupiter_smrter_sim_10]:default
