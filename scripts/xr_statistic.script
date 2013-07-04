@@ -376,7 +376,7 @@ function seeker_functor()
 	-- Ѕандиты симул€ционно больше преследуют игрока
 	db.actor:give_info_portion("sim_bandit_attack_harder")
 	news_manager.send_tip(db.actor, "st_ach_seeker", nil, "seeker", nil, nil)
-	xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"stalker", 200})
+--	xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"stalker", 200})
 	return true
 end
 
@@ -430,10 +430,10 @@ function diplomat_functor()
 		if has_alife_info("jup_a12_wo_shooting")
 				and (has_alife_info("jup_a10_bandit_take_all_money") or has_alife_info("jup_a10_bandit_take_money")) then
 			news_manager.send_tip(db.actor, "st_ach_diplomat", nil, "diplomat", nil, nil)
-			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"stalker", 200})
-			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"freedom", 200})
-			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"dolg", 200})
-			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"bandit", 200})
+--			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"stalker", 200})
+--			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"freedom", 200})
+--			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"dolg", 200})
+--			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"bandit", 200})
 			db.actor:give_info_portion("diplomat_achievement_gained")
 		end
 	end
@@ -583,7 +583,7 @@ function friend_of_stalkers_functor()
 				and has_alife_info("zat_b7_actor_help_stalkers") then
 			db.actor:give_info_portion("sim_stalker_help_harder")
 			news_manager.send_tip(db.actor, "st_ach_friend_of_stalkers", nil, "friend_of_stalkers", nil, nil)
-			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"stalker", 100})
+--			xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"stalker", 100})
 		end
 	end
 	return has_alife_info("sim_stalker_help_harder")

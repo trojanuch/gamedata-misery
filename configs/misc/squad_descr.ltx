@@ -674,12 +674,18 @@ npc_random = sim_default_duty_commando_1, sim_default_duty_commando_1, sim_defau
 npc_in_squad = 4, 4
 target_smart = {=is_dark_night} zat_b5_smart_terrain, nil
 
-[duty_sim_squad_veteran_zat_b40_assault]:online_offline_group
+[duty_sim_squad_veteran_zat_b40_assault]:online_offline_group ;;; SPECIAL ZAT_B40 ASSAULT SCENARIO GROUP
 faction = dolg_elite
 npc = sim_default_duty_commando_1, sim_default_duty_commando_2, sim_default_duty_commando_sniper, sim_default_duty_commando_2
 npc_in_squad = 4, 4
 target_smart = {=smart_empty(zat_b40_smart_terrain)} nil, {+zat_b40_find_information_complete =zat_b7_is_night} zaton_smrter_sim_1, {+zat_b40_find_information_complete =is_rain} zaton_smrter_sim_1
 story_id = duty_sim_squad_veteran_zat_b40_assault
+
+[duty_sim_squad_veteran_zat_b40_2_assault]:online_offline_group
+faction = dolg_elite
+npc = sim_default_duty_commando_1, sim_default_duty_commando_2, sim_default_duty_commando_2
+npc_in_squad = 4, 4
+target_smart = {=is_dark_night} zat_b40_smart_terrain, nil
 
 [duty_sim_squad_veteran_zat_b103_merc_smart_assault]:online_offline_group
 faction = dolg_elite

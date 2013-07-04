@@ -336,18 +336,18 @@ discovery_dependency  =
 $spawn 				= "devices\play"
 cform                   = skeleton
 class         = II_ANTIR
-visual				= dynamics\weapons\wpn_grenades\wpn_mines_1.ogf       
+visual				= dynamics\weapons\wpn_pfm1\wpn_pfm1.ogf     
 inv_vol = 1
 
-inv_name        = st_mine_name
-inv_name_short      = st_mine_name
+inv_name        			= st_mine_name
+inv_name_short      		= st_mine_name
 description                     = st_mine_descr
 
-inv_weight        = 1.48
-inv_grid_width		= 2
+inv_weight        	= 0.751
+inv_grid_width		= 1
 inv_grid_height		= 1
-inv_grid_x			= 20
-inv_grid_y			= 4
+inv_grid_x			= 25
+inv_grid_y			= 2
 cost          = 2790
 
 attach_angle_offset   = -1.5708,0.1919,3.1416    ;устанавливаетсљ в радианах Angle*PI/180
@@ -377,39 +377,39 @@ cform				= skeleton
 
 script_binding			= m_mines.build_tbl
 
-visual				= dynamics\weapons\wpn_grenades\wpn_mines_1.ogf
+visual				= dynamics\weapons\wpn_pfm1\wpn_pfm1.ogf
 
 inv_name			= 
 inv_name_short		=
-inv_weight			= 5.0
+inv_weight        	= 0.751
 
 inv_grid_width		= 1
 inv_grid_height		= 1
-inv_grid_x			= 9
-inv_grid_y			= 9
+inv_grid_x			= 25
+inv_grid_y			= 2
 ;вещь невозможно подобрать
 can_take			= false
 
 cost				= 1500
 ;-------------------------------------------------------------------------------
-blast				= 3
-blast_r				= 6
-blast_impulse		= 30
+blast				= 1.7
+blast_r				= 2.2
+blast_impulse		= 54
 ;delete
-blast_impulse_factor = 1
+blast_impulse_factor = 0.85
 
 
 frags				= 0
 frags_r				= 0
-frag_hit			= 5.75
-frag_hit_impulse	= 10
+frag_hit			= 0.04
+frag_hit_impulse	= 8
 
 hit_type_blast		= explosion
-hit_type_frag		= burn
+hit_type_frag		= fire_wound
 
-up_throw_factor		= 1.0
+up_throw_factor		= 0.1
 ;-------------------------------------------------------------------------------
-wm_size                  = 4.0
+wm_size                  = 0.01
 
 explode_particles		 = explosions\explosion_01
 
@@ -433,12 +433,12 @@ wallmark_section		= explosion_marks
 burn_immunity			= 0.0
 strike_immunity			= 0
 shock_immunity			= 0
-wound_immunity			= 0
+wound_immunity			= 0.35
 radiation_immunity		= 0
 telepatic_immunity		= 0
 chemical_burn_immunity	= 0
-explosion_immunity		= 0.75
-fire_wound_immunity		= 0.75
+explosion_immunity		= 0.85
+fire_wound_immunity		= 0.95
 
 eat_portions_num = 1
 ; food item
