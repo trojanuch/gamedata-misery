@@ -10,9 +10,9 @@ cform				= skeleton
 visual				= dynamics\balon\kanistra.ogf
 radius				= 68; 50
 
-description			= To_Be_Done
-inv_name			= Fuel_Jerrycan
-inv_name_short			= Fuel_Jerrycan
+description			= st_jerrycan_fuel_descr
+inv_name			= st_jerrycan_fuel
+inv_name_short			= st_jerrycan_fuel
 
 inv_grid_width     = 2
 inv_grid_height    = 2
@@ -23,7 +23,7 @@ cost				= 2890
 
 ;box_size			= 1
 
-inv_weight			= 5.48
+inv_weight			= 6.48
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset		= 0.096910, -0.013594, 0.107925
@@ -31,21 +31,21 @@ attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
 ;-------------------------------------------------------------------------------
-blast				= 5.4
-blast_r				= 8
-blast_impulse		= 130
+blast				= 3.8
+blast_r				= 5.6
+blast_impulse		= 126
 ;delete
 blast_impulse_factor = 1
 
-frags				= 53
-frags_r				= 44
-frag_hit			= 0.05
-frag_hit_impulse	= 53
+frags				= 39
+frags_r				= 28
+frag_hit			= 0.09
+frag_hit_impulse	= 47
 
 hit_type_blast		= explosion
 hit_type_frag		= fire_wound
 
-up_throw_factor		= 1.0
+up_throw_factor		= 0.46
 ;-------------------------------------------------------------------------------
 wm_size                  = 0.1
 
@@ -56,13 +56,28 @@ light_range		         = 30.0
 light_time 		         = 1
 
 ;трассы от осколков
-fragment_speed				= 188		;скорость осколков (м/с)
-explode_duration		 = 5		;подолжительность взрыва (с)
+fragment_speed				= 96		;скорость осколков (м/с)
+explode_duration		 = 3		;подолжительность взрыва (с)
 wallmark_section		= explosion_marks
 
 ;звуки
 snd_explode = weapons\explo\fuelcan_boom
-immunities_sect			= explosive_tank_immunities_sect
+
+immunities_sect			= explosive_jerrycan_immunities_sect
+
+repair_part_bonus	 	= 0.04
+
+[explosive_jerrycan_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.16
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.84
+fire_wound_immunity		= 0.66
 
 [explo_metalcan_powder]:identity_immunities,delayed_action_fuse,default_weapon_params
 $spawn 				= "weapons\explosive\mobiltank"
@@ -72,9 +87,9 @@ cform				= skeleton
 visual				= dynamics\workshop_room\banka_kraski_1.ogf
 radius				= 68; 50
 
-description			= To_Be_Done
-inv_name			= Explosive_Can
-inv_name_short			= Explosive_Can
+description			= st_metalcan_powder_descr
+inv_name			= st_metalcan_powder
+inv_name_short			= st_metalcan_powder
 
 inv_grid_width     = 1
 inv_grid_height    = 1
@@ -85,7 +100,7 @@ cost				= 2466
 
 ;box_size			= 1
 
-inv_weight			= 1.22
+inv_weight			= 2.081
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset		= 0.096910, -0.013594, 0.107925
@@ -93,21 +108,21 @@ attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
 ;-------------------------------------------------------------------------------
-blast				= 2.8
-blast_r				= 4.6
-blast_impulse		= 94
+blast				= 1.6
+blast_r				= 1.8
+blast_impulse		= 63
 ;delete
 blast_impulse_factor = 1
 
-frags				= 28
-frags_r				= 39
-frag_hit			= 0.04
-frag_hit_impulse	= 53
+frags				= 77
+frags_r				= 14
+frag_hit			= 0.08
+frag_hit_impulse	= 56
 
 hit_type_blast		= explosion
 hit_type_frag		= fire_wound
 
-up_throw_factor		= 1.0
+up_throw_factor		= 0.13
 ;-------------------------------------------------------------------------------
 wm_size                  = 0.1
 
@@ -119,13 +134,27 @@ light_time 		         = 1
 
 ;трассы от осколков
 fragment_speed				= 163		;скорость осколков (м/с)
-explode_duration		 = 5		;подолжительность взрыва (с)
+explode_duration		 = 0		;подолжительность взрыва (с)
 ;wallmarks
 wallmark_section		= explosion_marks
 
 ;звуки
 snd_explode = weapons\explo\fuelcan_boom
-immunities_sect			= explosive_tank_immunities_sect
+immunities_sect			= explosive_metalcan_powder_immunities_sect
+
+repair_part_bonus	 	= 0.01
+
+[explosive_metalcan_powder_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.22
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.94
+fire_wound_immunity		= 0.78
 
 [explo_balon_gas]:identity_immunities,delayed_action_fuse,default_weapon_params
 $spawn 				= "weapons\explosive\mobiltank"
@@ -135,9 +164,9 @@ cform				= skeleton
 visual				= dynamics\balon\gaz_balon.ogf
 radius				= 68; 50
 
-description			= To_Be_Done
-inv_name			= Gas_Balon
-inv_name_short			= Gas_Balon
+description			= st_balon_gas_descr
+inv_name			= st_balon_gas
+inv_name_short			= st_balon_gas
 
 inv_grid_width     = 2
 inv_grid_height    = 2
@@ -148,7 +177,7 @@ cost				= 3240
 
 ;box_size			= 1
 
-inv_weight			= 3.36
+inv_weight			= 10.242
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset		= 0.096910, -0.013594, 0.107925
@@ -156,21 +185,21 @@ attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
 ;-------------------------------------------------------------------------------
-blast				= 5.4
-blast_r				= 8
+blast				= 4.6
+blast_r				= 6.4
 blast_impulse		= 130
 ;delete
 blast_impulse_factor = 1
 
-frags				= 53
-frags_r				= 54
-frag_hit			= 0.05
+frags				= 28
+frags_r				= 36
+frag_hit			= 0.11
 frag_hit_impulse	= 66
 
 hit_type_blast		= explosion
-hit_type_frag		= light_burn
+hit_type_frag		= fire_wound
 
-up_throw_factor		= 1.0
+up_throw_factor		= 0.54
 ;-------------------------------------------------------------------------------
 wm_size                  = 0.1
 
@@ -183,13 +212,27 @@ light_time 		         = 1
 ;трассы от осколков
 fragment_speed				= 206		;скорость осколков (м/с)
 
-explode_duration		 = 5		;подолжительность взрыва (с)
+explode_duration		 = 2		;подолжительность взрыва (с)
 ;wallmarks
 wallmark_section		= explosion_marks
 
 ;звуки
 snd_explode = weapons\explo\fuelcan_boom
-immunities_sect			= explosive_tank_immunities_sect
+immunities_sect			= explosive_balon_gas_immunities_sect
+
+repair_part_bonus	 	= 0.05
+
+[explosive_balon_gas_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.14
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.77
+fire_wound_immunity		= 0.68
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; DEPLOYABLE MILITARY EXPLOSIVES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -212,7 +255,7 @@ inv_grid_height			= 2
 inv_grid_x			= 6
 inv_grid_y			= 43
 
-cost				= 3990
+cost				= 4990
 
 ;box_size			= 1
 
@@ -224,40 +267,40 @@ attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
 ;-------------------------------------------------------------------------------
-blast				= 1.50
-blast_r				= 8
-blast_impulse		= 250
+blast				= 4.3
+blast_r				= 7.2
+blast_impulse		= 205
 ;delete
 blast_impulse_factor = 1
 
 
-frags				= 5
-frags_r				= 15
-frag_hit			= 0.75
-frag_hit_impulse	= 150
+frags				= 153
+frags_r				= 36
+frag_hit			= 0.03
+frag_hit_impulse	= 28
 
 hit_type_blast		= explosion
-hit_type_frag		= light_burn
+hit_type_frag		= fire_wound
 
 up_throw_factor		= 1.0
 ;-------------------------------------------------------------------------------
 wm_size                  = 0.1
 
-explode_particles		 = explosions\explosion_mobiltank
+explode_particles			= explosions\explosion_04
 
 light_color		         = 1.9,1.3,0.5
 light_range		         = 30.0
 light_time 		         = 1
 
 ;трассы от осколков
-fragment_speed				= 100		;скорость осколков (м/с)
+fragment_speed				= 220		;скорость осколков (м/с)
 
 explode_duration		 = 5		;подолжительность взрыва (с)
 ;wallmarks
 wallmark_section		= explosion_marks
 
 ;звуки
-snd_explode = weapons\explo\fuelcan_boom
+snd_explode 				= weapons\rpg7\rpg7_explode
 immunities_sect			= explosive_tank_immunities_sect
 
 [ied]:identity_immunities,delayed_action_fuse,default_weapon_params
@@ -277,7 +320,7 @@ inv_grid_height			= 2
 inv_grid_x			= 5
 inv_grid_y			= 43
 
-cost				= 3690
+cost				= 5690
 
 ;box_size			= 1
 
@@ -289,19 +332,20 @@ attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
 ;-------------------------------------------------------------------------------
-blast				= 1.50
-blast_r				= 8
-blast_impulse		= 250
+blast				= 5.7
+blast_r				= 12.9
+blast_impulse		= 274
 ;delete
 blast_impulse_factor = 1
 
+
 frags				= 5
-frags_r				= 15
-frag_hit			= 0.75
-frag_hit_impulse	= 150
+frags_r				= 74
+frag_hit			= 0.06
+frag_hit_impulse	= 43
 
 hit_type_blast		= explosion
-hit_type_frag		= light_burn
+hit_type_frag		= fire_wound
 
 up_throw_factor		= 1.0
 ;-------------------------------------------------------------------------------
@@ -314,7 +358,7 @@ light_range		         = 30.0
 light_time 		         = 1
 
 ;трассы от осколков
-fragment_speed				= 100		;скорость осколков (м/с)
+fragment_speed				= 270		;скорость осколков (м/с)
 
 explode_duration		 = 5		;подолжительность взрыва (с)
 ;wallmarks
@@ -392,9 +436,9 @@ can_take			= false
 
 cost				= 1500
 ;-------------------------------------------------------------------------------
-blast				= 1.7
+blast				= 2.18
 blast_r				= 2.2
-blast_impulse		= 54
+blast_impulse		= 66
 ;delete
 blast_impulse_factor = 0.85
 

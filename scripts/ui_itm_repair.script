@@ -346,7 +346,7 @@ function repair_ui:AddItemToList(item,listbox,condition)
 
 	condition = math.ceil(condition*100)
 	if (item) then
-		_itm.fage			= _itm:AddTextField(condition.."%", self.file_item_fd_sz.x)
+		_itm.fage			= _itm:AddTextField("+"..condition.."%", self.file_item_fd_sz.x)
 		_itm.fage:SetFont	(GetFontLetterica16Russian())
 		_itm.fage:SetWndPos	(vector2():set(self.file_item_fn_sz.x+4, 0))
 		_itm.fage:SetWndSize(self.file_item_fd_sz)

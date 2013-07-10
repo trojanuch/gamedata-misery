@@ -1582,12 +1582,52 @@ function play_sound_on_actor(actor,obj,p)
 end
 
 --function play_repair_sound()
---	local snd_obj = sound_object("interface\\inv_kit_use_2p8")
+--	local snd_obj = sound_object("interface\\inv_repair_kit_use_fast_2p8")
 --	snd_obj:play_no_feedback(db.actor,0, sound_object.s2d)
 --end
 
-function play_repair_sound()
-	local snd_obj = sound_object("interface\\inv_kit_use_2p8")
+function play_inv_repair_kit_use_fast_2p8()
+	local snd_obj = sound_object("interface\\inv_repair_kit_use_fast_2p8")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_kit_use_fast()
+	local snd_obj = sound_object("interface\\inv_repair_kit_use_fast")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_kit_with_brushes()
+	local snd_obj = sound_object("interface\\inv_repair_kit_with_brushes")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_sewing_kit()
+	local snd_obj = sound_object("interface\\inv_repair_sewing_kit")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_sewing_kit_fast()
+	local snd_obj = sound_object("interface\\inv_repair_sewing_kit_fast")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_spray_oil()
+	local snd_obj = sound_object("interface\\inv_repair_spray_oil")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_brushes()
+	local snd_obj = sound_object("interface\\inv_repair_brushes")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_repair_kit()
+	local snd_obj = sound_object("interface\\inv_repair_kit")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_drink_flask_2()
+	local snd_obj = sound_object("interface\\inv_drink_flask_2")
 	snd_obj:play(db.actor,0,sound_object.s2d)
 end
 

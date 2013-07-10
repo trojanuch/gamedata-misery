@@ -545,8 +545,43 @@ run_jamp_1		=		0.55,		0.6,			10,        0.0, 1.0, 4.0,		 -1.8, 1.8, -1.8, 1.8,		
 $spawn				= "monsters\psy_dog\zat_b18_dog"
 community				= pseudodog
 
-radiation_max_distance		=	0
+;-------------------------------------------------------------------------
+; Vision
+;-------------------------------------------------------------------------
+eye_fov				 = 3	;150
+eye_range			 = 1	;100
 
+vision_free_section			= zat_b18_dog_vision_free
+vision_danger_section		= zat_b18_dog_vision_danger
+
+; ЗНАЧЕНИЯ visibility_threshold ДОЛЖНЫ БЫТЬ РАВНЫ для денжера и фри,
+; иначе возникают артефакты с потерей видимости при переходе от денжера во фри.
+
+[zat_b18_dog_vision_free]
+min_view_distance   		= 0.1				; коэффициент, которvй множится на eye_range, в зависимости от угла
+max_view_distance	 		= 0.2				; коэффициент, которvй множится на eye_range, в зависимости от угла
+visibility_threshold	 	= 70.0				; значение, при достижении суммой которого объект считается видимvм
+always_visible_distance 	= 0.001
+time_quant					= 0.001
+decrease_value				= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсїкся по каким-то причинам
+velocity_factor		     	= 0.4
+luminocity_factor			= 0.5 				; фактор освещения (только для Актера)
+transparency_threshold		= 0.38
+
+[zat_b18_dog_vision_danger]
+min_view_distance   		= 0.1				; коэффициент, которvй множится на eye_range, в зависимости от угла
+max_view_distance	 		= 0.2				; коэффициент, которvй множится на eye_range, в зависимости от угла
+visibility_threshold	 	= 60.0				; значение, при достижении суммой которого объект считается видимvм
+always_visible_distance 	= 0.001
+time_quant					= 0.001
+decrease_value				= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсїкся по каким-то причинам
+velocity_factor		     	= 0.4
+luminocity_factor			= 0.5 				; фактор освещения (только для Актера)
+transparency_threshold		= 0.38
+
+feel_enemy_who_just_hit_max_distance = 350
+
+radiation_max_distance		=	0
 
 ;----------------------------------------------------------------------------
 ; Movement::Velocities & Acceleration
@@ -558,7 +593,23 @@ Velocity_RunFwdDamaged	= 4.3,  	5.0,			5.0,		0.5,	1.0
 Velocity_WalkFwdNormal	= 5.0,		5.0,			5.0,		0.1,	1.0
 Velocity_WalkFwdDamaged	= 2.2,		6.0,			6.0,		0.1,	2.2
 
-
+;---------------------------------------------------------
+; Sounds and sound parameters
+;---------------------------------------------------------
+sound_idle				= ; monsters\pseudodog\pdog_idle_
+sound_eat				= ; monsters\pseudodog\pdog_chew_
+sound_aggressive		= ; monsters\pseudodog\pdog_aggression_
+sound_attack_hit		= ; monsters\pseudodog\pdog_attack_
+sound_take_damage		= ; monsters\pseudodog\pdog_hurt_
+sound_die				= ; monsters\pseudodog\pdog_death_
+sound_bkgnd				= ; monsters\biting\def_
+sound_threaten			= ; monsters\pseudodog\pdog_threaten_
+sound_landing			= ; monsters\biting\def_
+sound_steal				= ; monsters\biting\def_
+sound_panic				= ; monsters\biting\def_
+sound_growling			= ; monsters\biting\def_
+sound_psy_attack		= ; monsters\pseudodog\psy_attack_
+sound_die_in_anomaly	= ; monsters\pseudodog\pdog_death_
 
 ;*********************************************************************************
 ; FEARLESS PROFILES FOR GARBAGE

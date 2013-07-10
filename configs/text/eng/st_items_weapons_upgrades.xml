@@ -76,7 +76,7 @@
 		<text>Change of caliber to 9x19</text>
 	</string>
 	<string id="st_up_addd_a1_descr">
-		<text>Magazine capacity increase without increasing weapon part length</text>
+		<text>Magazine capacity increase without increasing weapon part length.</text>
 	</string>
 	<string id="st_up_addd_a1_name">
 		<text>Magazine capacity increase</text>
@@ -226,7 +226,7 @@
 		<text>Sewn-in chainmail shirt</text>
 	</string>
 	<string id="st_up_arm_c2_descr">
-		<text>The Scale comprises overlaying ceramic plates that prevent the wearer from being hit in the same place.</text>
+		<text>The Scale comprises overlaying ceramic plates that prevent the wearer from being hit in the same place twice in a row.</text>
 	</string>
 	<string id="st_up_arm_c2_name">
 		<text>Deflective ceramic Scale modification </text>
@@ -253,7 +253,8 @@
 		<text>Ceramic layer on plates</text>
 	</string>
 	<string id="st_up_arm_c7_descr">
-		<text>Carbon fiber is one of the most durable and wear-resistant materials that is even used in aviation construction.</text>
+		<text>Carbon fiber is one of the
+ most durable and wear-resistant materials and are even used in aviation construction.</text>
 	</string>
 	<string id="st_up_arm_c8_descr">
 		<text>Combined multi-layered polymer and ceramic coating.</text>
@@ -481,7 +482,9 @@
 		<text>Installation of a stopping device</text>
 	</string>
 	<string id="st_up_bar_a1_descr">
-		<text>Replacement of a regular barrel with a longer one improves accuracy and flatness.</text>
+		<text>Replacement of
+ a regular barrel
+ with a longer one improves accuracy and flatness.</text>
 	</string>
 	<string id="st_up_bar_a1_name">
 		<text>Longer barrel</text>
@@ -709,7 +712,8 @@
 		<text>Addition of hydraulic boosters into drive devices</text>
 	</string>
 	<string id="st_up_kom_a1_descr">
-		<text>A fabric insert prevents soft tissue damage in the event of impact against the plate.</text>
+		<text>A fabric insert prevents soft tissue damage in the event
+ of impact against the plate.</text>
 	</string>
 	<string id="st_up_kom_a1_name">
 		<text>Amortization fabric layer</text>
@@ -946,19 +950,20 @@
 		<text>Adjustable zoom lens</text>
 	</string>
 	<string id="st_up_stk_binoc1_descr">
-		<text>Replacement of metalized grip with polymer one, resulting in significant reduction of weight.</text>
+		<text>Replacement of metalized grip with a polymer version, resulting in significant reduction of weight.</text>
 	</string>
 	<string id="st_up_stk_binoc1_name">
 		<text>Polymer grip</text>
 	</string>
 	<string id="st_up_stk_binoc2_descr">
-		<text>Replacement of steel body of binoculars with aluminium one. Lowers equipment's weight and thus significantly boosts usage convenience.</text>
+		<text>Replacement of binocular frame with an aluminium one. Lowers equipment's weight and thus significantly boosts convenience of use.</text>
 	</string>
 	<string id="st_up_stk_binoc2_name">
-		<text>Aluminium frame</text>
+		<text>Aluminium
+ frame</text>
 	</string>
 	<string id="st_up_stk_binoc3_descr">
-		<text>Replacement of moving parts with titanium counter-parts. Futher weight lowering and functionality increase.</text>
+		<text>Replacement of moving parts with titanium counterparts. Lowers weight and increases functionality.</text>
 	</string>
 	<string id="st_up_stk_binoc3_name">
 		<text>Titanium-based mechanical apparatus</text>
@@ -1051,31 +1056,31 @@
 		<text>A mask used in contaminated air or critical air temperature conditions, which are too low or too high for breathing.</text>
 	</string>
 	<string id="st_up_res_b1_descr">
-		<text>Application of a screening coating</text>
+		<text>Application of a screening coating.</text>
 	</string>
 	<string id="st_up_res_b1_name">
 		<text>Application of a screening coating</text>
 	</string>
 	<string id="st_up_res_b2_descr">
-		<text>A filter with a reinforced anti-corrosive coating with an additional preventing layer for removal of poisons</text>
+		<text>A filter with a reinforced anti-corrosive coating with an additional preventing layer for removal of poisons.</text>
 	</string>
 	<string id="st_up_res_b2_name">
 		<text>Filter for work in contaminated areas</text>
 	</string>
 	<string id="st_up_res_b3_descr">
-		<text>A plexiglass mask can provide partial protection from radiation</text>
+		<text>A plexiglass mask can provide partial protection from radiation.</text>
 	</string>
 	<string id="st_up_res_b3_name">
 		<text>Plexiglass coating</text>
 	</string>
 	<string id="st_up_res_b4_descr">
-		<text>A plexiglass mask can provide partial protection from radiation</text>
+		<text>A plexiglass mask can provide partial protection from radiation.</text>
 	</string>
 	<string id="st_up_res_b4_name">
 		<text>Plexiglass breathing mask</text>
 	</string>
 	<string id="st_up_res_b5_descr">
-		<text>Respirator for total blocking of poisons</text>
+		<text>Respirator for total blocking of poisons.</text>
 	</string>
 	<string id="st_up_res_b5_name">
 		<text>Impregnated breathing mask</text>
@@ -1123,7 +1128,7 @@
 		<text>Reinforced respirator for extreme conditions</text>
 	</string>
 	<string id="st_up_resp_a1_descr">
-		<text>Standard-issue 1PN93-1 Russian Military Forces night vision device modified for mounting on combat helmet. Offers generation 2+ image intensifying for operations at night or in reduced lightning conditions. After removal of battery compartment and replacing it with UPD imput, total weight with mounting grid has been established at usable ~1,5 kg. Purchased and delivered as complete isntallation kit it also features mounting interface, allowing easy updating to better device in future. Device depletes UPD at medium rate.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
+		<text>Standard-issue 1PN93-1 Russian Military Forces night vision device. This modified version can be mounted on a combat helmet. Offers generation 2+ image intensification, especially useful for operations at night or in low light conditions. After removing the battery compartment and replacing it with UPD input, total weight was reduced to bearable ~1,5 kg. Purchased and delivered as a complete set, it also features a mounting interface, which enables to install better devices in the future. Depletes UPD at a high rate.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
 	</string>
 	<string id="st_up_resp_a1_name">
 		<text>1PN93-1 night vision device</text>
@@ -1138,7 +1143,7 @@
 		<text>Steam purification & respiration mask</text>
 	</string>
 	<string id="st_up_resp_b1_descr">
-		<text>Modern-day, IIT generation 3 PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. It's specifically desinged to be head-mounted. Installation on combat helmet greatly enhances possibilities of operations in complete darkness. It features an advanced image processing software which transforms typical green night-vision view to more convenient greyscale one. Requires base mounting grid to be present on helmet to allow integration. Weighting about 270 grams it is lighter than 1PN58 nvd giving back about 400 grams on installation. There is a upgrade kit present on the market which replaces lens to better ones and contains an update to image-processing software.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
+		<text>Modern-day, IIT generation 3 PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. Head-mounted, greatly enhances vision in complete darkness. It features advanced image processing software which displays images in shades of grey. Requires base mounting grid to be installed. With weight of about 270 grams, it is significantly lighter than other helmets. Can be upgraded with better lens and more sophisticated image-processing software by means of an upgrade kit.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
 	</string>
 	<string id="st_up_resp_b1_name">
 		<text>PN21KL night vision device</text>
@@ -1156,7 +1161,7 @@
 		<text>Oracle psy-stimulator</text>
 	</string>
 	<string id="st_up_resp_c1_descr">
-		<text>Lenses and image processing software update cleares the vision of artifacts and enhances the image intensifying capabilities of PN21K unit and thus making it a full-fledged IIT generation 3+ night vision device. Does not affect the weight of helmet or UPD depletion rate.</text>
+		<text>Lenses and image processing software update removes video noise and enhances image intensifying capabilities of PN21K unit, thus making it a full-fledged IIT generation 3+ night vision device. Does not affect the weight of helmet or UPD depletion rate.</text>
 	</string>
 	<string id="st_up_resp_c1_name">
 		<text>Improved lenses and image processing software update for PN21K night vision device</text>
@@ -1168,7 +1173,8 @@
 		<text>Ion Wind cooling system</text>
 	</string>
 	<string id="st_up_resp_c3_descr">
-		<text>An infrared scanner allows for detection of nearby humans.</text>
+		<text>An
+ infrared scanner allows for detection of nearby humans.</text>
 	</string>
 	<string id="st_up_resp_c3_name">
 		<text>Infrared scanner</text>
@@ -1360,7 +1366,7 @@
 		<text>High-durability, thermal resistant alloys</text>
 	</string>
 	<string id="st_up_stvh_b1_descr">
-		<text>An important modification that protects the weapon from air temperature effects during firing</text>
+		<text>An important modification that protects the weapon from air temperature effects during firing.</text>
 	</string>
 	<string id="st_up_stvh_b1_name">
 		<text>Addition of thermal regulation jackets</text>
@@ -1416,7 +1422,8 @@
 	<string id="st_up_stvp_b5_descr">
 		<text>A change in the rear section makes for a more ergonomic handle shape.</text>
 	</string>
-	<string id="st_up_stvp_b5_name">
+	<string
+ id="st_up_stvp_b5_name">
 		<text>Changing handle shape with a straight rear section</text>
 	</string>
 	<string id="st_up_stvp_b6_descr">
@@ -1459,7 +1466,7 @@
 		<text>Longitudinal fullers of the barrel section prevent the barrel from overheating and dirt contamination.</text>
 	</string>
 	<string id="st_up_stvs_b3_name">
-		<text>Longitudinal fullers of the barrel section </text>
+		<text>Longitudinal fullers of the barrel section</text>
 	</string>
 	<string id="st_up_stvs_c1_descr">
 		<text>Integrated silencer and flash suppressor, essential for stealth fire.</text>
@@ -1642,7 +1649,8 @@
 		<text>Short movement firing mechanism</text>
 	</string>
 	<string id="st_up_uti_a1_descr">
-		<text>Additional movement devices allow for maximum carried load to be increased.</text>
+		<text>Additional
+ movement devices allow for maximum carried load to be increased.</text>
 	</string>
 	<string id="st_up_uti_a1_name">
 		<text>Additional servomotors</text>
@@ -1878,7 +1886,8 @@
 	<string id="st_up_zatp_b5_descr">
 		<text>A heavier and closed bolt prevents the pistol's bolt section from malfunctioning.</text>
 	</string>
-	<string id="st_up_zatp_b5_name">
+	<string
+ id="st_up_zatp_b5_name">
 		<text>Reinforced and fully closed bolt</text>
 	</string>
 	<string id="st_up_zatp_b6_descr">
