@@ -218,7 +218,7 @@ function dynamic_actor_loadout()
 	if (ActorClass == "assaulter") then
 		create_items("identity_card_assaulter")
 		if (MiseryBlackRoad) then
-			create_items("wpn_knife_inv")
+			create_items("wpn_knife_inv_2")
 		else
 			create_items("wpn_upd")
 			create_items("roubles",7)
@@ -227,6 +227,8 @@ function dynamic_actor_loadout()
 			
 			create_items("gun_oil")
 			create_items("cleaning_kit_r7")
+			create_items("glue_a")
+			create_items("textile_patch_m")
 			
 			create_items("swiss")
 
@@ -236,11 +238,11 @@ function dynamic_actor_loadout()
 			create_items("bandage",3)
 			create_items("antirad")
 			create_items("drug_coagulant")
-			create_items("medkit_army")
-			create_items("stimpack_army")
+			create_items("medkit_army",2)
+			create_items("stimpack_army",2)
 
 			create_items("wpn_stg44")
-			create_items("wpn_aps")
+			create_items("wpn_gsh18")
             create_ammunition("ammo_9x18_fmj",3)
             create_ammunition("ammo_9x18_pmm",2)
 			create_ammunition("ammo_7.92x33_fmj",5)
@@ -260,11 +262,13 @@ function dynamic_actor_loadout()
 			create_items("roubles",3)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
+			create_items("swiss",2)
 			
-			create_items("gun_oil")
+			create_items("gun_oil_ru_d")
 			create_items("cleaning_kit_r7")
+			create_items("sewing_kit_a")
 			
-			create_items("swiss")
+			create_items("swiss",2)
 
 			create_items("flask",3)
 			create_items("ration_ukr")
@@ -298,10 +302,8 @@ function dynamic_actor_loadout()
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
 			
-			create_items("gun_oil")
+			create_items("gun_oil_ru_d")
 			create_items("cleaning_kit_pe")
-			
-			create_items("swiss",2)
 
 			create_items("flask",3)
 			create_items("ration_ukr")
@@ -309,18 +311,20 @@ function dynamic_actor_loadout()
 
 			create_items("bandage",4)
 			create_items("antirad",2)
-			create_items("drug_coagulant",2)
+			create_items("drug_coagulant")
 			create_items("drug_psy_blockade")
 			create_items("morphine")
-			create_items("medkit_army",2)
+			create_items("medkit_army",1)
 			create_items("stimpack_army",2)
+			create_items("mine",2)
 
-			create_items("wpn_mp5_worn")
-         	create_ammunition("ammo_9x19_fmj",5)
-           	create_ammunition("ammo_9x19_pbp",2)
-			create_ammunition("ammo_9x19_ap",4)
+			create_items("wpn_pb")
+			create_items("wpn_scorpion")
+         	create_ammunition("ammo_9x18_fmj",5)
+           	create_ammunition("ammo_9x18_pbp",2)
+			create_ammunition("ammo_9x18_ap",4)
 
-			create_items("wpn_addon_silencer_9x19")
+			create_items("wpn_addon_silencer_9x18")
 			create_items("helm_respirator")
 			create_items("detector_simple")
 		end
