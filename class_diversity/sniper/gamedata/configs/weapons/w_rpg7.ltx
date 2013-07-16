@@ -61,8 +61,8 @@ crosshair_inertion		= 11.3
 PDM_disp_base 				= 0.85
 PDM_disp_vel_factor 		= 3.75
 PDM_disp_accel_factor 		= 3.75
-PDM_disp_crouch	 			= 0.6
-PDM_disp_crouch_no_acc 		= 0.35
+PDM_disp_crouch	 			= 0.52
+PDM_disp_crouch_no_acc 		= 0.36
 
 ;отдача
 cam_relax_speed         = 2.0	;скорость возврата в исходное положение
@@ -215,20 +215,21 @@ kill_msg_height				= 19
 
 cost					= 200
 ;---------------------------------------------------------------
-blast					= 5.00
-blast_r					= 10;15
-blast_impulse				= 350
-blast_impulse_factor 			= 1
+blast				= 4.3
+blast_r				= 7.2
+blast_impulse		= 205
+;delete
+blast_impulse_factor = 1
 
-frags					= 8
-frags_r					= 25
-frag_hit				= 1.50
-frag_hit_impulse			= 275
+frags				= 153
+frags_r				= 36
+frag_hit			= 0.03
+frag_hit_impulse	= 28
 
 hit_type_blast				= explosion
 hit_type_frag				= fire_wound
 
-up_throw_factor				= 0.25
+up_throw_factor				= 0.76
 ;---------------------------------------------------------------
 
 wm_size                  		= 0.1
@@ -246,9 +247,9 @@ explode_particles			= explosions\explosion_04
 
 
 ;трассы от осколков
-fragment_speed	     		= 100
+fragment_speed	     		= 230
 
-explode_duration		 	= 5		;подолжительность взрыва (с)
+explode_duration		 	= 0		;подолжительность взрыва (с)
 
 
 ;звуки

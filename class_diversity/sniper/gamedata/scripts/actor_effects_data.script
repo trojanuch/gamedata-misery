@@ -1224,70 +1224,70 @@ wpn_fx = {
 		s = {4, 5},
 		r = 1,
 		e = { {1.7}, {1.7}, {1.4}, {2.8}, {5.2}, {3.4} },
-		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.07},
+		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_toz34_new = {
 		s = {4, 5},
 		r = 1,
 		e = { {1.7}, {1.7}, {1.4}, {2.8}, {5.2}, {3.4} },
-		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.07},
+		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_toz34_alt = {
 		s = {4, 5},
 		r = 1,
 		e = { {1.7}, {1.7}, {1.4}, {2.8}, {5.2}, {3.4} },
-		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.07},
+		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_toz34_decor = {
 		s = {4, 5},
 		r = 1,
 		e = { {1.7}, {1.7}, {1.4}, {2.8}, {5.2}, {3.4} },
-		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.07},
+		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_toz34_worn = {
 		s = {4, 5},
 		r = 1,
 		e = { {1.7}, {1.7}, {1.4}, {2.8}, {5.2}, {3.4} },
-		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.07},
+		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_bm16_full = {
 		s = {4, 5},
 		r = 1,
 		e = { {1.7}, {1.7}, {1.4}, {2.8}, {5.2}, {3.4} },
-		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.07},
+		p = {black = 0.1, blur = 0, grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_protecta = {
 		s = {3, 4},
 		r = 1,
 		e = { {1}, {1}, {0.8}, {1.5}, {3.1}, {3.4} },
-		p = {grey = 0.1, duality_v = 0.06},
+		p = {grey = 0.1, duality_v = 0.03},
 	},
 
 	wpn_protecta_custom = {
 		s = {3, 4},
 		r = 1,
 		e = { {1}, {1}, {0.8}, {1.5}, {3.1}, {3.4} },
-		p = {grey = 0.1, duality_v = 0.06},
+		p = {grey = 0.1, duality_v = 0.03},
 	},
 
 	wpn_protecta_camo = {
 		s = {3, 4},
 		r = 1,
 		e = { {1}, {1}, {0.8}, {1.5}, {3.1}, {3.4} },
-		p = {grey = 0.1, duality_v = 0.06},
+		p = {grey = 0.1, duality_v = 0.03},
 	},
 
 	wpn_protecta_worn = {
 		s = {3, 4},
 		r = 1,
 		e = { {1}, {1}, {0.8}, {1.5}, {3.1}, {3.4} },
-		p = {grey = 0.1, duality_v = 0.06},
+		p = {grey = 0.1, duality_v = 0.03},
 	},
 
 	wpn_rg6 = {
@@ -1301,7 +1301,7 @@ wpn_fx = {
 		s = {3, 4},
 		r = 1,
 		e = { {1}, {1}, {0.8}, {1.5}, {3.1}, {3.4} },
-		p = {grey = 0.1, duality_v = 0.01},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_ump45 = {
@@ -1315,73 +1315,73 @@ wpn_fx = {
 		s = {3, 4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_spas12_custom = {
 		s = {3, 4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_spas12_alt = {
 		s = {3, 4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_spas12_worn = {
 		s = {3, 4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_mossberg = {
 		s = {3, 4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_wincheaster1300 = {
 		s = {4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_wincheaster1300_trapper = {
 		s = {4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 	wpn_wincheaster1300_worn = {
 		s = {4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 	wpn_wincheaster1300_camo = {
 		s = {4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 	wpn_wincheaster1300_alt = {
 		s = {4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 	wpn_wincheaster1300_rusty = {
 		s = {4},
 		r = 1,
 		e = { {1.4}, {1.4}, {1.1}, {2.1}, {4.1}, {4.4} },
-		p = {grey = 0.1, duality_v = 0.07},
+		p = {grey = 0.1, duality_v = 0.02},
 	},
 
 	wpn_rpg7 = {

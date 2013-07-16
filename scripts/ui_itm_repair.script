@@ -56,7 +56,7 @@ function repair_ui:FillList()
 			if (self.repair_type == "weapon" and alun_utils.item_is_fa(obj) or ( (self.repair_type == "outfit") and (alun_utils.item_is_outfit(obj) or obj:clsid() == 69))) then
 				local con = obj:condition()
 				if (con and con >= self.min_condition and con <= self.max_condition) then
-					self:AddItemToList(obj,self.list_box,con)
+					self:AddItemToList(obj,self.list_box)
 				end
 			end
 		end
@@ -79,7 +79,7 @@ function repair_ui:FillPartsList()
 	local function fill_list(actor,itm)
 		if (itm and itm:id() ~= item.item_id) then
 			if (self.parts_include and self.parts_include[itm:section()]) or (self.parts_exclude == nil and string.find(obj:section(),itm:section())) or (self.parts_exclude and self.parts_exclude[itm:section()] == nil and string.find(obj:section(),itm:section())) then
-				self:AddItemToList(itm,self.list_box_parts,alun_utils.read_from_ini(nil,itm:section(),"repair_part_bonus","float",nil) or self.part_bonus)
+				self:AddItemToList(itm,self.list_box_parts)
 			end
 		end
 	end
@@ -108,8 +108,7 @@ function repair_ui:InitControls()
 	self.file_item_fd_sz	= vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
 
 	self.form				= self.xml:InitStatic("itm_repair:form",self)
-	--self.form:SetWndPos(vector2():set(device().width/2-(self.form:GetWidth()+70), device().height/2 - self.form:GetHeight()))
-	self.form:SetWndPos(vector2():set(0, 0))
+	self.form:SetWndPos(vector2():set(device().width/2-(self.form:GetWidth()+70), device().height/2 - self.form:GetHeight()))
 
 	-- Background for forms
 	--self.xml:InitStatic("itm_repair:form:list_background",self.form)
@@ -332,7 +331,7 @@ function repair_ui:OnButton_repair()
 	end
 end
 
-function repair_ui:AddItemToList(item,listbox,condition)
+function repair_ui:AddItemToList(item,listbox)
 
 	local _itm			= load_item(self.file_item_main_sz.y)
 	local sec = item and item:section()
@@ -344,9 +343,9 @@ function repair_ui:AddItemToList(item,listbox,condition)
 	_itm.fn:SetWndSize	(self.file_item_fn_sz)
 	_itm.fn:SetText		(inv_name)
 
-	condition = math.ceil(condition*100)
+	local condition = item and math.ceil(item:condition()*100)
 	if (item) then
-		_itm.fage			= _itm:AddTextField("+"..condition.."%", self.file_item_fd_sz.x)
+		_itm.fage			= _itm:AddTextField(condition.."%", self.file_item_fd_sz.x)
 		_itm.fage:SetFont	(GetFontLetterica16Russian())
 		_itm.fage:SetWndPos	(vector2():set(self.file_item_fn_sz.x+4, 0))
 		_itm.fage:SetWndSize(self.file_item_fd_sz)

@@ -5,16 +5,21 @@ max_population = 1
 respawn_params = respawn@zat_b38u
 
 [respawn@zat_b38u]
+
+;;; unused
+
 sim_burer
 sim_bloodsucker
 
+;;; unused
+
 [sim_burer]
 spawn_squads = simulation_controller_zat_b38u, simulation_burer_zat_b38u
-spawn_num = {+zat_b57_bloodsucker_lair_clear} 1, 0
+spawn_num = 0 ; {+zat_b57_bloodsucker_lair_clear} 1, 0
 
 [sim_bloodsucker]
 spawn_squads = simulation_bloodsucker_zat_b38u
-spawn_num = {+zat_b38_failed} 1, 0
+spawn_num = 0 ; {+zat_b38_failed} 1, 0
 
 [exclusive]
 sleeper_bloodsucker_1 = zaton\zat_b38_sleeper_bloodsuckers.ltx

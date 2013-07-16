@@ -717,7 +717,7 @@
     <rank>45</rank>
     <reputation>0</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2_mask_nohood</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
     <supplies>
       [spawn] \n
       
@@ -892,7 +892,7 @@
     <rank>45</rank>
     <reputation>0</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_6</visual>
     <supplies>
       [spawn] \n
 
@@ -1066,7 +1066,7 @@
     <rank>45</rank>
     <reputation>0</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_6</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
     <supplies>
       [spawn] \n
 
@@ -1148,7 +1148,7 @@
     <rank>45</rank>
     <reputation>0</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
     <supplies>
       [spawn] \n
 
@@ -1234,7 +1234,7 @@
     <rank>45</rank>
     <reputation>0</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2_mask</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_11</visual>
     <supplies>
       [spawn] \n
 
@@ -1321,7 +1321,7 @@
     <rank>45</rank>
     <reputation>0</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg2a</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
     <supplies>
       [spawn] \n
 
@@ -1441,7 +1441,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_Dolg_7</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_7</visual>
     <supplies>
       [spawn] \n
 
@@ -1499,7 +1499,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolggas_2</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
     <supplies>
       [spawn] \n
 
@@ -1528,7 +1528,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_6</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
     <supplies>
       [spawn] \n
 
@@ -1673,7 +1673,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_6</visual>
     <supplies>
       [spawn] \n
 
@@ -1733,7 +1733,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2_medic</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
     <supplies>
       [spawn] \n
 
@@ -1763,7 +1763,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2_medic</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
     <supplies>
       [spawn] \n
 
@@ -1810,7 +1810,7 @@
 
   <specific_character id="sim_default_duty_3_default_16" team_default = "1">
     <name>GENERATE_NAME_lieutenant</name>
-    <icon>ui_inGame2_Dolg_2</icon>
+    <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -1821,7 +1821,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
     <supplies>
       [spawn] \n
 
@@ -1899,7 +1899,7 @@
 
   <specific_character id="sim_default_duty_3_default_19" team_default = "1">
     <name>GENERATE_NAME_lieutenant</name>
-    <icon>ui_inGame2_Dolg_2</icon>
+    <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -1910,7 +1910,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_Dolg_2</visual>
+    <visual>actors\stalker_dolg\stalker_Dolg_10</visual>
     <supplies>
       [spawn] \n
 
@@ -1957,7 +1957,7 @@
 
   <specific_character id="sim_default_duty_3_default_21" team_default = "1">
     <name>GENERATE_NAME_lieutenant</name>
-    <icon>ui_inGame2_dutygas_2_mask</icon>
+    <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -1968,7 +1968,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolggas_2</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
     <supplies>
       [spawn] \n
 
@@ -2055,7 +2055,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
     <supplies>
       [spawn] \n
 
@@ -2102,7 +2102,7 @@
   
   <specific_character id="sim_default_duty_3_default_26" team_default = "1">
     <name>GENERATE_NAME_captain</name>
-    <icon>ui_inGame2_Dolg_3</icon>
+    <icon>ui_inGame2_Soldier_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -2113,7 +2113,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_7</visual>
     <supplies>
       [spawn] \n
 
@@ -2131,7 +2131,7 @@
   
   <specific_character id="sim_default_duty_3_default_27" team_default = "1">
     <name>GENERATE_NAME_captain</name>
-    <icon>ui_inGame2_Dolg_3</icon>
+    <icon>ui_inGame2_Soldier_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
@@ -2142,7 +2142,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_6</visual>
     <supplies>
       [spawn] \n
 
@@ -4926,7 +4926,7 @@
     <rank>60</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_6</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
     <supplies>
       [spawn] \n
 
@@ -7551,7 +7551,7 @@ hand_radio = 1 \n
     <rank>60</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_6</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
     <supplies>
       [spawn] \n
 
@@ -8523,7 +8523,7 @@ hand_radio = 1 \n
     <rank>35</rank>
     <reputation>0</reputation>
 	<money min="1000" max="2000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_8</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_7</visual>
     <supplies>
       [spawn] \n
 
@@ -8604,7 +8604,7 @@ hand_radio = 1 \n
     <rank>35</rank>
     <reputation>0</reputation>
 	<money min="1000" max="2000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_7</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_6</visual>
     <supplies>
       [spawn] \n
 
@@ -8849,7 +8849,7 @@ hand_radio = 1 \n
     <rank>40</rank>
     <reputation>0</reputation>
 	<money min="1500" max="2500" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_8</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_semi_pro</visual>
     <supplies>
       [spawn] \n
 
@@ -8905,7 +8905,7 @@ hand_radio = 1 \n
     <rank>40</rank>
     <reputation>0</reputation>
 	<money min="1500" max="2500" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_8</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_7</visual>
     <supplies>
       [spawn] \n
 
@@ -8933,7 +8933,7 @@ hand_radio = 1 \n
     <rank>40</rank>
     <reputation>0</reputation>
 	<money min="1500" max="2500" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom2b</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_semi_pro</visual>
     <supplies>
       [spawn] \n
 
@@ -9014,7 +9014,7 @@ hand_radio = 1 \n
     <rank>40</rank>
     <reputation>0</reputation>
 	<money min="1500" max="2500" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_8</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_6</visual>
     <supplies>
       [spawn] \n
 
@@ -9041,7 +9041,7 @@ hand_radio = 1 \n
     <rank>40</rank>
     <reputation>0</reputation>
 	<money min="1500" max="2500" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_7</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_13</visual>
     <supplies>
       [spawn] \n
 
@@ -9369,7 +9369,7 @@ hand_radio = 1 \n
     <rank>40</rank>
     <reputation>0</reputation>
 	<money min="1500" max="2500" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_2</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_6</visual>
     <supplies>
       [spawn] \n
 
@@ -9425,6 +9425,33 @@ hand_radio = 1 \n
     <reputation>0</reputation>
 	<money min="1500" max="2500" infinitive="0"/>
     <visual>actors\stalker_freedom\stalker_freedom_2</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_2.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_2.xml"
+#include "gameplay\character_drugs_freedom_2.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_freedom_2_default_23" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_freedom_2</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\freedom\</snd_config>
+
+    <rank>40</rank>
+    <reputation>0</reputation>
+	<money min="1500" max="2500" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_semi_pro</visual>
     <supplies>
       [spawn] \n
 
@@ -10064,7 +10091,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+    <visual>actors\stalker_nebo\stalker_neboa2</visual>
     <supplies>
       [spawn] \n
 
@@ -10093,7 +10120,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_nebo\stalker_nebo_2</visual>
+    <visual>actors\stalker_nebo\stalker_nebo_1</visual>
     <supplies>
       [spawn] \n
 
@@ -10180,7 +10207,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_13</visual>
     <supplies>
       [spawn] \n
 
@@ -10269,7 +10296,7 @@ hand_radio = 1 \n
     <rank>65</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom2b_mask</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_7</visual>
     <supplies>
       [spawn] \n
 
@@ -10298,7 +10325,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_nebo\stalker_nebo_1</visual>
+    <visual>actors\stalker_nebo\stalker_neboa2</visual>
     <supplies>
       [spawn] \n
 
@@ -10328,7 +10355,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <visual>actors\stalker_freedom\stalker_freedom3a</visual>
     <supplies>
       [spawn] \n
 
@@ -10530,7 +10557,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_13</visual>
     <supplies>
       [spawn] \n
 
@@ -10588,7 +10615,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_semi_pro</visual>
     <supplies>
       [spawn] \n
 
@@ -10617,7 +10644,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_13</visual>
     <supplies>
       [spawn] \n
 
@@ -10646,7 +10673,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <visual>actors\stalker_freedom\stalker_freedom3a</visual>
     <supplies>
       [spawn] \n
 
@@ -10675,7 +10702,7 @@ hand_radio = 1 \n
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <visual>actors\stalker_freedom\stalker_freedom_6</visual>
     <supplies>
       [spawn] \n
 
@@ -11548,7 +11575,7 @@ hand_radio = 1 \n
     <rank>70</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+    <visual>actors\stalker_nebo\stalker_neboa2</visual>
     <supplies>
       [spawn] \n
 
@@ -12173,7 +12200,7 @@ hand_radio = 1 \n
     <rank>70</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+    <visual>actors\stalker_nebo\stalker_neboa2</visual>
     <supplies>
       [spawn] \n
 
@@ -12204,7 +12231,7 @@ hand_radio = 1 \n
     <rank>70</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+    <visual>actors\stalker_nebo\stalker_nebo_1</visual>
     <supplies>
       [spawn] \n
 
@@ -22493,7 +22520,7 @@ hand_radio = 1 \n
 	<money min="1500" max="3500" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_nebo\stalker_nebo_2</visual>
+    <visual>actors\stalker_nebo\stalker_neboa2</visual>
     <supplies>
       [spawn] \n
 
@@ -22992,7 +23019,7 @@ hand_radio = 1 \n
 	<money min="2500" max="5000" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_nebo\stalker_nebo_2</visual>
+    <visual>actors\stalker_nebo\stalker_nebo_1</visual>
     <supplies>
       [spawn] \n
 
@@ -23174,7 +23201,7 @@ hand_radio = 1 \n
 	<money min="1500" max="3500" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_nebo\stalker_nebo_2</visual>
+    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
     <supplies>
       [spawn] \n
 
@@ -24154,7 +24181,7 @@ hand_radio = 1 \n
 	<money min="2500" max="5000" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+    <visual>actors\stalker_nebo\stalker_neboa2</visual>
     <supplies>
       [spawn] \n
 
@@ -24187,6 +24214,38 @@ hand_radio = 1 \n
     <reputation>0</reputation>
 
     <visual>actors\stalker_soldier\stalker_soldier_4</visual>
+    <supplies>
+      [spawn] \n
+
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_items_4_stalker.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_4.xml"
+#include "gameplay\character_drugs_sci.xml"
+#include "gameplay\character_drugs_neutral_4.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+  
+  <specific_character id="sim_default_stalker_4_default_25" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_stalker_4</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>70</rank>
+	<money min="2500" max="5000" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_nebo\stalker_nebo_2</visual>
     <supplies>
       [spawn] \n
 
@@ -25321,7 +25380,7 @@ hand_radio = 1 \n
 	<money min="1500" max="3500" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_nebo\stalker_nebo_2_mask</visual>
+    <visual>actors\stalker_nebo\stalker_nebo_1</visual>
     <supplies>
       [spawn] \n
 
