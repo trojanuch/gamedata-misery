@@ -3396,7 +3396,8 @@
 		<supplies>
 
       [spawn] \n
-
+	  jup_b47_merc_pda = 1 \n
+	  
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
