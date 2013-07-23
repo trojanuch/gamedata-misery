@@ -37,6 +37,12 @@
 	<string id="mutant_snork_hand">
 		<text>Snork hand</text>
 	</string>
+		<string id="mutant_part_crow_beak_description">
+		<text>Mutated beak from a crow that has lived for more than 15 years in the Zone. Extremely durable and hard. Majority of Stalkers consider crows as pests that are to be disposed of, while others acknowledge their usefulness when navigating through the empty streets of Chernobyl. Beaks are sometimes worn as jewelry, but are of not much use besides that. However, there is a rumor that the very first Stalkers that arrived in the Zone came up with a ritual that they named 'The Beak'.</text>
+	</string>
+	<string id="mutant_part_crow_beak">
+		<text>Mutated crow beak</text>
+	</string>
 	<string id="mutant_chimera_meat_description">
 		<text>A heavy chunk of chimera meat. Since chimeras are considered one of the most dangerous creatures, their meat is highly valued by veteran Stalkers who are willing to buy it for fairly high prices. The cook on Skadovsk uses this meat as one of the ingredients of the so called masculine meal, although only few claim that it's better than boar meat. Can be sold to scientists. Furthermore, it provides the best quality animal fat available in the Zone which can be used for the purposes of very effective gun lubrication.\n \n%c[0,204,0,51]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinellosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumors on the surface of the body indicate that the meat is infected and should be disposed of.\n \n%c[0,204,0,51] • %c[0,140,140,140] toxic food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +665 mSv\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon lubrication (+4%)</text>
 	</string>

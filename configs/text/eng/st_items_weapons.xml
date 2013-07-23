@@ -304,88 +304,103 @@
     <text>ACOG Scope</text>
   </string>
   <string id="st_addon_acog_descr">
-    <text>Detachable optical scope made specifically for NATO rifles.</text>
+    <text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[255,238,153,26] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule and fixed magnification of 2.0x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]USMC</text>
   </string>
   <string id="st_addon_night_acog">
     <text>ACOG Scope Nightvision</text>
   </string>
   <string id="st_addon_acog_night_descr">
-    <text>Detachable optical scope with night vision for NATO rifles.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+    <text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[255,238,153,26] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a civilian 'Trijicon' reticule, build in generation 3 night vision device and fixed magnification of 2.0x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]trijicon\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
   </string>
   <string id="st_addon_custom_acog">
     <text>ACOG Scope Custom</text>
   </string>
   <string id="st_addon_acog_custom_descr">
-    <text>Detachable optical scope with adjustable magnification for NATO rifles.</text>
+    <text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[255,238,153,26] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule, and features an adjustable magnification.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]adjustable\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]USMC</text>
   </string>
   <string id="st_addon_detect_acog">
     <text>ACOG Scope Detector</text>
   </string>
   <string id="st_addon_acog_detect_descr">
-    <text>Detachable optical scope with thermal imaging capability for NATO rifles.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+    <text>Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule, and features a heat-based target aquisition at close-medium range.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]trijicon\n%c[0,153,255,255] • %c[0,140,140,140] Built-in mid-range heat sensor\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
   </string>
 	<string id="st_addon_scope">
 		<text>PSO-1m scope</text>
 	</string>
 	<string id="st_addon_scope_descr">
-		<text>A Soviet-made 5.0x fixed zoom optical scope with a range scale. Usable mainly for combat at long ranges. Attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.</text>
+		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has 5.0x magnifization rate, making it usable mainly for combat at long ranges. It is attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]5.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1</text>
 	</string>
 	<string id="st_addon_scope_detector">
 		<text>PSS-2x scope</text>
 	</string>
 	<string id="st_addon_scope_detector_descr">
-		<text>A 5.0x fixed zoom optical scope with a built-in heat visor used to identify heat sources typical to the human body. Designed for use by Spetsnaz. Attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has beeb equiped wtih medium-range heat sensor and 5.0x magnifization rate. Sigth equiped like that were meinly desinged for use by Spetznaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[0,153,255,255] • %c[0,140,140,140] Built-in mid-range heat sensor\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_night_vision">
 		<text>NSPU-3 scope</text>
 	</string>
 	<string id="st_addon_scope_night_vision_descr">
-		<text>An image intensifier night vision 2.6x fixed zoom scope for medium range combat in low light conditions. Attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has beeb equiped wtih self-sustaining generation 3 night vision device and 2.6x magnifization rate, making it ideal for close to medium range combat in low-light conditions. Sigths equiped like that were meinly desinged for use by Spetznaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_susat">
 		<text>SUSAT 4x scope</text>
 	</string>
-	<string id="st_addon_scope_susat_custom_descr">
-		<text>An adjustable long-range 1.6-4x zoom scope that can use automatic adjustments to provide greater fire effectiveness. Attached to weapons by means of the NATO-standard Picatinny rail.</text>
-	</string>
 	<string id="st_addon_scope_susat_descr">
-		<text>A 4x fixed zoom scope produced primarily in Western countries. Attached to weapons by means of the NATO-standard Picatinny rail. Often used for accurate fire from small arms at medium to long range.</text>
+		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit features a fixed 4.0x vision zooming rate allowing at least partiall usage for long-range fire exchanges.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]4.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
+	</string>
+	<string id="st_addon_scope_susat_custom">
+		<text>SUSAT Mera scope</text>
+	</string>
+	<string id="st_addon_scope_susat_custom_descr">
+		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is of a MERA sub-type which has been equiped with adjustable magnficiation apparaturs with manual focus adjustment.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]adjustable\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
 	</string>
 	<string id="st_addon_scope_susat_dusk">
 		<text>SUSAT Twilight x1.6 scope</text>
 	</string>
 	<string id="st_addon_scope_susat_dusk_descr">
-		<text>An optical SUSAT 1.6x higher contrast scope for combat in reduced lighting conditions. Attached to weapons by means of the NATO-standard Picatinny rail.</text>
+		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is desinged for usage in reduced lighting conditions and in close-combat, making it a very good choice for building infiltration.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n%c[0,153,255,255] • %c[0,140,140,140] Built-in passive vision illumination</text>
 	</string>
 	<string id="st_addon_scope_susat_night_vision">
 		<text>SUSAT Night x1.6 scope</text>
 	</string>
 	<string id="st_addon_scope_susat_night_vision_descr">
-		<text>A 1.6x fixed zoom scope with a night vision device for long range combat in darkness. Attached to weapons by means of the NATO-standard Picatinny rail.\n \n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is equiped with generation 3 night-vision device indicating special-forces designation.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6">
 		<text>SUSAT 1.6x scope</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_descr">
-		<text>An optical SUSAT 1.6x scope for combat at short to medium range. Attached to weapons by means of the NATO-standard Picatinny rail.</text>
+		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_worn">
 		<text>SUSAT 1.6x scope (damaged)</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_worn_descr">
-		<text>An optical SUSAT 1.6x scope for combat at short to medium range. Attached to weapons by means of the NATO-standard Picatinny rail. This unit's optics have been severely damaged.\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
+		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
+	</string>
+	<string id="st_addon_scope_susat_x1.6_moist">
+		<text>SUSAT 1.6x scope (moist-covered)</text>
+	</string>
+	<string id="st_addon_scope_susat_x1.6_moist_descr">
+		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to external casing making the sight permanently covered with moist.</text>
 	</string>
 	<string id="st_addon_scope_x2.7">
 		<text>PSU-1 scope</text>
 	</string>
 	<string id="st_addon_scope_x2.7_descr">
-		<text>A 2.6x optical scope for urban combat at medium range. Attached to weapons by means of a dovetail mount.</text>
+		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1</text>
 	</string>
 	<string id="st_addon_scope_x2.7_worn">
 		<text>PSU-1 scope (damaged)</text>
 	</string>
 	<string id="st_addon_scope_x2.7_worn_descr">
-		<text>A 2.6x optical scope for urban combat at medium range. Attached to weapons by means of a dovetail mount. This unit's optics have been severely damaged.\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
+		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]low\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
+	</string>
+	<string id="st_addon_scope_x2.7_moist">
+		<text>PSU-1 scope (moist-covered)</text>
+	</string>
+	<string id="st_addon_scope_x2.7_moist_descr">
+		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]mediun\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to external casing making the sight permanently covered with moist.</text>
 	</string>
 	<string id="st_addon_scope_zf4">
 		<text>ZF-4 scope</text>
@@ -1312,9 +1327,6 @@
 	</string>
 	<string id="ammo-gauss_cardan">
 		<text>Homemade batteries</text>
-	</string>
-	<string id="st_addon_scope_susat_custom">
-		<text>SUSAT Mera scope</text>
 	</string>
 	<string id="st_wpn_abakan_descr">
 		<text>A key improvement of the AN-94 over the AK-74 is the introduction of the additional 2-rounds burst mode. Nikonov design delays the force of recoil until the fired rounds have left the barrel, which along with a unique 1800 rpm two-shot burst function increases body armor piercing capabilities of this firearm. Used by Spetsnaz operators as well as Duty members to take out armored targets at relatively long ranges.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Scopes\n%c[0,93,0,116] • %c[0,140,140,140] Silencer 5.45x39</text>

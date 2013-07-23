@@ -298,6 +298,28 @@ script_binding      	= bind_physic_object.init
 visual_flags 			= 1
 remove_time     = 60; after this time  unbreaked removable bone will be removed
 
+[yanov_door]
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn 					= "devices\inventory box"
+class					= O_PHYS_S
+cform					= skeleton
+visual 					= dynamics\prop\yanov_door.ogf
+script_binding      	= bind_physic_object.init
+visual_flags 			= 1
+remove_time     = 60; after this time  unbreaked removable bone will be removed
+
+[yanov_bucket]
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn 					= "devices\inventory box"
+class					= O_PHYS_S
+cform					= skeleton
+visual 					= dynamics\workshop_room\vedro_01.ogf
+script_binding      	= bind_physic_object.init
+visual_flags 			= 1
+remove_time     = 60; after this time  unbreaked removable bone will be removed
+
 [porn_prop]
 GroupControlSection		= spawn_group
 discovery_dependency 	=
@@ -396,3 +418,56 @@ visual 					= dynamics\equipments\case.ogf
 script_binding      	= bind_physic_object.init
 visual_flags 			= 1
 remove_time     = 60; after this time  unbreaked removable bone will be removed
+
+;========================================
+; USS OPERATIVE DROP-OFF, USS class dependent
+;========================================
+
+[dropoff_assaulter]:inventory_box
+visual = dynamics\personal\dropoff_assaulter.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1
+
+[dropoff_recon]:inventory_box
+visual = dynamics\personal\dropoff_recon.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1
+
+[dropoff_sniper]:inventory_box
+visual = dynamics\personal\dropoff_sniper.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1
+
+;========================================
+; PERSONAL DELIVERY, customized
+;========================================
+
+[delivery_noah]:inventory_box
+visual = dynamics\personal\delivery_box_noah.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1
+
+[delivery_nimble]:inventory_box
+visual = dynamics\personal\delivery_box_nimble.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1
+
+[delivery_bunker]:inventory_box
+visual = dynamics\personal\delivery_box_bunker.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1
+
+[delivery_freedom]:inventory_box
+visual = dynamics\personal\delivery_box_freedom.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1
+
+[delivery_duty]:inventory_box
+visual = dynamics\personal\delivery_box_duty.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1
+
+[delivery_bonesetter]:inventory_box
+visual = dynamics\personal\delivery_box_bonesetter.ogf
+custom_data = scripts\treasure_inventory_box.ltx
+radius = 1

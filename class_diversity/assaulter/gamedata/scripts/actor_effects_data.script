@@ -1398,6 +1398,53 @@ wpn_fx = {
 
 --		!!!IMPORTANT!!!
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;; PERSONAL WEAPON ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	wpn_personal_1 = {
+		s = {4, 3, 4},
+		r = 2,
+		e = { {2.5}, {1.7, 1}, {0}, {3.8}, {3.3, 0}, {0.6} },
+		p = {blur = 0},
+	},
+	
+	wpn_personal_2 = {
+		s = {4, 3, 4},
+		r = 2,
+		e = { {2.5}, {1.7, 1}, {0}, {3.8}, {3.3, 0}, {0.6} },
+		p = {blur = 0},
+	},
+	
+	wpn_personal_3 = {
+		s = {4, 3, 4},
+		r = 2,
+		e = { {2.5}, {1.7, 1}, {0}, {3.8}, {3.3, 0}, {0.6} },
+		p = {blur = 0},
+	},
+	
+	wpn_personal_4 = {
+		s = {4, 3, 4},
+		r = 2,
+		e = { {2.5}, {1.7, 1}, {0}, {3.8}, {3.3, 0}, {0.6} },
+		p = {blur = 0},
+	},
+	
+	wpn_personal_5 = {
+		s = {4, 3, 4},
+		r = 2,
+		e = { {2.5}, {1.7, 1}, {0}, {3.8}, {3.3, 0}, {0.6} },
+		p = {blur = 0},
+	},
+	
+	wpn_personal_6 = {
+		s = {4, 3, 4},
+		r = 2,
+		e = { {2.5}, {1.7, 1}, {0}, {3.8}, {3.3, 0}, {0.6} },
+		p = {blur = 0},
+	},
+
+
 --;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 --;;;;;;;; Item usage effects ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 --;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -2072,6 +2119,18 @@ item_fx = {
 		[6350] = "actor_effects.use_weapon(1)"
 	},
 	water_drink = {
+		[0] = "actor_effects.use_weapon(0)",
+		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[378] = "actor_effects.use_helmet(0)",
+		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[550] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8053, false,'')",
+		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[4351] = "xr_effects.enable_ui_lite(db.actor, nil)",
+		[5150] = "actor_effects.use_helmet(1)",
+		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
+		[6350] = "actor_effects.use_weapon(1)"
+	},
+	drink_crow = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",

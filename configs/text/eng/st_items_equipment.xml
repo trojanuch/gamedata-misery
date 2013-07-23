@@ -31,10 +31,10 @@
 		<text>A bread loaf baked on the Great Land.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] food\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_porn">
-		<text>Porn magazine</text>
+		<text>Russian PLAYBOY</text>
 	</string>
 	<string id="st_porn_descr">
-		<text>100 pages worth of prime Russian girls. Probably the best way to travel to a better place, at least mentally. Westerners often joke about it saying "From Russia with love".\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+2%)</text>
+		<text>100 pages worth of prime nude Russian girls. Probably the best way to travel to a better place, at least mentally. Westerners often joke about it saying "From Russia with love".\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+2%)</text>
 	</string>
 	<string id="st_joint">
 		<text>Cannabis joint (zone produced)</text>
@@ -185,6 +185,12 @@
 	</string>
 	<string id="st_water_drink_descr">
 		<text>Sparkling water for thirsty Stalkers, it has some exhilarating effect when you're tired.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] drink\n%c[0,153,255,255] • %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] • %c[0,140,140,140] slight sleepiness decrease\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and maintenance (+1%)</text>
+	</string>
+	<string id="st_drink_crow">
+		<text>'The Beak' (Zone-produced)</text>
+	</string>
+	<string id="st_drink_crow_descr">
+		<text>'The Beak' is a powerful mixture of Zone-produced vodka and the pulverized beak of a black crow. Not every beak can be used as an ingredient, only the one that belonged to a black male Zone crow that has lived for more than 15 years as the beak has mutated and hardened. The rumor has it that such beaks contain a form of enriched proteine that cleanses moderate amounts of radiation from the body. Some even say that taking the Beak shot makes you feel like you have wings for a few seconds. On the downside, however, the taste itself it said to be very awful.</text>
 	</string>
 	<string id="st_energy_drink">
 		<text>Strong energy drink</text>
@@ -697,10 +703,10 @@
 		<text>A whole bag full of hooks, knives and other equipment used for skinning and gutting animals and mutants. Few stalkers carry professional equipment for mutant hunting. That is probably the reason why so many Zoners are sick after eating meat of mutants. Thanks to variety of tools present inside it kit can be quite effective at improving effectivity of weapon and armor maintenance.\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon and outfit maintenance (+7%)</text>
 	</string>
 	<string id="st_porn2">
-		<text>Porn magazine</text>
+		<text>Ukranian MAXIM</text>
 	</string>
 	<string id="st_porn2_descr">
-		<text>A magazine full of glossy pictures of tattooed nude girls. A popular find among Zoners who need a psychological escape on a daily basis.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+2%)</text>
+		<text>Glossy spreads with erotic ukranian girls featuring Joanna Krupa as the star of the month. A popular find among Zoners who need a psychological escape on a daily basis. The Krupa poster inside has been removed.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+2%)</text>
 	</string>
 	<string id="st_boots">
 		<text>Leather boots</text>

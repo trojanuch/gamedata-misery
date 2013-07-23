@@ -1381,7 +1381,7 @@ end
 -------------- jup_b211 ---------------------
 
 function jup_b211_kill_bludsuckers_reward(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 4500)
+	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 8500)
 end
 
 function jup_b19_transfer_conserva_to_actor(first_speaker, second_speaker)

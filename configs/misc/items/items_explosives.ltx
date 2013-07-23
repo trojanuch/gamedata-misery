@@ -80,7 +80,7 @@ chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.84
 fire_wound_immunity		= 0.66
 
-[explo_metalcan_powder]:identity_immunities,delayed_action_fuse,default_weapon_params
+[explo_metalcan_powder]:identity_immunities,instant_action_fuse,default_weapon_params
 $spawn 				= "weapons\explosive\mobiltank"
 $prefetch 			= 16
 class				= S_EXPLO
@@ -241,7 +241,7 @@ fire_wound_immunity		= 0.68
 ;;;;;;;; DEPLOYABLE MILITARY EXPLOSIVES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[ied_rpg]:identity_immunities,delayed_action_fuse,default_weapon_params
+[ied_rpg]:identity_immunities,instant_action_fuse,default_weapon_params
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_EXPLO
@@ -307,7 +307,7 @@ wallmark_section		= explosion_marks
 snd_explode 				= weapons\rpg7\rpg7_explode
 immunities_sect			= explosive_tank_immunities_sect
 
-[ied]:identity_immunities,delayed_action_fuse,default_weapon_params
+[ied]:identity_immunities,instant_action_fuse,default_weapon_params
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_EXPLO
