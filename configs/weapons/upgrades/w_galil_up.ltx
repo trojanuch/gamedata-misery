@@ -2,8 +2,9 @@
 scheme_index            = 0, 0
 known                   = 1
 effects                 = up_gr_firstcd_galil
-section                 = up_sect_firsta_l85
-property                = prop_reliability
+section                 = up_sect_firsta_galil
+property                = prop_rpm
+
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -15,180 +16,16 @@ effect_parameter        = on_weapon_upgrade_something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stk_a2_name
-description             = st_up_stk_a2_descr
-icon                    = ui_inGame2_upgrade_IL86_1
+name                    = st_up_zat_a3_name
+description             = st_up_zat_a3_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_1
 
 ;;...
 [up_firstc_galil]
 scheme_index            = 1, 0
 known                   = 1
 effects                 = up_gr_firstef_galil
-section                 = up_sect_firstc_l85
-property                = prop_inertion
-
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-; ui
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_stk_b2_name
-description             = st_up_stk_b2_descr
-icon                    = ui_inGame2_upgrade_IL86_2
-
-[up_firste_galil]
-scheme_index            = 2, 0
-known                   = 1
-effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_firste_l85
-property                = prop_not_available
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
-
-[up_firstf_galil]
-scheme_index            = 2, 1
-known                   = 1
-effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_firstf_l85
-property                = prop_not_available
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
-
-[up_secona_galil]
-scheme_index            = 0, 1
-known                   = 1
-effects                 = up_gr_seconcd_galil
-section                 = up_sect_secona_l85
-property                = prop_dispersion
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-; ui
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_usm_a2_name
-description             = st_up_usm_a2_descr
-icon                    = ui_inGame2_upgrade_IL86_5
-
-[up_seconc_galil]
-scheme_index            = 1, 1
-known                   = 1
-effects                 = up_gr_seconef_galil
-section                 = up_sect_seconc_l85
-property                = prop_inertion
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_usm_b3_name
-description             = st_up_usm_b3_descr
-icon                    = ui_inGame2_upgrade_IL86_6
-
-[up_second_galil]
-scheme_index            = 1, 2
-known                   = 1
-effects                 = up_gr_seconef_galil
-section                 = up_sect_second_l85
-property                = prop_reliability
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-; ui
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_usm_b1_name
-description             = st_up_usm_b1_descr
-icon                    = ui_inGame2_upgrade_IL86_7
-
-[up_secone_galil]
-scheme_index            = 2, 2
-known                   = 1
-effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_secone_l85
-property                = prop_not_available
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
-
-[up_thirda_galil]
-scheme_index            = 0, 2
-known                   = 1
-effects                 = up_gr_thirdcd_galil
-section                 = up_sect_thirda_l85
-property                = prop_bullet_speed
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_bar_a1_name
-description             = st_up_bar_a1_descr
-icon                    = ui_inGame2_upgrade_IL86_9
-
-[up_thirdc_galil]
-scheme_index            = 1, 3
-known                   = 1
-effects                 = up_gr_thirdef_galil
-section                 = up_sect_thirdc_l85
+section                 = up_sect_firstc_galil
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -197,60 +34,226 @@ precondition_parameter  = a & b
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_bar_b1_name
-description             = st_up_bar_b1_descr
-icon                    = ui_inGame2_upgrade_IL86_10
+name                    = st_up_zat_b2_name
+description             = st_up_zat_b2_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_2
 
+[up_firstd_galil]
+scheme_index            = 1, 1
+known                   = 1
+effects                 = up_gr_firstef_galil
+section                 = up_sect_firstd_galil
+property                = prop_reliability
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_zat_b3_name
+description             = st_up_zat_b3_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_3
+
+[up_firste_galil]
+scheme_index            = 2, 0
+known                   = 1
+effects                 =
+section                 = up_sect_firste_galil
+property                = prop_recoil
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_zat_c1_name
+description             = st_up_zat_c1_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_4
+
+[up_secona_galil]
+scheme_index            = 0, 1
+known                   = 1
+effects                 = up_gr_seconcd_galil
+section                 = up_sect_secona_galil
+property                = prop_recoil
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_auto_a1_name
+description             = st_up_auto_a1_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_5
+
+[up_seconc_galil]
+scheme_index            = 1, 2
+known                   = 1
+effects                 = up_gr_seconef_galil
+section                 = up_sect_seconc_galil
+property                = prop_dispersion
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_auto_b4_name
+description             = st_up_auto_b4_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_6
+
+[up_secone_galil]
+scheme_index            = 2, 1
+known                   = 1
+effects                 =
+section                 = up_sect_secone_galil
+property                = prop_recoil
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_auto_c1_name
+description             = st_up_auto_c1_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_7
+
+[up_seconf_galil]
+scheme_index            = 2, 2
+known                   = 1
+effects                 =
+section                 = up_sect_seconf_galil
+property                = prop_dispersion
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here_h
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_auto_c5_name
+description             = st_up_auto_c5_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_8
+
+[up_thirda_galil]
+scheme_index            = 0, 2
+known                   = 1
+effects                 = up_gr_thirdcd_galil
+section                 = up_sect_thirda_galil
+property                = prop_reliability
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_bar_a3_name
+description             = st_up_bar_a3_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_9
+
+[up_thirdc_galil]
+scheme_index            = 1, 3
+known                   = 1
+effects                 = up_gr_thirdef_galil
+section                 = up_sect_thirdc_galil
+property                = prop_rpm
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_bar_b3_name
+description             = st_up_bar_b3_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_10
+
+
+[up_thirdd_galil]
+scheme_index            = 1, 4
+known                   = 1
+effects                 = up_gr_thirdef_galil
+section                 = up_sect_thirdd_galil
+property                = prop_bullet_speed
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_bar_b2_name
+description             = st_up_bar_b2_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_11
 
 [up_thirde_galil]
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_thirde_l85
-property                = prop_not_available
+section                 = up_sect_thirde_galil
+property                = prop_rpm
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
-
-[up_thirdf_galil]
-scheme_index            = 2, 4
-known                   = 1
-effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_thirdf_l85
-property                = prop_not_available
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_bar_c2_name
+description             = st_up_bar_c2_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_12
 
 [up_fourta_galil]
 scheme_index            = 0, 3
 known                   = 1
-effects                 =
-section                 = up_sect_fourta_l85
-property                = prop_scope_4x
+effects                 = up_gr_fourtcd_galil
+section                 = up_sect_fourta_galil
+property                = prop_weight
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -261,16 +264,18 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_opt_a2_name
-description             = st_up_opt_a2_descr
-icon                    = ui_inGame2_upgrade_IL86_13
+name                    = st_up_stk_a1_name
+description             = st_up_stk_a1_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_13
 
 [up_fourtc_galil]
-scheme_index            = 1, 4
+scheme_index            = 1, 5
 known                   = 1
-effects                 = 
-section                 = up_sect_fourtc_l85
-property                = prop_contrast 
+effects                 = up_gr_fourtef_galil
+section                 = up_sect_fourtc_galil
+property                = prop_inertion
+
+known                   = 1
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -281,96 +286,95 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_opt_b1_name
-description             = st_up_opt_b1_descr
-icon                    = ui_inGame2_upgrade_IL86_14
+name                    = st_up_stk_b2_name
+description             = st_up_stk_b2_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_14
 
 [up_fourte_galil]
+scheme_index            = 2, 4
+known                   = 1
+effects                 =
+section                 = up_sect_fourte_galil
+property                = prop_inertion
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_stk_c3_name
+description             = st_up_stk_c3_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_15
+
+[up_fourtf_galil]
 scheme_index            = 2, 5
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_fourte_l85
-property                = prop_not_available
+section                 = up_sect_fourtf_galil
+property                = prop_bullet_speed
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
-
+precondition_parameter  = a & b
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_stk_c2_name
+description             = st_up_stk_c2_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_16
 
 [up_fiftha_galil]
 scheme_index            = 0, 4
 known                   = 1
-effects                 = 
-section                 = up_sect_empty
-property                = prop_not_available_no_reason
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
-
-[up_fifthc_galil]
-scheme_index            = 1, 5
-known                   = 1
 effects                 =
-section                 = up_sect_fifthc_l85
-property                = prop_calibre
+section                 = up_sect_fiftha_galil
+property                = prop_ammo_size 
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
-
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_add_b1_name
-description             = st_up_add_b1_descr
-icon                    = ui_inGame2_upgrade_IL86_17
+name                    = st_up_add_a4_name
+description             = st_up_add_a4_descr
+icon                    = ui_inGame2_upgrade_SGI_5K_17
+
 
 [up_gr_firstab_galil]
 elements                = up_firsta_galil
 
 [up_gr_firstcd_galil]
-elements                = up_firstc_galil
+elements                = up_firstc_galil, up_firstd_galil
 
 [up_gr_firstef_galil]
-elements                = up_firste_galil, up_firstf_galil
+elements                = up_firste_galil
 
 [up_gr_seconab_galil]
 elements                = up_secona_galil
 
 [up_gr_seconcd_galil]
-elements                = up_seconc_galil, up_second_galil
+elements                = up_seconc_galil
 
 [up_gr_seconef_galil]
-elements                = up_secone_galil
+elements                = up_secone_galil, up_seconf_galil,
 
 [up_gr_thirdab_galil]
 elements                = up_thirda_galil
 
 [up_gr_thirdcd_galil]
-elements                = up_thirdc_galil
+elements                = up_thirdc_galil, up_thirdd_galil
 
 [up_gr_thirdef_galil]
-elements                = up_thirde_galil, up_thirdf_galil
+elements                = up_thirde_galil
 
 [up_gr_fourtab_galil]
 elements                = up_fourta_galil
@@ -379,10 +383,7 @@ elements                = up_fourta_galil
 elements                = up_fourtc_galil
 
 [up_gr_fourtef_galil]
-elements                = up_fourte_galil
+elements                = up_fourte_galil, up_fourtf_galil
 
 [up_gr_fifthab_galil]
 elements                = up_fiftha_galil
-
-[up_gr_fifthcd_galil]
-elements                = up_fifthc_galil

@@ -4,7 +4,7 @@
 		<text>.45 ACP rounds</text>
 	</string>
 	<string id="ammo-11.43x23-fmj_descr">
-		<text>The .45 caliber full metal jacket round has enjoyed popularity for a hundred years thanks to its ballistic performance and a relatively small propelling charge. As a result, the bullet in this round is relatively slow but highly accurate and provides considerable stopping power.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>The .45 caliber full metal jacket round has enjoyed popularity for a hundred years thanks to its ballistic performance and a relatively small propelling charge. As a result, the bullet in this round is relatively slow but highly accurate and provides considerable stopping power.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-11.43x23-fmj_s">
 		<text>.45 ACP</text>
@@ -13,7 +13,7 @@
 		<text>7.62x51 mm NATO rounds</text>
 	</string>
 	<string id="ammo-7.62x51_fmj_descr">
-		<text>The 7.62x51 NATO round is a military variant of the .308 round which was used as a standard-issue by the NATO forces until 5.56 ammunition was introduced in the 70-ties in the Vietnam War. At present, it is most commonly employed by private military contractors all over the world. The 7.62x51 round is a very common machine gun caliber, and can also be used in sniper rifles.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>The 7.62x51 NATO round is a military variant of the .308 round which was used as a standard-issue by the NATO forces until 5.56 ammunition was introduced in the 70-ties in the Vietnam War. At present, it is most commonly employed by private military contractors all over the world. The 7.62x51 round is a very common machine gun caliber, and can also be used in sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x51_fmj_s">
 		<text>7.62x51 NATO rounds</text>
@@ -22,7 +22,7 @@
     <text>7.62x51 mm DU</text>
   </string>
   <string id="ammo-7.62x51_ap_descr">
-    <text>The 7.62x51 Depleted Uranium round is produced and used by private military organizations world-wide. The need to develop a DU version of this cartridge arose during large-scale private military operations against drug cartels in several countries when PMCs looked for a way to gain another edge.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+    <text>The 7.62x51 Depleted Uranium round is produced and used by private military organizations world-wide. The need to develop a DU version of this cartridge arose during large-scale private military operations against drug cartels in several countries when PMCs looked for a way to gain another edge.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
   </string>
   <string id="ammo-7.62x51_ap_s">
     <text>7.62x51 DU</text>
@@ -31,7 +31,7 @@
 		<text>.45 ACP Hydra-shock rounds</text>
 	</string>
 	<string id="ammo-11.43x23-hydro_descr">
-		<text>This unusual .45 ACP caliber round is comprised of a jacketed soft point bullet with an expanding hollow and a steel core. It combines of jacketed expanding soft point and armor piercing bullet, benefiting from the advantages of both and suffering from their downsides.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
+		<text>This unusual .45 ACP caliber round is comprised of a jacketed soft point bullet with an expanding hollow and a steel core. It combines of jacketed expanding soft point and armor piercing bullet, benefiting from the advantages of both and suffering from their downsides.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="ammo-11.43x23-hydro_s">
 		<text>.45 Hydro</text>
@@ -40,7 +40,7 @@
 		<text>.45 DU rounds</text>
 	</string>
 	<string id="ammo-11.43x23-ap_descr">
-		<text>Uranium round, chambered in .45 ACP. From the time of the first deployment on the battlefield, depleted uranium rounds have been the object of widespread criticism in the international community; rumors of its effects and radiation poisoning have been very common in the fight to ban the use of DU. .45 DU uses enforced steel infused with depleted uranium. The round is self-sharpening, enhancing its armor penetrating capabilities. After impact, uranium heats up and burns; this process, however, produces no radiation. These rounds are only actively used by the US, and less effective versions are sometimes employed by other countries.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>Uranium round, chambered in .45 ACP. From the time of the first deployment on the battlefield, depleted uranium rounds have been the object of widespread criticism in the international community; rumors of its effects and radiation poisoning have been very common in the fight to ban the use of DU. .45 DU uses enforced steel infused with depleted uranium. The round is self-sharpening, enhancing its armor penetrating capabilities. After impact, uranium heats up and burns; this process, however, produces no radiation. These rounds are only actively used by the US, and less effective versions are sometimes employed by other countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-11.43x23-ap_s">
 		<text>.45 DU</text>
@@ -49,7 +49,7 @@
 		<text>.357 HP rounds</text>
 	</string>
 	<string id="ammo-357-hp_descr">
-		<text>The .357 HP round is a hollow-point bullet. The purpose of the round is to slow down upon impact, decreasing its penetration, but causing larger internal tissue damage. \n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>The .357 HP round is a hollow-point bullet. The purpose of the round is to slow down upon impact, decreasing its penetration, but causing larger internal tissue damage. \n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-357-hp_s">
 		<text>.357 HP</text>
@@ -58,7 +58,7 @@
 		<text>.357 Incendiary rounds</text>
 	</string>
 	<string id="ammo-357-incendiary_descr">
-		<text>Ammunition utilizing phosphorus to burn through targets. Phosphorus based incendiary ammunition was first produced and used during the First World War. Currently true incendiary ammunition is only utilized by a small number of groups, and can only be fired by a handful of weapons. This round used in the Zone is of mid-level quality and moderate price. It does not explode upon impact, but is highly reliable.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]Special:\n \n%c[0,153,255,255] • %c[0,140,140,140] produces tracer</text>
+		<text>Ammunition utilizing phosphorus to burn through targets. Phosphorus based incendiary ammunition was first produced and used during the First World War. Currently true incendiary ammunition is only utilized by a small number of groups, and can only be fired by a handful of weapons. This round used in the Zone is of mid-level quality and moderate price. It does not explode upon impact, but is highly reliable.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]Special:\n \n%c[0,93,0,116] • %c[0,140,140,140] produces tracer</text>
 	</string>
 	<string id="ammo-357-incendiary_s">
 		<text>.357 Incendiary</text>
@@ -67,7 +67,7 @@
 		<text>.338 Lapua Magnum rounds</text>
 	</string>
 	<string id="ammo-338-lapua_descr">
-		<text>The .338 Lapua Magnum is a specialized rimless bottlenecked centerfire cartridge developed for military long-range sniper rifles. The Afghanistan War and Iraq War made it a combat-proven round with ready and substantial ammunition availability. The .338 Lapua is a dual-purpose anti-personnel and anti-materiel round, but its anti-materiel potential is limited.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>The .338 Lapua Magnum is a specialized rimless bottlenecked centerfire cartridge developed for military long-range sniper rifles. The Afghanistan War and Iraq War made it a combat-proven round with ready and substantial ammunition availability. The .338 Lapua is a dual-purpose anti-personnel and anti-materiel round, but its anti-materiel potential is limited.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-338-lapua_s">
 		<text>.338 Lapua Magnum</text>
@@ -76,7 +76,7 @@
 		<text>.338 DU rounds</text>
 	</string>
 	<string id="ammo-338-du_descr">
-		<text>The .338 DU is a depleted uranium round based on the .338 Lapua Magnum cartridge. Developed for use by private military contractors stationing in Iraq who were up against numerous armored targets, mainly tanks stolen from Pakistan and body armors sold by Middle Eastern sympathizers. In a quick move to prevent insurgents from obtaining more advanced equipment, three largest private military firms launched a joint attack on weapon traders in Iraq and Tajikistan. The .338 DU round was created as a counter-measure against armored personnel involved in the blitz. This round is very rare due to the trade agreements between the companies involved in its creation, but is highly sought after by those in the private sector. \n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>The .338 DU is a depleted uranium round based on the .338 Lapua Magnum cartridge. Developed for use by private military contractors stationing in Iraq who were up against numerous armored targets, mainly tanks stolen from Pakistan and body armors sold by Middle Eastern sympathizers. In a quick move to prevent insurgents from obtaining more advanced equipment, three largest private military firms launched a joint attack on weapon traders in Iraq and Tajikistan. The .338 DU round was created as a counter-measure against armored personnel involved in the blitz. This round is very rare due to the trade agreements between the companies involved in its creation, but is highly sought after by those in the private sector. \n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-338-du_s">
 		<text>.338 DU</text>
@@ -85,7 +85,7 @@
 		<text>12x70 shot rounds</text>
 	</string>
 	<string id="ammo-12x70-buck_descr">
-		<text>Standard 12-caliber round filled with 6 mm shot. Highly lethal at close range. Only suitable for use with smoothbore weapons.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]none\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high\n \n%c[0,170,170,170]Special:\n \n%c[0,153,255,255] • %c[0,140,140,140] expanding cloud of pellets, short eff. range</text>
+		<text>Standard 12-caliber round filled with 6 mm shot. Highly lethal at close range. Only suitable for use with smoothbore weapons.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]none\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high\n \n%c[0,170,170,170]Special:\n \n%c[0,93,0,116] • %c[0,140,140,140] expanding cloud of pellets, short eff. range</text>
 	</string>
 	<string id="ammo-12x70-buck_s">
 		<text>12x70 shot </text>
@@ -94,7 +94,7 @@
 		<text>12x76 slug rounds</text>
 	</string>
 	<string id="ammo-12x76-zhekan_descr">
-		<text>This heavy 12 caliber slug round is normally used for hunting big game, but is also good for other purposes. Instead of piercing, this hefty slug simply crushes through armor.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>This heavy 12 caliber slug round is normally used for hunting big game, but is also good for other purposes. Instead of piercing, this hefty slug simply crushes through armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-12x76-zhekan_s">
 		<text>12x76 slug</text>
@@ -103,7 +103,7 @@
 		<text>5.45x39 mm AP rounds</text>
 	</string>
 	<string id="ammo-5.45x39-ap_descr">
-		<text>Military 5.45x39 7H22 caliber armor-piercing round for automatic rifles of Warsaw Pact countries. The bullet contains a hard-alloy armor piercing penetrator. Effective against body armor.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>Military 5.45x39 7H22 caliber armor-piercing round for automatic rifles of Warsaw Pact countries. The bullet contains a hard-alloy armor piercing penetrator. Effective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-5.45x39-ap_s">
 		<text>5.45x39 AP</text>
@@ -112,7 +112,7 @@
 		<text>5.45x39 mm rounds</text>
 	</string>
 	<string id="ammo-5.45x39-fmj_descr">
-		<text>Military 5.45x39 7H10 caliber is an improved piercing round for automatic rifles of Warsaw Pact countries. Provides better accuracy than the 7.62 caliber round thanks to reduced recoil and a 100 meter increase in range.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>Military 5.45x39 7H10 caliber is an improved piercing round for automatic rifles of Warsaw Pact countries. Provides better accuracy than the 7.62 caliber round thanks to reduced recoil and a 100 meter increase in range.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-5.45x39-fmj_s">
 		<text>5.45x39</text>
@@ -122,7 +122,7 @@
 	</string>
 	<string id="ammo-5.56x45-ap_descr">
 		<text>A common NATO military 5.56x45 caliber armor piercing round, known under its SS190/M855 index, widely used by Western security agencies and special
- forces. Effective against body armor.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ forces. Effective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-5.56x45-ap_s">
 		<text>5.56x45 mm AP</text>
@@ -131,7 +131,7 @@
 		<text>5.56x45 mm rounds</text>
 	</string>
 	<string id="ammo-5.56x45-ss190_descr">
-		<text>A standard issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]Special:\n \n%c[0,204,0,51] • %c[0,140,140,140] lowered ap capabilities\n%c[0,153,255,255] • %c[0,140,140,140] enhanced tumble and fragmentation properties</text>
+		<text>A standard issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]Special:\n \n%c[0,204,0,51] • %c[0,140,140,140] lowered ap capabilities\n%c[0,93,0,116] • %c[0,140,140,140] enhanced tumble and fragmentation properties</text>
 	</string>
 	<string id="ammo-5.56x45-ss190_s">
 		<text>5.56x45</text>
@@ -140,7 +140,7 @@
 		<text>7.62x54 mm 7N1 rounds</text>
 	</string>
 	<string id="ammo-7.62x54-7n1_descr">
-		<text>A 7.62 caliber sniper round with a steel penetrator specially designed for the SVD. Unlike the machine gun round, the 7N1 provides tight groupings and excellent penetration characteristics.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>A 7.62 caliber sniper round with a steel penetrator specially designed for the SVD. Unlike the machine gun round, the 7N1 provides tight groupings and excellent penetration characteristics.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-7.62x54-7n1_s">
 		<text>7.62x54 7N1</text>
@@ -149,7 +149,7 @@
 		<text>7.62x54 mm 7N14 rounds</text>
 	</string>
 	<string id="ammo-7.62x54_7n14_descr">
-		<text>The 7.62x54mmR N14 is an armor-piercing cartridge. The bullet has a steel core to penetrate body armor or light barriers, and a boat-tail base to increase accuracy.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>The 7.62x54mmR N14 is an armor-piercing cartridge. The bullet has a steel core to penetrate body armor or light barriers, and a boat-tail base to increase accuracy.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-7.62x54_7n14_s">
 		<text>7.62x54 7N14</text>
@@ -158,7 +158,7 @@
 		<text>7.62x54 mm PP rounds</text>
 	</string>
 	<string id="ammo-7.62x54-ap_descr">
-		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-7.62x54-ap_s">
 		<text>7.62x54 PP</text>
@@ -167,7 +167,7 @@
 		<text>9x18 mm rounds</text>
 	</string>
 	<string id="ammo-9x18-fmj_descr">
-		<text>A full metal jacket round with a steel penetrator and a lead core under a metal jacket. Provides good stopping power but is ineffective against body armor.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
+		<text>A full metal jacket round with a steel penetrator and a lead core under a metal jacket. Provides good stopping power but is ineffective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
 	</string>
 	<string id="ammo-9x18-fmj_s">
 		<text>9x18</text>
@@ -176,7 +176,7 @@
 		<text>9x18 mm +P+ rounds</text>
 	</string>
 	<string id="ammo-9x18-pmm_descr">
-		<text>This round contains a bullet with enhanced stopping power, while its European +P+ designation indicates "overpressure ammunition" with a 30% increase in muzzle velocity. Ineffective against body armor.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>This round contains a bullet with enhanced stopping power, while its European +P+ designation indicates "overpressure ammunition" with a 30% increase in muzzle velocity. Ineffective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-9x18-pmm_s">
 		<text>9x18 +P+</text>
@@ -185,7 +185,7 @@
 		<text>9x18 RG028 rounds</text>
 	</string>
 	<string id="ammo-9x18-ap_descr">
-		<text>RG028 is a cartridge used for its armor penetration capabilities. The goal of the RG028 was to become a counter to body armor; for this reason, it's loaded with a hardened steel core. Unfortunately, the round itself isn't much of an improvement over the standard, instead it has a stronger impact than the standard 9x18 round.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
+		<text>RG028 is a cartridge used for its armor penetration capabilities. The goal of the RG028 was to become a counter to body armor; for this reason, it's loaded with a hardened steel core. Unfortunately, the round itself isn't much of an improvement over the standard, instead it has a stronger impact than the standard 9x18 round.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
 	</string>
 	<string id="ammo-9x18-ap_s">
 		<text>9x18 RG028</text>
@@ -194,7 +194,7 @@
 		<text>9x19 mm FMJ rounds</text>
 	</string>
 	<string id="ammo-9x19-fmj_descr">
-		<text>This basic 9x19 caliber round with a jacketed bullet has good characteristics while being simple to produce. The round is popular due to the fact that international conventions prohibit the use of expanding ammunition in combat. Ineffective against body armor.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>This basic 9x19 caliber round with a jacketed bullet has good characteristics while being simple to produce. The round is popular due to the fact that international conventions prohibit the use of expanding ammunition in combat. Ineffective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-9x19-fmj_s">
 		<text>9x19 FMJ</text>
@@ -203,7 +203,7 @@
 		<text>9x19 mm JHP rounds</text>
 	</string>
 	<string id="ammo-9x19-pbp_descr">
-		<text>This 9x19 caliber jacketed hollow point bullet with an expanding hollow provides high stopping power and low ricochet propensity. Used by police and for self-defense. Ineffective against body armor due to its low penetration potential.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>This 9x19 caliber jacketed hollow point bullet with an expanding hollow provides high stopping power and low ricochet propensity. Used by police and for self-defense. Ineffective against body armor due to its low penetration potential.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-9x19-pbp_s">
 		<text>9x19 JHP</text>
@@ -212,7 +212,7 @@
 		<text>9x19 mm AP rounds</text>
 	</string>
 	<string id="ammo-9x19-ap_descr">
-		<text>This 9x19 caliber bullet comes with a hard steel core. Designed to enhance armor penetrating capabilities of small arms and submachine guns. Used mainly by anti-terrorist and special police units when faced with multiple enemy types.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
+		<text>This 9x19 caliber bullet comes with a hard steel core. Designed to enhance armor penetrating capabilities of small arms and submachine guns. Used mainly by anti-terrorist and special police units when faced with multiple enemy types.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
 	</string>
 	<string id="ammo-9x19-ap_s">
 		<text>9x19 AP</text>
@@ -221,7 +221,7 @@
 		<text>9x39 mm SP-6 rounds</text>
 	</string>
 	<string id="ammo-9x39-ap_descr">
-		<text>The SP-6 is a subsonic assault rifle round with a jacketed soft point bullet with a hard steel core that protrudes from the casing. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries. Effective against body armor.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>The SP-6 is a subsonic assault rifle round with a jacketed soft point bullet with a hard steel core that protrudes from the casing. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries. Effective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-9x39-ap_s">
 		<text>9x39 SP-6</text>
@@ -230,7 +230,7 @@
 		<text>9x39 mm SP-5 rounds</text>
 	</string>
 	<string id="ammo-9x39-pab9_descr">
-		<text>The SP-5 is a subsonic sniper round with a bimetallic casing. The round contains a steel core with a gap behind it that is filled with lead. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>The SP-5 is a subsonic sniper round with a bimetallic casing. The round contains a steel core with a gap behind it that is filled with lead. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-9x39-pab9_s">
 		<text>9x39 mm SP-5 rounds</text>
@@ -269,7 +269,7 @@
 	 <text>7.62x39 mm M43 rounds</text>
 	 </string>
  	<string id="ammo-7.62x39_ap_descr">
- 		<text>7.62x39 M43 is a round produced in China and used for armor piercing purposes, which is why it's often referred to as "7.62x39 CN". This round features a mild steel core which enhances its penetration capabilities. Chinese ammunition (as well as all other M43 ammunition) is currently banned for import in the U.S. because U.S. federal law classifies the round as an armor-piercing handgun round. This classification is based on materials and bullet design rather than on empirical ability to penetrate armor.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ 		<text>7.62x39 M43 is a round produced in China and used for armor piercing purposes, which is why it's often referred to as "7.62x39 CN". This round features a mild steel core which enhances its penetration capabilities. Chinese ammunition (as well as all other M43 ammunition) is currently banned for import in the U.S. because U.S. federal law classifies the round as an armor-piercing handgun round. This classification is based on materials and bullet design rather than on empirical ability to penetrate armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	 </string>
  	<string id="ammo-7.62x39_ap_s">
  		<text>7.62x39 M43 rounds</text>
@@ -278,7 +278,7 @@
  		<text>7.62x39 mm FMJ rounds</text>
  	</string>
  	<string id="ammo-7.62x39_fmj_descr">
- 		<text>7.62x39 Full Metal Jacket is one the most commonly used types of ammunition, especially in Africa and in the Middle East. Some nicknamed it the "Round of the Revolution" due to its favored use by both terrorist and criminal organizations. Due to the sheer power of the round most military organizations have turned to using steel plates to counter 7.62x39 as there is high probability of encountering it in combat situations.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ 		<text>7.62x39 Full Metal Jacket is one the most commonly used types of ammunition, especially in Africa and in the Middle East. Some nicknamed it the "Round of the Revolution" due to its favored use by both terrorist and criminal organizations. Due to the sheer power of the round most military organizations have turned to using steel plates to counter 7.62x39 as there is high probability of encountering it in combat situations.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	 </string>
  	<string id="ammo-7.62x39_fmj_s">
  		<text>7.62x39 FMJ rounds</text>
@@ -287,7 +287,7 @@
  		<text>7.92x57 mm Mauser rounds</text>
  	</string>
  	<string id="ammo-7.92x33_fmj_descr">
- 		<text>The 7.92x57 Mauser round was adopted by the German Empire and then the Third Reich. It was one of the most popular cartridges in the period of two world wars. However,  nowadays, the round is primarily used for hunting and sports.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ 		<text>The 7.92x57 Mauser round was adopted by the German Empire and then the Third Reich. It was one of the most popular cartridges in the period of two world wars. However,  nowadays, the round is primarily used for hunting and sports.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	 </string>
  	<string id="ammo-7.92x33_fmj_s">
  		<text>7.62x57 Mauser rounds</text>
@@ -295,7 +295,7 @@
  		<text>7.92x57 mm SA rounds</text>
  	</string>
  	<string id="ammo-7.92x33_ap_descr">
- 		<text>7.92x57 SA is a round used by the British military against armored targets. It features a hardened steel core which gives it higher piercing capabilities. Used primarily for long range shots, the grain quality of this round is higher than the standard. This cartridge is supported by several sniper rifles.\n \n%c[0,153,255,255] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,153,255,255] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ 		<text>7.92x57 SA is a round used by the British military against armored targets. It features a hardened steel core which gives it higher piercing capabilities. Used primarily for long range shots, the grain quality of this round is higher than the standard. This cartridge is supported by several sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	 </string>
  	<string id="ammo-7.92x33_ap_s">
  		<text>7.62x57 SA rounds</text>
@@ -304,182 +304,211 @@
     <text>ACOG Scope</text>
   </string>
   <string id="st_addon_acog_descr">
-    <text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[255,238,153,26] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule and fixed magnification of 2.0x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]USMC</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule and fixed magnification of 2.0x\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]USMC</text>
+  </string>
+  <string id="st_addon_trijicon_acog">
+    <text>ACOG Scope</text>
+  </string>
+  <string id="st_addon_trijicon_acog_descr">
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a modern 'trijicon' reticule pattern and fixed magnification of 2.0x\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]USMC</text>
   </string>
   <string id="st_addon_night_acog">
     <text>ACOG Scope Nightvision</text>
   </string>
   <string id="st_addon_acog_night_descr">
-    <text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[255,238,153,26] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a civilian 'Trijicon' reticule, build in generation 3 night vision device and fixed magnification of 2.0x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]trijicon\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a civilian 'Trijicon' reticule, build in generation 3 night vision device and fixed magnification of 2.0x\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]trijicon\n%c[255,238,153,26] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[255,238,153,26] • %c[0,140,140,140] does not require UPD</text>
   </string>
   <string id="st_addon_custom_acog">
     <text>ACOG Scope Custom</text>
   </string>
   <string id="st_addon_acog_custom_descr">
-    <text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[255,238,153,26] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule, and features an adjustable magnification.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]adjustable\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]USMC</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule, and features an adjustable magnification.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]adjustable\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]USMC</text>
   </string>
   <string id="st_addon_detect_acog">
     <text>ACOG Scope Detector</text>
   </string>
   <string id="st_addon_acog_detect_descr">
-    <text>Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule, and features a heat-based target aquisition at close-medium range.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]trijicon\n%c[0,153,255,255] • %c[0,140,140,140] Built-in mid-range heat sensor\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights which refer to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule ilumination. This particular type has a USMC-style reticule, and features a heat-based target aquisition at close-medium range.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]trijicon\n%c[255,238,153,26] • %c[0,140,140,140] Built-in mid-range heat sensor\n%c[255,238,153,26] • %c[0,140,140,140] does not require UPD</text>
   </string>
 	<string id="st_addon_scope">
 		<text>PSO-1m scope</text>
 	</string>
 	<string id="st_addon_scope_descr">
-		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has 5.0x magnifization rate, making it usable mainly for combat at long ranges. It is attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]5.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has 5.0x magnifization rate, making it usable mainly for combat at long ranges. It is attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]5.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1</text>
 	</string>
 	<string id="st_addon_scope_detector">
 		<text>PSS-2x scope</text>
 	</string>
 	<string id="st_addon_scope_detector_descr">
-		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has beeb equiped wtih medium-range heat sensor and 5.0x magnifization rate. Sigth equiped like that were meinly desinged for use by Spetznaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[0,153,255,255] • %c[0,140,140,140] Built-in mid-range heat sensor\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has beeb equiped wtih medium-range heat sensor and 5.0x magnifization rate. Sigth equiped like that were meinly desinged for use by Spetznaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[255,238,153,26] • %c[0,140,140,140] Built-in mid-range heat sensor\n%c[255,238,153,26] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_night_vision">
 		<text>NSPU-3 scope</text>
 	</string>
 	<string id="st_addon_scope_night_vision_descr">
-		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has beeb equiped wtih self-sustaining generation 3 night vision device and 2.6x magnifization rate, making it ideal for close to medium range combat in low-light conditions. Sigths equiped like that were meinly desinged for use by Spetznaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has beeb equiped wtih self-sustaining generation 3 night vision device and 2.6x magnifization rate, making it ideal for close to medium range combat in low-light conditions. Sigths equiped like that were meinly desinged for use by Spetznaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[255,238,153,26] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[255,238,153,26] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_susat">
 		<text>SUSAT 4x scope</text>
 	</string>
 	<string id="st_addon_scope_susat_descr">
-		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit features a fixed 4.0x vision zooming rate allowing at least partiall usage for long-range fire exchanges.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]4.0x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit features a fixed 4.0x vision zooming rate allowing at least partiall usage for long-range fire exchanges.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]4.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
 	</string>
 	<string id="st_addon_scope_susat_custom">
 		<text>SUSAT Mera scope</text>
 	</string>
 	<string id="st_addon_scope_susat_custom_descr">
-		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is of a MERA sub-type which has been equiped with adjustable magnficiation apparaturs with manual focus adjustment.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]adjustable\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is of a MERA sub-type which has been equiped with adjustable magnficiation apparaturs with manual focus adjustment.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]adjustable\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
 	</string>
 	<string id="st_addon_scope_susat_dusk">
 		<text>SUSAT Twilight x1.6 scope</text>
 	</string>
 	<string id="st_addon_scope_susat_dusk_descr">
-		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is desinged for usage in reduced lighting conditions and in close-combat, making it a very good choice for building infiltration.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n%c[0,153,255,255] • %c[0,140,140,140] Built-in passive vision illumination</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is desinged for usage in reduced lighting conditions and in close-combat, making it a very good choice for building infiltration.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n%c[255,238,153,26] • %c[0,140,140,140] Built-in passive vision illumination</text>
 	</string>
 	<string id="st_addon_scope_susat_night_vision">
 		<text>SUSAT Night x1.6 scope</text>
 	</string>
 	<string id="st_addon_scope_susat_night_vision_descr">
-		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is equiped with generation 3 night-vision device indicating special-forces designation.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit is equiped with generation 3 night-vision device indicating special-forces designation.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n%c[255,238,153,26] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[255,238,153,26] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6">
 		<text>SUSAT 1.6x scope</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_descr">
-		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_worn">
 		<text>SUSAT 1.6x scope (damaged)</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_worn_descr">
-		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]low\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_moist">
 		<text>SUSAT 1.6x scope (moist-covered)</text>
 	</string>
 	<string id="st_addon_scope_susat_x1.6_moist_descr">
-		<text>SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to external casing making the sight permanently covered with moist.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]SUSAT is a weapon sighting system developed and widely used by the British Army during the cold war, which has later been ported by numerous other western-block countries and can now be installed on top of most modern rifles equiped with NATO-standard Picatinny rail. It features a very untipical, pylon-shaped reticule which makes the sight mostly usable at short-medium distances due to the fact it can obscure targets at long range. This particular unit has close-combat calibrated zoom rate of 1.6x\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]1.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]SUSAT\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to external casing making the sight permanently covered with moist.</text>
 	</string>
 	<string id="st_addon_scope_x2.7">
 		<text>PSU-1 scope</text>
 	</string>
 	<string id="st_addon_scope_x2.7_descr">
-		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSU-1 is a medium-range variant of PSO series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). The scope is mostly utilized by assault rifles such as AK-74 or AN-94 for combat at short to medium ranges. As all scopes from the PSO familiy it is recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1</text>
 	</string>
 	<string id="st_addon_scope_x2.7_worn">
 		<text>PSU-1 scope (damaged)</text>
 	</string>
 	<string id="st_addon_scope_x2.7_worn_descr">
-		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]low\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSU-1 is a medium-range variant of PSO series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). The scope is mostly utilized by assault rifles such as AK-74 or AN-94 for combat at short to medium ranges. As all scopes from the PSO familiy it is recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]low\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
 	</string>
 	<string id="st_addon_scope_x2.7_moist">
 		<text>PSU-1 scope (moist-covered)</text>
 	</string>
 	<string id="st_addon_scope_x2.7_moist_descr">
-		<text>PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to be also utilized by assault rifles such as AK-74 or AN-94. Recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,153,255,255] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,153,255,255] • %c[0,140,140,140] Quality: %c[0,170,170,170]mediun\n%c[0,153,255,255] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to external casing making the sight permanently covered with moist.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSU-1 is a medium-range variant of PSO series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). The scope is mostly utilized by assault rifles such as AK-74 or AN-94 for combat at short to medium ranges. As all scopes from the PSO familiy it is recognized for its durability, versatality and very well-desinged reticule patern featuring convenient range-fider scale. This particular type has fixed 2.6x magnifization rate desinged mainly for close and medium range combat. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to external casing making the sight permanently covered with moist.</text>
 	</string>
 	<string id="st_addon_scope_zf4">
 		<text>ZF-4 scope</text>
 	</string>
 	<string id="st_addon_scope_zf4_descr">
-		<text>An old and worn optic scope with 2x zoom used for specific weapon models from World War II.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] historic German rifles\n \n%c[0,170,170,170]ZF-4 is one of the first telescopic sights wide-spread among army troops. Of WW2-era German desing and manufacture, it was desinged to provide the regular infrantry-men with sharpshooting capability. In the end due to inadequate number of produced units, it has become primarly used by German snipers and elite combat units. Due to weapons it has been desinged for are still in production and usage - so is the scope, remaining relatively popular model also in the Zone.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]ZF-41</text>
+	</string>
+	<string id="st_addon_scope_zf4_moist">
+		<text>ZF-4 scope (moist-covered)</text>
+	</string>
+	<string id="st_addon_scope_zf4_moist_descr">
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] historic German rifles\n \n%c[0,170,170,170]ZF-4 is one of the first telescopic sights wide-spread among army troops. Of WW2-era German desing and manufacture, it was desinged to provide the regular infrantry-men with sharpshooting capability. In the end due to inadequate number of produced units, it has become primarly used by German snipers and elite combat units. Due to weapons it has been desinged for are still in production and usage - so is the scope, remaining relatively popular model also in the Zone.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]low\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]ZF-41\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to external casing making the sight permanently covered with moist.</text>
+	</string>
+	<string id="st_addon_scope_zf4_worn">
+		<text>ZF-4 scope (damaged)</text>
+	</string>
+	<string id="st_addon_scope_zf4_worn_descr">
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] historic German rifles\n \n%c[0,170,170,170]ZF-4 is one of the first telescopic sights wide-spread among army troops. Of WW2-era German desing and manufacture, it was desinged to provide the regular infrantry-men with sharpshooting capability. In the end due to inadequate number of produced units, it has become primarly used by German snipers and elite combat units. Due to weapons it has been desinged for are still in production and usage - so is the scope, remaining relatively popular model also in the Zone.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]ZF-41\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
 	</string>
 	<string id="st_addon_scope_ww2">
-		<text>PU Scope</text>
+		<text>PU scope</text>
 	</string>
 	<string id="st_addon_scope_ww2_descr">
-		<text>An old and worn optic scope with 2x zoom used for specific weapon models from World War II.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] historic Russian rifles\n \n%c[0,170,170,170]Stadard-issue telescopic sight of the Red Army during World War II and years right after it, desinged to fit inrantry and precision rifles such as Mosin-Nagant or SVT-40. It features a fixed 3.5x zoom making it good choice of longer distances. As all Soviet desings it is durabile and effective and is still in production and usage, as are the weapons it has been dedicated to operate on.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PU</text>
+	</string>
+	<string id="st_addon_scope_ww2_moist">
+		<text>PU scope (moist-covered)</text>
+	</string>
+	<string id="st_addon_scope_ww2_moist_descr">
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] historic Russian rifles\n \n%c[0,170,170,170]Stadard-issue telescopic sight of the Red Army during World War II and years right after it, desinged to fit inrantry and precision rifles such as Mosin-Nagant or SVT-40. It features a fixed 3.5x zoom making it good choice of longer distances. As all Soviet desings it is durabile and effective and is still in production and usage, as are the weapons it has been dedicated to operate on.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]low\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]ZF-41\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to external casing making the sight permanently covered with moist.</text>
+	</string>
+	<string id="st_addon_scope_ww2_worn">
+		<text>PU scope (damaged)</text>
+	</string>
+	<string id="st_addon_scope_ww2_worn_descr">
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] historic Russian rifles\n \n%c[0,170,170,170]Stadard-issue telescopic sight of the Red Army during World War II and years right after it, desinged to fit inrantry and precision rifles such as Mosin-Nagant or SVT-40. It features a fixed 3.5x zoom making it good choice of longer distances. As all Soviet desings it is durabile and effective and is still in production and usage, as are the weapons it has been dedicated to operate on.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very low\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]ZF-41\n \n%c[0.204,0,51]WARNING:\n \n%c[0.170,170,170]This particular unit has sustained irreversible damage to optical apparatus, which substantially decreases its usability.</text>
 	</string>
 	<string id="st_addon_scope_vsk">
-		<text>VSK-94 scope</text>
+		<text>PSO-1-1</text>
 	</string>
 	<string id="st_addon_scope_vsk_descr">
-		<text>Special designed telescopic sight for the VSK-94 silenced firearm.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]Special version of PSO-1 Soviet scope with reticule desinged specifically to assist in firing low-velocity, heavy bullets such 9x39 caliber. The grid pattern and range-finder scale make it easier to compensate for increased drop and wind susceptibility of such rounds, while radioactively lit center point increases the usability in low-lighting conditions. Such set of properties make the scope ideal for usage on top of Spetnaz-dedicated, special-purpose firearms such as OTs-14 Groza or AS VAL. It is also by standard mounted on VSS Vintorez sub-sonic sniper rifle. Althou the reticule is desinged specifically for above-mentioned purposes, the scope body is mounted using standard dovetail mount - making it possible to install the scope on any Warsaw Pact rifle.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1-1</text>
 	</string>
 	<string id="st_addon_silencer">
-		<text>Silencer (5.56x45)</text>
+		<text>U.S. Army smallbore rifle silencer</text>
 	</string>
 	<string id="st_addon_silencer_descr">
-		<text>An effective sound suppressor for caliber 5.56x45 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 caliber weapons\n \n%c[0,170,170,170]Advanced rifle suppressor of US desing and manufacture, which has apparently 'fallen off' one of the U.S. Army supply containers. It is consisted of hi-grade steel body filled with four extension chambers, followed by a series of Z-type, titanium baffles. The unit is effective at both - almost complete muzzle flash reduction and shot sound suppresion. It also requires only minimum maintenance. Silencers of this and similar types are commonly used on all smallbore western-made rifles and remain in active service in western-block armed forces.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="st_addon_silencer_9x18">
-		<text>Silencer (9x18)</text>
+		<text>Soviet-made pistol silencer</text>
 	</string>
 	<string id="st_addon_silencer_9x18_descr">
-		<text>An effective sound suppressor for caliber 9x18 weapons. The
- body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x18 caliber weapons\n \n%c[0,170,170,170]An effective sound suppressor for caliber 9x18 weapons. It is of very archaic and yet still effective desings with the body of the silencer containing a thoghtly-packed roll of fine brass mesh. The front of the unit comprises a set of rubber wipes with caliber-sized holes for the bullet to pass through. Normally used for close-combat engagements against lightly-armored enemies and for assasinations.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="st_addon_silencer_9x19">
-		<text>Silencer (9x19)</text>
+		<text>AAC "Evolution-9" silencer</text>
 	</string>
 	<string id="st_addon_silencer_9x19_descr">
-		<text>An effective sound suppressor for caliber 9x19 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 caliber weapons\n \n%c[0,170,170,170]Very efficient, recoil-assisted suppresor desinged for usage on all 9mm caliber firearms. Mounted thru miniaturized Nielsen Device it does not obscure the ironsight aiming, remaining perfectly in-line with upper edge of most modern repeatable and automatic pistols. Re-desinged baffle spread and carefull desing of initial expansion chamber provide very sufficient reduction of sound, while muzzle flash gets almost entirely eliminated. It requires almost none manual maintenance.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="st_addon_silencer_9x39">
-		<text>Silencer (9x39)</text>
+		<text>PBS-6 silencer</text>
 	</string>
 	<string id="st_addon_silencer_9x39_descr">
-		<text>An effective sound suppressor for caliber 9x39 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x39 caliber weapons\n \n%c[0,170,170,170]Pinnacle of Soviet / Russian firearm suppresion technology made fully out of titanium and featuring extension chamber with precisely drilled holes divided with polymer wipe from baffle segment. Desinged specifically for usage with OTs-14 Groza sub-sonic rifles it provides these weapons with very effective sound suppresing - placing them on par in this regard with special-purpose weapons with integrated suppresors such as VSK-94.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]high</text>
 	</string>
 	<string id="st_addon_silencer_545x39">
-		<text>Silencer (5.45x39)</text>
+		<text>PBS-2 silencer</text>
 	</string>
 	<string id="st_addon_silencer_545x39_descr">
-		<text>Russian PBS-1 Sound Suppressor for caliber 5.45x39 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention. These suppressors were used extensively during the Soviet-Afghan War by Spetsnaz units engaging Mujahedeen.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 caliber weapons\n \n%c[0,170,170,170]Standard-isse smallbore, russian weapon suppresor fitting most common infrantry and assault rifle caliber of 5.45x39. It is reliable and cheap in production constituting a very good addition to AK-based small arms. In construction it is almost the same desing as in PBS-1 model with slightly better materials being used, allowing for lower weight of the unit. Suppressors of this type were used extensively during the Soviet-Afghan War by Spetsnaz units engaging Mujahedeen.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="st_addon_silencer_556x45">
-		<text>Silencer (5.56x45)</text>
+		<text>U.S. Army smallbore rifle silencer</text>
 	</string>
 	<string id="st_addon_silencer_556x45_descr">
-		<text>An effective sound suppressor for caliber 5.56x45 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 caliber weapons\n \n%c[0,170,170,170]Advanced rifle suppressor of US desing and manufacture, which has apparently 'fallen off' one of the U.S. Army supply containers. It is consisted of hi-grade steel body filled with four extension chambers, followed by a series of Z-type, titanium baffles. The unit is effective at both - almost complete muzzle flash reduction and shot sound suppresion. It also requires only minimum maintenance. Silencers of this and similar types are commonly used on all smallbore western-made rifles and remain in active service in western-block armed forces.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="st_addon_silencer_762x39">
-		<text>Silencer (7.62x39)</text>
+		<text>PBS-1 silencer</text>
 	</string>
 	<string id="st_addon_silencer_762x39_descr">
-		<text>Russian PBS-1 Sound Suppressor for caliber 7.62x39 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention. These suppressors were used extensively during the Soviet-Afghan War by Spetsnaz units engaging Mujahedeen.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 7.62x39 caliber weapons\n \n%c[0,170,170,170]Russian PBS-1 (for Pribor Bezszumnoj Strielby) sound suppressor for caliber 7.62x39 weapons. Althou dated, orginate from 1950s desing it remains effective and is being produced as valuable addon to still wide-spread AK-47 and AKM rifles. The suppresor is encompassed in alloy-steel cylinder and consists of gas-exhausting expansion chamber which is followed by eleven compartments divided by ten M-type, steel baffles. Originally both areas were divided by singular, rubber-made wipe, which in modern times got replaced with hi-quality polymer one, which does no longer require frequent replacement. Only drawback of the product is that sound suppresion is not as effective as it is the case in newer designs.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="st_addon_silencer_762x51">
-		<text>Silencer (7.62x51)</text>
+		<text>Gemtech "Sandstorm" silencer</text>
 	</string>
 	<string id="st_addon_silencer_762x51_descr">
-		<text>An effective sound suppressor for caliber 7.62x51 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 7.62x51 caliber weapons\n \n%c[0,170,170,170]Large, modern-made suppressor desinged for usage on medium and large caliber, western-made rifles. It is made fully out of titanium to both - greatly increase durability and minimize point of impact shift of usually quite long rifles it is desinged to be installed on. Premium sonic reduction is achieved even with forgiving baffle apertures. An all new baffle design gives better accuracy while still aggressively muting sound and flash signature. Due to fact that it has not been smuggled into the Zone in large number it remains one of the more expensive firearm silencers available on the local market.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]low</text>
 	</string>
 	<string id="st_addon_silencer_762x54">
-		<text>Silencer (7.62x54)</text>
+		<text>PBS-4</text>
 	</string>
 	<string id="st_addon_silencer_762x54_descr">
-		<text>An effective sound suppressor for caliber 7.62x54 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] 7.62x54 caliber weapons\n \n%c[0,170,170,170]Larger version of more typical PBS-1 and 2 russian-made suppresors. It is desinged to fit large caliber weaponry such as RPK-74 or precision firearms such as SVD "Dragunov" sniper rifle. In concept it does not differ from it smaller counter-parts but due to increased energy produced by larger-caliber round it is made of higher-quality materials. This difference is also visible in pricing as PBS-4 remains one of the most expensive types of silencers available in the Zone.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="st_addon_silencer_1143x23">
-		<text>Silencer (1143x23)</text>
+		<text>M100 silencer</text>
 	</string>
 	<string id="st_addon_silencer_1143x23_descr">
-		<text>An effective sound suppressor for caliber 1143x23 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] .45, .328, .357 caliber weapons\n \n%c[0,170,170,170]M100 is a result of discarded U.S. Army research project to develop a reliable flash and sound suppresor for higher-caliber rifles such as .50 or .338. Althou the results of prototype tests were promising, achieving this effect has come at far greater cost that would be acceptable in terms of mass production for regular troops. Althou a similar model was eventually adapted for special forces, M100 didn't ever see actual service. Nonetheless, few hundreds of already produced units have suddenly 'disappeared' from the warehouse they were storaged in. Many of those have eventually ended up on Zone market where having a large caliber weapon might be a good choice, considering the nature of local fauna. Althou the silencer has been desinged for usage on large caliber rifles, it is also very often used on top of .45 and .357 pistols, shoting sound of whom it is able to suppress almost completely.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppresion: %c[0,170,170,170]low (rifle) / v. high (pistol)</text>
 	</string>
 	<string id="st_grenade_f1">
 		<text>F1 grenade</text>
@@ -488,16 +517,16 @@
 		<text>A defensive hand grenade, with fragments capable of piercing medium level body armor. The grenade has roughtly a 4 meter kill radius. Stalkers get F1 grenades from trading with the military, who write them off as having been used for fighting mutants.\n \n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]4,2 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments radius: %c[0,170,170,170]48 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]380 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]~4 seconds</text>
 	</string>
 	<string id="st_grenade_launcher">
-		<text>GP-25 Kostyor</text>
+		<text>GP-25 "Kostyor" grenade launcher</text>
 	</string>
 	<string id="st_grenade_launcher_descr">
-		<text>A single shot, front loaded, rifled underbarrel grenade launcher for assault rifles made in Warsaw Pact countries. The firing mechanism is self-cocking, with a manual safety catch and automatic shot prevention if incorrectly installed onto a rifle. Uses VOG-25 grenades.</text>
+		<text>A single shot, front loaded, rifled underbarrel grenade launcher for assault rifles made in Warsaw Pact countries. Desinged to gratly expand fire-power of a basic infrantry squa. The firing mechanism is self-cocking, with a manual safety catch and automatic shot prevention if incorrectly installed onto a rifle.\n \n%c[0,93,0,116] • %c[0,140,140,140] muzzle velocity: %c[0,170,170,170]~76 m / sec\n%c[0,93,0,116] • %c[0,140,140,140] fire range: %c[0,170,170,170]~300 m m\n%c[0,93,0,116] • %c[0,140,140,140] reload time: %c[0,170,170,170]slow\n%c[0,93,0,116] • %c[0,140,140,140] ammunition: %c[0,170,170,170]VOG-25 40mm grenade</text>
 	</string>
 	<string id="st_grenade_launcher_m203">
-		<text>M203</text>
+		<text>M203 grenade launcher</text>
 	</string>
 	<string id="st_grenade_launcher_m203_descr">
-		<text>A modified M203 grenade launcher that has been shortened by three inches, attached to weapons by means of a Picatinny Rail. Thanks to a changed mount, this grenade launcher is widely used around the world.</text>
+		<text>A modified M203 grenade launcher that has been shortened by three inches, attached to weapons by means of a Picatinny Rail. Thanks to a changed mount, this grenade launcher is widely used around the world and can be installed on most currently produced rifles. Althou more modern desing it has almost the same properties as its sovie counter-part - the GP-25 grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] muzzle velocity: %c[0,170,170,170]~76 m / sec\n%c[0,93,0,116] • %c[0,140,140,140] fire range: %c[0,170,170,170]~300 m m\n%c[0,93,0,116] • %c[0,140,140,140] reload time: %c[0,170,170,170]slow\n%c[0,93,0,116] • %c[0,140,140,140] ammunition: %c[0,170,170,170]M203 40mm grenade</text>
 	</string>
 	<string id="st_grenade_rgd5">
 		<text>RGD-5 grenade</text>
@@ -769,13 +798,13 @@
 		<text>Honorary Mosin-Nagant</text>
 	</string>
 	<string id="st_wpn_m1891honorary_descr">
-		<text>Silver decorated Honorary the Mosin-Nagant named 'The Russian Spear'. The M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was extremely successful in World War II as a sniper rifle when it was equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[255,238,153,26]• %c[0,140,140,140]Scopes</text>
+		<text>Silver decorated Honorary the Mosin-Nagant named 'The Russian Spear'. The M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was extremely successful in World War II as a sniper rifle when it was equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[0,93,0,116]• %c[0,140,140,140]Scopes</text>
 	</string>
 		<string id="st_wpn_m1891">
 		<text>Mosin-Nagant M1891/30</text>
 	</string>
 	<string id="st_wpn_m1891_descr">
-		<text>A personalized version of the Mosin-Nagant with slightly worn interiors. The M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was extremely successful in World War II as a sniper rifle when it was equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[255,238,153,26]• %c[0,140,140,140]Scopes</text>
+		<text>A personalized version of the Mosin-Nagant with slightly worn interiors. The M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was extremely successful in World War II as a sniper rifle when it was equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[0,93,0,116]• %c[0,140,140,140]Scopes</text>
 	</string>
 	<string id="st_wpn_obrez">
 		<text>"Obrez" Mosin-Nagant M1891/30 (Sawn off)</text>
