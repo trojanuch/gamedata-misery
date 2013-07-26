@@ -8,6 +8,13 @@ Copyright (C) 2012 Alundaio
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 --]]
 
+--[[
+THIS XR_REACH_TASK.SCRIPT CAUSES CTD WITH 'ERROR IN STALKER WITH VISUAL ...' WHENEVER HUMAN SQUADS SELECTS ANOTHER SQUAD AS DESTINATION IN A-LIFE (THRU 'SQUAD' ENTRIES IN SIM_BOARD.SCRIPT).
+ALL INSTANCES OF SUCH SELECTION HAVE BEEN DISABLED THOU IN THE BUILD INCL. ACTOR HELPING IN SIM_SQUAD_SCRIPTED.SCRIPT.
+IN CASE OF WANTING TO RE-ENABLE THIS FEATURE (FOR EX. TO ALLOW HUNTERS SELECT ALSO MUTANTS INSTEAD OF ONLY HUNTING GROUND S_Ts)
+USE XR_REACH_TASK FROM BETA PRIOR TO V0.7.0.0. note made on 25.07.2013 by trojanuch
+--]]
+
 ----------------------------------------------------------------------------------------------------------------------
 --	—хема патруль дл€ reach_task_location.
 ----------------------------------------------------------------------------------------------------------------------

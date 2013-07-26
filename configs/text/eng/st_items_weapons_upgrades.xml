@@ -52,25 +52,25 @@
 		<text>Increased magazine capacity</text>
 	</string>
 	<string id="st_up_add_b1_descr">
-		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allows its caliber to be changed at the cost of reliability.</text>
 	</string>
 	<string id="st_up_add_b1_name">
-		<text>Change of caliber to 5x45</text>
+		<text>Change of caliber to 5.45x39</text>
 	</string>
 	<string id="st_up_add_b2_descr">
-		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allows its caliber to be changed at the cost of reliability.</text>
 	</string>
 	<string id="st_up_add_b2_name">
-		<text>Change of caliber to 5x56</text>
+		<text>Change of caliber to 5.56x45</text>
 	</string>
 	<string id="st_up_add_b3_descr">
-		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allows its caliber to be changed at the cost of reliability.</text>
 	</string>
 	<string id="st_up_add_b3_name">
 		<text>Change of caliber to 9x18</text>
 	</string>
 	<string id="st_up_add_b4_descr">
-		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allows its caliber to be changed at the cost of reliability.</text>
 	</string>
 	<string id="st_up_add_b4_name">
 		<text>Change of caliber to 9x19</text>
@@ -483,6 +483,7 @@
 	</string>
 	<string id="st_up_bar_a1_descr">
 		<text>Replacement of
+
  a regular barrel
  with a longer one improves accuracy and flatness.</text>
 	</string>
@@ -610,7 +611,7 @@
 		<text>Addition of an active counter-weight to the barrel jacket</text>
 	</string>
 	<string id="st_up_bard_c6_descr">
-		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allows its caliber to be changed at the cost of reliability.</text>
 	</string>
 	<string id="st_up_bard_c6_name">
 		<text>Change of caliber to 7.62x54</text>
@@ -712,7 +713,8 @@
 		<text>Addition of hydraulic boosters into drive devices</text>
 	</string>
 	<string id="st_up_kom_a1_descr">
-		<text>A fabric insert prevents soft tissue damage in the event
+		<text>A fabric insert prevents soft tissue
+ damage in the event
  of impact against the plate.</text>
 	</string>
 	<string id="st_up_kom_a1_name">
@@ -960,6 +962,7 @@
 	</string>
 	<string id="st_up_stk_binoc2_name">
 		<text>Aluminium
+
  frame</text>
 	</string>
 	<string id="st_up_stk_binoc3_descr">
@@ -1180,7 +1183,8 @@
 		<text>Infrared scanner</text>
 	</string>
 	<string id="st_up_resp_c4_descr">
-		<text>SPB - VPZ.m.IV Psychological Security Wave Psy Protection System, mark four.</text>
+		<text>SPB - VPZ.m.IV
+ Psychological Security Wave Psy Protection System, mark four.</text>
 	</string>
 	<string id="st_up_resp_c4_name">
 		<text>SPB - VPZ.m.IV combat system</text>
@@ -1427,7 +1431,8 @@
 		<text>Changing handle shape with a straight rear section</text>
 	</string>
 	<string id="st_up_stvp_b6_descr">
-		<text>The possibility of choosing a suitable handle length makes for a more ergonomic handle shape.</text>
+		<text>The possibility of choosing a suitable
+ handle length makes for a more ergonomic handle shape.</text>
 	</string>
 	<string id="st_up_stvp_b6_name">
 		<text>Adjustable handle</text>
@@ -1655,7 +1660,8 @@
 	<string id="st_up_uti_a1_name">
 		<text>Additional servomotors</text>
 	</string>
-	<string id="st_up_uti_a2_descr">
+	<string
+ id="st_up_uti_a2_descr">
 		<text>The system supplies anti-tetanic, anti-inflammatory and streptocide substances.</text>
 	</string>
 	<string id="st_up_uti_a2_name">
@@ -1891,7 +1897,8 @@
 		<text>Reinforced and fully closed bolt</text>
 	</string>
 	<string id="st_up_zatp_b6_descr">
-		<text>A small buffer that takes on some of the recoil.</text>
+		<text>A small buffer that takes on some of
+ the recoil.</text>
 	</string>
 	<string id="st_up_zatp_b6_name">
 		<text>Polymer recoil buffer</text>
@@ -2023,7 +2030,7 @@
 		<text>Upgrade not supported by this weapon</text>
 	</string>
 	<string id="st_gauss_cannot_be_repaired">
-		<text>It’s not clear how the weapon works. It can’t be repaired without additional information about its design.</text>
+		<text>It's not clear how the weapon works. It can't be repaired without additional information about its design.</text>
 	</string>
 	<string id="st_upgr_cant_do">
 		<text>The technician cannot perform this modification</text>
