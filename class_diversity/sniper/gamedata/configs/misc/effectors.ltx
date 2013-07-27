@@ -73,9 +73,30 @@ time_attack		= 0.4		; fade in
 time_release		= 0.5		; fade out
 
 [zoom_inertion_effector]
+
+;ASSAULTER
+
+;camera_move_epsilon	= 0.03		;the difference between the two vectors is the direction the camera when the camera is moved
+;disp_min			= 0.0035		
+;speed_min			= 0
+;zoom_aim_disp_k		= 0.04		;odds ratio of the total variance of shooting
+;zoom_aim_speed_k	= 0.001		;and wiggle sight
+;delta_time			= 600		;time at which the effector changes the direction of motion (in milliseconds)
+
+;RECON
+
+;camera_move_epsilon	= 0.03		;the difference between the two vectors is the direction the camera when the camera is moved
+;disp_min			= 0.004		
+;speed_min			= 0
+;zoom_aim_disp_k		= 0.04		;odds ratio of the total variance of shooting
+;zoom_aim_speed_k	= 0.001		;and wiggle sight
+;delta_time			= 600		;time at which the effector changes the direction of motion (in milliseconds)
+
+;SNIPER:
+
 camera_move_epsilon	= 0.03		;the difference between the two vectors is the direction the camera when the camera is moved
-disp_min			= 0.02		
-speed_min			= 0.02
-zoom_aim_disp_k		= 0.1		;odds ratio of the total variance of shooting
-zoom_aim_speed_k	= 0.2		;and wiggle sight
-delta_time			= 5450		;time at which the effector changes the direction of motion (in milliseconds)
+disp_min			= 0.003		
+speed_min			= 0
+zoom_aim_disp_k		= 0.04		;odds ratio of the total variance of shooting
+zoom_aim_speed_k	= 0.001		;and wiggle sight
+delta_time			= 600		;time at which the effector changes the direction of motion (in milliseconds)
