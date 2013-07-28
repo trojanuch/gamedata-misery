@@ -40,7 +40,7 @@
 		<text>Cannabis joint (zone produced)</text>
 	</string>
 	<string id="st_joint_descr">
-		<text>A joint calms you and lets you relax for a little while. Induces a soothing effect if combined with alcohol. Increases hunger. Valuable item.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] stimulant\n%c[0,153,255,255] • %c[0,140,140,140] mild alcohol sobering effect\n%c[0,204,0,51] • %c[0,140,140,140] moderate sleepiness increase</text>
+		<text>A joint calms you and lets you relax for a little while. Induces a soothing effect if combined with alcohol. Increases hunger.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] stimulant\n%c[0,153,255,255] • %c[0,140,140,140] mild alcohol sobering effect\n%c[0,204,0,51] • %c[0,140,140,140] moderate sleepiness increase</text>
 	</string>
 	<string id="st_cigarettes">
 		<text>Pack of Marlboro cigarettes (imported)</text>
@@ -493,49 +493,49 @@
 		<text>Clear Sky faction patch</text>
 	</string>
 	<string id="st_clearsky_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
+		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
 	</string>
 	<string id="st_freedom_fp">
 		<text>Freedom faction patch</text>
 	</string>
 	<string id="st_freedom_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
+		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
 	</string>
 	<string id="st_stalker_fp">
 		<text>Stalker faction patch</text>
 	</string>
 	<string id="st_stalker_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
+		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
 	</string>
 	<string id="st_renegade_fp">
 		<text>Renegade faction patch</text>
 	</string>
 	<string id="st_renegade_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
+		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
 	</string>
 	<string id="st_bandit_fp">
 		<text>Bandit faction patch</text>
 	</string>
 	<string id="st_bandit_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
+		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
 	</string>
 	<string id="st_dolg_fp">
 		<text>Duty faction patch</text>
 	</string>
 	<string id="st_dolg_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
+		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
 	</string>
 	<string id="st_monolith_fp">
 		<text>Monolith faction patch</text>
 	</string>
 	<string id="st_monolith_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
+		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
 	</string>
 	<string id="st_duty_fp">
 		<text>Military faction patch</text>
 	</string>
 	<string id="st_duty_fp_descr">
-		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
+		<text>Faction patches are often used to determine the rank of faction members, and the reasoning behind it is simple: the higher the count, the better the skills. They are also a proof that you won't hesitate to kill someone with your own hands to achieve your goals. For this reason, it can be extremely dangerous to display the patch to the wrong people, but it can as well open important doors for you.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+3%)</text>
 	</string>
 	<string id="st_merc_fp">
 		<text>Mercenary faction patch</text>
@@ -567,29 +567,17 @@
 	<string id="st_shovel_mili_descr">
 		<text>High-quality black military shovel. Used for numerous field purposes. Training regimen of Spetsnaz soldiers covers hand-to-hand combat and the use of hand-held weapons and other equipment for the purposes of eliminating enemies. One famous example is the entrenching shovel which is a formidable weapon in close combat when used by a Spetsnaz operator.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military item</text>
 	</string>
-	<string id="st_ied_rpg">
-		<text>IED</text>
-	</string>
-	<string id="st_ied_rpg_descr">
-		<text>Improvised Explosive Device based on RPG7 grenade and parts of a car battery. It looks like it has been carried around for quite some time and could go off any second...\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,204,0,51] • %c[0,140,140,140] unusable</text>
-	</string>
-	<string id="st_ied">
-		<text>IED</text>
-	</string>
-	<string id="st_ied_descr">
-		<text>Improvised Explosive Device produced from various chemical substances. It reeks of strong chemicals, which may attract or repel mutants. It looks like it has been carried around for quite some time and could go off any second...\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,204,0,51] • %c[0,140,140,140] unusable</text>
-	</string>
 	<string id="st_meinkampf">
 		<text>Mein Kampf</text>
 	</string>
 	<string id="st_meinkampf_descr">
-		<text>Heil Hitler! Adolf Hitler's strategic memoires collected in a single book. The book and all that it stands for is hated by many, which makes this an item hold high symbolic value. Adolf Hitler (20 April 1889 – 30 April 1945) was an Austrian-born German politician and the leader of the National Socialist German Workers Party (German: Nationalsozialistische Deutsche Arbeiterpartei (NSDAP), commonly referred to as the Nazi Party). He was chancellor of Germany from 1933 to 1945 and dictator of Nazi Germany (as Führer und Reichskanzler) from 1934 to 1945. Hitler was at the centre of the founding of Nazism, the start of World War II, and the Holocaust.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+2%)</text>
+		<text>Heil Hitler! Adolf Hitler's strategic memoires collected in a single book. The book and all that it stands for is hated by many, which makes this an item hold high symbolic value. Adolf Hitler (20 April 1889 – 30 April 1945) was an Austrian-born German politician and the leader of the National Socialist German Workers Party (German: Nationalsozialistische Deutsche Arbeiterpartei (NSDAP), commonly referred to as the Nazi Party). He was chancellor of Germany from 1933 to 1945 and dictator of Nazi Germany (as Führer und Reichskanzler) from 1934 to 1945. Hitler was at the centre of the founding of Nazism, the start of World War II, and the Holocaust.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+2%)</text>
 	</string>
 	<string id="st_jar">
 		<text>Plastic jar</text>
 	</string>
 	<string id="st_jar_descr">
-		<text>A handful of gold teeth in a small plastic jar filled with sand and leaves to minimize the noise while running. Liberating a fallen Stalker of his teeth is a favored practice among bandits.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] valuable item</text>
+		<text>A handful of gold teeth in a small plastic jar filled with sand and leaves to minimize the noise while running. Liberating a fallen Stalker of his teeth is a favored practice among bandits.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable</text>
 	</string>
 	<string id="st_grooming">
 		<text>Grooming kit</text>
@@ -637,7 +625,7 @@
 		<text>Decorated jewelry box</text>
 	</string>
 	<string id="st_jewelry_box_descr">
-		<text>Small box full of women's jewelry. It seems rather valuable but these items are not very popular among Zoners who will think they must have been stolen or looted from the corpses of their previous owners.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] valuable item</text>
+		<text>Small box full of women's jewelry. It seems rather valuable but these items are not very popular among Zoners who will think they must have been stolen or looted from the corpses of their previous owners.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] valuable</text>
 	</string>
 	<string id="st_cooking">
 		<text>Field cooking kit</text>
@@ -661,7 +649,7 @@
 		<text>Drug distribution notes</text>
 	</string>
 	<string id="st_drugnotes_descr">
-		<text>This notebook describes various drug deals in detail. Specific nicknames, locations and time of meets. Some deals are executed through equipment exchanges and others are paid in large amounts of roubles. When browsing the pages, it becomes clear that Freedom is the main distributor of natural drugs such as marijuana. Bandits are producers and distributors of the more powerful (and dangerous) synthetic drugs like salicylic acid and cocaine. Apparently, every faction in the Zone takes part in these deals. Especially Monolith seems to be taking in large amounts drugs in exchange for more expensive types of ammunition and equipment.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+2%)</text>
+		<text>This notebook describes various drug deals in detail. Specific nicknames, locations and time of meets. Some deals are executed through equipment exchanges and others are paid in large amounts of roubles. When browsing the pages, it becomes clear that Freedom is the main distributor of natural drugs such as marijuana. Bandits are producers and distributors of the more powerful (and dangerous) synthetic drugs like salicylic acid and cocaine. Apparently, every faction in the Zone takes part in these deals. Especially Monolith seems to be taking in large amounts drugs in exchange for more expensive types of ammunition and equipment.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon cleaning and lubrication (+2%)</text>
 	</string>
 	<string id="st_picture_woman">
 		<text>Picture of a woman</text>
@@ -673,7 +661,7 @@
 		<text>Drug-making kit</text>
 	</string>
 	<string id="st_drugs_kit_descr">
-		<text>Small cases and various metal items constitute a kit for managing and producing drugs. Some plastic bags contain pills and herbs.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] valuable item</text>
+		<text>Small cases and various metal items constitute a kit for managing and producing drugs. Some plastic bags contain pills and herbs.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[0,204,0,51] • %c[0,140,140,140] unusable</text>
 	</string>
 	<string id="st_cigar">
 		<text>Soviet cigarettes</text>
@@ -685,7 +673,7 @@
 		<text>Sleeping Bag</text>
 	</string>
 	<string id="st_itm_sleepbag_descr">
-		<text>A light sleeping bag that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Does not protect from radiation.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] sets up portable bed\n%c[0,153,255,255] • %c[0,140,140,140] multiple usages\n%c[0,153,255,255] • %c[0,140,140,140] everyday item</text>
+		<text>A light sleeping bag that will keep you warm and dry when you need to rest. Be sure to pick a safe spot with a possible escape route.\n \n%c[0,153,255,255]WARNING:\n \n%c[0,170,170,170]Sleeping in the open may attract predators. Does not protect from radiation.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] sets up portable bed\n%c[0,153,255,255] • %c[0,140,140,140] infinite usages\n%c[0,153,255,255] • %c[0,140,140,140] everyday item</text>
 	</string>
 	<string id="sleep_itm_warning_blowout">
 		<text>It's not safe to sleep!</text>
@@ -1104,13 +1092,13 @@
 		<text>Improvised explosive device (based on OG-7V warhead)</text>
 	</string>
 	<string id="st_ied_rpg_descr">
-		<text>\n \n%c[0,204,0,51]WARNING: Explodes when impacted\n \n%c[0,170,170,170]Improvised Explosive Device based on OG-7V warhead and parts of a car battery. It looks like it has been carried around for quite some time and could go off any second. Fortunately the triggering mechanism makes it safe untill the item is directly shot at or subjected to other heavy physical trauma. In the Zone IED's like that are quite popular and Stalkers use them for variety of purposes, from opening access to closed areas to ambushes setting. They are also often placed next to mines to greatly magnify the explosion's strenght. IED can be effectively concealed making it unnoticable to other Stalkers.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] explosive\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,153,255,255] • %c[0,140,140,140] unnoticable when placed on ground\n%c[0,93,0,116] • %c[0,140,140,140] triggering mechanism: %c[0,170,170,170]bullet impact or explosion\n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]7,8 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments radius: %c[0,170,170,170]56 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]440 (shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none</text>
+		<text>Improvised Explosive Device based on OG-7V warhead and parts of a car battery. It looks like it has been carried around for quite some time and could go off any second. Fortunately the triggering mechanism makes it safe untill the item is directly shot at or subjected to other heavy physical trauma. In the Zone IED's like that are quite popular and Stalkers use them for variety of purposes, from opening access to closed areas to ambushes setting. They are also often placed next to mines to greatly magnify the explosion's strenght. IED can be effectively concealed making it unnoticable to other Stalkers.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] explosive\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,153,255,255] • %c[0,140,140,140] unnoticable when placed on ground\n%c[0,93,0,116] • %c[0,140,140,140] triggering mechanism: %c[0,170,170,170]proximity\n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]7,8 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments radius: %c[0,170,170,170]56 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]440 (shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none</text>
 	</string>
 	<string id="st_ied">
 		<text>Improvised explosive device (based on chemicals)</text>
 	</string>
 	<string id="st_ied_descr">
-		<text>\n \n%c[0,204,0,51]WARNING: Explodes when impacted\n \n%c[0,170,170,170]Improvised Explosive Device produced from various chemical substances combined with container of steel balls and broken electronical ingniter. Chemicals used in device produce intense odour and are haevly toxic. Device is significantly more powerfull than a more common RPG-7's warhead based one. In the Zone IED's are quite popular and Stalkers use them for variety of purposes, from opening access to closed areas to ambushes setting. They are also often placed next to mines to greatly magnify the explosion's strenght. IED can be effectively concealed making it unnoticable to other Stalkers.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] explosive\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,153,255,255] • %c[0,140,140,140] unnoticable when placed on ground\n%c[0,93,0,116] • %c[0,140,140,140] triggering mechanism: %c[0,170,170,170]bullet impact or explosion\n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]12,9 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments radius: %c[0,170,170,170]74 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]580 (steel balls)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none</text>
+		<text>Improvised Explosive Device produced from various chemical substances combined with container of steel balls and broken electronical ingniter. Chemicals used in device produce intense odour and are haevly toxic. Device is significantly more powerfull than a more common RPG-7's warhead based one. In the Zone IED's are quite popular and Stalkers use them for variety of purposes, from opening access to closed areas to ambushes setting. They are also often placed next to mines to greatly magnify the explosion's strenght. IED can be effectively concealed making it unnoticable to other Stalkers.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] explosive\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,153,255,255] • %c[0,140,140,140] unnoticable when placed on ground\n%c[0,93,0,116] • %c[0,140,140,140] triggering mechanism: %c[0,170,170,170]proximity\n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]12,9 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments radius: %c[0,170,170,170]74 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]580 (steel balls)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none</text>
 	</string>
 	<string id="st_balon_gas">
 		<text>Gas balon</text>

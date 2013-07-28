@@ -208,10 +208,17 @@ function actor_binder:use_inventory_item(obj)
 		
 		-- Swartz
 		if(s_obj)and(s_obj:section_name()=="mine")then
-      alife():create("mine_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
-    end
-    -- Swartz
-    	
+      		alife():create("mine_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+    		end
+		-- Swartz
+    		-- ponney68
+		if(s_obj)and(s_obj:section_name()=="ied_rpg")then
+      		alife():create("rpg_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ied")then
+      		alife():create("ied_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+    		end
+		-- End ponney68 
 	end
 end
 

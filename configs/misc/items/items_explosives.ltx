@@ -237,17 +237,17 @@ chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.77
 fire_wound_immunity		= 0.68
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;; DEPLOYABLE MILITARY EXPLOSIVES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; IEDs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[ied_rpg]:identity_immunities,instant_action_fuse,default_weapon_params
+[ied_rpg]:identity_immunities
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
-class				= S_EXPLO
+class				= II_ANTIR
 cform				= skeleton
-visual          	= dynamics\weapons\wpn_ammo\ammo_og_7b.ogf
-radius				= 68; 50
+visual          	= dynamics\weapons\wpn_ied\wpn_ied_rpg.ogf
+inv_vol = 1
 
 description			= st_ied_rpg_descr
 inv_name			= st_ied_rpg
@@ -259,16 +259,46 @@ inv_grid_x			= 6
 inv_grid_y			= 43
 
 cost				= 4990
-
-;box_size			= 1
-
 inv_weight			= 1.89
 
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
+attach_angle_offset   = -1.5708,0.1919,3.1416    ;устанавливаетсљ в радианах Angle*PI/180
+attach_position_offset  = 0.075, 0.066, 0.023
+attach_bone_name    = bip01_l_hand
+auto_attach       = false
 
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+eat_portions_num = 1
+
+wounds_heal_perc = 0
+;-------------------------------------------------------------------------------
+
+[rpg_blow]:explosive_barrel
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= II_EXPLO            
+cform				= skeleton
+
+script_binding			= m_mines.build_tbl
+
+visual				= dynamics\weapons\wpn_ied\wpn_ied_rpg.ogf
+
+inv_name			= 
+inv_name_short		=
+inv_weight        	= 1.89
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 43
+;вещь невозможно подобрать
+can_take			= false
+
+cost				= 4990
 ;-------------------------------------------------------------------------------
 blast				= 4.3
 blast_r				= 7.2
@@ -286,10 +316,11 @@ hit_type_blast		= explosion
 hit_type_frag		= fire_wound
 
 up_throw_factor		= 0.76
+
 ;-------------------------------------------------------------------------------
 wm_size                  = 0.1
 
-explode_particles			= explosions\explosion_04
+explode_particles		 = explosions\explosion_04
 
 light_color		         = 1.9,1.3,0.5
 light_range		         = 30.0
@@ -298,22 +329,38 @@ light_time 		         = 1
 ;трассы от осколков
 fragment_speed				= 230		;скорость осколков (м/с)
 
-explode_duration		 = 0		;подолжительность взрыва (с)
+explode_duration			 = 0		;подолжительность взрыва (с)
 time_to_explode			= 0.f
+
+;звуки
+snd_explode = weapons\rpg7\rpg7_explode
+immunities_sect			= ied_rpg_immunities_sect
 ;wallmarks
 wallmark_section		= explosion_marks
 
-;звуки
-snd_explode 				= weapons\rpg7\rpg7_explode
-immunities_sect			= explosive_tank_immunities_sect
+[ied_rpg_immunities_sect]
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.14
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.77
+fire_wound_immunity		= 0.68
 
-[ied]:identity_immunities,instant_action_fuse,default_weapon_params
+eat_portions_num = 1
+; food item
+animation_slot  = 4
+;hud item
+hud = wpn_vodka_hud
+
+[ied]:identity_immunities
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
-class				= S_EXPLO
+class				= II_ANTIR
 cform				= skeleton
-visual				= dynamics\equipments\quest\explosive_charge.ogf
-radius				= 68; 50
+visual				= dynamics\weapons\wpn_ied\wpn_ied.ogf
 
 description			= st_ied_descr
 inv_name			= st_ied
@@ -326,15 +373,45 @@ inv_grid_y			= 43
 
 cost				= 5690
 
-;box_size			= 1
-
 inv_weight			= 2.165
 
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
+attach_angle_offset   = -1.5708,0.1919,3.1416    ;устанавливаетсљ в радианах Angle*PI/180
+attach_position_offset  = 0.075, 0.066, 0.023
+attach_bone_name    = bip01_l_hand
+auto_attach       = false
 
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+eat_portions_num = 1
+
+wounds_heal_perc = 0
+
+;-------------------------------------------------------------------------------
+[ied_blow]:explosive_barrel
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= II_EXPLO            
+cform				= skeleton
+
+script_binding			= m_mines.build_tbl
+
+visual				= dynamics\weapons\wpn_ied\wpn_ied.ogf
+
+inv_name			= st_ied
+inv_name_short			= st_ied
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 5
+inv_grid_y			= 43
+
+cost				= 5690
+
+can_take			= false
 ;-------------------------------------------------------------------------------
 blast				= 5.7
 blast_r				= 12.9
@@ -372,7 +449,24 @@ wallmark_section		= explosion_marks
 
 ;звуки
 snd_explode = weapons\explo\fuelcan_boom
-immunities_sect			= explosive_tank_immunities_sect
+immunities_sect			= ied_immunities_sect
+
+[ied_immunities_sect]
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.14
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.77
+fire_wound_immunity		= 0.68
+
+eat_portions_num = 1
+; food item
+animation_slot  = 4
+;hud item
+hud = wpn_vodka_hud
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; MINES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -398,7 +492,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 25
 inv_grid_y			= 2
-cost          = 2790
+cost          = 1790
 
 attach_angle_offset   = -1.5708,0.1919,3.1416    ;устанавливаетсљ в радианах Angle*PI/180
 attach_position_offset  = 0.075, 0.066, 0.023
@@ -442,8 +536,8 @@ can_take			= false
 
 cost				= 1500
 ;-------------------------------------------------------------------------------
-blast				= 2.18
-blast_r				= 2.2
+blast				= 3.18
+blast_r				= 2.26
 blast_impulse		= 66
 ;delete
 blast_impulse_factor = 0.85
