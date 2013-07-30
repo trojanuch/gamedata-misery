@@ -58,7 +58,7 @@
 		<text>.357 Incendiary rounds</text>
 	</string>
 	<string id="ammo-357-incendiary_descr">
-		<text>Ammunition utilizing phosphorus to burn through targets. Phosphorus based incendiary ammunition was first produced and used during the First World War. Currently true incendiary ammunition is only utilized by a small number of groups, and can only be fired by a handful of weapons. This round used in the Zone is of mid-level quality and moderate price. It does not explode upon impact, but is highly reliable.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]Special:\n \n%c[0,93,0,116] • %c[0,140,140,140] produces tracer</text>
+		<text>Ammunition utilizing phosphorus to burn through targets. Phosphorus based incendiary ammunition was first produced and used during the First World War. Currently true incendiary ammunition is only utilized by a small number of groups, and can only be fired by a handful of weapons. This round used in the Zone is of mid-level quality and moderate price. It does not explode upon impact, but is highly reliable.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,93,0,116] • %c[0,140,140,140] produces tracer</text>
 	</string>
 	<string id="ammo-357-incendiary_s">
 		<text>.357 Incendiary</text>
@@ -85,7 +85,7 @@
 		<text>12x70 shot rounds</text>
 	</string>
 	<string id="ammo-12x70-buck_descr">
-		<text>Standard 12-caliber round filled with 6 mm shot. Highly lethal at close range. Only suitable for use with smoothbore weapons.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]none\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high\n \n%c[0,170,170,170]Special:\n \n%c[0,93,0,116] • %c[0,140,140,140] expanding cloud of pellets, short eff. range</text>
+		<text>Standard 12-caliber round filled with 6 mm shot. Highly lethal at close range. Only suitable for use with smoothbore weapons.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]none\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,93,0,116] • %c[0,140,140,140] expanding cloud of pellets, short eff. range</text>
 	</string>
 	<string id="ammo-12x70-buck_s">
 		<text>12x70 shot </text>
@@ -130,7 +130,7 @@
 		<text>5.56x45 mm rounds</text>
 	</string>
 	<string id="ammo-5.56x45-ss190_descr">
-		<text>A standard issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]Special:\n \n%c[0,204,0,51] • %c[0,140,140,140] lowered ap capabilities\n%c[0,93,0,116] • %c[0,140,140,140] enhanced tumble and fragmentation properties</text>
+		<text>A standard issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,204,0,51] • %c[0,140,140,140] lowered piercing capability\n%c[0,93,0,116] • %c[0,140,140,140] enhanced fragmentation in soft tissue</text>
 	</string>
 	<string id="ammo-5.56x45-ss190_s">
 		<text>5.56x45</text>
@@ -447,7 +447,7 @@
 		<text>PSO-1-1</text>
 	</string>
 	<string id="st_addon_scope_vsk_descr">
-		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]Special version of Soviet PSO-1 scope with reticule, designed specifically to assist in firing low-velocity, heavy bullets such as 9x39 caliber. The grid pattern and range-finder scale make it easier to compensate for increased drop and wind susceptibility of such rounds, while radioactively lit center-point increases effectiveness in low-light conditions. This set of properties makes the scope ideal for use on top of Spetnaz-dedicated, special-purpose firearms such as OTs-14 Groza or AS VAL. It is also by standard mounted on VSS Vintorez sub-sonic sniper rifle. Although the reticule is designed specifically for above-mentioned purposes, the scope is attached using standard dovetail mount, thus it can be installed on any Warsaw Pact rifle.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1-1</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,93,0,116] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]SPECIAL version of Soviet PSO-1 scope with reticule, designed specifically to assist in firing low-velocity, heavy bullets such as 9x39 caliber. The grid pattern and range-finder scale make it easier to compensate for increased drop and wind susceptibility of such rounds, while radioactively lit center-point increases effectiveness in low-light conditions. This set of properties makes the scope ideal for use on top of Spetnaz-dedicated, special-purpose firearms such as OTs-14 Groza or AS VAL. It is also by standard mounted on VSS Vintorez sub-sonic sniper rifle. Although the reticule is designed specifically for above-mentioned purposes, the scope is attached using standard dovetail mount, thus it can be installed on any Warsaw Pact rifle.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1-1</text>
 	</string>
 	<string id="st_addon_silencer">
 		<text>U.S. Army smallbore rifle silencer</text>
@@ -918,7 +918,7 @@
 		<text>Skorpion vz. 68</text>
 	</string>
 	<string id="st_wpn_scorpion_descr">
-		<text>Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, full production of the 9x19mm Skorpion vz. 68 never took place. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatibile silencer</text>
+		<text>Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, full production of the 9x19mm Skorpion vz. 68 never took place. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x18 compatibile silencer</text>
 	</string>
 	<string id="st_wpn_scorpion_camo">
 		<text>Skorpion vz. 68 (Camouflaged)</text>
@@ -1485,7 +1485,7 @@
 		<text>Batteries that use a capsulated fragment of the “Flash” as their power source. Manufactured using hi-tech equipment.</text>
 	</string>
 	<string id="ammo-gauss_cardan_descr">
-		<text>These lower-capacity cells use capsulated fragments of the “Flash” as their power source. Their lower capacity is due to makeshift production conditions and lack of specialized equipment.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high\n \n%c[0,170,170,170]Special:\n \n%c[0,93,0,116] • %c[0,140,140,140] technological item\n%c[0,93,0,116] • %c[0,140,140,140] prototype</text>
+		<text>These lower-capacity cells use capsulated fragments of the “Flash” as their power source. Their lower capacity is due to makeshift production conditions and lack of specialized equipment.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,93,0,116] • %c[0,140,140,140] technological item\n%c[0,93,0,116] • %c[0,140,140,140] prototype</text>
 	</string>
 	<string id="st_knife_combat">
 		<text>Hunting knife</text>

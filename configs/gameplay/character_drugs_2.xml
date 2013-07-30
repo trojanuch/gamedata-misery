@@ -155,34 +155,34 @@ mre = 1, prob=0.003
 ration_ru = 1, prob=0.001
 ration_ukr = 1, prob=0.001
 
-gun_oil = 2, prob=0.011
-cleaning_kit_p = 1, prob=0.011
-cleaning_kit_s = 1, prob=0.011
-cleaning_kit_r5 = 1, prob=0.011
-cleaning_kit_r7 = 1, prob=0.011
-cleaning_kit_u = 1, prob=0.008
-toolkit_p = 1, prob=0.006
-toolkit_s = 1, prob=0.006
-toolkit_r5 = 1, prob=0.006
-toolkit_r7 = 1, prob=0.006
+gun_oil = 2, prob=0.007
+cleaning_kit_p = 1, prob=0.007
+cleaning_kit_s = 1, prob=0.007
+cleaning_kit_r5 = 1, prob=0.007
+cleaning_kit_r7 = 1, prob=0.007
+cleaning_kit_u = 1, prob=0.004
+toolkit_p = 1, prob=0.003
+toolkit_s = 1, prob=0.003
+toolkit_r5 = 1, prob=0.003
+toolkit_r7 = 1, prob=0.003
 toolkit_u = 1, prob=0.004
-sharpening_stones = 2, prob=0.011 \n
-gun_oil_ru_d = 3, prob=0.011 \n
-gun_oil_ru = 3, prob=0.011 \n
-solvent = 1, prob=0.011 \n
-grease = 2, prob=0.011 \n
-steel_wool = 2, prob=0.011 \n
-glue_b = 1, prob=0.011 \n
-glue_a = 1, prob=0.008 \n
-glue_e = 1, prob=0.006 \n
-sewing_kit_b = 1, prob=0.011 \n
-sewing_kit_a = 1, prob=0.008 \n
-sewing_kit_h = 1, prob=0.006 \n
+sharpening_stones = 2, prob=0.007 \n
+gun_oil_ru_d = 2, prob=0.007 \n
+gun_oil_ru = 2, prob=0.007 \n
+solvent = 1, prob=0.007 \n
+grease = 2, prob=0.007 \n
+steel_wool = 2, prob=0.007 \n
+glue_b = 2, prob=0.007 \n
+glue_a = 2, prob=0.004 \n
+glue_e = 1, prob=0.003 \n
+sewing_kit_b = 1, prob=0.007 \n
+sewing_kit_a = 1, prob=0.004 \n
+sewing_kit_h = 1, prob=0.003 \n
 armor_repair_fa = 1, prob=0.003 \n
 armor_repair_pro = 1, prob=0.003 \n
-textile_patch_b = 2, prob=0.011 \n
-textile_patch_m = 2, prob=0.008 \n
-textile_patch_e = 2, prob=0.006 \n
+textile_patch_b = 3, prob=0.007 \n
+textile_patch_m = 3, prob=0.004 \n
+textile_patch_e = 3, prob=0.003 \n
 
 hide_pseudogiant = 1, prob=0.003 \n
 hide_psy_dog = 1, prob=0.003 \n
