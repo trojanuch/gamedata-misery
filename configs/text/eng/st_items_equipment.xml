@@ -1065,22 +1065,61 @@
 		<text>Stored energy is given in ampere-hours (Ah).</text>
 	</string>
 	<string id="st_mre">
-		<text>MRE</text>
+		<text>MRE (Unopened)</text>
+	</string>
+	<string id="st_mre2">
+		<text>MRE (2 packs left)</text>
+	</string>
+	<string id="st_mre3">
+		<text>MRE (1 pack left)</text>
 	</string>
 	<string id="st_mre_descr">
-		<text>The Meal, Ready-to-Eat (commonly known as the MRE) is a self-contained, individual field ration in lightweight packaging developed by the United States military for its service members for use in combat or other field conditions where organized food facilities are not available. One MRE can be used as one meal. The packaging of an MRE is designed to withstand rough conditions and exposure to the elements. Contains one course (entree) along with a variety of other food and drink items. While it can be eaten cold, it usually tastes much better when heated up with the included Flameless Ration Heater (FRH, a water-activated exothermic reaction device that emits heat).\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military ration\n\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] • %c[0,140,140,140] sold in a form of one meal of 500 kcal</text>
+		<text>The Meal, Ready-to-Eat (commonly known as the MRE) is a self-contained, individual field ration in lightweight packaging developed by the United States military for its service members for use in combat or other field conditions where organized food facilities are not available. One MRE can be used as one meal. The packaging of an MRE is designed to withstand rough conditions and exposure to the elements. Contains one course (entree) along with a variety of other food and drink items. While it can be eaten cold, it usually tastes much better when heated up with the included Flameless Ration Heater (FRH, a water-activated exothermic reaction device that emits heat).\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military ration\n\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] • %c[0,140,140,140] 3 packs in one package. Total 1398 Kcal</text>
 	</string>
 	<string id="st_ration_ru">
-		<text>Russian IRP-B combat ration</text>
+		<text>Russian IRP-B combat ration (Unopened)</text>
+	</string>
+	<string id="st_ration_ru2">
+		<text>Russian IRP-B combat ration (6 packs left)</text>
+	</string>
+	<string id="st_ration_ru3">
+		<text>Russian IRP-B combat ration (5 packs left)</text>
+	</string>
+	<string id="st_ration_ru4">
+		<text>Russian IRP-B combat ration (4 packs left)</text>
+	</string>
+	<string id="st_ration_ru5">
+		<text>Russian IRP-B combat ration (3 packs left)</text>
+	</string>
+	<string id="st_ration_ru6">
+		<text>Russian IRP-B combat ration (2 packs left)</text>
+	</string>
+	<string id="st_ration_ru7">
+		<text>Russian IRP-B combat ration (1 pack left)</text>
 	</string>
 	<string id="st_ration_ru_descr">
-		<text>Breakfast, dinner and supper all in one package. Comes with a polymeric box. This particular ration pack includes 2 apple sauce portions, 4 cleaning cloths, 1 vitamin drink (tastes like apricots and has a yellowish colour), 2 vitamin pills in, 4 flimsy plastic spoons, 4 biscuit packs (10 biscuits in 1 pack), 3 bags containing 20 grams of sugar each,1 square tin of meat (“Tushonka” - "òóø¸íêà"), 2 square tins of puffed wheat ("êàøà") with meat (“Kasha” and “Tushonka”), 1 can of cheese, 1 rectangular tin of fish (“Natural fish”), 1 laminated pack containing 6 matches and a striker, 1 tin of canned mixed vegetables, 1 bag of salt, 3 sachets of tea (black tea), 1 plastic packet containing 3 matches with a striker; 3 lighter tablets with metal frame used for cooking, 6 napkins. The polymeric box has 3 sections, each respectively for breakfast, dinner and supper. Protects the ingredients from hazardous environmental conditions.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military ration\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] • %c[0,140,140,140] sold in a form of one meal of 500 kcal</text>
+		<text>Breakfast, dinner and supper all in one package. Comes with a polymeric box. This particular ration pack includes 2 apple sauce portions, 4 cleaning cloths, 1 vitamin drink (tastes like apricots and has a yellowish colour), 2 vitamin pills in, 4 flimsy plastic spoons, 4 biscuit packs (10 biscuits in 1 pack), 3 bags containing 20 grams of sugar each,1 square tin of meat (“Tushonka” - "òóø¸íêà"), 2 square tins of puffed wheat ("êàøà") with meat (“Kasha” and “Tushonka”), 1 can of cheese, 1 rectangular tin of fish (“Natural fish”), 1 laminated pack containing 6 matches and a striker, 1 tin of canned mixed vegetables, 1 bag of salt, 3 sachets of tea (black tea), 1 plastic packet containing 3 matches with a striker; 3 lighter tablets with metal frame used for cooking, 6 napkins. The polymeric box has 3 sections, each respectively for breakfast, dinner and supper. Protects the ingredients from hazardous environmental conditions.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military ration\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] • %c[0,140,140,140] 7 packs in one package. Total 3661 Kcal</text>
 	</string>
 	<string id="st_ration_ukr">
-		<text>Ukrainian combat ration</text>
+		<text>Ukrainian combat ration (Unopened)</text>
+	</string>
+	<string id="st_ration_ukr2">
+		<text>Ukrainian combat ration (5 packs left)</text>
+	</string>
+	<string id="st_ration_ukr3">
+		<text>Ukrainian combat ration (4 packs left)</text>
+	</string>
+	<string id="st_ration_ukr4">
+		<text>Ukrainian combat ration (3 packs left)</text>
+	</string>
+	<string id="st_ration_ukr5">
+		<text>Ukrainian combat ration (2 packs left)</text>
+	</string>
+	<string id="st_ration_ukr6">
+		<text>Ukrainian combat ration (1 pack left)</text>
 	</string>
 	<string id="st_ration_ukr_descr">
-		<text>The Ukrainian combat ration is based on a previous Russian version, consisting of commercially available cans and dried food items packed together in a sectioned box (resembles a takeout tray) made of very thin green plastic. Contains: two 250 g cans (boiled buckwheat groats and buckwheat with beef); two 100 g cans of meat spread (liver pâté and beef in lard); a 160 g can of herring or mackerel; six 50 g packages of small, hard crackers (resembling oyster crackers); two foil pouches (20 g each) of jam or jelly; six boiled sweets; two tea bags; an envelope of instant cherry juice powder; a chicken flavour bouillon cube; two packets of sugar; and three dining packets, each with a plastic spoon, a napkin, and a moist towelette.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military ration\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] • %c[0,140,140,140] sold in a form of one meal of 500 kcal</text>
+		<text>The Ukrainian combat ration is based on a previous Russian version, consisting of commercially available cans and dried food items packed together in a sectioned box (resembles a takeout tray) made of very thin green plastic. Contains: two 250 g cans (boiled buckwheat groats and buckwheat with beef); two 100 g cans of meat spread (liver pâté and beef in lard); a 160 g can of herring or mackerel; six 50 g packages of small, hard crackers (resembling oyster crackers); two foil pouches (20 g each) of jam or jelly; six boiled sweets; two tea bags; an envelope of instant cherry juice powder; a chicken flavour bouillon cube; two packets of sugar; and three dining packets, each with a plastic spoon, a napkin, and a moist towelette.\n \n%c[0,140,140,140]PROPERTIES:\n \n%c[0,153,255,255] • %c[0,140,140,140] military ration\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[0,153,255,255] • %c[0,140,140,140] 6 packs in one package. Total 3186 Kcal</text>
 	</string>
 	<string id="st_mine_name">
 		<text>PFM-1 scatterable anti-personnel mine</text>

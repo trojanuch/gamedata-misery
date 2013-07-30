@@ -233,7 +233,7 @@ function dynamic_actor_loadout()
 			create_items("swiss")
 
 			create_items("flask",3)
-			create_items("ration_ukr")
+			create_items("ration_ukr5")
 
 			create_items("bandage",3)
 			create_items("antirad")
@@ -271,7 +271,7 @@ function dynamic_actor_loadout()
 			create_items("swiss",2)
 
 			create_items("flask",3)
-			create_items("ration_ukr")
+			create_items("ration_ukr5")
 
 			create_items("bandage",3)
 			create_items("tetanus")
@@ -306,7 +306,7 @@ function dynamic_actor_loadout()
 			create_items("cleaning_kit_pe")
 
 			create_items("flask",3)
-			create_items("ration_ukr")
+			create_items("ration_ukr5")
 			create_items("cigar2")
 
 			create_items("bandage",4)

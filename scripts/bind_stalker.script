@@ -211,12 +211,57 @@ function actor_binder:use_inventory_item(obj)
       		alife():create("mine_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
     		end
 		-- Swartz
-    		-- ponney68
+
+    		-- ponney68 IEDs
 		if(s_obj)and(s_obj:section_name()=="ied_rpg")then
       		alife():create("rpg_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
     		end
 		if(s_obj)and(s_obj:section_name()=="ied")then
       		alife():create("ied_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+    		end
+
+		-- ponney68 Combat Rations		
+		-- ration_ukr x6
+		if(s_obj)and(s_obj:section_name()=="ration_ukr")then
+      		alife():create("ration_ukr2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ukr2")then
+      		alife():create("ration_ukr3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ukr3")then
+      		alife():create("ration_ukr4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ukr4")then
+      		alife():create("ration_ukr5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ukr5")then
+      		alife():create("ration_ukr6", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- ration_ru x7
+		if(s_obj)and(s_obj:section_name()=="ration_ru")then
+      		alife():create("ration_ru2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ru2")then
+      		alife():create("ration_ru3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ru3")then
+      		alife():create("ration_ru4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ru4")then
+      		alife():create("ration_ru5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ru5")then
+      		alife():create("ration_ru6", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="ration_ru6")then
+      		alife():create("ration_ru7", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- mre x3
+		if(s_obj)and(s_obj:section_name()=="mre")then
+      		alife():create("mre2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="mre2")then
+      		alife():create("mre3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
     		end
 		-- End ponney68 
 	end

@@ -1,5 +1,5 @@
 <w>
-	<main_frame x="10" y="300" width="370" height="170" delay="810"/>
+	<main_frame x="10" y="300" width="470" height="170" delay="810"/>
 	<background_frame x="0" y="0" width="370" height="170">
 		<texture>ui_inGame2_hint_wnd_main_window</texture>
 	</background_frame>
@@ -20,7 +20,7 @@
 		<text align="l" font="letterica16" complex_mode="1"/>
 	</static_no_trade>
 
-	<descr_list x="20" y="60" width="356" height="130" always_show_scroll="0" fit_to_height="1">
+	<descr_list x="20" y="60" width="456" height="130" always_show_scroll="0" fit_to_height="1">
 		<font font="letterica16" r="170" g="170" b="170"/>
 	</descr_list>
 	<description_line x="20" y="50" width="322" height="9" stretch="1">

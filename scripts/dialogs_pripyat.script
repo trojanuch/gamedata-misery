@@ -89,7 +89,7 @@ local medic_items_table = {
 									["drug_radioprotector"]	= 1,
 									["salicidic_acid"]	= 1,
 									["marijuana"]	= 1,
-									["ration_ukr"]	= 1
+									["ration_ukr6"]	= 1
 									},
 
 						["advanced"] = {
@@ -105,7 +105,7 @@ local medic_items_table = {
 									["drug_psy_blockade"]	= 1,
 									["salicidic_acid"]	= 2,
 									["marijuana"]	= 1,
-									["ration_ukr"]	= 1
+									["ration_ukr6"]	= 1
 									},
 
 						["elite"] = {
@@ -125,7 +125,7 @@ local medic_items_table = {
 									["morphine"]	= 1,
 									["adrenalin"]	= 1,
 									["marijuana"]	= 2,
-									["ration_ukr"]	= 1
+									["ration_ukr5"]	= 1
 									},
 					}
 
