@@ -1428,31 +1428,30 @@ hud						= device_flashlight_hud
 
 [device_flashlight_hud]:detector_base_hud
 
-item_position			= -0.055,0.03,0.012213
-item_orientation		= 180,-190,-220  ;324.640503,-189.627350,-183.009415
+item_position			= -0.065,0.033,0.01
+item_orientation		= 198,-198,-230
 
 item_visual             = dynamics\devices\dev_flashlight\dev_flashlight_hud
 
-fire_point				= 0,0,-0.05
+fire_point				= 0,0,0.05
 fire_bone      	      	= light_bone_2
 fire_point2				= 0,0,0
 fire_bone2				= light_bone_1
 
-anm_show				= dev_detector_1_draw
-anm_show_fast			= dev_detector_1_draw	;_quick
-anm_hide				= dev_detector_1_holster
-anm_hide_fast			= dev_detector_1_holster_quick
-anm_idle				= dev_detector_1_idle
-anm_idle_moving			= dev_detector_1_idle_moving
-anm_idle_sprint			= dev_detector_1_idle_moving
-
+anm_show			= flash_draw, draw
 anm_show_16x9			= flash_draw, draw
+anm_show_fast			= flash_draw, draw
 anm_show_fast_16x9		= flash_draw, draw
+anm_hide			= flash_holster, holster
 anm_hide_16x9			= flash_holster, holster
+anm_hide_fast			= flash_holster, holster
 anm_hide_fast_16x9		= flash_holster, holster
+anm_idle			= flash_idle, idle_f
 anm_idle_16x9			= flash_idle, idle_f
-anm_idle_moving_16x9	= flash_idle_moving, moving
-anm_idle_sprint_16x9	= flash_idle_sprint, sprint
+anm_idle_moving			= flash_idle_moving, moving
+anm_idle_moving_16x9		= flash_idle_moving, moving
+anm_idle_sprint			= flash_idle_sprint, sprint
+anm_idle_sprint_16x9		= flash_idle_sprint, sprint
 
 flash_light_range		= 0
 onoff_light_range		= 0
@@ -1498,10 +1497,10 @@ cost					= 4390
 inv_name				= st_device_torch_name
 inv_name_short			= st_device_torch_name
 inv_weight				= 0.186
-inv_grid_width			= 2
-inv_grid_height			= 1
-inv_grid_x				= 16
-inv_grid_y				= 12
+inv_grid_width     		= 1
+inv_grid_height    		= 1
+inv_grid_x         		= 24
+inv_grid_y         		= 3
 default_to_ruck			= true
 eat_health 				= 0
 eat_satiety 			= 0

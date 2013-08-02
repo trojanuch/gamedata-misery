@@ -314,7 +314,7 @@
 	<string id="st_addon_night_acog">
 		<text>ACOG Scope Nightvision</text>
 	</string>
-	<string id="st_addon_acog_night_descr">
+	<string id="st_addon_night_acog_descr">
 		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] selected NATO rifles\n \n%c[0,170,170,170]Detachable optical scope made specifically for NATO rifles. ACOG stands for Advanced Combat Optical Gunsights and refers to a family of firearm scopes produced by the Trijicon company. Scopes of this type are usually of high quality and have an internal tritium-based reticule illumination. This particular type has a civilian 'Trijicon' reticule, built-in third generation night vision device and fixed magnification of 2.0x.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.0x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]trijicon\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_custom_acog">
@@ -1518,9 +1518,15 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]This Soviet steel knife has a 152 mm blade with a clip point, a large choil, a black wooden handle, and an S-shaped guard. The guard is "inverted" because standard Soviet Army grips called for holding the knife with the edge towards yourself. The handle is enforced with rugged fabric for a good grip. Knife is realitevely small which does not allow it to produce too heavy wounds, on the other hand it is specifically desinged to bypass modern combat armors.</text>
 	</string>
 	<string id="st_trg_sako">
-		<text>TRG-42</text>
+		<text>Sako TRG-42</text>
 	</string>
 	<string id="st_wpn_trg_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The TRG-42 is not an accurized version of an existing rifle, but was developed from the very beginning as a sniper rifle. Its consistent high accuracy and reliability have made it popular both in long-range competitions and military sniper operations.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] FINDOT scope (permanent)</text>
+	</string>
+	<string id="st_wpn_sako">
+		<text>Sako M95</text>
+	</string>
+	<string id="st_wpn_sako_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The Sako M95 is a rifle of Finnish design based on the AK-47. It is a high damage, balanced assault rifle, possessing great damage and predictable moveshot. It possesses great flexibility because of its ability to fight anywhere from CQC to medium ranges. Depending on the mods, the firepower, recoil and bloom recovery are interchangeble, making it limitedly customisable to fire in short bursts or tapping. The Sako features an abnormally high ROF for a weapon of such high damage resulting in very high DPS at the cost of some control. The weapon's fast reload can open your chances over your opponent in fast-paced firefights or engagments where you are outnumbered. For unknown reason Sako N95 rifles which ended up in the Zone are permenently equiped with PSU-1 medium-range scopes.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatibile silencer%c[0,93,0,116] • %c[0,140,140,140] PSU-1 2.7x scope (permanent)</text>
 	</string>
 </string_table>

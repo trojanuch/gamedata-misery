@@ -2131,7 +2131,7 @@
     <rank>55</rank>
     <reputation>0</reputation>
 	<money min="2500" max="5000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_2_sergant</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_2_sergent</visual>
     <supplies>
       [spawn] \n
 
@@ -17961,7 +17961,7 @@ hand_radio = 1 \n
 	<money min="2500" max="5000" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_bandit\stalker_merc_10</visual>
+    <visual>actors\stalker_merc\stalker_merc_10</visual>
     <supplies>
       [spawn] \n
 
