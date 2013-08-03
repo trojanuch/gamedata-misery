@@ -57,7 +57,7 @@ corpse_detection_enabled = false
 target = story | zat_b14_stalker_1
 anim = ward_noweap
 on_info = %=play_sound(zat_b14_scene_1_linker_reply)%
-on_info2 = {-zat_b14_cut_scene_linker_have_artefact} =seize_money_to_npc(1000) +zat_b14_cut_scene_linker_have_artefact%
+on_info2 = {-zat_b14_cut_scene_linker_have_artefact} %=spawn_item_to_npc(af_quest_b14_twisted) =seize_money_to_npc(1000) +zat_b14_cut_scene_linker_have_artefact%
 snd_anim_sync = true
 on_signal = sound_end | remark@wait_2 %+zat_b14_cut_scene_1_point_02%
 meet = no_meet
