@@ -881,15 +881,15 @@ $spawn			= "weapons\ammo\ammo_7.62x54_ap" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
 visual                  = dynamics\weapons\wpn_ammo\ammo_762x54_ap.ogf
-description		= ammo-7.62x54-ap_descr
+description		= ammo-7.62x54-r_descr
 $prefetch 		= 64
 
-cost					 = 5560
+cost					 = 2860
 
 box_size		= 25
 
-inv_name		= ammo-7.62x54-ap
-inv_name_short		= ammo-7.62x54-ap
+inv_name		= ammo-7.62x54-r
+inv_name_short		= ammo-7.62x54-r_s
 inv_weight		= .18
 
 inv_grid_width		= 2
@@ -897,16 +897,18 @@ inv_grid_height		= 1
 inv_grid_x			= 16
 inv_grid_y			= 13
 
-k_dist			= 1
-k_disp			= 0.66
-k_hit			= 0.85
-k_impulse		= 0.52
-k_pierce		= 1.65
-k_ap			= 1.42
-impair			= 1.05 ; 1.25
+k_hit_critical   = 1.
+k_dist			= 0.8
+k_disp			= 0.92 ; 2
+k_hit			= 1.31
+k_impulse		= 0
+k_pierce		= 0.78
+k_ap		    = 0.44
+impair			= 1.05 ; 1.1
 buck_shot		= 1
-tracer			= off        ;  on
-wm_size         = 0.0052
+tracer			= off        ;  off
+wm_size         = 0.0051
+k_air_resistance = 2.3
 explosive		= off
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

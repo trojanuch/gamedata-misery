@@ -493,9 +493,9 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_leader_monolith_skin</class>
-		<community>monolith</community>
+		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
 		<rank>100</rank>
 		<reputation>0</reputation>
@@ -687,9 +687,9 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_1_monolith_skin</class>
-		<community>monolith</community>
+		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\monolith\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>70</rank>
 		<reputation>0</reputation>
@@ -781,9 +781,9 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_2_monolith_skin</class>
-		<community>monolith</community>
+		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\monolith\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>35</rank>
 		<reputation>0</reputation>
@@ -875,9 +875,9 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_3_monolith_skin</class>
-		<community>monolith</community>
+		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\monolith\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>55</rank>
 		<reputation>0</reputation>
@@ -969,9 +969,9 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_4_monolith_skin</class>
-		<community>monolith</community>
+		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\monolith\</snd_config>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
 		<rank>35</rank>
 		<reputation>0</reputation>
@@ -1065,9 +1065,9 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b4_monolith_squad_soldier_5_monolith_skin</class>
-		<community>monolith</community>
+		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\monolith\</snd_config>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
 		<rank>25</rank>
 		<reputation>0</reputation>
@@ -1161,7 +1161,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
     <class>jup_b4_freedom_help</class>
-    <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_01\freedom\</snd_config>
 
     <rank>35</rank>
@@ -1191,7 +1191,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
     <class>jup_b4_duty_help</class>
-    <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\dolg\</snd_config>
 
     <rank>35</rank>
@@ -1221,7 +1221,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
     <class>jup_b4_freedom_leader</class>
-    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\freedom\</snd_config>
 
     <rank>70</rank>
@@ -1254,7 +1254,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
     <class>jup_b4_duty_leader</class>
-    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_01\dolg\</snd_config>
 
     <rank>70</rank>

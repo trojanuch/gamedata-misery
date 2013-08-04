@@ -148,7 +148,7 @@
 		<text>7.62x54 mm 7N14 rounds</text>
 	</string>
 	<string id="ammo-7.62x54_7n14_descr">
-		<text>The 7.62x54mmR N14 is an armor-piercing cartridge. The bullet has a steel core to penetrate body armor or light barriers, and a boat-tail base to increase accuracy.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>The 7.62x54mm N14 is an armor-piercing cartridge. The bullet has a steel core to penetrate body armor or light barriers, and a boat-tail base to increase accuracy.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-7.62x54_7n14_s">
 		<text>7.62x54 7N14</text>
@@ -157,9 +157,18 @@
 		<text>7.62x54 mm PP rounds</text>
 	</string>
 	<string id="ammo-7.62x54-ap_descr">
-		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>Cheap 7.62 PP (also known as 7.62 R) is a dated rifle caliber developed and used by Soviet Empire near the end of 19th century and later on USSR till few years after World War II. It was originally desinged for Mosin-Nagant standard-issue infrantry rifle and as this renown weapon is still manufactured and used widely in the Exclusion Zone - so is the round, making it quite common finding in Stalkers inventories and trader stocks there. Ammunition is relatively cheap but it lacks in penetration capabilites in comparison to more modern desings. It can also be used as a chaeper alternative for the PKM machine gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x54-ap_s">
+		<text>7.62x54 PP</text>
+	</string>
+	<string id="ammo-7.62x54-r">
+		<text>7.62x54 mm PP rounds</text>
+	</string>
+	<string id="ammo-7.62x54-r_descr">
+		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+	</string>
+	<string id="ammo-7.62x54-r_s">
 		<text>7.62x54 PP</text>
 	</string>
 	<string id="ammo-9x18-fmj">
@@ -1491,31 +1500,31 @@
 		<text>Hunting knife</text>
 	</string>
 	<string id="st_knife_combat_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]A large hunting knife with a rugged rubber handle. Sharp and well maintained. It might not be good at penetrating combat armors but due to the toothed blade it is ideal at causing massive, bleeding wounds to open flesh. This is makes it a perfect choice when confronting animals, especially at finishing off already wounded ones.</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A large hunting knife with a rugged rubber handle. Sharp and well maintained. It might not be good at penetrating combat armors but due to the toothed blade it is ideal at causing massive, bleeding wounds to open flesh. This is makes it a perfect choice when confronting animals, especially at finishing off already wounded ones.</text>
 	</string>
 	<string id="st_knife_nr40">
 		<text>NR-40</text>
 	</string>
 	<string id="st_knife_nr40_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]A rare Soviet military knife of high historic and symbolic value. Decorated with an iron emblem of a certain World War II parachute division on the wooden handle. Any Stalker in possession of one of these, be it novice or veteran, is highly respected anywhere in the Zone and especially within his faction. Usually awarded for exceptional performance during missions, for example for saving a faction leader from the certain death.</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A rare Soviet military knife of high historic and symbolic value. Decorated with an iron emblem of a certain World War II parachute division on the wooden handle. Any Stalker in possession of one of these, be it novice or veteran, is highly respected anywhere in the Zone and especially within his faction. Usually awarded for exceptional performance during missions, for example for saving a faction leader from the certain death.</text>
 	</string>
 	<string id="st_knife_spetznaz">
-		<text>Speztnaz switchblade</text>
+		<text>spetznaz switchblade</text>
 	</string>
 	<string id="st_knife_spetznaz_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]A well kept Spetsnaz military knife ideal for recon class soldiers. Spetznaz units were to use it to slit throats of MRBM launching sites crews few days prior to planned massive nuclear exchange on European operational theater. It is a deadly weapon and the only knife available in the Zone which is relatively good in both: piercing armors and dealing massive tissue damage. Ultimate melee weapon.</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A well kept Spetsnaz military knife ideal for recon class soldiers. Spetznaz units were to use it to slit throats of MRBM launching sites crews few days prior to planned massive nuclear exchange on European operational theater. It is a deadly weapon and the only knife available in the Zone which is relatively good in both: piercing armors and dealing massive tissue damage. Ultimate melee weapon.</text>
 	</string>
 	<string id="st_knife_hunting">
 		<text>Large hunting knife</text>
 	</string>
 	<string id="st_knife_hunting_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]A very durable hunting knife with a large blade of stainless steel. Ideal for handling larger animals, meat and thick hides. It is able to cause massive, bleeding wounds. Its draw-back is that it does not pierce heavy armors with adequate effectiveness.</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A very durable hunting knife with a large blade of stainless steel. Ideal for handling larger animals, meat and thick hides. It is able to cause massive, bleeding wounds. Its draw-back is that it does not pierce heavy armors with adequate effectiveness.</text>
 	</string>
 	<string id="st_knife_needle">
 		<text>Soviet combat knife</text>
 	</string>
 	<string id="st_knife_needle_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]This Soviet steel knife has a 152 mm blade with a clip point, a large choil, a black wooden handle, and an S-shaped guard. The guard is "inverted" because standard Soviet Army grips called for holding the knife with the edge towards yourself. The handle is enforced with rugged fabric for a good grip. Knife is realitevely small which does not allow it to produce too heavy wounds, on the other hand it is specifically desinged to bypass modern combat armors.</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]This Soviet steel knife has a 152 mm blade with a clip point, a large choil, a black wooden handle, and an S-shaped guard. The guard is "inverted" because standard Soviet Army grips called for holding the knife with the edge towards yourself. The handle is enforced with rugged fabric for a good grip. The knife is relatively small, which does not allow it to produce deep or heavy wounds, however it is specifically designed to bypass modern combat armors.</text>
 	</string>
 	<string id="st_trg_sako">
 		<text>Sako TRG-42</text>
@@ -1527,6 +1536,6 @@
 		<text>Sako M95</text>
 	</string>
 	<string id="st_wpn_sako_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The Sako M95 is a rifle of Finnish design based on the AK-47. It is a high damage, balanced assault rifle, possessing great damage and predictable moveshot. It possesses great flexibility because of its ability to fight anywhere from CQC to medium ranges. Depending on the mods, the firepower, recoil and bloom recovery are interchangeble, making it limitedly customisable to fire in short bursts or tapping. The Sako features an abnormally high ROF for a weapon of such high damage resulting in very high DPS at the cost of some control. The weapon's fast reload can open your chances over your opponent in fast-paced firefights or engagments where you are outnumbered. For unknown reason Sako N95 rifles which ended up in the Zone are permenently equiped with PSU-1 medium-range scopes.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatibile silencer%c[0,93,0,116] • %c[0,140,140,140] PSU-1 2.7x scope (permanent)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The Sako M95 is a rifle of Finnish design based on the AK-47. It is a commonly-used, balanced assault rifle, possessing great damage output and predictable moveshot. Highly flexible as it can be used in a variety of combat situations, from CQC to medium ranges. Depending on the mods, the firepower, recoil and bloom recovery can be augmented, allowing it to fire in short bursts or tapping. The Sako features an abnormally high ROF for a weapon of such high damage resulting in very high DPS at the cost of some control. The weapon's fast reload can boost your chances when engaging opponents in fast-paced firefights or when you're outnumbered. For unknown reason, Sako N95 rifles which are available in the Zone are permanently equipped with PSU-1 medium-range scope.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatibile silencer%c[0,93,0,116] • %c[0,140,140,140] PSU-1 2.7x scope (permanent)</text>
 	</string>
 </string_table>
