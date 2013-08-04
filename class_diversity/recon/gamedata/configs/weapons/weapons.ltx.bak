@@ -911,10 +911,6 @@ wm_size         = 0.0051
 k_air_resistance = 2.3
 explosive		= off
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[ammo_7.62x54_ap_2]:ammo_7.62x54_ap ; technical
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ammo_gauss]:ammo_base
@@ -2679,7 +2675,7 @@ k_disp			= 0.66
 k_hit			= 19.0
 k_impulse		= 1.1
 k_pierce		= 0.01
-k_ap			= 0.33
+k_ap			= 0.48
 impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
@@ -2715,7 +2711,7 @@ k_disp			= 0.66
 k_hit			= 19.0
 k_impulse		= 1.2
 k_pierce		= 0.01
-k_ap			= 1.15
+k_ap			= 1.37
 impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
@@ -2751,7 +2747,7 @@ k_disp			= 0.66
 k_hit			= 19.0
 k_impulse		= 1.2
 k_pierce		= 0.01
-k_ap			= 1.35
+k_ap			= 1.56
 impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
@@ -2787,7 +2783,7 @@ k_disp			= 0.66
 k_hit			= 19.0
 k_impulse		= 1.2
 k_pierce		= 0.01
-k_ap			= 0.80
+k_ap			= 0.97
 impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
@@ -2823,7 +2819,7 @@ k_disp			= 0.1
 k_hit			= 19.0
 k_impulse		= 1.0
 k_pierce		= 0.01
-k_ap			= 0.75
+k_ap			= 0.86
 impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
