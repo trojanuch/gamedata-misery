@@ -974,16 +974,15 @@
 		<actor_dialog>zat_a2_stalker_barmen_oasis_art_sell</actor_dialog>
 		<actor_dialog>zat_a2_stalker_barmen_b52_about_snag</actor_dialog>
 		<actor_dialog>zat_a2_stalker_barmen_b52_about_nimble</actor_dialog>
+		<actor_dialog>zat_a2_linker_b29_actor_info</actor_dialog>
+		<actor_dialog>zat_a2_linker_b29_actor_get_adv_task</actor_dialog>
+		<actor_dialog>zat_a2_linker_b29_actor_give_adv_task</actor_dialog>
 		<actor_dialog>zat_a2_stalker_barmen_b30_take_money_actor_dialog</actor_dialog>
 		<actor_dialog>zat_a2_stalker_barmen_actor_info</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 	</specific_character>
-	
-<!--		<actor_dialog>zat_a2_linker_b29_actor_info</actor_dialog>
-<!--		<actor_dialog>zat_a2_linker_b29_actor_get_adv_task</actor_dialog>
-<!--		<actor_dialog>zat_a2_linker_b29_actor_give_adv_task</actor_dialog>
 
 	<!-- Медик-вампир -->
 	<specific_character id="zat_b22_stalker_medic" team_default="1">
@@ -1046,7 +1045,6 @@
 
 		<start_dialog>zat_b3_stalker_tech_start</start_dialog>
 
-		<actor_dialog>dm_tech_repair</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_produce_62_show</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_produce_62_end</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_return_access_card</actor_dialog>

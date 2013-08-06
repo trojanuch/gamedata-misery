@@ -64,15 +64,15 @@ function add_dialog(p_id,id,phrase_id,cond,act)
 	return phrase_script
 end
 
-function dm_init_dynamic_repair_dialog(dialog)
-	saved_dialog = dialog
-
-	add_dialog("",0,"st_mechanic_query_items")
-
-	local script = add_dialog(0,1,"st_mechanic_repair_not_done","inventory_upgrades.dont_has_repaired_items")
-	script:SetScriptText("inventory_upgrades.dm_repair_not_done")
-	add_dialog(0,2,"st_mechanic_repair_done","inventory_upgrades.has_repaired_items","inventory_upgrades.give_repaired_items")
-end
+--function dm_init_dynamic_repair_dialog(dialog)
+--	saved_dialog = dialog
+--
+--	add_dialog("",0,"st_mechanic_query_items")
+--
+--	local script = add_dialog(0,1,"st_mechanic_repair_not_done","inventory_upgrades.dont_has_repaired_items")
+--	script:SetScriptText("inventory_upgrades.dm_repair_not_done")
+--	add_dialog(0,2,"st_mechanic_repair_done","inventory_upgrades.has_repaired_items","inventory_upgrades.give_repaired_items")
+--end
 
 -- End Alundaio
 -----------------------------------------------------------------------------

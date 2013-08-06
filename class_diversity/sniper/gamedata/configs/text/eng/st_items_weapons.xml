@@ -157,7 +157,7 @@
 		<text>7.62x54 mm PP rounds</text>
 	</string>
 	<string id="ammo-7.62x54-ap_descr">
-		<text>Cheap 7.62 PP (also known as 7.62 R) is a dated rifle caliber developed and used by Soviet Empire near the end of 19th century and later on USSR till few years after World War II. It was originally desinged for Mosin-Nagant standard-issue infrantry rifle and as this renown weapon is still manufactured and used widely in the Exclusion Zone - so is the round, making it quite common finding in Stalkers inventories and trader stocks there. Ammunition is relatively cheap but it lacks in penetration capabilites in comparison to more modern desings. It can also be used as a chaeper alternative for the PKM machine gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>Cheap 7.62 PP (also known as 7.62 R) is a dated rifle caliber introduced in the Soviet Empire at the turn of the 19th century and was still used by the USSR after World War II. It was originally designed for Mosin-Nagant standard-issue infantry rifle and is quite common in the Zone due to the popularity of the rifle. The round is relatively cheap but it lacks in penetrative capabilities in comparison to more modern ammo types. It can also be used as a cheaper solution in the PKM machine gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x54-ap_s">
 		<text>7.62x54 PP</text>
@@ -348,13 +348,13 @@
 		<text>PSS-2x scope</text>
 	</string>
 	<string id="st_addon_scope_detector_descr">
-		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to assault rifles such as AK-74 or AN-94. Recognized for its durability, versatility and very well-designed reticule pattern featuring convenient range-finder scale. This particular type has been equipped with medium-range heat sensor and 5.0x magnification rate. This variant was mainly designed for use by Spetznaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[0,153,255,255] • %c[0,140,140,140] Built-in mid-range heat sensor\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to assault rifles such as AK-74 or AN-94. Recognized for its durability, versatility and very well-designed reticule pattern featuring convenient range-finder scale. This particular type has been equipped with medium-range heat sensor and 5.0x magnification rate. This variant was mainly designed for use by Spetsnaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[0,153,255,255] • %c[0,140,140,140] Built-in mid-range heat sensor\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_night_vision">
 		<text>NSPU-3 scope</text>
 	</string>
 	<string id="st_addon_scope_night_vision_descr">
-		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to assault rifles such as AK-74 or AN-94. Recognized for its durability, versatility and very well-designed reticule pattern featuring convenient range-finder scale. This particular type has been equipped with self-sustaining third generation night vision device and 2.6x magnification rate, making it ideal for close to medium range combat in low-light conditions. This variant was mainly designed for use by Spetznaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]PSO (for Pritsel Snaipersky Optichesky, "Optical Sniper Sight") is a series of Soviet-made optical scopes produced by Novosibirsk Instrument-Making Plant (NPZ Optics State Plant). In wide use since 1964 where it was introduced as a standard issue telescopic sight for SVD sniper rifle. The scope has been later adapted to assault rifles such as AK-74 or AN-94. Recognized for its durability, versatility and very well-designed reticule pattern featuring convenient range-finder scale. This particular type has been equipped with self-sustaining third generation night vision device and 2.6x magnification rate, making it ideal for close to medium range combat in low-light conditions. This variant was mainly designed for use by Spetsnaz units. It is attached to weapons by means of a dovetail mount.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1\n%c[0,153,255,255] • %c[0,140,140,140] Built-in gen. 3 nvd\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD</text>
 	</string>
 	<string id="st_addon_scope_susat">
 		<text>SUSAT 4x scope</text>
@@ -456,7 +456,7 @@
 		<text>PSO-1-1</text>
 	</string>
 	<string id="st_addon_scope_vsk_descr">
-		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]SPECIAL version of Soviet PSO-1 scope with reticule, designed specifically to assist in firing low-velocity, heavy bullets such as 9x39 caliber. The grid pattern and range-finder scale make it easier to compensate for increased drop and wind susceptibility of such rounds, while radioactively lit center-point increases effectiveness in low-light conditions. This set of properties makes the scope ideal for use on top of Spetnaz-dedicated, special-purpose firearms such as OTs-14 Groza or AS VAL. It is also by standard mounted on VSS Vintorez sub-sonic sniper rifle. Although the reticule is designed specifically for above-mentioned purposes, the scope is attached using standard dovetail mount, thus it can be installed on any Warsaw Pact rifle.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1-1</text>
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] all Warsaw Pact rifles\n \n%c[0,170,170,170]SPECIAL version of Soviet PSO-1 scope with reticule, designed specifically to assist in firing low-velocity, heavy bullets such as 9x39 caliber. The grid pattern and range-finder scale make it easier to compensate for increased drop and wind susceptibility of such rounds, while radioactively lit center-point increases effectiveness in low-light conditions. This set of properties makes the scope ideal for use on top of Spetsnaz-dedicated, special-purpose firearms such as OTs-14 Groza or AS VAL. It is also by standard mounted on VSS Vintorez sub-sonic sniper rifle. Although the reticule is designed specifically for above-mentioned purposes, the scope is attached using standard dovetail mount, thus it can be installed on any Warsaw Pact rifle.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]2.6x\n%c[0,93,0,116] • %c[0,140,140,140] Quality: %c[0,170,170,170]very high\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]PSO-1-1</text>
 	</string>
 	<string id="st_addon_silencer">
 		<text>U.S. Army smallbore rifle silencer</text>
@@ -657,7 +657,7 @@
 		<text>Military Knife</text>
 	</string>
 	<string id="st_knife_h_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Basic utility knife, commonly used by Stalkers due to its versatility. Limited combat use.</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Basic utility knife, commonly used by Stalkers due to its versatility and practical (altou non-combat) usability.\n \n[0,204,0,51]CAUTION:\n \n%c[0,170,170,170]Knife is not desinged for combat and will do very little damage vesus almost all target. Use only as a last-resort weapon to finish-off an already weakened enemy.</text>
 	</string>
 	<string id="st_knife_m_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Standard issue military knife.</text>
@@ -1208,6 +1208,9 @@
 	<string id="st_wpn_sig550_sniper">
 		<text>SG 550-S Sniper</text>
 	</string>
+	<string id="st_wpn_sig550_sniper_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A marksman variant of a populat swiss-made assault rifle, the SG 550-S constitutes a perfect middle between sniper and assault rifle providing merits of both types of weaponry. On the other hand it suffers from ceetain draw-backs such as aomewhat lacking stopping power and accuracy (for a sniper rifle) and lack of automatic fire. Still it remains one of the best, top-tier weapon systems available withing the Exclusion Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] custom SIG scope (permanent)</text>
+	</string>
 	<string id="st_wpn_sig550_custom">
 		<text>SG 550 (Customized)</text>
 	</string>
@@ -1509,10 +1512,10 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A rare Soviet military knife of high historic and symbolic value. Decorated with an iron emblem of a certain World War II parachute division on the wooden handle. Any Stalker in possession of one of these, be it novice or veteran, is highly respected anywhere in the Zone and especially within his faction. Usually awarded for exceptional performance during missions, for example for saving a faction leader from the certain death.</text>
 	</string>
 	<string id="st_knife_spetznaz">
-		<text>spetznaz switchblade</text>
+		<text>Spetsnaz switchblade</text>
 	</string>
 	<string id="st_knife_spetznaz_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A well kept Spetsnaz military knife ideal for recon class soldiers. Spetznaz units were to use it to slit throats of MRBM launching sites crews few days prior to planned massive nuclear exchange on European operational theater. It is a deadly weapon and the only knife available in the Zone which is relatively good in both: piercing armors and dealing massive tissue damage. Ultimate melee weapon.</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A well kept Spetsnaz military knife ideal for recon class soldiers. Spetsnaz units were to use it to slit throats of MRBM launching sites crews few days prior to planned massive nuclear exchange on European operational theater. It is a deadly weapon and the only knife available in the Zone which is relatively good in both: piercing armors and dealing massive tissue damage. Ultimate melee weapon.</text>
 	</string>
 	<string id="st_knife_hunting">
 		<text>Large hunting knife</text>
