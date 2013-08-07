@@ -186,6 +186,34 @@ scope_nightvision = scope_nightvision
 scope_texture		= wpn_crosshair_pso1
 scope_zoom_factor	= 36	; x2.7
 
+[wpn_addon_scope_vsk]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+description		= st_addon_scope_vsk_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 2290
+
+holder_range_modifier	= 1.3
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_vsk
+inv_name_short	= st_addon_scope_vsk
+inv_weight		= .309
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 18
+inv_grid_y		= 2
+scope_texture		= wpn_crosshair_vsk
+scope_nightvision 	= scope_contrast
+scope_zoom_factor	= 36		;x2.6
+
 [wpn_addon_scope_susat]:identity_immunities  ; this is a 2.7x scope now, configs have been replaced !!!
 GroupControlSection	= spawn_group
 discovery_dependency	=
@@ -382,8 +410,6 @@ scope_texture		= wpn_crosshair_susat
 scope_nightvision = scope_nightvision
 scope_zoom_factor	= 42	; x1.6
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; TO DO MISSING SCOPES
@@ -551,33 +577,6 @@ inv_grid_x		= 14
 inv_grid_y		= 22
 scope_texture		= wpn_crosshair_pu9130_scratched
 scope_zoom_factor	= 30 ; 2x
-
-[wpn_addon_scope_vsk]:identity_immunities
-GroupControlSection	= spawn_group
-discovery_dependency =
-$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
-class			= WP_SCOPE
-cform           = skeleton
-visual          = dynamics\weapons\wpn_upgrade\wpn_scope_zf4.ogf
-description		= st_addon_scope_vsk_descr
-slot = -1
-;$prefetch 		= 64
-
-cost			= 2290
-
-holder_range_modifier	= 1.3
-holder_fov_modifier	= 1.0
-
-inv_name		= st_addon_scope_vsk
-inv_name_short	= st_addon_scope_vsk
-inv_weight		= .309
-
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x		= 15
-inv_grid_y		= 22
-scope_texture		= wpn_crosshair_vsk
-scope_zoom_factor	= 36		;x2.6
 
 [wpn_addon_scope_acog]:identity_immunities
 GroupControlSection	= spawn_group

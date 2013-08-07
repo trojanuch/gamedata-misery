@@ -291,6 +291,7 @@
 #include "w_fnfallelcan.ltx"
 #include "w_trg.ltx"
 #include "w_sako.ltx"
+#include "w_ksvk.ltx"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Огнестрельное оружие
@@ -862,7 +863,7 @@ hud_icon = ui_hud2_res_back
 
 k_dist			= 1
 k_disp			= 0.66; 3.5
-k_hit			= 0.9
+k_hit			= 1.26
 k_impulse		= 0.6
 k_pierce		= 1.3
 k_ap			= 0.81
@@ -886,16 +887,16 @@ $prefetch 		= 64
 
 cost					 = 2860
 
-box_size		= 25
+box_size		= 15
 
 inv_name		= ammo-7.62x54-r
 inv_name_short		= ammo-7.62x54-r_s
 inv_weight		= .18
 
-inv_grid_width		= 2
-inv_grid_height		= 1
-inv_grid_x			= 16
-inv_grid_y			= 13
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 8
+inv_grid_y         = 40
 
 k_hit_critical   = 1.
 k_dist			= 0.8
@@ -911,9 +912,9 @@ wm_size         = 0.0051
 k_air_resistance = 2.3
 explosive		= off
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[ammo_7.62x54_ap_2]:ammo_7.62x54_ap ; technical
+[ammo_7.62x54_ap_2]:ammo_7.62x54_ap ; old saves compatibility section
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1074,7 +1075,7 @@ k_disp			= 4.8 ;7
 k_hit			= 0.36
 k_impulse		= 0.7
 k_pierce		= 0.2
-k_ap			= 0.004
+k_ap			= 0.0001
 impair			= 1.05 ; 1.1
 buck_shot		= 12
 tracer			= off        ;  off
@@ -1554,6 +1555,80 @@ impair			= 1.05 ; 1.29
 buck_shot		= 1
 tracer			= off       ;  on
 wm_size         = 0.006
+explosive		= off
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[ammo_12.7x108_fmj]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
+class			= AMMO_S
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
+description		= ammo_12.7x108_fmj_descr
+$prefetch 		= 64
+
+cost			= 3880
+
+box_size		= 10
+
+inv_name		= ammo_12.7x108_fmj
+inv_name_short	= ammo_12.7x108_fmj
+inv_weight		= .161
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 4
+inv_grid_y         = 53
+
+k_dist			= 1
+k_disp			= 0.66	; 3.2
+k_hit			= 2.66
+k_impulse		= 1.17
+k_pierce		= 2.47
+k_ap			= 1.78
+impair			= 1.05 ; 0.95
+buck_shot		= 1
+tracer			= off        ;  off
+wm_size         = 0.0108
+explosive		= off
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[ammo_12.7x108_ap]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
+class			= AMMO_S
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
+description		= ammo_12.7x108_ap_descr
+$prefetch 		= 64
+
+cost			= 4980
+
+box_size		= 10
+
+inv_name		= ammo_12.7x108_ap
+inv_name_short	= ammo_12.7x108_ap
+inv_weight		= .161
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 4
+inv_grid_y         = 53
+
+k_dist			= 1
+k_disp			= 0.66	; 3.2
+k_hit			= 2.58
+k_impulse		= 1.26
+k_pierce		= 3.86
+k_ap			= 2.48
+impair			= 1.05 ; 0.95
+buck_shot		= 1
+tracer			= off        ;  off
+wm_size         = 0.0094
 explosive		= off
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -2679,8 +2754,8 @@ k_disp			= 0.66
 k_hit			= 19.0
 k_impulse		= 1.1
 k_pierce		= 0.01
-k_ap			= 0.33
-impair			= 1.05 ; 1
+k_ap			= 0.48
+impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
 wm_size         	= 0.0085
@@ -2715,8 +2790,8 @@ k_disp			= 0.66
 k_hit			= 19.0
 k_impulse		= 1.2
 k_pierce		= 0.01
-k_ap			= 1.15
-impair			= 1.05 ; 1
+k_ap			= 1.37
+impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
 wm_size         	= 0.0085
@@ -2751,8 +2826,8 @@ k_disp			= 0.66
 k_hit			= 19.0
 k_impulse		= 1.2
 k_pierce		= 0.01
-k_ap			= 1.35
-impair			= 1.05 ; 1
+k_ap			= 1.56
+impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
 wm_size         	= 0.0085
@@ -2787,8 +2862,8 @@ k_disp			= 0.66
 k_hit			= 19.0
 k_impulse		= 1.2
 k_pierce		= 0.01
-k_ap			= 0.80
-impair			= 1.05 ; 1
+k_ap			= 0.97
+impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
 wm_size         	= 0.0085
@@ -2823,8 +2898,8 @@ k_disp			= 0.1
 k_hit			= 19.0
 k_impulse		= 1.0
 k_pierce		= 0.01
-k_ap			= 0.75
-impair			= 1.05 ; 1
+k_ap			= 0.86
+impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off        ;  off
 wm_size         	= 0.0105
@@ -2861,7 +2936,7 @@ k_hit			= 1
 k_impulse		= 1
 k_pierce		= 1
 k_ap			= 1
-impair			= 1.05 ; 1
+impair			= 1.5 ; 1
 buck_shot		= 1
 tracer			= off
 wm_size         	= 0.001

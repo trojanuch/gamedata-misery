@@ -139,10 +139,16 @@
 	<string id="mutant_burer_hand">
 		<text>Burer hand</text>
 	</string>
-			<string id="mutant_pseudogigant_hand_description">
+	<string id="mutant_pseudogigant_hand_description">
 		<text>A hand of a pseudogiant may prove useful for the scientists who will gladly examine it. Smells like old socks and bad Kimchi.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] mutated body part\n%c[0,153,255,255] • %c[0,140,140,140] very rare scientific specimen\n%c[0,153,255,255] • %c[0,140,140,140] valuable</text>
 	</string>
 	<string id="mutant_pseudogigant_hand">
 		<text>Pseudogiant hand</text>
+	</string>
+	<string id="mutant_pseudogigant_eye_description">
+		<text>An eye of the pseudogiant is very similar to human's only larger. It can also have multiple colors of the iris and have quite large tear glands. It a known feature that Pseudogiants often weap tears but it not known wheter this is an effect of some phisiological process or a by-product of creatures psycology. In any case scientiscs are very prone to studying this phenomena, thus a high demand for and price of these eyes on the specimen market.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] mutated body part\n%c[0,153,255,255] • %c[0,140,140,140] very rare scientific specimen\n%c[0,153,255,255] • %c[0,140,140,140] valuable</text>
+	</string>
+	<string id="mutant_pseudogigant_eye">
+		<text>Pseudogiant eye</text>
 	</string>
 </string_table>
