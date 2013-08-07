@@ -1,7 +1,16 @@
-function radio_spawn()
-alife():create("radio_shevchenko",vector():set(5.1626,-5.0778,29.9566),953843,19)
-alife():create("radio_skadovsk",vector():set(124.06143798828,-4.3362640380859,175.74554138184),1182873,225)
-alife():create("refrigerator_baby",vector():set(-383.9515,6.8990,-12.1225),201591,52)
-alife():create("radio_yanov",vector():set(-58.112621307373,5.932647228241,203.24978942871),623866,333)
-alife():create("radio_bunker",vector():set(-217.9680, -3.5675, 74.4321),346871,385)
+
+function spawn_music_01()
+
+alife():create("krujka_boroda_music",vector():set(124.06143798828,-4.3362640380859,175.74554138184),1182873,225)
+
+alife():create("krujka_jupiter_music",vector():set(-58.112621307373,5.932647228241,203.24978942871),623866,333)
+
+end
+
+function save_variable(variable_name, value)
+xr_logic.pstor_store(db.actor, variable_name, value)
+end
+
+function load_variable(variable_name, value_if_not_found)
+return xr_logic.pstor_retrieve(db.actor, variable_name, value_if_not_found)
 end

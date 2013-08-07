@@ -160,7 +160,7 @@ power_loss						= -0.02
 [up_sect_fourtd_exo_outfit]
 cost 		= 9940
 inv_weight	= +0.63
-value		= -5
+value		= +5
 
 hit_fraction_actor				= -0.011
 explosion_protection 			= 0.036
@@ -541,8 +541,8 @@ icon                    = ui_inGame2_upgrade_exo_outfit_18
 scheme_index            = 2, 5
 known                   = 1
 effects                 =
-section                 = up_sect_fourte_exo_outfit
-property                = prop_power
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -552,10 +552,10 @@ effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_exo_c1_name
-description             = st_up_exo_c1_descr
-icon                    = ui_inGame2_upgrade_exo_outfit_17
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fourtf_exo_outfit]
 scheme_index            = 2, 6
@@ -580,7 +580,7 @@ icon                    = ui_inGame2_upgrade_exo_outfit_19
 [up_fiftha_exo_outfit]
 scheme_index            = 0, 4
 known                   = 1
-effects                 = 
+effects                 = up_gr_fifthcd_exo_outfit
 section                 = up_sect_empty
 property                = prop_not_available_no_reason
 
@@ -600,7 +600,7 @@ icon                    = ui_inGame2_upgrade_unavailable
 [up_fifthc_exo_outfit]
 scheme_index            = 1, 7
 known                   = 1
-effects                 = 
+effects                 = up_gr_fifthef_exo_outfit
 section                 = up_sect_empty
 property                = prop_not_available_no_reason
 
@@ -620,7 +620,7 @@ icon                    = ui_inGame2_upgrade_unavailable
 [up_fifthd_exo_outfit]
 scheme_index            = 1, 8
 known                   = 1
-effects                 = 
+effects                 = up_gr_fifthef_exo_outfit
 section                 = up_sect_empty
 property                = prop_not_available_no_reason
 

@@ -468,6 +468,10 @@ function actor_binder:update(delta)
 	if (axr_main) then axr_main.actor_on_update(self,delta) end
 	if (xrs_debug_tools) then xrs_debug_tools.on_actor_update(self,delta) end
 	-- alundaio
+	if spawn_music.load_variable("spawn_music_p_",false)==false then
+		spawn_music.spawn_music_01()
+		spawn_music.save_variable("spawn_music_p_",true)
+	end
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:save(packet)

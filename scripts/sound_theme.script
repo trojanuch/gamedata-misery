@@ -7,7 +7,7 @@ theme = {}
 
 -- Restore ph_sound-scheme (by Shadows)
 ph_snd_themes = {}
-ph_snd_themes["radio_skadovsk"] = {
+ph_snd_themes["music_boroda"] = {
 	"music\\radio\\01_Radiomix",
 	"music\\radio\\02_Radiomix",
 	"music\\radio\\03_Radiomix",
@@ -20,12 +20,7 @@ ph_snd_themes["radio_skadovsk"] = {
 	"music\\radio\\10_Radiomix",
 	"music\\radio\\11_Radiomix"
 }
-ph_snd_themes["radio_shevchenko"] = {
-	"music\\radio\\01_radio_im_dropout_scotch",
-	"music\\radio\\02_radio_im_noisemaker",
-	"music\\radio\\03_radio_im_dropout"
-}
-ph_snd_themes["radio_yanov"] = {
+ph_snd_themes["music_jupiter"] = {
 	"music\\radio\\01_Radiomix",
 	"music\\radio\\02_Radiomix",
 	"music\\radio\\03_Radiomix",
@@ -37,12 +32,6 @@ ph_snd_themes["radio_yanov"] = {
 	"music\\radio\\09_Radiomix",
 	"music\\radio\\10_Radiomix",
 	"music\\radio\\11_Radiomix"
-}
-ph_snd_themes["radio_bunker"] = {
-	"music\\radio\\01_siberiannights"
-}
-ph_snd_themes["refrigerator_baby"] = {
-	"music\\radio\\01_babycry"
 }
 
 local sounds_base = stalker_ids.sound_script + 10000
