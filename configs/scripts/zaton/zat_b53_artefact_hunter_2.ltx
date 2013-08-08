@@ -11,13 +11,14 @@ prior = 70
 active = walker@wait_actor_scene_start
 on_hit = hit
 on_death = death
- 
+
 [walker@wait_actor_scene_start]:walker@def_no_loot
 meet = no_meet
 path_walk = artefact_hunter_2_walk
 path_look = artefact_hunter_2_look
 def_state_standing = wait_na
 on_info = {+zat_b53_artefact_hunter_2_must_say_go_on} walker@scene_start
+invulnerable = true
 
 [walker@scene_start]:walker@def_no_loot
 meet = no_meet
@@ -81,19 +82,19 @@ on_info5 = {+zat_b53_thanks_dialog} remark@actor_help_wait %=actor_friend%
 meet = meet
 anim = wait_na
 target = story | actor
-on_info = {=npc_talking} remark@acor_help_talk
-on_info2 = {+zat_b53_thanks_dialog +zat_b53_artefact_hunter_1_with_friend} remark@sit_ass_talk
+on_info = {=npc_talking} remark@actor_help_talk
+on_info2 = {+zat_b53_thanks_dialog +zat_b53_artefact_hunter_1_with_friend} beh@sit_ass_talk
 on_info3 = {+zat_b53_actor_enemy} walker@actor_enemy
 on_info4 = {=surge_kill_all} %=kill_npc%
 on_info5 = {!is_alive(zat_b53_artefact_hunter_1)} remark@wait_for_a_new_job
 on_info6 = {+zat_b53_thanks_dialog} %=actor_friend%
 
-[remark@acor_help_talk]:walker@def_no_loot
+[remark@actor_help_talk]:walker@def_no_loot
 meet = meet
 anim = wait_na
 target = story | actor
 on_info = {+zat_b53_artefact_hunter_dialog_1_end} remark@wait_actor_help_to_friend
-on_info2 = {+zat_b53_thanks_dialog +zat_b53_artefact_hunter_1_with_friend} remark@sit_ass_talk
+on_info2 = {+zat_b53_thanks_dialog +zat_b53_artefact_hunter_1_with_friend} beh@sit_ass_talk
 on_info3 = {+zat_b53_actor_enemy} walker@actor_enemy
 on_info4 = {=surge_kill_all} %=kill_npc%
 on_info5 = {+zat_b53_thanks_dialog} %=actor_friend%
@@ -102,7 +103,7 @@ on_info5 = {+zat_b53_thanks_dialog} %=actor_friend%
 meet = no_meet
 anim = wait_na
 target = story | zat_b53_artefact_hunter_1
-on_info = {+zat_b53_thanks_dialog +zat_b53_artefact_hunter_1_with_friend} remark@sit_ass_talk
+on_info = {+zat_b53_thanks_dialog +zat_b53_artefact_hunter_1_with_friend} beh@sit_ass_talk
 on_info2 = {+zat_b53_actor_enemy} walker@actor_enemy
 on_info3 = {=surge_kill_all} %=kill_npc%
 on_info4 = {!is_alive(zat_b53_artefact_hunter_1)} remark@wait_for_a_new_job
@@ -115,11 +116,50 @@ target = story | zat_b53_artefact_hunter_1
 on_info = {+zat_b53_actor_enemy} walker@actor_enemy
 on_info2 = {=surge_kill_all} %=kill_npc%
 
-[remark@sit_ass_talk]:walker@def_no_loot
+[beh@sit_ass_talk]
+behavior_state = beh_move
+target = waypoint
 meet = meet
-anim = sit_ass
-target = path | zat_b53_artefact_hunter_2_sit_ass_look, 0
-on_info = {+zat_b53_actor_enemy} walker@actor_enemy
+corpse_detection_enabled = false
+gather_items_enabled = false
+pt1 = 1654677,30000,sit_ass look:425,-4,425
+path_end = camper@journey_skadovsk
+
+[camper@journey_skadovsk]
+out_restr = zat_a2_sr_noweap
+meet = meet
+corpse_detection_enabled = false
+gather_items_enabled = false
+def_state_moving = rush
+def_state_standing = idle
+shoot = always
+pt1 = 1224391,0,idle look:139,-7,183
+path_end = beh@wait_wall
+
+
+[beh@general]
+meet = meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = zat_a2_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+behavior_state = beh_move
+target = waypoint
+walk_dist = 100
+jog_dist = 220
+wait_anim = guard
+walk_anim = patrol
+jog_anim = patrol
+run_anim = rush
+delay_anim = guard
+
+[beh@wait_wall]
+use_camp = true
+pt1 = 1186086,60000,animpoint_stay_wall animpoint:125.75717926025,-7.3197393417358,179.54898071289,-1,0,0
+on_info = {+zat_b53_go_nil} %=clear_logic%
 
 [walker@actor_enemy]:walker@def_no_loot
 meet = no_meet
@@ -130,7 +170,7 @@ on_info = %=actor_enemy%
 use = true
 abuse = false
 allow_break = false
-trade_enable = false
+trade_enable = true
 close_anim = nil
 close_distance = 0
 far_distance = 0

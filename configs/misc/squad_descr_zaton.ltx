@@ -313,19 +313,11 @@ target_smart = zat_b42_smart_terrain
 spawn_point = zat_b42_smart_terrain_mob_home
 story_id = zat_b42_controller_squad
 
-[renderman_selo_test_controller_squad]:online_offline_group
-faction = monster_zombied_day
-npc = m_controller_normal
-target_smart = alex_selo_smart_terrain
-spawn_point = alex_selo_smart_terrain_mob_home
-;story_id = zat_b42_controller_squad
-
-
 ;------------------------b40-------------------------------
 [zat_b40_merc_squad]:online_offline_group
 faction = killer
 sympathy = 0
-npc = zat_b40_merc_squad_leader_1, zat_b40_merc_squad_leader_2, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3
+npc = zat_b40_merc_squad_leader_1, zat_b40_merc_squad_leader_2, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2,sim_default_killer_1,sim_default_killer_1
 target_smart = zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 story_id = zat_b40_merc_squad
@@ -334,7 +326,7 @@ story_id = zat_b40_merc_squad
 faction = bandit_elite
 relationship = enemy
 npc_random = sim_default_bandit_4, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_2
-npc_in_squad = 2,2
+npc_in_squad = 4,4
 target_smart = {+zat_b40_find_information_comlpete -pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 
@@ -342,7 +334,7 @@ spawn_point = zat_b40_smart_terrain_spown_point
 faction = monolith
 relationship = enemy
 npc_random = sim_default_monolith_4, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_2
-npc_in_squad = 2, 2
+npc_in_squad = 4, 4
 target_smart = {+zat_b40_find_information_comlpete +pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 
@@ -368,7 +360,7 @@ story_id = zat_b39_dogs_squad
 [zat_b53_artefact_hunter_1_squad]:online_offline_group
 faction = stalker_sci
 npc = zat_b53_artefact_hunter_1, zat_b53_artefact_hunter_2
-target_smart = {-zat_b53_go_nil} zat_b53, nil
+target_smart = {+zat_b53_artefact_hunter_quest_1_finished} zat_stalker_base_smart, {-zat_b53_go_nil} zat_b53, nil
 spawn_point = zat_b53_artefact_hunter_2_walk
 story_id = zat_b53_artefact_hunter_1_squad
 

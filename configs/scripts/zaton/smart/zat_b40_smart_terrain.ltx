@@ -9,12 +9,12 @@ spawn_bandits
 spawn_monolith
 
 [spawn_bandits]
-spawn_squads = bandit_sim_squad_hostile_elite_zat_b40
-spawn_num = {!squad_exist(zat_b40_merc_squad) -pri_a17_actor_has_gauss_rifle} 3, 0
+spawn_squads = zat_b40_bandit_squad
+spawn_num = {!squad_exist(zat_b40_merc_squad) +zat_b40_find_information_complete -pri_a17_actor_has_gauss_rifle} 4, 0
 
 [spawn_monolith]
-spawn_squads = monolith_sim_squad_advanced_1, monolith_sim_squad_veteran_2, monolith_sci_simulation_squad_zat_b40
-spawn_num = {!squad_exist(zat_b40_merc_squad) +pri_a17_actor_has_gauss_rifle} 3, 0
+spawn_squads = zat_b40_monolith_squad
+spawn_num = {!squad_exist(zat_b40_merc_squad) !squad_exist(zat_b40_bandit_squad) +pri_a17_actor_has_gauss_rifle} 4, 0
 
 [exclusive]
 zat_b40_guard_leader_01 = zaton\zat_b40_mercs.ltx
@@ -28,3 +28,11 @@ zat_b40_guard_05 = zaton\zat_b40_mercs.ltx
 zat_b40_guard_06 = zaton\zat_b40_mercs.ltx
 zat_b40_guard_07 = zaton\zat_b40_mercs.ltx
 zat_b40_guard_08 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_09 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_10 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_11 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_12 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_13 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_14 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_15 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_16 = zaton\zat_b40_mercs.ltx
