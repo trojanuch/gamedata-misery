@@ -109,7 +109,7 @@ function on_update()
 			end
 
 			-- Quest extras by Alundaio
-			if (axr_quest_master) then axr_quest_master.alun_stashes() end
+--			if (axr_quest_master) then axr_quest_master.alun_stashes() end
 		end
 	elseif (stage == 1) then
 		if (timer and time_global() > timer) then

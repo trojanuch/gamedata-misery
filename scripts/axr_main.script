@@ -123,7 +123,7 @@ function on_game_start()
 
 	-- Misery
 	if (axr_misery) then axr_misery.on_game_start() end
-	if (axr_quest_master) then axr_quest_master.on_game_start() end
+--	if (axr_quest_master) then axr_quest_master.on_game_start() end
 	if (axr_battery) then axr_battery.on_game_start() end
 
 	-- Dynamic Spawn
