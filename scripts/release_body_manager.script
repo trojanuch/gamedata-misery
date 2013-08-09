@@ -4,8 +4,8 @@
 --' Made by Distemper ----------------------------------------------------------------
 --' 11.02.08 ----------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
-local MIN_RELEASE_DISTANCE = 150
-local IDLE_AFTER_DEATH = 17600 -- время лежания после смерти, в секундах
+local MIN_RELEASE_DISTANCE = 200
+local IDLE_AFTER_DEATH = 60000 -- время лежания после смерти, в секундах
 local BODY_MAX_COUNT = 200 -- количество тел которое одновременно может находится на локации
 local function add_to_release_table(obj,death,release_tbl)
 	--alun_utils.printf("add to release_objects_table [ %s ]",obj:section())
