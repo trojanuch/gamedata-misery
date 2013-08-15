@@ -90,7 +90,7 @@ npc_in_squad = 4, 4
 
 [simulation_stalker_for_a1]:online_offline_group
 faction = stalker
-target_smart = {+zat_a1_atack_from_zat_sim_15} zat_a1:nil, nil
+;target_smart = {+zat_a1_atack_from_zat_sim_15} zat_a1:nil, nil
 spawn_point = zat_sim_15_spawn_for_a1
 npc = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_2
 
@@ -137,13 +137,13 @@ npc_in_squad = 3, 4
 faction = stalker_hunter_day
 npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 2, 3
-;target_smart = {=is_dark_night} nil, zat_sim_4
+;;target_smart = {=is_dark_night} nil, zat_sim_4
 
 [stalker_hunter_day_zat_sim_10_assault_simulation_squad]:online_offline_group
 faction = stalker_hunter_day
 npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 3, 4
-;target_smart = {=is_dark_night} nil, zat_sim_10
+;;target_smart = {=is_dark_night} nil, zat_sim_10
 
 [stalker_hunter_night_simulation_squad]:online_offline_group
 faction = stalker_hunter_night
@@ -256,14 +256,14 @@ faction = stalker_hunter_day_hostile
 relationship = enemy
 npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 2, 3
-;target_smart = {=is_dark_night} nil, zat_sim_4
+;;target_smart = {=is_dark_night} nil, zat_sim_4
 
 [stalker_hunter_day_zat_sim_10_assault_simulation_squad_hostile]:online_offline_group
 faction = stalker_hunter_day_hostile
 relationship = enemy
 npc_random = sim_default_stalker_hunter_day, sim_default_stalker_hunter_day, sim_default_stalker_hunter_night
 npc_in_squad = 2, 3
-;target_smart = {=is_dark_night} nil, zat_sim_10
+;;target_smart = {=is_dark_night} nil, zat_sim_10
 
 [stalker_hunter_night_simulation_squad_hostile]:online_offline_group
 faction = stalker_hunter_night_hostile
@@ -1259,7 +1259,7 @@ npc_in_squad = 3, 5
 faction 		= zombied
 npc_random 		= sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_3, sim_default_zombied_4
 npc_in_squad = 4, 5
-;target_smart = {=is_dark_night} nil, zat_sim_4
+;;target_smart = {=is_dark_night} nil, zat_sim_4
 
 [simulation_zombied_1_jup_sim_16]:online_offline_group
 faction 		= zombied
@@ -1307,12 +1307,12 @@ npc_in_squad = 1, 5
 ;--------------- monster simulation squads -----------------------
 
 [simulation_bloodsucker]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 2
 
 [simulation_bloodsucker_pripyat]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 4
 
@@ -1338,25 +1338,25 @@ target_smart = jup_b219
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, jup_sim_2
+;target_smart = {=is_dark_night} nil, jup_sim_2
 
 [simulation_bloodsucker_jup_sim_20]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, jup_sim_20
+;target_smart = {=is_dark_night} nil, jup_sim_20
 
 [simulation_bloodsucker_jup_sim_12]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_sim_12
+;target_smart = {=is_dark_night} nil, jup_sim_12
 
 [simulation_bloodsucker_jup_b212]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 2, 4
-target_smart = {=is_dark_night} nil, jup_b212
+;target_smart = {=is_dark_night} nil, jup_b212
 
 [simulation_bloodsucker_jup_b205_smart_terrain]:online_offline_group
 faction = monster_predatory_night
@@ -1368,55 +1368,55 @@ target_smart = jup_b205_smart_terrain
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, jup_b209
+;target_smart = {=is_dark_night} nil, jup_b209
 
 [simulation_bloodsucker_jup_b4]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, jup_b4
+;target_smart = {=is_dark_night} nil, jup_b4
 
 [simulation_bloodsucker_zat_sim_6]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_6
+;target_smart = {=is_dark_night} nil, zat_sim_6
 
 [simulation_bloodsucker_zat_sim_7]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_7
+;target_smart = {=is_dark_night} nil, zat_sim_7
 
 [simulation_bloodsucker_zat_sim_8]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_8
+;target_smart = {=is_dark_night} nil, zat_sim_8
 
 [simulation_bloodsucker_jup_sim_18]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, jup_sim_18
+;target_smart = {=is_dark_night} nil, jup_sim_18
 
 [simulation_bloodsucker_zat_sim_26]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_26
+;target_smart = {=is_dark_night} nil, zat_sim_26
 
 [simulation_bloodsucker_zat_sim_10]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_10
+;target_smart = {=is_dark_night} nil, zat_sim_10
 
 [simulation_bloodsucker_zat_sim_5]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_5
+;target_smart = {=is_dark_night} nil, zat_sim_5
 
 [simulation_bloodsucker_zat_b38]:online_offline_group
 faction = monster_predatory_night
@@ -1440,43 +1440,43 @@ target_smart = zat_b28
 faction = monster_predatory_night
 npc_random = bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_b38
+;target_smart = {=is_dark_night} nil, zat_b38
 
 [simulation_bloodsucker_zaton_smrter_sim_3]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_4
+;target_smart = {=is_dark_night} nil, zat_sim_4
 
 [simulation_bloodsucker_jup_b208]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 2, 4
-target_smart = {=is_dark_night} nil, jup_b208
+;target_smart = {=is_dark_night} nil, jup_b208
 
 [simulation_bloodsucker_pri_a21_mart_terrain]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 4
-target_smart = {=is_dark_night} nil, pri_a21_smart_terrain
+;target_smart = {=is_dark_night} nil, pri_a21_smart_terrain
 
 [simulation_bloodsucker_pri_sim_11]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 4
-target_smart = {=is_dark_night} nil, pri_sim_11
+;target_smart = {=is_dark_night} nil, pri_sim_11
 
 [simulation_bloodsucker_pri_sim_9]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 1, 4
-target_smart = {=is_dark_night} nil, pri_sim_9
+;target_smart = {=is_dark_night} nil, pri_sim_9
 
 [simulation_bloodsucker_zat_b100]:online_offline_group
 faction = monster_predatory_night
 npc_random = bloodsucker_weak, bloodsucker_weak, bloodsucker_weak, bloodsucker_normal, bloodsucker_normal, bloodsucker_strong, bloodsucker_strong
 npc_in_squad = 4, 5
-target_smart = {=is_dark_night} nil, zat_b100
+;target_smart = {=is_dark_night} nil, zat_b100
 
 ;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1493,7 +1493,7 @@ npc_in_squad = 2, 6
 ;;;;;;;;;;;;;;;;;;;;;;
 
 [simulation_burer]:online_offline_group
-faction = monster_predatory_day
+faction = monster_predatory_night
 npc_random = burer_normal
 npc_in_squad = 1, 3
 
@@ -1530,7 +1530,7 @@ target_smart = jup_b205_smart_terrain
 faction = monster_predatory_night
 npc_random = burer_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, jup_sim_2
+;target_smart = {=is_dark_night} nil, jup_sim_2
 
 [simulation_burer_zat_b38]:online_offline_group
 faction = monster_predatory_night
@@ -1554,7 +1554,7 @@ target_smart = zat_b40_smart_terrain
 faction = monster_predatory_night
 npc_random = burer_normal
 npc_in_squad = 2, 2
-target_smart = {=is_dark_night} nil, zat_sim_7
+;target_smart = {=is_dark_night} nil, zat_sim_7
 
 [simulation_burer_zat_b28]:online_offline_group
 faction = monster_predatory_night
@@ -1578,7 +1578,7 @@ target_smart = zat_b38
 faction = monster_predatory_night
 npc_random = burer_normal
 npc_in_squad = 3, 4
-target_smart = {=is_dark_night} nil, jup_b208
+;target_smart = {=is_dark_night} nil, jup_b208
 
 [simulation_burer_pri_b301]:online_offline_group
 faction = monster_predatory_night
@@ -1651,145 +1651,145 @@ npc_in_squad = 3, 6
 ;;;;;;;;;;;;;;;;;;;;;;
 
 [simulation_snork]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 1, 4
 
 [simulation_snork_jupiter]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 1, 3
 
 [simulation_snork_pripyat]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 5
 
 [simulation_snork_zat_b28]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_strong
 npc_in_squad = 3, 4
 target_smart = zat_b28
 
 [simulation_snork_zat_b38]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 4
 target_smart = zat_b38
 
 [simulation_snork_zat_b38u]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_strong
 npc_in_squad = 2, 4
 target_smart = zat_b38u
 
 [simulation_snork_zat_b40_smart_terrain]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_strong
 npc_in_squad = 2, 2
 target_smart = zat_b40_smart_terrain
 
 [simulation_snork_zaton_smrter_sim_11]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_strong
 npc_in_squad = 1, 4
 target_smart = zat_b38
 
 [simulation_snork_zaton_smrter_sim_1]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_strong
 npc_in_squad = 4, 4
-target_smart = {=is_dark_night} nil, zaton_smrter_sim_1
+;target_smart = {=is_dark_night} nil, zaton_smrter_sim_1
 
 [simulation_snork_jupiter_smrter_sim_4]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_strong
 npc_in_squad = 5, 6
-target_smart = {=is_dark_night} nil, jup_sim_19
+;target_smart = {=is_dark_night} nil, jup_sim_19
 
 [simulation_snork_jup_b205_smart_terrain]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 4, 4
 target_smart = jup_b205_smart_terrain
 
 [simulation_snork_jup_b4]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 3, 4
-target_smart = {=is_dark_night} nil, jup_b4
+;target_smart = {=is_dark_night} nil, jup_b4
 
 [simulation_snork_jup_sim_20]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, jup_sim_20
+;target_smart = {=is_dark_night} nil, jup_sim_20
 
 [simulation_snork_jup_b208]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 4
-target_smart = {=is_dark_night} nil, jup_b208
+;target_smart = {=is_dark_night} nil, jup_b208
 
 [simulation_snork_jup_b209]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 5
-target_smart = {=is_dark_night} nil, jup_b209
+;target_smart = {=is_dark_night} nil, jup_b209
 
 [simulation_snork_pri_b306]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 4
-target_smart = {=is_dark_night} nil, pri_b306
+;target_smart = {=is_dark_night} nil, pri_b306
 
 [simulation_snork_pri_b307]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 5
-target_smart = {=is_dark_night} nil, pri_b307
+;target_smart = {=is_dark_night} nil, pri_b307
 
 [simulation_snork_pri_a25]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 4
-target_smart = {=is_dark_night} nil, pri_a25
+;target_smart = {=is_dark_night} nil, pri_a25
 
 [simulation_snork_pri_b303]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 5
-target_smart = {=is_dark_night} nil, pri_b303
+;target_smart = {=is_dark_night} nil, pri_b303
 
 [simulation_snork_pri_b301]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 3, 4
-target_smart = {=is_dark_night} nil, pri_b301
+;target_smart = {=is_dark_night} nil, pri_b301
 
 [simulation_snork_pri_b304]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 3, 4
-target_smart = {=is_dark_night} nil, pri_b304
+;target_smart = {=is_dark_night} nil, pri_b304
 
 [simulation_snork_pri_b305]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 3, 4
-target_smart = {=is_dark_night} nil, pri_b305
+;target_smart = {=is_dark_night} nil, pri_b305
 
 [simulation_snork_pri_sim_1]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 3, 4
-target_smart = {=is_dark_night} nil, pri_sim_1
+;target_smart = {=is_dark_night} nil, pri_sim_1
 
 [simulation_snork_zat_b100]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_nigh
 npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 4, 5
-target_smart = {=is_dark_night} nil, zat_b100
+;target_smart = {=is_dark_night} nil, zat_b100
 
 ;;;;;;;;;;;;;;;;;;;;;;
 
@@ -2093,7 +2093,7 @@ npc_in_squad = 2, 2
 target_smart = pri_sim_1
 
 [simulation_poltergeist_flame]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc = m_poltergeist_normal_flame
 npc_in_squad = 2, 2
 
@@ -2195,16 +2195,16 @@ npc_random = chimera_normal
 npc_in_squad = 1, 2
 
 [simulation_chimera_zaton]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, {~50} zat_sim_5, {~50} zat_sim_3, {~50} zat_sim_1, {~50} zat_sim_18, {~50} zat_sim_10, {~50} zat_sim_7, zat_sim_26
+;target_smart = {=is_dark_night} nil, {~50} zat_sim_5, {~50} zat_sim_3, {~50} zat_sim_1, {~50} zat_sim_18, {~50} zat_sim_10, {~50} zat_sim_7, zat_sim_26
 
 [simulation_chimera_pripyat]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, pri_a15
+;target_smart = {=is_dark_night} nil, pri_a15
 
 [simulation_chimera_jupiter]:online_offline_group
 faction = monster_predatory_night
@@ -2233,7 +2233,7 @@ target_smart = jup_b219
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_b209
+;target_smart = {=is_dark_night} nil, jup_b209
 
 [simulation_chimera_jup_b4]:online_offline_group
 faction = monster_predatory_night
@@ -2245,115 +2245,115 @@ target_smart = jup_b4
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_b212
+;target_smart = {=is_dark_night} nil, jup_b212
 
 [simulation_chimera_jup_sim_20]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_sim_20
+;target_smart = {=is_dark_night} nil, jup_sim_20
 
 [simulation_chimera_jup_sim_12]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_sim_12
+;target_smart = {=is_dark_night} nil, jup_sim_12
 
 [simulation_chimera_zat_sim_20]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_20
+;target_smart = {=is_dark_night} nil, zat_sim_20
 
 [simulation_chimera_zat_sim_6]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_6
+;target_smart = {=is_dark_night} nil, zat_sim_6
 
 [simulation_chimera_zat_sim_7]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_7
+;target_smart = {=is_dark_night} nil, zat_sim_7
 
 [simulation_chimera_zat_sim_8]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_8
+;target_smart = {=is_dark_night} nil, zat_sim_8
 
 [simulation_chimera_zat_sim_5]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_5
+;target_smart = {=is_dark_night} nil, zat_sim_5
 
 [simulation_chimera_zat_sim_10]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_10
+;target_smart = {=is_dark_night} nil, zat_sim_10
 
 [simulation_chimera_zaton_smrter_sim_11]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, b38
+;target_smart = {=is_dark_night} nil, b38
 
 [simulation_chimera_zaton_smrter_sim_3]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_4
+;target_smart = {=is_dark_night} nil, zat_sim_4
 
 [simulation_chimera_jup_b205_smart_terrain]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
+;target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
 
 [simulation_chimera_pri_b301]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, pri_b301
+;target_smart = {=is_dark_night} nil, pri_b301
 
 [simulation_chimera_pri_b303]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, pri_b303
+;target_smart = {=is_dark_night} nil, pri_b303
 
 [simulation_chimera_pri_a17]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, pri_a17
+;target_smart = {=is_dark_night} nil, pri_a17
 
 [simulation_chimera_pri_b306]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, pri_b306
+;target_smart = {=is_dark_night} nil, pri_b306
 
 [simulation_chimera_pri_b307]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, pri_b307
+;target_smart = {=is_dark_night} nil, pri_b307
 
 [simulation_chimera_pri_sim_1]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, pri_sim_1
+;target_smart = {=is_dark_night} nil, pri_sim_1
 
 [simulation_chimera_pri_a25_smart_terrain]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, pri_a25_smart_terrain
+;target_smart = {=is_dark_night} nil, pri_a25_smart_terrain
 
 [simulation_chimera_jup_sim_18]:online_offline_group
 faction = monster_predatory_night
@@ -2365,7 +2365,7 @@ target_smart = jup_sim_18
 faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_b38
+;target_smart = {=is_dark_night} nil, zat_b38
 
 [simulation_chimera_zat_b38u]:online_offline_group
 faction = monster_predatory_night
@@ -2420,19 +2420,19 @@ target_smart = zat_b28
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_6
+;target_smart = {=is_dark_night} nil, zat_sim_6
 
 [simulation_psy_dog_zat_sim_7]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_7
+;target_smart = {=is_dark_night} nil, zat_sim_7
 
 [simulation_psy_dog_zat_sim_8]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 1, 3
-target_smart = {=is_dark_night} nil, zat_sim_8
+;target_smart = {=is_dark_night} nil, zat_sim_8
 
 [simulation_psy_dog_zaton_smrter_sim_1]:online_offline_group
 faction = monster_predatory_night
@@ -2450,13 +2450,13 @@ target_smart = zat_b28
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 2, 4
-target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
+;target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
 
 [simulation_psy_dog_jup_b209]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_b209
+;target_smart = {=is_dark_night} nil, jup_b209
 
 [simulation_psy_dog_zat_b38u]:online_offline_group
 faction = monster_predatory_night
@@ -2474,43 +2474,43 @@ target_smart = zat_b40_smart_terrain
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 2, 3
-target_smart = {=is_dark_night} nil, pri_b301
+;target_smart = {=is_dark_night} nil, pri_b301
 
 [simulation_psy_dog_pri_b303]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 2, 3
-target_smart = {=is_dark_night} nil, pri_b303
+;target_smart = {=is_dark_night} nil, pri_b303
 
 [simulation_psy_dog_pri_b306]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 2, 3
-target_smart = {=is_dark_night} nil, pri_b306
+;target_smart = {=is_dark_night} nil, pri_b306
 
 [simulation_psy_dog_pri_b307]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 2, 3
-target_smart = {=is_dark_night} nil, pri_b307
+;target_smart = {=is_dark_night} nil, pri_b307
 
 [simulation_psy_dog_pri_a17]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 2, 3
-target_smart = {=is_dark_night} nil, pri_a17
+;target_smart = {=is_dark_night} nil, pri_a17
 
 [simulation_psy_dog_pri_sim_1]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 2, 3
-target_smart = {=is_dark_night} nil, pri_sim_1
+;target_smart = {=is_dark_night} nil, pri_sim_1
 
 [simulation_psy_dog_pri_a25_smart_terrain]:online_offline_group
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 2, 3
-target_smart = {=is_dark_night} nil, pri_a25_smart_terrain
+;target_smart = {=is_dark_night} nil, pri_a25_smart_terrain
 
 [simulation_psy_dog_jup_sim_18]:online_offline_group
 faction = monster_predatory_night
@@ -2528,7 +2528,7 @@ target_smart = jup_b208
 faction = monster_predatory_night
 npc_random = psy_dog_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jupiter_smrter_sim_8
+;target_smart = {=is_dark_night} nil, jupiter_smrter_sim_8
 
 [simulation_psy_dog_zat_b100]:online_offline_group
 faction = monster_predatory_night
@@ -2576,55 +2576,55 @@ target_smart = jup_b219
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, jup_b212
+;target_smart = {=is_dark_night} nil, jup_b212
 
 [simulation_gigant_jup_b4]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, jup_b4
+;target_smart = {=is_dark_night} nil, jup_b4
 
 [simulation_gigant_jup_sim_2]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, jup_sim_2
+;target_smart = {=is_dark_night} nil, jup_sim_2
 
 [simulation_gigant_jup_sim_20]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, jup_sim_20
+;target_smart = {=is_dark_night} nil, jup_sim_20
 
 [simulation_gigant_jup_sim_12]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, jup_sim_12
+;target_smart = {=is_dark_night} nil, jup_sim_12
 
 [simulation_gigant_zat_sim_6]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, zat_sim_6
+;target_smart = {=is_dark_night} nil, zat_sim_6
 
 [simulation_gigant_zat_sim_7]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, zat_sim_7
+;target_smart = {=is_dark_night} nil, zat_sim_7
 
 [simulation_gigant_zat_sim_8]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, zat_sim_8
+;target_smart = {=is_dark_night} nil, zat_sim_8
 
 [simulation_gigant_zat_sim_10]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 1
-target_smart = {=is_dark_night} nil, zat_sim_10
+;target_smart = {=is_dark_night} nil, zat_sim_10
 
 [simulation_gigant_zat_b28]:online_offline_group
 faction = monster_predatory_night
@@ -2636,31 +2636,31 @@ target_smart = zat_b28
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_b38
+;target_smart = {=is_dark_night} nil, zat_b38
 
 [simulation_gigant_zaton_smrter_sim_3]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_sim_4
+;target_smart = {=is_dark_night} nil, zat_sim_4
 
 [simulation_gigant_jupiter_smrter_sim_4]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_sim_19
+;target_smart = {=is_dark_night} nil, jup_sim_19
 
 [simulation_gigant_jup_b205_smart_terrain]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
+;target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
 
 [simulation_gigant_jup_b209]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, jup_b209
+;target_smart = {=is_dark_night} nil, jup_b209
 
 [simulation_gigant_jup_sim_18]:online_offline_group
 faction = monster_predatory_night
@@ -2672,37 +2672,37 @@ target_smart = jup_sim_18
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 2, 2
-target_smart = {=is_dark_night} nil, pri_b301
+;target_smart = {=is_dark_night} nil, pri_b301
 
 [simulation_gigant_pri_b303]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 2, 2
-target_smart = {=is_dark_night} nil, pri_b303
+;target_smart = {=is_dark_night} nil, pri_b303
 
 [simulation_gigant_pri_a25]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 2, 2
-target_smart = {=is_dark_night} nil, pri_a25
+;target_smart = {=is_dark_night} nil, pri_a25
 
 [simulation_gigant_pri_b306]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 2, 2
-target_smart = {=is_dark_night} nil, pri_b306
+;target_smart = {=is_dark_night} nil, pri_b306
 
 [simulation_gigant_pri_b307]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 2, 2
-target_smart = {=is_dark_night} nil, pri_b307
+;target_smart = {=is_dark_night} nil, pri_b307
 
 [simulation_gigant_zat_b38]:online_offline_group
 faction = monster_predatory_night
 npc_random = gigant_normal
 npc_in_squad = 1, 2
-target_smart = {=is_dark_night} nil, zat_b38
+;target_smart = {=is_dark_night} nil, zat_b38
 
 [simulation_gigant_zat_b38u]:online_offline_group
 faction = monster_predatory_night
@@ -2719,12 +2719,12 @@ target_smart = zat_b100
 ;;;;;;;;;;;;;;;;;;;
 
 [simulation_fracture]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 2, 4
 
 [simulation_fracture_pripyat]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
 
@@ -2744,31 +2744,31 @@ target_smart = jup_b219
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 4, 5
-target_smart = {=is_dark_night} nil, jup_b212
+;target_smart = {=is_dark_night} nil, jup_b212
 
 [simulation_fracture_jup_b4]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, jup_b4
+;target_smart = {=is_dark_night} nil, jup_b4
 
 [simulation_fracture_jup_sim_2]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, jup_sim_2
+;target_smart = {=is_dark_night} nil, jup_sim_2
 
 [simulation_fracture_jup_sim_20]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, jup_sim_20
+;target_smart = {=is_dark_night} nil, jup_sim_20
 
 [simulation_fracture_jup_sim_12]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, jup_sim_12
+;target_smart = {=is_dark_night} nil, jup_sim_12
 
 [simulation_fracture_jupiter_smrter_sim_8]:online_offline_group
 faction = monster_predatory_night
@@ -2780,25 +2780,25 @@ target_smart = jupiter_smrter_sim_8
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, zat_sim_6
+;target_smart = {=is_dark_night} nil, zat_sim_6
 
 [simulation_fracture_zat_sim_7]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, zat_sim_7
+;target_smart = {=is_dark_night} nil, zat_sim_7
 
 [simulation_fracture_zat_sim_8]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, zat_sim_8
+;target_smart = {=is_dark_night} nil, zat_sim_8
 
 [simulation_fracture_zat_sim_10]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, zat_sim_10
+;target_smart = {=is_dark_night} nil, zat_sim_10
 
 [simulation_fracture_zat_b28]:online_offline_group
 faction = monster_predatory_night
@@ -2828,25 +2828,25 @@ target_smart = zat_b100
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, zat_b38
+;target_smart = {=is_dark_night} nil, zat_b38
 
 [simulation_fracture_zaton_smrter_sim_13]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 3, 4
-target_smart = {=is_dark_night} nil, zaton_smrter_sim_13
+;target_smart = {=is_dark_night} nil, zaton_smrter_sim_13
 
 [simulation_fracture_zaton_smrter_sim_3]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 1, 5
-target_smart = {=is_dark_night} nil, zat_sim_4
+;target_smart = {=is_dark_night} nil, zat_sim_4
 
 [simulation_fracture_jup_b205_smart_terrain]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 4, 5
-target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
+;target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
 
 [simulation_fracture_jup_sim_18]:online_offline_group
 faction = monster_predatory_night
@@ -2858,41 +2858,41 @@ target_smart = jup_sim_18
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 3, 5
-target_smart = {=is_dark_night} nil, pri_b301
+;target_smart = {=is_dark_night} nil, pri_b301
 
 [simulation_fracture_pri_b303]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 3, 5
-target_smart = {=is_dark_night} nil, pri_b303
+;target_smart = {=is_dark_night} nil, pri_b303
 
 [simulation_fracture_pri_a25]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 3, 5
-target_smart = {=is_dark_night} nil, pri_a25
+;target_smart = {=is_dark_night} nil, pri_a25
 
 [simulation_fracture_pri_b306]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 3, 5
-target_smart = {=is_dark_night} nil, pri_b306
+;target_smart = {=is_dark_night} nil, pri_b306
 
 [simulation_fracture_pri_b307]:online_offline_group
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 3, 5
-target_smart = {=is_dark_night} nil, pri_b307
+;target_smart = {=is_dark_night} nil, pri_b307
 
 ;;;;;;;;;;;;;;;;;;;
 
 [simulation_zombi_night]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2, zombie_1_ghost, zombie_2_ghost, zombie_3_ghost
 npc_in_squad = 4, 5
 
 [simulation_zombi_day]:online_offline_group
-faction = monster_predatory_night
+faction = monster_predatory_day
 npc_random = zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2, zombie_1_ghost, zombie_2_ghost, zombie_3_ghost
 npc_in_squad = 4, 5
 
@@ -2917,37 +2917,37 @@ target_smart = jup_b219
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, jup_b212
+;target_smart = {=is_dark_night} nil, jup_b212
 
 [simulation_zombi_jup_b4]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, jup_b4
+;target_smart = {=is_dark_night} nil, jup_b4
 
 [simulation_zombi_jup_sim_2]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, jup_sim_2
+;target_smart = {=is_dark_night} nil, jup_sim_2
 
 [simulation_zombi_jup_sim_20]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, jup_sim_20
+;target_smart = {=is_dark_night} nil, jup_sim_20
 
 [simulation_zombi_jup_sim_12]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, jup_sim_12
+;target_smart = {=is_dark_night} nil, jup_sim_12
 
 [simulation_zombi_zat_sim_6]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, zat_sim_6
+;target_smart = {=is_dark_night} nil, zat_sim_6
 
 [simulation_zombi_jupiter_smrter_sim_8]:online_offline_group
 faction = monster_predatory_night
@@ -2959,19 +2959,19 @@ target_smart = jupiter_smrter_sim_8
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, zat_sim_7
+;target_smart = {=is_dark_night} nil, zat_sim_7
 
 [simulation_zombi_zat_sim_8]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, zat_sim_8
+;target_smart = {=is_dark_night} nil, zat_sim_8
 
 [simulation_zombi_zat_sim_10]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, zat_sim_10
+;target_smart = {=is_dark_night} nil, zat_sim_10
 
 [simulation_zombi_zat_b28]:online_offline_group
 faction = monster_predatory_night
@@ -2995,25 +2995,25 @@ target_smart = zat_b100
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, zat_b38
+;target_smart = {=is_dark_night} nil, zat_b38
 
 [simulation_zombi_zaton_smrter_sim_13]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, zaton_smrter_sim_13
+;target_smart = {=is_dark_night} nil, zaton_smrter_sim_13
 
 [simulation_zombi_zaton_smrter_sim_3]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, zat_sim_4
+;target_smart = {=is_dark_night} nil, zat_sim_4
 
 [simulation_zombi_jup_b205_smart_terrain]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
+;target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
 
 [simulation_zombi_jup_sim_18]:online_offline_group
 faction = monster_predatory_night
@@ -3031,31 +3031,31 @@ target_smart = jup_sim_16
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, pri_b301
+;target_smart = {=is_dark_night} nil, pri_b301
 
 [simulation_zombi_pri_b303]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, pri_b303
+;target_smart = {=is_dark_night} nil, pri_b303
 
 [simulation_zombi_pri_a25]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, pri_a25
+;target_smart = {=is_dark_night} nil, pri_a25
 
 [simulation_zombi_pri_b306]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, pri_b306
+;target_smart = {=is_dark_night} nil, pri_b306
 
 [simulation_zombi_pri_b307]:online_offline_group
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 1, 6
-target_smart = {=is_dark_night} nil, pri_b307
+;target_smart = {=is_dark_night} nil, pri_b307
 
 ;;;;;;;;;;;;;;;;;;;
 

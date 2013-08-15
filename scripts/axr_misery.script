@@ -280,6 +280,7 @@ function dynamic_actor_loadout()
 			create_items("drug_sleepingpills",2)
 			create_items("medkit_army",2)
 			create_items("stimpack_army")
+			create_items("itm_backpack")
 			
 			create_items("helm_cloth_mask",2)
 

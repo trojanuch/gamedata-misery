@@ -2708,7 +2708,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	mutant_part_boar_meat = {
+	mutant_part_boar_chop = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -2773,7 +2773,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	mutant_part_snork_meat = {
+	mutant_part_snork_hand = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",

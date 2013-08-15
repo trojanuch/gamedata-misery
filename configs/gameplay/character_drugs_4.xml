@@ -208,11 +208,11 @@ cleaning_kit_s = 1, prob=0.016
 cleaning_kit_r5 = 1, prob=0.016
 cleaning_kit_r7 = 1, prob=0.016
 cleaning_kit_u = 1, prob=0.013
-toolkit_p = 1, prob=0.010
-toolkit_s = 1, prob=0.010
-toolkit_r5 = 1, prob=0.010
-toolkit_r7 = 1, prob=0.010
-toolkit_u = 1, prob=0.007
+toolkit_p = 1, prob=0.001
+toolkit_s = 1, prob=0.001
+toolkit_r5 = 1, prob=0.001
+toolkit_r7 = 1, prob=0.001
+toolkit_u = 1, prob=0.001
 sharpening_stones = 2, prob=0.016 \n
 gun_oil_ru_d = 3, prob=0.016 \n
 gun_oil_ru = 3, prob=0.016 \n
@@ -221,13 +221,13 @@ grease = 3, prob=0.016 \n
 steel_wool = 3, prob=0.016 \n
 glue_b = 2, prob=0.016 \n
 glue_a = 2, prob=0.013 \n
-glue_e = 1, prob=0.008 \n
+glue_e = 1, prob=0.002 \n
 sewing_kit_b = 1, prob=0.016 \n
 sewing_kit_a = 1, prob=0.013 \n
-sewing_kit_h = 1, prob=0.008 \n
-armor_repair_fa = 1, prob=0.007 \n
-helmet_repair_kit = 1, prob=0.007 \n
-armor_repair_pro = 1, prob=0.007 \n
+sewing_kit_h = 1, prob=0.001 \n
+armor_repair_fa = 1, prob=0.004 \n
+helmet_repair_kit = 1, prob=0.001 \n
+armor_repair_pro = 1, prob=0.001 \n
 textile_patch_b = 2, prob=0.016 \n
 textile_patch_m = 2, prob=0.013 \n
 textile_patch_e = 2, prob=0.008 \n

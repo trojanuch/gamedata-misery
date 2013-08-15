@@ -52,7 +52,7 @@ story_id = zat_b14_stalkers
 [zat_b57_bloodsuckers]:online_offline_group
 faction = monster_predatory_night
 npc = bloodsucker_strong, bloodsucker_strong
-target_smart = zat_b38
+target_smart = zat_b38 
 spawn_point = zat_b57_bloodsucker_spawn_point
 story_id = zat_b57_bloodsuckers
 
@@ -242,7 +242,7 @@ story_id = zat_b33_stalker_snag_squad
 [zat_b29_stalker_rival_1_squad]:online_offline_group
 faction = stalker
 npc = zat_b29_stalker_rival_1, sim_default_stalker_2, sim_default_stalker_2
-target_smart = {+zat_b30_task_end} nil,{+zat_b29_rival_1_1} zat_b55, {+zat_b29_rival_1_2} zat_b54, {+zat_b29_rival_1_3} zat_b53, {+zat_b29_rival_1_4} zat_b39, {+zat_b29_rival_1_5} zat_b56, {+zat_b29_rival_1_base} zat_stalker_base_smart, zat_b55
+target_smart = {+zat_b30_task_end} nil,{+zat_b29_rival_1_1} zat_b55, {+zat_b29_rival_1_2} zat_b54, {+zat_b29_rival_1_3} zat_b53, {+zat_b29_rival_1_4} zat_b39, {+zat_b29_rival_1_5} zat_b56, {+zat_b29_rival_1_base} zat_stalker_base_smart, zat_b55 
 spawn_point = zat_b29_rival_1_spawn
 story_id = zat_b29_stalker_rival_1_squad
 
@@ -271,7 +271,7 @@ story_id = zat_b29_stalker_rival_default_2_squad
 ;-----------------------zaton B18-------------------
 
 [zat_b18_noah_squad]:online_offline_group
-faction = stalker_hunter_day
+faction = stalker
 npc = zat_b18_noah
 target_smart = zat_b18
 sympathy = 0
@@ -317,7 +317,7 @@ story_id = zat_b42_controller_squad
 [zat_b40_merc_squad]:online_offline_group
 faction = killer
 sympathy = 0
-npc = zat_b40_merc_squad_leader_1, zat_b40_merc_squad_leader_2, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2,sim_default_killer_1,sim_default_killer_1
+npc = zat_b40_merc_squad_leader_1, zat_b40_merc_squad_leader_2, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3,sim_default_killer_3,sim_default_killer_3,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2
 target_smart = zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 story_id = zat_b40_merc_squad
@@ -327,7 +327,7 @@ faction = bandit_elite
 relationship = enemy
 npc_random = sim_default_bandit_4, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_2
 npc_in_squad = 4,4
-target_smart = {+zat_b40_find_information_comlpete -pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
+target_smart = zat_b40_smart_terrain ; {+zat_b40_find_information_comlpete -pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 
 [zat_b40_monolith_squad]:online_offline_group
@@ -335,7 +335,7 @@ faction = monolith
 relationship = enemy
 npc_random = sim_default_monolith_4, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_2
 npc_in_squad = 4, 4
-target_smart = {+zat_b40_find_information_comlpete +pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
+target_smart = zat_b40_smart_terrain ; {+zat_b40_find_information_comlpete +pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 
 ;-----------------------zaton B20-------------------
@@ -373,7 +373,7 @@ spawn_point = zat_a23_smart_terrain_zat_a23_zombie_spawn
 story_id = zat_a23_zombie_squad
 
 [zat_a23_giant_squad]:online_offline_group
-faction = monster_special
+faction = monster_special 
 npc = gigant_normal
 target_smart = zat_a23_smart_terrain
 spawn_point = zat_a23_smart_terrain_zat_a23_giant_walk
