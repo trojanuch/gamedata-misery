@@ -25,11 +25,11 @@ icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SI
 scheme_index            = 1, 0
 known                   = 1
 effects                 = up_gr_firstef_sig220_rusty
-section                 = up_sect_firstc_sig220_rusty
-property                = prop_not_available ; prop_reliability
+section                 = up_sect_empty_tier_2
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -38,29 +38,30 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name ; st_up_zatp_b3_name
-description             = st_up_upgrade_not_available_descr ; st_up_zatp_b3_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_2
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_firstd_sig220_rusty]
 scheme_index            = 1, 1
 known                   = 1
 effects                 = up_gr_firstef_sig220_rusty
-section                 = up_sect_firstd_sig220_rusty
-property                = prop_not_available ; prop_bullet_speed
+section                 = up_sect_empty_tier_2
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name ; st_up_zatp_b8_name
-description             = st_up_upgrade_not_available_descr ; st_up_zatp_b8_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_3
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_firste_sig220_rusty]
 scheme_index            = 2, 0
@@ -82,7 +83,6 @@ prereq_params           =
 name                    = st_up_upgrade_not_available_name ; st_up_zatp_c7_name
 description             = st_up_upgrade_not_available_descr ; st_up_zatp_c7_descr
 icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_4
-
 
 
 [up_secona_sig220_rusty]
@@ -109,11 +109,11 @@ icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SI
 scheme_index            = 1, 2
 known                   = 1
 effects                 = up_gr_seconef_sig220_rusty
-section                 = up_sect_seconc_sig220_rusty
-property                = prop_not_available ; prop_reliability
+section                 = up_sect_empty_tier_2
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -122,51 +122,49 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name ; st_up_barp_b1_name
-description             = st_up_upgrade_not_available_descr ; st_up_barp_b1_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_6
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_secone_sig220_rusty]
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_sig220_rusty
-property                = prop_not_available ; prop_rpm
+section                 = up_sect_empty_tier_3
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name ; st_up_barp_c1_name
-description             = st_up_upgrade_not_available_descr ; st_up_barp_c1_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_7
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_seconf_sig220_rusty]
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_seconf_sig220_rusty
-property                = prop_not_available ; prop_bullet_speed
+section                 = up_sect_empty_tier_3
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_upgrade_not_available_name ; st_up_barp_c2_name
-description             = st_up_upgrade_not_available_descr ; st_up_barp_c2_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_8
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_thirda_sig220_rusty]
@@ -193,41 +191,43 @@ icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SI
 scheme_index            = 1, 3
 known                   = 1
 effects                 =
-section                 = up_sect_thirdc_sig220_rusty
-property                = prop_not_available ; prop_inertion
+section                 = up_sect_empty_tier_2
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name ; st_up_stvp_b2_name
-description             = st_up_upgrade_not_available_descr ; st_up_stvp_b2_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_10
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_thirdd_sig220_rusty]
 scheme_index            = 1, 4
 known                   = 1
 effects                 =
-section                 = up_sect_thirdd_sig220_rusty
-property                = prop_not_available ; prop_recoil
+section                 = up_sect_empty_tier_2
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name ; st_up_stvp_b3_name
-description             = st_up_upgrade_not_available_descr ; st_up_stvp_b3_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_11
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fourta_sig220_rusty]
 scheme_index            = 0, 3
@@ -254,11 +254,32 @@ icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SI
 scheme_index            = 1, 5
 known                   = 1
 effects                 = up_gr_fourtef_sig220_rusty
-section                 = up_sect_fourtc_sig220_rusty
-property                = prop_not_available ; prop_reliability
+section                 = up_sect_empty_tier_2
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
+
+[up_fourte_sig220_rusty]
+scheme_index            = 2, 3
+known                   = 1
+effects                 =
+section                 = up_sect_empty_tier_3
+property                = prop_not_available
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = true
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -266,29 +287,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name ; st_up_usmp_b5_name
-description             = st_up_upgrade_not_available_descr ; st_up_usmp_b5_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_13
-
-[up_fourte_sig220_rusty]
-scheme_index            = 2, 3
-known                   = 1
-effects                 =
-section                 = up_sect_fourte_sig220_rusty
-property                = prop_not_available ; prop_rpm
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_upgrade_not_available_name ; st_up_usmp_c3_name
-description             = st_up_upgrade_not_available_descr ; st_up_usmp_c3_descr
-icon                    = ui_inGame2_upgrade_unavailable ; ui_inGame2_upgrade_SIP_t_M200_14
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_fiftha_sig220_rusty]
