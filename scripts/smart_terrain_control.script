@@ -93,7 +93,7 @@ function CBaseOnActorControl:actor_attack()
 			xr_sound.set_sound_play(db.actor:id(), sound)
 		end
 		for squad_id,squad in pairs(sim_board.get_sim_board().smarts[self.smart.id].squads) do
-			game_relations.set_squad_goodwill(squad_id, "enemy")
+			game_relations.set_squad_goodwill(squad_id, "neutral")
 		end
 	end
 	self.status = ALARM

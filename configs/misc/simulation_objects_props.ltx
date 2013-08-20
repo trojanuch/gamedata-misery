@@ -222,6 +222,8 @@ sim_avail = {+zat_b5_task_start +zat_b5_task_end} true, {-zat_b5_task_start -zat
 [zat_b106_smart_terrain]:default
 territory = 2
 territory_monolith = 1
+base_hostile = 1
+territory_hostile = 1
 ;hunting_ground 	= 2
 ;lair = 2
 ;lair_night = 2
@@ -306,7 +308,7 @@ sim_avail = {+zat_b100_heli_2_searched} true, false
 
 [zat_b39]:default
 territory_hostile = 2
-base_hostile = 1
+base_hostile = 2
 resource = 2
 territory = 2
 sim_avail = {+zat_b39_tech_buddies_joker_found} true, false
@@ -403,6 +405,7 @@ base = 2
 
 [zat_sim_12]:default
 territory_hostile = 2
+base_hostile = 1
 territory = 1
 lair_night = 1
 sim_avail = true
@@ -411,6 +414,8 @@ sim_avail = true
 lair = 2
 lair_night = 2
 hunting_ground 	= 1
+territory_hostile = 1
+base_hostile = 1
 sim_avail = true
 
 [zat_sim_14]:default
@@ -467,6 +472,8 @@ lair_night = 2
 ;hunting_ground 	= 1
 ;lair = 1
 lair_night = 2
+base_hostile = 1
+territory_hostile = 1
 sim_avail = {+zat_b18_noah_dead} true, false
 
 [zat_sim_24]:default
@@ -2249,6 +2256,9 @@ sim_avail = true
 [merc_sim_squad_veteran]:default_squad
 sim_avail = true
 
+[merc_sim_squad_veteran_pripyat]:default_squad
+sim_avail = true
+
 [merc_sim_squad_veteran_jup_a12]:default_squad
 sim_avail = true
 
@@ -2256,6 +2266,48 @@ sim_avail = true
 sim_avail = true
 
 [merc_sim_squad_veteran_jup_b47_assault]:default_squad
+sim_avail = true
+
+[simulation_killer_jupiter]:default_squad
+sim_avail = true
+
+[simulation_killer_jup_a12_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_novice_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_novice_jup_a12_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_novice_zat_sim_25_sentry_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_novice_zat_b5_smart_terrain_sentry_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_advanced_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_advanced_jup_a12_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_advanced_zat_sim_25_sentry_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_advanced_zat_b5_smart_terrain_sentry_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_veteran_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_veteran_jup_a12_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_veteran_zaton_smrter_sim_9_assault_jupiter]:default_squad
+sim_avail = true
+
+[merc_sim_squad_veteran_jup_b47_assault_jupiter]:default_squad
 sim_avail = true
 
 [simulation_killer_neutral]:default_squad
@@ -2291,6 +2343,9 @@ sim_avail = true
 [merc_sim_squad_veteran_neutral]:default_squad
 sim_avail = true
 
+[merc_sim_squad_veteran_pripyat_neutral]:default_squad
+sim_avail = true
+
 [merc_sim_squad_veteran_neutral_jup_a12]:default_squad
 sim_avail = true
 
@@ -2298,6 +2353,48 @@ sim_avail = true
 sim_avail = true
 
 [merc_sim_squad_veteran_jup_b47_assault_neutral]:default_squad
+sim_avail = true
+
+[simulation_killer_jupiter_neutral]:default_squad
+sim_avail = true
+
+[simulation_killer_jupiter_neutral_jup_a12]:default_squad
+sim_avail = true
+
+[merc_sim_squad_novice_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_novice_jup_a12_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_novice_zat_sim_25_sentry_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_novice_zat_b5_smart_terrain_sentry_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_advanced_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_advanced_jup_a12_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_advanced_zat_sim_25_sentry_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_advanced_zat_b5_smart_terrain_sentry_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_veteran_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_veteran_jupiter_neutral_jup_a12]:default_squad
+sim_avail = true
+
+[merc_sim_squad_veteran_zaton_smrter_sim_9_assault_jupiter_neutral]:default_squad
+sim_avail = true
+
+[merc_sim_squad_veteran_jup_b47_assault_jupiter_neutral]:default_squad
 sim_avail = true
 
 ;;;;;;;;;;;;;;;;;;;
@@ -2332,6 +2429,9 @@ sim_avail = true
 [bandit_sim_squad_veteran]:default_squad
 sim_avail = true
 
+[bandit_sim_squad_veteran_pripyat]:default_squad
+sim_avail = true
+
 [bandit_sim_squad_veteran_zat_b40]:default_squad
 sim_avail = true
 
@@ -2356,7 +2456,67 @@ sim_avail = true
 [bandit_sim_squad_hostile_elite]:default_squad
 sim_avail = true
 
+[bandit_sim_squad_hostile_elite_pripyat]:default_squad
+sim_avail = true
+
 [bandit_sim_squad_hostile_elite_zat_b40]:default_squad
+sim_avail = true
+
+[simulation_bandit_jupiter]:default_squad
+sim_avail = true
+
+[simulation_bandit_1_jupiter]:default_squad
+sim_avail = true
+
+[simulation_bandit_2_jupiter]:default_squad
+sim_avail = true
+
+[simulation_bandit_3_jupiter]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_novice_jupiter]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_novice_zat_b5_smart_terrain_sentry_jupiter]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_advanced_jupiter]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_advanced_zat_b5_smart_terrain_sentry_jupiter]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_advanced_zat_sim_25_jupiter]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_veteran_jupiter]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_veteran_zat_b40_jupiter]:default_squad
+sim_avail = true
+
+[simulation_bandit_jupiter_hostile]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_zat_b5_smart_terrain_sentry_jupiter_hostile]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_advanced_jupiter_hostile]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_advanced_zat_b5_smart_terrain_sentry_jupiter_hostile]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_advanced_zat_sim_25_jupiter_hostile]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_hostile_elite_jupiter]:default_squad
+sim_avail = true
+
+[bandit_sim_squad_hostile_elite_zat_b40_jupiter]:default_squad
 sim_avail = true
 
 ;;;;;;;;;;;;;;;;;;;
@@ -2403,6 +2563,12 @@ sim_avail = true
 [stalker_sim_squad_advanced_veteran_jup_a6_sentry]:default_squad
 sim_avail = true
 
+[stalker_sim_squad_veteran]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_veteran_pripyat]:default_squad
+sim_avail = true
+
 [stalker_sim_squad_veteran_zat_stalker_base_smart_sentry]:default_squad
 sim_avail = true
 
@@ -2436,7 +2602,76 @@ sim_avail = true
 [stalker_hunter_night_zat_sim_10_assault_simulation_squad]:default_squad
 sim_avail = true
 
-[stalker_guide_simulation_squad]:default_squad
+[simulation_stalker_jupiter]:default_squad
+sim_avail = true
+
+[simulation_stalker_1_jupiter]:default_squad
+sim_avail = true
+
+[simulation_stalker_2_jupiter]:default_squad
+sim_avail = true
+
+[simulation_stalker_3_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_novice_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_zat_stalker_base_smart_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_veteran_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_zat_stalker_base_smart_sentry_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_jup_a6_sentry_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_veteran_zat_stalker_base_smart_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_veteran_zat_stalker_base_smart_sentry_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_veteran_jup_a6_sentry_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_veteran_zat_stalker_base_smart_sentry_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_veteran_jup_a6_sentry_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_veteran_zaton_smrter_sim_12_assault_jupiter]:default_squad
+sim_avail = true
+
+[stalker_sci_simulation_squad_jupiter]:default_squad
+sim_avail = true
+
+[stalker_hunter_day_simulation_squad_jupiter]:default_squad
+sim_avail = true
+
+[stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad_jupiter]:default_squad
+sim_avail = true
+
+[stalker_hunter_day_zat_sim_10_assault_simulation_squad_jupiter]:default_squad
+sim_avail = true
+
+[stalker_hunter_night_simulation_squad_jupiter]:default_squad
+sim_avail = true
+
+[stalker_hunter_night_zaton_smrter_sim_8_assault_simulation_squad_jupiter]:default_squad
+sim_avail = true
+
+[stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad_jupiter]:default_squad
+sim_avail = true
+
+[stalker_hunter_night_zat_sim_10_assault_simulation_squad_jupiter]:default_squad
 sim_avail = true
 
 [simulation_stalker_hostile]:default_squad
@@ -2461,6 +2696,9 @@ sim_avail = true
 sim_avail = true
 
 [stalker_sim_squad_veteran_hostile]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_veteran_pripyat_hostile]:default_squad
 sim_avail = true
 
 [stalker_sim_squad_veteran_zaton_smrter_sim_12_assault_hostile]:default_squad
@@ -2488,6 +2726,60 @@ sim_avail = true
 sim_avail = true
 
 [stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad_hostile]:default_squad
+sim_avail = true
+
+[stalker_guide_simulation_squad]:default_squad
+sim_avail = true
+
+[simulation_stalker_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_stalker_1_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_stalker_2_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_stalker_3_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_novice_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_advanced_veteran_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_veteran_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_sim_squad_veteran_zaton_smrter_sim_12_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_sci_simulation_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_hunter_day_simulation_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_hunter_day_zat_sim_10_assault_simulation_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_hunter_night_simulation_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_hunter_night_zaton_smrter_sim_8_assault_simulation_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_hunter_night_zat_sim_10_assault_simulation_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad_jupiter_hostile]:default_squad
 sim_avail = true
 
 ;;;;;;;;;;;;;;;;;;;
@@ -2528,6 +2820,9 @@ sim_avail = true
 [duty_sim_squad_veteran]:default_squad
 sim_avail = true
 
+[duty_sim_squad_veteran_pripyat]:default_squad
+sim_avail = true
+
 [duty_sim_squad_veteran_jup_a12_assault]:default_squad
 sim_avail = true
 
@@ -2553,6 +2848,69 @@ sim_avail = true
 sim_avail = true
 
 [duty_hunter_night_simulation_squad]:default_squad
+sim_avail = true
+
+[simulation_duty_jupiter]:default_squad
+sim_avail = true
+
+[simulation_duty_1_jupiter]:default_squad
+sim_avail = true
+
+[simulation_duty_2_jupiter]:default_squad
+sim_avail = true
+
+[simulation_duty_3_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_novice_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_zat_b101_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_jup_b46_sentry_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_veteran_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_veteran_zat_b101_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_veteran_jup_b46_sentry_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_jup_a12_assault_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_jup_b47_assault_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_zat_b5_smart_terrain_assault_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_zat_b40_assault_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_zat_b40_assault_2_jupiter]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_zat_b103_merc_smart_assault_jupiter]:default_squad
+sim_avail = true
+
+[duty_hunter_day_simulation_squad_novice_jupiter]:default_squad
+sim_avail = true
+
+[duty_hunter_day_simulation_squad_jupiter]:default_squad
+sim_avail = true
+
+[duty_hunter_night_simulation_squad_jupiter]:default_squad
 sim_avail = true
 
 [simulation_duty_hostile]:default_squad
@@ -2591,6 +2949,9 @@ sim_avail = true
 [duty_sim_squad_veteran_hostile]:default_squad
 sim_avail = true
 
+[duty_sim_squad_veteran_pripyat_hostile]:default_squad
+sim_avail = true
+
 [duty_sim_squad_veteran_jup_a12_assault_hostile]:default_squad
 sim_avail = true
 
@@ -2616,6 +2977,69 @@ sim_avail = true
 sim_avail = true
 
 [duty_hunter_night_simulation_squad_hostile]:default_squad
+sim_avail = true
+
+[simulation_duty_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_duty_1_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_duty_2_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_duty_3_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_novice_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_zat_b101_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_jup_b46_sentry_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_veteran_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_veteran_zat_b101_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_advanced_veteran_jup_b46_sentry_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_jup_a12_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_jup_b47_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_zat_b5_smart_terrain_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_zat_b40_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_zat_b40_assault_2_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_sim_squad_veteran_zat_b103_merc_smart_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_hunter_day_simulation_squad_novice_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_hunter_day_simulation_squad_jupiter_hostile]:default_squad
+sim_avail = true
+
+[duty_hunter_night_simulation_squad_jupiter_hostile]:default_squad
 sim_avail = true
 
 ;;;;;;;;;;;;;;;;;;;
@@ -2650,6 +3074,9 @@ sim_avail = true
 [freedom_sim_squad_veteran]:default_squad
 sim_avail = true
 
+[freedom_sim_squad_veteran_pripyat]:default_squad
+sim_avail = true
+
 [freedom_sim_squad_veteran_jup_a12_assault]:default_squad
 sim_avail = true
 
@@ -2666,6 +3093,54 @@ sim_avail = true
 sim_avail = true
 
 [freedom_sci_simulation_squad]:default_squad
+sim_avail = true
+
+[simulation_freedom_jupiter]:default_squad
+sim_avail = true
+
+[simulation_freedom_1_jupiter]:default_squad
+sim_avail = true
+
+[simulation_freedom_2_jupiter]:default_squad
+sim_avail = true
+
+[simulation_freedom_3_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_novice_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_advanced_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_advanced_jup_b200_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_advanced_veteran_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_advanced_veteran_jup_b200_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_jup_a12_assault_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_jup_b47_assault_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_zat_b5_smart_terrain_assault_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_zat_b40_assault_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_zat_b103_merc_smart_assault_jupiter]:default_squad
+sim_avail = true
+
+[freedom_sci_simulation_squad_jupiter]:default_squad
 sim_avail = true
 
 [simulation_freedom_hostile]:default_squad
@@ -2698,6 +3173,9 @@ sim_avail = true
 [freedom_sim_squad_veteran_hostile]:default_squad
 sim_avail = true
 
+[freedom_sim_squad_veteran_pripyat_hostile]:default_squad
+sim_avail = true
+
 [freedom_sim_squad_veteran_jup_a12_assault_hostile]:default_squad
 sim_avail = true
 
@@ -2714,6 +3192,54 @@ sim_avail = true
 sim_avail = true
 
 [freedom_sci_simulation_squad_hostile]:default_squad
+sim_avail = true
+
+[simulation_freedom_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_freedom_1_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_freedom_2_jupiter_hostile]:default_squad
+sim_avail = true
+
+[simulation_freedom_3_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_novice_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_advanced_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_advanced_jup_b200_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_advanced_veteran_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_advanced_veteran_jup_b200_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_jup_a12_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_jup_b47_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_zat_b5_smart_terrain_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_zat_b40_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sim_squad_veteran_zat_b103_merc_smart_assault_jupiter_hostile]:default_squad
+sim_avail = true
+
+[freedom_sci_simulation_squad_jupiter_hostile]:default_squad
 sim_avail = true
 
 ;;;;;;;;;;;;;;;;;;;
@@ -2948,6 +3474,7 @@ territory_hostile = 2
 territory = 1
 lair_night = 1
 base_hostile = 1
+territory_hostile = 1
 
 [jup_b25]:default_resource_hard
 sim_avail = {+jup_b25_senya_dead} true, false

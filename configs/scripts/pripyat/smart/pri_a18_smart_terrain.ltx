@@ -16,13 +16,13 @@ spawn_killer
 ; Bandit squads
 
 [spawn_bandit]
-spawn_squads = bandit_sim_squad_veteran
-spawn_num = {squad_exist(bandit_sim_squad_hostile_elite)} 0, {+kingpin_gained +pri_a18_use_idol_done} 1, 0
+spawn_squads = bandit_sim_squad_veteran_pripyat
+spawn_num = {=squad_exist(bandit_sim_squad_hostile_elite_pripyat)} 0, {+kingpin_gained +pri_a18_use_idol_done} 1, 0
 
 ; Bandit hostile squads
 
 [spawn_bandit@hostile]
-spawn_squads = bandit_sim_squad_hostile_elite
+spawn_squads = bandit_sim_squad_hostile_elite_pripyat
 spawn_num = {-kingpin_gained +pri_a18_use_idol_done} 1, 0
 
 ; Merc squads
