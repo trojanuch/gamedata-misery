@@ -24,7 +24,7 @@ current_level_going_speed		= 3;2					; option for ALife Simulator
 search_speed			= 1.5						         ; option for ALife Simulator
 
 MaxHealthValue		    = 200
-DynamicObjectsCount		= 32
+DynamicObjectsCount		= 8
 smart_terrain_choose_interval	= 00:15:00
 Spawn_Inventory_Item_Section = mutant_boar_leg
 Spawn_Inventory_Item_Probability = 0.0
@@ -267,7 +267,7 @@ terrain							= boar_terrain
 
 
 material				= creatures\hoof
-DynamicObjectsCount		= 32
+DynamicObjectsCount		= 8
 
 ;species of monster
 species				= boar
@@ -452,13 +452,13 @@ stand_drag_0		=	  1,	0.2,    1,	     0.25,    0.7,    0.7,    1.0,     0.7,   1.
 ; IMMUNITIES
 ;===========================================================================
 [boar_immunities]
-burn_immunity = 3.0 ;			= 0.2								;коэффициенты иммунитета
+burn_immunity = 0.96 ;			= 0.2								;коэффициенты иммунитета
 strike_immunity			= 0.25
-shock_immunity = 3.0 ;			= 0.25
+shock_immunity = 0.74 ;			= 0.25
 wound_immunity			= 0.35
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity = 5.5 ; = 3.0 ;	= 0.2
+chemical_burn_immunity = 1.66 ; = 3.0 ;	= 0.2
 explosion_immunity		= 0.6
 fire_wound_immunity		= 0.25
 
@@ -489,13 +489,13 @@ spec_rank			= normal
 community			= boar
 
 [boar_immunities_normal]
-burn_immunity = 3.0 ;			= 0.2
-strike_immunity			= 0.2
-shock_immunity = 3.0 ;			= 0.2
-wound_immunity			= 0.25
+burn_immunity = 0.96 ;			= 0.2								;коэффициенты иммунитета
+strike_immunity			= 0.25
+shock_immunity = 0.74 ;			= 0.25
+wound_immunity			= 0.28
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity = 5.5 ; = 3.0 ;	= 0.2
+chemical_burn_immunity = 1.66 ; = 3.0 ;	= 0.2
 explosion_immunity		= 0.6
 fire_wound_immunity		= 0.25
 
@@ -551,13 +551,13 @@ community			= boar
 ; STRONG PROFILE
 ;*********************************************************************************
 [boar_immunities_strong]
-burn_immunity = 3.0 ;			= 0.1
-strike_immunity			= 0.1
-shock_immunity = 3.0 ;			= 0.1
-wound_immunity			= 0.2
+burn_immunity = 0.96 ;			= 0.2								;коэффициенты иммунитета
+strike_immunity			= 0.25
+shock_immunity = 0.74 ;			= 0.25
+wound_immunity			= 0.22
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity = 5.5 ; = 3.0 ;	= 0.1
+chemical_burn_immunity = 1.66 ; = 3.0 ;	= 0.2
 explosion_immunity		= 0.5
 fire_wound_immunity		= 0.2
 

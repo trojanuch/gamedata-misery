@@ -194,11 +194,11 @@ inv_weight              = +0.05
 [up_sect_fourtc_vintorez]
 ;Контрастный прицел
 ;------------------
-cost		      		= 3360
+cost		      		= 480
 
 scope_nightvision = scope_contrast
 
-inv_weight              = +0.05
+inv_weight              = +0.03
 
 [up_sect_fourte_vintorez]
 ;ПНВ
@@ -207,15 +207,15 @@ cost		      		= 4860
 
 scope_nightvision = scope_nightvision
 
-inv_weight              = +0.1
+inv_weight              = +0.05
 
 [up_sect_fourtf_vintorez]
 ;Тепловизор
 ;------------------
-cost		      		= 7890
-scope_alive_detector = scope_detector
+cost		      		= 5390
+scope_dynamic_zoom 		= on
 
-inv_weight              = +0.15
+inv_weight              = +0.01
 
 [up_firsta_vintorez]
 scheme_index            = 0, 0
@@ -561,7 +561,7 @@ scheme_index            = 2, 6
 known                   = 1
 effects                 =
 section                 = up_sect_fourtf_vintorez
-property                = prop_autolockscope 
+property                = prop_scope 
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -573,8 +573,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_opt_c1_name
-description             = st_up_opt_c1_descr
+name                    = st_up_opt_c3_name
+description             = st_up_opt_c3_descr
 icon                    = ui_inGame2_upgrade_Vintar_VS_17
 
 
@@ -596,7 +596,6 @@ elements                = up_seconc_vintorez, up_second_vintorez
 
 [up_gr_seconef_vintorez]
 elements                = up_secone_vintorez
-
 
 [up_gr_thirdab_vintorez]
 elements                = up_thirda_vintorez

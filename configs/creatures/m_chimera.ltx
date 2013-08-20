@@ -242,7 +242,7 @@ head_boss 						= 1.65, -1, 0.9
 ; Other Stuff (refactoring needed)
 ;-------------------------------------------------------------------------
 material						= creatures\medium
-DynamicObjectsCount				= 16
+DynamicObjectsCount				= 8
 
 squad_attack_algorithm			= 1
 attack_effector					= m_chimera_attack_effector
@@ -303,8 +303,8 @@ transparency_threshold			= 0.10
 feel_enemy_who_just_hit_max_distance = 180
 
 [chimera_protections]
-skin_armor = 0.45
-hit_fraction_monster = 0.75
+skin_armor = 0.54
+hit_fraction_monster = 0.66
 
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
@@ -344,10 +344,10 @@ stand_run_fwd_0	=	   1,	   0.01,    1,	    0.25,    0.6,
 ; IMMUNITIES
 ;---------------------------------------------------------------------------
 [chimera_immunities]
-burn_immunity = 2.0 ;     	= 0.35 				;коэффициенты иммунитета
+burn_immunity = 0.66 ;     	= 0.35 				;коэффициенты иммунитета
 strike_immunity     	= 0.0
-shock_immunity = 2.0 ;      	= 0.1
-wound_immunity      	= 0.25
+shock_immunity = 0.12 ;      	= 0.1
+wound_immunity      	= 0.14
 radiation_immunity   	= 0.0
 telepatic_immunity    	= 0.0
 chemical_burn_immunity = 0.85 ; = 3.0 ;  = 0.45
@@ -390,10 +390,10 @@ immunities_sect = chimera_immunities_normal
 spec_rank     	= normal
 
 [chimera_immunities_normal]
-burn_immunity = 2.0 ;     	= 0.35 				;коэффициенты иммунитета
+burn_immunity = 0.66 ;     	= 0.35 				;коэффициенты иммунитета
 strike_immunity     	= 0.0
-shock_immunity = 2.0 ;      	= 0.1
-wound_immunity      	= 0.25
+shock_immunity = 0.12 ;      	= 0.1
+wound_immunity      	= 0.14
 radiation_immunity   	= 0.0
 telepatic_immunity    	= 0.0
 chemical_burn_immunity = 0.85 ; = 3.0 ;  = 0.45

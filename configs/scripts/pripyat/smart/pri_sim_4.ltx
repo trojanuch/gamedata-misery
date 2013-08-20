@@ -28,7 +28,7 @@ spawn_num = {-sim_freedom_help_harder} 1, 0
 
 [spawn_duty@advanced_hostile]
 spawn_squads = duty_sim_squad_veteran_hostile, duty_hunter_night_simulation_squad_hostile
-spawn_num = {+sim_freedom_help_harder} 1, 0
+spawn_num = {squad_exist(duty_sim_squad_veteran)} 0, {squad_exist(duty_hunter_night_simulation_squad)} 0, {+sim_freedom_help_harder} 1, 0
 
 ;;; unused
 

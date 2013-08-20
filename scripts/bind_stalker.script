@@ -156,9 +156,6 @@ function actor_binder:on_trade (item, sell_bye, money)
 	-- End Alundaio
 end
 ----------------------------------------------------------------------------------------------------------------------
-function actor_binder:article_callback(npc, group, name)
-end
-----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_take (obj)
 	printf("on_item_take [%s]", obj:name())
 	if isArtefact(obj) then

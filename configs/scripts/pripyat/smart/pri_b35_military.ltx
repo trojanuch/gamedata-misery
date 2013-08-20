@@ -14,7 +14,7 @@ spawn_num = {+pri_b35_task_end -kingpin_gained} 1, 0
 
 [spawn_stalker@master_hostile]
 spawn_squads = stalker_sim_squad_veteran_hostile, stalker_hunter_night_simulation_squad_hostile
-spawn_num = {+pri_b35_task_end +kingpin_gained} 1, 0
+spawn_num = {squad_exist(stalker_sim_squad_veteran)} 0, {squad_exist(stalker_hunter_night_simulation_squad)} 0, {+pri_b35_task_end +kingpin_gained} 1, 0
 
 [exclusive]
 pri_a22_army_signaller = pripyat\pri_b35_military_logic.ltx

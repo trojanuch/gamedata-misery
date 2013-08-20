@@ -682,7 +682,7 @@ function travel_condlist(actor, npc, dialog_id, prev_phrase_id, phrase_id)
 end
 
 function get_price_by_distance(distance)
-	return math.ceil(distance/50)*750
+	return math.ceil(distance/50)*875
 end
 
 function get_travel_cost(actor, npc, dialog_id, phrase_id, p1)
