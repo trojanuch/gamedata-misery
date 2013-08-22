@@ -1106,17 +1106,17 @@ end
 -- плата за телепорт игрока на ѕрип€ть
 
 function pay_cost_to_guide_to_pripyat(first_speaker, second_speaker)
-	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 15000)
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 12000)
 end
 
 -- проверка, платежеспособности игрока за телепорт на ѕрип€ть
 
-function jup_b43_actor_has_15000_money(first_speaker, second_speaker)
-	return db.actor:money() >= 15000
+function jup_b43_actor_has_12000_money(first_speaker, second_speaker)
+	return db.actor:money() >= 12000
 end
 
-function jup_b43_actor_do_not_has_15000_money(first_speaker, second_speaker)
-	return db.actor:money() < 15000
+function jup_b43_actor_do_not_has_12000_money(first_speaker, second_speaker)
+	return db.actor:money() < 12000
 end
 
 -- награда за артефакты
