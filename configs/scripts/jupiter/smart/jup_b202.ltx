@@ -9,7 +9,7 @@ spawn_bandit@hostile
 
 [spawn_bandit@hostile]
 spawn_squads = bandit_sim_squad_hostile, stalker_sim_squad_novice, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork
-spawn_num = {-jup_b52_actor_items_can_be_stolen} 1, {+jup_b202_actor_items_returned} 1, 0
+spawn_num = {=actor_on_level(jupiter) -jup_b52_actor_items_can_be_stolen} 1, {=actor_on_level(jupiter) +jup_b202_actor_items_returned} 1, 0
 
 [exclusive]
 jup_b202_stalker_snag_wounded = jupiter\jup_b202_snag_wounded.ltx

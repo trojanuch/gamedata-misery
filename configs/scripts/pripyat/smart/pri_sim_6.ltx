@@ -9,4 +9,4 @@ spawn_monolith
 
 [spawn_monolith]
 spawn_squads = monolith_sim_squad_advanced_pripyat, monolith_sim_squad_veteran_pripyat, monolith_sci_simulation_squad_pripyat
-spawn_num = {+pri_b306_task_end} 2, {+pri_b36_master_dead} 2, 1
+spawn_num = {=actor_on_level(pripyat) -pri_b306_task_end -pri_b36_master_dead} 1, {=actor_on_level(pripyat) +pri_b306_task_end +pri_b36_master_dead} 2, 0

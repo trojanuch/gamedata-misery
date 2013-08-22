@@ -15,15 +15,15 @@ spawn_zombies
 
 [spawn_dog]
 spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog, simulation_cat_normal, simulation_bloodsucker
-spawn_num = 2
+spawn_num = {=actor_on_level(jupiter) +pri_a17_actor_has_gauss_rifle} 2, 0
 
 [spawn_boar]
 spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog, simulation_pseudodog, simulation_snork, simulation_cat_strong, simulation_cat, simulation_bloodsucker, simulation_gigant, simulation_psy_dog
-spawn_num = 1
+spawn_num = {=actor_on_level(jupiter)} 2, 0
 
 [spawn_zombies]
 spawn_squads = simulation_zombied_1_jupiter
-spawn_num = {+pri_a17_actor_has_gauss_rifle} 0, 2
+spawn_num = {=actor_on_level(jupiter) -pri_a17_actor_has_gauss_rifle} 2, 0
 
 ;;;unused
 
