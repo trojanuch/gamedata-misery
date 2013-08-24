@@ -11,6 +11,8 @@ misfire_start_prob	     	= -0.0004
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.005 ;0.03
 
+inv_weight			= +0.18
+
 [up_sect_firstc_rpk74]
 ;Отдача(2)-20%
 ;------------
@@ -22,6 +24,8 @@ cam_dispersion_inc          = -0.03     ;0.7
 cam_step_angle_horz         = -0.2  ;0.7
 cam_max_angle               = -1.0
 
+inv_weight			= +0.14
+
 [up_sect_firstd_rpk74]
 ;Настильность(2)20%
 ;------------------
@@ -32,13 +36,17 @@ bullet_speed            = +100
 fire_dispersion_base	= -0.02 ;0.7
 hit_impulse             = +30
 
+inv_weight			= +0.26
+
 [up_sect_firste_rpk74]
 ;Скорострельность(3)25%
 ;----------------------
-cost		      		= 7990
-value					= +15
+cost		      		= 5990
+value					= +5
 
-rpm                     = +100
+rpm                     = +30
+
+inv_weight			= +0.12
 
 [up_sect_secona_rpk74]
 ;Отдача(1)-10%
@@ -50,6 +58,8 @@ cam_dispersion              = -0.02		;0.7
 cam_dispersion_inc         	= -0.01		;0.7
 cam_step_angle_horz        	= -0.1	;0.7
 
+inv_weight			= +0.08
+
 [up_sect_seconc_rpk74]
 ;Отдача(2)-20%
 ;------------
@@ -60,6 +70,8 @@ cam_dispersion              = -0.04		;0.7
 cam_dispersion_inc         	= -0.03		;0.7
 cam_step_angle_horz        	= -0.2	;0.7
 cam_max_angle               = -1.0   
+
+inv_weight			= +0.11
 
 [up_sect_secone_rpk74]
 ;Удобство(2)15%
@@ -73,13 +85,17 @@ PDM_disp_base 				= -0.15 ;0.5
 PDM_disp_vel_factor 		= -0.5 ;1.5
 PDM_disp_accel_factor 		= -0.5 ;1.5
 
+inv_weight			= -0.11
+
 [up_sect_seconf_rpk74]
 ;Скорострельность(3)25%
 ;----------------------
 cost		      		= 8660
-value					= +15
+value					= +10
 
-rpm						= +100
+rpm						= +60
+
+inv_weight			= +0.16
 
 [up_sect_thirda_rpk74]
 ;Надежность(1)10%
@@ -93,6 +109,8 @@ value					= +10
 misfire_start_prob	     	= -0.0004
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.005 ;0.03
+
+inv_weight			= +0.16
 
 [up_sect_thirdc_rpk74]
 ;Надежность(2)15%
@@ -111,14 +129,17 @@ misfire_start_prob	     	= -0.0007
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.01 ;0.03
 
+inv_weight			= +0.18
+
 [up_sect_thirdd_rpk74]
 ;Скорострельность(2)15%
 ;----------------------
 cost		      		= 9320
 value					= +15
 
-rpm						= +100
+rpm						= +80
 
+inv_weight			= +0.26
 
 [up_sect_thirde_rpk74]
 ;Точность(3)30%
@@ -129,6 +150,8 @@ value					= +30
 fire_dispersion_base	= -0.09 ;0.7
 ;fire_dispersion_condition_factor    = -1 ;15
 
+inv_weight			= +0.18
+
 [up_sect_fourta_rpk74]
 ;Точность(1)10%
 ;---------------
@@ -137,6 +160,8 @@ value					= +10
 
 fire_dispersion_base	= -0.05 ;0.7
 ;fire_dispersion_condition_factor    = -1 ;15
+
+inv_weight			= +0.16
 
 [up_sect_fourtc_rpk74]
 ;Удобство(2)15%
@@ -150,6 +175,8 @@ PDM_disp_base 				= -0.15 ;0.5
 PDM_disp_vel_factor 		= -0.5 ;1.5
 PDM_disp_accel_factor 		= -0.5 ;1.5
 
+inv_weight			= -0.08
+
 [up_sect_fourte_rpk74]
 ;Отдача(3)30%
 ;---------------
@@ -159,15 +186,19 @@ value					= -30
 cam_dispersion              = -0.07		;0.7
 cam_dispersion_inc         	= -0.05		;0.7
 cam_step_angle_horz        	= -0.4	;0.7
-cam_max_angle               = -2.0   
+cam_max_angle               = -2.0
+
+inv_weight			= +0.16   
 
 [up_sect_fiftha_rpk74]
 ;Увеличенный объем ленточной коробки
 ;---------------
 cost		      		= 10690
-value					= +100
+value					= +20
 
-ammo_mag_size           = 100
+ammo_mag_size           = 20
+
+inv_weight			= +0.21
 
 [up_firsta_rpk74]
 scheme_index            = 0, 0

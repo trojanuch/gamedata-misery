@@ -42,8 +42,8 @@ misfire_end_prob = 0.11 ;	     	= 0.07
 condition_shot_dec      	= 0.0024
 condition_queue_shot_dec	= 0.0026
 
-ammo_elapsed		 	= 7
-ammo_mag_size		 	= 7
+ammo_elapsed		 	= 9
+ammo_mag_size		 	= 9
 ammo_class		 		= ammo_357_hp_mag, ammo_357_hp_mag_ap
 hand_dependence		 	= 1
 single_handed			= 1
@@ -72,8 +72,8 @@ cam_step_angle_horz			= 1.0		;(degree) size of step camera moved in horizontal p
 PDM_disp_base 				= 0.85
 PDM_disp_vel_factor 		= 1.05
 PDM_disp_accel_factor 		= 1.055
-PDM_disp_crouch	 				= 0.925
-PDM_disp_crouch_no_acc 			= 1.135
+PDM_disp_crouch = 1.0 ; 				= 0.925
+PDM_disp_crouch_no_acc = 1.0 ; 			= 1.135
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 12		;увеличение дисперсии в процентах при максимальном износе
 
@@ -247,7 +247,7 @@ aim_hud_offset_rot_16x9			= -0.019200,-0.010000,-0.010000
 
 [wpn_desert_eagle_hydro]:wpn_desert_eagle
 
-ammo_class		 		= ammo_11.43x23_hydro, ammo_11.43x23_fmj, ammo_11.43x23_ap
+ammo_class		 		= ammo_357_hp_mag_ap, ammo_357_hp_mag
 
 ;---------------------------
 ;End of AP section
@@ -277,8 +277,7 @@ misfire_end_prob = 0.11 ;	     	= 0.07
 condition_shot_dec      	= 0.0020
 condition_queue_shot_dec	= 0.0022
 
-ammo_mag_size		 	= 7
-ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+ammo_mag_size		 	= 9
 
 fire_dispersion_base		= 0.65
 
@@ -321,8 +320,7 @@ misfire_end_prob = 0.11 ;	     	= 0.07
 condition_shot_dec      	= 0.0024
 condition_queue_shot_dec	= 0.0026
 
-ammo_mag_size		 	= 7
-ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+ammo_mag_size		 	= 9
 
 fire_dispersion_base		= 0.66
 
@@ -365,8 +363,7 @@ misfire_end_prob = 0.11 ;	     	= 0.06
 condition_shot_dec      	= 0.0018
 condition_queue_shot_dec	= 0.0018
 
-ammo_mag_size		 	= 7
-ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+ammo_mag_size		 	= 9
 
 fire_dispersion_base		= 0.65
 
@@ -409,8 +406,9 @@ misfire_end_prob = 0.11 ;	     	= 0.09
 condition_shot_dec      	= 0.0030
 condition_queue_shot_dec	= 0.0032
 
-ammo_mag_size		 	= 7
-ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+silencer_status				= 0
+
+ammo_mag_size		 	= 9
 
 fire_dispersion_base		= 1.06
 
@@ -439,7 +437,8 @@ description					= st_wpn_desert_eagle_nimble_descr
 
 cost					= 19940
 
-installed_upgrades      = up_fiftha_desert_eagle_custom, up_thirda_desert_eagle_custom, up_thirdc_desert_eagle_custom, up_thirde_desert_eagle_custom
+upgrades                = up_gr_firstab_desert_eagle_custom, up_gr_seconab_desert_eagle_custom, up_gr_thirdab_desert_eagle_custom, up_gr_fourtab_desert_eagle_custom, up_gr_fifthab_desert_eagle_custom
+installed_upgrades      = up_fiftha_desert_eagle_custom, up_thirda_desert_eagle_custom, up_thirdc_desert_eagle_custom
 
 ;--TTX----------------------------------------------------------------------------
 
@@ -455,6 +454,6 @@ fire_dispersion_base		= 0.54
 hud                     	= wpn_desert_eagle_nimble_hud
 visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle.ogf
 
-[wpn_desert_eagle_nimble_hud]:hud_base
+[wpn_desert_eagle_nimble_hud]:wpn_desert_eagle_hud
 
 item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_hud.ogf

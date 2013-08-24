@@ -5,8 +5,8 @@ $npc			 		= on				; option for Level Editor
 $prefetch 		 		= 8
 scheduled               = off              	; option for ALife Simulator
 cform                   = skeleton
-;class                   = WP_AK74
-class = WP_AK74
+;class                   = WP_SVD
+class = WP_SVD
 min_radius = 0 ;              = 0
 max_radius = 500 ; = 250 ;              = 200
 description				= st_wpn_sks_descr
@@ -42,7 +42,7 @@ holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
 ;-------------------------------------------------------------------------------
 
 cost					= 33610
-weapon_class            = assault_rifle ; sniper_rifle
+weapon_class            = sniper_rifle
 
 ammo_limit				= 60
 ammo_current			= 10
@@ -97,8 +97,8 @@ cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in hori
 PDM_disp_base 				= 1.45
 PDM_disp_vel_factor 		= 2.25
 PDM_disp_accel_factor 		= 2.255
-PDM_disp_crouch	 			= 2.465
-PDM_disp_crouch_no_acc 		= 2.845
+PDM_disp_crouch = 1.0 ; 			= 2.465
+PDM_disp_crouch_no_acc = 1.0 ; 		= 2.845
 
 zoom_cam_relax_speed         = 5     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
@@ -265,7 +265,7 @@ scope_y                 = -26
 ;==============================================================================================================================
 [wpn_sks_modern]:wpn_sks
 class 					= WP_SVD
-weapon_class            = assault_rifle ; sniper_rifle
+weapon_class            = sniper_rifle
 
 cost					= 40960
 inv_weight			= 3.622
