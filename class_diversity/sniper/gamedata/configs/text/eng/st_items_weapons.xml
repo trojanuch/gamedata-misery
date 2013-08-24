@@ -612,7 +612,7 @@
 		<text>AKS-74 (Camouflaged)</text>
 	</string>
 	<string id="st_wpn_ak74_camo_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A more accurate and reliable rifle than the AKM, the AK-74 is still used by the majority of countries of the former USSR. The AKS-74 is equipped with a side-folding metal shoulder stock and is designed primarily for use with air assault infantry. This particular variant of the AK-74 is using the ERDL pattern, aka the "leaf pattern". In 1948, the US Army Engineer Research and Development Laboratory (ERDL) designed a general purpose jungle camouflage consisting of mid-brown and grass green organic shapes with black "branches" on a lime green background. This camouflage has been used by many countries and remains popular around the world.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]A more accurate and reliable rifle than the AKM, the AK-74 is still used by the majority of countries of the former USSR. The AKS-74 is equipped with a side-folding metal shoulder stock and is designed primarily for use with air assault infantry. This particular variant of the AK-74 is using the ERDL pattern, aka the "leaf pattern". In 1948, the US Army Engineer Research and Development Laboratory (ERDL) designed a general purpose jungle camouflage consisting of mid-brown and grass green organic shapes with black "branches" on a lime green background. This camouflage has been used by many countries and remains popular around the world.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
 	</string>
 		<string id="st_wpn_ak74_worn">
 		<text>AKS-74 (Worn)</text>
@@ -630,7 +630,7 @@
 		<text>AKS-74U (Camouflaged)</text>
 	</string>
 	<string id="st_wpn_ak74u_camo_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The AKS-74U was intended as a personal defense weapon for use mainly with Spetsnaz forces, airborne infantry, rear-echelon support units and armored vehicle crews that required compact but relatively powerful individual automatic weapon. This particular model of the AKS-74U is using the Bulgarian four colour urban disruptive pattern. Used by Bulgarian Air Force and Gendarmerie serving in ISAF (Afghanistan). In use since 2004.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The AKS-74U was intended as a personal defense weapon for use mainly with Spetsnaz forces, airborne infantry, rear-echelon support units and armored vehicle crews that required compact but relatively powerful individual automatic weapon. This particular model of the AKS-74U is using the Bulgarian four colour urban disruptive pattern. Used by Bulgarian Air Force and Gendarmerie serving in ISAF (Afghanistan). In use since 2004.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
 	</string>
 	<string id="st_wpn_ak74u_worn">
 		<text>AKS-74U (Worn)</text>
@@ -1065,7 +1065,7 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Adopted for Spetsnaz forces and specialist front-line combat units, the OTs-14-4A allows for assembly of one of four weapon versions, depending on the mission. This Zone version is equipped with the GP-25 grenade launcher.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x39 compatible silencer \n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher (permanent)</text>
 	</string>
 	<string id="st_wpn_groza_nimble">
-		<text>OTs-14-4A 'Storm'</text>
+		<text>OTs-14-1A 'Groza-1'</text>
 	</string>
 	<string id="st_wpn_groza_nimble_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Being the only variant of the OTs-14-4A, the OTs-14-1A “Groza-1” is chambered for 7.62x39mm. Fire rate, flatness and magazine capacity are improved thanks to the use of this lighter, faster round. The Groza-1 was only produced in small batches.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher (permanent)</text>
@@ -1146,7 +1146,7 @@
 		<text>MP5A3 'Frasier'</text>
 	</string>
 	<string id="st_wpn_mp5_nimble_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A submachine gun prototype based on the excellent H&K MP5A3 model. Designed as a next generation close quarter combat weapon, it benefits from a higher caliber, rate of fire and accuracy.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A submachine gun prototype based on the excellent H&K MP5A3 model. Designed as a next generation close quarter combat weapon, it benefits from a higher caliber, rate of fire and accuracy.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 11.43x23 compatible silencer</text>
 	</string>
 	<string id="st_wpn_pb">
 		<text>PB/6P9</text>
@@ -1557,7 +1557,7 @@
 		<text>Sako TRG-42</text>
 	</string>
 	<string id="st_wpn_trg_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The TRG-42 is not an accurized version of an existing rifle, but was developed from the very beginning as a sniper rifle. Its consistent high accuracy and reliability have made it popular both in long-range competitions and military sniper operations.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] FINDOT scope (permanent)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The TRG-42 is not an accurized version of an existing rifle, but was developed from the very beginning as a sniper rifle. Its consistent high accuracy and reliability have made it popular both in long-range competitions and military sniper operations.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] FINDOT scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] .300 compatible silencer</text>
 	</string>
 	<string id="st_wpn_sako">
 		<text>Sako M95</text>
