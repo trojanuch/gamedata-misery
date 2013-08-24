@@ -39,7 +39,7 @@ function main_menu:InitControls()
 
 	local _ver = xml:InitStatic		("static_version",self)
 	local mm						= _G.main_menu.get_main_menu()
-	_ver:TextControl():SetText		("ver. " .. mm:GetGSVer().." + MISERY ver. 2.0.2")
+	_ver:TextControl():SetText		("ver. " .. mm:GetGSVer().." + MISERY ver. 2.0.2 + QF")
 
     self.l_mgr = mm:GetLoginMngr()
     self.acc_mgr = mm:GetAccountMngr()
