@@ -4,7 +4,7 @@
 [danger_inertion]
 grenade 		= 15000							;May use condlists from xr_condition
 entity_corpse 	= 0
-entity_attacked = 60000
+entity_attacked = 126000
 attacked 		= 126000
 bullet_ricochet = 35000
 enemy_sound 	= 48000
@@ -17,7 +17,7 @@ visual			= 60000
 [danger_object] 							;Ignore distances squared
 grenade 		= {=anim_state(sleep)} 100, {=is_heavy_rain} 144, {=is_rain} 400, 900 ;May use condlists from xr_condition
 entity_corpse 	= 0
-entity_attacked = {=anim_state(sleep)} 16, {=is_heavy_rain} 100, {=is_rain} 144, 225
+entity_attacked = {=anim_state(sleep)} 16, {=is_heavy_rain} 400, {=is_rain} 900, 2500
 attacked 		= 40000
 bullet_ricochet = {=anim_state(sleep)} 25, {=is_heavy_rain} 36, {=is_rain} 49, 81
 enemy_sound 	= {=anim_state(sleep)} 0, {=is_heavy_rain} 25, {=is_rain} 25, 100
@@ -29,7 +29,7 @@ visual			= {=anim_state(sleep)} 0, {=is_dark_night} 2500, {=is_heavy_rain} 8100,
 
 [sound_threshold] ; = inertion,distance,relation   [Relation 0-all, 1-enemies]
 wpn 				= 0,0,0
-wpn_shoot 			= 9600,64,0
+wpn_shoot 			= 30000,3600,1
 wpn_empty			= 0,0,1
 wpn_hit 			= 50000,400,0
 wpn_show			= 6600,9,1
