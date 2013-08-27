@@ -10,11 +10,11 @@ spawn_bloodsucker
 
 [spawn_snork]
 spawn_squads = simulation_chimera_jup_b209, simulation_bloodsucker_jup_b209, simulation_bloodsucker_jup_b209, simulation_gigant_jup_b209, simulation_psy_dog_jup_b209, simulation_snork_jup_b209, simulation_snork_jup_b209, simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_dog, simulation_dog, simulation_pseudodog
-spawn_num = {+jup_b209_hypotheses_end} 1, 0
+spawn_num = {=actor_on_level(jupiter) +jup_b209_hypotheses_end} 1, 0
 
 [spawn_bloodsucker]
 spawn_squads = simulation_chimera_jup_b209, simulation_bloodsucker_jup_b209, simulation_bloodsucker_jup_b209, simulation_gigant_jup_b209, simulation_psy_dog_jup_b209, simulation_snork_jup_b209, simulation_snork_jup_b209, simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_dog, simulation_dog, simulation_pseudodog
-spawn_num = {+jup_b209_hypotheses_end} 0, 1
+spawn_num = {=actor_on_level(jupiter) -jup_b209_hypotheses_end} 1, 0
 
 [exclusive]
 jup_b209_snork_1 = jupiter\jup_b209_snork_1.ltx

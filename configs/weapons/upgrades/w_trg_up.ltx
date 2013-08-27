@@ -81,6 +81,11 @@ misfire_end_prob	     	= -0.007 ;0.03
 cost		      		= 6860
 value                   = -20
 
+cam_dispersion         = -0.18     ;1.8
+cam_dispersion_inc     = -0.18     ;1.8
+cam_step_angle_horz    = -0.05     ;0.25
+cam_relax_speed        = +0.035
+
 zoom_cam_dispersion         = -0.18     ;1.8
 zoom_cam_dispersion_inc     = -0.18     ;1.8
 zoom_cam_step_angle_horz    = -0.05     ;0.25
@@ -105,10 +110,16 @@ inv_weight			= +0.16
 cost		      		= 7920
 value                   = -10
 
+cam_dispersion         = -0.12     ;1.8
+cam_dispersion_inc     = -0.12     ;1.8
+cam_step_angle_horz    = -0.03     ;0.25
+cam_relax_speed        = +0.02
+
 zoom_cam_dispersion         = -0.12     ;1.8
 zoom_cam_dispersion_inc     = -0.12     ;1.8
 zoom_cam_step_angle_horz    = -0.03     ;0.25
 zoom_cam_relax_speed        = +0.02
+
 inv_weight			= +0.184
 
 [up_sect_thirdc_trg]
@@ -131,6 +142,11 @@ inv_weight			= +0.24
 cost		      		= 7860
 value                   = -30
 
+cam_dispersion         = -0.25     ;1.8
+cam_dispersion_inc     = -0.25     ;1.8
+cam_step_angle_horz    = -0.1      ;0.25
+cam_relax_speed        = +0.05
+
 zoom_cam_dispersion         = -0.25     ;1.8
 zoom_cam_dispersion_inc     = -0.25     ;1.8
 zoom_cam_step_angle_horz    = -0.1      ;0.25
@@ -141,14 +157,14 @@ inv_weight			= +0.16
 [up_sect_fourta_trg]
 ;6икс прицел.
 ;------------
-cost		      		= 3100
+cost		      		= 3720
 
-scope_zoom_factor       = -13
+scope_zoom_factor       = -25
 
 [up_sect_fourtc_trg]
 ;Контрастный прицел
 ;------------
-cost		      		= 4200
+cost		      		= 4780
 
 scope_nightvision = scope_contrast
 
@@ -157,7 +173,7 @@ inv_weight			= +0.01
 [up_sect_fourte_trg]
 ;ПНВ
 ;------------
-cost		      		= 6000
+cost		      		= 5240
 
 scope_nightvision = scope_nightvision
 
@@ -166,11 +182,11 @@ inv_weight			= +0.05
 [up_sect_fourtf_trg]
 ;Тепловизор
 ;------------
-cost		      		= 14000
+cost		      		= 6880
 
-scope_alive_detector = scope_detector
+scope_dynamic_zoom = on
 
-inv_weight			= +0.08
+inv_weight			= +0.01
 
 [up_firsta_trg]
 scheme_index            = 0, 0
@@ -473,7 +489,7 @@ scheme_index            = 2, 4
 known                   = 1
 effects                 =
 section                 = up_sect_fourtf_trg
-property                = prop_autolockscope
+property                = prop_scope
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -485,8 +501,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_opt_c1_name
-description             = st_up_opt_c1_descr
+name                    = st_up_opt_c3_name
+description             = st_up_opt_c3_descr
 icon                    = ui_inGame2_upgrade_SVDm2_16
 
 [up_gr_firstab_trg]

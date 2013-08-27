@@ -213,7 +213,13 @@
     <auto_static x="0" y="0" width="1024" height="768" stretch="1">
       <texture>wpn_crosshair_findot</texture>
     </auto_static>
-  </wpn_crosshair_findot>
+	 </wpn_crosshair_findot>
+	  
+    <wpn_crosshair_pso1_ksvk x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_pso1_ksvk</texture>
+    </auto_static>
+  </wpn_crosshair_pso1_ksvk>
 
 </w>
 

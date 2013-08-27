@@ -69,24 +69,24 @@ cl_run_fwd_0				=	1,	  0.2,	    1,   0.4,     1
 [stalker_vision_free]
 min_view_distance   		= 0.35				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 2.00				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 230.0				;Threshold in which object becames visible based on factors
+visibility_threshold	 	= 200.0				;Threshold in which object becames visible based on factors
 always_visible_distance 	= 0.02
-time_quant					= 0.0012			;step increment to for sight calculations (low values seem to make stalkers take shots faster)
-decrease_value				= 0.0013 			;Decrease over time to overall threshold
+time_quant					= 0.0013			;step increment to for sight calculations (low values seem to make stalkers take shots faster)
+decrease_value				= 0.0014 			;Decrease over time to overall threshold
 velocity_factor		     	= 2.12				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
-luminocity_factor			= 0.36				;Low value = easier to see at night
-transparency_threshold	 	= 0.96 				;Low value = easier to see through semi-transparent objects
+luminocity_factor			= 0.46				;Low value = easier to see at night
+transparency_threshold	 	= 0.82 				;Low value = easier to see through semi-transparent objects
 
 [stalker_vision_danger]
-min_view_distance   		= 0.50				; коэффициент, который множится на eye_range, в зависимости от угла
+min_view_distance   		= 0.45				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 2.00				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 200.0				; значение, при достижении суммой которого объект считается видимым
+visibility_threshold	 	= 180.0				; значение, при достижении суммой которого объект считается видимым
 always_visible_distance 	= 0.02
-time_quant					= 0.0009
+time_quant					= 0.0010
 decrease_value				= 0.0011 ;0.004		; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 2.12
-luminocity_factor			= 0.36				; фактор освещения (только для Актёра)
-transparency_threshold	 	= 0.96
+velocity_factor		     	= 2.12				
+luminocity_factor			= 0.46				; фактор освещения (только для Актёра)
+transparency_threshold	 	= 0.82
 
 [stalker_sound_perceive]
 	weapon					= 2; 0.75; 10 коэффициент усиления приоритета\силы звука
@@ -102,12 +102,12 @@ bip01_pelvis 				= 0.5, 4, 0.1
 bip01_spine 		 		= 0.8, 4, 0.4
 bip01_spine1 		 		= 0.8, 4, 0.4
 bip01_spine2 		 		= 0.8, 4, 0.4
-bip01_neck 			 		= 1.5, 0, 3.5
-bip01_head 			 		= 2.5, 0, 3.5, 	3
-eyelid_1 			 		= 2.5, 0, 3.5, 	3
-eye_left 			 		= 2.5, 0, 3.5, 	3
-eye_right 			 		= 2.5, 0, 3.5, 	3
-jaw_1 		 		 		= 2.5, 0, 3.5
+bip01_neck 			 		= 2.65, 0, 3.5
+bip01_head 			 		= 3.95, 0, 3.5, 	3
+eyelid_1 			 		= 3.95, 0, 3.5, 	3
+eye_left 			 		= 3.95, 0, 3.5, 	3
+eye_right 			 		= 3.95, 0, 3.5, 	3
+jaw_1 		 		 		= 2.95, 0, 3.5
 
 bip01_l_clavicle	 		= 0.35, 10, 0.45
 bip01_l_upperarm	 		= 0.20, 10, 0.45
@@ -137,11 +137,11 @@ bip01_r_finger2	 	 	 	= 0.01, -1, 0.01
 bip01_r_finger21	 		= 0.01, -1, 0.01
 bip01_r_finger22	 		= 0.01, -1, 0.01
 
-bip01_l_thigh	 	 		= 0.30,  4, 0.45
+bip01_l_thigh	 	 		= 0.65,  4, 0.45
 bip01_l_calf	 	 		= 0.15,  4, 0.4
 bip01_l_foot	 	 		= 0.05,  4, 0.01
 bip01_l_toe0	 	 		= 0.01, -1, 0.01
-bip01_r_thigh	 	 		= 0.30,  6, 0.45
+bip01_r_thigh	 	 		= 0.65,  6, 0.45
 bip01_r_calf	 	 		= 0.15,  6, 0.4
 bip01_r_foot	 	 		= 0.05,  6, 0.01
 bip01_r_toe0	 	 		= 0.01, -1, 0.01
@@ -247,14 +247,21 @@ sleep_psy_health			= 1.0
 use_limping_state			= off ;off
 limping_threshold			= 0.05
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 'EXTREME BLEEDING-BASED' DAMAGE MODEL ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Bullet damage model for NPCs is based mostly on ultra-severe but fast healing bleeding wounds. This allows for almost immediate damage using only bleeding which almost perfectly simulates regular damage (ie. no falling down after few secs effect). This approach is required to make armor penetration system properly working for NPCs, as k_ap param of ammo mostly affects bleeding. It also allows to set zoned armor section using 2nd value of protections ([*_damage] sections) defined in damages.ltx. 30.05.2013 trojanuch
+
 ;открытые раны
-bleeding_v					= 0.595	;потеря крови при номинальной ране в секунду
-wound_incarnation_v			= 0.535		;крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
+bleeding_v					= 0.825	;потеря крови при номинальной ране в секунду
+wound_incarnation_v			= 0.800		;крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
 min_wound_size				= 0.0075
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [stalker_terrain]
 	255,000,255,255
-
 
 [sakharov_terrain]
 	255,001,255,255
@@ -387,8 +394,8 @@ sound_perceive_section			= stalker_sound_perceive
 ;---VISIBILITY--------------------------------------------------------
 vision_danger_section			= stalker_vision_danger
 vision_free_section				= stalker_vision_free
-eye_fov							= 110 ;110;120
-eye_range						= 110
+eye_fov							= 130 ;110;120
+eye_range						= 150
 far_plane_factor				= 1.0				; фактор дальности тумана
 fog_density_factor				= 1.95 ; 0.95			;0.1		;0.05				; фактор плотности тумана
 
@@ -484,8 +491,8 @@ fire_queue_section = fire_queue_params
 
 
 ;---CRITICAL WOUND------------------------------------------------------------------
-critical_wound_threshold		= 0.4
-critical_wound_decrease_quant		= 0.2
+critical_wound_threshold		= 0.05
+critical_wound_decrease_quant		= 0.1
 body_parts_section_id			= critical_wound_body_parts_section
 critical_wound_weights			= 100,50,10
 
@@ -495,10 +502,10 @@ hit_type				= strike
 power_fx_factor				= 50.0
 
 ;---PHYSICS-----------------------------------------------------------
-ph_box0_center 				= 0.0, 0.9, 0.0
-ph_box0_size 		 			= 0.32, 0.9,  0.32
-ph_box1_center 				= 0.0, 0.6, 0.0
-ph_box1_size 		 			= 0.37, 0.6,  0.37
+ph_box0_center 				= 0.0,  0.9,  0.0
+ph_box0_size 		 		= 0.29, 0.9,  0.29
+ph_box1_center 		 		= 0.0,  0.6,  0.0
+ph_box1_size 		 		= 0.33, 0.6,  0.33
 
 ;---------------------------------------------------------------------
 ph_crash_speed_min			= 10

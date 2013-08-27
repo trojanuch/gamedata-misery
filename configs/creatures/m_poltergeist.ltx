@@ -16,7 +16,7 @@ visual				 = monsters\poltergeist\poltergeist
 corpse_visual		 = monsters\poltergeist\poltergeist_dead
 icon				 = ui_npc_monster_poltergeist
 MaxHealthValue		 = 150			; range [0..200]
-DynamicObjectsCount	 = 16
+DynamicObjectsCount	 = 8
 smart_terrain_choose_interval	= 00:15:00
 
 cform                = skeleton					; collision class
@@ -49,10 +49,10 @@ pp_effector_name			= 	postprocess_thermal
 pp_highest_at				= 	0
 
 psy_linear_factor		=	1.8
-psy_quadratic_factor	=	0.039
+psy_quadratic_factor	=	0.032
 psy_max_distance		=	52.0
 psy_max_power			=	7.05
-psy_sound				=	anomaly\psy_voices_1_l		;monsters\controller\controller_presence_l
+psy_sound				=	anomaly\psy_polter	;monsters\controller\controller_presence_l
 psy_pp_effector_name	= 	psy_antenna 				;postprocess_psi
 psy_pp_highest_at		= 	0.2
 
@@ -277,7 +277,7 @@ critical_wound_decrease_quant	= 0.
 eye_fov				 = 100	;120
 eye_range			 = 60 ;60
 
-DynamicObjectsCount		= 16
+DynamicObjectsCount		= 8
 
 vision_free_section			= poltergeist_vision_free
 vision_danger_section		= poltergeist_vision_danger
@@ -383,8 +383,8 @@ wound_immunity 		= 0.3
 radiation_immunity 	= 0.0
 telepatic_immunity 	= 0.0
 chemical_burn_immunity = 0.0 ; = 3.0 ; 	= 0.0
-explosion_immunity 	= 0.5
-fire_wound_immunity 	= 0.9
+explosion_immunity 	= 0.74
+fire_wound_immunity 	= 0.92
 
 ;===========================================================================
 ; TELE
@@ -528,10 +528,10 @@ pp_effector_name			= 	postprocess_thermal
 pp_highest_at				= 	0.02
 
 psy_linear_factor		=	1.3
-psy_quadratic_factor	=	0.025
+psy_quadratic_factor	=	0.021
 psy_max_distance		=	38.0
 psy_max_power			=	4.8
-psy_sound				=	anomaly\psy_voices_1_l		;monsters\controller\controller_presence_l
+psy_sound				=	anomaly\psy_polter		;monsters\controller\controller_presence_l
 psy_pp_effector_name	= 	psy_antenna 				;postprocess_psi
 psy_pp_highest_at		= 	0.2
 ;;;;;;;;;;;;;
@@ -547,8 +547,8 @@ wound_immunity 		= 0.3
 radiation_immunity 	= 0.0
 telepatic_immunity 	= 0.0
 chemical_burn_immunity = 0.0 ; = 3.0 ; 	= 0.0
-explosion_immunity 	= 0.5
-fire_wound_immunity 	= 0.9
+explosion_immunity 	= 0.66
+fire_wound_immunity 	= 0.84
 
 
 

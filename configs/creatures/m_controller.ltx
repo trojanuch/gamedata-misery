@@ -16,7 +16,7 @@ visual				 = monsters\controller\controller_1
 corpse_visual		 = monsters\controller\controller_dead
 icon				 = ui_npc_monster_controller
 MaxHealthValue		     = 200			; range [0..200]
-DynamicObjectsCount	 = 32
+DynamicObjectsCount	 = 8
 smart_terrain_choose_interval	= 00:15:00
 
 
@@ -242,7 +242,7 @@ critical_wound_bones_legs	= controller_critical_wound_bones_legs
 DamagedThreshold		= 0.25
 
 material				= creatures\medium
-DynamicObjectsCount		= 32
+DynamicObjectsCount		= 8
 
 attack_effector			= m_controller_attack_effector
 
@@ -305,10 +305,10 @@ vision_danger_section		= controller_vision_danger
 ; иначе возникают артефакты с потерей видимости при переходе от денжера во фри.
 
 [controller_vision_free]
-min_view_distance   		= 1.5				; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance	 		= 1.8				; коэффициент, который множится на eye_range, в зависимости от угла
+min_view_distance   		= 1.0				; коэффициент, который множится на eye_range, в зависимости от угла
+max_view_distance	 		= 1.2				; коэффициент, который множится на eye_range, в зависимости от угла
 visibility_threshold	 	= 100.0				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.55
+always_visible_distance 	= 0.05
 time_quant					= 0.002
 decrease_value				= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
 velocity_factor		     	= 0.5
@@ -316,10 +316,10 @@ luminocity_factor			= 0.5 				; фактор освещения (только для Актёра)
 transparency_threshold		= 0.25
 
 [controller_vision_danger]
-min_view_distance   		= 1.5				; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance	 		= 1.8				; коэффициент, который множится на eye_range, в зависимости от угла
+min_view_distance   		= 1.0				; коэффициент, который множится на eye_range, в зависимости от угла
+max_view_distance	 		= 1.2				; коэффициент, который множится на eye_range, в зависимости от угла
 visibility_threshold	 	= 60.0				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.55
+always_visible_distance 	= 0.05
 time_quant					= 0.001
 decrease_value				= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
 velocity_factor		     	= 0.5
@@ -352,62 +352,62 @@ stand_run_dmg_0	 	=	    1,	   0.01,     1,	    0.25,    0.6,
 [controller_immunities]
 burn_immunity = 2.0 ; 				= 0.6			;Factors of immunity
 strike_immunity 			= 0.3
-shock_immunity = 2.0 ; 				= 0.5
+shock_immunity = 0.34 ; 				= 0.5
 wound_immunity				= 0.25
 radiation_immunity 			= 0.0
 telepatic_immunity 			= 0.0
 chemical_burn_immunity = 4.5 ; = 3.0 ; 		= 0.3
-explosion_immunity 					= 0.6
+explosion_immunity 					= 0.85
 fire_wound_immunity  				= 0.5
 
 ;=========================================================================================
 ; CONTROL Effector
 ;==========================================================================================
 [controller_control_effector]
-duality_h		= 0.1	;0.31
-duality_v		= 0.2	;0.31
-blur			= 0.01
-gray			= 0.5	;0.5
-noise_intensity = 1.0
-noise_grain		= 0.9
-noise_fps		= 30
-color_base		= 1.1,1.1,1	;0.1,0.15,0.4
-color_gray		= 1,1,1		;0.333,0.333,0.333
-color_add		= 0.2,0.2,0.1
-time			= 1.0		;1.5
-time_attack		= 0.3		;0.5		; fade in
-time_release	= 0.5		; fade out
+duality_h		= 0 ;  0.1	;0.31
+duality_v		= 0 ;  0.2	;0.31
+blur			= 0 ;  0.01
+gray			= 0 ;  0.5	;0.5
+noise_intensity = 0 ;  1.0
+noise_grain		= 0 ;  0.9
+noise_fps		= 0 ;  30
+color_base		= 0 ;  1.1,1.1,1	;0.1,0.15,0.4
+color_gray		= 0 ;  1,1,1		;0.333,0.333,0.333
+color_add		= 0 ;  0.2,0.2,0.1
+time			= 0 ;  1.0		;1.5
+time_attack		= 0 ;  0.3		;0.5		; fade in
+time_release	= 0 ;  0.5		; fade out
 
 ; camera effects
-ce_time				= 1.0	;1.5
-ce_amplitude		= 20.0
-ce_period_number	= 1.0
-ce_power			= 0.7
+ce_time				= 0 ;  1.0	;1.5
+ce_amplitude		= 0 ;  20.0
+ce_period_number	= 0 ;  1.0
+ce_power			= 0 ;  0.7
 
 ;==========================================================================================
 ; Psy Attack Effector
 ;==========================================================================================
 [m_controller_attack_effector]
 
-duality_h		= 0.01
-duality_v		= 0.01
-blur			= 0.01
-gray			= 0.5
-noise_intensity = 0.0
-noise_grain		= 1
-noise_fps		= 30
-color_base		= 0.65,0.15,0.1
-color_gray		= 0.333,0.333,0.333
-color_add		= 0,0,0
-time			= 0.3
-time_attack		= 0.05		; fade in
-time_release	        = 0.20		; fade out
+duality_h		= 0 ; 0.01
+duality_v		= 0 ; 0.01
+blur			= 0 ; 0.01
+gray			= 0 ; 0.5
+noise_intensity = 0 ; 0.0
+noise_grain		= 0 ; 1
+noise_fps		= 0 ; 30
+color_base		= 0 ; 0.65,0.15,0.1
+color_gray		= 0 ; 0.333,0.333,0.333
+color_add		= 0 ; 0,0,0
+time			= 0 ; 0.3
+time_attack		= 0 ; 0.05		; fade in
+time_release	        = 0 ; 0.20		; fade out
 
 ; camera effects
-ce_time				= 0.40 ;time
-ce_amplitude		= -15.0
-ce_period_number	= 1.5 ;2.0
-ce_power			= 0.7 ;0.7 ; power
+ce_time				= 0 ; 0.40 ;time
+ce_amplitude		= 0 ; -15.0
+ce_period_number	= 0 ; 1.5 ;2.0
+ce_power			= 0 ; 0.7 ;0.7 ; power
 
 ;=========================================================================================
 ; Aura PP Effector

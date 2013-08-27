@@ -10,13 +10,13 @@ spawn_flesh
 spawn_snork
 
 [spawn_pseudodog]
-spawn_squads = simulation_pseudodog, simulation_pseudodog, simulation_pseudodog, simulation_bloodsucker, simulation_cat_pripyat
-spawn_num = 1
+spawn_squads = simulation_flesh, simulation_flesh, simulation_boar, simulation_boar, simulation_snork
+spawn_num = {=actor_on_level(pripyat)} 2, 0
 
 [spawn_flesh]
-spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog, simulation_cat_pripyat
-spawn_num = 1
+spawn_squads = simulation_flesh, simulation_flesh, simulation_flesh, simulation_boar
+spawn_num = {=actor_on_level(pripyat)} 1, 0
 
 [spawn_snork]
-spawn_squads = simulation_pseudodog, simulation_pseudodog, simulation_snork, simulation_bloodsucker, simulation_bloodsucker, simulation_gigant, simulation_cat_pripyat
-spawn_num = 1
+spawn_squads = simulation_flesh, simulation_flesh, simulation_boar, simulation_boar, simulation_gigant, simulation_chimera
+spawn_num = {=actor_on_level(pripyat)} 1, 0

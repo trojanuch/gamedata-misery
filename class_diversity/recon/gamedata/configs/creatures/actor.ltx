@@ -83,11 +83,11 @@ camera_height_factor            = 0.92
 ;дисперсия стрельбы с учетом ходьбы и бега
 disp_base                    = 1.5         ;угол (в градусах) разлета пуль, когда актер стоит на месте
 disp_aim                     = 0.33
-disp_vel_factor              = 2.5          ;на сколько увеличится дисперсия при скрости в 10 м/с (не обязательно при беге)
+disp_vel_factor              = 1.35          ;на сколько увеличится дисперсия при скрости в 10 м/с (не обязательно при беге)
 disp_accel_factor            = 0.0          ;еще на сколько увеличится, если актер бежит (+ скорость)
 disp_crouch_factor           = -0.75         ;уменьшение если актер сидит
-disp_crouch_no_acc_factor    = -0.5         ;уменьшение если актер сидит + no acceleration
-disp_jump_factor             = 1.8
+disp_crouch_no_acc_factor    = -0.95         ;уменьшение если актер сидит + no acceleration
+disp_jump_factor             = 1.15
 
 body_remove_time = 6000000        ;время уничтожения трупа (с учетом TimeFactor)
 
@@ -131,7 +131,7 @@ radiation_immunity 			= 1.03
 telepatic_immunity 			= 2.84
 chemical_burn_immunity 			= 2.42
 explosion_immunity 			= 0.89
-fire_wound_immunity  			= 0.72
+fire_wound_immunity  			= 0.76
 
 [actor_immunities_gd_stalker]
 burn_immunity 				= 10.9
@@ -142,7 +142,7 @@ radiation_immunity 			= 1.03
 telepatic_immunity 			= 2.84
 chemical_burn_immunity 			= 2.42
 explosion_immunity 			= 0.89
-fire_wound_immunity  			= 0.72
+fire_wound_immunity  			= 0.76
 
 [actor_immunities_gd_veteran]
 burn_immunity 				= 10.9
@@ -153,7 +153,7 @@ radiation_immunity 			= 1.03
 telepatic_immunity 			= 2.84
 chemical_burn_immunity 			= 2.42
 explosion_immunity 			= 0.89
-fire_wound_immunity  			= 0.72
+fire_wound_immunity  			= 0.76
 
 [actor_immunities_gd_master]
 burn_immunity 				= 10.9
@@ -164,10 +164,10 @@ radiation_immunity 			= 1.03
 telepatic_immunity 			= 2.84
 chemical_burn_immunity 			= 2.42
 explosion_immunity 			= 0.89
-fire_wound_immunity  			= 0.72
+fire_wound_immunity  			= 0.76
 
 [actor_condition]
-satiety_v				= 0.000008 	;скорость уменьшения сытости со временем
+satiety_v				= 0.0000105 	;скорость уменьшения сытости со временем
 radiation_v				= 0.000018	;скорость уменьшения радиации
 satiety_power_v			= 0.00325		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.00007    ;увеличение здоровья при уменьшении сытости
@@ -177,15 +177,15 @@ morale_v				= 0.0001	;скорость восстановления морали
 psy_health_v			= 0.0028 ;0.001		;скорость восстановления psy-здоровья
 alcohol_v				= -0.00052
 health_hit_part			= 1.0		;процент хита, уходящий на отнимание здоровья
-power_hit_part			= 0.08		;процент хита, уходящий на отнимание силы
+power_hit_part			= 0.03		;процент хита, уходящий на отнимание силы
 max_power_leak_speed	= 0.000001		;накопление усталости (макс граница, до которой восстанавливается сила) в секунду игрового времени
 max_walk_weight			= 150 ; 950 ; wpn_test ; 150 ; 55 ;50 ;490 ;90
 health_restore_v              = 0
 
-bleeding_v 				= 0.0128	 ;0.0005	;потеря крови при номинальной ране в секунду
+bleeding_v 				= 0.0084	 ;0.0005	;потеря крови при номинальной ране в секунду
 
-wound_incarnation_v		= 0.0028 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления раны
-min_wound_size 			= 0.0082	;минимальный размер раны, после которого она считается зажившей
+wound_incarnation_v		= 0.0034 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления раны
+min_wound_size 			= 0.0074	;минимальный размер раны, после которого она считается зажившей
 
 ;--when actor in sleep
 satiety_v_sleep          	= 0.000006
@@ -203,7 +203,12 @@ wound_incarnation_v_sleep     	= 0.0
 max_power_leak_speed_sleep    	= -0.00001
 health_restore_v              	= 0.0		;0.0001
 
-;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LINEAR WEIGHT SYSTEM ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Shift of values to make entire stamina consumption lineary depended on weight, with very long sprint times with low or no encumbrance. Works in coherence with max weight limits. 30.05.2013 trojanuch
+
 ;actor_condition only
 
 jump_power 				= 0.018 ;умешьшение силы с прыжком без учета веса ноши
@@ -212,10 +217,12 @@ overweight_jump_k       = 1.04		;10                ;10                          
 
 stand_power             = -0.0075
 walk_power              = 0.00001 ;0.00002  ;0.000012                                ;Reduction of force for a second during walking without taking into account weight of a burden
-walk_weight_power       = 0.0065  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
+walk_weight_power       = 0.0050  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
 overweight_walk_k       = 1.12			;9        ;10                                ;Factor influence of an overload of a burden (it is multiplied on walk_weight_power)
 accel_k                 = 1.3			;5                                        ;Factor on run (it is multiplied walk_power, walk_weight_power)
 sprint_k                = 3.0 ;75        ;коэффициент на "sprint" бег (умножается walk_power, walk_weight_power)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; хромота
 limping_health_begin =        0.08                ;порог здоровья меньше которого актер начинает хромать

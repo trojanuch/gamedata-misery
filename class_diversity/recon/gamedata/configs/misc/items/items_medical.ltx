@@ -17,7 +17,7 @@ inv_grid_height		= 1
 inv_grid_x			= 3
 inv_grid_y			= 18
 
-eat_bleeding	= -0.56
+eat_bleeding	= -1.14
 
 eat_satiety 			= -0.029
 eat_alcohol			= 0.018
@@ -50,6 +50,8 @@ eat_bleeding	= -0.88
 eat_satiety 			= 0.346
 
 use_sound			= interface\inv_medkit
+
+repair_part_bonus	 	= 0.06
 
 [medkit_script]:booster ;Do not use! Used in xr_wounded
 ;$spawn 				= "food and drugs\medkit_script"
@@ -312,6 +314,44 @@ eat_sleepiness			= 0.09
 
 use_sound			= interface\inv_syringe
 
+[glucose]:booster ; (Glucose shot large)
+$spawn 				= "food and drugs\antirad"
+visual				= dynamics\devices\glucose_shots\glucose.ogf
+inv_name			= st_glucose
+inv_name_short			= st_glucose
+description			= st_glucose_descr
+inv_weight			= 0.021
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 39
+inv_grid_y			= 0
+cost				= 1840
+
+eat_satiety 			= 0.396
+eat_sleepiness			= 0.278
+
+use_sound			= interface\inv_syringe
+
+[glucose_s]:booster ; (Glucose shot small)
+$spawn 				= "food and drugs\antirad"
+visual				= dynamics\devices\glucose_shots\glucose_s.ogf
+inv_name			= st_glucose_s
+inv_name_short			= st_glucose_s
+description			= st_glucose_s_descr
+inv_weight			= 0.0134
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 40
+inv_grid_y			= 0
+cost				= 960
+
+eat_satiety 			= 0.173
+eat_sleepiness			= 0.169
+
+use_sound			= interface\inv_syringe
+
 [cocaine]:booster
 $spawn 				= "devices\pda"
 visual				= dynamics\drink\drink_cocaine.ogf
@@ -343,10 +383,10 @@ boost_power_restore		= 0.00442
 boost_max_weight	= 6.329
 boost_bleeding_restore	= 0.00026
 
-boost_wound_immunity		= 0.066
-boost_fire_wound_immunity	= 0.045
-boost_explosion_immunity	= 0.061
-boost_strike_immunity		= 0.043
+;boost_wound_immunity		= 0.066
+;boost_fire_wound_immunity	= 0.045
+;boost_explosion_immunity	= 0.061
+;boost_strike_immunity		= 0.043
 
 eat_alcohol				= -0.16
 eat_satiety				= 0.212
@@ -392,7 +432,7 @@ boost_fire_wound_immunity	= 0.144
 boost_explosion_immunity	= 0.255
 boost_strike_immunity		= 0.187
 
-eat_alcohol				= 0.414
+eat_alcohol				= 0.022
 eat_satiety				= -0.406
 eat_sleepiness				= 0.13
 
@@ -402,7 +442,7 @@ use_sound			= interface\inv_syringe
 
 [morphine]:booster
 $spawn 				= "devices\pda"
-visual				= dynamics\equipments\medical\stim3.ogf
+visual				= dynamics\equipments\medical\rebirth.ogf
 description			= st_morphine_descr
 
 inv_name			= st_morphine
@@ -436,7 +476,7 @@ boost_fire_wound_immunity	= 0.188
 boost_explosion_immunity	= 0.344
 boost_strike_immunity		= 0.266
 
-eat_alcohol				= 0.648
+eat_alcohol				= 0.038
 eat_satiety				= -0.587
 eat_sleepiness				= 0.16
 
@@ -448,7 +488,7 @@ use_sound			= interface\inv_syringe
 $spawn 				= "food and drugs\energy_drink"
 inv_name			= st_adrenalin
 inv_name_short			= st_adrenalin
-visual				= dynamics\equipments\medical\stim3.ogf
+visual				= dynamics\equipments\medical\rebirth.ogf
 description			= st_adrenalin_descr
 cost				= 2780
 
@@ -468,10 +508,10 @@ boost_power_restore		= 0.00629
 boost_max_weight	= 11.147
 boost_bleeding_restore	= 0.00047
 
-boost_wound_immunity		= 0.109
-boost_fire_wound_immunity	= 0.081
-boost_explosion_immunity	= 0.122
-boost_strike_immunity		= 0.082
+;boost_wound_immunity		= 0.109
+;boost_fire_wound_immunity	= 0.081
+;boost_explosion_immunity	= 0.122
+;boost_strike_immunity		= 0.082
 
 eat_alcohol				= -0.53
 eat_satiety				= 0.418

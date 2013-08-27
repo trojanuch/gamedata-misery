@@ -1114,8 +1114,7 @@
     			</supplies>
 #include "gameplay\character_criticals_4.xml"
 	<start_dialog>pri_a22_army_signaller_start_dialog</start_dialog>
-	
-	<actor_dialog>dm_tech_repair</actor_dialog>
+
 	<actor_dialog>pri_a22_army_signaller_about_rfi_source</actor_dialog>
 	<actor_dialog>pri_a22_army_signaller_about_signal</actor_dialog>
 	<actor_dialog>pri_a22_army_signaller_supply_outfit</actor_dialog>

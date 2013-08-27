@@ -15,15 +15,15 @@ spawn_boar
 
 [spawn_zombies]
 spawn_squads = simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_zombied_1, simulation_snork
-spawn_num = 1
+spawn_num = {=actor_on_level(zaton)} 1, 0
 
 [spawn_flesh]
 spawn_squads = simulation_snork, simulation_boar, simulation_boar, simulation_flesh, simulation_flesh, simulation_boar, simulation_boar, simulation_flesh, simulation_flesh
-spawn_num = 1
+spawn_num = {=actor_on_level(zaton)} 1, 0
 
 [spawn_boar]
 spawn_squads = simulation_boar, simulation_flesh
-spawn_num = 0
+spawn_num = {=actor_on_level(zaton)} 1, 0
 
 ;;; unused
 

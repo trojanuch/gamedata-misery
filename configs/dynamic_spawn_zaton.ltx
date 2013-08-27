@@ -8,23 +8,16 @@ position			= 412.80319213867,43.936130523682,1.6001467704773
 level_vertex_id		= 1642352
 game_vertex_id		= 293
 
-[zat_box_wood_02]
-section 			= box_wood_01
+[disel_generator]
+section 			= disel_generator
 position			= 460,37,-66.66
 level_vertex_id		= 1716749
 game_vertex_id		= 222
 enable				= {=actor_class(assaulter)} true, false
 
-[zat_box_wood_03]
+[zat_box_wood_02]
 section 			= box_wood_01
-position			= 460,37.8,-66.66
-level_vertex_id		= 1716749
-game_vertex_id		= 222
-enable				= {=actor_class(assaulter)} true, false
-
-[zat_box_wood_04]
-section 			= box_wood_01
-position			= 461,37,-67.7
+position			= 462,37,-67.7
 level_vertex_id		= 1716749
 game_vertex_id		= 222
 enable				= {=actor_class(assaulter)} true, false
@@ -74,20 +67,6 @@ game_vertex_id 		= 0
 item1				= wpn_pm_worn
 item2				= kolbasa
 item3				= beadspread
-
-[radio_skadovsk_01]
-section 			= krujka
-position			= 124.06143798828,-4.3362640380859,175.74554138184
-level_vertex_id		= 1182873
-game_vertex_id		= 225
-custom_data			= scripts\sounds\music\playlist_1.ltx
-
-[radio_shevchenko_01]
-section 			= priemnik_gorizont
-position			= 5.1626, -5.0778, 29.9566
-level_vertex_id		= 953843
-game_vertex_id		= 19
-;custom_data			= scripts\sounds\music\playlist_3.ltx
 
 ;========================================
 ; Anomalies
@@ -169,24 +148,6 @@ game_vertex_id 		= 72
 ; Teleport Zones
 ;========================================
 
-[zat_anom_zone_teleport_01]
-section				= zone_teleport
-position 			= 148.34191894531,16.591650009155,-137.80070495605
-level_vertex_id 	= 1581222
-game_vertex_id 		= 219
-
-[zat_anom_zone_teleport_01_sr]
-section 			= space_restrictor
-position 			= 148.34191894531,16.591650009155,-137.80070495605
-level_vertex_id 	= 1581222
-game_vertex_id 		= 219
-custom_data			= scripts\compass_tele.ltx
-shape_type 				= 1
-v1 						= 3,0,0
-v2 						= 0,3,0
-v3 						= 0,0,3
-v4 						= 0,0,0
-
 [zat_anom_zone_teleport_02]
 section				= zone_teleport
 position 			= -253.41983032227,37.722602844238,-494.95825195313
@@ -266,43 +227,3 @@ v1 						= 3,0,0
 v2 						= 0,2,0
 v3 						= 0,0,3
 v4 						= 0,0,0
-
-;========================================
-; Environment Props
-;========================================
-
-[zat_vertel_boar]
-section				= vertel_boar
-position 			= -171.0172, 7.8401, 142.9318
-level_vertex_id 	= 599708
-game_vertex_id 		= 1
-visual_flags 		= 1
-item1				= meat_boar, 2
-
-[zat_freezer_baby_01]
-section 			= freezer
-position			= -383.9515, 6.8990, -12.1225
-level_vertex_id		= 201591
-game_vertex_id		= 52
-;custom_data			= scripts\sounds\music\playlist_4.ltx
-
-[zat_transiver_rangerstation]
-section 			= transiver_01
-position			= 409.4234, 40.7813, -15.8060
-level_vertex_id		= 1637343
-game_vertex_id		= 293
-item1				= batteries_dead
-
-[zat_transiver_mercs]
-section 			= transiver_01
-position			= -133.2792, 24.5570, -399.3253
-level_vertex_id		= 675620
-game_vertex_id		= 4
-item1				= batteries_dead
-
-[zat_transiver_sawmill]
-section 			= transiver_01
-position			= -347.4092, 8.1628, 254.6850
-level_vertex_id		= 261091
-game_vertex_id		= 229
-item1				= batteries_empty

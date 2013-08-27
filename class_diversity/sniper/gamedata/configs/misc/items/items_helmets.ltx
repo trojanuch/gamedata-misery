@@ -92,7 +92,7 @@ bones_koeff_protection		= actor_helm_absent
 
 telepatic_protection 		= 0 ; 0 mT
 shock_protection 			= 0.0080 ; 6 kV
-radiation_protection 		= 0.0184
+radiation_protection 		= 0.0046
 chemical_burn_protection 	= 0.0095 ; 28 C1 ppm eq.
 burn_protection			= 0.0023 ; 1 kw / m2
 strike_protection 		= 0
@@ -107,13 +107,13 @@ repair_part_bonus	 	= 0.03
 burn_immunity			= 1.28
 strike_immunity			= 0.0
 shock_immunity			= 0.0
-wound_immunity			= 0.13
-wound_2_immunity		= 0.13
-radiation_immunity 		= 0.74
+wound_immunity			= 0.123
+wound_2_immunity		= 0.123
+radiation_immunity 		= 0.88
 telepatic_immunity		= 0.0
 chemical_burn_immunity	= 0.295
-explosion_immunity		= 0.38
-fire_wound_immunity		= 0.17
+explosion_immunity		= 0.284
+fire_wound_immunity		= 0.162
 
 [helm_respirator]:helmet
 $spawn 			= "outfit\helm_respirator"
@@ -138,7 +138,7 @@ upgr_icon_y			= 579 ; 619
 upgr_icon_width		= 159 ; 106
 upgr_icon_height   	= 137 ; 149
 
-cost			= 15120
+cost			= 10120
 
 immunities_sect 			= sect_helm_respirator_immunities
 bones_koeff_protection		= actor_helm_respirator
@@ -158,17 +158,19 @@ upgrades                = up_gr_firstab_helm_respirator, up_gr_firstcd_helm_resp
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_helm_respirator
 
+repair_part_bonus	 	= 0.11
+
 [sect_helm_respirator_immunities]
 burn_immunity			= 0.70
 strike_immunity			= 0.0
 shock_immunity			= 0.0
-wound_immunity			= 0.87
-wound_2_immunity		= 0.87
+wound_immunity			= 0.196
+wound_2_immunity		= 0.196
 radiation_immunity = 0.0 ;		= 0.24
 telepatic_immunity		= 0.0
 chemical_burn_immunity	= 0.165
-explosion_immunity		= 0.75
-fire_wound_immunity		= 0.56
+explosion_immunity		= 0.282
+fire_wound_immunity		= 0.196
 
 [sect_helm_respirator_immunities_burn_add]
 burn_immunity			= 0.140
@@ -241,7 +243,7 @@ upgr_icon_y			= 579 ; 619
 upgr_icon_width		= 159 ; 106
 upgr_icon_height   	= 137 ; 149
 
-cost			= 19920
+cost			= 15920
 
 nightvision_sect	= effector_nightvision_1
 
@@ -259,21 +261,23 @@ explosion_protection		= 0.04
 
 power_restore_speed				= -0.0015
 
-upgrades                = up_gr_firstab_helm_respirator_heavy, up_gr_firstcd_helm_respirator_heavy, up_gr_seconcd_helm_respirator, up_gr_seconef_helm_respirator
+upgrades                = up_gr_firstab_helm_respirator_heavy, up_gr_firstcd_helm_respirator_heavy, up_gr_seconab_helm_respirator_heavy, up_gr_seconcd_helm_respirator_heavy, up_gr_seconef_helm_respirator_heavy
 installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_helm_respirator_heavy
+upgrade_scheme          = upgrade_scheme_helm_respirator
+
+repair_part_bonus	 	= 0.14
 
 [sect_helm_respirator_heavy_immunities]
 burn_immunity			= 0.45
 strike_immunity			= 0.0
 shock_immunity			= 0.0
-wound_immunity			= 0.078
-wound_2_immunity		= 0.078
+wound_immunity			= 0.108
+wound_2_immunity		= 0.108
 radiation_immunity 		= 0.0 ;		= 0.24
 telepatic_immunity		= 0.0
 chemical_burn_immunity	= 0.065
-explosion_immunity		= 0.180
-fire_wound_immunity		= 0.086
+explosion_immunity		= 0.166
+fire_wound_immunity		= 0.097
 
 [sect_helm_respirator_heavy_immunities_burn_add]
 burn_immunity			= 0.088
@@ -367,6 +371,8 @@ explosion_protection		= 0.12
 upgrades                = up_gr_firstab_helm_hardhat, up_gr_firstcd_helm_hardhat, up_gr_seconab_helm_hardhat, up_gr_seconcd_helm_hardhat, up_gr_seconef_helm_hardhat
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_helm_hardhat
+
+repair_part_bonus	 	= 0.16
 
 [sect_helm_hardhat_immunities]
 burn_immunity			= 0.50
@@ -467,9 +473,9 @@ shock_protection 			= 0.340 ; 205 kV
 radiation_protection 		= 0.0355
 chemical_burn_protection 	= 0.1090 ; 335 C1 ppm eq.
 burn_protection				= 0.0370 ; 13 kw / m2 ; 0.0440 = 16 kw / m2 = +50% time
-strike_protection 			= 0
-wound_protection			= 0.02
-explosion_protection		= 0.1
+wound_protection		= 0.046
+strike_protection 		= 0.0
+explosion_protection		= 0.17
 
 power_restore_speed				= -0.0004
 
@@ -477,17 +483,18 @@ upgrades                = up_gr_firstab_helm_protective, up_gr_firstcd_helm_prot
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_helm_protective
 
+repair_part_bonus	 	= 0.22
+
 [sect_helm_protective_immunities]
-burn_immunity			= 0.040
-strike_immunity			= 0.0
-shock_immunity			= 0.0
-wound_immunity			= 0.023
-wound_2_immunity		= 0.023
-radiation_immunity 		= 0.0 ;		= 0.04
-telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.03
-explosion_immunity		= 0.35
-fire_wound_immunity		= 0.25
+burn_immunity				= 0.040		;коэффициенты иммунитета самого костюма
+strike_immunity				= 0
+shock_immunity				= 0.004
+wound_immunity				= 0.024
+radiation_immunity = 0.0 ;			= 0.07
+telepatic_immunity			= 0.0
+chemical_burn_immunity		= 0.007
+explosion_immunity			= 0.034
+fire_wound_immunity			= 0.024
 
 [sect_helm_protective_immunities_burn_add]
 burn_immunity			= 0.026
@@ -587,6 +594,8 @@ power_restore_speed				= -0.0005
 upgrades                = up_gr_firstab_helm_tactic, up_gr_firstcd_helm_tactic, up_gr_firstef_helm_tactic, up_gr_seconab_helm_tactic, up_gr_seconcd_helm_tactic, up_gr_seconef_helm_tactic
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_helm_tactic
+
+repair_part_bonus	 	= 0.18
 
 [sect_helm_tactic_immunities]
 burn_immunity			= 0.45
@@ -696,6 +705,8 @@ power_restore_speed				= -0.0005
 upgrades                = up_gr_firstab_helm_battle, up_gr_firstcd_helm_battle, up_gr_firstef_helm_battle, up_gr_seconab_helm_battle, up_gr_seconcd_helm_battle, up_gr_seconef_helm_battle
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_helm_battle
+
+repair_part_bonus	 	= 0.20
 
 [sect_helm_battle_immunities]
 burn_immunity			= 0.40

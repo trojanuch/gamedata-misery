@@ -2,6 +2,8 @@
 ;;;;;;;; ARMOUR ATTACHEMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+; 'Artificial' artifacts system. 30.05.2013 N.Aaroe (concept & text), r_populik (GFX), trojanuch (gameplay implementation)
+
 [aa_base]:identity_immunities
 GroupControlSection		= spawn_group
 cform           		= skeleton
@@ -73,6 +75,8 @@ additional_inventory_weight2	= 3.385
 
 artefact_activation_seq		= af_activation_bold
 
+repair_part_bonus	 	= 0.08
+
 [af_surge_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
 strike_immunity 		= 0
@@ -130,6 +134,8 @@ additional_inventory_weight2	= 3.792
 
 artefact_activation_seq		= af_activation_bold
 
+repair_part_bonus	 	= 0.06
+
 [af_frames_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
 strike_immunity 		= 0
@@ -186,6 +192,8 @@ additional_inventory_weight		= 4.836
 additional_inventory_weight2		= 4.836
 
 artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.10
 
 [af_grid_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
@@ -301,6 +309,8 @@ additional_inventory_weight2	= 2.58
 
 artefact_activation_seq		= af_activation_bold
 
+repair_part_bonus	 	= 0.08
+
 [af_cooler_absorbation]
 burn_immunity 			= 0.0013				;коэффициенты иммунитета
 strike_immunity 		= 0
@@ -321,14 +331,14 @@ visual = dynamics\equipments\aa\kevlar
 description			= st_af_kevlar_descr
 inv_name			= st_af_kevlar_name
 inv_name_short			= st_af_kevlar_name
-inv_weight			= 1.74
+inv_weight			= 1.743
 
 inv_grid_x			= 10
 inv_grid_y			= 44
 inv_grid_width			= 1
 inv_grid_height			= 1
 
-cost				= 4480 ; 6200
+cost				= 5380 ; 6200
 
 jump_height			= 0.0
 ;particles		        = artefact\af_thermal_idle
@@ -358,16 +368,18 @@ additional_inventory_weight2	= 1.26
 
 artefact_activation_seq		= af_activation_bold
 
+repair_part_bonus	 	= 0.12
+
 [af_kevlar_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
 strike_immunity 		= 0
 shock_immunity 			= 0
-wound_immunity 			= 0.088
+wound_immunity 			= 0.024
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
 chemical_burn_immunity 		= 0
-explosion_immunity 			= 0.152
-fire_wound_immunity  		= 0.152
+explosion_immunity 			= 0.046 ; 23 sheets of kevlar eq.
+fire_wound_immunity  		= 0.062 ; 23 sheets of kevlar eq.
 
 ;------------------------------------------------------------------------------------------
 
@@ -378,14 +390,14 @@ visual = dynamics\equipments\aa\plates
 description			= st_af_plates_descr
 inv_name			= st_af_plates_name
 inv_name_short			= st_af_plates_name
-inv_weight			= 2.82
+inv_weight			= 2.826
 
 inv_grid_x			= 10
 inv_grid_y			= 42
 inv_grid_width			= 1
 inv_grid_height			= 1
 
-cost				= 6740 ; 6200
+cost				= 7860 ; 6200
 
 jump_height			= 0.0
 ;particles		        = artefact\af_thermal_idle
@@ -415,16 +427,18 @@ additional_inventory_weight2	= 1.58
 
 artefact_activation_seq		= af_activation_bold
 
+repair_part_bonus	 	= 0.20
+
 [af_plates_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
 strike_immunity 		= 0
-shock_immunity 			= -0.063
-wound_immunity 			= 0.138
+shock_immunity 			= -0.087
+wound_immunity 			= 0.056
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
 chemical_burn_immunity 		= 0
-explosion_immunity 			= 0.278
-fire_wound_immunity  		= 0.278
+explosion_immunity 			= 0.086 ; 35 sheets of kevlar eq.
+fire_wound_immunity  		= 0.097 ; 35 sheets of kevlar eq.
 
 ;------------------------------------------------------------------------------------------
 
@@ -473,6 +487,8 @@ additional_inventory_weight2	= 1.22
 
 artefact_activation_seq		= af_activation_bold
 
+repair_part_bonus	 	= 0.06
+
 [af_camelbak_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
 strike_immunity 		= 0
@@ -519,7 +535,7 @@ auto_attach			= false
 
 ;скорости увеличения (уменьшения)
 health_restore_speed		= 0
-radiation_restore_speed		= -0.00046
+radiation_restore_speed		= -0.00016
 satiety_restore_speed		= 0
 power_restore_speed			= 0
 bleeding_restore_speed		= 0
@@ -529,6 +545,8 @@ additional_inventory_weight	= 1.86
 additional_inventory_weight2	= 1.86
 
 artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.06
 
 [af_iam_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
@@ -576,7 +594,7 @@ auto_attach			= false
 
 ;скорости увеличения (уменьшения)
 health_restore_speed		= 0
-radiation_restore_speed		= -0.00084
+radiation_restore_speed		= -0.00028
 satiety_restore_speed		= 0
 power_restore_speed		= 0
 bleeding_restore_speed		= 0
@@ -586,6 +604,8 @@ additional_inventory_weight	= 2.34
 additional_inventory_weight2	= 2.34
 
 artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.10
 
 [af_aac_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета
@@ -633,7 +653,7 @@ auto_attach			= false
 
 ;скорости увеличения (уменьшения)
 health_restore_speed		= 0
-radiation_restore_speed		= -0.00154
+radiation_restore_speed		= -0.00052
 satiety_restore_speed		= 0
 power_restore_speed			= 0
 bleeding_restore_speed		= 0
@@ -643,6 +663,8 @@ additional_inventory_weight	= 2.77
 additional_inventory_weight2	= 2.77
 
 artefact_activation_seq		= af_activation_bold
+
+repair_part_bonus	 	= 0.14
 
 [af_aam_absorbation]
 burn_immunity 			= 0				;коэффициенты иммунитета

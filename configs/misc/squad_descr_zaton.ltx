@@ -52,7 +52,7 @@ story_id = zat_b14_stalkers
 [zat_b57_bloodsuckers]:online_offline_group
 faction = monster_predatory_night
 npc = bloodsucker_strong, bloodsucker_strong
-target_smart = zat_b38
+target_smart = zat_b38 
 spawn_point = zat_b57_bloodsucker_spawn_point
 story_id = zat_b57_bloodsuckers
 
@@ -94,6 +94,7 @@ story_id = zat_a2_stalker_mechanic_squad
 ;-----------------------B 22---------------------------------
 [zat_b22_barmen]:online_offline_group
 faction = stalker
+relationship = friend
 sympathy = 1
 npc = zat_a2_stalker_barmen
 target_smart = zat_stalker_base_smart
@@ -113,7 +114,7 @@ story_id = zat_b22_medic
 faction = killer
 relationship = neutral;friend
 sympathy = 0
-npc = zat_b103_lost_merc_leader, zat_b103_lost_merc_1, zat_b103_lost_merc_2, zat_b103_lost_merc_3, zat_b103_lost_merc_4, zat_b103_lost_merc_5, zat_b103_lost_merc_6, zat_b103_lost_merc_7
+npc = zat_b103_lost_merc_leader, zat_b103_lost_merc_1, zat_b103_lost_merc_2, zat_b103_lost_merc_3, zat_b103_lost_merc_4, zat_b103_lost_merc_5, zat_b103_lost_merc_6, zat_b103_lost_merc_7  
 target_smart = zat_b103_merc_smart
 spawn_point = zat_b103_merc_smart_lost_merc_leader_walk
 story_id = zat_b103_lost_merc_squad1
@@ -122,7 +123,7 @@ story_id = zat_b103_lost_merc_squad1
 sympathy = 0
 faction = stalker
 npc = zat_b7_stalker_raider_leader, zat_b7_stalker_raider_1, zat_b7_stalker_raider_2, zat_b7_stalker_raider_3
-target_smart = {-zat_b7_stalkers_raiders_attack_started +zat_b7_task_fail} zat_stalker_base_smart, {-zat_b7_task_end -zat_b7_actor_help_bandits -zat_b7_stalkers_raiders_attack} zat_stalker_base_smart, {-actor_is_sleeping +zat_b7_stalkers_raiders_attack -zat_b7_task_end -zat_b7_actor_help_bandits} zat_b7_stalker_raider, {+actor_is_sleeping +zat_b7_stalker_teleported} zat_b7_stalker_raider, {+zat_b7_task_end -zat_b7_actor_killed_victims_self =squad_exist(zat_b7_stalkers_victims_1)} zat_b7_stalker_raider, {+zat_b7_task_end -zat_b7_actor_killed_victims_self !squad_exist(zat_b7_stalkers_victims_1)} zat_b7, {+zat_b7_task_end +zat_b7_actor_killed_victims_self} zat_stalker_base_smart, {+zat_b7_actor_help_bandits} zat_b7
+target_smart = {-zat_b7_stalkers_raiders_attack_started +zat_b7_task_fail} zat_stalker_base_smart, {-zat_b7_task_end -zat_b7_actor_help_bandits -zat_b7_stalkers_raiders_attack} zat_stalker_base_smart, {-actor_is_sleeping +zat_b7_stalkers_raiders_attack -zat_b7_task_end -zat_b7_actor_help_bandits} zat_b7_stalker_raider, {+actor_is_sleeping +zat_b7_stalker_teleported} zat_b7_stalker_raider, {+zat_b7_task_end -zat_b7_actor_killed_victims_self =squad_exist(zat_b7_stalkers_victims_1)} zat_b7_stalker_raider, {+zat_b7_task_end -zat_b7_actor_killed_victims_self !squad_exist(zat_b7_stalkers_victims_1)} zat_b7, {+zat_b7_task_end +zat_b7_actor_killed_victims_self} zat_stalker_base_smart, {+zat_b7_actor_help_bandits} zat_b7 
 spawn_point = zat_b7_stalkers_raiders_spawn
 story_id = zat_b7_stalkers_raiders
 always_arrived = true
@@ -130,8 +131,8 @@ always_arrived = true
 [zat_b7_stalkers_victims_1]:online_offline_group
 sympathy = 0
 faction = stalker
-npc = zat_b7_stalker_victim_1, sim_default_stalker_2, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0
-target_smart = {+zat_b7_task_end} nil, zat_b7
+npc = zat_b7_stalker_victim_1, sim_default_stalker_3, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_1, sim_default_stalker_0
+target_smart = zat_b7
 spawn_point = zat_b7_stalkers_victims_spawn_1
 story_id = zat_b7_stalkers_victims_1
 
@@ -241,7 +242,7 @@ story_id = zat_b33_stalker_snag_squad
 [zat_b29_stalker_rival_1_squad]:online_offline_group
 faction = stalker
 npc = zat_b29_stalker_rival_1, sim_default_stalker_2, sim_default_stalker_2
-target_smart = {+zat_b30_task_end} nil,{+zat_b29_rival_1_1} zat_b55, {+zat_b29_rival_1_2} zat_b54, {+zat_b29_rival_1_3} zat_b53, {+zat_b29_rival_1_4} zat_b39, {+zat_b29_rival_1_5} zat_b56, {+zat_b29_rival_1_base} zat_stalker_base_smart, zat_b55
+target_smart = {+zat_b30_task_end} nil,{+zat_b29_rival_1_1} zat_b55, {+zat_b29_rival_1_2} zat_b54, {+zat_b29_rival_1_3} zat_b53, {+zat_b29_rival_1_4} zat_b39, {+zat_b29_rival_1_5} zat_b56, {+zat_b29_rival_1_base} zat_stalker_base_smart, zat_b55 
 spawn_point = zat_b29_rival_1_spawn
 story_id = zat_b29_stalker_rival_1_squad
 
@@ -270,12 +271,13 @@ story_id = zat_b29_stalker_rival_default_2_squad
 ;-----------------------zaton B18-------------------
 
 [zat_b18_noah_squad]:online_offline_group
-faction = stalker_hunter_day
+faction = stalker
 npc = zat_b18_noah
 target_smart = zat_b18
 sympathy = 0
 spawn_point = zat_b18_noah_spawn_point
 story_id = zat_b18_noah_squad
+relationship = neutral
 
 [zat_b18_dog_noah_squad]:online_offline_group
 faction = monster
@@ -284,6 +286,7 @@ sympathy = 0
 target_smart = {-zat_b18_dog_noah_free} zat_b18, nil
 spawn_point = zat_b18_noah_spawn_point
 story_id = zat_b18_dog_noah_squad
+relationship = neutral
 
 ;-----------------------B 215-----------------------
 
@@ -314,7 +317,7 @@ story_id = zat_b42_controller_squad
 [zat_b40_merc_squad]:online_offline_group
 faction = killer
 sympathy = 0
-npc = zat_b40_merc_squad_leader_1, zat_b40_merc_squad_leader_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_1, sim_default_killer_2,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2
+npc = zat_b40_merc_squad_leader_1, zat_b40_merc_squad_leader_2, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_4, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3, sim_default_killer_3,sim_default_killer_3,sim_default_killer_3,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2
 target_smart = zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 story_id = zat_b40_merc_squad
@@ -322,17 +325,17 @@ story_id = zat_b40_merc_squad
 [zat_b40_bandit_squad]:online_offline_group
 faction = bandit_elite
 relationship = enemy
-npc_random = sim_default_killer_2, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_4
+npc_random = sim_default_bandit_4, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_2
 npc_in_squad = 4,4
-target_smart = {+zat_b40_find_information_comlpete -pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
+target_smart = zat_b40_smart_terrain ; {+zat_b40_find_information_comlpete -pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 
 [zat_b40_monolith_squad]:online_offline_group
 faction = monolith
 relationship = enemy
-npc_random = sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_4, sim_default_monolith_4
+npc_random = sim_default_monolith_4, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_2
 npc_in_squad = 4, 4
-target_smart = {+zat_b40_find_information_comlpete +pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
+target_smart = zat_b40_smart_terrain ; {+zat_b40_find_information_comlpete +pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 
 ;-----------------------zaton B20-------------------
@@ -370,7 +373,7 @@ spawn_point = zat_a23_smart_terrain_zat_a23_zombie_spawn
 story_id = zat_a23_zombie_squad
 
 [zat_a23_giant_squad]:online_offline_group
-faction = monster_special
+faction = monster_special 
 npc = gigant_normal
 target_smart = zat_a23_smart_terrain
 spawn_point = zat_a23_smart_terrain_zat_a23_giant_walk

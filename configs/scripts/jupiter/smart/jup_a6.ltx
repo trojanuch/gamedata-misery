@@ -17,16 +17,16 @@ spawn_stalker@advanced_sentry
 
 [spawn_stalker@advanced]
 spawn_squads = stalker_sim_squad_novice
-spawn_num = {+kingpin_gained} 0, {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) +kingpin_gained} 0, 1 ; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
 
 [spawn_stalker@master]
-spawn_squads = stalker_sim_squad_veteran, stalker_sim_squad_advanced_veteran, stalker_sci_simulation_squad
-spawn_num = {-kingpin_gained +jup_b207_task_end} 2, {-kingpin_gained +jup_a12_task_done} 2, {-kingpin_gained +jup_b46_task_done} 2, {-kingpin_gained +jup_b8_heli_4_searched} 2, {-kingpin_gained +jup_b209_task_done} 2, {-kingpin_gained +jup_b218_gather_squad_complete} 2, 0
+spawn_squads = stalker_sim_squad_veteran, stalker_sci_simulation_squad
+spawn_num = {=actor_on_level(jupiter) -kingpin_gained +jup_b207_task_end} 1, {=actor_on_level(jupiter) -kingpin_gained +jup_a12_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained +jup_b46_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained +jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) -kingpin_gained +jup_b209_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained +jup_b218_gather_squad_complete} 1, 0
 
 ; Stalker sentry squads
 
-[spawn_stalker@advanced_sentry]
-spawn_squads = stalker_sim_squad_advanced_jup_a6_sentry
+[spawn_stalker@advanced_sentry] ; TURNED TO REGULAR SQUADS !!!
+spawn_squads = stalker_sim_squad_advanced ; stalker_sim_squad_advanced_jup_a6_sentry
 spawn_num = 1
 
 [smart_control]

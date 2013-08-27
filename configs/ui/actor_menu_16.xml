@@ -233,7 +233,7 @@
 
 	<dragdrop_quick_slots x="398" y="407" width="227" height="41"
 	    cell_width="33" cell_height="41" a="0" rows_num="1"	cols_num="4"
-		cell_sp_x="32" cell_sp_y="0" custom_placement="1"/>
+		cell_sp_x="32" cell_sp_y="0" custom_placement="1" always_show_scroll="0"/>
 
 	<trade_buy_button x="113" y="295" width="107" height="26" stretch="1" hint="ui_st_buy_hint">
 	    <window_name>trade_buy_button</window_name>

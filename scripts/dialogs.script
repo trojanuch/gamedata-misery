@@ -13,7 +13,7 @@ function npc_is_not_surrendered(a,b)
 	local st = db.storage[npc:id()]
 	local po = st and st.victim_surrender and level.object_by_id(st.victim_surrender)
 	if not (po) then
-		return false
+    return true
 	end
 	return po:id() ~= db.actor:id()
 end

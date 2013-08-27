@@ -1,7 +1,7 @@
 [up_sect_firsta_exo_outfit]
 cost 		= 8940
 inv_weight	= +0.58
-value		= -5
+value		= +5
 
 hit_fraction_actor				= -0.011
 explosion_protection 			= 0.036
@@ -15,7 +15,7 @@ immunities_sect_add 			= sect_exo_outfit_immunities_physical_add_small
 [up_sect_firstc_exo_outfit]
 cost 		= 9040
 inv_weight	= +0.56
-value		= -5
+value		= +5
 
 hit_fraction_actor				= -0.011
 explosion_protection 			= 0.036
@@ -29,7 +29,7 @@ mmunities_sect_add 			= sect_exo_outfit_immunities_physical_add_small
 [up_sect_firstd_exo_outfit]
 cost 		= 9160
 inv_weight	= +0.62
-value		= -5
+value		= +5
 
 hit_fraction_actor				= -0.011
 explosion_protection 			= 0.036
@@ -43,7 +43,7 @@ mmunities_sect_add 			= sect_exo_outfit_immunities_physical_add_small
 [up_sect_firste_exo_outfit]
 cost 		= 9340
 inv_weight	= +0.64
-value		= -5
+value		= +5
 
 hit_fraction_actor				= -0.011
 explosion_protection 			= 0.036
@@ -57,7 +57,7 @@ mmunities_sect_add 			= sect_exo_outfit_immunities_physical_add_small
 [up_sect_firstf_exo_outfit]
 cost 		= 9520
 inv_weight	= +0.57
-value		= -5
+value		= +5
 
 hit_fraction_actor				= -0.011
 explosion_protection 			= 0.036
@@ -71,7 +71,7 @@ mmunities_sect_add 			= sect_exo_outfit_immunities_physical_add_small
 [up_sect_secona_exo_outfit]
 cost 		= 9480
 inv_weight	= +0.63
-value		= -5
+value		= +5
 
 hit_fraction_actor				= -0.011
 explosion_protection 			= 0.036
@@ -108,8 +108,7 @@ value		= +10
 burn_protection 				= 0.01  ;0.040
 chemical_burn_protection 		= 0.016 ;0.040
 
-immunities_sect_add 			= sect_exo_outfit_immunities_chemical_burn_add
-immunities_sect_add2			= sect_exo_outfit_immunities_burn_add
+immunities_sect_add 			= sect_exo_outfit_immunities_burn_add
 
 [up_sect_seconf_exo_outfit]
 cost 		= 7890
@@ -138,9 +137,9 @@ artefact_count					= 1
 [up_sect_thirde_exo_outfit]
 cost 		= 5200
 inv_weight	= +0.15
-value       = +2
+value       = +1
 
-artefact_count					= 2
+artefact_count					= 1
 
 [up_sect_fourta_exo_outfit]
 cost 		= 17250
@@ -152,15 +151,15 @@ power_loss						= -0.1
 
 [up_sect_fourtc_exo_outfit]
 cost 		= 19540
-value		= -10
+value		= -10.5
 
-inv_weight  					= -10
+inv_weight  					= -10.5
 power_loss						= -0.02
 
 [up_sect_fourtd_exo_outfit]
 cost 		= 9940
 inv_weight	= +0.63
-value		= -5
+value		= +5
 
 hit_fraction_actor				= -0.011
 explosion_protection 			= 0.036
@@ -169,7 +168,7 @@ fire_wound_protection  			= 0.033
 
 bones_koeff_protection_add		= actor_armor_medium_add_4
 
-immunities_sect_add 			= sect_exo_outfit_immunities_wound_add_small, sect_exo_outfit_immunities_fire_wound_add_small, sect_exo_outfit_immunities_explosion_add_small
+immunities_sect_add 			= sect_exo_outfit_immunities_physical_add_large
 
 [up_sect_fourte_exo_outfit]
 cost 		= 12800
@@ -541,8 +540,8 @@ icon                    = ui_inGame2_upgrade_exo_outfit_18
 scheme_index            = 2, 5
 known                   = 1
 effects                 =
-section                 = up_sect_fourte_exo_outfit
-property                = prop_power
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -552,10 +551,10 @@ effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_exo_c1_name
-description             = st_up_exo_c1_descr
-icon                    = ui_inGame2_upgrade_exo_outfit_17
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fourtf_exo_outfit]
 scheme_index            = 2, 6
@@ -581,8 +580,8 @@ icon                    = ui_inGame2_upgrade_exo_outfit_19
 scheme_index            = 0, 4
 known                   = 1
 effects                 = up_gr_fifthcd_exo_outfit
-section                 = up_sect_fiftha_exo_outfit
-property                = prop_radio, prop_chem
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -592,17 +591,17 @@ effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_res_a1_name
-description             = st_up_res_a1_descr
-icon                    = ui_inGame2_upgrade_exo_outfit_20
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fifthc_exo_outfit]
 scheme_index            = 1, 7
 known                   = 1
 effects                 = up_gr_fifthef_exo_outfit
-section                 = up_sect_fifthc_exo_outfit
-property                = prop_psy
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -612,17 +611,17 @@ effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_res_b1_name
-description             = st_up_res_b1_descr
-icon                    = ui_inGame2_upgrade_exo_outfit_21
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fifthd_exo_outfit]
 scheme_index            = 1, 8
 known                   = 1
 effects                 = up_gr_fifthef_exo_outfit
-section                 = up_sect_fifthd_exo_outfit
-property                = prop_night_vision
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -632,17 +631,17 @@ effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_resp_b1_name
-description             = st_up_resp_b1_descr
-icon                    = ui_inGame2_upgrade_exo_outfit_23
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_fifthe_exo_outfit]
 scheme_index            = 2, 7
 known                   = 1
-effects                 =
-section                 = up_sect_fifthe_exo_outfit
-property                = prop_psy
+effects                 = 
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -652,10 +651,10 @@ effect_parameter        = something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_res_c4_name
-description             = st_up_res_c4_descr
-icon                    = ui_inGame2_upgrade_exo_outfit_22
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_gr_firstab_exo_outfit]
 elements                = up_firsta_exo_outfit
