@@ -16,15 +16,15 @@ spawn@zombies
 
 [spawn_boar]
 spawn_squads = simulation_boar, simulation_flesh
-spawn_num = 2
+spawn_num = {=actor_on_level(pripyat) +pri_a28_actor_in_zone_stay} 1, {+pri_b305_fifth_cam_end} 0, {=actor_on_level(pripyat)} 1, 0
 
 [spawn_flesh]
 spawn_squads = simulation_boar, simulation_flesh, simulation_flesh
-spawn_num = 2
+spawn_num = {=actor_on_level(pripyat) +pri_a28_actor_in_zone_stay} 1, {+pri_b305_fifth_cam_end} 0, {=actor_on_level(pripyat)} 1, 0
 
 [spawn@zombies]
-spawn_squads = simulation_flesh, simulation_flesh, simulation_boar, simulation_zombied_1
-spawn_num = 2
+spawn_squads = simulation_flesh, simulation_flesh, simulation_boar, simulation_zombied_1, simulation_zombied_1
+spawn_num = {=actor_on_level(pripyat) +pri_a28_actor_in_zone_stay} 1, {+pri_b305_fifth_cam_end} 0, {=actor_on_level(pripyat)} 1, 0
 
 ;;; unused
 

@@ -63,7 +63,12 @@ function generic_object_binder:update(delta)
 	end
 	-- fluffy22
 
-
+  -- Swartz
+	if object_alive then
+    if (m_mines) then m_mines.chek_target(self.object) end	
+	end
+	-- Swartz
+	
 	self.object:set_tip_text("")
 	local st = db.storage[self.object:id()]
 	if st ~= nil and st.active_scheme ~= nil then

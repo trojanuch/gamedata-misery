@@ -2,345 +2,55 @@
 --' funtions for upgerade items ----------------------------------------------------
 --' Made by Distemper ----------------------------------------------------------------
 --' 03.08 --------------------------------------------------------------------------------
--- Alundaio (ScarabParamit -- Repair Cost Factor)
--- For Misery 2.0
---[[
-Copyright (C) 2012 Alundaio
-This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
---]]
-
+	--' функция доступности апгрейда
+		--' function precondition_functor_a( param1, section )
+	--' функция применения апгрейда (отнимание денег)
+		--' function effect_functor_a( param2, section )
+	--' функция отображения нужных сдедств  для апгрейда
+		--' function prereq_functor_a( param3, section )
+	--' функция временно не используеться
+		--' function prereq_tooltip_functor_a( param3 )
+		--' функции для отображения свойств апгрейдов
+		--' function property_functor_a( param1, name )
+		--' function property_functor_b( param1, name )
+		--' function property_functor_c( param1, name )
+		--' функция для отображения специализации техника
+--------------------------------------------------------------------------------------------
 cur_hint = nil
 local issue_condlist = true
 local mechanic_name = ""
 local char_ini = ini_file("item_upgrades.ltx")
 local param_ini = ini_file("misc\\stalkers_upgrade_info.ltx")
 local cur_price_percent = 1
-
-local RepairItemList = {}
-local check_items
-local weapon_upgrades = {}
-local effect_funct
-
-function npc_on_save(npc,packet)
-	set_save_marker(packet, "save", false, "inventory_upgrades")
-
-	local sec = npc:section()
-	if not (RepairItemList[sec]) then
-		packet:w_u32(0)
-		return
-	end
-
-	local c = 0
-	for id,t in pairs(RepairItemList[sec]) do
-		c = c + 1
-	end
-
-	packet:w_u32(c)
-
-	for id,t in pairs(RepairItemList[sec]) do
-		packet:w_u32(id)
-		packet:w_u32(t.rt)
-		utils.w_CTime(packet, t.gt, "inventory_upgrades")
-		alun_utils.printf("sec=%s id=%s c=%s",sec,id,c)
-	end
-
-	set_save_marker(packet, "save", true, "inventory_upgrades")
-end
-
-function npc_on_load(npc,packet)
-	set_save_marker(packet, "load", false, "inventory_upgrades")
-
-	local c = packet:r_u32()
-
-	if (c < 1) then
-		return
-	end
-
-	local sec = npc:section()
-	RepairItemList[sec] = {}
-
-	local id
-	for i=1, c do
-		id = packet:r_u32()
-		RepairItemList[sec][id] = {}
-		RepairItemList[sec][id].rt = packet:r_u32()
-		RepairItemList[sec][id].gt = utils.r_CTime(packet,"inventory_upgrades")
-		alun_utils.printf("sec=%s id=%s",sec,id)
-	end
-
-	set_save_marker(packet, "load", true, "inventory_upgrades")
-end
-
------------ Dialog Func--------------------
-
-local last_lend_item
-function lend_item_for_repair(itm,mechanic_name,rt)
-	local npc = get_story_object(mechanic_name)
-	if (npc) then
-		last_lend_item = itm
-		db.actor:transfer_item(itm,npc)
-		give_info(npc:section().."_is_repairing")
-		news_manager.relocate_item(db.actor, "out", itm:section(), 1)
-
-		if not (RepairItemList[mechanic_name]) then
-			RepairItemList[mechanic_name] = {}
-		end
-
-		alun_utils.printf("mechanic name = %s",mechanic_name)
-		RepairItemList[mechanic_name][itm:id()] = {gt = game.get_game_time(), rt = rt}
-
-		local hud = get_hud()
-		hud:HideActorMenu()
-	end
-end
-
-function has_repair_info(a,b)
-	if (check_items and not effect_funct) then
-		check_items = nil
-		--alun_utils.printf("check_items nil")
-		for k in pairs (weapon_upgrades) do
-			weapon_upgrades[k] = nil
-		end
-	end
-	local npc = dialogs.who_is_npc(a,b)
-	if (has_alife_info(npc:section().."_is_repairing")) then
-		return true
-	end
-	return false
-end
-
-function has_repaired_items(a,b)
-	local npc = dialogs.who_is_npc(a,b)
-	local sec = npc:section()
-	if not (RepairItemList[sec]) then
-		return false
-	end
-	for id,t in pairs(RepairItemList[sec]) do
-		if (game.get_game_time():diffSec(t.gt) >= t.rt) then
-			return true
-		end
-	end
-	return false
-end
-
-function dont_has_repaired_items(a,b)
-	local npc = dialogs.who_is_npc(a,b)
-	local sec = npc:section()
-	if not (RepairItemList[sec]) then
-		return true
-	end
-	for id,t in pairs(RepairItemList[sec]) do
-		if (game.get_game_time():diffSec(t.gt) >= t.rt) then
-			return false
-		end
-	end
-	return true
-end
-
-function give_repaired_items(a,b)
-	local npc = dialogs.who_is_npc(a,b)
-	local sec = npc:section()
-	if not (RepairItemList[sec]) then
-		return false
-	end
-
-	local process_list = {}
-	local itm
-	local index = 0
-	for id,t in pairs(RepairItemList[sec]) do
-		index = index + 1
-		if (game.get_game_time():diffSec(t.gt) >= t.rt) then
-			itm = level.object_by_id(id)
-			if (itm) then
-				npc:transfer_item(itm,db.actor)
-				news_manager.relocate_item(db.actor, "in", itm:section(), 1)
-				process_list[id] = index
-				table.insert(process_list,id)
-			end
-		end
-	end
-
-	for i=1,#process_list do
-		RepairItemList[sec][process_list[i]] = nil
-	end
-
-	disable_info(npc:section().."_is_repairing")
-
-	for k,v in pairs(RepairItemList[sec]) do
-		if (k) then
-			return give_info(npc:section().."_is_repairing")
-		end
-	end
-
-	return true
-end
-
-function dm_repair_not_done(a,b)
-	local npc = dialogs.who_is_npc(a,b)
-	local sec = npc:section()
-	if not (RepairItemList[sec]) then
-		return "ERROR in dm_repair_not_done"
-	end
-
-	local lowest,itm_id,gts
-	for id,t in pairs(RepairItemList[sec]) do
-		gts = t.rt - game.get_game_time():diffSec(t.gt)
-		if not (lowest) then
-			lowest = gts
-			itm_id = id
-		end
-
-		if (gts < lowest) then
-			lowest = gts
-			itm_id = id
-		end
-	end
-
-	if (lowest and itm_id) then
-		local seconds = lowest
-		local minutes = seconds/60
-		local hours = minutes/60
-
-		local itm = level.object_by_id(itm_id)
-		local itm_sec = itm and itm:section()
-
-		local inv_name = game.translate_string(alun_utils.read_from_ini(nil,itm_sec,"inv_name","string",""))
-
-		local text = { "Your %s will be ready in %s minutes. Come back then.",
-						"Soon your %s will be ready. Come back in %s minutes.",
-						"Urgh, piss off. I'm not drunk yet.",
-						"Your bloody %s will be ready in an hour and %s minutes. I'll be drunk by then.",
-						"It's not easy to repair something when you have the shakes... Come back in about an hour for your %s.",
-						"Hey Stal-- Oh heck, I forgot I was repairing your equipment. Come back for your %s in an hour and %s minutes.",
-						"Your %s will be ready in an hour and %s. So come back then, okay?",
-						"Your %s will be ready in about %s hours and %s. Come back then.",
-						"It's almost ready."
-		}
-
-		local function set_text(str,...)
-			local p = {...}
-			local i = 0
-			local function sr(a)
-				i = i + 1
-				return tostring(p[i])
-			end
-			return string.gsub(str,"%%s",sr)
-		end
-
-		if (hours < 1) then
-			local m = math.floor(minutes)
-			if (m <= 1) then
-				return set_text(text[9])
-			end
-
-			if (npc:section() == "zat_a2_stalker_mechanic") then
-				return set_text(text[math.random(3)],inv_name,m)
-			end
-			return set_text(text[math.random(2)],inv_name,m)
-		elseif (hours < 2) then
-			local m = math.floor(minutes - 60)
-			if (npc:section() == "zat_a2_stalker_mechanic") then
-				return set_text(text[math.random(3,#text)],inv_name,m)
-			end
-			return set_text(text[7],inv_name,m)
-		else
-			local h = math.floor(hours)
-			local m = math.floor(minutes - (60*h))
-			return set_text(text[8],inv_name,h,m)
-		end
-	end
-	return "ERROR in dm_repair_not_done"
-end
------------ End Dialog Func--------------------
-
 function precondition_functor_a( param1, section )
-	local ret
 	if(param_ini:line_exist(mechanic_name.."_upgr", section)) then
 		local param = param_ini:r_string(mechanic_name.."_upgr", section)
 		if(param) then
 			if(param=="false") then
-				ret = 1
+				return 1
 			elseif(param~="true") then
 				local possibility_table = xr_logic.parse_condlist(victim, mechanic_name.."_upgr", section, param)
 				local possibility = xr_logic.pick_section_from_condlist(db.actor, victim, possibility_table)
 				if not(possibility) or (possibility=="false") then
-					ret = 2
+					return 2
 				end
 			end
 		end
 	end
-
-	if not (db.actor) then
-		return ret or 0
-	end
-
-	local price = math.floor(char_ini:r_u32(section, "cost")*cur_price_percent)
-	local cash = db.actor:money()
-	if(cash<price) then
-		ret = 2
-	end
-
-	if not (alun_utils.read_from_ini(nil,"mechanic_repair","upgrade_queue_enable","bool",false)) then
-		return ret or 0
-	end
-
-	if (ret ~= 0 and not check_items) then
-		check_items = true
-		last_section = section
-		--alun_utils.printf("check_items true")
-	end
-
-	if (check_items) then
-		local item,se_itm
-		local sim = alife()
-		local data
-		local rt = alun_utils.read_from_ini(nil,"mechanic_repair","upgrade_queue_time","float",1500)
-		local function itr(actor,itm)
-			if (itm) then
-				se_itm = sim:object(itm:id())
-				if (se_itm) then
-					data = stpk_utils.get_weapon_data(se_itm)
-
-					if (data) then
-						if not (effect_funct) then
-							weapon_upgrades[se_itm.id] = data.upgrades
-						else
-							if (#weapon_upgrades[se_itm.id] ~= #data.upgrades) then
-								lend_item_for_repair(itm,mechanic_name,rt)
-							else
-								for i=1,#data.upgrades do
-									if (data.upgrades[i] ~= weapon_upgrades[se_itm.id][i]) then
-										lend_item_for_repair(itm,mechanic_name,rt)
-										break
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-
-		db.actor:iterate_inventory(itr,db.actor)
-	end
-
-	if (effect_funct) then
-		check_items = nil
-		--alun_utils.printf("check_items nil")
-		for k in pairs (weapon_upgrades) do
-			weapon_upgrades[k] = nil
+	if(db.actor) then
+		local price = math.floor(char_ini:r_u32(section, "cost")*cur_price_percent)
+		local cash = db.actor:money()
+		if(cash<price) then
+			return 2
 		end
 	end
-
-	effect_funct = nil
-	return ret or 0
+	return 0
 end
 
 function effect_functor_a( param2, section, loading ) --( string, string, int )
 	if loading == 0 then
 		local money = char_ini:r_u32(section, "cost")
 		db.actor:give_money(math.floor(money*-1*cur_price_percent))
-		effect_funct = true
 	end
 end
 
@@ -479,9 +189,13 @@ local function how_much_repair( item_name, item_condition )
 	local ltx = system_ini()
 	local cost = ltx:r_u32(item_name, "cost")
 	local class = ltx:r_string(item_name, "class")
-	local factor = alun_utils.read_from_ini(nil,"mechanic_repair","cost_factor","float",5)
 
-	return math.floor( cost * ((1 * (1-item_condition)) / (1 / (1-item_condition))) * factor * cur_price_percent )
+	local repair_cost_factor = 3.7
+
+	return
+
+	math.floor( cost * ((1 * (1-item_condition)) / (1 / (1-item_condition))) * repair_cost_factor * cur_price_percent )
+
 end
 
 function can_repair_item( item_name, item_condition, mechanic ) --( string, float, string )
@@ -492,8 +206,6 @@ function can_repair_item( item_name, item_condition, mechanic ) --( string, floa
 	if db.actor:money() < price then
 		return false
 	end
-
-	mechanic_name = mechanic
 	return true
 end
 
@@ -508,27 +220,10 @@ function question_repair_item( item_name, item_condition, can, mechanic ) --( st
 	return game.translate_string("st_upgr_cost").." "..price.." RU. "..game.translate_string("ui_inv_repair").."?"
 end
 
-function effect_repair_item( item_name, item_condition)
-	local price = how_much_repair( item_name, item_condition )
-	db.actor:give_money(-price)
-
-	if not (alun_utils.read_from_ini(nil,"mechanic_repair","repair_queue_enable","bool",false)) then
-		return
-	end
-
-	local item
-	local function itr(actor,itm)
-		if (itm and itm:section() == item_name and itm:condition() == item_condition) then
-			item = itm
-			return
-		end
-	end
-
-	db.actor:iterate_inventory(itr,db.actor)
-
-	if (item) then
-		local rt = alun_utils.read_from_ini(nil,"mechanic_repair","repair_queue_time","float",1500)
-		lend_item_for_repair(item,mechanic_name,rt)
+function effect_repair_item( item_name, item_condition )
+	if mechanic_name ~= "kat_cs_commander" then
+		local price = how_much_repair( item_name, item_condition )
+		db.actor:give_money(-price)
 	end
 end
 

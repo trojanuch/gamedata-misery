@@ -37,7 +37,6 @@ ammo_5.56x45_ap			= wpn_l85, wpn_lr300, wpn_sig550, wpn_fn2000, wpn_g36, wpn_fr2
 
 ammo_7.62x54_7h1		= wpn_svu, wpn_svd
 ammo_7.62x54_7h14		= wpn_svu, wpn_svd
-ammo_7.62x54_ap			= wpn_svu, wpn_svd
 
 ammo_357_hp_mag_ap		= wpn_gp100, wpn_desert_eagle, wpn_desert_eagle_custom, wpn_desert_eagle_alt, wpn_desert_eagle_camo, wpn_desert_eagle_worn
 ammo_357_hp_mag			= wpn_gp100, wpn_desert_eagle, wpn_desert_eagle_custom, wpn_desert_eagle_alt, wpn_desert_eagle_camo, wpn_desert_eagle_worn
@@ -51,9 +50,10 @@ ammo_vog-25				= wpn_groza
 ammo_m209				= wpn_fn2000, wpn_m4a1
 
 ammo_pkm_100			= wpn_pkm
+ammo_7.62x54_ap			= wpn_pkm, wpn_m1891, wpn_m1891_alt, wpn_obrez
 
-ammo_7.62x39_fmj		= wpn_ak47m, wpn_sks, wpn_m1891, wpn_m1891_alt, wpn_obrez, wpn_ak47m_modern, wpn_ak47m_camo, wpn_ak47m_alt, wpn_ak47m_worn, wpn_ak47m_custom
-ammo_7.62x39_ap			= wpn_ak47m, wpn_sks, wpn_m1891, wpn_m1891_alt,  wpn_obrez, wpn_ak47m_modern, wpn_ak47m_camo, wpn_ak47m_alt, wpn_ak47m_worn, wpn_ak47m_custom
+ammo_7.62x39_fmj		= wpn_sako, wpn_ak47m, wpn_sks, wpn_ak47m_modern, wpn_ak47m_camo, wpn_ak47m_alt, wpn_ak47m_worn, wpn_ak47m_custom
+ammo_7.62x39_ap			= wpn_sako, wpn_ak47m, wpn_sks, wpn_ak47m_modern, wpn_ak47m_camo, wpn_ak47m_alt, wpn_ak47m_worn, wpn_ak47m_custom
 
 ammo_7.62x51_fmj		= wpn_fnfal, wpn_fnfallelcan, wpn_galil, wpn_m21
 ammo_7.62x51_ap			= wpn_fnfal, wpn_fnfallelcan, wpn_galil, wpn_m21
@@ -63,6 +63,9 @@ ammo_7.92x33_ap			= wpn_stg44, wpn_k98, wpn_stg44_new, wpn_stg44_alt, wpn_stg44_
 
 ammo_magnum_300			= wpn_m24, wpn_trg
 ammo_magnum_300_ap		= wpn_m24, wpn_trg
+
+;ammo_12.7x108_fmj		= wpn_ksvk
+ammo_12.7x108_ap		= wpn_ksvk
 
 ;-- Put here only items NPC realy need to keep,
 ;-- those are not only items safe from cleaning script,
@@ -76,30 +79,68 @@ ammo_magnum_300_ap		= wpn_m24, wpn_trg
 ;-- items very important or total junk for immersion.
 
 [keep_items]
-itm_alun_journal_8
-af_quest_b14_twisted = true
-device_pda_zat_b5_dealer = true
-device_pda_port_bandit_leader = true
-af_quest_b14_twisted = true
-pri_a17_gauss_rifle = true
-device_flash_snag = true
-zat_b14_device_pda_stalker_find_artefact = true
-detector_scientific = true
-zat_b12_key_1 = true
-zat_b12_key_2 = true
-jup_b46_duty_founder_pda = true
-jup_b207_merc_pda_with_contract = true
-pri_b306_envoy_pda = true
-zat_b40_pda_1 = true
-zat_b40_pda_2 = true
-zat_b20_noah_pda = true
-zat_b44_barge_pda = true
-pri_b36_monolith_hiding_place_pda = true
-pri_a25_explosive_charge_item = true
-jup_b47_merc_pda = true
-pri_b35_lab_x8_key = true
-zat_b22_medic_pda = true
-jup_b202_bandit_pda = true
+jup_a9_conservation_info			= true
+jup_a9_power_info					= true
+jup_a9_way_info						= true
+jup_a9_evacuation_info				= true
+jup_a9_meeting_info					= true
+jup_a9_losses_info					= true
+jup_a9_delivery_info				= true
+jup_b10_ufo_memory					= true
+jup_b10_ufo_memory_2				= true
+jup_b10_notes_01					= true
+jup_b10_notes_02					= true
+jup_b10_notes_03					= true
+jup_b205_sokolov_note				= true
+jup_b206_plant						= true
+jup_b209_monster_scanner			= true
+jup_b200_tech_materials_wire		= true
+jup_b200_tech_materials_acetone		= true
+jup_b200_tech_materials_textolite	= true
+jup_b200_tech_materials_transistor	= true
+jup_b200_tech_materials_capacitor	= true
+jup_b9_blackbox						= true
+jup_b32_scanner_device				= true
+jup_b46_duty_founder_pda			= true
+jup_b207_merc_pda_with_contract		= true
+jup_b47_jupiter_products_info		= true
+toolkit_2							= true
+toolkit_1							= true
+zat_b33_safe_container				= true
+zat_b57_gas							= true
+zat_b12_key_1						= true
+zat_b12_key_2						= true
+zat_b12_documents_1					= true
+zat_b12_documents_2					= true
+device_pda_port_bandit_leader		= true
+device_flash_snag					= true
+jup_b202_bandit_pda					= true
+zat_b40_notebook					= true
+zat_b40_pda_1						= true
+zat_b40_pda_2						= true
+device_pda_zat_b5_dealer			= true
+zat_b20_noah_pda					= true
+zat_a23_access_card					= true
+zat_a23_gauss_rifle_docs			= true
+zat_b44_barge_pda					= true
+zat_b39_joker_pda					= true
+zat_b22_medic_pda					= true
+toolkit_3							= true
+pri_b35_lab_x8_key					= true
+pri_b306_envoy_pda					= true
+pri_b36_monolith_hiding_place_pda	= true
+pri_a25_explosive_charge_item		= true
+pri_a19_american_experiment_info	= true
+pri_a19_lab_x16_info				= true
+pri_a19_lab_x10_info				= true
+pri_a19_lab_x7_info					= true
+pri_a19_lab_x18_info				= true
+zat_a23_labx8_key					= true
+lx8_service_instruction				= true
+af_compass							= true
+af_oasis_heart						= true
+jup_b1_half_artifact				= true
+af_quest_b14_twisted				= true
 
 [ammo_sections]
 ammo_9x18_fmj
@@ -134,3 +175,5 @@ ammo_357_hp_mag_ap
 ammo_357_hp_mag
 ammo_magnum_300
 ammo_magnum_300_ap
+;ammo_12.7x108_fmj
+ammo_12.7x108_ap

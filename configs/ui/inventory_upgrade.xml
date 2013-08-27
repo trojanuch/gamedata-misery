@@ -336,7 +336,7 @@
 	    <template name="upgrade_scheme_helm_respirator_heavy">
 	        <column>
 	            <cell x="0" y="24" point_x="162" point_y="190"/>
-				<cell x="0" y="126" point_x="174" point_y="253"/>
+				<cell x="0" y="330" point_x="171" point_y="215"/>
 	        </column>
 	        <column>
 	            <cell x="100" y="24" point_x="163" point_y="265"/>
@@ -410,6 +410,36 @@
    	            <cell x="200" y="330" point_x="160" point_y="149"/>
 	        </column>
 	    </template>
+<!-- knife upgrade scheme -->
+	    <template name="upgrade_scheme_knife">
+	        <column>
+	            <cell x="0" y="126" point_x="162" point_y="190"/>
+				<cell x="0" y="228" point_x="171" point_y="215"/>
+	        </column>
+	        <column>
+	            <cell x="100" y="126" point_x="190" point_y="224"/>
+				<cell x="80" y="228" point_x="171" point_y="215"/>
+	        </column>
+	        <column>
+	            <cell x="200" y="126" point_x="190" point_y="224"/>
+	            <cell x="200" y="228" point_x="171" point_y="215"/>
+	        </column>
+	    </template>
+<!-- binoculars upgrade scheme -->
+	    <template name="upgrade_scheme_binoculars">
+	        <column>
+	            <cell x="0" y="126" point_x="162" point_y="190"/>
+				<cell x="0" y="228" point_x="171" point_y="215"/>
+	        </column>
+	        <column>
+	            <cell x="100" y="126" point_x="190" point_y="224"/>
+				<cell x="80" y="228" point_x="171" point_y="215"/>
+	        </column>
+	        <column>
+	            <cell x="200" y="126" point_x="190" point_y="224"/>
+	            <cell x="200" y="228" point_x="171" point_y="215"/>
+	        </column>
+	    </template>		
 <!-- weapon upgrade schemes -->
 	    <template name="upgrade_scheme_abakan">
 	        <column>

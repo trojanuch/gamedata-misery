@@ -15,7 +15,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 14
 inv_grid_y			= 41
-cost				= 116
+cost				= 84
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -50,7 +50,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 14
 inv_grid_y			= 43
-cost				= 314
+cost				= 226
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -85,7 +85,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 13
 inv_grid_y			= 43
-cost				= 489
+cost				= 372
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -120,7 +120,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 14
 inv_grid_y			= 42
-cost				= 570
+cost				= 451
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -155,7 +155,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 13
 inv_grid_y			= 42
-cost				= 693
+cost				= 486
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -190,7 +190,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 12
 inv_grid_y			= 43
-cost				= 925
+cost				= 691
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -225,7 +225,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 11
 inv_grid_y			= 16
-cost				= 225
+cost				= 163
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -260,7 +260,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 13
 inv_grid_y			= 41
-cost				= 1658
+cost				= 1218
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -405,6 +405,37 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 eat_satiety				= 0.228
+
+eat_sleepiness				= 0.0055
+
+use_sound			= interface\inv_eat_can_open
+
+[tushonka]:booster
+$spawn 				= "food and drugs\conserva"
+visual				= dynamics\devices\dev_tushonka\dev_tushonka.ogf
+description			= st_tushonka_descr
+
+inv_name			= st_tushonka
+inv_name_short			= st_tushonka
+inv_weight			= 0.338
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 26
+inv_grid_y			= 1
+cost				= 1321
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.584
 
 eat_sleepiness				= 0.0055
 
@@ -743,21 +774,24 @@ eat_sleepiness			= -0.01
 
 use_sound			= interface\inv_eat_gum
 
+
+;;;;;;;;;;;;; mre x3 ;;;;;;;;;;;;;;;;
+
 [mre]:booster
 $spawn 				= "food and drugs\kolbasa"
 visual				= dynamics\devices\rations\ration_mre.ogf
-;class			= AMMO_S
+
 description			= st_mre_descr
 
 inv_name			= st_mre
 inv_name_short			= st_mre
-inv_weight			= 0.235 ; 0.705
+inv_weight			= 0.699 ; 0.705
 
 inv_grid_width		= 1
 inv_grid_height		= 2
-inv_grid_x			= 5
-inv_grid_y			= 38
-cost				= 1408
+inv_grid_x			= 20
+inv_grid_y			= 50
+cost				= 4176
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -770,26 +804,86 @@ position_offset			 = 0.0,0.0,0.0 0.117
 angle_offset			 = 1.570790,1.570790,3.92699
 
 eat_satiety				= 0.466
-
 eat_sleepiness				= 0.0023
-
 use_sound			= interface\inv_eat_ration3
+
+[mre2]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_mre.ogf
+
+description			= st_mre_descr
+
+inv_name			= st_mre2
+inv_name_short			= st_mre2
+inv_weight			= 0.466 ; 0.705
+
+inv_grid_width		= 1
+inv_grid_height		= 2
+inv_grid_x			= 21
+inv_grid_y			= 50
+cost				= 2784
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.466
+eat_sleepiness				= 0.0023
+use_sound			= interface\inv_eat_ration3
+
+[mre3]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_mre.ogf
+
+description			= st_mre_descr
+
+inv_name			= st_mre3
+inv_name_short			= st_mre3
+inv_weight			= 0.233 ; 0.705
+
+inv_grid_width		= 1
+inv_grid_height		= 2
+inv_grid_x			= 22
+inv_grid_y			= 50
+cost				= 1392
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.466
+eat_sleepiness				= 0.0023
+use_sound			= interface\inv_eat_ration3
+
+;;;;;;;;;;;;ration_ru x7;;;;;;;;;;;;;;;
 
 [ration_ru]:booster
 $spawn 				= "food and drugs\kolbasa"
 visual				= dynamics\devices\rations\ration_ru.ogf
-;class			= AMMO_S
+
 description			= st_ration_ru_descr
 
 inv_name			= st_ration_ru
 inv_name_short			= st_ration_ru
-inv_weight			= 0.198
+inv_weight			= 1.393
 
 inv_grid_width		= 2
 inv_grid_height		= 1
-inv_grid_x			= 14
+inv_grid_x			= 22
 inv_grid_y			= 52
-cost				= 2038
+cost				= 14112
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
 attach_position_offset	= 0.104196, -0.010821, 0.076969
@@ -802,25 +896,350 @@ position_offset			 = 0.0,0.0,0.0 0.117
 angle_offset			 = 1.570790,1.570790,3.92699
 
 eat_satiety				= 0.523
-
 eat_sleepiness				= 0.0056
-
 use_sound			= interface\inv_eat_ration1
+
+[ration_ru2]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ru.ogf
+
+description			= st_ration_ru_descr
+
+inv_name			= st_ration_ru2
+inv_name_short			= st_ration_ru2
+inv_weight			= 1.194
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 22
+inv_grid_y			= 53
+cost				= 12096
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.523
+eat_sleepiness				= 0.0056
+use_sound			= interface\inv_eat_ration1
+
+[ration_ru3]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ru.ogf
+
+description			= st_ration_ru_descr
+
+inv_name			= st_ration_ru3
+inv_name_short			= st_ration_ru3
+inv_weight			= 0.995
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 22
+inv_grid_y			= 54
+cost				= 10080
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.523
+eat_sleepiness				= 0.0056
+use_sound			= interface\inv_eat_ration1
+
+[ration_ru4]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ru.ogf
+
+description			= st_ration_ru_descr
+
+inv_name			= st_ration_ru4
+inv_name_short			= st_ration_ru4
+inv_weight			= 0.796
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 22
+inv_grid_y			= 55
+cost				= 8064
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.523
+eat_sleepiness				= 0.0056
+use_sound			= interface\inv_eat_ration1
+
+[ration_ru5]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ru.ogf
+
+description			= st_ration_ru_descr
+
+inv_name			= st_ration_ru5
+inv_name_short			= st_ration_ru5
+inv_weight			= 0.597
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 22
+inv_grid_y			= 56
+cost				= 6048
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.523
+eat_sleepiness				= 0.0056
+use_sound			= interface\inv_eat_ration1
+
+[ration_ru6]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ru.ogf
+
+description			= st_ration_ru_descr
+
+inv_name			= st_ration_ru6
+inv_name_short			= st_ration_ru6
+inv_weight			= 0.398
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 22
+inv_grid_y			= 57
+cost				= 4032
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.523
+eat_sleepiness				= 0.0056
+use_sound			= interface\inv_eat_ration1
+
+[ration_ru7]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ru.ogf
+
+description			= st_ration_ru_descr
+
+inv_name			= st_ration_ru7
+inv_name_short			= st_ration_ru7
+inv_weight			= 0.199
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 22
+inv_grid_y			= 58
+cost				= 2016
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.523
+eat_sleepiness				= 0.0056
+use_sound			= interface\inv_eat_ration1
+
+
+;;;;;;;;;;;;ration_ukr x6;;;;;;;;;;;;;;;
 
 [ration_ukr]:booster
 $spawn 				= "food and drugs\kolbasa"
 visual				= dynamics\devices\rations\ration_ukr.ogf
-;class			= AMMO_S
 description			= st_ration_ukr_descr
 
 inv_name			= st_ration_ukr
 inv_name_short			= st_ration_ukr
-inv_weight			= 0.286
+inv_weight			= 1.722
 
 inv_grid_width		= 2
 inv_grid_height		= 1
-inv_grid_x			= 12
+inv_grid_x			= 20
 inv_grid_y			= 52
+cost				= 10716
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.531
+eat_sleepiness				= 0.0033
+use_sound			= interface\inv_eat_ration2
+
+[ration_ukr2]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ukr.ogf
+description			= st_ration_ukr_descr
+
+inv_name			= st_ration_ukr2
+inv_name_short			= st_ration_ukr2
+inv_weight			= 1.435
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 20
+inv_grid_y			= 53
+cost				= 8930
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.531
+eat_sleepiness				= 0.0033
+use_sound			= interface\inv_eat_ration2
+
+[ration_ukr3]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ukr.ogf
+description			= st_ration_ukr_descr
+
+inv_name			= st_ration_ukr3
+inv_name_short			= st_ration_ukr3
+inv_weight			= 1.148
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 20
+inv_grid_y			= 54
+cost				= 7144
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.531
+eat_sleepiness				= 0.0033
+use_sound			= interface\inv_eat_ration2
+
+[ration_ukr4]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ukr.ogf
+description			= st_ration_ukr_descr
+
+inv_name			= st_ration_ukr4
+inv_name_short			= st_ration_ukr4
+inv_weight			= 0.861
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 20
+inv_grid_y			= 55
+cost				= 5358
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.531
+eat_sleepiness				= 0.0033
+use_sound			= interface\inv_eat_ration2
+
+[ration_ukr5]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ukr.ogf
+description			= st_ration_ukr_descr
+
+inv_name			= st_ration_ukr5
+inv_name_short			= st_ration_ukr5
+inv_weight			= 0.574
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 20
+inv_grid_y			= 56
+cost				= 3572
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0 0.117
+angle_offset			 = 1.570790,1.570790,3.92699
+
+eat_satiety				= 0.531
+eat_sleepiness				= 0.0033
+use_sound			= interface\inv_eat_ration2
+
+[ration_ukr6]:booster
+$spawn 				= "food and drugs\kolbasa"
+visual				= dynamics\devices\rations\ration_ukr.ogf
+description			= st_ration_ukr_descr
+
+inv_name			= st_ration_ukr6
+inv_name_short			= st_ration_ukr6
+inv_weight			= 0.287
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 20
+inv_grid_y			= 57
 cost				= 1786
 
 attach_angle_offset		= 0.440521, 1.378287, -0.644026
@@ -834,9 +1253,7 @@ position_offset			 = 0.0,0.0,0.0 0.117
 angle_offset			 = 1.570790,1.570790,3.92699
 
 eat_satiety				= 0.531
-
 eat_sleepiness				= 0.0033
-
 use_sound			= interface\inv_eat_ration2
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

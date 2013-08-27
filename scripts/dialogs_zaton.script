@@ -1719,7 +1719,6 @@ end
 
 function zat_b106_transfer_weap_to_actor(first_speaker, second_speaker)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "wpn_toz34_decor")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5250)
 end
 
 function zat_b106_soroka_reward(first_speaker, second_speaker)

@@ -81,11 +81,11 @@
 
 	<radiation_immunity x="0" y="0" width="214" height="20" >
 		<caption x="0" y="0" width="15" height="20" stretch="1">
-			<texture>ui_am_prop_radiation_immunity</texture>
+			<texture>ui_am_propery_09</texture>
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
-			<texture_minus>ui_am_propery_09</texture_minus>
-		<value x="137" y="0" width="30" height="20" magnitude="3000">
+			<texture_minus>ui_am_prop_radiation_immunity</texture_minus>
+		<value x="137" y="0" width="30" height="20" magnitude="750" unit_str="st_perc">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</radiation_immunity>

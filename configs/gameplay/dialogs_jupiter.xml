@@ -2857,11 +2857,11 @@
             </phrase>
             <phrase id="13">
                 <text>jup_b43_stalker_assistant_guide_to_pripyat_13</text>
-                <precondition>dialogs_jupiter.jup_b43_actor_do_not_has_15000_money</precondition>
+                <precondition>dialogs_jupiter.jup_b43_actor_do_not_has_12000_money</precondition>
             </phrase>
             <phrase id="11">
                 <text>jup_b43_stalker_assistant_guide_to_pripyat_11</text>
-                <precondition>dialogs_jupiter.jup_b43_actor_has_15000_money</precondition>
+                <precondition>dialogs_jupiter.jup_b43_actor_has_12000_money</precondition>
                 <action>dialogs.save_uni_travel_jup_to_pri</action>
                 <next>111</next>
             </phrase>
@@ -2873,7 +2873,7 @@
             </phrase>
             <phrase id="12">
                 <text>jup_b43_stalker_assistant_guide_to_pripyat_12</text>
-                <precondition>dialogs_jupiter.jup_b43_actor_has_15000_money</precondition>
+                <precondition>dialogs_jupiter.jup_b43_actor_has_12000_money</precondition>
                 <next>121</next>
             </phrase>
             <phrase id="0">

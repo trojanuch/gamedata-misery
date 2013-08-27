@@ -201,13 +201,11 @@ rpm                     = +48 ;600
 ;Объем магазина +10
 ;--------------------
 [up_sect_fiftha_saiga]
-cost		      		= 1920
-value					= +7
-ammo_mag_size        	= 7
+cost		      		= 2920
+value					= +3
+ammo_mag_size        	= 3
 
 ;--------END----------
-
-
 [up_firsta_saiga]
 scheme_index            = 0, 0
 known                   = 1
@@ -276,8 +274,8 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_firste_saiga
-property                = prop_not_available
+section                 = up_sect_firste_saiga
+property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true
@@ -288,9 +286,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_zat_c1_name
+description             = st_up_zat_c1_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2U_4
 
 [up_secona_saiga]
 scheme_index            = 0, 1
@@ -337,8 +335,8 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_6
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_secone_saiga
-property                = prop_not_available
+section                 = up_sect_secone_saiga
+property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true
@@ -349,16 +347,16 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_auto_c1_name
+description             = st_up_auto_c1_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2U_7
 
 [up_seconf_saiga]
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_seconf_saiga
-property                = prop_not_available
+section                 = up_sect_seconf_saiga
+property                = prop_weight
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true
@@ -366,12 +364,13 @@ precondition_parameter  = true
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_auto_c6_name
+description             = st_up_auto_c6_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2U_8
 
 [up_thirda_saiga]
 scheme_index            = 0, 2
@@ -443,8 +442,8 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_11
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_thirde_saiga
-property                = prop_not_available
+section                 = up_sect_thirde_saiga
+property                = prop_inertion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true
@@ -452,12 +451,13 @@ precondition_parameter  = true
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_usm_c3_name
+description             = st_up_usm_c3_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2U_12
 
 
 [up_fourta_saiga]
@@ -506,8 +506,8 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_14
 scheme_index            = 2, 4
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_fourte_saiga
-property                = prop_not_available
+section                 = up_sect_fourte_saiga
+property                = prop_rpm
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true
@@ -515,12 +515,13 @@ precondition_parameter  = true
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_ret_c2_name
+description             = st_up_ret_c2_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2U_15
 
 
 [up_fiftha_saiga]

@@ -11,15 +11,15 @@ spawn_snork
 
 [spawn_boar]
 spawn_squads = simulation_flesh, simulation_boar
-spawn_num = 1
+spawn_num = {=actor_on_level(jupiter)} 1, 0
 
 [spawn_flesh]
 spawn_squads = simulation_flesh, simulation_boar
-spawn_num = 1
+spawn_num = {=actor_on_level(jupiter)} 1, 0
 
 [spawn_snork]
 spawn_squads = simulation_flesh, simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_boar, simulation_snork, simulation_bloodsucker
-spawn_num = 1
+spawn_num = {=actor_on_level(jupiter)} 1, 0
 
 [exclusive]
 jup_b25_stalker_senya_wounded = jupiter\jup_b25_stalker_senya.ltx

@@ -33,28 +33,28 @@
 
 			<icon x="118" y="250" width="128" height="128" stretch="1">
 			</icon>
-			<icon_parts x="118" y="85" width="128" height="128" stretch="1">
+			<icon_parts x="118" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="267" y="390" width="128" height="128" stretch="1">
+			<icon_tool x="266" y="390" width="128" height="128" stretch="1">
 			</icon_tool>
 
-			<caption_repair x="100" y="240" width="200" height="50" complex_mode="1">
+			<caption_repair x="112" y="245" width="195" height="50" complex_mode="1">
 				<text font="letterica18"/>
 			</caption_repair>
-			<list_frame x="251" y="197" width="294" height="107">
+			<list_frame x="265" y="202" width="284" height="107">
 				<texture>ui_inGame2_servers_list_frame</texture>
 			</list_frame>
-			<list x="255" y="200" width="290" height="102" item_height="18" can_select="1">
+			<list x="272" y="205" width="275" height="102" item_height="18" can_select="1">
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="95" y="75" width="240" height="20">
+			<caption_parts x="112" y="75" width="195" height="20">
 				<text font="letterica18"/>
 			</caption_parts>
-			<list_frame_parts x="250" y="48" width="294" height="107">
+			<list_frame_parts x="265" y="48" width="284" height="107">
 				<texture>ui_inGame2_servers_list_frame</texture>
 			</list_frame_parts>
-			<list_parts x="254" y="50" width="290" height="102" item_height="18" can_select="1">
+			<list_parts x="272" y="50" width="275" height="102" item_height="18" can_select="1">
 				<font font="letterica16"/>
 			</list_parts>
 

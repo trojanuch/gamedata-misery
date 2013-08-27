@@ -115,7 +115,6 @@ function updateLight(battery)
 			if (itms_manager) then itms_manager.show_message("Low battery power",25) end
 			db.actor:object("device_torch"):enable_torch(false)
 		else
-			--if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
 			db.actor:object("device_torch"):enable_torch(false)
 		end
 	end

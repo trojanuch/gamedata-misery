@@ -16,15 +16,15 @@ spawn_pseudodog
 
 [spawn_snork]
 spawn_squads = simulation_snork, simulation_pseudodog, simulation_dog, simulation_dog, simulation_pseudodog, simulation_dog, simulation_dog
-spawn_num = 1
+spawn_num = {=actor_on_level(zaton)} 2, 0
 
 [spawn_pseudodog]
 spawn_squads = simulation_dog, simulation_pseudodog
-spawn_num = 2
+spawn_num = {=actor_on_level(zaton)} 2, 0
 
 [spawn_dog]
 spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog
-spawn_num = 2
+spawn_num = {=actor_on_level(zaton)} 1, 0
 
 ;;; unused
 

@@ -275,21 +275,22 @@ icon                    = ui_inGame2_upgrade_unavailable
 scheme_index            = 0, 3
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_2 ; up_sect_fourta_wincheaster1300
-property                = prop_not_available
+section                 = up_sect_fourta_wincheaster1300
+property                = prop_ammo_size 
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
+; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_addd_a1_name
+description             = st_up_addd_a1_descr
+icon                    = ui_inGame2_upgrade_Cheyser_13_14
 
 [up_gr_firstab_wincheaster1300_worn]
 elements                = up_firsta_wincheaster1300_worn

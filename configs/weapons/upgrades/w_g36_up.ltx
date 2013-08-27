@@ -173,17 +173,16 @@ scope_nightvision = scope_contrast
 [up_sect_fourte_g36]
 ;ПНВ
 ;------------------
-cost		      		= 4680
+cost		      		= 3680
 
 scope_nightvision = scope_nightvision
 
 [up_sect_fourtf_g36]
 ;Динамический прицел
 ;------------------
-cost		      		= 3680
+cost		      		= 5680
 
 scope_dynamic_zoom = on
-
 
 ;[up_sect_fiftha_g36]
 ;cost		      		= 1
@@ -504,8 +503,8 @@ icon                    = ui_inGame2_upgrade_GP37_15
 scheme_index            = 2, 6
 known                   = 1
 effects                 =
-section                 = up_sect_fourtf_g36
-property                = prop_scope
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -516,9 +515,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_opt_c3_name
-description             = st_up_opt_c3_descr
-icon                    = ui_inGame2_upgrade_GP37_16
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 ;[up_fiftha_g36]

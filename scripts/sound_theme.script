@@ -5,6 +5,35 @@
 nstl = 64
 theme = {}
 
+-- Restore ph_sound-scheme (by Shadows)
+ph_snd_themes = {}
+ph_snd_themes["music_boroda"] = {
+	"music\\radio\\01_Radiomix",
+	"music\\radio\\02_Radiomix",
+	"music\\radio\\03_Radiomix",
+	"music\\radio\\04_Radiomix",
+	"music\\radio\\05_Radiomix",
+	"music\\radio\\06_Radiomix",
+	"music\\radio\\07_Radiomix",
+	"music\\radio\\08_Radiomix",
+	"music\\radio\\09_Radiomix",
+	"music\\radio\\10_Radiomix",
+	"music\\radio\\11_Radiomix"
+}
+ph_snd_themes["music_jupiter"] = {
+	"music\\radio\\01_Radiomix",
+	"music\\radio\\02_Radiomix",
+	"music\\radio\\03_Radiomix",
+	"music\\radio\\04_Radiomix",
+	"music\\radio\\05_Radiomix",
+	"music\\radio\\06_Radiomix",
+	"music\\radio\\07_Radiomix",
+	"music\\radio\\08_Radiomix",
+	"music\\radio\\09_Radiomix",
+	"music\\radio\\10_Radiomix",
+	"music\\radio\\11_Radiomix"
+}
+
 local sounds_base = stalker_ids.sound_script + 10000
 
 function id()
@@ -26,7 +55,6 @@ function npc_sound:__init(snd_ini, section)
 	self.group_snd = utils.cfg_get_bool(snd_ini, section, "group_snd", nil, false, false)
 	self.play_always = utils.cfg_get_bool(snd_ini, section, "play_always", nil, false, false)
 	self.is_combat_sound = utils.cfg_get_bool(snd_ini, section, "is_combat_sound", nil, false, false)
-	self.dont_save = utils.cfg_get_bool(snd_ini, section, "dont_save", nil, false, false)
 	self.section = section
 	--' Хранит параметры звука для каждого NPC
 	self.npc = {}
@@ -34,7 +62,7 @@ function npc_sound:__init(snd_ini, section)
 	-- Время задержки начала отыгрывания звука
 	self.delay_sound = utils.cfg_get_number(snd_ini, section, "delay_sound", self.npc, false, 0)
 	--' Интервал проигрывания звука
-	local interval = parse_names(utils.cfg_get_string(snd_ini, section, "idle", nil, false, "", "3,5,100"))
+	local interval = parse_names(utils.cfg_get_string(snd_ini, section, "idle", nil, false, "", "3,5,100"))	
 	self.min_idle = tonumber(interval[1])
 	self.max_idle = tonumber(interval[2])
 	self.rnd = tonumber(interval[3])
@@ -109,11 +137,10 @@ function npc_sound:init_npc(npc)
 			num = num + 1
 		end
 	end
-
 	if self.npc[npc_id].max < 0 then
-		--abort("Couldnt find sounds %s with prefix %s", tostring(self.path), npc:sound_prefix())
-		return
+		abort("Couldnt find sounds %s with prefix %s", tostring(self.path), npc:sound_prefix())
 	end
+
 
 	if self.prefix == false then
 		npc:sound_prefix(character_prefix)
@@ -138,7 +165,7 @@ function npc_sound:callback(npc_id)
 
 --	printf("npc_sound:callback!!!!!!!!")
 
---	get_hud():RemoveCustomStatic("cs_subtitles_npc")
+	get_hud():RemoveCustomStatic("cs_subtitles_npc")
 
 	local st   = db.storage[npc_id]
 	if st.active_scheme == nil then
@@ -232,7 +259,6 @@ function npc_sound:play(npc_id, faction, point, msg)
 	else
 		self.can_play_sound[npc_id] = false
 	end
-
 	if not closecaption.sound(snd, sound_object(snd):length(), npc, faction, point, self.delay_sound) then
 	if game.translate_string(snd_st) ~= snd_st then
 		if not faction then
@@ -253,23 +279,12 @@ function npc_sound:play(npc_id, faction, point, msg)
 end
 function npc_sound:select_next_sound(npc_id)
 	local npc_data = self.npc[npc_id]
-	if not (npc_data) then
-		abort("sound_theme: npc_data is nil for select_next_sound [%s]",self.npc and self.npc:section())
-		return 0
-	end
-
 	if self.shuffle == "rnd" then
-		if not (npc_data.max) then
-			local snd = self.sound_path[npc_id] and self.sound_path[npc_id][self.played_id + 1]
-			abort("sound_theme: max not set for snd=%s",snd)
-			npc_data.max = 0
-		end
-
-		if (npc_data.max == 0) then
+		if npc_data.max == 0 then
 			return 0
 		end
 
-		if (self.played_id) then
+		if self.played_id ~= nil then
 			local played_id = math.random(0,npc_data.max - 1)
 			if played_id >= self.played_id then
 				return played_id + 1
@@ -314,9 +329,6 @@ function npc_sound:stop(obj_id)
 	end
 end
 function npc_sound:save(thread)
-	if self.dont_save then
-		return
-	end
 --	set_save_marker(thread, "save", false, "npc_sound")
 		thread:w_stringZ(tostring(self.played_id))
 
@@ -326,9 +338,6 @@ function npc_sound:save(thread)
 --	set_save_marker(thread, "save", true, "npc_sound")
 end
 function npc_sound:load(thread)
-	if self.dont_save then
-		return
-	end
 --	set_save_marker(thread, "load", false, "npc_sound")
 	local id = thread:r_stringZ()
 	if(id~="nil") then
@@ -343,9 +352,6 @@ function npc_sound:load(thread)
 --	set_save_marker(thread, "load", true, "npc_sound")
 end
 function npc_sound:save_npc(thread, npc_id)
-	if self.dont_save then
-		return
-	end
 --	set_save_marker(thread, "save", false, "npc_sound_save_npc")
 	if not self.group_snd then
 		thread:w_bool(self.can_play_sound[npc_id] == true)
@@ -353,9 +359,6 @@ function npc_sound:save_npc(thread, npc_id)
 --	set_save_marker(thread, "save", true, "npc_sound_save_npc")
 end
 function npc_sound:load_npc(thread, npc_id)
-	if self.dont_save then
-		return
-	end
 --	set_save_marker(thread, "load", false, "npc_sound_save_npc")
 	if not self.group_snd then
 		self.can_play_sound[npc_id] = thread:r_bool()
@@ -413,7 +416,7 @@ function actor_sound:callback(npc_id)
 	self.snd_obj = nil
 	self.can_play_sound = true
 
---	get_hud():RemoveCustomStatic("cs_subtitles_actor")
+	get_hud():RemoveCustomStatic("cs_subtitles_actor")
 
 --	printf("actor_sound:callback from [%s]", npc_id)
 	local st   = db.storage[npc_id]

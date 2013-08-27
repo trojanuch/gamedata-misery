@@ -11,7 +11,7 @@ drug_sleepingpills		= 0.65, 0.3
 
 ; alundaio
 itm_backpack			= 1, 0.2
-itm_actor_backpack		= 1, 0.2
+;itm_actor_backpack		= 1, 0.2
 
 ;roubles					= 1, 1
 
@@ -60,14 +60,37 @@ mutant_part_snork_leg						= 0.45, 0.4
 mutant_part_snork_mask						= 0.45, 0.4
 mutant_part_tushkano_head					= 0.45, 0.4
 
-mutant_part_flesh_meat					= 0.45, 0.4
-mutant_part_boar_chop					= 0.45, 0.4
-mutant_part_dog_meat					= 0.45, 0.4
-mutant_part_psevdodog_meat				= 0.45, 0.4
-mutant_part_krovosos_meat				= 0.45, 0.4
-mutant_part_snork_hand					= 0.45, 0.4
-mutant_part_chimera_meat				= 0.45, 0.4
-mutant_part_tushkano_meat				= 0.45, 0.4
+mutant_part_flesh_meat					= 0.25, 0.15
+mutant_part_boar_chop					= 0.25, 0.15
+mutant_part_dog_meat					= 0.25, 0.15
+mutant_part_psevdodog_meat				= 0.25, 0.15
+mutant_part_krovosos_meat				= 0.25, 0.15
+mutant_part_snork_hand					= 0.25, 0.15
+mutant_part_chimera_meat				= 0.25, 0.15
+mutant_part_tushkano_meat				= 0.25, 0.15
+
+meat_tushkano		= 0.25, 0.15
+meat_dog			= 0.25, 0.15
+meat_pseudodog		= 0.25, 0.15
+meat_flesh			= 0.25, 0.15
+meat_boar			= 0.25, 0.15
+meat_bloodsucker	= 0.25, 0.15
+meat_snork			= 0.25, 0.15
+meat_chimera		= 0.25, 0.15
+
+hide_chimera					= 0.45, 0.4
+powder_poltergeist				= 0.45, 0.4
+hide_pseudogiant				= 0.45, 0.4
+hide_psy_dog					= 0.45, 0.4
+hide_pseudodog					= 0.45, 0.4
+hide_burer						= 0.45, 0.4
+hide_controller					= 0.45, 0.4
+hide_bloodsucker				= 0.45, 0.4
+hide_boar						= 0.45, 0.4
+hide_flesh						= 0.45, 0.4
+
+mutant_part_crow_beak			= 0.45, 0.4
+drink_crow						= 0.2, 0.1
 
 ;---------------------------
 ;NEW ORDNANCE WEAPONRY MODULE
@@ -144,6 +167,7 @@ wpn_oc33						= 0.025,	0.025
 wpn_tt33						= 0.025,	0.025
 wpn_fnfallelcan					= 0.025,	0.025
 wpn_trg							= 0.025,	0.025
+wpn_ksvk						= 0.025,	0.025
 
 wpn_abakan_alt					= 0.025,	0.025
 wpn_ak47m_alt					= 0.025,	0.025
@@ -295,6 +319,15 @@ wpn_knife_inv_3				= 0.025,	0.025
 wpn_knife_inv_4				= 0.025,	0.025
 wpn_knife_m					= 0.025,	0.025
 
+; PERSONAL WEAPONS
+
+wpn_personal_1				= 0.025,	0.025
+wpn_personal_2				= 0.025,	0.025
+wpn_personal_3				= 0.025,	0.025
+wpn_personal_4				= 0.025,	0.025
+wpn_personal_5				= 0.025,	0.025
+wpn_personal_6				= 0.025,	0.025
+
 ; BINOCULARS PROFILES
 
 wpn_binoc_inv				= 0.025,	0.025
@@ -372,109 +405,111 @@ wpn_trg_ap						= 0.025,	0.025
 
 ; normal scopes
 
-wpn_addon_scope					= 0.15,	0.07
-wpn_addon_scope_x2.7			= 0.15,	0.07
-wpn_addon_scope_detector		= 0.15,	0.07
-wpn_addon_scope_night			= 0.15,	0.07
-wpn_addon_scope_susat			= 0.15,	0.07
-wpn_addon_scope_susat_x1.6		= 0.15,	0.07
-wpn_addon_scope_susat_custom	= 0.15,	0.07
-wpn_addon_scope_susat_dusk		= 0.15,	0.07
-wpn_addon_scope_susat_night		= 0.15,	0.07
-wpn_addon_scope_zf4				= 0.15,	0.07
-wpn_addon_scope_ww2				= 0.15,	0.07
-wpn_addon_scope_vsk				= 0.15,	0.07
-wpn_addon_scope_acog			= 0.15,	0.07
-wpn_addon_scope_acog_trijicon	= 0.15,	0.07
-wpn_addon_scope_acog_night		= 0.15,	0.07
+wpn_addon_scope					= 0.16,	0.14
+wpn_addon_scope_x2.7			= 0.16,	0.14
+wpn_addon_scope_detector		= 0.16,	0.14
+wpn_addon_scope_night			= 0.16,	0.14
+wpn_addon_scope_susat			= 0.16,	0.14
+wpn_addon_scope_susat_x1.6		= 0.16,	0.14
+;wpn_addon_scope_susat_custom	= 0.16,	0.14
+wpn_addon_scope_susat_dusk		= 0.16,	0.14
+wpn_addon_scope_susat_night		= 0.16,	0.14
+wpn_addon_scope_zf4				= 0.16,	0.14
+wpn_addon_scope_ww2				= 0.16,	0.14
+wpn_addon_scope_vsk				= 0.16,	0.14
+wpn_addon_scope_acog			= 0.16,	0.14
+wpn_addon_scope_acog_trijicon	= 0.16,	0.14
+wpn_addon_scope_acog_night		= 0.16,	0.14
 
 ; moist-covered scopes
 
-wpn_addon_scope_moist			= 0.13, 0.05
-wpn_addon_scope_susat_moist		= 0.13, 0.05
-wpn_addon_scope_ww2_moist		= 0.13, 0.05
-wpn_addon_scope_zf4_moist		= 0.13, 0.05
+wpn_addon_scope_moist			= 0.13, 0.10
+wpn_addon_scope_susat_moist		= 0.13, 0.10
+wpn_addon_scope_ww2_moist		= 0.13, 0.10
+wpn_addon_scope_zf4_moist		= 0.13, 0.10
 
 ; broken scopes
 
-wpn_addon_scope_worn			= 0.11, 0.03
-wpn_addon_scope_susat_worn		= 0.11, 0.03
-wpn_addon_scope_ww2_worn		= 0.11, 0.03
-wpn_addon_scope_zf4_worn		= 0.11, 0.03
+wpn_addon_scope_worn			= 0.11, 0.07
+wpn_addon_scope_susat_worn		= 0.11, 0.07
+wpn_addon_scope_ww2_worn		= 0.11, 0.07
+wpn_addon_scope_zf4_worn		= 0.11, 0.07
 
 ; silencers
 
-wpn_addon_silencer				= 0.15,	0.07
-wpn_addon_silencer_9x18			= 0.15,	0.07
-wpn_addon_silencer_9x19			= 0.15,	0.07
-wpn_addon_silencer_9x39			= 0.15,	0.07
-wpn_addon_silencer_545x39		= 0.15,	0.07
-wpn_addon_silencer_556x45		= 0.15,	0.07
-wpn_addon_silencer_762x39		= 0.15,	0.07
-wpn_addon_silencer_762x51		= 0.15,	0.07
-wpn_addon_silencer_762x54		= 0.15,	0.07
-wpn_addon_silencer_1143x23		= 0.15,	0.07
+wpn_addon_silencer				= 0.16,	0.14
+wpn_addon_silencer_9x18			= 0.16,	0.14
+wpn_addon_silencer_9x19			= 0.16,	0.14
+wpn_addon_silencer_9x39			= 0.16,	0.14
+wpn_addon_silencer_545x39		= 0.16,	0.14
+wpn_addon_silencer_556x45		= 0.16,	0.14
+wpn_addon_silencer_762x39		= 0.16,	0.14
+wpn_addon_silencer_762x51		= 0.16,	0.14
+wpn_addon_silencer_762x54		= 0.16,	0.14
+wpn_addon_silencer_1143x23		= 0.16,	0.14
 
 ; grenade launchers
 
-wpn_addon_grenade_launcher		= 0.15,	0.07
-wpn_addon_grenade_launcher_m203 = 0.15,	0.07
+wpn_addon_grenade_launcher		= 0.16,	0.14
+wpn_addon_grenade_launcher_m203 = 0.16,	0.14
 
 ; AMMO TYPES
 
 ; pistol ammo
 
-ammo_9x18_fmj			= 0.4,	0.05
-ammo_9x18_pmm			= 0.4,	0.05
-ammo_9x18_ap			= 0.4,	0.05
-ammo_9x19_pbp			= 0.4,	0.05
-ammo_9x19_fmj			= 0.4,	0.05
-ammo_9x19_ap			= 0.4,	0.05
-ammo_11.43x23_hydro		= 0.4,	0.05
-ammo_11.43x23_fmj		= 0.4,	0.05
-ammo_11.43x23_ap		= 0.4,	0.05
-ammo_12x70_buck			= 0.4,	0.05
-ammo_12x76_zhekan		= 0.4,	0.05
-ammo_357_hp_mag_ap		= 0.4,	0.05
-ammo_357_hp_mag			= 0.4,	0.05
+ammo_9x18_fmj			= 0.15,	0.025
+ammo_9x18_pmm			= 0.15,	0.025
+ammo_9x18_ap			= 0.15,	0.025
+ammo_9x19_pbp			= 0.15,	0.025
+ammo_9x19_fmj			= 0.15,	0.025
+ammo_9x19_ap			= 0.15,	0.025
+ammo_11.43x23_hydro		= 0.15,	0.025
+ammo_11.43x23_fmj		= 0.15,	0.025
+ammo_11.43x23_ap		= 0.15,	0.025
+ammo_12x70_buck			= 0.15,	0.025
+ammo_12x76_zhekan		= 0.15,	0.025
+ammo_357_hp_mag_ap		= 0.15,	0.025
+ammo_357_hp_mag			= 0.15,	0.025
 
 ; rifle ammo
 
-ammo_5.45x39_fmj		= 0.4,	0.05
-ammo_5.45x39_ap			= 0.4,	0.05
-ammo_5.56x45_ss190		= 0.4,	0.05
-ammo_5.56x45_ap			= 0.4,	0.05
-ammo_9x39_ap			= 0.4,	0.05
-ammo_9x39_pab9			= 0.4,	0.05
-ammo_7.62x39_fmj		= 0.4,	0.05
-ammo_7.62x39_ap			= 0.4,	0.05
-ammo_7.62x51_fmj		= 0.4,	0.05
-ammo_7.62x51_ap			= 0.4,	0.05
-ammo_7.92x33_fmj		= 0.4,	0.05
-ammo_7.92x33_ap			= 0.4,	0.05
+ammo_5.45x39_fmj		= 0.15,	0.025
+ammo_5.45x39_ap			= 0.15,	0.025
+ammo_5.56x45_ss190		= 0.15,	0.025
+ammo_5.56x45_ap			= 0.15,	0.025
+ammo_9x39_ap			= 0.15,	0.025
+ammo_9x39_pab9			= 0.15,	0.025
+ammo_7.62x39_fmj		= 0.15,	0.025
+ammo_7.62x39_ap			= 0.15,	0.025
+ammo_7.62x51_fmj		= 0.15,	0.025
+ammo_7.62x51_ap			= 0.15,	0.025
+ammo_7.92x33_fmj		= 0.15,	0.025
+ammo_7.92x33_ap			= 0.15,	0.025
 
 ; sniper ammo
 
-ammo_7.62x54_7h1		= 0.4,	0.05
-ammo_7.62x54_7h14		= 0.4,	0.05
-ammo_magnum_300			= 0.4,	0.05
-ammo_magnum_300_ap		= 0.4,	0.05
+ammo_7.62x54_7h1		= 0.15,	0.025
+ammo_7.62x54_7h14		= 0.15,	0.025
+ammo_magnum_300			= 0.15,	0.025
+ammo_magnum_300_ap		= 0.15,	0.025
+;ammo_12.7x108_fmj		= 0.15,	0.025
+ammo_12.7x108_ap		= 0.15,	0.025
 
 ; lmg ammo
 
-ammo_pkm_100			= 0.4,	0.05
-ammo_7.62x54_ap			= 0.4,	0.05
+ammo_pkm_100			= 0.15,	0.025
+ammo_7.62x54_ap			= 0.15,	0.025
 
 ; grenades
 
-grenade_f1				= 0.4,	0.05
-grenade_rgd5			= 0.4,	0.05
-ammo_vog-25				= 0.4,	0.05
-ammo_m209				= 0.4,	0.05
+grenade_f1				= 0.15,	0.025
+grenade_rgd5			= 0.15,	0.025
+ammo_vog-25				= 0.15,	0.025
+ammo_m209				= 0.15,	0.025
 
 ; rockets
 
-ammo_og-7b				= 0.4,	0.05
+ammo_og-7b				= 0.15,	0.025
 
 ; special
 
@@ -568,8 +603,21 @@ chocolate			= 0.4, 0.15
 nuts				= 0.4, 0.15
 
 mre				= 0.4, 0.15
-ration_ru			= 0.4, 0.15
-ration_ukr			= 0.4, 0.15
+mre2				= 0.4, 0.15
+mre3				= 0.4, 0.15
+ration_ru				= 0.4, 0.15
+ration_ru2				= 0.4, 0.15
+ration_ru3				= 0.4, 0.15
+ration_ru4				= 0.4, 0.15
+ration_ru5				= 0.4, 0.15
+ration_ru6				= 0.4, 0.15
+ration_ru7				= 0.4, 0.15
+ration_ukr				= 0.4, 0.15
+ration_ukr2			= 0.4, 0.15
+ration_ukr3			= 0.4, 0.15
+ration_ukr4			= 0.4, 0.15
+ration_ukr5			= 0.4, 0.15
+ration_ukr6			= 0.4, 0.15
 
 mint				= 0.4, 0.15
 mineral_water			= 0.4, 0.15
@@ -612,21 +660,12 @@ cocaine			= 0.3, 0.2
 tetanus			= 0.3, 0.2
 adrenalin			= 0.3, 0.2
 
-meat_tushkano		= 0.4, 0.15
-meat_dog		= 0.4, 0.15
-meat_pseudodog		= 0.4, 0.15
-meat_flesh		= 0.4, 0.15
-meat_boar		= 0.4, 0.15
-meat_bloodsucker	= 0.4, 0.15
-meat_snork		= 0.4, 0.15
-meat_chimera		= 0.4, 0.15
-
 ;repair_kit			= 0.7, 0.04
 
 shovel_old					= 0.3, 0.2
 shovel_mili					= 0.3, 0.2
-ied_rpg					= 0.3, 0.2
-ied					= 0.3, 0.2
+ied_rpg					= 0.32, 0.22
+ied					= 0.32, 0.22
 meinkampf					= 0.3, 0.2
 jar					= 0.3, 0.2
 grooming					= 0.3, 0.2
@@ -675,37 +714,66 @@ fieldcooker					= 0.3, 0.2
 
 ; UPD & BATTERIES
 
-wpn_upd							= 0.4,	0.2
-batteries						= 0.4,	0.2
-batteries_dead					= 0.4,	0.2
-batteries_empty					= 0.4,	0.2
-batteries_ccell					= 0.4,	0.2
+wpn_upd							= 0.46,	0.23
+batteries						= 0.36,	0.24
+batteries_dead					= 0.36,	0.24
+batteries_empty					= 0.36,	0.24
+batteries_ccell					= 0.36,	0.24
 
 ; REPAIR ITEMS
 
-gun_oil					= 0.65,	0.55
-cleaning_kit_p			= 0.65,	0.55
-cleaning_kit_s			= 0.65,	0.55
-cleaning_kit_r5			= 0.65,	0.55
-cleaning_kit_r7			= 0.65,	0.55
-cleaning_kit_u			= 0.65,	0.55
-toolkit_p			= 0.65,	0.55
-toolkit_s			= 0.65,	0.55
-toolkit_r5			= 0.65,	0.55
-toolkit_r7			= 0.65,	0.55
-toolkit_u			= 0.65,	0.55
+gun_oil					= 0.38,	0.32
+cleaning_kit_p			= 0.38,	0.32
+cleaning_kit_s			= 0.38,	0.32
+cleaning_kit_r5			= 0.38,	0.32
+cleaning_kit_r7			= 0.38,	0.32
+cleaning_kit_u			= 0.38,	0.32
+toolkit_p			= 0.38,	0.32
+toolkit_s			= 0.38,	0.32
+toolkit_r5			= 0.38,	0.32
+toolkit_r7			= 0.38,	0.32
+toolkit_u			= 0.38,	0.32
+sharpening_stones		= 0.38,	0.32
+gun_oil_ru_d			= 0.38,	0.32
+gun_oil_ru				= 0.38,	0.32
+solvent					= 0.38,	0.32
+grease					= 0.38,	0.32
+steel_wool				= 0.38,	0.32
+glue_b					= 0.38,	0.32
+glue_a					= 0.38,	0.32
+glue_e					= 0.38,	0.32
+sewing_kit_b			= 0.38,	0.32
+sewing_kit_a			= 0.38,	0.32
+sewing_kit_h			= 0.38,	0.32
+armor_repair_fa			= 0.38,	0.32
+helmet_repair_kit		= 0.38,	0.32
+armor_repair_pro		= 0.38,	0.32
+textile_patch_b			= 0.38,	0.32
+textile_patch_m			= 0.38,	0.32
+textile_patch_e			= 0.38,	0.32
+
+explo_jerrycan_fuel				= 0.52,	0.41
+explo_metalcan_powder			= 0.52,	0.41
+explo_balon_gas					= 0.52,	0.41
+
+mine						= 0.68,	0.58
+
+tushonka					= 0.4, 0.15
+
+glucose						= 0.3, 0.2
+glucose_s					= 0.3, 0.2
 
 ;Предметы
-device_flashlight		= 0.4,	0.2
-device_torch_dummy		= 0.4,	0.2
-detector_simple			= 0.4,	0.2
-detector_advanced		= 0.4,	0.2
-detector_elite			= 0.4,	0.2
-detector_scientific		= 0.4,	0.2
-device_pda				= 0.4,	0.2
-hand_radio				= 0.4,	0.2
-guitar_a				= 0.4,	0.2
-harmonica_a				= 0.4,	0.2
+device_flashlight		= 0.46,	0.23
+device_torch_dummy		= 0.46,	0.23
+detector_simple			= 0.46,	0.23
+detector_advanced		= 0.46,	0.23
+detector_elite			= 0.46,	0.23
+detector_scientific		= 0.46,	0.23
+device_pda				= 0.46,	0.23
+hand_radio				= 0.46,	0.23
+guitar_a				= 0.46,	0.23
+harmonica_a				= 0.46,	0.23
 anomaly_scaner			; NO TRADE
 
 ;Квестовые предметы
@@ -779,7 +847,7 @@ itm_sleepbag			= 1.3, 2.2
 
 ; alundaio
 itm_backpack			= 1.3, 2.2
-itm_actor_backpack		= 1.3, 2.2
+;itm_actor_backpack		= 1.3, 2.2
 
 ;roubles					= 1, 1
 
@@ -828,14 +896,37 @@ mutant_part_snork_leg						= 1.0, 1.8
 mutant_part_snork_mask						= 1.0, 1.8
 mutant_part_tushkano_head					= 1.0, 1.8
 
-mutant_part_flesh_meat					= 1.2, 1.95
-mutant_part_boar_chop					= 1.2, 1.95
-mutant_part_dog_meat					= 1.2, 1.95
-mutant_part_psevdodog_meat				= 1.2, 1.95
-mutant_part_krovosos_meat				= 1.2, 1.95
-mutant_part_snork_hand					= 1.2, 1.95
-mutant_part_chimera_meat				= 1.2, 1.95
-mutant_part_tushkano_meat				= 1.2, 1.95
+mutant_part_flesh_meat					= 0.95, 1.65
+mutant_part_boar_chop					= 0.95, 1.65
+mutant_part_dog_meat					= 0.95, 1.65
+mutant_part_psevdodog_meat				= 0.95, 1.65
+mutant_part_krovosos_meat				= 0.95, 1.65
+mutant_part_snork_hand					= 0.95, 1.65
+mutant_part_chimera_meat				= 0.95, 1.65
+mutant_part_tushkano_meat				= 0.95, 1.65
+
+meat_tushkano		= 0.95, 1.65
+meat_dog			= 0.95, 1.65
+meat_pseudodog		= 0.95, 1.65
+meat_flesh			= 0.95, 1.65
+meat_boar			= 0.95, 1.65
+meat_bloodsucker	= 0.95, 1.65
+meat_snork			= 0.95, 1.65
+meat_chimera		= 0.95, 1.65
+
+hide_chimera					= 1.0, 1.8
+powder_poltergeist				= 1.0, 1.8
+hide_pseudogiant				= 1.0, 1.8
+hide_psy_dog					= 1.0, 1.8
+hide_pseudodog					= 1.0, 1.8
+hide_burer						= 1.0, 1.8
+hide_controller					= 1.0, 1.8
+hide_bloodsucker				= 1.0, 1.8
+hide_boar						= 1.0, 1.8
+hide_flesh						= 1.0, 1.8
+
+mutant_part_crow_beak			= 1.0, 1.8
+drink_crow						= 0.95, 1.65
 
 ;---------------------------
 ;NEW ORDNANCE WEAPONRY MODULE
@@ -912,6 +1003,7 @@ wpn_oc33						= 1.2,	0.8
 wpn_tt33						= 1.2,	0.8
 wpn_fnfallelcan					= 1.2,	0.8
 wpn_trg							= 1.2,	0.8
+wpn_ksvk						= 1.2,	0.8
 
 wpn_abakan_alt					= 1.2,	0.8
 wpn_ak47m_alt					= 1.2,	0.8
@@ -926,6 +1018,7 @@ wpn_l85_custom					= 1.2,	0.8
 wpn_lr300_alt					= 1.2,	0.8
 wpn_lr300_custom				= 1.2,	0.8
 wpn_mp5_alt						= 1.2,	0.8
+wpn_m1891_alt					= 1.2,	0.8
 wpn_pm_alt						= 1.2,	0.8
 wpn_ppsh41_woodnew				= 1.2,	0.8
 wpn_sig550_alt					= 1.2,	0.8
@@ -1022,6 +1115,7 @@ wpn_hpsa_camo					= 1.6,	0.9
 wpn_l85_camo					= 1.6,	0.9
 wpn_lr300_camo					= 1.6,	0.9
 wpn_protecta_camo				= 1.6,	0.9
+wpn_scorpion_camo				= 1.6,	0.9
 wpn_sig220_camo					= 1.6,	0.9
 wpn_sig550_sniper				= 1.6,	0.9
 wpn_usp_custom					= 1.6,	0.9
@@ -1061,6 +1155,15 @@ wpn_knife_inv_5				= 0.8,	1.2
 wpn_knife_inv_3				= 0.8,	1.2
 wpn_knife_inv_4				= 0.8,	1.2
 wpn_knife_m					= 0.8,	1.2
+
+; PERSONAL WEAPONS
+
+wpn_personal_1				= 1.2,	0.8
+wpn_personal_2				= 1.2,	0.8
+wpn_personal_3				= 1.2,	0.8
+wpn_personal_4				= 1.2,	0.8
+wpn_personal_5				= 1.2,	0.8
+wpn_personal_6				= 1.2,	0.8
 
 ; BINOCULARS PROFILES
 
@@ -1145,7 +1248,7 @@ wpn_addon_scope_detector		= 1.3,	2.6
 wpn_addon_scope_night			= 1.3,	2.6
 wpn_addon_scope_susat			= 1.3,	2.6
 wpn_addon_scope_susat_x1.6		= 1.3,	2.6
-wpn_addon_scope_susat_custom	= 1.3,	2.6
+;wpn_addon_scope_susat_custom	= 1.3,	2.6
 wpn_addon_scope_susat_dusk		= 1.3,	2.6
 wpn_addon_scope_susat_night		= 1.3,	2.6
 wpn_addon_scope_zf4				= 1.3,	2.6
@@ -1191,57 +1294,59 @@ wpn_addon_grenade_launcher_m203 = 1.3,	2.6
 
 ; pistol ammo
 
-ammo_9x18_fmj			= 1.2,	1.5
-ammo_9x18_pmm			= 1.2,	1.5
-ammo_9x18_ap			= 1.2,	1.5
-ammo_9x19_pbp			= 1.2,	1.5
-ammo_9x19_fmj			= 1.2,	1.5
-ammo_9x19_ap			= 1.2,	1.5
-ammo_11.43x23_hydro		= 1.2,	1.5
-ammo_11.43x23_fmj		= 1.2,	1.5
-ammo_11.43x23_ap		= 1.2,	1.5
-ammo_12x70_buck			= 1.2,	1.5
-ammo_12x76_zhekan		= 1.2,	1.5
-ammo_357_hp_mag_ap		= 1.2,	1.5
-ammo_357_hp_mag			= 1.2,	1.5
+ammo_9x18_fmj			= 0.65,	0.72
+ammo_9x18_pmm			= 0.65,	0.72
+ammo_9x18_ap			= 0.65,	0.72
+ammo_9x19_pbp			= 0.65,	0.72
+ammo_9x19_fmj			= 0.65,	0.72
+ammo_9x19_ap			= 0.65,	0.72
+ammo_11.43x23_hydro		= 0.65,	0.72
+ammo_11.43x23_fmj		= 0.65,	0.72
+ammo_11.43x23_ap		= 0.65,	0.72
+ammo_12x70_buck			= 0.65,	0.72
+ammo_12x76_zhekan		= 0.65,	0.72
+ammo_357_hp_mag_ap		= 0.65,	0.72
+ammo_357_hp_mag			= 0.65,	0.72
 
 ; rifle ammo
 
-ammo_5.45x39_fmj		= 1.2,	1.5
-ammo_5.45x39_ap			= 1.2,	1.5
-ammo_5.56x45_ss190		= 1.2,	1.5
-ammo_5.56x45_ap			= 1.2,	1.5
-ammo_9x39_ap			= 1.2,	1.5
-ammo_9x39_pab9			= 1.2,	1.5
-ammo_7.62x39_fmj		= 1.2,	1.5
-ammo_7.62x39_ap			= 1.2,	1.5
-ammo_7.62x51_fmj		= 1.2,	1.5
-ammo_7.62x51_ap			= 1.2,	1.5
-ammo_7.92x33_fmj		= 1.2,	1.5
-ammo_7.92x33_ap			= 1.2,	1.5
+ammo_5.45x39_fmj		= 0.65,	0.72
+ammo_5.45x39_ap			= 0.65,	0.72
+ammo_5.56x45_ss190		= 0.65,	0.72
+ammo_5.56x45_ap			= 0.65,	0.72
+ammo_9x39_ap			= 0.65,	0.72
+ammo_9x39_pab9			= 0.65,	0.72
+ammo_7.62x39_fmj		= 0.65,	0.72
+ammo_7.62x39_ap			= 0.65,	0.72
+ammo_7.62x51_fmj		= 0.65,	0.72
+ammo_7.62x51_ap			= 0.65,	0.72
+ammo_7.92x33_fmj		= 0.65,	0.72
+ammo_7.92x33_ap			= 0.65,	0.72
 
 ; sniper ammo
 
-ammo_7.62x54_7h1		= 1.2,	1.5
-ammo_7.62x54_7h14		= 1.2,	1.5
-ammo_magnum_300			= 1.2,	1.5
-ammo_magnum_300_ap		= 1.2,	1.5
+ammo_7.62x54_7h1		= 0.65,	0.72
+ammo_7.62x54_7h14		= 0.65,	0.72
+ammo_magnum_300			= 0.65,	0.72
+ammo_magnum_300_ap		= 0.65,	0.72
+;ammo_12.7x108_fmj		= 0.65,	0.72
+ammo_12.7x108_ap		= 0.65,	0.72
 
 ; lmg ammo
 
-ammo_pkm_100			= 1.2,	1.5
-ammo_7.62x54_ap			= 1.2,	1.5
+ammo_pkm_100			= 0.65,	0.72
+ammo_7.62x54_ap			= 0.65,	0.72
 
 ; grenades
 
-grenade_f1				= 1.2,	1.5
-grenade_rgd5			= 1.2,	1.5
-ammo_vog-25				= 1.2,	1.5
-ammo_m209				= 1.2,	1.5
+grenade_f1				= 0.65,	0.72
+grenade_rgd5			= 0.65,	0.72
+ammo_vog-25				= 0.65,	0.72
+ammo_m209				= 0.65,	0.72
 
 ; rockets
 
-ammo_og-7b				= 1.2,	1.5
+ammo_og-7b				= 0.65,	0.72
 
 ; special
 
@@ -1263,35 +1368,35 @@ af_aac			= 1, 1.7
 af_aam			= 1, 1.7
 
 ;Броники
-novice_outfit			= 1.7, 1.0
-specops_outfit			= 1.7, 1.0
-military_outfit			= 1.7, 1.0
-stalker_outfit			= 1.7, 1.0
-scientific_outfit		= 1.7, 1.0
-exo_outfit				= 1.7, 1.0
-svoboda_light_outfit	= 1.7, 1.0
-svoboda_heavy_outfit	= 1.7, 1.0
-cs_heavy_outfit			= 1.7, 1.0
-dolg_outfit				= 1.7, 1.0
-dolg_heavy_outfit		= 1.7, 1.0
+novice_outfit			= 1.95, 1.0
+specops_outfit			= 1.95, 1.0
+military_outfit			= 1.95, 1.0
+stalker_outfit			= 1.95, 1.0
+scientific_outfit		= 1.95, 1.0
+exo_outfit				= 1.95, 1.0
+svoboda_light_outfit	= 1.95, 1.0
+svoboda_heavy_outfit	= 1.95, 1.0
+cs_heavy_outfit			= 1.95, 1.0
+dolg_outfit				= 1.95, 1.0
+dolg_heavy_outfit		= 1.95, 1.0
 
-ecologist_red_outfit	= 1.7, 1.0
-ecologist_green_outfit	= 1.7, 1.0
+ecologist_red_outfit	= 1.95, 1.0
+ecologist_green_outfit	= 1.95, 1.0
 
-coat_outfit				= 1.7, 1.0
-coat_heavy_outfit		= 1.7, 1.0
+coat_outfit				= 1.95, 1.0
+coat_heavy_outfit		= 1.95, 1.0
 
 salicidic_acid			= 2.9, 3.6
 morphine				= 2.9, 3.6
 
 ;Шлемы
-helm_cloth_mask			= 1.7, 1.0
-helm_respirator			= 1.7, 1.0
-helm_respirator_heavy	= 1.7, 1.0
-helm_hardhat			= 1.7, 1.0
-helm_protective			= 1.7, 1.0
-helm_tactic				= 1.7, 1.0
-helm_battle				= 1.7, 1.0
+helm_cloth_mask			= 1.95, 1.0
+helm_respirator			= 1.95, 1.0
+helm_respirator_heavy	= 1.95, 1.0
+helm_hardhat			= 1.95, 1.0
+helm_protective			= 1.95, 1.0
+helm_tactic				= 1.95, 1.0
+helm_battle				= 1.95, 1.0
 
 ;Медикаменты
 bandage					= 2.9, 3.6
@@ -1330,8 +1435,21 @@ chocolate			= 2.7, 3.4
 nuts				= 2.7, 3.4
 
 mre				= 2.7, 3.4
-ration_ru			= 2.7, 3.4
-ration_uk			= 2.7, 3.4
+mre2				= 2.7, 3.4
+mre3				= 2.7, 3.4
+ration_ru				= 2.7, 3.4
+ration_ru2				= 2.7, 3.4
+ration_ru3				= 2.7, 3.4
+ration_ru4				= 2.7, 3.4
+ration_ru5				= 2.7, 3.4
+ration_ru6				= 2.7, 3.4
+ration_ru7				= 2.7, 3.4
+ration_ukr				= 2.7, 3.4
+ration_ukr2			= 2.7, 3.4
+ration_ukr3			= 2.7, 3.4
+ration_ukr4			= 2.7, 3.4
+ration_ukr5			= 2.7, 3.4
+ration_ukr6			= 2.7, 3.4
 
 mint				= 2.7, 3.4
 mineral_water			= 2.7, 3.4
@@ -1370,15 +1488,6 @@ vodka_quality			= 2.7, 3.4
 cocaine			= 2.9, 3.6
 tetanus			= 2.9, 3.6
 adrenalin		= 2.9, 3.6
-
-meat_tushkano		= 2.7, 3.4
-meat_dog		= 2.7, 3.4
-meat_pseudodog		= 2.7, 3.4
-meat_flesh		= 2.7, 3.4
-meat_boar		= 2.7, 3.4
-meat_bloodsucker	= 2.7, 3.4
-meat_snork		= 2.7, 3.4
-meat_chimera		= 2.7, 3.4
 
 ;repair_kit		= 1.5, 2.2
 
@@ -1438,11 +1547,11 @@ cigar3					= 2.9, 3.6
 
 ; UPD & BATTERIES
 
-wpn_upd							= 0.8, 1.7
-batteries						= 0.8, 1.7
-batteries_dead					= 0.8, 1.7
-batteries_empty					= 0.8, 1.7
-batteries_ccell					= 0.8, 1.7
+wpn_upd							= 1.14, 2.44
+batteries						= 0.94, 1.77
+batteries_dead					= 0.94, 1.77
+batteries_empty					= 0.94, 1.77
+batteries_ccell					= 0.94, 1.77
 
 ; REPAIR ITEMS
 
@@ -1457,18 +1566,47 @@ toolkit_s			= 1.25,	1.45
 toolkit_r5			= 1.25,	1.45
 toolkit_r7			= 1.25,	1.45
 toolkit_u			= 1.25,	1.45
+sharpening_stones		= 1.25,	1.45
+gun_oil_ru_d			= 1.25,	1.45
+gun_oil_ru				= 1.25,	1.45
+solvent					= 1.25,	1.45
+grease					= 1.25,	1.45
+steel_wool				= 1.25,	1.45
+glue_b					= 1.25,	1.45
+glue_a					= 1.25,	1.45
+glue_e					= 1.25,	1.45
+sewing_kit_b			= 1.25,	1.45
+sewing_kit_a			= 1.25,	1.45
+sewing_kit_h			= 1.25,	1.45
+armor_repair_fa			= 1.25,	1.45
+helmet_repair_kit		= 1.25, 1.45
+armor_repair_pro		= 1.25,	1.45
+textile_patch_b			= 1.25,	1.45
+textile_patch_m			= 1.25,	1.45
+textile_patch_e			= 1.25,	1.45
+
+explo_jerrycan_fuel				= 1.28,	1.48
+explo_metalcan_powder			= 1.28,	1.48
+explo_balon_gas					= 1.28,	1.48
+
+mine						= 1.28,	1.48
+
+tushonka					= 2.7, 3.4
+
+glucose						= 2.9, 3.6
+glucose_s					= 2.9, 3.6
 
 ;Предметы
-device_flashlight		= 0.8, 1.7
-device_torch_dummy		= 0.8, 1.7
-hand_radio				= 0.8, 1.7
-detector_simple			= 0.8, 1.7
-detector_advanced		= 0.8, 1.7
-detector_elite			= 0.8, 1.7
-detector_scientific		= 0.8, 1.7
-device_pda			= 0.8, 1.7
-guitar_a			= 0.8, 1.7
-harmonica_a			= 0.8, 1.7
+device_flashlight		= 1.14, 2.44
+device_torch_dummy		= 1.14, 2.44
+hand_radio				= 1.14, 2.44
+detector_simple			= 1.14, 2.44
+detector_advanced		= 1.14, 2.44
+detector_elite			= 1.14, 2.44
+detector_scientific		= 1.14, 2.44
+device_pda			= 1.14, 2.44
+guitar_a			= 1.14, 2.44
+harmonica_a			= 1.14, 2.44
 anomaly_scaner			; NO TRADE
 
 ;Квестовые предметы

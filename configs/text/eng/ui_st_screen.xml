@@ -211,10 +211,10 @@
 		<text>Are you ready to leave the Zone? There’s no way back.</text>
 	</string>
 	<string id="st_game_over">
-		<text>Lost to The Zone</text>
+		<text>%c[255,238,153,26]Lost to The Zone</text>
 	</string>
 	<string id="st_game_over_press_jump">
-		<text>Press ($$ACTION_JUMP$$) to exit to the main menu.</text>
+		<text>%c[255,238,153,26]Press ($$ACTION_JUMP$$)</text>
 	</string>
 	<string id="st_game_paused">
 		<text>Pause</text>
@@ -325,7 +325,7 @@
 		<text>You can restock on medical supplies and ammo by visiting Lieutenant Rogovets and Lieutenant Kirillov.</text>
 	</string>
 	<string id="st_surge_while_asleep">
-		<text>An emission recently occurred in the Zone.</text>
+		<text>No indications or PDA warnings of an ongoing emission.</text>
 	</string>
 	<string id="st_ach_marked_by_zone">
 		<text>You have attained the Marked by the Zone achievement.</text>
@@ -337,12 +337,12 @@
 		<text>Received coordinates of a stash that has already been discovered.</text>
 	</string>
 	<string id="st_got_treasure">
-		<text>Stash found</text>
+		<text>Stash looted</text>
 	</string>
 	<string id="st_found_new_treasure">
 		<text>Stash coordinates received</text>
 	</string>
 	<string id="st_press_any_key">
-		<text>The Zone awaits you</text>
+		<text>%c[255,238,153,26]The Zone awaits you</text>
 	</string>
 </string_table>

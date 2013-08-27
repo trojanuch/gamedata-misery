@@ -8,18 +8,18 @@ respawn_params = respawn@pri_a16
 arrive_dist = 65
 
 [respawn@pri_a16]
-spawn_freedom@veteran
 
 ;;; unused
 
 ;spawn_stalker
 ;spawn_stalker@sci
+spawn_freedom@veteran
+
+;;; unused
 
 [spawn_freedom@veteran]
 spawn_squads = stalker_sim_squad_veteran, stalker_sim_squad_veteran, stalker_hunter_night_simulation_squad, stalker_hunter_day_simulation_squad
-spawn_num = {+pri_a28_actor_in_zone_stay} 2, 0
-
-;;; unused
+spawn_num = 0 ; {+pri_a28_actor_in_zone_stay} 2, 0
 
 ;[spawn_stalker]
 ;spawn_squads = stalker_hunter_day_simulation_squad

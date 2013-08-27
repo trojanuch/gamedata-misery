@@ -10,13 +10,13 @@ spawn_flesh
 
 [spawn_mutants]
 spawn_squads = simulation_boar, simulation_flesh, simulation_flesh
-spawn_num = {+zat_b53_go_nil} 1, {+zat_b53_actor_enemy} 1, {+zat_b53_thanks_dialog} 1, 0
+spawn_num = {=actor_on_level(zaton) +zat_b53_go_nil} 1, {=actor_on_level(zaton) +zat_b53_actor_enemy} 1, {=actor_on_level(zaton) +zat_b53_thanks_dialog} 1, 0
 
 [spawn_boar]
 spawn_squads = simulation_flesh, simulation_boar, simulation_tushkano
-spawn_num = {+zat_b53_go_nil} 1, {+zat_b53_actor_enemy} 1, {+zat_b53_thanks_dialog} 1, 0
+spawn_num = {=actor_on_level(zaton) +zat_b53_go_nil} 1, {=actor_on_level(zaton) +zat_b53_actor_enemy} 1, {=actor_on_level(zaton) +zat_b53_thanks_dialog} 1, 0
 
 [spawn_flesh]
 spawn_squads = simulation_flesh, simulation_flesh, simulation_boar
-spawn_num = {+zat_b53_go_nil} 1, {+zat_b53_actor_enemy} 1, {+zat_b53_thanks_dialog} 1, 0
+spawn_num = {=actor_on_level(zaton) +zat_b53_go_nil} 1, {=actor_on_level(zaton) +zat_b53_actor_enemy} 1, {=actor_on_level(zaton) +zat_b53_thanks_dialog} 1, 0
 

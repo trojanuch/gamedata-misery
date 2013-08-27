@@ -278,13 +278,13 @@ local function can_help_actor(squad)
 	end
 	-- Alundaio
 
-	if has_alife_info("sim_duty_help_harder") and squad:get_squad_community() == "duty" then
-		return true
-	elseif has_alife_info("sim_freedom_help_harder") and squad:get_squad_community() == "freedom" then
-		return true
-	elseif has_alife_info("sim_stalker_help_harder") and squad:get_squad_community() == "stalker" then
-		return true
-	end
+--	if has_alife_info("sim_duty_help_harder") and squad:get_squad_community() == "duty" then
+--		return true
+--	elseif has_alife_info("sim_freedom_help_harder") and squad:get_squad_community() == "freedom" then
+--		return true
+--	elseif has_alife_info("sim_stalker_help_harder") and squad:get_squad_community() == "stalker" then
+--		return true
+--	end
 	return false
 end
 

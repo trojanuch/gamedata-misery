@@ -10,11 +10,11 @@ spawn_monolith
 
 [spawn_bandits]
 spawn_squads = zat_b40_bandit_squad
-spawn_num = {!squad_exist(zat_b40_merc_squad) +zat_b40_find_information_complete -pri_a17_actor_has_gauss_rifle} 4, 0
+spawn_num = {=actor_on_level(zaton) !squad_exist(zat_b40_merc_squad) -pri_a17_actor_has_gauss_rifle} 3, 0
 
 [spawn_monolith]
 spawn_squads = zat_b40_monolith_squad
-spawn_num = {!squad_exist(zat_b40_merc_squad) !squad_exist(zat_b40_bandit_squad) +pri_a17_actor_has_gauss_rifle} 4, 0
+spawn_num = {=actor_on_level(zaton) !squad_exist(zat_b40_merc_squad) !squad_exist(zat_b40_bandit_squad) +pri_a17_actor_has_gauss_rifle} 3, 0
 
 [exclusive]
 zat_b40_guard_leader_01 = zaton\zat_b40_mercs.ltx
