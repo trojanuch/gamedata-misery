@@ -33,7 +33,7 @@ function se_actor:STATE_Write(packet)
 --	end
 	set_save_marker(packet, "save", false, "se_actor")
 	packet:w_bool(self.start_position_filled)
-	story_objects.get_story_objects_registry():save(packet)
+--	story_objects.get_story_objects_registry():save(packet)
 	set_save_marker(packet, "save", true, "se_actor")
 end
 --------------------
@@ -49,9 +49,9 @@ function se_actor:STATE_Read(packet, size)
 	if db.actor == nil then
 		set_save_marker(packet, "load", false, "se_actor")
 		self.start_position_filled = packet:r_bool()
-		if (size >= 156) then
-			story_objects.get_story_objects_registry():load(packet)
-		end
+--		if (size >= 156) then
+--			story_objects.get_story_objects_registry():load(packet)
+--		end
 		set_save_marker(packet, "load", true, "se_actor")
 	end
 end

@@ -432,6 +432,9 @@ function motivator_binder:update(delta)
 			self.st.state_mgr:update()
 			if not self.st.state_mgr.combat and not self.st.state_mgr.alife then
 				trade_manager.update(object)
+				-----YASTI TRADE RELEASE-----
+				trade_release.update(npc)
+				-----END YASTI TRADE RELEASE-----
 			end
 		end
 	else
@@ -498,7 +501,9 @@ function motivator_binder:save(packet)
 	set_save_marker(packet, "save", false, "motivator_binder")
 	object_binder.save(self, packet)
 	xr_logic.save_obj(self.object, packet)
-	trade_manager.save(self.object, packet)
+	-----YASTI TRADE RELEASE-----
+--	trade_manager.save(self.object, packet)
+	-----END YASTI TRADE RELEASE-----
 --	treasure_manager.save(packet)
 	xr_sound.save_npc(packet, self.object:id())
 	dialog_manager.save_npc(packet, self.object:id())
@@ -523,7 +528,9 @@ function motivator_binder:load(reader)
 	set_save_marker(reader, "load", false, "motivator_binder")
 	object_binder.load(self, reader)
 	xr_logic.load_obj(self.object, reader)
-	trade_manager.load(self.object, reader)
+	-----YASTI TRADE RELEASE-----
+--	trade_manager.load(self.object, reader)
+	-----END YASTI TRADE RELEASE-----
 --	treasure_manager.load(reader)
 	xr_sound.load_npc(reader, self.object:id())
 	dialog_manager.load_npc(reader, self.object:id())

@@ -1174,7 +1174,7 @@ zat_b51_buy_item_table[5] = {		[1] = {item = {"helm_tactic", "cs_heavy_outfit"}}
 	}
 zat_b51_buy_item_table[6] = {		[1] = {item = {"scientific_outfit"}}
 	}
-zat_b51_buy_item_table[7] = {		[1] = {item = {"exo_outfit"}}
+zat_b51_buy_item_table[7] = {		[1] = {item = {"military_outfit"}}
 	}
 
 function zat_b51_randomize_item(first_speaker, second_speaker)
