@@ -4,7 +4,7 @@
 cost		      		= 1860
 value					= +10
 
-rpm						= +25
+rpm						= +40
 
 inv_weight			= +0.09
 
@@ -14,10 +14,10 @@ inv_weight			= +0.09
 cost		      		= 2160
 value					= +20
 
-bullet_speed		 	= +50
-fire_distance       		= +40
+bullet_speed		 	= +54
+fire_distance       	= +30
 
-fire_dispersion_base	= -0.04
+fire_dispersion_base	= -0.03
 
 inv_weight			= +0.11
 
@@ -27,31 +27,30 @@ inv_weight			= +0.11
 cost		      		= 2290
 value                   = -20
 
-cam_dispersion          = -0.45     ;1.2
-cam_dispersion_inc      = -0.45     ;1.2
-cam_step_angle_horz     = -0.3      ;1.2
-
+cam_dispersion          = -0.35
+cam_dispersion_inc      = -0.35
+cam_step_angle_horz     = -0.25
 
 inv_weight			= +0.12
 
 [up_sect_firste_colt1911]
-;“очность(3)30%
+;“очность(3)15%
 ;---------------
 cost		      		= 2480
 value					= +15
 
-fire_dispersion_base			= -0.03
+fire_dispersion_base			= -0.09
 ;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.09
 
 [up_sect_secona_colt1911]
-;—корострельность(3)25%
+;—корострельность(3)10%
 ;----------------------
 cost		      		= 2860
 value					= +10
 
-rpm						= +38
+rpm						= +40
 
 inv_weight			= +0.11
 
@@ -61,9 +60,9 @@ inv_weight			= +0.11
 cost		      		= 1600
 value                   = -20
 
-cam_dispersion          = -0.45     ;1.2
-cam_dispersion_inc      = -0.45     ;1.2
-cam_step_angle_horz     = -0.3      ;1.2
+cam_dispersion          = -0.35
+cam_dispersion_inc      = -0.35
+cam_step_angle_horz     = -0.25
 
 inv_weight			= +0.11
 
@@ -73,26 +72,22 @@ inv_weight			= +0.11
 cost		      		= 2480
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00014 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00014 ;0.0011
+condition_shot_dec      	= -0.00035
+condition_queue_shot_dec	= -0.00035
 
 misfire_start_prob	     	= -0.0015
-
-misfire_end_prob	     	= -0.015 ;0.03
+misfire_end_prob	     	= -0.015
 
 inv_weight			= +0.12
 
 [up_sect_secone_colt1911]
-;—корострельность(3)25%
+;—корострельность(3)10%
 ;----------------------
 cost		      		= 2640
 value					= +10
 
-rpm						= +12
+rpm						= +40
 
 inv_weight			= +0.09
 
@@ -130,9 +125,9 @@ inv_weight			= -0.09
 cost		      		= 1600
 value                   = -20
 
-cam_dispersion          = -0.45     ;1.2
-cam_dispersion_inc      = -0.45     ;1.2
-cam_step_angle_horz     = -0.3      ;1.2
+cam_dispersion          = -0.35
+cam_dispersion_inc      = -0.35
+cam_step_angle_horz     = -0.25
 
 inv_weight			= +0.08
 
@@ -142,7 +137,7 @@ inv_weight			= +0.08
 cost		      		= 2460
 value					= +10
 
-fire_dispersion_base		= -0.03
+fire_dispersion_base		= -0.06
 ;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.1
@@ -153,18 +148,14 @@ inv_weight			= +0.1
 cost		      		= 2380
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00014 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00014 ;0.0011
+condition_shot_dec      	= -0.00035
+condition_queue_shot_dec	= -0.00035
 
 misfire_start_prob	     	= -0.001
+misfire_end_prob	     	= -0.01
 
-misfire_end_prob	     	= -0.01 ;0.03
-
-inv_weight			= +0.1
+inv_weight			= +0.042
 
 [up_sect_fiftha_colt1911]
 ;”величенный объем магазина

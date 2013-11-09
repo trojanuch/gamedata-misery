@@ -1502,8 +1502,10 @@ function destroy_object(actor, obj, p)
 	if sobj == nil then
 		return
 	end
-
-	if (axr_main and sobj.online) then
+	alife():release(sobj, true)
+	
+	--Removed Yasti Dredge Station Quest Fix
+--[[	if (axr_main and sobj.online) then
 		-- safe destroy
 		local sim = alife()
 		sobj:switch_offline()
@@ -1523,7 +1525,8 @@ function destroy_object(actor, obj, p)
 		return
 	end
 
-	alife():release(sobj, true)
+	alife():release(sobj, true)--]]
+	--End Yasti
 end
 
 function give_actor(actor, npc, p)
@@ -1628,6 +1631,16 @@ end
 
 function play_inv_drink_flask_2()
 	local snd_obj = sound_object("interface\\inv_drink_flask_2")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_cooking()
+	local snd_obj = sound_object("interface\\inv_cooking")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_arty_container()
+	local snd_obj = sound_object("interface\\inv_close")
 	snd_obj:play(db.actor,0,sound_object.s2d)
 end
 
@@ -3087,22 +3100,82 @@ function damage_actor_items_on_start(actor, npc)
 
 	local obj = actor:object("helm_respirator")
 	if obj ~= nil then
-		obj:set_condition(0.8)
+		obj:set_condition(0.92)
 	end
 
-	obj = actor:object("stalker_outfit")
+	obj = actor:object("helm_hardhat")
+	if obj ~= nil then
+		obj:set_condition(0.88)
+	end
+
+	obj = actor:object("helm_cloth_mask")
+	if obj ~= nil then
+		obj:set_condition(0.84)
+	end
+
+	obj = actor:object("novice_outfit")
 	if obj ~= nil then
 		obj:set_condition(0.76)
 	end
 
 	obj = actor:object("wpn_pm_actor")
 	if obj ~= nil then
-		obj:set_condition(0.9)
+		obj:set_condition(0.92)
 	end
 
-	obj = actor:object("wpn_ak74u")
+	obj = actor:object("wpn_gsh18")
 	if obj ~= nil then
-		obj:set_condition(0.7)
+		obj:set_condition(0.92)
+	end
+
+	obj = actor:object("wpn_pb")
+	if obj ~= nil then
+		obj:set_condition(0.94)
+	end
+
+	obj = actor:object("wpn_bm16")
+	if obj ~= nil then
+		obj:set_condition(0.86)
+	end
+
+	obj = actor:object("wpn_stg44")
+	if obj ~= nil then
+		obj:set_condition(0.88)
+	end
+
+	obj = actor:object("wpn_m1891")
+	if obj ~= nil then
+		obj:set_condition(0.96)
+	end
+
+	obj = actor:object("wpn_scorpion")
+	if obj ~= nil then
+		obj:set_condition(0.86)
+	end
+
+	obj = actor:object("wpn_knife_inv")
+	if obj ~= nil then
+		obj:set_condition(0.96)
+	end
+
+	obj = actor:object("wpn_knife_inv_2")
+	if obj ~= nil then
+		obj:set_condition(0.96)
+	end
+
+	obj = actor:object("wpn_knife_inv_3")
+	if obj ~= nil then
+		obj:set_condition(0.96)
+	end
+
+	obj = actor:object("wpn_knife_inv_4")
+	if obj ~= nil then
+		obj:set_condition(0.96)
+	end
+
+	obj = actor:object("wpn_knife_inv_5")
+	if obj ~= nil then
+		obj:set_condition(0.96)
 	end
 
 end
@@ -3691,6 +3764,15 @@ function jup_b200_count_found(actor)
 
 	cnt = cnt + xr_logic.pstor_retrieve(actor, "jup_b200_tech_materials_brought_counter", 0)
 	xr_logic.pstor_store(actor, "jup_b200_tech_materials_found_counter", cnt)
+end
+
+function up_start()
+up.up_objects_spawn()
+up.up_stalkers_spawn()
+end
+
+function up_freeplay()
+up.freeplay_clean_territory()
 end
 
 function sr_teleport(actor,npc,p)

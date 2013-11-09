@@ -117,7 +117,9 @@ prior = 118
 storyline = true
 title  = jup_b218_actor_outfit_name
 descr  = jup_b218_actor_outfit_text
-condlist_0 = {=actor_has_item(scientific_outfit)} complete
+condlist_0 = {=actor_has_item_in_slot_7(scientific_outfit)} complete
+condlist_1 = {=actor_has_item_in_slot_7(ecologist_red_outfit)} complete
+condlist_2 = {=actor_has_item_in_slot_7(ecologist_green_outfit)} complete
 on_complete = %-jup_b218_actor_outfit_task +jup_b218_actor_can_go_pass%
 
 [pas_b400_pripyat]
@@ -171,6 +173,7 @@ descr = {+jup_a10_back_vano} jup_a10_actor_back_vano_duties_text, {+jup_a10_kill
 target = {+jup_a10_back_vano} jup_a10_stalker_vano, {+jup_a10_death_0 =squad_exist(jup_a10_bandit_squad_3)} jup_a10_bandit_squad_3, {+jup_a10_kill_all_bandit =squad_exist(jup_a10_bandit_squad_3)} jup_a10_bandit_leader, {=squad_exist(jup_a10_bandit_squad_3)} jup_a10_bandit_leader
 ;target = {+jup_a10_back_vano} jup_a10_stalker_vano, {+jup_a10_kill_all_bandit}jup_a10_bandit_leader
 condlist_0 = {+jup_a10_vano_give_task_end} complete
+condlist_1 = {+jup_b218_gather_squad_complete} fail 
 ;condlist_1 = {+jup_a10_fals} fail
 
 [jup_b16_oasis]

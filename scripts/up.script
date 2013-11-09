@@ -1,0 +1,275 @@
+----------------------------------------------------------------------------------------------------------------------
+-- File: UP.SCRIPT
+-- Copyright: 2010-2012 SWM Team
+-- Author: Jurok
+-- Description: Основной скрипт
+----------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------
+--- Апдейт игры ---
+----------------------------------------------------------------------------------------------------------------------
+
+function main()
+up_surge.update()
+end
+
+----------------------------------------------------------------------------------------------------------------------
+--- Спавн предметов и персонажей ---
+----------------------------------------------------------------------------------------------------------------------
+
+------------------------
+--- Спавн персонажей ---
+------------------------
+
+function up_stalkers_spawn()
+up.zat_stalker_neborsky_dead_spawn()
+up.zat_stalker_messenger_spawn()
+up.zat_stalker_messenger_2_spawn()
+up.zat_stalker_b12_dead_spawn()
+up.zat_stalker_hunter_dead_spawn()
+up.jup_stalker_b211_1_dead_spawn()
+up.jup_stalker_b208_1_dead_spawn()
+up.jup_stalker_b208_2_dead_spawn()
+up.pri_stalker_batay_dead_spawn()
+end
+
+
+function zat_stalker_neborsky_dead_spawn()
+up.spawn_obj("zat_stalker_neborsky_dead", -440.848938, 11.708458, -72.396042, 121986, 253, 1)
+end
+
+function zat_stalker_messenger_spawn()
+up.spawn_obj("zat_stalker_messenger", 81.491653, 27.411600, -357.996521, 1105033, 218, 1)
+end
+
+function zat_stalker_messenger_2_spawn()
+up.spawn_obj("zat_stalker_messenger_2", 148.158081, 27.984652, -400.832275, 1219571, 22, 1)
+end
+
+function zat_stalker_b12_dead_spawn()
+up.spawn_obj("zat_b12_stalker_dead", 430.555206, 33.255634, -148.281219, 1672077, 73, 1)
+end
+
+function zat_stalker_hunter_dead_spawn()
+up.spawn_obj("zat_stalker_hunter_dead", 238.498718, 8.093756, -5.571949, 1373228, 10, 1)
+end
+
+
+function jup_stalker_b211_1_dead_spawn()
+up.spawn_obj("jup_b211_stalker_1_dead", 316.940948, -5.331285, 446.399078, 1226535, 317, 1)
+end
+
+function jup_stalker_b208_1_dead_spawn()
+up.spawn_obj("jup_b208_stalker_1_dead", 420.017395, 9.954163, -69.285095, 1379513, 527, 1)
+end
+
+function jup_stalker_b208_2_dead_spawn()
+up.spawn_obj("jup_b208_stalker_2_dead", 419.495148, 10.110260, -82.661392, 1379478, 531, 1)
+end
+
+
+function pri_stalker_batay_dead_spawn()
+up.spawn_obj("pri_stalker_batay_dead", -41.839497, -0.308941, -348.567108, 146627, 677, 1)
+end
+
+---------------------------------------------
+--- Спавн различных предметов по локациям ---
+---------------------------------------------
+
+function up_objects_spawn()
+up.zat_object_1_spawn()
+up.zat_object_2_spawn()
+up.zat_object_3_spawn()
+up.zat_object_4_spawn()
+up.zat_object_5_spawn()
+up.jup_object_1_spawn()
+end
+
+
+function zat_object_1_spawn()
+up.spawn_obj("miska", 150.264481, -6.824040, -142.279861, 1224668, 13, 1)
+end
+
+function zat_object_2_spawn()
+up.spawn_obj("tarelka1", 150.101196, -5.911881, -139.134613, 1224671, 13, 1)
+end
+
+function zat_object_3_spawn()
+up.spawn_obj("vodka", 149.963806, -5.917306, -138.056610, 1224673, 13, 1)
+end
+
+function zat_object_4_spawn()
+up.spawn_obj("krujka", 149.815063, -5.901786, -137.895782, 1224673, 13, 1)
+end
+
+function zat_object_5_spawn()
+up.spawn_obj("vedro_01", 149.943054, -6.823942, -136.831146, 1222249, 13, 1)
+end
+
+
+function jup_object_1_spawn() 
+up.spawn_obj("transiver", -228.057693, -2.307170, 80.977470, 331134, 385, 1)
+end
+
+----------------------------------------------------------------------------------------------------------------------
+--- Функции для новых квестов и диалогов ---
+----------------------------------------------------------------------------------------------------------------------
+
+---------------------------
+--- Диалоги со Стрелком ---
+---------------------------
+
+function actor_has_luckygun(first_speaker, second_speaker)
+return db.actor:object("wpn_sig550_luckygun") ~= nil
+end
+
+function transfer_luckygun(first_speaker, second_speaker)
+dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "wpn_sig550_luckygun")
+end
+
+function give_reward_strelok(first_speaker, second_speaker)
+dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "af_gold_fish")
+end
+
+-------------------------
+--- Диалоги с Сенькой ---
+-------------------------
+
+function actor_has_vodka(first_speaker, second_speaker)
+return db.actor:object("vodka") ~= nil
+end
+function actor_not_has_vodka(first_speaker, second_speaker)
+return db.actor:object("vodka") == nil
+end
+function transfer_vodka(first_speaker, second_speaker)
+dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "vodka")
+end
+
+--------------------------
+--- Диалоги с Германом ---
+--------------------------
+
+function actor_has_af_compass(first_speaker, second_speaker)
+return db.actor:object("af_compass") ~= nil
+end
+
+function transfer_af_compass(first_speaker, second_speaker)
+dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "af_compass")
+end
+
+function ecolog_sell_compass(first_speaker, second_speaker)
+dialogs.relocate_money_to_actor(first_speaker, second_speaker, 14000)
+end
+
+-----------------------
+--- Диалоги с Сычем ---
+-----------------------
+
+function actor_has_pda_medic(first_speaker, second_speaker)
+return db.actor:object("zat_b22_medic_pda") ~= nil
+end
+
+function zat_b22_owl_stalker_trader_sell_pda_medic(first_speaker, second_speaker)
+dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "zat_b22_medic_pda")
+dialogs.relocate_money_to_actor(first_speaker, second_speaker, 4000)
+end
+
+----------------------------------------------------------------------------------------------------------------------
+--- Изменённые/доработанные дефолтные диалоги ---
+----------------------------------------------------------------------------------------------------------------------
+
+--------------------------
+--- Диалоги с Карданом ---
+--------------------------
+
+function actor_has_electra_flash(first_speaker, second_speaker)
+return db.actor:object("af_electra_flash") ~= nil
+end
+function actor_not_has_electra_flash(first_speaker, second_speaker)
+return db.actor:object("af_electra_flash") == nil
+end
+function transfer_electra_flash(first_speaker, second_speaker)
+dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "af_electra_flash")
+end
+
+function give_actor_battery(first_speaker, second_speaker)
+dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "ammo_gauss_cardan")
+end
+
+function actor_no_sell_pda_joker_and_barge()
+return not has_alife_info("zat_owl_sell_pda_joker_info") and not has_alife_info("zat_owl_sell_pda_barge_info")
+end
+
+--------------------------
+--- Диалоги с Морганом ---
+--------------------------
+
+function actor_has_merc_pda_with_contract(first_speaker, second_speaker)
+return db.actor:object("jup_b207_merc_pda_with_contract") ~= nil
+end
+
+function actor_not_has_merc_pda_with_contract(first_speaker, second_speaker)
+return db.actor:object("jup_b207_merc_pda_with_contract") == nil
+end
+
+--------------------------
+--- Диалоги с Германом ---
+--------------------------
+
+function actor_has_detector_scientific(first_speaker, second_speaker)
+return db.actor:object("detector_scientific") ~= nil
+end
+
+----------------------------------------------------------------------------------------------------------------------
+--- Другие функции ---
+----------------------------------------------------------------------------------------------------------------------
+
+------------------------
+--- Работа с погодой ---
+------------------------
+
+function set_weather(weather)
+if (weather==nil) then
+return
+end 
+if (level.get_weather()~=weather) then
+level.set_weather(weather, true)
+end
+end
+
+-------------------------
+--- Работа со спавном ---
+-------------------------
+
+function spawn_obj(name, x, y, z, lv, gv, count)
+if (name==nil) then
+return
+end
+if (count==nil or count<=0) then
+count = 1
+end
+for i=1, count do
+alife():create(name,vector():set(x, y, z),lv,gv)
+end
+end
+
+---------------------------
+--- Отчистка территорий ---
+---------------------------
+
+function freeplay_clean_territory()
+for i = 1,65535 do
+local obj = level.object_by_id(i)
+if (obj and IsStalker(obj) and not obj:alive()) then
+alife():release(alife():object(obj:id()), true)
+end
+end
+end
+
+---------------------------------------------------------------------------------------------------------------------
+--Если вы собираетесь использовать данный скрипт целиком или частично в своих 
+--разработках по игре S.T.A.L.K.E.R. Не удаляйте копирайды, указывайте настоящего 
+--автора(ов) и не выдавайте чужие идеи и их реализацию за свои. Ведь это элементарная 
+--этика модостроителей! Спасибо за понимание.
+--(Выписка из OGSM)
+----------------------------------------------------------------------------------------------------------------------

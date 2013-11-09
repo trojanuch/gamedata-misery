@@ -13,19 +13,19 @@ ef_weapon_type					= 5
 
 ;-----------------------------------------------------------------------------
 cost					= 7080
-inv_weight				= 0.791
+inv_weight				= 0.91
 
 upgrades                = up_gr_firstab_tt33, up_gr_seconab_tt33, up_gr_thirdab_tt33, up_gr_fourtab_tt33, up_gr_fifthab_tt33, up_gr_fifthcd_tt33
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_pm
 
 ;--TTX----------------------------------------------------------------------------
-hit_power           = 0.25, 0.25, 0.25, 0.25
-hit_impulse	 		 	= 19
+hit_power           = 0.241, 0.241, 0.241, 0.241
+hit_impulse	 		 	= 20
 hit_type 				= fire_wound
-fire_distance           = 395
-bullet_speed		 	= 420
-rpm                     = 325
+fire_distance           = 300
+bullet_speed		 	= 339
+rpm                     = 175
 rpm_empty_click 	 	= 120
 
 use_aim_bullet					= false		;Поддерживается ли первая суппер пуля
@@ -33,12 +33,13 @@ time_to_aim						= 1.0
 
 hud                     	= wpn_tt33_hud
 
+misfire_probability        	= 0.05
 misfire_start_condition		= 0.7
 misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.007
 misfire_end_prob = 0.11 ;	     	= 0.07
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0015
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0014
 
 ammo_elapsed		 	= 8
 ammo_mag_size		 	= 8
@@ -52,12 +53,12 @@ reload_dof				= 0.0, 0.5, 5, 1.7
 
 ;--дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.63 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.02 ;		= 1.1
+fire_dispersion_base		= 0.59 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.02f
 crosshair_inertion			= 3.3
 
 ;отдача
-cam_return				= 0 ;					= 0
+cam_return = 0 ;				= 0
 cam_relax_speed         	= 6			;скорость возврата в исходное положение
 cam_relax_speed_ai      	= 120.75
 cam_dispersion          	= 0.68		;увеличения угла (в градусах) с каждым выстрелом
@@ -133,7 +134,8 @@ smoke_particles         = weapons\generic_shoot_00
 
 shell_point		 				= 0.0, 0.133, 0.047
 shell_dir		 				= 0.0, 0.0, 0.4
-;shell_particles	 			= weapons\generic_shells
+;shell_particles	 		= weapons\generic_shells
+shell_particles	 			= amik\weapons\data\9x18\9x18_1_r
 
 ;-------------------------------------------------------------------------------
 light_color		 				= 0.6,0.5,0.3
@@ -172,8 +174,8 @@ snd_close					= weapons\generic_close
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 silencer_name  				= wpn_addon_silencer_9x18		; section name for the attachable silencer
-silencer_x 						= 73						; offset in inventory icon
-silencer_y 						= -17
+silencer_x 					= 73						; offset in inventory icon
+silencer_y 					= -17
 
 ;params when silencer is attached
 ;similar to corresponding params without prefix silencer_
@@ -213,7 +215,7 @@ item_orientation				= 1.239378,-0.134046,-2.052052
 item_visual             	= dynamics\weapons\wpn_tt33\wpn_tt33_hud.ogf
 attach_place_idx				= 0
 
-shell_point						= 0.021,0.057,0.456
+shell_point						= 0.015,0.062,0.155  ; 0.021,0.057,0.456
 shell_bone              	= wpn_body
 
 fire_point			= 0,0.048,0.222

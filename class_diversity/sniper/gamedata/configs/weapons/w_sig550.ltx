@@ -15,20 +15,20 @@ default_to_ruck         = false
 sprint_allowed       	= true
 
 ;-------------------------------------------------------------------------------
-cost                    = 33640
+cost                    = 38640
 weapon_class            = assault_rifle        ; Type of the weapon
-inv_weight              = 4.212
+inv_weight              = 4.1
 
 upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_sig550
 
 ;-------TTX-----------------------------------------------------------------------
-hit_power				= 0.475, 0.475, 0.475, 0.475
-hit_impulse				= 34
+hit_power				= 0.552, 0.552, 0.552, 0.552
+hit_impulse				= 25
 hit_type				= fire_wound
-fire_distance           = 880
-bullet_speed            = 910        ;начальная скорость пули
+fire_distance           = 1000
+bullet_speed            = 980        ;начальная скорость пули
 rpm                     = 700
 rpm_empty_click         = 200
 
@@ -42,8 +42,8 @@ misfire_start_condition		= 0.84
 misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.0048
 misfire_end_prob = 0.11 ;	     	= 0.032
-condition_shot_dec      	= 0.0012
-condition_queue_shot_dec	= 0.0010
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0009
 
 ammo_elapsed            = 30
 ammo_mag_size           = 30
@@ -57,17 +57,17 @@ single_handed           = 0
 
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.258        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.278        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.65f
 crosshair_inertion		= 7.3
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
-cam_relax_speed         = 5		; скорость возврата в исходное положение
+cam_return = 0 ;				= 0
+cam_relax_speed         = 9		; скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
-cam_dispersion	         	= 0.96
-cam_dispersion_inc         	= 0.89
-cam_dispersion_frac     = 1.1       ; frac * angle + rand(-1,1)*(1-frac) * angle
+cam_dispersion	        = 0.81
+cam_dispersion_inc      = 0.84
+cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
 cam_max_angle           = 50.0       ; максимальный угол отдачи
 cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
 cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
@@ -78,10 +78,10 @@ PDM_disp_accel_factor 		= 2.105
 PDM_disp_crouch = 1.0 ; 			= 2.235
 PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
 
-zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed         = 9     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.78
-zoom_cam_dispersion_inc      	= 0.66
+zoom_cam_dispersion          = 0.58
+zoom_cam_dispersion_inc      = 0.6
 zoom_cam_dispersion_frac     = 0.7
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
@@ -173,7 +173,7 @@ scope_zoom_factor       = 49.6 ;        = 85                                    
 
 silencer_name           = wpn_addon_silencer_556x45
 silencer_x              = 221
-silencer_y              = 14
+silencer_y              = 16
 grenade_launcher_name   = wpn_addon_grenade_launcher_m203
 grenade_launcher_x      = 109
 grenade_launcher_y      = 30
@@ -191,12 +191,6 @@ snd_switch              = weapons\groza_switch, 1.0, 0.5
 snd_bore		= weapons\draw_silent
 snd_bore1		= weapons\mp5_bore
 snd_silncer_shot        = weapons\silencers\silencer_556x45
-
-;настройки для глушителя
-;silencer_hit_power      = 0.31, 0.31, 0.31, 0.31
-;silencer_hit_impulse    = 100
-;silencer_fire_distance  = 200
-;silencer_bullet_speed   = 500
 
 ;silencer_flame_particles  = weapons\generic_weapon01
 silencer_smoke_particles   = weapons\generic_shoot_00
@@ -281,37 +275,37 @@ lean_hud_offset_rot	= 0,0,0
 
 [scope_susat_sig]
 scope_name 					= wpn_addon_scope_susat
-scope_x                 = 78
+scope_x                 = 70
 scope_y                 = 0
 
 [scope_susat_sig_moist]
 scope_name 					= wpn_addon_scope_susat_moist
-scope_x                 = 78
+scope_x                 = 70
 scope_y                 = 0
 
 [scope_susat_sig_worn]
 scope_name 					= wpn_addon_scope_susat_worn
-scope_x                 = 78
+scope_x                 = 70
 scope_y                 = 0
 
 [scope_susat_x1.6_sig]
 scope_name 					= wpn_addon_scope_susat_x1.6
-scope_x                 = 78
+scope_x                 = 70
 scope_y                 = 0
 
 [scope_susat_custom_sig]
 scope_name 					= wpn_addon_scope_susat_custom
-scope_x                 = 78
+scope_x                 = 70
 scope_y                 = 0
 
 [scope_susat_dusk_sig]
 scope_name 					= wpn_addon_scope_susat_dusk
-scope_x                 = 78
+scope_x                 = 70
 scope_y                 = 0
 
 [scope_susat_night_sig]
 scope_name 					= wpn_addon_scope_susat_night
-scope_x                 = 78
+scope_x                 = 70
 scope_y                 = 0
 
 ;-----------------------------------------------------------------------------
@@ -328,19 +322,19 @@ installed_upgrades      = up_thirda_sig550_custom, up_thirdd_sig550_custom, up_t
 upgrade_scheme          = upgrade_scheme_sig550
 
 ;-------TTX-----------------------------------------------------------------------
-hit_power				= 0.528, 0.528, 0.528, 0.528
-hit_impulse				= 34
+hit_power				= 0.625, 0.625, 0.625, 0.625
+hit_impulse				= 25
 hit_type				= fire_wound
-fire_distance           = 956
-bullet_speed            = 973        ;начальная скорость пули
-rpm                     = 738
+fire_distance           = 1000
+bullet_speed            = 995        ;начальная скорость пули
+rpm                     = 700
 rpm_empty_click         = 200
 
 scope_status            = 2
 silencer_status			= 2
 
 inv_weight              = 3.926
-cost 				= 41140
+cost 				= 46140
 
 inv_grid_width			= 5	 
 inv_grid_height			= 2	  
@@ -353,10 +347,8 @@ misfire_start_condition		= 0.79
 misfire_end_condition		= 0.09
 misfire_start_prob = 0.007 ;	     	= 0.0046
 misfire_end_prob = 0.11 ;	     	= 0.028
-condition_shot_dec      	= 0.0010
-condition_queue_shot_dec	= 0.0008
-
-fire_modes              = 1, 3, -1
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0007
 
 visual                  = dynamics\weapons\wpn_sig551\wpn_sig551.ogf
 
@@ -449,16 +441,16 @@ class                   = WP_SVD
 weapon_class            = sniper_rifle        ; Type of the weapon
 
 cost                    = 38860
-inv_weight              = 4.874
+inv_weight              = 7.0
 
 upgrades                = up_gr_firstab_sig550_sniper, up_gr_seconab_sig550_sniper, up_gr_thirdab_sig550_sniper, up_gr_fourtab_sig550_sniper, up_gr_fifthab_sig550_sniper
 installed_upgrades      =
 
 hit_power				= 0.642, 0.642, 0.642, 0.642
-hit_impulse				= 34
-fire_distance           = 1034
-bullet_speed            = 994
-rpm                     = 145
+hit_impulse				= 25
+fire_distance           = 1000
+bullet_speed            = 998
+rpm                     = 200
 
 hud                     = wpn_sig550_sniper_hud
 
@@ -466,15 +458,30 @@ misfire_start_condition		= 0.88
 misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.0056
 misfire_end_prob = 0.11 ;	     	= 0.044
-condition_shot_dec      	= 0.0015
-condition_queue_shot_dec	= 0.0013
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0009
 
-ammo_mag_size           = 30
+ammo_mag_size           = 20
 
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
 fire_modes              = 1
 
-fire_dispersion_base    = 0.09
+fire_dispersion_base    = 0.16
+
+control_inertion_factor = 1.7f
+crosshair_inertion		= 7.5
+
+;отдача
+cam_dispersion	         	= 0.76
+cam_dispersion_inc         	= 0.76
+cam_max_angle           = 20.0       ; максимальный угол отдачи
+cam_max_angle_horz      = 20.0       ; (degree) maximum shot horizontal degree
+cam_step_angle_horz     = 0.5       ; (degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          	= 0.52
+zoom_cam_dispersion_inc      	= 0.52
+zoom_cam_max_angle           = 20.0
+zoom_cam_max_angle_horz      = 20.0
+zoom_cam_step_angle_horz     = 0.5
 
 inv_name                = st_wpn_sig550_sniper
 inv_name_short          = st_wpn_sig550_sniper
@@ -505,7 +512,7 @@ scope_status            = 1
 silencer_status         = 2
 grenade_launcher_status = 0
 
-scope_zoom_factor       = 20
+scope_zoom_factor       = 16
 scope_dynamic_zoom 		= on
 scope_texture			= wpn_crosshair_snag
 
@@ -522,17 +529,17 @@ item_visual						= dynamics\weapons\wpn_sig550_sniper\wpn_sig550_sniper_hud
 ;====================================================================================================================================================
 [wpn_sig550_custom]:wpn_sig550
 
-cost                    = 36260
-inv_weight              = 4.188
+cost                    = 41260
+inv_weight              = 4.088
 
 upgrades                = up_gr_firstab_sig550_custom, up_gr_seconab_sig550_custom, up_gr_thirdab_sig550_custom, up_gr_fourtab_sig550_custom, up_gr_fifthab_sig550_custom
 installed_upgrades      = up_firsta_sig550_custom, up_firstc_sig550_custom, up_firste_sig550_custom, up_fiftha_sig550_custom
 
-hit_power				= 0.509, 0.509, 0.509, 0.509
-hit_impulse				= 34
-fire_distance           = 948
-bullet_speed            = 973
-rpm                     = 714
+hit_power				= 0.582, 0.582, 0.582, 0.582
+hit_impulse				= 25
+fire_distance           = 1000
+bullet_speed            = 985
+rpm                     = 715
 
 hud                     = wpn_sig550_custom_hud
 
@@ -540,15 +547,10 @@ misfire_start_condition		= 0.81
 misfire_end_condition		= 0.11
 misfire_start_prob = 0.007 ;	     	= 0.0044
 misfire_end_prob = 0.11 ;	     	= 0.028
-condition_shot_dec      	= 0.0011
-condition_queue_shot_dec	= 0.0009
+condition_shot_dec      	= 0.00075
+condition_queue_shot_dec	= 0.00075
 
-ammo_mag_size           = 30
-
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, 3, -1
-
-fire_dispersion_base    = 0.205
+fire_dispersion_base    = 0.24
 
 inv_name                = st_wpn_sig550_custom
 inv_name_short          = st_wpn_sig550_custom
@@ -570,17 +572,17 @@ item_visual						= dynamics\weapons\wpn_sig550\wpn_sig55a_hud
 ;====================================================================================================================================================
 [wpn_sig550_alt]:wpn_sig550
 
-cost                    = 33980
-inv_weight              = 4.136
+cost                    = 38980
+inv_weight              = 4.036
 
 upgrades                = up_gr_firstab_sig550_alt, up_gr_seconab_sig550_alt, up_gr_thirdab_sig550_alt, up_gr_fourtab_sig550_alt, up_gr_fifthab_sig550_alt
 installed_upgrades      = up_secona_sig550_alt, up_seconc_sig550_alt
 
-hit_power				= 0.484, 0.484, 0.484, 0.484
-hit_impulse				= 34
-fire_distance           = 894
-bullet_speed            = 926
-rpm                     = 709
+hit_power				= 0.556, 0.556, 0.556, 0.556
+hit_impulse				= 25
+fire_distance           = 1000
+bullet_speed            = 982
+rpm                     = 710
 
 hud                     = wpn_sig550_alt_hud
 
@@ -588,15 +590,10 @@ misfire_start_condition		= 0.86
 misfire_end_condition		= 0.13
 misfire_start_prob = 0.007 ;	     	= 0.0052
 misfire_end_prob = 0.11 ;	     	= 0.037
-condition_shot_dec      	= 0.0013
-condition_queue_shot_dec	= 0.0011
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.0008
 
-ammo_mag_size           = 30
-
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, 3, -1
-
-fire_dispersion_base    = 0.247
+fire_dispersion_base    = 0.27
 
 inv_name                = st_wpn_sig550_alt
 inv_name_short          = st_wpn_sig550_alt
@@ -618,16 +615,16 @@ item_visual						= dynamics\weapons\wpn_sig550\wpn_sig55b_hud
 ;====================================================================================================================================================
 [wpn_sig550_worn]:wpn_sig550
 
-cost                    = 29520
-inv_weight              = 4.226
+cost                    = 33520
+inv_weight              = 4.15
 
 upgrades                = up_gr_firstab_sig550_worn, up_gr_seconab_sig550_worn, up_gr_thirdab_sig550_worn, up_gr_fourtab_sig550_worn, up_gr_fifthab_sig550_worn
 
-hit_power				= 0.407, 0.407, 0.407, 0.407
-hit_impulse				= 34
-fire_distance           = 863
-bullet_speed            = 887
-rpm                     = 686
+hit_power				= 0.447, 0.447, 0.447, 0.447
+hit_impulse				= 25
+fire_distance           = 1000
+bullet_speed            = 920
+rpm                     = 680
 
 hud                     = wpn_sig550_worn_hud
 
@@ -636,16 +633,11 @@ misfire_end_condition		= 0.15
 misfire_start_prob = 0.007 ;	     	= 0.0056
 misfire_end_prob = 0.11 ;	     	= 0.037
 condition_shot_dec      	= 0.0015
-condition_queue_shot_dec	= 0.0014
+condition_queue_shot_dec	= 0.0015
 
 silencer_status         = 0
 
-ammo_mag_size           = 30
-
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, 3, -1
-
-fire_dispersion_base    = 0.25
+fire_dispersion_base    = 0.345
 
 inv_name                = st_wpn_sig550_worn
 inv_name_short          = st_wpn_sig550_worn

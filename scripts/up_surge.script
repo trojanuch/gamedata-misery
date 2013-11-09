@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------------------------------------------
+-- File: UP_SURGE.SCRIPT
+-- Copyright: 2010-2012 SWM Team
+-- Author: Jurok
+-- Description: Дополнительные примочки для выброса
+----------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------
+--- Удаление трупов во время выброса ---
+----------------------------------------------------------------------------------------------------------------------
+
+function update()
+local actor=db.actor
+if (actor) then 
+if (surge_manager.is_started() and not has_alife_info("removing_dead_info")) then
+up_surge.removing_dead()
+give_info("removing_dead_info")
+end
+if (surge_manager.is_finished() and has_alife_info("removing_dead_info")) then
+disable_info("removing_dead_info")
+end
+end
+end
+
+function removing_dead()
+for i = 1,65535 do
+local obj = level.object_by_id(i)
+if (obj and IsMonster(obj) and not obj:alive() and obj:position():distance_to(db.actor:position())>20) then
+alife():release(alife():object(obj:id()), true)
+end
+end
+end
+
+----------------------------------------------------------------------------------------------------------------------
+--- Исправление некорректной погоды ---
+----------------------------------------------------------------------------------------------------------------------
+
+function weather_fix()
+level.add_pp_effector("teleport.ppe", 0005, false)
+up.set_weather("default_cloudy")
+end
+
+----------------------------------------------------------------------------------------------------------------------
+--- Исправление некорректной озвучки ---
+----------------------------------------------------------------------------------------------------------------------
+
+----------------------------
+--- Полковник Ковальский ---
+----------------------------
+
+function pri_surge_phase_1_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"pri_a16_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "pri_a17_kovalsky_surge_phase_1")
+end
+end
+
+function pri_surge_phase_2_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"pri_a16_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "pri_a17_kovalsky_surge_phase_2")
+end
+end
+
+function pri_after_surge_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"pri_a16_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "pri_a17_kovalsky_after_surge")
+end
+end
+
+-----------------
+--- Костоправ ---
+-----------------
+
+function jup_surge_phase_1_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"jup_a6_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "jup_a6_stalker_medik_phase_1")
+end
+end
+
+function jup_surge_phase_2_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"jup_a6_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "jup_a6_stalker_medik_phase_2")
+end
+end
+
+function jup_after_surge_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"jup_a6_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "jup_a6_stalker_medik_after_surge")
+end
+end
+
+--------------
+--- Борода ---
+--------------
+
+function zat_surge_phase_1_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"zat_a2_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "zat_a2_stalker_barmen_surge_phase_1")
+end
+end
+
+function zat_surge_phase_2_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"zat_a2_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "zat_a2_stalker_barmen_surge_phase_2")
+end
+end
+
+function zat_after_surge_snd_fix()
+if (not xr_conditions.actor_in_zone(actor, npc, {"zat_a2_sr_noweap"})) then
+xr_sound.set_sound_play(db.actor:id(), "zat_a2_stalker_barmen_after_surge")
+end
+end
+
+---------------------------------------------------------------------------------------------------------------------
+--Если вы собираетесь использовать данный скрипт целиком или частично в своих 
+--разработках по игре S.T.A.L.K.E.R. Не удаляйте копирайды, указывайте настоящего 
+--автора(ов) и не выдавайте чужие идеи и их реализацию за свои. Ведь это элементарная 
+--этика модостроителей! Спасибо за понимание.
+--(Выписка из OGSM)
+----------------------------------------------------------------------------------------------------------------------

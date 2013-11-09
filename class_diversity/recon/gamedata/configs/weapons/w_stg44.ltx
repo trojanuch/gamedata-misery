@@ -17,19 +17,19 @@ sprint_allowed          = true
 ;-------------------------------------------------------------------------------
 cost              	 = 18380            ; the price of the item
 weapon_class         = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
-inv_weight        	= 4.626                      ; weight in inventory
+inv_weight        	= 4.41              ; weight in inventory
 
 upgrades                = up_gr_firstab_stg44, up_gr_seconab_stg44, up_gr_thirdab_stg44, up_gr_fourtab_stg44, up_gr_fifthab_stg44
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_ak74u
 
 ;-ТТХ---------------------------------------------------------------------------
-hit_power           		= 0.405, 0.405, 0.405, 0.405
-hit_impulse          = 32    ; size of physic impulse by bullet
+hit_power           	= 0.41, 0.41, 0.41, 0.41
+hit_impulse          = 34    ; size of physic impulse by bullet
 hit_type             = fire_wound            ; [] type of the wound
-fire_distance           = 660 ;1000                  ; maximum fire distance that bullet can fly
+fire_distance           = 800                  ; maximum fire distance that bullet can fly
 bullet_speed            = 685                ; starting bullet speed
-rpm                     = 500    ; max round per minute
+rpm                     = 500
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -42,16 +42,14 @@ misfire_start_condition		= 0.88
 misfire_end_condition		= 0.17
 misfire_start_prob = 0.007 ;	     	= 0.0066
 misfire_end_prob = 0.11 ;	     	= 0.074
-condition_shot_dec      	= 0.0013
+condition_shot_dec      	= 0.0012
 condition_queue_shot_dec	= 0.0012
-
-condition_queue_shot_dec	= 0.0006
 
 ammo_elapsed         = 30           ; obsolete
 ammo_mag_size        = 30           ; clip (magazine) size
 fire_modes           = 1, -1
 
-ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
+ammo_class           = ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
 grenade_class        = ammo_vog-25         ; name of the ltx-section of used grenades
 
 launch_speed            = 0
@@ -64,12 +62,12 @@ reload_dof           = 0.0, 0.5, 5, 2;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       	= 0.52    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.57    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    	= 1.62f
 crosshair_inertion   	= 7.3
 
 ;отдача
-cam_return				= 0 ;					= 0
+cam_return = 0 ;				= 0
 cam_relax_speed             = 10		;скорость возврата в исходное положение
 cam_relax_speed_ai      	= 360
 cam_dispersion	         	= 1.07
@@ -81,8 +79,8 @@ cam_step_angle_horz        	= 0.35		;(degree) size of step camera moved in horiz
 
 zoom_cam_relax_speed         = 10	    ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.88
-zoom_cam_dispersion_inc      	= 0.44
+zoom_cam_dispersion          = 0.88
+zoom_cam_dispersion_inc      = 0.44
 zoom_cam_dispersion_frac     = 0.7
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 5.0
@@ -124,7 +122,7 @@ grenade_flame_particles = weapons\generic_weapon01
 
 shell_point             = 0,0.216,0.174            ; position (3rd person view) for shell to throw out
 shell_particles         = weapons\generic_shells   ; name of the particles for shells
-shell_particles         = weapons\generic_shells
+
 
 ;-------------------------------------------------------------------------------
 inv_name          = st_wpn_stg44                    ; name in inventory
@@ -277,33 +275,33 @@ lean_hud_offset_rot        = 0,0,0
 
 [scope_stg44]
 scope_name 		= wpn_addon_scope_zf4
-scope_x              	= 60                 ; offset in inventory icon
-scope_y                 = -16
+scope_x              	= 45                 ; offset in inventory icon
+scope_y                 = -12
 
 [scope_stg44_moist]
 scope_name 		= wpn_addon_scope_zf4_moist
-scope_x              	= 60                 ; offset in inventory icon
-scope_y                 = -16
+scope_x              	= 45                 ; offset in inventory icon
+scope_y                 = -12
 
 [scope_stg44_broken]
-scope_name 		= wpn_addon_scope_zf4_broken
-scope_x              	= 60                 ; offset in inventory icon
-scope_y                 = -16
+scope_name 		= wpn_addon_scope_zf4_worn
+scope_x              	= 45                 ; offset in inventory icon
+scope_y                 = -12
 
 ;=====================================================================================================================
 [wpn_stg44_new]:wpn_stg44
 
 cost              	 = 25880            ; the price of the item
-inv_weight        = 4.421                      ; weight in inventory
+inv_weight        = 4.3                 ; weight in inventory
 
 upgrades                = up_gr_firstab_stg44_new, up_gr_seconab_stg44_new, up_gr_thirdab_stg44_new, up_gr_fourtab_stg44_new, up_gr_fifthab_stg44_new
 installed_upgrades      = up_secona_stg44_new, up_seconc_stg44_new, up_secone_stg44_new
 
 hit_power           		= 0.454, 0.454, 0.454, 0.454
-hit_impulse          	= 39    ; size of physic impulse by bullet
-fire_distance           = 698 ;1000                  ; maximum fire distance that bullet can fly
-bullet_speed            = 717                ; starting bullet speed
-rpm                     = 523    ; max round per minute
+hit_impulse          	= 34    ; size of physic impulse by bullet
+fire_distance           = 800                  ; maximum fire distance that bullet can fly
+bullet_speed            = 700                ; starting bullet speed
+rpm                     = 525
 
 hud                     = wpn_stg44_new_hud
 
@@ -311,14 +309,10 @@ misfire_start_condition		= 0.84
 misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.0059
 misfire_end_prob = 0.11 ;	     	= 0.064
-condition_shot_dec      	= 0.0012
+condition_shot_dec      	= 0.0010
 condition_queue_shot_dec	= 0.0010
 
-ammo_mag_size        = 30           ; clip (magazine) size
-fire_modes           = 1, 3, -1
-ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
-
-fire_dispersion_base       	= 0.41
+fire_dispersion_base       	= 0.47
 
 inv_name          = st_wpn_stg44_new                    ; name in inventory
 inv_name_short    = st_wpn_stg44_new
@@ -339,16 +333,16 @@ item_visual                = dynamics\weapons\wpn_stg44\wpn_stg4a_hud.ogf
 [wpn_stg44_alt]:wpn_stg44
 
 cost              	 = 18840            ; the price of the item
-inv_weight        = 4.621                      ; weight in inventory
+inv_weight        = 4.4
 
 upgrades                = up_gr_firstab_stg44_alt, up_gr_seconab_stg44_alt, up_gr_thirdab_stg44_alt, up_gr_fourtab_stg44_alt, up_gr_fifthab_stg44_alt
 installed_upgrades      = up_fiftha_stg44_alt
 
 hit_power           		= 0.426, 0.426, 0.426, 0.426
-hit_impulse          	= 35    ; size of physic impulse by bullet
-fire_distance           = 677 ;1000                  ; maximum fire distance that bullet can fly
-bullet_speed            = 696                ; starting bullet speed
-rpm                     = 508    ; max round per minute
+hit_impulse          	= 34    ; size of physic impulse by bullet
+fire_distance           = 800                  ; maximum fire distance that bullet can fly
+bullet_speed            = 692                ; starting bullet speed
+rpm                     = 500
 
 hud                     = wpn_stg44_alt_hud
 
@@ -356,14 +350,10 @@ misfire_start_condition		= 0.89
 misfire_end_condition		= 0.18
 misfire_start_prob = 0.007 ;	     	= 0.0071
 misfire_end_prob = 0.11 ;	     	= 0.077
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0013
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.0012
 
-ammo_mag_size        = 30           ; clip (magazine) size
-fire_modes           = 1, -1
-ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
-
-fire_dispersion_base       	= 0.47
+fire_dispersion_base       	= 0.52
 
 inv_name          = st_wpn_stg44_alt                    ; name in inventory
 inv_name_short    = st_wpn_stg44_alt
@@ -384,15 +374,15 @@ item_visual                = dynamics\weapons\wpn_stg44\wpn_stg4b_hud.ogf
 [wpn_stg44_old]:wpn_stg44
 
 cost              	 = 15780            ; the price of the item
-inv_weight        = 4.613                      ; weight in inventory
+inv_weight        = 4.44
 
 upgrades                = up_gr_firstab_stg44_old, up_gr_seconab_stg44_old, up_gr_thirdab_stg44_old, up_gr_fourtab_stg44_old, up_gr_fifthab_stg44_old
 
 hit_power           		= 0.378, 0.378, 0.378, 0.378
-hit_impulse          = 32    ; size of physic impulse by bullet
-fire_distance           = 638 ;1000                  ; maximum fire distance that bullet can fly
-bullet_speed            = 676                ; starting bullet speed
-rpm                     = 487    ; max round per minute
+hit_impulse          = 34    ; size of physic impulse by bullet
+fire_distance           = 800                  ; maximum fire distance that bullet can fly
+bullet_speed            = 670                ; starting bullet speed
+rpm                     = 500
 
 hud                     = wpn_stg44_old_hud
 
@@ -400,16 +390,12 @@ misfire_start_condition		= 0.91
 misfire_end_condition		= 0.19
 misfire_start_prob = 0.007 ;	     	= 0.0077
 misfire_end_prob = 0.11 ;	     	= 0.078
-condition_shot_dec      	= 0.0015
+condition_shot_dec      	= 0.0014
 condition_queue_shot_dec	= 0.0014
 
 silencer_status            = 0
 
-ammo_mag_size        = 30           ; clip (magazine) size
-fire_modes           = 1, -1
-ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
-
-fire_dispersion_base       	= 0.64
+fire_dispersion_base       	= 0.69
 
 inv_name          = st_wpn_stg44_old                    ; name in inventory
 inv_name_short    = st_wpn_stg44_old
@@ -431,15 +417,15 @@ item_visual                = dynamics\weapons\wpn_stg44\wpn_stg4c_hud.ogf
 [wpn_stg44_worn]:wpn_stg44
 
 cost              	 = 10820            ; the price of the item
-inv_weight        = 4.612                      ; weight in inventory
+inv_weight        = 4.41                      ; weight in inventory
 
 upgrades                = up_gr_firstab_stg44_worn, up_gr_seconab_stg44_worn, up_gr_thirdab_stg44_worn, up_gr_fourtab_stg44_worn, up_gr_fifthab_stg44_worn
 
 hit_power           		= 0.334, 0.334, 0.334, 0.334
-hit_impulse          = 32    ; size of physic impulse by bullet
-fire_distance           = 616 ;1000                  ; maximum fire distance that bullet can fly
-bullet_speed            = 636                ; starting bullet speed
-rpm                     = 464    ; max round per minute
+hit_impulse          = 34    ; size of physic impulse by bullet
+fire_distance           = 700                  ; maximum fire distance that bullet can fly
+bullet_speed            = 625                ; starting bullet speed
+rpm                     = 470
 
 hud                     = wpn_stg44_worn_hud
 
@@ -448,15 +434,11 @@ misfire_end_condition		= 0.22
 misfire_start_prob = 0.007 ;	     	= 0.0084
 misfire_end_prob = 0.11 ;	     	= 0.088
 condition_shot_dec      	= 0.0017
-condition_queue_shot_dec	= 0.0016
+condition_queue_shot_dec	= 0.0017
 
 silencer_status            = 0
 
-ammo_mag_size        = 30           ; clip (magazine) size
-fire_modes           = 1, -1
-ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
-
-fire_dispersion_base       	= 0.78
+fire_dispersion_base       	= 0.82
 
 inv_name          = st_wpn_stg44_worn                    ; name in inventory
 inv_name_short    = st_wpn_stg44_worn

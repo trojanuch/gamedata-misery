@@ -18,22 +18,22 @@ control_inertion_factor = 1.0
 ;-------------------------------------------------------------------------------
 cost              		= 37300
 weapon_class          	= assault_rifle
-inv_weight              = 3.391
+inv_weight              = 3.76
 
 upgrades                = up_gr_firstab_fr2000, up_gr_seconab_fr2000, up_gr_thirdab_fr2000, up_gr_fourtab_fr2000, up_gr_fourtcd_fr2000, up_gr_fourtef_fr2000
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_fn2000
 
 ;--TTX----------------------------------------------------------------------------
-hit_power					= 0.445, 0.445, 0.445, 0.445
-hit_impulse					= 35 ;50 ;100
+hit_power					= 0.455, 0.455, 0.455, 0.455
+hit_impulse					= 25
 hit_type						= fire_wound
-fire_distance           = 895
+fire_distance           = 1000
 bullet_speed         	= 900 ;начальная скорость пули
 rpm                     = 850
 rpm_empty_click         = 200
 
-grenade_vel 			= 32 ;76
+grenade_vel 			= 76
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
 time_to_aim             = 1.0
@@ -54,21 +54,21 @@ hand_dependence         = 1
 single_handed           = 0
 ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
 grenade_class			= ammo_m209
-fire_modes              = 1, 3, -1
+fire_modes              = 1
 launch_speed         	= 32
 
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base       = 0.26    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       = 0.31    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.42f
 crosshair_inertion	= 6.8
 
 ;отдача
-cam_return				= 0 ; 				= 0
-cam_relax_speed         = 5    		;скорость возврата в исходное положение
+cam_return = 0 ;				= 0
+cam_relax_speed         = 8    		;скорость возврата в исходное положение
 cam_relax_speed_ai     	= 120.75
-cam_dispersion	         	= 1.14
-cam_dispersion_inc         	= 0.8
+cam_dispersion	        = 1.14
+cam_dispersion_inc      = 0.8
 cam_dispersion_frac     = 1.1 		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle           = 50.0		;максимальный угол отдачи
 cam_max_angle_horz      = 50.0      ;(degree) maximum shot horizontal degree
@@ -80,10 +80,10 @@ PDM_disp_accel_factor 		= 2.255
 PDM_disp_crouch = 1.0 ; 			= 1.165
 PDM_disp_crouch_no_acc = 1.0 ; 			= 1.985
 
-zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed         = 8     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.97
-zoom_cam_dispersion_inc      	= 0.51
+zoom_cam_dispersion          = 0.97
+zoom_cam_dispersion_inc      = 0.51
 zoom_cam_dispersion_frac     = 1.0
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
@@ -143,7 +143,7 @@ grenade_flame_particles = weapons\generic_weapon01
 
 shell_point       		= -0.020000,0.186000,0.200000
 shell_dir            	= 0.0, 1.0, 0.0
-shell_particles         = weapons\generic_shells
+;shell_particles         = weapons\generic_shells
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 strap_position          = -0.15,-0.35,0.27         ; position (offset) and orientation of the weapon when it is strapped
@@ -172,7 +172,7 @@ grenade_launcher_status = 0
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time			= 0.25
-scope_zoom_factor       = 42                                                ; fov for zoom mode
+scope_zoom_factor       = 56                                                ; fov for zoom mode
 scope_texture		= wpn_crosshair_fn2000
 lens_texture		= wpn\wpn_crosshair_g36_lens
 lens_texture_x		= 183

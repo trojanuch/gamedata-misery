@@ -1,0 +1,34 @@
+;--------------------------------------------------------------------------------
+;-- Copyright: 2010-2012 SWM Team -----------------------------------------------
+;-- last edited: Jurok ----------------------------------------------------------
+;--------------------------------------------------------------------------------
+
+[logic]
+active = ph_door@closed_out
+
+[ph_door@closed_out]
+locked = false
+closed = true
+tip_open = tip_open_another_site
+on_info = {=actor_in_zone(pri_b303_one_side_door_rest)} ph_door@closed_in %+pri_b303_door_is_open%
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+
+[ph_door@open]
+locked = false
+closed = false
+tip_close = tip_door_close
+on_use = ph_door@closed_in
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+
+[ph_door@closed_in]
+locked = false
+closed = true
+tip_close = tip_door_open
+on_use = ph_door@open 
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop

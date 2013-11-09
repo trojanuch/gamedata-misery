@@ -1,0 +1,46 @@
+;--------------------------------------------------------------------------------
+;-- Copyright: 2010-2012 SWM Team -----------------------------------------------
+;-- last edited: Jurok ----------------------------------------------------------
+;--------------------------------------------------------------------------------
+
+[logic]
+active = ph_door@locked
+
+[ph_door@locked]
+locked = true
+on_info = {+zat_b22_medic_respawn} ph_door@locked_timer
+tip_open = tip_door_locked
+not_for_npc = true
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+
+[ph_door@locked_timer]
+locked = true
+tip_open = tip_door_locked
+not_for_npc = true
+on_game_timer = 10800 | {+zat_b22_trick_done} ph_door@close %+zat_b22_can_go_in%  
+on_info = {+zat_b38_disappearance_stalkers_find_cop_near_port_krans_give -zat_b22_can_go_in +zat_b22_trick_done} ph_door@close %+zat_b22_can_go_in%
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+
+[ph_door@close]
+locked = false
+closed = true
+tip_open = tip_door_open
+on_use = {-zat_b22_actor_can_hurt} ph_door@open %+zat_b22_actor_can_hurt%, ph_door@open
+not_for_npc = true
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop
+
+[ph_door@open]
+locked = false
+closed = false
+on_use = ph_door@close
+tip_close = tip_door_close
+not_for_npc = true
+snd_open_start = wood_large_open
+snd_close_start = wood_large_close_start
+snd_close_stop = wood_large_close_stop

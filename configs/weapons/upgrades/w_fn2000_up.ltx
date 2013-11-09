@@ -5,38 +5,37 @@ cost		      		= 3720
 value					= +10
 
 ;fire_dispersion_condition_factor    = -1
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
+
 misfire_start_prob	     	= -0.001
 misfire_end_prob	     	= -0.016
 
-inv_weight              	= +0.2
+inv_weight              	= +0.1
 
 [up_sect_firstc_fn2000]
-;Надежность(2)15%
+;Надежность(2)10%
 ;---------------
 cost		      		= 3860
-value					= +15
+value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= -0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.016 ;0.03
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
 
-inv_weight              	= +0.2
+misfire_start_prob	     	= -0.002
+misfire_end_prob	     	= -0.016
+
+inv_weight              	= +0.1
 
 [up_sect_firstd_fn2000]
-;Настильность(2)20%
+;Настильность(2)10%
 ;------------------
 cost		      		= 4980
-value					= +20
+value					= +10
 
-bullet_speed            = +75
-fire_dispersion_base	= -0.01
+bullet_speed            = +90
+fire_dispersion_base    = -0.002
 
 inv_weight              	= +0.1
 
@@ -46,11 +45,11 @@ inv_weight              	= +0.1
 cost		      		= 4460
 value					= +25
 
-crosshair_inertion		   = -2
+crosshair_inertion		   = -1.5
  
-PDM_disp_base 				= -0.2 ;0.5
-PDM_disp_vel_factor 		= -0.75 ;1.5
-PDM_disp_accel_factor 		= -0.75 ;1.5
+PDM_disp_base 				= -0.2
+PDM_disp_vel_factor 		= -0.75
+PDM_disp_accel_factor 		= -0.75
 
 inv_weight              	= +0.05
 
@@ -60,10 +59,10 @@ inv_weight              	= +0.05
 cost		      		= 4890
 value					= +30
 
-fire_dispersion_base	= -0.04 ;0.7
+fire_dispersion_base	= -0.045
 ;fire_dispersion_condition_factor    = -1 ;15
 
-inv_weight              	= +0.1
+inv_weight              	= +0.12
 
 [up_sect_secona_fn2000]
 ;Настильность(1)10%
@@ -71,30 +70,31 @@ inv_weight              	= +0.1
 cost		      		= 4890
 value					= +10
 
-bullet_speed            = +50
-
-inv_weight              	= +0.05
-
-[up_sect_seconc_fn2000]
-;Настильность(2)20%
-;------------------
-cost		      		= 5680
-value					= +20
-
-bullet_speed            = +75
-fire_dispersion_base	= -0.02
+bullet_speed            = +90
+fire_dispersion_base    = -0.002
 
 inv_weight              	= +0.1
 
+[up_sect_seconc_fn2000]
+;Настильность(2)15%
+;------------------
+cost		      		= 5680
+value					= +15
+
+bullet_speed            = +135
+fire_dispersion_base	= -0.01
+
+inv_weight              	= +0.2
+
 [up_sect_second_fn2000]
-;Скорострельность(2)15%
+;Скорострельность(2)5%
 ;----------------------
 cost		      		= 5690
 value					= +5
 
 rpm          = +42
 
-inv_weight              	= +0.2
+inv_weight              	= +0.1
 
 [up_sect_secone_fn2000]
 ;Точность(3)30%
@@ -102,7 +102,7 @@ inv_weight              	= +0.2
 cost		      		= 5460
 value					= +30
 
-fire_dispersion_base	= -0.036
+fire_dispersion_base	= -0.045
 ;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight              	= +0.15
@@ -113,15 +113,15 @@ inv_weight              	= +0.15
 cost		      		= 5980
 value                   = -30
 
-cam_dispersion              = -0.14     ;0.5
-cam_dispersion_inc          = -0.07     ;0.5
-cam_step_angle_horz         = -0.65     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.3
+cam_dispersion_inc          = -0.18
+cam_step_angle_horz         = -0.5
 
-zoom_cam_dispersion         = -0.14     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.08     ;0.5
-zoom_cam_step_angle_horz    = -0.55     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.24
+zoom_cam_dispersion_inc     = -0.12
+zoom_cam_step_angle_horz    = -0.5
 
-inv_weight              	= +0.1
+inv_weight              	= +0.21
 
 [up_sect_thirda_fn2000]
 ;Отдача(1)-10%
@@ -129,29 +129,30 @@ inv_weight              	= +0.1
 cost		      		= 6890
 value                   = -10
 
-cam_dispersion              = -0.09     ;0.5
-cam_dispersion_inc          = -0.04     ;0.5
-cam_step_angle_horz         = -0.35     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.1
+cam_dispersion_inc          = -0.06
+cam_step_angle_horz         = -0.15
 
-zoom_cam_dispersion         = -0.09     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.05     ;0.5
-zoom_cam_step_angle_horz    = -0.28     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.08
+zoom_cam_dispersion_inc     = -0.04
+zoom_cam_step_angle_horz    = -0.15
 
 inv_weight              	= +0.1
 
 [up_sect_thirdc_fn2000]
-;Надежность(2)15%
+;Надежность(2)20%
 ;---------------
 cost		      		= 6620
-value					= +10
+value					= +20
 
 ;fire_dispersion_condition_factor    = -1 ;15
-condition_queue_shot_dec	= -0.0001 ;0.0013
-condition_shot_dec      	= -0.0001 ;0.0011
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
+
 misfire_start_prob	     	= -0.002
 misfire_end_prob	     	= -0.016 ;0.03
 
-inv_weight              	= +0.2
+inv_weight              	= +0.12
 
 [up_sect_thirdd_fn2000]
 ;Точность(2)20%
@@ -159,7 +160,7 @@ inv_weight              	= +0.2
 cost		      		= 5840
 value					= +20
 
-fire_dispersion_base	= -0.024 ;0.7
+fire_dispersion_base	= -0.03
 ;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight              	= +0.15
@@ -175,35 +176,40 @@ rpm          = +85
 inv_weight              	= +0.2
 
 [up_sect_thirdf_fn2000]
-;Настильность(3)30%
+;Настильность(3)15%
 ;------------------
 cost		      		= 6950
-value					= +10
+value					= +15
 
-bullet_speed            = +100
-fire_dispersion_base    = -0.014
+bullet_speed            = +135
+fire_dispersion_base    = -0.01
+
+inv_weight              	= +0.14
 
 [up_sect_fourta_fn2000]
+;Оптика 4x
+;------------------
 cost		      		= 2240
 
-scope_zoom_factor       = -12   
+scope_zoom_factor       = -32
+inv_weight			= +0.1
 
 [up_sect_fourtc_fn2000]
 cost		      		= 3360
 
 scope_nightvision = scope_contrast
-
+inv_weight			= +0.05
 
 [up_sect_fourte_fn2000]
 cost		      		= 5890
 
 scope_nightvision = scope_nightvision
+inv_weight			= +0.27
 
 [up_sect_fourtf_fn2000]
 cost		      		= 4890
 
 scope_dynamic_zoom = on
-
 
 [up_firsta_fn2000]
 scheme_index            = 0, 0

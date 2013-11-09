@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+  <!-- Copyright: 2010-2012 SWM Team --> 
+  <!-- Author: Jurok --> 
+
+  <!-- Zaton -->
+
+<!-- Погибший майор Неборский -->
+<specific_character id="zat_stalker_neborsky_dead" team_default = "1">
+    <name>st_neborsky_name</name>
+    <icon>ui_inGame2_Soldier_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Командир отряда «Ската-3». Погиб возле станции зондирования от кровососа.</bio>
+
+    <class>zat_stalker_neborsky_dead</class>
+    <community>army</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\military\</snd_config>
+
+    <rank>100</rank>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+    <supplies>
+
+            [spawn] \n
+            wpn_pm \n
+            ammo_9x18_fmj = 1 \n
+
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+
+<!-- Погибший наёмник №1 -->
+<specific_character id="zat_stalker_messenger" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_merc_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Неизвестный наёмник. Детальная информация отсутствует.</bio>
+
+    <class>zat_stalker_messenger</class>
+    <community>killer</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\killer\</snd_config>
+
+    <rank>100</rank>
+	<money min="1500" max="2500" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_merc\stalker_merc_2</visual>
+    
+            <supplies>
+[spawn] \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+
+<!-- Погибший наёмник №2 -->
+<specific_character id="zat_stalker_messenger_2" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_merc_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Неизвестный наёмник. Детальная информация отсутствует.</bio>
+
+    <class>zat_stalker_messenger_2</class>
+    <community>killer</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\killer\</snd_config>
+
+    <rank>100</rank>
+	<money min="1500" max="2500" infinitive="0"/>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_merc\stalker_merc_2</visual>
+
+            <supplies>
+[spawn] \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+
+<!-- Погибший возле моста сталкер -->
+<specific_character id="zat_b12_stalker_dead" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Сталкер, попавший в аномалию на мосту им. Преображенского.</bio>
+
+    <class>zat_b12_stalker_dead</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="3000" max="3000" infinitive="0"/>
+    <visual>actors\stalker_neutral\stalker_neutral_2</visual>
+    
+            <supplies>
+[spawn] \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+
+<!-- Погибший охотник Данила -->
+<specific_character id="zat_stalker_hunter_dead" team_default = "1">
+    <name>st_zat_b38_stalker_hunter_name</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Убитый Тремором охотник.</bio>
+
+    <class>zat_stalker_hunter_dead</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="3000" max="3000" infinitive="0"/>
+    <visual>actors\stalker_neutral\stalker_neutral_2</visual>
+    
+            <supplies>
+[spawn] \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+
+  <!-- Jupiter -->
+
+<!-- Погибший на «Плавнях» сталкер -->
+<specific_character id="jup_b211_stalker_1_dead" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Сталкер, сгинувший в логове болотных кровососов.</bio>
+
+    <class>jup_b211_stalker_1_dead</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="3000" max="3000" infinitive="0"/>
+    <visual>actors\stalker_neutral\stalker_neutral_2</visual>
+    
+            <supplies>
+[spawn] \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+
+<!-- Погибший в туннеле сталкер №1 -->
+<specific_character id="jup_b208_stalker_1_dead" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_nauchniy</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Один из сталкеров, сгинувших в логове бюреров.</bio>
+
+    <class>jup_b208_stalker_1_dead</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="3000" max="3000" infinitive="0"/>
+    <visual>actors\stalker_neutral\stalker_neutral_nauchniy</visual>
+    
+            <supplies>
+[spawn] \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+
+<!-- Погибший в туннеле сталкер №2 -->
+<specific_character id="jup_b208_stalker_2_dead" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Один из сталкеров, сгинувших в логове бюреров.</bio>
+
+    <class>jup_b208_stalker_2_dead</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
+
+    <rank>50</rank>
+    <reputation>0</reputation>
+	<money min="3000" max="3000" infinitive="0"/>
+    <visual>actors\stalker_neutral\stalker_neutral_2</visual>
+    
+            <supplies>
+[spawn] \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+
+<!-- Комментатор -->
+<specific_character id="jup_b25_stalker_commentator" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Сталкер группировки «Свобода». Комментирует истории Флинта. Детальная информация отсутствует.</bio>
+
+    <class>jup_b25_stalker_commentator</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_01\freedom\</snd_config>
+
+    <rank>40</rank>
+    <reputation>0</reputation>
+	<money min="1500" max="2500" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mask</visual>
+    <supplies>
+      [spawn] \n
+      
+      wpn_l85 \n
+      ammo_5.56x45_ap = 1 \n
+      wpn_beretta \n
+      ammo_9x19_pbp = 1 \n
+      grenade_rgd5 = 2 \n
+
+#include "gameplay\character_items_2.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_2.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs_no_guide.xml"
+  </specific_character>
+
+
+  <!-- Pripyat -->
+
+<!-- Погибший ст. сержант Батяй -->
+<specific_character id="pri_stalker_batay_dead" team_default = "1">
+    <name>st_batay_name</name>
+    <icon>ui_inGame2_Soldier_1</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Снайпер, погибший в стычке с «Монолитом».</bio>
+
+    <class>pri_stalker_batay_dead</class>
+    <community>army</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_02\military\</snd_config>
+
+    <rank>100</rank>
+    <reputation>0</reputation>
+
+    <visual>actors\stalker_soldier\stalker_soldier_1</visual>
+
+            <supplies>
+[spawn] \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+  </specific_character>
+
+</xml>

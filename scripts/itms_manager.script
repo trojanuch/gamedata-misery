@@ -35,6 +35,11 @@ local ini = ini_file("plugins\\itms_manager.ltx")
 	local RepairModEnable = alun_utils.read_from_ini(ini,"repair_mod","enable","bool",true)
 	local RepairTools = RepairModEnable and alun_utils.collect_section(ini,"repair_mod_tools",true)
 
+	-- Cooking mod
+	local CookingModEnable = alun_utils.read_from_ini(ini,"cooking_mod","enable","bool",true)
+	local CookingTools = CookingModEnable and alun_utils.collect_section(ini,"cooking_mod_tools",true)
+
+
 	-- Loot Mutant mod
 	local MutantLootEnable = alun_utils.read_from_ini(ini,"mutant_loot_mod","enable","bool",true)
 	local MutantLootEnableUI = alun_utils.read_from_ini(ini,"mutant_loot_mod","enable_ui","bool",true)
@@ -277,6 +282,18 @@ function actor_on_item_use(obj)
 		end
 	end
 
+	-- Cooking mod
+	if (CookingModEnable and CookingTools[obj:section()]) then
+		local hud = get_hud()
+		--hud:HideActorMenu()
+		local ui = ui_itm_cooking and ui_itm_cooking.cooking_ui(hud,obj:section())
+		if (ui) then
+			ui:ShowDialog(true)
+			ui:FillList()
+		end
+	end
+
+
 	-- Dummy Torch for Flashlight
 	if (FlashlightModEnable and obj:section() == "device_torch_dummy") then
 		local torch = db.actor:object("device_torch")
@@ -336,7 +353,7 @@ function check_actor_backpack()
 end
 
 -- bind_stalker take_item_from_iventory_box
-function actor_on_take_item_from_box(box,obj)
+function actor_on_item_take_from_box(box,obj)
 	if not (box) then
 		return
 	end
@@ -369,7 +386,7 @@ function actor_on_take_item_from_box(box,obj)
 			alife():release( alife():object(box:id()) ,true)
 
 			alife():create("itm_actor_backpack",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-
+			
 			xr_logic.pstor_store(db.actor,"actor_inv_backpack_id",nil)
 
 			db.actor:disable_info_portion("actor_filled_backpack")
@@ -416,7 +433,7 @@ function squad_assign_new_target(squad)
 	end
 end
 
-function is_ammo_for_wpn(sec)
+function is_ammo_for_wpn(sec) --Adjusted to allow 3 types of ammo for weapon to stay in inventory...Yasti
 	local ammos, wpn, data
 	local sim = alife()
 	for i=2,3 do
@@ -431,6 +448,14 @@ function is_ammo_for_wpn(sec)
 			if (sec == ammos[data.ammo_type+1]) then
 				return true
 			end
+			--Adjusted Yasti
+			if (sec == ammos[data.ammo_type+2]) then
+				return true
+			end
+			if (sec == ammos[data.ammo_type+3]) then
+				return true
+			end
+			--End Yasti
 		end
 	end
 	return false

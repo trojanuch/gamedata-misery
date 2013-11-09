@@ -816,12 +816,6 @@
 
       [spawn] \n
       device_torch \n
-	  	wpn_groza_ap = 1, silencer \n
-        ammo_9x39_ap = 2 \n
-        wpn_pb \n
-        ammo_9x18_pmm = 2 \n
-	  pri_a25_explosive_charge_item = 1 \n
-	  wpn_binoc = 1 \n
       pri_a15_wpn_wincheaster1300 \n
 
 #include "gameplay\character_items.xml"
@@ -1346,7 +1340,7 @@
 		<class>pri_b36_monolith_sniper</class>
 		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\monolith\</snd_config>
+		<snd_config>characters_voice\human_03\monolith\</snd_config>
 
 		<rank>80</rank>
 		<reputation>0</reputation>
@@ -1378,7 +1372,7 @@
 		<class>pri_b36_monolith_master_hiding_place</class>
 		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\monolith\</snd_config>
+		<snd_config>characters_voice\human_03\monolith\</snd_config>
 
 		<rank>60</rank>
 		<reputation>0</reputation>
@@ -1415,7 +1409,7 @@
 		<class>pri_b36_monolith_marine_sniper</class>
 		<community>monolith</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\monolith\</snd_config>
+		<snd_config>characters_voice\human_03\monolith\</snd_config>
 
 		<rank>80</rank>
 		<reputation>0</reputation>
@@ -1480,6 +1474,7 @@
 	<actor_dialog>pri_b305_strelok_about_station</actor_dialog>
 	<actor_dialog>pri_b305_strelok_about_base</actor_dialog>
 	<actor_dialog>pri_b305_strelok_note</actor_dialog>
+        <actor_dialog>pri_return_sig_strelok_dialog</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 

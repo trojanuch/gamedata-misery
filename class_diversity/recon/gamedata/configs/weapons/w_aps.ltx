@@ -20,12 +20,12 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_pm
 
 ;-TTX-----------------------------------------------------------------------------
-hit_power           		= 0.18, 0.18, 0.18, 0.18
-hit_impulse	 		 		= 13
+hit_power           		= 0.245, 0.245, 0.245, 0.245
+hit_impulse	 		 		= 20
 hit_type 					= fire_wound
-fire_distance           = 270
-bullet_speed		 	= 305
-rpm                     = 850
+fire_distance           = 300
+bullet_speed		 	= 340
+rpm                     = 600
 rpm_empty_click 	 	= 120
 
 use_aim_bullet				= false
@@ -38,8 +38,8 @@ misfire_start_condition		= 0.88
 misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.0048
 misfire_end_prob = 0.11 ;	     	= 0.043
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0021
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0018
 
 ammo_elapsed		 	= 20
 ammo_mag_size		 	= 20
@@ -53,11 +53,11 @@ zoom_dof					= -1000, 1.0, 1000
 reload_dof				= 0.0, 0.5, 5, 1.7
 
 ;---Fire--------------------------------------------------------------------------
-fire_dispersion_base	= 0.63 ;0.19
-control_inertion_factor = 1.01
+fire_dispersion_base	= 0.65
+control_inertion_factor = 1.01f
 crosshair_inertion		= 3.8
 
-cam_return				= 0 ;				= 0
+cam_return = 0 ;				= 0
 cam_relax_speed         = 8
 cam_relax_speed_ai      = 360
 cam_dispersion          = 0.55
@@ -133,7 +133,8 @@ smoke_particles         = weapons\generic_shoot_00
 
 shell_point		 	= 0.0, 0.133, 0.047
 shell_dir		 	= 0.0, 0.0, 0.4
-shell_particles	 		= weapons\generic_shells
+;shell_particles	 		= weapons\generic_shells
+shell_particles	 			= amik\weapons\data\9x18\9x18_1_r
 
 ;-------------------------------------------------------------------------------
 ;startup_ammo           	= 90
@@ -153,7 +154,7 @@ grenade_launcher_status			= 0
 
 zoom_enabled					= true
 zoom_rotate_time				= 0.25
-scope_zoom_factor       = 78.5
+scope_zoom_factor       = 58.6
 
 snd_draw				= weapons\generic\pistol_draw
 snd_holster				= weapons\generic\pistol_holster
@@ -209,7 +210,7 @@ item_orientation			= 1.239378,-0.134046,-2.052052
 item_visual                = dynamics\weapons\wpn_aps\wpn_aps_hud.ogf
 attach_place_idx				= 0
 
-shell_point						= 0.015,0.048,0.475
+shell_point						= 0.015,0.068,0.175  ;0.015,0.048,0.475
 shell_bone              	= wpn_body
 
 fire_point			= 0,0.043,0.187

@@ -494,12 +494,15 @@
             </phrase>
             <phrase id="11">
                 <text>jup_a6_freedom_leader_start_dialog_11</text>
+                <precondition>dialogs_jupiter.jup_b4_is_actor_enemies_to_freedom</precondition>
             </phrase>
             <phrase id="12">
                 <text>jup_a6_freedom_leader_start_dialog_12</text>
+                <precondition>dialogs_jupiter.jup_b4_is_actor_neutral_to_freedom</precondition>
             </phrase>
             <phrase id="13">
                 <text>jup_a6_freedom_leader_start_dialog_13</text>
+                <precondition>dialogs_jupiter.jup_b4_is_actor_friend_to_freedom</precondition>
             </phrase>
         </phrase_list>
     </dialog>
@@ -1956,6 +1959,7 @@
         <precondition>dialogs_jupiter.jup_b207_actor_has_merc_pda_with_contract</precondition>
         <has_info>jup_b207_morgan_blackmailed</has_info>
         <dont_has_info>jup_b207_morgan_gived_blackmail_reward</dont_has_info>
+        <dont_has_info>jup_morgan_dialog_2_info</dont_has_info>
         <phrase_list>
             <phrase id="0">
                 <text>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda_0</text>
@@ -1973,6 +1977,8 @@
             </phrase>
             <phrase id="13">
                 <text>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda_13</text>
+                <give_info>jup_morgan_dialog_2_info</give_info>
+                <action>dialogs.break_dialog</action>
             </phrase>
         </phrase_list>
     </dialog>
@@ -2020,6 +2026,7 @@
         <has_info>zat_b5_actor_help_dealer</has_info>
         <has_info>jup_b207_task_start</has_info>
         <dont_has_info>jup_b207_morgan_blackmailed</dont_has_info>
+        <dont_has_info>jup_morgan_dialog_1_info</dont_has_info>
         <phrase_list>
             <phrase id="1">
                 <text>zat_b7_duty_illicit_dealer_b207_blackmail_1</text>
@@ -2028,6 +2035,8 @@
             </phrase>
             <phrase id="11">
                 <text>zat_b7_duty_illicit_dealer_b207_blackmail_11</text>
+                <give_info>jup_morgan_dialog_1_info</give_info>
+                <action>dialogs.break_dialog</action>  
             </phrase>
             <phrase id="12">
                 <text>zat_b7_duty_illicit_dealer_b207_blackmail_12</text>
@@ -2341,12 +2350,15 @@
         <has_info>jup_b207_morgan_blackmailed</has_info>
         <has_info>jup_b207_morgan_gived_blackmail_reward</has_info>
         <dont_has_info>jup_b207_morgan_gived_depot</dont_has_info>
+        <dont_has_info>jup_morgan_dialog_3_info</dont_has_info>
         <phrase_list>
             <phrase id="13">
                 <text>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda_2_13</text>
+                <give_info>jup_morgan_dialog_3_info</give_info>
             </phrase>
             <phrase id="1211">
                 <text>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda_2_1211</text>
+                <give_info>jup_morgan_dialog_3_info</give_info>
             </phrase>
             <phrase id="1">
                 <text>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda_2_1</text>
@@ -2820,6 +2832,10 @@
         <phrase_list>
             <phrase id="12">
                 <text>jup_b43_stalker_assistant_guide_to_jupiter_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>jup_b43_stalker_assistant_guide_to_jupiter_13</text>
             </phrase>
             <phrase id="11">
                 <text>jup_b43_stalker_assistant_guide_to_jupiter_11</text>
@@ -2857,11 +2873,15 @@
             </phrase>
             <phrase id="13">
                 <text>jup_b43_stalker_assistant_guide_to_pripyat_13</text>
-                <precondition>dialogs_jupiter.jup_b43_actor_do_not_has_12000_money</precondition>
+                <precondition>dialogs_jupiter.jup_b43_actor_do_not_has_5000_money</precondition>
+                <next>131</next>
+            </phrase>
+            <phrase id="131">
+                <text>jup_b43_stalker_assistant_guide_to_pripyat_131</text>
             </phrase>
             <phrase id="11">
                 <text>jup_b43_stalker_assistant_guide_to_pripyat_11</text>
-                <precondition>dialogs_jupiter.jup_b43_actor_has_12000_money</precondition>
+                <precondition>dialogs_jupiter.jup_b43_actor_has_5000_money</precondition>
                 <action>dialogs.save_uni_travel_jup_to_pri</action>
                 <next>111</next>
             </phrase>
@@ -2873,7 +2893,6 @@
             </phrase>
             <phrase id="12">
                 <text>jup_b43_stalker_assistant_guide_to_pripyat_12</text>
-                <precondition>dialogs_jupiter.jup_b43_actor_has_12000_money</precondition>
                 <next>121</next>
             </phrase>
             <phrase id="0">
@@ -2889,8 +2908,8 @@
                 <text>jup_b43_stalker_assistant_guide_to_pripyat_1</text>
                 <precondition>dialogs.is_surge_not_running</precondition>
                 <next>11</next>
-                <next>12</next>
                 <next>13</next>
+                <next>12</next>
             </phrase>
         </phrase_list>
     </dialog>
@@ -2899,11 +2918,11 @@
         <phrase_list>
             <phrase id="23">
                 <text>jup_b43_stalker_assistant_guide_to_zaton_23</text>
-                <precondition>dialogs_pripyat.jup_b43_actor_do_not_has_6000_money</precondition>
+                <precondition>dialogs_pripyat.jup_b43_actor_do_not_has_10000_money</precondition>
             </phrase>
             <phrase id="22">
                 <text>jup_b43_stalker_assistant_guide_to_zaton_22</text>
-                <precondition>dialogs_pripyat.jup_b43_actor_has_6000_money</precondition>
+                <precondition>dialogs_pripyat.jup_b43_actor_has_10000_money</precondition>
                 <next>221</next>
             </phrase>
             <phrase id="221">
@@ -2911,7 +2930,7 @@
             </phrase>
             <phrase id="21">
                 <text>jup_b43_stalker_assistant_guide_to_zaton_21</text>
-                <precondition>dialogs_pripyat.jup_b43_actor_has_6000_money</precondition>
+                <precondition>dialogs_pripyat.jup_b43_actor_has_10000_money</precondition>
                 <action>dialogs.save_uni_travel_pri_to_zat</action>
                 <next>211</next>
             </phrase>
@@ -3853,30 +3872,46 @@
         <phrase_list>
             <phrase id="1">
                 <text />
-                <disable_info>jup_b6_scientist_nuclear_physicist_jupiter_docs_talked</disable_info>
                 <give_info>jup_b6_scientist_nuclear_physicist_setup</give_info>
                 <next>11</next>
                 <next>12</next>
                 <next>13</next>
                 <next>14</next>
+                <next>15</next>
+                <next>16</next> 
             </phrase>
             <phrase id="13">
                 <text>jup_b6_scientist_nuclear_physicist_start_13</text>
                 <has_info>jup_b47_bunker_guards_started</has_info>
+                <has_info>jup_b47_sell_pda_merc_info</has_info>
+            </phrase>
+            <phrase id="15">
+                <text>jup_b6_scientist_nuclear_physicist_start_13</text>
+                <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <has_info>jup_b47_sell_pda_merc_info</has_info>
+            </phrase>
+            <phrase id="16">
+                <text>jup_b6_scientist_nuclear_physicist_start_13</text>
+                <has_info>jup_b47_bunker_guards_started</has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
             </phrase>
             <phrase id="14">
                 <text>jup_b6_scientist_nuclear_physicist_start_14</text>
                 <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <has_info>jup_b47_all_merc_dead</has_info>
             </phrase>
             <phrase id="12">
                 <text>jup_b6_scientist_nuclear_physicist_start_12</text>
                 <dont_has_info>jup_b47_all_merc_dead</dont_has_info>
                 <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <has_info>jup_b47_actor_pick_docs</has_info>
             </phrase>
             <phrase id="11">
                 <text>jup_b6_scientist_nuclear_physicist_start_11</text>
+                <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <dont_has_info>jup_b47_actor_pick_docs</dont_has_info>
                 <dont_has_info>jup_b47_all_merc_dead</dont_has_info>
             </phrase>
@@ -3966,16 +4001,29 @@
             <phrase id="13">
                 <text>jup_b16_biochemist_oasis_start_13</text>
                 <has_info>jup_b47_bunker_guards_started</has_info>
+                <has_info>jup_b47_sell_pda_merc_info</has_info>
+            </phrase>
+            <phrase id="15">
+                <text>jup_b16_biochemist_oasis_start_13</text>
+                <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <has_info>jup_b47_sell_pda_merc_info</has_info>
+            </phrase>
+            <phrase id="16">
+                <text>jup_b16_biochemist_oasis_start_13</text>
+                <has_info>jup_b47_bunker_guards_started</has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
             </phrase>
             <phrase id="14">
                 <text>jup_b16_biochemist_oasis_start_14</text>
                 <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <has_info>jup_b47_all_merc_dead</has_info>
             </phrase>
             <phrase id="12">
                 <text>jup_b16_biochemist_oasis_start_12</text>
                 <dont_has_info>jup_b47_all_merc_dead</dont_has_info>
                 <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <has_info>jup_b47_actor_pick_docs</has_info>
             </phrase>
             <phrase id="1">
@@ -3984,6 +4032,8 @@
                 <next>12</next>
                 <next>13</next>
                 <next>14</next>
+                <next>15</next>
+                <next>16</next>
             </phrase>
             <phrase id="0">
                 <text />
@@ -3991,6 +4041,8 @@
             </phrase>
             <phrase id="11">
                 <text>jup_b16_biochemist_oasis_start_11</text>
+                <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <dont_has_info>jup_b47_actor_pick_docs</dont_has_info>
                 <dont_has_info>jup_b47_all_merc_dead</dont_has_info>
             </phrase>
@@ -4344,6 +4396,7 @@
     <dialog id="jup_b19_freedom_yar_done_why_mercs">
         <has_info>jup_b19_complete</has_info>
         <dont_has_info>jup_b19_done_why_mercs_complete</dont_has_info>
+        <dont_has_info>jup_b19_done_why_my_complete</dont_has_info>
         <phrase_list>
             <phrase id="0">
                 <text>jup_b19_freedom_yar_done_why_mercs_0</text>
@@ -4713,6 +4766,8 @@
         <phrase_list>
             <phrase id="11">
                 <text>jup_b6_scientist_medic_start_11</text>
+                <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <dont_has_info>jup_b47_actor_pick_docs</dont_has_info>
                 <dont_has_info>jup_b47_all_merc_dead</dont_has_info>
             </phrase>
@@ -4720,15 +4775,28 @@
                 <text>jup_b6_scientist_medic_start_12</text>
                 <dont_has_info>jup_b47_all_merc_dead</dont_has_info>
                 <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <has_info>jup_b47_actor_pick_docs</has_info>
             </phrase>
             <phrase id="13">
                 <text>jup_b6_scientist_medic_start_13</text>
                 <has_info>jup_b47_bunker_guards_started</has_info>
+                <has_info>jup_b47_sell_pda_merc_info</has_info> 
+            </phrase>
+            <phrase id="16">
+                <text>jup_b6_scientist_medic_start_13</text>
+                <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <has_info>jup_b47_sell_pda_merc_info</has_info>
+            </phrase>
+            <phrase id="17">
+                <text>jup_b6_scientist_medic_start_13</text>
+                <has_info>jup_b47_bunker_guards_started</has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
             </phrase>
             <phrase id="14">
                 <text>jup_b6_scientist_medic_start_14</text>
                 <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
+                <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
                 <has_info>jup_b47_all_merc_dead</has_info>
             </phrase>
             <phrase id="1">
@@ -4738,6 +4806,8 @@
                 <next>13</next>
                 <next>14</next>
                 <next>15</next>
+                <next>16</next>
+                <next>17</next>
             </phrase>
             <phrase id="15">
                 <text>jup_b6_scientist_medic_start_15</text>
@@ -5427,6 +5497,7 @@
             </phrase>
             <phrase id="1511">
                 <text>jup_b15_zulus_about_dialog_1511</text>
+                <give_info>jup_zulus_dialog_1_info</give_info>
                 <next>15111</next>
             </phrase>
             <phrase id="15111">
@@ -6016,6 +6087,7 @@
             </phrase>
             <phrase id="12">
                 <text>jup_b1_stalkers_about_tunnel_dialog_start_miss_12</text>
+                <action>dialogs.break_dialog</action>
             </phrase>
             <phrase id="0">
                 <text>jup_b1_stalkers_about_tunnel_dialog_start_miss_0</text>
@@ -6166,6 +6238,7 @@
             </phrase>
             <phrase id="12">
                 <text>jup_b4_duty_go_home_12</text>
+                <action>dialogs.break_dialog</action>
             </phrase>
             <phrase id="0">
                 <text>jup_b4_duty_go_home_0</text>
@@ -6410,6 +6483,7 @@
     <dialog id="jup_a12_bandit_chief_actor_self_dialog">
         <has_info>jup_a12_actor_choose_self_or_ransom</has_info>
         <dont_has_info>jup_a12_stalker_prisoner_free</dont_has_info>
+        <dont_has_info>jup_a12_stalker_prisoner_dead</dont_has_info>
         <phrase_list>
             <phrase id="2">
                 <text>jup_a12_bandit_chief_actor_self_dialog_2</text>
@@ -6551,11 +6625,13 @@
             </phrase>
             <phrase id="4">
                 <text>jup_a12_bandit_guard_start_4</text>
+                <dont_has_info>jup_a12_stalker_prisoner_dead</dont_has_info>
                 <has_info>jup_a12_actor_choose_self</has_info>
                 <next>21</next>
             </phrase>
             <phrase id="2">
                 <text>jup_a12_bandit_guard_start_2</text>
+                <dont_has_info>jup_a12_stalker_prisoner_dead</dont_has_info>
                 <has_info>jup_a12_actor_choose_ransom</has_info>
                 <next>21</next>
             </phrase>
@@ -6568,6 +6644,7 @@
             </phrase>
             <phrase id="1">
                 <text>jup_a12_bandit_guard_start_1</text>
+                <dont_has_info>jup_a12_stalker_prisoner_dead</dont_has_info> 
                 <dont_has_info>jup_a12_actor_choose_ransom</dont_has_info>
                 <dont_has_info>jup_a12_actor_choose_self</dont_has_info>
                 <next>11</next>
@@ -6760,7 +6837,7 @@
             </phrase>
             <phrase id="13">
                 <text>jup_a12_stalker_assaulter_after_scene_dialog_13</text>
-                <action>dialogs_jupiter.jup_a12_transfer_8000_money_to_actor</action>
+                <action>dialogs_jupiter.jup_a12_transfer_5000_money_to_actor</action>
                 <dont_has_info>jup_a12_stalker_prisoner_friends_talked</dont_has_info>
                 <dont_has_info>jup_a12_stalker_prisoner_dead</dont_has_info>
                 <give_info>jup_a12_stalker_prisoner_friends_talked</give_info>
@@ -6769,7 +6846,7 @@
             </phrase>
             <phrase id="14">
                 <text>jup_a12_stalker_assaulter_after_scene_dialog_14</text>
-                <action>dialogs_jupiter.jup_a12_transfer_15000_money_to_actor</action>
+                <action>dialogs_jupiter.jup_a12_transfer_5000_money_to_actor</action>
                 <dont_has_info>jup_a12_stalker_prisoner_friends_talked</dont_has_info>
                 <dont_has_info>jup_a12_stalker_prisoner_dead</dont_has_info>
                 <give_info>jup_a12_stalker_prisoner_friends_talked</give_info>
@@ -7581,6 +7658,7 @@
     </dialog>
     <dialog id="jup_a10_stalker_vano_goto_zulus">
         <has_info>jup_a10_stalker_vano_get_money</has_info>
+        <dont_has_info>jup_b218_gather_squad_complete</dont_has_info>
         <phrase_list>
             <phrase id="2">
                 <text>jup_a10_stalker_vano_goto_zulus_2</text>
@@ -7607,6 +7685,7 @@
         <has_info>jup_a9_tech_way_info</has_info>
         <has_info>jup_b218_stalker_agreed</has_info>
         <dont_has_info>jup_a10_stalker_vano_need_outfit_told</dont_has_info>
+        <dont_has_info>jup_b218_gather_squad_complete</dont_has_info>
         <phrase_list>
             <phrase id="1">
                 <text>jup_a10_stalker_vano_need_outfit_1</text>
@@ -7621,6 +7700,7 @@
     <dialog id="jup_a10_stalker_vano_outfit_money_yes">
         <has_info>jup_a10_stalker_vano_need_outfit_told</has_info>
         <dont_has_info>jup_a10_stalker_vano_get_money</dont_has_info>
+        <dont_has_info>jup_b218_gather_squad_complete</dont_has_info>
         <phrase_list>
             <phrase id="121">
                 <text>jup_a10_stalker_vano_outfit_money_yes_121</text>
@@ -7709,6 +7789,7 @@
     </dialog>
     <dialog id="jup_a10_stalkers_dialog_debt">
         <has_info>jup_a10_vano_give_task</has_info>
+        <dont_has_info>jup_b218_gather_squad_complete</dont_has_info>
         <dont_has_info>jup_a10_bandit_take_all_money</dont_has_info>
         <dont_has_info>jup_a10_bandit_take_money</dont_has_info>
         <dont_has_info>jup_a10_bandit_out</dont_has_info>
@@ -7860,12 +7941,9 @@
     </dialog>
     <dialog id="jup_b6_scientist_nuclear_physicist_jupiter_docs">
         <precondition>dialogs_jupiter.jup_b47_jupiter_docs_enabled</precondition>
+        <dont_has_info>jup_b47_jupiter_products_start</dont_has_info>
+        <dont_has_info>jup_b6_scientist_nuclear_physicist_jupiter_docs_talked</dont_has_info>
         <phrase_list>
-            <phrase id="2">
-                <text>jup_b6_scientist_nuclear_physicist_jupiter_docs_2</text>
-                <precondition>dialogs_jupiter.jup_b47_jupiter_products_info_disabled</precondition>
-                <give_info>jup_b6_scientist_nuclear_physicist_jupiter_docs_talked</give_info>
-            </phrase>
             <phrase id="12">
                 <text />
                 <precondition>dialogs_jupiter.jup_b47_actor_has_not_merc_pda</precondition>
@@ -7886,6 +7964,7 @@
             <phrase id="111">
                 <text>jup_b6_scientist_nuclear_physicist_jupiter_docs_111</text>
                 <action>dialogs_jupiter.jup_b47_merc_pda_revard</action>
+                <give_info>jup_b47_sell_pda_merc_info</give_info>
             </phrase>
             <phrase id="11">
                 <text>jup_b6_scientist_nuclear_physicist_jupiter_docs_11</text>
@@ -7895,7 +7974,6 @@
             <phrase id="0">
                 <text>jup_b6_scientist_nuclear_physicist_jupiter_docs_0</text>
                 <next>1</next>
-                <next>2</next>
             </phrase>
         </phrase_list>
     </dialog>
@@ -7946,6 +8024,7 @@
             <phrase id="111">
                 <text>jup_b6_scientist_nuclear_physicist_jupiter_products_info_111</text>
                 <action>dialogs_jupiter.jup_b47_merc_pda_revard</action>
+                <give_info>jup_b47_sell_pda_merc_info</give_info>
             </phrase>
             <phrase id="11">
                 <text>jup_b6_scientist_nuclear_physicist_jupiter_products_info_11</text>
@@ -7960,6 +8039,7 @@
     </dialog>
     <dialog id="jup_b6_scientist_nuclear_physicist_guards">
         <has_info>jup_b47_no_bunker_guard</has_info>
+        <dont_has_info>jup_b47_sell_pda_merc_info</dont_has_info>
         <dont_has_info>jup_b47_bunker_guards_started</dont_has_info>
         <phrase_list>
             <phrase id="1111">
@@ -8039,6 +8119,7 @@
         <has_info>jup_b46_spatial_bubble_mentioned</has_info>
         <dont_has_info>jup_b46_spatial_bubble_started</dont_has_info>
         <dont_has_info>jup_b46_spatial_bubble_ruptured</dont_has_info>
+        <precondition>up.actor_has_detector_scientific</precondition>
         <phrase_list>
             <phrase id="1">
                 <text>jup_b6_scientist_nuclear_physicist_results_1</text>
@@ -8201,7 +8282,7 @@
                 <next>121</next>
             </phrase>
             <phrase id="121">
-                <text></text>
+                <text />
                 <action>dialogs.break_dialog</action>
                 <give_info>jup_b6_go_to_anom_2</give_info>
             </phrase>
@@ -8232,7 +8313,7 @@
                 <next>111</next>
             </phrase>
             <phrase id="111">
-                <text></text>
+                <text />
                 <action>dialogs.break_dialog</action>
                 <give_info>jup_b6_go_to_anom_1</give_info>
             </phrase>
@@ -8277,7 +8358,7 @@
         <dont_has_info>jup_b6_st_mission</dont_has_info>
         <phrase_list>
             <phrase id="1113111">
-                <text></text>
+                <text />
             </phrase>
             <phrase id="111612">
                 <text>jup_b1_stalker_lead_info_111612</text>
@@ -8366,7 +8447,7 @@
                 <next>11121111</next>
             </phrase>
             <phrase id="11">
-                <text></text>
+                <text />
                 <next>111</next>
             </phrase>
             <phrase id="1112141">
@@ -8397,7 +8478,7 @@
                 <next>1111111</next>
             </phrase>
             <phrase id="111">
-                <text></text>
+                <text />
                 <next>1111</next>
                 <next>1112</next>
                 <next>1116</next>
@@ -8411,7 +8492,7 @@
             <phrase id="1111">
                 <text>jup_b1_stalker_lead_info_1111</text>
                 <dont_has_info>jup_b1_start</dont_has_info>
-                <has_info>jup_b1_give_info_ab</has_info>
+                <has_info>jup_b1_give_task</has_info>
                 <next>11111</next>
                 <next>11112</next>
             </phrase>
@@ -8512,10 +8593,16 @@
             </phrase>
             <phrase id="1121">
                 <text>jup_a10_guard_dialog_1121</text>
+		<next>1131</next>
+            </phrase>
+		<phrase id="1131">
+                <text>jup_a10_guard_dialog_1131</text>
+                <action>dialogs.break_dialog</action>
             </phrase>
             <phrase id="111">
                 <text>jup_a10_guard_dialog_111</text>
                 <dont_has_info>jup_a10_back_vano</dont_has_info>
+                <dont_has_info>jup_b218_gather_squad_complete</dont_has_info>
                 <has_info>jup_a10_vano_give_task</has_info>
                 <next>1111</next>
             </phrase>
@@ -8569,6 +8656,7 @@
             </phrase>
             <phrase id="12">
                 <text>jup_b4_freedom_go_home_12</text>
+                <action>dialogs.break_dialog</action>
             </phrase>
             <phrase id="11">
                 <text>jup_b4_freedom_go_home_11</text>

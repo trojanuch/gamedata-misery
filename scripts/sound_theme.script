@@ -33,6 +33,35 @@ ph_snd_themes["music_jupiter"] = {
 	"music\\radio\\10_Radiomix",
 	"music\\radio\\11_Radiomix"
 }
+ph_snd_themes["static"] = {
+	"soundtrack\\static\\static_01",
+	"soundtrack\\static\\static_02",
+	"soundtrack\\static\\static_03",
+	"soundtrack\\static\\static_04",
+	"soundtrack\\static\\static_05",
+	"soundtrack\\static\\static_06",
+	"soundtrack\\static\\static_07"
+}
+-- Quick and dirty hack to prevent the dreaded red text in the console.
+ph_snd_themes["silence"] = {
+	"none"
+}
+ph_snd_themes["broadcast_disrupt"] = {
+	"soundtrack\\psi\\psi_01",
+	"soundtrack\\psi\\psi_02",
+	"soundtrack\\psi\\psi_03",
+	"soundtrack\\psi\\psi_04",
+	"soundtrack\\psi\\psi_05",
+	"soundtrack\\psi\\psi_06",
+	"soundtrack\\psi\\psi_07",
+	"soundtrack\\psi\\psi_08",
+	"soundtrack\\psi\\psi_09",
+	"soundtrack\\psi\\psi_10",
+	"soundtrack\\psi\\psi_11",
+	"soundtrack\\psi\\psi_12",
+	"soundtrack\\psi\\psi_13",
+	"soundtrack\\psi\\psi_14"
+}
 
 local sounds_base = stalker_ids.sound_script + 10000
 

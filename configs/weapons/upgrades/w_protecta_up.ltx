@@ -4,10 +4,10 @@
 cost		      		= 2690
 value					= +10
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00015 ;0.0011
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
+
+inv_weight			= +0.1
 
 [up_sect_firstc_protecta]
 ;Настильность(2)20%
@@ -16,8 +16,9 @@ cost		      		= 3650
 value					= +20
 
 bullet_speed            = +80
-hit_impulse      		= +20
 fire_dispersion_base	= -0.02
+
+inv_weight			= +0.18
 
 [up_sect_firstd_protecta]
 ;Надежность(2)15%
@@ -25,10 +26,10 @@ fire_dispersion_base	= -0.02
 cost		      		= 3490
 value					= +15
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00018 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00018 ;0.0011
+condition_shot_dec      	= -0.0004
+condition_queue_shot_dec	= -0.0004
+
+inv_weight			= +0.14
 
 [up_sect_firste_protecta]
 ;Отдача(3)-30%
@@ -36,13 +37,15 @@ condition_shot_dec      	= -0.00018 ;0.0011
 cost		      		= 4430
 value					= -30
 
-cam_dispersion              = -0.7		;0.7
-cam_dispersion_inc         	= -0.7		;0.7
-cam_step_angle_horz        	= -0.7		;0.7
+cam_dispersion              = -0.6
+cam_dispersion_inc         	= -0.6
+cam_step_angle_horz        	= -0.1
 
-zoom_cam_dispersion          = -0.7		;0.6
-zoom_cam_dispersion_inc      = -0.7		;0.6
-zoom_cam_step_angle_horz     = -0.7		;0.6
+zoom_cam_dispersion          = -0.36
+zoom_cam_dispersion_inc      = -0.36
+zoom_cam_step_angle_horz     = -0.1
+
+inv_weight			= +0.25
 
 [up_sect_firstf_protecta]
 ;Скорострельность(3)25%
@@ -50,7 +53,9 @@ zoom_cam_step_angle_horz     = -0.7		;0.6
 cost		      		= 4840
 value					= +25
 
-rpm                     = +35
+rpm                     = +40
+
+inv_weight			= +0.15
 
 [up_sect_secona_protecta]
 ;Отдача(1)-10%
@@ -58,13 +63,13 @@ rpm                     = +35
 cost		      		= 2950
 value					= -10
 
-cam_dispersion              = -0.25    ;3.0
-cam_dispersion_inc         	= -0.25    ;3.0
-cam_step_angle_horz        	= -0.25    ;3.0
+cam_dispersion              = -0.2
+cam_dispersion_inc         	= -0.2
+cam_step_angle_horz        	= -0.02
 
-zoom_cam_dispersion          = -0.25     ;3.0
-zoom_cam_dispersion_inc      = -0.25  	;3.0
-zoom_cam_step_angle_horz     = -0.25     ;3.0
+zoom_cam_dispersion          = -0.12
+zoom_cam_dispersion_inc      = -0.12
+zoom_cam_step_angle_horz     = -0.02
 
 [up_sect_seconc_protecta]
 ;Удобство(2)15%
@@ -78,19 +83,23 @@ PDM_disp_base 				= -0.1
 PDM_disp_vel_factor 		= -0.5
 PDM_disp_accel_factor 		= -0.5
 
+inv_weight			= -0.58
+
 [up_sect_second_protecta]
 ;Отдача(2)-20%
 ;------------
 cost		      		= 4450
 value					= -20
 
-cam_dispersion              = -0.4		;3.0
-cam_dispersion_inc         	= -0.4		;3.0
-cam_step_angle_horz        	= -0.4		;3.0
+cam_dispersion              = -0.4
+cam_dispersion_inc         	= -0.4
+cam_step_angle_horz        	= -0.05
 
-zoom_cam_dispersion          = -0.4     ;3.0
-zoom_cam_dispersion_inc      = -0.4  	;3.0
-zoom_cam_step_angle_horz     = -0.4     ;3.0
+zoom_cam_dispersion          = -0.24
+zoom_cam_dispersion_inc      = -0.24
+zoom_cam_step_angle_horz     = -0.05
+
+inv_weight			= +0.16
 
 [up_sect_thirda_protecta]
 ;Надежность(1)10%
@@ -98,10 +107,8 @@ zoom_cam_step_angle_horz     = -0.4     ;3.0
 cost		      		= 2690
 value					= +10
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00015 ;0.0011
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
 
 [up_sect_thirdc_protecta]
 ;Отдача(2)-20%
@@ -109,13 +116,15 @@ condition_shot_dec      	= -0.00015 ;0.0011
 cost		      		= 4240
 value					= -20
 
-cam_dispersion              = -0.4		;3.0
-cam_dispersion_inc         	= -0.4		;3.0
-cam_step_angle_horz        	= -0.4		;3.0
+cam_dispersion              = -0.4
+cam_dispersion_inc         	= -0.4
+cam_step_angle_horz        	= -0.05
 
-zoom_cam_dispersion          = -0.4     ;3.0
-zoom_cam_dispersion_inc      = -0.4  	;3.0
-zoom_cam_step_angle_horz     = -0.4     ;3.0
+zoom_cam_dispersion          = -0.24
+zoom_cam_dispersion_inc      = -0.24
+zoom_cam_step_angle_horz     = -0.05
+
+inv_weight			= +0.2
 
 [up_sect_thirdd_protecta]
 ;Скорострельность(2)15%
@@ -127,14 +136,18 @@ value					= +15
 rpm                     = +25
 fire_modes              = 1, -1
 
+inv_weight			= +0.1
+
 [up_sect_thirde_protecta]
 ;Точность(3)30%
 ;---------------
 cost		      		= 3740
 value					= +30
 
-fire_dispersion_base	= -0.1
-fire_dispersion_condition_factor = -0.05
+fire_dispersion_base	= -0.18
+;fire_dispersion_condition_factor = -0.05
+
+inv_weight			= +0.22
 
 [up_sect_fourta_protecta]
 ;Отдача(1)-10%
@@ -142,13 +155,15 @@ fire_dispersion_condition_factor = -0.05
 cost		      		= 2750
 value					= -10
 
-cam_dispersion              = -0.25    ;3.0
-cam_dispersion_inc         	= -0.25    ;3.0
-cam_step_angle_horz        	= -0.25    ;3.0
+cam_dispersion              = -0.2
+cam_dispersion_inc         	= -0.2
+cam_step_angle_horz        	= -0.02
 
-zoom_cam_dispersion          = -0.25     ;3.0
-zoom_cam_dispersion_inc      = -0.25  	;3.0
-zoom_cam_step_angle_horz     = -0.25     ;3.0
+zoom_cam_dispersion          = -0.11
+zoom_cam_dispersion_inc      = -0.11
+zoom_cam_step_angle_horz     = -0.02
+
+inv_weight			= +0.1
 
 [up_sect_fourtc_protecta]
 ;Скорострельность(2)15%
@@ -157,6 +172,8 @@ cost		      		= 4150
 value					= +15
 
 rpm                     = +25
+
+inv_weight			= +0.1
 
 [up_firsta_protecta]
 scheme_index            = 0, 0

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+      <!-- Copyright: 2010-2012 SWM Team --> 
+      <!-- Author: Jurok -->  
+      <!-- Information --> 
+
+      <!-- Dialogs and quests --> 
+      <info_portion id="zat_raider_1_dialog_1_info"></info_portion>
+      <info_portion id="zat_raider_2_dialog_1_info"></info_portion>
+      <info_portion id="zat_raider_3_dialog_1_info"></info_portion>
+      <info_portion id="jup_zulus_bio_1_info"></info_portion>
+      <info_portion id="jup_zulus_dialog_1_info"></info_portion>
+      <info_portion id="jup_zulus_dialog_2_info"></info_portion>
+      <info_portion id="jup_gavaets_dialog_1_info"></info_portion>
+      <info_portion id="zat_noah_dialog_1_info"></info_portion>
+      <info_portion id="zat_noah_dialog_2_info"></info_portion>
+      <info_portion id="zat_noah_quest_1_info"></info_portion>
+      <info_portion id="zat_noah_quest_1_complete_info"></info_portion>
+      <info_portion id="zat_b30_noah_give_compass"></info_portion> 
+      <info_portion id="zat_sich_stages_dialog_1_info"></info_portion> 
+      <info_portion id="zat_sich_stages_dialog_2_info"></info_portion> 
+      <info_portion id="zat_sich_stages_dialog_3_info"></info_portion> 
+      <info_portion id="zat_linker_dialog_1_info"></info_portion>    	  
+      <info_portion id="jup_morgan_dialog_1_info"></info_portion> 
+      <info_portion id="jup_morgan_dialog_2_info"></info_portion>
+      <info_portion id="jup_morgan_dialog_3_info"></info_portion>
+      <info_portion id="zat_lotsman_where_to_dialog_info"></info_portion>
+      <info_portion id="jup_azot_about_gauss_dialog_info"></info_portion>
+      <info_portion id="jup_novikov_about_gauss_dialog_info"></info_portion>
+      <info_portion id="jup_scientist_about_compass_dialog_2_info"></info_portion>
+      <info_portion id="zat_b215_guide_to_pripyat_no_way_told_2"></info_portion>
+      <info_portion id="zat_guide_to_pripyat_dialog_info"></info_portion>
+      <info_portion id="jup_guide_to_pripyat_dialog_info"></info_portion>
+      <info_portion id="pri_guide_to_zaton_dialog_info"></info_portion>
+      <info_portion id="jup_guide_to_zaton_dialog_info"></info_portion> 
+      <info_portion id="jup_b47_sell_pda_merc_info"></info_portion> 
+      <info_portion id="zat_owl_sell_pda_medic_info"></info_portion>
+      <info_portion id="zat_actor_drinking_1_info"></info_portion> 
+      <info_portion id="zat_actor_drinking_2_info"></info_portion> 
+      <info_portion id="jup_stalker_drunk_sleep_info"></info_portion>
+ 
+      <!-- Sound -->
+      <info_portion id="zat_noah_gave_first_artefact_sound_info"></info_portion>
+      <info_portion id="zat_noah_gave_second_artefact_sound_info"></info_portion> 
+      <info_portion id="zat_noah_gave_first_artefact_sound_end_info"></info_portion>
+      <info_portion id="zat_noah_gave_second_artefact_sound_end_info"></info_portion>
+      <info_portion id="zat_b106_gonta_to_actor_sound_info"></info_portion>
+
+      <!-- Simpathy -->
+      <info_portion id="zat_b106_crab_max_simpathy_info"></info_portion>
+
+      <!-- Removing dead --> 
+      <info_portion id="removing_dead_info"></info_portion>
+
+      <!-- Save -->
+      <info_portion id="save_uni_travel_pas_to_pri_info"></info_portion>
+
+      <!-- Other -->
+      <info_portion id="up_start_info"></info_portion>
+ 
+</game_information_portions>

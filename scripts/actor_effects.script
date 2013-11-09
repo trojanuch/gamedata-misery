@@ -414,7 +414,13 @@ function hud_condition()
 			return
 		end
 
-		cond = math.floor(11*(1.17-cond))
+		cond = math.floor(11*(1.09-cond))
+		if cond < 0 then
+			cond = math.abs(cond)
+		end
+		if cond < 1 then
+			cond = 1
+		end
 		if current_helmet~=helmet_name or cond~=helmet_cond then
 			if helmet_name then
 				hud:RemoveCustomStatic(helmet_name..helmet_cond)

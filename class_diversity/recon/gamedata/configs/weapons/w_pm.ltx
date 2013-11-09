@@ -12,19 +12,19 @@ ef_weapon_type				= 5
 
 ;-----------------------------------------------------------------------------
 cost					= 4890
-inv_weight				= 0.507
+inv_weight				= 0.73
 
 upgrades                = up_gr_firstab_pm, up_gr_seconab_pm, up_gr_thirdab_pm, up_gr_fourtab_pm, up_gr_fifthab_pm, up_gr_fifthcd_pm
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_pm
 
 ;---TTX-------------------------------------------------------------------------
-hit_power           		= 0.18, 0.18, 0.18, 0.18
-hit_impulse	 		 		= 15
+hit_power           		= 0.2, 0.2, 0.2, 0.2
+hit_impulse	 		 		= 20
 hit_type 					= fire_wound
-fire_distance           = 310
-bullet_speed		 	= 345
-rpm                     	= 340
+fire_distance           = 300
+bullet_speed		 	= 315
+rpm                     = 340
 rpm_empty_click 	 	= 120
 
 use_aim_bullet				= false		;Поддерживается ли первая суппер пуля
@@ -37,8 +37,8 @@ misfire_start_condition		= 0.81
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.0072
 misfire_end_prob = 0.11 ;	     	= 0.044
-condition_shot_dec      	= 0.0013
-condition_queue_shot_dec	= 0.0014
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.0012
 
 ammo_elapsed		 	= 8
 ammo_mag_size		 	= 8
@@ -49,12 +49,12 @@ single_handed			= 1
 
 ;-----дисперсия-------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.76 ;0.19 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.0 ; = 0.76
+fire_dispersion_base	= 0.72 ;0.19 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.0f
 crosshair_inertion		= 2.3
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
+cam_return = 0 ;				= 0
 cam_relax_speed         = 8				;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
 cam_dispersion          = 0.77				;увеличения угла (в градусах) с каждым выстрелом
@@ -251,26 +251,22 @@ inv_name                = st_wpn_pm_actor
 description				= st_wpn_pm_actor_descr
 
 cost					= 7340
-inv_weight				= 0.462
+inv_weight				= 0.684
 
 ;---TTX-------------------------------------------------------------------------
 hit_power           		= 0.255, 0.255, 0.255, 0.255
-hit_impulse	 		 		= 15
+hit_impulse	 		 		= 20
 hit_type 					= fire_wound
-fire_distance           = 413
-bullet_speed		 	= 421
-rpm                     = 319
+fire_distance           = 320
+bullet_speed		 	= 340
+rpm                     = 375
 rpm_empty_click 	 	= 120
-
-ammo_elapsed		 	= 8
-ammo_mag_size		 	= 8
 
 ;addons
 scope_status			= 0
 silencer_status			= 2
 grenade_launcher_status		= 0
 
-inv_weight				= 0.497
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 5
@@ -280,10 +276,10 @@ upgrades                = up_gr_firstab_pm, up_gr_seconab_pm, up_gr_thirdab_pm, 
 installed_upgrades      = up_fourta_pm, up_fourtc_pm, up_secona_pm
 upgrade_scheme          = upgrade_scheme_pm
 
-fire_dispersion_base	= 0.57
+fire_dispersion_base	= 0.58
 
-condition_shot_dec      	= 0.0008
-condition_queue_shot_dec	= 0.0008
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0007
 
 hud                     	= wpn_pu_hud
 
@@ -291,8 +287,6 @@ misfire_start_condition		= 0.74
 misfire_end_condition		= 0.08
 misfire_start_prob = 0.007 ;	     	= 0.0068
 misfire_end_prob = 0.11 ;	     	= 0.037
-condition_shot_dec      	= 0.0012
-condition_queue_shot_dec	= 0.0014
 
 visual                  	= dynamics\weapons\wpn_pu\wpn_pu.ogf
 
@@ -386,16 +380,16 @@ ammo_class		 		=  ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
 [wpn_pm_custom]:wpn_pm
 
 cost					= 7320
-inv_weight				= 0.477
+inv_weight				= 0.7
 
 upgrades                = up_gr_firstab_pm_custom, up_gr_seconab_pm_custom, up_gr_thirdab_pm_custom, up_gr_fourtab_pm_custom, up_gr_fifthab_pm_custom, up_gr_fifthcd_pm_custom
 installed_upgrades      = up_thirda_pm_custom, up_thirdd_pm_custom, up_fiftha_pm_custom
 
-hit_power           		= 0.215, 0.215, 0.215, 0.215
-hit_impulse	 		 		= 15
-fire_distance           = 344
-bullet_speed		 	= 368
-rpm                     = 288
+hit_power           		= 0.22, 0.22, 0.22, 0.22
+hit_impulse	 		 		= 20
+fire_distance           = 300
+bullet_speed		 	= 325
+rpm                     = 354
 
 hud                     	= wpn_pm_custom_hud
 
@@ -403,13 +397,10 @@ misfire_start_condition		= 0.78
 misfire_end_condition		= 0.09
 misfire_start_prob = 0.007 ;	     	= 0.0066
 misfire_end_prob = 0.11 ;	     	= 0.042
-condition_shot_dec      	= 0.0012
-condition_queue_shot_dec	= 0.0013
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0010
 
-ammo_mag_size		 	= 8
-ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
-
-fire_dispersion_base	= 0.68
+fire_dispersion_base	= 0.64
 
 inv_name				= st_wpn_pm_custom
 inv_name_short			= st_wpn_pm_custom
@@ -430,16 +421,16 @@ item_visual						= dynamics\weapons\wpn_pm\wpn_p1_hud.ogf
 [wpn_pm_alt]:wpn_pm
 
 cost					= 4980
-inv_weight				= 0.511
+inv_weight				= 0.75
 
 upgrades                = up_gr_firstab_pm_alt, up_gr_seconab_pm_alt, up_gr_thirdab_pm_alt, up_gr_fourtab_pm_alt, up_gr_fifthab_pm_alt, up_gr_fifthcd_pm_alt
 installed_upgrades      = up_secona_pm_alt
 
-hit_power           		= 0.195, 0.195, 0.195, 0.195
-hit_impulse	 		 		= 15
-fire_distance           = 333
-bullet_speed		 	= 358
-rpm                     = 277
+hit_power           		= 0.21, 0.21, 0.21, 0.21
+hit_impulse	 		 		= 20
+fire_distance           = 300
+bullet_speed		 	= 319
+rpm                     = 342
 
 hud                     	= wpn_pm_alt_hud
 
@@ -447,13 +438,10 @@ misfire_start_condition		= 0.84
 misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.0084
 misfire_end_prob = 0.11 ;	     	= 0.052
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0016
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.0012
 
-ammo_mag_size		 	= 8
-ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
-
-fire_dispersion_base	= 0.72
+fire_dispersion_base	= 0.69
 
 inv_name				= st_wpn_pm_alt
 inv_name_short			= st_wpn_pm_alt
@@ -474,15 +462,15 @@ item_visual						= dynamics\weapons\wpn_pm\wpn_p2_hud.ogf
 [wpn_pm_worn]:wpn_pm
 
 cost					= 2180
-inv_weight				= 0.621
+inv_weight				= 0.73
 
 upgrades                = up_gr_firstab_pm_worn, up_gr_seconab_pm_worn, up_gr_thirdab_pm_worn, up_gr_fourtab_pm_worn, up_gr_fifthab_pm_worn, up_gr_fifthcd_pm_worn
 
-hit_power           		= 0.143, 0.143, 0.143, 0.143
-hit_impulse	 		 		= 15
-fire_distance           = 246
-bullet_speed		 	= 302
-rpm                     = 251
+hit_power           		= 0.163, 0.163, 0.163, 0.163
+hit_impulse	 		 		= 20
+fire_distance           = 250
+bullet_speed		 	= 280
+rpm                     = 315
 
 hud                     	= wpn_pm_worn_hud
 
@@ -490,13 +478,10 @@ misfire_start_condition		= 0.88
 misfire_end_condition		= 0.16
 misfire_start_prob = 0.007 ;	     	= 0.0092
 misfire_end_prob = 0.11 ;	     	= 0.068
-condition_shot_dec      	= 0.0022
+condition_shot_dec      	= 0.0020
 condition_queue_shot_dec	= 0.0020
 
-ammo_mag_size		 	= 8
-ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
-
-fire_dispersion_base	= 0.92
+fire_dispersion_base	= 0.88
 
 inv_name				= st_wpn_pm_worn
 inv_name_short			= st_wpn_pm_worn

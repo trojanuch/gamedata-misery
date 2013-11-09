@@ -15,14 +15,14 @@ ef_weapon_type			= 12
 ;-------------------------------------------------------------------------------
 cost						= 37980
 weapon_class				= heavy_weapon
-inv_weight				= 7.381
+inv_weight				= 6.2
 
 ;----TTX--------------------------------------------------------------------------
 hit_power        			= 0.755, 0.755, 0.755, 0.755
 hit_impulse      			= 150
 hit_type 					= fire_wound
-fire_distance       		= 1000
-bullet_speed				= 76 ;76
+fire_distance       		= 500
+bullet_speed				= 76
 rpm                 		= 115
 
 hud                     = wpn_rg-6_hud
@@ -32,8 +32,8 @@ misfire_start_condition		= 0.86
 misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.0074
 misfire_end_prob = 0.11 ;	     	= 0.088
-condition_shot_dec      	= 0.0042
-condition_queue_shot_dec	= 0.0048
+condition_shot_dec      	= 0.00075
+condition_queue_shot_dec	= 0.00075
 
 tri_state_reload			= on
 
@@ -48,7 +48,7 @@ sprint_allowed				= true
 
 ;------дисперсия------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.72  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.76  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.76f
 crosshair_inertion   	= 9.3
 
@@ -149,7 +149,7 @@ silencer_status			= 0
 grenade_launcher_status	= 0
 
 zoom_enabled				= true
-scope_zoom_factor	    	= 85
+scope_zoom_factor	    	= 58.6
 
 ;звуки
 snd_draw			= weapons\generic_draw

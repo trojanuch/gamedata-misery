@@ -242,15 +242,16 @@ function init_start_dialogs(dialog, str)
 					table.insert(p,get_id())
 				end
 
-				add_dialog(v.id,p[1],"st_surrender_query_victim_1",{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
-				add_dialog(v.id,p[2],"st_surrender_query_victim_5",{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
+				add_dialog(v.id,p[1],"st_surrender_query_victim_1_"..dialogs.real_rand(30),{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
+				--Why have two dialogs for the same interaction? Commented out redundant one.
+				--add_dialog(v.id,p[2],"st_surrender_query_victim_5",{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
 				add_dialog(v.id,p[3],"st_surrender_query_victim_2",{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
 				add_dialog(v.id,p[4],"dm_wounded_medkit",{"dialogs.victim_no_surrender","dialogs.actor_have_medkit","dialogs.npc_is_not_surrendered"},{"dialogs.transfer_medkit","dialogs.break_dialog"})
 				add_dialog(v.id,p[5],"dm_wounded_sorry",{"dialogs.victim_no_surrender","dialogs.npc_is_not_surrendered"},"dialogs.break_dialog")
 				add_dialog(v.id,p[6],"st_surrender_query_victim_3","dialogs.victim_surrender","dialogs.break_dialog")
 					d = add_dialog(p[1],p[7],"I smoke crack!")
 						d:SetScriptText("dialogs.surrender_victim_answers_1")
-					d = add_dialog(p[2],p[7],"I smoke crack! sadf")
+					--d = add_dialog(p[2],p[7],"I smoke crack! sadf")
 						--d:SetScriptText("dialogs.surrender_victim_answers_1")
 					d = add_dialog(p[3],p[8],"I smoke crack!adfas")
 						d:SetScriptText("dialogs.surrender_victim_answers_2")
@@ -296,7 +297,7 @@ function init_new_dialog(dialog)
 	local ph,id,str
 	for j = 1, 5 do
 
-		ph = add_dialog(0,j,start_phrase_table[math.random(4)],precond_table[j])
+		ph = add_dialog(0,j,start_phrase_table[dialogs.real_rand(4)],precond_table[j])
 
 		for i = 1,3 do
 			id = get_id()
@@ -700,7 +701,7 @@ end
 
 function create_bye_phrase()
 	if(rnd==0) then
-		rnd = math.random(1, 99)
+		rnd = dialogs.real_rand(1, 99)
 	end
 	if(rnd>=66) then
 		return game.translate_string("actor_break_dialog_1")

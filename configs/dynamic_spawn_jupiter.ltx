@@ -57,3 +57,194 @@ v1 						= 3,0,0
 v2 						= 0,2,0
 v3 						= 0,0,3
 v4 						= 0,0,0
+
+;========================================
+; Environment Props
+;========================================
+
+[radio_banditmain_01]
+section 			= priemnik_gorizont
+position			= 47.9639, 24.0330, -203.1812
+level_vertex_id		= 793264
+game_vertex_id		= 360
+
+[jup_vertel_boar_bandit]
+section				= vertel_boar
+position 			= 49.8553, 24.2009, -207.0923
+level_vertex_id 	= 796761
+game_vertex_id 		= 360
+visual_flags 		= 1
+item1				= meat_boar, 2
+
+[zat_transiver_bunker]
+section 			= transiver_01
+position			= -199.3444, -4.0174, 56.2508
+level_vertex_id		= 377592
+game_vertex_id		= 340
+item1				= batteries_empty
+
+[zat_transiver_banditmain]
+section 			= transiver_01
+position			= 37.8291, 24.0095, -182.2763
+level_vertex_id		= 775793
+game_vertex_id		= 356
+item1				= batteries_dead
+
+[zat_transiver_cement]
+section 			= transiver_01
+position			= 360.7265, 37.3659, 337.9333
+level_vertex_id		= 1284673
+game_vertex_id		= 349
+item1				= batteries_empty
+
+[zat_transiver_signal]
+section 			= transiver_01
+position			= -185.8592, 16.1640, 379.0182
+level_vertex_id		= 622114
+game_vertex_id		= 333
+item1				= batteries_dead
+
+[case]
+section 			= case
+position			= -57.8110, 4.5260, 216.9888
+level_vertex_id		= 619942
+game_vertex_id		= 413
+
+[green_box]
+section 			= green_box
+position			= -56.9238, 4.3014, 220.4571
+level_vertex_id		= 623234
+game_vertex_id		= 413
+
+[blue_box]
+section 			= blue_box
+position			= -59.4367, 3.4831, 219.0927
+level_vertex_id		= 619945
+game_vertex_id		= 413
+
+[armor_repair_fa_prop]
+section 			= armor_repair_fa_prop
+position			= -56.6888, 3.4872, 216.5927
+level_vertex_id		= 623230
+game_vertex_id		= 413
+
+[jup_fuel_bandit_garage]
+section 			= explo_jerrycan_fuel
+position			= 50.4881, 24.1637, -175.4126
+level_vertex_id		= 799105
+game_vertex_id		= 356
+
+[jup_metalcan_powder_bandit_garage]
+section 			= explo_metalcan_powder
+position			= 50.4859, 24.1635, -174.2601
+level_vertex_id		= 799107
+game_vertex_id		= 356
+
+[jup_fuel_bandit_camp_truck]
+section 			= explo_jerrycan_fuel
+position			= -420.8806, 1.3580, -323.8446
+level_vertex_id		= 15493
+game_vertex_id		= 323
+
+[jup_metalcan_powder_bandit_base1]
+section 			= explo_metalcan_powder
+position			= -455.4301, 3.4424, -372.0046
+level_vertex_id		= 25
+game_vertex_id		= 323
+
+[jup_metalcan_powder_bandit_base2]
+section 			= explo_metalcan_powder
+position			= -455.5339, 3.3791, -371.0925
+level_vertex_id		= 25
+game_vertex_id		= 323
+
+[jup_metalcan_powder_bandit_base3]
+section 			= explo_metalcan_powder
+position			= -455.6586, 3.5540, -373.5136
+level_vertex_id		= 19
+game_vertex_id		= 323
+
+[yanov_door]
+section 			= yanov_door
+position			= -54.8884, 3.5493, 203.8806
+level_vertex_id		= 627576
+game_vertex_id		= 368
+
+[yanov_bucket]
+section 			= yanov_bucket
+position			= -52.6548, 3.4870, 203.4615
+level_vertex_id		= 629789
+game_vertex_id		= 332
+
+;========================================
+; Tier 3 toolkits, USS class dependent
+;========================================
+
+[jup_toolkit_3_assaulter]
+section 			= toolkit_3
+position			= 415.8014, 28.3671, -434.9562
+level_vertex_id		= 1368852
+game_vertex_id		= 554
+enable				= {=actor_class(assaulter)} true, false
+
+[jup_toolkit_3_recon]
+section 			= toolkit_3
+position			= 50.9113, 28.7637, -184.7573
+level_vertex_id		= 799096
+game_vertex_id		= 356
+enable				= {=actor_class(recon)} true, false
+
+[jup_toolkit_3_sniper]
+section 			= toolkit_3
+position			= -168.9089, -1.3215, -250.6382
+level_vertex_id		= 427467
+game_vertex_id		= 557
+enable				= {=actor_class(sniper)} true, false
+
+;========================================
+; PERSONAL DELIVERY, customized
+;========================================
+
+[jup_delivery_bunker]
+section				= delivery_bunker
+position 			= -219.0009, -3.0185, 66.4798
+level_vertex_id 	= 343142
+game_vertex_id 		= 385
+secret				= false
+
+item1				= journal_delivery
+item2				= wpn_personal_3
+item3				= ammo_5.56x45_fmj, 2
+
+[jup_delivery_freedom]
+section				= delivery_freedom
+position 			= -45.4410, 3.4889, 216.2464
+level_vertex_id 	= 641384
+game_vertex_id 		= 339
+secret				= false
+
+item1				= journal_delivery
+item2				= wpn_personal_4
+item3				= ammo_9x19_fmj, 3
+
+[jup_delivery_duty]
+section				= delivery_duty
+position 			= -59.6469, 3.4871, 177.1036
+level_vertex_id 	= 618830
+game_vertex_id 		= 348
+secret				= false
+
+item1				= journal_delivery
+item2				= wpn_personal_5
+item3				= ammo_5.56x45_ap, 2
+
+[jup_delivery_bonesetter]
+section				= delivery_bonesetter
+position 			= -53.5723, 3.4882, 220.3376
+level_vertex_id 	= 626538
+game_vertex_id 		= 413
+secret				= false
+
+item1				= journal_delivery
+item2				= wpn_personal_6
+item3				= ammo_7.62x54_ap, 2

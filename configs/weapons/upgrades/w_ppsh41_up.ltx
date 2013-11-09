@@ -4,14 +4,13 @@
 cost		      		= 2480
 value                   = -10
 
-cam_dispersion              = -0.13    ;0.5
-cam_dispersion_inc          = -0.12     ;0.5
-cam_step_angle_horz         = -0.08     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.12
+cam_dispersion_inc          = -0.11
+cam_step_angle_horz         = -0.1
 
-zoom_cam_dispersion         = -0.13     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.08     ;0.5
-zoom_cam_step_angle_horz    = -0.07     ;1.0 [0.505 в остатке]
-
+zoom_cam_dispersion         = -0.1
+zoom_cam_dispersion_inc     = -0.07
+zoom_cam_step_angle_horz    = -0.1
 
 [up_sect_firstc_ppsh41]
 ;Надежность(2)15%
@@ -19,45 +18,40 @@ zoom_cam_step_angle_horz    = -0.07     ;1.0 [0.505 в остатке]
 cost		      		= 1850
 value					= +15
 
-
-;fire_dispersion_condition_factor    = -1.5 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
+;fire_dispersion_condition_factor    = -1.5
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
 
 misfire_start_prob	     	= -0.0006
-
-misfire_end_prob	     	= -0.006 ;0.03
+misfire_end_prob	     	= -0.006
 
 inv_weight			= +0.15
 
 [up_sect_firstd_ppsh41]
-;Отдача(3)-20%
+;Отдача(2)-20%
 ;------------
 cost		      		= 2920
 value                   = -20
 
-cam_dispersion              = -0.24      ;0.5
-cam_dispersion_inc          = -0.22     ;0.5
-cam_step_angle_horz         = -0.14     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.22
+cam_dispersion_inc          = -0.18
+cam_step_angle_horz         = -0.1
 
-zoom_cam_dispersion         = -0.22     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.11     ;0.5
-zoom_cam_step_angle_horz    = -0.08     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.2
+zoom_cam_dispersion_inc     = -0.10
+zoom_cam_step_angle_horz    = -0.1
 
 inv_weight			= +0.2
 
 [up_sect_firste_ppsh41]
-;Точность(3)30%
+;Точность(3)10%
 ;---------------
 cost		      		= 1750
 value					= +10
 
-fire_dispersion_base	= -0.06 ;0.7
-;fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.06
 
-inv_weight			= +0.15
+inv_weight			= +0.1
 
 [up_sect_firstf_ppsh41]
 ;Настильность(3)30%
@@ -66,44 +60,41 @@ cost		      		= 2650
 value					= +30
 
 bullet_speed            = +110
-fire_dispersion_base	= -0.04 ;0.7
+fire_dispersion_base	= -0.04
 
-inv_weight			= +0.3
+inv_weight			= +0.2
 
 [up_sect_secona_ppsh41]
-;Уменьшение веса
+;Удобство(1) 10%
 ;---------------
 cost		      		= 1860
-value					= -10
+value					= +10
 
-cam_dispersion              = -0.13    ;0.5
-cam_dispersion_inc          = -0.12     ;0.5
-cam_step_angle_horz         = -0.08     ;1.5 [0.73 в остатке]
-
-zoom_cam_dispersion         = -0.13     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.08     ;0.5
-zoom_cam_step_angle_horz    = -0.07     ;1.0 [0.505 в остатке]
+crosshair_inertion		   = -0.5
+ 
+PDM_disp_base 				= -0.1
+PDM_disp_vel_factor 		= -0.15
+PDM_disp_accel_factor 		= -0.15
 
 inv_weight			= +0.15
 
 [up_sect_seconc_ppsh41]
-;Точность(2)20%
+;Точность(2)10%
 ;---------------
 cost		      		= 1850
 value					= +10
 
-fire_dispersion_base	= -0.06 ;0.7
-;fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.06
 
 [up_sect_second_ppsh41]
-;Скорострельность(2)15%
+;Скорострельность(2)10%
 ;----------------------
 cost		      		= 3150
 value					= +10
 
 rpm                     = +90
 
-inv_weight			= +0.25
+inv_weight			= +0.15
 
 [up_sect_thirda_ppsh41]
 ;Надежность(1)10%
@@ -111,40 +102,34 @@ inv_weight			= +0.25
 cost		      		= 2650
 value					= +10
 
-
-;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
+;fire_dispersion_condition_factor    = -1
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
 
 misfire_start_prob	     	= -0.0005
+misfire_end_prob	     	= -0.005
 
-misfire_end_prob	     	= -0.005 ;0.03
-
-inv_weight			= +0.15
+inv_weight			= +0.12
 
 [up_sect_thirdc_ppsh41]
-;Настильность(2)20%
+;Настильность(2)10%
 ;------------------
 cost		      		= 2950
 value					= +10
 
-bullet_speed            = +50
-fire_dispersion_base	= -0.05 ;0.7
+bullet_speed            = +38
+fire_dispersion_base	= -0.05
 
 inv_weight			= +0.15
 
 [up_sect_thirde_ppsh41]
-;Скорострельность(3)25%
-;----------------------
-cost		      		= 3950
-value					= +10
+;Надежность(3)25%
+;---------------
+cost		      		= 2870
+value					= +25
 
-rpm                     = +90
-
-inv_weight			= +0.15
-
+condition_queue_shot_dec	= -0.00015
+condition_shot_dec      	= -0.00015
 
 [up_sect_thirdf_ppsh41]
 ;Удобство(3)25%
@@ -152,11 +137,11 @@ inv_weight			= +0.15
 cost		      		= 3250
 value					= +25
 
-crosshair_inertion		   = -1.25
+crosshair_inertion		   = -1
  
-PDM_disp_base 				= -0.15 ;0.5
-PDM_disp_vel_factor 		= -0.4 ;1.5
-PDM_disp_accel_factor 		= -0.4 ;1.5
+PDM_disp_base 				= -0.15
+PDM_disp_vel_factor 		= -0.4
+PDM_disp_accel_factor 		= -0.4
 
 [up_firsta_ppsh41]
 scheme_index            = 0, 0
@@ -166,12 +151,11 @@ section                 = up_sect_firsta_ppsh41
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = on_weapon_upgrade_something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
@@ -187,19 +171,17 @@ section                 = up_sect_firstc_ppsh41
 property                = prop_reliability
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_auto_b1_name
 description             = st_up_auto_b1_descr
 icon                    = ui_inGame2_upgrade_AKM_74_2_2
-
 
 [up_firstd_ppsh41]
 scheme_index            = 1, 1
@@ -209,10 +191,10 @@ section                 = up_sect_firstd_ppsh41
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
@@ -221,47 +203,45 @@ name                    = st_up_auto_c1_name
 description             = st_up_auto_c1_descr
 icon                    = ui_inGame2_upgrade_AKM_74_2_4
 
-
 [up_firste_ppsh41]
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_thirde_ppsh41
-property                = prop_not_available
+section                 = up_sect_empty_tier_3  ; up_sect_firste_ppsh41
+property                = prop_not_available  ; prop_dispersion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_upgrade_not_available_name  ; st_up_ret_b3_name
+description             = st_up_upgrade_not_available_descr  ; st_up_ret_b3_descr
+icon                    = ui_inGame2_upgrade_unavailable  ; ui_inGame2_upgrade_AKM_74_2_6
 
 [up_firstf_ppsh41]
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_thirde_ppsh41
-property                = prop_not_available
+section                 = up_sect_empty_tier_3  ; up_sect_firstf_ppsh41
+property                = prop_not_available  ; prop_bullet_speed
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
-
+name                    = st_up_upgrade_not_available_name  ; st_up_ret_c1_name
+description             = st_up_upgrade_not_available_descr  ; st_up_ret_c1_descr
+icon                    = ui_inGame2_upgrade_unavailable  ; ui_inGame2_upgrade_AKM_74_2_8
 
 [up_secona_ppsh41]
 scheme_index            = 0, 1
@@ -271,12 +251,11 @@ section                 = up_sect_secona_ppsh41
 property                = prop_inertion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
@@ -292,10 +271,10 @@ section                 = up_sect_seconc_ppsh41
 property                = prop_dispersion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
@@ -304,7 +283,6 @@ name                    = st_up_ret_b3_name
 description             = st_up_ret_b3_descr
 icon                    = ui_inGame2_upgrade_AKM_74_2_6
 
-
 [up_second_ppsh41]
 scheme_index            = 1, 3
 known                   = 1
@@ -312,21 +290,18 @@ effects                 =
 section                 = up_sect_second_ppsh41
 property                = prop_rpm
 
-
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
+prereq_params           =
 name                    = st_up_ret_b2_name
 description             = st_up_ret_b2_descr
 icon                    = ui_inGame2_upgrade_AKM_74_2_7
-
 
 [up_thirda_ppsh41]
 scheme_index            = 0, 2
@@ -336,18 +311,17 @@ section                 = up_sect_thirda_ppsh41
 property                = prop_reliability
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
+prereq_params           = 
 name                    = st_up_zat_a1_name
 description             = st_up_zat_a1_descr
 icon                    = ui_inGame2_upgrade_AKM_74_2_9
-
 
 [up_thirdc_ppsh41]
 scheme_index            = 1, 4
@@ -356,13 +330,11 @@ effects                 = up_gr_thirdef_ppsh41
 section                 = up_sect_thirdc_ppsh41
 property                = prop_bullet_speed
 
-known                   = 1
-
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
@@ -371,46 +343,45 @@ name                    = st_up_zat_b5_name
 description             = st_up_zat_b5_descr
 icon                    = ui_inGame2_upgrade_AKM_74_2_10
 
-
 [up_thirde_ppsh41]
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_empty_tier_3 ; up_sect_thirde_ppsh41
-property                = prop_not_available
+section                 = up_sect_empty_tier_3  ; up_sect_thirde_ppsh41
+property                = prop_not_available  ; prop_reliability
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_upgrade_not_available_name  ; st_up_zat_a1_name
+description             = st_up_upgrade_not_available_descr  ; st_up_zat_a1_descr
+icon                    = ui_inGame2_upgrade_unavailable  ; ui_inGame2_upgrade_AKM_74_2_9
 
 [up_thirdf_ppsh41]
 scheme_index            = 2, 3
 known                   = 1
 effects                 =
-section                 = up_sect_thirdf_ppsh41
-property                = prop_inertion
+section                 = up_sect_empty_tier_3  ; up_sect_thirdf_ppsh41
+property                = prop_not_available  ; prop_inertion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+effect_parameter        = on_weapon_upgrade_something_here
 
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stk_c3_name
-description             = st_up_stk_c3_descr
-icon                    = ui_inGame2_upgrade_AKM_74_2_15
+name                    = st_up_upgrade_not_available_name  ; st_up_stk_c3_name
+description             = st_up_upgrade_not_available_descr  ; st_up_stk_c3_descr
+icon                    = ui_inGame2_upgrade_unavailable  ; ui_inGame2_upgrade_AKM_74_2_15
 
 [up_gr_firstab_ppsh41]
 elements                = up_firsta_ppsh41

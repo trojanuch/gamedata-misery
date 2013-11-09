@@ -69,6 +69,100 @@
 		</form>
 	</itm_repair>
 
+	<itm_cooking>
+		<file_item>
+			<main width="550" height="18"/>
+			<fn width="200" height="18"/>
+			<fd width="50" height="18"/>
+		</file_item>
+		<form x="100" y="150" width="469" height="509" stretch="1">
+			<texture>ui_cooking_window</texture>
+
+			<icon x="83" y="248" width="128" height="128" stretch="1">
+			</icon>
+			<icon_parts x="83" y="112" width="128" height="128" stretch="1">
+			</icon_parts>
+			<icon_tool x="216" y="390" width="128" height="128" stretch="1">
+			</icon_tool>
+
+			<caption_cooking x="65" y="245" width="187" height="50" complex_mode="1">
+				<text font="letterica18"/>
+			</caption_cooking>
+			<list_frame x="217" y="202" width="241" height="107">
+				<texture>ui_inGame2_servers_list_frame</texture>
+			</list_frame>
+			<list x="219" y="205" width="241" height="102" item_height="18" can_select="1">
+				<font font="letterica16"/>
+			</list>
+
+			<caption_parts x="65" y="78" width="187" height="30">
+				<text font="letterica18"/>
+			</caption_parts>
+			<list_frame_parts x="217" y="50" width="241" height="117">
+				<texture>ui_inGame2_servers_list_frame</texture>
+			</list_frame_parts>
+			<list_parts x="219" y="53" width="241" height="112" item_height="18" can_select="1">
+				<font font="letterica16"/>
+			</list_parts>
+
+			<btn_cooking x="25" y="427" width="67" height="40">
+				<texture>ui_button_main01</texture>
+				<text font="letterica18">Cooking</text>
+			</btn_cooking>
+			<btn_cancel x="105" y="427" width="67" height="40">
+				<texture>ui_button_main01</texture>
+				<text font="letterica18">ui_mm_cancel</text>
+			</btn_cancel>
+		</form>
+	</itm_cooking>
+
+	<itm_arty>
+		<file_item>
+			<main width="550" height="18"/>
+			<fn width="200" height="18"/>
+			<fd width="50" height="18"/>
+		</file_item>
+		<form x="100" y="150" width="469" height="509" stretch="1">
+			<texture>ui_arty_window</texture>
+
+			<icon x="105" y="245" width="128" height="128" stretch="0">
+			</icon>
+			<icon_parts x="105" y="123" width="128" height="128" stretch="0">
+			</icon_parts>
+			<icon_tool x="368" y="278" width="128" height="128" stretch="0">
+			</icon_tool>
+
+			<caption_arty x="65" y="245" width="187" height="50" complex_mode="1">
+				<text font="letterica18"/>
+			</caption_arty>
+			<list_frame x="217" y="202" width="241" height="107">
+				<texture>ui_inGame2_servers_list_frame</texture>
+			</list_frame>
+			<list x="219" y="205" width="241" height="102" item_height="18" can_select="1">
+				<font font="letterica16"/>
+			</list>
+
+			<caption_parts x="65" y="78" width="187" height="30">
+				<text font="letterica18"/>
+			</caption_parts>
+			<list_frame_parts x="217" y="50" width="231" height="145">
+				<texture>ui_inGame2_servers_list_frame</texture>
+			</list_frame_parts>
+			<list_parts x="219" y="53" width="231" height="145" item_height="18" can_select="1">
+				<font font="letterica16"/>
+			</list_parts>
+
+			<btn_ok x="25" y="308" width="67" height="40">
+				<texture>ui_button_main01</texture>
+				<text font="letterica18">OK</text>
+			</btn_ok>
+			<btn_cancel x="105" y="308" width="67" height="40">
+				<texture>ui_button_main01</texture>
+				<text font="letterica18">ui_mm_cancel</text>
+			</btn_cancel>
+		</form>
+	</itm_arty>
+
 	<loot>
 		<file_item>
 			<main width="490" height="18"/>

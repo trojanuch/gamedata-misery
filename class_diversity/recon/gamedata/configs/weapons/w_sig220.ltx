@@ -16,18 +16,18 @@ control_inertion_factor = 1.0 ; = 1.0
 
 ;-------------------------------------------------------------------------------
 cost              = 13340            ; the price of the item
-inv_weight        = 0.721
+inv_weight        = 0.8
 
 upgrades                = up_gr_firstab_sig220, up_gr_seconab_sig220, up_gr_thirdab_sig220, up_gr_fourtab_sig220, up_gr_fifthab_sig220
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_sig220
 
 ;----TTX--------------------------------------------------------------------------
-hit_power           		= 0.424, 0.424, 0.424, 0.424
-hit_impulse	 		 		= 44
+hit_power           		= 0.434, 0.434, 0.434, 0.434
+hit_impulse	 		 		= 40
 hit_type 					= fire_wound
-fire_distance           	= 630
-bullet_speed		 		= 672
+fire_distance           	= 200
+bullet_speed		 		= 278
 rpm                     	= 280
 rpm_empty_click 	 		= 120
 
@@ -41,8 +41,8 @@ misfire_start_condition		= 0.82
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.0067
 misfire_end_prob = 0.11 ;	     	= 0.072
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0014
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0010
 
 ammo_elapsed		 	= 7
 ammo_mag_size		 	= 7        ; clip (magazine) size
@@ -60,12 +60,12 @@ reload_dof						= 0.0, 0.5, 5, 1.7
 
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.47 ;0.8    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.01 ; = 0.55
+fire_dispersion_base	= 0.54
+control_inertion_factor = 1.01f
 crosshair_inertion		= 2.8
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
+cam_return = 0 ;				= 0
 cam_relax_speed         = 7				;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
 cam_dispersion          = 1.14				;увеличения угла (в градусах) с каждым выстрелом
@@ -172,7 +172,7 @@ scope_name              = wpn_addon_scope       ; section name for the attachabl
 scope_x              	= 47                 ; offset in inventory icon
 scope_y                 = 0
 silencer_name  				= wpn_addon_silencer_1143x23		; section name for the attachable silencer
-silencer_x 						= 48						; offset in inventory icon
+silencer_x 						= 52						; offset in inventory icon
 silencer_y 						= -14
 grenade_launcher_name   = wpn_addon_grenade_launcher; section name for the attachable grenade launcher
 grenade_launcher_x      = 126                ; offset in inventory icon
@@ -268,7 +268,7 @@ $spawn               = "weapons\wpn_sig220_nimble"   ; name and section in level
 inv_name				= st_wpn_sig220_nimble
 description					= st_wpn_sig220_nimble_descr
 
-inv_weight        = 0.703
+inv_weight        = 0.773
 cost              = 19230
 
 inv_grid_width			= 2	 
@@ -283,12 +283,12 @@ installed_upgrades      = up_firsta_sig220_custom, up_firstc_sig220_custom, up_t
 upgrade_scheme          = upgrade_scheme_sig220
 
 ;----TTX--------------------------------------------------------------------------
-hit_power           		= 0.529, 0.529, 0.529, 0.529
-hit_impulse	 		 		= 88
+hit_power           		= 0.509, 0.509, 0.509, 0.509
+hit_impulse	 		 		= 40
 hit_type 					= fire_wound
-fire_distance           	= 669
-bullet_speed		 		= 702
-rpm                     	= 219
+fire_distance           	= 250
+bullet_speed		 		= 292
+rpm                     	= 304
 rpm_empty_click 	 		= 120
 
 hud                     = wpn_sig221_hud
@@ -300,11 +300,11 @@ misfire_end_prob = 0.11 ;	     	= 0.058
 condition_shot_dec      	= 0.0010
 condition_queue_shot_dec	= 0.0010
 
-fire_dispersion_base		= 0.39
+fire_dispersion_base		= 0.405
 
 visual                  = dynamics\weapons\wpn_sig221\wpn_sig221.ogf
 
-silencer_x 						= 58						
+silencer_x 						= 62
 silencer_y 						= -18
 
 [wpn_sig221_hud]:hud_base
@@ -384,16 +384,16 @@ ammo_class		 		= ammo_11.43x23_ap, ammo_11.43x23_hydro, ammo_11.43x23_fmj
 [wpn_sig220_custom]:wpn_sig220
 
 cost              = 16940           ; the price of the item
-inv_weight        = 0.662
+inv_weight        = 0.75
 
 upgrades                = up_gr_firstab_sig220_custom, up_gr_seconab_sig220_custom, up_gr_thirdab_sig220_custom, up_gr_fourtab_sig220_custom, up_gr_fifthab_sig220_custom
 installed_upgrades      = up_fiftha_sig220_custom, up_thirda_sig220_custom, up_thirdc_sig220_custom
 
-hit_power           		= 0.494, 0.494, 0.494, 0.494
-hit_impulse	 		 		= 44
-fire_distance           	= 653
-bullet_speed		 		= 698
-rpm                     	= 209
+hit_power           		= 0.464, 0.464, 0.464, 0.464
+hit_impulse	 		 		= 40
+fire_distance           	= 200
+bullet_speed		 		= 281
+rpm                     	= 295
 
 hud                     = wpn_sig220_custom_hud
 
@@ -401,14 +401,10 @@ misfire_start_condition		= 0.82
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.0067
 misfire_end_prob = 0.11 ;	     	= 0.072
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0014
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0010
 
-ammo_mag_size		 	= 7      
-fire_modes		  = 1
-ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
-
-fire_dispersion_base	= 0.58
+fire_dispersion_base	= 0.48
 
 inv_name          = st_wpn_sig220_custom              
 inv_name_short    = st_wpn_sig220_custom
@@ -429,16 +425,16 @@ item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22a_hud.ogf
 [wpn_sig220_camo]:wpn_sig220
 
 cost              = 17890            ; the price of the item
-inv_weight        = 0.654
+inv_weight        = 0.78
 
 upgrades                = up_gr_firstab_sig220_camo, up_gr_seconab_sig220_camo, up_gr_thirdab_sig220_camo, up_gr_fourtab_sig220_camo, up_gr_fifthab_sig220_camo
 installed_upgrades      = up_thirda_sig220_camo
 
-hit_power           		= 0.507, 0.507, 0.507, 0.507
-hit_impulse	 		 		= 88
-fire_distance           	= 656
-bullet_speed		 		= 698
-rpm                     	= 219
+hit_power           		= 0.482, 0.482, 0.482, 0.482
+hit_impulse	 		 		= 40
+fire_distance           	= 250
+bullet_speed		 		= 288
+rpm                     	= 304
 
 hud                     = wpn_sig220_camo_hud
 
@@ -446,17 +442,16 @@ misfire_start_condition		= 0.76
 misfire_end_condition		= 0.06
 misfire_start_prob = 0.007 ;	     	= 0.0061
 misfire_end_prob = 0.11 ;	     	= 0.064
-condition_shot_dec      	= 0.0009
-condition_queue_shot_dec	= 0.0010
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.0008
 
-ammo_mag_size		 	= 7      
-fire_modes		  		= 1
-ammo_class		  		= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
-
-fire_dispersion_base	= 0.58
+fire_dispersion_base	= 0.45
 
 inv_name          = st_wpn_sig220_camo              
 inv_name_short    = st_wpn_sig220_camo
+
+silencer_x 						= 56						; offset in inventory icon
+silencer_y 						= -14
 
 inv_grid_width			= 2
 inv_grid_height			= 1
@@ -474,15 +469,15 @@ item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22b_hud.ogf
 [wpn_sig220_worn]:wpn_sig220
 
 cost              = 8790            ; the price of the item
-inv_weight        = 0.7
+inv_weight        = 0.8
 
 upgrades                = up_gr_firstab_sig220_worn, up_gr_seconab_sig220_worn, up_gr_thirdab_sig220_worn, up_gr_fourtab_sig220_worn, up_gr_fifthab_sig220_worn
 
-hit_power           		= 0.418, 0.418, 0.418, 0.418
-hit_impulse	 		 		= 88
-fire_distance           	= 617
-bullet_speed		 		= 652
-rpm                     	= 177
+hit_power           		= 0.39, 0.39, 0.39, 0.39
+hit_impulse	 		 		= 40
+fire_distance           	= 200
+bullet_speed		 		= 255
+rpm                     	= 262
 
 hud                     = wpn_sig220_worn_hud
 
@@ -491,13 +486,11 @@ misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.0079
 misfire_end_prob = 0.11 ;	     	= 0.084
 condition_shot_dec      	= 0.0017
-condition_queue_shot_dec	= 0.0019
-
-ammo_mag_size		 	= 7      
-fire_modes		  = 1
-ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+condition_queue_shot_dec	= 0.0017
 
 fire_dispersion_base	= 0.66
+
+silencer_status         = 0
 
 inv_name          = st_wpn_sig220_worn            
 inv_name_short    = st_wpn_sig220_worn
@@ -519,14 +512,14 @@ item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22c_hud.ogf
 [wpn_sig220_rusty]:wpn_sig220
 
 cost              = 5870            ; the price of the item
-inv_weight        = 0.867
+inv_weight        = 0.86
 
 upgrades                = up_gr_firstab_sig220_rusty, up_gr_seconab_sig220_rusty, up_gr_thirdab_sig220_rusty, up_gr_fourtab_sig220_rusty, up_gr_fifthab_sig220_rusty
 
 hit_power           		= 0.368, 0.368, 0.368, 0.368
-hit_impulse	 		 		= 88
-fire_distance           	= 602
-bullet_speed		 		= 631
+hit_impulse	 		 		= 40
+fire_distance           	= 180
+bullet_speed		 		= 240
 rpm                     	= 166
 
 hud                     = wpn_sig220_rusty_hud
@@ -535,14 +528,12 @@ misfire_start_condition		= 0.95
 misfire_end_condition		= 0.18
 misfire_start_prob = 0.007 ;	     	= 0.0083
 misfire_end_prob = 0.11 ;	     	= 0.088
-condition_shot_dec      	= 0.0019
-condition_queue_shot_dec	= 0.0022
-
-ammo_mag_size		 	= 7      
-fire_modes		  = 1
-ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+condition_shot_dec      	= 0.0021
+condition_queue_shot_dec	= 0.0021
 
 fire_dispersion_base	= 0.83
+
+silencer_status         = 0
 
 inv_name          = st_wpn_sig220_rusty             
 inv_name_short    = st_wpn_sig220_rusty

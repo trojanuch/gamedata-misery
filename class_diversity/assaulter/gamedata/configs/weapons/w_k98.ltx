@@ -5,17 +5,17 @@ $npc			        = on
 $prefetch 		        = 8
 scheduled               = off
 cform                   = skeleton
-class                	= WP_SVD
+class                	= WP_AK74 ; WP_SVD
 
 ef_main_weapon_type 	= 3
 ef_weapon_type	     	= 8
 
 default_to_ruck         = false
 sprint_allowed       	= true
-weapon_class		    = sniper_rifle
+weapon_class		    = assault_rifle ; sniper_rifle
 ;-----------[Главные параметры]----------------;
 cost					= 25290
-inv_weight		        = 3.726
+inv_weight		        = 3.92
 inv_name		        = st_wpn_k98
 inv_name_short		    = st_wpn_k98
 description		        = st_wpn_k98_descr
@@ -49,15 +49,15 @@ zoom_rotate_time	= 0.25
 scopes_sect           = scope_zf4_k98_moist, scope_zf4_k98, scope_zf4_k98_worn
 scope_zoom_factor	= 58.6
 scope_texture		= wpn_crosshair_zf9
-silencer_name           = wpn_addon_silencer_762x39 ; section name for the attachable silencer
+silencer_name           = wpn_addon_silencer_762x54 ; section name for the attachable silencer
 silencer_x              = 270		; offset in inventory icon
 silencer_y              = -18
 --------------[Убойность]---------------------;
-hit_power           	= 0.685, 0.685, 0.685, 0.685
-hit_impulse		 	= 40 ;60 ;125
+hit_power           	= 0.77, 0.77, 0.77, 0.77
+hit_impulse		 	= 37
 hit_type 	         	= fire_wound
-fire_distance           = 750
-bullet_speed	     	= 760
+fire_distance           = 1000
+bullet_speed	     	= 832
 rpm                     = 28
 rpm_empty_click         = 200
 launch_speed            = 0
@@ -77,16 +77,16 @@ snd_silncer_shot        = weapons\k98\kar98k_shoot_sil
 silencer_smoke_particles = weapons\generic_shoot_00
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.115  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.155  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 1.66f
 crosshair_inertion      = 7.8
 
 disp_rate               = 1.85
-cam_return				= 0 ;		        = 1
-cam_relax_speed         = 2.3
+cam_return = 0 ;				= 0
+cam_relax_speed         = 4.5
 cam_relax_speed_ai      = 360
-cam_dispersion	         	= 2.7
-cam_dispersion_inc         	= 2.7
+cam_dispersion	        = 2.7
+cam_dispersion_inc      = 2.7
 cam_dispersion_frac	    = 1.0
 cam_max_angle		    = 15.0
 cam_max_angle_horz	    = 3.0
@@ -120,8 +120,8 @@ misfire_start_condition		= 0.88
 misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.009
 misfire_end_prob = 0.11 ;	     	= 0.03
-condition_shot_dec      	= 0.0031
-condition_queue_shot_dec	= 0.0015
+condition_shot_dec      	= 0.0029
+condition_queue_shot_dec	= 0.0029
 
 hand_dependence         = 1
 single_handed           = 0

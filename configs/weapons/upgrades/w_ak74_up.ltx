@@ -4,13 +4,14 @@
 cost		      		= 3480
 value                   = -10
 
-cam_dispersion              = -0.16     ;0.5
-cam_dispersion_inc          = -0.06     ;0.5
-cam_step_angle_horz         = -0.02     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.09
+cam_dispersion_inc          = -0.06
+cam_step_angle_horz         = -0.05
 
-zoom_cam_dispersion         = -0.12     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.07     ;0.5
-zoom_cam_step_angle_horz    = -0.02     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.07
+zoom_cam_dispersion_inc     = -0.05
+zoom_cam_step_angle_horz    = -0.05
+
 inv_weight			= +0.25
 
 [up_sect_firstc_ak74]
@@ -19,26 +20,22 @@ inv_weight			= +0.25
 cost		      		= 2850
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1.5 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
 
 misfire_start_prob	     	= -0.0015
-
-misfire_end_prob	     	= -0.015 ;0.03
+misfire_end_prob	     	= -0.015
 
 inv_weight			= +0.15
 
 [up_sect_firste_ak74]
-;“очность(3)30%
+;“очность(3)10%
 ;---------------
 cost		      		= 2750
 value					= +10
 
-fire_dispersion_base	= -0.02 ;0.7
+fire_dispersion_base	= -0.035
 ;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight			= +0.15
@@ -49,38 +46,45 @@ inv_weight			= +0.15
 cost		      		= 3920
 value                   = -30
 
-cam_dispersion              = -0.3      ;0.5
-cam_dispersion_inc          = -0.16     ;0.5
-cam_step_angle_horz         = -0.11     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.27
+cam_dispersion_inc          = -0.18
+cam_step_angle_horz         = -0.1
 
-zoom_cam_dispersion         = -0.31     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.17     ;0.5
-zoom_cam_step_angle_horz    = -0.11     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.21
+zoom_cam_dispersion_inc     = -0.15
+zoom_cam_step_angle_horz    = -0.1
+
 inv_weight			= +0.2
 
 [up_sect_secona_ak74]
-;”добство(1)10%
+;”добство(1)5%
 ;--------------
 cost		      		= 2940
 value					= -5
 
-cam_dispersion              = -0.1		;0.5
-cam_dispersion_inc         	= -0.005		;0.5
-cam_step_angle_horz        	= -0.008		;1.5 [0.73 в остатке]
+crosshair_inertion		   = -0.25
+ 
+PDM_disp_base 				= -0.07
+PDM_disp_vel_factor 		= -0.1
+PDM_disp_accel_factor 		= -0.1
 
-zoom_cam_dispersion         = -0.06		;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.006		;0.5
-zoom_cam_step_angle_horz    = -0.003 	;1.0 [0.505 в остатке]
+cam_dispersion              = -0.08
+cam_dispersion_inc         	= -0.05
+cam_step_angle_horz        	= -0.02
+
+zoom_cam_dispersion         = -0.06
+zoom_cam_dispersion_inc     = -0.03
+zoom_cam_step_angle_horz    = -0.02
 
 inv_weight			= +0.15
 
 [up_sect_seconc_ak74]
-;“очность(2)20%
+;“очность(2)10%
 ;---------------
 cost		      		= 2850
 value					= +10
 
-fire_dispersion_base	= -0.02 ;0.7
+fire_dispersion_base	= -0.035
 ;fire_dispersion_condition_factor    = -1 ;15
 
 [up_sect_second_ak74]
@@ -89,9 +93,9 @@ fire_dispersion_base	= -0.02 ;0.7
 cost		      		= 4150
 value					= +15
 
-rpm                     = +75
+rpm                     = +95
 
-inv_weight			= +0.25
+inv_weight			= +0.14
 
 [up_sect_secone_ak74]
 ;Ќастильность(3)30%
@@ -99,10 +103,10 @@ inv_weight			= +0.25
 cost		      		= 3650
 value					= +30
 
-bullet_speed            = +110
-fire_dispersion_base	= -0.02 ;0.7
+bullet_speed            = +200
+fire_dispersion_base	= -0.02
 
-inv_weight			= +0.3
+inv_weight			= +0.2
 
 [up_sect_thirda_ak74]
 ;Ќадежность(1)10%
@@ -110,16 +114,12 @@ inv_weight			= +0.3
 cost		      		= 3650
 value					= +10
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
+condition_shot_dec      	= -0.00015
+condition_queue_shot_dec	= -0.00015
 
 misfire_start_prob	     	= -0.0005
-
-misfire_end_prob	     	= -0.01 ;0.03
+misfire_end_prob	     	= -0.01
 
 inv_weight			= +0.15
 
@@ -129,8 +129,8 @@ inv_weight			= +0.15
 cost		      		= 3950
 value					= +20
 
-bullet_speed            = +75
-fire_dispersion_base	= -0.02 ;0.7
+bullet_speed            = +100
+fire_dispersion_base	= -0.015
 
 inv_weight			= +0.15
 
@@ -140,25 +140,25 @@ inv_weight			= +0.15
 cost		      		= 4680
 value                   = -20
 
-cam_dispersion              = -0.21     ;0.5
-cam_dispersion_inc          = -0.1      ;0.5
-cam_step_angle_horz         = -0.06     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.18
+cam_dispersion_inc          = -0.12
+cam_step_angle_horz         = -0.1
 
-zoom_cam_dispersion         = -0.21     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.12     ;0.5
-zoom_cam_step_angle_horz    = -0.04     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.14
+zoom_cam_dispersion_inc     = -0.1
+zoom_cam_step_angle_horz    = -0.1
 
 inv_weight			= +0.25
 
 [up_sect_thirde_ak74]
-;—корострельность(3)25%
+;—корострельность(3)10%
 ;----------------------
 cost		      		= 4950
 value					= +10
 
-rpm                     = +75
+rpm                     = +65
 
-inv_weight			= +0.18
+inv_weight			= +0.1
 
 [up_sect_fourta_ak74]
 ;¬ес
@@ -172,13 +172,13 @@ inv_weight = -0.84
 ;”добство(2)15%
 ;--------------
 cost		      		= 3950
-value					= +14
+value					= +15
 
 crosshair_inertion		   = -0.75
  
-PDM_disp_base 				= -0.1 ;0.5
-PDM_disp_vel_factor 		= -0.35 ;1.5
-PDM_disp_accel_factor 		= -0.35 ;1.5
+PDM_disp_base 				= -0.1
+PDM_disp_vel_factor 		= -0.3
+PDM_disp_accel_factor 		= -0.3
 
 inv_weight			= -0.17
 
@@ -190,20 +190,20 @@ value					= +25
 
 crosshair_inertion		   = -1.25
  
-PDM_disp_base 				= -0.15 ;0.5
-PDM_disp_vel_factor 		= -0.4 ;1.5
-PDM_disp_accel_factor 		= -0.4 ;1.5
+PDM_disp_base 				= -0.2
+PDM_disp_vel_factor 		= -0.4
+PDM_disp_accel_factor 		= -0.4
 
-inv_weight			= -0.22
+inv_weight			= -0.2
 
 [up_sect_fiftha_ak74]
 ; репление дл€ оптики
 ;--------------
 cost		      		= 1250
 scope_status = 2
-scopes_sect		= scope_ak74_moist, scope_ak74, scope_ak74_worn, scope_x2.7_ak74, scope_live_detector_ak74, scope_night_ak74
+scopes_sect		= scope_ak74_moist, scope_ak74, scope_ak74_worn, scope_x2.7_ak74, scope_live_detector_ak74, scope_night_ak74, scope_vsk_ak74
 
-inv_weight              	= +0.34
+inv_weight              	= +0.2
 
 [up_sect_fifthc_ak74]
 ;—мена  аллибра
@@ -212,19 +212,16 @@ cost		      		= 4680
 value					= "5.56x45"
 ammo_class          	= ammo_5.56x45_ss190, ammo_5.56x45_ap
 
-;silencer_name           = wpn_addon_silencer_556x45    ; section name for the attachable silencer
-;snd_silncer_shot        = weapons\silencers\silencer_556x45
+silencer_name           = wpn_addon_silencer_556x45    ; section name for the attachable silencer
+snd_silncer_shot        = weapons\silencers\silencer_556x45
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0001 ;0.0011
+condition_queue_shot_dec	= +0.0001 ;0.0013
+condition_shot_dec      	= +0.0001 ;0.0011
 
 misfire_start_prob	     	= 0.0005
-
 misfire_end_prob	     	= 0.005 ;0.03
 
-inv_weight              	= +0.22
+inv_weight              	= +0.15
 
 [up_firsta_ak74]
 scheme_index            = 0, 0
@@ -560,7 +557,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_16
 scheme_index            = 1, 6
 known                   = 1
 effects                 = ; 
-section                 = up_sect_fifthc_ak74
+section                 = up_sect_empty_tier_3
 property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

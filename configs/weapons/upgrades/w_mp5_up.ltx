@@ -4,21 +4,22 @@
 cost		      		= 2680
 value                   = -10
 
-cam_dispersion              = -0.08     ;0.5
-cam_dispersion_inc          = -0.04     ;0.5
-cam_step_angle_horz         = -0.2      ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.06
+cam_dispersion_inc          = -0.04
+cam_step_angle_horz         = -0.2
 
-zoom_cam_dispersion          = -0.1     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.05        ;0.5
-zoom_cam_step_angle_horz     = -0.3     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.05
+zoom_cam_dispersion_inc      = -0.03
+zoom_cam_step_angle_horz     = -0.2
 
 inv_weight        = +0.15
 
-;Точность(2)20%
+;Точность(2)10%
 [up_sect_firstc_mp5]
 cost		      		= 3200
 value					= +10
-fire_dispersion_base    = -0.05 		;0.09
+
+fire_dispersion_base    = -0.05
 ;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight        = +0.05
@@ -29,7 +30,7 @@ inv_weight        = +0.05
 cost		      		= 3360
 value					= +5
 
-rpm                     = +40 ;700
+rpm                     = +40
 
 inv_weight        = +0.1
 
@@ -40,7 +41,7 @@ inv_weight        = +0.1
 cost		      		= 3450
 value					= +5
 
-rpm                     = +40 ;700
+rpm                     = +40
 
 inv_weight        = +0.1
 
@@ -49,7 +50,8 @@ inv_weight        = +0.1
 [up_sect_secona_mp5]
 cost		      		= 3240
 value					= +5
-rpm                     = +40 ;700
+
+rpm                     = +40
 
 inv_weight        = +0.125
 
@@ -59,25 +61,21 @@ inv_weight        = +0.125
 cost		      		= 3150
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00014 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00014 ;0.0011
+condition_shot_dec      	= -0.00014
+condition_queue_shot_dec	= -0.00014
 
 misfire_start_prob	     	= -0.001
-
-misfire_end_prob	     	= -0.016 ;0.03
+misfire_end_prob	     	= -0.016
 
 inv_weight        = +0.15
 
-;Точность(3)30%
+;Точность(3)20%
 [up_sect_secone_mp5]
 cost		      		= 3060
-value					= +10
+value					= +20
 
-fire_dispersion_base    = -0.05 		;0.09
+fire_dispersion_base    = -0.09
 ;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight        = +0.1
@@ -88,13 +86,13 @@ inv_weight        = +0.1
 cost		      		= 2730
 value                   = -30
 
-cam_dispersion              = -0.18     ;0.5
-cam_dispersion_inc          = -0.08     ;0.5
-cam_step_angle_horz         = -0.4      ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.16
+cam_dispersion_inc          = -0.08
+cam_step_angle_horz         = -0.5
 
-zoom_cam_dispersion          = -0.2     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.1     ;0.5
-zoom_cam_step_angle_horz     = -0.5     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.12
+zoom_cam_dispersion_inc      = -0.05
+zoom_cam_step_angle_horz     = -0.5
 
 inv_weight        = +0.1
 
@@ -104,13 +102,13 @@ inv_weight        = +0.1
 cost		      		= 2840
 value                   = -10
 
-cam_dispersion              = -0.08     ;0.5
-cam_dispersion_inc          = -0.04     ;0.5
-cam_step_angle_horz         = -0.2      ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.06
+cam_dispersion_inc          = -0.04
+cam_step_angle_horz         = -0.2
 
-zoom_cam_dispersion          = -0.1     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.05        ;0.5
-zoom_cam_step_angle_horz     = -0.3     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.05
+zoom_cam_dispersion_inc      = -0.03
+zoom_cam_step_angle_horz     = -0.3
 
 inv_weight        = +0.1
 
@@ -122,9 +120,9 @@ value					= +15
 
 crosshair_inertion		   = -0.35
  
-PDM_disp_base 				= -0.07 ;0.5
-PDM_disp_vel_factor 		= -0.25 ;1.5
-PDM_disp_accel_factor 		= -0.25 ;1.5
+PDM_disp_base 				= -0.07
+PDM_disp_vel_factor 		= -0.25
+PDM_disp_accel_factor 		= -0.25
 
 inv_weight        = -0.15
 
@@ -134,16 +132,12 @@ inv_weight        = -0.15
 cost		      		= 3240
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00014 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00014 ;0.0011
+condition_shot_dec      	= -0.00014
+condition_queue_shot_dec	= -0.00014
 
 misfire_start_prob	     	= -0.001
-
-misfire_end_prob	     	= -0.016 ;0.03
+misfire_end_prob	     	= -0.016
 
 inv_weight        = +0.15
 
@@ -153,7 +147,7 @@ inv_weight        = +0.15
 cost		      		= 3360
 value					= +10
 
-rpm                     = +80 ;700
+rpm                     = +80
 
 inv_weight        = +0.1
 
@@ -163,12 +157,13 @@ inv_weight        = +0.1
 cost		      		= 2980
 value					= +10
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
 
-misfire_start_prob	     	= -0.0008
+condition_shot_dec      	= -0.00009
+condition_queue_shot_dec	= -0.00009
 
-misfire_end_prob	     	= -0.008 ;0.03
+misfire_start_prob	     	= -0.0008
+misfire_end_prob	     	= -0.008
 
 inv_weight        = +0.1
 
@@ -178,7 +173,7 @@ inv_weight        = +0.1
 cost		      		= 3680
 value					= +5
 
-rpm                     	= +40 ;700
+rpm                     	= +40
 
 inv_weight        = +0.1
 
@@ -190,9 +185,9 @@ value					= +25
 
 crosshair_inertion		   = -0.5
  
-PDM_disp_base 				= -0.1 ;0.5
-PDM_disp_vel_factor 		= -0.3 ;1.5
-PDM_disp_accel_factor 		= -0.3 ;1.5
+PDM_disp_base 				= -0.1
+PDM_disp_vel_factor 		= -0.25
+PDM_disp_accel_factor 		= -0.25
 
 inv_weight        = -0.05
 
@@ -200,10 +195,10 @@ inv_weight        = -0.05
 ;------------------
 [up_sect_fourtf_mp5]
 cost		      		= 3860
-value					= +10
+value					= +20
 
-bullet_speed			= +80   ;270
-fire_distance           = 71
+bullet_speed			= +80
+fire_distance           = +50
 
 fire_dispersion_base    = -0.024
 
@@ -213,10 +208,10 @@ inv_weight        = +0.1
 ;--------------------
 [up_sect_fiftha_mp5]
 cost		      		= 1640
-value					= +7
-ammo_mag_size        	= 7
+value					= +10
+ammo_mag_size        	= +10
 
-inv_weight        = +0.075
+inv_weight        = +0.12
 
 ;Смена калибра 9x18
 ;-------------
@@ -225,19 +220,16 @@ cost		      		= 4670
 value					= "9x18"
 ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
 
-;silencer_name  			= wpn_addon_silencer_1143x23		; section name for the attachable silencer
-;snd_silncer_shot        = weapons\silencers\silencer_1143x23
+silencer_name  			= wpn_addon_silencer_1143x23		; section name for the attachable silencer
+snd_silncer_shot        = weapons\silencers\silencer_1143x23
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.00014 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.00014 ;0.0011
+condition_shot_dec      	= +0.0001
+condition_queue_shot_dec	= +0.0001
 
 misfire_start_prob	     	= 0.0005
+misfire_end_prob	     	= 0.005
 
-misfire_end_prob	     	= 0.005 ;0.03
-
-inv_weight        = +0.2
+inv_weight        = +0.15
 
 ;---END----
 

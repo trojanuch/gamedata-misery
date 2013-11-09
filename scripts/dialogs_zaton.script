@@ -22,6 +22,7 @@ function zat_b30_owl_stalker_trader_actor_has_item_to_sell(first_speaker, second
 						"jup_b202_bandit_pda",
 						"device_pda_port_bandit_leader",
 						"jup_b10_ufo_memory_2",
+						"zat_b22_medic_pda",
 						-- no sell
 						"jup_b1_half_artifact",
 						"af_quest_b14_twisted",
@@ -297,9 +298,21 @@ function zat_b103_transfer_merc_supplies(first_speaker, second_speaker)
 	local j = 0
 	local section
 	local item_sections	= {
-		[1] = "conserva",
-		[2] = "kolbasa",
-		[3] = "bread"
+		[1] = "bread",
+		[2] = "tushonka",
+		[3] = "conserva",
+		[4] = "protein",
+		[5] = "tomato",
+		[6] = "sausage",
+		[7] = "corn",
+		[8] = "beans",
+		[9] = "chili",
+		[10] = "salmon",
+		[11] = "raisins",
+		[12] = "chocolate",
+		[13] = "nuts",
+		[14] = "glucose",
+		[15] = "glucose_s"
 	}
 
 	local function transfer_object_item(temp, item)
@@ -1170,7 +1183,7 @@ zat_b51_buy_item_table[4] = {	[1] = {item = {"wpn_vintorez_nimble"}},
 								[2] = {item = {"wpn_svu_nimble"}},
 								[3] = {item = {"wpn_svd_nimble"}}
 	}
-zat_b51_buy_item_table[5] = {		[1] = {item = {"helm_tactic", "cs_heavy_outfit"}}
+zat_b51_buy_item_table[5] = {		[1] = {item = {"cs_heavy_outfit"}}
 	}
 zat_b51_buy_item_table[6] = {		[1] = {item = {"scientific_outfit"}}
 	}
@@ -1618,7 +1631,9 @@ end
 
 ----------------------	b53 ----------------------
 function zat_b53_if_actor_has_detector_advanced(first_speaker, second_speaker)
-	return db.actor:object("detector_simple") ~= nil or db.actor:object("detector_scientific") ~= nil
+	return db.actor:object("detector_advanced") ~= nil or
+	db.actor:object("detector_elite") ~= nil or
+	db.actor:object("detector_scientific") ~= nil
 end
 
 function zat_b53_if_actor_hasnt_detector_advanced(first_speaker, second_speaker)
@@ -1748,8 +1763,20 @@ end
 function zat_b103_actor_has_needed_food(first_speaker, second_speaker)
 	local item_sections	= {
 		[1] = "bread",
-		[2] = "kolbasa",
-		[3] = "conserva"
+		[2] = "tushonka",
+		[3] = "conserva",
+		[4] = "protein",
+		[5] = "tomato",
+		[6] = "sausage",
+		[7] = "corn",
+		[8] = "beans",
+		[9] = "chili",
+		[10] = "salmon",
+		[11] = "raisins",
+		[12] = "chocolate",
+		[13] = "nuts",
+		[14] = "glucose",
+		[15] = "glucose_s"
 	}
 	local needed = 6
 	local count	= 0

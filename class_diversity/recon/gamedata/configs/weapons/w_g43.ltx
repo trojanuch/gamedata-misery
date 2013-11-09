@@ -5,7 +5,7 @@ $npc		        	= on				; option for Level Editor
 $prefetch 	        	= 8
 scheduled               = off              	; option for ALife Simulator
 cform                   = skeleton
-class                	= WP_SVD
+class                	= WP_AK74 ; WP_SVD
 ef_main_weapon_type 	= 3
 ef_weapon_type	     	= 11
 description	          	= st_wpn_g43_descr
@@ -16,19 +16,19 @@ sprint_allowed       	= true
 
 ;---------------------------------------------------------------------------------
 cost                    = 32280
-weapon_class            = sniper_rifle
-inv_weight	         	= 4.428
+weapon_class            = assault_rifle ; sniper_rifle
+inv_weight	         	= 4.73
 
 upgrades                = up_gr_firstab_g43, up_gr_seconab_g43, up_gr_thirdab_g43
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_toz34
 
 ;---------------------------------------------------------------------------------
-hit_power           	= 0.655, 0.655, 0.655, 0.655
-hit_impulse		 		= 44
+hit_power           	= 0.745, 0.745, 0.745, 0.745
+hit_impulse		 		= 37
 hit_type 	         	= fire_wound
-fire_distance           = 780
-bullet_speed	     	= 775
+fire_distance           = 1000
+bullet_speed	     	= 840
 rpm                     = 70
 rpm_empty_click         = 200
 
@@ -42,8 +42,8 @@ misfire_start_condition		= 0.90
 misfire_end_condition		= 0.15
 misfire_start_prob = 0.007 ;	     	= 0.0087
 misfire_end_prob = 0.11 ;	     	= 0.04
-condition_shot_dec      	= 0.0026
-condition_queue_shot_dec	= 0.0013
+condition_shot_dec      	= 0.0025
+condition_queue_shot_dec	= 0.0025
 
 launch_speed            = 0
 hand_dependence         = 1
@@ -56,15 +56,16 @@ ammo_class           	= ammo_7.92x33_fmj, ammo_7.92x33_ap ; name of the ltx-sect
 grenade_class        = ammo_vog-25         ; name of the ltx-section of used grenades
 
 ;-------------------------------------------------------------------------------
-fire_dispersion_base	= 0.14 ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+;базовая дисперсия
+fire_dispersion_base	= 0.18 ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.42f
 crosshair_inertion   	= 9.8
 
-cam_return				= 0 ;	         	= 1
+cam_return = 0 ;				= 0
 cam_relax_speed         = 4.5
 cam_relax_speed_ai      = 360	;скорость возврата в исходное положение
-cam_dispersion	         	= 3.4
-cam_dispersion_inc         	= 3.4
+cam_dispersion	        = 3.4
+cam_dispersion_inc      = 3.4
 cam_dispersion_frac 	= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle	     	= 15.0	;максимальный угол отдачи
 cam_max_angle_horz   	= 3.0	;(degree) maximum shot horizontal degree
@@ -78,8 +79,8 @@ PDM_disp_crouch_no_acc = 1.0 ; 		= 1.425
 
 zoom_cam_relax_speed    = 0.75    ; scope & ironsight
 zoom_cam_relax_speed_ai = 120.75
-zoom_cam_dispersion          	= 2.55
-zoom_cam_dispersion_inc      	= 2.55
+zoom_cam_dispersion       = 2.55
+zoom_cam_dispersion_inc   = 2.55
 zoom_cam_dispersion_frac = 1.0
 zoom_cam_max_angle      = 6.0
 zoom_cam_max_angle_horz = 3.0
@@ -163,7 +164,7 @@ grenade_launcher_status	= 0
 
 zoom_enabled	    	= true
 zoom_rotate_time	    = 0.25
-scope_zoom_factor       = 30
+scope_zoom_factor       = 24
 
 scope_texture	        = wpn_crosshair_zf9
 scope_name 	        = wpn_addon_scope_zf4

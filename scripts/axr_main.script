@@ -128,6 +128,9 @@ function on_game_start()
 
 	-- Dynamic Spawn
 	if (axr_dynamic_spawn) then axr_dynamic_spawn.on_game_start() end
+	
+	--Artefact Container Mod
+	if (arty_container) then arty_container.on_game_start() end
 
 	-- TEST
 	--if (axr_overheat) then axr_overheat.on_game_start() end

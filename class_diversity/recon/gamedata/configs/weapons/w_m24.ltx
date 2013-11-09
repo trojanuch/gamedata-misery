@@ -17,18 +17,18 @@ sprint_allowed       	= true
 ;-------------------------------------------------------------------------------
 cost					= 64380
 weapon_class			= sniper_rifle
-inv_weight				= 7.318
+inv_weight				= 6.39
 
 upgrades                = up_gr_firstab_m24, up_gr_seconab_m24, up_gr_thirdab_m24, up_gr_fourtab_m24, up_gr_fourtcd_m24, up_gr_fourtef_m24
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svd
 
 ;------TTX------------------------------------------------------------------------
-hit_power           		= 0.792, 0.792, 0.792, 0.792
-hit_impulse				= 58
+hit_power           		= 0.85, 0.85, 0.85, 0.85
+hit_impulse				= 45
 hit_type 		        = fire_wound
-fire_distance           = 1015
-bullet_speed		    = 795	;начальная скорость пули
+fire_distance           = 1500
+bullet_speed		    = 845	;начальная скорость пули
 rpm                     = 20
 rpm_empty_click         = 200
 
@@ -44,10 +44,10 @@ misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.0081
 misfire_end_prob = 0.11 ;	     	= 0.058
 condition_shot_dec      	= 0.0024
-condition_queue_shot_dec	= 0.0013
+condition_queue_shot_dec	= 0.0024
 
-ammo_elapsed			= 10
-ammo_mag_size			= 10
+ammo_elapsed			= 5
+ammo_mag_size			= 5
 fire_modes		        = 1
 ammo_class			= ammo_magnum_300, ammo_magnum_300_ap
 
@@ -56,12 +56,12 @@ single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.02	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.055	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.32f
 crosshair_inertion   	= 10.8
 
 ;отдача
-cam_return				= 0 ;				= 1
+cam_return = 0 ;				= 0
 cam_relax_speed         = 4.5	;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	;скорость возврата в исходное положение
 cam_dispersion          = 3.65	;увеличения угла (в градусах) с каждым выстрелом
@@ -167,7 +167,7 @@ grenade_launcher_status		= 0
 
 zoom_enabled			= true
 zoom_rotate_time		= 0.25
-scope_zoom_factor		= 30
+scope_zoom_factor		= 10.5
 scope_texture		    		= wpn_crosshair_m24
 scope_name 				= wpn_addon_scope
 scope_x 				= 60

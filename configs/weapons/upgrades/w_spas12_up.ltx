@@ -4,21 +4,19 @@
 cost		      		= 2480
 value					= +10
 
-condition_queue_shot_dec	= -0.0003 ;0.0013
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
 
-condition_shot_dec      	= -0.0003 ;0.0011
-
-inv_weight          = +0.25
+inv_weight          = +0.14
 
 [up_sect_firstc_spas12]
-;Настильность(2)20%
+;Настильность(2)10%
 ;------------------
 cost		      		= 2360
 value					= +10
 
-bullet_speed            = +55
-fire_distance  		= +50
-hit_impulse      		= +5
+bullet_speed            = +45
+fire_distance  		= +40
 fire_dispersion_base	= -0.02
 
 inv_weight          = +0.2
@@ -29,21 +27,19 @@ inv_weight          = +0.2
 cost		      		= 2760
 value					= +15
 
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
 
-condition_queue_shot_dec	= -0.0005 ;0.0013
-
-condition_shot_dec      	= -0.0005 ;0.0011
-
-inv_weight          = +0.3
+inv_weight          = +0.2
 
 [up_sect_firste_spas12]
-;Точность(3)30%
+;Точность(3)20%
 ;---------------
 cost		      		= 2450
-value					= +10
+value					= +20
 
-fire_dispersion_base	= -0.03
-fire_dispersion_condition_factor	= -0.25
+fire_dispersion_base	= -0.08
+;fire_dispersion_condition_factor	= -0.25
 
 inv_weight          = +0.15
 
@@ -55,7 +51,7 @@ value					= +20
 
 rpm                     = +20
 
-inv_weight          = +0.2
+inv_weight          = +0.1
 
 [up_sect_secona_spas12]
 ;Уменьшение веса
@@ -75,7 +71,7 @@ PDM_disp_accel_factor 		= -0.2
 cost		      		= 2490
 value					= +15
 
-crosshair_inertion			= -1.5
+crosshair_inertion			= -1.0
 
 PDM_disp_base 				= -0.1
 PDM_disp_vel_factor 		= -0.5
@@ -89,13 +85,13 @@ inv_weight          = -0.12
 cost		      		= 2780
 value                   = -20
 
-cam_dispersion              = -1.25         ;0.7
-cam_dispersion_inc          = -0.5          ;0.7
-cam_step_angle_horz         = -1.25         ;0.7
+cam_dispersion              = -1.05
+cam_dispersion_inc          = -0.25
+cam_step_angle_horz         = -1.25
 
-zoom_cam_dispersion          = -1.25        ;0.6
-zoom_cam_dispersion_inc      = -0.5     ;0.6
-zoom_cam_step_angle_horz     = -1.25        ;0.6
+zoom_cam_dispersion          = -0.9
+zoom_cam_dispersion_inc      = -0.2
+zoom_cam_step_angle_horz     = -1.25
 
 inv_weight          = +0.15
 
@@ -105,21 +101,18 @@ inv_weight          = +0.15
 cost		      		= 2350
 value					= +10
 
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
 
-condition_queue_shot_dec	= -0.0003 ;0.0013
-
-condition_shot_dec      	= -0.0003 ;0.0011
-
-inv_weight          = +0.25
+inv_weight          = +0.14
 
 [up_sect_thirdc_spas12]
-;Точность(2)20%
+;Точность(2)10%
 ;---------------
 cost		      		= 2680
 value					= +10
 
-fire_dispersion_base	= -0.03
-fire_dispersion_base	= -0.025
+fire_dispersion_base	= -0.04
 
 inv_weight          = +0.15
 
@@ -131,32 +124,32 @@ value					= +20
 
 rpm                     = +20
 
-inv_weight          = +0.2
+inv_weight          = +0.1
 
 [up_sect_thirde_spas12]
 ;Надежность(3)30%
 ;---------------
 cost		      		= 2410
-value					= +10
+value					= +30
 
-condition_queue_shot_dec	= -0.0007 ;0.0013
-condition_shot_dec      	= -0.0007 ;0.0011
+condition_queue_shot_dec	= -0.0003
+condition_shot_dec      	= -0.0003
 
-inv_weight          = +0.25
+inv_weight          = +0.22
 
 [up_sect_thirdf_spas12]
-;Отдача(3)-30%
+;Отдача(3)-20%
 ;------------
 cost		      		= 2150
 value                   = -20
 
-cam_dispersion              = -1.75     ;0.7
-cam_dispersion_inc          = -0.75     ;0.7
-cam_step_angle_horz         = -1.75     ;0.7
+cam_dispersion              = -1.05
+cam_dispersion_inc          = -0.25
+cam_step_angle_horz         = -1.25
 
-zoom_cam_dispersion          = -2.25        ;0.6
-zoom_cam_dispersion_inc      = -0.75        ;0.6
-zoom_cam_step_angle_horz     = -2.25        ;0.6
+zoom_cam_dispersion          = -0.9
+zoom_cam_dispersion_inc      = -0.2
+zoom_cam_step_angle_horz     = -1.25
 
 inv_weight          = +0.15
 
@@ -166,9 +159,9 @@ inv_weight          = +0.15
 cost		      		= 2290
 value					= +3
 
-ammo_mag_size		 		= 3
+ammo_mag_size		 		= +3
 
-inv_weight          = +0.3
+inv_weight          = +0.1
 
 [up_firsta_spas12]
 scheme_index            = 0, 0

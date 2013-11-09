@@ -1,0 +1,68 @@
+;--------------------------------------------------------------------------------
+;-- Copyright: 2010-2012 SWM Team -----------------------------------------------
+;-- last edited: Jurok ----------------------------------------------------------
+;--------------------------------------------------------------------------------
+
+[logic@b14_stalker_3]
+suitable = {=check_npc_name(zat_b14_stalker_3) -zat_b14_stalkers_bandits_free} true
+prior = 100
+active = walker@stand
+on_hit = hit
+on_death = death
+post_combat_time = 0, 0
+
+[death]
+on_info = {=killed_by_actor =squad_exist(zat_b14_stalkers)} %+zat_b14_stalker_killed_by_actor =set_squad_enemy_to_actor(zat_b14_stalkers) =stop_sound%, %=stop_sound%
+
+[hit] 
+on_info = {=hit_by_actor =actor_has_item(af_quest_b14_twisted) =is_alive} %+zat_b14_actor_enemy%
+on_info2 = {=actor_enemy -zat_b14_stop_sound} walker@fight %+zat_b14_stop_sound =stop_sound%
+
+[walker@stand] ;ֿנÿקולסÿ ט זהול
+path_walk = zat_b14_stalker_2_walk_1
+path_look = zat_b14_stalker_2_look_1
+on_info = {+zat_b14_stalker_robbery_cutscene_start} walker@go_robbery
+on_info2 = {=actor_enemy} walker@fight
+in_restr = zat_b14_not_give_item_zone
+combat_ignore_cond = {!actor_enemy} true
+show_spot = {!actor_enemy} false, true
+meet = no_meet
+;group = 14
+
+[walker@go_robbery] ;ָהול דנאבטעü
+def_state_moving1 = assault
+path_walk = zat_b14_stalker_2_walk_2
+path_look = zat_b14_stalker_2_look_2
+on_info = {+zat_b14_stalker_robbery_cutscene_end} remark@robbery_1
+on_info2 = {=actor_enemy} walker@fight
+in_restr = zat_b14_not_give_item_zone
+meet = no_meet
+
+[remark@robbery_1] 
+target = story | actor
+anim = threat_na
+snd_anim_sync = true
+on_info = {=dist_to_actor_ge(100)} %+zat_b14_stalkers_bandits_free%
+on_info2 = {=actor_enemy} walker@fight
+on_info3 = {!actor_nomove_nowpn() =dist_to_actor_le(5)} remark@robbery_2
+in_restr = zat_b14_not_give_item_zone
+meet = no_meet
+
+[remark@robbery_2] 
+target = story | actor
+anim = backoff2
+snd_anim_sync = true
+on_info = {=dist_to_actor_ge(100)} %+zat_b14_stalkers_bandits_free%
+on_info2 = {=dist_to_actor_ge(5)} remark@robbery_1
+on_info3 = {=actor_enemy} walker@fight
+on_info4 = {=actor_nomove_nowpn()} remark@robbery_1
+on_timer = 10000 | {!actor_nomove_nowpn() =dist_to_actor_le(5)} walker@fight %=set_squad_enemy_to_actor(zat_b14_stalkers)%
+in_restr = zat_b14_not_give_item_zone
+meet = no_meet
+
+[walker@fight] ;ֲ במי!
+path_walk = zat_b14_stalker_2_walk_1
+path_look = zat_b14_stalker_2_look_1
+in_restr = zat_b14_not_give_item_zone
+meet = no_meet
+out_restr = zat_b14_robbery_reaction

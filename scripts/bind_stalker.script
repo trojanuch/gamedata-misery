@@ -137,6 +137,10 @@ function actor_binder:take_item_from_box(box, item)
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_item_take_from_box(box,item) end
 	-- End Alundaio
+	
+	--Yasti Quick Release Backpack
+	itms_manager.actor_on_take_item_from_box(box,item)
+	--End Yasti
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:info_callback(npc, info_id)
@@ -147,14 +151,21 @@ end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_trade (item, sell_bye, money)
 	if sell_bye == true then
-		 game_stats.money_trade_update (money)
+		game_stats.money_trade_update (money)
+		--Yasti Trade Release--
+		alife():release(alife():object(item:id()), true)
+		--End Yasti--
 	else
-		 game_stats.money_trade_update (-money)
+		game_stats.money_trade_update (-money)
 	end
+	
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_trade(item,sell_bye,money) end
 	-- End Alundaio
 end
+----------------------------------------------------------------------------------------------------------------------
+--function actor_binder:article_callback(npc, group, name)
+--end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_take (obj)
 	printf("on_item_take [%s]", obj:name())
@@ -217,7 +228,8 @@ function actor_binder:use_inventory_item(obj)
       		alife():create("ied_blow",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
     		end
 
-		-- ponney68 Combat Rations		
+    	-- ponney68 Multi usage items
+		-- Combat Rations		
 		-- ration_ukr x6
 		if(s_obj)and(s_obj:section_name()=="ration_ukr")then
       		alife():create("ration_ukr2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -260,6 +272,243 @@ function actor_binder:use_inventory_item(obj)
 		if(s_obj)and(s_obj:section_name()=="mre2")then
       		alife():create("mre3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
     		end
+
+		-- IMPORTED DRINK
+		-- vodka x3
+		if(s_obj)and(s_obj:section_name()=="vodka")then
+      		alife():create("vodka_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="vodka_2")then
+      		alife():create("vodka_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- vodka2 x3
+		if(s_obj)and(s_obj:section_name()=="vodka2")then
+      		alife():create("vodka2_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="vodka2_2")then
+      		alife():create("vodka2_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- vodka_quality x3
+		if(s_obj)and(s_obj:section_name()=="vodka_quality")then
+      		alife():create("vodka_quality2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="vodka_quality2")then
+      		alife():create("vodka_quality3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- mineral_water x3
+		if(s_obj)and(s_obj:section_name()=="mineral_water")then
+      		alife():create("mineral_water2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="mineral_water2")then
+      		alife():create("mineral_water3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+
+		-- ZONE-PRODUCED DRINK
+		-- bottle_metal x3
+		if(s_obj)and(s_obj:section_name()=="bottle_metal")then
+      		alife():create("bottle_metal2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="bottle_metal2")then
+      		alife():create("bottle_metal3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- tea x3
+		if(s_obj)and(s_obj:section_name()=="tea")then
+      		alife():create("tea2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="tea2")then
+      		alife():create("tea3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- flask x3
+		if(s_obj)and(s_obj:section_name()=="flask")then
+      		alife():create("flask2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="flask2")then
+      		alife():create("flask3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+
+		-- ZONE-PRODUCED SMOKES
+		-- marijuana x3
+		if(s_obj)and(s_obj:section_name()=="marijuana")then
+      		alife():create("marijuana2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="marijuana2")then
+      		alife():create("marijuana3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+
+		-- IMPORTED SMOKES
+		-- cigarettes x4
+		if(s_obj)and(s_obj:section_name()=="cigarettes")then
+      		alife():create("cigarettes2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cigarettes2")then
+      		alife():create("cigarettes3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cigarettes3")then
+      		alife():create("cigarettes4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- cigar1 x3
+		if(s_obj)and(s_obj:section_name()=="cigar1")then
+      		alife():create("cigar1_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cigar1_2")then
+      		alife():create("cigar1_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- cigar2 x3
+		if(s_obj)and(s_obj:section_name()=="cigar2")then
+      		alife():create("cigar2_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cigar2_2")then
+      		alife():create("cigar2_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- cigar3 x3
+		if(s_obj)and(s_obj:section_name()=="cigar3")then
+      		alife():create("cigar3_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cigar3_2")then
+      		alife():create("cigar3_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- tobacco x5
+		if(s_obj)and(s_obj:section_name()=="tobacco")then
+      		alife():create("tobacco2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="tobacco2")then
+      		alife():create("tobacco3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="tobacco3")then
+      		alife():create("tobacco4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="tobacco4")then
+      		alife():create("tobacco5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- hand_rolling_tobacco x5
+		if(s_obj)and(s_obj:section_name()=="hand_rolling_tobacco")then
+      		alife():create("hand_rolling_tobacco2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="hand_rolling_tobacco2")then
+      		alife():create("hand_rolling_tobacco3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="hand_rolling_tobacco3")then
+      		alife():create("hand_rolling_tobacco4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="hand_rolling_tobacco4")then
+      		alife():create("hand_rolling_tobacco5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- cigarettes_lucky x4
+		if(s_obj)and(s_obj:section_name()=="cigarettes_lucky")then
+      		alife():create("cigarettes_lucky2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cigarettes_lucky2")then
+      		alife():create("cigarettes_lucky3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cigarettes_lucky3")then
+      		alife():create("cigarettes_lucky4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- cigarettes_russian x3
+		if(s_obj)and(s_obj:section_name()=="cigarettes_russian")then
+      		alife():create("cigarettes_russian2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cigarettes_russian2")then
+      		alife():create("cigarettes_russian3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+
+		-- MEDICAL ITEMS
+		-- caffeine x5
+		if(s_obj)and(s_obj:section_name()=="caffeine")then
+      		alife():create("caffeine2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="caffeine2")then
+      		alife():create("caffeine3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="caffeine3")then
+      		alife():create("caffeine4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="caffeine4")then
+      		alife():create("caffeine5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- cocaine x3
+		if(s_obj)and(s_obj:section_name()=="cocaine")then
+      		alife():create("cocaine2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="cocaine2")then
+      		alife():create("cocaine3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		
+		-- DRUGS
+		-- drug_sleepingpills x5
+		if(s_obj)and(s_obj:section_name()=="drug_sleepingpills")then
+      		alife():create("drug_sleepingpills2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_sleepingpills2")then
+      		alife():create("drug_sleepingpills3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_sleepingpills3")then
+      		alife():create("drug_sleepingpills4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_sleepingpills4")then
+      		alife():create("drug_sleepingpills5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- drug_coagulant x5
+		if(s_obj)and(s_obj:section_name()=="drug_coagulant")then
+      		alife():create("drug_coagulant2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_coagulant2")then
+      		alife():create("drug_coagulant3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_coagulant3")then
+      		alife():create("drug_coagulant4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_coagulant4")then
+      		alife():create("drug_coagulant5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- drug_psy_blockade x5
+		if(s_obj)and(s_obj:section_name()=="drug_psy_blockade")then
+      		alife():create("drug_psy_blockade2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_psy_blockade2")then
+      		alife():create("drug_psy_blockade3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_psy_blockade3")then
+      		alife():create("drug_psy_blockade4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_psy_blockade4")then
+      		alife():create("drug_psy_blockade5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- drug_antidot x3
+		if(s_obj)and(s_obj:section_name()=="drug_antidot")then
+      		alife():create("drug_antidot2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="drug_antidot2")then
+      		alife():create("drug_antidot3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- drug_radioprotector x2
+		if(s_obj)and(s_obj:section_name()=="drug_radioprotector")then
+      		alife():create("drug_radioprotector2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		-- akvatab x4
+		if(s_obj)and(s_obj:section_name()=="akvatab")then
+      		alife():create("akvatab2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="akvatab2")then
+      		alife():create("akvatab3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="akvatab3")then
+      		alife():create("akvatab4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+
+		-- IMPORTED FOOD
+		-- mint x5
+		if(s_obj)and(s_obj:section_name()=="mint")then
+      		alife():create("mint2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="mint2")then
+      		alife():create("mint3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="mint3")then
+      		alife():create("mint4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
+		if(s_obj)and(s_obj:section_name()=="mint4")then
+      		alife():create("mint5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+    		end
 		-- End ponney68 
 	end
 end
@@ -294,7 +543,8 @@ function anabiotic_callback()
 end
 
 function anabiotic_callback2()
-	xr_effects.enable_ui(db.actor, nil)
+	xr_effects.enable_ui_lite(db.actor, nil)
+	xr_effects.enable_nv_and_imput(db.actor, nil)
     get_console():execute("snd_volume_music "..tostring(_G.mus_vol))
 	get_console():execute("snd_volume_eff "..tostring(_G.amb_vol))
 	_G.amb_vol = 0
@@ -338,7 +588,8 @@ function actor_binder:update(delta)
 	--slowdown.update()
 	local time = time_global()
 	game_stats.update (delta, self.object)
-	postproces_mod.wounded_pp_update()
+	-- This function is already accounted for in actor_effects.script. Having the same effect in two functions screws with class bonuses like the Assaulter's Strong Grip. Naughty naughty.
+	-- postproces_mod.wounded_pp_update()
 	-- апдейт погоды
 	self.weather_manager:update()
 

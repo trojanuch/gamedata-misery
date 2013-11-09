@@ -3,13 +3,23 @@ enable = true  									;Enables a memory system that keeps track of how long en
 combat_during_surge = false						; When disabled NPCs will ignore enemies during surge until cover is reached.
 time_safe = 30000 ; 60000								;Amount of time before safe zone flag wears off when an NPC leaves a no combat smart
 
+[ghillie_inertion] ;Reduced inertion Value for if a Ghillie Suit is being Worn
+stalker = 	{=is_dark_night} 90000, 75000
+bandit = 	{=is_dark_night} 90000, 75000
+dolg = 		{=is_dark_night} 105000, 90000
+freedom =	{=is_dark_night} 105000, 90000
+ecolog = 	{=is_dark_night} 90000, 90000
+killer = 	{=is_dark_night} 135000, {=is_dark_night !npc_in_zone(;zat_b40)} 22500, {=npc_in_zone(;zat_b40)} 25000, 105000
+army =		{=is_dark_night} 135000, 105000
+monolith =	{=is_dark_night} 135000, 105000
+
 [combat_inertion]; Time in which a NPC engages combat long after losing sight or sound on an enemy
 stalker = 	{=is_dark_night} 180000, 150000
 bandit = 	{=is_dark_night} 180000, 150000
 dolg = 		{=is_dark_night} 210000, 180000
 freedom =	{=is_dark_night} 210000, 180000
 ecolog = 	{=is_dark_night} 180000, 180000
-killer = 	{=is_dark_night} 270000, {=is_dark_night !npc_in_zone(;zat_b40)} 45000, {=npc_in_zone(;zat_b40)} 50000, 210000
+killer = 	{=is_dark_night} 270000, {=is_dark_night !npc_in_zone(zat_b40)} 330000, {=npc_in_zone(zat_b40)} 260000, 210000
 army =		{=is_dark_night} 270000, 210000
 monolith =	{=is_dark_night} 270000, 210000
 

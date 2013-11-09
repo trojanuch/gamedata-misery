@@ -56,8 +56,8 @@
 		<class>jup_a12_stalker_diplomat</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
-		<rank>65</rank>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<rank>30</rank>
 		<reputation>0</reputation>
 		<money min="1000"  max="5000"  infinitive="0"/>
 		<visual>actors\stalker_neutral\stalker_neutral_4</visual>
@@ -225,8 +225,8 @@
 		<class>jup_a12_merc_cover</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
-		<rank>65</rank>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<rank>60</rank>
 		<reputation>0</reputation>
 		<money min="1000"  max="5000"  infinitive="0"/>
 		<visual>actors\stalker_neutral\stalker_neutral2b_mask</visual>
@@ -299,7 +299,6 @@
     <supplies>
 
 	  [spawn] \n
-      jup_b207_merc_pda_with_contract = 1 \n
 
 #include "gameplay\character_items_nd.xml"
 #include "gameplay\character_items_4_merc.xml"
@@ -319,7 +318,7 @@
 
     <class>jup_b207_duty_security_squad_leader</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>65</rank>
     <reputation>0</reputation>
@@ -495,7 +494,7 @@
 		<class>jup_b4_monolith_squad_leader_monolith_skin</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
 		<rank>100</rank>
 		<reputation>0</reputation>
@@ -708,7 +707,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<specific_character id="jup_b4_monolith_squad_soldier_1_duty_skin" team_default="1">
@@ -721,7 +719,7 @@
 		<class>jup_b4_monolith_squad_soldier_1_duty_skin</class>
 		<community>dolg</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\dolg\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>70</rank>
 		<reputation>0</reputation>
@@ -740,7 +738,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
   <specific_character id="jup_b4_monolith_squad_soldier_1_freedom_skin" team_default = "1">
@@ -751,7 +748,7 @@
 
     <class>jup_b4_monolith_squad_soldier_1_freedom_skin</class>
     <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\freedom\</snd_config>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
 
     <rank>70</rank>
     <reputation>0</reputation>
@@ -770,7 +767,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<specific_character id="jup_b4_monolith_squad_soldier_2_monolith_skin" team_default="1">
@@ -783,7 +779,7 @@
 		<class>jup_b4_monolith_squad_soldier_2_monolith_skin</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<snd_config>characters_voice\human_03\monolith\</snd_config>
 
 		<rank>35</rank>
 		<reputation>0</reputation>
@@ -802,7 +798,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<specific_character id="jup_b4_monolith_squad_soldier_2_duty_skin" team_default="1">
@@ -815,7 +810,7 @@
 		<class>jup_b4_monolith_squad_soldier_2_duty_skin</class>
 		<community>dolg</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\dolg\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>55</rank>
 		<reputation>0</reputation>
@@ -834,7 +829,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
   <specific_character id="jup_b4_monolith_squad_soldier_2_freedom_skin" team_default = "1">
@@ -845,7 +839,7 @@
 
     <class>jup_b4_monolith_squad_soldier_2_freedom_skin</class>
     <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\freedom\</snd_config>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
 
     <rank>55</rank>
     <reputation>0</reputation>
@@ -864,7 +858,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<specific_character id="jup_b4_monolith_squad_soldier_3_monolith_skin" team_default="1">
@@ -896,7 +889,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<specific_character id="jup_b4_monolith_squad_soldier_3_duty_skin" team_default="1">
@@ -909,7 +901,7 @@
 		<class>jup_b4_monolith_squad_soldier_3_duty_skin</class>
 		<community>dolg</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>55</rank>
 		<reputation>0</reputation>
@@ -928,7 +920,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
   <specific_character id="jup_b4_monolith_squad_soldier_3_freedom_skin" team_default = "1">
@@ -939,7 +930,7 @@
 
     <class>jup_b4_monolith_squad_soldier_3_freedom_skin</class>
     <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\freedom\</snd_config>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
 
     <rank>55</rank>
     <reputation>0</reputation>
@@ -958,7 +949,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<specific_character id="jup_b4_monolith_squad_soldier_4_monolith_skin" team_default="1">
@@ -1003,7 +993,7 @@
 		<class>jup_b4_monolith_squad_soldier_4_duty_skin</class>
 		<community>dolg</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
 		<rank>45</rank>
 		<reputation>0</reputation>
@@ -1023,7 +1013,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
   <specific_character id="jup_b4_monolith_squad_soldier_4_freedom_skin" team_default = "1">
@@ -1034,7 +1023,7 @@
 
     <class>jup_b4_monolith_squad_soldier_4_freedom_skin</class>
     <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\freedom\</snd_config>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
 
     <rank>45</rank>
     <reputation>0</reputation>
@@ -1054,7 +1043,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<specific_character id="jup_b4_monolith_squad_soldier_5_monolith_skin" team_default="1">
@@ -1087,7 +1075,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<specific_character id="jup_b4_monolith_squad_soldier_5_duty_skin" team_default="1">
@@ -1100,7 +1087,7 @@
 		<class>jup_b4_monolith_squad_soldier_5_duty_skin</class>
 		<community>dolg</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
 		<rank>40</rank>
 		<reputation>0</reputation>
@@ -1120,7 +1107,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
   <specific_character id="jup_b4_monolith_squad_soldier_5_freedom_skin" team_default = "1">
@@ -1131,7 +1117,7 @@
 
     <class>jup_b4_monolith_squad_soldier_5_freedom_skin</class>
     <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\freedom\</snd_config>
+    <snd_config>characters_voice\human_03\stalker\</snd_config>
 
     <rank>40</rank>
     <reputation>0</reputation>
@@ -1151,7 +1137,6 @@
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
   <specific_character id="jup_b4_freedom_help" team_default = "1">
@@ -1162,7 +1147,7 @@
 
     <class>jup_b4_freedom_help</class>
     <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\freedom\</snd_config>
+    <snd_config>characters_voice\human_02\freedom\</snd_config>
 
     <rank>35</rank>
     <reputation>0</reputation>
@@ -1192,7 +1177,7 @@
 
     <class>jup_b4_duty_help</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>35</rank>
     <reputation>0</reputation>
@@ -1290,7 +1275,7 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b6_scientist_biochemist</class>
-		<community>stalker</community>
+		<community>ecolog</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
@@ -1340,7 +1325,7 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b6_scientist_nuclear_physicist</class>
-		<community>stalker</community>
+		<community>ecolog</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
@@ -1363,13 +1348,15 @@
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_b32_scanner_placed</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_b32_artefact_spawn</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_results</actor_dialog>
-        <actor_dialog>jup_b6_scientist_nuclear_physicist_bubble</actor_dialog>
+        <actor_dialog>jup_b6_scientist_nuclear_physicist_bubble</actor_dialog>	
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_jupiter_products</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_jupiter_docs</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_guards</actor_dialog>
+        <actor_dialog>jup_b6_scientist_nuclear_physicist_guards_2</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_found_guards</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_gauss_rifle_docs</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_jupiter_products_info</actor_dialog>
+        <actor_dialog>jup_b6_scientist_nuclear_physicist_about_compass</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_about_halfartefact_zat_b14</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_about_mercs</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_about_scientists</actor_dialog>
@@ -1439,8 +1426,12 @@
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
     </supplies>
+
+<start_dialog>jup_senya_drunk_dialog</start_dialog>
+<actor_dialog>jup_senya_bio_dialog</actor_dialog>
+<actor_dialog>actor_break_dialog</actor_dialog>
+
 #include "gameplay\character_criticals_4.xml"
-#include "gameplay\character_dialogs.xml"
   </specific_character>
 
 	<!-- Мертвый Сенька Пьяница  -->
@@ -1494,6 +1485,7 @@
 
 		<start_dialog>jup_b217_stalker_tech_start</start_dialog>
 
+                <actor_dialog>jup_azot_about_gauss_dialog</actor_dialog>
 		<actor_dialog>jup_b217_stalker_tech_blackbox</actor_dialog>
 		<actor_dialog>jup_b217_stalker_tech_main_info</actor_dialog>
 		<actor_dialog>jup_b217_stalker_tech_minor_info</actor_dialog>
@@ -1585,12 +1577,12 @@
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b6_scientist_tech</class>
-		<community>stalker</community>
+		<community>ecolog</community>
 		<mechanic_mode>1</mechanic_mode>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
-		<rank>95</rank>
+		<rank>0</rank>
 		<reputation>0</reputation>
 		<money min="10000" max="10000" infinitive="0" />
 		<visual>actors\stalker_nebo\stalker_nebo_2_face_1</visual>
@@ -1602,10 +1594,11 @@
 
 		<start_dialog>jup_b6_scientist_medic_start</start_dialog>
 
+                <actor_dialog>jup_novikov_about_gauss_dialog</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_soldier_outfit</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_b1_psi_emission_dialog</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_b32_give_scanner</actor_dialog>
-		<actor_dialog>jup_b6_scientist_medic_aproach</actor_dialog>
+		<actor_dialog>jup_b6_scientist_medic_aproach</actor_dialog> 
 		<actor_dialog>jup_b6_scientist_medic_ufo_memory_repair</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_ufo_memory_repaired</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_zat_b30_actor_bring_detectors</actor_dialog>
@@ -1613,7 +1606,7 @@
 		<actor_dialog>jup_b6_scientist_tech_b33_about_snags_container</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_blackbox</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_csky_outfit</actor_dialog>
-		<actor_dialog>jup_b6_scientist_tech_about_new_upgrade</actor_dialog>
+		<actor_dialog>jup_b6_scientist_tech_about_new_upgrade</actor_dialog> 
 		<actor_dialog>jup_b6_scientist_tech_about_mercs</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_about_scientists</actor_dialog>
 
@@ -1632,7 +1625,7 @@
 		<class>jup_b1_stalker_1</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
 		<rank>50</rank>
 		<reputation>0</reputation>
@@ -1659,11 +1652,10 @@
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_start_miss</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
 		<actor_dialog>jup_b47_ask_topol_about_guard</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
-		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>
-		<actor_dialog>dm_universal_dialog</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>		
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
@@ -1683,7 +1675,7 @@
 		<class>jup_b1_stalker_2</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>50</rank>
 		<reputation>0</reputation>
@@ -1701,6 +1693,7 @@
 #include "gameplay\character_drugs_sci.xml"
     </supplies>
 
+                <start_dialog>jup_bulava_hello_dialog</start_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_ab_tu_2</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_2</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
@@ -1743,6 +1736,7 @@
 #include "gameplay\character_drugs_sci.xml"
     </supplies>
 
+                <start_dialog>jup_dux_hello_dialog</start_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_ab_tu_3</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_3</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
@@ -1767,7 +1761,7 @@
 		<class>jup_b1_stalker_4</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>40</rank>
 		<reputation>0</reputation>
@@ -1784,6 +1778,7 @@
 #include "gameplay\character_drugs_sci.xml"
     </supplies>
 
+                <start_dialog>jup_zmey_hello_dialog</start_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_ab_tu_4</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_4</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
@@ -1800,20 +1795,20 @@
 
 	<specific_character id="jup_b1_pro_stalker_1" team_default = "1">
 		<name>jup_b1_stalker_1</name>
-		<icon>ui_inGame2_neutral_4</icon>
+		<icon>ui_inGame2_ecolog_military</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b1_pro_stalker_1</class>
-		<community>stalker</community>
+		<community>ecolog</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>75</rank>
 		<reputation>0</reputation>
 
-		<visual>actors\stalker_neutral\stalker_neutral_4</visual>
+		<visual>actors\stalker_soldier\stalker_ecolog_military</visual>
 		<supplies>
       [spawn] \n
 	  detector_scientific \n
@@ -1830,8 +1825,7 @@
 		<actor_dialog>jup_b1_stalker_squad_thanks</actor_dialog>
 		<actor_dialog>jup_b1_stalker_lead_info</actor_dialog>
 		<actor_dialog>jup_b47_ask_topol_about_guard</actor_dialog>
-		<actor_dialog>dm_universal_dialog</actor_dialog>
-		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>
+		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>		
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -1841,20 +1835,20 @@
 
 	<specific_character id="jup_b1_pro_stalker_2" team_default = "1">
 		<name>jup_b1_stalker_2</name>
-		<icon>ui_inGame2_soldier_4</icon>
+		<icon>ui_inGame2_ecolog_military</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b1_pro_stalker_2</class>
-		<community>stalker</community>
+		<community>ecolog</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>60</rank>
 		<reputation>0</reputation>
 
-		<visual>actors\stalker_soldier\stalker_soldier_4</visual>
+		<visual>actors\stalker_soldier\stalker_ecolog_military</visual>
 		<supplies>
 
       [spawn] \n
@@ -1875,20 +1869,20 @@
 
 	<specific_character id="jup_b1_pro_stalker_3" team_default = "1">
 		<name>jup_b1_stalker_3</name>
-		<icon>ui_inGame2_neutral_nauchniy</icon>
+		<icon>ui_inGame2_ecolog_military</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b1_pro_stalker_3</class>
-		<community>stalker</community>
+		<community>ecolog</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>55</rank>
 		<reputation>0</reputation>
 
-		<visual>actors\stalker_neutral\stalker_neutral_nauchniy</visual>
+		<visual>actors\stalker_soldier\stalker_ecolog_military</visual>
 		<supplies>
 
       [spawn] \n
@@ -1909,20 +1903,20 @@
 
 	<specific_character id="jup_b1_pro_stalker_4" team_default = "1">
 		<name>jup_b1_stalker_4</name>
-		<icon>ui_inGame2_soldier_3</icon>
+		<icon>ui_inGame2_ecolog_military</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>jup_b1_pro_stalker_4</class>
-		<community>stalker</community>
+		<community>ecolog</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>50</rank>
 		<reputation>0</reputation>
 
-		<visual>actors\stalker_soldier\stalker_soldier_3</visual>
+		<visual>actors\stalker_soldier\stalker_ecolog_military</visual>
 		<supplies>
 
       [spawn] \n
@@ -1989,7 +1983,7 @@
 		<class>jup_b6_stalker_diplomat</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
 		<rank>50</rank>
 		<reputation>0</reputation>
 		<money min="1000"  max="5000"  infinitive="0"/>
@@ -2027,7 +2021,7 @@
 		<class>jup_b6_stalker_prisoner</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
 		<rank>30</rank>
 		<reputation>0</reputation>
 		<money min="0"  max="0"  infinitive="0"/>
@@ -2064,8 +2058,8 @@
 		<class>jup_b6_stalker_gonta</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
-		<rank>35</rank>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<rank>50</rank>
 		<reputation>0</reputation>
 		<money min="1000" max="1000" infinitive="0" />
 		<visual>actors\stalker_neutral\stalker_neutral_2_face_6</visual>
@@ -2181,7 +2175,7 @@
 
     <class>jup_b6_freedom_stalker_1</class>
     <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\freedom\</snd_config>
+    <snd_config>characters_voice\human_02\freedom\</snd_config>
 
     <rank>50</rank>
     <reputation>0</reputation>
@@ -2317,7 +2311,7 @@
 
     <class>jup_b6_duty_stalker_1</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>55</rank>
     <reputation>0</reputation>
@@ -2351,7 +2345,7 @@
 
     <class>jup_b6_duty_stalker_2</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>45</rank>
     <reputation>0</reputation>
@@ -2384,7 +2378,7 @@
 
     <class>jup_b6_duty_stalker_3</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>45</rank>
     <reputation>0</reputation>
@@ -2418,7 +2412,7 @@
 
     <class>jup_b6_duty_stalker_4</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>45</rank>
     <reputation>0</reputation>
@@ -2490,7 +2484,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
-		<rank>35</rank>
+		<rank>0</rank>
 		<reputation>0</reputation>
 		<money min="500" max="1000" infinitive="0"/>
 		<visual>actors\stalker_freedom\stalker_freedom_1_face_1</visual>
@@ -2546,6 +2540,7 @@
     </supplies>
 
 		<start_dialog>jup_a6_stalker_medik_start_dialog</start_dialog>
+                <actor_dialog>jup_kostoprav_bio_dialog</actor_dialog>
 		<actor_dialog>jup_a6_stalker_medik_pripyat_group</actor_dialog>
 		<actor_dialog>jup_a6_stalker_medik_tech_b202_about_stole</actor_dialog>
 		<actor_dialog>jup_a6_stalker_medik_duty_founder_pda</actor_dialog>
@@ -2593,7 +2588,9 @@
     </supplies>
 
 		<start_dialog>jup_b15_zulus_about_dialog</start_dialog>
-
+                <actor_dialog>jup_zulus_bio_1_dialog</actor_dialog>
+                <actor_dialog>jup_zulus_bio_2_dialog</actor_dialog>
+                <actor_dialog>jup_zulus_about_noah_dialog</actor_dialog>
 		<actor_dialog>jup_b15_zulus_go_to_pripyat</actor_dialog>
 		<actor_dialog>jup_b15_zulus_group_fighters</actor_dialog>
 		<actor_dialog>jup_b15_zulus_tech_b202_about_stole</actor_dialog>
@@ -2669,6 +2666,9 @@
     </supplies>
 
 		<start_dialog>jup_a6_stalker_barmen_start_dialog</start_dialog>
+                <actor_dialog>jup_gavaets_bio_dialog</actor_dialog>
+                <actor_dialog>jup_gavaets_about_vano_1_dialog</actor_dialog>
+                <actor_dialog>jup_gavaets_about_vano_2_dialog</actor_dialog>
 		<actor_dialog>jup_a6_stalker_barmen_pripyat_group</actor_dialog>
 		<actor_dialog>jup_a6_stalker_barmen_b4_monolith_squad_dialog</actor_dialog>
 		<actor_dialog>jup_a6_stalker_barmen_b202_about_stole</actor_dialog>
@@ -2760,11 +2760,11 @@
 		<actor_dialog>jup_b19_freedom_yar_come_with_me</actor_dialog>
 
 		<actor_dialog>jup_b19_freedom_yar_pripyat_about</actor_dialog>
-		<actor_dialog>jup_b19_freedom_yar_pripyat_healing</actor_dialog>
+		<!-- actor_dialog>jup_b19_freedom_yar_pripyat_healing</actor_dialog -->
 
 		<actor_dialog>jup_b19_freedom_yar_break_dialog</actor_dialog>
 
-		<!--<actor_dialog>actor_break_dialog</actor_dialog>-->
+		<!-- actor_dialog>actor_break_dialog</actor_dialog -->
 
 #include "gameplay\character_criticals_4.xml"
   </specific_character>
@@ -2947,8 +2947,10 @@
 		<start_dialog>jup_b43_stalker_assistant_bunker_start</start_dialog>
 
 		<actor_dialog>jup_b43_stalker_assistant_guide_leave_zone</actor_dialog>
+                <actor_dialog>pri_garik_to_zaton_dialog</actor_dialog>
+                <actor_dialog>jup_garik_to_zaton_dialog</actor_dialog>
 		<actor_dialog>jup_b43_stalker_assistant_guide_to_pripyat</actor_dialog>
-		<actor_dialog>jup_b43_stalker_assistant_guide_to_zaton</actor_dialog>
+                <!-- actor_dialog>jup_b43_stalker_assistant_guide_to_zaton</actor_dialog -->
 		<actor_dialog>jup_b43_stalker_assistant_guide_to_jupiter</actor_dialog>
 		<actor_dialog>jup_b43_stalker_assistant_bunker_boredom</actor_dialog>
 		<actor_dialog>jup_b43_stalker_assistant_bunker_contract</actor_dialog>
@@ -2973,7 +2975,7 @@
 
     <class>jup_b46_duty_founder</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>100</rank>
     <reputation>0</reputation>
@@ -2981,9 +2983,7 @@
     <visual>actors\stalker_dolg\stalker_dolg4c</visual>
     <supplies>
       [spawn] \n
-	  jup_b46_duty_founder_pda \n
-
-#include "gameplay\character_items_4_duty.xml"
+	  jup_b46_duty_founder_pda \n		
     </supplies>
   </specific_character>
 
@@ -2997,16 +2997,12 @@
 
     <class>jup_b46_duty_founder_squad_01</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="100" max="3000" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolg_3</visual>
-	<supplies>
-      [spawn] \n
-#include "gameplay\character_items_4_duty.xml"
-    </supplies>
   </specific_character>
 
   <specific_character id="jup_b46_duty_founder_squad_02" team_default = "1">
@@ -3017,16 +3013,13 @@
 
     <class>jup_b46_duty_founder_squad_02</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="100" max="3000" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolg2a</visual>
-	<supplies>
-      [spawn] \n
-#include "gameplay\character_items_4_duty.xml"
-    </supplies>
+
   </specific_character>
 
   <specific_character id="jup_b46_duty_founder_squad_03" team_default = "1">
@@ -3034,19 +3027,15 @@
     <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
-
+ 
     <class>jup_b46_duty_founder_squad_03</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="100" max="3000" infinitive="0"/>
     <visual>actors\stalker_dolg\stalker_dolg_3</visual>
-	<supplies>
-      [spawn] \n
-#include "gameplay\character_items_4_duty.xml"
-    </supplies>
   </specific_character>
 
   <specific_character id="jup_b46_duty_founder_squad_04" team_default = "1">
@@ -3057,7 +3046,7 @@
 
     <class>jup_b46_duty_founder_squad_04</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\dolg\</snd_config>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
 
     <rank>50</rank>
     <reputation>0</reputation>

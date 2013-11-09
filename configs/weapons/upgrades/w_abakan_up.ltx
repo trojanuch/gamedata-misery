@@ -4,13 +4,13 @@
 cost		      		= 3250
 value                   = -10
 
-cam_dispersion              = -0.07     ;0.5
-cam_dispersion_inc          = -0.03     ;0.5
-cam_step_angle_horz         = -0.07     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.08
+cam_dispersion_inc          = -0.045
+cam_step_angle_horz         = -0.05
 
-zoom_cam_dispersion         = -0.09     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.045        ;0.5
-zoom_cam_step_angle_horz    = -0.09     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.06
+zoom_cam_dispersion_inc     = -0.03
+zoom_cam_step_angle_horz    = -0.05
 
 [up_sect_firstc_abakan]
 ;Надежность(2)15%
@@ -19,11 +19,11 @@ cost		      		= 3050
 value					= +15
 
 ;fire_dispersion_condition_factor    = -1 ;15
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
 
-condition_queue_shot_dec	= -0.0001 ;0.0013
-condition_shot_dec      	= -0.0001 ;0.0011
 misfire_start_prob	     	= -0.0015
-misfire_end_prob	     	= -0.03 ;0.03
+misfire_end_prob	     	= -0.03
 
 [up_sect_firste_abakan]
 ;Скорострельность(3)25%
@@ -31,10 +31,9 @@ misfire_end_prob	     	= -0.03 ;0.03
 cost		      		= 3800
 value					= +5
 
-rpm                     = +30 ;650
+rpm                     = +30
 
-inv_weight              	= +0.25
-
+inv_weight              	= +0.1
 
 [up_sect_firstf_abakan]
 ;Отдача(3)-30%
@@ -42,13 +41,14 @@ inv_weight              	= +0.25
 cost		      		= 3600
 value                   = -30
 
-cam_dispersion              = -0.3      ;0.1
-cam_dispersion_inc          = -0.1      ;0.6
-cam_step_angle_horz         = -0.15     ;0.6
+cam_dispersion              = -0.24
+cam_dispersion_inc          = -0.12
+cam_step_angle_horz         = -0.15
 
-zoom_cam_dispersion          = -0.27    ;0.1
-zoom_cam_dispersion_inc      = -0.11    ;0.5
-zoom_cam_step_angle_horz     = -0.16    ;0.5
+zoom_cam_dispersion          = -0.18
+zoom_cam_dispersion_inc      = -0.09
+zoom_cam_step_angle_horz     = -0.15
+
 inv_weight              	= +0.15
 
 [up_sect_secona_abakan]
@@ -56,7 +56,9 @@ inv_weight              	= +0.15
 ;------------------
 cost		      		= 2700
 value					= +10
-bullet_speed			= +100 	;550 
+
+bullet_speed			= +90
+fire_dispersion_base    		= -0.005
 
 inv_weight              	= +0.2
 
@@ -66,7 +68,7 @@ inv_weight              	= +0.2
 cost		      		= 2850
 value					= +5
 
-fire_dispersion_base    		= -0.025 ;0.07
+fire_dispersion_base    		= -0.013
 ;fire_dispersion_condition_factor 	= -1 ;15
 
 [up_sect_second_abakan]
@@ -75,9 +77,9 @@ fire_dispersion_base    		= -0.025 ;0.07
 cost		      		= 3450
 value					= +5
 
-rpm                     = +30 ;650
+rpm                     = +30
 
-inv_weight              	= +0.15
+inv_weight              	= +0.1
 
 [up_sect_secone_abakan]
 ;Настильность(3)10%
@@ -85,10 +87,10 @@ inv_weight              	= +0.15
 cost		      		= 3300
 value					= +10
 
-bullet_speed			= +100 ;550
-fire_dispersion_base    = -0.025
+bullet_speed			= +90
+fire_dispersion_base    = -0.01
 
-inv_weight              	= +0.25
+inv_weight              	= +0.2
 
 [up_sect_thirda_abakan]
 ;Надежность(1)10%
@@ -97,8 +99,11 @@ cost		      		= 2700
 value					= +10
 
 ;fire_dispersion_condition_factor    = -1 ;15
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
+
 misfire_start_prob	     	= -0.0015
-misfire_end_prob	     	= -0.015 ;0.03
+misfire_end_prob	     	= -0.015
 
 inv_weight              	= +0.2
 
@@ -107,8 +112,9 @@ inv_weight              	= +0.2
 ;------------------
 cost		      		= 3450
 value					= +10
-bullet_speed			= +100 ;550
-fire_dispersion_base    = -0.02
+
+bullet_speed			= +90
+fire_dispersion_base    = -0.01
 
 inv_weight              	= +0.15
 
@@ -118,22 +124,22 @@ inv_weight              	= +0.15
 cost	      	     	= 3740
 value                   = -20
 
-cam_dispersion              = -0.16     ;0.1
-cam_dispersion_inc          = -0.07     ;0.6
-cam_step_angle_horz         = -0.11     ;0.6
+cam_dispersion              = -0.16
+cam_dispersion_inc          = -0.08
+cam_step_angle_horz         = -0.1
 
-zoom_cam_dispersion          = -0.18    ;0.1
-zoom_cam_dispersion_inc      = -0.08    ;0.5
-zoom_cam_step_angle_horz     = -0.13    ;0.5
+zoom_cam_dispersion          = -0.12
+zoom_cam_dispersion_inc      = -0.06
+zoom_cam_step_angle_horz     = -0.1
 
-inv_weight              	= +0.25
+inv_weight              	= +0.2
 
 [up_sect_thirde_abakan]
-;Точность(3)30%
+;Точность(3)15%
 cost		      		= 3820
-value					= +10
+value					= +15
 
-fire_dispersion_base    = -0.02 ;0.07
+fire_dispersion_base    = -0.04
 ;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight              	= +0.15
@@ -155,26 +161,32 @@ cost		      		= 3250
 value					= +15
 
 crosshair_inertion		   = -0.5
-fire_dispersion_base    = -0.025 		;0.07
-;fire_dispersion_condition_factor    = -1 	;15
+
+PDM_disp_base 				= -0.1
+PDM_disp_vel_factor 		= -0.2
+PDM_disp_accel_factor 		= -0.2
 	
 inv_weight              	= +0.1
 
 [up_sect_fourte_abakan]
-;Удобство(3)25%
+;Удобство(3)20%
 ;--------------
 cost		      		= 4950
-value					= +9
+value					= +20
  
 crosshair_inertion		   = -0.7
- 
-cam_dispersion              = -0.32		;0.1
-cam_dispersion_inc         	= -0.04		;0.6
-cam_step_angle_horz        	= -0.08		;0.6
 
-zoom_cam_dispersion          = -0.21	;0.1
-zoom_cam_dispersion_inc      = -0.03	;0.5
-zoom_cam_step_angle_horz     = -0.052	;0.5
+PDM_disp_base 				= -0.1
+PDM_disp_vel_factor 		= -0.2
+PDM_disp_accel_factor 		= -0.2
+
+cam_dispersion              = -0.05
+cam_dispersion_inc          = -0.03
+cam_step_angle_horz         = -0.05
+
+zoom_cam_dispersion         = -0.03
+zoom_cam_dispersion_inc     = -0.02
+zoom_cam_step_angle_horz    = -0.05
 
 inv_weight              	= +0.25
 
@@ -183,8 +195,9 @@ inv_weight              	= +0.25
 ;------------------
 cost		      		= 4800
 value					= +10
-bullet_speed			= +90 ;550
-fire_dispersion_base    = -0.02
+
+bullet_speed			= +90
+fire_dispersion_base    = -0.01
 
 inv_weight              	= +0.1
 
@@ -193,6 +206,7 @@ inv_weight              	= +0.1
 ;------------------
 cost		      		= 5120
 ;value					= +30
+
 grenade_launcher_status    = 2
 grenade_launcher_name   = wpn_addon_grenade_launcher
 grenade_launcher_x      = 126

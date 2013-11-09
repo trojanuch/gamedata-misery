@@ -85,10 +85,10 @@ local medic_items_table = {
 									["stimpack"] 		= 2,
 									["antirad"] 	= 1,
 									["bandage"] 	= 2,
-									["drug_coagulant"] 		= 1,
-									["drug_radioprotector"]	= 1,
+									["drug_coagulant5"] 		= 1,
+									["drug_radioprotector2"]	= 1,
 									["salicidic_acid"]	= 1,
-									["marijuana"]	= 1,
+									["marijuana3"]	= 1,
 									["ration_ukr6"]	= 1
 									},
 
@@ -99,12 +99,12 @@ local medic_items_table = {
 									["stimpack_army"] 		= 1,
 									["antirad"] 			= 2,
 									["bandage"] 			= 3,
-									["drug_coagulant"] 		= 1,
-									["drug_radioprotector"]	= 1,
-									["drug_antidot"] 		= 1,
-									["drug_psy_blockade"]	= 1,
+									["drug_coagulant5"] 		= 1,
+									["drug_radioprotector2"]	= 1,
+									["drug_antidot3"] 		= 1,
+									["drug_psy_blockade5"]	= 1,
 									["salicidic_acid"]	= 2,
-									["marijuana"]	= 1,
+									["marijuana3"]	= 1,
 									["ration_ukr6"]	= 1
 									},
 
@@ -117,14 +117,14 @@ local medic_items_table = {
 									["stimpack_scientic"] 	= 1,
 									["antirad"] 			= 2,
 									["bandage"] 			= 4,
-									["drug_coagulant"] 		= 2,
-									["drug_radioprotector"]	= 1,
-									["drug_antidot"] 		= 2,
-									["drug_psy_blockade"]	= 2,
+									["drug_coagulant4"] 		= 1,
+									["drug_radioprotector2"]	= 1,
+									["drug_antidot2"] 		= 1,
+									["drug_psy_blockade4"]	= 1,
 									["salicidic_acid"]	= 1,
 									["morphine"]	= 1,
 									["adrenalin"]	= 1,
-									["marijuana"]	= 2,
+									["marijuana2"]	= 1,
 									["ration_ukr5"]	= 1
 									},
 					}
@@ -175,19 +175,12 @@ function pri_a22_army_signaller_supply(first_speaker, second_speaker)
 end
 
 function pri_a22_give_actor_outfit (first_speaker, second_speaker)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "stimpack_army")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "stimpack_army")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit_army")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit_army")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "stimpack_army", 2)
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit_army", 2)	
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage", 3)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_coagulant")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_coagulant5")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade3")
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "morphine")
 end
 

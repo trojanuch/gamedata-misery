@@ -1,8 +1,56 @@
+[up_sect_firsta_aek973]
+;Отдача(1)-10%
+;------------
+cost		      		= 3480
+value                   = -10
+
+cam_dispersion              = -0.09
+cam_dispersion_inc          = -0.07
+cam_step_angle_horz         = -0.05
+
+zoom_cam_dispersion         = -0.06
+zoom_cam_dispersion_inc     = -0.06
+zoom_cam_step_angle_horz    = -0.05
+
+inv_weight			= +0.25
+
+[up_sect_firstf_aek973]
+;Отдача(3)-30%
+;------------
+cost		      		= 3920
+value                   = -30
+
+cam_dispersion              = -0.25
+cam_dispersion_inc          = -0.21
+cam_step_angle_horz         = -0.1
+
+zoom_cam_dispersion         = -0.17
+zoom_cam_dispersion_inc     = -0.18
+zoom_cam_step_angle_horz    = -0.1
+
+inv_weight			= +0.24
+
+[up_sect_thirdd_aek973]
+;Отдача(2)-20%
+;------------
+cost		      		= 4680
+value                   = -20
+
+cam_dispersion              = -0.16
+cam_dispersion_inc          = -0.14
+cam_step_angle_horz         = -0.1
+
+zoom_cam_dispersion         = -0.11
+zoom_cam_dispersion_inc     = -0.12
+zoom_cam_step_angle_horz    = -0.1
+
+inv_weight			= +0.2
+
 [up_firsta_aek973]
 scheme_index            = 0, 0
 known                   = 1
 effects                 = up_gr_firstcd_aek973
-section                 = up_sect_firsta_ak74
+section                 = up_sect_firsta_aek973
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -66,7 +114,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_3
 scheme_index            = 2, 1
 known                   = 1
 effects                 = 
-section                 = up_sect_firstf_ak74
+section                 = up_sect_firstf_aek973
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -210,7 +258,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_10
 scheme_index            = 1, 4
 known                   = 1
 effects                 = up_gr_thirdef_aek973
-section                 = up_sect_thirdd_ak74
+section                 = up_sect_thirdd_aek973
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

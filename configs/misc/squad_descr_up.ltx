@@ -1,0 +1,49 @@
+;--------------------------------------------------------------------------------
+;-- Copyright: 2010-2012 SWM Team -----------------------------------------------
+;-- Author: Jurok ---------------------------------------------------------------
+;--------------------------------------------------------------------------------
+
+;--------------------------------------------------------------------------------
+;-- Zaton
+;--------------------------------------------------------------------------------
+[zat_simulation_bloodsucker]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_weak
+npc_in_squad = 1, 1
+
+[zat_simulation_bloodsucker_marsh]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_normal
+npc_in_squad = 1, 1
+
+;--------------------------------------------------------------------------------
+;-- Jupiter
+;--------------------------------------------------------------------------------
+[jup_simulation_bloodsucker]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_weak
+npc_in_squad = 1, 1
+
+[jup_simulation_bloodsucker_marsh]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_normal
+npc_in_squad = 1, 1
+
+;--------------------------------------------------------------------------------
+;-- Pripyat
+;--------------------------------------------------------------------------------
+[pri_simulation_bloodsucker]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_weak, bloodsucker_strong, bloodsucker_strong
+npc_in_squad = 1, 2
+
+
+[pri_simulation_stalker_veteran]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_3, sim_default_stalker_3, sim_default_stalker_4
+npc_in_squad = 2, 3
+
+[pri_simulation_stalker_master]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_3, sim_default_stalker_4, sim_default_stalker_4
+npc_in_squad = 2, 3

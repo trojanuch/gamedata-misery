@@ -100,6 +100,12 @@ function options_dialog:SetCurrentValues()
 	opt:SetCurrentValues("mm_opt_gameplay")
 	opt:SaveBackupValues("mm_opt_gameplay")
 
+	opt:SetCurrentValues("mm_opt_video_adv_dx10_1")
+	opt:SaveBackupValues("mm_opt_video_adv_dx10_1")
+
+	opt:SetCurrentValues("mm_opt_video_adv_ssao")
+	opt:SaveBackupValues("mm_opt_video_adv_ssao")
+
 	opt:SetCurrentValues("mm_opt_sound")
 	opt:SaveBackupValues("mm_opt_sound")
 
@@ -110,7 +116,7 @@ function options_dialog:SetCurrentValues()
 	opt:SaveBackupValues("key_binding")
 
 	self:UpdateDependControls()
-
+	self:Update_dx10_1()
 	if (alife() ~= nil) then
 		local tabs = {"none", "storyonly", "all"}
 		if db.cc_npc == nil then closecaption.read_cc_ini() end
@@ -166,7 +172,40 @@ end
 	end
 
 	self.texture_lod_track:SetOptIBounds(min_texture_lod, max_texture_lod)
-if self.game_version ~= 1600 then self:OnAOOptionChange() end
+	if self.game_version ~= 1600 then 
+		self:OnAOOptionChange() 
+		self:OnSunOptionChange()
+	end
+	
+end
+
+function options_dialog:check_dx10_1()
+	
+
+end
+
+function options_dialog:Update_dx10_1()
+	local _r3_use_dx10_1_enabled	= self.chk_r3_use_dx10_1:GetCheck()
+	local ResetValue = false
+	local _id = 2
+
+	if _r3_use_dx10_1_enabled then
+		self.r3_msaa_alphatest:enable_id(_id)
+	else
+		ResetValue = (self.r3_msaa_alphatest:CurrentID()==_id)
+		
+		self.r3_msaa_alphatest:disable_id(_id)
+	end
+
+	self.r3_msaa_alphatest:SetCurrentOptValue()
+
+	if ResetValue then
+		local opt = COptionsManager()
+		local console = get_console()
+		opt:SaveValues("mm_opt_video_adv_dx10_1")
+		self.r3_msaa_alphatest:SetCurrentOptValue()
+	end
+
 end
 
 function options_dialog:InitCallBacks()
@@ -188,6 +227,7 @@ if self.game_version ~= 1600 then
 if self.game_version >= 1602 then
 	self:AddCallback("mb",					ui_events.MESSAGE_BOX_YES_CLICKED, self.OnApplyChanges, self)
 	self:AddCallback("mb",					ui_events.MESSAGE_BOX_NO_CLICKED, self.OnDiscardChanges,self)
+	self:AddCallback("check_r3_use_dx10_1",	ui_events.BUTTON_CLICKED,	self.Update_dx10_1,			self)
 end
 else	-- v1.6.00
 	self:AddCallback("trb_ssample",			ui_events.BUTTON_CLICKED,	self.UpdateDependControls,	self)
@@ -212,6 +252,8 @@ end
 function options_dialog:OnPresetChanged()
 	local opt					= COptionsManager()
 	opt:SetCurrentValues		("mm_opt_video_adv")
+	opt:SetCurrentValues		("mm_opt_video_adv_dx10_1")
+	opt:SetCurrentValues		("mm_opt_video_adv_ssao")
 end
 
 
@@ -236,6 +278,8 @@ function options_dialog:OnBtnAccept()
 	opt:SaveValues("key_binding")
 	opt:SaveValues("mm_opt_video")
 	opt:SaveValues("mm_opt_video_adv")
+	opt:SaveValues("mm_opt_video_adv_dx10_1")
+	opt:SaveValues("mm_opt_video_adv_ssao")
 	opt:SaveValues("mm_opt_gameplay")
 	opt:SaveValues("mm_opt_sound")
 	opt:SaveValues("mm_opt_controls")
@@ -305,6 +349,8 @@ function options_dialog:OnBtnCancel()
 	opt:UndoGroup			("mm_opt_video_preset")
 	opt:UndoGroup			("mm_opt_video")
 	opt:UndoGroup			("mm_opt_video_adv")
+	opt:UndoGroup			("mm_opt_video_adv_dx10_1")
+	opt:UndoGroup			("mm_opt_video_adv_ssao")
 	opt:UndoGroup			("mm_opt_sound")
 	opt:OptionsPostAccept	()
 
@@ -336,12 +382,32 @@ end
 function options_dialog:OnAOOptionChange()
 	local ao_opt_id = self.tab_ao_opt:GetActiveId()
 	local render_id = self.combo_renderer:CurrentID()
+	local ResetValue10 = false
+	local _id = 4
 	if(render_id>=4) and (ao_opt_id=="hdao") then
 		self.combo_ssao:enable_id(4)
 	else
+		ResetValue10 = (self.combo_ssao:CurrentID()==_id)
 		self.combo_ssao:disable_id(4)
 	end
 	self.combo_ssao:SetCurrentOptValue()
+	
+	if ResetValue10 then
+		local opt = COptionsManager()
+		local console = get_console()
+		opt:SaveValues("mm_opt_video_adv_ssao")
+		self.combo_ssao:SetCurrentOptValue()
+	end
+end
+
+function options_dialog:OnSunOptionChange()
+	local render_id = self.combo_renderer:CurrentID()
+	if(render_id==5) then
+		self.list_r2_sun_quality:enable_id(4)
+	else
+		self.list_r2_sun_quality:disable_id(4)
+	end
+	self.list_r2_sun_quality:SetCurrentOptValue()
 end
 
 function options_dialog:OnBtnAdvGraphic()

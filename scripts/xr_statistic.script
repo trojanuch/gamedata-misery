@@ -472,7 +472,7 @@ function research_man_functor()
 end
 
 function friend_of_duty_functor()
-	if not has_alife_info("sim_duty_help_harder") and not has_alife_info ("sim_freedom_help_harder") then
+	if not has_alife_info("sim_duty_help_harder") and not has_alife_info ("sim_freedom_help_harder") and not has_alife_info("balance_advocate_gained") then
 		if has_alife_info("jup_b4_monolith_squad_in_duty")
 				or has_alife_info("jup_b207_duty_knows_about_depot")
 --				and has_alife_info("jup_b25_flint_blame_done_to_duty")
@@ -485,7 +485,7 @@ function friend_of_duty_functor()
 end
 
 function friend_of_freedom_functor()
-	if not has_alife_info("sim_freedom_help_harder") and not has_alife_info ("sim_duty_help_harder") then
+	if not has_alife_info("sim_freedom_help_harder") and not has_alife_info ("sim_duty_help_harder") and not has_alife_info("balance_advocate_gained") then
 		if has_alife_info("jup_b4_monolith_squad_in_freedom")
 				or has_alife_info("jup_b207_freedom_knows_about_depot")
 --				and has_alife_info("jup_b25_flint_blame_done_to_freedom")
@@ -498,8 +498,8 @@ function friend_of_freedom_functor()
 end
 
 function balance_advocate_functor()
-	if not has_alife_info("balance_advocate_gained") then
-		if has_alife_info("jup_b46_duty_founder_pda_to_owl")
+	if not has_alife_info("balance_advocate_gained") and not has_alife_info("sim_freedom_help_harder") and not has_alife_info("sim_duty_help_harder") then
+		if has_alife_info("jup_b46_duty_founder_pda_to_stalkers")
 				and has_alife_info("jup_b207_dealers_pda_sold_owl")
 				and has_alife_info("zat_b106_found_soroka_done") then
 			db.actor:give_info_portion("balance_advocate_gained")

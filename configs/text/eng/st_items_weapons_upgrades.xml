@@ -253,8 +253,7 @@
 		<text>Ceramic layer on plates</text>
 	</string>
 	<string id="st_up_arm_c7_descr">
-		<text>Carbon fiber is one of the
- most durable and wear-resistant materials and are even used in aviation construction.</text>
+		<text>Carbon fiber is one of the most durable and wear-resistant materials and are even used in aviation construction.</text>
 	</string>
 	<string id="st_up_arm_c8_descr">
 		<text>Combined multi-layered polymer and ceramic coating.</text>
@@ -482,10 +481,7 @@
 		<text>Installation of a stopping device</text>
 	</string>
 	<string id="st_up_bar_a1_descr">
-		<text>Replacement of
-
- a regular barrel
- with a longer one improves accuracy and flatness.</text>
+		<text>Replacement of a regular barrel with a longer one improves accuracy and flatness.</text>
 	</string>
 	<string id="st_up_bar_a1_name">
 		<text>Longer barrel</text>
@@ -713,9 +709,7 @@
 		<text>Addition of hydraulic boosters into drive devices</text>
 	</string>
 	<string id="st_up_kom_a1_descr">
-		<text>A fabric insert prevents soft tissue
- damage in the event
- of impact against the plate.</text>
+		<text>A fabric insert prevents soft tissue damage in the event of impact against the plate.</text>
 	</string>
 	<string id="st_up_kom_a1_name">
 		<text>Amortization fabric layer</text>
@@ -901,13 +895,13 @@
 		<text>Mounting of an optical scope for long range combat.</text>
 	</string>
 	<string id="st_up_opt_a3_name">
-		<text>5.0x optical scope</text>
+		<text>8.0x PSO-3 optical scope</text>
 	</string>
 	<string id="st_up_opt_a4_descr">
 		<text>Mounting of an optical scope for long range combat.</text>
 	</string>
 	<string id="st_up_opt_a4_name">
-		<text>6.0x optical scope</text>
+		<text>15.0x optical scope</text>
 	</string>
 	<string id="st_up_opt_b1_descr">
 		<text>A modification made to assault weapons with reflex sights by means of a simple improvement in sight contrast in the yellow range. Important for combat in twilight conditions and dim buildings.</text>
@@ -922,7 +916,7 @@
 		<text>Automatic optical target acquisition</text>
 	</string>
 	<string id="st_up_opt_c2_descr">
-		<text>Night vision devices have saved many a sniper since their inception.</text>
+		<text>Night vision devices have saved many a sniper since their inception. Adds weight 0.27 kg.</text>
 	</string>
 	<string id="st_up_opt_c2_name">
 		<text>Night vision device installation</text>
@@ -934,16 +928,16 @@
 		<text>Adjustable range-finder sight</text>
 	</string>
 	<string id="st_up_opt_binoc1_descr">
-		<text>Contrast-enhancing filters integration into the binoculars lens for improved visibility in urban areas and twilight lighting conditions.</text>
+		<text>Contrast-enhancing filters integrated into the binocular lens for improved visibility in urban areas and low-lighting conditions.</text>
 	</string>
 	<string id="st_up_opt_binoc1_name">
 		<text>Contrast-enhancing sight overlay</text>
 	</string>
 	<string id="st_up_opt_binoc2_descr">
-		<text>Replacement of binocular lens with better zooming ones. Sigh magnification improved to 5.0x</text>
+		<text>Replacement of binocular lens for better zooming. Sight magnification improved to 5.0x</text>
 	</string>
 	<string id="st_up_opt_binoc2_name">
-		<text>5.0x zoom increas</text>
+		<text>15x zoom increase</text>
 	</string>
 	<string id="st_up_opt_binoc3_descr">
 		<text>Replacement of optical apparatus of binoculars to allow adjustable zoom. Slight increase in weight due to installation of more complex mechanism.</text>
@@ -952,18 +946,16 @@
 		<text>Adjustable zoom lens</text>
 	</string>
 	<string id="st_up_stk_binoc1_descr">
-		<text>Replacement of metalized grip with a polymer version, resulting in significant reduction of weight.</text>
+		<text>Replacement of metalized grip with polymer counterpart, resulting in significant reduction of weight.</text>
 	</string>
 	<string id="st_up_stk_binoc1_name">
 		<text>Polymer grip</text>
 	</string>
 	<string id="st_up_stk_binoc2_descr">
-		<text>Replacement of binocular frame with an aluminium one. Lowers equipment's weight and thus significantly boosts convenience of use.</text>
+		<text>Replacement of binocular frame with aluminium counterpart. Lowers weight, significantly increasing convenience of use.</text>
 	</string>
 	<string id="st_up_stk_binoc2_name">
-		<text>Aluminium
-
- frame</text>
+		<text>Aluminium frame</text>
 	</string>
 	<string id="st_up_stk_binoc3_descr">
 		<text>Replacement of moving parts with titanium counterparts. Lowers weight and increases functionality.</text>
@@ -1131,7 +1123,7 @@
 		<text>Reinforced respirator for extreme conditions</text>
 	</string>
 	<string id="st_up_resp_a1_descr">
-		<text>Standard-issue 1PN93-1 Russian Military Forces night vision device. This modified version can be mounted on a combat helmet. Offers generation 2+ image intensification, especially useful for operations at night or in low light conditions. After removing the battery compartment and replacing it with UPD input, total weight was reduced to bearable ~1,5 kg. Purchased and delivered as a complete set, it also features a mounting interface, which enables to install better devices in the future. Depletes UPD at a high rate.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
+		<text>Standard-issue 1PN93-1 Russian Military Forces night-vision device. This modified version can be mounted on a combat helmet. Offers generation 2+ image intensification, especially useful for operations at night or in low-light conditions. After removing the battery compartment and replacing it with UPD input, total weight was reduced to bearable ~1,5 kg. Purchased and delivered as a complete set, it also features a mounting interface, which enables to install better devices in the future. Depletes UPD at a high rate.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
 	</string>
 	<string id="st_up_resp_a1_name">
 		<text>1PN93-1 night vision device</text>
@@ -1146,7 +1138,7 @@
 		<text>Steam purification & respiration mask</text>
 	</string>
 	<string id="st_up_resp_b1_descr">
-		<text>Modern-day, IIT generation 3 PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. Head-mounted, greatly enhances vision in complete darkness. It features advanced image processing software which displays images in shades of grey. Requires base mounting grid to be installed. With weight of about 270 grams, it is significantly lighter than other helmets. Can be upgraded with better lens and more sophisticated image-processing software by means of an upgrade kit.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
+		<text>Modern-day, IIT generation PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. Head-mounted, greatly enhances vision in low-light conditions. Features advanced image-processing software which displays images in shades of grey. Requires base mounting grid to be installed. With weight of about 270 grams, it is significantly lighter than other helmets. Can be upgraded with better lenses and more sophisticated image-processing software by means of an upgrade kit.\n \n%c[0,153,255,255] • %c[default] high UPD consumption</text>
 	</string>
 	<string id="st_up_resp_b1_name">
 		<text>PN21KL night vision device</text>
@@ -1164,10 +1156,10 @@
 		<text>Oracle psy-stimulator</text>
 	</string>
 	<string id="st_up_resp_c1_descr">
-		<text>Lenses and image processing software update removes video noise and enhances image intensifying capabilities of PN21K unit, thus making it a full-fledged IIT generation 3+ night vision device. Does not affect the weight of helmet or UPD depletion rate.</text>
+		<text>Update of lenses and image-processing software removes video noise and enhances image-intensifying capabilities of PN21K unit, thus making it a full-fledged IIT generation 3+ night vision device. Does not affect the weight of helmet or UPD depletion rate.</text>
 	</string>
 	<string id="st_up_resp_c1_name">
-		<text>Improved lenses and image processing software update for PN21K night vision device</text>
+		<text>Improved lenses and image-processing software update for PN21K night-vision device</text>
 	</string>
 	<string id="st_up_resp_c2_descr">
 		<text>Ionized air particles move between the system's electrodes in reverse to the movement of electrons using electricity, creating an ion wind.</text>
@@ -1176,15 +1168,13 @@
 		<text>Ion Wind cooling system</text>
 	</string>
 	<string id="st_up_resp_c3_descr">
-		<text>An
- infrared scanner allows for detection of nearby humans.</text>
+		<text>An infrared scanner allows for detection of nearby humans.</text>
 	</string>
 	<string id="st_up_resp_c3_name">
 		<text>Infrared scanner</text>
 	</string>
 	<string id="st_up_resp_c4_descr">
-		<text>SPB - VPZ.m.IV
- Psychological Security Wave Psy Protection System, mark four.</text>
+		<text>SPB - VPZ.m.IV Psychological Security Wave Psy Protection System, mark four.</text>
 	</string>
 	<string id="st_up_resp_c4_name">
 		<text>SPB - VPZ.m.IV combat system</text>
@@ -1426,13 +1416,11 @@
 	<string id="st_up_stvp_b5_descr">
 		<text>A change in the rear section makes for a more ergonomic handle shape.</text>
 	</string>
-	<string
- id="st_up_stvp_b5_name">
+	<string id="st_up_stvp_b5_name">
 		<text>Changing handle shape with a straight rear section</text>
 	</string>
 	<string id="st_up_stvp_b6_descr">
-		<text>The possibility of choosing a suitable
- handle length makes for a more ergonomic handle shape.</text>
+		<text>The possibility of choosing a suitable handle length makes for a more ergonomic handle shape.</text>
 	</string>
 	<string id="st_up_stvp_b6_name">
 		<text>Adjustable handle</text>
@@ -1892,13 +1880,11 @@
 	<string id="st_up_zatp_b5_descr">
 		<text>A heavier and closed bolt prevents the pistol's bolt section from malfunctioning.</text>
 	</string>
-	<string
- id="st_up_zatp_b5_name">
+	<string id="st_up_zatp_b5_name">
 		<text>Reinforced and fully closed bolt</text>
 	</string>
 	<string id="st_up_zatp_b6_descr">
-		<text>A small buffer that takes on some of
- the recoil.</text>
+		<text>A small buffer that takes on some of the recoil.</text>
 	</string>
 	<string id="st_up_zatp_b6_name">
 		<text>Polymer recoil buffer</text>
@@ -2051,7 +2037,7 @@
 		<text>3-round burst mode</text>
 	</string>
 	<string id="st_prop_artefact">
-		<text>Number of armour attachment modules</text>
+		<text>Number of armor attachment modules</text>
 	</string>
 	<string id="st_upgr_vodka">
 		<text>the technician needs vodka</text>
@@ -2078,10 +2064,10 @@
 		<text>corrosion prevents modifications above basic level</text>
 	</string>
 	<string id="st_upgr_standard_profile">
-		<text>modernized weapon required to perform modification</text>
+		<text>modernized weapon profile required to perform modification</text>
 	</string>
 	<string id="st_upgr_no_reason">
-		<text>item design does not allow this modification to be installed</text>
+		<text>modification impossible for this item</text>
 	</string>
 	<string id="st_up_arm_c9_name">
 		<text>Armadillo protective coating based on sapphire crystals</text>

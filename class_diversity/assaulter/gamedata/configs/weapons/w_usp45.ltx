@@ -17,18 +17,18 @@ control_inertion_factor = 1.0 ; = 1.0
 
 ;-------------------------------------------------------------------------------
 cost					= 9860         ; the price of the item
-inv_weight				= 0.726
+inv_weight				= 0.714
 
 upgrades                = up_gr_firstab_usp, up_gr_seconab_usp, up_gr_thirdab_usp, up_gr_fourtab_usp, up_gr_fifthab_usp
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_usp
 
 ;----TTX--------------------------------------------------------------------------
-hit_power           		= 0.404, 0.404, 0.404, 0.404
+hit_power           		= 0.405, 0.405, 0.405, 0.405
 hit_impulse	 		 		= 40
 hit_type 					= fire_wound
-fire_distance           	= 624
-bullet_speed		 		= 649
+fire_distance           	= 200
+bullet_speed		 		= 260
 rpm                     	= 200
 rpm_empty_click 	 		= 250
 
@@ -42,11 +42,11 @@ misfire_start_condition		= 0.86
 misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.0076
 misfire_end_prob = 0.11 ;	     	= 0.078
-condition_shot_dec      	= 0.0017
-condition_queue_shot_dec	= 0.0016
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0014
 
-ammo_elapsed		 	= 12
-ammo_mag_size		 	= 12         ; clip (magazine) size
+ammo_elapsed		 	= 8
+ammo_mag_size		 	= 8         ; clip (magazine) size
 fire_modes		  = 1;, -1
 ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
 grenade_class     = ammo_vog-25         ; name of the ltx-section of used grenades
@@ -61,15 +61,16 @@ reload_dof						= 0.0, 0.5, 5, 1.7
 
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.56 ;0.7 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.04 ; = 0.86
+fire_dispersion_base	= 0.5 ;0.7 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.04f
 crosshair_inertion   	= 4.3
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
+cam_return = 0 ;				= 0
 cam_relax_speed         = 7				;скорость возврата в исходное положение
-cam_dispersion          = 1.6				;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 1.6				;увеличениe cam_dispersion с каждым выстрелом
+cam_relax_speed_ai      = 360
+cam_dispersion          = 1.5				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.5				;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac		= 1.1				;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle			= 10.0			;максимальный угол отдачи
 cam_max_angle_horz		= 10.0			;(degree) maximum shot horizontal degree
@@ -172,7 +173,7 @@ scope_name              = wpn_addon_scope       ; section name for the attachabl
 scope_x              	= 47                 ; offset in inventory icon
 scope_y                 = 0
 silencer_name  				= wpn_addon_silencer_1143x23		; section name for the attachable silencer
-silencer_x 						= 48						; offset in inventory icon
+silencer_x 						= 52						; offset in inventory icon
 silencer_y 						= -15
 grenade_launcher_name   = wpn_addon_grenade_launcher; section name for the attachable grenade launcher
 grenade_launcher_x      = 126                ; offset in inventory icon
@@ -269,7 +270,7 @@ inv_name				= st_wpn_usp_nimble
 description					= st_wpn_usp_nimble_descr
 
 cost					= 13930
-inv_weight				= 0.716
+inv_weight				= 0.7
 
 inv_grid_width			= 2	 
 inv_grid_height			= 1	  
@@ -283,8 +284,8 @@ installed_upgrades      = up_secona_usp_custom, up_second_usp_custom, up_secone_
 hit_power           		= 0.448, 0.448, 0.448, 0.448
 hit_impulse	 		 		= 40
 hit_type 					= fire_wound
-fire_distance           	= 668
-bullet_speed		 		= 687
+fire_distance           	= 200
+bullet_speed		 		= 270
 rpm                     	= 234
 rpm_empty_click 	 		= 200
 
@@ -294,14 +295,14 @@ misfire_start_condition		= 0.82
 misfire_end_condition		= 0.09
 misfire_start_prob = 0.007 ;	     	= 0.0066
 misfire_end_prob = 0.11 ;	     	= 0.072
-condition_shot_dec      	= 0.0014
+condition_shot_dec      	= 0.0012
 condition_queue_shot_dec	= 0.0012
 
 fire_dispersion_base	= 0.43
 
 visual             	= dynamics\weapons\wpn_usp46\wpn_usp46.ogf
 
-silencer_x 						= 51						
+silencer_x 						= 52
 silencer_y 						= -15
 
 [wpn_usp46_hud]:hud_base
@@ -379,15 +380,15 @@ ammo_class		 		= ammo_11.43x23_ap, ammo_11.43x23_hydro, ammo_11.43x23_fmj
 [wpn_usp_custom]:wpn_usp
 
 cost					= 12320
-inv_weight				= 0.702
+inv_weight				= 0.705
 
 upgrades                = up_gr_firstab_usp_custom, up_gr_seconab_usp_custom, up_gr_thirdab_usp_custom, up_gr_fourtab_usp_custom, up_gr_fifthab_usp_custom
 installed_upgrades      = up_fiftha_usp_custom, up_firsta_usp_custom, up_firstd_usp_custom
 
-hit_power           		= 0.427, 0.427, 0.427, 0.427
+hit_power           		= 0.425, 0.425, 0.425, 0.425
 hit_impulse	 		 		= 40
-fire_distance           	= 658
-bullet_speed		 		= 652
+fire_distance           	= 200
+bullet_speed		 		= 264
 rpm                     	= 200
 
 hud                     	= wpn_usp_custom_hud
@@ -396,12 +397,8 @@ misfire_start_condition		= 0.83
 misfire_end_condition		= 0.10
 misfire_start_prob = 0.007 ;	     	= 0.0071
 misfire_end_prob = 0.11 ;	     	= 0.067
-condition_shot_dec      	= 0.0016
-condition_queue_shot_dec	= 0.0014
-
-ammo_mag_size		 	= 12 
-fire_modes		  = 1
-ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+condition_shot_dec      	= 0.00125
+condition_queue_shot_dec	= 0.00125
 
 fire_dispersion_base	= 0.47
 
@@ -424,16 +421,16 @@ item_visual             	= dynamics\weapons\wpn_usp45\wpn_usp4a_hud.ogf
 [wpn_usp_alt1]:wpn_usp
 
 cost					= 10980
-inv_weight				= 0.769
+inv_weight				= 0.73
 
 upgrades                = up_gr_firstab_usp_alt, up_gr_seconab_usp_alt, up_gr_thirdab_usp_alt, up_gr_fourtab_usp_alt, up_gr_fifthab_usp_alt
 installed_upgrades      = up_thirda_usp_alt
 
 hit_power           		= 0.408, 0.408, 0.408, 0.408
 hit_impulse	 		 		= 40
-fire_distance           	= 628
-bullet_speed		 		= 651
-rpm                     	= 200
+fire_distance           	= 200
+bullet_speed		 		= 261
+rpm                     	= 210
 
 hud                     	= wpn_usp_alt1_hud
 
@@ -441,14 +438,10 @@ misfire_start_condition		= 0.89
 misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.0081
 misfire_end_prob = 0.11 ;	     	= 0.086
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0017
+condition_shot_dec      	= 0.0014
+condition_queue_shot_dec	= 0.0014
 
-ammo_mag_size		 	= 12 
-fire_modes		  = 1
-ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
-
-fire_dispersion_base	= 0.52
+fire_dispersion_base	= 0.49
 
 inv_name          = st_wpn_usp_alt             ; name in inventory
 inv_name_short    = st_wpn_usp_alt
@@ -469,14 +462,14 @@ item_visual             	= dynamics\weapons\wpn_usp45\wpn_usp4b_hud.ogf
 [wpn_usp_alt2]:wpn_usp
 
 cost					= 8760
-inv_weight				= 0.703
+inv_weight				= 0.712
 
 upgrades                = up_gr_firstab_usp_alt, up_gr_seconab_usp_alt, up_gr_thirdab_usp_alt, up_gr_fourtab_usp_alt, up_gr_fifthab_usp_alt
 
-hit_power           		= 0.382, 0.382, 0.382, 0.382
+hit_power           		= 0.392, 0.392, 0.392, 0.392
 hit_impulse	 		 		= 40
-fire_distance           	= 612
-bullet_speed		 		= 623
+fire_distance           	= 200
+bullet_speed		 		= 256
 rpm                     	= 204
 
 hud                     	= wpn_usp_alt2_hud
@@ -485,14 +478,10 @@ misfire_start_condition		= 0.88
 misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.0079
 misfire_end_prob = 0.11 ;	     	= 0.080
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0018
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
 
-ammo_mag_size		 	= 12 
-fire_modes		  = 1
-ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
-
-fire_dispersion_base	= 0.54
+fire_dispersion_base	= 0.5
 
 inv_name          = st_wpn_usp_alt               ; name in inventory
 inv_name_short    = st_wpn_usp_alt
@@ -513,15 +502,15 @@ item_visual             	= dynamics\weapons\wpn_usp45\wpn_usp4c_hud.ogf
 [wpn_usp_worn]:wpn_usp
 
 cost					= 5330
-inv_weight				= 0.801
+inv_weight				= 0.72
 
 upgrades                = up_gr_firstab_usp_worn, up_gr_seconab_usp_worn, up_gr_thirdab_usp_worn, up_gr_fourtab_usp_worn, up_gr_fifthab_usp_worn
 
 hit_power           		= 0.352, 0.352, 0.352, 0.352
 hit_impulse	 		 		= 40
-fire_distance           	= 593
-bullet_speed		 		= 616
-rpm                     	= 184
+fire_distance           	= 180
+bullet_speed		 		= 240
+rpm                     	= 185
 
 hud                     	= wpn_usp_worn_hud
 
@@ -529,16 +518,12 @@ misfire_start_condition		= 0.8
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.0055
 misfire_end_prob = 0.11 ;	     	= 0.055
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0018
+condition_shot_dec      	= 0.0019
+condition_queue_shot_dec	= 0.0019
 
 silencer_status         = 0
 
-ammo_mag_size		 	= 12 
-fire_modes		  = 1
-ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
-
-fire_dispersion_base	= 0.55
+fire_dispersion_base	= 0.595
 
 inv_name          = st_wpn_usp_worn              ; name in inventory
 inv_name_short    = st_wpn_usp_worn

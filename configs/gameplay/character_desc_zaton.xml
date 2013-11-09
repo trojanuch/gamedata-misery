@@ -49,8 +49,8 @@
 		<class>zat_b106_stalker_gonta</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
-		<rank>80</rank>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<rank>50</rank>
 		<reputation>0</reputation>
 		<money min="1000" max="1000" infinitive="0" />
 		<visual>actors\stalker_neutral\stalker_neutral_2_face_6</visual>
@@ -170,8 +170,8 @@
 		<class>zat_b14_stalker_1</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_03\stalker\</snd_config>
-		<rank>40</rank>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<rank>25</rank>
 		<reputation>0</reputation>
 		<money min="330" max="1980" infinitive="0" />
 		<visual>actors\stalker_bandit\stalker_bandit_0</visual>
@@ -185,6 +185,7 @@
 #include "gameplay\character_drugs_neutral_2.xml"
     </supplies>
 
+        <start_dialog>zat_b14_stalker_hello_dialog</start_dialog>
 		<actor_dialog>zat_b14_stalker_at_bar_start</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
@@ -389,8 +390,8 @@
 		<class>zat_b7_duty_illicit_dealer</class>
 		<community>dolg</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\dolg\</snd_config>
-		<rank>35</rank>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<rank>60</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_dolg\stalker_dolg3b</visual>
 		<supplies>
@@ -409,6 +410,7 @@
 	</supplies>
 #include "gameplay\character_criticals_4.xml"
 
+                <start_dialog>jup_morgan_start_dialog</start_dialog>
 		<actor_dialog>zat_b7_duty_illicit_dealer_b207_blackmail</actor_dialog>
 		<actor_dialog>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda</actor_dialog>
 		<actor_dialog>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda_2</actor_dialog>
@@ -727,7 +729,7 @@
 		<class>zat_b5_stalker_commander</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
 		<rank>35</rank>
 		<reputation>0</reputation>
@@ -764,7 +766,7 @@
 		<class>zat_b5_stalker_commander_b7</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
 		<rank>55</rank>
 		<reputation>0</reputation>
@@ -865,7 +867,7 @@
 		<class>zat_b5_stalker_3</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>25</rank>
 		<reputation>0</reputation>
@@ -897,7 +899,7 @@
 		<class>zat_b5_stalker_4</class>
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
 		<rank>25</rank>
 		<reputation>0</reputation>
@@ -1049,7 +1051,8 @@
 		<actor_dialog>zat_b3_stalker_tech_produce_62_end</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_return_access_card</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_produce_62_repair_gauss</actor_dialog>
-		<actor_dialog>zat_b3_stalker_tech_produce_62_make_battery</actor_dialog>
+		<actor_dialog>zat_tech_about_battery_dialog</actor_dialog>
+                <!-- actor_dialog>zat_b3_stalker_tech_produce_62_make_battery</actor_dialog -->
 		<actor_dialog>zat_b3_tech_buddies_about</actor_dialog>
 		<actor_dialog>zat_b3_tech_buddies_apologies_both</actor_dialog>
 		<actor_dialog>zat_b3_tech_buddies_apologies_joker</actor_dialog>
@@ -1061,9 +1064,12 @@
 		<actor_dialog>zat_b3_stalker_mechanic_b207_about_dealer_pda</actor_dialog>
 		<actor_dialog>zat_b3_stalker_mechanic_electro_toolkit_dialog</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_instruments</actor_dialog>
-		<actor_dialog>zat_b3_stalker_tech_drink_1</actor_dialog>
-		<actor_dialog>zat_b3_stalker_tech_drink_2</actor_dialog>
-		<actor_dialog>zat_b3_stalker_tech_drink_3</actor_dialog>
+		<!-- actor_dialog>zat_b3_stalker_tech_drink_1</actor_dialog -->
+		<!-- actor_dialog>zat_b3_stalker_tech_drink_2</actor_dialog -->
+		<!-- actor_dialog>zat_b3_stalker_tech_drink_3</actor_dialog -->
+                <actor_dialog>zat_tech_drink_dialog_1</actor_dialog>
+		<actor_dialog>zat_tech_drink_dialog_2</actor_dialog>
+		<actor_dialog>zat_tech_drink_dialog_3</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
@@ -1339,7 +1345,7 @@
 
 	<specific_character id="zat_b7_stalker_raider_1" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_bandit_3</icon>
+		<icon>ui_inGame2_neutral_2</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1347,13 +1353,13 @@
 		<class>zat_b7_stalker_raider_1</class>
     	<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-    	<snd_config>characters_voice\human_02\stalker\</snd_config>
+    	<snd_config>characters_voice\human_03\stalker\</snd_config>
 
     	<rank>45</rank>
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
-    	<visual>actors\stalker_bandit\stalker_bandit_3</visual>
+    	<visual>actors\stalker_neutral\stalker_neutral_2</visual>
    		<supplies>
       	[spawn] \n
 
@@ -1364,13 +1370,15 @@
 #include "gameplay\character_drugs_bandit_2.xml"
 
    	 </supplies>
+<start_dialog>zat_raider_hello_1_dialog</start_dialog>
+
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"
  	 </specific_character>
 
 	<specific_character id="zat_b7_stalker_raider_2" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_bandit_2</icon>
+		<icon>ui_inGame2_neutral_2</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1378,13 +1386,13 @@
 		<class>zat_b7_stalker_raider_2</class>
     	<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-    	<snd_config>characters_voice\human_02\stalker\</snd_config>
+    	<snd_config>characters_voice\human_03\stalker\</snd_config>
 
     	<rank>30</rank>
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
-    	<visual>actors\stalker_bandit\stalker_bandit_2</visual>
+    	<visual>actors\stalker_neutral\stalker_neutral_3</visual>
    		<supplies>
       	[spawn] \n
 
@@ -1395,6 +1403,8 @@
 #include "gameplay\character_drugs_bandit_2.xml"
 
    	 </supplies>
+<start_dialog>zat_raider_hello_2_dialog</start_dialog>
+
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"
  	 </specific_character>
@@ -1402,7 +1412,7 @@
 
 	<specific_character id="zat_b7_stalker_raider_3" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_bandit_1</icon>
+		<icon>ui_inGame2_neutral_2</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1410,13 +1420,13 @@
 		<class>zat_b7_stalker_raider_3</class>
     	<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-    	<snd_config>characters_voice\human_02\stalker\</snd_config>
+    	<snd_config>characters_voice\human_03\stalker\</snd_config>
 
     	<rank>25</rank>
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
-    	<visual>actors\stalker_bandit\stalker_bandit_1</visual>
+    	<visual>actors\stalker_neutral\stalker_neutral_4</visual>
    		<supplies>
       	[spawn] \n
 
@@ -1427,6 +1437,8 @@
 #include "gameplay\character_drugs_bandit_2.xml"
 
    	 </supplies>
+<start_dialog>zat_raider_hello_3_dialog</start_dialog>
+
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"
  	 </specific_character>
@@ -1787,7 +1799,7 @@
 		<class>zat_b18_noah</class>
 		<community>ecolog</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
 		<rank>90</rank>
 		<reputation>0</reputation>
@@ -1810,6 +1822,7 @@
 
 		<start_dialog>zat_b18_noah_start</start_dialog>
 
+                <actor_dialog>zat_noah_about_pripyat_dialog</actor_dialog>
 		<actor_dialog>zat_b18_noah_plateau_way</actor_dialog>
 		<actor_dialog>zat_b18_noah_first_artefact</actor_dialog>
 		<actor_dialog>zat_b18_noah_second_artefact</actor_dialog>
@@ -1884,7 +1897,9 @@
 		<actor_dialog>zat_b215_stalker_guide_leave_zone</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_maps</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_to_pripyat_no_way</actor_dialog>
-		<actor_dialog>zat_b215_stalker_guide_to_pripyat</actor_dialog>
+                <!-- actor_dialog>zat_b215_stalker_guide_to_pripyat</actor_dialog -->
+                <actor_dialog>zat_lotsman_to_pripyat_dialog</actor_dialog>
+                <actor_dialog>jup_lotsman_to_pripyat_dialog</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_to_jupiter</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_to_zaton</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_where_to</actor_dialog>

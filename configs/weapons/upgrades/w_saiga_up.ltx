@@ -3,9 +3,10 @@
 [up_sect_firsta_saiga]
 cost		      		= 3230
 value					= +10
-rpm                     = +30 ;600
 
-inv_weight			= +0.15
+rpm                     = +35
+
+inv_weight			= +0.1
 
 ;Надежность(2)15%
 ;---------------
@@ -13,48 +14,44 @@ inv_weight			= +0.15
 cost		      		= 3560
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
+condition_queue_shot_dec	= -0.0003
+condition_shot_dec      	= -0.0003
 
 misfire_start_prob	     	= -0.0007
+misfire_end_prob	     	= -0.011
 
-misfire_end_prob	     	= -0.011 ;0.03
-
-inv_weight			= +0.2
+inv_weight			= +0.14
 
 ;Отдача(2)-20%
 ;------------
 [up_sect_firstd_saiga]
 cost	      	     	= 2390
-value                   = -10
+value                   = -20
 
-cam_dispersion              = -0.23     ;1.2
-cam_dispersion_inc          = -0.22     ;0.6
-cam_step_angle_horz         = -0.07         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.4
+cam_dispersion_inc          = -0.4
+cam_step_angle_horz         = -0.07
 
-zoom_cam_dispersion          = -0.05    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.05   ;0.5
-zoom_cam_step_angle_horz     = -0.07     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.32
+zoom_cam_dispersion_inc      = -0.32
+zoom_cam_step_angle_horz     = -0.07
 
-inv_weight			= +0.22
+inv_weight			= +0.16
 
 ;Отдача(3)-30%
 ;------------
 [up_sect_firste_saiga]
 cost		      		= 2720
-value                   = -10
+value                   = -30
 
-cam_dispersion              = -0.23     ;1.2
-cam_dispersion_inc          = -0.22     ;0.6
-cam_step_angle_horz         = -0.07         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.6
+cam_dispersion_inc          = -0.6
+cam_step_angle_horz         = -0.1
 
-zoom_cam_dispersion          = -0.05    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.05   ;0.5
-zoom_cam_step_angle_horz     = -0.07     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.48
+zoom_cam_dispersion_inc      = -0.48
+zoom_cam_step_angle_horz     = -0.1
 
 inv_weight			= +0.25
 
@@ -64,13 +61,13 @@ inv_weight			= +0.25
 cost		      		= 2840
 value                   = -10
 
-cam_dispersion              = -0.23     ;1.2
-cam_dispersion_inc          = -0.22     ;0.6
-cam_step_angle_horz         = -0.07         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.2
+cam_dispersion_inc          = -0.2
+cam_step_angle_horz         = -0.05
 
-zoom_cam_dispersion          = -0.05    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.05   ;0.5
-zoom_cam_step_angle_horz     = -0.07     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.18
+zoom_cam_dispersion_inc      = -0.18
+zoom_cam_step_angle_horz     = -0.05
 
 ;Надежность(2)15%
 ;---------------
@@ -78,36 +75,32 @@ zoom_cam_step_angle_horz     = -0.07     ;1.0 [0.505 в остатке]
 cost		      		= 3760
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
+condition_queue_shot_dec	= -0.0003
+condition_shot_dec      	= -0.0003
 
 misfire_start_prob	     	= -0.0007
-
-misfire_end_prob	     	= -0.011 ;0.03
+misfire_end_prob	     	= -0.011
 
 inv_weight			= +0.2
 
-;Отдача(3)-30%
+;Отдача(3)-20%
 ;------------
 [up_sect_secone_saiga]
 cost		      		= 3690
 value                   = -20
 
-cam_dispersion              = -0.46     ;0.5
-cam_dispersion_inc          = -0.44     ;0.5
-cam_step_angle_horz         = -0.14     ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.4
+cam_dispersion_inc          = -0.4
+cam_step_angle_horz         = -0.07
 
-zoom_cam_dispersion          = -0.1    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.1   ;0.5
-zoom_cam_step_angle_horz     = -0.14    ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.32
+zoom_cam_dispersion_inc      = -0.32
+zoom_cam_step_angle_horz     = -0.07
 
-inv_weight			= +0.22
+inv_weight			= +0.18
 
-;Удобство(3)25%
+;Вес(3)25%
 ;--------------
 [up_sect_seconf_saiga]
 cost		      		= 4280
@@ -121,15 +114,15 @@ inv_weight			= -0.88
 ;------------
 [up_sect_thirda_saiga]
 cost		      		= 4290
-value                   = -15
+value                   = -10
 
-cam_dispersion              = -0.33     ;0.5
-cam_dispersion_inc          = -0.33     ;0.5
-cam_step_angle_horz         = -0.09         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.2
+cam_dispersion_inc          = -0.2
+cam_step_angle_horz         = -0.05
 
-zoom_cam_dispersion          = -0.075    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.075   ;0.5
-zoom_cam_step_angle_horz     = -0.09    ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.18
+zoom_cam_dispersion_inc      = -0.18
+zoom_cam_step_angle_horz     = -0.05
 
 ;Скорострельность(2)15%
 ;----------------------
@@ -137,7 +130,7 @@ zoom_cam_step_angle_horz     = -0.09    ;1.0 [0.505 в остатке]
 cost		      		= 3890
 value					= +15
 
-rpm                     = +45 ;600
+rpm                     = +50
 
 ;Надежность(2)15%
 ;---------------
@@ -145,16 +138,14 @@ rpm                     = +45 ;600
 cost		      		= 2650
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
+condition_queue_shot_dec	= -0.0003
+condition_shot_dec      	= -0.0003
 
 misfire_start_prob	     	= -0.0007
+misfire_end_prob	     	= -0.011
 
-misfire_end_prob	     	= -0.011 ;0.03
+inv_weight			= +0.1
 
 ;Удобство(3)25%
 ;--------------
@@ -164,31 +155,33 @@ value					= +25
 
 crosshair_inertion		   = -0.7
  
-PDM_disp_base 				= -0.1 ;0.5
-PDM_disp_vel_factor 		= -0.3 ;1.5
-PDM_disp_accel_factor 		= -0.3 ;1.5
+PDM_disp_base 				= -0.1
+PDM_disp_vel_factor 		= -0.3
+PDM_disp_accel_factor 		= -0.3
 
-;Отдача(1)10%
+inv_weight			= +0.12
+
+;Отдача(1)5%
 ;------------
 [up_sect_fourta_saiga]
 cost		      		= 1390
 value                   = -5
 
-cam_dispersion              = -0.11     ;0.5
-cam_dispersion_inc          = -0.11     ;0.5
-cam_step_angle_horz         = -0.035         ;1.5 [0.73 в остатке]
+cam_dispersion              = -0.1
+cam_dispersion_inc          = -0.1
+cam_step_angle_horz         = -0.025
 
-zoom_cam_dispersion          = -0.025    ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.025   ;0.5
-zoom_cam_step_angle_horz     = -0.035    ;1.0 [0.505 в остатке]
+zoom_cam_dispersion          = -0.09
+zoom_cam_dispersion_inc      = -0.09
+zoom_cam_step_angle_horz     = -0.025
 
-;Скорострельность(2)15%
+;Скорострельность(2)10%
 ;----------------------
 [up_sect_fourtc_saiga]
 cost		      		= 2650
 value					= +10
 
-rpm                     = +35 ;600
+rpm                     = +35
 
 ;Скорострельность(3)25%
 ;----------------------
@@ -196,14 +189,16 @@ rpm                     = +35 ;600
 cost		      		= 3680
 value					= +15
 
-rpm                     = +48 ;600
+rpm                     = +50
 
 ;Объем магазина +10
 ;--------------------
 [up_sect_fiftha_saiga]
 cost		      		= 2920
 value					= +3
-ammo_mag_size        	= 3
+
+ammo_mag_size        	= +3
+inv_weight              = +0.085
 
 ;--------END----------
 [up_firsta_saiga]

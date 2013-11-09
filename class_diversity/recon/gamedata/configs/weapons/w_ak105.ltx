@@ -24,11 +24,11 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_ak74u
 
 ;-ТТХ---------------------------------------------------------------------------
-hit_power            			= 0.48 0.48, 0.48, 0.48
-hit_impulse						= 36			; size of physic impulse by bullet
+hit_power            			= 0.482 0.482, 0.482, 0.482
+hit_impulse						= 25			; size of physic impulse by bullet
 hit_type						= fire_wound	; [] type of the wound
-fire_distance					= 640	; maximum fire distance that bullet can fly
-bullet_speed					= 800			; starting bullet speed
+fire_distance					= 700	; maximum fire distance that bullet can fly
+bullet_speed					= 820			; starting bullet speed
 rpm								= 650			; max round per minute
 rpm_empty_click					= 200
 
@@ -42,8 +42,8 @@ misfire_start_condition		= 0.73
 misfire_end_condition		= 0.08
 misfire_start_prob = 0.007 ;	     	= 0.0057
 misfire_end_prob = 0.11 ;	     	= 0.055
-condition_shot_dec      	= 0.0008
-condition_queue_shot_dec	= 0.00075
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0007
 
 ammo_elapsed					= 30			; obsolete
 ammo_mag_size					= 30			; clip (magazine) size
@@ -62,29 +62,29 @@ reload_dof						= 0.0, 0.5, 5, 2;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       = 0.40 	;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       = 0.5 	;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.11f
 crosshair_inertion   	= 4.8
 
 ;отдача
-cam_return						= 0
-cam_relax_speed					= 7	;скорость возврата в исходное положение
-cam_relax_speed_ai				= 360
-cam_dispersion					= 0.96	;увеличения угла (в градусах) с первым выстрелом
-cam_dispersion_inc				= 0.62	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac				= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle					= 20.0	;максимальный угол отдачи
-cam_max_angle_horz				= 20.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz				= 1.1	;(degree) size of step camera moved in horizontal position while shooting
+cam_return = 0 ;					= 1
+cam_relax_speed				= 12	;скорость возврата в исходное положение
+cam_relax_speed_ai			= 360
+cam_dispersion				= 0.90	;увеличения угла (в градусах) с первым выстрелом
+cam_dispersion_inc			= 0.54	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac			= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle				= 20.0	;максимальный угол отдачи
+cam_max_angle_horz			= 20.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz			= 1.1	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_relax_speed			= 10	; scope & ironsight
-zoom_cam_relax_speed_ai			= 360
-zoom_cam_dispersion				= 0.74
-zoom_cam_dispersion_inc			= 0.38
-zoom_cam_dispersion_frac		= 0.7
-zoom_cam_max_angle				= 50.0
-zoom_cam_max_angle_horz			= 5.0
-zoom_cam_step_angle_horz		= 0.3
+zoom_cam_relax_speed		= 12	; scope & ironsight
+zoom_cam_relax_speed_ai		= 360
+zoom_cam_dispersion			= 0.7
+zoom_cam_dispersion_inc		= 0.44
+zoom_cam_dispersion_frac	= 0.7
+zoom_cam_max_angle			= 50.0
+zoom_cam_max_angle_horz		= 5.0
+zoom_cam_step_angle_horz	= 0.3
 
 PDM_disp_base 				= 0.8
 PDM_disp_vel_factor 		= 1.65
@@ -122,7 +122,7 @@ grenade_flame_particles			= weapons\generic_weapon01
 
 shell_point						= 0,0.216,0.174				; position (3rd person view) for shell to throw out
 ;shell_particles					= weapons\generic_shells	; name of the particles for shells
-;shell_particles					= weapons\generic_shells
+shell_particles					= amik\weapons\data\5_45x39\5_45x39_r
 
 ;-------------------------------------------------------------------------------
 inv_name						= st_wpn_ak105	; name in inventory
@@ -163,7 +163,7 @@ light_time						= 0.2
 ph_mass							= 4
 
 ;addons
-scope_status					= 0		; 0 - no addon
+scope_status					= 2		; 0 - no addon
 silencer_status					= 2		; 1 - permanent
 grenade_launcher_status				= 2		; 2 - attachable
 
@@ -173,11 +173,11 @@ scope_zoom_factor       = 58.6	; fov for zoom mode
 
 silencer_name           			= wpn_addon_silencer_545x39    ; section name for the attachable silencer
 silencer_x              			= 224                ; offset in inventory icon
-silencer_y              			= 13
+silencer_y              			= 11
 grenade_launcher_name			= wpn_addon_grenade_launcher
 grenade_launcher_x				= 126
 grenade_launcher_y				= 21
-scopes_sect						= scope_ak105, scope_ak105_worn, scope_x2.7_ak105, scope_live_detector_ak105, scope_night_ak105
+scopes_sect						= scope_ak105, scope_ak105_worn, scope_ak105_moist, scope_x2.7_ak105, scope_live_detector_ak105, scope_night_ak105, scope_vsk_ak105
 
 ;звуки
 snd_draw                = weapons\generic\rifle_draw_02
@@ -215,7 +215,7 @@ hands_orientation_16x9			= -0.750000,1.700000,-4.199999
 item_position					= 0.004111,0.008527,-0.005906
 item_orientation				= -15.488927,-3.320898,367.220154
 
-shell_point						= 0.017,0.054,0.17
+shell_point						= 0.045,0.054,0.35  ;0.017,0.054,0.17
 shell_dir						= 0.0, 1.0, 0.0
 shell_bone						= wpn_body
 
@@ -271,28 +271,38 @@ gl_hud_offset_rot_16x9			= -0.150000, 0.000000, 0.000000
 
 [scope_ak105]
 scope_name						= wpn_addon_scope
-scope_x							= 47	; offset in inventory icon
-scope_y							= 0
+scope_x							= 52	; offset in inventory icon
+scope_y							= -5
 
 [scope_ak105_worn]
 scope_name						= wpn_addon_scope_worn
-scope_x							= 47	; offset in inventory icon
-scope_y							= 0
+scope_x							= 52	; offset in inventory icon
+scope_y							= -5
+
+[scope_ak105_moist]
+scope_name						= wpn_addon_scope_moist
+scope_x							= 52	; offset in inventory icon
+scope_y							= -5
 
 [scope_x2.7_ak105]
 scope_name						= wpn_addon_scope_x2.7
-scope_x							= 47	; offset in inventory icon
-scope_y							= 0
+scope_x							= 77	; offset in inventory icon
+scope_y							= -6
 
 [scope_live_detector_ak105]
 scope_name						= wpn_addon_scope_detector
-scope_x							= 47	; offset in inventory icon
-scope_y							= 0
+scope_x							= 52	; offset in inventory icon
+scope_y							= -5
 
 [scope_night_ak105]
 scope_name						= wpn_addon_scope_night
-scope_x							= 47	; offset in inventory icon
-scope_y							= 0
+scope_x							= 52	; offset in inventory icon
+scope_y							= -5
+
+[scope_vsk_ak105]
+scope_name						= wpn_addon_scope_vsk
+scope_x							= 52	; offset in inventory icon
+scope_y							= -5
 
 ;-----------------------------------------------------------------------------
 ; Уникальные

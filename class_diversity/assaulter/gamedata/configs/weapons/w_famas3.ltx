@@ -17,17 +17,17 @@ sprint_allowed       	= true
 ;-------------------------------------------------------------------------------
 cost                    = 44900
 weapon_class            = assault_rifle        ; Type of the weapon
-inv_weight           	= 3.789
+inv_weight           	= 3.8
 
 upgrades                = up_gr_firstab_famas3, up_gr_seconab_famas3, up_gr_thirdab_famas3, up_gr_fourtab_famas3, up_gr_fourtcd_famas3, up_gr_fourtef_famas3
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_g36
 
 ;--TTX--------------------------------------------------------------------------
-hit_power		= 0.473, 0.473, 0.473, 0.473
-hit_impulse             = 25 ;50 ;100
+hit_power		= 0.483, 0.483, 0.483, 0.483
+hit_impulse             = 25
 hit_type		= fire_wound
-fire_distance           = 885
+fire_distance           = 1000
 bullet_speed            = 925        ;начальная скорость пули
 rpm                     = 950
 rpm_empty_click         = 200
@@ -42,8 +42,8 @@ misfire_start_condition		= 0.82
 misfire_end_condition		= 0.08
 misfire_start_prob = 0.007 ;	     	= 0.0053
 misfire_end_prob = 0.11 ;	     	= 0.05
-condition_shot_dec      	= 0.0013
-condition_queue_shot_dec	= 0.0008
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0010
 
 ammo_elapsed            = 30
 ammo_mag_size           = 30
@@ -57,16 +57,16 @@ single_handed           = 0
 
 ;--дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.26    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.31    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.32f
 crosshair_inertion	= 5.8
 
 ;отдача
-cam_return				= 0 ;				= 0
-cam_relax_speed         = 5      ;скорость возврата в исходное положение
+cam_return = 0 ;				= 1
+cam_relax_speed         = 9      ;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	         	= 1.0
-cam_dispersion_inc         	= 0.5
+cam_dispersion	        = 1.0
+cam_dispersion_inc      = 0.5
 cam_dispersion_frac     = 1.0    ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle           = 50.0         ;максимальный угол отдачи
 cam_max_angle_horz      = 50.0      ;(degree) maximum shot horizontal degree
@@ -78,10 +78,10 @@ PDM_disp_accel_factor 		= 2.3
 PDM_disp_crouch = 1.0 ;  			= 1.165
 PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
 
-zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed         = 9     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.8
-zoom_cam_dispersion_inc      	= 0.4
+zoom_cam_dispersion          = 0.8
+zoom_cam_dispersion_inc      = 0.4
 zoom_cam_dispersion_frac     = 1.0
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
@@ -140,7 +140,8 @@ grenade_flame_particles = weapons\generic_weapon01
 
 shell_point             = -0.020000,0.167000,0.082000
 shell_dir               = 0.0, 0.0, 0.4
-shell_particles         = weapons\generic_shells
+;shell_particles         = weapons\generic_shells
+shell_particles         = amik\weapons\data\5_56x45\5_56x45_shells_r
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
@@ -219,7 +220,7 @@ hands_orientation_16x9			= -3.099998,3.949998,-4.449999
 item_position				= 0.002926,0.000089,0.001182
 item_orientation			= 1.598515,-1.348796,363.621826
 
-shell_point					= 0.02,0.06,-0.119
+shell_point					= 0.02,0.08,-0.02  ;0.02,0.06,-0.119
 shell_dir               = 0.0, 1.0, 0.0
 shell_bone					= wpn_body
 

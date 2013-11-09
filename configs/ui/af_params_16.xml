@@ -19,7 +19,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
 		<texture_minus>ui_am_prop_radio_restore</texture_minus>
-		<value x="137" y="0" width="30" height="20" magnitude="4700" sign_inverse="1" unit_str="st_msv_sec">
+		<value x="137" y="0" width="30" height="20" magnitude="47000" sign_inverse="1" unit_str="st_msv_sec"> <!-- magnitude changed from 4700..Yasti Arefact Container-->
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</radiation_restore_speed>
