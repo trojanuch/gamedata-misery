@@ -353,7 +353,7 @@ function check_actor_backpack()
 end
 
 -- bind_stalker take_item_from_iventory_box
-function actor_on_item_take_from_box(box,obj)
+function actor_on_take_item_from_box(box,obj)
 	if not (box) then
 		return
 	end

@@ -17,9 +17,6 @@ local CombatDuringSurge = alun_utils.read_from_ini(ini,"settings","combat_during
 local CombatInertion = alun_utils.collect_section(ini,"combat_inertion",true)
 local CombatInertionMult = alun_utils.collect_section(ini,"combat_inertion_mult",true)
 local ForbiddenNPCs = alun_utils.collect_section(ini,"forbidden_npcs",true)
---Yasti Ghillie Suit--
-local GhillieInertion = alun_utils.collect_section(ini,"ghillie_inertion",true)
---End Yasti--
 TimeSafe = alun_utils.read_from_ini(ini,"settings","time_safe","float",120000)
 ini = nil
 
@@ -110,14 +107,13 @@ function squad_on_npc_death(squad,npc)
 end
 
 function is_enemy(obj,enemy,no_memory)
-	if not db.actor then return end
 	if not (obj:alive()) then return false end
 	if (obj:critically_wounded()) then return true end
-	
+
 	local ene_id = enemy:id()
 	local id = obj:id()
 	local st = db.storage[id].combat_ignore
-		
+
 	-- Ignore long unseen/unheard enemies
 	if not (no_memory) then
 		local tg = time_global()
@@ -141,7 +137,7 @@ function is_enemy(obj,enemy,no_memory)
 			return false
 		end
 	end
-	
+
 	-- NPC was hit by actor always return true
 	if (db.actor:id() == ene_id and not st.enabled) then
 		db.storage[id].enemy_id = ene_id
@@ -181,16 +177,7 @@ function is_enemy(obj,enemy,no_memory)
 	if (ignore_enemy_by_overrides(obj,enemy)) then
 		return false
 	end
-	
-	--Yasti Reduce Detection Range For Ghillie Suit--
-	if ai_tweaks.GhillieEnable == true then
-		if db.actor:id() == ene_id and st.enabled and fighting_with_actor_npcs[obj:id()] == nil then
-			if (axr_range_modifier.override_combat_ignore(obj,enemy, 1) == true ) then
-				return false
-			end
-		end
-	end
-	--End Yasti--
+
 	return true
 end
 
@@ -203,7 +190,6 @@ function action_process_enemy:__init( obj, storage )
 	self.comm = get_object_community(obj)
 	self.rank = ranks.get_obj_rank_name(obj)
 	self.st.stage = 0
-	self.timer = nil
 
 	if not (IsStalker(obj)) then
 		return
@@ -212,25 +198,13 @@ function action_process_enemy:__init( obj, storage )
 	if (self.comm == "zombied") then
 		return
 	end
-	--Yasti Ghillie Suit. Adjusted Values for inertion time--
-	if (ai_tweaks.GhillieEnable == true) and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit" then --Inertion Values for wearing a Ghillie Suit
-		--alun_utils.printf("xr_combat_ignore.process_enemy_init: Ghillie Suit inertion values loaded")
-		local search = GhillieInertion[self.comm] or "60000"
-		local search_time = xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj, self.comm,"ghillie_inertion",search))
-		self.st.combat_inertion = search_time and tonumber(search_time) or 60000
 
-		local mult = CombatInertionMult[self.rank] and tonumber(CombatInertionMult[self.rank]) or 1
-		self.st.combat_inertion = self.st.combat_inertion * mult
-	else
-		--alun_utils.printf("xr_combat_ignore.process_enemy_init: Standard inertion values loaded")
-		local search = CombatInertion[self.comm] or "60000"
-		local search_time = xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj, self.comm,"combat_inertion",search))
-		self.st.combat_inertion = search_time and tonumber(search_time) or 60000
+	local search = CombatInertion[self.comm] or "60000"
+	local search_time = xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj, self.comm,"combat_inertion",search))
+	self.st.combat_inertion = search_time and tonumber(search_time) or 60000
 
-		local mult = CombatInertionMult[self.rank] and tonumber(CombatInertionMult[self.rank]) or 1
-		self.st.combat_inertion = self.st.combat_inertion * mult
-	end
-	--End Yasti--
+	local mult = CombatInertionMult[self.rank] and tonumber(CombatInertionMult[self.rank]) or 1
+	self.st.combat_inertion = self.st.combat_inertion * mult
 end
 
 function action_process_enemy:trader_enemy_callback(obj,enemy)
@@ -243,13 +217,13 @@ function action_process_enemy:enemy_callback(npc, enemy)
 		if (is_obj_enemy) then
 			local id = npc:id()
 			local ene_id = enemy:id()
-			
+
 			-- keep track of actor enemies
 			if (ene_id == db.actor:id()) then
 				fighting_with_actor_npcs[id] = true
 				if (axr_main) then axr_main.npc_on_fighting_actor(npc) end
 			end
-			
+
 			-- Set smart alarm
 			local se_obj = alife():object(id)
 			if (se_obj and se_obj.m_smart_terrain_id ~= 65535) then
@@ -260,7 +234,7 @@ function action_process_enemy:enemy_callback(npc, enemy)
 					smart_obj.base_on_actor_control:actor_attack()
 				end
 			end
-			
+
 			-- Jump to next stage
 			if (string.find(level.get_weather(),"veryfoggy") or ForbiddenNPCs[npc:section()] or ForbiddenNPCs[enemy:section()]) then
 				self.st.stage = 3

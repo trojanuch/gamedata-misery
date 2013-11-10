@@ -1,0 +1,80 @@
+--[[
+************************************************************
+					module range_modifier
+Alundaio
+************************************************************
+--]]
+local range_modifiers = 	{
+							["4"] 	= {default = 0.90, rain = 0.80},
+							["3"] 	= {default = 0.80, rain = 0.75},
+							["2"] 	= {default = 0.75, rain = 0.60},
+							["1"] 	= {default = 0.70, rain = 0.60},
+							["24"] 	= {default = 0.70, rain = 0.60},
+							["23"] 	= {default = 0.75, rain = 0.65},
+							["22"] 	= {default = 0.80, rain = 0.70},
+							["21"] 	= {default = 0.85, rain = 0.75},
+							["20"] 	= {default = 0.90, rain = 0.80}
+							}
+class "range_modifier"
+function range_modifier:__init(object,storage)
+	self.st = storage
+	self.object = object
+	self.timer = nil
+	self.stage = nil
+	self.old_range = nil
+end
+
+function range_modifier:update()
+	local m = alun_override_manager
+	local timer_signal = m.get_timer(self)
+	local stage = m.get_stage(self)
+
+	if ( stage == 0 ) then
+		local rain = level.rain_factor()
+		local gt = level.get_time_hours()
+
+		for key,value in pairs(range_modifiers) do
+			if ( gt == tonumber(key) ) then
+				local range = self.object:range()
+
+				if ( range ) then
+					self.old_range = range
+
+					if ( rain >= 0.40 ) then
+						self.object:set_range(range * value.rain)
+					else
+						self.object:set_range(range * value.default)
+					end
+					local seconds_left_in_hour = ( 60 - level.get_time_minutes() ) * 60
+					-- Reset range and do another check at the end of the hour
+					m.set_timer(self, seconds_left_in_hour)
+					m.next_stage(self)
+					return
+				end
+			end
+		end
+		--Should never get this far, If busticated leave in empty stage
+		m.set_stage(self,5)
+	elseif ( stage == 2 ) then
+		-- Reset range back to normal at end of hour and repeat stage 0
+		if ( timer_signal == "timer_expired" ) then
+			if ( self.old_range ~= nil ) then
+				self.object:set_range(self.old_range)
+				self.old_range = nil
+				m.set_stage(self,0)
+				return
+			end
+		end
+	end
+end
+function range_modifier:finalize()
+	if ( self.old_range ) then
+		self.object:set_range(self.old_range)
+	end
+end
+
+function evaluate_preconditions(obj,st,axr)
+	axr_precond.add_precondition("is_alive",true,true,obj)
+	axr_precond.add_precondition("is_day",false,false)
+	axr_precond.add_precondition("is_trader",false,true,obj)
+end
