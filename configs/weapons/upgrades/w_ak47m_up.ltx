@@ -1,8 +1,72 @@
+[up_sect_firsta_ak47m]
+cost		      		= 3290
+value                   = -10
+
+cam_dispersion	         	= -0.14
+cam_dispersion_inc         	= -0.12
+cam_step_angle_horz			= -0.138	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.11
+zoom_cam_dispersion_inc     = -0.088
+zoom_cam_step_angle_horz	= -0.128
+
+inv_weight			= +0.25
+
+[up_sect_firstf_ak47m]
+;Отдача(3)-30%
+;------------
+cost		      		= 3830
+value                   = -10
+
+cam_dispersion	         	= -0.14
+cam_dispersion_inc         	= -0.12
+cam_step_angle_horz			= -0.138	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.11
+zoom_cam_dispersion_inc     = -0.088
+zoom_cam_step_angle_horz	= -0.128
+
+[up_sect_secona_ak47m]
+;Удобство(1)5%
+;--------------
+cost		      		= 2940
+value					= -5
+
+crosshair_inertion		   = -0.25
+ 
+PDM_disp_base 				= -0.07
+PDM_disp_vel_factor 		= -0.1
+PDM_disp_accel_factor 		= -0.1
+
+cam_dispersion	         	= -0.07
+cam_dispersion_inc         	= -0.06
+cam_step_angle_horz			= -0.069	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.055
+zoom_cam_dispersion_inc     = -0.044
+zoom_cam_step_angle_horz	= -0.064
+
+inv_weight			= +0.15
+
+[up_sect_thirdd_ak47m]
+cost		      		= 4020
+value                   = -10
+
+cam_dispersion	         	= -0.14
+cam_dispersion_inc         	= -0.12
+cam_step_angle_horz			= -0.138	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.11
+zoom_cam_dispersion_inc     = -0.088
+zoom_cam_step_angle_horz	= -0.128
+
+inv_weight			= +0.25
+
 [up_firsta_ak47m]
 scheme_index            = 0, 0
 known                   = 1
 effects                 = up_gr_firstcd_ak47m
-section                 = up_sect_firsta_ak74
+section                 = up_sect_firsta_ak47m
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -85,7 +149,7 @@ icon                    = ui_inGame2_upgrade_unavailable
 scheme_index            = 0, 1
 known                   = 1
 effects                 = up_gr_seconcd_ak47m
-section                 = up_sect_secona_ak74
+section                 = up_sect_secona_ak47m
 property                = prop_inertion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -209,7 +273,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_10
 scheme_index            = 1, 4
 known                   = 1
 effects                 = up_gr_thirdef_ak47m
-section                 = up_sect_thirdd_ak74
+section                 = up_sect_thirdd_ak47m
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

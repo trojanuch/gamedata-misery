@@ -1,3 +1,51 @@
+[up_sect_seconc_ksvk]
+;Отдача(2)-20%
+;------------
+cost		      		= 7310
+value                   = -10
+
+cam_dispersion          = -0.243	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.322	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.245	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.166
+zoom_cam_dispersion_inc     = -0.277
+zoom_cam_step_angle_horz    = -0.225
+
+inv_weight			= +0.23
+
+[up_sect_thirda_ksvk]
+;Отдача(1)-10%
+;------------
+cost		      		= 8460
+value                   = -10
+
+cam_dispersion          = -0.243	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.322	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.245	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.166
+zoom_cam_dispersion_inc     = -0.277
+zoom_cam_step_angle_horz    = -0.225
+
+inv_weight			= +0.21
+
+[up_sect_thirde_ksvk]
+;Отдача(3)-30%
+;------------
+cost		      		= 8710
+value                   = -10
+
+cam_dispersion          = -0.243	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.322	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.245	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.166
+zoom_cam_dispersion_inc     = -0.277
+zoom_cam_step_angle_horz    = -0.225
+
+inv_weight			= +0.19
+
 [up_firsta_ksvk]
 scheme_index            = 0, 0
 known                   = 1
@@ -128,7 +176,7 @@ icon                    = ui_inGame2_upgrade_SVDm2_6
 scheme_index            = 1, 2
 known                   = 1
 effects                 = 
-section                 = up_sect_seconc_trg
+section                 = up_sect_seconc_ksvk
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -170,7 +218,7 @@ icon                    = ui_inGame2_upgrade_SVDm2_8
 scheme_index            = 0, 2
 known                   = 1
 effects                 = up_gr_thirdcd_ksvk
-section                 = up_sect_thirda_trg
+section                 = up_sect_thirda_ksvk
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -212,7 +260,7 @@ icon                    = ui_inGame2_upgrade_SVDm2_11
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_thirde_trg
+section                 = up_sect_thirde_ksvk
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

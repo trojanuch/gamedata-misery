@@ -844,7 +844,7 @@
 		<text>"Obrez" Mosin-Nagant M1891/30 (sawn-off)</text>
 	</string>
 	<string id="st_wpn_obrez_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]"Obrez" is a Russian word meaning "cut". This "Obrez" is a sawn-off Mosin-Nagant M1891/30. Mainly used by rebels and criminals, it still fires the original rifle cartridge. It's "classified" as a hybrid between a bolt-action pistol and a shotgun, i.e. a budget hand-cannon!</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]"Obrez" is a Russian word meaning "cut". This "Obrez" is a sawn-off Mosin-Nagant M1891/30. Mainly used by rebels and criminals, it still fires the original rifle cartridge. It's "classified" as a hybrid between a bolt-action pistol and a shotgun, i.e. a budget hand-cannon!</text>
 	</string>
 	<string id="st_wpn_aek973">
     <text>AEK-971</text>
@@ -880,7 +880,7 @@
 		<text>M14 DMR</text>
 	</string>
 	<string id="st_wpn_m21_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The DMR fills the need for a lightweight, accurate weapon system utilizing the 7.62x51mm NATO round. Marine Corps Explosive Ordnance Disposal Teams, Scout Snipers and sniper spotters also used DMRs when the mission requires rapid, accurate fire at long range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] M16 scope (permanent)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The DMR fills the need for a lightweight, accurate weapon system utilizing the 7.62x51mm NATO round. Marine Corps Explosive Ordnance Disposal Teams, Scout Snipers and sniper spotters also used DMRs when the mission requires rapid, accurate fire at long range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] M24 sniper scope (permanent)</text>
 	</string>
 	<string id="st_wpn_m1000">
 		<text>Muzgaran</text>
@@ -1468,10 +1468,10 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]The standard individual weapon for the British armed forces, the L85 (in its original A1 version) had numerous performance issues. The improved L85A2 is extremely reliable over a range of climates for various operational scenarios.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] SUSAT scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
 	</string>
 	<string id="st_wpn_lr300_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Based on the AR-15, the LR 300 is an excellent weapon system suitable for military use in close quarters battle. Its folding skeletal stock makes it ideal for aggressive and rapid building entries requiring a compact yet powerful selective fire weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Based on the AR-15, the LR 300 is an excellent weapon system suitable for military use in close quarters battle. Its folding skeletal stock makes it ideal for aggressive and rapid building entries requiring a compact yet powerful selective fire weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
 	</string>
 	<string id="st_wpn_lr300_worn_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Based on the AR-15, the LR 300 is an excellent weapon system suitable for military use in close quarters battle. Its folding skeletal stock makes it ideal for aggressive and rapid building entries requiring a compact yet powerful selective fire weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible\n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Based on the AR-15, the LR 300 is an excellent weapon system suitable for military use in close quarters battle. Its folding skeletal stock makes it ideal for aggressive and rapid building entries requiring a compact yet powerful selective fire weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible\n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
 	</string>
 	<string id="st_wpn_pb_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Issued into service in 1967, the PB (GRAU index 6P9) is a Soviet silenced pistol based on the Makarov PM. It was intended for use by the KGB and army reconnaissance groups. The PB's integral silencer also reduces the bullet velocity to below subsonic levels.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] PB silencer (permanent)</text>

@@ -1,0 +1,346 @@
+----------------------------------------------------------
+--	Inventory_radiation.script
+--  Original scripting done by the NARODNAYA SOLYANKA team
+--  Modified for use in Misery 2.0+ by Yastiandrie
+----------------------------------------------------------
+
+local cfg_arts = {}
+local inv_arts = {}
+local inv_check = {}
+local ballast_weight = 0
+
+local inv_arts_rad = 0
+local time_previous = 0
+local time_step = 287
+local rad_factor = 0.5  --Yasti: 1.0 = full radiation_restore_speed hit while in inventory,  change to 0.0 if you want no inventory radiation
+
+
+function on_game_start()
+	callback_register("actor_on_update",actor_on_update)
+	callback_register("actor_on_item_drop",actor_on_item_drop)
+	callback_register("actor_on_item_take",actor_on_item_take)
+end
+
+
+function actor_on_update()
+	local tg = time_global()
+	apply_rad(tg)
+
+--	if actor_menu.inventory_opened == true then
+--		need_update = true
+--	else
+--		inv_rad_update()
+--	end
+end
+
+
+function actor_on_item_take(obj)
+	local obj_id = obj:id()
+	local obj_sect = obj:section()
+	local obj_clsid = obj:clsid()
+ 
+	if (obj_clsid == clsid.artefact) or (obj_clsid == clsid.artefact_s) then 
+		register_artefact(obj_sect, 1)
+    end
+		
+--	if obj:section() == separator then return end
+--	if (actor_menu.inventory_opened == false) and (actor_menu.dead_body_searching == false) then
+--		if (separator_spawned == true) then
+--			db.actor:inventory_for_each(del_separator)
+--			separator_spawned = false
+--		end
+
+--		need_update = true
+--	end
+end
+
+
+function actor_on_item_drop(obj)
+	local obj_id = obj:id()
+	local obj_sect = obj:section()
+	local obj_clsid = obj:clsid()
+
+	if (obj_clsid == clsid.artefact) or (obj_clsid == clsid.artefact_s) then 
+		register_artefact(obj_sect, -1)
+	end
+
+	if obj_clsid == clsid.wpn_ammo then
+		if obj_sect == "lead_ballast" then
+			lead_ballast.on_lose_ballast(obj)
+		end
+	end
+--	if obj:section() == separator then return end
+--	if (actor_menu.inventory_opened == false) and (actor_menu.dead_body_searching == false) then
+--		if (separator_spawned == true) then
+--			db.actor:inventory_for_each(del_separator)
+--			separator_spawned = false
+--		end
+--
+--		need_update = true		
+--	end
+	
+end
+
+----------------------------------------------------
+--Function add's artifacts in inventory to table and adjusts inventory radiation value
+----------------------------------------------------
+
+function register_artefact(obj_sec, number, in_container)
+	local f = get_art_index(obj_sec)
+
+	if f == 0 then
+		--local obj_section = level.object_by_id(obj_id):section()
+		local ini = system_ini()
+		if ini:section_exist(obj_sec) then
+			local class = ini:r_clsid(obj_sec, "class")
+
+			if class == clsid.artefact or class == clsid.artefact_s then
+				local tmp = {}
+
+				--tmp.obj_id = obj_id
+				tmp.section = obj_sec
+				tmp.inv_rad = ini:r_float(obj_sec, "radiation_restore_speed")
+				tmp.tx = ini:r_u32(obj_sec, "inv_grid_x")
+				tmp.ty = ini:r_u32(obj_sec, "inv_grid_y")
+				tmp.weight = ini:r_float(obj_sec, "inv_weight")
+				
+				table.insert(cfg_arts, tmp)
+				f = table.getn(cfg_arts)
+			
+				if not in_container then			
+					table.insert(inv_arts, number)
+					change_inv_arts_rad(number*cfg_arts[f].inv_rad)
+				else
+					table.insert(inv_arts, 0)
+					lead_ballast.change_ballast(number*cfg_arts[f].weight)
+				end
+			end
+		end
+	else -- If artefact is already in cfg_arts table
+		if not in_container then
+			inv_arts[f]=inv_arts[f] + number
+			change_inv_arts_rad(number*cfg_arts[f].inv_rad)
+		else
+			lead_ballast.change_ballast(number*cfg_arts[f].weight)
+		end
+	end
+	
+--	for k,v in pairs(cfg_arts) do
+--		alun_utils.printf("cfg_arts key|value=  "..tostring(k).."  |  "..tostring(v))
+--	end
+
+--[[
+--	if number == -1 then  -- Adding/removing to secondary table for checking if the Artefact is on the belt
+--		inv_check[obj_id] = nil
+--	elseif number == 1 then
+--		inv_check[obj_id] = true
+--	end
+--]]
+
+--	if number == -1 then
+--		alun_utils.printf("Artifact "..tostring(obj_sec).." has been de-registered")
+--	elseif number == 1 then
+--		alun_utils.printf("inventory_radiation.register_artefact: Artifact "..tostring(obj_sec).." has been registered")
+--	end
+	return f
+end
+
+
+function change_inv_arts_rad(delta)
+	inv_arts_rad = inv_arts_rad + delta
+	if inv_arts_rad < 0.00000001 then -- Yasti: Makes sure values low enough return zero. May need to be further adjusted
+		inv_arts_rad = 0
+	end
+	--alun_utils.printf("inventory_radiation.change_inv_arts_rad: inv_arts_rad= "..tostring(inv_arts_rad))
+end
+
+----------------------------------------------------
+--Function applies the radiation from registered artifacts to the actor
+----------------------------------------------------
+
+function apply_rad(time)
+	local time_delta = time - time_previous
+	if time_delta >= time_step then
+		local stepped_delta = math.min(5, time_delta/time_step)
+		local delta_rad = inv_arts_rad*stepped_delta
+--		alun_utils.printf("inventory_radiation.apply_rad: inv_arts_rad x stepped_delta = delta_radiation: "..tostring(inv_arts_rad).."x"..tostring(stepped_delta).."="..tostring(delta_rad))
+		
+		if delta_rad~=0 then
+			delta_rad = delta_rad * rad_factor
+			
+			if delta_rad < 0 then 
+				delta_rad = 0
+			end
+			
+			db.actor.radiation = delta_rad
+--			alun_utils.printf("inventory_radiation.apply_rad: actor rad= "..tostring(db.actor.radiation).." delta_rad= "..tostring(delta_rad))
+		end
+		time_previous = time
+	end
+end
+
+
+function get_art_index(obj)
+	for i = 1, get_cfg_arts_number() do
+		if cfg_arts[i].section == obj then
+			return i
+		end
+	end
+	return 0
+end
+
+
+function get_cfg_arts_number()
+	return table.getn(cfg_arts)
+end
+
+
+function get_art_section(art_index)
+  return cfg_arts[art_index].section
+end
+
+
+function get_inv_arts_number(art_index)
+  return inv_arts[art_index]
+end
+
+---------------------------------------------------------------------------------------------
+
+--[[
+----------------------------------------------------
+-- Yasti: Belt Functions. Currently unused
+----------------------------------------------------
+
+belt = {}
+belt_id = {}
+belt_status = false
+
+local need_update = true
+local inventory_open = false
+local separator_spawned = false
+local separator = "separator"
+local count = 0
+local flag
+
+---------------------------------------------------
+
+
+----------------------------------------------------
+--Function to check if artifact is on belt and remove from/add to artefact inventory radiation registry table
+----------------------------------------------------
+function inv_rad_update()
+	if (need_update == false) then return end
+
+	belt_status = false
+
+	-- Spawn Divider to determine if object is on belt
+	if (separator_spawned == false) then
+		alife():create(separator,
+			db.actor:position(),
+			db.actor:level_vertex_id(),
+			db.actor:game_vertex_id(),
+			db.actor:id())
+		separator_spawned = true
+		return
+	end
+
+	belt = {}
+	belt_id = {}
+	flag = 0
+
+	-- Scans Iventory
+	db.actor:inventory_for_each(scan_inv)
+	need_update = false
+
+	-- Delete Divider
+	db.actor:inventory_for_each(del_separator)
+	separator_spawned = false
+
+	belt_status = true
+
+	--	for i,k in pairs(belt) do
+	--		alun_utils.printf(i.."="..k)
+	--	end
+	--end
+	
+	--Compares cfg_arts to belt_id and inv_check and adjusts registry accordingly
+	for k,v in pairs(cfg_arts) do
+		if v.obj_id then
+			local obj = level.object_by_id(v.obj_id)
+			if obj then
+				local obj_id = obj:id()
+				if belt_id[obj_id] == true and inv_check[obj_id] == true then
+					local obj_clsid = obj:clsid()
+					local ini = system_ini()
+					if ini:section_exist(obj:section()) then
+						local class = ini:r_clsid(obj:section(), "class")
+						if class == clsid.artefact or class == clsid.artefact_s then
+							register_artefact(obj:id(), -1)
+--							alun_utils.printf("inventory_radiation.update(): Artefact removed from radiation table as it is now on belt. Artefact= "..tostring(obj:name()))
+						end
+					end
+				elseif belt_id[obj_id] == nil and inv_check[obj_id] == nil and db.actor:object(obj:section()) then
+					local obj_clsid = obj:clsid()
+					local ini = system_ini()
+					if ini:section_exist(obj:section()) then
+						local class = ini:r_clsid(obj:section(), "class")
+						if class == clsid.artefact or class == clsid.artefact_s then
+							register_artefact(obj:id(), 1)
+--							alun_utils.printf("inventory_radiation.update(): Artefact added to radiation table as it is removed on belt. Artefact= "..tostring(obj:name()))
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+
+
+-- Adding Inventory items to a table after the Divider
+function scan_inv(item)
+	local section = item:section()
+
+	if section == separator then
+		flag = 1
+		return
+	end
+
+	if flag == 1 then
+		if slot_item(item) ~= nil then
+			flag = 2
+		else
+			insert_to_table(belt, section)
+			belt_id[item:id()] = true
+		end
+	end
+end
+
+-- Adding Table
+function insert_to_table(tbl, section)
+	if tbl[section] == nil then
+		tbl[section] = 1
+	else
+		tbl[section] = tbl[section] + 1
+	end
+end
+
+-- Removing the Divider
+function del_separator(item)
+	if item:section() == separator then
+		alife():release(alife():object(item:id()), true)
+	end
+end
+
+-- Checking for items in slots
+function slot_item(item)
+	for i=0,12 do
+		local obj = db.actor:item_in_slot(i)
+		if obj and item:id() == obj:id() then
+			return i
+		end
+	end
+
+	return nil
+end
+--]]

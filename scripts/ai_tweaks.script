@@ -12,14 +12,23 @@ local InfiniteAmmoSecondary = alun_utils.read_from_ini(ini,"weapon_reload","infi
 local LIOSEnable = alun_utils.read_from_ini(ini,"lios","enable","bool",false)
 local LIOSRange = alun_utils.read_from_ini(ini,"lios","range_add","float",0.30)
 local LIOSFov = alun_utils.read_from_ini(ini,"lios","fov_add","float",-0.30)
+
 local NpcHelpEnable = alun_utils.read_from_ini(ini,"npc_help","enable","bool",true)
-local NpcHelpDistance = alun_utils.read_from_ini(ini,"npc_help","npc_help_distance","float",400)
-local NpcHelpTimer = alun_utils.read_from_ini(ini,"npc_help","npc_help_timer","float",5000)
+local NpcHelpDistanceClose = alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_close","float",225)
+local NpcHelpTimerClose = alun_utils.read_from_ini(ini,"npc_help","npc_help_timer_close","float",3500)
+local NpcHelpDistanceMedium = alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_medium","float",900)
+local NpcHelpTimerMedium = alun_utils.read_from_ini(ini,"npc_help","npc_help_timer_medium","float",15000)
+local NpcHelpDistanceFar = alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_far","float",2500)
+local NpcHelpTimerFar = alun_utils.read_from_ini(ini,"npc_help","npc_help_timer_far","float",20000)
+
 GhillieEnable = alun_utils.read_from_ini(ini,"ghillie_settings","enable","bool",true)
 local GhillieSightRange = alun_utils.read_from_ini(ini,"ghillie_settings","detect_range_factor","float",0.6)
-local GhillieAimTime = alun_utils.read_from_ini(ini,"ghillie_settings","aim_time_factor","float",2)
+local GhillieAimTime = alun_utils.read_from_ini(ini,"ghillie_settings","aim_time_factor","float",1.5)
+local GhilleHelpTimeFactor = alun_utils.read_from_ini(ini,"ghillie_settings","help_timer_factor","float",1.2)
+local GhillieHelpDistanceFactor = alun_utils.read_from_ini(ini,"ghillie_settings","help_distance_factor","float",0.8)
 ini = nil
 
+local wearing_ghillie = db.actor and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit"
 
 
 local scope_flags = {	[1] = true,
@@ -244,24 +253,77 @@ function npc_on_update(obj,st)
 	
 	--Yasti: NPC informs close-by allies of your location--
 	if (NpcHelpEnable) then
+		local help_dist_close
+		local help_dist_med
+		local help_dist_far
+		
+		if GhillieEnable and wearing_ghillie then
+			help_dist_close = NpcHelpDistanceClose * GhillieHelpDistanceFactor
+			help_dist_med = NpcHelpDistanceMedium * GhillieHelpDistanceFactor
+			help_dist_far = NpcHelpDistanceFar * GhillieHelpDistanceFactor
+		else
+			help_dist_close = NpcHelpDistanceClose
+			help_dist_med = NpcHelpDistanceMedium
+			help_dist_far = NpcHelpDistanceFar
+		end
+		
 		if not empty(xr_combat_ignore.fighting_with_actor_npcs) then
 			for k,v in pairs(xr_combat_ignore.fighting_with_actor_npcs) do
 				--alun_utils.printf("xr_combat_ignore.process:enemy_callback: fighting with actor table check: "..tostring(k).." | "..tostring(v))
 				local hostile_npc = level.object_by_id(k)
 				local near_npc = get_near_npc(hostile_npc)
-				if alun_utils.get_timer(db.storage[hostile_npc:id()]) == 1 then
-					if near_npc and near_npc:alive() and hostile_npc:position():distance_to_sqr(near_npc:position()) <= NpcHelpDistance then
-						if xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] == nil and near_npc:character_community() == hostile_npc:character_community() then
-							db.storage[near_npc:id()].enemy_id = db.actor:id()
-							xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
-							alun_utils.printf("ai_tweaks.npc_on_update: Nearest Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
-						end
+				local npc_distances = near_npc and hostile_npc:position():distance_to_sqr(near_npc:position())
+				local timer_close = get_timer_close(db.storage[hostile_npc:id()])
+				local timer_medium = get_timer_med(db.storage[hostile_npc:id()])
+				local timer_far = get_timer_far(db.storage[hostile_npc:id()])
+				local fighting_actor = near_npc and xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()]
+				--Yasti: Distance Checks for Closest NPC to Hostile NPC. Further away they are the longer it takes to flag NPC to engage Actor
+				if near_npc and near_npc:alive() and npc_distances <= help_dist_close and timer_close == 1 and fighting_actor == nil then
+					if near_npc:character_community() == hostile_npc:character_community() then
+						db.storage[near_npc:id()].enemy_id = db.actor:id()
+						xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
+					--	alun_utils.printf("ai_tweaks.npc_on_update: Nearest Close Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
 					end
-				elseif alun_utils.get_timer(db.storage[hostile_npc:id()]) == nil then
-					alun_utils.set_timer(db.storage[hostile_npc:id()], NpcHelpTimer)
-				--	alun_utils.printf("ai_tweak.npc_on_update : Help Timer is set for "..tostring(hostile_npc:character_name()))
+					
+				elseif near_npc and near_npc:alive() and (npc_distances > help_dist_close) and (npc_distances <= help_dist_med) and timer_medium == 1 and fighting_actor == nil then
+					if near_npc:character_community() == hostile_npc:character_community() then
+						db.storage[near_npc:id()].enemy_id = db.actor:id()
+						xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
+					--	alun_utils.printf("ai_tweaks.npc_on_update: Nearest Medium Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
+					end
+								
+				elseif near_npc and near_npc:alive() and (npc_distances > help_dist_med) and (npc_distances <= help_dist_far) and timer_far == 1 and fighting_actor == nil then
+					if near_npc:character_community() == hostile_npc:character_community() then
+						db.storage[near_npc:id()].enemy_id = db.actor:id()
+						xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
+					--	alun_utils.printf("ai_tweaks.npc_on_update: Nearest Far Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
+					end
+					
 				else
-				--	alun_utils.printf("ai_tweak.npc_on_update : Help Timer is counting down for "..tostring(hostile_npc:character_name()))
+					if timer_close == nil then
+						if GhillieEnable and wearing_ghillie then
+							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * GhillieHelpTimeFactor)
+						else
+							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose)
+						end
+					--	alun_utils.printf("ai_tweaks: NPC on update: close dist timer started for: "..tostring(hostile_npc:character_name()))
+					end
+					if timer_medium == nil then
+						if GhillieEnable and wearing_ghillie then
+							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * GhilleHelpTimeFactor)
+						else
+							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium)
+						end
+					--	alun_utils.printf("ai_tweaks: NPC on update: med dist timer started for: "..tostring(hostile_npc:character_name()))
+					end
+					if timer_far == nil then
+						if GhillieEnable and wearing_ghillie then
+							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * GhillieHelpTimeFactor)
+						else
+							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar)
+						end
+					--	alun_utils.printf("ai_tweaks: NPC on update: far dist timer started for: "..tostring(hostile_npc:character_name()))
+					end
 				end
 			end
 		end
@@ -287,8 +349,8 @@ function override_combat_ignore(obj,enemy,check_num)
 	
 	if check_num == 1 and GhillieEnable then
 	--	debug_write("Npc to Actor distance = %s for NPC: %s and Detection Range with Ghillie and is %s Actor seen? %s", dist_check,obj:character_name(),detect_range_check,obj:see(enemy))
-		if db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit" then 			--Checks to see if Ghillie Suit is being Worn
-			if obj:position():distance_to_sqr(enemy:position()) >= ghillie_range then							--Distance the player is no longer ignored by NPC
+		if wearing_ghillie then 																--Checks to see if Ghillie Suit is being Worn
+			if obj:position():distance_to_sqr(enemy:position()) >= ghillie_range then			--Distance the player is no longer ignored by NPC
 				return true
 			end
 		end
@@ -349,7 +411,72 @@ function aim_modify(obj, st)
 	end
 end	
 
+--------------------------------------------------------
+--Timer function's. Taken from alun_utils for use with NPC Help
+--------------------------------------------------------
 
+function set_timer_close(userobj, time)
+	if not ( userobj ) then
+		return
+	end
+	userobj.timerclose = time_global() + time
+end
+
+function get_timer_close(userobj)
+	if ( userobj.timerclose ~= nil ) then
+		if ( time_global() > userobj.timerclose ) then
+			userobj.timerclose = nil
+			return 1
+		else
+			return -1
+		end
+	end
+	return nil
+end
+
+--------------------------------------------------------
+
+function set_timer_med(userobj, time)
+	if not ( userobj ) then
+		return
+	end
+	userobj.timermed = time_global() + time
+end
+
+function get_timer_med(userobj)
+	if ( userobj.timermed ~= nil ) then
+		if ( time_global() > userobj.timermed ) then
+			userobj.timermed = nil
+			return 1
+		else
+			return -1
+		end
+	end
+	return nil
+end
+
+--------------------------------------------------------
+
+function set_timer_far(userobj, time)
+	if not ( userobj ) then
+		return
+	end
+	userobj.timerfar = time_global() + time
+end
+
+function get_timer_far(userobj)
+	if ( userobj.timerfar ~= nil ) then
+		if ( time_global() > userobj.timerfar ) then
+			userobj.timerfar = nil
+			return 1
+		else
+			return -1
+		end
+	end
+	return nil
+end
+
+--------------------------------------------------------
 
 --DEBUG FUNCTIONS--
 function debug_write(text,...)

@@ -870,6 +870,24 @@
 	<string id="st_wpn_fnfalll_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
+	<string id="st_wpn_fnfallelcan_custom">
+			<text>FN FAL (customized)</text>
+	</string>
+	<string id="st_wpn_fnfallelcan_custom_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+	</string>
+		<string id="st_wpn_fnfallelcan_modern">
+			<text>FN FAL (modern)</text>
+	</string>
+	<string id="st_wpn_fnfallelcan_modern_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+	</string>
+			<string id="st_wpn_fnfallelcan_camo">
+			<text>FN FAL (camouflaged)</text>
+	</string>
+	<string id="st_wpn_fnfallelcan_camo_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+	</string>
 	<string id="st_wpn_fr2000">
 		<text>FN FS2000</text>
 	</string>
@@ -880,7 +898,7 @@
 		<text>M14 DMR</text>
 	</string>
 	<string id="st_wpn_m21_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]The DMR fills the need for a lightweight, accurate weapon system utilizing the 7.62x51mm NATO round. Marine Corps Explosive Ordnance Disposal Teams, Scout Snipers and sniper spotters also used DMRs when the mission requires rapid, accurate fire at long range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] M16 scope (permanent)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]The DMR fills the need for a lightweight, accurate weapon system utilizing the 7.62x51mm NATO round. Marine Corps Explosive Ordnance Disposal Teams, Scout Snipers and sniper spotters also used DMRs when the mission requires rapid, accurate fire at long range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] M24 sniper scope (permanent)</text>
 	</string>
 	<string id="st_wpn_m1000">
 		<text>Muzgaran</text>
@@ -1468,10 +1486,10 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The standard individual weapon for the British armed forces, the L85 (in its original A1 version) had numerous performance issues. The improved L85A2 is extremely reliable over a range of climates for various operational scenarios.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] SUSAT scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
 	</string>
 	<string id="st_wpn_lr300_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Based on the AR-15, the LR 300 is an excellent weapon system suitable for military use in close quarters battle. Its folding skeletal stock makes it ideal for aggressive and rapid building entries requiring a compact yet powerful selective fire weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Based on the AR-15, the LR 300 is an excellent weapon system suitable for military use in close quarters battle. Its folding skeletal stock makes it ideal for aggressive and rapid building entries requiring a compact yet powerful selective fire weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
 	</string>
 	<string id="st_wpn_lr300_worn_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Based on the AR-15, the LR 300 is an excellent weapon system suitable for military use in close quarters battle. Its folding skeletal stock makes it ideal for aggressive and rapid building entries requiring a compact yet powerful selective fire weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible\n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Based on the AR-15, the LR 300 is an excellent weapon system suitable for military use in close quarters battle. Its folding skeletal stock makes it ideal for aggressive and rapid building entries requiring a compact yet powerful selective fire weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible\n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
 	</string>
 	<string id="st_wpn_pb_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Issued into service in 1967, the PB (GRAU index 6P9) is a Soviet silenced pistol based on the Makarov PM. It was intended for use by the KGB and army reconnaissance groups. The PB's integral silencer also reduces the bullet velocity to below subsonic levels.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] PB silencer (permanent)</text>

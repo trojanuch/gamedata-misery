@@ -59,7 +59,7 @@ single_handed           = 0
 
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.48       ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.34     ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.93f
 crosshair_inertion		= 9.3
 
@@ -67,12 +67,12 @@ crosshair_inertion		= 9.3
 cam_return = 0 ;				= 1
 cam_relax_speed         = 15               ;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360                ;скорость возврата в исходное положение у АИ
-cam_dispersion          = 0.7                ;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc      = 0.44                ;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          = 1.44                ;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc      = 1.44                ;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac     = 1.1                ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle           = 10.0                ;максимальный угол отдачи
+cam_max_angle           = 50.0                ;максимальный угол отдачи
 cam_max_angle_horz      = 50.0                ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.65                    ;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 2.35                    ;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.25
 PDM_disp_vel_factor 		= 2.4
@@ -82,12 +82,12 @@ PDM_disp_crouch_no_acc = 1.0 ; 		= 1.425
 
 zoom_cam_relax_speed         = 10	    ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 0.51
-zoom_cam_dispersion_inc      = 0.38
+zoom_cam_dispersion          = 1.34
+zoom_cam_dispersion_inc      = 1.34
 zoom_cam_dispersion_frac     = 1.1
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 0.5
+zoom_cam_step_angle_horz     = 2.15
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 15        ;увеличение дисперсии в процентах при максимальном износе
 

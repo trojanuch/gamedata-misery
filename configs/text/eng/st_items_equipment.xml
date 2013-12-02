@@ -1626,4 +1626,22 @@
 	<string id="st_container_tool_descr">
 	<text>A simple tool to assist in the removal of artifacts from Containers</text>
 	</string>
+	<string id="st_lead_box_name">
+		<text>Lead-Lined Metal Container</text>
+	</string>
+	<string id="st_lead_box_descr">	
+		<text>A simple metal lead-lined container with foam inserts designed for transporting dangerous artifacts. It is used in conjuction with a Artifact Removal Tool. \n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] Holds 2 Artifacts\n • %c[0,140,140,140] Simple item\n • %c[0,140,140,140] Contains No Artifacts \n\n%c[255,238,153,26] Item's inside are lost when traded\n</text>
+	</string>
+	<string id="st_lead_box_half_name">
+		<text>LLMC With 1 Artifact Inside</text>
+	</string>
+	<string id="st_lead_box_half_descr">	
+		<text>A simple metal lead-lined container with foam inserts designed for transporting dangerous artifacts. It is used in conjuction with a Artifact Removal Tool. \n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] Holds 2 Artifacts\n • %c[0,140,140,140] Simple item\n • %c[0,140,140,140] Contains 1 Artifact \n\n%c[255,238,153,26] Item's inside are lost when traded\n</text>
+	</string>
+	<string id="st_lead_box_closed_name">
+		<text>LLMC With 2 Artifacts Inside</text>
+	</string>
+	<string id="st_lead_box_closed_descr">	
+		<text>A simple metal lead-lined container with foam inserts designed for transporting dangerous artifacts. It is used in conjuction with a Artifact Removal Tool. \n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] Holds 2 Artifacts\n • %c[0,140,140,140] Simple item\n • %c[0,140,140,140] Contains 2 Artifacts \n\n%c[255,238,153,26] Item's inside are lost when traded\n</text>
+	</string>
 </string_table>

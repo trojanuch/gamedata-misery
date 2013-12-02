@@ -131,7 +131,8 @@ function on_game_start()
 	
 	--Artefact Container Mod
 	if (arty_container) then arty_container.on_game_start() end
-
+	if (inventory_radiation) then inventory_radiation.on_game_start() end
+	if (lead_containers) then lead_containers.on_game_start() end
 	-- TEST
 	--if (axr_overheat) then axr_overheat.on_game_start() end
 end

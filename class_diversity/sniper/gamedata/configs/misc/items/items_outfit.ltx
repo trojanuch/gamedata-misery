@@ -578,10 +578,10 @@ inv_name			= scientific_outfit_name
 inv_name_short		= scientific_outfit_name
 description			= scientific_outfit_description
 
-inv_weight			= 18
+inv_weight			= 18.48
 
-additional_inventory_weight2 	= 18
-additional_inventory_weight 	= 18
+additional_inventory_weight2 	= 19
+additional_inventory_weight 	= 19
 
 slot				= 6
 inv_grid_width		= 2
@@ -1360,10 +1360,10 @@ player_hud_section	= actor_hud_07
 
 ef_equipment_type	= 2
 
-inv_name			= st_ecologist_red_outfit_name 
+inv_name			= st_ecologist_red_outfit_name
 inv_name_short		= st_ecologist_red_outfit_name
 description			= st_ecologist_red_outfit_description
-inv_weight			= 12.14
+inv_weight			= 15.14
 slot				= 6
 
 inv_grid_width		= 2
@@ -1448,7 +1448,7 @@ ef_equipment_type	= 2
 inv_name			= st_ecologist_green_outfit_name
 inv_name_short		= st_ecologist_green_outfit_name
 description			= st_ecologist_green_outfit_description
-inv_weight			= 12.42
+inv_weight			= 16.33
 slot				= 6
 
 inv_grid_width		= 2
@@ -1518,3 +1518,83 @@ fire_wound_immunity			= -0.006
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;---------------------------------------------------------------------------------------------
+;		Маскировочный костюм "Леший"
+;---------------------------------------------------------------------------------------------
+[ghillie_outfit]:outfit_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 			= "outfit\ghillie_outfit"
+;$prefetch 		= 32
+class			= E_STLK
+cform           = skeleton
+visual          = dynamics\outfit\ghillie_outfit
+actor_visual	= actors\stalker_new\stalker_ghillie.ogf
+player_hud_section	= actor_hud_ghillie
+
+ef_equipment_type	= 3
+
+inv_name			= ghillie_outfit_name
+inv_name_short		= ghillie_outfit_name
+description			= ghillie_outfit_description
+
+inv_weight			= 13.82
+
+inv_grid_width		= 2
+inv_grid_height		= 3
+inv_grid_x        	= 20
+inv_grid_y        	= 24
+upgr_icon_x			= 1622
+upgr_icon_y			= 383
+upgr_icon_width		= 277
+upgr_icon_height   	= 175
+
+full_icon_name		= npc_icon_ghillie_outfit
+helmet_avaliable	= false
+
+cost				= 48710
+slot				= 6
+full_scale_icon		= 14,11			;иконка сталкера в костюме в полный рост
+
+additional_inventory_weight		= 15		; +max_walk_weight
+additional_inventory_weight2	= 15		;	+40 kg
+artefact_count                  = 1
+
+default_to_ruck     = false
+immunities_sect		= sect_ghillie_outfit_immunities
+
+; LOW RESISTANCE
+burn_protection 			= 0.0370 ; 12 kW / m2
+shock_protection 			= 1.180 ; 1065 kV
+radiation_protection 			= 0.0036
+chemical_burn_protection 		= 0.015 ; 50 C1 ppm eq.
+telepatic_protection 			= 0 ; 0 mT
+strike_protection 			= 0
+explosion_protection 			= 0.18
+wound_protection			= 0.24
+fire_wound_protection  			= 0.16
+
+hit_fraction_actor			= 0.48
+bones_koeff_protection 			= actor_armor_light
+
+control_inertion_factor = 1.23
+power_loss 			= 0.68
+
+upgrades                = up_gr_firstab_stalker_outfit, up_gr_seconab_stalker_outfit, up_gr_thirdab_stalker_outfit
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_stalker_outfit
+
+repair_part_bonus	 	= 0.24
+
+immunities_sect		= sect_ghillie_outfit_immunities
+
+[sect_ghillie_outfit_immunities]
+burn_immunity				= 0.36			;коэффициенты иммунитета самого костюма
+strike_immunity				= 0
+shock_immunity				= 0.005
+wound_immunity				= 0.051
+radiation_immunity = 0.0 ;			= 0.028
+telepatic_immunity			= 0.0
+chemical_burn_immunity		= 0.018
+explosion_immunity			= 0.066
+fire_wound_immunity			= 0.048

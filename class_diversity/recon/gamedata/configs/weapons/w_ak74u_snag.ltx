@@ -29,7 +29,7 @@ hit_impulse          	= 20
 hit_type            	= fire_wound            ; [] type of the wound
 fire_distance           = 900
 bullet_speed            = 800
-rpm                     = 650
+rpm                     = 708
 rpm_empty_click         = 200
 
 use_aim_bullet          = false
@@ -61,29 +61,30 @@ zoom_dof             		= 0.5, 1.0, 180
 reload_dof           		= 0.0, 0.5, 5, 2
 
 ;----Дисперсия---------------------------------------------------------------------------
-fire_dispersion_base       = 0.45 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       = 0.42 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    = 1.06f
 crosshair_inertion		= 4.3
 
 ;params of weapon recoil
 cam_return = 0 ;				= 1
-cam_relax_speed         	= 11
-cam_relax_speed_ai     		= 120.75
-cam_dispersion	         	= 0.89
-cam_dispersion_inc         	= 0.54
-cam_dispersion_frac     	= 1.0
-cam_max_angle				= 50.0
-cam_max_angle_horz      	= 5.0
-cam_step_angle_horz     	= 1.5
+cam_relax_speed         = 12			;скорость возврата в исходное положение
+cam_relax_speed_ai     	= 120.75
+cam_dispersion	        = 0.83
+cam_dispersion_inc      = 0.51
+cam_dispersion_frac     = 1.1	    ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 41.0      ;максимальный угол отдачи
+cam_max_angle_horz      = 41.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.16		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_relax_speed         	= 11
-zoom_cam_relax_speed_ai      	= 360
-zoom_cam_dispersion          	= 0.69
-zoom_cam_dispersion_inc      	= 0.44
-zoom_cam_dispersion_frac     	= 0.7
-zoom_cam_max_angle           	= 50.0
-zoom_cam_max_angle_horz      	= 5.0
-zoom_cam_step_angle_horz     	= 1.0
+zoom_cam_relax_speed         = 12	    ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          = 0.73
+zoom_cam_dispersion_inc      = 0.43
+zoom_cam_dispersion_frac     = 1.0
+zoom_cam_max_angle           = 41.0
+zoom_cam_max_angle_horz      = 41.0
+zoom_cam_step_angle_horz     = 1.05
+
 fire_dispersion_condition_factor = 0.001 ;	= 0.01 ; 10
 
 PDM_disp_base 				= 0.7

@@ -57,7 +57,7 @@ grenade_class        = ammo_vog-25         ; name of the ltx-section of used gre
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.18 ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.16 ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.42f
 crosshair_inertion   	= 9.8
 
@@ -67,9 +67,9 @@ cam_relax_speed_ai      = 360	;скорость возврата в исходное положение
 cam_dispersion	        = 3.4
 cam_dispersion_inc      = 3.4
 cam_dispersion_frac 	= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle	     	= 15.0	;максимальный угол отдачи
-cam_max_angle_horz   	= 3.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz 	= 0.25	;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle	     	= 50.0	;максимальный угол отдачи
+cam_max_angle_horz   	= 50.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz 	= 0.8	;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.45
 PDM_disp_vel_factor 		= 2.55
@@ -82,9 +82,9 @@ zoom_cam_relax_speed_ai = 120.75
 zoom_cam_dispersion       = 2.55
 zoom_cam_dispersion_inc   = 2.55
 zoom_cam_dispersion_frac = 1.0
-zoom_cam_max_angle      = 6.0
-zoom_cam_max_angle_horz = 3.0
-zoom_cam_step_angle_horz = 0.25
+zoom_cam_max_angle      = 50.0
+zoom_cam_max_angle_horz = 50.0
+zoom_cam_step_angle_horz = 0.7
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 8
 

@@ -8,11 +8,17 @@ range_add 	=  0.6							;Percent increase to NPC range
 fov_add		= -0.4							;Percent increase to NPC FOV (negative to reduce)
 
 [npc_help]
-enable = true					; Enables NPC informing allies of your location
-npc_help_distance = 400 		; Sets distance that an NPC who has "seen" the player can alert other NPC's to the players location. Value is distance squared
-npc_help_timer = 3500			; Sets time before the NPC inform allies in ms
+enable = true						; Enables NPC informing allies of your location
+npc_help_distance_close = 25		; Sets distance that an NPC who has "seen" the player can alert other NPC's to the players location. Value is distance squared
+npc_help_timer_close = 10000			; Sets time before the NPC inform allies in ms
+npc_help_distance_medium = 625 
+npc_help_timer_medium = 15000
+npc_help_distance_far = 1600
+npc_help_timer_far = 30000
 
 [ghillie_settings]
 enable = true   				; Enables reduced detection of the Ghillie Suit.
-detect_range_factor = 0.6 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
-aim_time_factor = 1.5				; Time it take for NPC's to aim while wearing a Ghillie
+detect_range_factor = 0.8 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 2.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.9		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 2.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help

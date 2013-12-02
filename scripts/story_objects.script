@@ -27,8 +27,8 @@ function story_objects_registry:register(obj_id , story_obj_id, on_register, sav
 	self.story_id_by_id[obj_id]			= story_obj_id
 	
 	--Yasti Backup Corruption Prevention--
-	if is_bad_str(story_obj_id) then
-			alun_utils.printf("story_objects_registry:register 2nd level Corruption Detected. Releasing Object. Object Name is: "..tostring(story_obj_id))
+	if is_bad_str(story_obj_id) or obj_id > 65535 then
+			alun_utils.printf("story_objects_registry:register 2nd level Corruption Detected. Releasing Object. Object Name|ID is: "..tostring(story_obj_id).." | "..tostring(obj_id))
 			alife():release(alife():object(self.id_by_story_id[story_obj_id]),true)
 	end
 	--End Yasti--
@@ -97,13 +97,15 @@ function story_objects_registry:save(packet)
 		local id = self.dynamic_story_ids[i]
 		local story_id = self.story_id_by_id[id]
 		--Yasti Save Corruption--
-		if is_bad_str(story_id) then
-			alun_utils.printf("story_objects_registry:save Corruption Detected. Object Name is: "..tostring(story_id))
+		if is_bad_str(story_id) or id > 65535 then
+			alun_utils.printf("story_objects_registry:save Corruption Detected. Object Name| ID is: "..tostring(story_id).." | "..tostring(id))
 			give_quick_news("Possible Save Corruption Detected. Reload the Save to Correct Issue")
-		end
+		--	alife():release(alife():object(level.object_by_id(id):id()),true)
+		else
 		--End Yasti--
-		packet:w_stringZ(story_id)
-		packet:w_u32(id) -- Adjusted Yasti Save Corruption Epiphany. Vanilla Version is 16
+			packet:w_stringZ(story_id)
+			packet:w_u16(id)
+		end
 	end
 	set_save_marker(packet, "save", true, "story_objects")
 end
@@ -128,13 +130,15 @@ function story_objects_registry:load(packet)
 	local se_obj,story_id,obj_id
 	for i = 1, count do
 		story_id 	= packet:r_stringZ()
-		obj_id = packet:r_u32()  -- Adjusted Yasti Save Corruption Epiphany. Vanilla Version is 16
+		obj_id = packet:r_u16()
+		alun_utils.printf("story_objects_registry.load: obj_id|Story_id = "..tostring(obj_id).." | "..tostring(story_id))
 		--Yasti Save Corruption--
-		if is_bad_str(story_id) then
-			alun_utils.printf("story_objects_registry:load corruption detected. Releasing Object. Object Name is: "..tostring(story_id))
+		if is_bad_str(story_id, true) or obj_id > 65535 then
+			alun_utils.printf("story_objects_registry:load corruption detected. Releasing Object. Object Name is: "..tostring(story_id).." | "..tostring(obj_id))
 			alife():release(alife():object(obj_id),true)
+		else
+			self:register(obj_id, story_id, false, true)	--Real Wolf	
 		end
-		self:register(obj_id, story_id, false, true)	--Real Wolf	
 		--End Yasti--
 	end
 	set_save_marker(packet, "load", true, "story_objects")
@@ -173,7 +177,7 @@ function check_spawn_ini_for_story_id(se_obj)
 end
 
 -- Real Wolf
-function is_bad_str(str)
+function is_bad_str(str, check)
 	local allowed_codes_for_sid = {}
 	local codes_intervals = { {"a", "z"}, {"A", "Z"}, {"0", "9"}, {"_", "_"}, {"-", "-"} }
 
@@ -192,6 +196,14 @@ function is_bad_str(str)
 		alun_utils.printf("Warning! story_objects.is_bad_str: str = nil. You may be attempting to save too often.")
 		flag = true
 		return flag
+	end
+	if check then
+		if string.find(str, "zat") or string.find(str, "jup") or string.find(str, "pri") or string.find(str, "disel") then
+			--alun_utils.printf("story_objects.is_bad_str: object string is correct: "..tostring(str))
+		else
+			flag = true
+			return flag
+		end
 	end
 	--End Yasti--
 	for i = 1, #str do

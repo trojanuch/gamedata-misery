@@ -1639,8 +1639,43 @@ function play_inv_cooking()
 	snd_obj:play(db.actor,0,sound_object.s2d)
 end
 
-function play_inv_arty_container()
-	local snd_obj = sound_object("interface\\inv_close")
+function play_inv_aam_open()
+	local snd_obj = sound_object("interface\\inv_aam_open")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_aam_close()
+	local snd_obj = sound_object("interface\\inv_aam_close")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_aac_open()
+	local snd_obj = sound_object("interface\\inv_aac_open")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_aac_close()
+	local snd_obj = sound_object("interface\\inv_aac_close")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_iam_open()
+	local snd_obj = sound_object("interface\\inv_iam_open")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_iam_close()
+	local snd_obj = sound_object("interface\\inv_iam_close")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_lead_open()
+	local snd_obj = sound_object("interface\\inv_lead_open")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_lead_close()
+	local snd_obj = sound_object("interface\\inv_lead_close")
 	snd_obj:play(db.actor,0,sound_object.s2d)
 end
 

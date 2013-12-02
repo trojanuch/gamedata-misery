@@ -50,7 +50,7 @@ auto_attach			= false
 
 ;скорости увеличения (уменьшения)
 health_restore_speed		= 0
-radiation_restore_speed		= -0.00013
+radiation_restore_speed		= 0 ; -0.00013
 satiety_restore_speed		= 0
 power_restore_speed			= 0
 bleeding_restore_speed		= 0
@@ -118,7 +118,7 @@ auto_attach			= false
 
 ;скорости увеличения (уменьшения)
 health_restore_speed		= 0
-radiation_restore_speed		= -0.00025
+radiation_restore_speed		= 0 ; -0.00025
 satiety_restore_speed		= 0
 power_restore_speed		= 0
 bleeding_restore_speed		= 0
@@ -186,7 +186,7 @@ auto_attach			= false
 
 ;скорости увеличения (уменьшения)
 health_restore_speed		= 0
-radiation_restore_speed		= -0.00047
+radiation_restore_speed		= 0 ; -0.00047
 satiety_restore_speed		= 0
 power_restore_speed			= 0
 bleeding_restore_speed		= 0
@@ -211,6 +211,136 @@ explosion_immunity 			= 0
 fire_wound_immunity  		= 0
 
 ;------------------------------------------------------------------------------------------
+
+[lead_box_open]:af_iam
+class 				= S_PDA
+inv_weight 			= 5.48
+cost 				= 0
+description			= st_lead_box_descr
+inv_name			= st_lead_box_name
+inv_name_short		= st_lead_box_name
+
+cost				= 2420
+
+animation_slot  = 4
+hud = wpn_vodka_hud
+
+visual				= dynamics\devices\dev_instrument_1\dev_instrument_1.ogf
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 20
+inv_grid_y			= 42
+
+container_slots	= 2
+radiation_restore_speed = 0 ; -0.00500
+
+additional_inventory_weight	= 0
+additional_inventory_weight2	= 0
+
+can_trade = false
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+radius				= 68; 50
+
+[lead_box_open_dummy]:lead_box_open
+inv_grid_x			= 21
+inv_grid_y			= 42
+
+;------------------------------------------------------------------------------------------
+
+[lead_box_closed]:lead_box_open
+class 				= S_PDA 
+inv_weight 			= 5.48
+cost 				= 0
+description			= st_lead_box_closed_descr
+inv_name			= st_lead_box_closed_name
+inv_name_short		= st_lead_box_closed_name
+
+animation_slot  = 4
+hud = wpn_vodka_hud
+
+visual				= dynamics\devices\dev_instrument_1\dev_instrument_1.ogf
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 25
+inv_grid_y			= 42
+
+container_slots	= 2
+radiation_restore_speed = 0 ; -0.00500
+
+additional_inventory_weight	= 0
+additional_inventory_weight2	= 0
+
+can_trade = false
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+radius				= 68; 50
+
+[lead_box_closed_dummy]:lead_box_closed
+inv_grid_x			= 24
+inv_grid_y			= 42
+
+;------------------------------------------------------------------------------------------
+
+[lead_box_half]:lead_box_closed
+description			= st_lead_box_half_descr
+inv_name			= st_lead_box_half_name
+inv_name_short		= st_lead_box_half_name
+
+inv_grid_x			= 23
+inv_grid_y			= 42
+
+[lead_box_half_dummy]:lead_box_half
+inv_grid_x			= 22
+inv_grid_y			= 42
+
+;------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------
+
+[container_tool]:booster
+class       = II_ANTIR
+inv_weight      = 0.264
+
+description     = st_container_tool_descr
+inv_name      = st_container_tool_name
+inv_name_short      = st_container_tool_name
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 26
+inv_grid_y			= 2
+
+cost        = 463
+
+quest_item = true
+can_trade = false
+
+[lead_ballast]:ammo_9x18_pmm
+class	= AMMO
+
+box_size = 50000
+inv_weight = 500
+
+inv_grid_width		= 0;1
+inv_grid_height		= 0;1
+
+k_dist = 1
+k_disp = 3
+k_hit = 1.2
+k_impulse = 1
+k_pierce = 1
+impair = 1
+buck_shot = 1
+tracer = off
+wm_size = 0.05
+
+;------------------------------------------------------------------------------------------
 ;----------------------IAM WITH ARTEFACT---------------------------------------------------
 ;------------------------------------------------------------------------------------------
 
@@ -223,6 +353,9 @@ belt				= true
 description			= st_af_medusa_af_iam_descr
 inv_name			= st_af_medusa_af_iam_name
 inv_name_short			= st_af_medusa_af_iam_name
+
+inv_grid_x			= 24
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.000
@@ -245,6 +378,9 @@ belt				= true
 description			= st_af_cristall_flower_af_iam_descr
 inv_name			= st_af_cristall_flower_af_iam_name
 inv_name_short			= st_af_cristall_flower_af_iam_name
+
+inv_grid_x			= 25
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -269,6 +405,9 @@ description			= st_af_night_star_af_iam_descr
 inv_name			= st_af_night_star_af_iam_name
 inv_name_short			= st_af_night_star_af_iam_name
 
+inv_grid_x			= 26
+inv_grid_y			= 56
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00009
 satiety_restore_speed		= 0
@@ -291,6 +430,9 @@ belt				= true
 description			= st_af_vyvert_af_iam_descr
 inv_name			= st_af_vyvert_af_iam_name
 inv_name_short			= st_af_vyvert_af_iam_name
+
+inv_grid_x			= 27
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00015
@@ -315,6 +457,9 @@ description			= st_af_gravi_af_iam_descr
 inv_name			= st_af_gravi_af_iam_name
 inv_name_short			= st_af_gravi_af_iam_name
 
+inv_grid_x			= 28
+inv_grid_y			= 56
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00023
 satiety_restore_speed		= 0
@@ -337,6 +482,9 @@ belt				= true
 description			= st_af_gold_fish_af_iam_descr
 inv_name			= st_af_gold_fish_af_iam_name
 inv_name_short			= st_af_gold_fish_af_iam_name
+
+inv_grid_x			= 29
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00031
@@ -361,6 +509,9 @@ description			= st_af_cristall_af_iam_descr
 inv_name			= st_af_cristall_af_iam_name
 inv_name_short			= st_af_cristall_af_iam_name
 
+inv_grid_x			= 30
+inv_grid_y			= 56
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -382,6 +533,9 @@ belt				= true
 description			= st_af_fireball_af_iam_descr
 inv_name			= st_af_fireball_af_iam_name
 inv_name_short			= st_af_fireball_af_iam_name
+
+inv_grid_x			= 31
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00003
@@ -406,6 +560,9 @@ description			= st_af_dummy_glassbeads_af_iam_descr
 inv_name			= st_af_dummy_glassbeads_af_iam_name
 inv_name_short			= st_af_dummy_glassbeads_af_iam_name
 
+inv_grid_x			= 32
+inv_grid_y			= 56
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00009
 satiety_restore_speed		= 0
@@ -428,6 +585,9 @@ belt				= true
 description			= st_af_eye_af_iam_descr
 inv_name			= st_af_eye_af_iam_name
 inv_name_short			= st_af_eye_af_iam_name
+
+inv_grid_x			= 33
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00023
@@ -452,6 +612,9 @@ description			= st_af_fire_af_iam_descr
 inv_name			= st_af_fire_af_iam_name
 inv_name_short			= st_af_fire_af_iam_name
 
+inv_grid_x			= 34
+inv_grid_y			= 56
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00031
 satiety_restore_speed		= 0
@@ -474,6 +637,9 @@ belt				= true
 description			= st_af_blood_af_iam_descr
 inv_name			= st_af_blood_af_iam_name
 inv_name_short			= st_af_blood_af_iam_name
+
+inv_grid_x			= 35
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -498,6 +664,9 @@ description			= st_af_mincer_meat_af_iam_descr
 inv_name			= st_af_mincer_meat_af_iam_name
 inv_name_short			= st_af_mincer_meat_af_iam_name
 
+inv_grid_x			= 36
+inv_grid_y			= 56
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00003
 satiety_restore_speed		= 0
@@ -520,6 +689,9 @@ belt				= true
 description			= st_af_soul_af_iam_descr
 inv_name			= st_af_soul_af_iam_name
 inv_name_short			= st_af_soul_af_iam_name
+
+inv_grid_x			= 37
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00009
@@ -544,6 +716,9 @@ description			= st_af_fuzz_kolobok_af_iam_descr
 inv_name			= st_af_fuzz_kolobok_af_iam_name
 inv_name_short			= st_af_fuzz_kolobok_af_iam_name
 
+inv_grid_x			= 38
+inv_grid_y			= 56
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00023
 satiety_restore_speed		= 0
@@ -566,6 +741,9 @@ belt				= true
 description			= st_af_baloon_af_iam_descr
 inv_name			= st_af_baloon_af_iam_name
 inv_name_short			= st_af_baloon_af_iam_name
+
+inv_grid_x			= 39
+inv_grid_y			= 56
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00031
@@ -590,6 +768,9 @@ description			= st_af_glass_af_iam_descr
 inv_name			= st_af_glass_af_iam_name
 inv_name_short			= st_af_glass_af_iam_name
 
+inv_grid_x			= 40
+inv_grid_y			= 56
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00034
 satiety_restore_speed		= 0
@@ -613,6 +794,9 @@ description			= st_af_electra_sparkler_af_iam_descr
 inv_name			= st_af_electra_sparkler_af_iam_name
 inv_name_short			= st_af_electra_sparkler_af_iam_name
 
+inv_grid_x			= 22
+inv_grid_y			= 59
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -628,13 +812,16 @@ hit_absorbation_sect = af_electra_sparkler_absorbation
 
 [af_electra_flash_af_iam]:af_iam
 class				= SCRPTART
-inv_weight			= 3.842
+inv_weight			= 3.84
 cost				= 0
 can_trade 			= false
 belt				= true
 description			= st_af_electra_flash_af_iam_descr
 inv_name			= st_af_electra_flash_af_iam_name
 inv_name_short			= st_af_electra_flash_af_iam_name
+
+inv_grid_x			= 23
+inv_grid_y			= 59
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00003
@@ -651,13 +838,16 @@ hit_absorbation_sect = af_electra_flash_absorbation
 
 [af_electra_moonlight_af_iam]:af_iam
 class				= SCRPTART
-inv_weight			= 3.862
+inv_weight			= 3.86
 cost				= 0
 can_trade 			= false
 belt				= true
 description			= st_af_electra_moonlight_af_iam_descr
 inv_name			= st_af_electra_moonlight_af_iam_name
 inv_name_short			= st_af_electra_moonlight_af_iam_name
+
+inv_grid_x			= 24
+inv_grid_y			= 59
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00009
@@ -674,13 +864,16 @@ hit_absorbation_sect = af_electra_moonlight_absorbation
 
 [af_dummy_battery_af_iam]:af_iam
 class				= SCRPTART
-inv_weight			= 4.066
+inv_weight			= 4.06
 cost				= 0
 can_trade 			= false
 belt				= true
 description			= st_af_dummy_battery_af_iam_descr
 inv_name			= st_af_dummy_battery_af_iam_name
 inv_name_short			= st_af_dummy_battery_af_iam_name
+
+inv_grid_x			= 25
+inv_grid_y			= 59
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00023
@@ -705,6 +898,9 @@ description			= st_af_dummy_dummy_af_iam_descr
 inv_name			= st_af_dummy_dummy_af_iam_name
 inv_name_short			= st_af_dummy_dummy_af_iam_name
 
+inv_grid_x			= 26
+inv_grid_y			= 59
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00031
 satiety_restore_speed		= 0
@@ -727,6 +923,9 @@ belt				= true
 description			= st_af_ice_af_iam_descr
 inv_name			= st_af_ice_af_iam_name
 inv_name_short			= st_af_ice_af_iam_name
+
+inv_grid_x			= 27
+inv_grid_y			= 59
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00034
@@ -751,6 +950,9 @@ description			= st_af_compass_af_iam_descr
 inv_name			= st_af_compass_af_iam_name
 inv_name_short			= st_af_compass_af_iam_name
 
+inv_grid_x			= 28
+inv_grid_y			= 59
+
 health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00069
 satiety_restore_speed 		= 0
@@ -772,6 +974,9 @@ belt				= true
 description			= st_af_oasis_heart_af_iam_descr
 inv_name			= st_af_oasis_heart_af_iam_name
 inv_name_short			= st_af_oasis_heart_af_iam_name
+
+inv_grid_x			= 29
+inv_grid_y			= 59
 
 health_restore_speed		= 0
 radiation_restore_speed 	= 0.00063
@@ -795,6 +1000,9 @@ description			= st_jup_b1_half_artifact_af_iam_descr
 inv_name			= st_jup_b1_half_artifact_af_iam_name
 inv_name_short			= st_jup_b1_half_artifact_af_iam_name
 
+inv_grid_x			= 30
+inv_grid_y			= 59
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00081
 satiety_restore_speed		= 0
@@ -817,6 +1025,9 @@ belt				= true
 description			= st_af_quest_b14_twisted_af_iam_descr
 inv_name			= st_af_quest_b14_twisted_af_iam_name
 inv_name_short			= st_af_quest_b14_twisted_af_iam_name
+
+inv_grid_x			= 31
+inv_grid_y			= 59
 
 health_restore_speed 		= 0
 radiation_restore_speed 	= 0.0009
@@ -842,6 +1053,9 @@ description			= st_af_medusa_af_aac_descr
 inv_name			= st_af_medusa_af_aac_name
 inv_name_short			= st_af_medusa_af_aac_name
 
+inv_grid_x			= 24
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -863,6 +1077,9 @@ belt				= true
 description			= st_af_cristall_flower_af_aac_descr
 inv_name			= st_af_cristall_flower_af_aac_name
 inv_name_short			= st_af_cristall_flower_af_aac_name
+
+inv_grid_x			= 25
+inv_grid_y			= 57
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -887,6 +1104,9 @@ description			= st_af_night_star_af_aac_descr
 inv_name			= st_af_night_star_af_aac_name
 inv_name_short			= st_af_night_star_af_aac_name
 
+inv_grid_x			= 26
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -909,6 +1129,9 @@ belt				= true
 description			= st_af_vyvert_af_aac_descr
 inv_name			= st_af_vyvert_af_aac_name
 inv_name_short			= st_af_vyvert_af_aac_name
+
+inv_grid_x			= 27
+inv_grid_y			= 57
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00003
@@ -933,6 +1156,9 @@ description			= st_af_gravi_af_aac_descr
 inv_name			= st_af_gravi_af_aac_name
 inv_name_short			= st_af_gravi_af_aac_name
 
+inv_grid_x			= 28
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00011
 satiety_restore_speed		= 0
@@ -955,6 +1181,9 @@ belt				= true
 description			= st_af_gold_fish_af_aac_descr
 inv_name			= st_af_gold_fish_af_aac_name
 inv_name_short			= st_af_gold_fish_af_aac_name
+
+inv_grid_x			= 29
+inv_grid_y			= 57
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00019
@@ -979,6 +1208,9 @@ description			= st_af_cristall_af_aac_descr
 inv_name			= st_af_cristall_af_aac_name
 inv_name_short			= st_af_cristall_af_aac_name
 
+inv_grid_x			= 30
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1000,6 +1232,9 @@ belt				= true
 description			= st_af_fireball_af_aac_descr
 inv_name			= st_af_fireball_af_aac_name
 inv_name_short			= st_af_fireball_af_aac_name
+
+inv_grid_x			= 31
+inv_grid_y			= 57
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1024,6 +1259,9 @@ description			= st_af_dummy_glassbeads_af_aac_descr
 inv_name			= st_af_dummy_glassbeads_af_aac_name
 inv_name_short			= st_af_dummy_glassbeads_af_aac_name
 
+inv_grid_x			= 32
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1046,6 +1284,9 @@ belt				= true
 description			= st_af_eye_af_aac_descr
 inv_name			= st_af_eye_af_aac_name
 inv_name_short			= st_af_eye_af_aac_name
+
+inv_grid_x			= 33
+inv_grid_y			= 57
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00011
@@ -1070,6 +1311,9 @@ description			= st_af_fire_af_aac_descr
 inv_name			= st_af_fire_af_aac_name
 inv_name_short			= st_af_fire_af_aac_name
 
+inv_grid_x			= 34
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00019
 satiety_restore_speed		= 0
@@ -1092,6 +1336,9 @@ belt				= true
 description			= st_af_blood_af_aac_descr
 inv_name			= st_af_blood_af_aac_name
 inv_name_short			= st_af_blood_af_aac_name
+
+inv_grid_x			= 35
+inv_grid_y			= 57
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1116,6 +1363,9 @@ description			= st_af_mincer_meat_af_aac_descr
 inv_name			= st_af_mincer_meat_af_aac_name
 inv_name_short			= st_af_mincer_meat_af_aac_name
 
+inv_grid_x			= 36
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1138,6 +1388,9 @@ belt				= true
 description			= st_af_soul_af_aac_descr
 inv_name			= st_af_soul_af_aac_name
 inv_name_short			= st_af_soul_af_aac_name
+
+inv_grid_x			= 37
+inv_grid_y			= 57
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1162,6 +1415,9 @@ description			= st_af_fuzz_kolobok_af_aac_descr
 inv_name			= st_af_fuzz_kolobok_af_aac_name
 inv_name_short			= st_af_fuzz_kolobok_af_aac_name
 
+inv_grid_x			= 38
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00011
 satiety_restore_speed		= 0
@@ -1184,6 +1440,9 @@ belt				= true
 description			= st_af_baloon_af_aac_descr
 inv_name			= st_af_baloon_af_aac_name
 inv_name_short			= st_af_baloon_af_aac_name
+
+inv_grid_x			= 39
+inv_grid_y			= 57
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00019
@@ -1208,6 +1467,9 @@ description			= st_af_glass_af_aac_descr
 inv_name			= st_af_glass_af_aac_name
 inv_name_short			= st_af_glass_af_aac_name
 
+inv_grid_x			= 40
+inv_grid_y			= 57
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1230,6 +1492,9 @@ belt				= true
 description			= st_af_electra_sparkler_af_aac_descr
 inv_name			= st_af_electra_sparkler_af_aac_name
 inv_name_short			= st_af_electra_sparkler_af_aac_name
+
+inv_grid_x			= 22
+inv_grid_y			= 60
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1254,6 +1519,9 @@ description			= st_af_electra_flash_af_aac_descr
 inv_name			= st_af_electra_flash_af_aac_name
 inv_name_short			= st_af_electra_flash_af_aac_name
 
+inv_grid_x			= 23
+inv_grid_y			= 60
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1276,6 +1544,9 @@ belt				= true
 description			= st_af_electra_moonlight_af_aac_descr
 inv_name			= st_af_electra_moonlight_af_aac_name
 inv_name_short			= st_af_electra_moonlight_af_aac_name
+
+inv_grid_x			= 24
+inv_grid_y			= 60
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1300,6 +1571,9 @@ description			= st_af_dummy_battery_af_aac_descr
 inv_name			= st_af_dummy_battery_af_aac_name
 inv_name_short			= st_af_dummy_battery_af_aac_name
 
+inv_grid_x			= 25
+inv_grid_y			= 60
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00011
 satiety_restore_speed		= 0
@@ -1322,6 +1596,9 @@ belt				= true
 description			= st_af_dummy_dummy_af_aac_descr
 inv_name			= st_af_dummy_dummy_af_aac_name
 inv_name_short			= st_af_dummy_dummy_af_aac_name
+
+inv_grid_x			= 26
+inv_grid_y			= 60
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00019
@@ -1346,6 +1623,9 @@ description			= st_af_ice_af_aac_descr
 inv_name			= st_af_ice_af_aac_name
 inv_name_short			= st_af_ice_af_aac_name
 
+inv_grid_x			= 27
+inv_grid_y			= 60
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00022
 satiety_restore_speed		= 0
@@ -1369,6 +1649,9 @@ description			= st_af_compass_af_aac_descr
 inv_name			= st_af_compass_af_aac_name
 inv_name_short			= st_af_compass_af_aac_name
 
+inv_grid_x			= 28
+inv_grid_y			= 60
+
 health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00057
 satiety_restore_speed 		= 0
@@ -1390,6 +1673,9 @@ belt				= true
 description			= st_af_oasis_heart_af_aac_descr
 inv_name			= st_af_oasis_heart_af_aac_name
 inv_name_short			= st_af_oasis_heart_af_aac_name
+
+inv_grid_x			= 29
+inv_grid_y			= 60
 
 health_restore_speed		= 0
 radiation_restore_speed 	= 0.00051
@@ -1413,6 +1699,9 @@ description			= st_jup_b1_half_artifact_af_aac_descr
 inv_name			= st_jup_b1_half_artifact_af_aac_name
 inv_name_short			= st_jup_b1_half_artifact_af_aac_name
 
+inv_grid_x			= 30
+inv_grid_y			= 60
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00069
 satiety_restore_speed		= 0
@@ -1435,6 +1724,9 @@ belt				= true
 description			= st_af_quest_b14_twisted_af_aac_descr
 inv_name			= st_af_quest_b14_twisted_af_aac_name
 inv_name_short			= st_af_quest_b14_twisted_af_aac_name
+
+inv_grid_x			= 31
+inv_grid_y			= 60
 
 health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00078
@@ -1460,6 +1752,9 @@ description			= st_af_medusa_af_aam_descr
 inv_name			= st_af_medusa_af_aam_name
 inv_name_short			= st_af_medusa_af_aam_name
 
+inv_grid_x			= 24
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1481,6 +1776,9 @@ belt				= true
 description			= st_af_cristall_flower_af_aam_descr
 inv_name			= st_af_cristall_flower_af_aam_name
 inv_name_short			= st_af_cristall_flower_af_aam_name
+
+inv_grid_x			= 25
+inv_grid_y			= 58
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1505,6 +1803,9 @@ description			= st_af_night_star_af_aam_descr
 inv_name			= st_af_night_star_af_aam_name
 inv_name_short			= st_af_night_star_af_aam_name
 
+inv_grid_x			= 26
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1527,6 +1828,9 @@ belt				= true
 description			= st_af_vyvert_af_aam_descr
 inv_name			= st_af_vyvert_af_aam_name
 inv_name_short			= st_af_vyvert_af_aam_name
+
+inv_grid_x			= 27
+inv_grid_y			= 58
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1551,6 +1855,9 @@ description			= st_af_gravi_af_aam_descr
 inv_name			= st_af_gravi_af_aam_name
 inv_name_short			= st_af_gravi_af_aam_name
 
+inv_grid_x			= 28
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1573,6 +1880,9 @@ belt				= true
 description			= st_af_gold_fish_af_aam_descr
 inv_name			= st_af_gold_fish_af_aam_name
 inv_name_short			= st_af_gold_fish_af_aam_name
+
+inv_grid_x			= 29
+inv_grid_y			= 58
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1597,6 +1907,9 @@ description			= st_af_cristall_af_aam_descr
 inv_name			= st_af_cristall_af_aam_name
 inv_name_short			= st_af_cristall_af_aam_name
 
+inv_grid_x			= 30
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1618,6 +1931,9 @@ belt				= true
 description			= st_af_fireball_af_aam_descr
 inv_name			= st_af_fireball_af_aam_name
 inv_name_short			= st_af_fireball_af_aam_name
+
+inv_grid_x			= 31
+inv_grid_y			= 58
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1642,6 +1958,9 @@ description			= st_af_dummy_glassbeads_af_aam_descr
 inv_name			= st_af_dummy_glassbeads_af_aam_name
 inv_name_short			= st_af_dummy_glassbeads_af_aam_name
 
+inv_grid_x			= 32
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1664,6 +1983,9 @@ belt				= true
 description			= st_af_eye_af_aam_descr
 inv_name			= st_af_eye_af_aam_name
 inv_name_short			= st_af_eye_af_aam_name
+
+inv_grid_x			= 33
+inv_grid_y			= 58
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1688,6 +2010,9 @@ description			= st_af_fire_af_aam_descr
 inv_name			= st_af_fire_af_aam_name
 inv_name_short			= st_af_fire_af_aam_name
 
+inv_grid_x			= 34
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1710,6 +2035,9 @@ belt				= true
 description			= st_af_blood_af_aam_descr
 inv_name			= st_af_blood_af_aam_name
 inv_name_short			= st_af_blood_af_aam_name
+
+inv_grid_x			= 35
+inv_grid_y			= 58
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1734,6 +2062,9 @@ description			= st_af_mincer_meat_af_aam_descr
 inv_name			= st_af_mincer_meat_af_aam_name
 inv_name_short			= st_af_mincer_meat_af_aam_name
 
+inv_grid_x			= 36
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1756,6 +2087,9 @@ belt				= true
 description			= st_af_soul_af_aam_descr
 inv_name			= st_af_soul_af_aam_name
 inv_name_short			= st_af_soul_af_aam_name
+
+inv_grid_x			= 37
+inv_grid_y			= 58
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1780,6 +2114,9 @@ description			= st_af_fuzz_kolobok_af_aam_descr
 inv_name			= st_af_fuzz_kolobok_af_aam_name
 inv_name_short			= st_af_fuzz_kolobok_af_aam_name
 
+inv_grid_x			= 38
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1802,6 +2139,9 @@ belt				= true
 description			= st_af_baloon_af_aam_descr
 inv_name			= st_af_baloon_af_aam_name
 inv_name_short			= st_af_baloon_af_aam_name
+
+inv_grid_x			= 39
+inv_grid_y			= 58
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1826,6 +2166,9 @@ description			= st_af_glass_af_aam_descr
 inv_name			= st_af_glass_af_aam_name
 inv_name_short			= st_af_glass_af_aam_name
 
+inv_grid_x			= 40
+inv_grid_y			= 58
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1848,6 +2191,9 @@ belt				= true
 description			= st_af_electra_sparkler_af_aam_descr
 inv_name			= st_af_electra_sparkler_af_aam_name
 inv_name_short			= st_af_electra_sparkler_af_aam_name
+
+inv_grid_x			= 22
+inv_grid_y			= 61
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1872,6 +2218,9 @@ description			= st_af_electra_flash_af_aam_descr
 inv_name			= st_af_electra_flash_af_aam_name
 inv_name_short			= st_af_electra_flash_af_aam_name
 
+inv_grid_x			= 23
+inv_grid_y			= 61
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1894,6 +2243,9 @@ belt				= true
 description			= st_af_electra_moonlight_af_aam_descr
 inv_name			= st_af_electra_moonlight_af_aam_name
 inv_name_short			= st_af_electra_moonlight_af_aam_name
+
+inv_grid_x			= 24
+inv_grid_y			= 61
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1918,6 +2270,9 @@ description			= st_af_dummy_battery_af_aam_descr
 inv_name			= st_af_dummy_battery_af_aam_name
 inv_name_short			= st_af_dummy_battery_af_aam_name
 
+inv_grid_x			= 25
+inv_grid_y			= 61
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1940,6 +2295,9 @@ belt				= true
 description			= st_af_dummy_dummy_af_aam_descr
 inv_name			= st_af_dummy_dummy_af_aam_name
 inv_name_short			= st_af_dummy_dummy_af_aam_name
+
+inv_grid_x			= 26
+inv_grid_y			= 61
 
 health_restore_speed		= 0
 radiation_restore_speed		= 0
@@ -1964,6 +2322,9 @@ description			= st_af_ice_af_aam_descr
 inv_name			= st_af_ice_af_aam_name
 inv_name_short			= st_af_ice_af_aam_name
 
+inv_grid_x			= 27
+inv_grid_y			= 61
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0
 satiety_restore_speed		= 0
@@ -1987,6 +2348,9 @@ description			= st_af_compass_af_aam_descr
 inv_name			= st_af_compass_af_aam_name
 inv_name_short			= st_af_compass_af_aam_name
 
+inv_grid_x			= 28
+inv_grid_y			= 61
+
 health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00035
 satiety_restore_speed 		= 0
@@ -2008,6 +2372,9 @@ belt				= true
 description			= st_af_oasis_heart_af_aam_descr
 inv_name			= st_af_oasis_heart_af_aam_name
 inv_name_short			= st_af_oasis_heart_af_aam_name
+
+inv_grid_x			= 29
+inv_grid_y			= 61
 
 health_restore_speed		= 0
 radiation_restore_speed 	= 0.00029
@@ -2031,6 +2398,9 @@ description			= st_jup_b1_half_artifact_af_aam_descr
 inv_name			= st_jup_b1_half_artifact_af_aam_name
 inv_name_short			= st_jup_b1_half_artifact_af_aam_name
 
+inv_grid_x			= 30
+inv_grid_y			= 61
+
 health_restore_speed		= 0
 radiation_restore_speed		= 0.00047
 satiety_restore_speed		= 0
@@ -2053,6 +2423,9 @@ belt				= true
 description			= st_af_quest_b14_twisted_af_aam_descr
 inv_name			= st_af_quest_b14_twisted_af_aam_name
 inv_name_short			= st_af_quest_b14_twisted_af_aam_name
+
+inv_grid_x			= 31
+inv_grid_y			= 61
 
 health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00054

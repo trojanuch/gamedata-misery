@@ -1,3 +1,59 @@
+[up_sect_firstc_galil]
+cost	      	     	= 3820
+value                   = -5
+
+cam_dispersion	         	= -0.075
+cam_dispersion_inc         	= -0.062
+cam_step_angle_horz        	= -0.067		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.065
+zoom_cam_dispersion_inc      = -0.046
+zoom_cam_step_angle_horz     = -0.062
+
+inv_weight			= +0.22
+
+[up_sect_firste_galil]
+cost		      		= 4105
+value                   = -5
+
+cam_dispersion	         	= -0.075
+cam_dispersion_inc         	= -0.062
+cam_step_angle_horz        	= -0.067		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.065
+zoom_cam_dispersion_inc      = -0.046
+zoom_cam_step_angle_horz     = -0.062
+
+inv_weight			= +0.23
+
+[up_sect_secona_galil]
+cost		      		= 4570
+value                   = -5
+
+cam_dispersion	         	= -0.075
+cam_dispersion_inc         	= -0.062
+cam_step_angle_horz        	= -0.067		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.065
+zoom_cam_dispersion_inc      = -0.046
+zoom_cam_step_angle_horz     = -0.062
+
+inv_weight			= +0.16
+
+[up_sect_secone_galil]
+cost		      		= 5140
+value                   = -5
+
+cam_dispersion	         	= -0.075
+cam_dispersion_inc         	= -0.062
+cam_step_angle_horz        	= -0.067		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.065
+zoom_cam_dispersion_inc      = -0.046
+zoom_cam_step_angle_horz     = -0.062
+
+inv_weight			= +0.18
+
 [up_firsta_galil]
 scheme_index            = 0, 0
 known                   = 1
@@ -25,7 +81,7 @@ icon                    = ui_inGame2_upgrade_SGI_5K_1
 scheme_index            = 1, 0
 known                   = 1
 effects                 = up_gr_firstef_galil
-section                 = up_sect_firstc_sig550
+section                 = up_sect_firstc_galil
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -66,7 +122,7 @@ icon                    = ui_inGame2_upgrade_SGI_5K_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_sig550
+section                 = up_sect_firste_galil
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -87,7 +143,7 @@ icon                    = ui_inGame2_upgrade_SGI_5K_4
 scheme_index            = 0, 1
 known                   = 1
 effects                 = up_gr_seconcd_galil
-section                 = up_sect_secona_sig550
+section                 = up_sect_secona_galil
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -128,7 +184,7 @@ icon                    = ui_inGame2_upgrade_SGI_5K_6
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_sig550
+section                 = up_sect_secone_galil
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

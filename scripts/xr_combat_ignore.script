@@ -110,7 +110,7 @@ function squad_on_npc_death(squad,npc)
 end
 
 function is_enemy(obj,enemy,no_memory)
-	if not db.actor then return end
+--	if not db.actor then return end
 	if not (obj:alive()) then return false end
 	if (obj:critically_wounded()) then return true end
 	
@@ -213,7 +213,7 @@ function action_process_enemy:__init( obj, storage )
 		return
 	end
 	--Yasti Ghillie Suit. Adjusted Values for inertion time--
-	if (ai_tweaks.GhillieEnable == true) and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit" then --Inertion Values for wearing a Ghillie Suit
+	if db.actor and (ai_tweaks.GhillieEnable == true) and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit" then --Inertion Values for wearing a Ghillie Suit
 		--alun_utils.printf("xr_combat_ignore.process_enemy_init: Ghillie Suit inertion values loaded")
 		local search = GhillieInertion[self.comm] or "60000"
 		local search_time = xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj, self.comm,"ghillie_inertion",search))

@@ -62,7 +62,7 @@ reload_dof           = 0.0, 0.5, 5, 2;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       	= 0.57    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.47    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    	= 1.46f
 crosshair_inertion		= 6.8
 
@@ -74,8 +74,8 @@ cam_dispersion	         	= 0.82
 cam_dispersion_inc         	= 0.79
 cam_dispersion_frac        	= 0.5	    ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle				= 50.0      ;максимальный угол отдачи
-cam_max_angle_horz         	= 5.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz        	= 0.35		;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle_horz         	= 50.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz        	= 1.45		;(degree) size of step camera moved in horizontal position while shooting
 
 zoom_cam_relax_speed         = 10	    ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
@@ -83,8 +83,8 @@ zoom_cam_dispersion          = 0.73
 zoom_cam_dispersion_inc      = 0.57
 zoom_cam_dispersion_frac     = 0.7
 zoom_cam_max_angle           = 50.0
-zoom_cam_max_angle_horz      = 5.0
-zoom_cam_step_angle_horz     = 0.3
+zoom_cam_max_angle_horz      = 50.0
+zoom_cam_step_angle_horz     = 1.4
 
 PDM_disp_base 				= 1.08
 PDM_disp_vel_factor 		= 1.71
@@ -312,7 +312,7 @@ misfire_end_prob = 0.11 ;	     	= 0.064
 condition_shot_dec      	= 0.0010
 condition_queue_shot_dec	= 0.0010
 
-fire_dispersion_base       	= 0.47
+fire_dispersion_base       	= 0.38
 
 inv_name          = st_wpn_stg44_new                    ; name in inventory
 inv_name_short    = st_wpn_stg44_new
@@ -353,7 +353,7 @@ misfire_end_prob = 0.11 ;	     	= 0.077
 condition_shot_dec      	= 0.0012
 condition_queue_shot_dec	= 0.0012
 
-fire_dispersion_base       	= 0.52
+fire_dispersion_base       	= 0.44
 
 inv_name          = st_wpn_stg44_alt                    ; name in inventory
 inv_name_short    = st_wpn_stg44_alt
@@ -395,7 +395,7 @@ condition_queue_shot_dec	= 0.0014
 
 silencer_status            = 0
 
-fire_dispersion_base       	= 0.69
+fire_dispersion_base       	= 0.57
 
 inv_name          = st_wpn_stg44_old                    ; name in inventory
 inv_name_short    = st_wpn_stg44_old
@@ -438,7 +438,7 @@ condition_queue_shot_dec	= 0.0017
 
 silencer_status            = 0
 
-fire_dispersion_base       	= 0.82
+fire_dispersion_base       	= 0.66
 
 inv_name          = st_wpn_stg44_worn                    ; name in inventory
 inv_name_short    = st_wpn_stg44_worn

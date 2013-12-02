@@ -11,89 +11,32 @@ local ArtyCon = ContainerEnable and alun_utils.collect_section(ini,"containers",
 local Combined = alun_utils.collect_section(ini,"artyandcon", true)
 
 
-
 function on_game_start()
 	callback_register("actor_on_update",actor_on_update)
 	callback_register("actor_on_item_use",actor_on_item_use)
+	callback_register("actor_on_item_drop",actor_on_item_drop)
 end
 
 
 function actor_on_item_use(obj)
-	if ArtyCon[obj:section()] then -- Yasti. Searching for Artefact
+	if ArtyCon[obj:section()] then -- Yasti. Searching for Artifact
 		local con_id = obj:id()
 	--	alun_utils.printf("arty_container.on_item_use: container check: "..tostring(obj:section()))
 		local hud = get_hud()
 		local ui = ui_arty_container and ui_arty_container.arty_ui(hud,obj:section()) --Yasti. Bring up UI
 		if (ui) then
 			ui:ShowDialog(true)
-			ui:FillList()
-		end
-	end
-end
-	
-
-function actor_on_update()
-	check_box_inv()
-end
-
-
-function check_box_inv()
-	local zat_box_id = alife():object(get_story_object_id("zat_a2_actor_treasure"))
-	local jup_box_id = alife():object(get_story_object_id("jup_b202_actor_treasure"))
-	local pri_box_id = alife():object(get_story_object_id("pri_a16_actor_treasure"))
-	local zat_box = level.object_by_id(story_objects.get_story_objects_registry():get("zat_a2_actor_treasure"))
-	local jup_box = level.object_by_id(story_objects.get_story_objects_registry():get("jup_b202_actor_treasure"))
-	local pri_box = level.object_by_id(story_objects.get_story_objects_registry():get("pri_a16_actor_treasure"))
-	
---[[   FOR DEBUGGING
-	if zat_box then
-		alun_utils.printf("aarty_container.on_item_drop: zat_box|"..zat_box:name()..":"..zat_box:id())
-	end
-	if jup_box then
-		alun_utils.printf("arty_container.on_item_drop: jup_box|"..jup_box:name()..":"..jup_box:id()) 
-	end	
-	if pri_box then
-		alun_utils.printf("arty_container.on_item_drop: pri_box|"..pri_box:name()..":"..pri_box:id())
-	end
---]]
-	
-	local function scan_inv(box_id, item)
-		if Combined[item:section()] then
-			--alun_utils.printf("arty_container_.scan_inv: item= "..tostring(item:name()))
-			
-			local break_arty
-			local break_con
-			--alun_utils.printf("artycontext.actor_on_item_drop: break test")
-			itm_sec = item:section()
-			--alun_utils.printf("arty_container.check_box_inv: object section= "..tostring(obj_sec))
-		
-			if (string.find(itm_sec, "(af.-_iam)",3)) then  --Yasti. Searching for container section in string
-				break_con = "af_iam"
-				break_arty = itm_sec:gsub("_af_iam", "")
-			elseif (string.find(itm_sec, "(af.-_aac)",3)) then
-				break_con = "af_aac"
-				break_arty = itm_sec:gsub("_af_aac", "")
-			elseif (string.find(itm_sec, "(af.-_aam)",3)) then
-				break_con = "af_aam"
-				break_arty = itm_sec:gsub("_af_aam", "")
-			else
-			end
-			--alun_utils.printf("artycontext.check_box_inv: break_con= "..tostring(break_con))
-			alife():create(break_con, box_id.position, box_id.m_level_vertex_id, box_id.m_game_vertex_id, box_id.id) --Yasti. "Splitting" Container into original items
-			alife():create(break_arty, box_id.position, box_id.m_level_vertex_id, box_id.m_game_vertex_id,box_id.id)
-			alife():release(alife():object(item:id()))
+			ui:FillPartsList()
 		end
 	end
 	
-	if pri_box then
-		pri_box:iterate_inventory_box(scan_inv, pri_box_id)
-	end
-	
-	if zat_box then
-		zat_box:iterate_inventory_box(scan_inv, zat_box_id)
-	end
-	
-	if jup_box then
-		jup_box:iterate_inventory_box(scan_inv, jup_box_id)
+	if obj:section() == "container_tool" then
+	--	alun_utils.printf("arty_container.on_item_use: container check: "..tostring(obj:section()))
+		local hud = get_hud()
+		local ui = ui_arty_container and ui_arty_container.arty_ui(hud,obj:section()) --Yasti. Bring up UI
+		if (ui) then
+			ui:ShowDialog(true)
+			ui:FillPartsList()
+		end
 	end
 end

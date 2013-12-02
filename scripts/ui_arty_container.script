@@ -4,7 +4,7 @@ Copyright (C) 2012 Alundaio
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 
 
-Modified by Yasti for use with Arefact Containers
+Modified by Yasti for use with Artifact Containers
 UI Modified by ponney68 --]]
 -------------------------------------------------------------------
 class "load_item" (CUIListBoxItem)
@@ -31,7 +31,7 @@ function arty_ui:__init(owner,section) super()
 	local ini = ini_file("plugins\\arty_container.ltx")
 	self.artefact = alun_utils.collect_section(ini,"artifacts",true)
 	self.container = alun_utils.collect_section(ini,"containers",true)
-
+	self.artycon = alun_utils.collect_section(ini,"artyandcon",true)
 	self:InitControls()
 	self:InitCallBacks()
 
@@ -40,30 +40,29 @@ end
 function arty_ui:__finalize()
 end
 
-function arty_ui:FillList()
-	self.list_box:RemoveAll()
-	local count = 0
-
-	local function fill_list(actor,obj)
-		if (obj) and obj:section() == self.section then 
-			self:AddItemToArtyList(obj,self.list_box)
-		end
-	end
-
-	db.actor:iterate_inventory(fill_list,db.actor)
-end
-
 function arty_ui:FillPartsList()
 	self.list_box_parts:RemoveAll()
 
 	local function fill_list(actor,itm)
-		if (itm) then
-			if self.artefact[itm:section()] then
-				self:AddItemToList(itm,self.list_box_parts)
+		if self.container[self.section] then
+			if (itm) then
+				if self.artefact[itm:section()] then
+					self:AddItemToList(itm,self.list_box_parts)
+				end
+			end
+			
+		elseif self.section == "container_tool" then
+			if (itm) then
+				if self.artycon[itm:section()] then
+					if itm:section() == "lead_box_open" or itm:section() == "lead_box_closed" or itm:section() == "lead_box_half" then
+						self:AddItemToList(itm,self.list_box_parts, lead_containers.get_inv_index(itm:id()))
+					else	
+						self:AddItemToList(itm,self.list_box_parts)
+					end
+				end
 			end
 		end
 	end
-
 	db.actor:iterate_inventory(fill_list,db.actor)
 end
 
@@ -86,8 +85,9 @@ function arty_ui:InitControls()
 
 	self.xml:InitWindow			("itm_arty:file_item:fd",0,ctrl)
 	self.file_item_fd_sz	= vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
-
+	
 	self.form				= self.xml:InitStatic("itm_arty:form",self)
+
 	--self.form:SetWndPos(vector2():set(device().width/2-(self.form:GetWidth()+70), device().height/2 - self.form:GetHeight()))
 	self.form:SetWndPos(vector2():set(0, 0))
 
@@ -101,7 +101,21 @@ function arty_ui:InitControls()
 	-- Item picture
 	self.picture			= self.xml:InitStatic("itm_arty:form:icon",self.form)
 	self.picture_parts		= self.xml:InitStatic("itm_arty:form:icon_parts",self.form)
-
+	
+	--Item Used Title
+	local used_name = game.translate_string(alun_utils.read_from_ini(nil,self.section,"inv_name","string","error"))
+	self.caption_item_used = self.xml:InitTextWnd("itm_arty:form:caption_item_used",self.form)
+	self.caption_item_used:SetText(used_name)
+	
+	--Parts Window Title
+	self.caption_parts_title = self.xml:InitTextWnd("itm_arty:form:caption_parts_title",self.form)
+	
+	if self.section == "container_tool" then
+		self.caption_parts_title:SetText("Containers")
+	else
+		self.caption_parts_title:SetText("Artifacts")
+	end
+	
 	-- Arty Container picture
 	self.pic = self.xml:InitStatic("itm_arty:form:icon_tool",self.form)
 
@@ -126,24 +140,12 @@ function arty_ui:InitControls()
 
 	-- Caption
 	self.caption_parts 		= self.xml:InitTextWnd("itm_arty:form:caption_parts",self.form)
-
-	--Container List Box
-	self.xml:InitFrame			("itm_arty:form:list_frame",self.form)
-
-	self.list_box			= self.xml:InitListBox("itm_arty:form:list",self.form)
-
-	self.list_box:ShowSelectedItem	(true)
-	self:Register			(self.list_box, "list_window")
-
-	--Artefact List Box
-	self.list_pos = self.list_box:GetWndPos()
-
 	self.list_box_parts			= self.xml:InitListBox("itm_arty:form:list_parts",self.form)
 		--self.list_box_parts:SetWndPos(vector2():set(self.list_pos.x+self.list_box:GetWidth()+5, self.list_pos.y))
 
 	local frame = self.xml:InitFrame("itm_arty:form:list_frame_parts",self.form)
 		--frame:SetWndPos(vector2():set(self.list_pos.x+self.list_box:GetWidth()+5, self.list_pos.y))
-
+	
 	self.list_box_parts:ShowSelectedItem(true)
 	self:Register(self.list_box_parts, "list_window_parts")
 --	else
@@ -185,9 +187,9 @@ function arty_ui:OnPartsListItemClicked()
 		self.list_box_parts:RemoveItem(item)
 		return
 	end
-
+	
 	local sec = se_item:section_name()
-
+	
 	local w,h = item.width/1.2,item.height/1.2
 	self.picture_parts:InitTexture("ui\\ui_icon_equipment")
 	self.picture_parts:SetTextureRect(Frect():set(item.x1,item.y1,item.x2,item.y2))
@@ -200,42 +202,18 @@ function arty_ui:OnPartsListItemClicked()
 	end
 
 	self.picture_parts:SetWndPos(vector2():set(self.picture_parts.x-w/2, self.picture_parts.y-h/2))
-
-	self.caption_parts:SetText("Place in Container")
+	
+	if self.section == "container_tool" and sec == "lead_box_closed" or self.section == "container_tool" and sec == "lead_box_open" or self.section == "container tool" and sec == "lead_box_half" then
+		self.caption_parts:SetText("Open Container")
+	elseif self.section == "container_tool" then
+		self.caption_parts:SetText("Remove from Container")
+	else
+		self.caption_parts:SetText("Place in Container")
+	end
 end
 
 function arty_ui:OnPartsListItemDbClicked()
 	self:OnButton_ok()
-end
-
-
-function arty_ui:OnListItemClicked()
-	if self.list_box:GetSize()==0 then return end
-
-	local item = self.list_box:GetSelectedItem()
-
-	local w,h = item.width/1.2,item.height/1.2
-	self.picture:InitTexture("ui\\ui_icon_equipment")
-	self.picture:SetTextureRect(Frect():set(item.x1,item.y1,item.x2,item.y2))
-	self.picture:SetWndSize(vector2():set(w,h))
-
-	if not (self.picture.x) then
-		local pos = self.picture:GetWndPos()
-		self.picture.x = pos.x
-		self.picture.y = pos.y
-	end
-
-	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
-
-	if (self.section) then
-		self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
-		self.caption_parts:SetText("")
-		self:FillPartsList()
-	end
-end
-
-function arty_ui:OnListItemDbClicked()
-	--self:OnButton_ok()
 end
 
 function arty_ui:OnButton_back_clicked()
@@ -256,7 +234,9 @@ function arty_ui:OnKeyboard(dik, keyboard_action)
 end
 
 function arty_ui:OnButton_ok()
-
+	local break_con
+	local break_arty
+	
 	if (self.list_box_parts) then
 		index = self.list_box_parts:GetSelectedIndex()
 		if (index ~= -1) then
@@ -271,14 +251,53 @@ function arty_ui:OnButton_ok()
 		end
 	end
 	
-	local new_item = tostring(sec.."_"..self.section)
-	alife():create(new_item, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+	if self.section == "container_tool" then
+		if sec == "lead_box_closed" or sec == "lead_box_open" or sec == "lead_box_half" then
+			if not db.actor:object("container_tool") then
+				axr_misery.create_items("container_tool")
+			end
+			self:HideDialog()
+			local ui = ui_lead_containers and ui_lead_containers.lead_ui(hud, sec)
+			if (ui) then
+				lead_containers.set_menu_showed(true)
+				ui:ShowDialog(true)
+				ui:FillList(lead_containers.get_inv_index(item.item_id))
+			end
+			return
+			
+		elseif (string.find(sec, "(af.-_iam)",3)) then  --Yasti. Searching for container section in string
+			break_con = "af_iam"
+			break_arty = sec:gsub("_af_iam", "")
+		elseif (string.find(sec, "(af.-_aac)",3)) then
+			break_con = "af_aac"
+			break_arty = sec:gsub("_af_aac", "")
+		elseif (string.find(sec, "(af.-_aam)",3)) then
+			break_con = "af_aam"
+			break_arty = sec:gsub("_af_aam", "")
+		end
+		
+		alife():create(break_con, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		alife():create(break_arty, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+	else
+		local new_item = tostring(sec.."_"..self.section)
+		alife():create(new_item, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+	end
+	if not db.actor:object("container_tool") then
+		axr_misery.create_items("container_tool")
+	end
 	self:HideDialog()
 
 	-- ponney68 added actor_effects
-	if (actor_effects.use_item(self.section.."_dummy")) then
-		actor_effects.use_item(self.section.."_dummy")
-		level_weathers.get_weather_manager():forced_weather_change()
+	if self.section == "container_tool" then
+		if (actor_effects.use_item(self.section.."_"..break_con.."_dummy")) then
+			actor_effects.use_item(self.section.."_"..break_con.."_dummy")
+			level_weathers.get_weather_manager():forced_weather_change()
+		end
+	else
+		if (actor_effects.use_item(self.section.."_dummy")) then
+			actor_effects.use_item(self.section.."_dummy")
+			level_weathers.get_weather_manager():forced_weather_change()
+		end
 	end
 end
 
@@ -292,54 +311,23 @@ function arty_ui:AddItemToList(item,listbox,condition)
 	_itm.fn:SetWndPos(vector2():set(0,0))
 	_itm.fn:SetWndSize	(self.file_item_fn_sz)
 	_itm.fn:SetText		(inv_name)
-
-	if (item) then
-
-		_itm.item_id = item:id()
-
-		local inv_grid_width = alun_utils.read_from_ini(ini,sec,"inv_grid_width","float",0)
-		local inv_grid_height = alun_utils.read_from_ini(ini,sec,"inv_grid_height","float",0)
-		local inv_grid_x = alun_utils.read_from_ini(ini,sec,"inv_grid_x","float",0)
-		local inv_grid_y = alun_utils.read_from_ini(ini,sec,"inv_grid_y","float",0)
-
-		_itm.x1 = inv_grid_x*50
-		_itm.y1 = inv_grid_y*50
-
-		_itm.width = inv_grid_width*50
-		_itm.height = inv_grid_height*50
-
-		_itm.x2 = _itm.x1 + _itm.width
-		_itm.y2 = _itm.y1 + _itm.height
-	end
-
-	--[[
-	_itm.picture = self.xml:InitStatic("itm_arty:form:picture",self.form)
-	_itm.picture:InitTexture("ui\\ui_icon_equipment")
-	_itm.picture:SetTextureRect(Frect():set(_itm.x1,_itm.y1,_itm.x2,_itm.y2))
-	_itm.picture:SetWndSize(vector2():set(inv_grid_width*50,inv_grid_height*50))
-	--]]
-
-	listbox:AddExistingItem(_itm)
-end
-
-function arty_ui:AddItemToArtyList(item,listbox,condition)
-	if listbox == self.list_box and item:section() ~= self.section then return end
 	
-	local _itm			= load_item(self.file_item_main_sz.y)
-	local sec = item and item:section()
-	local inv_name 		= item and game.translate_string(alun_utils.read_from_ini(nil,sec,"inv_name","string","error")) or "none"
-
-	_itm:SetWndSize		(self.file_item_main_sz)
-
-	_itm.fn:SetWndPos(vector2():set(0,0))
-	_itm.fn:SetWndSize	(self.file_item_fn_sz)
-	_itm.fn:SetText		(inv_name)
-
-
 	if (item) then
 
 		_itm.item_id = item:id()
-
+		if condition then
+			_itm.fage     = _itm:AddTextField(condition, self.file_item_fd_sz.x)
+		end
+		if self.section == "container_tool" then
+			if (string.find(sec, "(af.-_iam)",3)) then  --Yasti. Searching for container section in string
+				sec = sec:gsub("_af_iam", "")
+			elseif (string.find(sec, "(af.-_aac)",3)) then
+				sec = sec:gsub("_af_aac", "")
+			elseif (string.find(sec, "(af.-_aam)",3)) then
+				sec = sec:gsub("_af_aam", "")
+			end
+		end
+		
 		local inv_grid_width = alun_utils.read_from_ini(ini,sec,"inv_grid_width","float",0)
 		local inv_grid_height = alun_utils.read_from_ini(ini,sec,"inv_grid_height","float",0)
 		local inv_grid_x = alun_utils.read_from_ini(ini,sec,"inv_grid_x","float",0)

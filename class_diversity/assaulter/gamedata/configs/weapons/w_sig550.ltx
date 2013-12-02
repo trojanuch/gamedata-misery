@@ -57,7 +57,7 @@ single_handed           = 0
 
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.278        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.238        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.54f
 crosshair_inertion	= 6.8
 
@@ -65,8 +65,8 @@ crosshair_inertion	= 6.8
 cam_return = 0 ;				= 1
 cam_relax_speed         = 9		; скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
-cam_dispersion	        = 1.0
-cam_dispersion_inc      = 0.6
+cam_dispersion	        = 1.15
+cam_dispersion_inc      = 0.95
 cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
 cam_max_angle           = 50.0       ; максимальный угол отдачи
 cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
@@ -80,8 +80,8 @@ PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
 
 zoom_cam_relax_speed         = 9     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 0.8
-zoom_cam_dispersion_inc      = 0.4
+zoom_cam_dispersion          = 0.95
+zoom_cam_dispersion_inc      = 0.75
 zoom_cam_dispersion_frac     = 0.7
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
@@ -465,18 +465,19 @@ ammo_mag_size           = 20
 
 fire_modes              = 1
 
-fire_dispersion_base    = 0.16
+fire_dispersion_base    = 0.085
 
 control_inertion_factor = 1.78f
 crosshair_inertion		= 8.0
 
 ;отдача
-cam_return = 0 ;				= 0
-cam_dispersion	         	= 0.94
-cam_dispersion_inc         	= 0.6
+cam_dispersion	         	= 1.53
+cam_dispersion_inc         	= 1.28
+cam_step_angle_horz     = 1.3
 
-zoom_cam_dispersion          	= 0.75
-zoom_cam_dispersion_inc      	= 0.4
+zoom_cam_dispersion          	= 1.47
+zoom_cam_dispersion_inc      	= 1.22
+zoom_cam_step_angle_horz     = 1.1
 
 inv_name                = st_wpn_sig550_sniper
 inv_name_short          = st_wpn_sig550_sniper
@@ -545,7 +546,7 @@ misfire_end_prob = 0.11 ;	     	= 0.028
 condition_shot_dec      	= 0.00075
 condition_queue_shot_dec	= 0.00075
 
-fire_dispersion_base    = 0.24
+fire_dispersion_base    = 1.94
 
 inv_name                = st_wpn_sig550_custom
 inv_name_short          = st_wpn_sig550_custom
@@ -588,7 +589,7 @@ misfire_end_prob = 0.11 ;	     	= 0.037
 condition_shot_dec      	= 0.0008
 condition_queue_shot_dec	= 0.0008
 
-fire_dispersion_base    = 0.27
+fire_dispersion_base    = 2.18
 
 inv_name                = st_wpn_sig550_alt
 inv_name_short          = st_wpn_sig550_alt
@@ -632,7 +633,7 @@ condition_queue_shot_dec	= 0.0015
 
 silencer_status         = 0
 
-fire_dispersion_base    = 0.345
+fire_dispersion_base    = 3.07
 
 inv_name                = st_wpn_sig550_worn
 inv_name_short          = st_wpn_sig550_worn
