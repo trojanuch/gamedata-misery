@@ -19,6 +19,20 @@ npc_help_timer_far = 30000
 [ghillie_settings]
 enable = true   				; Enables reduced detection of the Ghillie Suit.
 detect_range_factor = 0.8 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
-aim_time_factor = 2.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
-help_distance_factor = 0.9		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_distance_factor = 0.95		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
 help_timer_factor = 2.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+aim_time_factor = 3.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+
+[night_settings]
+enable = true
+detect_range_factor = 0.9				; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+help_distance_factor = 0.9				; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+help_timer_factor = 1.3					; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+aim_time_factor = 1.3					; Multiplier for time it take for NPC's to aim during night hours
+
+[recon_settings]
+enable = true
+detect_range_factor = 0.85				; Factor of range that a NPC no longer ignores a player if he is Recon during night. (10pm to 3am)
+help_distance_factor = 0.8				; Factor for Decreasing Distance for NPC's informing allies of your position during night hours as Recon. Used in conjuction with npc_help
+help_timer_factor = 1.8					; Factor for Increasing Timer for NPC's informing allies of your position during night hours Recon. Used in conjunction with npc_help
+aim_time_factor = 1.6					; Multiplier for time it take for NPC's to aim during night hours as recon

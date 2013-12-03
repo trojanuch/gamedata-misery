@@ -22,13 +22,26 @@ local NpcHelpDistanceFar = alun_utils.read_from_ini(ini,"npc_help","npc_help_dis
 local NpcHelpTimerFar = alun_utils.read_from_ini(ini,"npc_help","npc_help_timer_far","float",20000)
 
 GhillieEnable = alun_utils.read_from_ini(ini,"ghillie_settings","enable","bool",true)
-local GhillieSightRange = alun_utils.read_from_ini(ini,"ghillie_settings","detect_range_factor","float",0.6)
-local GhillieAimTime = alun_utils.read_from_ini(ini,"ghillie_settings","aim_time_factor","float",1.5)
-local GhilleHelpTimeFactor = alun_utils.read_from_ini(ini,"ghillie_settings","help_timer_factor","float",1.2)
-local GhillieHelpDistanceFactor = alun_utils.read_from_ini(ini,"ghillie_settings","help_distance_factor","float",0.8)
+local GhillieSightRange = alun_utils.read_from_ini(ini,"ghillie_settings","detect_range_factor","float",0.8)
+local GhillieAimTime = alun_utils.read_from_ini(ini,"ghillie_settings","aim_time_factor","float",2)
+local GhillieHelpTimeFactor = alun_utils.read_from_ini(ini,"ghillie_settings","help_timer_factor","float",2)
+local GhillieHelpDistanceFactor = alun_utils.read_from_ini(ini,"ghillie_settings","help_distance_factor","float",0.9)
+
+local NightEnable = alun_utils.read_from_ini(ini,"night_settings","enable","bool",true)
+local NightSightRange = alun_utils.read_from_ini(ini,"night_settings","detect_range_factor","float",0.85)
+local NightAimTime = alun_utils.read_from_ini(ini,"night_settings","aim_time_factor","float",1.5)
+local NightHelpTimeFactor = alun_utils.read_from_ini(ini,"night_settings","help_timer_factor","float",1.2)
+local NightHelpDistanceFactor = alun_utils.read_from_ini(ini,"night_settings","help_distance_factor","float",0.8)
+
+local ReconEnable = alun_utils.read_from_ini(ini,"recon_settings","enable","bool",true)
+local ReconSightRange = alun_utils.read_from_ini(ini,"recon_settings","detect_range_factor","float",0.8)
+local ReconAimTime = alun_utils.read_from_ini(ini,"recon_settings","aim_time_factor","float",1.5)
+local ReconHelpTimeFactor = alun_utils.read_from_ini(ini,"recon_settings","help_timer_factor","float",1.2)
+local ReconHelpDistanceFactor = alun_utils.read_from_ini(ini,"recon_settings","help_distance_factor","float",0.8)
 ini = nil
 
-local wearing_ghillie = db.actor and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit"
+local is_night = xr_conditions.is_dark_night()
+local act_class = axr_misery.ActorClass
 
 
 local scope_flags = {	[1] = true,
@@ -246,7 +259,7 @@ function npc_on_update(obj,st)
 	end
 	
 	--Yasti: Ghillie aim time increase--
-	if GhilliEnable then
+	if GhilliEnable or NightEnable or ReconEnable then
 		aim_modify(obj,st)
 	end
 	--End Yasti--
@@ -257,10 +270,21 @@ function npc_on_update(obj,st)
 		local help_dist_med
 		local help_dist_far
 		
-		if GhillieEnable and wearing_ghillie then
+		if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
+			help_dist_close = NpcHelpDistanceClose * GhillieHelpDistanceFactor * NightHelpDistanceFactor
+			help_dist_med = NpcHelpDistanceMedium * GhillieHelpDistanceFactor * NightHelpDistanceFactor
+			help_dist_far = NpcHelpDistanceFar * GhillieHelpDistanceFactor * NightHelpDistanceFactor
+		
+		elseif GhillieEnable and wearing_ghillie() and NightEnable and not is_night then
 			help_dist_close = NpcHelpDistanceClose * GhillieHelpDistanceFactor
 			help_dist_med = NpcHelpDistanceMedium * GhillieHelpDistanceFactor
 			help_dist_far = NpcHelpDistanceFar * GhillieHelpDistanceFactor
+			
+		elseif NightEnable and is_night then
+			help_dist_close = NpcHelpDistanceClose * NightHelpDistanceFactor
+			help_dist_med = NpcHelpDistanceMedium * NightHelpDistanceFactor
+			help_dist_far = NpcHelpDistanceFar * NightHelpDistanceFactor
+		
 		else
 			help_dist_close = NpcHelpDistanceClose
 			help_dist_med = NpcHelpDistanceMedium
@@ -301,24 +325,47 @@ function npc_on_update(obj,st)
 					
 				else
 					if timer_close == nil then
-						if GhillieEnable and wearing_ghillie then
+						if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
+							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * GhillieHelpTimeFactor * NightHelpTimeFactor)
+						
+						elseif GhillieEnable and wearing_ghillie() and not is_night then
 							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * GhillieHelpTimeFactor)
+						
+						elseif NightEnable and is_night then
+							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * NightHelpTimeFactor)
+						
 						else
 							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose)
 						end
 					--	alun_utils.printf("ai_tweaks: NPC on update: close dist timer started for: "..tostring(hostile_npc:character_name()))
 					end
+					
 					if timer_medium == nil then
-						if GhillieEnable and wearing_ghillie then
-							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * GhilleHelpTimeFactor)
+						if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
+							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * GhillieHelpTimeFactor * NightHelpTimeFactor)
+						
+						elseif GhillieEnable and wearing_ghillie() and not is_night then						
+							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * GhillieHelpTimeFactor)
+						
+						elseif NightEnable and is_night then
+							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * NightHelpTimeFactor)
+							
 						else
 							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium)
 						end
 					--	alun_utils.printf("ai_tweaks: NPC on update: med dist timer started for: "..tostring(hostile_npc:character_name()))
 					end
+					
 					if timer_far == nil then
-						if GhillieEnable and wearing_ghillie then
+						if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
+							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * GhillieHelpTimeFactor * NightHelpTimeFactor)
+						
+						elseif GhillieEnable and wearing_ghillie() and NightEnable and not is_night then
 							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * GhillieHelpTimeFactor)
+						
+						elseif NightEnable and is_night then
+							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * NightHelpTimeFactor)
+						
 						else
 							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar)
 						end
@@ -336,6 +383,7 @@ end
 --------------------------------------------------------
 	Checks Number List for Function override_combat_ignore
 1 = Ghillie Suit
+2 = Recon Class
 
 
 --------------------------------------------------------
@@ -343,19 +391,44 @@ end
 function override_combat_ignore(obj,enemy,check_num)
 	local id = obj:id()
 	local ene_id = enemy:id()
---	local dist_check = math.sqrt(obj:position():distance_to_sqr(enemy:position()))
---	local detect_range_check = tonumber(obj:range() * GhillieSightRange)
-	local ghillie_range = tonumber((obj:range() * GhillieSightRange)*(obj:range() * GhillieSightRange)) --distance squared for detection
 	
-	if check_num == 1 and GhillieEnable then
-	--	debug_write("Npc to Actor distance = %s for NPC: %s and Detection Range with Ghillie and is %s Actor seen? %s", dist_check,obj:character_name(),detect_range_check,obj:see(enemy))
-		if wearing_ghillie then 																--Checks to see if Ghillie Suit is being Worn
-			if obj:position():distance_to_sqr(enemy:position()) >= ghillie_range then			--Distance the player is no longer ignored by NPC
-				return true
+	local ghillie_range = tonumber((obj:range() * GhillieSightRange)*(obj:range() * GhillieSightRange)) --distance squared for detection
+	local ghillie_range_night = tonumber((obj:range() * GhillieSightRange * NightSightRange)*(obj:range() * GhillieSightRange * NightSightRange)) --distance squared for detection
+	local recon_range = tonumber((obj:range() * ReconSightRange)*(obj:range() * ReconSightRange)) --distance squared for detection
+	
+	if check_num == 1 then
+		if GhillieEnable and NightEnable then
+			if wearing_ghillie() and is_night then
+				if obj:position():distance_to_sqr(enemy:position()) >= ghillie_range_night then
+					return true
+				end
+			
+			elseif wearing_ghillie() and not is_night then 																--Checks to see if Ghillie Suit is being Worn
+				if obj:position():distance_to_sqr(enemy:position()) >= ghillie_range then			--Distance the player is no longer ignored by NPC
+					return true
+				end
+			end
+		end
+	
+	elseif check_num == 2 then
+		if act_class == "recon" and ReconEnable then
+			if GhillieEnable and NightEnable then
+				if wearing_ghillie() and is_night then
+					if obj:position():distance_to_sqr(enemy:position()) >= (ghillie_range_night * ReconSightRange) then
+						return true
+					end
+				end
+			
+			elseif NightEnable then
+				if is_night then
+					if obj:position():distance_to_sqr(enemy:position()) >= (recon_range * NightSightRange) then
+						return true
+					end
+				end
 			end
 		end
 	end
-
+	
 	return false
 end
 
@@ -395,21 +468,93 @@ end
 
 function aim_modify(obj, st)
 	local active_item = st.object:active_item()
+	local flag = 0
 	
-	if GhillieEnable then		
-		if st.enemy_id == db.actor:id() and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit" and st.old_aim == nil then
-			st.old_aim = st.object:aim_time(active_item)
-			st.object:aim_time(active_item,st.old_aim * GhillieAimTime)
-		--	debug_write("Aim Time increased for %s as actor is wearing a ghillie",st.object:character_name())
+	if ReconEnable and act_class == "recon" then
+		if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
+			if st.enemy_id == db.actor:id() and st.old_aim == nil then
+				st.old_aim = st.object:aim_time(active_item)
+				st.object:aim_time(active_item,st.old_aim * GhillieAimTime * NightAimTime * ReconAimTime)
+			--	debug_write("Aim Time increased for %s as actor is wearing a ghillie, is recon, and is night",st.object:character_name())
+				flag = 1
+			end
+		
+		elseif NightEnable and is_night then
+			if st.enemy_id == db.actor:id() and wearing_ghillie() and st.old_aim == nil then
+				st.old_aim = st.object:aim_time(active_item)
+				st.object:aim_time(active_item,st.old_aim * ReconAimTime * NightAimTime)
+			--	debug_write("Aim Time increased for %s as actor is recon, and at night",st.object:character_name())
+				flag = 2
+			end
+		
+		elseif GhillieEnable and wearing_ghillie() then
+			if st.enemy_id == db.actor:id() and wearing_ghillie() and st.old_aim == nil then
+				st.old_aim = st.object:aim_time(active_item)
+				st.object:aim_time(active_item,st.old_aim * GhillieAimTime)
+			--	debug_write("Aim Time increased for %s as actor is recon, and at night",st.object:character_name())
+				flag = 3
+			end
 		end
-	
-		if (st.old_aim ~= nil) and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() ~= "cs_heavy_outfit" or (st.old_aim ~= nil) and db.actor:item_in_slot(7) == nil then
+		
+		if (st.old_aim ~= nil) then
+			if not wearing_ghillie() and not is_night and flag == 1 or not wearing_ghillie() and flag == 3 then
+				st.object:aim_time(active_item,st.old_aim)
+			--	debug_write("aim time is back to normal for %s",st.object:character_name())
+				st.old_aim = nil
+				flag = 0
+			
+			elseif not is_night and flag == 2 then
+				st.object:aim_time(active_item,st.old_aim)
+			--	debug_write("aim time is back to normal for %s",st.object:character_name())
+				st.old_aim = nil
+				flag = 0
+			end
+		end
+			
+	elseif GhillieEnable then
+		if NightEnable and is_night and wearing_ghillie() then
+			if st.enemy_id == db.actor:id() and st.old_aim == nil then
+				st.old_aim = st.object:aim_time(active_item)
+				st.object:aim_time(active_item,st.old_aim * GhillieAimTime * NightAimTime)
+			--	debug_write("Aim Time increased for %s as actor is wearing a ghillie, and is night",st.object:character_name())
+			end
+		
+		elseif wearing_ghillie() then
+			if st.enemy_id == db.actor:id() and st.old_aim == nil then
+				st.old_aim = st.object:aim_time(active_item)
+				st.object:aim_time(active_item,st.old_aim * GhillieAimTime)
+			--	debug_write("Aim Time increased for %s as actor is wearing a ghillie",st.object:character_name())
+			end
+		end
+			
+		if (st.old_aim ~= nil) and not wearing_ghillie() or (st.old_aim ~= nil) and db.actor:item_in_slot(7) == nil then
 			st.object:aim_time(active_item,st.old_aim)
 		--	debug_write("aim time is back to normal for %s",st.object:character_name())
 			st.old_aim = nil
 		end
 	end
 end	
+
+
+--------------------------------------------------------
+--Function used to Check to see if actor is wearing a Ghillie
+--------------------------------------------------------
+
+function wearing_ghillie()
+	local cur_outfit
+	if db.actor:item_in_slot(7) ~= nil then
+		cur_outfit = db.actor:item_in_slot(7):section()
+	end
+	
+	local ghillie_sec = "ghillie_outfit"
+	
+	if cur_outfit == ghillie_sec then
+		return true
+	else
+		return false
+	end
+end
+
 
 --------------------------------------------------------
 --Timer function's. Taken from alun_utils for use with NPC Help
