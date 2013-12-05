@@ -97,6 +97,28 @@ function npc_on_hit_callback(npc,amount,local_direction,who,bone_index)
 	if (amount > 0) then
 		db.storage[npc:id()].hitted_by = who and who:id()
 	end
+	--Yasti: if NPC that was killed by Player in a safe zone was in a squad, all squadmembers will override safe zone flag and attack--
+	local squad = get_object_squad(npc)
+	
+	if not squad then
+		return
+	end
+	
+	if (safe_zone_npcs[squad.id]) then
+		if who:id() == db.actor:id() and db.storage[npc:id()].hitted_by == who:id() then
+			alun_utils.set_squad_relation(npc, who, game_object.enemy)
+			for k in squad:squad_members() do
+				local member = db.storage[k.id] and db.storage[k.id].object
+				if (member and member:alive()) and db.storage[member:id()].combat_ignore.enabled then
+					alun_utils.printf("xr_combat_ignore.npc_on_hit_callback: safe zone squad hostile: "..member:character_name().." is now hostile to "..who:character_name())
+			--		db.storage[member:id()].enemy_id = ene_id
+			--		fighting_with_actor_npcs[member:id()] = true
+					db.storage[member:id()].combat_ignore.enabled = false
+				end
+			end
+		end
+	end
+	--End Yasti--
 end
 
 function npc_on_death_callback(npc,who)
@@ -160,18 +182,22 @@ function is_enemy(obj,enemy,no_memory)
 		local cid = squad and squad.id or id
 
 		if (safe_zone_npcs[cid]) then
-			--Yasti: if NPC that was killed by Player in a safe zone was in a squad, all squadmembers will override safe zone flag and attack
-			if db.actor:id() == ene_id and squad then
+			--Yasti: if NPC that was killed by Player in a safe zone was in a squad, all squadmembers will override safe zone flag and attack--
+			if db.actor:id() == ene_id and db.storage[id].enemy_id == ene_id and safe_zone_npcs[squad.id] and (obj:relation(enemy) == game_object.enemy) then
 				for k in squad:squad_members() do
 					local member = db.storage[k.id] and db.storage[k.id].object
-					if (member and member:alive()) and db.storage[id].enemy_id == ene_id then
-					--	alun_utils.printf("xr_combat_ignore.is_enemy: safe zone squad hostile: "..member:character_name().." is now hostile")
+					if (member and member:alive()) and db.storage[member:id()].combat_ignore.enabled then
+				--		alun_utils.printf("xr_combat_ignore.is_enemy: safe zone squad hostile: "..member:character_name().." is now hostile to "..enemy:character_name())
+				--		db.storage[member:id()].enemy_id = ene_id
+				--		fighting_with_actor_npcs[member:id()] = true
+						db.storage[member:id()].combat_ignore.enabled = false
 					end
 				end
 				return true
 			else
 				return false
 			end
+			--End Yasti--
 		end
 
 		if (db.actor:id() ~= ene_id) then
@@ -225,7 +251,7 @@ function action_process_enemy:__init( obj, storage )
 		return
 	end
 	--Yasti Ghillie Suit. Adjusted Values for inertion time--
-	if db.actor and (ai_tweaks.GhillieEnable == true) and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "ghillie_outfit" then --Inertion Values for wearing a Ghillie Suit
+	if db.actor and (ai_tweaks.GhillieEnable == true) and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit" then --Inertion Values for wearing a Ghillie Suit
 		--alun_utils.printf("xr_combat_ignore.process_enemy_init: Ghillie Suit inertion values loaded")
 		local search = GhillieInertion[self.comm] or "60000"
 		local search_time = xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj, self.comm,"ghillie_inertion",search))
