@@ -37,13 +37,13 @@
 		<text>7.62x51 NATO rounds</text>
 	</string>
 	<string id="ammo-7.62x51_ap">
-    <text>7.62x51 mm DU</text>
+	<text>7.62x51 mm DU</text>
 	</string>
 	<string id="ammo-7.62x51_ap_descr">
-    <text>The 7.62x51 Depleted Uranium round is produced and used by private military organizations world-wide. The need to develop a DU version of this cartridge arose during large-scale private military operations against drug cartels in several countries when PMCs looked for a way to gain another edge.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+	<text>The 7.62x51 Depleted Uranium round is produced and used by private military organizations world-wide. The need to develop a DU version of this cartridge arose during large-scale private military operations against drug cartels in several countries when PMCs looked for a way to gain another edge.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x51_ap_s">
-    <text>7.62x51 DU</text>
+	<text>7.62x51 DU</text>
 	</string>
 	<string id="ammo-11.43x23-hydro">
 		<text>.45 ACP Hydra-shock rounds</text>
@@ -615,7 +615,7 @@
 	<string id="st_wpn_ak74_camo_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A more accurate and reliable rifle than the AKM, the AK-74 is still used by the majority of countries of the former USSR. The AKS-74 is equipped with a side-folding metal shoulder stock and is designed primarily for use with air assault infantry. This particular variant of the AK-74 is using the ERDL pattern, aka the "leaf pattern". In 1948, the US Army Engineer Research and Development Laboratory (ERDL) designed a general purpose jungle camouflage consisting of mid-brown and grass-green organic shapes with black "branches" on a lime green background. This camouflage has been used by many countries and remains popular around the world.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
 	</string>
-		<string id="st_wpn_ak74_worn">
+	<string id="st_wpn_ak74_worn">
 		<text>AKS-74 (old)</text>
 	</string>
 	<string id="st_wpn_ak74_rusty">
@@ -834,7 +834,7 @@
 	<string id="st_wpn_m1891honorary_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Silver decorated Honorary Mosin-Nagant named "The Russian Spear". The M1891/30 was produced for standard issue to all Soviet infantry from 1930 to 1945. It was extremely successful in World War II as a sniper rifle when it was equipped with a 4x PE or a 3.5x PU scope.\n\n%c[0,140,140,140]ATTACHMENTS:\n%c[0,93,0,116]• %c[0,140,140,140] PU series scopes</text>
 	</string>
-		<string id="st_wpn_m1891">
+	<string id="st_wpn_m1891">
 		<text>Mosin-Nagant M1891/30</text>
 	</string>
 	<string id="st_wpn_m1891_descr">
@@ -847,7 +847,7 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]"Obrez" is a Russian word meaning "cut". This "Obrez" is a sawn-off Mosin-Nagant M1891/30. Mainly used by rebels and criminals, it still fires the original rifle cartridge. It's "classified" as a hybrid between a bolt-action pistol and a shotgun, i.e. a budget hand-cannon!</text>
 	</string>
 	<string id="st_wpn_aek973">
-    <text>AEK-971</text>
+	<text>AEK-971</text>
 	</string>
 	<string id="st_wpn_aek973_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Based on previous AK rifles in internal design and layout, the AEK-971 is also equipped with a recoil-balancing mechanism, resulting in more controllable automatic fire. Small batches of this rifle were manufactured for the Russian MVD.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher</text>
@@ -862,31 +862,31 @@
 		<text>FN FAL Para</text>
 	</string>
 	<string id="st_wpn_fnfall_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Assault rifle chambered with the heavy 7.62x51mm round and with custom Magpul stock. Expensive rifle designed for medium to long distance precision shooting, with a permanent scope and a special magazine.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] BSA TW4X30 scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x51 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Assault rifle chambered with the heavy 7.62x51mm round and with custom Magpul stock. Expensive rifle designed for medium to long distance precision shooting, with a permanent scope and a special magazine.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] BSA TW4X30 scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x51 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] M203 grenade launcher</text>
 	</string>
 	<string id="st_wpn_fnfalll">
 		<text>FN FAL</text>
 	</string>
 	<string id="st_wpn_fnfalll_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used small-arms in the world. It fires a heavy, 7.62x51 NATO rounds making a weapon of considerable stopping power. Originally desinged and produced in Belgian Fabrique Nationale (FN) it has later on been licensed to multiple countries around the globe. The rifle is available in two distinct patterns: inch and metric, both of which were serving as primary battle rifles of many NATO countries during the Cold War (for which the weapon was nicknamed "The right arm of the Free World"). Variant of this legendary gun which is the most commonly found in the Zone is the metric pattern of uknown manufacture, which features metal grip, classic wooden stock and FN CAL-shaped handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_custom">
-			<text>FN FAL (customized)</text>
+		<text>FN FAL "Azzasin's" (customized)</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_custom_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Customized FN FAL which originally benlonged to "Azzasin" - retired Spetznaz operative who has got to become Stalker of large renown, who has spent years traversing the Zone in ever-lasting search for opportunities. Some say that he was one of the few real 'Zone men' for whom the sheer opportunity to breath its unique air becomes the very purpose of living. The weapon is heavly-customized with high quality after-market elements and surpases most other pieces in terms of accuracy, durability and handling properties.\n \n%c[0,170,170,170]\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
-		<string id="st_wpn_fnfallelcan_modern">
-			<text>FN FAL (modern)</text>
+	<string id="st_wpn_fnfallelcan_modern">
+		<text>StG 58 (modern)</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_modern_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]This is a modernized version of Austrian Steyr Stg 58 (for "Sturmgewehr 58") - a license-built rifle based on Belgian FN FAL. It features a polymer stock, handguard and pistol grip and has been constructed with great care and only with high-quality elements. This results in lowered weight, better handling, increased durability (especially when firing in automatic mode) and significantly reduced recoil which remains the biggest drawback of most other revisions of FAL.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
-			<string id="st_wpn_fnfallelcan_camo">
-			<text>FN FAL (camouflaged)</text>
+	<string id="st_wpn_fnfallelcan_camo">
+		<text>L1A1 SLR (camouflaged)</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_camo_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]This is the British inch-pattern FN FAL - Commonwealth L1A1 SLR (for "Self Loading Rifle"). It has been painted into rare Rhodesian camouflage which unequivocally indicates its African origin. Rhodesia (which has eventually transformed into modern-day Zimbabwe) was a former british colony declared independent in 1965. Later on the country was torn apart by the civil war - nicknamed the "Bush War" - during which the governmental security forces (one of the three sides of the conflict) where using camouflaged L1A1s as primary battle rifles. The weapon - as all FAL 'inch rifles' - while offering increased accuracy, only allows for semi-automatic fire. Thanks to its Bush War origin it also features a custom muzzle brake mounted on the barrel - such devices were commonly installed at the time for the purpose of recoil reduction. It is not known how a contigent of these rifles ended up in the Zone, however as "Rhodesian" L1A1s were specifically suited for operating in harsh envirnomental conditions - they remain one of the most reliable fire-arms to be found on the local market.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
 	<string id="st_wpn_fr2000">
 		<text>FN FS2000</text>
@@ -907,7 +907,7 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Unknown sniper rifle with the inscription "Muzgaran" on the muzzle.</text>
 	</string>
 	<string id="st_wpn_rpk74">
-    <text>RPK-74</text>
+	<text>RPK-74</text>
 	</string>
 	<string id="st_wpn_rpk74_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The Kalashnikov RPK-74 light machine gun was developed during mid-seventies to complement the AK-74 assault rifle as a standard squad automatic weapon of the Soviet army. It is based on its parent, the AK-74 assault rifle, but with an extended magazine.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes</text>
@@ -1092,10 +1092,10 @@
 	<string id="st_wpn_hpsa">
 		<text>Inglis Hi-Power</text>
 	</string>
-		<string id="st_wpn_hpsa_custom">
+	<string id="st_wpn_hpsa_custom">
 		<text>Browning Hi-Power (customized)</text>
 	</string>
-		<string id="st_wpn_hpsa_alt">
+	<string id="st_wpn_hpsa_alt">
 		<text>Browning Hi-Power (lternate)</text>
 	</string>
 		<string id="st_wpn_hpsa_camo">
@@ -1131,7 +1131,7 @@
 	<string id="st_wpn_lr300">
 		<text>LR-300-ML</text>
 	</string>
-		<string id="st_wpn_lr300_custom">
+	<string id="st_wpn_lr300_custom">
 		<text>LR-300-ML (customized)</text>
 	</string>
 	<string id="st_wpn_lr300_alt">

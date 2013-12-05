@@ -315,10 +315,10 @@ scope_y 					= -2
 ;=====================================================================================================================================================
 [wpn_fnfallelcan_custom]:wpn_fnfallelcan
 
-upgrades                = up_gr_firstab_fnfallelcan, up_gr_seconab_fnfallelcan, up_gr_thirdab_fnfallelcan, up_gr_fourtab_fnfallelcan, up_gr_fifthab_fnfallelcan
-installed_upgrades      =
+upgrades                = up_gr_firstab_fnfallelcan_custom, up_gr_seconab_fnfallelcan_custom, up_gr_thirdab_fnfallelcan_custom, up_gr_fourtab_fnfallelcan_custom, up_gr_fifthab_fnfallelcan_custom
+installed_upgrades      = up_firsta_fnfallelcan_custom, up_firstd_fnfallelcan_custom, up_firste_fnfallelcan_custom, up_fiftha_fnfallelcan_custom
 
-cost                    = 59640
+cost                    = 61640
 inv_weight              = 4.244
 inv_name          = st_wpn_fnfallelcan_custom
 inv_name_short    = st_wpn_fnfallelcan_custom
@@ -335,10 +335,10 @@ misfire_start_condition		= 0.7
 misfire_end_condition		= 0.05
 misfire_start_prob = 0.007 ;	     	= 0.0025
 misfire_end_prob = 0.11 ;	     	= 0.05
-condition_shot_dec      	= 0.00075
-condition_queue_shot_dec	= 0.00075
+condition_shot_dec      	= 0.00055
+condition_queue_shot_dec	= 0.00055
 
-fire_dispersion_base    = 0.125
+fire_dispersion_base    = 0.102
 
 inv_grid_width		    = 6
 inv_grid_height		    = 2
@@ -355,19 +355,19 @@ item_visual		= dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelca2_hud
 ;=====================================================================================================================================================
 [wpn_fnfallelcan_modern]:wpn_fnfallelcan
 
-upgrades                = up_gr_firstab_fnfallelcan, up_gr_seconab_fnfallelcan, up_gr_thirdab_fnfallelcan, up_gr_fourtab_fnfallelcan, up_gr_fifthab_fnfallelcan
-installed_upgrades      =
+upgrades                = up_gr_firstab_fnfallelcan_modern, up_gr_seconab_fnfallelcan_modern, up_gr_thirdab_fnfallelcan_modern, up_gr_fourtab_fnfallelcan_modern, up_gr_fifthab_fnfallelcan_modern
+installed_upgrades      = up_fourta_fnfallelcan_modern, up_fourtc_fnfallelcan_modern
 
-cost                    = 47840
+cost                    = 48840
 inv_weight              = 3.948
 inv_name          = st_wpn_fnfallelcan_modern
 inv_name_short    = st_wpn_fnfallelcan_modern
 description       = st_wpn_fnfallelcan_modern_descr
 
-hit_power           	= 0.563, 0.563, 0.563, 0.563
+hit_power           	= 0.573, 0.573, 0.573, 0.573
 hit_impulse				= 38
-fire_distance           = 1100
-bullet_speed            = 839         ;начальная скорость пули
+fire_distance           = 1120
+bullet_speed            = 823         ;начальная скорость пули
 rpm                     = 652
 
 misfire_probability        = 0.004
@@ -375,10 +375,10 @@ misfire_start_condition		= 0.7
 misfire_end_condition		= 0.05
 misfire_start_prob = 0.007 ;	     	= 0.0025
 misfire_end_prob = 0.11 ;	     	= 0.05
-condition_shot_dec      	= 0.0009
-condition_queue_shot_dec	= 0.0009
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0005
 
-fire_dispersion_base    = 0.165
+fire_dispersion_base    = 0.168
 
 inv_grid_width		    = 6
 inv_grid_height		    = 2
@@ -395,30 +395,32 @@ item_visual		= dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelca3_hud
 ;=====================================================================================================================================================
 [wpn_fnfallelcan_camo]:wpn_fnfallelcan
 
-upgrades                = up_gr_firstab_fnfallelcan, up_gr_seconab_fnfallelcan, up_gr_thirdab_fnfallelcan, up_gr_fourtab_fnfallelcan, up_gr_fifthab_fnfallelcan
-installed_upgrades      =
+upgrades                = up_gr_firstab_fnfallelcan_camo, up_gr_seconab_fnfallelcan_camo, up_gr_thirdab_fnfallelcan_camo, up_gr_fourtab_fnfallelcan_camo, up_gr_fifthab_fnfallelcan_camo
+installed_upgrades      = up_secona_fnfallelcan_camo, up_seconc_fnfallelcan_camo, up_secone_fnfallelcan_camo
 
 cost                    = 54640
-inv_weight              = 3.921
+inv_weight              = 4.46
 inv_name          = st_wpn_fnfallelcan_camo
 inv_name_short    = st_wpn_fnfallelcan_camo
 description       = st_wpn_fnfallelcan_camo_descr
 
-hit_power           	= 0.578, 0.578, 0.578, 0.578
+hit_power           	= 0.592, 0.592, 0.592, 0.592
 hit_impulse				= 41
-fire_distance           = 1180
-bullet_speed            = 843         ;начальная скорость пули
+fire_distance           = 1188
+bullet_speed            = 838         ;начальная скорость пули
 rpm                     = 658
 
-misfire_probability        = 0.004
+misfire_probability        = 0.003
 misfire_start_condition		= 0.7
 misfire_end_condition		= 0.05
 misfire_start_prob = 0.007 ;	     	= 0.0025
 misfire_end_prob = 0.11 ;	     	= 0.05
-condition_shot_dec      	= 0.0009
-condition_queue_shot_dec	= 0.0009
+condition_shot_dec      	= 0.0005
+condition_queue_shot_dec	= 0.0008
 
-fire_dispersion_base    = 0.145
+fire_dispersion_base    = 0.12
+
+fire_modes              = 1
 
 inv_grid_width		    = 6
 inv_grid_height		    = 2

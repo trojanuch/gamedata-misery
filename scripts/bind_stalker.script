@@ -139,7 +139,7 @@ function actor_binder:take_item_from_box(box, item)
 	-- End Alundaio
 	
 	--Yasti Quick Release Backpack
-	itms_manager.actor_on_take_item_from_box(box,item)
+	itms_manager.actor_on_item_take_from_box(box,item)
 	--End Yasti
 end
 ----------------------------------------------------------------------------------------------------------------------

@@ -13,7 +13,7 @@
 		<text>12.7x108 mm FMJ rounds</text>
 	</string>
 	<string id="ammo_12.7x108_fmj_descr">
-		<text>Full metal jacket ammo for the 12.7x108mm is mainly used in machine guns such as the Russian DShK or Kord. This Soviet round is slightly longer and thicker than the American .50 BMG round, which makes it possible for it to hold slightly more powder for ignition. The FMJ variant of the 12.7x108mm is not suitable for penetrating armors of heavily-armored vehicles (irrelevant in the Zone unless you encounter a military unit with an Mi-24 or BTR-80). It is also slightly less accurate than the AP variant. It is also cheaper.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
+		<text>Full metal jacket ammo for the 12.7x108mm is mainly used in machine guns such as the Russian 'DShK' or 'Kord'. This 'Soviet' round is slightly longer and thicker than the American .50 BMG round, which makes it possible for it to hold slightly more powder for ignition. The FMJ variant of the 12.7x108mm is not suitable for penetrating armors of heavily-armored vehicles (irrelevant in the Zone unless you encounter a military unit with an Mi-24 or BTR-80). The FMJ variant of the 12.7x108mm is slightly less accurate than the AP variant. It is also cheaper.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="ammo_12.7x108_fmj_s">
 		<text>12.7x108 FMJ</text>
@@ -22,7 +22,7 @@
 		<text>12.7x108 mm AP rounds</text>
 	</string>
 	<string id="ammo_12.7x108_ap_descr">
-		<text>An armor-piercing round chambered in the 12.7x108mm. The round is tailor-made for the KSVK. The 12.7x108mm AP rounds that made their way into the Zone are not suited for regular DShK or Kord as they are much more expensive than typical armor-piercing rounds. The 12.7x108mm AP is fitted with a tungsten tip, which enables the round to penetrate 25mm-thick layer of steel. These bullets are very expensive due to their special nature and should be used exclusively against the deadliest of enemies.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
+		<text>There is not much to say about this armor-piercing round chambered in the 12.7x108mm. The round is tailor-made for the KSVK. The 12.7x108mm AP rounds that found their way into the Zone are not suited for the regular 'DShK' or 'Kord' as they are much more expensive than the typical armor-piercing rounds. The 12.7x108mm AP is fitted with a tungsten tip, which enables the round to penetrate 25mm-thick layers of steel. These bullets are very expensive due to their special nature and should be used exclusively against the deadliest of enemies.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="ammo_12.7x108_ap_s">
 		<text>12.7x108 AP</text>
@@ -31,25 +31,25 @@
 		<text>7.62x51 mm NATO rounds</text>
 	</string>
 	<string id="ammo-7.62x51_fmj_descr">
-		<text>The 7.62x51 NATO round is a military variant of the .308 round which was used as a standard-issue by the NATO forces until 5.56 ammunition was introduced in the 70s in the Vietnam War. At present, it is most commonly employed by private military contractors all over the world. The 7.62x51 round is a very common machine gun caliber, and can also be used in sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>The 7.62x51 NATO round is a military variant of the .308 round which was used as a standard-issue by the NATO forces until 5.56 ammunition was introduced in the 70-ties in the Vietnam War. At present, it is most commonly employed by private military contractors all over the world. The 7.62x51 round is a very common machine gun caliber, and can also be used in sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x51_fmj_s">
 		<text>7.62x51 NATO rounds</text>
 	</string>
 	<string id="ammo-7.62x51_ap">
-		<text>7.62x51 mm DU</text>
+	<text>7.62x51 mm DU</text>
 	</string>
 	<string id="ammo-7.62x51_ap_descr">
-		<text>The 7.62x51 Depleted Uranium round is produced and used by private military organizations world-wide. The need to develop a DU version of this cartridge arose during large-scale private military operations against drug cartels in several countries when PMCs looked for a way to gain another edge.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+	<text>The 7.62x51 Depleted Uranium round is produced and used by private military organizations world-wide. The need to develop a DU version of this cartridge arose during large-scale private military operations against drug cartels in several countries when PMCs looked for a way to gain another edge.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x51_ap_s">
-		<text>7.62x51 DU</text>
+	<text>7.62x51 DU</text>
 	</string>
 	<string id="ammo-11.43x23-hydro">
 		<text>.45 ACP Hydra-shock rounds</text>
 	</string>
 	<string id="ammo-11.43x23-hydro_descr">
-		<text>This unusual .45 ACP caliber round is comprised of a jacketed soft point bullet with hollow steel core, benefiting from the advantages of both and suffering from their downsides.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
+		<text>This unusual .45 ACP caliber round is comprised of a jacketed soft point bullet with an expanding hollow and a steel core. It combines of jacketed expanding soft point and armor piercing bullet, benefiting from the advantages of both and suffering from their downsides.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="ammo-11.43x23-hydro_s">
 		<text>.45 Hydro</text>
@@ -58,7 +58,7 @@
 		<text>.45 DU rounds</text>
 	</string>
 	<string id="ammo-11.43x23-ap_descr">
-		<text>Uranium round, chambered in .45 ACP. From the time of the first deployment on the battlefield, depleted uranium rounds have been the object of widespread criticism in the international community; rumors of their effects and radiation poisoning have been very common in the fight to ban the use of DU. .45 DU uses enforced steel infused with depleted uranium. The round is self-sharpening, which enhances its armor penetrating capabilities. After impact, uranium heats up and burns; this process, however, produces no radiation. These rounds are only actively used by the US, and less effective versions are sometimes employed by other countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>Uranium round, chambered in .45 ACP. From the time of the first deployment on the battlefield, depleted uranium rounds have been the object of widespread criticism in the international community; rumors of its effects and radiation poisoning have been very common in the fight to ban the use of DU. .45 DU uses enforced steel infused with depleted uranium. The round is self-sharpening, which enhances its armor penetrating capabilities. After impact, uranium heats up and burns; this process, however, produces no radiation. These rounds are only actively used by the US, and less effective versions are sometimes employed by other countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-11.43x23-ap_s">
 		<text>.45 DU</text>
@@ -76,7 +76,7 @@
 		<text>.357 Incendiary rounds</text>
 	</string>
 	<string id="ammo-357-incendiary_descr">
-		<text>Ammunition utilizing phosphorus to burn through targets. Phosphorus-based incendiary ammunition was first produced and used during the First World War. Currently true incendiary ammunition is only utilized by a small number of groups, and can only be fired by a handful of weapons. This round used in the Zone is of mid-level quality and moderate price. It does not explode upon impact, but is highly reliable.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,93,0,116] • %c[0,140,140,140] produces tracer</text>
+		<text>Ammunition utilizing phosphorus to burn through targets. Phosphorus based incendiary ammunition was first produced and used during the First World War. Currently true incendiary ammunition is only utilized by a small number of groups, and can only be fired by a handful of weapons. This round used in the Zone is of mid-level quality and moderate price. It does not explode upon impact, but is highly reliable.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,93,0,116] • %c[0,140,140,140] produces tracer</text>
 	</string>
 	<string id="ammo-357-incendiary_s">
 		<text>.357 Incendiary</text>
@@ -112,7 +112,7 @@
 		<text>12x76 slug rounds</text>
 	</string>
 	<string id="ammo-12x76-zhekan_descr">
-		<text>This heavy 12-caliber slug round is normally used for hunting big game, but is also good for other purposes. Instead of piercing, this hefty slug simply crushes through armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>This heavy 12 caliber slug round is normally used for hunting big game, but is also good for other purposes. Instead of piercing, this hefty slug simply crushes through armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-12x76-zhekan_s">
 		<text>12x76 slug</text>
@@ -148,7 +148,7 @@
 		<text>5.56x45 mm rounds</text>
 	</string>
 	<string id="ammo-5.56x45-ss190_descr">
-		<text>A standard-issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,204,0,51] • %c[0,140,140,140] lowered piercing capability\n%c[0,93,0,116] • %c[0,140,140,140] enhanced fragmentation in soft tissue</text>
+		<text>A standard issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,204,0,51] • %c[0,140,140,140] lowered piercing capability\n%c[0,93,0,116] • %c[0,140,140,140] enhanced fragmentation in soft tissue</text>
 	</string>
 	<string id="ammo-5.56x45-ss190_s">
 		<text>5.56x45</text>
@@ -175,7 +175,7 @@
 		<text>7.62x54 mm PP rounds</text>
 	</string>
 	<string id="ammo-7.62x54-ap_descr">
-		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun. It is a high-powered round and thanks to a hard steel core it possesses quite good penetrative capabilities. A heavy round for a heavy gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun. It is a high-powered round and due to a hard steel core it possesses quite good penetrative capabilities. A heavy round for a heavy gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-7.62x54-ap_s">
 		<text>7.62x54 PP</text>
@@ -211,7 +211,7 @@
 		<text>9x18 RG028 rounds</text>
 	</string>
 	<string id="ammo-9x18-ap_descr">
-		<text>RG028 is a cartridge used for its armor penetration capabilities. The goal of the RG028 was to become a counter to body armor; for this reason, it's loaded with a hardened steel core. Unfortunately, the round itself isn't much of an improvement over the standard, it just has a stronger impact than the typical 9x18 round.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
+		<text>RG028 is a cartridge used for its armor penetration capabilities. The goal of the RG028 was to become a counter to body armor; for this reason, it's loaded with a hardened steel core. Unfortunately, the round itself isn't much of an improvement over the standard, instead it has a stronger impact than the standard 9x18 round.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
 	</string>
 	<string id="ammo-9x18-ap_s">
 		<text>9x18 RG028</text>
@@ -229,7 +229,7 @@
 		<text>9x19 mm JHP rounds</text>
 	</string>
 	<string id="ammo-9x19-pbp_descr">
-		<text>This 9x19 caliber jacketed hollow-point bullet with an expanding hollow has high stopping power and low ricochet propensity. Used by police and for self-defense. Ineffective against body armor due to its low penetration potential.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>This 9x19 caliber jacketed hollow point bullet with an expanding hollow provides high stopping power and low ricochet propensity. Used by police and for self-defense. Ineffective against body armor due to its low penetration potential.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-9x19-pbp_s">
 		<text>9x19 JHP</text>
@@ -268,7 +268,7 @@
 		<text>M203 grenade</text>
 	</string>
 	<string id="ammo-m209_descr">
-		<text>40 mm grenade for the M203 underbarrel grenade launcher. This round has a 3.5 meter kill zone. Also suitable for use in the FN F2000 integrated grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] Blast power: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Blast radius: %c[0,170,170,170]4.1 m\n%c[0,93,0,116] • %c[0,140,140,140] Fragments' radius: %c[0,170,170,170]28 m\n%c[0,93,0,116] • %c[0,140,140,140] Av. number of fragments: %c[0,170,170,170]95 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] Explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
+		<text>40 mm grenade for the M203 underbarrel grenade launcher. This round has a 3,5 meter kill zone. Also suitable for use in the FN F2000 integrated grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]4,1 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments' radius: %c[0,170,170,170]28 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]95 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
 	</string>
 	<string id="ammo-m209_s">
 		<text>M203</text>
@@ -277,7 +277,7 @@
 		<text>OG-7V warhead</text>
 	</string>
 	<string id="ammo-og-7b_descr">
-		<text>Fragmentation warhead for anti-personnel warfare used with the RPG-7 grenade launcher. The main purpose of the warhead is to kill enemies in cover outside the range of hand grenades.\n \n%c[0,93,0,116] • %c[0,140,140,140] Blast power: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Blast radius: %c[0,170,170,170]5.6 m\n%c[0,93,0,116] • %c[0,140,140,140] Fragments' radius: %c[0,170,170,170]41 m\n%c[0,93,0,116] • %c[0,140,140,140] Av. number of fragments: %c[0,170,170,170]153 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] Explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
+		<text>Fragmentation warhead for anti-personnel warfare used with the RPG-7 grenade launcher. The main purpose of the warhead is to kill enemies in cover outside the range of hand grenades.\n \n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]5,6 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments' radius: %c[0,170,170,170]41 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]153 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
 	</string>
 	<string id="ammo-og-7b_s">
 		<text>OG-7V</text>
@@ -286,26 +286,26 @@
 		<text>VOG-25 grenade</text>
 	</string>
 	<string id="ammo-vog-25_descr">
-		<text>Regular fragmentation grenade for the GP-25 Kostyor underbarrel grenade launcher. This round has a 2.5 meter kill zone. The VOG-25 grenade is also used in the OC-14 Groza complex and RG6 / 6G30 revolver-type grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] Blast power: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Blast radius: %c[0,170,170,170]3.6 m\n%c[0,93,0,116] • %c[0,140,140,140] Fragments' radius: %c[0,170,170,170]20 m\n%c[0,93,0,116] • %c[0,140,140,140] Av. number of fragments: %c[0,170,170,170]81 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] Explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
+		<text>Regular fragmentation grenade for the GP-25 Kostyor underbarrel grenade launcher. This round has a 2,5 meter kill zone. The VOG-25 grenade is also used in the OC-14 Groza complex and RG6 / 6G30 revolver-type grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]3,6 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments' radius: %c[0,170,170,170]20 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]81 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
 	</string>
 	<string id="ammo-vog-25_s">
 		<text>VOG-25</text>
 	</string>
   	<string id="ammo-7.62x39_ap">
-	 	<text>7.62x39 mm M43 rounds</text>
-	</string>
+	 <text>7.62x39 mm M43 rounds</text>
+	 </string>
  	<string id="ammo-7.62x39_ap_descr">
  		<text>7.62x39 M43 is an armor piercing round produced in China, which is why it's often referred to as "7.62x39 CN". This round features a mild steel core which enhances its penetration capabilities. This Chinese round (as well as all other M43 ammunition) is currently banned for import in the U.S. because U.S. federal law classifies the round as an armor-piercing handgun round. This classification is based on materials and bullet design rather than on empirical ability to penetrate armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
-	</string>
+	 </string>
  	<string id="ammo-7.62x39_ap_s">
  		<text>7.62x39 M43 rounds</text>
-	</string>
+	 </string>
  	<string id="ammo-7.62x39_fmj">
  		<text>7.62x39 mm FMJ rounds</text>
  	</string>
  	<string id="ammo-7.62x39_fmj_descr">
- 		<text>7.62x39 Full Metal Jacket is one the most commonly used types of ammunition, especially in Africa and in the Middle East. Some nicknamed it the "Round of the Revolution" due to its favored use by both terrorist and criminal organizations. Due to the sheer power of the round most military organizations have turned to using additional steel plates to counter 7.62x39 as there is high probability of encountering it in combat situations.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
-	</string>
+ 		<text>7.62x39 Full Metal Jacket is one the most commonly used types of ammunition, especially in Africa and in the Middle East. Some nicknamed it the "Round of the Revolution" due to its favored use by both terrorist and criminal organizations. Due to the sheer power of the round most military organizations have turned to using steel plates to counter 7.62x39 as there is high probability of encountering it in combat situations.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+	 </string>
  	<string id="ammo-7.62x39_fmj_s">
  		<text>7.62x39 FMJ rounds</text>
  	</string>
@@ -313,7 +313,7 @@
  		<text>7.92x57 mm Mauser rounds</text>
  	</string>
  	<string id="ammo-7.92x33_fmj_descr">
- 		<text>The 7.92x57 Mauser round was adopted by the German Empire and then the Third Reich. It was one of the most popular cartridges in the period of two world wars. However, nowadays, the round is primarily used for hunting and sports.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ 		<text>The 7.92x57 Mauser round was adopted by the German Empire and then the Third Reich. It was one of the most popular cartridges in the period of two world wars. However,  nowadays, the round is primarily used for hunting and sports.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	 </string>
  	<string id="ammo-7.92x33_fmj_s">
  		<text>7.62x57 Mauser rounds</text>
@@ -868,31 +868,25 @@
 		<text>FN FAL</text>
 	</string>
 	<string id="st_wpn_fnfalll_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The FAL is one of the most common and widely used small-arms in the world. It fires a heavy, 7.62x51 NATO rounds making a weapon of considerable stopping power. Originally desinged and produced in Belgian Fabrique Nationale (FN) it has later on been licensed to multiple countries around the globe. The rifle is available in two distinct patterns: inch and metric, both of which were serving as primary battle rifles of many NATO countries during the Cold War (for which the weapon was nicknamed "The right arm of the Free World"). Variant of this legendary gun which is the most commonly found in the Zone is the metric pattern of uknown manufacture, which features metal grip, classic wooden stock and FN CAL-shaped handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
-	<string id="st_wpn_fnfalll">
-		<text>FN FAL</text>
-	</string>
-	<string id="st_wpn_fnfalll_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
-	</string>
-	<string id="st_wpn_fnfallelcan_camo">
-		<text>FN FAL (camo)</text>
-	</string>
-	<string id="st_wpn_fnfallelcan_cmao_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
-	</string>
-		<string id="st_wpn_fnfallelcan_modern">
-		<text>FN FAL (modern)</text>
-	</string>
-	<string id="st_wpn_fnfallelcan_modern_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
-	</string>
-		<string id="st_wpn_fnfallelcan_custom">
-		<text>FN FAL (customized)</text>
+	<string id="st_wpn_fnfallelcan_custom">
+		<text>FN FAL "Azzasin's" (customized)</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_custom_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The FAL is one of the most common and widely used firearms in the world. Used by many NATO countries during the Cold War, it was nicknamed "The right arm of the Free World". This Zone version has a custom grip and Magpul stock and a FN CAL handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Customized FN FAL which originally benlonged to "Azzasin" - retired Spetznaz operative who has got to become Stalker of large renown, who has spent years traversing the Zone in ever-lasting search for opportunities. Some say that he was one of the few real 'Zone men' for whom the sheer opportunity to breath its unique air becomes the very purpose of living. The weapon is heavly-customized with high quality after-market elements and surpases most other pieces in terms of accuracy, durability and handling properties.\n \n%c[0,170,170,170]\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+	</string>
+	<string id="st_wpn_fnfallelcan_modern">
+		<text>StG 58 (modern)</text>
+	</string>
+	<string id="st_wpn_fnfallelcan_modern_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]This is a modernized version of Austrian Steyr Stg 58 (for "Sturmgewehr 58") - a license-built rifle based on Belgian FN FAL. It features a polymer stock, handguard and pistol grip and has been constructed with great care and only with high-quality elements. This results in lowered weight, better handling, increased durability (especially when firing in automatic mode) and significantly reduced recoil which remains the biggest drawback of most other revisions of FAL.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
+	</string>
+	<string id="st_wpn_fnfallelcan_camo">
+		<text>L1A1 SLR (camouflaged)</text>
+	</string>
+	<string id="st_wpn_fnfallelcan_camo_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]This is the British inch-pattern FN FAL - Commonwealth L1A1 SLR (for "Self Loading Rifle"). It has been painted into rare Rhodesian camouflage which unequivocally indicates its African origin. Rhodesia (which has eventually transformed into modern-day Zimbabwe) was a former british colony declared independent in 1965. Later on the country was torn apart by the civil war - nicknamed the "Bush War" - during which the governmental security forces (one of the three sides of the conflict) where using camouflaged L1A1s as primary battle rifles. The weapon - as all FAL 'inch rifles' - while offering increased accuracy, only allows for semi-automatic fire. Thanks to its Bush War origin it also features a custom muzzle brake mounted on the barrel - such devices were commonly installed at the time for the purpose of recoil reduction. It is not known how a contigent of these rifles ended up in the Zone, however as "Rhodesian" L1A1s were specifically suited for operating in harsh envirnomental conditions - they remain one of the most reliable fire-arms to be found on the local market.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
 	<string id="st_wpn_fr2000">
 		<text>FN FS2000</text>
@@ -1101,7 +1095,7 @@
 		<string id="st_wpn_hpsa_custom">
 		<text>Browning Hi-Power (customized)</text>
 	</string>
-			<string id="st_wpn_hpsa_alt">
+	<string id="st_wpn_hpsa_alt">
 		<text>Browning Hi-Power (alternate)</text>
 	</string>
 				<string id="st_wpn_hpsa_camo">
@@ -1137,7 +1131,7 @@
 	<string id="st_wpn_lr300">
 		<text>LR-300-ML</text>
 	</string>
-		<string id="st_wpn_lr300_custom">
+	<string id="st_wpn_lr300_custom">
 		<text>LR-300-ML (customized)</text>
 	</string>
 	<string id="st_wpn_lr300_alt">
