@@ -1639,6 +1639,16 @@ function play_inv_cooking()
 	snd_obj:play(db.actor,0,sound_object.s2d)
 end
 
+function play_inv_cooking_cooker()
+	local snd_obj = sound_object("interface\\inv_cooking_cooker")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+function play_inv_cooking_stove()
+	local snd_obj = sound_object("interface\\inv_cooking_stove")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
 function play_inv_aam_open()
 	local snd_obj = sound_object("interface\\inv_aam_open")
 	snd_obj:play(db.actor,0,sound_object.s2d)
