@@ -249,7 +249,7 @@
 
 	<specific_character id="zat_a2_stalker_nimble" team_default="1">
 		<name>st_zat_a2_stalker_nimble_name</name>
-		<icon>ui_inGame2_nebo_2</icon>
+		<icon>ui_inGame2_neutral_1</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -721,7 +721,7 @@
 	<!--командир сталкеров-->
 	<specific_character id="zat_b5_stalker_commander" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_soldier_3</icon>
+		<icon>ui_inGame2_Soldier_3</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
