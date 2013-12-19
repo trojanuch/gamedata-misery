@@ -392,9 +392,6 @@ function repair_ui:OnButton_repair()
 		if self.section =="toolkit_p3" then
 		alife():create("toolkit_p4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 		end
-		if self.section =="toolkit_p4" then
-		alife():create("toolkit_p4_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
 		-- toolkit_s x4
 		if self.section =="toolkit_s" then
 		alife():create("toolkit_s2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -404,9 +401,6 @@ function repair_ui:OnButton_repair()
 		end
 		if self.section =="toolkit_s3" then
 		alife():create("toolkit_s4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
-		if self.section =="toolkit_s4" then
-		alife():create("toolkit_s_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 		end
 		-- toolkit_r5 x4
 		if self.section =="toolkit_r5" then
@@ -418,9 +412,6 @@ function repair_ui:OnButton_repair()
 		if self.section =="toolkit_r5_3" then
 		alife():create("toolkit_r5_4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 		end
-		if self.section =="toolkit_r5_4" then
-		alife():create("toolkit_r5_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
 		-- toolkit_r7 x4
 		if self.section =="toolkit_r7" then
 		alife():create("toolkit_r7_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -430,9 +421,6 @@ function repair_ui:OnButton_repair()
 		end
 		if self.section =="toolkit_r7_3" then
 		alife():create("toolkit_r7_4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
-		if self.section =="toolkit_r7_4" then
-		alife():create("toolkit_r7_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 		end
 
 		-- ARMOR REPAIR ITEMS
@@ -491,9 +479,6 @@ function repair_ui:OnButton_repair()
 		if self.section =="helmet_repair_kit2" then
 		alife():create("helmet_repair_kit3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 		end
-		if self.section =="helmet_repair_kit3" then
-		alife():create("helmet_repair_kit_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
 		-- armor_repair_pro x4
 		if self.section =="armor_repair_pro" then
 		alife():create("armor_repair_pro2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -504,9 +489,6 @@ function repair_ui:OnButton_repair()
 		if self.section =="armor_repair_pro3" then
 		alife():create("armor_repair_pro4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 		end
-		if self.section =="armor_repair_pro4" then
-		alife():create("armor_repair_pro_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
 		-- toolkit_u x4
 		if self.section =="toolkit_u" then
 		alife():create("toolkit_u2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -516,9 +498,6 @@ function repair_ui:OnButton_repair()
 		end
 		if self.section =="toolkit_u3" then
 		alife():create("toolkit_u4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
-		if self.section =="toolkit_u4" then
-		alife():create("toolkit_u_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 		end
 		-- End ponney68
 
@@ -646,9 +625,6 @@ function repair_ui:OnButton_repair()
 				if(se_parts)and(se_parts:section_name()=="toolkit_p3")then
 				alife():create("toolkit_p4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
-				if(se_parts)and(se_parts:section_name()=="toolkit_p4")then
-				alife():create("toolkit_p_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-				end
 				-- toolkit_s x4
 				if(se_parts)and(se_parts:section_name()=="toolkit_s")then
 				alife():create("toolkit_s2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -658,9 +634,6 @@ function repair_ui:OnButton_repair()
 				end
 				if(se_parts)and(se_parts:section_name()=="toolkit_s3")then
 				alife():create("toolkit_s4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-				end
-				if(se_parts)and(se_parts:section_name()=="toolkit_s4")then
-				alife():create("toolkit_s_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
 				-- toolkit_r5 x4
 				if(se_parts)and(se_parts:section_name()=="toolkit_r5")then
@@ -672,9 +645,6 @@ function repair_ui:OnButton_repair()
 				if(se_parts)and(se_parts:section_name()=="toolkit_r5_3")then
 				alife():create("toolkit_r5_4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
-				if(se_parts)and(se_parts:section_name()=="toolkit_r5_4")then
-				alife():create("toolkit_r5_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-				end
 				-- toolkit_r7 x4
 				if(se_parts)and(se_parts:section_name()=="toolkit_r7")then
 				alife():create("toolkit_r7_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -684,9 +654,6 @@ function repair_ui:OnButton_repair()
 				end
 				if(se_parts)and(se_parts:section_name()=="toolkit_r7_3")then
 				alife():create("toolkit_r7_4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-				end
-				if(se_parts)and(se_parts:section_name()=="toolkit_r7_4")then
-				alife():create("toolkit_r7_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
 
 				-- ARMOR REPAIR ITEMS
@@ -746,9 +713,6 @@ function repair_ui:OnButton_repair()
 				if(se_parts)and(se_parts:section_name()=="helmet_repair_kit2")then
 				alife():create("helmet_repair_kit3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
-				if(se_parts)and(se_parts:section_name()=="helmet_repair_kit3")then
-				alife():create("helmet_repair_kit_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-				end
 				-- armor_repair_pro x4
 				if(se_parts)and(se_parts:section_name()=="armor_repair_pro")then
 				alife():create("armor_repair_pro2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -759,9 +723,6 @@ function repair_ui:OnButton_repair()
 				if(se_parts)and(se_parts:section_name()=="armor_repair_pro3")then
 				alife():create("armor_repair_pro4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
-				if(se_parts)and(se_parts:section_name()=="armor_repair_pro4")then
-				alife():create("armor_repair_pro_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-				end
 				-- toolkit_u x4
 				if(se_parts)and(se_parts:section_name()=="toolkit_u")then
 				alife():create("toolkit_u2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -771,9 +732,6 @@ function repair_ui:OnButton_repair()
 				end
 				if(se_parts)and(se_parts:section_name()=="toolkit_u3")then
 				alife():create("toolkit_u4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-				end
-				if(se_parts)and(se_parts:section_name()=="toolkit_u4")then
-				alife():create("toolkit_u_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
 
 				-- FUEL
@@ -811,9 +769,6 @@ function repair_ui:OnButton_repair()
 				end
 				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel7")then
 				alife():create("explo_jerrycan_fuel8", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-				end
-				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel8")then
-				alife():create("explo_jerrycan_fuel_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
 				-- End ponney68
 

@@ -1486,6 +1486,7 @@ function destroy_object(actor, obj, p)
 	else
 		if p[1] == nil or p[2] == nil then
 			abort("Wrong parameters in destroy_object function!!!")
+			alun_utils.printf("Wrong parameters in destroy_object function!!!")
 		end
 		local target_str = nil
 		if p[3] ~= nil then
@@ -1495,7 +1496,13 @@ function destroy_object(actor, obj, p)
 		end
 		local target_position, target_id, target_init = xr_remark.init_target(obj, target_str)
 		if target_id == nil then
-			printf("You are trying to set non-existant target [%s] for object [%s] in section [%s]", target_str, npc:name(), db.storage[npc:id()].active_section)
+			if obj:object("af_quest_b14_twisted") then --Yasti: Added to combat ID issues if twisted artifact has been put into a container
+				target_id = obj:object("af_quest_b14_twisted"):id()
+				alun_utils.printf("Attempt to repair incorrect af_quest_b14_twisted has been successful")
+			else 
+				printf("You are trying to set non-existant target [%s] for object [%s] in section [%s]", target_str, obj:name(), db.storage[obj:id()].active_section)
+				alun_utils.printf("You are trying to set non-existant target [%s] for object [%s] in section [%s]", target_str, obj:name(), db.storage[obj:id()].active_section)
+			end
 		end
 		sobj = alife():object(target_id)
 	end

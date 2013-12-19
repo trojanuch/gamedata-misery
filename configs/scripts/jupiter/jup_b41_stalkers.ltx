@@ -1,24 +1,19 @@
-;--------------------------------------------------------------------------------
-;-- Copyright: 2010-2012 SWM Team -----------------------------------------------
-;-- last edited: Jurok ----------------------------------------------------------
-;--------------------------------------------------------------------------------
+[walker]
+combat_ignore_cond =  {=check_enemy_name(jup_b47_merc)} true
 
 [meet@jup_b41_animpoint_meet]
-close_snd_hello = nil
-close_snd_bye = nil
-close_anim = nil
-close_victim = nil
-far_anim = nil
-far_victim = nil
-close_distance = 0
-far_distance = 0
-close_snd_distance = 0
-snd_on_use = nil
-use = {=is_wounded} false, {=actor_enemy} false, {=has_enemy} false, {=dist_to_actor_le(3)} true, false
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance 	= 0
+far_distance 	= 0
+snd_on_use = {=is_wounded} nil, {=actor_enemy} nil, {=has_enemy} meet_use_no_fight, {=actor_has_weapon} meet_use_no_weapon, {!dist_to_actor_le(3)} nil
+use = {=is_wounded} false, {=actor_enemy} false, {=has_enemy} false, {=actor_has_weapon} false, {=dist_to_actor_le(3)} true, false
 meet_on_talking = false
-trade_enable = false
 
 [animpoint@jup_b41_animp_gen]
+combat_ignore_cond =  {=check_enemy_name(jup_b47_merc)} true
 reach_movement = walk
 use_camp = false
 meet = meet@jup_b41_animpoint_meet
@@ -33,28 +28,25 @@ active = walker@jup_b1_stalker_1_home
 on_death = death@stalker_1
 on_combat = combat
 
-[walker@jup_b1_stalker_1_home]
+[walker@jup_b1_stalker_1_home]:walker
 path_walk = base_stay_st_1
 path_look = base_look_st_1
 on_info = {+jup_b1_go_on_task =squad_exist(jup_b1_stalker_squad)} patrol@go_to_tunnel
-on_info2 = {=actor_in_zone(jup_b1_st_1_greet) -jup_b1_greet_end +jup_b1_give_task -jup_b1_squad_is_dead !is_playing_sound} remark@callactor
+on_info2 = {=actor_in_zone(jup_b1_st_1_greet) -jup_b1_greet_end +jup_b1_give_task !is_playing_sound} remark@callactor
 on_info3 = {=surge_started !has_enemy} animpoint@jup_b41_stalker_1_reach_hide
 out_restr = jup_b41_sr_noweap
 in_restr = jup_b41_sr_light
 meet = meet@default
 
 [meet@default]
-close_snd_hello = nil
-close_snd_bye = nil
-close_anim = nil
-close_victim = nil
-far_anim = ward
-far_victim = actor
-close_distance = 0
-far_distance = 5
-close_snd_distance = 0
-snd_on_use = nil
-use = {=is_wounded} false, {=actor_enemy} false, {=has_enemy} false, true
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 2
+far_distance 	= 0
+close_snd_distance = 2
+use =  true
 allow_break = false
 trade_enable = false
 
@@ -73,7 +65,7 @@ commander = true
 formation = back
 on_signal = at_pos | %+jup_b1_st_mission -jup_b1_go_on_task%
 meet = no_meet
-on_info = {=health_le(0.5) !actor_enemy} %=restore_health% 
+on_info = {=health_le(0.5) !actor_enemy} %=restore_health%
 on_info2 = {=dist_to_actor_ge(140) =dist_to_story_obj_ge(jup_b1_half_artifact:260) -jup_b1_teleport_squad_only} %+jup_b1_teleport_squad_only%
 
 [animpoint@jup_b41_stalker_1_reach_hide]
@@ -86,15 +78,10 @@ on_info2 = {=has_enemy} walker@jup_b1_stalker_1_home
 out_restr = jup_b41_sr_light
 
 [meet@stalker_1]
-close_snd_hello = nil
-close_snd_bye = nil
-snd_on_use = nil
-use = {=is_wounded} false, {=actor_enemy} false, {=has_enemy} false, true
-close_distance = 0
-far_distance = 0
-trade_enable = false
+close_distance 	= 0
+far_distance 	= 0
 
-[animpoint@jup_b41_stalker_1_hide]
+[animpoint@jup_b41_stalker_1_hide]:walker
 cover_name = jup_b41_animp_surge_1
 reach_movement = run
 use_camp = false

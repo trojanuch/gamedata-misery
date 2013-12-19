@@ -220,7 +220,7 @@ function save(package)
 	for k,v in pairs(weapons_table) do
 		i = i + 1
 	end
-	package:w_u8(i)
+	package:w_u16(i)
 	for k,v in pairs(weapons_table) do
 		package:w_stringZ(tostring(k))
 		package:w_float(v)
@@ -229,7 +229,7 @@ function save(package)
 	for k,v in pairs(artefacts_table) do
 		i = i + 1
 	end
-	package:w_u8(i)
+	package:w_u16(i)
 	for k,v in pairs(artefacts_table) do
 		package:w_stringZ(tostring(k))
 		package:w_bool(v)
@@ -238,7 +238,7 @@ function save(package)
 	for k,v in pairs(taken_artefacts) do
 		i = i + 1
 	end
-	package:w_u8(i)
+	package:w_u16(i)
 	for k,v in pairs(taken_artefacts) do
 		package:w_u32(k)
 	end
@@ -262,14 +262,14 @@ function load(package)
 		actor_statistic.favorite_weapon_sect = str
 	end
 	weapons_table = {}
-	local n = package:r_u8()
+	local n = package:r_u16()
 	for i = 1,n do
 		local k = package:r_stringZ()
 		local v = package:r_float()
 		weapons_table[k] = v
 	end
 	artefacts_table = {}
-	n = package:r_u8()
+	n = package:r_u16()
 	for i = 1,n do
 		log("n "..tostring(n))
 		local k = package:r_stringZ()
@@ -278,7 +278,7 @@ function load(package)
 	end
 
 		taken_artefacts = {}
-	n = package:r_u8()
+	n = package:r_u16()
 	for i = 1,n do
 		local k = package:r_u32()
 		taken_artefacts[k] = k

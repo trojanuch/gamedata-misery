@@ -56,7 +56,7 @@ on_complete = %+pri_a21_task_end =inc_faction_goodwill_to_actor(army:250)%
 
 [pri_a22_rfi_source]
 icon = ui_inGame2_Radiopomehi
-on_init = %=send_tip(st_resupply_ready_2:can_resupply) +pri_a22_actor_needs_ammo_supply -pri_a22_actor_needs_ammo_supply_one_done +pri_a22_actor_needs_grenade_supply +pri_a25_actor_needs_medikit_supply +pri_a25_actor_needs_medikit_basic_supply%
+on_init = %=send_tip(st_resupply_ready:can_resupply) +pri_a22_actor_needs_ammo_supply -pri_a22_actor_needs_ammo_supply_one_done +pri_a22_actor_needs_grenade_supply +pri_a25_actor_needs_medikit_supply +pri_a25_actor_needs_medikit_basic_supply%
 prior = 126
 storyline = true
 title = {+pri_a25_check_freezer_knock} pri_a25_check_freezer_knock_name, {+pri_a25_destroy_antenna} pri_a25_destroy_antenna_name, {+pri_a25_find_antenna} pri_a25_find_antenna_name, {+pri_a25_blow_up_door} pri_a25_blow_up_door_name, {+pri_a25_find_explosive} pri_a25_find_explosive_name, {+pri_a22_scene_done} pri_a25_remove_source_of_hindrances_name, {+pri_a22_actor_in_zone_pri_a22_find_squad} pri_a22_search_yarmoshuk_body_name, pri_a22_find_dead_squad_name

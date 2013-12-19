@@ -150,12 +150,10 @@ af_camelbak = 1, prob=0.002 \n
 af_surge = 1, prob=0.001 \n
 af_iam = 1, prob=0.001 \n
 
-af_medusa_af_iam = 1, prob=0.001 \n
-af_cristall_af_iam = 1, prob=0.001 \n
-af_blood_af_iam = 1, prob=0.001 \n
-af_electra_sparkler_af_iam = 1, prob=0.001 \n
-
-lead_box_open = 1, prob=0.002 \n
+af_medusa_lead_box = 1, prob=0.001 \n
+af_cristall_lead_box = 1, prob=0.001 \n
+af_blood_lead_box = 1, prob=0.001 \n
+af_electra_sparkler_lead_box = 1, prob=0.001 \n
 
 mutant_part_boar_leg = 2, prob=0.01 \n
 mutant_part_dog_tail = 4, prob=0.01 \n

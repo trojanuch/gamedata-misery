@@ -72,7 +72,7 @@ close_victim = actor
 far_distance = 10
 far_anim = hello
 far_victim = actor
-far_snd = nil
+far_snd = zat_b7_raiders_to_boss
 trade_enable = false
 use = {-zat_b7_raider_plan} false, {!actor_enemy} true
 snd_on_use = {-zat_b7_raider_plan} meet_use_no_talk_leader
@@ -87,6 +87,7 @@ suitable = {=is_alive(zat_b7_stalker_raider_leader) =check_npc_name(zat_b7_stalk
 post_combat_time = 0, 0
 
 [walker@leader_attack]
+combat_ignore_cond = {=fighting_dist_le(30)} true
 path_walk = leader_attack_start_walk
 path_look = leader_attack_start_look
 on_signal = path_end | %+zat_b7_stalkers_raiders_meet%
@@ -106,8 +107,8 @@ close_snd_hello = nil
 close_snd_bye = nil
 close_victim = actor
 trade_enable = false
-close_distance = 0
-far_distance = 0
+close_distance 	= 0
+far_distance 	= 0
 snd_on_use = {=is_wounded} nil, {=actor_enemy} nil, {=has_enemy} meet_use_no_fight
 use = {=is_wounded} false, {=actor_enemy} false, {=has_enemy} false, {-zat_b7_stalkers_raiders_attack_started} true, {+zat_b7_stalkers_raiders_attack_started} false
 meet_dialog = zat_b7_stalkers_raiders_dialog
@@ -164,7 +165,7 @@ path_walk = leader_attack_walk
 path_look = leader_attack_look
 def_state_moving = assault
 def_state_standing = threat
-on_actor_dist_ge_nvis = 50 | %+zat_b7_actor_refused_to_be_robbed%  
+on_actor_dist_ge_nvis = 50 | %+zat_b7_actor_refused_to_be_robbed%
 meet = meet@leader_rob_actor
 use_camp = false
 gather_items_enabled = false
@@ -215,7 +216,7 @@ close_victim = nil
 far_distance = 10
 trade_enable = false
 close_victim = actor
-use = {=is_wounded} false, {=actor_enemy} false, {=has_enemy} false, {+zat_b7_actor_robbed} false, true 
+use = {=is_wounded} false, {=actor_enemy} false, {=has_enemy} false, {+zat_b7_actor_robbed} false, true
 meet_dialog = zat_b7_stalkers_raiders_dialog
 snd_on_use = nil
 

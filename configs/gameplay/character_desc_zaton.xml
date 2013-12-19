@@ -185,7 +185,6 @@
 #include "gameplay\character_drugs_neutral_2.xml"
     </supplies>
 
-        <start_dialog>zat_b14_stalker_hello_dialog</start_dialog>
 		<actor_dialog>zat_b14_stalker_at_bar_start</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
@@ -410,7 +409,6 @@
 	</supplies>
 #include "gameplay\character_criticals_4.xml"
 
-                <start_dialog>jup_morgan_start_dialog</start_dialog>
 		<actor_dialog>zat_b7_duty_illicit_dealer_b207_blackmail</actor_dialog>
 		<actor_dialog>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda</actor_dialog>
 		<actor_dialog>zat_b7_duty_illicit_dealer_b207_blackmail_with_pda_2</actor_dialog>
@@ -1051,8 +1049,7 @@
 		<actor_dialog>zat_b3_stalker_tech_produce_62_end</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_return_access_card</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_produce_62_repair_gauss</actor_dialog>
-		<actor_dialog>zat_tech_about_battery_dialog</actor_dialog>
-                <!-- actor_dialog>zat_b3_stalker_tech_produce_62_make_battery</actor_dialog -->
+		<actor_dialog>zat_b3_stalker_tech_produce_62_make_battery</actor_dialog>
 		<actor_dialog>zat_b3_tech_buddies_about</actor_dialog>
 		<actor_dialog>zat_b3_tech_buddies_apologies_both</actor_dialog>
 		<actor_dialog>zat_b3_tech_buddies_apologies_joker</actor_dialog>
@@ -1064,12 +1061,9 @@
 		<actor_dialog>zat_b3_stalker_mechanic_b207_about_dealer_pda</actor_dialog>
 		<actor_dialog>zat_b3_stalker_mechanic_electro_toolkit_dialog</actor_dialog>
 		<actor_dialog>zat_b3_stalker_tech_instruments</actor_dialog>
-		<!-- actor_dialog>zat_b3_stalker_tech_drink_1</actor_dialog -->
-		<!-- actor_dialog>zat_b3_stalker_tech_drink_2</actor_dialog -->
-		<!-- actor_dialog>zat_b3_stalker_tech_drink_3</actor_dialog -->
-                <actor_dialog>zat_tech_drink_dialog_1</actor_dialog>
-		<actor_dialog>zat_tech_drink_dialog_2</actor_dialog>
-		<actor_dialog>zat_tech_drink_dialog_3</actor_dialog>
+		<actor_dialog>zat_b3_stalker_tech_drink_1</actor_dialog>
+		<actor_dialog>zat_b3_stalker_tech_drink_2</actor_dialog>
+		<actor_dialog>zat_b3_stalker_tech_drink_3</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 

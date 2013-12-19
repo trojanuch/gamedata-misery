@@ -933,6 +933,8 @@
 	<string id="ui_mm_confirm_changes">
 		<text>Apply changes? All changes will be reverted in</text>
 	</string>
+
+
 	<string id="ui_mm_hud_helm">
 		<text>Show helmet HUD</text>
 	</string>
@@ -948,49 +950,6 @@
 	<string id="ui_mm_safe_cover">
 		<text>Surge cover notification</text>
 	</string>
-	<string id="ui_mm_r1_tf_mipbias">
-		<text>Clarity of distant objects</text>
-	</string>
-	<string id="ui_mm_r1_ssa_lod_a">
-		<text>Visiblity of distant objects</text>
-	</string>
-	<string id="ui_mm_r1_ssa_lod_b">
-		<text>Detailing of distant objects</text>
-	</string>
-	<string id="ui_mm_r1_glows_per_frame">
-		<text>Maximum light sources</text>
-	</string>	
-	<string id="ui_mm_r3_minmax_sm">
-		<text>Software SM 4.1</text>
-	</string>
-	<string id="auto">
-		<text>auto detect</text>
-	</string>
-	<string id="on">
-		<text>enabled (forced)</text>
-	</string>
-	<string id="off">
-		<text>disabled</text>
-	</string>
-	<string id="autodetect">
-		<text>auto</text>
-	</string>
-	<string id="st_opt_atest_msaa_dx10_0">
-		<text>DX10.0 [Standard]</text>
-	</string>
-	<string id="st_opt_atest_msaa_dx10_1">
-		<text>DX10.1 [Superior]</text>
-	</string>
-	<string id="ui_mm_r2_gloss_factor">
-		<text>Gloss factor</text>
-	</string>
-	<string id="ui_mm_r2_tf_mipbias">
-		<text>Clarity of distant objects</text>
-	</string>
-	<string id="ui_mm_r2_mblur">
-		<text>Motion blur</text>
-	</string>	
-	<string id="ui_keypress_on_start">
-		<text>Keypress to Start</text>
-	</string>
+
+
 </string_table>

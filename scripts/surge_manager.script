@@ -31,10 +31,6 @@ local immuned_to_surge_squads = {
 						["monster_zombied_night"] 	= true,
 						["monster_special"] 		= true,
 						["monster"]					= true,
-						["monolith"]				= true,
-						["monolith_pripyat"]		= true,
-						["monolith_sci"]			= true,
-						["monolith_sci_pripyat"]	= true,
 						["zombied"]					= true
 						 }
 
@@ -202,7 +198,7 @@ function CSurgeManager:skip_surge()
 	self:respawn_artefacts_and_replace_anomaly_zone()
 	xr_statistic.inc_surges_counter()
 	if (not self.skip_message and self.atmosfear.opt_enable_blowout==1) then
-		up_surge.removing_dead()
+		news_manager.send_tip(db.actor, "st_surge_while_asleep", nil, "recent_surge", nil, nil)
 		self.skip_message = true
 	end
 	-- hide indicators
@@ -420,18 +416,18 @@ function CSurgeManager:update()
 			if (diff_sec>=38) and not(self.task_given) then
 				if (level) and (self.atmosfear.opt_blowout_warning=="radio" or self.atmosfear.opt_blowout_warning=="radio_siren") then
 					if(level.name()=="zaton") then
-						up_surge.zat_surge_phase_1_snd_fix()
+						xr_sound.set_sound_play(db.actor:id(), "zat_a2_stalker_barmen_surge_phase_1")
 					elseif(level.name()=="jupiter") then
-						up_surge.jup_surge_phase_1_snd_fix()
+						xr_sound.set_sound_play(db.actor:id(), "jup_a6_stalker_medik_phase_1")
 					elseif not has_alife_info("pri_b305_fifth_cam_end") then
-						up_surge.pri_surge_phase_1_snd_fix()
+						xr_sound.set_sound_play(db.actor:id(), "pri_a17_kovalsky_surge_phase_1")
 					end
 				end
 				self:launch_rockets()
 
 				if (axr_misery) then
 					local task_given = axr_misery.Config.GetValue("settings","safe_cover_notification",1)
-					if (task_given) then -- Removed "not". Now correctly registers true as true, and false as false.
+					if not (task_given) then
 						self:give_surge_hide_task()
 					end
 				else
@@ -478,11 +474,11 @@ function CSurgeManager:update()
 			if(diff_sec>=90) and not(self.second_message_given) then
 				if (level) and (self.atmosfear.opt_blowout_warning=="radio" or self.atmosfear.opt_blowout_warning=="radio_siren") then
 					if(level.name()=="zaton") then
-						up_surge.zat_surge_phase_2_snd_fix()
+						xr_sound.set_sound_play(db.actor:id(), "zat_a2_stalker_barmen_surge_phase_2")
 					elseif(level.name()=="jupiter") then
-						up_surge.jup_surge_phase_2_snd_fix()
+						xr_sound.set_sound_play(db.actor:id(), "jup_a6_stalker_medik_phase_2")
 					elseif not has_alife_info("pri_b305_fifth_cam_end") then
-						up_surge.pri_surge_phase_2_snd_fix()
+						xr_sound.set_sound_play(db.actor:id(), "pri_a17_kovalsky_surge_phase_2")
 					end
 				end
 				self.second_message_given = true

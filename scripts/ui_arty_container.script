@@ -54,11 +54,7 @@ function arty_ui:FillPartsList()
 		elseif self.section == "container_tool" then
 			if (itm) then
 				if self.artycon[itm:section()] then
-					if itm:section() == "lead_box_open" or itm:section() == "lead_box_closed" or itm:section() == "lead_box_half" then
-						self:AddItemToList(itm,self.list_box_parts, lead_containers.get_inv_index(itm:id()))
-					else	
-						self:AddItemToList(itm,self.list_box_parts)
-					end
+					self:AddItemToList(itm,self.list_box_parts)
 				end
 			end
 		end
@@ -117,7 +113,11 @@ function arty_ui:InitControls()
 	end
 	
 	-- Arty Container picture
-	self.pic = self.xml:InitStatic("itm_arty:form:icon_tool",self.form)
+	if self.section == "lead_box" then
+		self.pic = self.xml:InitStatic("itm_arty:form:icon_tool_lead",self.form)
+	else
+		self.pic = self.xml:InitStatic("itm_arty:form:icon_tool",self.form)
+	end
 
 	local inv_grid_width = alun_utils.read_from_ini(ini,self.section,"inv_grid_width","float",0)
 	local inv_grid_height = alun_utils.read_from_ini(ini,self.section,"inv_grid_height","float",0)
@@ -203,9 +203,7 @@ function arty_ui:OnPartsListItemClicked()
 
 	self.picture_parts:SetWndPos(vector2():set(self.picture_parts.x-w/2, self.picture_parts.y-h/2))
 	
-	if self.section == "container_tool" and sec == "lead_box_closed" or self.section == "container_tool" and sec == "lead_box_open" or self.section == "container tool" and sec == "lead_box_half" then
-		self.caption_parts:SetText("Open Container")
-	elseif self.section == "container_tool" then
+	if self.section == "container_tool" then
 		self.caption_parts:SetText("Remove from Container")
 	else
 		self.caption_parts:SetText("Place in Container")
@@ -252,19 +250,9 @@ function arty_ui:OnButton_ok()
 	end
 	
 	if self.section == "container_tool" then
-		if sec == "lead_box_closed" or sec == "lead_box_open" or sec == "lead_box_half" then
-			if not db.actor:object("container_tool") then
-				axr_misery.create_items("container_tool")
-			end
-			self:HideDialog()
-			local ui = ui_lead_containers and ui_lead_containers.lead_ui(hud, sec)
-			if (ui) then
-				lead_containers.set_menu_showed(true)
-				ui:ShowDialog(true)
-				ui:FillList(lead_containers.get_inv_index(item.item_id))
-			end
-			return
-			
+		if (string.find(sec, "(lead.-_box)",3)) then
+			break_con = "lead_box"
+			break_arty = sec:gsub("_lead_box", "")		
 		elseif (string.find(sec, "(af.-_iam)",3)) then  --Yasti. Searching for container section in string
 			break_con = "af_iam"
 			break_arty = sec:gsub("_af_iam", "")
@@ -325,6 +313,8 @@ function arty_ui:AddItemToList(item,listbox,condition)
 				sec = sec:gsub("_af_aac", "")
 			elseif (string.find(sec, "(af.-_aam)",3)) then
 				sec = sec:gsub("_af_aam", "")
+			elseif (string.find(sec, "(lead.-_box)",3)) then
+				sec = sec:gsub("_lead_box", "")
 			end
 		end
 		

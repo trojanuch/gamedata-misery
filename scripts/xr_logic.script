@@ -1421,9 +1421,9 @@ function pstor_load_all(obj, reader)
 	
 	local ctr = reader:r_u32()
 	--Yasti pstor corruption--
-	if tonumber(ctr) > 10 and tostring(obj:name()) ~= "single_player" and npc_id ~= 0 then
+	if tonumber(ctr) > 12 and tostring(obj:name()) ~= "single_player" and npc_id ~= 0 then
 		alun_utils.printf("xr_logic.pstor_load_all: a NPC was detected with a damaged PSTOR:"..tostring(obj:name())..":"..tostring(npc_id)..". Will try to recover")
-		ctr = 10
+		ctr = 12
 	end
 	-- ^ Maximum of 10 variables for NPC's.
 	--End Yasti--
@@ -1456,7 +1456,7 @@ function pstor_load_all(obj, reader)
 			pstor[varname] = nil
 			alun_utils.printf("xr_logic.pstor_load_all: not registered type N "..tostring(tn).." encountered... "..tostring(obj:name())..":"..tostring(npc_id)) --Yasti
 		end
-	alun_utils.printf("xr_logic.pstor_load_all: varname check: "..tostring(obj:name()).."|"..tostring(npc_id)..": "..tostring(varname).."= "..tostring(pstor[varname]))
+	--alun_utils.printf("xr_logic.pstor_load_all: varname check: "..tostring(obj:name()).."|"..tostring(npc_id)..": "..tostring(varname).."= "..tostring(pstor[varname]))
 	end	--printf("_bp: pstor_load_all: loaded [%s]='%s'", varname, utils.to_str(pstor[varname]))
 	--End Yasti--
 end

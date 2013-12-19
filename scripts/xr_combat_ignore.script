@@ -109,8 +109,9 @@ function npc_on_hit_callback(npc,amount,local_direction,who,bone_index)
 			alun_utils.set_squad_relation(npc, who, game_object.enemy)
 			for k in squad:squad_members() do
 				local member = db.storage[k.id] and db.storage[k.id].object
+				xr_logic.pstor_store(member,"can_attack_actor",true)
 				if (member and member:alive()) and db.storage[member:id()].combat_ignore.enabled then
-					alun_utils.printf("xr_combat_ignore.npc_on_hit_callback: safe zone squad hostile: "..member:character_name().." is now hostile to "..who:character_name())
+			--		alun_utils.printf("xr_combat_ignore.npc_on_hit_callback: safe zone squad hostile: "..member:character_name().." is now hostile to "..who:character_name())
 			--		db.storage[member:id()].enemy_id = ene_id
 			--		fighting_with_actor_npcs[member:id()] = true
 					db.storage[member:id()].combat_ignore.enabled = false
@@ -183,13 +184,11 @@ function is_enemy(obj,enemy,no_memory)
 
 		if (safe_zone_npcs[cid]) then
 			--Yasti: if NPC that was killed by Player in a safe zone was in a squad, all squadmembers will override safe zone flag and attack--
-			if db.actor:id() == ene_id and db.storage[id].enemy_id == ene_id and safe_zone_npcs[squad.id] and (obj:relation(enemy) == game_object.enemy) then
+			local can_attack_actor = xr_logic.pstor_retrieve(obj,"can_attack_actor",nil)
+			if db.actor:id() == ene_id and (obj:relation(enemy) == game_object.enemy) and can_attack_actor == true then
 				for k in squad:squad_members() do
 					local member = db.storage[k.id] and db.storage[k.id].object
 					if (member and member:alive()) and db.storage[member:id()].combat_ignore.enabled then
-				--		alun_utils.printf("xr_combat_ignore.is_enemy: safe zone squad hostile: "..member:character_name().." is now hostile to "..enemy:character_name())
-				--		db.storage[member:id()].enemy_id = ene_id
-				--		fighting_with_actor_npcs[member:id()] = true
 						db.storage[member:id()].combat_ignore.enabled = false
 					end
 				end

@@ -1419,11 +1419,11 @@ function jup_b47_actor_not_enemy_to_dolg(first_speaker, second_speaker)
 end
 
 function jup_b15_actor_sci_outfit(first_speaker, second_speaker)
-	return (db.actor:item_in_slot(7) and (db.actor:item_in_slot(7):section()=="scientific_outfit" or db.actor:item_in_slot(7):section()=="ecologist_red_outfit" or db.actor:item_in_slot(7):section()=="ecologist_green_outfit"))
+	return (db.actor:object("scientific_outfit") ~= nil)
 end
 
 function jup_b15_no_actor_sci_outfit(first_speaker, second_speaker)
-	return (db.actor:item_in_slot(7)==nil or (db.actor:item_in_slot(7):section()~="scientific_outfit" or db.actor:item_in_slot(7):section()~="ecologist_red_outfit" or db.actor:item_in_slot(7):section()~="ecologist_green_outfit"))
+	return (db.actor:object("scientific_outfit") == nil)
 end
 
 function jup_b19_reward(first_speaker, second_speaker)
