@@ -339,6 +339,9 @@ function cooking_ui:OnButton_cooking()
 	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel7")then
 	alife():create("explo_jerrycan_fuel8", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 	end
+	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel8")then
+	alife():create("explo_jerrycan_fuel_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+	end
 	-- explo_explo_balon_gas x8
 	if(obj)and(se_obj:section_name()=="explo_balon_gas")then
 	alife():create("explo_balon_gas2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -360,6 +363,9 @@ function cooking_ui:OnButton_cooking()
 	end
 	if(obj)and(se_obj:section_name()=="explo_balon_gas7")then
 	alife():create("explo_balon_gas8", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+	end
+	if(obj)and(se_obj:section_name()=="explo_balon_gas8")then
+	alife():create("explo_balon_gas_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 	end
 
 	if not (obj) then
