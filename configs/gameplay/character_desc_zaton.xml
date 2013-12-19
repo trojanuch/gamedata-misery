@@ -1364,8 +1364,6 @@
 #include "gameplay\character_drugs_bandit_2.xml"
 
    	 </supplies>
-<start_dialog>zat_raider_hello_1_dialog</start_dialog>
-
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"
  	 </specific_character>
@@ -1397,8 +1395,6 @@
 #include "gameplay\character_drugs_bandit_2.xml"
 
    	 </supplies>
-<start_dialog>zat_raider_hello_2_dialog</start_dialog>
-
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"
  	 </specific_character>
@@ -1431,8 +1427,6 @@
 #include "gameplay\character_drugs_bandit_2.xml"
 
    	 </supplies>
-<start_dialog>zat_raider_hello_3_dialog</start_dialog>
-
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"
  	 </specific_character>
@@ -1816,7 +1810,6 @@
 
 		<start_dialog>zat_b18_noah_start</start_dialog>
 
-                <actor_dialog>zat_noah_about_pripyat_dialog</actor_dialog>
 		<actor_dialog>zat_b18_noah_plateau_way</actor_dialog>
 		<actor_dialog>zat_b18_noah_first_artefact</actor_dialog>
 		<actor_dialog>zat_b18_noah_second_artefact</actor_dialog>
@@ -1891,9 +1884,7 @@
 		<actor_dialog>zat_b215_stalker_guide_leave_zone</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_maps</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_to_pripyat_no_way</actor_dialog>
-                <!-- actor_dialog>zat_b215_stalker_guide_to_pripyat</actor_dialog -->
-                <actor_dialog>zat_lotsman_to_pripyat_dialog</actor_dialog>
-                <actor_dialog>jup_lotsman_to_pripyat_dialog</actor_dialog>
+		<actor_dialog>zat_b215_stalker_guide_to_pripyat</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_to_jupiter</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_to_zaton</actor_dialog>
 		<actor_dialog>zat_b215_stalker_guide_where_to</actor_dialog>
