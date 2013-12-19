@@ -234,7 +234,7 @@ function get_nearest_stalker(npc)
 	local pos
 	for i=1, #db.OnlineStalkers do
 		stalker = db.storage[db.OnlineStalkers[i]] and db.storage[db.OnlineStalkers[i]].object or level.object_by_id(db.OnlineStalkers[i])
-		if (stalker and stalker:alive()) then
+		if (stalker:alive() and stalker:id()) then
 			pos = npc == "cam" and device().cam_pos or npc:position()
 			dist = pos:distance_to_sqr(stalker:position())
 			if not (nearest_dist) then
@@ -341,6 +341,18 @@ function item_is_outfit(o,c)
 	end
 	local t = {
 	[clsid.equ_stalker_s] = true}
+	if c and t[c] then
+		return true
+	end
+	return false
+end
+
+function item_is_explosive(o,c)
+	if not c then
+		c = o and o:clsid()
+	end
+	local t = {
+	[clsid.obj_explosive_s] = true}
 	if c and t[c] then
 		return true
 	end
@@ -1320,4 +1332,124 @@ end
 
 function startsWith(text,prefix)
 	return string.sub(text, 1, string.len(prefix)) == prefix
+end
+
+function w_stpk(stpk,typ,n,info)
+	local isError
+
+	if (typ == "bool") then
+		if (n and type(n) == "boolean") then
+			stpk:w_bool(n)
+		elseif (n and type(n) == "string") then
+			isError = true
+			if (n == "true") then
+				stpk:w_bool(true)
+			elseif (n == "false") then
+				stpk:w_bool(false)
+			end
+			info = info .. " |-> auto-corrected bool value from string"
+		else
+			if (n) then
+				isError = true
+			end
+			stpk:w_bool(false)
+		end
+
+	elseif (typ == "s8") then
+		if (n and type(n) == "number" and n >= -128 and n <= 128) then
+			stpk:w_s8(n)
+		else
+			isError = true
+			stpk:w_s8(0)
+		end
+
+	elseif (typ == "s16") then
+		if (n and type(n) == "number" and n >= -32768 and n <= 32767) then
+			stpk:w_s16(n)
+		else
+			isError = true
+			stpk:w_s16(0)
+		end
+
+	elseif (typ == "s32") then
+		if (n and type(n) == "number" and n >= -2147483648 and n <= 2147483647) then
+			stpk:w_s32(n)
+		else
+			isError = true
+			stpk:w_s32(0)
+		end
+
+	elseif (typ == "s64") then
+		if (n and type(n) == "number" and n >= -9223372036854775808 and n <= 9223372036854775808) then
+			stpk:w_s64(n)
+		else
+			isError = true
+			stpk:w_s64(0)
+		end
+
+	elseif (typ == "u8") then
+		if (n and type(n) == "number" and n >= 0 and n <= 255) then
+			stpk:w_u8(n)
+		else
+			isError = true
+			stpk:w_u8(0)
+		end
+
+	elseif (typ == "u16") then
+		if (n and type(n) == "number" and n >= 0 and n <= 65535) then
+			stpk:w_u16(n)
+		else
+			isError = true
+			stpk:w_u16(0)
+		end
+
+	elseif (typ == "u32") then
+		if (n and type(n) == "number" and n >= 0 and n <= 4294967295) then
+			stpk:w_u32(n)
+		else
+			isError = true
+			stpk:w_u32(0)
+		end
+
+	elseif (typ == "u64") then
+		if (n and type(n) == "number" and n >= 0 and n <= 18446744073709551615) then
+			stpk:w_u64(n)
+		else
+			isError = true
+			stpk:w_u64(0)
+		end
+
+	elseif (typ == "float") then
+		if (n and type(n) == "number") then
+			stpk:w_float(n)
+		else
+			isError = true
+			stpk:w_float(0)
+		end
+
+	elseif (typ == "stringZ") then
+		if (n and type(n) == "string") then
+			stpk:w_stringZ(n)
+		elseif (n and type(n) ~= "userdata") then
+			stpk:w_stringZ(tostring(n))
+		else
+			isError = true
+			stpk:w_stringZ("nil")
+		end
+
+	elseif (typ == "CTime") then
+		if (n and type(n) == "userdata" and n.timeToString) then
+			utils.w_CTime(stpk,n)
+		else
+			utils.w_CTime(stpk,nil)
+		end
+	else
+		isError = true
+	end
+
+	if (isError) then
+		printf("w_stpk:CRITICAL ERROR: write %s (%s) TrueType=%s [%s]   | Packet:w_tell()=>%s",typ,type(n) ~= "userdata" and tostring(n) or "userdata",type(n),info,stpk:w_tell())
+	else
+		--printf("w_stpk:DEBUG: write %s (%s) TrueType=%s [%s]   | Packet:w_tell()=>%s",typ,type(n) ~= "userdata" and tostring(n) or "userdata",type(n),info,stpk:w_tell())
+	end
 end

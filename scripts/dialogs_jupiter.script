@@ -885,9 +885,9 @@ function jup_b1_stalker_squad_thanks(first_speaker, second_speaker)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad", 2)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "morphine", 1)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "adrenalin", 1)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade", 1)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_antidot", 1)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_radioprotector", 1)
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade5", 1)
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_antidot3", 1)
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_radioprotector2", 1)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_anabiotic")
 end
 

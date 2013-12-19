@@ -295,8 +295,9 @@ function repair_ui:OnKeyboard(dik, keyboard_action)
 end
 
 function repair_ui:OnButton_repair()
+
 	local index = self.list_box:GetSelectedIndex()
-	if index == -1 then return end
+ 	if index == -1 then return end
 	local item  = self.list_box:GetItemByIndex(index)
 
 	local obj = item and level.object_by_id(item.item_id)
@@ -306,6 +307,200 @@ function repair_ui:OnButton_repair()
 
 	local bonus = 0
 	if (self.list_box_parts) then
+
+		-- ponney68 repair item multi usage
+		-- WEAPON REPAIR ITEMS
+		-- sharpening_stones x4
+		if self.section =="sharpening_stones" then
+		alife():create("sharpening_stones2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="sharpening_stones2" then
+		alife():create("sharpening_stones3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="sharpening_stones3" then
+		alife():create("sharpening_stones4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+
+		-- gun_oil x2
+		if self.section =="gun_oil" then
+		alife():create("gun_oil2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- gun_oil_ru_d x2
+		if self.section =="gun_oil_ru_d" then
+		alife():create("gun_oil_ru_d2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- gun_oil_ru x2
+		if self.section =="gun_oil_ru" then
+		alife():create("gun_oil_ru2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- solvent x2
+		if self.section =="solvent" then
+		alife():create("solvent2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- steel_wool x2
+		if self.section =="steel_wool" then
+		alife():create("steel_wool2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- grease x2
+		if self.section =="grease" then
+		alife():create("grease2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+
+		-- cleaning_kit_p x3
+		if self.section =="cleaning_kit_p" then
+		alife():create("cleaning_kit_p2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="cleaning_kit_p2" then
+		alife():create("cleaning_kit_p3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- cleaning_kit_s x3
+		if self.section =="cleaning_kit_s" then
+		alife():create("cleaning_kit_s2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="cleaning_kit_s2" then
+		alife():create("cleaning_kit_s3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- cleaning_kit_r5 x3
+		if self.section =="cleaning_kit_r5" then
+		alife():create("cleaning_kit_r5_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="cleaning_kit_r5_2" then
+		alife():create("cleaning_kit_r5_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- cleaning_kit_r7 x3
+		if self.section =="cleaning_kit_r7" then
+		alife():create("cleaning_kit_r7_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="cleaning_kit_r7_2" then
+		alife():create("cleaning_kit_r7_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- cleaning_kit_u x3
+		if self.section =="cleaning_kit_u" then
+		alife():create("cleaning_kit_u2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="cleaning_kit_u2" then
+		alife():create("cleaning_kit_u3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+
+		-- toolkit_p x4
+		if self.section =="toolkit_p" then
+		alife():create("toolkit_p2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_p2" then
+		alife():create("toolkit_p3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_p3" then
+		alife():create("toolkit_p4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- toolkit_s x4
+		if self.section =="toolkit_s" then
+		alife():create("toolkit_s2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_s2" then
+		alife():create("toolkit_s3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_s3" then
+		alife():create("toolkit_s4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- toolkit_r5 x4
+		if self.section =="toolkit_r5" then
+		alife():create("toolkit_r5_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_r5_2" then
+		alife():create("toolkit_r5_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_r5_3" then
+		alife():create("toolkit_r5_4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- toolkit_r7 x4
+		if self.section =="toolkit_r7" then
+		alife():create("toolkit_r7_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_r7_2" then
+		alife():create("toolkit_r7_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_r7_3" then
+		alife():create("toolkit_r7_4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+
+		-- ARMOR REPAIR ITEMS
+		-- sewing_kit_b x4
+		if self.section =="sewing_kit_b" then
+		alife():create("sewing_kit_b2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="sewing_kit_b2" then
+		alife():create("sewing_kit_b3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="sewing_kit_b3" then
+		alife():create("sewing_kit_b4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- sewing_kit_a x4
+		if self.section =="sewing_kit_a" then
+		alife():create("sewing_kit_a2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="sewing_kit_a2" then
+		alife():create("sewing_kit_a3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="sewing_kit_a3" then
+		alife():create("sewing_kit_a4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- sewing_kit_h x4
+		if self.section =="sewing_kit_h" then
+		alife():create("sewing_kit_h2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="sewing_kit_h2" then
+		alife():create("sewing_kit_h3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="sewing_kit_h3" then
+		alife():create("sewing_kit_h4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+
+		-- glue_b x2
+		if self.section =="glue_b" then
+		alife():create("glue_b2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- glue_a x2
+		if self.section =="glue_a" then
+		alife():create("glue_a2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- glue_e x2
+		if self.section =="glue_e" then
+		alife():create("glue_e2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+
+		-- armor_repair_fa x2
+		if self.section =="armor_repair_fa" then
+		alife():create("armor_repair_fa2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- helmet_repair x3
+		if self.section =="helmet_repair_kit" then
+		alife():create("helmet_repair_kit2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="helmet_repair_kit2" then
+		alife():create("helmet_repair_kit3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- armor_repair_pro x4
+		if self.section =="armor_repair_pro" then
+		alife():create("armor_repair_pro2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="armor_repair_pro2" then
+		alife():create("armor_repair_pro3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="armor_repair_pro3" then
+		alife():create("armor_repair_pro4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- toolkit_u x4
+		if self.section =="toolkit_u" then
+		alife():create("toolkit_u2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_u2" then
+		alife():create("toolkit_u3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		if self.section =="toolkit_u3" then
+		alife():create("toolkit_u4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+		-- End ponney68
+
 		index = self.list_box_parts:GetSelectedIndex()
 		if (index ~= -1) then
 			item = self.list_box_parts:GetItemByIndex(index)
@@ -313,6 +508,270 @@ function repair_ui:OnButton_repair()
 			if (se_parts) then
 				local sec = se_parts:section_name()
 				bonus = alun_utils.read_from_ini(nil,sec,"repair_part_bonus","float",nil) or self.part_bonus
+
+				-- ponny68 repair optional parts multi usage
+				-- IMPORTED DRINK
+				-- vodka x3
+				if(se_parts)and(se_parts:section_name()=="vodka")then
+		      		alife():create("vodka_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				if(se_parts)and(se_parts:section_name()=="vodka_2")then
+		      		alife():create("vodka_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				-- vodka2 x3
+				if(se_parts)and(se_parts:section_name()=="vodka2")then
+		      		alife():create("vodka2_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				if(se_parts)and(se_parts:section_name()=="vodka2_2")then
+		      		alife():create("vodka2_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				-- vodka_quality x3
+				if(se_parts)and(se_parts:section_name()=="vodka_quality")then
+		      		alife():create("vodka_quality2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				if(se_parts)and(se_parts:section_name()=="vodka_quality2")then
+		      		alife():create("vodka_quality3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				-- mineral_water x3
+				if(se_parts)and(se_parts:section_name()=="mineral_water")then
+		      		alife():create("mineral_water2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				if(se_parts)and(se_parts:section_name()=="mineral_water2")then
+		      		alife():create("mineral_water3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+
+				-- ZONE-PRODUCED DRINK
+				-- bottle_metal x3
+				if(se_parts)and(se_parts:section_name()=="bottle_metal")then
+		      		alife():create("bottle_metal2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				if(se_parts)and(se_parts:section_name()=="bottle_metal2")then
+		      		alife():create("bottle_metal3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				-- flask x3
+				if(se_parts)and(se_parts:section_name()=="flask")then
+		      		alife():create("flask2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+				if(se_parts)and(se_parts:section_name()=="flask2")then
+		      		alife():create("flask3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		    		end
+
+				-- WEAPON REPAIR ITEMS
+				-- gun_oil x2
+				if(se_parts)and(se_parts:section_name()=="gun_oil")then
+				alife():create("gun_oil2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- gun_oil_ru_d x2
+				if(se_parts)and(se_parts:section_name()=="gun_oil_ru_d")then
+				alife():create("gun_oil_ru_d2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- gun_oil_ru x2
+				if(se_parts)and(se_parts:section_name()=="gun_oil_ru")then
+				alife():create("gun_oil_ru2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- solvent x2
+				if(se_parts)and(se_parts:section_name()=="solvent")then
+				alife():create("solvent2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- steel_wool x2
+				if(se_parts)and(se_parts:section_name()=="steel_wool")then
+				alife():create("steel_wool2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- grease x2
+				if(se_parts)and(se_parts:section_name()=="grease")then
+				alife():create("grease2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- cleaning_kit_p x3
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_p")then
+				alife():create("cleaning_kit_p2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_p2")then
+				alife():create("cleaning_kit_p3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- cleaning_kit_s x3
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_s")then
+				alife():create("cleaning_kit_s2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_s2")then
+				alife():create("cleaning_kit_s3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- cleaning_kit_r5 x3
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_r5")then
+				alife():create("cleaning_kit_r5_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_r5_2")then
+				alife():create("cleaning_kit_r5_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- cleaning_kit_r7 x3
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_r7")then
+				alife():create("cleaning_kit_r7_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_r7_2")then
+				alife():create("cleaning_kit_r7_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- cleaning_kit_u x3
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_u")then
+				alife():create("cleaning_kit_u2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())						end
+				if(se_parts)and(se_parts:section_name()=="cleaning_kit_u2")then
+				alife():create("cleaning_kit_u3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- toolkit_p x4
+				if(se_parts)and(se_parts:section_name()=="toolkit_p")then
+				alife():create("toolkit_p2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_p2")then
+				alife():create("toolkit_p3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_p3")then
+				alife():create("toolkit_p4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- toolkit_s x4
+				if(se_parts)and(se_parts:section_name()=="toolkit_s")then
+				alife():create("toolkit_s2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_s2")then
+				alife():create("toolkit_s3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_s3")then
+				alife():create("toolkit_s4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- toolkit_r5 x4
+				if(se_parts)and(se_parts:section_name()=="toolkit_r5")then
+				alife():create("toolkit_r5_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_r5_2")then
+				alife():create("toolkit_r5_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_r5_3")then
+				alife():create("toolkit_r5_4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- toolkit_r7 x4
+				if(se_parts)and(se_parts:section_name()=="toolkit_r7")then
+				alife():create("toolkit_r7_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_r7_2")then
+				alife():create("toolkit_r7_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_r7_3")then
+				alife():create("toolkit_r7_4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+
+				-- ARMOR REPAIR ITEMS
+				-- sewing_kit_b x4
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_b")then
+				alife():create("sewing_kit_b2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_b2")then
+				alife():create("sewing_kit_b3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_b3")then
+				alife():create("sewing_kit_b4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- sewing_kit_a x4
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_a")then
+				alife():create("sewing_kit_a2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_a2")then
+				alife():create("sewing_kit_a3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_a3")then
+				alife():create("sewing_kit_a4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+
+				-- sewing_kit_h x4
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_h")then
+				alife():create("sewing_kit_h2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_h2")then
+				alife():create("sewing_kit_h3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="sewing_kit_h3")then
+				alife():create("sewing_kit_h4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+
+				-- glue_b x2
+				if(se_parts)and(se_parts:section_name()=="glue_b")then
+				alife():create("glue_b2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- glue_a x2
+				if(se_parts)and(se_parts:section_name()=="glue_a")then
+				alife():create("glue_a2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- glue_e x2
+				if(se_parts)and(se_parts:section_name()=="glue_e")then
+				alife():create("glue_e2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+
+				-- armor_repair_fa x2
+				if(se_parts)and(se_parts:section_name()=="armor_repair_fa")then
+				alife():create("armor_repair_fa2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- helmet_repair x3
+				if(se_parts)and(se_parts:section_name()=="helmet_repair_kit")then
+				alife():create("helmet_repair_kit2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="helmet_repair_kit2")then
+				alife():create("helmet_repair_kit3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- armor_repair_pro x4
+				if(se_parts)and(se_parts:section_name()=="armor_repair_pro")then
+				alife():create("armor_repair_pro2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="armor_repair_pro2")then
+				alife():create("armor_repair_pro3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="armor_repair_pro3")then
+				alife():create("armor_repair_pro4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- toolkit_u x4
+				if(se_parts)and(se_parts:section_name()=="toolkit_u")then
+				alife():create("toolkit_u2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_u2")then
+				alife():create("toolkit_u3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="toolkit_u3")then
+				alife():create("toolkit_u4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+
+				-- FUEL
+				-- kerosene x5
+				if(se_parts)and(se_parts:section_name()=="kerosene")then
+				alife():create("kerosene2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="kerosene2")then
+				alife():create("kerosene3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="kerosene3")then
+				alife():create("kerosene4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="kerosene4")then
+				alife():create("kerosene5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- explo_jerrycan_fuel x8
+				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel")then
+				alife():create("explo_jerrycan_fuel2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel2")then
+				alife():create("explo_jerrycan_fuel3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel3")then
+				alife():create("explo_jerrycan_fuel4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel4")then
+				alife():create("explo_jerrycan_fuel5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel5")then
+				alife():create("explo_jerrycan_fuel6", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel6")then
+				alife():create("explo_jerrycan_fuel7", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel7")then
+				alife():create("explo_jerrycan_fuel8", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- End ponney68
+
 				alife():release(se_parts,true)
 			end
 		end
@@ -327,7 +786,6 @@ function repair_ui:OnButton_repair()
 
 	if (self.use_actor_effects and actor_effects) then
 		actor_effects.use_item(self.section.."_dummy")
-		level.change_game_time(0,0,30)
 		level_weathers.get_weather_manager():forced_weather_change()
 	end
 end

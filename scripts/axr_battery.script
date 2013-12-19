@@ -10,6 +10,11 @@ installed into a device called a UPD (Universal Power Device). The UPD is linked
 PDA, Flashlight and Nightvision equipment. When the battery is exhausted, these devices
 no longer work.
 
+Updated by ddraig to properly utilize power from batteries. Now the UPD's condition is set to
+its current condition (power level) plus the "power" setting from the battery, rather than just
+setting it to the battery's power level, which can severely break things. Also temporarily disabled
+the "spawn excess battery" function, for a few reasons.
+
 ]]
 
 local ini = ini_file("plugins\\axr_battery.ltx")
@@ -67,7 +72,8 @@ function use_battery(obj)
 		local power
 		local bb,bp
 
-		for k, v in pairs(Batteries) do
+		-- Temporarily disabled. Batteries are now consumed entirely.
+		--[[for k, v in pairs(Batteries) do
 			power = alun_utils.read_from_ini(ini,k,"power","float",0)
 			-- Find battery closest to current power level of UPD
 			if (not bp and power <= con) or (bp and power > bp and power <= con) then
@@ -75,14 +81,17 @@ function use_battery(obj)
 				bb = k
 			end
 		end
-
+		]]
+		
 		-- spawn battery according to current UPD power level
-		if (bp and bb) then
-			alife():create(bb, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
+		alife():create(name.."_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 
 		power = alun_utils.read_from_ini(ini,name,"power","float",0.6)
-		upd:set_condition(power)
+		bp = con + power
+		if bp > 1 then
+			bp = 1
+		end
+		upd:set_condition(bp)
 
 		db.actor:transfer_item(upd,db.actor)
 	else

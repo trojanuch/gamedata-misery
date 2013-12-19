@@ -188,6 +188,9 @@
 #include "upgrades\w_oc33_up.ltx"
 #include "upgrades\w_tt33_up.ltx"
 #include "upgrades\w_fnfallelcan_up.ltx"
+#include "upgrades\w_fnfallelcan_camo_up.ltx"
+#include "upgrades\w_fnfallelcan_custom_up.ltx"
+#include "upgrades\w_fnfallelcan_modern_up.ltx"
 #include "upgrades\w_trg_up.ltx"
 #include "upgrades\w_ksvk_up.ltx"
 
@@ -342,12 +345,12 @@ color_5 = 255,  127, 	 63,     150 ;79
 ;color_4 = 255, 	255, 	255, 	255	; white
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; AMUNITION
+;; Knife statistics addon
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[ammo_base]:identity_immunities,default_weapon_params
-;belt				= true;
-slot				= -1
-explosive			= false
+
+#include "weapons_knives.ltx"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ammo_9x18_fmj]:ammo_base
 GroupControlSection	= spawn_group
@@ -365,7 +368,7 @@ box_size		= 15
 
 inv_name		= ammo-9x18-fmj
 inv_name_short	= ammo-9x18-fmj_s
-inv_weight		= .08
+inv_weight		= .15
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -403,7 +406,7 @@ box_size		= 15
 
 inv_name		= ammo-9x18-pmm
 inv_name_short	= ammo-9x18-pmm_s
-inv_weight		= .1
+inv_weight		= .147
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -441,7 +444,7 @@ box_size		= 15
 inv_name		= ammo-9x18-ap
 inv_name_short	= ammo-9x18-ap_s
 
-inv_weight		= .066
+inv_weight		= .15
 
 inv_grid_width     = 1
 inv_grid_height    = 1
@@ -479,7 +482,7 @@ box_size		= 15
 
 inv_name		= ammo-9x19-fmj
 inv_name_short	= ammo-9x19-fmj_s
-inv_weight		= .08
+inv_weight		= .18
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -516,7 +519,7 @@ box_size		= 15
 
 inv_name		= ammo-9x19-pbp
 inv_name_short	= ammo-9x19-pbp_s
-inv_weight		= .12
+inv_weight		= .17
 
 inv_grid_width	= 1
 inv_grid_height	= 1
@@ -554,7 +557,7 @@ box_size		= 15
 
 inv_name		= ammo-9x19-ap
 inv_name_short	= ammo-9x19-ap_s
-inv_weight		= .07
+inv_weight		= .14
 
 inv_grid_width     = 1
 inv_grid_height    = 1
@@ -591,7 +594,7 @@ box_size		= 13
 
 inv_name		= ammo-11.43x23-fmj
 inv_name_short	= ammo-11.43x23-fmj_s
-inv_weight		= .14;
+inv_weight		= .29
 
 inv_grid_width	= 2;1
 inv_grid_height	= 1
@@ -628,7 +631,7 @@ box_size		= 13
 
 inv_name		= ammo-11.43x23-hydro
 inv_name_short	= ammo-11.43x23-hydro_s
-inv_weight		= .165
+inv_weight		= .32
 
 inv_grid_width		= 2;1
 inv_grid_height		= 1
@@ -665,7 +668,7 @@ box_size		= 13
 
 inv_name		= ammo-11.43x23-ap
 inv_name_short	= ammo-11.43x23-ap_s
-inv_weight		= .125 ;
+inv_weight		= .35
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -779,7 +782,7 @@ box_size		= 15
 
 inv_name		= ammo-5.56x45-ss190
 inv_name_short	= ammo-5.56x45-ss190_s
-inv_weight		= .165
+inv_weight		= .168
 
 inv_grid_width		= 2
 inv_grid_height		= 1
@@ -816,7 +819,7 @@ box_size		= 15
 
 inv_name		= ammo-5.56x45-ap
 inv_name_short	= ammo-5.56x45-ap_s
-inv_weight		= .21
+inv_weight		= .17
 
 inv_grid_width		= 2
 inv_grid_height		= 1
@@ -847,13 +850,13 @@ visual          = dynamics\weapons\wpn_ammo\ammo_pkm.ogf
 description		= ammo-7.62x54-ap_descr
 $prefetch 		= 64
 
-cost			= 4290
+cost			= 8580
 
-box_size		= 25
+box_size		= 50
 
 inv_name		= ammo-7.62x54-ap_s
 inv_name_short		= ammo-7.62x54-ap_s
-inv_weight		= 1.43
+inv_weight		= 1.95
 
 inv_grid_width		= 2
 inv_grid_height		= 1
@@ -892,7 +895,7 @@ box_size		= 15
 
 inv_name		= ammo-7.62x54-r
 inv_name_short		= ammo-7.62x54-r_s
-inv_weight		= .18
+inv_weight		= .33
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -990,7 +993,7 @@ box_size		= 15
 
 inv_name		= ammo-9x39-pab9
 inv_name_short	= ammo-9x39-pab9_s
-inv_weight		= .31
+inv_weight		= .35
 
 inv_grid_width		= 2
 inv_grid_height		= 1
@@ -1027,7 +1030,7 @@ box_size		= 15
 
 inv_name		= ammo-9x39-ap
 inv_name_short	= ammo-9x39-ap_s
-inv_weight		= .38
+inv_weight		= .34
 
 inv_grid_width		= 2
 inv_grid_height		= 1
@@ -1064,7 +1067,7 @@ box_size		= 10
 
 inv_name		= ammo-12x70-buck
 inv_name_short	= ammo-12x70-buck_s
-inv_weight		= .275
+inv_weight		= .52
 
 inv_grid_width	= 2
 inv_grid_height	= 1
@@ -1101,7 +1104,7 @@ box_size		= 10
 
 inv_name		= ammo-12x76-zhekan
 inv_name_short	= ammo-12x76-zhekan_s
-inv_weight		= .36
+inv_weight		= .41
 
 inv_grid_width		= 2
 inv_grid_height		= 1
@@ -1271,7 +1274,7 @@ box_size		= 15
 
 inv_name		= ammo-7.62x39_fmj
 inv_name_short	        = ammo-7.62x39_fmj_s
-inv_weight		= .17
+inv_weight		= .23
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1309,7 +1312,7 @@ box_size		= 15
 
 inv_name		= ammo-7.62x39_ap
 inv_name_short	        = ammo-7.62x39_ap_s
-inv_weight		= .17
+inv_weight		= .244
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1347,7 +1350,7 @@ box_size		= 15
 
 inv_name		= ammo-7.92x33_fmj
 inv_name_short	        = ammo-7.92x33_fmj_s
-inv_weight		= .17
+inv_weight		= .24
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1385,7 +1388,7 @@ box_size		= 15
 
 inv_name		= ammo-7.92x33_ap
 inv_name_short	        = ammo-7.92x33_ap_s
-inv_weight		= .17
+inv_weight		= .24
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1424,7 +1427,7 @@ box_size		= 15
 
 inv_name		= ammo-7.62x51_fmj
 inv_name_short		= ammo-7.62x51_fmj_s
-inv_weight		= .18
+inv_weight		= .36
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1463,7 +1466,7 @@ box_size		= 15
 
 inv_name		= ammo-7.62x51_ap
 inv_name_short		= ammo-7.62x51_ap
-inv_weight		= .19
+inv_weight		= .375
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1502,7 +1505,7 @@ box_size		= 10
 
 inv_name		= ammo-7.62x54-7n1
 inv_name_short		= ammo-7.62x54-7n1_s
-inv_weight		= .15
+inv_weight		= .22
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1511,7 +1514,7 @@ inv_grid_y         = 9
 
 k_dist			= 1
 k_disp			= 0.66	; 3.2
-k_hit			= 1.78
+k_hit			= 1.98
 k_impulse		= 0.8
 k_pierce		= 1.5
 k_ap			= 0.74
@@ -1539,7 +1542,7 @@ box_size		= 10
 
 inv_name		= ammo-7.62x54_7n14
 inv_name_short		= ammo-7.62x54_7n14_s
-inv_weight		= .23
+inv_weight		= .22
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1548,7 +1551,7 @@ inv_grid_y         = 9
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 1.59
+k_hit			= 1.69
 k_impulse		= 0.74
 k_pierce		= 2.94
 k_ap			= 1.32
@@ -1576,7 +1579,7 @@ box_size		= 10
 
 inv_name		= ammo_12.7x108_fmj
 inv_name_short	= ammo_12.7x108_fmj_s
-inv_weight		= .161
+inv_weight		= 1.45
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1613,7 +1616,7 @@ box_size		= 10
 
 inv_name		= ammo_12.7x108_ap
 inv_name_short	= ammo_12.7x108_ap_s
-inv_weight		= .161
+inv_weight		= 1.38
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1650,7 +1653,7 @@ box_size		= 10
 
 inv_name		= ammo-338-lapua
 inv_name_short		= ammo-338-lapua_s
-inv_weight		= .161
+inv_weight		= .44
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1659,7 +1662,7 @@ inv_grid_y         = 53
 
 k_dist			= 1
 k_disp			= 0.66	; 3.2
-k_hit			= 2.44
+k_hit			= 2.74
 k_impulse		= 0.92
 k_pierce		= 0.86
 k_ap			= 0.39
@@ -1687,7 +1690,7 @@ box_size		= 10
 
 inv_name		= ammo-338-du
 inv_name_short		= ammo-338-du_s
-inv_weight		= .256
+inv_weight		= .46
 
 inv_grid_width     = 2
 inv_grid_height    = 1
@@ -1696,7 +1699,7 @@ inv_grid_y         = 54
 
 k_dist			= 1
 k_disp			= 0.66
-k_hit			= 1.88
+k_hit			= 2.14
 k_impulse		= 0.78
 k_pierce		= 2.24
 k_ap			= 1.18
@@ -1724,7 +1727,7 @@ box_size		= 13
 
 inv_name		= ammo-357-hp
 inv_name_short		= ammo-357-hp_s
-inv_weight		= 0.11
+inv_weight		= 0.214
 
 inv_grid_width     = 1
 inv_grid_height    = 1
@@ -1733,9 +1736,9 @@ inv_grid_y         = 53
 
 k_dist			= 1.0
 k_disp			= 0.66
-k_hit			= 3.24
+k_hit			= 2.98
 k_impulse		= 0.67
-k_pierce		= 0.37
+k_pierce		= 0.32
 k_ap			= 0.11
 impair			= 1.05 ; 1.1
 buck_shot		= 1
@@ -1765,7 +1768,7 @@ box_size		= 13
 
 inv_name			= ammo-357-incendiary
 inv_name_short		= ammo-357-incendiary_s
-inv_weight		= 0.11
+inv_weight		= 0.214
 
 inv_grid_width     = 1
 inv_grid_height    = 1
@@ -1774,10 +1777,10 @@ inv_grid_y         = 54
 
 k_dist			= 1.0
 k_disp			= 0.66
-k_hit			= 2.88
+k_hit			= 3.26
 k_impulse		= 0.58
-k_pierce		= 0.98
-k_ap			= 0.62
+k_pierce		= 0.47
+k_ap			= 0.31
 impair			= 1.05 ; 1.1
 buck_shot		= 1
 tracer			= on        ;  off
@@ -2724,187 +2727,6 @@ inv_grid_height		= 1
 inv_grid_x			= 17
 inv_grid_y			= 3
 grenade_vel 		= 76	;32	;76
-
-;;;;;;;;;;;;;;;;;;;;;;;KNIFE AMMO;;;;;;;;;;;;;;;;;;;;;;;
-[ammo_knife]:ammo_base
-GroupControlSection	= spawn_group
-discovery_dependency 	=
-$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
-class			= AMMO_S
-cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Melee
-slot 			= -1
-$prefetch 		= 64
-
-cost			= 0
-
-box_size		= 1 ;50
-
-inv_name			= Melee
-inv_name_short		= Melee
-inv_weight		= .1 ;.24
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 18
-inv_grid_y         = 49
-
-k_dist			= 1
-k_disp			= 0.66
-k_hit			= 19.0
-k_impulse		= 1.1
-k_pierce		= 0.01
-k_ap			= 0.33
-impair			= 1.5 ; 1
-buck_shot		= 1
-tracer			= off        ;  off
-wm_size         	= 0.0085
-k_air_resistance 	= 1.5
-
-[ammo_knife_2]:ammo_base
-GroupControlSection	= spawn_group
-discovery_dependency 	=
-$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
-class			= AMMO_S
-cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Melee
-slot 			= -1
-$prefetch 		= 64
-
-cost			= 0
-
-box_size		= 1 ;50
-
-inv_name			= Melee
-inv_name_short		= Melee
-inv_weight		= .1 ;.24
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 18
-inv_grid_y         = 51
-
-k_dist			= 1
-k_disp			= 0.66
-k_hit			= 19.0
-k_impulse		= 1.2
-k_pierce		= 0.01
-k_ap			= 1.15
-impair			= 1.5 ; 1
-buck_shot		= 1
-tracer			= off        ;  off
-wm_size         	= 0.0085
-k_air_resistance 	= 1.5
-
-[ammo_knife_3]:ammo_base
-GroupControlSection	= spawn_group
-discovery_dependency 	=
-$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
-class			= AMMO_S
-cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Melee
-slot 			= -1
-$prefetch 		= 64
-
-cost			= 0
-
-box_size		= 1 ;50
-
-inv_name		= Melee
-inv_name_short		= Melee
-inv_weight		= .1 ;.24
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 18
-inv_grid_y         = 52
-
-k_dist			= 1
-k_disp			= 0.66
-k_hit			= 19.0
-k_impulse		= 1.2
-k_pierce		= 0.01
-k_ap			= 1.35
-impair			= 1.5 ; 1
-buck_shot		= 1
-tracer			= off        ;  off
-wm_size         	= 0.0085
-k_air_resistance 	= 1.5
-
-[ammo_knife_4]:ammo_base
-GroupControlSection	= spawn_group
-discovery_dependency 	=
-$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
-class			= AMMO_S
-cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Melee
-slot 			= -1
-$prefetch 		= 64
-
-cost			= 0
-
-box_size		= 1 ;50
-
-inv_name		= Melee
-inv_name_short		= Melee
-inv_weight		= .1 ;.24
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 18
-inv_grid_y         = 48
-
-k_dist			= 1
-k_disp			= 0.66
-k_hit			= 19.0
-k_impulse		= 1.2
-k_pierce		= 0.01
-k_ap			= 0.80
-impair			= 1.5 ; 1
-buck_shot		= 1
-tracer			= off        ;  off
-wm_size         	= 0.0085
-k_air_resistance 	= 1.5
-
-[ammo_knife_5]:ammo_base
-GroupControlSection	= spawn_group
-discovery_dependency 	=
-$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
-class			= AMMO_S
-cform                   = skeleton
-visual                  = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
-description		= Melee
-slot 			= -1
-$prefetch 		= 64
-
-cost			= 0
-
-box_size		= 1 ;50
-
-inv_name		= Melee
-inv_name_short		= Melee
-inv_weight		= .1 ;.24
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 18
-inv_grid_y         = 50
-
-k_dist			= 1
-k_disp			= 0.1
-k_hit			= 19.0
-k_impulse		= 1.0
-k_pierce		= 0.01
-k_ap			= 0.75
-impair			= 1.5 ; 1
-buck_shot		= 1
-tracer			= off        ;  off
-wm_size         	= 0.0105
-k_air_resistance 	= 1.5
 
 ;;;;;;;;;;;;;;;;;;;;;;;Binoc AMMO;;;;;;;;;;;;;;;;;;;;;;;
 [ammo_binoc]:ammo_base

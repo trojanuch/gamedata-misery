@@ -4,13 +4,13 @@
 cost		      		= 4460
 value					= +10
 
-crosshair_inertion			= -1
+crosshair_inertion			= -0.5
 
 PDM_disp_base 				= -0.2
-PDM_disp_vel_factor 		= -0.5
-PDM_disp_accel_factor 		= -0.5
+PDM_disp_vel_factor 		= -0.3
+PDM_disp_accel_factor 		= -0.3
 
-inv_weight			= +0.25
+inv_weight			= -0.214
 
 [up_sect_firstc_trg]
 ;Точность(2)20%
@@ -18,8 +18,8 @@ inv_weight			= +0.25
 cost		      		= 4680
 value					= +20
 
-fire_dispersion_base    = -0.02  	;0.15
-fire_dispersion_condition_factor    = -1
+fire_dispersion_base    = -0.015
+;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.15
 
@@ -31,20 +31,20 @@ value					= +20
 
 crosshair_inertion			= -1
 
-PDM_disp_base 				= -0.5
-PDM_disp_vel_factor 		= -1.2
-PDM_disp_accel_factor 		= -1.2
+PDM_disp_base 				= -0.4
+PDM_disp_vel_factor 		= -0.5
+PDM_disp_accel_factor 		= -0.5
 
-inv_weight			= +0.23
+inv_weight			= -0.23
 
 [up_sect_firste_trg]
-;Настильность(3)30%
+;Настильность(3)25%
 ;------------------ 
 cost		      		= 6240
-value					= +30
+value					= +25
 
 bullet_speed			= +200
-fire_dispersion_base    = -0.01  	;0.15
+fire_dispersion_base    = -0.005
 
 inv_weight			= +0.162
 
@@ -56,7 +56,7 @@ value					= +25
 
 rpm						= +35
 
-inv_weight			= +0.27
+inv_weight			= +0.17
 
 [up_sect_secona_trg]
 ;Надежность(1)10%
@@ -64,32 +64,24 @@ inv_weight			= +0.27
 cost		      		= 5400
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1.5 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0007 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0007 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= -0.0007
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.007 ;0.03
+condition_queue_shot_dec	= -0.0009
+condition_shot_dec      	= -0.0009
+misfire_start_prob	     	= -0.0009
+misfire_end_prob	     	= -0.009
 
 [up_sect_seconc_trg]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 6860
-value                   = -20
+cost		      		= 7860
+value                   = -10
 
-cam_dispersion         = -0.18     ;1.8
-cam_dispersion_inc     = -0.18     ;1.8
-cam_step_angle_horz    = -0.05     ;0.25
-cam_relax_speed        = +0.035
+cam_dispersion          = -0.239	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.239	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.108	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.18     ;1.8
-zoom_cam_dispersion_inc     = -0.18     ;1.8
-zoom_cam_step_angle_horz    = -0.05     ;0.25
-zoom_cam_relax_speed        = +0.035
+zoom_cam_dispersion         = -0.183
+zoom_cam_dispersion_inc     = -0.183
+zoom_cam_step_angle_horz    = -0.074
 
 inv_weight			= +0.224
 
@@ -99,8 +91,8 @@ inv_weight			= +0.224
 cost		      		= 5420
 value					= +20
 
-fire_dispersion_base    = -0.02  	;0.15
-fire_dispersion_condition_factor    = -1
+fire_dispersion_base    = -0.015
+;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.16
 
@@ -110,15 +102,13 @@ inv_weight			= +0.16
 cost		      		= 7920
 value                   = -10
 
-cam_dispersion         = -0.12     ;1.8
-cam_dispersion_inc     = -0.12     ;1.8
-cam_step_angle_horz    = -0.03     ;0.25
-cam_relax_speed        = +0.02
+cam_dispersion          = -0.239	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.239	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.108	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.12     ;1.8
-zoom_cam_dispersion_inc     = -0.12     ;1.8
-zoom_cam_step_angle_horz    = -0.03     ;0.25
-zoom_cam_relax_speed        = +0.02
+zoom_cam_dispersion         = -0.183
+zoom_cam_dispersion_inc     = -0.183
+zoom_cam_step_angle_horz    = -0.074
 
 inv_weight			= +0.184
 
@@ -130,36 +120,34 @@ value					= +15
 
 crosshair_inertion			= -1
 
-PDM_disp_base 				= -0.5
-PDM_disp_vel_factor 		= -1.2
-PDM_disp_accel_factor 		= -1.2
+PDM_disp_base 				= -0.4
+PDM_disp_vel_factor 		= -0.5
+PDM_disp_accel_factor 		= -0.5
 
-inv_weight			= +0.24
+inv_weight			= -0.2
 
 [up_sect_thirde_trg]
 ;Отдача(3)-30%
 ;------------
 cost		      		= 7860
-value                   = -30
+value                   = -10
 
-cam_dispersion         = -0.25     ;1.8
-cam_dispersion_inc     = -0.25     ;1.8
-cam_step_angle_horz    = -0.1      ;0.25
-cam_relax_speed        = +0.05
+cam_dispersion          = -0.239	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.239	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.108	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.25     ;1.8
-zoom_cam_dispersion_inc     = -0.25     ;1.8
-zoom_cam_step_angle_horz    = -0.1      ;0.25
-zoom_cam_relax_speed        = +0.05
+zoom_cam_dispersion         = -0.183
+zoom_cam_dispersion_inc     = -0.183
+zoom_cam_step_angle_horz    = -0.074
 
 inv_weight			= +0.16
 
 [up_sect_fourta_trg]
-;6икс прицел.
+;15икс прицел.
 ;------------
-cost		      		= 3720
+cost		      		= 1520
 
-scope_zoom_factor       = -25
+scope_zoom_factor       = -16
 
 [up_sect_fourtc_trg]
 ;Контрастный прицел
@@ -167,8 +155,7 @@ scope_zoom_factor       = -25
 cost		      		= 4780
 
 scope_nightvision = scope_contrast
-
-inv_weight			= +0.01
+inv_weight			= +0.05
 
 [up_sect_fourte_trg]
 ;ПНВ
@@ -176,8 +163,7 @@ inv_weight			= +0.01
 cost		      		= 5240
 
 scope_nightvision = scope_nightvision
-
-inv_weight			= +0.05
+inv_weight			= +0.27
 
 [up_sect_fourtf_trg]
 ;Тепловизор
@@ -418,7 +404,6 @@ prereq_params           =
 name                    = st_up_pris_c1_name
 description             = st_up_pris_c1_descr
 icon                    = ui_inGame2_upgrade_SVDm2_12
-
 
 
 [up_fourta_trg]

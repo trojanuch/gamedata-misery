@@ -13,7 +13,7 @@ function npc_is_not_surrendered(a,b)
 	local st = db.storage[npc:id()]
 	local po = st and st.victim_surrender and level.object_by_id(st.victim_surrender)
 	if not (po) then
-    return true
+		return false
 	end
 	return po:id() ~= db.actor:id()
 end
@@ -1120,7 +1120,7 @@ function save_pri_a17_hospital_start(first_speaker, second_speaker)
 end
 
 function save_jup_a10_gonna_return_debt(first_speaker, second_speaker)
-	if not has_alife_info("jup_a10_avtosave") then
+	if has_alife_info("jup_a10_vano_give_task") and not has_alife_info("jup_a10_avtosave") and not has_alife_info("jup_b218_gather_squad_complete") then
 		xr_effects.scenario_autosave(db.actor,nil,{"st_save_jup_a10_gonna_return_debt"})
 		db.actor:give_info_portion("jup_a10_avtosave")
 	end

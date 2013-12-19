@@ -28,9 +28,9 @@ holder_range_modifier   = 1.0                       ; во сколько раз увеличивает
 holder_fov_modifier     = 1.0              ; во сколько раз увеличивается eye_fov
 ;-------------------------------------------------------------------------------
 
-upgrades                = up_gr_firstab_sako95, up_gr_seconab_sako95, up_gr_thirdab_sako95, up_gr_fourtab_sako95, up_gr_fifthab_sako95, up_gr_fifthcd_sako95
+upgrades                = up_gr_firstab_sako95, up_gr_seconab_sako95, up_gr_thirdab_sako95, up_gr_fourtab_sako95, up_gr_fifthab_sako95, up_gr_fifthcd_sako95, up_gr_fifthef_sako95
 installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_ak74
+upgrade_scheme          = upgrade_scheme_ak74_sako
 
 
 cost              	 = 38450            ; the price of the item
@@ -52,7 +52,7 @@ animation_slot          = 2                ; type of the animation that will be 
 
 inv_name          = st_wpn_sako
 inv_name_short    = st_wpn_sako
-inv_weight        = 3.662                      ; weight in inventory
+inv_weight        = 4.32                      ; weight in inventory
 
 inv_grid_width          = 5
 inv_grid_height         = 2
@@ -73,20 +73,20 @@ kill_msg_height      = 28
 ;-------------------------------------------------------------------------------
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       	= 0.23    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.24    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    	= 1.38f
 crosshair_inertion			= 6.8
 
 ;отдача
-cam_return	          	= 0
+cam_return = 0 ;	          	= 1
 cam_relax_speed         = 10	;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	         	= 1.0
-cam_dispersion_inc         	= 0.6
+cam_dispersion	        = 0.94
+cam_dispersion_inc      = 0.77
 cam_dispersion_frac     = 1.0	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle        	= 10.0 	;максимальный угол отдачи
-cam_max_angle_horz      = 5.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 3.0	;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle        	= 50.0 	;максимальный угол отдачи
+cam_max_angle_horz      = 50.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.15	;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.04
 PDM_disp_vel_factor 		= 2.5
@@ -96,18 +96,12 @@ PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
 
 zoom_cam_relax_speed        = 10    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 360
-zoom_cam_dispersion          	= 0.8
-zoom_cam_dispersion_inc      	= 0.4
-zoom_cam_dispersion_frac    = 0.9
-zoom_cam_max_angle          = 10.0
-zoom_cam_max_angle_horz     = 5.0
-zoom_cam_step_angle_horz    = 0.2
-
-PDM_disp_base 				= 0.5
-PDM_disp_vel_factor 		= 1.855
-PDM_disp_accel_factor 		= 1.855
-PDM_disp_crouch = 1.0 ;  			= 1.0
-PDM_disp_crouch_no_acc = 1.0 ; 		= 1.0
+zoom_cam_dispersion         = 0.88
+zoom_cam_dispersion_inc     = 0.57
+zoom_cam_dispersion_frac    = 1.0
+zoom_cam_max_angle          = 50.0
+zoom_cam_max_angle_horz     = 50.0
+zoom_cam_step_angle_horz    = 1.05
 
 fire_dispersion_condition_factor    = 0.001         ;увеличение дисперсии в процентах при максимальном износе
 ;-------------------------------------------------------------------------------
@@ -126,22 +120,22 @@ grenade_flame_particles = weapons\generic_weapon01
 
 shell_point             = 0,0.216,0.174            ; position (3rd person view) for shell to throw out
 ;shell_particles            = weapons\generic_shells   ; name of the particles for shells
+shell_particles         = amik\weapons\data\5_56x45\5_56x45_shells_r
 
 ; ttc
-hit_power            = 0.52
+hit_power			= 0.54, 0.54, 0.54, 0.54
 hit_impulse          = 34    ; size of physic impulse by bullet
 hit_type             = fire_wound            ; [] type of the wound
+fire_distance           = 1000                  ; maximum fire distance that bullet can fly
+bullet_speed            = 715                ; starting bullet speed
+rpm                     = 700    ; max round per minute
+rpm_empty_click         = 200
+; end ttc
 
 hit_probability_gd_novice  = 1
 hit_probability_gd_stalker = 1
 hit_probability_gd_veteran = 1
 hit_probability_gd_master  = 1
-
-fire_distance           = 780 ;1000                  ; maximum fire distance that bullet can fly
-bullet_speed            = 715                ; starting bullet speed
-rpm                     = 700    ; max round per minute
-rpm_empty_click         = 200
-; end ttc
 
 use_aim_bullet          = true                ;Поддерживается ли первая суппер пуля
 time_to_aim             = 3.0
@@ -183,18 +177,18 @@ grenade_launcher_status    = 2                  ; 2 - attachable
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time        = 0.25
-scope_zoom_factor       = 36                                                ; fov for zoom mode
+scope_zoom_factor       = 37.3                                                ; fov for zoom mode
 
 scope_texture				= wpn_crosshair_findot
 scope_name 					= wpn_addon_scope
 scope_x                 = 47                 ; offset in inventory icon
 scope_y                 = 0
 silencer_name           = wpn_addon_silencer_762x39    ; section name for the attachable silencer
-silencer_x              = 213               ; offset in inventory icon
-silencer_y              = 4
+silencer_x              = 224               ; offset in inventory icon
+silencer_y              = 13
 grenade_launcher_name   = wpn_addon_grenade_launcher
 grenade_launcher_x      = 116
-grenade_launcher_y      = 15
+grenade_launcher_y      = 17
 ;scopes_sect			= scope_sako, scope_x2.7_sako, scope_live_detector_sako, scope_night_sako, scope_sako_moist, scope_sako_worn
 
 ;звуки
@@ -238,7 +232,7 @@ hands_orientation_16x9			= -0.750000,1.700000,-4.199999
 item_position				= 0.004111,0.013527,-0.005906
 item_orientation			= -15.488927,-3.320898,367.220154
 
-shell_point                = 0.017,0.054,0.17
+shell_point                = 0.032,0.054,0.35  ;0.017,0.054,0.17
 shell_dir               = 0.0, 1.0, 0.0
 shell_bone                = wpn_body
 

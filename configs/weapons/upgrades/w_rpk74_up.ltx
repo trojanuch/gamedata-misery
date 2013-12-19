@@ -4,25 +4,28 @@
 cost		      		= 5640
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
 ;fire_dispersion_condition_factor    = -1 ;15
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.000075
+condition_queue_shot_dec	= -0.000075
+
 misfire_start_prob	     	= -0.0004
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.005 ;0.03
+misfire_end_prob	     	= -0.005
 
 inv_weight			= +0.18
 
 [up_sect_firstc_rpk74]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 5950
-value                   = -20
+cost		      		= 3950
+value                   = -5
 
-cam_dispersion              = -0.04 ;0.7
-cam_dispersion_inc          = -0.03     ;0.7
-cam_step_angle_horz         = -0.2  ;0.7
-cam_max_angle               = -1.0
+cam_dispersion					= -0.082	;увеличения угла (в градусах) с первым выстрелом
+cam_dispersion_inc				= -0.072	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz				= -0.072	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion				= -0.072
+zoom_cam_dispersion_inc			= -0.061
+zoom_cam_step_angle_horz		= -0.07
 
 inv_weight			= +0.14
 
@@ -32,11 +35,11 @@ inv_weight			= +0.14
 cost		      		= 6340
 value					= +20
 
-bullet_speed            = +100
-fire_dispersion_base	= -0.02 ;0.7
-hit_impulse             = +30
+bullet_speed            = +180
+fire_dispersion_base	= -0.02
+hit_impulse             = +5
 
-inv_weight			= +0.26
+inv_weight			= +0.2
 
 [up_sect_firste_rpk74]
 ;Скорострельность(3)25%
@@ -51,25 +54,32 @@ inv_weight			= +0.12
 [up_sect_secona_rpk74]
 ;Отдача(1)-10%
 ;------------
-cost		      		= 5160
-value					= -10
+cost		      		= 4160
+value                   = -5
 
-cam_dispersion              = -0.02		;0.7
-cam_dispersion_inc         	= -0.01		;0.7
-cam_step_angle_horz        	= -0.1	;0.7
+cam_dispersion					= -0.082	;увеличения угла (в градусах) с первым выстрелом
+cam_dispersion_inc				= -0.072	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz				= -0.072	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion				= -0.072
+zoom_cam_dispersion_inc			= -0.061
+zoom_cam_step_angle_horz		= -0.07
 
 inv_weight			= +0.08
 
 [up_sect_seconc_rpk74]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 5740
-value					= -20
+cost		      		= 5220
+value                   = -10
 
-cam_dispersion              = -0.04		;0.7
-cam_dispersion_inc         	= -0.03		;0.7
-cam_step_angle_horz        	= -0.2	;0.7
-cam_max_angle               = -1.0   
+cam_dispersion					= -0.165	;увеличения угла (в градусах) с первым выстрелом
+cam_dispersion_inc				= -0.145	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz				= -0.145	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion				= -0.145
+zoom_cam_dispersion_inc			= -0.125
+zoom_cam_step_angle_horz		= -0.14
 
 inv_weight			= +0.11
 
@@ -81,9 +91,9 @@ value					= +25
 
 crosshair_inertion		   = -0.5
  
-PDM_disp_base 				= -0.15 ;0.5
-PDM_disp_vel_factor 		= -0.5 ;1.5
-PDM_disp_accel_factor 		= -0.5 ;1.5
+PDM_disp_base 				= -0.15
+PDM_disp_vel_factor 		= -0.5
+PDM_disp_accel_factor 		= -0.5
 
 inv_weight			= -0.11
 
@@ -103,31 +113,27 @@ inv_weight			= +0.16
 cost		      		= 7400
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
 ;fire_dispersion_condition_factor    = -1 ;15
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= -0.0004
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.005 ;0.03
+condition_shot_dec      	= -0.000075
+condition_queue_shot_dec	= -0.000075
 
-inv_weight			= +0.16
+misfire_start_prob	     	= -0.0004
+misfire_end_prob	     	= -0.005
+
+inv_weight			= +0.1
 
 [up_sect_thirdc_rpk74]
-;Надежность(2)15%
+;Надежность(2)20%
 ;---------------
 cost		      		= 7620
-value					= +15
+value					= +20
 
-;увеличение дисперсии в процентах при максимальном износе
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0002 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0002 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
+
 misfire_start_prob	     	= -0.0007
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.01 ;0.03
+misfire_end_prob	     	= -0.01
 
 inv_weight			= +0.18
 
@@ -139,18 +145,18 @@ value					= +15
 
 rpm						= +80
 
-inv_weight			= +0.26
+inv_weight			= +0.2
 
 [up_sect_thirde_rpk74]
 ;Точность(3)30%
 ;---------------
-cost		      		= 5450
+cost		      		= 8450
 value					= +30
 
-fire_dispersion_base	= -0.09 ;0.7
+fire_dispersion_base	= -0.09
 ;fire_dispersion_condition_factor    = -1 ;15
 
-inv_weight			= +0.18
+inv_weight			= +0.14
 
 [up_sect_fourta_rpk74]
 ;Точность(1)10%
@@ -158,10 +164,10 @@ inv_weight			= +0.18
 cost		      		= 6120
 value					= +10
 
-fire_dispersion_base	= -0.05 ;0.7
+fire_dispersion_base	= -0.03
 ;fire_dispersion_condition_factor    = -1 ;15
 
-inv_weight			= +0.16
+inv_weight			= +0.18
 
 [up_sect_fourtc_rpk74]
 ;Удобство(2)15%
@@ -171,34 +177,43 @@ value					= +15
 
 crosshair_inertion		   = -0.5
  
-PDM_disp_base 				= -0.15 ;0.5
-PDM_disp_vel_factor 		= -0.5 ;1.5
-PDM_disp_accel_factor 		= -0.5 ;1.5
+PDM_disp_base 				= -0.15
+PDM_disp_vel_factor 		= -0.5
+PDM_disp_accel_factor 		= -0.5
 
 inv_weight			= -0.08
 
 [up_sect_fourte_rpk74]
-;Отдача(3)30%
+;Отдача(3)20%
 ;---------------
 cost		      		= 6240
-value					= -30
+value                   = -10
 
-cam_dispersion              = -0.07		;0.7
-cam_dispersion_inc         	= -0.05		;0.7
-cam_step_angle_horz        	= -0.4	;0.7
-cam_max_angle               = -2.0
+cam_dispersion					= -0.165	;увеличения угла (в градусах) с первым выстрелом
+cam_dispersion_inc				= -0.145	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz				= -0.145	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion				= -0.145
+zoom_cam_dispersion_inc			= -0.125
+zoom_cam_step_angle_horz		= -0.14
 
 inv_weight			= +0.16   
 
 [up_sect_fiftha_rpk74]
 ;Увеличенный объем ленточной коробки
 ;---------------
-cost		      		= 10690
-value					= +20
+;cost		      		= 10690
+;value					= +20
+;ammo_mag_size           = 20
+;inv_weight			= +0.21
 
-ammo_mag_size           = 20
+;Крепление для оптики
+;---------------
+cost		      		= 1500
 
-inv_weight			= +0.21
+scope_status = 2
+scopes_sect					= scope_rpk74_moist, scope_rpk74, scope_rpk74_worn, scope_x2.7_rpk74, scope_live_detector_rpk74, scope_night_rpk74, scope_vsk_rpk74
+inv_weight              	= +0.15
 
 [up_firsta_rpk74]
 scheme_index            = 0, 0
@@ -523,7 +538,7 @@ scheme_index            = 0, 4
 known                   = 1
 effects                 =
 section                 = up_sect_fiftha_rpk74
-property                = prop_ammo_size 
+property                = prop_scope_attach  ; prop_ammo_size
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true
@@ -535,9 +550,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_addh_a1_name
-description             = st_up_addh_a1_descr
-icon                    = ui_inGame2_upgrade_RP74_16
+name                    = st_up_add_a2_name  ;st_up_addh_a1_name
+description             = st_up_add_a2_descr  ;st_up_addh_a1_descr
+icon                    = ui_inGame2_upgrade_AKM_74_2_16  ;ui_inGame2_upgrade_RP74_16
 
 
 [up_gr_firstab_rpk74]

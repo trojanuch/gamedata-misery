@@ -1,10 +1,34 @@
+[up_sect_firstd_tt33]
+;Отдача(2)-20%
+;------------
+cost                    = 1020 ;400
+value					= -10
+
+cam_dispersion          	= -0.048		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= -0.048		;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz			= -0.10		;(degree) size of step camera moved in horizontal position while shooting
+
+inv_weight			= +0.06
+
+[up_sect_thirdd_tt33]
+;Отдача(2)-20%
+;------------
+cost                    = 1160 ;400
+value					= -10
+
+cam_dispersion          	= -0.048		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= -0.048		;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz			= -0.10		;(degree) size of step camera moved in horizontal position while shooting
+
+inv_weight			= +0.06
+
 [up_firsta_tt33]
 scheme_index            = 0, 0
 known                   = 1
 ;;invented                = 1                							; 0
 effects                 = up_gr_firstcd_tt33
 section                 = up_sect_firsta_pm
-property                = prop_rtt33
+property                = prop_rpm
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -46,7 +70,7 @@ icon                    = ui_inGame2_upgrade_PMm_2
 scheme_index            = 1, 1
 known                   = 1
 effects                 = up_gr_firstef_tt33
-section                 = up_sect_firstd_pm
+section                 = up_sect_firstd_tt33
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -66,8 +90,8 @@ icon                    = ui_inGame2_upgrade_PMm_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_pm
-property                = prop_rtt33
+section                 = up_sect_empty_tier_3
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -75,15 +99,12 @@ precondition_parameter  = a & b
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_zatp_c1_name
-description             = st_up_zatp_c1_descr
-icon                    = ui_inGame2_upgrade_PMm_4
-
-
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 [up_secona_tt33]
 scheme_index            = 0, 1
@@ -171,7 +192,7 @@ icon                    = ui_inGame2_upgrade_PMm_8
 scheme_index            = 1, 4
 known                   = 1
 effects                 =
-section                 = up_sect_thirdd_pm
+section                 = up_sect_thirdd_tt33
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -255,9 +276,8 @@ icon                    = ui_inGame2_upgrade_PMm_12
 scheme_index            = 1, 6
 known                   = 1
 effects                 =
-section                 = up_sect_fifthc_pm
-property                = prop_calibre
-
+section                 = up_sect_empty_tier_3
+property                = prop_not_available
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -265,13 +285,12 @@ precondition_parameter  = a & b
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
 
-; ui
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_add_b4_name
-description             = st_up_add_b4_descr
-icon                    = ui_inGame2_upgrade_PMm_13
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 
 [up_gr_firstab_tt33]

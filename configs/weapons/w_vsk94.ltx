@@ -23,11 +23,11 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_val
 
 ;-TTX-----------------------------------------------------------------------------
-hit_power			= 0.420, 0.420, 0.420, 0.420
-hit_impulse		= 33 ;50 ;100
+hit_power			= 0.482, 0.482, 0.482, 0.482
+hit_impulse		= 33
 hit_type		= fire_wound
-fire_distance           = 369
-bullet_speed            = 560
+fire_distance           = 400
+bullet_speed            = 302
 rpm                     = 700
 rpm_empty_click         = 200
 
@@ -42,7 +42,7 @@ misfire_end_condition		= 0.11
 misfire_start_prob = 0.007 ;	     	= 0.0058
 misfire_end_prob = 0.11 ;	     	= 0.054
 condition_shot_dec      	= 0.0007
-condition_queue_shot_dec	= 0.0009
+condition_queue_shot_dec	= 0.0008
 
 ammo_elapsed            = 20
 ammo_mag_size           = 20
@@ -55,32 +55,32 @@ single_handed           = 0
 
 ;--дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.195 ;0.15   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.245 ;0.15   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.24f
-crosshair_inertion	= 5.3
+crosshair_inertion		= 5.3
 
 ;отдача
-cam_return				= 0 ;				= 0
-cam_relax_speed         = 4   		;скорость возврата в исходное положение
+cam_return = 0 ;				= 0
+cam_relax_speed         = 10   		;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	         	= 1.4
-cam_dispersion_inc         	= 1.0
-cam_dispersion_frac     = 0.7       ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_dispersion	        = 0.98
+cam_dispersion_inc      = 0.85
+cam_dispersion_frac     = 0.9       ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle        	= 50.0 		;максимальный угол отдачи
 cam_max_angle_horz      = 50.0   	;(degree) maximum shot horizontal degree
 cam_step_angle_horz     = 0.7		;(degree) size of step camera moved in horizontal position while shooting
 
-PDM_disp_base 				= 0.75
+PDM_disp_base 				= 0.73
 PDM_disp_vel_factor 		= 2.3
 PDM_disp_accel_factor 		= 2.3
 PDM_disp_crouch = 1.0 ;  			= 1.165
 PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
 
-zoom_cam_relax_speed        = 7    ; scope & ironsight
+zoom_cam_relax_speed        = 10    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 120.75
-zoom_cam_dispersion          	= 1.2
-zoom_cam_dispersion_inc      	= 0.7
-zoom_cam_dispersion_frac    = 0.8
+zoom_cam_dispersion         = 0.88
+zoom_cam_dispersion_inc     = 0.76
+zoom_cam_dispersion_frac    = 0.9
 zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 50.0
 zoom_cam_step_angle_horz    = 0.5
@@ -142,6 +142,7 @@ grenade_flame_particles = weapons\generic_weapon01
 shell_point             = -0.020000,0.167000,0.082000
 shell_dir               = 0.0, 0.0, 0.4
 ;shell_particles         = weapons\generic_shells
+shell_particles         = amik\weapons\data\5_45x39\5_45x39_r
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
@@ -173,11 +174,6 @@ grenade_launcher_status = 0
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time		= 0.25
 scope_zoom_factor       = 58.6                                                ; fov for zoom mode
-
-scope_texture			= wpn_crosshair_vsk
-
-zoom_enabled			= true
-scope_zoom_factor       = 58.6
 
 scope_texture           = wpn_crosshair
 silencer_name           = wpn_addon_silencer_9x39
@@ -293,23 +289,23 @@ grenade_bone            = grenade
 
 [scope_vsk94]
 scope_name 					= wpn_addon_scope
-scope_x              	= 102                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 60                 ; offset in inventory icon
+scope_y                 = -25
 
 [scope_vsk94_moist]
 scope_name 					= wpn_addon_scope_moist
-scope_x              	= 102                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 60                 ; offset in inventory icon
+scope_y                 = -25
 
 [scope_vsk94_worn]
 scope_name 					= wpn_addon_scope_worn
-scope_x              	= 102                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 60                 ; offset in inventory icon
+scope_y                 = -25
 
 [scope_x2.7_vsk94]
 scope_name 					= wpn_addon_scope_x2.7
-scope_x              	= 60                 ; offset in inventory icon
-scope_y                 = -25
+scope_x              	= 87                 ; offset in inventory icon
+scope_y                 = -30
 
 [scope_live_detector_vsk94]
 scope_name 					= wpn_addon_scope_detector
@@ -323,5 +319,5 @@ scope_y                 = -25
 
 [scope_vsk_vsk94]
 scope_name 					= wpn_addon_scope_vsk
-scope_x		= 63
-scope_y		= -1
+scope_x              	= 60                 ; offset in inventory icon
+scope_y                 = -25

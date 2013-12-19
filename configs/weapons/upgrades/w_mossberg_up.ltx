@@ -1,3 +1,51 @@
+[up_sect_firstd_mossberg]
+;Отдача(2)-20%
+;------------
+cost		      		= 2520
+value                   = -10
+
+cam_dispersion          	= -0.274	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.326	;увеличениe cam_dispersion с каждым выстрелом  
+cam_step_angle_horz		= -0.15	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion		= -0.214
+zoom_cam_dispersion_inc		= -0.294
+zoom_cam_step_angle_horz	= -0.3
+
+inv_weight 					= +0.15
+
+[up_sect_secone_mossberg]
+;Отдача(3)-30%
+;------------
+cost		      		= 2660
+value                   = -10
+
+cam_dispersion          	= -0.274	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.326	;увеличениe cam_dispersion с каждым выстрелом  
+cam_step_angle_horz		= -0.15	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion		= -0.214
+zoom_cam_dispersion_inc		= -0.294
+zoom_cam_step_angle_horz	= -0.3
+
+inv_weight 					= +0.15
+
+[up_sect_thirdd_mossberg]
+;Отдача(2)-20%
+;------------
+cost		      		= 1840
+value                   = -10
+
+cam_dispersion          	= -0.274	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.326	;увеличениe cam_dispersion с каждым выстрелом  
+cam_step_angle_horz		= -0.15	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion		= -0.214
+zoom_cam_dispersion_inc		= -0.294
+zoom_cam_step_angle_horz	= -0.3
+
+inv_weight 					= +0.1
+
 [up_firsta_mossberg]
 scheme_index            = 0, 0
 known                   = 1
@@ -45,7 +93,7 @@ icon                    = ui_inGame2_upgrade_Cheyser_13_2
 scheme_index            = 1, 1
 known                   = 1
 effects                 = up_gr_firstef_mossberg
-section                 = up_sect_firstd_wincheaster1300
+section                 = up_sect_firstd_mossberg
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -154,7 +202,7 @@ icon                    = ui_inGame2_upgrade_Cheyser_13_7
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_wincheaster1300
+section                 = up_sect_secone_mossberg
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -221,7 +269,7 @@ icon                    = ui_inGame2_upgrade_Cheyser_13_10
 scheme_index            = 1, 5
 known                   = 1
 effects                 = up_gr_thirdef_mossberg
-section                 = up_sect_thirdd_wincheaster1300
+section                 = up_sect_thirdd_mossberg
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

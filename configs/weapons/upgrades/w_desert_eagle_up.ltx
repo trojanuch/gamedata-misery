@@ -4,29 +4,29 @@
 cost		      		= 3340
 value					= +20
 
-rpm						= +40
+rpm						= +38
 
 inv_weight				= +0.15
 
 [up_sect_firstc_desert_eagle]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 1690
-value                   = -20
+cost		      		= 3690
+value                   = -10
 
-cam_dispersion          = -0.3      ;1.2
-cam_dispersion_inc      = -0.3      ;1.2
-cam_step_angle_horz     = -0.15     ;1.0
+cam_dispersion          	= -0.191		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= -0.198		;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz			= -0.114		;(degree) size of step camera moved in horizontal position while shooting
 
 inv_weight				= +0.05
 
 [up_sect_firste_desert_eagle]
-;Точность(3)30%
+;Точность(3)25%
 ;---------------
 cost		      		= 3140
 value					= +25
 
-fire_dispersion_base	= -0.05
+fire_dispersion_base	= -0.15
 ;fire_dispersion_condition_factor    = -1
 
 inv_weight				= +0.1
@@ -34,12 +34,12 @@ inv_weight				= +0.1
 [up_sect_firstf_desert_eagle]
 ;Отдача(3)-30%
 ;------------
-cost		      		= 1840
-value                   = -30
+cost		      		= 3840
+value                   = -10
 
-cam_dispersion          = -0.5      ;1.2
-cam_dispersion_inc      = -0.5      ;1.2
-cam_step_angle_horz     = -0.25     ;1.0
+cam_dispersion          	= -0.191		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= -0.198		;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz			= -0.114		;(degree) size of step camera moved in horizontal position while shooting
 
 inv_weight				= +0.05
 
@@ -49,10 +49,8 @@ inv_weight				= +0.05
 cost		      		= 2840
 value					= +5
 
-bullet_speed		 	= +35
-fire_distance           	= +32
-
-fire_dispersion_base		= -0.1
+bullet_speed		 	= +22
+fire_dispersion_base		= -0.05
 
 inv_weight				= +0.05
 
@@ -62,39 +60,35 @@ inv_weight				= +0.05
 cost		      		= 3160
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -2 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00014 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00014 ;0.0011
+condition_shot_dec      	= -0.0004
+condition_queue_shot_dec	= -0.0004
 
 misfire_start_prob	     	= -0.0025
-
 misfire_end_prob	     	= -0.025 ;0.03
 
 inv_weight				= +0.15
 
 [up_sect_secone_desert_eagle]
-;Скорострельность(3)25%
+;Скорострельность(3)15%
 ;----------------------
 cost		      		= 2800
 value					= +15
 
-rpm						= +15
+rpm						= +29
 
 inv_weight				= +0.15
 
 [up_sect_seconf_desert_eagle]
-;Настильность(3)30%
+;Настильность(3)5%
 ;------------------
 cost		      		= 2920
 value					= +5
 
-bullet_speed		 	= +35
-fire_distance           	= +32
+bullet_speed		 	= +22
+fire_distance           	= +30
 
-fire_dispersion_base		= -0.1
+fire_dispersion_base		= -0.03
 
 inv_weight				= +0.05
 
@@ -129,34 +123,34 @@ PDM_disp_accel_factor 		= -0.35
 [up_sect_thirdd_desert_eagle]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 3280
-value                   = -20
+cost		      		= 2280
+value                   = -5
 
-cam_dispersion          = -0.3      ;1.2
-cam_dispersion_inc      = -0.3      ;1.2
-cam_step_angle_horz     = -0.15     ;1.0
+cam_dispersion          	= -0.095		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= -0.099		;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz			= -0.057		;(degree) size of step camera moved in horizontal position while shooting
 
 inv_weight				= +0.1
 
 [up_sect_thirde_desert_eagle]
 ;Отдача(3)-30%
 ;------------
-cost		      		= 3240
-value                   = -30
+cost		      		= 2240
+value                   = -5
 
-cam_dispersion          = -0.5      ;1.2
-cam_dispersion_inc      = -0.5      ;1.2
-cam_step_angle_horz     = -0.25     ;1.0
+cam_dispersion          	= -0.095		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= -0.099		;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz			= -0.057		;(degree) size of step camera moved in horizontal position while shooting
 
 inv_weight				= +0.15
 
 [up_sect_fourta_desert_eagle]
-;Точность(1)10%
+;Точность(1)25%
 ;---------------
 cost		      		= 3450
 value					= +25
 
-fire_dispersion_base	= -0.06
+fire_dispersion_base	= -0.15
 
 inv_weight				= +0.1
 
@@ -166,16 +160,12 @@ inv_weight				= +0.1
 cost		      		= 3180
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -2 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00014 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00014 ;0.0011
+condition_shot_dec      	= -0.0004
+condition_queue_shot_dec	= -0.0004
 
 misfire_start_prob	     	= -0.0025
-
-misfire_end_prob	     	= -0.025 ;0.03
+misfire_end_prob	     	= -0.025
 
 inv_weight				= +0.15
 
@@ -183,11 +173,11 @@ inv_weight				= +0.15
 ;Увеличенный объем магазина
 ;---------------
 cost		      		= 3650
-value					= +4
+value					= +3
 
-ammo_mag_size		 	= +4
+ammo_mag_size		 	= +3
 
-inv_weight				= +0.15
+inv_weight				= +0.1
 
 [up_firsta_desert_eagle]
 scheme_index            = 0, 0

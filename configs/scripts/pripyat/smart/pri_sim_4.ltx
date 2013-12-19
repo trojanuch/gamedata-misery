@@ -22,13 +22,13 @@ spawn_duty@advanced_hostile
 
 [spawn_duty@advanced]
 spawn_squads = duty_sim_squad_veteran_pripyat, duty_hunter_night_simulation_squad_pripyat
-spawn_num = {=actor_on_level(pripyat) -sim_freedom_help_harder} 1, 0
+spawn_num = {=actor_on_level(pripyat) +pri_a28_actor_in_zone_stay -sim_freedom_help_harder} 1, 0
 
 ; Duty hostile squads
 
 [spawn_duty@advanced_hostile]
 spawn_squads = duty_sim_squad_veteran_pripyat_hostile, duty_hunter_night_simulation_squad_pripyat_hostile
-spawn_num = {=actor_on_level(pripyat) +sim_freedom_help_harder} 1, 0
+spawn_num = {=actor_on_level(pripyat) +pri_a28_actor_in_zone_stay +sim_freedom_help_harder} 1, 0
 
 ;;; unused
 

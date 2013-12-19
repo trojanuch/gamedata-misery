@@ -443,5 +443,28 @@
     </auto_static>
   </wpn_crosshair_pso1_ksvk>
 
+        <wpn_crosshair_1p78 x="0" y="0" width="1024" height="768">
+    <auto_static x="85" y="0" width="854" height="768" stretch="1">
+      <texture>wpn_crosshair_1p78</texture>
+    </auto_static>
+	    <auto_static x="0" y="0" width="86" height="768" stretch="1">
+      <texture>wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="939" y="0" width="85" height="768" stretch="1">
+      <texture>wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_1p78>
+  
+          <wpn_crosshair_nspu x="0" y="0" width="1024" height="768">
+    <auto_static x="85" y="0" width="854" height="768" stretch="1">
+      <texture>wpn_crosshair_nspu</texture>
+    </auto_static>
+	    <auto_static x="0" y="0" width="86" height="768" stretch="1">
+      <texture>wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="939" y="0" width="85" height="768" stretch="1">
+      <texture>wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_nspu>
 </w>
 

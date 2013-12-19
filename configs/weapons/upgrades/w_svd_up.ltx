@@ -4,13 +4,13 @@
 cost		      		= 4460
 value					= +10
 
-crosshair_inertion			= -1
+crosshair_inertion			= -0.5
 
 PDM_disp_base 				= -0.2
-PDM_disp_vel_factor 		= -0.5
-PDM_disp_accel_factor 		= -0.5
+PDM_disp_vel_factor 		= -0.3
+PDM_disp_accel_factor 		= -0.3
 
-inv_weight			= -0.25
+inv_weight			= -0.24
 
 [up_sect_firstc_svd]
 ;Точность(2)20%
@@ -18,7 +18,7 @@ inv_weight			= -0.25
 cost		      		= 4680
 value					= +20
 
-fire_dispersion_base    = -0.02  	;0.15
+fire_dispersion_base    = -0.02
 ;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.15
@@ -31,20 +31,20 @@ value					= +20
 
 crosshair_inertion			= -1
 
-PDM_disp_base 				= -0.5
-PDM_disp_vel_factor 		= -1.2
-PDM_disp_accel_factor 		= -1.2
+PDM_disp_base 				= -0.4
+PDM_disp_vel_factor 		= -0.5
+PDM_disp_accel_factor 		= -0.5
 
 inv_weight			= -0.23
 
 [up_sect_firste_svd]
-;Настильность(3)30%
+;Настильность(3)25%
 ;------------------ 
 cost		      		= 6240
-value					= +30
+value					= +25
 
 bullet_speed			= +200
-fire_dispersion_base    = -0.01  	;0.15
+fire_dispersion_base    = -0.016
 
 inv_weight			= +0.162
 
@@ -56,7 +56,7 @@ value					= +25
 
 rpm						= +35
 
-inv_weight			= +0.27
+inv_weight			= +0.12
 
 [up_sect_secona_svd]
 ;Надежность(1)10%
@@ -64,32 +64,26 @@ inv_weight			= +0.27
 cost		      		= 5400
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
 ;fire_dispersion_condition_factor    = -1.5 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0007 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0007 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.0007
+condition_queue_shot_dec	= -0.0007
+
 misfire_start_prob	     	= -0.0007
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.007 ;0.03
+misfire_end_prob	     	= -0.007
 
 [up_sect_seconc_svd]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 6860
-value                   = -20
+cost		      		= 5860
+value                   = -10
 
-cam_dispersion         = -0.18     ;1.8
-cam_dispersion_inc     = -0.18     ;1.8
-cam_step_angle_horz    = -0.05     ;0.25
-cam_relax_speed        = +0.035
+cam_dispersion          = -0.224	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.224	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.064	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.18     ;1.8
-zoom_cam_dispersion_inc     = -0.18     ;1.8
-zoom_cam_step_angle_horz    = -0.05     ;0.25
-zoom_cam_relax_speed        = +0.035
+zoom_cam_dispersion         = -0.154
+zoom_cam_dispersion_inc     = -0.154
+zoom_cam_step_angle_horz    = -0.49
 
 inv_weight			= +0.224
 
@@ -99,7 +93,7 @@ inv_weight			= +0.224
 cost		      		= 5420
 value					= +20
 
-fire_dispersion_base    = -0.03  	;0.15
+fire_dispersion_base    = -0.02
 ;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.16
@@ -107,18 +101,17 @@ inv_weight			= +0.16
 [up_sect_thirda_svd]
 ;Отдача(1)-10%
 ;------------
-cost		      		= 7920
+cost		      		= 5920
 value                   = -10
 
-cam_dispersion         = -0.12     ;1.8
-cam_dispersion_inc     = -0.12     ;1.8
-cam_step_angle_horz    = -0.03     ;0.25
-cam_relax_speed        = +0.02
+cam_dispersion          = -0.224	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.224	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.064	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.12     ;1.8
-zoom_cam_dispersion_inc     = -0.12     ;1.8
-zoom_cam_step_angle_horz    = -0.03     ;0.25
-zoom_cam_relax_speed        = +0.02
+zoom_cam_dispersion         = -0.154
+zoom_cam_dispersion_inc     = -0.154
+zoom_cam_step_angle_horz    = -0.49
+
 inv_weight			= +0.184
 
 [up_sect_thirdc_svd]
@@ -129,36 +122,34 @@ value					= +15
 
 crosshair_inertion			= -1
 
-PDM_disp_base 				= -0.5
-PDM_disp_vel_factor 		= -1.2
-PDM_disp_accel_factor 		= -1.2
+PDM_disp_base 				= -0.4
+PDM_disp_vel_factor 		= -0.5
+PDM_disp_accel_factor 		= -0.5
 
 inv_weight			= -0.24
 
 [up_sect_thirde_svd]
 ;Отдача(3)-30%
 ;------------
-cost		      		= 7860
-value                   = -30
+cost		      		= 6860
+value                   = -10
 
-cam_dispersion         = -0.25     ;1.8
-cam_dispersion_inc     = -0.25     ;1.8
-cam_step_angle_horz    = -0.1      ;0.25
-cam_relax_speed        = +0.05
+cam_dispersion          = -0.224	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.224	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.064	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.25     ;1.8
-zoom_cam_dispersion_inc     = -0.25     ;1.8
-zoom_cam_step_angle_horz    = -0.1      ;0.25
-zoom_cam_relax_speed        = +0.05
+zoom_cam_dispersion         = -0.154
+zoom_cam_dispersion_inc     = -0.154
+zoom_cam_step_angle_horz    = -0.49
 
 inv_weight			= +0.16
 
 [up_sect_fourta_svd]
-;6икс прицел.
+;8икс прицел ПСО-3.
 ;------------
-cost		      		= 3100
+cost		      		= 1100
 
-scope_zoom_factor       = -26 
+scope_zoom_factor       = -12
 
 [up_sect_fourtc_svd]
 ;Контрастный прицел
@@ -166,8 +157,7 @@ scope_zoom_factor       = -26
 cost		      		= 3980
 
 scope_nightvision = scope_contrast
-
-inv_weight			= +0.01
+inv_weight			= +0.05
 
 [up_sect_fourte_svd]
 ;ПНВ
@@ -175,8 +165,7 @@ inv_weight			= +0.01
 cost		      		= 5680
 
 scope_nightvision = scope_nightvision
-
-inv_weight			= +0.05
+inv_weight			= +0.27
 
 [up_sect_fourtf_svd]
 ;Тепловизор
@@ -184,7 +173,6 @@ inv_weight			= +0.05
 cost		      		= 6140
 
 scope_dynamic_zoom = on
-
 inv_weight			= +0.01
 
 [up_firsta_svd]
@@ -425,7 +413,7 @@ scheme_index            = 0, 3
 known                   = 1
 effects                 = 
 section                 = up_sect_fourta_svd
-property                = prop_scope_6x
+property                = prop_scope_5x
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -437,9 +425,9 @@ effect_parameter        = on_weapon_upgrade_something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_opt_a4_name
-description             = st_up_opt_a4_descr
-icon                    = ui_inGame2_upgrade_SVDm2_13
+name                    = st_up_opt_a3_name
+description             = st_up_opt_a3_descr
+icon                    = ui_inGame2_upgrade_SVUmk2_12
 
 [up_fourtc_svd]
 scheme_index            = 1, 5

@@ -17,18 +17,18 @@ sprint_allowed       	= true
 ;-------------------------------------------------------------------------------
 cost                    = 32260
 weapon_class            = assault_rifle        ; Type of the weapon
-inv_weight              = 3.982
+inv_weight              = 4.0
 
 upgrades                = up_gr_firstab_groza, up_gr_seconab_groza, up_gr_thirdab_groza, up_gr_fourtab_groza, up_gr_fifthab_groza
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_groza
 
 ;--TTX----------------------------------------------------------------------------
-hit_power				= 0.476, 0.476, 0.476, 0.476
-hit_impulse				= 38
+hit_power				= 0.496, 0.496, 0.496, 0.496
+hit_impulse				= 35
 hit_type				= fire_wound
-fire_distance           = 430
-bullet_speed            = 600
+fire_distance           = 450
+bullet_speed            = 310
 rpm                     = 700
 rpm_empty_click         = 200
 
@@ -42,8 +42,8 @@ misfire_start_condition		= 0.75
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.003
 misfire_end_prob = 0.11 ;	     	= 0.03
-condition_shot_dec      	= 0.0008
-condition_queue_shot_dec	= 0.0008
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0009
 
 ammo_elapsed            = 20
 ammo_mag_size           = 20
@@ -51,7 +51,7 @@ ammo_class              = ammo_9x39_pab9, ammo_9x39_ap
 grenade_class           = ammo_vog-25
 
 fire_modes              = 1, -1
-grenade_vel 			= 32 ;76
+grenade_vel 			= 76
 launch_speed            = 32
 
 hand_dependence         = 1
@@ -63,20 +63,20 @@ reload_dof				= 0.0, 0.5, 5, 2
 
 ;-дисперси€-----------------------------------------------------------------------------
 ;базова€ дисперси€
-fire_dispersion_base    = 0.34     ;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
+fire_dispersion_base    = 0.37     ;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
 control_inertion_factor = 1.33f
 crosshair_inertion		= 6.3
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
-cam_relax_speed         = 5        ;скорость возврата в исходное положение
+cam_return = 0 ;				= 0
+cam_relax_speed         = 8        ;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360     ;скорость возврата в исходное положение
-cam_dispersion	         	= 1.12
-cam_dispersion_inc         	= 0.98
-cam_dispersion_frac     = 0.8       ;ствол будет подыматьс€ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_dispersion	        = 0.64
+cam_dispersion_inc      = 0.63
+cam_dispersion_frac     = 1.0       ;ствол будет подыматьс€ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle           = 50.0        ;максимальный угол отдачи
 cam_max_angle_horz      = 50.0        ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.35        ;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 2.15        ;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.75
 PDM_disp_vel_factor 		= 1.71
@@ -84,14 +84,14 @@ PDM_disp_accel_factor 		= 1.71
 PDM_disp_crouch = 1.0 ; 			= 2.235
 PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
 
-zoom_cam_relax_speed         = 5	    ; scope & ironsight
+zoom_cam_relax_speed         = 8	    ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.83
-zoom_cam_dispersion_inc      	= 0.79
+zoom_cam_dispersion          = 0.54
+zoom_cam_dispersion_inc      = 0.53
 zoom_cam_dispersion_frac     = 1.0
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.25
+zoom_cam_step_angle_horz     = 2.05
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 11        
 
@@ -290,37 +290,37 @@ lean_hud_offset_rot	= 0,0,0
 [scope_groza]
 scope_name 					= wpn_addon_scope
 scope_x		= 63
-scope_y		= -1
+scope_y		= -5
 
 [scope_groza_moist]
 scope_name 					= wpn_addon_scope_moist
 scope_x		= 63
-scope_y		= -1
+scope_y		= -5
 
 [scope_groza_worn]
 scope_name 					= wpn_addon_scope_worn
 scope_x		= 63
-scope_y		= -1
+scope_y		= -5
 
 [scope_x2.7_groza]
 scope_name 					= wpn_addon_scope_x2.7
-scope_x		= 63
-scope_y		= -1
+scope_x		= 88
+scope_y		= -4
 
 [scope_live_detector_groza]
 scope_name 					= wpn_addon_scope_detector
 scope_x		= 63
-scope_y		= -1
+scope_y		= -5
 
 [scope_night_groza]
 scope_name 					= wpn_addon_scope_night
 scope_x		= 63
-scope_y		= -1
+scope_y		= -5
 
 [scope_vsk_groza]
 scope_name 					= wpn_addon_scope_vsk
 scope_x		= 63
-scope_y		= -1
+scope_y		= -5
 
 ;-----------------------------------------------------------------------------
 ; ”никальный O÷-14 ЂЎтормї
@@ -337,20 +337,22 @@ inv_grid_height			= 2
 inv_grid_x				= 5  
 inv_grid_y				= 30
 
-ammo_mag_size 	= 25
+inv_weight              = 4.1
+
+ammo_mag_size 	= 30
 ammo_class 		= ammo_7.62x39_fmj, ammo_7.62x39_ap
 fire_modes 		= 1, 3, -1
 
 upgrades                = up_gr_firstab_groza, up_gr_seconab_groza, up_gr_thirdab_groza, up_gr_fourtab_groza, up_gr_fifthab_groza
-installed_upgrades      = up_fiftha_groza, up_fourta_groza, up_fourtc_groza
+installed_upgrades      = up_fourta_groza, up_fourtc_groza
 
 ;--TTX----------------------------------------------------------------------------
-hit_power				= 0.534, 0.534, 0.534, 0.534
-hit_impulse				= 38
+hit_power				= 0.564, 0.564, 0.564, 0.564
+hit_impulse				= 34
 hit_type				= fire_wound
-fire_distance           = 885
-bullet_speed            = 740
-rpm                     = 640
+fire_distance           = 1000
+bullet_speed            = 720
+rpm                     = 750
 rpm_empty_click         = 200
 
 scope_status            = 2
@@ -358,16 +360,18 @@ silencer_status			= 2
 
 silencer_name					= wpn_addon_silencer_762x39	; section name for the attachable silencer
 snd_silncer_shot				= weapons\silencers\silencer_762x39
+silencer_x              = 180
+silencer_y              = 16
 
 misfire_probability        = 0.005
 misfire_start_condition		= 0.75
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.003
 misfire_end_prob = 0.11 ;	     	= 0.03
-condition_shot_dec      	= 0.0008
-condition_queue_shot_dec	= 0.0008
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0009
 
-fire_dispersion_base    = 0.26
+fire_dispersion_base    = 0.3
 
 hud                     = wpn_groz1_hud
 visual                  = dynamics\weapons\wpn_groz1\wpn_groz1.ogf
@@ -385,9 +389,6 @@ hands_orientation_16x9			= 0.400000,3.199998,0.299999
 
 item_position				= -0.006247,0.007542,-0.008760
 item_orientation			= -15.517174,-2.455023,362.066071
-
-silencer_x              = 176
-silencer_y              = 17
 
 [wpn_groz1_hud]:hud_base
 zoom_hide_crosshair	= true

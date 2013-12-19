@@ -4,28 +4,28 @@
 cost		      		= 4460
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;шанс осечки при изношености больше чем misfireStartCondition
+;fire_dispersion_condition_factor    = -1 ;15
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
+
 misfire_start_prob	     	= -0.0008
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.008 ;0.03.03
+misfire_end_prob	     	= -0.008
 
 inv_weight              = +0.15
 
 [up_sect_firstc_val]
 ;ќтдача(2)-20%
 ;------------
-cost		      		= 3840
-value                   = -20
+cost		      		= 4840
+value                   = -10
 
-cam_dispersion              = -0.06     ;0.5
-cam_dispersion_inc          = -0.04     ;0.5
-cam_step_angle_horz         = -0.14     ;1.5 [0.73 в остатке]
+cam_dispersion	        = -0.082
+cam_dispersion_inc      = -0.070
+cam_step_angle_horz     = -0.059		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.07     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.04     ;0.5
-zoom_cam_step_angle_horz    = -0.6  ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.076
+zoom_cam_dispersion_inc     = -0.064
+zoom_cam_step_angle_horz    = -0.041
 
 inv_weight              = +0.05
 
@@ -35,12 +35,12 @@ inv_weight              = +0.05
 cost		      		= 4440
 value					= +20
 
-bullet_speed            = +140
-fire_distance           = +120
+bullet_speed            = +60
+fire_distance           = +50
 
-fire_dispersion_base	= -0.15 ;0.7
+fire_dispersion_base	= -0.01
 
-inv_weight              = +0.5
+inv_weight              = +0.15
 
 [up_sect_firste_val]
 ;—корострельность(3)25%
@@ -48,34 +48,34 @@ inv_weight              = +0.5
 cost		      		= 4680
 value					= +5
 
-rpm          = +30
+rpm          = +45
 
-inv_weight              = +0.15
+inv_weight              = +0.1
 
 [up_sect_firstf_val]
-;“очность(3)30%
+;“очность(3)20%
 ;---------------
 cost		      		= 4560
-value					= +25
+value					= +20
 
-fire_dispersion_base	= -0.2 	;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.06
+;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight              = +0.1
 
 [up_sect_secona_val]
 ;ќтдача(1)-10%
 ;------------
-cost		      		= 4640
-value                   = -10
+cost		      		= 3640
+value                   = -5
 
-cam_dispersion              = -0.05     ;0.5
-cam_dispersion_inc          = -0.02     ;0.5
-cam_step_angle_horz         = -0.09     ;1.5 [0.73 в остатке]
+cam_dispersion	        = -0.041
+cam_dispersion_inc      = -0.035
+cam_step_angle_horz     = -0.028		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.05     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.02     ;0.5
-zoom_cam_step_angle_horz    = -0.05     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.038
+zoom_cam_dispersion_inc     = -0.032
+zoom_cam_step_angle_horz    = -0.021
 
 inv_weight              = +0.05
 
@@ -87,9 +87,9 @@ value					= +15
 
 crosshair_inertion		   = -0.75
  
-PDM_disp_base 				= -0.1 ;0.5
-PDM_disp_vel_factor 		= -0.35 ;1.5
-PDM_disp_accel_factor 		= -0.35 ;1.5
+PDM_disp_base 				= -0.1
+PDM_disp_vel_factor 		= -0.35
+PDM_disp_accel_factor 		= -0.35
 
 inv_weight              = +0.025
 
@@ -99,11 +99,11 @@ inv_weight              = +0.025
 cost		      		= 4640
 value					= +25
 
-crosshair_inertion		   = -1.25
+crosshair_inertion		   = -1.0
  
-PDM_disp_base 				= -0.15 ;0.5
-PDM_disp_vel_factor 		= -0.4 ;1.5
-PDM_disp_accel_factor 		= -0.4 ;1.5
+PDM_disp_base 				= -0.15
+PDM_disp_vel_factor 		= -0.4
+PDM_disp_accel_factor 		= -0.4
 
 inv_weight              = +0.025
 
@@ -111,28 +111,28 @@ inv_weight              = +0.025
 ;ќтдача(3)-30%
 ;------------
 cost		      		= 4620
-value                   = -30
+value                   = -10
 
-cam_dispersion              = -0.16     ;0.5
-cam_dispersion_inc          = -0.06     ;0.5
-cam_step_angle_horz         = -0.18     ;1.5 [0.73 в остатке]
+cam_dispersion	        = -0.082
+cam_dispersion_inc      = -0.070
+cam_step_angle_horz     = -0.059		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.11     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.055        ;0.5
-zoom_cam_step_angle_horz    = -0.16     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.076
+zoom_cam_dispersion_inc     = -0.064
+zoom_cam_step_angle_horz    = -0.041
 
 inv_weight              = +0.1
 
 [up_sect_thirda_val]
-;Ќастильность(1)10%
+;Ќастильность(1)20%
 ;------------------
 cost		      		= 5520
 value					= +20
 
-bullet_speed            = +140
-fire_distance           = +120
+bullet_speed            = +60
+fire_distance           = +50
 
-fire_dispersion_base	= -0.10 ;0.7
+fire_dispersion_base	= -0.01
 
 inv_weight              = +0.05
 
@@ -142,16 +142,12 @@ inv_weight              = +0.05
 cost		      		= 5740
 value					= +20
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+;fire_dispersion_condition_factor    = -1 ;15
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
+
 misfire_start_prob	     	= -0.0018
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.014 ;0.03
+misfire_end_prob	     	= -0.014
 
 inv_weight              = +0.1
 
@@ -159,44 +155,43 @@ inv_weight              = +0.1
 ;“очность(2)20%
 ;---------------
 cost		      		= 4980
-value					= +25
+value					= +20
 
-fire_dispersion_base	= -0.20 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.06
+;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight              = +0.05
 
 [up_sect_thirde_val]
-;—корострельность(3)25%
+;—корострельность(3)5%
 ;----------------------
 cost		      		= 5720
 value					= +5
 
-rpm          = +30
+rpm          = +45
 
-inv_weight              = +0.15
-
+inv_weight              = +0.1
 
 [up_sect_thirdf_val]
-;Ќастильность(3)30%
+;Ќастильность(3)20%
 ;------------------
 cost		      		= 5580
 value					= +20
 
-bullet_speed            = +140
-fire_distance           = +120
+bullet_speed            = +60
+fire_distance           = +50
 
-fire_dispersion_base	= -0.25 ;0.7
+fire_dispersion_base	= -0.01
 
 inv_weight              = +0.1
 
 [up_sect_fourta_val]
-;—корострельность(1)10%
+;—корострельность(1)5%
 ;------------------
 cost		      		= 5940
 value					= +5
 
-rpm          = +30
+rpm          = +45
 
 inv_weight              = +0.15
 
@@ -206,27 +201,23 @@ inv_weight              = +0.15
 cost		      		= 4650
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+;fire_dispersion_condition_factor    = -1 ;15
+condition_shot_dec      	= -0.00015
+condition_queue_shot_dec	= -0.00015
+
 misfire_start_prob	     	= -0.0018
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.014 ;0.03
+misfire_end_prob	     	= -0.014
 
 inv_weight              = +0.1
 
 [up_sect_fourte_val]
-;“очность(3)30%
+;“очность(3)20%
 ;---------------
 cost		      		= 4920
-value					= +25
+value					= +20
 
-fire_dispersion_base	= -0.25 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.06
+;fire_dispersion_condition_factor    = -1 ;15
 
 inv_weight              = +0.05
 
@@ -234,15 +225,15 @@ inv_weight              = +0.05
 ;ќтдача(3)-30%
 ;------------
 cost		      		= 6140
-value                   = -30
+value                   = -10
 
-cam_dispersion              = -0.16     ;0.5
-cam_dispersion_inc          = -0.06     ;0.5
-cam_step_angle_horz         = -0.18     ;1.5 [0.73 в остатке]
+cam_dispersion	        = -0.082
+cam_dispersion_inc      = -0.070
+cam_step_angle_horz     = -0.059		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.11     ;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.055        ;0.5
-zoom_cam_step_angle_horz    = -0.16     ;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.076
+zoom_cam_dispersion_inc     = -0.064
+zoom_cam_step_angle_horz    = -0.041
 
 inv_weight              = +0.1
 
@@ -252,7 +243,9 @@ inv_weight              = +0.1
 cost		      		= 2160
 value					= +10
 
-ammo_mag_size        	= +10 
+ammo_mag_size        	= +10
+
+inv_weight              = +0.12
 
 [up_firsta_val]
 scheme_index            = 0, 0

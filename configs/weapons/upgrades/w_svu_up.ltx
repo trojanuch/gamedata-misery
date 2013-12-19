@@ -4,7 +4,7 @@
 cost		      		= 5120
 value					= +10
 
-fire_dispersion_base    = -0.02  	;0.15
+fire_dispersion_base    = -0.015
 
 inv_weight			= +0.134
 
@@ -14,27 +14,23 @@ inv_weight			= +0.134
 cost		      		= 4860
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
 ;fire_dispersion_condition_factor    = -1.5 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= -0.001
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.01 ;0.03
+condition_shot_dec      	= -0.0006
+condition_queue_shot_dec	= -0.0006
 
-inv_weight			= +0.224
+misfire_start_prob	     	= -0.001
+misfire_end_prob	     	= -0.01
+
+inv_weight			= +0.14
 
 [up_sect_firste_svu]
-;Настильность(3)30%
+;Настильность(3)25%
 ;------------------ 
 cost		      		= 6210
-value					= +30
+value					= +25
 
 bullet_speed			= +200
-fire_dispersion_base    = -0.03  
+fire_dispersion_base    = -0.01
 
 inv_weight			= +0.112
 
@@ -44,7 +40,7 @@ inv_weight			= +0.112
 cost		      		= 6480
 value					= +30
 
-fire_dispersion_base    = -0.06  	;0.15
+fire_dispersion_base    = -0.045
 ;fire_dispersion_condition_factor    = -1.5
 
 inv_weight			= +0.142
@@ -55,34 +51,29 @@ inv_weight			= +0.142
 cost		      		= 5490
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
 ;fire_dispersion_condition_factor    = -1.5 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0005 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0005 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= -0.0005
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.005 ;0.03
+condition_shot_dec      	= -0.0003
+condition_queue_shot_dec	= -0.0003
 
-inv_weight			= +0.238
+misfire_start_prob	     	= -0.0005
+misfire_end_prob	     	= -0.005
+
+inv_weight			= +0.1
 
 [up_sect_seconc_svu]
 ;Отдача(2)20%
 ;---------------
-cost		      		= 7480
-value                   = -20
+cost		      		= 5680
+value                   = -10
 
-cam_dispersion         = -0.2      ;1.8
-cam_dispersion_inc     = -0.2      ;1.8
-cam_step_angle_horz    = -0.2      ;0.25
-cam_relax_speed        = +0.05
+cam_dispersion          = -0.138 ;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.138	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz     = -0.241 ;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.2      ;1.8
-zoom_cam_dispersion_inc     = -0.2      ;1.8
-zoom_cam_step_angle_horz    = -0.2      ;0.25
-zoom_cam_relax_speed        = +0.05
+zoom_cam_dispersion         = -0.118
+zoom_cam_dispersion_inc     = -0.118
+zoom_cam_step_angle_horz    = -0.203
+
 inv_weight			= +0.202
 
 [up_sect_second_svu]
@@ -91,18 +82,14 @@ inv_weight			= +0.202
 cost		      		= 5890
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
 ;fire_dispersion_condition_factor    = -1.5 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= -0.001
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.01 ;0.03
+condition_shot_dec      	= -0.0004
+condition_queue_shot_dec	= -0.0004
 
-inv_weight			= +0.26
+misfire_start_prob	     	= -0.001
+misfire_end_prob	     	= -0.01
+
+inv_weight			= +0.2
 
 [up_sect_secone_svu]
 ;Интегрированный глушитель
@@ -117,7 +104,15 @@ silencer_y              = 13
 snd_silncer_shot        = weapons\silencers\silencer_545x39
 silencer_smoke_particles   = weapons\generic_shoot_00
 
-inv_weight			= +0.142
+cam_dispersion          = -0.069 ;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.069	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz     = -0.121 ;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.059
+zoom_cam_dispersion_inc     = -0.059
+zoom_cam_step_angle_horz    = -0.101
+
+inv_weight			= +0.46
 
 [up_sect_seconf_svu]
 ;Скорострельность(3)25%
@@ -133,17 +128,15 @@ rpm 					= +45
 cost		      		= 5620
 value                   = -10
 
-cam_dispersion         = -0.1      ;1.8
-cam_dispersion_inc     = -0.1      ;1.8
-cam_step_angle_horz    = -0.1      ;0.25
-cam_relax_speed        = +0.05
+cam_dispersion          = -0.138 ;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.138	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz     = -0.241 ;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion         = -0.1      ;1.8
-zoom_cam_dispersion_inc     = -0.1      ;1.8
-zoom_cam_step_angle_horz    = -0.1      ;0.25
-zoom_cam_relax_speed        = +0.05
+zoom_cam_dispersion         = -0.118
+zoom_cam_dispersion_inc     = -0.118
+zoom_cam_step_angle_horz    = -0.203
 
-inv_weight			= +0.186
+inv_weight			= +0.18
 
 [up_sect_thirdc_svu]
 ;Удобство(2)20%
@@ -153,18 +146,18 @@ value					= +20
 
 crosshair_inertion			= -1.5
 
-PDM_disp_base 				= -0.5
-PDM_disp_vel_factor 		= -1.5
-PDM_disp_accel_factor 		= -1.5
+PDM_disp_base 				= -0.85
+PDM_disp_vel_factor 		= -1.25
+PDM_disp_accel_factor 		= -1.25
 
-inv_weight			= +0.22
+inv_weight			= -0.22
 
 [up_sect_fourta_svu]
-;5x прицел.
+;8x прицел ПСО-3.
 ;------------
-cost		      		= 3110
+cost		      		= 1110
 
-scope_zoom_factor       = -26 
+scope_zoom_factor       = -12
 
 [up_sect_fourtc_svu]
 ;Контрастный прицел
@@ -172,8 +165,7 @@ scope_zoom_factor       = -26
 cost		      		= 4240
 
 scope_nightvision = scope_contrast
-
-inv_weight			= +0.01
+inv_weight			= +0.05
 
 [up_sect_fourte_svu]
 ;ПНВ
@@ -181,8 +173,7 @@ inv_weight			= +0.01
 cost		      		= 4880
 
 scope_nightvision = scope_nightvision
-
-inv_weight			= +0.05
+inv_weight			= +0.27
 
 [up_sect_fourtf_svu]
 ;Регулируемый прицел
@@ -190,7 +181,6 @@ inv_weight			= +0.05
 cost		      		= 5990
 
 scope_dynamic_zoom = on
-
 inv_weight			= +0.01
 
 [up_sect_fiftha_svu]

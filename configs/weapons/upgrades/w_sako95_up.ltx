@@ -1,8 +1,78 @@
+[up_sect_firsta_sako95]
+;Отдача(1)-10%
+;------------
+cost		      		= 3690
+value                   = -10
+
+cam_dispersion	         	= -0.093
+cam_dispersion_inc         	= -0.065
+cam_step_angle_horz        	= -0.115		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.075
+zoom_cam_dispersion_inc      = -0.053
+zoom_cam_step_angle_horz     = -0.105
+
+inv_weight			= +0.25
+
+[up_sect_firstf_sako95]
+;Отдача(3)-30%
+;------------
+cost		      		= 4130
+value                   = -10
+
+cam_dispersion	         	= -0.093
+cam_dispersion_inc         	= -0.065
+cam_step_angle_horz        	= -0.115		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.075
+zoom_cam_dispersion_inc      = -0.053
+zoom_cam_step_angle_horz     = -0.105
+
+inv_weight			= +0.2
+
+[up_sect_secona_sako95]
+;Удобство(1)5%
+;--------------
+cost		      		= 3220
+value					= -5
+
+crosshair_inertion		   = -0.25
+ 
+PDM_disp_base 				= -0.07
+PDM_disp_vel_factor 		= -0.1
+PDM_disp_accel_factor 		= -0.1
+
+cam_dispersion	         	= -0.046
+cam_dispersion_inc         	= -0.033
+cam_step_angle_horz        	= -0.057		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.047
+zoom_cam_dispersion_inc      = -0.025
+zoom_cam_step_angle_horz     = -0.051
+
+inv_weight			= +0.15
+
+[up_sect_thirdd_sako95]
+;Отдача(2)-20%
+;------------
+cost		      		= 4480
+value                   = -10
+
+cam_dispersion	         	= -0.093
+cam_dispersion_inc         	= -0.065
+cam_step_angle_horz        	= -0.115		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.075
+zoom_cam_dispersion_inc      = -0.053
+zoom_cam_step_angle_horz     = -0.105
+
+inv_weight			= +0.25
+
 [up_firsta_sako95]
 scheme_index            = 0, 0
 known                   = 1
 effects                 = up_gr_firstcd_sako95
-section                 = up_sect_firsta_ak74
+section                 = up_sect_firsta_sako95
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -66,7 +136,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_3
 scheme_index            = 2, 1
 known                   = 1
 effects                 = 
-section                 = up_sect_firstf_ak74
+section                 = up_sect_firstf_sako95
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -86,7 +156,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_4
 scheme_index            = 0, 1
 known                   = 1
 effects                 = up_gr_seconcd_sako95
-section                 = up_sect_secona_ak74
+section                 = up_sect_secona_sako95
 property                = prop_inertion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -210,7 +280,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_10
 scheme_index            = 1, 4
 known                   = 1
 effects                 = up_gr_thirdef_sako95
-section                 = up_sect_thirdd_ak74
+section                 = up_sect_thirdd_sako95
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -314,8 +384,8 @@ icon                    = ui_inGame2_upgrade_AKM_74_2_15
 scheme_index            = 0, 4
 known                   = 1
 effects                 = 
-section                 = up_sect_empty
-property                = prop_not_available_no_reason
+section                 = up_sect_fourta_g36
+property                = prop_scope_4x
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -326,20 +396,19 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_upgrade_not_available_name
-description             = st_up_upgrade_not_available_descr
-icon                    = ui_inGame2_upgrade_unavailable
+name                    = st_up_opt_a2_name
+description             = st_up_opt_a2_descr
+icon                    = ui_inGame2_upgrade_GP37_13
 
 [up_fifthc_sako95]
 scheme_index            = 1, 6
 known                   = 1
 effects                 = 
-section                 = up_sect_fifthc_ak74
-property                = prop_calibre
-
+section                 = up_sect_fourtc_g36
+property                = prop_contrast 
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = true
+precondition_parameter  = a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -347,10 +416,29 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_add_b2_name
-description             = st_up_add_b2_descr
-icon                    = ui_inGame2_upgrade_AKM_74_2_17
+name                    = st_up_opt_b1_name
+description             = st_up_opt_b1_descr
+icon                    = ui_inGame2_upgrade_GP37_14
 
+[up_fifthe_sako95]
+scheme_index            = 2, 5
+known                   = 1
+effects                 = 
+section                 = up_sect_fourte_g36
+property                = prop_nightvision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_opt_c2_name
+description             = st_up_opt_c2_descr
+icon                    = ui_inGame2_upgrade_GP37_15
 
 [up_gr_firstab_sako95]
 elements                = up_firsta_sako95
@@ -393,3 +481,6 @@ elements                = up_fiftha_sako95
 
 [up_gr_fifthcd_sako95]
 elements                = up_fifthc_sako95
+
+[up_gr_fifthef_sako95]
+elements                = up_fifthe_sako95

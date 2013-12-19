@@ -62,18 +62,6 @@ angle_offset			 = 1.570790,1.570790,3.92699
 
 use_sound			= interface\inv_batt
 
-[batteries_empty]:batteries_dead
-
-inv_name			= st_batteries_empty
-inv_name_short		= st_batteries_empty
-description			= st_batteries_empty_descr
-
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 12
-inv_grid_y			= 19
-cost				= 32
-
 [batteries_ccell]:booster
 $spawn 				= "food and drugs\kolbasa"
 $prefetch 			= 16
@@ -106,3 +94,55 @@ use_sound			= interface\inv_batt
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;DEAD BATTERIES;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[batteries_empty]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+radius				= 68; 50
+
+visual          = dynamics\equipments\trade\battery.ogf
+inv_name			= st_batteries_empty
+inv_name_short		= st_batteries_empty
+description			= st_batteries_empty_descr
+
+inv_weight   	= 0.139
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 12
+inv_grid_y			= 19
+cost    		= 32
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+
+[batteries_dead_empty]:batteries_empty
+
+inv_name			= st_batteries_dead_empty
+inv_name_short		= st_batteries_dead_empty
+description			= st_batteries_dead_empty_descr
+inv_weight   		= 0.127
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 12
+inv_grid_y			= 19
+
+[batteries_ccell_empty]:batteries_empty
+
+inv_name			= st_batteries_ccell_empty
+inv_name_short		= st_batteries_ccell_empty
+description			= st_batteries_ccell_empty_descr
+inv_weight   		= 0.141
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 17

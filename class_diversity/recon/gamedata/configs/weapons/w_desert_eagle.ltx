@@ -13,7 +13,7 @@ ef_weapon_type					= 5
 
 ;-----------------------------------------------------------------------------
 cost					= 14480
-inv_weight				= 1.986
+inv_weight				= 1.715
 
 upgrades                = up_gr_firstab_desert_eagle, up_gr_seconab_desert_eagle, up_gr_thirdab_desert_eagle, up_gr_fourtab_desert_eagle, up_gr_fifthab_desert_eagle
 installed_upgrades      =
@@ -21,12 +21,12 @@ upgrade_scheme          = upgrade_scheme_desert_eagle
 
 ;--TTX----------------------------------------------------------------------------
 
-hit_power           	= 0.455, 0.455, 0.455, 0.455
+hit_power           	= 0.465, 0.465, 0.465, 0.465
 hit_impulse	 		 	= 45
 hit_type 				= fire_wound
 fire_distance           = 650
-bullet_speed		 	= 420
-rpm                     	= 280
+bullet_speed		 	= 440
+rpm                     = 280
 rpm_empty_click 	 	= 120
 
 use_aim_bullet					= false		;Поддерживается ли первая суппер пуля
@@ -40,7 +40,7 @@ misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.007
 misfire_end_prob = 0.11 ;	     	= 0.07
 condition_shot_dec      	= 0.0024
-condition_queue_shot_dec	= 0.0026
+condition_queue_shot_dec	= 0.0024
 
 ammo_elapsed		 	= 9
 ammo_mag_size		 	= 9
@@ -54,20 +54,20 @@ reload_dof				= 0.0, 0.5, 5, 1.7
 
 ;--дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.66		;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.03 ;		= 0.93
+fire_dispersion_base		= 0.54		;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.05f
 crosshair_inertion   	= 4.3
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
+cam_return = 0 ;				= 0
 cam_relax_speed         	= 6			;скорость возврата в исходное положение
 cam_relax_speed_ai      	= 120.75
-cam_dispersion          	= 1.92		;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc			= 1.94		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          	= 1.91		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 1.98		;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac			= 0.92		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle				= 15.0		;максимальный угол отдачи
-cam_max_angle_horz			= 15.0		;(degree) maximum shot horizontal degree
-cam_step_angle_horz			= 1.0		;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle				= 50.0		;максимальный угол отдачи
+cam_max_angle_horz			= 50.0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz			= 1.14		;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.85
 PDM_disp_vel_factor 		= 1.05
@@ -257,16 +257,16 @@ ammo_class		 		= ammo_357_hp_mag_ap, ammo_357_hp_mag
 [wpn_desert_eagle_custom]:wpn_desert_eagle
 
 cost					= 17660
-inv_weight				= 1.926
+inv_weight				= 1.655
 
 upgrades                = up_gr_firstab_desert_eagle_custom, up_gr_seconab_desert_eagle_custom, up_gr_thirdab_desert_eagle_custom, up_gr_fourtab_desert_eagle_custom, up_gr_fifthab_desert_eagle_custom
 installed_upgrades      = up_fiftha_desert_eagle_custom, up_thirda_desert_eagle_custom, up_thirdc_desert_eagle_custom
 
-hit_power           	= 0.455, 0.455, 0.455, 0.455
+hit_power           	= 0.48, 0.48, 0.48, 0.48
 hit_impulse	 		 	= 45
 fire_distance           = 650
-bullet_speed		 	= 420
-rpm                     = 210
+bullet_speed		 	= 455
+rpm                     = 300
 
 hud                     	= wpn_desert_eagle_custom_hud
 
@@ -275,11 +275,9 @@ misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.007
 misfire_end_prob = 0.11 ;	     	= 0.07
 condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0022
+condition_queue_shot_dec	= 0.0020
 
-ammo_mag_size		 	= 9
-
-fire_dispersion_base		= 0.65
+fire_dispersion_base		= 0.6
 
 inv_name				= st_wpn_eagle_custom
 inv_name_short			= st_wpn_eagle_custom
@@ -300,16 +298,16 @@ item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_hu
 [wpn_desert_eagle_alt]:wpn_desert_eagle
 
 cost					= 15540
-inv_weight				= 1.884
+inv_weight				= 1.613
 
 upgrades                = up_gr_firstab_desert_eagle_alt, up_gr_seconab_desert_eagle_alt, up_gr_thirdab_desert_eagle_alt, up_gr_fourtab_desert_eagle_alt, up_gr_fifthab_desert_eagle_alt
 installed_upgrades      = up_secona_desert_eagle_alt
 
-hit_power           	= 0.455, 0.455, 0.455, 0.455
+hit_power           	= 0.465, 0.465, 0.465, 0.465
 hit_impulse	 		 	= 45
 fire_distance           = 650
-bullet_speed		 	= 420
-rpm                     	= 280
+bullet_speed		 	= 440
+rpm                     = 280
 
 hud                     	= wpn_desert_eagle_alt_hud
 
@@ -318,9 +316,7 @@ misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.007
 misfire_end_prob = 0.11 ;	     	= 0.07
 condition_shot_dec      	= 0.0024
-condition_queue_shot_dec	= 0.0026
-
-ammo_mag_size		 	= 9
+condition_queue_shot_dec	= 0.0024
 
 fire_dispersion_base		= 0.66
 
@@ -343,16 +339,16 @@ item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl1_hu
 [wpn_desert_eagle_camo]:wpn_desert_eagle
 
 cost					= 18460
-inv_weight				= 1.827
+inv_weight				= 1.556
 
 upgrades                = up_gr_firstab_desert_eagle_camo, up_gr_seconab_desert_eagle_camo, up_gr_thirdab_desert_eagle_camo, up_gr_fourtab_desert_eagle_camo, up_gr_fifthab_desert_eagle_camo
 installed_upgrades      = up_thirda_desert_eagle_camo, up_fourta_desert_eagle_camo, up_fourtc_desert_eagle_camo, up_firsta_desert_eagle_camo
 
-hit_power           	= 0.455, 0.455, 0.455, 0.455
+hit_power           	= 0.503, 0.503, 0.503, 0.503
 hit_impulse	 		 	= 45
-fire_distance           = 650
-bullet_speed		 	= 420
-rpm                     = 220
+fire_distance           = 700
+bullet_speed		 	= 470
+rpm                     = 310
 
 hud                     	= wpn_desert_eagle_camo_hud
 
@@ -363,9 +359,7 @@ misfire_end_prob = 0.11 ;	     	= 0.06
 condition_shot_dec      	= 0.0018
 condition_queue_shot_dec	= 0.0018
 
-ammo_mag_size		 	= 9
-
-fire_dispersion_base		= 0.65
+fire_dispersion_base		= 0.57
 
 inv_name			= st_wpn_eagle_camo
 inv_name_short			= st_wpn_eagle_camo
@@ -387,15 +381,15 @@ item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl3_hu
 [wpn_desert_eagle_worn]:wpn_desert_eagle
 
 cost					= 12740
-inv_weight				= 2.0
+inv_weight				= 1.73
 
 upgrades                = up_gr_firstab_desert_eagle_worn, up_gr_seconab_desert_eagle_worn, up_gr_thirdab_desert_eagle_worn, up_gr_fourtab_desert_eagle_worn, up_gr_fifthab_desert_eagle_worn
 
 hit_power           	= 0.405, 0.405, 0.405, 0.405
 hit_impulse	 		 	= 45
-fire_distance           = 612
-bullet_speed		 	= 391
-rpm                     = 176
+fire_distance           = 600
+bullet_speed		 	= 405
+rpm                     = 266
 
 hud                     	= wpn_desert_eagle_worn_hud
 
@@ -404,11 +398,9 @@ misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.009
 misfire_end_prob = 0.11 ;	     	= 0.09
 condition_shot_dec      	= 0.0030
-condition_queue_shot_dec	= 0.0032
+condition_queue_shot_dec	= 0.0030
 
 silencer_status				= 0
-
-ammo_mag_size		 	= 9
 
 fire_dispersion_base		= 1.06
 
@@ -442,12 +434,12 @@ installed_upgrades      = up_fiftha_desert_eagle_custom, up_thirda_desert_eagle_
 
 ;--TTX----------------------------------------------------------------------------
 
-hit_power           	= 0.485, 0.485, 0.485, 0.485
+hit_power           	= 0.52, 0.52, 0.52, 0.52
 hit_impulse	 		 	= 45
 hit_type 				= fire_wound
-fire_distance           = 690
-bullet_speed		 	= 460
-rpm                     = 225
+fire_distance           = 700
+bullet_speed		 	= 477
+rpm                     = 315
 
 fire_dispersion_base		= 0.54
 

@@ -60,6 +60,7 @@ end
 -- Итерируемся по НПС, начинаем со свободных нпс, потом НПС на низкоприоритетных работах, потом на высокоприоритетных.
 -- Для каждого конкретного НПС ищем работу.
 -- Отсеиваем в поиске работы, приоритет которых ниже, чем у текущей.
+--[[
 local function job_iterator(jobs, npc_data, selected_job_prior, smart)
 	--printf("  iterate")
 	-- итерируемся по работам
@@ -87,6 +88,47 @@ local function job_iterator(jobs, npc_data, selected_job_prior, smart)
 			end
 		end
 	end
+	return selected_job_id, current_job_prior, selected_job_link
+end--]]
+
+-------------------------------------------------------------------
+--Revolucas's job_iterator rewrite
+-------------------------------------------------------------------
+local function job_iterator(jobs, npc_data, selected_job_prior, smart)
+	local tbl = jobs
+	local deepest
+	local list = {}
+	local current_job_prior = selected_job_prior
+	local selected_job_id, selected_job_link
+	while not deepest do
+		for k,v in pairs(tbl) do
+			-- This check is necessary to decide which table to recurse. If NPC is monster, he'll only recurse
+			-- down monster table or if they are a stalker, they'll only use the stalker table
+			if (v._precondition_is_monster == nil or npc_data.is_monster == v._precondition_is_monster) then
+				-- Take the highest priority job available
+				if (v._prior > current_job_prior and v.job_id and job_avail_to_npc(npc_data, v, smart)) and (v.npc_id == nil or v.job_id == npc_data.job_id) then
+					selected_job_id = v.job_id
+					current_job_prior = v._prior
+					selected_job_link = v
+				end
+				if (v.jobs and type(v.jobs) == "table") then
+					-- Store newly found tables separately, to loop through later
+					-- This way, ALL tables will be searched through until the deepest depth is reached
+					table.insert(list,v.jobs)
+				end
+			end
+		end
+
+		if (#list > 0) then
+			-- Points to new table to loop though
+			tbl = list[#list]
+			list[#list] = nil
+		else
+			-- All tables have been searched
+			deepest = true
+		end
+	end
+
 	return selected_job_id, current_job_prior, selected_job_link
 end
 

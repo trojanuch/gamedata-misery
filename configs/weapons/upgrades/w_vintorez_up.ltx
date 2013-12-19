@@ -4,27 +4,26 @@
 cost		      		= 3720
 value					= +10
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_shot_dec      	= -0.0001
+condition_queue_shot_dec	= -0.0001
+
 misfire_start_prob	     	= -0.001
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.013 ;0.03
+misfire_end_prob	     	= -0.013
 
 inv_weight              = +0.15
 
 [up_sect_firstc_vintorez]
-;Отдача(2)-15%
-cost		      		= 3940
-value                   = -20
+;Отдача(2)-20%
+cost		      		= 4940
+value                   = -10
 
-cam_dispersion              = -0.1      ;0.1
-cam_dispersion_inc          = -0.04     ;0.6
-cam_step_angle_horz         = -0.15     ;0.6
+cam_dispersion	        = -0.087
+cam_dispersion_inc      = -0.078
+cam_step_angle_horz     = -0.062		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion          = -0.04    ;0.1
-zoom_cam_dispersion_inc      = -0.02    ;0.5
-zoom_cam_step_angle_horz     = -0.06    ;0.5
+zoom_cam_dispersion         = -0.083
+zoom_cam_dispersion_inc     = -0.071
+zoom_cam_step_angle_horz    = -0.044
 
 inv_weight              = +0.05
 
@@ -32,12 +31,12 @@ inv_weight              = +0.05
 ;Настильность(2)20%
 ;------------------
 cost		      		= 3760
-value					= +10
+value					= +20
 
-bullet_speed            = +80
-fire_distance           = +78
+bullet_speed            = +60
+fire_distance           = +50
 
-fire_dispersion_base    = -0.16
+fire_dispersion_base    = -0.01
 
 inv_weight              = +0.1
 
@@ -47,35 +46,34 @@ inv_weight              = +0.1
 cost		      		= 3350
 value					= +25
 
-crosshair_inertion			= -1.5
+crosshair_inertion			= -1.0
 
-PDM_disp_base 				= -0.2
-PDM_disp_vel_factor 		= -0.4
-PDM_disp_accel_factor 		= -0.4
+PDM_disp_base 				= -0.15
+PDM_disp_vel_factor 		= -0.35
+PDM_disp_accel_factor 		= -0.35
 
 inv_weight              = +0.05
 
 [up_sect_firstf_vintorez]
-;Точность(3)30%
+;Точность(3)20%
 ;--------------
 cost		      		= 2840
 value					= +20
 
-fire_dispersion_base	= -0.34 	;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.04
 
 inv_weight              = +0.05
 
 [up_sect_secona_vintorez]
-;Настильность(1)10%
+;Настильность(1)20%
 ;------------------
 cost		      		= 3720
-value					= +10
+value					= +20
 
-bullet_speed            = +80
-fire_distance           = +78
+bullet_speed            = +60
+fire_distance           = +50
 
-fire_dispersion_base    = -0.08 
+fire_dispersion_base    = -0.01
 
 inv_weight              = +0.1
 
@@ -85,16 +83,11 @@ inv_weight              = +0.1
 cost		      		= 3670
 value					= +15
 
-;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
-;шанс осечки при изношености больше чем misfireStartCondition
+condition_queue_shot_dec	= -0.0002
+condition_shot_dec      	= -0.0002
+
 misfire_start_prob	     	= -0.002
-;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.023 ;0.03
+misfire_end_prob	     	= -0.023
 
 inv_weight              = +0.2
 
@@ -104,8 +97,7 @@ inv_weight              = +0.2
 cost		      		= 2880
 value					= +20
 
-fire_dispersion_base	= -0.16 	;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.04
 
 inv_weight              = +0.05
 
@@ -113,28 +105,28 @@ inv_weight              = +0.05
 ;Настильность(3)30%
 ;------------------
 cost		      		= 3800
-value					= +10
+value					= +20
 
-bullet_speed            = +80
-fire_distance           = +78
+bullet_speed            = +60
+fire_distance           = +50
 
-fire_dispersion_base    = -0.16
+fire_dispersion_base    = -0.01
 
 inv_weight              = +0.1
-' 
+
 [up_sect_thirda_vintorez]
 ;Отдача(1)-10%
 ;------------
-cost		      		= 4380
+cost		      		= 4980
 value                   = -10
 
-cam_dispersion              = -0.05     ;0.1
-cam_dispersion_inc          = -0.03     ;0.6
-cam_step_angle_horz         = -0.1      ;0.6
+cam_dispersion	        = -0.087
+cam_dispersion_inc      = -0.078
+cam_step_angle_horz     = -0.062		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion          = -0.03    ;0.1
-zoom_cam_dispersion_inc      = -0.01    ;0.5
-zoom_cam_step_angle_horz     = -0.04    ;0.5
+zoom_cam_dispersion         = -0.083
+zoom_cam_dispersion_inc     = -0.071
+zoom_cam_step_angle_horz    = -0.044
 
 inv_weight              = +0.05
 
@@ -144,7 +136,7 @@ inv_weight              = +0.05
 cost		      		= 4120
 value					= +15
 
-crosshair_inertion			= -1.5
+crosshair_inertion			= -0.75
 
 PDM_disp_base 				= -0.08
 PDM_disp_vel_factor 		= -0.2
@@ -158,38 +150,36 @@ inv_weight              = +0.05
 cost		      		= 4010
 value					= +25
 
-crosshair_inertion			= -1.5
+crosshair_inertion			= -1.0
 
-PDM_disp_base 				= -0.1
-PDM_disp_vel_factor 		= -0.4
-PDM_disp_accel_factor 		= -0.4
+PDM_disp_base 				= -0.15
+PDM_disp_vel_factor 		= -0.35
+PDM_disp_accel_factor 		= -0.35
 
 inv_weight              = +0.05
 
 [up_sect_thirdf_vintorez]
 ;Отдача(3)-30%
 ;------------
-cost		      		= 4360
-value                   = -30
+cost		      		= 5260
+value                   = -10
 
-cam_dispersion              = -0.15     ;0.1
-cam_dispersion_inc          = -0.08     ;0.6
-cam_step_angle_horz         = -0.2      ;0.6
+cam_dispersion	        = -0.087
+cam_dispersion_inc      = -0.078
+cam_step_angle_horz     = -0.062		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion          = -0.08    ;0.1
-zoom_cam_dispersion_inc      = -0.03    ;0.5
-zoom_cam_step_angle_horz     = -0.1 ;0.5
+zoom_cam_dispersion         = -0.083
+zoom_cam_dispersion_inc     = -0.071
+zoom_cam_step_angle_horz    = -0.044
 
 inv_weight              = +0.1
 
 [up_sect_fourta_vintorez]
-;Оптика 4.0икс
+;Оптика 8икс
 ;------------------
-cost		      		= 3320
+cost		      		= 1320
 
-scope_zoom_factor       = -26 
-
-inv_weight              = +0.05
+scope_zoom_factor       = -12
 
 [up_sect_fourtc_vintorez]
 ;Контрастный прицел
@@ -197,8 +187,7 @@ inv_weight              = +0.05
 cost		      		= 480
 
 scope_nightvision = scope_contrast
-
-inv_weight              = +0.03
+inv_weight              = +0.05
 
 [up_sect_fourte_vintorez]
 ;ПНВ
@@ -206,8 +195,7 @@ inv_weight              = +0.03
 cost		      		= 4860
 
 scope_nightvision = scope_nightvision
-
-inv_weight              = +0.05
+inv_weight              = +0.27
 
 [up_sect_fourtf_vintorez]
 ;Тепловизор
@@ -576,7 +564,6 @@ prereq_params           =
 name                    = st_up_opt_c3_name
 description             = st_up_opt_c3_descr
 icon                    = ui_inGame2_upgrade_Vintar_VS_17
-
 
 
 [up_gr_firstab_vintorez]

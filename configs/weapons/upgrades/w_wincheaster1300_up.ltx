@@ -4,48 +4,46 @@
 cost		      		= 2150
 value					= +10
 
-condition_queue_shot_dec	= -0.0003
-condition_shot_dec      	= -0.0003
+condition_queue_shot_dec	= -0.00015
+condition_shot_dec      	= -0.00015
 
-inv_weight 					= +0.2
+inv_weight 					= +0.12
 
 [up_sect_firstc_wincheaster1300]
-;Настильность(2)20%
+;Настильность(2)10%
 ;------------------
 cost		      		= 2330
 value					= +10
 
-bullet_speed            = +44
-fire_distance            = +46
-
-hit_impulse      		= +5
+bullet_speed            = +45
+fire_distance           = +40
 fire_dispersion_base	= -0.03
 
-inv_weight 					= +0.15
+inv_weight 				= +0.15
 
 [up_sect_firstd_wincheaster1300]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 2520
-value                   = -20
+cost		      		= 2920
+value                   = -10
 
-cam_dispersion              = -0.3      ;0.7
-cam_dispersion_inc          = -0.3      ;0.7
-cam_step_angle_horz         = -0.3      ;0.7
+cam_dispersion          = -0.204	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.364	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.171	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion          = -0.3     ;0.6
-zoom_cam_dispersion_inc      = -0.3     ;0.6
-zoom_cam_step_angle_horz     = -0.3     ;0.6
+zoom_cam_dispersion			= -0.191
+zoom_cam_dispersion_inc		= -0.296
+zoom_cam_step_angle_horz	= -0.152
 
 inv_weight 					= +0.15
 
 [up_sect_firste_wincheaster1300]
-;Точность(3)30%
+;Точность(3)20%
 ;---------------
 cost		      		= 2460
 value					= +20
 
-fire_dispersion_base	= -0.07
+fire_dispersion_base	= -0.1
 ;fire_dispersion_condition_factor    = -0.5
 
 inv_weight 					= +0.1
@@ -68,11 +66,11 @@ PDM_disp_accel_factor 		= -0.2
 cost		      		= 2260
 value					= +15
 
-crosshair_inertion			= -1.5
+crosshair_inertion			= -1.0
 
 PDM_disp_base 				= -0.1
-PDM_disp_vel_factor 		= -0.5
-PDM_disp_accel_factor 		= -0.5
+PDM_disp_vel_factor 		= -0.4
+PDM_disp_accel_factor 		= -0.4
 
 inv_weight 					= +0.05
 
@@ -82,26 +80,24 @@ inv_weight 					= +0.05
 cost		      		= 2640
 value					= +15
 
+condition_shot_dec      	= -0.0002
+condition_queue_shot_dec	= -0.0002
 
-condition_queue_shot_dec	= -0.0005 ;0.0013
-
-condition_shot_dec      	= -0.0005 ;0.0011
-
-inv_weight 					= +0.25
+inv_weight 					= +0.2
 
 [up_sect_secone_wincheaster1300]
 ;Отдача(3)-30%
 ;------------
-cost		      		= 2660
-value                   = -30
+cost		      		= 3460
+value                   = -10
 
-cam_dispersion              = -0.5      ;0.7
-cam_dispersion_inc          = -0.5      ;0.7
-cam_step_angle_horz         = -0.5      ;0.7
+cam_dispersion          = -0.204	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.364	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.171	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion          = -0.6     ;0.6
-zoom_cam_dispersion_inc      = -0.6     ;0.6
-zoom_cam_step_angle_horz     = -0.6     ;0.6
+zoom_cam_dispersion			= -0.191
+zoom_cam_dispersion_inc		= -0.296
+zoom_cam_step_angle_horz	= -0.152
 
 inv_weight 					= +0.15
 
@@ -111,10 +107,8 @@ inv_weight 					= +0.15
 cost		      		= 2350
 value					= +10
 
-
-condition_queue_shot_dec	= -0.0003 ;0.0013
-
-condition_shot_dec      	= -0.0003 ;0.0011
+condition_shot_dec      	= -0.00015
+condition_queue_shot_dec	= -0.00015
 
 inv_weight 					= +0.2
 
@@ -124,7 +118,7 @@ inv_weight 					= +0.2
 cost		      		= 2340
 value					= +20
 
-fire_dispersion_base	= -0.04
+fire_dispersion_base	= -0.1
 ;fire_dispersion_condition_factor    = -0.2
 
 inv_weight 					= +0.05
@@ -132,16 +126,16 @@ inv_weight 					= +0.05
 [up_sect_thirdd_wincheaster1300]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 1840
-value                   = -20
+cost		      		= 2840
+value                   = -10
 
-cam_dispersion              = -0.3      ;0.7
-cam_dispersion_inc          = -0.3      ;0.7
-cam_step_angle_horz         = -0.3      ;0.7
+cam_dispersion          = -0.204	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.364	;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.171	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_dispersion          = -0.3     ;0.6
-zoom_cam_dispersion_inc      = -0.3     ;0.6
-zoom_cam_step_angle_horz     = -0.3     ;0.6
+zoom_cam_dispersion			= -0.191
+zoom_cam_dispersion_inc		= -0.296
+zoom_cam_step_angle_horz	= -0.152
 
 inv_weight 					= +0.1
 
@@ -151,22 +145,20 @@ inv_weight 					= +0.1
 cost		      		= 2840
 value					= +30
 
-
-condition_queue_shot_dec	= -0.0007 ;0.0013
-
-condition_shot_dec      	= -0.0007 ;0.0011
+condition_shot_dec      	= -0.0004
+condition_queue_shot_dec	= -0.0004
 
 inv_weight 					= +0.3
 
 [up_sect_thirdf_wincheaster1300]
-;Скорострельность(3)25%
+;Скорострельность(3)30%
 ;----------------------
 cost		      		= 2440
-value					= +25
+value					= +30
 
-rpm                     = +70
+rpm                     = +30
 
-inv_weight 					= +0.25
+inv_weight 					= +0.1
 
 [up_sect_fourta_wincheaster1300]
 ;Расширенный объем магазина
@@ -174,9 +166,9 @@ inv_weight 					= +0.25
 cost		      		= 1960
 value					= +2
 
-ammo_mag_size		 		= 2
+ammo_mag_size		 		= +2
 
-inv_weight 					= +0.2
+inv_weight 					= +0.08
 
 [up_firsta_wincheaster1300]
 scheme_index            = 0, 0

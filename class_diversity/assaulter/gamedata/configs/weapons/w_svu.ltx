@@ -16,18 +16,18 @@ sprint_allowed          = true
 ;-------------------------------------------------------------------------------
 cost                    = 46420
 weapon_class			= sniper_rifle
-inv_weight              = 4.196
+inv_weight              = 4.4
 
 upgrades                = up_gr_firstab_svu, up_gr_seconab_svu, up_gr_thirdab_svu, up_gr_fourtab_svu, up_gr_fourtcd_svu, up_gr_fourtef_svu, up_gr_fifthab_svu
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svu
 
 ;----TTX------------------------------------------------------------------------
-hit_power           	= 0.585, 0.585, 0.585, 0.585
-hit_impulse             = 55
+hit_power           	= 0.7, 0.7, 0.7, 0.7
+hit_impulse             = 40
 hit_type 				= fire_wound
-fire_distance           = 985
-bullet_speed		 	= 830 ;800	;начальная скорость пули
+fire_distance           = 1200
+bullet_speed		 	= 805	;начальная скорость пули
 rpm                     = 65
 rpm_empty_click         = 200
 
@@ -42,10 +42,10 @@ misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.0056
 misfire_end_prob = 0.11 ;	     	= 0.064
 condition_shot_dec      	= 0.0021
-condition_queue_shot_dec	= 0.0024
+condition_queue_shot_dec	= 0.0021
 
-ammo_elapsed			= 20
-ammo_mag_size			= 20
+ammo_elapsed			= 10
+ammo_mag_size			= 10
 fire_modes		  = 1
 ammo_class		        = ammo_7.62x54_7h1, ammo_7.62x54_7h14
 hand_dependence         = 1
@@ -53,20 +53,20 @@ single_handed           = 0
 
 ;---дисперсия-------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.105   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.073   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 2.06f
 crosshair_inertion		= 8.8
 
 ;отдача
-cam_return				= 0 ;				= 1
+cam_return = 0 ;				= 0
 cam_relax_speed         = 3.0   ;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	;скорость возврата в исходное положение
-cam_dispersion          = 2.0 ;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 2.0	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          = 1.94 ;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.94	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac		= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle           = 12.0   ;максимальный угол отдачи
-cam_max_angle_horz		= 3.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.5 ;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle           = 50.0   ;максимальный угол отдачи
+cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 2.92 ;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.33
 PDM_disp_vel_factor 		= 3.05
@@ -76,12 +76,12 @@ PDM_disp_crouch_no_acc = 1.0 ; 		= 1.425
 
 zoom_cam_relax_speed        = 0.7    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 120.75
-zoom_cam_dispersion         = 1.65
-zoom_cam_dispersion_inc     = 1.65
+zoom_cam_dispersion         = 1.48
+zoom_cam_dispersion_inc     = 1.48
 zoom_cam_dispersion_frac    = 1.0
-zoom_cam_max_angle          = 10.0
-zoom_cam_max_angle_horz     = 5.0
-zoom_cam_step_angle_horz    = 0.5
+zoom_cam_max_angle          = 50.0
+zoom_cam_max_angle_horz     = 50.0
+zoom_cam_step_angle_horz    = 2.56
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 10	;увеличение дисперсии в процентах при максимальном износе
 
@@ -164,9 +164,9 @@ grenade_launcher_status	= 0
 
 zoom_enabled			= true
 zoom_rotate_time		= 0.35
-scope_zoom_factor       = 36     ;ПСО-1 4X
+scope_zoom_factor       = 24
 
-scope_texture				= wpn_crosshair_pso1_ksvk
+scope_texture			= wpn_crosshair_pso1
 scope_name 				= wpn_addon_scope
 scope_x 				= 60
 scope_y 				= -2
@@ -233,7 +233,7 @@ inv_name				= st_wpn_svu_nimble
 description					= st_wpn_svu_nimble_descr
 
 cost                    = 60240
-inv_weight              = 4.111
+inv_weight              = 4.7
 
 inv_grid_width			= 5	 
 inv_grid_height			= 2	  
@@ -254,15 +254,17 @@ grenade_launcher_status	= 0
 launch_speed 		= 0
 
 ;----TTX------------------------------------------------------------------------
-hit_power           	= 0.555, 0.555, 0.555, 0.555
-hit_impulse             = 55
+hit_power           	= 0.7, 0.7, 0.7, 0.7
+hit_impulse             = 40
 hit_type 				= fire_wound
-fire_distance           = 1045
-bullet_speed		 	= 880 ;800	;начальная скорость пули
+fire_distance           = 1200
+bullet_speed		 	= 805	;начальная скорость пули
 rpm                     = 150
 rpm_empty_click         = 200
 
 grenade_flame_particles = weapons\generic_weapon01
+
+fire_dispersion_base    = 0.067
 
 hud                     = wpn_swu_hud
 visual                  = dynamics\weapons\wpn_swu\wpn_swu.ogf

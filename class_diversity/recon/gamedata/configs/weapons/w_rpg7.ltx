@@ -22,7 +22,7 @@ ef_weapon_type			= 12
 ;------------------------------------------------------------------------------
 cost					= 29980
 weapon_class			= heavy_weapon
-inv_weight				= 7.044
+inv_weight				= 6.3
 
 ;------TTX------------------------------------------------------------------------
 hit_power       		= 3.00
@@ -39,8 +39,8 @@ misfire_start_condition		= 0.82
 misfire_end_condition		= 0.11
 misfire_start_prob = 0.007 ;	     	= 0.078
 misfire_end_prob = 0.11 ;	     	= 0.084
-condition_shot_dec      	= 0.0062
-condition_queue_shot_dec	= 0.0062
+condition_shot_dec      	= 0.0030
+condition_queue_shot_dec	= 0.0030
 
 ammo_limit		 		= 120
 ammo_current		 	= 96
@@ -54,7 +54,7 @@ single_handed			= 0
 
 ;---дисперсия-------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base			= 0.44   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base			= 0.49   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor			= 3.54f
 crosshair_inertion   	= 11.3
 
@@ -68,8 +68,8 @@ PDM_disp_crouch_no_acc = 1.0 ; 		= 0.35
 cam_relax_speed         = 2.0	;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
 cam_dispersion          = 10.5	;увеличения угла (в градусах) с каждым выстрелом
-cam_max_angle			= 15		;максимальный угол отдачи
-cam_max_angle_horz		= 15	;(degree) maximum shot horizontal degree
+cam_max_angle			= 50		;максимальный угол отдачи
+cam_max_angle_horz		= 50	;(degree) maximum shot horizontal degree
 cam_step_angle_horz		= 0.5	;(degree) size of step camera moved in horizontal position while shooting
 fire_dispersion_condition_factor = 0.001 ; 	= 0.01 ; 5	
 
@@ -145,7 +145,7 @@ grenade_launcher_status			= 0
 scope_texture				= wpn_crosshair_rpg
 
 zoom_enabled				= true
-scope_zoom_factor			= 30		;ПСО-1 2X
+scope_zoom_factor			= 39		;ПГО 2.7X
 
 ;звуки
 snd_draw				= weapons\generic_draw

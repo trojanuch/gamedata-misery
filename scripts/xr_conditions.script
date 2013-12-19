@@ -658,6 +658,19 @@ function actor_has_item(actor, npc, p)
 	return p[1] ~= nil and story_actor and story_actor:object( p[1] ) ~= nil
 end
 
+function actor_has_item_in_slot_1(actor, npc, p)
+	local story_actor  = get_story_object("actor")
+	return p[1] ~= nil and story_actor and story_actor:item_in_slot(1) and story_actor:item_in_slot(1):section()==p[1]
+end
+function actor_has_item_in_slot_2(actor, npc, p)
+	local story_actor  = get_story_object("actor")
+	return p[1] ~= nil and story_actor and story_actor:item_in_slot(2) and story_actor:item_in_slot(2):section()==p[1]
+end
+function actor_has_item_in_slot_7(actor, npc, p)
+	local story_actor  = get_story_object("actor")
+	return p[1] ~= nil and story_actor and story_actor:item_in_slot(7) and story_actor:item_in_slot(7):section()==p[1]
+end
+
 function npc_has_item(actor, npc, p)
 	return p[1] ~= nil and npc:object( p[1] ) ~= nil
 end
@@ -1214,6 +1227,27 @@ end
 
 function surge_started()
 	return surge_manager.is_started() or psi_storm_manager and psi_storm_manager.is_started() or fallout_manager and fallout_manager.is_started()
+end
+
+function emission_started()
+	if surge_manager.is_started() then
+		return true
+	end
+	return false
+end
+
+function psysurge_started()
+	if psi_storm_manager.is_started() then
+		return true
+	end
+	return false
+end
+
+function fallout_started()
+	if fallout_manager.is_started() then
+		return true
+	end
+	return false
 end
 
 function surge_kill_all()

@@ -10,11 +10,11 @@ spawn_stalker@master_hostile
 
 [spawn_stalker@master]
 spawn_squads = stalker_sim_squad_veteran_pripyat, stalker_hunter_night_simulation_squad_pripyat
-spawn_num = {=actor_on_level(pripyat) +pri_b35_task_end -kingpin_gained} 1, 0
+spawn_num = {=actor_on_level(pripyat) +pri_a28_actor_in_zone_stay -kingpin_gained} 1, 0
 
 [spawn_stalker@master_hostile]
 spawn_squads = stalker_sim_squad_veteran_pripyat_hostile, stalker_hunter_night_simulation_squad_pripyat_hostile
-spawn_num = {=actor_on_level(pripyat) +pri_b35_task_end +kingpin_gained} 1, 0
+spawn_num = {=actor_on_level(pripyat) +pri_a28_actor_in_zone_stay +kingpin_gained} 1, 0
 
 [exclusive]
 pri_a22_army_signaller = pripyat\pri_b35_military_logic.ltx

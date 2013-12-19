@@ -2,9 +2,11 @@
 ;Скорострельность(1)10%
 ;----------------------
 cost		      		= 1280
-value					= +5
+value					= +10
 
-rpm						= +17
+rpm						= +23
+
+inv_weight			= +0.04
 
 [up_sect_firstc_hpsa]
 ;Настильность(2)20%
@@ -12,28 +14,35 @@ rpm						= +17
 cost		      		= 1420
 value					= +20
 
-bullet_speed		 	= +50
-fire_dispersion_base	= -0.01 
+bullet_speed		 	= +77
+fire_distance           = +50
+fire_dispersion_base	= -0.01
+
+inv_weight			= +0.1
 
 [up_sect_firstd_hpsa]
 ;Отдача(2)-20%
 ;------------
 cost		      		= 1580
-value					= -20
+value					= -10
 
-cam_dispersion          = -0.2 	;0.6
-cam_dispersion_inc		= -0.2		;0.6
-cam_step_angle_horz		= -0.2		;1.0
+cam_dispersion          = -0.068				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.073				;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.086				;(degree) size of step camera moved in horizontal position while shooting
+
+inv_weight			= +0.04
 
 [up_sect_firste_hpsa]
 ;Отдача(3)-30%
 ;------------
 cost		      		= 1720
-value					= -30
+value					= -10
 
-cam_dispersion          = -0.25		;0.6
-cam_dispersion_inc		= -0.25		;0.6
-cam_step_angle_horz		= -0.25		;1.0
+cam_dispersion          = -0.068				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.073				;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.086				;(degree) size of step camera moved in horizontal position while shooting
+
+inv_weight			= -0.07
 
 [up_sect_secona_hpsa]
 ;Настильность(1)10%
@@ -41,7 +50,7 @@ cam_step_angle_horz		= -0.25		;1.0
 cost		      		= 1340
 value					= +10
 
-bullet_speed		 	= +30
+bullet_speed		 	= +38
 
 [up_sect_seconc_hpsa]
 ;Надежность(2)15%
@@ -49,16 +58,14 @@ bullet_speed		 	= +30
 cost		      		= 1730
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00013 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00014 ;0.0011
+condition_shot_dec      	= -0.0004
+condition_queue_shot_dec	= -0.0004
 
 misfire_start_prob	     	= -0.002
+misfire_end_prob	     	= -0.02
 
-misfire_end_prob	     	= -0.02 ;0.03
+inv_weight			= +0.1
 
 [up_sect_secone_hpsa]
 ;Скорострельность(3)25%
@@ -66,15 +73,21 @@ misfire_end_prob	     	= -0.02 ;0.03
 cost		      		= 1820
 value					= +25
 
-rpm						= +75
+rpm						= +60
+
+inv_weight			= +0.08
 
 [up_sect_seconf_hpsa]
-;Настильность(1)10%
+;Настильность(1)30%
 ;------------------
 cost		      		= 1790
 value					= +30
 
-bullet_speed		 	= +30
+bullet_speed		 	= +115
+fire_distance           = +80
+fire_dispersion_base	= -0.02
+
+inv_weight              = +0.14
 
 [up_sect_thirda_hpsa]
 ;Вес
@@ -96,7 +109,7 @@ PDM_disp_accel_factor 		= -0.1
 cost		      		= 1720
 value					= +15
 
-crosshair_inertion			= -0.7
+crosshair_inertion			= -0.6
 
 PDM_disp_base 				= -0.1
 PDM_disp_vel_factor 		= -0.3
@@ -106,11 +119,13 @@ PDM_disp_accel_factor 		= -0.3
 ;Отдача(2)-20%
 ;------------
 cost		      		= 1630
-value					= -20
+value					= -10
 
-cam_dispersion          = -0.2		;0.6
-cam_dispersion_inc		= -0.2		;0.6
-cam_step_angle_horz		= -0.2		;1.0
+cam_dispersion          = -0.068				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.073				;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.086				;(degree) size of step camera moved in horizontal position while shooting
+
+inv_weight			= -0.07
 
 [up_sect_fourta_hpsa]
 ;Точность(1)10%
@@ -118,7 +133,7 @@ cam_step_angle_horz		= -0.2		;1.0
 cost		      		= 1360
 value					= +10
 
-fire_dispersion_base	= -0.02
+fire_dispersion_base	= -0.06
 ;fire_dispersion_condition_factor    = -1
 
 [up_sect_fourtc_hpsa]
@@ -128,10 +143,13 @@ cost		      		= 1590
 value					= +15
 
 ;fire_dispersion_condition_factor    = -1
-condition_queue_shot_dec	= -0.00013
-condition_shot_dec      	= -0.00014
+condition_shot_dec      	= -0.0004
+condition_queue_shot_dec	= -0.0004
+
 misfire_start_prob	     	= -0.002
 misfire_end_prob	     	= -0.02
+
+inv_weight			= +0.14
 
 [up_sect_fourte_hpsa]
 ;Удобство(3)25%
@@ -142,8 +160,10 @@ value					= +25
 crosshair_inertion			= -1
 
 PDM_disp_base 				= -0.2
-PDM_disp_vel_factor 		= -0.4
-PDM_disp_accel_factor 		= -0.4
+PDM_disp_vel_factor 		= -0.3
+PDM_disp_accel_factor 		= -0.3
+
+inv_weight			= +0.1
 
 [up_sect_fiftha_hpsa]
 ;Увеличенный объем магазина
@@ -153,6 +173,8 @@ value					= +4
 
 ammo_mag_size		 	= +4
 
+inv_weight			= +0.04
+
 [up_sect_fifthc_hpsa]
 ;Смена калибра на 9х18
 ;---------------
@@ -161,17 +183,16 @@ value					= "9x18"
 
 ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
 
-silencer_name  				= wpn_addon_silencer_9x18		; section name for the attachable silencer
-snd_silncer_shot				= weapons\silencers\silencer_9x18
+;silencer_name  				= wpn_addon_silencer_9x18		; section name for the attachable silencer
+;snd_silncer_shot				= weapons\silencers\silencer_9x18
 
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.00018 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.00014 ;0.0011
+condition_shot_dec      	= +0.00014
+condition_queue_shot_dec	= +0.00014
 
 misfire_start_prob	     	= 0.0008
-
 misfire_end_prob	     	= 0.008 ;0.03
+
+inv_weight			= +0.1
 
 [up_firsta_hpsa]
 scheme_index            = 0, 0

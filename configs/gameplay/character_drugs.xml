@@ -11,12 +11,23 @@ survival_kit		= 1, prob=0.003 \n
 
 antirad					= 1, prob=0.003 \n
 
-drug_booster			= 1, prob=0.002 \n
-drug_coagulant			= 1, prob=0.005 \n
-drug_psy_blockade		= 1, prob=0.002 \n
-drug_antidot			= 1, prob=0.002 \n
-drug_radioprotector		= 1, prob=0.003 \n
-drug_anabiotic			= 1, prob=0.001 \n
+drug_booster					= 1, prob=0.001 \n
+drug_coagulant4					= 1, prob=0.001 \n
+drug_coagulant5					= 1, prob=0.002 \n
+drug_psy_blockade4					= 1, prob=0.001 \n
+drug_psy_blockade5					= 1, prob=0.002 \n
+drug_antidot3					= 1, prob=0.003 \n
+drug_radioprotector2					= 1, prob=0.003 \n
+drug_sleepingpills4					= 1, prob=0.002 \n
+drug_sleepingpills5					= 1, prob=0.003 \n
+akvatab3					= 1, prob=0.002 \n
+akvatab4					= 1, prob=0.003 \n
+cocaine2					= 1, prob=0.001 \n
+cocaine3					= 1, prob=0.002 \n
+tetanus					= 1, prob=0.001 \n
+salicidic_acid					= 1, prob=0.002 \n
+caffeine4					= 1, prob=0.003 \n
+caffeine5					= 1, prob=0.003 \n
 
 roubles					= 1, prob=0.5 \n
 
@@ -25,8 +36,6 @@ breadold				= 2, prob=0.002 \n
 kolbasa					= 1, prob=0.001 \n
 conserva				= 1, prob=0.001 \n
 protein					= 1, prob=0.001 \n
-
-flask					= 2, prob=0.002 \n
 
 tomato				= 1, prob=0.001 \n
 sausage				= 1, prob=0.001 \n
@@ -38,34 +47,47 @@ raisins				= 1, prob=0.001 \n
 chocolate			= 1, prob=0.001 \n
 nuts				= 1, prob=0.001 \n
 
-mint				= 1, prob=0.001 \n
-mineral_water			= 1, prob=0.001 \n
+mint4				= 1, prob=0.001 \n
+mint5				= 1, prob=0.002 \n
 
-caffeine				= 1, prob=0.001 \n
+mineral_water2				= 1, prob=0.001 \n
+mineral_water3				= 1, prob=0.002 \n
 
-hand_rolling_tobacco		= 1, prob=0.001 \n
-cigar						= 1, prob=0.001 \n
+vodka_2				= 1, prob=0.001 \n
+vodka_3				= 1, prob=0.002 \n
+vodka2_2				= 1, prob=0.001 \n
+vodka2_3				= 1, prob=0.002 \n
+vodka_quality2				= 1, prob=0.001 \n
+vodka_quality3				= 1, prob=0.002 \n
+tea2				= 1, prob=0.001 \n
+tea3				= 1, prob=0.002 \n
+bottle_metal2				= 1, prob=0.001 \n
+bottle_metal3				= 1, prob=0.002 \n
+flask				= 1, prob=0.002 \n
+flask2				= 1, prob=0.003 \n
+flask3				= 1, prob=0.004 \n
 
-cigarettes_lucky		= 1, prob=0.001 \n
-cigarettes_russian		= 1, prob=0.002 \n
+hand_rolling_tobacco4				= 1, prob=0.001 \n
+hand_rolling_tobacco5				= 1, prob=0.002 \n
+cigar1_2				= 1, prob=0.001 \n
+cigar1_3				= 1, prob=0.002 \n
+cigar2_2				= 1, prob=0.001 \n
+cigar2_3				= 1, prob=0.002 \n
+cigar3_2				= 1, prob=0.001 \n
+cigar3_3				= 1, prob=0.002 \n
+cigarettes_lucky3				= 1, prob=0.001 \n
+cigarettes_lucky4				= 1, prob=0.002 \n
+cigarettes_russian2				= 1, prob=0.002 \n
+cigarettes_russian3				= 1, prob=0.003 \n
+tobacco4				= 1, prob=0.001 \n
+tobacco5				= 1, prob=0.002 \n
+marijuana2				= 1, prob=0.001 \n
+marijuana3				= 1, prob=0.002 \n
 
 beer					= 1, prob=0.002 \n
 
 energy_drink			= 1, prob=0.001 \n
 water_drink			    = 2, prob=0.002 \n
-
-vodka					= 1, prob=0.004 \n
-vodka2					= 1, prob=0.001 \n
-tea						= 1, prob=0.006 \n
-bottle_metal			= 2, prob=0.006 \n
-
-vodka_quality			= 1, prob=0.003 \n
-cocaine					= 1, prob=0.002 \n
-tetanus					= 1, prob=0.002 \n
-adrenalin				= 1, prob=0.001 \n
-
-salicidic_acid			= 1, prob=0.003 \n
-morphine				= 1, prob=0.002 \n
 
 meat_tushkano			= 2, prob=0.003 \n
 meat_dog				= 2, prob=0.003 \n
@@ -121,7 +143,17 @@ batteries_dead		= 3, prob=0.002 \n
 tarpaulin		= 2, prob=0.003 \n
 rope		= 2, prob=0.004 \n
 cutlery		= 1, prob=0.007 \n
-fieldcooker		= 1, prob=0.004 \n
+
+af_frames = 1, prob=0.002 \n
+af_kevlar = 1, prob=0.002 \n
+af_camelbak = 1, prob=0.002 \n
+af_surge = 1, prob=0.001 \n
+af_iam = 1, prob=0.001 \n
+
+af_medusa_lead_box = 1, prob=0.001 \n
+af_cristall_lead_box = 1, prob=0.001 \n
+af_blood_lead_box = 1, prob=0.001 \n
+af_electra_sparkler_lead_box = 1, prob=0.001 \n
 
 mutant_part_boar_leg = 2, prob=0.01 \n
 mutant_part_dog_tail = 4, prob=0.01 \n
@@ -137,41 +169,82 @@ mutant_part_dog_meat = 3, prob=0.01 \n
 mutant_part_psevdodog_meat = 2, prob=0.005 \n
 mutant_part_tushkano_meat = 2, prob=0.002 \n
 
-mre = 1, prob=0.001
-mre2 = 1, prob=0.001
-mre3 = 1, prob=0.001
-ration_ru = 1, prob=0.001
-ration_ru2 = 1, prob=0.001
-ration_ru3 = 1, prob=0.001
-ration_ru4 = 1, prob=0.001
-ration_ru5 = 1, prob=0.001
-ration_ru6 = 1, prob=0.001
-ration_ru7 = 1, prob=0.001
-ration_ukr = 1, prob=0.001
-ration_ukr2 = 1, prob=0.001
-ration_ukr3 = 1, prob=0.001
-ration_ukr4 = 1, prob=0.001
-ration_ukr5 = 1, prob=0.001
-ration_ukr6 = 1, prob=0.001
+mre = 1, prob=0.001 \n
+mre2 = 1, prob=0.001 \n
+mre3 = 1, prob=0.001 \n
+ration_ru = 1, prob=0.001 \n
+ration_ru2 = 1, prob=0.001 \n
+ration_ru3 = 1, prob=0.001 \n
+ration_ru4 = 1, prob=0.001 \n
+ration_ru5 = 1, prob=0.001 \n
+ration_ru6 = 1, prob=0.001 \n
+ration_ru7 = 1, prob=0.001 \n
+ration_ukr = 1, prob=0.001 \n
+ration_ukr2 = 1, prob=0.001 \n
+ration_ukr3 = 1, prob=0.001 \n
+ration_ukr4 = 1, prob=0.001 \n
+ration_ukr5 = 1, prob=0.001 \n
+ration_ukr6 = 1, prob=0.001 \n
 
-gun_oil = 1, prob=0.004 \n
-cleaning_kit_p = 1, prob=0.004 \n
-cleaning_kit_s = 1, prob=0.004 \n
-cleaning_kit_r5 = 1, prob=0.004 \n
-cleaning_kit_r7 = 1, prob=0.004 \n
-cleaning_kit_u = 1, prob=0.003 \n
-sharpening_stones = 2, prob=0.004 \n
-gun_oil_ru_d = 2, prob=0.004 \n
-gun_oil_ru = 2, prob=0.004 \n
-solvent = 1, prob=0.004 \n
-grease = 2, prob=0.008 \n
-steel_wool = 2, prob=0.008 \n
-glue_b = 2, prob=0.004 \n
-sewing_kit_b = 2, prob=0.004 \n
+gun_oil = 2, prob=0.001 \n
+gun_oil2 = 2, prob=0.003 \n
+cleaning_kit_p = 1, prob=0.001 \n
+cleaning_kit_p2 = 1, prob=0.001 \n
+cleaning_kit_p3 = 1, prob=0.002 \n
+cleaning_kit_s = 1, prob=0.001 \n
+cleaning_kit_s2 = 1, prob=0.001 \n
+cleaning_kit_s3 = 1, prob=0.002 \n
+cleaning_kit_r5 = 1, prob=0.001 \n
+cleaning_kit_r5_2 = 1, prob=0.001 \n
+cleaning_kit_r5_3 = 1, prob=0.002 \n
+cleaning_kit_r7 = 1, prob=0.001 \n
+cleaning_kit_r7_2 = 1, prob=0.001 \n
+cleaning_kit_r7_3 = 1, prob=0.002 \n
+cleaning_kit_u = 1, prob=0.001 \n
+cleaning_kit_u2 = 1, prob=0.001 \n
+cleaning_kit_u3 = 1, prob=0.002 \n
+sharpening_stones = 1, prob=0.001 \n
+sharpening_stones2 = 1, prob=0.002 \n
+sharpening_stones3 = 1, prob=0.003 \n
+sharpening_stones4 = 1, prob=0.004 \n
+gun_oil_ru_d = 1, prob=0.002 \n
+gun_oil_ru_d2 = 2, prob=0.004 \n
+gun_oil_ru = 1, prob=0.002 \n
+gun_oil_ru2 = 2, prob=0.004 \n
+solvent = 1, prob=0.001 \n
+solvent2 = 1, prob=0.004 \n
+grease = 1, prob=0.002 \n
+grease2 = 1, prob=0.008 \n
+steel_wool = 2, prob=0.002 \n
+steel_wool2 = 2, prob=0.004 \n
+glue_b = 1, prob=0.002 \n
+glue_b2 = 2, prob=0.004 \n
+sewing_kit_b = 1, prob=0.001 \n
+sewing_kit_b2 = 1, prob=0.002 \n
+sewing_kit_b3 = 1, prob=0.003 \n
+sewing_kit_b4 = 1, prob=0.004 \n
 armor_repair_fa = 1, prob=0.001 \n
-textile_patch_b = 2, prob=0.008 \n
-textile_patch_m = 2, prob=0.006 \n
-textile_patch_e = 2, prob=0.004 \n
+armor_repair_fa2 = 1, prob=0.002 \n
+textile_patch_b = 2, prob=0.005 \n
+textile_patch_m = 2, prob=0.004 \n
+textile_patch_e = 2, prob=0.003 \n
+
+fieldcooker = 1, prob=0.001 \n
+wood_stove = 1, prob=0.001 \n
+kerosene = 1, prob=0.001 \n
+kerosene2 = 1, prob=0.001 \n
+kerosene3 = 1, prob=0.001 \n
+kerosene4 = 1, prob=0.001 \n
+kerosene5 = 1, prob=0.001 \n
+charcoal = 1, prob=0.001 \n
+charcoal2 = 1, prob=0.001 \n
+charcoal3 = 1, prob=0.001 \n
+
+explo_jerrycan_fuel7 = 1, prob=0.001 \n
+explo_jerrycan_fuel8 = 1, prob=0.002 \n
+explo_metalcan_powder = 1, prob=0.001 \n
+explo_balon_gas7 = 1, prob=0.001 \n
+explo_balon_gas8 = 1, prob=0.002 \n
 
 hide_pseudodog = 1, prob=0.005 \n
 hide_bloodsucker = 1, prob=0.005 \n
@@ -182,11 +255,7 @@ tushonka	= 2, prob=0.001 \n
 glucose		= 1, prob=0.003 \n
 glucose_s	= 1, prob=0.005 \n
 
-explo_jerrycan_fuel	= 1, prob=0.002 \n
-explo_metalcan_powder	= 1, prob=0.002 \n
-explo_balon_gas	= 1, prob=0.002 \n
-
 mine	= 2, prob=0.002 \n
 
-wpn_binoc_inv = 1, prob=0.003
-wpn_upd = 1, prob=0.003
+wpn_binoc_inv = 1, prob=0.003 \n
+wpn_upd = 1, prob=0.003 \n

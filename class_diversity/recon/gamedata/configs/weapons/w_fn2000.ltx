@@ -18,22 +18,22 @@ control_inertion_factor = 1.0
 ;-------------------------------------------------------------------------------
 cost              		= 38920
 weapon_class          	= assault_rifle
-inv_weight              = 3.676
+inv_weight              = 4.6
 
 upgrades                = up_gr_firstab_fn2000, up_gr_seconab_fn2000, up_gr_thirdab_fn2000, up_gr_fourtab_fn2000, up_gr_fourtcd_fn2000, up_gr_fourtef_fn2000
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_fn2000
 
 ;--TTX----------------------------------------------------------------------------
-hit_power					= 0.475, 0.475, 0.475, 0.475
-hit_impulse					= 35
+hit_power					= 0.486, 0.486, 0.486, 0.486
+hit_impulse					= 25
 hit_type						= fire_wound
-fire_distance           = 895
+fire_distance           = 1000
 bullet_speed         	= 900 ;начальная скорость пули
 rpm                     = 850
 rpm_empty_click         = 200
 
-grenade_vel 			= 32 ;76
+grenade_vel 			= 76
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
 time_to_aim             = 1.0
@@ -59,35 +59,35 @@ launch_speed         	= 32
 
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base       = 0.18    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       = 0.234    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    = 1.44f
 crosshair_inertion   	= 6.8
 
 ;отдача
-cam_return				= 0 ; 				= 0
-cam_relax_speed         = 5    		;скорость возврата в исходное положение
+cam_return = 0 ;				= 0
+cam_relax_speed         = 8    		;скорость возврата в исходное положение
 cam_relax_speed_ai     	= 120.75
-cam_dispersion	         	= 1.14
-cam_dispersion_inc         	= 0.8
+cam_dispersion	        = 0.88
+cam_dispersion_inc      = 0.8
 cam_dispersion_frac     = 1.1 		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle           = 50.0		;максимальный угол отдачи
-cam_max_angle_horz      = 50.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.2 		;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle           = 59.0		;максимальный угол отдачи
+cam_max_angle_horz      = 59.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 2.36 		;(degree) size of step camera moved in horizontal position while shooting
 
-PDM_disp_base 				= 0.67
+PDM_disp_base 				= 0.63
 PDM_disp_vel_factor 		= 2.25
 PDM_disp_accel_factor 		= 2.255
 PDM_disp_crouch = 1.0 ; 			= 1.165
 PDM_disp_crouch_no_acc = 1.0 ; 			= 1.985
 
-zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed         = 8     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.97
-zoom_cam_dispersion_inc      	= 0.51
+zoom_cam_dispersion          = 0.8
+zoom_cam_dispersion_inc      = 0.72
 zoom_cam_dispersion_frac     = 1.0
-zoom_cam_max_angle           = 50.0
-zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.0
+zoom_cam_max_angle           = 59.0
+zoom_cam_max_angle_horz      = 59.0
+zoom_cam_step_angle_horz     = 2.21
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 11        ;увеличение дисперсии в процентах при максимальном износе
 
@@ -142,7 +142,7 @@ grenade_flame_particles = weapons\generic_weapon01
 
 shell_point       		= -0.020000,0.186000,0.200000
 shell_dir            	= 0.0, 1.0, 0.0
-shell_particles         = weapons\generic_shells
+;shell_particles         = weapons\generic_shells
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 strap_position          = -0.15,-0.35,0.27         ; position (offset) and orientation of the weapon when it is strapped
@@ -170,7 +170,7 @@ grenade_launcher_status = 1
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time			= 0.25
-scope_zoom_factor       = 42                                                ; fov for zoom mode
+scope_zoom_factor       = 56                                                ; fov for zoom mode
 scope_texture		= wpn_crosshair_fn2000
 lens_texture		= wpn\wpn_crosshair_g36_lens
 lens_texture_x		= 183
@@ -299,15 +299,15 @@ ammo_class              = ammo_5.56x45_ap, ammo_5.56x45_ss190
 [wpn_fn2000_custom]:wpn_fn2000
 
 cost              		= 48260
-inv_weight              = 3.582
+inv_weight              = 4.55
 
 upgrades                = up_gr_firstab_fn2000_custom, up_gr_seconab_fn2000_custom, up_gr_thirdab_fn2000_custom, up_gr_fourtab_fn2000_custom, up_gr_fourtcd_fn2000_custom, up_gr_fourtef_fn2000_custom
 installed_upgrades      = up_secona_fn2000_custom, up_seconc_fn2000_custom
 
 hit_power				= 0.52, 0.52, 0.52, 0.52
-hit_impulse				= 35
-fire_distance           = 895
-bullet_speed         	= 900
+hit_impulse				= 25
+fire_distance           = 1000
+bullet_speed         	= 920
 rpm                     = 865
 
 hud                      = wpn_fn2000_custom_hud
@@ -319,11 +319,7 @@ misfire_end_prob = 0.11 ;	     	= 0.05
 condition_shot_dec      	= 0.00075
 condition_queue_shot_dec	= 0.00075
 
-ammo_mag_size          	= 30
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, 3, -1
-
-fire_dispersion_base       = 0.145
+fire_dispersion_base       = 0.216
 
 inv_name             	= st_wpn_fn2000_custom
 inv_name_short         	= st_wpn_fn2000_custom
@@ -344,15 +340,15 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2001_hud.ogf
 [wpn_fn2000_alt1]:wpn_fn2000
 
 cost              		= 44480
-inv_weight              = 3.546
+inv_weight              = 4.7
 
 upgrades                = up_gr_firstab_fn2000_alt1, up_gr_seconab_fn2000_alt1, up_gr_thirdab_fn2000_alt1, up_gr_fourtab_fn2000_alt1, up_gr_fourtcd_fn2000_alt1, up_gr_fourtef_fn2000_alt1
 installed_upgrades      = up_firsta_fn2000_alt1
 
 hit_power				= 0.49, 0.49, 0.49, 0.49
-hit_impulse				= 35
-fire_distance           = 920
-bullet_speed         	= 940
+hit_impulse				= 25
+fire_distance           = 1000
+bullet_speed         	= 909
 rpm                     = 855
 
 hud                      = wpn_fn2000_alt1_hud
@@ -361,14 +357,10 @@ misfire_start_condition		= 0.89
 misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.004
 misfire_end_prob = 0.11 ;	     	= 0.07
-condition_shot_dec      	= 0.0009
-condition_queue_shot_dec	= 0.0009
+condition_shot_dec      	= 0.00085
+condition_queue_shot_dec	= 0.00085
 
-ammo_mag_size          	= 30
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, 3, -1
-
-fire_dispersion_base       = 0.175
+fire_dispersion_base       = 0.23
 
 inv_name             	= st_wpn_fn2000_alt
 inv_name_short         	= st_wpn_fn2000_alt
@@ -389,16 +381,16 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2002_hud.ogf
 [wpn_fn2000_alt2]:wpn_fn2000
 
 cost              		= 40260
-inv_weight              = 3.264
+inv_weight              = 4.46
 
 upgrades                = up_gr_firstab_fn2000_alt2, up_gr_seconab_fn2000_alt2, up_gr_thirdab_fn2000_alt2, up_gr_fourtab_fn2000_alt2, up_gr_fourtcd_fn2000_alt2, up_gr_fourtef_fn2000_alt2
-installed_upgrades      = up_thirda_fn2000_alt2, up_thirdd_fn2000_alt2, up_thirdf_fn2000_alt2
+installed_upgrades      = 
 
-hit_power				= 0.45, 0.45, 0.45, 0.45
-hit_impulse				= 35
-fire_distance           = 880
-bullet_speed         	= 870
-rpm                     = 740
+hit_power				= 0.46, 0.46, 0.46, 0.46
+hit_impulse				= 25
+fire_distance           = 1000
+bullet_speed         	= 890
+rpm                     = 800
 
 hud                      = wpn_fn2000_alt2_hud
 
@@ -413,33 +405,7 @@ ammo_mag_size          	= 30
 ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
 fire_modes              = 1
 
-fire_dispersion_base       = 0.085
-
-;отдача
-cam_return				= 0 ; 				= 0
-cam_relax_speed         = 5    		;скорость возврата в исходное положение
-cam_relax_speed_ai     	= 120.75
-cam_dispersion	         	= 0.95
-cam_dispersion_inc         	= 0.65
-cam_dispersion_frac     = 1.0 		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle           = 50.0		;максимальный угол отдачи
-cam_max_angle_horz      = 50.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.02 		;(degree) size of step camera moved in horizontal position while shooting
-
-PDM_disp_base 				= 0.87
-PDM_disp_vel_factor 		= 2.2
-PDM_disp_accel_factor 		= 2.2
-PDM_disp_crouch = 1.0 ; 			= 0.6
-PDM_disp_crouch_no_acc = 1.0 ; 		= 0.4
-
-zoom_cam_relax_speed         = 5     ; scope & ironsight
-zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.7
-zoom_cam_dispersion_inc      	= 0.42
-zoom_cam_dispersion_frac     = 0.92
-zoom_cam_max_angle           = 50.0
-zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 0.84
+fire_dispersion_base       = 0.184
 
 inv_name             	= st_wpn_fn2000_civilian
 inv_name_short         	= st_wpn_fn2000_civilian
@@ -460,15 +426,15 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2003_hud.ogf
 [wpn_fn2000_alt3]:wpn_fn2000
 
 cost              		= 51920
-inv_weight              = 3.106
+inv_weight              = 4.41
 
 upgrades                = up_gr_firstab_fn2000_alt3, up_gr_seconab_fn2000_alt3, up_gr_thirdab_fn2000_alt3, up_gr_fourtab_fn2000_alt3, up_gr_fourtcd_fn2000_alt3, up_gr_fourtef_fn2000_alt3
 installed_upgrades      = up_secona_fn2000_alt3, up_seconc_fn2000_alt3, up_seconf_fn2000_alt3
 
-hit_power				= 0.545, 0.545, 0.545, 0.545
-hit_impulse				= 35
-fire_distance           = 930
-bullet_speed         	= 915
+hit_power				= 0.538, 0.538, 0.538, 0.538
+hit_impulse				= 25
+fire_distance           = 1000
+bullet_speed         	= 930
 rpm                     = 865
 
 hud                      = wpn_fn2000_alt3_hud
@@ -480,11 +446,7 @@ misfire_end_prob = 0.11 ;	     	= 0.04
 condition_shot_dec      	= 0.0007
 condition_queue_shot_dec	= 0.0007
 
-ammo_mag_size          	= 30
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, 3, -1
-
-fire_dispersion_base       = 0.160
+fire_dispersion_base       = 0.22
 
 inv_name             	= st_wpn_fn2000_camo
 inv_name_short         	= st_wpn_fn2000_camo
@@ -506,13 +468,14 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2004_hud.ogf
 [wpn_fn2000_worn]:wpn_fn2000
 
 cost              		= 36920
-inv_weight              = 3.55
+inv_weight              = 4.6
 
 upgrades                = up_gr_firstab_fn2000_worn, up_gr_seconab_fn2000_worn, up_gr_thirdab_fn2000_worn, up_gr_fourtab_fn2000_worn, up_gr_fourtcd_fn2000_worn, up_gr_fourtef_fn2000_worn
+installed_upgrades      =
 
 hit_power				= 0.425, 0.425, 0.425, 0.425
-hit_impulse				= 35
-fire_distance           = 861
+hit_impulse				= 25
+fire_distance           = 900
 bullet_speed         	= 854
 rpm                     = 832
 
@@ -522,16 +485,12 @@ misfire_start_condition		= 0.96
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.0056
 misfire_end_prob = 0.11 ;	     	= 0.068
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0013
+condition_shot_dec      	= 0.0015
+condition_queue_shot_dec	= 0.0015
 
 silencer_status         = 0
 
-ammo_mag_size          	= 30
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, 3, -1
-
-fire_dispersion_base       = 0.345
+fire_dispersion_base       = 0.395
 
 inv_name             	= st_wpn_fn2000_worn
 inv_name_short         	= st_wpn_fn2000_worn

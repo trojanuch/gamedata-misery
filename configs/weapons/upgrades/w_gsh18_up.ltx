@@ -1,3 +1,36 @@
+[up_sect_firstc_gsh18]
+;Отдача(2)-20%
+;------------
+cost		      		= 1730
+value					= -10
+
+cam_dispersion          = -0.065
+cam_dispersion_inc		= -0.076
+cam_step_angle_horz		= -0.069
+
+[up_sect_firste_gsh18]
+;Режим автоматической стрельбы по три выстрела
+;------------------
+cost		      		= 4490
+;value					= +10
+
+fire_modes		  = 1, 3
+rpm               = +300
+
+cam_dispersion          = +0.065
+cam_dispersion_inc		= +0.076
+cam_step_angle_horz		= +0.069
+
+[up_sect_thirdd_gsh18]
+;Отдача(2)-20%
+;------------
+cost		      		= 1760
+value					= -10
+
+cam_dispersion          = -0.065
+cam_dispersion_inc		= -0.076
+cam_step_angle_horz		= -0.069
+
 [up_sect_fiftha_gsh18]
 ;Нанесение наружной резьбы на ствол
 ;---------------
@@ -39,7 +72,7 @@ icon                    = ui_inGame2_upgrade_Volker_P9M_1
 scheme_index            = 1, 0
 known                   = 1
 effects                 = up_gr_firstef_gsh18
-section                 = up_sect_firstc_walther
+section                 = up_sect_firstc_gsh18
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -80,7 +113,7 @@ icon                    = ui_inGame2_upgrade_Volker_P9M_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_walther
+section                 = up_sect_firste_gsh18
 property                = prop_3xfire
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -96,8 +129,6 @@ prereq_params           =
 name                    = st_up_zatp_c7_name
 description             = st_up_zatp_c7_descr
 icon                    = ui_inGame2_upgrade_Volker_P9M_4
-
-
 
 [up_secona_gsh18]
 scheme_index            = 0, 1
@@ -227,7 +258,7 @@ icon                    = ui_inGame2_upgrade_Volker_P9M_10
 scheme_index            = 1, 4
 known                   = 1
 effects                 =
-section                 = up_sect_thirdd_walther
+section                 = up_sect_thirdd_gsh18
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

@@ -17,18 +17,18 @@ sprint_allowed       	= true
 ;-------------------------------------------------------------------------------
 cost					= 61840
 weapon_class			= sniper_rifle
-inv_weight				= 5.103
+inv_weight				= 6.1
 
 upgrades                = up_gr_firstab_trg, up_gr_seconab_trg, up_gr_thirdab_trg, up_gr_fourtab_trg, up_gr_fourtcd_trg, up_gr_fourtef_trg
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svd
 
 ;------TTX------------------------------------------------------------------------
-hit_power           	= 0.734, 0.734, 0.734, 0.734
-hit_impulse			= 44
+hit_power           	= 0.814, 0.814, 0.814, 0.814
+hit_impulse			= 45
 hit_type 		= fire_wound
-fire_distance           = 1058
-bullet_speed		= 824 ;830	;начальная скорость пули
+fire_distance           = 1500
+bullet_speed		= 841		;начальная скорость пули
 rpm                     = 23
 rpm_empty_click         = 200
 
@@ -42,33 +42,33 @@ misfire_start_condition		= 0.93
 misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.0083
 misfire_end_prob = 0.11 ;	     	= 0.064
-condition_shot_dec      	= 0.0028
-condition_queue_shot_dec	= 0.0016
+condition_shot_dec      	= 0.0022
+condition_queue_shot_dec	= 0.0022
 
-ammo_elapsed			= 0
+ammo_elapsed			= 5
+ammo_mag_size			= 5
+fire_modes		  = 1
 
-ammo_mag_size			= 10
-fire_modes		  = 1;
 ammo_class				= ammo_magnum_300, ammo_magnum_300_ap
 hand_dependence         = 1
 single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.035	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.022	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.08f
 crosshair_inertion		= 8.98
 
 ;отдача
-cam_return				= 0 ;				= 1
+cam_return = 0 ;				= 0
 cam_relax_speed         = 3.1	;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	;скорость возврата в исходное положение
-cam_dispersion          = 1.76	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 1.76	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          = 2.39	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 2.39	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac		= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 15.0	;максимальный угол отдачи
-cam_max_angle_horz		= 3.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 0.25	;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle			= 50.0	;максимальный угол отдачи
+cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 1.08	;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.85
 PDM_disp_vel_factor 		= 2.355
@@ -78,12 +78,12 @@ PDM_disp_crouch_no_acc = 1.0 ; 		= 2.845
 
 zoom_cam_relax_speed        = 0.75    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 120
-zoom_cam_dispersion         = 1.42
-zoom_cam_dispersion_inc     = 1.42
+zoom_cam_dispersion         = 1.83
+zoom_cam_dispersion_inc     = 1.83
 zoom_cam_dispersion_frac    = 1.0
-zoom_cam_max_angle          = 10.0
-zoom_cam_max_angle_horz     = 5.0
-zoom_cam_step_angle_horz    = 0.25
+zoom_cam_max_angle          = 50.0
+zoom_cam_max_angle_horz     = 50.0
+zoom_cam_step_angle_horz    = 0.74
 
 fire_dispersion_condition_factor = 8	;увеличение дисперсии в процентах при максимальном износе
 
@@ -167,7 +167,7 @@ grenade_launcher_status		= 0
 
 zoom_enabled				= true
 zoom_rotate_time			= 0.25
-scope_zoom_factor			= 30	;ПСО-1 4X
+scope_zoom_factor			= 24
 
 scope_texture				= wpn_crosshair_findot
 scope_name 					= wpn_addon_scope

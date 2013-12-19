@@ -1,3 +1,75 @@
+[up_sect_firstd_ak105]
+;??????(1)-10%
+;------------
+cost		      		= 3480
+value                   = -10
+
+cam_dispersion	        = -0.087
+cam_dispersion_inc      = -0.051
+cam_step_angle_horz     = -0.110		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.071
+zoom_cam_dispersion_inc      = -0.042
+zoom_cam_step_angle_horz     = -0.10
+
+inv_weight			= +0.25
+
+[up_sect_firste_ak105]
+;??????(3)-30%
+;------------
+cost		      		= 3920
+value                   = -10
+
+cam_dispersion	        = -0.087
+cam_dispersion_inc      = -0.051
+cam_step_angle_horz     = -0.110		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.071
+zoom_cam_dispersion_inc      = -0.042
+zoom_cam_step_angle_horz     = -0.10
+
+inv_weight			= +0.24
+
+[up_sect_secone_ak105]
+;??????(2)-20%
+;------------
+cost		      		= 4680
+value                   = -10
+
+cam_dispersion	        = -0.087
+cam_dispersion_inc      = -0.051
+cam_step_angle_horz     = -0.110		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.071
+zoom_cam_dispersion_inc      = -0.042
+zoom_cam_step_angle_horz     = -0.10
+
+inv_weight			= +0.2
+
+[up_sect_thirda_ak105]
+cost		      		= 2415
+value                   = -5
+
+cam_dispersion	        = -0.043
+cam_dispersion_inc      = -0.026
+cam_step_angle_horz     = -0.055		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.045
+zoom_cam_dispersion_inc      = -0.021
+zoom_cam_step_angle_horz     = -0.05
+
+[up_sect_fourta_ak105]
+cost		      		= 2390
+value                   = -5
+
+cam_dispersion	        = -0.043
+cam_dispersion_inc      = -0.026
+cam_step_angle_horz     = -0.055		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = -0.045
+zoom_cam_dispersion_inc      = -0.021
+zoom_cam_step_angle_horz     = -0.05
+
 [up_firsta_ak105]
 scheme_index            = 0, 0
 known                   = 1
@@ -45,7 +117,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_2
 scheme_index            = 1, 1
 known                   = 1
 effects                 = up_gr_firstef_ak105
-section                 = up_sect_firstd_ak74u
+section                 = up_sect_firstd_ak105
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -66,7 +138,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_3
 scheme_index            = 2, 0
 known                   = 1
 effects                 =
-section                 = up_sect_firste_ak74u
+section                 = up_sect_firste_ak105
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -127,7 +199,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_6
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_ak74u
+section                 = up_sect_secone_ak105
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -168,7 +240,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_8
 scheme_index            = 0, 2
 known                   = 1
 effects                 = up_gr_thirdcd_ak105
-section                 = up_sect_thirda_ak74u
+section                 = up_sect_thirda_ak105
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -256,7 +328,7 @@ icon                    = ui_inGame2_upgrade_AKM_74_2U_12
 scheme_index            = 0, 3
 known                   = 1
 effects                 = up_gr_fourtcd_ak105
-section                 = up_sect_fourta_ak74u
+section                 = up_sect_fourta_ak105
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

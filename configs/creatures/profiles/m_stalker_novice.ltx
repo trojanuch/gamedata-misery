@@ -61,9 +61,9 @@ FireRandomMax 		 =     	4
 NoFireTimeMin 		 =    	4
 NoFireTimeMax 		 =    	10
 MinMissDistance		 =     	1
-MinMissFactor		 =     	0.01
+MinMissFactor		 =     	0.025
 MaxMissDistance		 =    	6
-MaxMissFactor		 =     	0.03
+MaxMissFactor		 =     	0.06
 
 step_params					= stalker_novice_step_manager
 
@@ -80,7 +80,7 @@ eye_range						= 150
 [stalker_novice_vision_free]:stalker_vision_free
 min_view_distance   		= 0.20				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 1.75				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 230.0				;Threshold in which object becames visible based on factors
+visibility_threshold	 	= 200.0				;Threshold in which object becames visible based on factors
 always_visible_distance 	= 0.02
 time_quant					= 0.0018			;step increment to for sight calculations (low values seem to make stalkers take shots faster)
 decrease_value				= 0.0020			;Decrease over time to overall threshold
@@ -91,7 +91,7 @@ transparency_threshold	 	= 0.82				;Low value = easier to see through semi-trans
 [stalker_novice_vision_danger]:stalker_vision_danger
 min_view_distance   		= 0.30				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 1.80				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 220.0				; значение, при достижении суммой которого объект считается видимым
+visibility_threshold	 	= 200.0				; значение, при достижении суммой которого объект считается видимым
 always_visible_distance 	= 0.02
 time_quant					= 0.0014
 decrease_value				= 0.0016 ;0.004		; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
@@ -128,13 +128,13 @@ pstl_max_queue_interval_far		= 2000
 
 pstl_min_queue_size_medium		= 1
 pstl_max_queue_size_medium		= 2
-pstl_min_queue_interval_medium	= 400
-pstl_max_queue_interval_medium	= 900
+pstl_min_queue_interval_medium	= 600
+pstl_max_queue_interval_medium	= 1350
 
 pstl_min_queue_size_close		= 1
 pstl_max_queue_size_close		= 3
-pstl_min_queue_interval_close	= 350
-pstl_max_queue_interval_close	= 550
+pstl_min_queue_interval_close	= 525
+pstl_max_queue_interval_close	= 825
 
 ;-------------------------------
 
@@ -145,64 +145,64 @@ shtg_max_queue_interval_far		= 2000
 
 shtg_min_queue_size_medium		= 1
 shtg_max_queue_size_medium		= 2
-shtg_min_queue_interval_medium	= 400
-shtg_max_queue_interval_medium	= 900
+shtg_min_queue_interval_medium	= 1225
+shtg_max_queue_interval_medium	= 1650
 
 shtg_min_queue_size_close		= 1
 shtg_max_queue_size_close		= 3
-shtg_min_queue_interval_close	= 250
-shtg_max_queue_interval_close	= 500
+shtg_min_queue_interval_close	= 750
+shtg_max_queue_interval_close	= 1200
 
 ;-------------------------------
 
 snp_min_queue_size_far			= 1
 snp_max_queue_size_far			= 1
 snp_min_queue_interval_far		= 2000
-snp_max_queue_interval_far		= 3600
+snp_max_queue_interval_far		= 3620
 
 snp_min_queue_size_medium		= 1
-snp_max_queue_size_medium		= 2
-snp_min_queue_interval_medium	= 1600
-snp_max_queue_interval_medium	= 2700
+snp_max_queue_size_medium		= 1
+snp_min_queue_interval_medium	= 1200
+snp_max_queue_interval_medium	= 2020
 
 snp_min_queue_size_close		= 1
-snp_max_queue_size_close		= 3
-snp_min_queue_interval_close	= 1000
-snp_max_queue_interval_close	= 2400
+snp_max_queue_size_close		= 1
+snp_min_queue_interval_close	= 720
+snp_max_queue_interval_close	= 1150
 
 ;-------------------------------
 
 auto_min_queue_size_far			= 1
 auto_max_queue_size_far			= 3
-auto_min_queue_interval_far		= 1000
-auto_max_queue_interval_far		= 2800
+auto_min_queue_interval_far		= 1400
+auto_max_queue_interval_far		= 2820
 
-auto_min_queue_size_medium		= 2
+auto_min_queue_size_medium		= 1
 auto_max_queue_size_medium		= 3
-auto_min_queue_interval_medium	= 900
-auto_max_queue_interval_medium	= 2500
+auto_min_queue_interval_medium	= 1220
+auto_max_queue_interval_medium	= 1750
 
-auto_min_queue_size_close		= 4
-auto_max_queue_size_close		= 8
-auto_min_queue_interval_close	= 500
+auto_min_queue_size_close		= 2
+auto_max_queue_size_close		= 5
+auto_min_queue_interval_close	= 780
 auto_max_queue_interval_close	= 1450
 
 ;-------------------------------
 
-mchg_min_queue_size_far			= 4
-mchg_max_queue_size_far			= 8
-mchg_min_queue_interval_far		= 1200
+mchg_min_queue_size_far			= 2
+mchg_max_queue_size_far			= 5
+mchg_min_queue_interval_far		= 1800
 mchg_max_queue_interval_far		= 3200
 
-mchg_min_queue_size_medium		= 4
-mchg_max_queue_size_medium		= 12
-mchg_min_queue_interval_medium	= 1000
-mchg_max_queue_interval_medium	= 3200
+mchg_min_queue_size_medium		= 2
+mchg_max_queue_size_medium		= 6
+mchg_min_queue_interval_medium	= 1350
+mchg_max_queue_interval_medium	= 2250
 
-mchg_min_queue_size_close		= 7
-mchg_max_queue_size_close		= 16
-mchg_min_queue_interval_close	= 600
-mchg_max_queue_interval_close	= 1650
+mchg_min_queue_size_close		= 3
+mchg_max_queue_size_close		= 8
+mchg_min_queue_interval_close	= 840
+mchg_max_queue_interval_close	= 1690
 
 ;-------------------------------
 

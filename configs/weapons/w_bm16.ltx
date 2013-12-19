@@ -15,18 +15,18 @@ ef_weapon_type			= 9
 ;-----------------------------------------------------------------------------
 cost					= 10560
 weapon_class			= shotgun
-inv_weight				= 3.12
+inv_weight				= 2.73
 
 upgrades                = up_gr_firstab_bm16, up_gr_seconab_bm16, up_gr_thirdab_bm16
 installed_upgrades      = 
 upgrade_scheme          = upgrade_scheme_bm16
 
 ;---TTX-------------------------------------------------------------------------
-hit_power       = 0.92, 0.92, 0.92, 0.92
-hit_impulse     = 60
+hit_power       = 0.88, 0.88, 0.88, 0.88
+hit_impulse     = 30
 hit_type 		= fire_wound
-fire_distance       	= 420
-bullet_speed			= 360
+fire_distance       	= 170
+bullet_speed			= 340
 rpm                 	= 800
 
 hud                      		= wpn_bm16_hud
@@ -35,8 +35,8 @@ misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.008
 misfire_end_prob = 0.11 ;	     	= 0.08
-condition_shot_dec      	= 0.0031
-condition_queue_shot_dec	= 0.0016
+condition_shot_dec      	= 0.0022
+condition_queue_shot_dec	= 0.0012
 
 ammo_elapsed		 	= 2
 ammo_mag_size		 	= 2
@@ -49,29 +49,29 @@ zoom_dof			    = 0.5, 1.0, 180
 ;reload_dof           = 0.0, 0.5, 5, 1.7
 ;----дисперсия--------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.80  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.04f ;		= 0.96f
-crosshair_inertion			= 3.8
+fire_dispersion_base		= 0.85  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.05f
+crosshair_inertion		= 4.0
 
 ;отдача
-cam_return				= 0 ;				= 1
-cam_relax_speed         = 4.0		;скорость возврата в исходное положение
+cam_return = 0 ;				= 0
+cam_relax_speed         = 8.0		;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	         	= 3.02
-cam_dispersion_inc         	= 3.88
+cam_dispersion	        = 4.92
+cam_dispersion_inc      = 4.78
 cam_dispersion_frac		= 0.5 	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 15 		;максимальный угол отдачи
-cam_max_angle_horz		= 15 		;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 5.5 	;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle			= 50.0 		;максимальный угол отдачи
+cam_max_angle_horz		= 50.0 		;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 5.98 	;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_relax_speed        = 4.0    ; scope & ironsight
+zoom_cam_relax_speed        = 8.0    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 120.75
-zoom_cam_dispersion          	= 2.67
-zoom_cam_dispersion_inc      	= 3.08
+zoom_cam_dispersion         = 4.43
+zoom_cam_dispersion_inc     = 3.98
 zoom_cam_dispersion_frac    = 0.5
-zoom_cam_max_angle          = 5.0
-zoom_cam_max_angle_horz     = 5.0
-zoom_cam_step_angle_horz    = 3.5
+zoom_cam_max_angle          = 50.0
+zoom_cam_max_angle_horz     = 50.0
+zoom_cam_step_angle_horz    = 3.93
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 2	
 
@@ -242,16 +242,16 @@ inv_name				= st_wpn_bm16_gold
 inv_name_short			= st_wpn_bm16_gold
 
 cost					= 16780
-inv_weight				= 3.942
+inv_weight				= 3.02
 
 upgrades                = up_gr_firstab_bm16_gold, up_gr_seconab_bm16_gold, up_gr_thirdab_bm16_gold
 installed_upgrades      = up_secona_bm16_gold, up_second_bm16_gold
 
-hit_power       = 1.03, 1.03, 1.03, 1.03
-hit_impulse     = 60
+hit_power       = 0.945, 0.945, 0.945, 0.945
+hit_impulse     = 30
 hit_type 		= fire_wound
-fire_distance       	= 460
-bullet_speed			= 384
+fire_distance       	= 200
+bullet_speed			= 370
 rpm                 	= 800
 
 hud                      		= wpn_bm16_gold_hud
@@ -260,12 +260,12 @@ misfire_start_condition		= 0.84
 misfire_end_condition		= 0.11
 misfire_start_prob = 0.007 ;	     	= 0.0052
 misfire_end_prob = 0.11 ;	     	= 0.063
-condition_shot_dec      	= 0.0024
+condition_shot_dec      	= 0.0020
 condition_queue_shot_dec	= 0.0008
 
 ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
-fire_dispersion_base		= 0.70
+fire_dispersion_base		= 0.8
 
 inv_grid_width          = 3
 inv_grid_height         = 1
@@ -286,15 +286,15 @@ inv_name				= st_wpn_bm16_worn
 inv_name_short			= st_wpn_bm16_worn
 
 cost					= 8640
-inv_weight				= 3.142
+inv_weight				= 2.73
 
 upgrades                = up_gr_firstab_bm16_worn, up_gr_seconab_bm16_worn, up_gr_thirdab_bm16_worn
 
-hit_power       = 0.81, 0.81, 0.81, 0.81
-hit_impulse     = 60
+hit_power       = 0.78, 0.78, 0.78, 0.78
+hit_impulse     = 30
 hit_type 		= fire_wound
-fire_distance       	= 391
-bullet_speed			= 332
+fire_distance       	= 150
+bullet_speed			= 330
 rpm                 	= 800
 
 hud                      		= wpn_bm16_worn_hud
@@ -303,12 +303,12 @@ misfire_start_condition		= 0.91
 misfire_end_condition		= 0.15
 misfire_start_prob = 0.007 ;	     	= 0.0074
 misfire_end_prob = 0.11 ;	     	= 0.071
-condition_shot_dec      	= 0.0044
+condition_shot_dec      	= 0.0040
 condition_queue_shot_dec	= 0.0019
 
 ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
-fire_dispersion_base		= 1.02
+fire_dispersion_base		= 1.0
 
 inv_grid_width          = 3
 inv_grid_height         = 1
@@ -330,15 +330,15 @@ inv_name_short			= st_wpn_bm16_rusty
 description				= st_wpn_bm16_irishrampage_descr
 
 cost					= 6240
-inv_weight				= 3.168
+inv_weight				= 2.8
 
 upgrades                = up_gr_firstab_bm16_rusty, up_gr_seconab_bm16_rusty, up_gr_thirdab_bm16_rusty
 
-hit_power       = 0.76, 0.76, 0.76, 0.76
-hit_impulse     = 60
+hit_power       = 0.74, 0.74, 0.74, 0.74
+hit_impulse     = 30
 hit_type 		= fire_wound
-fire_distance       	= 374
-bullet_speed			= 317
+fire_distance       	= 130
+bullet_speed			= 314
 rpm                 	= 800
 
 hud                      		= wpn_bm16_rusty_hud
@@ -347,12 +347,12 @@ misfire_start_condition		= 0.95
 misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.0083
 misfire_end_prob = 0.11 ;	     	= 0.076
-condition_shot_dec      	= 0.0052
-condition_queue_shot_dec	= 0.0026
+condition_shot_dec      	= 0.0050
+condition_queue_shot_dec	= 0.0025
 
 ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
-fire_dispersion_base		= 1.11 
+fire_dispersion_base		= 1.15
 
 inv_grid_width          = 3
 inv_grid_height         = 1
@@ -371,16 +371,16 @@ item_visual               		= dynamics\weapons\wpn_bm16\wpn_bm1c_hud.ogf
 [wpn_bm16_silver]:wpn_bm16
 
 cost					= 12320
-inv_weight				= 3.114
+inv_weight				= 2.91
 
 upgrades                = up_gr_firstab_bm16_silver, up_gr_seconab_bm16_silver, up_gr_thirdab_bm16_silver
 installed_upgrades      = up_firsta_bm16_silver, up_firstc_bm16_silver
 
-hit_power       = 0.99, 0.99, 0.99, 0.99
-hit_impulse     = 60
+hit_power       = 0.93, 0.93, 0.93, 0.93
+hit_impulse     = 30
 hit_type 		= fire_wound
-fire_distance       	= 430
-bullet_speed			= 371
+fire_distance       	= 200
+bullet_speed			= 366
 rpm                 	= 800
 
 hud                      		= wpn_bm16_silver_hud
@@ -389,12 +389,12 @@ misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.007
 misfire_end_prob = 0.11 ;	     	= 0.07
-condition_shot_dec      	= 0.005
-condition_queue_shot_dec	= 0.001
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0009
 
 ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan
 
-fire_dispersion_base		= 0.65 
+fire_dispersion_base		= 0.77
 
 inv_name				= st_wpn_bm16_silver
 inv_name_short			= st_wpn_bm16_silver

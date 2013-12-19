@@ -18,18 +18,18 @@ sprint_allowed          = true
 ;-------------------------------------------------------------------------------
 cost              		= 31150           ; the price of the item
 weapon_class            = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
-inv_weight				= 3.5								; weight in inventory
+inv_weight				= 3.12				; weight in inventory
 
 upgrades                = up_gr_firstab_ak74u_custom, up_gr_seconab_ak74u_custom, up_gr_thirdab_ak74u_custom, up_gr_fourtab_ak74u_custom, up_gr_fifthab_ak74u_custom
-installed_upgrades      = up_firsta_ak74u, up_firstd_ak74u, up_firste_ak74u 
+installed_upgrades      = up_firsta_ak74u_custom, up_firstd_ak74u_custom, up_firste_ak74u_custom 
 
 ;-““’---------------------------------------------------------------------------
-hit_power            	= 0.52, 0.52, 0.52, 0.52
-hit_impulse          	= 33 
+hit_power            	= 0.454, 0.454, 0.454, 0.454
+hit_impulse          	= 20
 hit_type            	= fire_wound            ; [] type of the wound
-fire_distance           = 600
-bullet_speed            = 750
-rpm                     = 660
+fire_distance           = 900
+bullet_speed            = 800
+rpm                     = 708
 rpm_empty_click         = 200
 
 use_aim_bullet          = false
@@ -42,12 +42,12 @@ misfire_start_condition		= 0.7
 misfire_end_condition		= 0.05
 misfire_start_prob = 0.007 ;	     	= 0.0052
 misfire_end_prob = 0.11 ;	     	= 0.052
-condition_shot_dec      	= 0.00075
-condition_queue_shot_dec	= 0.0007
+condition_shot_dec      	= 0.00065
+condition_queue_shot_dec	= 0.00065
 
 ammo_elapsed            	= 30	; obsolete
 ammo_mag_size        		= 30	; clip (magazine) size
-fire_modes           		= 1, -1
+fire_modes           		= 1, 3, -1
 
 ammo_class           		= ammo_5.45x39_fmj, ammo_5.45x39_ap  ; name of the ltx-section of used ammo
 grenade_class        		= ammo_vog-25	; name of the ltx-section of used grenades
@@ -61,29 +61,30 @@ zoom_dof             		= 0.5, 1.0, 180
 reload_dof           		= 0.0, 0.5, 5, 2
 
 ;----ƒисперси€---------------------------------------------------------------------------
-fire_dispersion_base       = 0.30 ;0.19      ;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
-control_inertion_factor    = 1.06
+fire_dispersion_base       = 0.42 ;0.19      ;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
+control_inertion_factor    = 1.06f
 crosshair_inertion		= 4.3
 
 ;params of weapon recoil
-cam_return				= 0 ;              		= 1
-cam_relax_speed         		= 10
-cam_relax_speed_ai     			= 120.75
-cam_dispersion	         	= 0.95
-cam_dispersion_inc         	= 0.6
-cam_dispersion_frac     		= 1.1
-cam_max_angle				= 50.0
-cam_max_angle_horz      		= 5.0
-cam_step_angle_horz     		= 1.5
+cam_return = 0 ;				= 1
+cam_relax_speed         = 12			;скорость возврата в исходное положение
+cam_relax_speed_ai     	= 120.75
+cam_dispersion	        = 0.83
+cam_dispersion_inc      = 0.51
+cam_dispersion_frac     = 1.1	    ;ствол будет подыматьс€ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 41.0      ;максимальный угол отдачи
+cam_max_angle_horz      = 41.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.16		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_relax_speed         		= 10
-zoom_cam_relax_speed_ai      		= 360
-zoom_cam_dispersion          	= 0.7
-zoom_cam_dispersion_inc      	= 0.35
-zoom_cam_dispersion_frac     		= 0.57
-zoom_cam_max_angle           		= 50.0
-zoom_cam_max_angle_horz      		= 5.0
-zoom_cam_step_angle_horz     		= 1.0
+zoom_cam_relax_speed         = 12	    ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          = 0.73
+zoom_cam_dispersion_inc      = 0.43
+zoom_cam_dispersion_frac     = 1.0
+zoom_cam_max_angle           = 41.0
+zoom_cam_max_angle_horz      = 41.0
+zoom_cam_step_angle_horz     = 1.05
+
 fire_dispersion_condition_factor = 0.001 ;	= 0.01 ; 10
 
 PDM_disp_base 				= 0.7
@@ -167,7 +168,7 @@ scope_name 			= wpn_addon_scope
 
 zoom_enabled            	= true   ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time        	= 0.25
-scope_zoom_factor       	= 44     ; fov for zoom mode
+scope_zoom_factor       	= 56     ; fov for zoom mode
 
 silencer_name           	= wpn_addon_silencer_545x39    ; section name for the attachable silencer
 silencer_x 			= 178	; offset in inventory icon

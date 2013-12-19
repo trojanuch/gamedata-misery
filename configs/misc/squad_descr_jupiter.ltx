@@ -29,7 +29,7 @@ spawn_point = {=actor_in_zone(jup_b212_chimera_spawn_zone)} jup_b212_chimera_spa
 faction = bandit
 npc = sim_default_bandit_4, sim_default_bandit_3, sim_default_bandit_3
 story_id = jup_a10_bandit_squad
-target_smart = {+jup_a10_vano_give_task_end} nil, {+jup_a10_fals} nil, jup_a10_smart_terrain
+target_smart = jup_a10_smart_terrain
 spawn_point = jup_a10_spawn_point
 sympathy = 0
 
@@ -37,7 +37,7 @@ sympathy = 0
 faction = bandit
 npc = sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_2
 story_id = jup_a10_bandit_squad_1
-target_smart = {+jup_a10_vano_give_task_end} nil, {+jup_a10_fals} nil, jup_a10_smart_terrain
+target_smart = jup_a10_smart_terrain
 spawn_point = jup_a10_smart_terrain_jup_a10_bandit_guard_1_walk
 sympathy = 0
 
@@ -45,7 +45,7 @@ sympathy = 0
 faction = bandit
 npc = sim_default_bandit_3, sim_default_bandit_2, sim_default_bandit_1
 story_id = jup_a10_bandit_squad_2
-target_smart = {+jup_a10_vano_give_task_end} nil, {+jup_a10_fals} nil, jup_a10_smart_terrain
+target_smart = jup_a10_smart_terrain
 spawn_point = jup_a10_smart_terrain_jup_a10_bandit_guard_1_walk
 sympathy = 0
 
@@ -53,7 +53,7 @@ sympathy = 0
 faction = bandit
 npc = jup_a10_bandit_leader, sim_default_bandit_4, sim_default_bandit_4, sim_default_bandit_4
 story_id = jup_a10_bandit_squad_3
-target_smart = {+jup_a10_vano_give_task_end} nil, {+jup_a10_fals} nil, jup_a10_smart_terrain
+target_smart = jup_a10_smart_terrain
 spawn_point = jup_a10_smart_terrain_walker_4_walk
 sympathy = 0
 
@@ -237,7 +237,7 @@ always_arrived = true
 
 [jup_b25_freedom_flint_squad]:online_offline_group
 faction = freedom
-npc = jup_b25_freedom_flint;, sim_default_freedom_2, sim_default_freedom_2
+npc = jup_b25_freedom_flint, jup_b25_stalker_commentator
 target_smart = jup_a6
 spawn_point = jup_a6_spawn_point
 story_id = jup_b25_freedom_flint_squad
@@ -287,6 +287,7 @@ target_smart = jup_b1
 
 [jup_b1_stalker_pro_squad]:jup_b1_stalker_squad
 npc = jup_b1_pro_stalker_1, jup_b1_pro_stalker_2, jup_b1_pro_stalker_3, jup_b1_pro_stalker_4
+relationship = friend
 faction = ecolog
 target_smart = jup_b41
 
@@ -359,8 +360,8 @@ story_id = jup_b6_boar_horde_2
 
 [jup_b6_swamp_hunters]:online_offline_group
 faction = monster_predatory_night
-npc = jup_b6_bloodsucker_1, jup_b6_bloodsucker_2, jup_b6_bloodsucker_3
-target_smart = {+jup_b6_complete_end} nil, jup_b211
+npc = bloodsucker_normal, bloodsucker_normal, bloodsucker_normal
+target_smart = jup_b211
 spawn_point = jup_b211_mob_home_hunter_prime
 story_id = jup_b6_swamp_hunters
 

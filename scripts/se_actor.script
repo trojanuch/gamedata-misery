@@ -7,7 +7,7 @@ end
 
 function se_actor:on_register()
 	cse_alife_creature_actor.on_register(self)
-	story_objects.get_story_objects_registry():register(self.id, "actor", true)
+	story_objects.get_story_objects_registry():register(self.id, "actor") -- Сохранять нет смысла, если назначаем каждый раз. Real Wolf
 	simulation_objects.get_sim_obj_registry():register(self)
 	self.m_registred = true
 	--Alundaio
@@ -33,6 +33,9 @@ function se_actor:STATE_Write(packet)
 --	end
 	set_save_marker(packet, "save", false, "se_actor")
 	packet:w_bool(self.start_position_filled)
+	-- Real Wolf
+	packet:w_stringZ("check")
+	-- Real Wolf
 	story_objects.get_story_objects_registry():save(packet)
 	set_save_marker(packet, "save", true, "se_actor")
 end
@@ -40,7 +43,7 @@ end
 function se_actor:STATE_Read(packet, size)
 	cse_alife_creature_actor.STATE_Read(self, packet, size)
 	-- под LevelEditor не пытаться читать из пакета ничего
-	if editor() then
+	if editor() or packet:r_eof() then
 		return
 	end
 --	if self.m_registred ~= true then
@@ -49,7 +52,9 @@ function se_actor:STATE_Read(packet, size)
 	if db.actor == nil then
 		set_save_marker(packet, "load", false, "se_actor")
 		self.start_position_filled = packet:r_bool()
-		if (size >= 156) then
+		-- Real Wolf
+		if (packet:r_stringZ() == "check") then
+		-- Real Wolf
 			story_objects.get_story_objects_registry():load(packet)
 		end
 		set_save_marker(packet, "load", true, "se_actor")

@@ -11,18 +11,18 @@ ef_weapon_type				= 5
 
 ;-------------------------------------------------------------------------------
 cost					= 6980
-inv_weight				= 0.697
+inv_weight				= 0.97
 
 upgrades                = up_gr_firstab_pb, up_gr_seconab_pb, up_gr_thirdab_pb, up_gr_fourtab_pb, up_gr_fifthab_pb
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_pb
 
 ;--TTX---------------------------------------------------------------------------
-hit_power           		= 0.155, 0.155, 0.155, 0.155
-hit_impulse	 		 		= 16
+hit_power           		= 0.175, 0.175, 0.175, 0.175
+hit_impulse	 		 		= 20
 hit_type 					= fire_wound
-fire_distance           	= 160
-bullet_speed		 		= 255
+fire_distance           	= 250
+bullet_speed		 		= 290
 rpm                     	= 385
 rpm_empty_click 	 		= 120
 
@@ -36,8 +36,8 @@ misfire_start_condition		= 0.89
 misfire_end_condition		= 0.16
 misfire_start_prob = 0.007 ;	     	= 0.009
 misfire_end_prob = 0.11 ;	     	= 0.072
-condition_shot_dec      	= 0.0017
-condition_queue_shot_dec	= 0.0020
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
 
 ammo_elapsed		 	= 8
 ammo_mag_size		 	= 8
@@ -47,20 +47,20 @@ single_handed			= 1
 
 ;---дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.84 ;0.15 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.0 ; = 0.80
+fire_dispersion_base	= 0.59 ;0.15 			;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.0f
 crosshair_inertion		= 2.8
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
+cam_return = 0 ;				= 0
 cam_relax_speed         = 8				;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion          = 0.39				;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.39				;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          = 0.47				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.53				;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac		= 1.1				;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 5.0			;максимальный угол отдачи
-cam_max_angle_horz		= 5.0			;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.0				;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle			= 50.0			;максимальный угол отдачи
+cam_max_angle_horz		= 50.0			;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 0.43				;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.7
 PDM_disp_vel_factor 		= 1.05

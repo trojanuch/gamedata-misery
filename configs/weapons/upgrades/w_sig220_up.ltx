@@ -2,11 +2,11 @@
 ;Скорострельность(1)10%
 ;----------------------
 cost		      		= 1460
-value					= +5
+value					= +10
 
-rpm						= +34
+rpm						= +20
 
-inv_weight			= +0.14
+inv_weight			= +0.1
 
 [up_sect_firstc_sig220]
 ;Надежность(2)15%
@@ -14,16 +14,12 @@ inv_weight			= +0.14
 cost		      		= 1960
 value					= +15
 
-
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00015 ;0.0011
+condition_shot_dec      	= -0.00015
+condition_queue_shot_dec	= -0.00015
 
 misfire_start_prob	     	= -0.0015
-
-misfire_end_prob	     	= -0.015 ;0.03
+misfire_end_prob	     	= -0.015
 
 inv_weight			= +0.18
 
@@ -33,8 +29,9 @@ inv_weight			= +0.18
 cost		      		= 1980
 value					= +20
 
-bullet_speed		 	= +60
-fire_dispersion_base	= -0.02 
+bullet_speed		 	= +56
+fire_distance           = +30
+fire_dispersion_base	= -0.02
 
 inv_weight			= +0.13
 
@@ -47,9 +44,9 @@ cost		      		= 2860
 fire_modes		  = 1, 3
 rpm               = +275
 
-cam_dispersion          = -0.45		;1.2
-cam_dispersion_inc		= -0.45		;1.2
-cam_step_angle_horz		= -0.45		;1.2
+cam_dispersion          = +0.057				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= +0.06				;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= +0.06				;(degree) size of step camera moved in horizontal position while shooting
 
 inv_weight			= +0.14
 
@@ -59,10 +56,10 @@ inv_weight			= +0.14
 cost		      		= 1560
 value					= +10
 
-bullet_speed		 	= +40
+bullet_speed		 	= +28
 fire_dispersion_base	= -0.01
 
-inv_weight			= +0.2
+inv_weight			= +0.1
 
 [up_sect_seconc_sig220]
 ;Надежность(2)15%
@@ -72,14 +69,11 @@ value					= +15
 
 
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00015 ;0.0011
+condition_shot_dec      	= -0.00015
+condition_queue_shot_dec	= -0.00015
 
 misfire_start_prob	     	= -0.0015
-
-misfire_end_prob	     	= -0.015 ;0.03
+misfire_end_prob	     	= -0.015
 
 inv_weight			= +0.16
 
@@ -89,7 +83,7 @@ inv_weight			= +0.16
 cost		      		= 2340
 value					= +15
 
-rpm						= +35
+rpm						= +30
 
 inv_weight			= +0.08
 
@@ -99,8 +93,10 @@ inv_weight			= +0.08
 cost		      		= 2380
 value					= +30
 
-bullet_speed		 	= +80
+bullet_speed		 	= +84
 fire_dispersion_base	= -0.03 
+
+fire_distance           = +50
 
 inv_weight			= +0.12
 
@@ -135,12 +131,12 @@ inv_weight			= -0.074
 [up_sect_thirdd_sig220]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 1930
-value					= -20
+cost		      		= 2830
+value					= -15
 
-cam_dispersion          = -0.45		;1.2
-cam_dispersion_inc		= -0.45		;1.2
-cam_step_angle_horz		= -0.45		;1.2
+cam_dispersion          = -0.168				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.182				;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.18				;(degree) size of step camera moved in horizontal position while shooting
 
 inv_weight			= +0.11
 
@@ -150,7 +146,7 @@ inv_weight			= +0.11
 cost		      		= 1640
 value					= +10
 
-fire_dispersion_base	= -0.03
+fire_dispersion_base	= -0.05
 ;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.07
@@ -162,14 +158,11 @@ cost		      		= 1780
 value					= +15
 
 ;fire_dispersion_condition_factor    = -1 ;15
-;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00015 ;0.0013
-;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00015 ;0.0011
+condition_shot_dec      	= -0.00015
+condition_queue_shot_dec	= -0.00015
 
 misfire_start_prob	     	= -0.0015
-
-misfire_end_prob	     	= -0.015 ;0.03
+misfire_end_prob	     	= -0.015
 
 inv_weight			= +0.14
 
@@ -179,7 +172,7 @@ inv_weight			= +0.14
 cost		      		= 2360
 value					= +15
 
-rpm						= +35
+rpm						= +30
 
 inv_weight			= +0.06
 
@@ -191,7 +184,7 @@ value					= +4
 
 ammo_mag_size		 	= +4
 
-inv_weight			= +0.42
+inv_weight			= +0.042
 
 [up_firsta_sig220]
 scheme_index            = 0, 0

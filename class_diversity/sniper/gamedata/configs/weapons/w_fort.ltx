@@ -18,11 +18,11 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_fort
 
 ;--TTX----------------------------------------------------------------------------
-hit_power           		= 0.255, 0.255, 0.255, 0.255
-hit_impulse	 		 		= 45
+hit_power           		= 0.24, 0.24, 0.24, 0.24
+hit_impulse	 		 		= 20
 hit_type 					= fire_wound
-fire_distance           	= 580
-bullet_speed		 		= 650
+fire_distance           	= 300
+bullet_speed		 		= 320
 rpm                     	= 235
 rpm_empty_click 	 		= 120
 
@@ -36,8 +36,8 @@ misfire_start_condition		= 0.88
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.008
 misfire_end_prob = 0.11 ;	     	= 0.05
-condition_shot_dec      	= 0.0017
-condition_queue_shot_dec	= 0.0020
+condition_shot_dec      	= 0.0015
+condition_queue_shot_dec	= 0.0015
 
 ammo_elapsed		 	= 12
 ammo_mag_size		 	= 12
@@ -52,19 +52,19 @@ reload_dof				= 0.0, 0.5, 5, 1.7
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
 fire_dispersion_base	= 0.64 ;0.18  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.11f ; = 0.78
-crosshair_inertion		= 3.8
+control_inertion_factor = 1.01f
+crosshair_inertion		= 3.3
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
+cam_return = 0 ;				= 0
 cam_relax_speed         = 8	;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion          = 1.0	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 1.15	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac		= 1.25	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 5.0	;максимальный угол отдачи
-cam_max_angle_horz		= 5.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.0	;(degree) size of step camera moved in horizontal position while shooting
+cam_dispersion          = 0.77	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.89	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 50.0	;максимальный угол отдачи
+cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 0.77	;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.65
 PDM_disp_vel_factor 		= 1.24
@@ -257,10 +257,10 @@ inv_weight				= 0.845
 upgrades                = up_gr_firstab_fort_custom, up_gr_seconab_fort_custom, up_gr_thirdab_fort_custom, up_gr_fourtab_fort_custom, up_gr_fifthab_fort_custom, up_gr_fifthcd_fort_custom
 installed_upgrades      = up_thirda_fort_custom, up_thirdd_fort_custom
 
-hit_power           		= 0.26, 0.26, 0.26, 0.26
-hit_impulse	 		 		= 45
-fire_distance           	= 605
-bullet_speed		 		= 670
+hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_impulse	 		 		= 20
+fire_distance           	= 300
+bullet_speed		 		= 330
 rpm                     	= 258
 
 hud                      	= wpn_fort_custom_hud
@@ -269,13 +269,10 @@ misfire_start_condition		= 0.84
 misfire_end_condition		= 0.12
 misfire_start_prob = 0.007 ;	     	= 0.006
 misfire_end_prob = 0.11 ;	     	= 0.05
-condition_shot_dec      	= 0.0015
-condition_queue_shot_dec	= 0.0017
+condition_shot_dec      	= 0.00135
+condition_queue_shot_dec	= 0.00135
 
-ammo_mag_size		 	= 12
-ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
-
-fire_dispersion_base	= 0.54
+fire_dispersion_base	= 0.58
 
 inv_name				= st_wpn_fort_custom
 inv_name_short			= st_wpn_fort_custom
@@ -296,15 +293,15 @@ item_visual						= dynamics\weapons\wpn_fort\wpn_for1_hud
 [wpn_fort_camo]:wpn_fort
 
 cost					= 8920
-inv_weight				= 0.726
+inv_weight				= 0.8
 
 upgrades                = up_gr_firstab_fort_camo, up_gr_seconab_fort_camo, up_gr_thirdab_fort_camo, up_gr_fourtab_fort_camo, up_gr_fifthab_fort_camo, up_gr_fifthcd_fort_camo
 installed_upgrades      = up_thirda_fort_camo, up_secona_fort_camo, up_second_fort_camo, up_fiftha_fort_camo
 
-hit_power           		= 0.285, 0.285, 0.285, 0.285
-hit_impulse	 		 		= 45
-fire_distance           	= 640
-bullet_speed		 		= 683
+hit_power           		= 0.28, 0.28, 0.28, 0.28
+hit_impulse	 		 		= 20
+fire_distance           	= 350
+bullet_speed		 		= 342
 rpm                     	= 262
 
 hud                      	= wpn_fort_camo_hud
@@ -313,13 +310,10 @@ misfire_start_condition		= 0.82
 misfire_end_condition		= 0.11
 misfire_start_prob = 0.007 ;	     	= 0.005
 misfire_end_prob = 0.11 ;	     	= 0.03
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0015
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.0012
 
-ammo_mag_size		 	= 12
-ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
-
-fire_dispersion_base	= 0.45
+fire_dispersion_base	= 0.53
 
 inv_name			= st_wpn_fort_camo
 inv_name_short			= st_wpn_fort_camo
@@ -341,14 +335,14 @@ item_visual						= dynamics\weapons\wpn_fort\wpn_for2_hud
 [wpn_fort_rusty]:wpn_fort
 
 cost					= 2880
-inv_weight				= 0.848
+inv_weight				= 0.85
 
 upgrades                = up_gr_firstab_fort_rusty, up_gr_seconab_fort_rusty, up_gr_thirdab_fort_rusty, up_gr_fourtab_fort_rusty, up_gr_fifthab_fort_rusty, up_gr_fifthcd_fort_rusty
 
 hit_power           		= 0.165, 0.165, 0.165, 0.165
-hit_impulse	 		 		= 45
-fire_distance           	= 522
-bullet_speed		 		= 601
+hit_impulse	 		 		= 20
+fire_distance           	= 250
+bullet_speed		 		= 296
 rpm                     	= 208
 
 hud                      	= wpn_fort_rusty_hud
@@ -357,13 +351,10 @@ misfire_start_condition		= 0.96
 misfire_end_condition		= 0.21
 misfire_start_prob = 0.007 ;	     	= 0.011
 misfire_end_prob = 0.11 ;	     	= 0.08
-condition_shot_dec      	= 0.0020
-condition_queue_shot_dec	= 0.0025
+condition_shot_dec      	= 0.0023
+condition_queue_shot_dec	= 0.0023
 
 silencer_status				= 0
-
-ammo_mag_size		 	= 12
-ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
 
 fire_dispersion_base	= 0.88
 
@@ -387,14 +378,14 @@ item_visual						= dynamics\weapons\wpn_fort\wpn_for3_hud
 [wpn_fort_worn]:wpn_fort
 
 cost					= 4998
-inv_weight				= 0.836
+inv_weight				= 0.832
 
 upgrades                = up_gr_firstab_fort_worn, up_gr_seconab_fort_worn, up_gr_thirdab_fort_worn, up_gr_fourtab_fort_worn, up_gr_fifthab_fort_worn, up_gr_fifthcd_fort_worn
 
 hit_power           		= 0.19, 0.19, 0.19, 0.19
-hit_impulse	 		 		= 45
-fire_distance           	= 540
-bullet_speed		 		= 602
+hit_impulse	 		 		= 20
+fire_distance           	= 300
+bullet_speed		 		= 310
 rpm                     	= 218
 
 hud                      	= wpn_fort_worn_hud
@@ -404,12 +395,9 @@ misfire_end_condition		= 0.16
 misfire_start_prob = 0.007 ;	     	= 0.009
 misfire_end_prob = 0.11 ;	     	= 0.06
 condition_shot_dec      	= 0.0019
-condition_queue_shot_dec	= 0.0023
+condition_queue_shot_dec	= 0.0019
 
 silencer_status				= 0
-
-ammo_mag_size		 	= 12
-ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
 
 fire_dispersion_base	= 0.76
 
@@ -433,4 +421,4 @@ item_visual						= dynamics\weapons\wpn_fort\wpn_for4_hud
 [wpn_fort_snag]:wpn_fort_custom
 $spawn                  	= "weapons\wpn_fort_snag"		; option for Level Editor
 
-installed_upgrades      = up_thirda_fort, up_thirdd_fort, up_fourta_fort, up_fourtc_fort
+installed_upgrades      = up_thirda_fort_custom, up_thirdd_fort_custom, up_fourta_fort_custom, up_fourtc_fort_custom

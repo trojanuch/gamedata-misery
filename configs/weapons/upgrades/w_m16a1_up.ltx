@@ -1,3 +1,35 @@
+[up_sect_secona_m16a1]
+;Отдача(1)-10%
+;------------
+cost		      		= 5460
+value                   = -10
+
+cam_dispersion	        = -0.138
+cam_dispersion_inc      = -0.106
+cam_step_angle_horz     = -0.136	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.118
+zoom_cam_dispersion_inc     = -0.096
+zoom_cam_step_angle_horz    = -0.124
+
+inv_weight			= +0.17
+
+[up_sect_secone_m16a1]
+;Отдача(3)-30%
+;------------
+cost		      		= 5810
+value                   = -10
+
+cam_dispersion	        = -0.138
+cam_dispersion_inc      = -0.106
+cam_step_angle_horz     = -0.136	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion         = -0.118
+zoom_cam_dispersion_inc     = -0.096
+zoom_cam_step_angle_horz    = -0.124
+
+inv_weight			= +0.12
+
 [up_firsta_m16a1]
 scheme_index            = 0, 0
 known                   = 1
@@ -87,7 +119,7 @@ icon                    = ui_inGame2_upgrade_TRs_301_4
 scheme_index            = 0, 1
 known                   = 1
 effects                 = up_gr_seconcd_m16a1
-section                 = up_sect_secona_lr300
+section                 = up_sect_secona_m16a1
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -128,7 +160,7 @@ icon                    = ui_inGame2_upgrade_TRs_301_6
 scheme_index            = 2, 1
 known                   = 1
 effects                 =
-section                 = up_sect_secone_lr300
+section                 = up_sect_secone_m16a1
 property                = prop_recoil
 
 precondition_functor    = inventory_upgrades.precondition_functor_a

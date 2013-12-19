@@ -247,7 +247,7 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 19
 inv_grid_y			= 4
-cost				= 4690
+cost				= 6690
 
 ;eatable item
 ;eat_radiation 			= 0.9
@@ -263,18 +263,117 @@ eat_sleepiness				= -0.041
 
 use_sound			= interface\inv_syringe
 
-[caffeine]:booster
+[caffeine]:booster ;x5
 $spawn 				= "food and drugs\drug_psy_blockade"
 visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
 inv_name			= st_caffeine
-inv_name_short		= st_caffeine
+inv_name_short			= st_caffeine
 description			= st_caffeine_descr
 
-inv_weight			= 0.01
+inv_weight			= 0.011
 inv_grid_width		= 1
 inv_grid_height		= 1
-inv_grid_x		= 10
-inv_grid_y		= 47
+inv_grid_x		= 20
+inv_grid_y		= 17
+cost			= 2550
+
+boost_time			= 348
+boost_max_weight	= 1.012
+
+boost_power_restore		= 0.00094
+
+eat_alcohol 			= -0.216
+eat_satiety 			= 0.014
+eat_sleepiness				= -0.034
+
+use_sound			= interface\inv_eat_pills_effect
+
+[caffeine2]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine2
+inv_name_short			= st_caffeine2
+description			= st_caffeine_descr
+
+inv_weight			= 0.009
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 20
+inv_grid_y		= 18
+cost			= 2040
+
+boost_time			= 348
+boost_max_weight	= 1.012
+
+boost_power_restore		= 0.00094
+
+eat_alcohol 			= -0.216
+eat_satiety 			= 0.014
+eat_sleepiness				= -0.034
+
+use_sound			= interface\inv_eat_pills_effect
+
+[caffeine3]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine3
+inv_name_short			= st_caffeine3
+description			= st_caffeine_descr
+
+inv_weight			= 0.007
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 20
+inv_grid_y		= 19
+cost			= 1530
+
+boost_time			= 348
+boost_max_weight	= 1.012
+
+boost_power_restore		= 0.00094
+
+eat_alcohol 			= -0.216
+eat_satiety 			= 0.014
+eat_sleepiness				= -0.034
+
+use_sound			= interface\inv_eat_pills_effect
+[caffeine4]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine4
+inv_name_short			= st_caffeine4
+description			= st_caffeine_descr
+
+inv_weight			= 0.005
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 20
+inv_grid_y		= 20
+cost			= 1020
+
+boost_time			= 348
+boost_max_weight	= 1.012
+
+boost_power_restore		= 0.00094
+
+eat_alcohol 			= -0.216
+eat_satiety 			= 0.014
+eat_sleepiness				= -0.034
+
+use_sound			= interface\inv_eat_pills_effect
+
+[caffeine5]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine5
+inv_name_short			= st_caffeine5
+description			= st_caffeine_descr
+
+inv_weight			= 0.003
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 20
+inv_grid_y		= 21
 cost			= 510
 
 boost_time			= 348
@@ -286,7 +385,7 @@ eat_alcohol 			= -0.216
 eat_satiety 			= 0.014
 eat_sleepiness				= -0.034
 
-use_sound			= interface\inv_eat_pills
+use_sound			= interface\inv_eat_pills_effect
 
 [tetanus]:booster
 $spawn 				= "food and drugs\antirad"
@@ -326,7 +425,7 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 39
 inv_grid_y			= 0
-cost				= 1840
+cost				= 2760
 
 eat_satiety 			= 0.364
 eat_sleepiness			= 0.236
@@ -345,14 +444,14 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 40
 inv_grid_y			= 0
-cost				= 960
+cost				= 1440
 
 eat_satiety 			= 0.152
 eat_sleepiness			= 0.147
 
 use_sound			= interface\inv_syringe
 
-[cocaine]:booster
+[cocaine]:booster ;x3
 $spawn 				= "devices\pda"
 visual				= dynamics\drink\drink_cocaine.ogf
 description			= st_cocaine_descr
@@ -364,9 +463,97 @@ inv_weight			= 0.033	;0.2
 
 inv_grid_width			= 1
 inv_grid_height			= 1
-inv_grid_x			= 8
-inv_grid_y			= 52
-cost				= 1780
+inv_grid_x			= 35
+inv_grid_y			= 8
+cost				= 6942
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+boost_time				= 1352
+boost_power_restore		= 0.0038
+boost_max_weight	= 5.271
+boost_bleeding_restore	= 0.0002
+
+;boost_wound_immunity		= 0.046
+;boost_fire_wound_immunity	= 0.032
+;boost_explosion_immunity	= 0.040
+;boost_strike_immunity		= 0.027
+
+eat_alcohol				= -0.22
+eat_satiety				= 0.212
+eat_sleepiness				= -0.431
+
+eat_health				= 0.056
+
+use_sound			= interface\inv_sniff_long
+
+[cocaine2]:booster
+$spawn 				= "devices\pda"
+visual				= dynamics\drink\drink_cocaine.ogf
+description			= st_cocaine_descr
+
+inv_name			= st_cocaine2
+inv_name_short			= st_cocaine2
+
+inv_weight			= 0.031	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 35
+inv_grid_y			= 9
+cost				= 4628
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+boost_time				= 1352
+boost_power_restore		= 0.0038
+boost_max_weight	= 5.271
+boost_bleeding_restore	= 0.0002
+
+;boost_wound_immunity		= 0.046
+;boost_fire_wound_immunity	= 0.032
+;boost_explosion_immunity	= 0.040
+;boost_strike_immunity		= 0.027
+
+eat_alcohol				= -0.22
+eat_satiety				= 0.212
+eat_sleepiness				= -0.431
+
+eat_health				= 0.056
+
+use_sound			= interface\inv_sniff_long
+
+[cocaine3]:booster
+$spawn 				= "devices\pda"
+visual				= dynamics\drink\drink_cocaine.ogf
+description			= st_cocaine_descr
+
+inv_name			= st_cocaine3
+inv_name_short			= st_cocaine3
+
+inv_weight			= 0.029	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 35
+inv_grid_y			= 10
+cost				= 2314
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -490,7 +677,7 @@ inv_name			= st_adrenalin
 inv_name_short			= st_adrenalin
 visual				= dynamics\equipments\medical\rebirth.ogf
 description			= st_adrenalin_descr
-cost				= 2780
+cost				= 3240
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -514,7 +701,7 @@ boost_bleeding_restore	= 0.00037
 ;boost_strike_immunity		= 0.058
 
 eat_alcohol				= -0.36
-eat_satiety				= 0.418
+eat_satiety				= 0.318
 eat_sleepiness				= -0.446
 
 eat_health				= 0.066

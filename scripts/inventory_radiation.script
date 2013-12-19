@@ -1,0 +1,160 @@
+----------------------------------------------------------
+--	Inventory_radiation.script
+--  Original scripting done by the NARODNAYA SOLYANKA team
+--  Modified for use in Misery 2.0+ by Yastiandrie
+----------------------------------------------------------
+
+local cfg_arts = {}
+local inv_arts = {}
+local inv_check = {}
+local ballast_weight = 0
+
+local inv_arts_rad = 0
+local time_previous = 0
+local time_step = 287
+local rad_factor = 0.5  --Yasti: 1.0 = full radiation_restore_speed hit while in inventory,  change to 0.0 if you want no inventory radiation
+
+
+function on_game_start()
+	callback_register("actor_on_update",actor_on_update)
+	callback_register("actor_on_item_drop",actor_on_item_drop)
+	callback_register("actor_on_item_take",actor_on_item_take)
+end
+
+
+function actor_on_update()
+	local tg = time_global()
+	apply_rad(tg)
+end
+
+
+function actor_on_item_take(obj)
+	local obj_id = obj:id()
+	local obj_sect = obj:section()
+	local obj_clsid = obj:clsid()
+ 
+	if (obj_clsid == clsid.artefact) or (obj_clsid == clsid.artefact_s) then 
+		register_artefact(obj_sect, 1)
+    end
+end
+
+
+function actor_on_item_drop(obj)
+	local obj_id = obj:id()
+	local obj_sect = obj:section()
+	local obj_clsid = obj:clsid()
+
+	if (obj_clsid == clsid.artefact) or (obj_clsid == clsid.artefact_s) then 
+		register_artefact(obj_sect, -1)
+	end	
+end
+
+----------------------------------------------------
+--Function add's artifacts in inventory to table and adjusts inventory radiation value
+----------------------------------------------------
+
+function register_artefact(obj_sec, number, in_container)
+	local f = get_art_index(obj_sec)
+
+	if f == 0 then
+		--local obj_section = level.object_by_id(obj_id):section()
+		local ini = system_ini()
+		if ini:section_exist(obj_sec) then
+			local class = ini:r_clsid(obj_sec, "class")
+
+			if class == clsid.artefact or class == clsid.artefact_s then
+				local tmp = {}
+
+				tmp.section = obj_sec
+				tmp.inv_rad = ini:r_float(obj_sec, "radiation_restore_speed")
+				tmp.tx = ini:r_u32(obj_sec, "inv_grid_x")
+				tmp.ty = ini:r_u32(obj_sec, "inv_grid_y")
+				tmp.weight = ini:r_float(obj_sec, "inv_weight")
+				
+				table.insert(cfg_arts, tmp)
+				f = table.getn(cfg_arts)
+			
+				if not in_container then			
+					table.insert(inv_arts, number)
+					change_inv_arts_rad(number*cfg_arts[f].inv_rad)
+				end
+			end
+		end
+	else -- If artefact is already in cfg_arts table
+		if not in_container then
+			inv_arts[f]=inv_arts[f] + number
+			change_inv_arts_rad(number*cfg_arts[f].inv_rad)
+		end
+	end
+	
+--	for k,v in pairs(cfg_arts) do
+--		alun_utils.printf("cfg_arts key|value=  "..tostring(k).."  |  "..tostring(v))
+--	end
+
+
+--	if number == -1 then
+--		alun_utils.printf("Artifact "..tostring(obj_sec).." has been de-registered")
+--	elseif number == 1 then
+--		alun_utils.printf("inventory_radiation.register_artefact: Artifact "..tostring(obj_sec).." has been registered")
+--	end
+	return f
+end
+
+
+function change_inv_arts_rad(delta)
+	inv_arts_rad = inv_arts_rad + delta
+	if inv_arts_rad < 0.00000001 then -- Yasti: Makes sure values low enough return zero. May need to be further adjusted
+		inv_arts_rad = 0
+	end
+	--alun_utils.printf("inventory_radiation.change_inv_arts_rad: inv_arts_rad= "..tostring(inv_arts_rad))
+end
+
+----------------------------------------------------
+--Function applies the radiation from registered artifacts to the actor
+----------------------------------------------------
+
+function apply_rad(time)
+	local time_delta = time - time_previous
+	if time_delta >= time_step then
+		local stepped_delta = math.min(5, time_delta/time_step)
+		local delta_rad = inv_arts_rad*stepped_delta
+--		alun_utils.printf("inventory_radiation.apply_rad: inv_arts_rad x stepped_delta = delta_radiation: "..tostring(inv_arts_rad).."x"..tostring(stepped_delta).."="..tostring(delta_rad))
+		
+		if delta_rad~=0 then
+			delta_rad = delta_rad * rad_factor
+			
+			if delta_rad < 0 then 
+				delta_rad = 0
+			end
+			
+			db.actor.radiation = delta_rad
+--			alun_utils.printf("inventory_radiation.apply_rad: actor rad= "..tostring(db.actor.radiation).." delta_rad= "..tostring(delta_rad))
+		end
+		time_previous = time
+	end
+end
+
+
+function get_art_index(obj)
+	for i = 1, get_cfg_arts_number() do
+		if cfg_arts[i].section == obj then
+			return i
+		end
+	end
+	return 0
+end
+
+
+function get_cfg_arts_number()
+	return table.getn(cfg_arts)
+end
+
+
+function get_art_section(art_index)
+  return cfg_arts[art_index].section
+end
+
+
+function get_inv_arts_number(art_index)
+  return inv_arts[art_index]
+end

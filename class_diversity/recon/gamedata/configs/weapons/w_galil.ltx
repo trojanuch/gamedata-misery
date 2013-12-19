@@ -17,26 +17,20 @@ sprint_allowed          = true
 ;-------------------------------------------------------------------------------
 cost              	 = 35580            ; the price of the item
 weapon_class         = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
-inv_weight        = 3.953                      ; weight in inventory
+inv_weight        = 3.98
 
 upgrades                = up_gr_firstab_galil, up_gr_seconab_galil, up_gr_thirdab_galil, up_gr_fourtab_galil, up_gr_fifthab_galil
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_sig550
 
 ;-ТТХ---------------------------------------------------------------------------
-hit_power           		= 0.44, 0.44, 0.44, 0.44
-hit_impulse          = 35    ; size of physic impulse by bullet
-hit_type             = fire_wound            ; [] type of the wound
-fire_distance           = 860 ;1000                  ; maximum fire distance that bullet can fly
-bullet_speed            = 800                ; starting bullet speed
-rpm                     = 680    ; max round per minute
+hit_power           		= 0.574, 0.574, 0.574, 0.574
+hit_impulse          = 37  					; size of physic impulse by bullet
+hit_type             = fire_wound           ; [] type of the wound
+fire_distance           = 1100              ; maximum fire distance that bullet can fly
+bullet_speed            = 835               ; starting bullet speed
+rpm                     = 650
 rpm_empty_click         = 200
-
-;настройки для глушителя
-;silencer_hit_power      = 0.88, 0.88, 0.88, 0.88
-;silencer_hit_impulse    = 100
-;silencer_fire_distance  = 200
-;silencer_bullet_speed   = 500
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
 time_to_aim             = 3.0
@@ -48,8 +42,8 @@ misfire_start_condition		= 0.6
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.006
 misfire_end_prob = 0.11 ;	     	= 0.077
-condition_shot_dec      	= 0.0009
-condition_queue_shot_dec	= 0.0007
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.0008
 
 ammo_elapsed         = 25           ; obsolete
 ammo_mag_size        = 25           ; clip (magazine) size
@@ -68,29 +62,29 @@ reload_dof           = 0.0, 0.5, 5, 2;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.22   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.195   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.87f
 crosshair_inertion   	= 7.8
 
 ;отдача
-cam_return				= 0 ;					= 0
-cam_relax_speed             = 10		;скорость возврата в исходное положение
+cam_return = 0 ;				= 0
+cam_relax_speed             = 9		;скорость возврата в исходное положение
 cam_relax_speed_ai      	= 360
-cam_dispersion	         	= 1.73
-cam_dispersion_inc         	= 1.46
+cam_dispersion	         	= 1.68
+cam_dispersion_inc         	= 1.39
 cam_dispersion_frac        	= 1.0	    ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle				= 50.0      ;максимальный угол отдачи
-cam_max_angle_horz         	= 5.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz        	= 0.35		;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle_horz         	= 50.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz        	= 1.55		;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_relax_speed         = 10	    ; scope & ironsight
+zoom_cam_relax_speed         = 9	    ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 1.56
-zoom_cam_dispersion_inc      	= 0.94
+zoom_cam_dispersion          = 1.4
+zoom_cam_dispersion_inc      = 1.08
 zoom_cam_dispersion_frac     = 0.7
 zoom_cam_max_angle           = 50.0
-zoom_cam_max_angle_horz      = 5.0
-zoom_cam_step_angle_horz     = 0.3
+zoom_cam_max_angle_horz      = 50.0
+zoom_cam_step_angle_horz     = 1.45
 
 PDM_disp_base 				= 1.25
 PDM_disp_vel_factor 		= 2.55
@@ -128,7 +122,7 @@ grenade_flame_particles = weapons\generic_weapon01
 
 shell_point             = 0,0.216,0.174            ; position (3rd person view) for shell to throw out
 shell_particles         = weapons\generic_shells   ; name of the particles for shells
-shell_particles         = weapons\generic_shells
+
 
 ;-------------------------------------------------------------------------------
 inv_name          = st_wpn_galil                    ; name in inventory

@@ -5,7 +5,6 @@ $npc			 		= on				; option for Level Editor
 $prefetch 		 		= 8
 scheduled               = off              	; option for ALife Simulator
 cform                   = skeleton
-;class                   = WP_SVD
 class = WP_SVD
 min_radius = 0 ;              = 0
 max_radius = 500 ; = 250 ;              = 200
@@ -24,8 +23,8 @@ misfire_start_condition		= 0.81
 misfire_end_condition		= 0.11
 misfire_start_prob = 0.007 ;	     	= 0.0066
 misfire_end_prob = 0.11 ;	     	= 0.022
-condition_shot_dec      	= 0.0022
-condition_queue_shot_dec	= 0.0010
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
 
 ;---DOF-------------------------------------------------------------------------
 ;zoom_dof				= 0.5, 1.0, 350
@@ -79,20 +78,20 @@ kill_msg_height			= 22
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.14        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.12        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.63f
 crosshair_inertion		= 7.8
 
 ;отдача
-cam_return				= 0 ;				= 0
+cam_return = 0 ;				= 0
 cam_relax_speed         = 5		; скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
-cam_dispersion	         	= 1.05
-cam_dispersion_inc         	= 0.82
+cam_dispersion	        = 1.45
+cam_dispersion_inc      = 1.25
 cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
 cam_max_angle           = 50.0       ; максимальный угол отдачи
 cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 0.95       ; (degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.45
 PDM_disp_vel_factor 		= 2.25
@@ -102,12 +101,12 @@ PDM_disp_crouch_no_acc = 1.0 ; 		= 2.845
 
 zoom_cam_relax_speed         = 5     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.88
-zoom_cam_dispersion_inc      	= 0.58
+zoom_cam_dispersion          = 1.18
+zoom_cam_dispersion_inc      = 0.98
 zoom_cam_dispersion_frac     = 0.7
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.3
+zoom_cam_step_angle_horz     = 0.85
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 7        ;увеличение дисперсии в процентах при максимальном износе
 ;-------------------------------------------------------------------------------
@@ -128,10 +127,10 @@ shell_dir		 			= 0.0, 0.0, 0.4
 shell_particles	 		= ;weapons\generic_shells
 
 ; ttc
-hit_power           	= 0.53, 0.53, 0.53, 0.53
-hit_impulse		        = 37
+hit_power           	= 0.54, 0.54, 0.54, 0.54
+hit_impulse		        = 34
 hit_type 		        = fire_wound
-fire_distance           = 700
+fire_distance           = 1000
 bullet_speed		    = 735
 rpm                     = 80
 rpm_empty_click         = 200
@@ -175,7 +174,7 @@ grenade_launcher_status		= 0
 scopes_sect				   = scope_acog_sks, scope_acog_trijicon_sks, scope_acog_night_sks
 silencer_name           	= wpn_addon_silencer_762x39    ; section name for the attachable silencer
 silencer_x                  = 232		; offset in inventory icon
-silencer_y                  = -9
+silencer_y                  = -12
 silencer_light_color    = 0.6,0.5,0.3
 silencer_light_range    = 0.01
 silencer_light_var_color= 0.05
@@ -185,7 +184,7 @@ silencer_smoke_particles   = weapons\generic_shoot_00
 
 zoom_enabled				= true
 zoom_rotate_time			= 0.25
-scope_zoom_factor       = 49.6 ; 			= 85; 67.5; 10 ;15		;ПСО-1 4X
+scope_zoom_factor       = 49.6
 
 ;звуки
 snd_draw		= weapons\sks\sks_draw
@@ -249,18 +248,18 @@ anm_close					= sks_reload_end
 
 [scope_acog_sks]
 scope_name 					= wpn_addon_scope_acog
-scope_x              	= 79                 ; offset in inventory icon
-scope_y                 = -26
+scope_x              	= 62                 ; offset in inventory icon
+scope_y                 = -18
 
 [scope_acog_trijicon_sks]
 scope_name 					= wpn_addon_scope_acog_trijicon
-scope_x              	= 79                 ; offset in inventory icon
-scope_y                 = -26
+scope_x              	= 62                 ; offset in inventory icon
+scope_y                 = -18
 
 [scope_acog_night_sks]
 scope_name 					= wpn_addon_scope_acog_night
-scope_x              	= 79                 ; offset in inventory icon
-scope_y                 = -26
+scope_x              	= 62                 ; offset in inventory icon
+scope_y                 = -18
 
 ;==============================================================================================================================
 [wpn_sks_modern]:wpn_sks
@@ -269,6 +268,7 @@ weapon_class            = sniper_rifle
 
 cost					= 40960
 inv_weight			= 3.622
+description				= st_wpn_sks_modern_descr
 
 upgrades                = up_gr_firstab_sks_modern, up_gr_seconab_sks_modern, up_gr_thirdab_sks_modern
 installed_upgrades      = up_firsta_sks_modern, up_firstc_sks_modern, up_secona_sks_modern
@@ -277,14 +277,14 @@ misfire_start_condition		= 0.76
 misfire_end_condition		= 0.08
 misfire_start_prob = 0.007 ;	     	= 0.0058
 misfire_end_prob = 0.11 ;	     	= 0.017
-condition_shot_dec      	= 0.0017
-condition_queue_shot_dec	= 0.0008
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
 
 scope_status			= 2
 silencer_status			= 2
 
-ammo_mag_size			= 10
-ammo_class           				= ammo_7.62x39_fmj, ammo_7.62x39_ap
+silencer_x                  = 232		; offset in inventory icon
+silencer_y                  = -10
 
 inv_name				= st_wpn_sks_modern
 inv_name_short			= st_wpn_sks_modern
@@ -294,13 +294,21 @@ inv_grid_height    = 1
 inv_grid_x         = 11
 inv_grid_y         = 48
 
-fire_dispersion_base    = 0.115
+fire_dispersion_base    = 0.111
+;отдача
+cam_dispersion	        = 1.32
+cam_dispersion_inc      = 1.12
+cam_step_angle_horz     = 1.05       ; (degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_dispersion          = 1.02
+zoom_cam_dispersion_inc      = 0.82
+zoom_cam_step_angle_horz     = 0.95
 rpm_empty_click 			= 200
 
 ; ttc
-hit_power           	= 0.53, 0.53, 0.53, 0.53
-hit_impulse		        = 37
-fire_distance           = 700
+hit_power           	= 0.54, 0.54, 0.54, 0.54
+hit_impulse		        = 34
+fire_distance           = 1000
 bullet_speed		    = 735
 rpm                     = 110
 

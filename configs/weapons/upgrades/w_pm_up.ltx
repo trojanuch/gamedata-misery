@@ -4,7 +4,7 @@
 cost                    = 990 ;200
 value					= +10
 
-rpm						= +35
+rpm						= +28
 
 inv_weight			= +0.03
 
@@ -14,8 +14,9 @@ inv_weight			= +0.03
 cost                    = 1080 ;400
 value					= +20
 
-bullet_speed		 	= +45
-fire_dispersion_base	= -0.01 
+bullet_speed		 	= +62
+fire_distance           = +40
+fire_dispersion_base	= -0.01
 
 inv_weight			= +0.05
 
@@ -23,21 +24,21 @@ inv_weight			= +0.05
 ;Отдача(2)-20%
 ;------------
 cost                    = 1160 ;400
-value					= -20
+value					= -10
 
-cam_dispersion          = -0.2		;0.5
-cam_dispersion_inc		= -0.2		;0.5
-cam_step_angle_horz		= -0.25;    ;1.0
+cam_dispersion          = -0.062				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.0675				;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.052				;(degree) size of step camera moved in horizontal position while shooting
 
 inv_weight			= +0.06
 
 [up_sect_firste_pm]
-;Скорострельность(3)25%
+;Скорострельность(3)10%
 ;----------------------
 cost                    = 1210 ;600
 value					= +10
 
-rpm						= +40
+rpm						= +28
 
 inv_weight			= +0.03
 
@@ -47,7 +48,7 @@ inv_weight			= +0.03
 cost                    = 1020 ;200
 value					= +10
 
-bullet_speed		 	= +35
+bullet_speed		 	= +31
 
 inv_weight			= +0.04
 
@@ -58,14 +59,11 @@ cost                    = 1170 ;400
 value					= +15
 
 ;fire_dispersion_condition_factor    = -2 ;15
-
-condition_queue_shot_dec	= -0.00012 ;0.0013
-
-condition_shot_dec      	= -0.00012 ;0.0011
+condition_shot_dec      	= -0.00025
+condition_queue_shot_dec	= -0.00025
 
 misfire_start_prob	     	= -0.002
-
-misfire_end_prob	     	= -0.02 ;0.03
+misfire_end_prob	     	= -0.02
 
 inv_weight			= +0.09
 
@@ -82,8 +80,6 @@ crosshair_inertion			= -0.3
 PDM_disp_base 				= -0.05
 PDM_disp_vel_factor 		= -0.15
 PDM_disp_accel_factor 		= -0.15
-
-inv_weight			= -0.03
 
 [up_sect_thirdc_pm]
 ;Удобство(2)15%
@@ -103,11 +99,11 @@ inv_weight			= -0.04
 ;Отдача(2)-20%
 ;------------
 cost                    = 1310 ;400
-value					= -20
+value					= -10
 
-cam_dispersion          = -0.2		;0.5
-cam_dispersion_inc		= -0.2		;0.5
-cam_step_angle_horz		= -0.25;    ;1.0
+cam_dispersion          = -0.062				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= -0.0675				;увеличениe cam_dispersion с каждым выстрелом
+cam_step_angle_horz		= -0.052				;(degree) size of step camera moved in horizontal position while shooting
 
 inv_weight			= +0.06
 
@@ -128,7 +124,7 @@ inv_weight			= +0.04
 cost                    = 1080 ;400
 value					= +20
 
-fire_dispersion_base	= -0.1 
+fire_dispersion_base	= -0.14
 ;fire_dispersion_condition_factor    = -1
 
 inv_weight			= +0.08
@@ -141,7 +137,7 @@ value					= +4
 
 ammo_mag_size		 	= +4
 
-inv_weight			= +0.4
+inv_weight			= +0.04
 
 [up_sect_fifthc_pm]
 ;Смена калибра на 9х19
@@ -151,11 +147,11 @@ value					= "9x19"
 
 ammo_class		 		= ammo_9x19_fmj, ammo_9x19_pbp
 
-silencer_name  				= wpn_addon_silencer_9x19		; section name for the attachable silencer
-snd_silncer_shot				= weapons\silencers\silencer_9x19
+;silencer_name  				= wpn_addon_silencer_9x19		; section name for the attachable silencer
+;snd_silncer_shot				= weapons\silencers\silencer_9x19
 
-condition_queue_shot_dec	= 0.00022 ;0.0013
-condition_shot_dec      	= 0.00022 ;0.0011
+condition_queue_shot_dec	= +0.00012 ;0.0013
+condition_shot_dec      	= +0.00012 ;0.0011
 misfire_start_prob	     	= 0.0008
 misfire_end_prob	     	= 0.008 ;0.03
 

@@ -16,19 +16,19 @@ sprint_allowed       	= true
 ;-------------------------------------------------------------------------------
 cost                 	= 31780
 weapon_class            = assault_rifle
-inv_weight              = 2.801
+inv_weight              = 2.705
 
 upgrades                = up_gr_firstab_val, up_gr_seconab_val, up_gr_thirdab_val, up_gr_fourtab_val, up_gr_fifthab_val
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_val
 
 ;-TTX-----------------------------------------------------------------------------
-hit_power		= 0.418, 0.418, 0.418, 0.418
+hit_power		= 0.48, 0.48, 0.48, 0.48
 hit_impulse		= 33
 hit_type		= fire_wound
-fire_distance           = 363
-bullet_speed            = 574
-rpm                     = 907
+fire_distance           = 400
+bullet_speed            = 300
+rpm                     = 900
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -41,8 +41,8 @@ misfire_start_condition		= 0.85
 misfire_end_condition		= 0.14
 misfire_start_prob = 0.007 ;	     	= 0.0066
 misfire_end_prob = 0.11 ;	     	= 0.063
-condition_shot_dec      	= 0.0009
-condition_queue_shot_dec	= 0.00095
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0007
 
 ammo_elapsed            = 20
 ammo_mag_size           = 20
@@ -55,20 +55,20 @@ single_handed           = 0
 
 ;--дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.28 ;0.15   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.33 ;0.15   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 1.16f
 crosshair_inertion   	= 4.8
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
-cam_relax_speed         = 4   		;скорость возврата в исходное положение
+cam_return = 0 ;				= 1
+cam_relax_speed         = 10   		;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	         	= 1.21
-cam_dispersion_inc         	= 0.86
+cam_dispersion	        = 0.82
+cam_dispersion_inc      = 0.70
 cam_dispersion_frac     = 0.9       ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle        	= 50.0 		;максимальный угол отдачи
-cam_max_angle_horz      = 50.0   	;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 0.7		;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle        	= 43.0 		;максимальный угол отдачи
+cam_max_angle_horz      = 43.0   	;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 0.59		;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.73
 PDM_disp_vel_factor 		= 1.745
@@ -76,14 +76,14 @@ PDM_disp_accel_factor 		= 1.745
 PDM_disp_crouch = 1.0 ; 			= 1.165
 PDM_disp_crouch_no_acc = 1.0 ; 			= 1.985
 
-zoom_cam_relax_speed        = 4    ; scope & ironsight
+zoom_cam_relax_speed        = 10    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 120.75
-zoom_cam_dispersion          	= 0.96
-zoom_cam_dispersion_inc      	= 0.54
-zoom_cam_dispersion_frac    = 0.7
-zoom_cam_max_angle          = 50.0
-zoom_cam_max_angle_horz     = 50.0
-zoom_cam_step_angle_horz    = 0.5
+zoom_cam_dispersion         = 0.76
+zoom_cam_dispersion_inc     = 0.64
+zoom_cam_dispersion_frac    = 0.9
+zoom_cam_max_angle          = 43.0
+zoom_cam_max_angle_horz     = 43.0
+zoom_cam_step_angle_horz    = 0.41
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 16        ;увеличение дисперсии в процентах при максимальном износе
 
@@ -168,10 +168,6 @@ zoom_enabled            = true                                                ; 
 zoom_rotate_time		= 0.25
 scope_zoom_factor       = 58.6 ;        = 50                                                ; fov for zoom mode
 
-scope_texture			= wpn_crosshair
-
-zoom_enabled			= true
-scope_zoom_factor       = 58.6 ;        = 85
 
 scope_texture           = wpn_crosshair
 silencer_name           = wpn_addon_silencer_9x39
@@ -250,38 +246,38 @@ grenade_bone					= grenade
 
 [scope_val]
 scope_name 					= wpn_addon_scope
-scope_x              	= 37                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 36                 ; offset in inventory icon
+scope_y                 = -25
 
 [scope_val_moist]
 scope_name 					= wpn_addon_scope_moist
-scope_x              	= 37                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 36                 ; offset in inventory icon
+scope_y                 = -25
 
 [scope_val_worn]
 scope_name 					= wpn_addon_scope_worn
-scope_x              	= 37                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 36                 ; offset in inventory icon
+scope_y                 = -25
 
 [scope_x2.7_val]
 scope_name 					= wpn_addon_scope_x2.7
-scope_x              	= 37                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 60                 ; offset in inventory icon
+scope_y                 = -28
 
 [scope_live_detector_val]
 scope_name 					= wpn_addon_scope_detector
-scope_x              	= 37                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 36                 ; offset in inventory icon
+scope_y                 = -25
 
 [scope_night_val]
 scope_name 					= wpn_addon_scope_night
-scope_x              	= 37                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 36                 ; offset in inventory icon
+scope_y                 = -25
 
 [wpn_addon_scope_vsk_val]
 scope_name 					= wpn_addon_scope_vsk
-scope_x              	= 37                 ; offset in inventory icon
-scope_y                 = -22
+scope_x              	= 36                 ; offset in inventory icon
+scope_y                 = -25
 
 ;-----------------------------------------------------------------------------
 ; Уникальные

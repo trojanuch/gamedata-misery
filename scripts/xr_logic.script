@@ -260,7 +260,7 @@ end
 ------------------------------------------------------------------------------------------------------------
 -- ÂÍÎÑß ÈÇÌÅÍÅÍÈß Â ÝÒÓ ÔÓÍÊÖÈÞ, ÍÅ ÇÀÁÛÂÀÉÒÅ ÄÎÁÀÂËßÒÜ ÑÎÎÒÂÅÒÑÒÂÓÞÙÈÅ ÑÒÐÎÊÈ È Â disable_generic_schemes
 ------------------------------------------------------------------------------------------------------------
- function enable_generic_schemes(ini, npc, stype, section)
+function enable_generic_schemes(ini, npc, stype, section)
 	if stype == modules.stype_stalker then
 		--xr_reactions.set_reactions(npc, ini, "reactions", section)
 		xr_danger.set_danger(npc, ini, "danger", "danger")
@@ -1312,34 +1312,48 @@ function pstor_store(obj, varname, val)
 		alun_utils.printf("xr_logic: error: pstor_store: obj is nil for varname = %s, val = %s",varname,val)
 		return
 	end
-
+	
 	local npc_id = type(obj.id) == "function" and obj:id() or obj.id
 
 	if db.storage[npc_id].pstor == nil then
-		db.storage[npc_id].pstor = {}
+	--Yasti--
+	--	db.storage[npc_id].pstor = {}
+		db.init_pstor(obj)
+	--End Yasti--
 	end
+	
 	local tv = type(val)
-	if val ~= nil and not pstor_is_registered_type(tv) then
-		abort("xr_logic: pstor_store: not registered type '%s' encountered [name=%s varname=%s ]", tv,obj:name(),varname)
-		return
+	if val~=nil and not pstor_is_registered_type(tv) then
+		--Yasti pstor corruption. Prevents saving of corrupted pstors. Abort command not 100% reliable--
+		--abort("xr_logic: pstor_store: not registered type '%s' encountered [name=%s varname=%s ]", tv,obj:name(),varname)
+		alun_utils.printf("xr_logic: pstor_store: not registered type encountered - write in pstor_store cancelled. tv = "..tostring(tv)..", "..tostring(varname)..","..tostring(val))
+	else
+		--db.storage[npc_id].pstor[varname] = val
+		db.set_pstor(obj, varname, val)
 	end
-	db.storage[npc_id].pstor[varname] = val
+	--End Yasti--
 end
 
 function pstor_retrieve(obj, varname, defval)
 	if not (obj) then
 		alun_utils.printf("xr_logic: error: pstor_retrieve: obj is nil for varname = %s, val = %s",varname,defval)
-		return
+		return defval --Yasti pstor corruption
 	end
+	
 
 	local npc_id = type(obj.id) == "function" and obj:id() or obj.id
+	
 
+
+	--Yasti pstor corruption--
 	if db.storage[npc_id].pstor ~= nil then
 		local val = db.storage[npc_id].pstor[varname]
-		if val ~= nil then
+		if val then
 			return val
 		end
 	end
+
+	--End Yasti--
 	if defval ~= nil then
 		return defval
 	end
@@ -1351,8 +1365,12 @@ function pstor_save_all(obj, packet)
 	local npc_id = obj:id()
 	local pstor = db.storage[npc_id].pstor
 	if not pstor then
-		pstor = {}
-		db.storage[npc_id].pstor = pstor
+	--Yasti--
+	--	pstor = {}
+	--	db.storage[npc_id].pstor = pstor
+		db.init_pstor(obj)
+		pstor = db.storage[npc_id].pstor
+	--End Yasti--
 	end
 
 	local ctr = 0
@@ -1367,15 +1385,24 @@ function pstor_save_all(obj, packet)
 		local tv = type(v)
 		if tv == "number" then
 			packet:w_u8(pstor_number)
-	 		packet:w_float(v)
+	 	--	packet:w_float(v)
+			alun_utils.w_stpk(packet,"float",v,k)
 	 	elseif tv == "string" then
 			packet:w_u8(pstor_string)
-	 		packet:w_stringZ(v)
+			--Yasti--
+			if v then
+				--packet:w_stringZ(v)
+				alun_utils.w_stpk(packet,"stringZ",v,k)
+			else
+				packet:w_stringZ("")
+			end
+			--End Yasti--
 	 	elseif tv == "boolean" then
 			packet:w_u8(pstor_boolean)
-	 		packet:w_bool(v)
+	 	--	packet:w_bool(v)
+			alun_utils.w_stpk(packet,"bool",v,k)
 		else
-			abort("xr_logic: pstor_save_all: not registered type '%s' encountered", tv)
+			alun_utils.printf("xr_logic: pstor_save_all: not registered type encountered in , NPC "..tostring(obj:name()).." varname "..tostring(k).." value "..tostring(v)) --Yasti
 		end
 	end
 end
@@ -1384,26 +1411,56 @@ function pstor_load_all(obj, reader)
 	local npc_id = obj:id()
 	local pstor = db.storage[npc_id].pstor
 	if not pstor then
-		pstor = {}
-		db.storage[npc_id].pstor = pstor
+	--Yasti--
+	--	pstor = {}
+	--	db.storage[npc_id].pstor = pstor
+		db.init_pstor(obj)
+		pstor = db.storage[npc_id].pstor
+	--End Yasti--
 	end
+	
 	local ctr = reader:r_u32()
-
+	--Yasti pstor corruption--
+	if tonumber(ctr) > 12 and tostring(obj:name()) ~= "single_player" and npc_id ~= 0 then
+		alun_utils.printf("xr_logic.pstor_load_all: a NPC was detected with a damaged PSTOR:"..tostring(obj:name())..":"..tostring(npc_id)..". Will try to recover")
+		ctr = 12
+	end
+	-- ^ Maximum of 10 variables for NPC's.
+	--End Yasti--
+	
+	local scheck
+	local varname
+	local tn
+	
 	for i = 1, ctr do
-		local varname = reader:r_stringZ()
-		local tn = reader:r_u8()
+		varname = nil
+		tn = nil
+		varname = reader:r_stringZ()
+		tn = reader:r_u8()
+		--alun_utils.printf("xr_logic.pstor_load_all: "..tostring(varname)..": "..tostring(obj:name()).."= "..tostring(tn))
 		if tn == pstor_number then
 			pstor[varname] = reader:r_float()
 		elseif tn == pstor_string then
-			pstor[varname] = reader:r_stringZ()
+		--Yasti--
+			scheck = reader:r_stringZ()
+			--pstor[varname] = reader:r_stringZ()
+			if scheck == nil then
+				scheck = ""
+			end
+			pstor[varname] = scheck
+		--End Yasti--
 		elseif tn == pstor_boolean then
 			pstor[varname] = reader:r_bool()
 		else
-			abort("xr_logic: pstor_load_all: not registered type N %d encountered", tn)
+			--abort("xr_logic: pstor_load_all: not registered type N %d encountered", tn, obj:name ())
+			pstor[varname] = nil
+			alun_utils.printf("xr_logic.pstor_load_all: not registered type N "..tostring(tn).." encountered... "..tostring(obj:name())..":"..tostring(npc_id)) --Yasti
 		end
-		--printf("_bp: pstor_load_all: loaded [%s]='%s'", varname, utils.to_str(pstor[varname]))
-	end
+	--alun_utils.printf("xr_logic.pstor_load_all: varname check: "..tostring(obj:name()).."|"..tostring(npc_id)..": "..tostring(varname).."= "..tostring(pstor[varname]))
+	end	--printf("_bp: pstor_load_all: loaded [%s]='%s'", varname, utils.to_str(pstor[varname]))
+	--End Yasti--
 end
+
 
 function save_obj(obj, packet)
 	--printf("save_obj: obj:name()='%s'", obj:name())

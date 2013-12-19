@@ -15,20 +15,20 @@ sprint_allowed       	= true
 ;-------------------------------------------------------------------------------
 cost                    = 33320
 weapon_class            = assault_rifle        ; Type of the weapon
-inv_weight           	= 4.984
+inv_weight           	= 4.5
 
 upgrades                = up_gr_firstab_l85, up_gr_seconab_l85, up_gr_thirdab_l85, up_gr_fourtab_l85, up_gr_fourtcd_l85, up_gr_fourtef_l85, up_gr_fifthab_l85, up_gr_fifthcd_l85
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_l85
 
 ;--TTX--------------------------------------------------------------------------
-hit_power               = 0.465, 0.465, 0.465, 0.465
-hit_impulse             = 38
+hit_power               = 0.488, 0.488, 0.488, 0.488
+hit_impulse             = 25
 hit_type				= fire_wound
 
-fire_distance           = 965
+fire_distance           = 1000
 bullet_speed            = 940        ;начальная скорость пули
-rpm                     = 685
+rpm                     = 650
 rpm_empty_click         = 200
 
 use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
@@ -37,12 +37,12 @@ time_to_aim             = 3.0
 hud                     = wpn_l85_hud
 
 misfire_probability        = 0.0005
-misfire_start_condition		= 0.90
+misfire_start_condition		= 0.85
 misfire_end_condition		= 0.11
 misfire_start_prob = 0.007 ;	     	= 0.008
-misfire_end_prob = 0.11 ;	     	= 0.08
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0011
+misfire_end_prob = 0.10 ;	     	= 0.08
+condition_shot_dec      	= 0.0009
+condition_queue_shot_dec	= 0.0009
 
 ammo_elapsed            = 30
 ammo_mag_size           = 30
@@ -56,20 +56,20 @@ single_handed           = 0
 
 ;--дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.195   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.215
 control_inertion_factor = 1.54f
 crosshair_inertion		= 6.8
 
 ;отдача
-cam_return				= 0 ;              = 1 ;0
-cam_relax_speed         = 5      ;скорость возврата в исходное положение
+cam_return = 0 ;				= 0
+cam_relax_speed         = 7      ;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	         	= 0.99
-cam_dispersion_inc         	= 0.96
+cam_dispersion	        = 0.72
+cam_dispersion_inc      = 0.92
 cam_dispersion_frac     = 1.1    ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle           = 50.0         ;максимальный угол отдачи
 cam_max_angle_horz      = 50.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 2.0    ;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 1.9    ;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.85
 PDM_disp_vel_factor 		= 2.105
@@ -77,14 +77,14 @@ PDM_disp_accel_factor 		= 2.105
 PDM_disp_crouch = 1.0 ; 			= 2.235
 PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
 
-zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed         = 7     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          	= 0.82
-zoom_cam_dispersion_inc      	= 0.65
+zoom_cam_dispersion          = 0.61
+zoom_cam_dispersion_inc      = 0.82
 zoom_cam_dispersion_frac     = 1.0
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.8
+zoom_cam_step_angle_horz     = 1.75
 
 fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 11        
 
@@ -168,7 +168,7 @@ grenade_launcher_status = 2
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time		= 0.25
-scope_zoom_factor       = 42 ; SUSAT 1.6x                                                ; fov for zoom mode
+scope_zoom_factor       = 24 ; SUSAT 4x
 
 scope_texture				= wpn_crosshair_susat
 
@@ -300,31 +300,27 @@ ammo_class              = ammo_5.56x45_ap, ammo_5.56x45_ss190
 [wpn_l85_custom]:wpn_l85
 
 cost                    = 39080
-inv_weight           	= 4.932
+inv_weight           	= 4.43
 
 upgrades                = up_gr_firstab_l85_custom, up_gr_seconab_l85_custom, up_gr_thirdab_l85_custom, up_gr_fourtab_l85_custom, up_gr_fourtcd_l85_custom, up_gr_fourtef_l85_custom, up_gr_fifthab_l85_custom, up_gr_fifthcd_l85_custom
 installed_upgrades      = up_fiftha_l85_custom, up_thirda_l85_custom, up_thirdc_l85_custom
 
-hit_power               = 0.485, 0.485, 0.485, 0.485
-hit_impulse             = 38
-fire_distance           = 995
-bullet_speed            = 955
+hit_power               = 0.506, 0.506, 0.506, 0.506
+hit_impulse             = 25
+fire_distance           = 1000
+bullet_speed            = 952
 rpm                     = 700
 
 hud                     = wpn_l85_custom_hud
 
-misfire_start_condition		= 0.87
+misfire_start_condition		= 0.82
 misfire_end_condition		= 0.10
 misfire_start_prob = 0.007 ;	     	= 0.0065
-misfire_end_prob = 0.11 ;	     	= 0.06
-condition_shot_dec      	= 0.0015
-condition_queue_shot_dec	= 0.0010
+misfire_end_prob = 0.10 ;	     	= 0.06
+condition_shot_dec      	= 0.0008
+condition_queue_shot_dec	= 0.0008
 
-ammo_mag_size           = 30
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, -1
-
-fire_dispersion_base    = 0.15
+fire_dispersion_base    = 0.165
 
 inv_name          		= st_wpn_l85_custom
 inv_name_short       	= st_wpn_l85_custom
@@ -347,31 +343,28 @@ item_visual					= dynamics\weapons\wpn_l85\wpn_l8a_hud.ogf
 [wpn_l85_camo]:wpn_l85
 
 cost                    = 40760
-inv_weight           	= 4.764
+inv_weight           	= 4.3
 
 upgrades                = up_gr_firstab_l85_camo, up_gr_seconab_l85_camo, up_gr_thirdab_l85_camo, up_gr_fourtab_l85_camo, up_gr_fourtcd_l85_camo, up_gr_fourtef_l85_camo, up_gr_fifthab_l85_camo, up_gr_fifthcd_l85_camo
 installed_upgrades      = up_fiftha_l85_camo, up_firsta_l85_camo, up_firstc_l85_camo, up_firstf_l85_camo, up_secona_l85_camo
 
-hit_power               = 0.515, 0.515, 0.515, 0.515
-hit_impulse             = 38
-fire_distance           = 1045
-bullet_speed            = 985
-rpm                     = 705
+hit_power               = 0.529, 0.529, 0.529, 0.529
+hit_impulse             = 25
+fire_distance           = 1000
+bullet_speed            = 965
+rpm                     = 700
 
 hud                     = wpn_l85_camo_hud
 
-misfire_start_condition		= 0.85
+misfire_start_condition		= 0.8
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.0055
-misfire_end_prob = 0.11 ;	     	= 0.07
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0008
+misfire_end_prob = 0.10 ;	     	= 0.07
+condition_shot_dec      	= 0.00075
+condition_queue_shot_dec	= 0.00075
 
-ammo_mag_size           = 30
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, -1
 
-fire_dispersion_base    = 0.125
+fire_dispersion_base    = 0.155
 
 inv_name          		= st_wpn_l85_camo
 inv_name_short       	= st_wpn_l85_camo
@@ -395,30 +388,27 @@ item_visual					= dynamics\weapons\wpn_l85\wpn_l8b_hud.ogf
 [wpn_l85_worn]:wpn_l85
 
 cost                    = 29980
-inv_weight           	= 4.884
+inv_weight           	= 4.4
 
 upgrades                = up_gr_firstab_l85_worn, up_gr_seconab_l85_worn, up_gr_thirdab_l85_worn, up_gr_fourtab_l85_worn, up_gr_fourtcd_l85_worn, up_gr_fourtef_l85_worn, up_gr_fifthab_l85_worn, up_gr_fifthcd_l85_worn
 
-hit_power               = 0.45, 0.45, 0.45, 0.45
-hit_impulse             = 38
-fire_distance           = 928
-bullet_speed            = 893
-rpm                     = 637
+hit_power               = 0.46, 0.46, 0.46, 0.46
+hit_impulse             = 25
+fire_distance           = 1000
+bullet_speed            = 920
+rpm                     = 650
 
 hud                     = wpn_l85_worn_hud
 
-misfire_start_condition		= 0.95
-misfire_end_condition		= 0.15
-misfire_start_prob = 0.007 ;	     	= 0.01
-misfire_end_prob = 0.11 ;	     	= 0.09
-condition_shot_dec      	= 0.0018
-condition_queue_shot_dec	= 0.0013
+misfire_probability        = 0.02
+misfire_start_condition		= 0.98
+misfire_end_condition		= 0.2
+misfire_start_prob = 0.025
+misfire_end_prob = 0.12
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
 
-ammo_mag_size           = 30
-ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes              = 1, -1
-
-fire_dispersion_base    = 0.30
+fire_dispersion_base    = 0.27
 
 inv_name          		= st_wpn_l85_worn
 inv_name_short       	= st_wpn_l85_worn
