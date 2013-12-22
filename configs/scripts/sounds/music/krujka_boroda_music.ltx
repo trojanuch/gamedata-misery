@@ -1,31 +1,10 @@
-[logic]
-active = ph_sound@normal
+[logic] 
+active = ph_sound 
 
-[ph_sound@normal]
-snd = music_boroda
-looped = false
+[ph_sound] 
+snd = music_boroda 
+looped = false 
 min_idle = 300
-max_idle = 500
-random = true
-on_info = {!psysurge_started !emission_started} ph_sound@normal
-on_info2 = {=psysurge_started !emission_started} ph_sound@psysurge
-on_info3 = {=emission_started !psysurge_started} ph_sound@static ; "Smooth" radio transition. Doesn't cut out. Plays a burst of static, then goes to silence.
+max_idle = 500 
+random = true 
 
-[ph_sound@static]
-snd = static
-on_signal = sound_end | ph_sound@silence
-
-[ph_sound@silence]
-snd = silence
-on_info = {!psysurge_started !emission_started} ph_sound@normal
-on_info2 = {=psysurge_started !emission_started} ph_sound@psysurge
-
-[ph_sound@psysurge]
-snd = broadcast_disrupt
-looped = false
-min_idle = 300
-max_idle = 500
-random = true
-on_info = {!psysurge_started !emission_started} ph_sound@normal
-on_info2 = {=emission_started !psysurge_started} ph_sound@static ; "Smooth" radio transition. Doesn't cut out. Plays a burst of static, then goes to silence.
-on_info3 = {=psysurge_started !emission_started} ph_sound@psysurge

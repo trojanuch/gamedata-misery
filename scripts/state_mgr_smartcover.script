@@ -6,7 +6,7 @@ end
 function eva_state_mgr_smartcover:evaluate()
 
 	if self.st.target_state ~= "smartcover" then
-		self.st.eval_states[self.st.properties["smartcover"]] = true
+		self.st.eval_states[state_mgr_goap.properties["smartcover"]] = true
 		return true
 	end
 
@@ -18,12 +18,12 @@ function eva_state_mgr_smartcover:evaluate()
 --	printf("SC %s [%s] [%s]", tostring(dest_smart_cover_name == (state_descr.smartcover_name or "")),
 --								tostring(dest_smart_cover_name), tostring((state_descr.smartcover_name or "")))
 	if not dest_smart_cover_name then
-		self.st.eval_states[self.st.properties["smartcover"]] = true
+		self.st.eval_states[state_mgr_goap.properties["smartcover"]] = true
 		return true
 	end
 
-	self.st.eval_states[self.st.properties["smartcover"]] = dest_smart_cover_name == (state_descr.cover_name or "")
-	return self.st.eval_states[self.st.properties["smartcover"]]
+	self.st.eval_states[state_mgr_goap.properties["smartcover"]] = dest_smart_cover_name == (state_descr.cover_name or "")
+	return self.st.eval_states[state_mgr_goap.properties["smartcover"]]
 end
 
 --' Нужно ли нам входить в смарткавер

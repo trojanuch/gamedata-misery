@@ -1,5 +1,3 @@
-function printf()
-end
 
 --' ПЕРЕМЕЩЕНИЕ
 --' мы уже находимся в необходимом состоянии?
@@ -8,12 +6,8 @@ function eva_state_mgr_movement:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_movement:evaluate()
---	printf("MOVE: %s",utils.to_str((state_lib.states[self.st.target_state].movement == nil) or
---		   (state_lib.states[self.st.target_state].movement == self.object:target_movement_type())))
---	printf("MOVE: %s",utils.to_str(self.object:target_movement_type()))
-
-	self.st.eval_states[self.st.properties["movement"]] = (state_lib.states[self.st.target_state].movement == nil) or (state_lib.states[self.st.target_state].movement == self.object:target_movement_type())
-	return self.st.eval_states[self.st.properties["movement"]]
+	self.st.eval_states[state_mgr_goap.properties["movement"]] = state_lib.states[self.st.target_state].movement == nil or state_lib.states[self.st.target_state].movement == self.object:target_movement_type() --and not self.object:is_body_turning()
+	return self.st.eval_states[state_mgr_goap.properties["movement"]]
 end
 --' нужно ли нам идти
 class "eva_state_mgr_movement_walk" (property_evaluator)

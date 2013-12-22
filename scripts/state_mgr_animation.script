@@ -12,9 +12,9 @@ function eva_state_mgr_animation:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_animation:evaluate()
-	self.st.eval_states[self.st.properties["animation"]] = state_lib.states[self.st.target_state].animation == self.st.animation.states.current_state
+	self.st.eval_states[state_mgr_goap.properties["animation"]] = state_lib.states[self.st.target_state].animation == self.st.animation.states.current_state
 	--printf("%s [%s] == [%s]", self.object:name(), tostring(state_lib.states[self.st.target_state].animation), tostring(self.st.animation.states.current_state))
-	return self.st.eval_states[self.st.properties["animation"]]
+	return self.st.eval_states[state_mgr_goap.properties["animation"]]
 end
 
 
@@ -48,8 +48,8 @@ function eva_state_mgr_animation_locked:evaluate()
 --	if self.st.fast_set == true then
 --		return false
 --	end
-	self.st.eval_states[self.st.properties["animation_locked"]] = self.st.animation.states.anim_marker ~= nil
-	return self.st.eval_states[self.st.properties["animation_locked"]]
+	self.st.eval_states[state_mgr_goap.properties["animation_locked"]] = self.st.animation.states.anim_marker ~= nil
+	return self.st.eval_states[state_mgr_goap.properties["animation_locked"]]
 end
 
 
@@ -190,7 +190,6 @@ function animation:set_state(new_state, fast_set)
 		self.states.next_rnd = time_global()
 		return
 	end
-
 
 	self.states.target_state = new_state
 	self.states.next_rnd = time_global()
@@ -395,7 +394,7 @@ end
 -- Вызов коллбека, обычно в этот момент нужен выбор новой анимации.
 function animation:animation_callback(skip_multianim_check)
 	--printf("[%s][%s] ANIM CALLBACK time[%s] count[%s]", self.npc:name(), self.name, time_global(), self.npc:animation_count())
-	if(self.npc:animation_count()~=0) then
+	if(self.npc:animation_count() > 0) then
 		return
 	end
 

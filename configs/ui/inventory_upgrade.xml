@@ -491,6 +491,32 @@
 	            <cell x="200" y="330" point_x="82" point_y="211"/>
 	        </column>
 	    </template>
+		<template name="upgrade_scheme_ak74_sako">
+	        <column>
+	            <cell x="0" y="24" point_x="80" point_y="185"/>
+	            <cell x="0" y="126" point_x="101" point_y="183"/>
+	            <cell x="0" y="228" point_x="112" point_y="186"/>
+	            <cell x="0" y="330" point_x="105" point_y="193"/>
+	            <cell x="0" y="409" point_x="111" point_y="163"/>
+	        </column>
+	        <column>
+	            <cell x="100" y="24" point_x="137" point_y="189"/>
+	            <cell x="100" y="102" point_x="89" point_y="194"/>
+	            <cell x="100" y="151" point_x="146" point_y="196"/>
+	            <cell x="100" y="204" point_x="229" point_y="205"/>
+	            <cell x="100" y="253" point_x="158" point_y="194"/>
+	            <cell x="100" y="330" point_x="122" point_y="194"/>
+				<cell x="100" y="409" point_x="122" point_y="194"/>
+	        </column>
+	        <column>
+	            <cell x="200" y="0" point_x="90" point_y="179"/>
+	            <cell x="200" y="49" point_x="72" point_y="193"/>
+	            <cell x="200" y="126" point_x="135" point_y="199"/>
+	            <cell x="200" y="228" point_x="185" point_y="193"/>
+	            <cell x="200" y="330" point_x="82" point_y="211"/>
+				<cell x="200" y="409" point_x="82" point_y="211"/>
+	        </column>
+	    </template>
 	    <template name="upgrade_scheme_ak74_worn">
 	        <column>
 	            <cell x="0" y="24" point_x="80" point_y="185"/>

@@ -17,16 +17,20 @@ function evaluator_state_mgr_idle:__init(name, state_manager) super (nil, name)
 	self.st = state_manager
 end
 function evaluator_state_mgr_idle:evaluate()
-	local mgr = self.object:motivation_action_manager()
+	if not (self.st.mgr) then
+		self.st.mgr = self.object:motivation_action_manager()
+	end
+
+	local mgr = self.st.mgr
 
 	if (not mgr or not mgr:initialized()) then
 		return false
 	end
 
 	if (mgr:current_action_id() == xr_actions_id.state_mgr + 1 and self.st.target_state == "idle") then
-		if (not self.st.eval_states[self.st.properties["animstate_locked"]] and not self.st.eval_states[self.st.properties["animation_locked"]]
-			and self.st.eval_states[self.st.properties["movement"]] and	self.st.eval_states[self.st.properties["animstate"]]
-			and	self.st.eval_states[self.st.properties["animation"]] and self.st.eval_states[self.st.properties["smartcover"]]) then
+		if (not self.st.eval_states[state_mgr_goap.properties["animstate_locked"]] and not self.st.eval_states[state_mgr_goap.properties["animation_locked"]]
+			and self.st.eval_states[state_mgr_goap.properties["movement"]] and	self.st.eval_states[state_mgr_goap.properties["animstate"]]
+			and	self.st.eval_states[state_mgr_goap.properties["animation"]] and self.st.eval_states[state_mgr_goap.properties["smartcover"]]) then
 			self.st.combat = true
 			return true
 		end
@@ -45,7 +49,11 @@ function evaluator_state_mgr_idle_alife:__init(name, state_manager) super (nil, 
 	self.st = state_manager
 end
 function evaluator_state_mgr_idle_alife:evaluate()
-	local mgr = self.object:motivation_action_manager()
+	if not (self.st.mgr) then
+		self.st.mgr = self.object:motivation_action_manager()
+	end
+
+	local mgr = self.st.mgr
 
 	if (not mgr or not mgr:initialized()) then
 		return false
@@ -64,10 +72,10 @@ function evaluator_state_mgr_idle_alife:evaluate()
 	end
 
 	if (self.st.target_state == "idle") then
-		--not self.st.eval_states[self.st.properties["weapon_locked"]] and
-		if (not self.st.eval_states[self.st.properties["animstate_locked"]] and not self.st.eval_states[self.st.properties["animation_locked"]]
-			and self.st.eval_states[self.st.properties["movement"]] and	self.st.eval_states[self.st.properties["animstate"]]
-			and	self.st.eval_states[self.st.properties["animation"]] and self.st.eval_states[self.st.properties["smartcover"]]) then
+		--not self.st.eval_states[state_mgr_goap.properties["weapon_locked"]] and
+		if (not self.st.eval_states[state_mgr_goap.properties["animstate_locked"]] and not self.st.eval_states[state_mgr_goap.properties["animation_locked"]]
+			and self.st.eval_states[state_mgr_goap.properties["movement"]] and	self.st.eval_states[state_mgr_goap.properties["animstate"]]
+			and	self.st.eval_states[state_mgr_goap.properties["animation"]] and self.st.eval_states[state_mgr_goap.properties["smartcover"]]) then
 			self.st.alife = true
 			return true
 		end
@@ -82,7 +90,11 @@ function evaluator_state_mgr_idle_items:__init(name, state_manager) super (nil, 
 	self.st = state_manager
 end
 function evaluator_state_mgr_idle_items:evaluate()
-	local mgr = self.object:motivation_action_manager()
+	if not (self.st.mgr) then
+		self.st.mgr = self.object:motivation_action_manager()
+	end
+
+	local mgr = self.st.mgr
 
 	if (not mgr or not mgr:initialized()) then
 		return false
@@ -97,9 +109,9 @@ function evaluator_state_mgr_idle_items:evaluate()
 	end
 
 	if (self.st.target_state == "idle") then
-		if (not self.st.eval_states[self.st.properties["animstate_locked"]] and not self.st.eval_states[self.st.properties["animation_locked"]]
-			and self.st.eval_states[self.st.properties["movement"]] and	self.st.eval_states[self.st.properties["animstate"]]
-			and	self.st.eval_states[self.st.properties["animation"]] and self.st.eval_states[self.st.properties["smartcover"]]) then
+		if (not self.st.eval_states[state_mgr_goap.properties["animstate_locked"]] and not self.st.eval_states[state_mgr_goap.properties["animation_locked"]]
+			and self.st.eval_states[state_mgr_goap.properties["movement"]] and	self.st.eval_states[state_mgr_goap.properties["animstate"]]
+			and	self.st.eval_states[state_mgr_goap.properties["animation"]] and self.st.eval_states[state_mgr_goap.properties["smartcover"]]) then
 			return true
 		end
 	end
@@ -123,14 +135,13 @@ function act_state_mgr_to_idle:__init(name,state_manager) super (nil, name)
 end
 function act_state_mgr_to_idle:initialize()
 	action_base.initialize(self)
-
 	self.object:inactualize_patrol_path()
 end
 function act_state_mgr_to_idle:execute()
 	action_base.execute(self)
 
 	utils.send_to_nearest_accessible_vertex( self.object, self.object:level_vertex_id() )
-	self.object:set_path_type( game_object.level_path )
+	self.object:set_path_type(game_object.level_path)
 
 	if (self.st.target_state ~= "idle") and (self.object:best_enemy() or self.object:best_danger()) then
 		self.object:clear_animations()
@@ -139,6 +150,7 @@ function act_state_mgr_to_idle:execute()
 		self.st.animation:set_control()
 		return
 	end
+
 	self.st:set_state("idle")
 end
 function act_state_mgr_to_idle:finalize()
@@ -150,6 +162,11 @@ end
 --'-------------------------------------------------------------------------------------
 --' Эвалуаторы и экшены менеджера
 --'-------------------------------------------------------------------------------------
+combat_action_ids = {	[stalker_ids.action_combat_planner] = true,
+						[stalker_ids.action_danger_planner] = true,
+						[stalker_ids.action_anomaly_planner] = true
+}
+
 --' Закончил ли менеджер свою работу
 class "eva_state_mgr_end" (property_evaluator)
 function eva_state_mgr_end:__init(name, st) super (nil, name)
@@ -157,33 +174,12 @@ function eva_state_mgr_end:__init(name, st) super (nil, name)
 end
 
 function eva_state_mgr_end:evaluate()
+	--alun_utils.printf(debug and debug.traceback(2))
+
 	local mgr = self.object:motivation_action_manager()
-
-	if (not mgr or not mgr:initialized()) then
-		return false
+	if (mgr and mgr:initialized() and combat_action_ids[mgr:current_action_id()] ~= true) then
+		self.st.combat = false
 	end
-
-	if (mgr:current_action_id() == stalker_ids.action_combat_planner) then
-		return false
-	end
-
-	if (mgr:current_action_id() == stalker_ids.action_danger_planner) then
-		return false
-	end
-
-	if (mgr:current_action_id() == stalker_ids.action_anomaly_planner) then
-		return false
-	end
-
-	if (xrs_facer) and (mgr:current_action_id() == xrs_facer.actid_facer or mgr:current_action_id() == xrs_facer.actid_steal_up_facer) then
-		return false
-	end
-
-	if (rx_bandage) and (mgr:current_action_id() == rx_bandage.actid_bandage) then
-		return false
-	end
-
-	self.st.combat = false
 
 	return false
 end
@@ -194,8 +190,7 @@ function eva_state_mgr_locked:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_locked:evaluate()
-	--return self.st.planner:initialized() and (weapon_locked(self.object) or self.object:is_body_turning())
-	return self.st.planner:initialized() and self.object:is_body_turning()
+	return false --self.st.planner:initialized() and self.object:is_body_turning() -- BUG: NPCs can be stuck in bushes after danger or combat because is_body_turning continously returns true
 end
 
 class "eva_state_mgr_locked_external" (property_evaluator)
@@ -203,7 +198,7 @@ function eva_state_mgr_locked_external:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_locked_external:evaluate()
-	if self.st.combat or self.st.alife then
+	if (self.st.combat or self.st.alife) then
 		return true
 	end
 	return false
@@ -314,7 +309,7 @@ function state_manager:set_state(state_name, callback, timeout, target, extra)
 	end
 
 	self.look_position = target and target.look_position
-	self.look_object = target and target.look_object and type(target.look_object) == "number" and target.look_object or target and target.look_object and target.look_object:id()
+	self.look_object = target and target.look_object and type(target.look_object) == "number" and target.look_object or target and target.look_object and target.look_object.id and target.look_object:id()
 	self.look_sight = target and target.look_sight
 
 	local switched = false
@@ -372,10 +367,11 @@ end
 function state_manager:update()
 
 	if (self.callback and self.callback.func and self.animation.states.current_state == state_lib.states[self.target_state].animation) then
+		local tg = time_global()
 		if not (self.callback.begin) then
-			self.callback.begin = time_global()
+			self.callback.begin = tg
 		else
-			if (time_global() - self.callback.begin >= self.callback.timeout) then
+			if (tg - self.callback.begin >= self.callback.timeout) then
 				self.callback.func(self.callback.obj)
 				self.callback.begin = nil
 				self.callback.func = nil
@@ -385,6 +381,8 @@ function state_manager:update()
 
 	self.planner:update()
 
+	--[[ Source of C Stack overflow?
+
 	if not (self.planner:initialized()) then
 		return
 	end
@@ -392,11 +390,12 @@ function state_manager:update()
 	local lid
 	local id = self.planner:current_action_id()
 
-	while id ~= lid and id ~= self.operators["end"] and id ~= self.operators["locked"] do
+	while id ~= lid and id ~= state_mgr_goap.operators["end"] and id ~= state_mgr_goap.operators["locked"] do
 		self.planner:update()
 		lid = id
 		id = self.planner:current_action_id()
 	end
+	--]]
 end
 
 function set_state(npc, state_name, callback, timeout, target, extra)
@@ -478,7 +477,6 @@ function bind_manager(object)
 
 	action = manager:action(stalker_ids.action_danger_planner)
 	action:add_precondition(wp(xr_evaluators_id.state_mgr + 1,true))
-
 
 	return state_manager
 end
