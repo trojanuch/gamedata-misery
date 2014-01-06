@@ -31,14 +31,14 @@
 		<form x="100" y="150" width="469" height="509" stretch="1">
 			<texture>ui_repair_window</texture>
 
-			<icon x="83" y="248" width="128" height="128" stretch="1">
+			<icon x="108" y="248" width="128" height="128" stretch="1">
 			</icon>
-			<icon_parts x="83" y="112" width="128" height="128" stretch="1">
+			<icon_parts x="108" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="216" y="390" width="128" height="128" stretch="1">
+			<icon_tool x="216" y="383" width="128" height="128" stretch="1">
 			</icon_tool>
 
-			<caption_repair x="65" y="245" width="187" height="50" complex_mode="1">
+			<caption_repair x="94" y="245" width="187" height="50" complex_mode="1">
 				<text font="letterica18"/>
 			</caption_repair>
 			<list_frame x="217" y="202" width="241" height="107">
@@ -48,7 +48,7 @@
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="65" y="78" width="187" height="30">
+			<caption_parts x="94" y="78" width="187" height="30">
 				<text font="letterica18"/>
 			</caption_parts>
 			<list_frame_parts x="217" y="50" width="241" height="117">
@@ -78,9 +78,9 @@
 		<form x="100" y="150" width="469" height="509" stretch="1">
 			<texture>ui_lead_window</texture>
 
-			<icon x="105" y="255" width="128" height="128" stretch="0">
+			<icon x="105" y="255" width="128" height="128" stretch="1">
 			</icon>
-			<icon_parts x="105" y="113" width="128" height="128" stretch="0">
+			<icon_parts x="105" y="113" width="128" height="128" stretch="1">
 			</icon_parts>
 			<icon_tool x="230" y="370" width="128" height="128" stretch="1">
 			</icon_tool>
@@ -130,14 +130,14 @@
 		<form x="100" y="150" width="469" height="509" stretch="1">
 			<texture>ui_cooking_window</texture>
 
-			<icon x="83" y="248" width="128" height="128" stretch="1">
+			<icon x="108" y="248" width="128" height="128" stretch="1">
 			</icon>
-			<icon_parts x="83" y="112" width="128" height="128" stretch="1">
+			<icon_parts x="108" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="216" y="390" width="128" height="128" stretch="1">
+			<icon_tool x="216" y="398" width="128" height="128" stretch="1">
 			</icon_tool>
 
-			<caption_cooking x="65" y="245" width="187" height="50" complex_mode="1">
+			<caption_cooking x="87" y="245" width="187" height="50" complex_mode="1">
 				<text font="letterica18"/>
 			</caption_cooking>
 			<list_frame x="217" y="202" width="241" height="107">
@@ -147,7 +147,7 @@
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="65" y="78" width="187" height="30">
+			<caption_parts x="87" y="78" width="187" height="30">
 				<text font="letterica18"/>
 			</caption_parts>
 			<list_frame_parts x="217" y="50" width="241" height="117">
@@ -177,13 +177,13 @@
 		<form x="100" y="150" width="469" height="509" stretch="1">
 			<texture>ui_arty_window</texture>
 
-			<icon x="105" y="245" width="128" height="128" stretch="0">
+			<icon x="105" y="245" width="128" height="128" stretch="1">
 			</icon>
-			<icon_parts x="105" y="123" width="128" height="128" stretch="0">
+			<icon_parts x="105" y="123" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="368" y="278" width="128" height="128" stretch="0">
+			<icon_tool x="372" y="276" width="128" height="128" stretch="1">
 			</icon_tool>
-			<icon_tool_lead x="368" y="248" width="128" height="128" stretch="0">
+			<icon_tool_lead x="372" y="276" width="128" height="128" stretch="1">
 			</icon_tool_lead>
 			
 			<caption_item_used x="317" y="210" width="150" height="50" complex_mode="1">

@@ -33,6 +33,13 @@ ph_snd_themes["music_jupiter"] = {
 	"music\\radio\\10_Radiomix",
 	"music\\radio\\11_Radiomix"
 }
+--Yasti: emission sound themes. Author =  burguois//ddraig --
+
+-- Quick and dirty hack to prevent the dreaded red text in the console.
+ph_snd_themes["silence"] = {
+	"none"
+}
+
 ph_snd_themes["static"] = {
 	"soundtrack\\static\\static_01",
 	"soundtrack\\static\\static_02",
@@ -40,13 +47,7 @@ ph_snd_themes["static"] = {
 	"soundtrack\\static\\static_04",
 	"soundtrack\\static\\static_05",
 	"soundtrack\\static\\static_06",
-	"soundtrack\\static\\static_07"
-}
--- Quick and dirty hack to prevent the dreaded red text in the console.
-ph_snd_themes["silence"] = {
-	"none"
-}
-ph_snd_themes["broadcast_disrupt"] = {
+	"soundtrack\\static\\static_07",
 	"soundtrack\\psi\\psi_01",
 	"soundtrack\\psi\\psi_02",
 	"soundtrack\\psi\\psi_03",
@@ -60,9 +61,41 @@ ph_snd_themes["broadcast_disrupt"] = {
 	"soundtrack\\psi\\psi_11",
 	"soundtrack\\psi\\psi_12",
 	"soundtrack\\psi\\psi_13",
-	"soundtrack\\psi\\psi_14"
+	"soundtrack\\psi\\psi_14",
+	"soundtrack\\psi\\psi_15",
+	"soundtrack\\psi\\psi_16",
+	"soundtrack\\psi\\psi_17",
+	"soundtrack\\psi\\psi_18"
 }
 
+ph_snd_themes["broadcast_disrupt"] = {
+	"soundtrack\\static\\static_01",
+	"soundtrack\\static\\static_02",
+	"soundtrack\\static\\static_03",
+	"soundtrack\\static\\static_04",
+	"soundtrack\\static\\static_05",
+	"soundtrack\\static\\static_06",
+	"soundtrack\\static\\static_07",
+	"soundtrack\\psi\\psi_01",
+	"soundtrack\\psi\\psi_02",
+	"soundtrack\\psi\\psi_03",
+	"soundtrack\\psi\\psi_04",
+	"soundtrack\\psi\\psi_05",
+	"soundtrack\\psi\\psi_06",
+	"soundtrack\\psi\\psi_07",
+	"soundtrack\\psi\\psi_08",
+	"soundtrack\\psi\\psi_09",
+	"soundtrack\\psi\\psi_10",
+	"soundtrack\\psi\\psi_11",
+	"soundtrack\\psi\\psi_12",
+	"soundtrack\\psi\\psi_13",
+	"soundtrack\\psi\\psi_14",
+	"soundtrack\\psi\\psi_15",
+	"soundtrack\\psi\\psi_16",
+	"soundtrack\\psi\\psi_17",
+	"soundtrack\\psi\\psi_18"
+}
+--End Yasti--
 local sounds_base = stalker_ids.sound_script + 10000
 
 function id()
@@ -401,6 +434,7 @@ class "actor_sound"
 function actor_sound:__init(snd_ini, section)
 	self.class_id = "actor_sound"
 		--' Параметры вычитывания звука
+	self.volume = utils.cfg_get_number(snd_ini, section, "volume", nil, false, 0.8)
 	self.stereo = utils.cfg_get_bool(snd_ini, section, "actor_stereo", nil, false, false)
 	self.prefix = utils.cfg_get_bool(snd_ini, section, "npc_prefix", nil, false, false)
 	self.path = utils.cfg_get_string(snd_ini, section, "path", nil, true, "")
@@ -495,9 +529,9 @@ function actor_sound:play(npc, faction, point, msg)
 	end
 	local snd = self.sound[self.played_id]
 	self.snd_obj = sound_object(snd)
-	self.snd_obj.volume = 0.8
+	self.snd_obj.volume = self.volume
 	self.snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
-	self.snd_obj.volume = 0.8
+	self.snd_obj.volume = self.volume
 --[[
 	local snd_st, num_copy = string.gsub(snd, "\\", "_")
 	if game.translate_string(snd_st) ~= snd_st then

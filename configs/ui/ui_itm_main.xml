@@ -31,14 +31,14 @@
 		<form x="100" y="150" width="563" height="509" stretch="1">
 			<texture>ui_repair_window</texture>
 
-			<icon x="118" y="250" width="128" height="128" stretch="1">
+			<icon x="128" y="250" width="128" height="128" stretch="1">
 			</icon>
-			<icon_parts x="118" y="112" width="128" height="128" stretch="1">
+			<icon_parts x="128" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
 			<icon_tool x="266" y="390" width="128" height="128" stretch="1">
 			</icon_tool>
 
-			<caption_repair x="112" y="245" width="195" height="50" complex_mode="1">
+			<caption_repair x="110" y="245" width="195" height="50" complex_mode="1">
 				<text font="letterica18"/>
 			</caption_repair>
 			<list_frame x="265" y="202" width="284" height="107">
@@ -48,7 +48,7 @@
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="112" y="75" width="195" height="20">
+			<caption_parts x="110" y="75" width="195" height="20">
 				<text font="letterica18"/>
 			</caption_parts>
 			<list_frame_parts x="265" y="48" width="284" height="107">
@@ -129,14 +129,14 @@
 		<form x="100" y="150" width="563" height="509" stretch="1">
 			<texture>ui_cooking_window</texture>
 
-			<icon x="118" y="250" width="128" height="128" stretch="1">
+			<icon x="128" y="250" width="128" height="128" stretch="1">
 			</icon>
-			<icon_parts x="118" y="112" width="128" height="128" stretch="1">
+			<icon_parts x="128" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="266" y="390" width="128" height="128" stretch="1">
+			<icon_tool x="266" y="405" width="128" height="128" stretch="1">
 			</icon_tool>
 
-			<caption_cooking x="112" y="245" width="195" height="50" complex_mode="1">
+			<caption_cooking x="100" y="245" width="195" height="50" complex_mode="1">
 				<text font="letterica18"/>
 			</caption_cooking>
 			<list_frame x="265" y="202" width="284" height="107">
@@ -146,7 +146,7 @@
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="112" y="75" width="195" height="20">
+			<caption_parts x="100" y="75" width="195" height="20">
 				<text font="letterica18"/>
 			</caption_parts>
 			<list_frame_parts x="265" y="48" width="284" height="107">
@@ -176,13 +176,13 @@
 		<form x="100" y="150" width="563" height="509" stretch="1">
 			<texture>ui_arty_window</texture>
 
-			<icon x="130" y="232" width="128" height="128" stretch="0">
+			<icon x="130" y="232" width="128" height="128" stretch="1">
 			</icon>
-			<icon_parts x="130" y="120" width="128" height="128" stretch="0">
+			<icon_parts x="130" y="120" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="447" y="278" width="128" height="128" stretch="0">
+			<icon_tool x="447" y="278" width="128" height="128" stretch="1">
 			</icon_tool>
-			<icon_tool_lead x="447" y="248" width="128" height="128" stretch="0">
+			<icon_tool_lead x="447" y="248" width="128" height="128" stretch="1">
 			</icon_tool_lead>
 
 

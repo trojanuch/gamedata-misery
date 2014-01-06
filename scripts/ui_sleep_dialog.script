@@ -161,7 +161,9 @@ function sleep_dialog:OnButtonSleep()
 			itms_manager.sleep_actor_safe = safe or nil
 		end
 	end
-	self:HideDialog()
+	if self:IsShown() then
+		self:HideDialog() -- Yasti: Crash Prevention from UP patch. Author = burguois
+	end
 	xr_effects.disable_ui(db.actor, nil)
 	level.add_cam_effector("camera_effects\\sleep.anm", 10, false, "ui_sleep_dialog.dream_callback")
 	level.add_pp_effector("sleep_fade.ppe", 11, false)

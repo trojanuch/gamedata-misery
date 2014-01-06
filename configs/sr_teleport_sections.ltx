@@ -12,19 +12,11 @@ enable 		= true
 position	= -252.22090148926,35.701934814453,-486.43334960938,0
 
 ;=============================================
-; Path Blockers
-;=============================================
-
-[zat_block_way_2]
-enable 		= true
-position	= -439.30908203125,40.530117034912,-326.75579833984,3
-
-;=============================================
 ; Teleporters for Level Changers
 ;=============================================
 
 [zat_to_jup_sr]
-enable 				= false ; {+jup_first_meet_made} true, false
+enable 				= true ; {+jup_first_meet_made} true, false
 position 			= -377.50015258789,66.542518615723,-432.15859985352
 reject				= -453.80810546875,41.010269165039,-432.94934082031,0
 reject_on_disabled 	= true
@@ -34,15 +26,15 @@ text				= st_travel_jupiter
 hint				= st_travel_jupiter
 
 [jup_to_zat_sr]
-enable 				= false ; {+jup_first_meet_made} true, false
-position 			= -377.50015258789,66.542518615723,-432.15859985352
+enable 				= true ; {+jup_first_meet_made} true, false
+position 			= -2.57737,13.3445,158.3687
 reject				= 425.2151184082,-0.92193555831909,469.37518310547,3
 spot 				= level_changer_up
 text				= st_travel_zaton
 hint				= st_travel_zaton
 
 [jup_to_pas_sr]
-enable 				= false ; {+pas_b400_canalisation_done +pas_b400_done} true, false
+enable 				= true ; {+pas_b400_canalisation_done +pas_b400_done} true, false
 position			= 327.29675292969,33.992305755615,-329.89562988281
 reject				= 334.46942138672,20.841920852661,-329.67962646484,4
 spot				= level_changer_right
@@ -50,7 +42,7 @@ text				= st_travel_underpass
 hint				= st_travel_underpass
 
 [pas_to_jup_sr]
-enable 				= false ; {+pas_b400_canalisation_done +pas_b400_done} true, false
+enable 				= true ; {+pas_b400_canalisation_done +pas_b400_done} true, false
 position			= -47.000480651855,38.006739616394,452.18865966797
 reject				= -47.20384979248,8.0078773498535,445.93075561523,3
 spot				= level_changer_left

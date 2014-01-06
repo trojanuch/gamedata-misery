@@ -655,6 +655,22 @@ end
 -- false, если нету, либо не задана секция предмета
 function actor_has_item(actor, npc, p)
 	local story_actor  = get_story_object("actor")
+		
+	if p[1] == "jup_b1_half_artifact" then
+		local insulator_table =	{
+								"jup_b1_half_artifact_af_iam",
+								"jup_b1_half_artifact_af_aac",
+								"jup_b1_half_artifact_af_aam",
+								"jup_b1_half_artifact_lead_box"
+								}
+								
+		for k,v in pairs(insulator_table) do
+			if db.actor:object(v) then
+				return true
+			end
+		end
+	end
+	
 	return p[1] ~= nil and story_actor and story_actor:object( p[1] ) ~= nil
 end
 
@@ -2080,3 +2096,33 @@ end
 function is_squad_monster(actor,squad,p)
 	return sim_squad_scripted.is_squad_monster[squad.player_id] == true
 end
+
+--Yasti: Radio Music Logic Functions. Author =  burguois--
+function emission_finished() -- Yasti
+	if surge_manager.is_finished() then
+		return true
+	end
+	return false
+end
+
+function emission_started()
+	if surge_manager.is_started() then
+		return true
+	end
+	return false
+end
+
+function psysurge_started()
+	if psi_storm_manager.is_started() then
+		return true
+	end
+	return false
+end
+
+function psysurge_finished() --Yasti
+	if psi_storm_manager.is_finished() then
+		return true
+	end
+	return false
+end
+--End Yasti--

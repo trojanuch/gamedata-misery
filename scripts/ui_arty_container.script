@@ -133,7 +133,12 @@ function arty_ui:InitControls()
 	local x2 = x1 + w
 	local y2 = y1 + h
 
-	local w,h = w/1.2,h/1.2
+	local w,h = w,h
+	if (utils.is_widescreen()) then
+	w,h = w/1.2,h/1
+	else
+	w,h = w/1,h/1
+	end
 	self.pic:InitTexture("ui\\ui_icon_equipment")
 	self.pic:SetTextureRect(Frect():set(x1,y1,x2,y2))
 	self.pic:SetWndSize(vector2():set(w,h))
@@ -189,8 +194,13 @@ function arty_ui:OnPartsListItemClicked()
 	end
 	
 	local sec = se_item:section_name()
-	
-	local w,h = item.width/1.2,item.height/1.2
+
+	local w,h = item.width,item.height
+	if (utils.is_widescreen()) then
+	w,h = item.width/1.2,item.height/1
+	else
+	w,h = item.width/1,item.height/1
+	end
 	self.picture_parts:InitTexture("ui\\ui_icon_equipment")
 	self.picture_parts:SetTextureRect(Frect():set(item.x1,item.y1,item.x2,item.y2))
 	self.picture_parts:SetWndSize(vector2():set(w,h))

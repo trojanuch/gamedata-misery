@@ -581,7 +581,7 @@ function wearing_ghillie()
 		cur_outfit = db.actor:item_in_slot(7):section()
 	end
 	
-	local ghillie_sec = "cs_heavy_outfit"
+	local ghillie_sec = "ghillie_outfit"
 	
 	if cur_outfit == ghillie_sec then
 		return true

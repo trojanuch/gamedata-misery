@@ -294,7 +294,7 @@ function se_smart_terrain:read_params()
 
 	self.squad_id		= utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "squad_id", 		self, false, 0)
 	self.respawn_sector = utils.cfg_get_string(ini, SMART_TERRAIN_SECT, "respawn_sector", 	self, false, "")
-	self.respawn_radius  = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "respawn_radius", 	self, false, 75)
+	self.respawn_radius  = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "respawn_radius", 	self, false, 150)
 	if self.respawn_sector ~= nil then
 		if self.respawn_sector == "default" then
 			self.respawn_sector = "all"
@@ -330,8 +330,8 @@ function se_smart_terrain:read_params()
 
 	local smart_control_section = utils.cfg_get_string(ini, SMART_TERRAIN_SECT, "smart_control", self, false, "", nil)
 
-	self.death_idle_time = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "death_idle_time", 	self, false, 7200)
-	self.respawn_idle = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "respawn_idle", 	self, false, 900)
+	self.death_idle_time = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "death_idle_time", 	self, false, 3600)
+	self.respawn_idle = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "respawn_idle", 	self, false, 3600)
 	self.respawn_only_level = utils.cfg_get_bool(ini, SMART_TERRAIN_SECT, "respawn_only_level", self, false, false)
 
 	if smart_control_section ~= nil then
