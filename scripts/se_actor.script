@@ -7,7 +7,7 @@ end
 
 function se_actor:on_register()
 	cse_alife_creature_actor.on_register(self)
-	story_objects.get_story_objects_registry():register(self.id, "actor") -- Сохранять нет смысла, если назначаем каждый раз. Real Wolf
+	story_objects.get_story_objects_registry():register(self.id, "actor")
 	simulation_objects.get_sim_obj_registry():register(self)
 	self.m_registred = true
 	--Alundaio
@@ -27,40 +27,32 @@ end
 
 --------------------
 function se_actor:STATE_Write(packet)
+	-- Alundaio
+	--if (axr_main) then axr_main.se_actor_on_STATE_Write(self,packet) end
+	-- Alundaio
 	cse_alife_creature_actor.STATE_Write(self, packet)
---	if self.m_registred ~= true then
---		return
---	end
 	set_save_marker(packet, "save", false, "se_actor")
 	packet:w_bool(self.start_position_filled)
-	-- Real Wolf
-	packet:w_stringZ("check")
-	-- Real Wolf
-	story_objects.get_story_objects_registry():save(packet)
 	set_save_marker(packet, "save", true, "se_actor")
 end
+
 --------------------
 function se_actor:STATE_Read(packet, size)
+	-- Alundaio
+	--if (axr_main) then axr_main.se_actor_on_STATE_Read(self,packet,size) end
+	-- Alundaio
 	cse_alife_creature_actor.STATE_Read(self, packet, size)
-	-- под LevelEditor не пытаться читать из пакета ничего
+
 	if editor() or packet:r_eof() then
 		return
 	end
---	if self.m_registred ~= true then
---		return
---	end
+
 	if db.actor == nil then
 		set_save_marker(packet, "load", false, "se_actor")
 		self.start_position_filled = packet:r_bool()
-		-- Real Wolf
-		if (packet:r_stringZ() == "check") then
-		-- Real Wolf
-			story_objects.get_story_objects_registry():load(packet)
-		end
 		set_save_marker(packet, "load", true, "se_actor")
 	end
 end
-
 
 --***********************************************************************************************
 --*										SIMULATION_TARGET_ACTOR									*
@@ -86,7 +78,8 @@ function se_actor:on_reach_target(squad)
 	squad:set_location_types()
 	for k in squad:squad_members() do
 		if db.offline_objects[k.id] ~= nil then
-			db.offline_objects[k.id] = {}
+			empty_table(db.offline_objects[k.id])
+			--db.offline_objects[k.id] = {}
 		end
 	end
 	sim_board.get_sim_board():assign_squad_to_smart(squad, nil)

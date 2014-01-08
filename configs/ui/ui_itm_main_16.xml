@@ -35,7 +35,7 @@
 			</icon>
 			<icon_parts x="108" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="216" y="383" width="128" height="128" stretch="1">
+			<icon_tool x="249" y="418" width="128" height="128" stretch="1">
 			</icon_tool>
 
 			<caption_repair x="94" y="245" width="187" height="50" complex_mode="1">
@@ -134,7 +134,7 @@
 			</icon>
 			<icon_parts x="108" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="216" y="398" width="128" height="128" stretch="1">
+			<icon_tool x="249" y="418" width="128" height="128" stretch="1">
 			</icon_tool>
 
 			<caption_cooking x="87" y="245" width="187" height="50" complex_mode="1">
@@ -228,16 +228,22 @@
 			<fn width="145" height="18"/>
 			<fd width="50" height="18"/>
 		</file_item>
-		<form x="100" y="150" width="450" height="460" stretch="1">
-			<icon x="90" y="135" width="128" height="128" stretch="1">
+		<form x="409" y="150" width="206" height="420" stretch="1">
+			<texture>ui_loot_window</texture>
+			<image  x="6" y="6" width="196" height="125" stretch="1">
+			</image>
+			<icon  x="100" y="190" width="128" height="128" stretch="1">
 			</icon>
-			<list_frame x="0" y="215" width="200" height="175">
+			<caption  x="100" y="185" width="196" height="30">
+				<text font="letterica18" align="c"/>
+			</caption>
+			<list_frame x="3" y="245" width="200" height="145">
 				<texture>ui_inGame2_servers_list_frame</texture>
 			</list_frame>
-			<list x="3" y="215" width="197" height="173" item_height="18" can_select="1">
+			<list x="6" y="245" width="197" height="143" item_height="18" can_select="1">
 				<font font="letterica16"/>
 			</list>
-			<btn_ok x="60" y="390" width="80" height="26">
+			<btn_ok x="62" y="390" width="80" height="26">
 				<texture>ui_button_main01</texture>
 				<text font="letterica18">OK</text>
 			</btn_ok>

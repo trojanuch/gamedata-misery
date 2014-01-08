@@ -1,152 +1,68 @@
 -- Lua class for managing story_objects.
--- edited Alundaio 12-21-2012
-
-local story_obj_registry = nil
+-- edited Alundaio 12-1-2013
 
 class "story_objects_registry"
-
 function story_objects_registry:__init ()
-	self.id_by_story_id = {}
-	self.story_id_by_id = {}
-	self.dynamic_story_ids = {}
+	self.story_id = {}
 end
 
-function story_objects_registry:register(obj_id , story_obj_id, on_register, save)
-	if self.id_by_story_id[story_obj_id] ~= nil then
-		if obj_id ~= self.id_by_story_id[story_obj_id] then
-			local exist_obj_name = alife():object(self.id_by_story_id[story_obj_id]):name()
-			local adding_obj_name = alife():object(obj_id):name()
-			abort("You are trying to spawn two or more objects with the same story_id:[%s] --> [%s] try to add:[%s]", story_obj_id, exist_obj_name, adding_obj_name)
-		end
-	elseif self.story_id_by_id[obj_id] ~= nil then
-		if self.story_id_by_id[obj_id] ~= story_obj_id then
-			abort("Object [%s] is already in story_objects_registry with story_id[%s]", tostring(obj_id), story_obj_id)
-		end
+function story_objects_registry:register(obj_id , story_obj_id)
+	if (self.story_id[story_obj_id] and self.story_id[story_obj_id] ~= obj_id) then
+		alun_utils.printf("Multiple objects trying to use same story_id %s",story_obj_id)
+		return
 	end
-	self.id_by_story_id[story_obj_id] 	= obj_id
-	self.story_id_by_id[obj_id]			= story_obj_id
-	
-	--Yasti Backup Corruption Prevention--
-	if is_bad_str(story_obj_id) or obj_id > 65535 then
-			alun_utils.printf("story_objects_registry:register 2nd level Corruption Detected. Releasing Object. Object Name|ID is: "..tostring(story_obj_id).." | "..tostring(obj_id))
-			alife():release(alife():object(self.id_by_story_id[story_obj_id]),true)
-	end
-	--End Yasti--
-	-- Alundaio
-	if (save) then
-		-- Real Wolf
-		local size = #self.dynamic_story_ids
-		for i = 1, size do
-			if self.dynamic_story_ids[i] == obj_id then
-				return
-			end
-		end
-		-- Real Wolf
 
-		table.insert(self.dynamic_story_ids,obj_id)
-
-	end
-	-- Alundaio
+	self.story_id[story_obj_id] = obj_id
+--	alun_utils.printf("story_objects_registry:register: story_obj_id | obj_id: "..tostring(story_obj_id).." | "..tostring(obj_id))
 end
 
 function story_objects_registry:unregister_by_id(obj_id)
-	if self.story_id_by_id[obj_id] ~= nil then
-		self.id_by_story_id[self.story_id_by_id[obj_id]]	= nil
-		self.story_id_by_id[obj_id] 						= nil
-		for i=#self.dynamic_story_ids, 1 do
-			if (self.dynamic_story_ids[i] == obj_id) then
-				table.remove(self.dynamic_story_ids,i)
-			end
+	for story_id,id in pairs(self.story_id) do
+		if (id == obj_id) then
+			self.story_id[story_id] = nil
 		end
 	end
 end
 
 function story_objects_registry:unregister_by_story_id(story_id)
-	if self.id_by_story_id[story_id] ~= nil then
-		for i=#self.dynamic_story_ids, 1 do
-			if (self.dynamic_story_ids[i] == self.id_by_story_id[story_id]) then
-				table.remove(self.dynamic_story_ids,i)
-			end
-		end
-		self.story_id_by_id[self.id_by_story_id[story_id]]	= nil
-		self.id_by_story_id[story_id]						= nil
-	end
+	self.story_id[story_id] = nil
 end
 
 function story_objects_registry:get(story_obj_id)
-	return self.id_by_story_id[story_obj_id]
+	if ( type(story_obj_id) == "number"	) then
+		return self:get_story_id(story_obj_id)
+	end
+
+	return self.story_id[story_obj_id] or axr_dynamic_spawn and axr_dynamic_spawn.dynamic_story_id[story_obj_id]
 end
 
 function story_objects_registry:get_story_id(obj_id)
-	return self.story_id_by_id[obj_id]
-end
-
--- Alundaio
-function story_objects_registry:save(packet)
-
-	local sim = alife()
-	if not (sim) then
-		return
+	if ( type(obj_id) == "string" ) then
+		return self:get(obj_id)
 	end
 
-	set_save_marker(packet, "save", false, "story_objects")
-
-	--alun_utils.printf("save count=%s",#self.dynamic_story_ids)
-	packet:w_u16(#self.dynamic_story_ids)
-
-	for i=1,#self.dynamic_story_ids do
-		local id = self.dynamic_story_ids[i]
-		local story_id = self.story_id_by_id[id]
-	--	alun_utils.printf("story_objects_registry.save: obj_id|story_id = "..tostring(id).." | "..tostring(story_id))
-		--Yasti Save Corruption--
-		if is_bad_str(story_id) or id > 65535 then
-			alun_utils.printf("story_objects_registry:save Corruption Detected. Object Name| ID is: "..tostring(story_id).." | "..tostring(id))
-			give_quick_news("Possible Save Corruption Detected. Reload the Save to Correct Issue")
-			alife():release(alife():object(id,true))
-		else
-		--End Yasti--
-			packet:w_stringZ(story_id)
-			packet:w_u16(id)
+	for story_id,id in pairs(self.story_id) do
+		if (id == obj_id) then
+			return story_id
 		end
 	end
-	set_save_marker(packet, "save", true, "story_objects")
-end
 
-function story_objects_registry:load(packet)
-
-	local sim = alife()
-	if not (sim) then
-		return
-	end
-
-	set_save_marker(packet, "load", false, "story_objects")
-
-	local count = packet:r_u16()
-	--alun_utils.printf("load count=%s",count)
-
-	-- empty table
-	for i=#self.dynamic_story_ids,1,-1 do
-		table.remove(self.dynamic_story_ids,i)
-	end
-
-	local se_obj,story_id,obj_id
-
-	for i = 1, count do
-		story_id 	= packet:r_stringZ()
-		obj_id = packet:r_u16()
-		alun_utils.printf("story_objects_registry.load: obj_id|Story_id = "..tostring(obj_id).." | "..tostring(story_id))
-		--Yasti Save Corruption--
-		if is_bad_str(story_id) or obj_id > 65535 then
-			alun_utils.printf("story_objects_registry:load corruption detected. Releasing Object. Object Name is: "..tostring(story_id).." | "..tostring(obj_id))
-			alife():release(alife():object(obj_id),true)
-		else
-			self:register(obj_id, story_id, false, true)	--Real Wolf	
+	if (axr_dynamic_spawn) then
+		for story_id,id in pairs(axr_dynamic_spawn.dynamic_story_id) do
+			if (id == obj_id) then
+				return story_id
+			end
 		end
-		--End Yasti--
 	end
-	set_save_marker(packet, "load", true, "story_objects")
 end
- -- Alundaio
+
+function story_objects_registry:save(sstpk)
+
+end
+
+function story_objects_registry:load(sstpk,size)
+
+end
 
 function get_story_objects_registry()
 	if story_obj_registry == nil then
@@ -156,6 +72,17 @@ function get_story_objects_registry()
 end
 
 function check_spawn_ini_for_story_id(se_obj)
+	if (axr_dynamic_spawn) then
+		for story_id,id in pairs(axr_dynamic_spawn.dynamic_story_id) do
+			if (se_obj.id == id) then
+				se_obj.dynamic_name = story_id
+				return
+			end
+		end
+	end
+
+	local sor = get_story_objects_registry()
+
 	--printf("checking obj[%s] for story_id!!!",se_obj:name())
 	local spawn_ini = se_obj:spawn_ini()
 	if spawn_ini:section_exist("story_object") then
@@ -167,99 +94,14 @@ function check_spawn_ini_for_story_id(se_obj)
 		if value == "" then
 			abort("Field 'story_id' in [story_object] section got no value :object [%s]", se_obj:name())
 		end
-		get_story_objects_registry():register(se_obj.id , value, true)
+		sor:register(se_obj.id , value)
 		return
 	end
 	spawn_ini = system_ini()
 	local spawn_sect = se_obj:section_name()
 	local story_id = utils.cfg_get_string(spawn_ini, spawn_sect, "story_id", nil, false, "", nil)
 	if story_id ~= nil then
-		get_story_objects_registry():register(se_obj.id , story_id, true)
+		sor:register(se_obj.id , story_id)
 		return
 	end
 end
-
--- Real Wolf
-function is_bad_str(str, check)
-	local allowed_codes_for_sid = {}
-	local codes_intervals = { {"a", "z"}, {"A", "Z"}, {"0", "9"}, {"_", "_"}, {"-", "-"} }
-
-	for i = 1, #codes_intervals do
-		local code_start = codes_intervals[i][1]:byte()
-		local code_end = codes_intervals[i][2]:byte()
-		
-		for j = code_start, code_end do
-			allowed_codes_for_sid[j] = true
-		end
-	end			
-
-	local flag = false
-	--Yasti--
-	if not str then
-		alun_utils.printf("Warning! story_objects.is_bad_str: str = nil. You may be attempting to save too often.")
-		flag = true
-		return flag
-	end
---	if check then
---		if string.find(str, "zat") or string.find(str, "jup") or string.find(str, "pri") or string.find(str, "disel") then
---			--alun_utils.printf("story_objects.is_bad_str: object string is correct: "..tostring(str))
---		else
---			flag = true
---			return flag
---		end
---	end
-	--End Yasti--
-	for i = 1, #str do
-		if not allowed_codes_for_sid[str:sub(i, i):byte()] then
-			flag = true
-			break
-		end
-	end
-
-	--get_console():execute(tostring(flag) )
-	return flag
-end
-
---Debugging Functions Yasti--
-function con(msg)
-	get_console():execute(tostring(msg))
-end
-
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
-
-function table_count(table, item)
-  local count
-  count = 0
-  for ii,xx in pairs(table) do
-    if item == xx then count = count + 1 end
-  end
-  return count
-end
-
-function give_quick_news(text)
-   if db.actor~=nil then
-      if text==true then
-         news_manager.send_tip(db.actor,"true",0,"diplomat",2000,nil,"Быстрое сообщение:")
-      elseif text==false then
-         news_manager.send_tip(db.actor,"false",0,"diplomat",2000,nil,"Быстрое сообщение:")
-      elseif text=="true" then
-         news_manager.send_tip(db.actor,"true в кавычках",0,"diplomat",2000,nil,"Быстрое сообщение:")
-      elseif text=="false" then
-         news_manager.send_tip(db.actor,"false в кавычках",0,"diplomat",2000,nil,"Быстрое сообщение:")
-      elseif text==nil then
-         news_manager.send_tip(db.actor,"nil",0,"diplomat",2000,nil,"Быстрое сообщение:")
-      elseif text=="nil" then
-         news_manager.send_tip(db.actor,"nil в кавычках",0,"diplomat",2000,nil,"Быстрое сообщение:")
-      else
-         news_manager.send_tip(db.actor,text,0,"diplomat",2000,nil,"Быстрое сообщение:")
-      end
-   end
-end
---End Yasti--

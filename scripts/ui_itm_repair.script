@@ -1,5 +1,6 @@
 -- ui_itm_repair
 -- Alundaio
+-- ponney68
 --[[
 Copyright (C) 2012 Alundaio
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
@@ -143,11 +144,20 @@ function repair_ui:InitControls()
 	if (utils.is_widescreen()) then
 	w,h = w/1.5,h/1.2
 	else
-	w,h = w/1.5,h/1.5
+	w,h = w/1.3,h/1.3
 	end
 	self.pic:InitTexture("ui\\ui_icon_equipment")
 	self.pic:SetTextureRect(Frect():set(x1,y1,x2,y2))
 	self.pic:SetWndSize(vector2():set(w,h))
+
+	if not (self.pic.x) then
+		local pos = self.pic:GetWndPos()
+		local posform = self.form:GetWndPos()
+		self.pic.x = pos.x + posform.x
+		self.pic.y = pos.y + posform.y
+	end
+
+	self.pic:SetWndPos(vector2():set(self.pic.x-w/2, self.pic.y-h/2))
 
 	-- Caption
 	self.caption_parts 		= self.xml:InitTextWnd("itm_repair:form:caption_parts",self.form)

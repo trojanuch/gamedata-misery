@@ -800,7 +800,7 @@ function get_object_story_id(obj_id)
 end
 
 function get_story_object_id(story_obj_id)
-	return story_objects.get_story_objects_registry().id_by_story_id[story_obj_id]
+	return story_objects.get_story_objects_registry():get(story_obj_id)
 end
 
 function unregister_story_object_by_id(obj_id)
