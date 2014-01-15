@@ -425,7 +425,7 @@ function hud_condition()
 			if helmet_name then
 				hud:RemoveCustomStatic(helmet_name..helmet_cond)
 			end
-			if suitfirstrun == false and cond > helmet_cond and current_helmet==helmet_name and current_outfit:section() ~= "ghillie_outfit" then
+			if suitfirstrun == false and cond > helmet_cond and current_helmet==helmet_name and not ai_tweaks.wearing_ghillie() then
 				local snd_obj = sound_object("material\\glass\\glass_fall03hl")
 				snd_obj:play(db.actor,0,sound_object.s2d)
 			elseif current_helmet~=helmet_name then

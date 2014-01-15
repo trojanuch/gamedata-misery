@@ -1,7 +1,9 @@
 ----------------------
 -- axr_dynamic_spawn
 -- Alundaio
--- Modified by Yasti from PR 1.12 mod
+-- Modified by Yasti based on PR 1.12 mod:
+--										-Save\load functions for dynamic spawns added
+--										-Check function for corrupted dynamic_story_id table added
 --[[
 	Copyright (C) 2012 Alundaio
 	This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
@@ -138,7 +140,8 @@ local m_classes =
 
 secret_stashes = {}
 dynamic_story_id = {}
-count = 0
+local corrupt_detect = false
+
 
 function on_game_start()
 --	callback_register("se_actor_on_register",on_register)
@@ -218,6 +221,7 @@ function on_game_load()
 end
 
 local tmr
+
 function actor_on_update()
 	if not (on_info_sections) then
 		return
@@ -298,17 +302,15 @@ function actor_on_save(se_actor,packet)
 	if (num > 0) then
 		packet:w_u16(num)
 		for story_id,id in pairs(dynamic_story_id) do
-			alun_utils.printf("axr_dynamic_spawn.save: id|story_id = "..tostring(id).." | "..tostring(story_id))
 			if is_bad_str(story_id) or id > 65535 then
-				give_quick_news("Possible Save Corruption Detected. Attempting to Release Object. Reload the Save to Correct Issue")
+				give_quick_news("Possible Save Corruption Detected. Reload the save to attempt recovery, load a previous save, or attempt to save again.")
 				alun_utils.printf("axr_dynamic_spawn.save: save corruption detected: id|story_id = "..tostring(id).." | "..tostring(story_id))
-				sobj = alife():object(id)
-				sobj:switch_offline()
-				alife():release(sobj, true)
 			else
-				packet:w_stringZ(story_id)
-				packet:w_u16(id)
+				alun_utils.printf("axr_dynamic_spawn.save: save successful id|story_id = "..tostring(id).." | "..tostring(story_id))
 			end
+			
+			packet:w_stringZ(story_id)
+			packet:w_u16(id)
 		end
 	end
 	--End Yasti--
@@ -329,35 +331,64 @@ function actor_on_load(se_actor,packet)
 			dynamic_story_id[packet:r_stringZ()] = packet:r_u16()
 		end
 	end
-	
+		
 	for k,v in pairs(dynamic_story_id) do
 		local sor = story_objects.get_story_objects_registry()
 		local id_check = sor:get_story_id(v)
 		local story_check = sor:get(k)
-		
-		if id_check and id_check == k and story_check and story_check == v then 
-			alun_utils.printf("axr_dynamic_spawn.load: id|story_id = "..tostring(story_check).." | "..tostring(id_check))
-		
-		elseif not id_check or not story_check then
-			alun_utils.printf("axr_dynamic_spawn.on_load: dynamic object corruption detected. object does not exist. object name|id = "..tostring(id_check).." | "..tostring(story_check))
-			alife():release(alife():object(v),true)
+				
+		if not id_check or not story_check then
+			alun_utils.printf("axr_dynamic_spawn.on_load: dynamic object corruption detected. object does not exist. object name|id = "..tostring(k).." | "..tostring(v))
 			dynamic_story_id[k] = nil
-			alun_utils.printf("axr_dynamic_spawn.on_load: object has been released")
+			corrupt_detect = true
 		
-		elseif is_bad_str(story_check) or id_check > 65535 then
-			alun_utils.printf("axr_dynamic_spawn.on_load: dynamic object corruption detected. bad string or invalid id. object name|id = "..tostring(id_check).." | "..tostring(story_check))
-			alife():release(alife():object(v),true)
+		elseif is_bad_str(k) or v > 65535 then
+			alun_utils.printf("axr_dynamic_spawn.on_load: dynamic object corruption detected. bad string or invalid id. object name|id = "..tostring(k).." | "..tostring(v))
 			dynamic_story_id[k] = nil
-			alun_utils.printf("axr_dynamic_spawn.on_load: object has been released")
+			corrupt_detect = true
+			
+		elseif id_check and id_check == k and story_check and story_check == v then
+			alun_utils.printf("axr_dynamic_spawn.load: load successful id|story_id = "..tostring(v).." | "..tostring(k))
 			
 		else
-			alun_utils.printf("axr_dynamic_spawn.on_load: dynamic object corruption detected. section or id mismatch. object name|id = "..tostring(id_check).." | "..tostring(story_check))
-			alife():release(alife():object(v),true)
+			alun_utils.printf("axr_dynamic_spawn.on_load: dynamic object corruption detected. section or id mismatch. object name|id|story_id|obj_id = "..tostring(k).." | "..tostring(v).."|"..tostring(story_check).."|"..tostring(id_check))
 			dynamic_story_id[k] = nil
-			alun_utils.printf("axr_dynamic_spawn.on_load: object has been released")			
+			corrupt_detect = true
 		end			
 	end
 	--End Yasti--
+end
+
+-------------------------------------------
+-- Yasti: function that attempts to repair corrupted dynamic_story_id table
+-------------------------------------------
+function dynamic_object_check(sec)
+	local sor = story_objects.get_story_objects_registry()
+	local t = alun_utils.collect_section(ini,sec,true)
+	local pos = alun_utils.string_to_vector(t.position)
+	local id_check
+	local story_check
+--	alun_utils.printf("test 0: "..tostring(sec))
+	local check = sor:get(sec)
+--	alun_utils.printf("test 1: "..tostring(sec).."|"..tostring(check))
+	if check and dynamic_story_id[sec] == nil then
+		dynamic_story_id[sec] = check
+		alun_utils.printf("axr_dynamic_spawn.object_checker: story object has been successfully repaired from corrupted load. id|section|section name: "..tostring(check).."|"..tostring(sec).."|"..tostring(t.section))
+		return
+	
+	elseif not check and dynamic_story_id[sec] == nil then
+		for i=1, 65535 do
+			id_check = alife():object(i)
+			story_check = sor:get_story_id(i)
+			for k,v in pairs(dynamic_story_id) do
+				if id_check and string.find(id_check:section_name(), t.section) and sec ~= story_check then
+					dynamic_story_id[sec] = i
+					alun_utils.printf("axr_dynamic_spawn.object_checker: dynamic object has been successfully recovered from corrupted load. id|section name: "..tostring(i).."|"..tostring(id_check:section_name()))
+					return
+				end
+			end
+		end
+	end
 end
 
 function parse_ltx(actor,sections,ltx_data)
@@ -386,6 +417,10 @@ function interpret_spawn_data(sections)
 	local data,t,enable,on_info
 	for i=1, #sections do
 		sec = sections[i]
+		--Yasti: Corruption Repair
+		if corrupt_detect == true then
+			checker(sec)
+		end
 
 		if (dynamic_story_id[sec] == nil and secret_stashes[sec] == nil) then
 			t = alun_utils.collect_section(ini,sec,true)
@@ -467,6 +502,7 @@ function interpret_spawn_data(sections)
 			end
 		end
 	end
+	corrupt_detect = false
 end
 
 last_secret = nil

@@ -259,7 +259,9 @@ function npc_on_update(obj,st)
 	
 	--Yasti: Ghillie aim time increase--
 	if GhilliEnable or NightEnable or ReconEnable then
-		aim_modify(obj,st)
+		if st.enemy_id == db.actor:id() then
+			aim_modify(obj,st)
+		end
 	end
 	--End Yasti--
 	
@@ -301,74 +303,76 @@ function npc_on_update(obj,st)
 				local timer_far = get_timer_far(db.storage[hostile_npc:id()])
 				local fighting_actor = near_npc and xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()]
 					--Yasti: Distance Checks for Closest NPC to Hostile NPC. Further away they are the longer it takes to flag NPC to engage Actor
-				if near_npc and near_npc:alive() and npc_distances <= help_dist_close and timer_close == 1 and fighting_actor == nil then
-					if near_npc:character_community() == hostile_npc:character_community() then
-						db.storage[near_npc:id()].enemy_id = db.actor:id()
-						xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
-				--		alun_utils.printf("ai_tweaks.npc_on_update: Nearest Close Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
-					end
+				if not is_in_ignored_zone(hostile_npc) then
+					if near_npc and near_npc:alive() and npc_distances <= help_dist_close and timer_close == 1 and fighting_actor == nil then
+						if near_npc:character_community() == hostile_npc:character_community() then
+							db.storage[near_npc:id()].enemy_id = db.actor:id()
+							xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
+				--			alun_utils.printf("ai_tweaks.npc_on_update: Nearest Close Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
+						end
 					
-				elseif near_npc and near_npc:alive() and (npc_distances > help_dist_close) and (npc_distances <= help_dist_med) and timer_medium == 1 and fighting_actor == nil then
-					if near_npc:character_community() == hostile_npc:character_community() then
-						db.storage[near_npc:id()].enemy_id = db.actor:id()
-						xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
-				--		alun_utils.printf("ai_tweaks.npc_on_update: Nearest Medium Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
-					end
+					elseif near_npc and near_npc:alive() and (npc_distances > help_dist_close) and (npc_distances <= help_dist_med) and timer_medium == 1 and fighting_actor == nil then
+						if near_npc:character_community() == hostile_npc:character_community() then
+							db.storage[near_npc:id()].enemy_id = db.actor:id()
+							xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
+					--		alun_utils.printf("ai_tweaks.npc_on_update: Nearest Medium Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
+						end
 								
-				elseif near_npc and near_npc:alive() and (npc_distances > help_dist_med) and (npc_distances <= help_dist_far) and timer_far == 1 and fighting_actor == nil then
-					if near_npc:character_community() == hostile_npc:character_community() then
-						db.storage[near_npc:id()].enemy_id = db.actor:id()
-						xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
-				--		alun_utils.printf("ai_tweaks.npc_on_update: Nearest Far Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
-					end
+					elseif near_npc and near_npc:alive() and (npc_distances > help_dist_med) and (npc_distances <= help_dist_far) and timer_far == 1 and fighting_actor == nil then
+						if near_npc:character_community() == hostile_npc:character_community() then
+							db.storage[near_npc:id()].enemy_id = db.actor:id()
+							xr_combat_ignore.fighting_with_actor_npcs[near_npc:id()] = true
+					--		alun_utils.printf("ai_tweaks.npc_on_update: Nearest Far Dist Stalker to "..tostring(hostile_npc:character_name()).." is: "..tostring(near_npc:character_name()).." and is now hostile to Actor")
+						end
 					
-				else
-					if timer_close == nil then
-						if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
-							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * GhillieHelpTimeFactor * NightHelpTimeFactor)
+					else
+						if timer_close == nil then
+							if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
+								set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * GhillieHelpTimeFactor * NightHelpTimeFactor)
 					
-						elseif GhillieEnable and wearing_ghillie() and not is_night then
-							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * GhillieHelpTimeFactor)
+							elseif GhillieEnable and wearing_ghillie() and not is_night then
+								set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * GhillieHelpTimeFactor)
 						
-						elseif NightEnable and is_night then
+							elseif NightEnable and is_night then
 							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * NightHelpTimeFactor)
 						
-						else
-							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose)
-						end
-				--		alun_utils.printf("ai_tweaks: NPC on update: close dist timer started for: "..tostring(hostile_npc:character_name()))
+							else
+								set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose)
+							end
+					--		alun_utils.printf("ai_tweaks: NPC on update: close dist timer started for: "..tostring(hostile_npc:character_name()))
 						end
 					
-					if timer_medium == nil then
-						if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
-							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * GhillieHelpTimeFactor * NightHelpTimeFactor)
+						if timer_medium == nil then
+							if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
+								set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * GhillieHelpTimeFactor * NightHelpTimeFactor)
 					
-						elseif GhillieEnable and wearing_ghillie() and not is_night then						
-							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * GhillieHelpTimeFactor)
+							elseif GhillieEnable and wearing_ghillie() and not is_night then						
+								set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * GhillieHelpTimeFactor)
 						
-						elseif NightEnable and is_night then
-							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * NightHelpTimeFactor)
+							elseif NightEnable and is_night then
+								set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium * NightHelpTimeFactor)
 							
-						else
-							set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium)
+							else
+								set_timer_med(db.storage[hostile_npc:id()], NpcHelpTimerMedium)
+							end
+					--		alun_utils.printf("ai_tweaks: NPC on update: med dist timer started for: "..tostring(hostile_npc:character_name()))
 						end
-				--		alun_utils.printf("ai_tweaks: NPC on update: med dist timer started for: "..tostring(hostile_npc:character_name()))
-					end
 					
-					if timer_far == nil then
-						if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
-							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * GhillieHelpTimeFactor * NightHelpTimeFactor)
+						if timer_far == nil then
+							if GhillieEnable and wearing_ghillie() and NightEnable and is_night then
+								set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * GhillieHelpTimeFactor * NightHelpTimeFactor)
 						
-						elseif GhillieEnable and wearing_ghillie() and NightEnable and not is_night then
-							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * GhillieHelpTimeFactor)
+							elseif GhillieEnable and wearing_ghillie() and NightEnable and not is_night then
+								set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * GhillieHelpTimeFactor)
 						
-						elseif NightEnable and is_night then
-							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * NightHelpTimeFactor)
+							elseif NightEnable and is_night then
+								set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar * NightHelpTimeFactor)
 						
-						else
-							set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar)
+							else
+								set_timer_far(db.storage[hostile_npc:id()], NpcHelpTimerFar)
+							end
+							alun_utils.printf("ai_tweaks: NPC on update: far dist timer started for: "..tostring(hostile_npc:character_name()))
 						end
-				--		alun_utils.printf("ai_tweaks: NPC on update: far dist timer started for: "..tostring(hostile_npc:character_name()))
 					end
 				end
 			end

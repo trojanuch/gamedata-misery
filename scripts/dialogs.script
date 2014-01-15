@@ -54,15 +54,15 @@ function surrender_victim_answers_1(a,b)
 			hint = hint and " -- " .. game.translate_string(hint) or ""
 			return game.translate_string("st_surrender_victim_answer_"..math.random(3)) .. hint
 		else
-			return game.translate_string("st_surrender_victim_answer_4")
+			return game.translate_string("st_surrender_victim_answer_4_"..math.random(20))
 		end
 	elseif (r == 3) then
-		return game.translate_string("st_surrender_victim_answer_4")
+		return game.translate_string("st_surrender_victim_answer_4_"..math.random(20))
 	elseif (r == 4) then
 		npc:set_relation(game_object.enemy,db.actor)
 		alife():create("medkit_script",npc:position(),0,0,npc:id())
 		xr_wounded.unlock_medkit(npc)
-		return game.translate_string("st_surrender_victim_answer_4")
+		return game.translate_string("st_surrender_victim_answer_4_"..math.random(20))
 	end
 end
 

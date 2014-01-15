@@ -158,53 +158,51 @@ end
 
 function load(obj, packet)
 	set_save_marker(packet, "load", false, "trade_manager")
-	if obj:alive() then
-		local a = packet:r_bool()
-		if a == false then
-			printf("TRADE LOAD [%s]: ignored", obj:name())
-			return
-		end
+	local a = packet:r_bool()
+	if a == false then
+		printf("TRADE LOAD [%s]: ignored", obj:name())
+		return
+	end
 
-		trade_manager[obj:id()] = {}
+	trade_manager[obj:id()] = {}
 
-		local tt = trade_manager[obj:id()]
+	local tt = trade_manager[obj:id()]
 
-		tt.cfg_ltx = packet:r_stringZ()
-		printf("TRADE LOAD [%s]: cfg_ltx = %s", obj:name(), tostring(tt.cfg_ltx))
+	tt.cfg_ltx = packet:r_stringZ()
+	printf("TRADE LOAD [%s]: cfg_ltx = %s", obj:name(), tostring(tt.cfg_ltx))
 
-		tt.config = ini_file(tt.cfg_ltx)
+	tt.config = ini_file(tt.cfg_ltx)
 
-		a = packet:r_stringZ()
-		printf("TRADE LOAD [%s]: current_buy_condition = %s", obj:name(), tostring(a))
-		if a ~= "" then
-			tt.current_buy_condition = a
-			obj:buy_condition(tt.config, a)
-		end
+	a = packet:r_stringZ()
+	printf("TRADE LOAD [%s]: current_buy_condition = %s", obj:name(), tostring(a))
+	if a ~= "" then
+		tt.current_buy_condition = a
+		obj:buy_condition(tt.config, a)
+	end
 
-		a = packet:r_stringZ()
-		printf("TRADE LOAD [%s]: current_sell_condition = %s", obj:name(), tostring(a))
-		if a ~= "" then
-			tt.current_sell_condition = a
-			obj:sell_condition(tt.config, a)
-		end
+	a = packet:r_stringZ()
+	printf("TRADE LOAD [%s]: current_sell_condition = %s", obj:name(), tostring(a))
+	if a ~= "" then
+		tt.current_sell_condition = a
+		obj:sell_condition(tt.config, a)
+	end
 
-		a = packet:r_stringZ()
-		printf("TRADE LOAD [%s]: current_buy_supplies = %s", obj:name(), tostring(a))
-		if a ~= "" then
-			tt.current_buy_supplies = a
-		end
+	a = packet:r_stringZ()
+	printf("TRADE LOAD [%s]: current_buy_supplies = %s", obj:name(), tostring(a))
+	if a ~= "" then
+		tt.current_buy_supplies = a
+	end
 
-		local cur_tm = time_global()
+	local cur_tm = time_global()
 
-		a = packet:r_s32()
-		if a ~= -1 then
-			tt.update_time = cur_tm + a
-		end
+	a = packet:r_s32()
+	if a ~= -1 then
+		tt.update_time = cur_tm + a
+	end
 
-		a = packet:r_s32()
-		if a ~= -1 then
+	a = packet:r_s32()
+	if a ~= -1 then
 		tt.resuply_time = cur_tm + a
-		end
 	end
 	set_save_marker(packet, "load", true, "trade_manager")
 end

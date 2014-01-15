@@ -84,38 +84,36 @@ function loot_ui:InitControls()
 end
 
 function loot_ui:SetMutantImage()
-	-- This table needs added mutant id
+	-- ponney68: This table based on "species" of mutants 
 	local killed_mutant_tbl =
 	{
-	cat_				= {file="ui\\ui_actor_monsters_pda",x="786",y="0"},
-	frac				= {file="ui\\ui_actor_monsters_pda",x="786",y="0"},
-	m_cr				= {file="ui\\ui_actor_monsters_pda",x="786",y="0"},
-	zomb				= {file="ui\\ui_actor_monsters_pda",x="786",y="0"},
+	cat				= {file="ui\\ui_actor_monsters_pda",x="786",y="0",special="0"},
+	fracture			= {file="ui\\ui_actor_monsters_pda",x="786",y="0",special="0"},
+	bird				= {file="ui\\ui_actor_monsters_pda",x="786",y="0",special="0"},
+	zombie				= {file="ui\\ui_actor_monsters_pda",x="786",y="0",special="0"},
 
-	snor				= {file="ui\\ui_actor_monsters_pda",x="393",y="0"},
-	dog_				= {file="ui\\ui_actor_monsters_pda",x="0",y="800"},
-	pseu				= {file="ui\\ui_actor_monsters_pda",x="393",y="200"},
-	psy_				= {file="ui\\ui_actor_monsters_pda",x="393",y="200"},
-	zat_				= {file="ui\\ui_actor_monsters_pda",x="393",y="200"},
-	polt				= {file="ui\\ui_actor_monsters_pda",x="0",y="400"},
-	bloo				= {file="ui\\ui_actor_monsters_pda",x="393",y="400"},
-	cont				= {file="ui\\ui_actor_monsters_pda",x="393",y="800"},
-	m_co				= {file="ui\\ui_actor_monsters_pda",x="393",y="800"},
-	chim				= {file="ui\\ui_actor_monsters_pda",x="0",y="600"},
-	tush				= {file="ui\\ui_actor_monsters_pda",x="0",y="0"},
-	fles				= {file="ui\\ui_actor_monsters_pda",x="393",y="600"},
+	snork				= {file="ui\\ui_actor_monsters_pda",x="393",y="0",special="0"},
+	dog				= {file="ui\\ui_actor_monsters_pda",x="0",y="800",special="0"},
+	pseudodog			= {file="ui\\ui_actor_monsters_pda",x="393",y="200",special="0"},
+	psy_dog				= {file="ui\\ui_actor_monsters_pda",x="393",y="200",special="0"},
+	poltergeist			= {file="ui\\ui_actor_monsters_pda",x="0",y="400",special="0"},
+	bloodsucker			= {file="ui\\ui_actor_monsters_pda",x="393",y="400",special="0"},
+	controller			= {file="ui\\ui_actor_monsters_pda",x="393",y="800",special="0"},
+	chimera				= {file="ui\\ui_actor_monsters_pda",x="0",y="600",special="0"},
+	tushkano			= {file="ui\\ui_actor_monsters_pda",x="0",y="0",special="0"},
+	rat				= {file="ui\\ui_actor_monsters_pda",x="0",y="0",special="0"},
+	flesh				= {file="ui\\ui_actor_monsters_pda",x="393",y="600",special="0"},
 
-	bure				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="0"},
-	m_bu				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="0"},
-	boar				= {file="ui\\ui_actor_monsters_pda_1",x="393",y="0"},
-	giga				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="200"},
+	burer				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="0",special="0"},
+	boar				= {file="ui\\ui_actor_monsters_pda_1",x="393",y="0",special="0"},
+	giant				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="200",special="0"},
 	}
+
+	local mutant_id = game.translate_string(alun_utils.read_from_ini(nil,self.section,"species","string",nil))
 
 	local mutant_f = "ui\\ui_actor_monsters_pda_1"
 	local mutant_x = 0
 	local mutant_y = 0
-
-	local mutant_id = string.sub(self.section, 1, 4)
 	
 	mutant_f = tostring(killed_mutant_tbl[mutant_id].file)
 	mutant_x = tostring(killed_mutant_tbl[mutant_id].x)
@@ -209,7 +207,7 @@ function loot_ui:OnListItemClicked()
 	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
 	-- TEST
 	--self.caption_icon 		= self.xml:InitTextWnd("loot:form:caption",self.form)
-	--self.caption_icon:SetText(tostring(self.section))
+	--self.caption_icon:SetText(tostring(mutant_i))
 end
 
 

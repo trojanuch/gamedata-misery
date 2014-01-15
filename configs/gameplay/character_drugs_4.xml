@@ -119,6 +119,9 @@ cigarettes_lucky4				= 1, prob=0.005 \n
 cigarettes_russian				= 1, prob=0.004 \n
 cigarettes_russian2				= 1, prob=0.005 \n
 cigarettes_russian3				= 1, prob=0.006 \n
+cigarettes 						= 1, prob=0.002 \n
+cigarettes2 					= 1, prob=0.003 \n
+cigarettes3 					= 1, prob=0.004 \n
 tobacco					= 1, prob=0.001 \n
 tobacco2				= 1, prob=0.002 \n
 tobacco3				= 1, prob=0.003 \n
@@ -144,14 +147,7 @@ meat_chimera			= 1, prob=0.003 \n
 
 itm_sleepbag = 1, prob=0.007 \n
 
-marijuana			= 3, prob=0.04 \n
-tobacco			= 4, prob=0.04 \n
-
 joint = 4, prob=0.05 \n
-cigarettes = 1, prob=0.04 \n
-cigar1			= 1, prob=0.04 \n
-cigar2			= 1, prob=0.04 \n
-cigar3			= 1, prob=0.04 \n
 
 porn = 1, prob=0.025 \n
 
@@ -207,7 +203,7 @@ af_freon = 1, prob=0.003 \n
 af_iam = 1, prob=0.002 \n
 af_aac = 1, prob=0.001 \n
 
-lead_box = 2, prob=0.004 \n
+lead_box = 2, prob=0.005 \n
 
 af_medusa_lead_box = 1, prob=0.005 \n
 af_cristall_lead_box = 1, prob=0.005 \n
@@ -336,23 +332,18 @@ cleaning_kit_r7_3 = 1, prob=0.004 \n
 cleaning_kit_u = 1, prob=0.002 \n
 cleaning_kit_u2 = 1, prob=0.003 \n
 cleaning_kit_u3 = 1, prob=0.004 \n
-toolkit_p = 1, prob=0.001 \n
 toolkit_p2 = 1, prob=0.002 \n
 toolkit_p3 = 1, prob=0.003 \n
 toolkit_p4 = 1, prob=0.004 \n
-toolkit_s = 1, prob=0.001 \n
 toolkit_s2 = 1, prob=0.002 \n
 toolkit_s3 = 1, prob=0.003 \n
 toolkit_s4 = 1, prob=0.004 \n
-toolkit_r5 = 1, prob=0.001 \n
 toolkit_r5_2 = 1, prob=0.002 \n
 toolkit_r5_3 = 1, prob=0.003 \n
 toolkit_r5_4 = 1, prob=0.004 \n
-toolkit_r7 = 1, prob=0.001 \n
 toolkit_r7_2 = 1, prob=0.002 \n
 toolkit_r7_3 = 1, prob=0.003 \n
 toolkit_r7_4 = 1, prob=0.004 \n
-toolkit_u2 = 1, prob=0.001 \n
 toolkit_u3 = 1, prob=0.002 \n
 toolkit_u4 = 1, prob=0.003 \n
 sharpening_stones = 1, prob=0.004 \n
@@ -375,24 +366,20 @@ glue_a = 1, prob=0.004 \n
 glue_a2 = 2, prob=0.005 \n
 glue_e = 1, prob=0.003 \n
 glue_e2 = 1, prob=0.004 \n
-sewing_kit_b = 1, prob=0.003 \n
 sewing_kit_b2 = 1, prob=0.004 \n
 sewing_kit_b3 = 1, prob=0.005 \n
 sewing_kit_b4 = 1, prob=0.006 \n
-sewing_kit_a = 1, prob=0.002 \n
 sewing_kit_a2 = 1, prob=0.003 \n
 sewing_kit_a3 = 1, prob=0.004 \n
 sewing_kit_a4 = 1, prob=0.005 \n
-sewing_kit_h = 1, prob=0.001 \n
 sewing_kit_h2 = 1, prob=0.002 \n
 sewing_kit_h3 = 1, prob=0.003 \n
 sewing_kit_h4 = 1, prob=0.004 \n
 armor_repair_fa = 1, prob=0.004 \n
 armor_repair_fa2 = 2, prob=0.005 \n
-helmet_repair_kit = 1, prob=0.002 \n
+helmet_repair_kit = 1, prob=0.001 \n
 helmet_repair_kit2 = 1, prob=0.003 \n
 helmet_repair_kit3 = 1, prob=0.004 \n
-armor_repair_pro = 1, prob=0.001 \n
 armor_repair_pro2 = 1, prob=0.002 \n
 armor_repair_pro3 = 1, prob=0.003 \n
 armor_repair_pro4 = 1, prob=0.004 \n

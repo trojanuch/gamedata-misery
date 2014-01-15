@@ -202,7 +202,7 @@
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
-		<rank>40</rank>
+		<rank>30</rank>
 		<reputation>0</reputation>
 		<money min="330" max="1980" infinitive="0" />
 		<visual>actors\stalker_neutral\stalker_neutral_18</visual>
@@ -229,7 +229,7 @@
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
-		<rank>40</rank>
+		<rank>30</rank>
 		<reputation>0</reputation>
 		<money min="330" max="1980" infinitive="0" />
 		<visual>actors\stalker_merc\stalker_merc_7</visual>
@@ -1370,7 +1370,7 @@
 
 	<specific_character id="zat_b7_stalker_raider_2" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2</icon>
+		<icon>ui_inGame2_bandit_2</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1384,7 +1384,7 @@
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
-    	<visual>actors\stalker_neutral\stalker_neutral_3</visual>
+    	<visual>actors\stalker_bandit\stalker_bandit_2</visual>
    		<supplies>
       	[spawn] \n
 
@@ -1416,7 +1416,7 @@
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
-    	<visual>actors\stalker_neutral\stalker_neutral_4</visual>
+    	<visual>actors\stalker_neutral\stalker_neutral_2</visual>
    		<supplies>
       	[spawn] \n
 
@@ -2054,7 +2054,7 @@
 		wpn_binoc \n
 		detector_simple = 1 \n
 		device_torch \n
-        af_fireball = 1 \n
+        af_fireball_lead_box = 1 \n
 
 #include "gameplay\character_items_3.xml"
 #include "gameplay\character_items_4_stalker.xml"

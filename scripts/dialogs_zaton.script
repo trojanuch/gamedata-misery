@@ -1654,7 +1654,8 @@ end
 
 ----------------------	b53 ----------------------
 function zat_b53_if_actor_has_detector_advanced(first_speaker, second_speaker)
-	return db.actor:object("detector_advanced") ~= nil or
+	return db.actor:object("detector_simple") ~= nil or
+	db.actor:object("detector_advanced") ~= nil or
 	db.actor:object("detector_elite") ~= nil or
 	db.actor:object("detector_scientific") ~= nil
 end
@@ -1664,13 +1665,13 @@ function zat_b53_if_actor_hasnt_detector_advanced(first_speaker, second_speaker)
 end
 
 function zat_b53_transfer_detector_advanced_to_actor(first_speaker, second_speaker)
-	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
+	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 6840)
 	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "detector_simple",1)
 end
 
 function zat_b53_transfer_fireball_to_actor(first_speaker, second_speaker)
 	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
-	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "af_fireball",1)
+	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "af_fireball_lead_box",1)
 end
 
 function zat_b53_transfer_medkit_to_actor(first_speaker, second_speaker)
