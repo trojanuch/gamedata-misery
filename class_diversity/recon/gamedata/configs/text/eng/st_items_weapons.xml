@@ -13,7 +13,7 @@
 		<text>12.7x108 mm FMJ rounds</text>
 	</string>
 	<string id="ammo_12.7x108_fmj_descr">
-		<text>Full metal jacket ammo for the 12.7x108mm is mainly used in machine guns such as the Russian 'DShK' or 'Kord'. This 'Soviet' round is slightly longer and thicker than the American .50 BMG round, which makes it possible for it to hold slightly more powder for ignition. The FMJ variant of the 12.7x108mm is not suitable for penetrating armors of heavily-armored vehicles (irrelevant in the Zone unless you encounter a military unit with an Mi-24 or BTR-80). The FMJ variant of the 12.7x108mm is slightly less accurate than the AP variant. It is also cheaper.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
+		<text>Full metal jacket ammo for the 12.7x108mm is mainly used in machine guns such as the Russian DShK or Kord. This Soviet round is slightly longer and thicker than the American .50 BMG round, which makes it possible for it to hold slightly more powder for ignition. The FMJ variant of the 12.7x108mm is not suitable for penetrating armors of heavily-armored vehicles (irrelevant in the Zone unless you encounter a military unit with an Mi-24 or BTR-80). It is also slightly less accurate than the AP variant. It is also cheaper.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="ammo_12.7x108_fmj_s">
 		<text>12.7x108 FMJ</text>
@@ -22,7 +22,7 @@
 		<text>12.7x108 mm AP rounds</text>
 	</string>
 	<string id="ammo_12.7x108_ap_descr">
-		<text>There is not much to say about this armor-piercing round chambered in the 12.7x108mm. The round is tailor-made for the KSVK. The 12.7x108mm AP rounds that found their way into the Zone are not suited for the regular 'DShK' or 'Kord' as they are much more expensive than the typical armor-piercing rounds. The 12.7x108mm AP is fitted with a tungsten tip, which enables the round to penetrate 25mm-thick layers of steel. These bullets are very expensive due to their special nature and should be used exclusively against the deadliest of enemies.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
+		<text>An armor-piercing round chambered in the 12.7x108mm. The round is tailor-made for the KSVK. The 12.7x108mm AP rounds that made their way into the Zone are not suited for regular DShK or Kord as they are much more expensive than typical armor-piercing rounds. The 12.7x108mm AP is fitted with a tungsten tip, which enables the round to penetrate 25mm-thick layer of steel. These bullets are very expensive due to their special nature and should be used exclusively against the deadliest of enemies.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]V\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="ammo_12.7x108_ap_s">
 		<text>12.7x108 AP</text>
@@ -31,25 +31,25 @@
 		<text>7.62x51 mm NATO rounds</text>
 	</string>
 	<string id="ammo-7.62x51_fmj_descr">
-		<text>The 7.62x51 NATO round is a military variant of the .308 round which was used as a standard-issue by the NATO forces until 5.56 ammunition was introduced in the 70-ties in the Vietnam War. At present, it is most commonly employed by private military contractors all over the world. The 7.62x51 round is a very common machine gun caliber, and can also be used in sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>The 7.62x51 NATO round is a military variant of the .308 round which was used as a standard-issue by the NATO forces until 5.56 ammunition was introduced in the 70s in the Vietnam War. At present, it is most commonly employed by private military contractors all over the world. The 7.62x51 round is a very common machine gun caliber, and can also be used in sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x51_fmj_s">
 		<text>7.62x51 NATO rounds</text>
 	</string>
 	<string id="ammo-7.62x51_ap">
-	<text>7.62x51 mm DU</text>
+    <text>7.62x51 mm DU</text>
 	</string>
 	<string id="ammo-7.62x51_ap_descr">
-	<text>The 7.62x51 Depleted Uranium round is produced and used by private military organizations world-wide. The need to develop a DU version of this cartridge arose during large-scale private military operations against drug cartels in several countries when PMCs looked for a way to gain another edge.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+    <text>The 7.62x51 Depleted Uranium round is produced and used by private military organizations world-wide. The need to develop a DU version of this cartridge arose during large-scale private military operations against drug cartels in several countries when PMCs looked for a way to gain another edge.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x51_ap_s">
-	<text>7.62x51 DU</text>
+    <text>7.62x51 DU</text>
 	</string>
 	<string id="ammo-11.43x23-hydro">
 		<text>.45 ACP Hydra-shock rounds</text>
 	</string>
 	<string id="ammo-11.43x23-hydro_descr">
-		<text>This unusual .45 ACP caliber round is comprised of a jacketed soft point bullet with an expanding hollow and a steel core. It combines of jacketed expanding soft point and armor piercing bullet, benefiting from the advantages of both and suffering from their downsides.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
+		<text>This unusual .45 ACP caliber round is comprised of a jacketed soft point bullet with hollow steel core, benefiting from the advantages of both and suffering from their downsides.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]very high</text>
 	</string>
 	<string id="ammo-11.43x23-hydro_s">
 		<text>.45 Hydro</text>
@@ -58,7 +58,7 @@
 		<text>.45 DU rounds</text>
 	</string>
 	<string id="ammo-11.43x23-ap_descr">
-		<text>Uranium round, chambered in .45 ACP. From the time of the first deployment on the battlefield, depleted uranium rounds have been the object of widespread criticism in the international community; rumors of its effects and radiation poisoning have been very common in the fight to ban the use of DU. .45 DU uses enforced steel infused with depleted uranium. The round is self-sharpening, which enhances its armor penetrating capabilities. After impact, uranium heats up and burns; this process, however, produces no radiation. These rounds are only actively used by the US, and less effective versions are sometimes employed by other countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>Uranium round, chambered in .45 ACP. From the time of the first deployment on the battlefield, depleted uranium rounds have been the object of widespread criticism in the international community; rumors of their effects and radiation poisoning have been very common in the fight to ban the use of DU. .45 DU uses enforced steel infused with depleted uranium. The round is self-sharpening, which enhances its armor penetrating capabilities. After impact, uranium heats up and burns; this process, however, produces no radiation. These rounds are only actively used by the US, and less effective versions are sometimes employed by other countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-11.43x23-ap_s">
 		<text>.45 DU</text>
@@ -76,7 +76,7 @@
 		<text>.357 Incendiary rounds</text>
 	</string>
 	<string id="ammo-357-incendiary_descr">
-		<text>Ammunition utilizing phosphorus to burn through targets. Phosphorus based incendiary ammunition was first produced and used during the First World War. Currently true incendiary ammunition is only utilized by a small number of groups, and can only be fired by a handful of weapons. This round used in the Zone is of mid-level quality and moderate price. It does not explode upon impact, but is highly reliable.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,93,0,116] • %c[0,140,140,140] produces tracer</text>
+		<text>Ammunition utilizing phosphorus to burn through targets. Phosphorus-based incendiary ammunition was first produced and used during the First World War. Currently true incendiary ammunition is only utilized by a small number of groups, and can only be fired by a handful of weapons. This round used in the Zone is of mid-level quality and moderate price. It does not explode upon impact, but is highly reliable.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,93,0,116] • %c[0,140,140,140] produces tracer</text>
 	</string>
 	<string id="ammo-357-incendiary_s">
 		<text>.357 Incendiary</text>
@@ -112,7 +112,7 @@
 		<text>12x76 slug rounds</text>
 	</string>
 	<string id="ammo-12x76-zhekan_descr">
-		<text>This heavy 12 caliber slug round is normally used for hunting big game, but is also good for other purposes. Instead of piercing, this hefty slug simply crushes through armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>This heavy 12-caliber slug round is normally used for hunting big game, but is also good for other purposes. Instead of piercing, this hefty slug simply crushes through armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-12x76-zhekan_s">
 		<text>12x76 slug</text>
@@ -148,7 +148,7 @@
 		<text>5.56x45 mm rounds</text>
 	</string>
 	<string id="ammo-5.56x45-ss190_descr">
-		<text>A standard issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,204,0,51] • %c[0,140,140,140] lowered piercing capability\n%c[0,93,0,116] • %c[0,140,140,140] enhanced fragmentation in soft tissue</text>
+		<text>A standard-issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]II\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,204,0,51] • %c[0,140,140,140] lowered piercing capability\n%c[0,93,0,116] • %c[0,140,140,140] enhanced fragmentation in soft tissue</text>
 	</string>
 	<string id="ammo-5.56x45-ss190_s">
 		<text>5.56x45</text>
@@ -175,7 +175,7 @@
 		<text>7.62x54 mm PP rounds</text>
 	</string>
 	<string id="ammo-7.62x54-ap_descr">
-		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun. It is a high-powered round and due to a hard steel core it possesses quite good penetrative capabilities. A heavy round for a heavy gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun. It is a high-powered round and thanks to a hard steel core it possesses quite good penetrative capabilities. A heavy round for a heavy gun.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-7.62x54-ap_s">
 		<text>7.62x54 PP</text>
@@ -211,7 +211,7 @@
 		<text>9x18 RG028 rounds</text>
 	</string>
 	<string id="ammo-9x18-ap_descr">
-		<text>RG028 is a cartridge used for its armor penetration capabilities. The goal of the RG028 was to become a counter to body armor; for this reason, it's loaded with a hardened steel core. Unfortunately, the round itself isn't much of an improvement over the standard, instead it has a stronger impact than the standard 9x18 round.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
+		<text>RG028 is a cartridge used for its armor penetration capabilities. The goal of the RG028 was to become a counter to body armor; for this reason, it's loaded with a hardened steel core. Unfortunately, the round itself isn't much of an improvement over the standard, it just has a stronger impact than typical 9x18 round.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IIIA\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]low - medium</text>
 	</string>
 	<string id="ammo-9x18-ap_s">
 		<text>9x18 RG028</text>
@@ -229,7 +229,7 @@
 		<text>9x19 mm JHP rounds</text>
 	</string>
 	<string id="ammo-9x19-pbp_descr">
-		<text>This 9x19 caliber jacketed hollow point bullet with an expanding hollow provides high stopping power and low ricochet propensity. Used by police and for self-defense. Ineffective against body armor due to its low penetration potential.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
+		<text>This 9x19 caliber jacketed hollow-point bullet with an expanding hollow has high stopping power and low ricochet propensity. Used by police and for self-defense. Ineffective against body armor due to its low penetration potential.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]I\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]high</text>
 	</string>
 	<string id="ammo-9x19-pbp_s">
 		<text>9x19 JHP</text>
@@ -247,7 +247,7 @@
 		<text>9x39 mm SP-6 rounds</text>
 	</string>
 	<string id="ammo-9x39-ap_descr">
-		<text>The SP-6 is a subsonic armor-piercing round with a jacketed soft point bullet with a hard steel core that protrudes from the casing. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries. Effective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>The SP-6 is a subsonic armor-piercing round with a jacketed soft point bullet with a hard steel core that protrudes from the casing. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries. Effective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-9x39-ap_s">
 		<text>9x39 SP-6</text>
@@ -256,7 +256,7 @@
 		<text>9x39 mm SP-5 rounds</text>
 	</string>
 	<string id="ammo-9x39-pab9_descr">
-		<text>The SP-5 is a subsonic sniper round with a bimetallic casing. The round contains a steel core with a gap behind it that is filled with lead. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>The SP-5 is a subsonic rifle round with a bimetallic casing. The round contains a steel core with a gap behind it that is filled with lead. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-9x39-pab9_s">
 		<text>9x39 mm SP-5 rounds</text>
@@ -268,7 +268,7 @@
 		<text>M203 grenade</text>
 	</string>
 	<string id="ammo-m209_descr">
-		<text>40 mm grenade for the M203 underbarrel grenade launcher. This round has a 3,5 meter kill zone. Also suitable for use in the FN F2000 integrated grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]4,1 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments' radius: %c[0,170,170,170]28 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]95 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
+		<text>40 mm grenade for the M203 underbarrel grenade launcher. This round has a 3.5 meter kill zone. Also suitable for use in the FN F2000 integrated grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] Blast power: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Blast radius: %c[0,170,170,170]4.1 m\n%c[0,93,0,116] • %c[0,140,140,140] Fragments' radius: %c[0,170,170,170]28 m\n%c[0,93,0,116] • %c[0,140,140,140] Av. number of fragments: %c[0,170,170,170]95 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] Explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
 	</string>
 	<string id="ammo-m209_s">
 		<text>M203</text>
@@ -277,7 +277,7 @@
 		<text>OG-7V warhead</text>
 	</string>
 	<string id="ammo-og-7b_descr">
-		<text>Fragmentation warhead for anti-personnel warfare used with the RPG-7 grenade launcher. The main purpose of the warhead is to kill enemies in cover outside the range of hand grenades.\n \n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]5,6 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments' radius: %c[0,170,170,170]41 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]153 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
+		<text>Fragmentation warhead for anti-personnel warfare used with the RPG-7 grenade launcher. The main purpose of the warhead is to kill enemies in cover outside the range of hand grenades.\n \n%c[0,93,0,116] • %c[0,140,140,140] Blast power: %c[0,170,170,170]high\n%c[0,93,0,116] • %c[0,140,140,140] Blast radius: %c[0,170,170,170]5.6 m\n%c[0,93,0,116] • %c[0,140,140,140] Fragments' radius: %c[0,170,170,170]41 m\n%c[0,93,0,116] • %c[0,140,140,140] Av. number of fragments: %c[0,170,170,170]153 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] Explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
 	</string>
 	<string id="ammo-og-7b_s">
 		<text>OG-7V</text>
@@ -286,7 +286,7 @@
 		<text>VOG-25 grenade</text>
 	</string>
 	<string id="ammo-vog-25_descr">
-		<text>Regular fragmentation grenade for the GP-25 Kostyor underbarrel grenade launcher. This round has a 2,5 meter kill zone. The VOG-25 grenade is also used in the OC-14 Groza complex and RG6 / 6G30 revolver-type grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] blast power: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] blast radius: %c[0,170,170,170]3,6 m\n%c[0,93,0,116] • %c[0,140,140,140] fragments' radius: %c[0,170,170,170]20 m\n%c[0,93,0,116] • %c[0,140,140,140] av. number of fragments: %c[0,170,170,170]81 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
+		<text>Regular fragmentation grenade for the GP-25 Kostyor underbarrel grenade launcher. This round has a 2.5 meter kill zone. The VOG-25 grenade is also used in the OC-14 Groza complex and RG6 / 6G30 revolver-type grenade launcher.\n \n%c[0,93,0,116] • %c[0,140,140,140] Blast power: %c[0,170,170,170]medium\n%c[0,93,0,116] • %c[0,140,140,140] Blast radius: %c[0,170,170,170]3.6 m\n%c[0,93,0,116] • %c[0,140,140,140] Fragments' radius: %c[0,170,170,170]20 m\n%c[0,93,0,116] • %c[0,140,140,140] Av. number of fragments: %c[0,170,170,170]81 (small shrapnels)\n%c[0,93,0,116] • %c[0,140,140,140] Explosion delay: %c[0,170,170,170]none (explodes on impact)</text>
 	</string>
 	<string id="ammo-vog-25_s">
 		<text>VOG-25</text>
@@ -304,7 +304,7 @@
  		<text>7.62x39 mm FMJ rounds</text>
  	</string>
  	<string id="ammo-7.62x39_fmj_descr">
- 		<text>7.62x39 Full Metal Jacket is one the most commonly used types of ammunition, especially in Africa and in the Middle East. Some nicknamed it the "Round of the Revolution" due to its favored use by both terrorist and criminal organizations. Due to the sheer power of the round most military organizations have turned to using steel plates to counter 7.62x39 as there is high probability of encountering it in combat situations.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ 		<text>7.62x39 Full Metal Jacket is one the most commonly used types of ammunition, especially in Africa and in the Middle East. Some nicknamed it the "Round of the Revolution" due to its favored use by both terrorist and criminal organizations. Due to the sheer power of the round most military organizations have turned to using additional steel plates to counter 7.62x39 as there is high probability of encountering it in combat situations.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	 </string>
  	<string id="ammo-7.62x39_fmj_s">
  		<text>7.62x39 FMJ rounds</text>
@@ -313,12 +313,12 @@
  		<text>7.92x57 mm Mauser rounds</text>
  	</string>
  	<string id="ammo-7.92x33_fmj_descr">
- 		<text>The 7.92x57 Mauser round was adopted by the German Empire and then the Third Reich. It was one of the most popular cartridges in the period of two world wars. However,  nowadays, the round is primarily used for hunting and sports.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ 		<text>The 7.92x57 Mauser round was adopted by the German Empire and then the Third Reich. It was one of the most popular cartridges in the period of two world wars. However, nowadays, the round is primarily used for hunting and sports.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]AIII\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	 </string>
  	<string id="ammo-7.92x33_fmj_s">
  		<text>7.62x57 Mauser rounds</text>
  	</string>
- 	<string id="ammo-7.92x33_ap">
+<string id="ammo-7.92x33_ap">
  		<text>7.92x57 mm SA rounds</text>
  	</string>
  	<string id="ammo-7.92x33_ap_descr">
@@ -655,7 +655,7 @@
 		<text>Beretta 92F (camouflaged)</text>
 	</string>
 	<string id="st_wpn_beretta_camo_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The 92F is perhaps best known as the standard pistol of the US Military, which replaced the legendary M1911. It is a short-recoil operated, locked-breech weapon with an aluminum frame and a hard-chromed barrel-bore. A popular sidearm adopted by several countries. This particular model uses the US MARPAT desert camouflage. MARPAT patterns are produced thanks to a highly complex fractal equations that result in a non-repeating pattern. When used in an operative environment, its textured appearance and lack of hard edges make it more effective than traditional patterns. This particular variant of the Beretta was imported into the Zone by a South African named Reon Cronje from a company called "Walco Financial Services".\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The 92F is perhaps best known as the standard pistol of the US Military, which replaced the legendary M1911. It is a short-recoil operated, locked-breech weapon with an aluminum frame and a hard-chromed barrel-bore. A popular sidearm adopted by several countries. This particular model uses the US MARPAT desert camouflage. MARPAT patterns are produced thanks to a highly complex fractal equations that result in a non-repeating pattern. When used in an operative environment, its textured appearance and lack of hard edges make it more effective than traditional patterns. This particular variant of the Beretta was imported into the Zone by a South African named Reon Cronje from a company called "Walco Financial Services".\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatible silencer</text>
 	</string>
 	<string id="st_wpn_beretta_worn">
 		<text>Beretta 92F (worn)</text>
@@ -706,7 +706,7 @@
 		<text>Colt M1911 (camouflaged)</text>
 	</string>
 	<string id="st_wpn_colt1911_camo_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The M1911 was the standard-issue side arm for the U.S. military from 1911 to 1985. An extremely reliable and robust weapon, it's been adopted for military, police and civilian use around the world and remains a very popular firearm to this day. This particular model is using a South Vietnamese camouflage based on the US m1948 ERDL camouflage pattern. This ARVN "leaf" or "Airborne leaf" pattern is a fairly accurate copy of the US ERDL design, having the same mid-brown, russet & beige organic shapes with dark brown "branches".\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 11.43x23 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The M1911 was the standard-issue side arm for the U.S. military from 1911 to 1985. An extremely reliable and robust weapon, it's been adopted for military, police and civilian use around the world and remains a very popular firearm to this day. This particular model is using a South Vietnamese camouflage based on the US m1948 ERDL camouflage pattern. This ARVN "leaf" or "Airborne leaf" pattern is a fairly accurate copy of the US ERDL design, having the same mid-brown, russet and beige organic shapes with dark brown "branches".\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 11.43x23 compatible silencer</text>
 	</string>
 	<string id="st_wpn_colt1911_alt">
 		<text>Colt M1911 (modern)</text>
@@ -718,7 +718,7 @@
 		<text>Desert Eagle "Steppe Eagle"</text>
 	</string>
 	<string id="st_wpn_desert_eagle_nimble_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A hand-made pistol based on the Desert Eagle design. The components are finely tuned to achieve incredible accuracy for a handgun of this type.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 11.43x23 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A hand-made pistol based on the Desert Eagle design. The components are finely tuned to achieve incredible accuracy for a handgun of this type. This weapon was brought to the Zone by a stalker named Logan Williams. Disguised as a TIME photographer he managed to single-handedly enter the center of Pripyat. His current whereabouts are unknown, but he is rumored to work as an information broker specializing in all matters related to the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 11.43x23 compatible silencer</text>
 	</string>
 	<string id="st_wpn_eagle">
 		<text>Desert Eagle</text>
@@ -756,7 +756,7 @@
 	<string id="st_wpn_fn2000_camo_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The FS2000 Tactical is a civilian legal, semi-auto-only variant of the F2000 selective-fire bullpup carbine with an integrated MIL-STD 1913 top mounting rail and emergency backup folding sights. Fitted with a permanent EOTech holographic sight. The FN F2000 is used by the Slovenian Army, this particular model uses the M91 Oakleaf Pattern which has been in service since 1991. The pattern is based on the Yugoslavian M87 small oak leaf pattern, but uses different colours.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer</text>
 	</string>
-	<string id="st_wpn_fn2000_worn">
+			<string id="st_wpn_fn2000_worn">
 		<text>FN F2000 (slightly worn)</text>
 	</string>
 	<string id="st_wpn_fort">
@@ -844,10 +844,10 @@
 		<text>"Obrez" Mosin-Nagant M1891/30 (sawn-off)</text>
 	</string>
 	<string id="st_wpn_obrez_descr">
-	<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]"Obrez" is a Russian word meaning "cut". This "Obrez" is a sawn-off Mosin-Nagant M1891/30. Mainly used by rebels and criminals, it still fires the original rifle cartridge. It's "classified" as a hybrid between a bolt-action pistol and a shotgun, i.e. a budget hand-cannon!</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]"Obrez" is a Russian word meaning "cut". This "Obrez" is a sawn-off Mosin-Nagant M1891/30. Mainly used by rebels and criminals, it still fires the original rifle cartridge. It's "classified" as a hybrid between a bolt-action pistol and a shotgun, i.e. a budget hand-cannon!</text>
 	</string>
 	<string id="st_wpn_aek973">
-	<text>AEK-971</text>
+    <text>AEK-971</text>
 	</string>
 	<string id="st_wpn_aek973_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Based on previous AK rifles in internal design and layout, the AEK-971 is also equipped with a recoil-balancing mechanism, resulting in more controllable automatic fire. Small batches of this rifle were manufactured for the Russian MVD.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher</text>
@@ -868,25 +868,25 @@
 		<text>FN FAL</text>
 	</string>
 	<string id="st_wpn_fnfalll_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The FAL is one of the most common and widely used small-arms in the world. It fires a heavy, 7.62x51 NATO rounds making it a weapon of considerable stopping power. Originally desinged and produced in Belgian Fabrique Nationale (FN) it has later on been licensed to multiple countries around the globe. The rifle is available in two distinct patterns: inch and metric, both of which were serving as primary battle rifles of many NATO countries during the Cold War (for which the weapon was nicknamed "The right arm of the Free World"). Variant of this legendary gun which is the most commonly found in the Zone is the metric pattern of uknown manufacture, which features metal grip, classic wooden stock and FN CAL-shaped handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] grenade launcher M203\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]FN FAL is one of the most common and widely used small-arms in the world. It fires heavy, 7.62x51 NATO rounds making it a weapon of considerable stopping power. Originally designed by and produced in Belgian Fabrique Nationale (FN), it has subsequently been licensed to multiple countries around the globe. The rifle is available in two distinct patterns: inch and metric, both of which were used as primary battle rifles of many NATO countries during the Cold War (and for this reason the weapon was nicknamed "The right arm of the Free World"). Variant of this legendary firearm most commonly found in the Zone is the metric pattern of unknown manufacture, which features a metal grip, classic wooden stock and FN CAL-shaped handguard.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_custom">
 		<text>FN FAL "Azzasin's" (customized)</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_custom_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Customized FN FAL which originally benlonged to "Azzasin" - retired Spetznaz operative who has got to become Stalker of large renown, who has spent years traversing the Zone in ever-lasting search for opportunities. Some say that he was one of the few real 'Zone men' for whom the sheer opportunity to breath its unique air becomes the very purpose of living. The weapon is heavly-customized with high quality after-market elements and surpases most other pieces in terms of accuracy, durability and handling properties.\n \n%c[0,170,170,170]\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] grenade launcher M203\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Customized FN FAL which originally belonged to "Azzasin" - a retired Spetznaz operative, later famous stalker, who has spent years traversing the Zone in ever-lasting search for opportunities. Some say that he was one of the few real Zoners: sheer possibility to breathe unique air of the Zone was his sole purpose of living. The weapon is heavily-customized with high quality after-market elements, and surpasses most other firearms in terms of accuracy, durability and handling properties.\n \n%c[0,170,170,170]\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_modern">
 		<text>StG 58 (modern)</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_modern_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]This is a modernized version of Austrian Steyr Stg 58 (for "Sturmgewehr 58") - a license-built rifle based on Belgian FN FAL. It features a polymer stock, handguard and pistol grip and has been constructed with great care and only with high-quality elements. This results in lowered weight, better handling, increased durability (especially when firing in automatic mode) and significantly reduced recoil which remains the biggest drawback of most other revisions of FAL.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] grenade launcher M203\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]This is a modernized version of Austrian Steyr Stg 58 (for "Sturmgewehr 58") - a license-built rifle based on Belgian FN FAL. It features a polymer stock, handguard and pistol grip, and has been constructed with great care and only with high-quality elements. This results in lowered weight, better handling, increased durability (especially when firing in automatic mode) and significantly reduced recoil which remains the biggest drawback of most other revisions of FAL.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_camo">
 		<text>L1A1 SLR (camouflaged)</text>
 	</string>
 	<string id="st_wpn_fnfallelcan_camo_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]This is the British inch-pattern FN FAL - Commonwealth L1A1 SLR (for "Self Loading Rifle"). It has been painted into rare Rhodesian camouflage which unequivocally indicates its African origin. Rhodesia (which has eventually transformed into modern-day Zimbabwe) was a former british colony declared independent in 1965. Later on the country was torn apart by the civil war - nicknamed the "Bush War" - during which the governmental security forces (one of the three sides of the conflict) where using camouflaged L1A1s as primary battle rifles. The weapon - as all FAL 'inch rifles' - while offering increased accuracy, only allows for semi-automatic fire. Thanks to its Bush War origin it also features a custom muzzle brake mounted on the barrel - such devices were commonly installed at the time for the purpose of recoil reduction. It is not known how a contigent of these rifles ended up in the Zone, however as "Rhodesian" L1A1s were specifically suited for operating in harsh envirnomental conditions - they remain one of the most reliable fire-arms to be found on the local market.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] SUSAT series scopes\n%c[0,93,0,116] • %c[0,140,140,140] grenade launcher M203\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x51 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]This is the British inch-pattern FN FAL - Commonwealth L1A1 SLR (for "Self Loading Rifle"). It has been painted with rare Rhodesian camouflage which unequivocally indicates its African origin. Rhodesia (which has eventually transformed into modern-day Zimbabwe) was a former British colony which declared its independence in 1965. Later on, the country was torn apart by the civil war - nicknamed the "Bush War" - during which government security forces (one of the three sides of the conflict) used camouflaged L1A1s as primary battle rifles. The weapon - as all FAL 'inch rifles' - while offering increased accuracy, only allows for semi-automatic fire. Due to its Bush War origin, it also features a custom muzzle brake mounted on the barrel for the purposes of recoil reduction. It is not known how a contingent of these rifles ended up in the Zone, however - as "Rhodesian" L1A1s were specifically suited for operating in harsh envirnoment conditions - they remain one of the most reliable firearms to be found on the local market.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[255,144,50,26]• %c[0,140,140,140] SUSAT series scopes\n%c[255,144,50,26]• %c[0,140,140,140] grenade launcher M203\n%c[255,144,50,26]• %c[0,140,140,140] 7.62x51 compatible silencer</text>
 	</string>
 	<string id="st_wpn_fr2000">
 		<text>FN FS2000</text>
@@ -898,7 +898,7 @@
 		<text>M14 DMR</text>
 	</string>
 	<string id="st_wpn_m21_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The DMR fills the need for a lightweight, accurate weapon system utilizing the 7.62x51mm NATO round. Marine Corps Explosive Ordnance Disposal Teams, Scout Snipers and sniper spotters also used DMRs when the mission requires rapid, accurate fire at long range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] M24 sniper scope (permanent)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The DMR fills the need for a lightweight, accurate weapon system utilizing the 7.62x51mm NATO round. Marine Corps Explosive Ordnance Disposal Teams, Scout Snipers and sniper spotters also used DMRs when the mission requires rapid, accurate fire at long range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] M24 scope (permanent)</text>
 	</string>
 	<string id="st_wpn_m1000">
 		<text>Muzgaran</text>
@@ -907,10 +907,10 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Unknown sniper rifle with the inscription "Muzgaran" on the muzzle.</text>
 	</string>
 	<string id="st_wpn_rpk74">
-	<text>RPK-74</text>
+    <text>RPK-74</text>
 	</string>
 	<string id="st_wpn_rpk74_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The Kalashnikov RPK-74 light machine gun was developed during mid-seventies to complement the AK-74 assault rifle as a standard squad automatic weapon of the Soviet army. It is based on its parent, the AK-74 assault rifle, but with an extended magazine.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The Kalashnikov RPK-74 light machine gun was developed during mid-seventies to complement the AK-74 assault rifle as a standard squad automatic weapon of the Soviet army. It is based on its parent, the AK-74 assault rifle, but with an extended magazine.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes (after modification)</text>
 	</string>
 	<string id="st_wpn_scar">
 		<text>XM8 Guerilla Camo</text>
@@ -970,13 +970,13 @@
 		<text>Skorpion vz. 68</text>
 	</string>
 	<string id="st_wpn_scorpion_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, mass production of the 9x19mm Skorpion vz. 68 never took place. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x18 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, mass production of Skorpion vz. 68 never took place. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x18 compatible silencer</text>
 	</string>
 	<string id="st_wpn_scorpion_camo">
 		<text>Skorpion vz. 68 (camouflaged)</text>
 	</string>
 	<string id="st_wpn_scorpion_camo_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A unique Spetsnaz Skorpion vz. 68 with a camouflaged chassis made of lightweight titanium. Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, mass production of the 9x19mm Skorpion vz. 68 never occurred. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x18 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A unique Spetsnaz Skorpion vz. 68 with a camouflaged chassis made of lightweight titanium. Originally chambered for the .32 ACP when adopted by the Czechoslovak Army in 1961, mass production of Skorpion vz. 68 never occurred. Even so, a large number of pre-production vz. 68 models made their way into the Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x18 compatible silencer</text>
 	</string>
 	<string id="st_wpn_ppsh41">
 		<text>PPSh-41</text>
@@ -1012,7 +1012,7 @@
 		<text>GSh-18</text>
 	</string>
 		<string id="st_wpn_gsh18_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The GSh-18 was developed in the '90s in Tula. It's capable of punching through all known bullet-proof vests with standard bullets. With the 7N21 and 7N31 armor-piercing bullets, it can pierce 8mm of steel at 20 meters.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The GSh-18 was developed in the '90s in Tula. It's capable of punching through all known bullet-proof vests with standard bullets. With the 7N21 and 7N31 armor-piercing bullets, it can pierce 8mm of steel at 20 meters.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatible silencer (after modification)</text>
 	</string>
 	<string id="st_wpn_ak47m">
 		<text>AKM</text>
@@ -1033,10 +1033,10 @@
 		<text>AKM (customized)</text>
 	</string>
 	<string id="st_wpn_ak47m_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The AKM (literally translated "Kalashnikov modernized automatic rifle") is an upgraded version of the AK-47 rifle. Although it was replaced in Soviet front-line service by the AK-74 in the 1970s, the AKM is the most widely used variant of the AK series of firearms.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 7.62x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The AKM (literally translated "Kalashnikov modernized automatic rifle") is an upgraded version of the AK-47 rifle. Although it was replaced in Soviet front-line service by the AK-74 in the 1970s, the AKM is the most widely used variant of the AK series of firearms.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 7.62x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes (after modification)\n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher</text>
 	</string>
 	<string id="st_wpn_ak47m_worn_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The AKM (literally translated "Kalashnikov modernized automatic rifle") is an upgraded version of the AK-47 rifle. Although it was replaced in Soviet front-line service by the AK-74 in the 1970s, the AKM is the most widely used variant of the AK series of firearms.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]The AKM (literally translated "Kalashnikov modernized automatic rifle") is an upgraded version of the AK-47 rifle. Although it was replaced in Soviet front-line service by the AK-74 in the 1970s, the AKM is the most widely used variant of the AK series of firearms.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes (after modification)\n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher</text>
 	</string>
 	<string id="st_wpn_saiga">
 		<text>Saiga-12K</text>
@@ -1048,7 +1048,7 @@
 		<text>TT-33</text>
 	</string>
 	<string id="wpn_tt33_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]An iconic Soviet firearm, the TT-33 is an improved version of the TT-30, a semi-automatic pistol developed in 1930 to replace the aging Nagant M1895 revolver. Even though the production of TT-33 in Russia ran from 1933 to 1954, some copies are still in service and produced today.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]An iconic Soviet firearm, the TT-33 is an improved version of the TT-30, a semi-automatic pistol developed in 1930 to replace the aging Nagant M1895 revolver. Even though the production of TT-33 in Russia ran from 1933 to 1954, some copies are still in service and produced today.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x18 compatible silencer</text>
 	</string>
 	<string id="st_wpn_oc33">
 		<text>Ots-33 "Pernach"</text>
@@ -1095,14 +1095,14 @@
 		<string id="st_wpn_hpsa_custom">
 		<text>Browning Hi-Power (customized)</text>
 	</string>
-	<string id="st_wpn_hpsa_alt">
+			<string id="st_wpn_hpsa_alt">
 		<text>Browning Hi-Power (alternate)</text>
 	</string>
 				<string id="st_wpn_hpsa_camo">
 		<text>Browning Hi-Power (camouflaged)</text>
 	</string>
 	<string id="st_wpn_hpsa_camo_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A modified model of a pistol from the first half of the 20th century, which is as reliable, powerful and accurate as the original. Pistols of this series deserve their reputation as one of the best handguns of the 20th century and are in great demand in the Zone. An interesting camouflage design emerged in the 1970s for test by Polish special purpose troops. Known as the Gepard (leopard) design, this pattern incorporated black & reddish brown leopard spots on a field grey background. It is believed only the special purpose uniform was produced in this pattern, and probably only for testing purposes as the uniform does not appear to have been adopted. A similar design, however, emerged in use with special units of the Zaire Armed Forces in the late 1970s, with a variant also appearing in Chad.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A modified model of a pistol from the first half of the 20th century, which is as reliable, powerful and accurate as the original. Pistols of this series deserve their reputation as one of the best handguns of the 20th century and are in great demand in the Zone. An interesting camouflage design emerged in the 1970s for test by Polish special purpose troops. Known as the Gepard (leopard) design, this pattern incorporated black and reddish brown leopard spots on a field grey background. It is believed only the special purpose uniform was produced in this pattern, and probably only for testing purposes as the uniform does not appear to have been adopted. A similar design, however, emerged in use with special units of the Zaire Armed Forces in the late 1970s, with a variant also appearing in Chad.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x19 compatible silencer</text>
 	</string>
 	<string id="st_wpn_hpsa_worn">
 		<text>Browning Hi-Power (worn)</text>
@@ -1131,7 +1131,7 @@
 	<string id="st_wpn_lr300">
 		<text>LR-300-ML</text>
 	</string>
-	<string id="st_wpn_lr300_custom">
+		<string id="st_wpn_lr300_custom">
 		<text>LR-300-ML (customized)</text>
 	</string>
 	<string id="st_wpn_lr300_alt">
@@ -1252,7 +1252,7 @@
 		<text>SG 550-S Sniper</text>
 	</string>
 	<string id="st_wpn_sig550_sniper_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A marksman variant of a popular Swiss-made assault rifle, the SG 550-S constitutes a perfect middle ground between sniper and assault rifles, retaining the strong points of both types of weaponry. On the other hand, it suffers from certain drawbacks such as somewhat lacking stopping power and accuracy for a sniper rifle and lack of automatic fire. Still, it remains one of the best, top-tier weapon systems available within the Exclusion Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] custom SUSAT scope (permanent)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A marksman variant of a popular Swiss-made assault rifle, the SG 550-S constitutes a perfect middle ground between sniper and assault rifles, retaining the strong points of both types of weaponry. On the other hand, it suffers from certain drawbacks such as somewhat lacking stopping power and accuracy for a sniper rifle and lack of automatic fire. Still, it remains one of the best, top-tier weapon systems available within the Exclusion Zone.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] custom SUSAT scope (permanent)</text>
 	</string>
 	<string id="st_wpn_sig550_custom">
 		<text>SG 550 (customized)</text>
@@ -1420,7 +1420,7 @@
 		<text>Maverick 88 (corroded)</text>
 	</string>
 	<string id="st_wpn_wincheaster1300_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]The Mossberg Maverick 88 is a simplified and cheaper version of the pump action Mossberg 500 shotgun. The 18 1/2" barrel allows to insert 6 rounds in the tube magazine and one in the 3" chamber. A Western smoothbore shotgun, extremely popular around the world thanks to its amazing reliability and fast reloading speed. Particularly valued for its functionality by the Zone's hunters. Coated with an anti-corrosion compound.</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]The Mossberg Maverick 88 is a simplified and cheaper version of the pump action Mossberg 500 shotgun. The 18 1/2" barrel allows to insert 5 rounds in the tube magazine and one in the 3" chamber. A Western smoothbore shotgun, extremely popular around the world thanks to its amazing reliability and fast reloading speed. Particularly valued for its functionality by the Zone's hunters. Coated with an anti-corrosion compound.</text>
 	</string>
 	<string id="st_wpn_wincheaster1300_trapper">
 		<text>Maverick 88 "Predator"</text>
@@ -1432,10 +1432,10 @@
 		<text>Homemade batteries</text>
 	</string>
 	<string id="st_wpn_abakan_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A key improvement of the AN-94 over the AK-74 is the introduction of the additional 2-rounds burst mode. Nikonov design delays the force of recoil until the fired rounds have left the barrel, which along with a unique 1800 rpm two-shot burst function increases body armor piercing capabilities of this firearm. Used by Spetsnaz operators as well as Duty members to take out armored targets at relatively long ranges.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] scopes\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A key improvement of the AN-94 over the AK-74 is the introduction of the additional 2-rounds burst mode. Nikonov design delays the force of recoil until the fired rounds have left the barrel, which along with a unique 1800 rpm two-shot burst function increases body armor piercing capabilities of this firearm. Used by Spetsnaz operators as well as Duty members to take out armored targets at relatively long ranges.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Grenade launcher (after modification)\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
 	</string>
 	<string id="st_wpn_abakan_worn_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A key improvement of the AN-94 over the AK-74 is the introduction of the additional 2-rounds burst mode. Nikonov design delays the force of recoil until the fired rounds have left the barrel, which along with a unique 1800 rpm two-shot burst function increases body armor piercing capabilities of this firearm. Used by Spetsnaz operators as well as Duty members to take out armored targets at relatively long ranges.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A key improvement of the AN-94 over the AK-74 is the introduction of the additional 2-rounds burst mode. Nikonov design delays the force of recoil until the fired rounds have left the barrel, which along with a unique 1800 rpm two-shot burst function increases body armor piercing capabilities of this firearm. Used by Spetsnaz operators as well as Duty members to take out armored targets at relatively long ranges.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Grenade launcher (after modification)\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
 	</string>
 	<string id="st_wpn_ak74_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A more accurate and reliable rifle than the AKM, the AK-74 is still used by the majority of countries of the former USSR. The AKS-74 is equipped with a side-folding metal shoulder stock and is designed primarily for use with air assault infantry.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes (after upgrade)\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
@@ -1444,10 +1444,10 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A more accurate and reliable rifle than the AKM, the AK-74 is still used by the majority of countries of the former USSR. The AKS-74 is equipped with a side-folding metal shoulder stock and is designed primarily for use with air assault infantry.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes (after upgrade)\n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
 	</string>
 	<string id="st_wpn_ak74u_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The AKS-74U was intended for use mainly with Spetsnaz units, airborne infantry, rear-echelon support units and armored vehicle crews, which required compact but relatively powerful individual automatic weapon. The AKS-74U is significantly more maneuverable in tight quarters than the AKS-74, however a significant decline in muzzle velocity resulted in a decrease in effective range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The AKS-74U was intended for use mainly with Spetsnaz units, airborne infantry, rear-echelon support units and armored vehicle crews, which required compact but relatively powerful individual automatic weapon. The AKS-74U is significantly more maneuverable in tight quarters than the AKS-74, however, a significant decline in muzzle velocity resulted in a decrease in effective range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
 	</string>
 	<string id="st_wpn_ak74u_worn_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The AKS-74U was intended for use mainly with Spetsnaz units, airborne infantry, rear-echelon support units and armored vehicle crews, which required compact but relatively powerful individual automatic weapon. The AKS-74U is significantly more maneuverable in tight quarters than the AKS-74, however a significant decline in muzzle velocity resulted in a decrease in effective range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The AKS-74U was intended for use mainly with Spetsnaz units, airborne infantry, rear-echelon support units and armored vehicle crews, which required compact but relatively powerful individual automatic weapon. The AKS-74U is significantly more maneuverable in tight quarters than the AKS-74, however, a significant decline in muzzle velocity resulted in a decrease in effective range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
 	</string>
 	<string id="st_wpn_ak74us_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]A special version of AKS-74U with a different mechanism and barrel. A new mechanism adds a burst mode to the weapon and a modified barrel gives it the same fire range as the AK-74. Modified muzzle brake reduces the recoil even better than in case of the ordinary AKS-74U, which leads to better handling and accuracy. It has a green or red, LED-illuminated, non-magnified Kobra optical reflex sight.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] AK74u scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
@@ -1465,10 +1465,10 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Designed by Magnum Research, U.S., the Desert Eagle uses a gas-operated mechanism normally found in rifles. This allows the pistol to use far more powerful rounds than traditional semi-automatic pistol designs. The drawback to this weapon is its size and weight. For reason unknown all Desert Eagle units found within Exclusion Zone are chambered with .357 Magnum rounds.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
 	</string>
 	<string id="st_wpn_fn2000_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]This futuristic-looking weapon with a bullpup layout is actually a mass produced modular system, comprising a rifle & grenade complex with a computerized fire control system and a 40-mm grenade launcher. Despite its bulky appearance, the weapon is highly ergonomic, easy to use and benefits from good technical characteristics.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] FN LG-41 grenade launcher (permanent)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]This futuristic-looking weapon with a bullpup layout is actually a mass produced modular system, comprising a rifle and grenade complex with a computerized fire control system and a 40-mm grenade launcher. Despite its bulky appearance, the weapon is highly ergonomic, easy to use and benefits from good technical characteristics.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] FN LG-41 grenade launcher (permanent)</text>
 	</string>
 	<string id="st_wpn_fn2000_worn_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]This futuristic-looking weapon with a bullpup layout is actually a mass produced modular system, comprising a rifle & grenade complex with a computerized fire control system and a 40-mm grenade launcher. Despite its bulky appearance, the weapon is highly ergonomic, easy to use and benefits from good technical characteristics.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]This futuristic-looking weapon with a bullpup layout is actually a mass produced modular system, comprising a rifle and grenade complex with a computerized fire control system and a 40-mm grenade launcher. Despite its bulky appearance, the weapon is highly ergonomic, easy to use and benefits from good technical characteristics.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] Scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
 	</string>
 	<string id="st_wpn_fort_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The first pistol developed by the independent Ukraine (one of the former USSR republics), Fort-12 is a blowback operated, double action pistol. The ergonomics, accuracy and magazine capacity of the Fort 12 are an improvement over the older Makarov PM.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 9x18 compatible silencer</text>
