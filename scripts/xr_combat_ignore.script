@@ -220,7 +220,7 @@ function is_enemy(obj,enemy,no_memory)
 	end
 	
 	--Yasti ai_tweaks.override_combat_ignore--
-	if db.actor:id() == ene_id and st.enabled and fighting_with_actor_npcs[obj:id()] == nil then
+	if db.actor:id() == ene_id and st.enabled and fighting_with_actor_npcs[obj:id()] == nil and IsStalker(obj) then
 		if (ai_tweaks.override_combat_ignore(obj,enemy, 2) == true) then --Yasti: Check for Recon First
 			return false
 		

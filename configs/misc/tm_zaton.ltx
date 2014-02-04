@@ -70,7 +70,7 @@ condlist_0 = {+zat_b14_give_item_linker} complete
 condlist_1 = {+zat_a2_linker_b14_quest_wrong_done} reversed, {+jup_b6_half_artefact_from_b14_given_to_sci} reversed %+zat_b14_smart_terrain_open%
 on_complete = %+zat_b14_smart_terrain_open%
 on_reversed = %+zat_b14_smart_terrain_open%
-reward_money = 14000
+reward_money = 7680
 
 [zat_b14_learn_about_strange_occurrence_by_stalkers] ;Игрок сам нашел артефакт
 icon = ui_inGame2_Strannoe_yavlenie
@@ -84,7 +84,7 @@ condlist_0 = {+zat_b14_give_item_linker} complete
 condlist_1 = {+zat_a2_linker_b14_quest_wrong_done} reversed %+zat_b14_smart_terrain_open%, {+jup_b6_half_artefact_from_b14_given_to_sci} reversed %+zat_b14_smart_terrain_open%, {+zat_b14_give_item_stalker -zat_b14_reversed_first_time} reversed
 on_complete = %+zat_b14_smart_terrain_open +zat_b14_give_item_linker%
 on_reversed = %+zat_b14_smart_terrain_open%
-reward_money = 11000
+reward_money = 7680
 
 [zat_b38_disappearance_stalkers] ;Исчезновение сталкеров
 icon = ui_inGame2_Ischeznovenie_stalkerov
@@ -95,7 +95,7 @@ descr  = {+zat_b22_actor_has_proof} zat_b22_bring_proof_text, {+zat_b22_find_pro
 target = {+zat_b22_actor_has_proof} zat_a2_stalker_barmen, {+zat_b22_find_proof} zat_b22_stalker_medic, {+zat_b38_disappearance_stalkers_tell_barmen_about_medic_give} zat_a2_stalker_barmen, {+zat_b38_disappearance_stalkers_deal_with_medic_give} zat_b22_stalker_medic, {+zat_b38_disappearance_stalkers_find_cop_near_port_krans_give} zat_b22_port_krans, {+zat_b38_disappearance_stalkers_find_out_where_is_cop_give} zat_a2_stalker_barmen, {+zat_b38_disappearance_stalkers_meet_cop_24h_past_give} zat_stalker_base_smart, {+zat_b38_disappearance_stalkers_meet_cop_later_give} nil, {+zat_b38_disappearance_stalkers_get_out_from_den_of_the_bloodsucker_give} zat_cop_id, {+zat_b38_disappearance_stalkers_clean_den_of_the_bloodsucker_give} zat_cop_id, {+zat_b38_disappearance_stalkers_meet_ment_give} zat_cop_id, zat_b38_hunter_point_zone
 condlist_0 = {+zat_b22_barmen_gave_reward} complete
 condlist_1 =  {+zat_b38_stalker_cop_death -zat_b38_disappearance_stalkers_meet_cop_24h_past_give} fail %+zat_b38_failed%, {+zat_b38_failed_getaway} fail %+zat_b38_failed%, {+zat_b38_quest_failed} fail %+zat_b38_failed%
-reward_money = 15000
+reward_money = 8800
 on_complete = %=inc_faction_goodwill_to_actor(stalker:200) =give_treasure(zat_hiding_place_31:zat_hiding_place_49)%
 
 [zat_b38_den_of_the_bloodsucker_inform_stalkers] ;Рассказать сталкерам о логове
@@ -107,7 +107,7 @@ descr =  {+zat_b57_den_of_the_bloodsucker_tell_stalkers_about_destroy_lair_give}
 target = {+zat_b57_den_of_the_bloodsucker_tell_stalkers_about_destroy_lair_give} zat_a2_stalker_barmen, {+zat_b57_den_of_the_bloodsucker_wait_destroy_give} nil, {+zat_b57_den_of_the_bloodsucker_twist_vintil_give} zat_b57_vintil_id, {+zat_b57_den_of_the_bloodsucker_place_gas_give +zat_b57_den_of_the_bloodsucker_search_gas_give} zat_b57_place_gas_id, {+zat_b57_actor_has_gas +zat_b57_den_of_the_bloodsucker_search_gas_give} zat_b57_place_gas_id,  {+zat_b12_find_keys_and_open +zat_b57_den_of_the_bloodsucker_search_gas_give} nil,  {+zat_b12_actor_have_keys +zat_b57_den_of_the_bloodsucker_search_gas_give} zat_b57_gas_box, {+zat_b12_find_the_way_to_open +zat_b57_den_of_the_bloodsucker_search_gas_give} nil, {+zat_b57_nimble_talk_about_gas} zat_b57_gas_box, {+zat_b57_den_of_the_bloodsucker_search_gas_give} zat_b30_owl_stalker_trader_id, zat_a2_stalker_barmen
 condlist_0 = {+zat_b38_den_of_the_bloodsucker_complete} complete
 on_complete = %+zat_b57_bloodsucker_lair_clear =inc_faction_goodwill_to_actor(stalker:200)%
-reward_money = 15000
+reward_money = 7950
 
 [zat_b52_reputation] ;Репутация
 icon = ui_inGame2_Reputatsiya
@@ -178,7 +178,7 @@ storyline = false
 title = zat_b5_talk_barmen_name
 descr = zat_b5_talk_barmen_text
 target = zat_a2_stalker_barmen
-reward_money = 12000
+reward_money = 6400
 condlist_0 = {+zat_b5_barmen_give_revard} complete %+zat_b5_task_end%
 condlist_1 = {=is_squad_enemy_to_actor(zat_b22_barmen)} fail %+zat_b5_quest_for_barmen_fail +zat_b5_task_end%
 

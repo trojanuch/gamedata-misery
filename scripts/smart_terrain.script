@@ -17,6 +17,7 @@ local valid_territory = {
 	base_freedom_safe = true,
 	base_duty_safe = true,
 	base_monolith = true,
+	base_monolith_safe = true,
 	resource = true,
 	resource_hard = true,
 	resource_monolith = true,

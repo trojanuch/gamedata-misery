@@ -295,9 +295,9 @@
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
-		<rank>80</rank>
+		<rank>85</rank>
 		<reputation>0</reputation>
-		<money min="8000" max="8000" infinitive="0" />
+		<money min="8000" max="12000" infinitive="0" />
 		<visual>actors\stalker_neutral\stalker_neutral_2_face_2</visual>
 
 		<supplies>
@@ -336,9 +336,9 @@
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
-		<rank>80</rank>
+		<rank>85</rank>
 		<reputation>0</reputation>
-		<money min="8000" max="8000" infinitive="0" />
+		<money min="8000" max="12000" infinitive="0" />
 		<visual>actors\stalker_neutral\stalker_neutral_2_face_2</visual>
 
 		<supplies>
@@ -363,7 +363,7 @@
 		<community>stalker</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
-		<rank>80</rank>
+		<rank>40</rank>
 		<reputation>0</reputation>
 		<money min="3000" max="3000" infinitive="0" />
         <visual>actors\stalker_neutral\stalker_neutral2c</visual>
@@ -1082,7 +1082,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>65</rank>
+		<rank>95</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc2c</visual>
 		<supplies>
@@ -1120,7 +1120,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>45</rank>
+		<rank>85</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc_2</visual>
 		<supplies>
@@ -1148,7 +1148,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>30</rank>
+		<rank>80</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc2c_mask</visual>
 		<supplies>
@@ -1177,7 +1177,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>30</rank>
+		<rank>80</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc2a</visual>
 		<supplies>
@@ -1206,7 +1206,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>45</rank>
+		<rank>60</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_bandit\stalker_bandit2a_mask</visual>
 		<supplies>
@@ -1232,7 +1232,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>25</rank>
+		<rank>60</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_bandit\stalker_bandit_1</visual>
 		<supplies>
@@ -1258,7 +1258,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>25</rank>
+		<rank>40</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_bandit\stalker_bandit1c</visual>
 		<supplies>
@@ -1281,7 +1281,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>45</rank>
+		<rank>40</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc_7</visual>
 		<supplies>

@@ -4869,6 +4869,12 @@ item_fx = {
 	},
 	helm_tactic = {
 		[30] = "level.add_pp_effector(\"helm_battle.ppe\",3000,true)",
+
+	mutant_looting = {
+		[0] = "level.disable_input()",
+		[1] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8053, false,'')",
+		[3900] = "level.enable_input()",
+		[4000] = "actor_effects.use_weapon(1)"
 	},
 }
 

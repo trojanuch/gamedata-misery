@@ -17,7 +17,10 @@ local wp = world_property
 -- INI
 ------------------------
 local ini = ini_file("ai_tweaks\\xr_corpse_detection.ltx")
-local AlwaysDetectDistance = alun_utils.read_from_ini(ini,"settings","always_detect_dist","float",2500)
+--local AlwaysDetectDistance = alun_utils.read_from_ini(ini,"settings","always_detect_dist","float",2500)
+local DeathTimeDanger = alun_utils.read_from_ini(ini,"settings","death_time_danger","string","60000")
+local AlwaysDetectDistanceFree = alun_utils.read_from_ini(ini,"settings","always_detect_dist_free","float",2500)
+local AlwaysDetectDistanceDanger = alun_utils.read_from_ini(ini,"settings","always_detect_dist_danger","float",125)
 local StateWalk	 = alun_utils.read_from_ini(ini,"settings","state_walk","string","walk_noweap")
 local StateRun	 = alun_utils.read_from_ini(ini,"settings","state_run","string","rush")
 local MonsterLoot = alun_utils.read_from_ini(ini,"settings","enable_mutant_looting","bool",false)
@@ -84,7 +87,14 @@ local function on_death_callback(npc,who)
 	if (corpse_contain_any_valuable) then
 		HasValuableLoot[npc:id()] = true
 	end
-
+	
+	alun_utils.save_var(npc,"death_by_id",who:id())
+	if (who:id() == db.actor:id()) then
+		local itm = db.actor:active_item()
+		if (itm and itm:clsid() == clsid.wpn_knife_s) then
+			alun_utils.save_var(npc,"death_by_knife",true)
+		end
+	end
 	--alun_utils.save_var(npc,"death_by_id",who:id())
 end
 
@@ -136,7 +146,7 @@ function on_game_start()
 end
 
 function get_all_from_corpse(npc)
-	state_mgr.set_state(npc,"idle")
+	state_mgr.set_state(npc,"idle",nil,nil,nil,{fast_set = true})
 
 	local id = npc:id()
 	local st = db.storage[id] and db.storage[id].corpse_detection
@@ -145,7 +155,7 @@ function get_all_from_corpse(npc)
 	if not (st) then
 		return
 	end
-
+	st.dtimer = time_global()+500
 	local corpse_npc_id = st.selected_corpse_id
 	local corpse_npc = corpse_npc_id and db.storage[corpse_npc_id] and db.storage[corpse_npc_id].object or corpse_npc_id and level.object_by_id(corpse_npc_id)
 
@@ -232,12 +242,23 @@ class "evaluator_corpse" (property_evaluator)
 function evaluator_corpse:__init(name, storage, npc) super (nil, name)
 	self.a = storage
 	self.a.stage = 1
+	self.a.dtimer = 0
 end
 
 local function eval_stage_1(st,npc)
 	local se_npc = alife():object(npc:id())
+	local detect_dist
+	local dt_threshold
+	local inertion
+	
+	local tg = time_global()
+	if st.dtimer > tg then
+		return false
+	end
+	st.dtimer = tg+3500
+	
 	if not (se_npc) then
-		alun_utils.printf("xr_corpse_detection: se_npc = nil! npc = %s",npc and npc:name())
+	--	alun_utils.printf("xr_corpse_detection: se_npc = nil! npc = %s",npc and npc:name())
 		return false
 	end
 
@@ -302,8 +323,13 @@ local function eval_stage_1(st,npc)
 		if (IsStalker(corpse_npc) or can_loot_mutants) then
 			local corpse_pos = corpse_npc:bone_position("bip01_spine")
 			local dist = npc:position():distance_to_sqr(corpse_pos)
+			
+			dt_threshold = npc:relation(corpse_npc) == game_object.friend and tg - corpse_npc:death_time()
+			inertion = xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,"settings","death_time_danger",DeathTimeDanger))
+			detect_dist = alun_utils.load_var(corpse_npc,"death_by_knife") and 0 or dt_threshold and dt_threshold > tonumber(inertion) and AlwaysDetectDistanceDanger or AlwaysDetectDistanceFree
 
-			if (st.nearest_corpse_dist == nil or dist <= st.nearest_corpse_dist) then
+
+			if (dist <= detect_dist) and (st.nearest_corpse_dist == nil or dist <= st.nearest_corpse_dist) then
 				local corpse_vertex = level.vertex_id(corpse_pos)
 				if level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) > 16 then
 					corpse_vertex = corpse_npc:level_vertex_id()
@@ -382,7 +408,16 @@ function evaluator_corpse:evaluate()
 		return eval_reset(self.a)
 	end
 
-	if (xr_help_wounded.is_under_help_wounded(npc)) then
+	if not (self.mgr) then
+		self.mgr = npc:motivation_action_manager()
+	end
+
+	if not self.mgr:initialized() then
+		return false
+	end
+
+	local cid = self.mgr:current_action_id()
+	if (cid == xr_actions_id.wounded_exist or cid == xr_actions_id.stohe_meet_base + 1 or cid == xr_gather_items.actid) then
 		return eval_reset(self.a)
 	end
 
@@ -408,12 +443,11 @@ function action_search_corpse:__init (npc_name,action_name,storage) super (nil,a
 end
 function action_search_corpse:initialize()
 	action_base.initialize(self)
-	state_mgr.set_state(self.object,"idle")
 	local npc = self.object
+	state_mgr.set_state(npc,self.a.state)
 	npc:set_desired_position()
 	npc:set_desired_direction()
 	npc:set_path_type(game_object.level_path)
-	--npc:set_dest_level_vertex_id(self.a.vertex_id)
 	self.a.vertex_id = utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id,"corpse_detection")
 	db.storage[self.a.selected_corpse_id].corpse_already_selected = npc:id()
 end
@@ -423,10 +457,7 @@ local function execute_search_corpse(npc,self)
 		return
 	end
 
-	state_mgr.set_state(npc,self.a.state)
-
 	local tg = time_global()
-
 	if (npc:level_vertex_id() == self.a.vertex_id) then
 		if not self.sound then
 			if math.random() < 0.60 then
@@ -437,8 +468,9 @@ local function execute_search_corpse(npc,self)
 
 		look_pos = corpse and corpse:bone_position("bip01_spine") or self.a.vertex_position
 
-		state_mgr.set_state(npc,"search_corpse",nil,nil,{look_position = look_pos})
+		state_mgr.set_state(npc,"search_corpse",nil,nil,{look_position = look_pos},{fast_set = true})
 	else
+		state_mgr.set_state(npc,self.a.state)
 		self.a.vertex_id = utils.send_to_nearest_accessible_vertex(npc, self.a.vertex_id,"corpse_detection")
 	end
 end
@@ -475,10 +507,9 @@ function add_to_binder(npc, char_ini, scheme, section, st)
 
 	if (character_community(npc) == "zombied" or npc:section() == "actor_visual_stalker") then
 		manager:add_evaluator(xr_evaluators_id.corpse_exist,property_evaluator_const(false))
+	else
+		manager:add_evaluator (xr_evaluators_id.corpse_exist, evaluator_corpse("corpse_exist", st))
 	end
-
-	-- Evaluators
-	manager:add_evaluator (xr_evaluators_id.corpse_exist, evaluator_corpse("corpse_exist", st))
 
 	-- Actions
 	local action = action_search_corpse (npc:name(),"action_search_corpse", st)
@@ -488,8 +519,8 @@ function add_to_binder(npc, char_ini, scheme, section, st)
 	action:add_precondition( wp(stalker_ids.property_danger,false) )
 	action:add_precondition( wp(stalker_ids.property_anomaly,false) )
 
-	action:add_precondition( wp(xr_gather_items.evaid, false))
-	action:add_precondition( wp(stalker_ids.property_items, false) )
+	--action:add_precondition( wp(xr_gather_items.evaid, false))
+	--action:add_precondition( wp(stalker_ids.property_items, false) )
 	action:add_precondition( wp(xr_evaluators_id.wounded_exist,false) )
 	action:add_precondition( wp(xr_evaluators_id.stohe_meet_base + 1, false) )
 	action:add_precondition( wp(xr_evaluators_id.sidor_wounded_base, false) )

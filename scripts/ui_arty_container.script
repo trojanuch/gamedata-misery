@@ -7,6 +7,7 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 Modified by Yasti for use with Artifact Containers
 UI Modified by ponney68 --]]
 -------------------------------------------------------------------
+last_art_spawn = 0
 class "load_item" (CUIListBoxItem)
 function load_item:__init(height) super(height)
 	self.file_name		= "filename"
@@ -34,6 +35,7 @@ function arty_ui:__init(owner,section) super()
 	self.artycon = alun_utils.collect_section(ini,"artyandcon",true)
 	self:InitControls()
 	self:InitCallBacks()
+	last_art_spawn = 0
 
 end
 
@@ -275,7 +277,8 @@ function arty_ui:OnButton_ok()
 		end
 		
 		alife():create(break_con, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		alife():create(break_arty, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		local se_obj = alife():create(break_arty, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		last_art_spawn = se_obj.id
 	else
 		local new_item = tostring(sec.."_"..self.section)
 		alife():create(new_item, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
@@ -351,4 +354,10 @@ function arty_ui:AddItemToList(item,listbox,condition)
 	--]]
 
 	listbox:AddExistingItem(_itm)
+end
+
+function del_art_spawn()
+	if last_art_spawn ~= 0 then
+		last_art_spawn = 0
+	end
 end

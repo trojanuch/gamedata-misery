@@ -266,16 +266,16 @@ end
 function zat_b7_give_stalker_reward_to_actor(first_speaker, second_speaker)
 	local reward = math.random(1,3)
 	if reward == 1 then
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage", 6)
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 4)
+		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage", 4)
+		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 1)
 	end
  	if reward == 2 then
 		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit", 2)
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 4)
+		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 1)
 	end
  	if reward == 3 then
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad",3)
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 4)
+		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad",2)
+		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 1)
 	end
 	treasure_manager.get_treasure_manager():give_treasure("zat_hiding_place_29")
 end
@@ -1823,20 +1823,20 @@ function zat_b103_actor_has_needed_food(first_speaker, second_speaker)
 end
 
 function zat_b5_stalker_transfer_money(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 6750)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5750)
 	treasure_manager.get_treasure_manager():give_treasure("zat_hiding_place_7")
 end
 
 function zat_b5_dealer_full_revard(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 7450)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 6450)
 end
 
 function zat_b5_dealer_easy_revard(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5450)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 4450)
 end
 
 function zat_b5_bandits_revard(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 6650)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5650)
 	treasure_manager.get_treasure_manager():give_treasure("zat_hiding_place_20")
 end
 

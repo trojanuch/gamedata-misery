@@ -15,7 +15,9 @@ function msg_box_ui:__init(obj,disable_msg,item) super()
 
 	if (string.find(self.name,obj:id())) then
 		local story_name = story_objects.get_story_objects_registry():get_story_id(obj:id())
-		self.name = story_name or self.name
+		local pstor_name = xr_logic.pstor_retrieve(obj, tostring(obj:id()))
+		self.name = pstor_name or story_name or self.name
+	--	alun_utils.printf("ui_sr_teleport.init: name test: "..tostring(self.name).."|"..tostring(pstor_name))
 	end
 
 	if (not self.name or not ini:section_exist(self.name)) then

@@ -500,7 +500,7 @@ function actor_sound:callback(npc_id)
 		st[st.active_scheme].signals["sound_end"] = true
 	end
 end
-function actor_sound:is_playing ()
+function actor_sound:is_playing()
 	if(self.snd_obj~=nil) then
 		return self.snd_obj:playing()
 	else
@@ -516,7 +516,7 @@ function actor_sound:play(npc, faction, point, msg)
 
 	if self.played_time ~= nil and time_global() - self.played_time < self.idle_time
 	then
-	--printf("self.idle_time not reached!!")
+		alun_utils.printf("self.idle_time not reached!!")
 		return false
 	end
 
@@ -529,6 +529,10 @@ function actor_sound:play(npc, faction, point, msg)
 	end
 	local snd = self.sound[self.played_id]
 	self.snd_obj = sound_object(snd)
+	if self.snd_obj ~= nil then
+--		alun_utils.printf("sound test :")
+		self.snd_obj:stop()
+	end
 	self.snd_obj.volume = self.volume
 	self.snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
 	self.snd_obj.volume = self.volume
@@ -545,7 +549,7 @@ function actor_sound:play(npc, faction, point, msg)
 		self.custom_static_demo:wnd():TextControl():SetTextST(snd_st)
 	end
 ]]
-	self.can_play_sound = false
+	self.can_play_sound = true
 
 	local sender, sname
 	if type(npc) ~= "userdata" then

@@ -163,27 +163,41 @@ end
 --function actor_binder:article_callback(npc, group, name)
 --end
 ----------------------------------------------------------------------------------------------------------------------
+
 function actor_binder:on_item_take (obj)
 	printf("on_item_take [%s]", obj:name())
-	if isArtefact(obj) then
-		local anomal_zone = bind_anomaly_zone.parent_zones_by_artefact_id[obj:id()]
-		if anomal_zone ~= nil then
-			anomal_zone:on_artefact_take(obj)
+	if isArtefact(obj) and ui_arty_container.last_art_spawn ~= obj:id() then
+		local scriptart_list = {
+								["af_quest_b14_twisted"] = true,
+								["jup_b1_half_artifact"] = true,
+								["af_oasis_heart"] = true,
+								["af_compass"] = true,
+							   }
+							   
+		local ob_sec = obj:section()
+		if obj:clsid() == clsid.artefact_s and not scriptart_list[ob_sec] then
+		--	alun_utils.printf("Artifact %s is not a valid artifact and will not be added to the PDA list", ob_sec)	
 		else
-			bind_anomaly_zone.artefact_ways_by_id[obj:id()] = nil
-		end
-		local artefact = obj:get_artefact()
-		artefact:FollowByPath("NULL",0,vector():set(500,500,500))
-		xr_statistic.inc_founded_artefacts_counter(obj:id())
+			local anomal_zone = bind_anomaly_zone.parent_zones_by_artefact_id[obj:id()]
+			if anomal_zone ~= nil then
+				anomal_zone:on_artefact_take(obj)
+			else
+				bind_anomaly_zone.artefact_ways_by_id[obj:id()] = nil
+			end
+			local artefact = obj:get_artefact()
+			artefact:FollowByPath("NULL",0,vector():set(500,500,500))
+			xr_statistic.inc_founded_artefacts_counter(obj:id())
 --[[
-		local s_art = alife():object(obj:id())
-		if(s_art) then
-			xr_statistic.inc_founded_artefacts_counter(s_art:section_name())
-		else
-			xr_statistic.inc_founded_artefacts_counter()
-		end
+			local s_art = alife():object(obj:id())
+			if(s_art) then
+				xr_statistic.inc_founded_artefacts_counter(s_art:section_name())
+			else
+				xr_statistic.inc_founded_artefacts_counter()
+			end
 ]]
+		end
 	end
+	ui_arty_container.del_art_spawn()
 	treasure_manager.get_treasure_manager():on_item_take(obj:id())
 
 	-- Alundaio

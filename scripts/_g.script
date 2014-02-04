@@ -862,3 +862,15 @@ function show_all_ui(show)
 			db.actor:disable_hit_marks(true)
 	end
 end
+
+
+function empty_table(t)
+	if (t == nil or type(t) ~= "table") then
+		alun_utils.printf("_G.empty_table: trying to empty non-table %s",t)
+		return
+	end
+	for k,v in pairs(t) do
+		t[k] = nil
+	end
+	return t
+end

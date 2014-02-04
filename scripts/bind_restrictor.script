@@ -1,9 +1,9 @@
 --[[------------------------------------------------------------------------------------------------
 Space restrictor binder
-Чугай Александр
+Г—ГіГЈГ Г© ГЂГ«ГҐГЄГ±Г Г­Г¤Г°
 
-Примечания:
-	- обновлений у рестрикторов нету, поэтому для тех, кому надо, актёр вызывает искусственно на своём обновлении
+ГЏГ°ГЁГ¬ГҐГ·Г Г­ГЁГї:
+	- Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГ© Гі Г°ГҐГ±ГІГ°ГЁГЄГІГ®Г°Г®Гў Г­ГҐГІГі, ГЇГ®ГЅГІГ®Г¬Гі Г¤Г«Гї ГІГҐГµ, ГЄГ®Г¬Гі Г­Г Г¤Г®, Г ГЄГІВёГ° ГўГ»Г§Г»ГўГ ГҐГІ ГЁГ±ГЄГіГ±Г±ГІГўГҐГ­Г­Г® Г­Г  Г±ГўГ®ВёГ¬ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГЁ
 --------------------------------------------------------------------------------------------------]]
 function bind( obj )
 	obj:bind_object( restrictor_binder( obj ) )
@@ -44,7 +44,7 @@ function restrictor_binder:net_spawn(data)
 		end
 	end
 
-	--' Если это рестиктор информационной территории - зарегистрить его.
+	--' Г…Г±Г«ГЁ ГЅГІГ® Г°ГҐГ±ГІГЁГЄГІГ®Г° ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГ®Г­Г­Г®Г© ГІГҐГ°Г°ГЁГІГ®Г°ГЁГЁ - Г§Г Г°ГҐГЈГЁГ±ГІГ°ГЁГІГј ГҐГЈГ®.
 	local ini = self.object:spawn_ini()
 	if not ini then
 		return true
@@ -76,7 +76,7 @@ function restrictor_binder:net_destroy()
 end
 
 local sr_teleport_ini = ini_file("sr_teleport_sections.ltx")
--- вызывается из обновления актёра!(БРЕХНЯ!!!!!!!)
+-- ГўГ»Г§Г»ГўГ ГҐГІГ±Гї ГЁГ§ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї Г ГЄГІВёГ°Г !(ГЃГђГ…Г•ГЌГџ!!!!!!!)
 function restrictor_binder:update(delta)
 	if not self.initialized and db.actor then
 		self.initialized = true
@@ -100,7 +100,8 @@ function restrictor_binder:update(delta)
 	local name = self.object:name()
 	if (string.find(name,id)) then
 		local story_name = story_objects.get_story_objects_registry():get_story_id(id)
-		name = story_name or name
+		local pstor_name = xr_logic.pstor_retrieve(self.object, tostring(id)) --Yasti: Added pstor variable as possible name
+		name = pstor_name or story_name or name
 	end
 	if (sr_teleport_ini:section_exist(name)) then
 		local enable = sr_teleport_ini:line_exist(name,"enable") and sr_teleport_ini:r_string(name,"enable")

@@ -32,8 +32,8 @@ function story_objects_registry:get(story_obj_id)
 	if ( type(story_obj_id) == "number"	) then
 		return self:get_story_id(story_obj_id)
 	end
-
-	return self.story_id[story_obj_id] or axr_dynamic_spawn and axr_dynamic_spawn.dynamic_story_id[story_obj_id]
+	
+	return self.story_id[story_obj_id] or (axr_dynamic_spawn and axr_dynamic_spawn.dynamic_story_id[story_obj_id])
 end
 
 function story_objects_registry:get_story_id(obj_id)
@@ -51,6 +51,11 @@ function story_objects_registry:get_story_id(obj_id)
 		for story_id,id in pairs(axr_dynamic_spawn.dynamic_story_id) do
 			if (id == obj_id) then
 				return story_id
+			end
+		end
+		for k,v in pairs(axr_dynamic_spawn.secret_stashes) do --Yasti: included as stashes are now kept in this table
+			if v.id == obj_id then
+				return v.section
 			end
 		end
 	end

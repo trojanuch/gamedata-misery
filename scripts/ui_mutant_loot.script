@@ -8,6 +8,31 @@
    it under the terms of the Open S.T.A.L.K.E.R. Mod License version 1.0.
 -]]
 -------------------------------------------------------------------
+	-- This table based on "species" of mutants 
+killed_mutant_tbl =
+	{
+	cat				= {file="ui\\ui_actor_monsters_pda_2",x="0",y="0",sound="inv_mutant_loot_smaller"},
+	fracture			= {file="ui\\ui_actor_monsters_pda_2",x="393",y="200",sound="inv_mutant_loot_rotten"},
+	bird				= {file="ui\\ui_actor_monsters_pda_2",x="393",y="0",sound="inv_mutant_loot_crow"},
+	zombie				= {file="ui\\ui_actor_monsters_pda_2",x="0",y="200",sound="inv_mutant_loot_rotten"},
+
+	snork				= {file="ui\\ui_actor_monsters_pda",x="393",y="0",sound="inv_mutant_loot_human"},
+	dog				= {file="ui\\ui_actor_monsters_pda",x="0",y="800",sound="inv_mutant_loot_animal2"},
+	pseudodog			= {file="ui\\ui_actor_monsters_pda",x="393",y="200",sound="inv_mutant_loot_animal2"},
+	psy_dog				= {file="ui\\ui_actor_monsters_pda",x="393",y="200",sound="inv_mutant_loot_animal2"},
+	poltergeist			= {file="ui\\ui_actor_monsters_pda",x="0",y="400",sound="inv_mutant_loot_animal2"},
+	bloodsucker			= {file="ui\\ui_actor_monsters_pda",x="393",y="400",sound="inv_mutant_loot_human"},
+	controller			= {file="ui\\ui_actor_monsters_pda",x="393",y="800",sound="inv_mutant_loot_human2"},
+	chimera				= {file="ui\\ui_actor_monsters_pda",x="0",y="600",sound="inv_mutant_loot_animal"},
+	tushkano			= {file="ui\\ui_actor_monsters_pda",x="0",y="0",sound="inv_mutant_loot_smaller"},
+	rat				= {file="ui\\ui_actor_monsters_pda",x="0",y="0",sound="inv_mutant_loot_smaller"},
+	flesh				= {file="ui\\ui_actor_monsters_pda",x="393",y="600",sound="inv_mutant_loot_grease"},
+
+	burer				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="0",sound="inv_mutant_loot_grease"},
+	boar				= {file="ui\\ui_actor_monsters_pda_1",x="393",y="0",sound="inv_mutant_loot_animal"},
+	giant				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="200",sound="inv_mutant_loot_animal"},
+	}
+--------------------------------------------------------------------
 class "load_item" (CUIListBoxItem)
 function load_item:__init(height) super(height)
 	self.file_name		= "filename"
@@ -63,9 +88,6 @@ function loot_ui:InitControls()
 	self.form				= self.xml:InitStatic("loot:form",self)
 	--self.form:SetWndPos(vector2():set(device().width/4-(self.form:GetWidth()/4), device().height/2 - self.form:GetHeight()))
 
-	-- Mutant image
-	self:SetMutantImage()
-
 	-- Item Icon
 	self.picture 			= self.xml:InitStatic("loot:form:icon",self)
 
@@ -83,41 +105,16 @@ function loot_ui:InitControls()
 	self:Register(ctrl, "button_ok")
 end
 
-function loot_ui:SetMutantImage()
-	-- ponney68: This table based on "species" of mutants 
-	local killed_mutant_tbl =
-	{
-	cat				= {file="ui\\ui_actor_monsters_pda",x="786",y="0",special="0"},
-	fracture			= {file="ui\\ui_actor_monsters_pda",x="786",y="0",special="0"},
-	bird				= {file="ui\\ui_actor_monsters_pda",x="786",y="0",special="0"},
-	zombie				= {file="ui\\ui_actor_monsters_pda",x="786",y="0",special="0"},
-
-	snork				= {file="ui\\ui_actor_monsters_pda",x="393",y="0",special="0"},
-	dog				= {file="ui\\ui_actor_monsters_pda",x="0",y="800",special="0"},
-	pseudodog			= {file="ui\\ui_actor_monsters_pda",x="393",y="200",special="0"},
-	psy_dog				= {file="ui\\ui_actor_monsters_pda",x="393",y="200",special="0"},
-	poltergeist			= {file="ui\\ui_actor_monsters_pda",x="0",y="400",special="0"},
-	bloodsucker			= {file="ui\\ui_actor_monsters_pda",x="393",y="400",special="0"},
-	controller			= {file="ui\\ui_actor_monsters_pda",x="393",y="800",special="0"},
-	chimera				= {file="ui\\ui_actor_monsters_pda",x="0",y="600",special="0"},
-	tushkano			= {file="ui\\ui_actor_monsters_pda",x="0",y="0",special="0"},
-	rat				= {file="ui\\ui_actor_monsters_pda",x="0",y="0",special="0"},
-	flesh				= {file="ui\\ui_actor_monsters_pda",x="393",y="600",special="0"},
-
-	burer				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="0",special="0"},
-	boar				= {file="ui\\ui_actor_monsters_pda_1",x="393",y="0",special="0"},
-	giant				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="200",special="0"},
-	}
-
-	local mutant_id = game.translate_string(alun_utils.read_from_ini(nil,self.section,"species","string",nil))
+function loot_ui:SetMutantImageAndSound()
+	self.mutant_id = game.translate_string(alun_utils.read_from_ini(nil,self.section,"species","string",nil))
 
 	local mutant_f = "ui\\ui_actor_monsters_pda_1"
 	local mutant_x = 0
 	local mutant_y = 0
 	
-	mutant_f = tostring(killed_mutant_tbl[mutant_id].file)
-	mutant_x = tostring(killed_mutant_tbl[mutant_id].x)
-	mutant_y = tostring(killed_mutant_tbl[mutant_id].y)
+	mutant_f = tostring(killed_mutant_tbl[self.mutant_id].file)
+	mutant_x = tostring(killed_mutant_tbl[self.mutant_id].x)
+	mutant_y = tostring(killed_mutant_tbl[self.mutant_id].y)
 
 	local x1 = mutant_x
 	local y1 = mutant_y
@@ -130,6 +127,8 @@ function loot_ui:SetMutantImage()
 	self.image			= self.xml:InitStatic("loot:form:image",self.form)
 	self.image:InitTexture(tostring(mutant_f))
 	self.image:SetTextureRect(Frect():set(x1,y1,x2,y2))
+
+	actor_effects.use_weapon(0)
 end
 	
 function loot_ui:InitCallBacks()
@@ -153,6 +152,9 @@ function loot_ui:FillList()
 
 	if (is_there_loot) then
 		self:ShowDialog(true)
+
+		-- Mutant image and looting sound
+		self:SetMutantImageAndSound()
 	else
 		local hud = get_hud()
 		hud:AddCustomStatic("can_use_weapon_now", true)
@@ -207,7 +209,7 @@ function loot_ui:OnListItemClicked()
 	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
 	-- TEST
 	--self.caption_icon 		= self.xml:InitTextWnd("loot:form:caption",self.form)
-	--self.caption_icon:SetText(tostring(mutant_i))
+	--self.caption_icon:SetText(tostring(self.mutant_id))
 end
 
 
@@ -217,6 +219,11 @@ end
 
 function loot_ui:OnButton_ok()
 	self:HideDialog()
+
+	local mutant_s = tostring(killed_mutant_tbl[self.mutant_id].sound)
+	xr_sound.set_sound_play(db.actor:id(),mutant_s)
+
+	actor_effects.use_item("mutant_looting")
 end
 
 function loot_ui:OnKeyboard(dik, keyboard_action)
@@ -271,5 +278,3 @@ function loot_ui:AddItemToList(sec,count)
 
 	self.list_box:AddExistingItem(_itm)
 end
-
-
