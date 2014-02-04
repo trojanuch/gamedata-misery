@@ -10,12 +10,6 @@ local locations_ini			= ini_file("misc\\smart_terrain_masks.ltx")
 --function printf()
 --end
 
---------------------
-local level = level
-local alife = alife
---------------------
-
-
 --***********************************************************************************************
 --*										INITIALIZATION											*
 --***********************************************************************************************
@@ -86,28 +80,6 @@ function sim_squad_scripted:set_squad_behaviour()
 	end
 end
 
-function sim_squad_scripted:find_open_smart()
-	local actor = db.actor or alife():actor()
-	local squad_count
-	local sim_reg = simulation_objects.get_sim_obj_registry()
-	for name,smart in pairs(self.board.smarts_by_names) do
-		if (smart) then
-			sim_reg:get_props(smart)
-			for k,v in pairs(self.behaviour) do
-				if (tonumber(v) > 0 and smart.props[k] and tonumber(smart.props[k]) > 0) then
-					if (xr_logic.pick_section_from_condlist(actor , smart, smart.sim_avail) == "true" and smart:sim_available()) then
-						if (game_graph():vertex(self.m_game_vertex_id):level_id() == game_graph():vertex(smart.m_game_vertex_id):level_id()) then
-							squad_count = smart_terrain.smart_terrain_squad_count(self.board.smarts[smart.id].squads)
-							if (squad_count < smart.max_population) then
-								return smart
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-end
 --***********************************************************************************************
 --*										SCRIPT_TARGET_SELECTION									*
 --***********************************************************************************************
@@ -283,7 +255,7 @@ end
 
 function sim_squad_scripted:assigned_target_avaliable()
 	local target_obj = self.assigned_target_id and alife():object(self.assigned_target_id)
-	if (target_obj == nil or self.assigned_target_id == self.id) then
+	if target_obj == nil then
 		return false
 	end
 	-- В данном случае нужно проверять попьюлейшн минус один, т.к. я уже состою в смарте.
@@ -306,13 +278,13 @@ local function can_help_actor(squad)
 	end
 	-- Alundaio
 
-	if has_alife_info("sim_duty_help_harder") and squad:get_squad_community() == "duty" then
-		return true
-	elseif has_alife_info("sim_freedom_help_harder") and squad:get_squad_community() == "freedom" then
-		return true
-	elseif has_alife_info("sim_stalker_help_harder") and squad:get_squad_community() == "stalker" then
-		return true
-	end
+--	if has_alife_info("sim_duty_help_harder") and squad:get_squad_community() == "duty" then
+--		return true
+--	elseif has_alife_info("sim_freedom_help_harder") and squad:get_squad_community() == "freedom" then
+--		return true
+--	elseif has_alife_info("sim_stalker_help_harder") and squad:get_squad_community() == "stalker" then
+--		return true
+--	end
 	return false
 end
 
@@ -324,9 +296,8 @@ local function get_help_target_id(squad)
 	end
 	-- End Alundaio
 
-	--[[
 	if not can_help_actor(squad) then
-		return
+		return nil
 	end
 
 	local enemy_squad_id
@@ -341,10 +312,7 @@ local function get_help_target_id(squad)
 			end
 		end
 	end
-
-	--]]
-
-	return
+	return nil
 end
 
 
@@ -364,10 +332,9 @@ function sim_squad_scripted:generic_update()
 		return
 	end
 
-	local se_target = self.assigned_target_id and alife():object(self.assigned_target_id)
-	if (se_target and se_target:clsid() ~= clsid.online_offline_group_s) then
+	if self.assigned_target_id and alife():object(self.assigned_target_id) and alife():object(self.assigned_target_id):clsid() ~= clsid.online_offline_group_s then
 		local squad_target = self.board:get_squad_target(self)
-		if (squad_target and squad_target:clsid() == clsid.online_offline_group_s and squad_target.id ~= self.id) then
+		if squad_target:clsid() == clsid.online_offline_group_s then
 			self.assigned_target_id = squad_target.id
 			self.current_action = nil
 			self:get_next_action(true)
@@ -391,20 +358,19 @@ function sim_squad_scripted:generic_update()
 	else
 		self.current_action = nil
 		self.current_target_id = nil
-		local target = self.board:get_squad_target(self)
-
-		if not (target) then
-			target = self:find_open_smart()
-		end
-		self.assigned_target_id = target and target.id
+		self.assigned_target_id = self.board:get_squad_target(self).id
 	end
 	self:get_next_action(true)
 end
 --' Получение следующего экшна на выполнение
 function sim_squad_scripted:get_next_action(under_simulation)
-	local squad_target = self.assigned_target_id and alife():object(self.assigned_target_id)
+	local squad_target = alife():object(self.assigned_target_id)
 	--printf("assigned_target = [%s]", tostring(self.assigned_target_id))
 	if self.current_target_id == nil then
+		if (squad_target and not squad_target.am_i_reached) then
+			squad_target = alun_utils.fake_squad()
+		end
+
 		if squad_target == nil or squad_target:am_i_reached(self) then
 			if squad_target ~= nil then
 				squad_target:on_reach_target(self)
@@ -430,27 +396,6 @@ end
 --***********************************************************************************************
 --*										MEMBERS_CONTROL											*
 --***********************************************************************************************
-local function release_object(p)
-	local sim = alife()
-	local se_obj = p[1] and sim:object(p[1])
-	if not (se_obj) then
-		return true
-	end
-
-	if (se_obj.online) then
-		se_obj:switch_offline()
-		return false
-	end
-
-	if not (se_obj.marked_for_release) then
-		--alun_utils.printf("safe released squad_npc %s",se_obj:name())
-		sim:release(se_obj,true)
-		se_obj.marked_for_release = true
-	end
-
-	return true
-end
-
 --' Удаление персонажей отряда
 function sim_squad_scripted:remove_squad()
 	local squad_npcs = {}
@@ -458,32 +403,31 @@ function sim_squad_scripted:remove_squad()
 		squad_npcs[k.id] = true
 	end
 
-	local sim = alife()
-	local se_obj, obj
-	local object_by_id = level.object_by_id
-	for id,v in pairs(squad_npcs) do
-		se_obj = sim:object(id)
-		if se_obj then
-			self:unregister_member(id)
-			create_delayed_event(id,"safe_release",5,release_object,id)
+	local obj
+	for j,v in pairs(squad_npcs) do
+		obj = alife():object(j)
+		if obj ~= nil then
+			self:unregister_member(j)
+			alife():release(obj, true)
 		end
 	end
 	self:hide()
+--	alife():release(self, true)
 end
 --' Удаление конкретного персонажа отряда
 function sim_squad_scripted:remove_npc(npc_id)
 	local npc = alife():object(npc_id)
+	-- Alundaio
+	if (axr_main) then axr_main.squad_on_npc_death(self,npc) end
+	-- End Alundaio
 	self:on_npc_death(npc)
 	--printf("releasing object ["..npc:name().."]")
-	--alife():release(npc, true)
-	create_delayed_event(npc:id(),"safe_release",1,release_object,npc:id())
+	alife():release(npc, true)
 end
 --' Убийство НПС
 function sim_squad_scripted:on_npc_death(npc)
 	--printf("Squad %s. Killed member %s", tostring(self.id), npc.id)
-	-- Alundaio
-	if (axr_main) then axr_main.squad_on_npc_death(self,npc) end
-	-- End Alundaio
+
 	self.sound_manager:unregister_npc(npc.id)
 	self:unregister_member(npc.id)
 
@@ -493,12 +437,11 @@ function sim_squad_scripted:on_npc_death(npc)
 			self.current_action:finalize()
 			self.current_action = nil
 		end
+
 		if self.death_condlist ~= nil then
 			xr_logic.pick_section_from_condlist(db.actor, self, self.death_condlist)
 		end
-		self.board:exit_smart(self, self.smart_id)
-		self.board:assign_squad_to_smart(self, nil)
-		self:hide()
+		self.board:remove_squad(self)
 		return
 	end
 	self:refresh()
@@ -537,12 +480,10 @@ function sim_squad_scripted:check_invulnerability()
 	end
 	local invulnerability = xr_logic.pick_section_from_condlist(db.actor, self, self.invulnerability) == "true"
 	local npc_st
-	local npc
-	local object_by_id = level.object_by_id
 	for k in self:squad_members() do
 		npc_st = db.storage[k.id]
-		npc = npc_st and npc_st.object or object_by_id(k.id)
-		if (npc) then
+		if npc_st ~= nil then
+			local npc = npc_st.object
 			if npc:invulnerable() ~= invulnerabilty and utils.cfg_get_string(npc_st.ini, npc_st.active_section, "invulnerable", npc, false, "", nil) == nil  then
 --				printf("RESET INVULNERABILITY. npc[%s] = [%s]", npc:name(), tostring(invulnerability))
 				npc:invulnerable(invulnerability)
@@ -563,8 +504,7 @@ function sim_squad_scripted:set_location_types(new_smart_name)
 	--printf("set_location_types for squad [%s]", self:name())
 	self:clear_location_types()
 
-	local sim = alife()
-	if (self.assigned_target_id and sim:object(self.assigned_target_id):clsid() == clsid.smart_terrain) then
+	if alife():object(self.assigned_target_id):clsid() == clsid.smart_terrain then
 		self:set_location_types_section(default_location)
 		local old_smart_name = self.smart_id and alife():object(self.smart_id) and alife():object(self.smart_id):name()
 		--printf("old_smart_name = [%s]!", tostring(old_smart_name))
@@ -578,14 +518,11 @@ function sim_squad_scripted:set_location_types(new_smart_name)
 	else
 		--printf("target is squad or actor setting [squad_terrain]!")
 		self:set_location_types_section("squad_terrain")
-
-		local se_obj
 		for k,v in pairs(simulation_objects.get_sim_obj_registry().objects) do
-			se_obj = sim:object(k)
-			if (se_obj and se_obj:clsid() == clsid.smart_terrain) then
-				local props_base = se_obj.props and se_obj.props["base"]
-				if (props_base and tonumber(props_base) == 0) then
-					self:set_location_types_section(se_obj:name())
+			if alife():object(k):clsid() == clsid.smart_terrain then
+				local props_base = alife():object(k).props and alife():object(k).props["base"]
+				if props_base and tonumber(props_base) == 0 then
+					self:set_location_types_section(alife():object(k):name())
 				end
 			end
 		end
@@ -642,21 +579,21 @@ function sim_squad_scripted:create_npc(spawn_smart)
 		base_spawn_position = level.vertex_position(base_lvi)
 		base_gvi = tonumber(vid[2])
 	else
-	if spawn_point ~= nil then
-		if spawn_point == "self" then
-			base_spawn_position = spawn_smart.position
-			base_lvi = spawn_smart.m_level_vertex_id
-			base_gvi = spawn_smart.m_game_vertex_id
-		else
-			base_spawn_position = patrol(spawn_point):point(0)
-			base_lvi = patrol(spawn_point):level_vertex_id(0)
-			base_gvi = patrol(spawn_point):game_vertex_id(0)
+		if spawn_point ~= nil then
+			if spawn_point == "self" then
+				base_spawn_position = spawn_smart.position
+				base_lvi = spawn_smart.m_level_vertex_id
+				base_gvi = spawn_smart.m_game_vertex_id
+			else
+				base_spawn_position = patrol(spawn_point):point(0)
+				base_lvi = patrol(spawn_point):level_vertex_id(0)
+				base_gvi = patrol(spawn_point):game_vertex_id(0)
+			end
+		elseif spawn_smart.spawn_point ~= nil then
+			base_spawn_position = patrol(spawn_smart.spawn_point):point(0)
+			base_lvi = patrol(spawn_smart.spawn_point):level_vertex_id(0)
+			base_gvi = patrol(spawn_smart.spawn_point):game_vertex_id(0)
 		end
-	elseif spawn_smart.spawn_point ~= nil then
-		base_spawn_position = patrol(spawn_smart.spawn_point):point(0)
-		base_lvi = patrol(spawn_smart.spawn_point):level_vertex_id(0)
-		base_gvi = patrol(spawn_smart.spawn_point):game_vertex_id(0)
-	end
 	end
 
 	if #spawn_sections ~= 0 then
@@ -693,10 +630,8 @@ end
 function sim_squad_scripted:set_squad_sympathy(sympathy)
 	local symp = sympathy or self.sympathy
 	if(symp~=nil) then
-		local npc
-		local object_by_id = level.object_by_id
 		for k in self:squad_members() do
-			npc = db.storage[k.id] and db.storage[k.id].object or object_by_id(k.id)
+			local npc = db.storage[k.id] and db.storage[k.id].object
 			if(npc) then
 				game_relations.set_npc_sympathy(npc, symp)
 			else
@@ -709,7 +644,12 @@ function sim_squad_scripted:set_squad_sympathy(sympathy)
 	end
 end
 local function set_relation(npc1, npc2, new_relation)
-	local goodwill = tonumber(new_relation) or new_relation == "enemy" and -1000 or new_relation == "friend" and 1000 or 0
+	local goodwill = 0
+	if(new_relation=="enemy") then
+		goodwill = -1000
+	elseif(new_relation=="friend") then
+		goodwill = 1000
+	end
 	if npc1 and npc2 then
 		npc1:force_set_goodwill(goodwill, npc2.id)
 	else
@@ -718,16 +658,13 @@ local function set_relation(npc1, npc2, new_relation)
 end
 function sim_squad_scripted:set_squad_relation(relation)
 	local rel = relation or self.relationship
-	local sim = alife()
 	if(rel~=nil) then
-		local npc
-		local object_by_id = level.object_by_id
 		for k in self:squad_members() do
-			npc = db.storage[k.id] and db.storage[k.id].object or object_by_id(k.id)
+			local npc = db.storage[k.id] and db.storage[k.id].object
 			if(npc) then
 				game_relations.set_npcs_relation(npc, db.actor, rel)
 			else
-				set_relation(sim:object(k.id), sim:actor(),rel)
+				set_relation(alife():object(k.id), alife():actor(),rel)
 			end
 		end
 	end
@@ -771,9 +708,8 @@ function sim_squad_scripted:set_squad_position(position)
 	end
 
 	local cl_object
-	local object_by_id = level.object_by_id
 	for k in self:squad_members() do
-		cl_object = object_by_id(k.id)
+		cl_object = level.object_by_id(k.id)
 		db.offline_objects[k.id].level_vertex_id = level.vertex_id(position)
 		if cl_object then
 			reset_animation(cl_object)
@@ -787,11 +723,8 @@ function sim_squad_scripted:set_squad_position(position)
 end
 
 function sim_squad_scripted:has_detector()
-	local sim = alife()
-	local se_obj
 	for k in self:squad_members() do
-		se_obj = sim:object(k.id)
-		if se_obj and se_obj:has_detector() then
+		if alife():object(k.id) and  alife():object(k.id):has_detector() then
 			return true
 		end
 	end
@@ -881,11 +814,6 @@ function sim_squad_scripted:on_unregister()
 	end
 end
 function sim_squad_scripted:can_switch_offline()
-	if (axr_main) then
-		if (axr_main.squad_can_switch_offline(self) == false) then
-			return false
-		end
-	end
 	return cse_alife_online_offline_group.can_switch_offline(self)
 end
 function sim_squad_scripted:can_switch_online()
@@ -909,7 +837,6 @@ monster_vegetarian
 monster_zombied_day
 monster_zombied_night
 monster_special
-
 ]]--
 
 is_squad_monster =
@@ -974,9 +901,10 @@ function sim_squad_scripted:show()
 		end
 	end
 
-    if (dev_debug) then
+	if (dev_debug) then
 		spot = "storyline_task_location"
 	end
+
 	if(spot~="") then
 		if spot == self.spot_section then
 			level.map_change_spot_hint(self.current_spot_id, self.spot_section, self:get_squad_props())
@@ -997,12 +925,9 @@ end
 
 function sim_squad_scripted:get_squad_props()
 	if dev_debug then
-		local assigned_target = self.assigned_target_id and alife():object(self.assigned_target_id)
-		local current_target = self.current_target_id and alife():object(self.current_target_id)
-
 		local t = "["..tostring(self:name()).."]\\n"..
-					"current_target = ["..tostring(current_target and current_target:name()).."]\\n"..
-					"assigned_target = ["..tostring(assigned_target and assigned_target:name()).."]\\n"
+					"current_target = ["..tostring(self.current_target_id and alife():object(self.current_target_id) and alife():object(self.current_target_id):name()).."]\\n"..
+					"assigned_target = ["..tostring(self.assigned_target_id and alife():object(self.assigned_target_id) and alife():object(self.assigned_target_id):name()).."]\\n"
 		if self.current_action and self.current_action.name == "stay_point" then
 			t = t.."stay_on_point = ["..tostring(self.current_action.idle_time - game.get_game_time():diffSec(self.current_action.start_time)).."]"
 		end
@@ -1024,14 +949,14 @@ function sim_squad_scripted:get_location()
 end
 
 function sim_squad_scripted:get_current_task()
-	local smart_terrain = self.assigned_target_id and alife():object(self.assigned_target_id)
-	if (smart_terrain) then
+	if self.assigned_target_id ~= nil and alife():object(self.assigned_target_id) ~= nil then
+		local smart_terrain = alife():object(self.assigned_target_id)
 		if smart_terrain.arriving_npc ~= nil and smart_terrain.arriving_npc[self:commander_id()] == nil
 			and smart_terrain.npc_info and smart_terrain.npc_info[self:commander_id()]
 			and smart_terrain.npc_info[self:commander_id()].job_id and smart_terrain.job_data[smart_terrain.npc_info[self:commander_id()].job_id] then
 			return smart_terrain.job_data[smart_terrain.npc_info[self:commander_id()].job_id].alife_task
 		end
-		return smart_terrain:get_alife_task()
+		return alife():object(self.assigned_target_id):get_alife_task()
 	end
 	return self:get_alife_task()
 end
@@ -1048,7 +973,7 @@ function sim_squad_scripted:on_reach_target(squad)
 	squad:set_location_types()
  	for k in squad:squad_members() do
 		if db.offline_objects[k.id] ~= nil then
-			db.offline_objects[k.id] = db.offline_objects[k.id] and empty_table(db.offline_objects[k.id])
+			db.offline_objects[k.id] = {}
 		end
 	end
 	self.board:assign_squad_to_smart(squad, nil)
@@ -1082,19 +1007,14 @@ function sim_squad_scripted:sim_available()
 	if self.smart_id == nil then
 		return true
 	end
-
-	local smart = alife():object(self.smart_id)
-	if not (smart) then
-		return false
-	end
-
 	-- Удалять из регистра сим обьектов если мы идем на базу.
-	local props_base = smart.props and smart.props["base"]
+	local props_base = alife():object(self.smart_id).props and alife():object(self.smart_id).props["base"]
 	if props_base and tonumber(props_base) > 0 then
 		return false
 	end
 
 
+	local smart = alife():object(self.smart_id)
 	if smart.base_on_actor_control ~= nil and smart.base_on_actor_control.status ~= smart_terrain_control.NORMAL then
 		if db.zone_by_name[smart.base_on_actor_control.noweap_zone] == nil or not db.zone_by_name[smart.base_on_actor_control.noweap_zone]:inside(self.position) then
 			return false
