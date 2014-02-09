@@ -1037,10 +1037,28 @@
 	        <column>
 	            <cell x="160" y="0" point_x="160" point_y="200"/>
 	            <cell x="160" y="49" point_x="150" point_y="210"/>
-
 	            <cell x="160" y="228" point_x="125" point_y="200"/>
 	            <cell x="160" y="306" point_x="180" point_y="160"/>
 	            <cell x="160" y="355" point_x="205" point_y="165"/>
+	        </column>
+	    </template>
+		<template name="upgrade_scheme_svd_nimble">
+	        <column>
+	            <cell x="0" y="24" point_x="155" point_y="220"/>
+	            <cell x="0" y="126" point_x="245" point_y="195"/>
+	            <cell x="0" y="228" point_x="30" point_y="235"/>
+	        </column>
+	        <column>
+	            <cell x="80" y="0" point_x="155" point_y="185"/>
+	            <cell x="80" y="49" point_x="130" point_y="185"/>
+	            <cell x="80" y="102" point_x="265" point_y="195"/>
+	            <cell x="80" y="151" point_x="290" point_y="195"/>
+	            <cell x="80" y="228" point_x="95" point_y="190"/>
+	        </column>
+	        <column>
+	            <cell x="160" y="0" point_x="160" point_y="200"/>
+	            <cell x="160" y="49" point_x="150" point_y="210"/>
+	            <cell x="160" y="228" point_x="125" point_y="200"/>
 	        </column>
 	    </template>
 	    <template name="upgrade_scheme_svu">

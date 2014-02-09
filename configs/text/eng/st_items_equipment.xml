@@ -112,10 +112,10 @@
 		<text>2 slices of fat and greasy bacon made from mutated pigs commonly known as fleshes. Wrapped in thick brown paper to prevent the fat from dripping.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +385 mSv</text>
 	</string>
 		<string id="st_meat_boar">
-		<text>Boar beef (Zone-produced)</text>
+		<text>Boar chops (Zone-produced)</text>
 	</string>
 	<string id="st_meat_boar_descr">
-		<text>A small portion of beef, grilled and seasoned with salt and mixed with peppers. The most popular warm meal among stalkers. Wrapped in brown paper.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +394 mSv</text>
+		<text>A small portion of boar meat, grilled and seasoned with salt and mixed with peppers. The most popular warm meal among stalkers. Wrapped in brown paper.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +394 mSv</text>
 	</string>
 		<string id="st_meat_bloodsucker">
 		<text>Bloodsucker goulash (Zone-produced)</text>
@@ -949,7 +949,7 @@
 		<text>Drug distribution notes</text>
 	</string>
 	<string id="st_drugnotes_descr">
-		<text>This notebook describes various drug deals in detail. Specific nicknames, locations and time of meets. Some deals are executed through equipment exchanges and others are paid in large amounts of roubles. When browsing the pages, it becomes clear that Freedom is the main distributor of natural drugs such as marijuana. Bandits are producers and distributors of the more powerful (and dangerous) synthetic drugs like salicylic acid and cocaine. Apparently, every faction in the Zone takes part in these deals. Especially Monolith seems to be taking in large amounts drugs in exchange for more expensive types of ammunition and equipment.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%)</text>
+		<text>This notebook describes various drug deals in detail. Specific nicknames, locations and time of meets. Some deals are executed through equipment exchanges and others are paid in large amounts of roubles. When browsing the pages, it becomes clear that Freedom is the main distributor of natural drugs such as marijuana. Bandits are producers and distributors of the more powerful (and dangerous) synthetic drugs like salicylic acid and cocaine. Apparently, every faction in the Zone takes part in these deals. In particular, Monolith seems to be taking in large amounts drugs in exchange for more expensive types of ammunition and equipment.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] personal belongings\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%)</text>
 	</string>
 	<string id="st_picture_woman">
 		<text>Picture of a woman</text>
@@ -1102,7 +1102,7 @@
 		<text>Bad ammo</text>
 	</string>
 	<string id="st_ammo_bad_descr">
-		<text>Every stalker is aware of the importance of reliable weaponry. That's the reason a daily and thorough examination of your shooter is vital to your survival. Stalkers often count their ammo and clean it to minimize the risk of weapon jam in the heat of battle. This ammo is in a bad condition and should be discarded.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,204,0,51] • %c[0,140,140,140] broken beyond repair\n%c[0,204,0,51] • %c[0,140,140,140] unusable</text>
+		<text>Every stalker is aware of the importance of reliable weaponry. That's the reason a daily and thorough examination of your shooter is vital to your survival. Stalkers often count their ammo and clean it to minimize the risk of a weapon jam in the heat of battle. This ammo is in a bad condition and should be discarded.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,204,0,51] • %c[0,140,140,140] broken beyond repair\n%c[0,204,0,51] • %c[0,140,140,140] unusable</text>
 	</string>
 	<string id="st_mili_maps">
 		<text>Military maps</text>

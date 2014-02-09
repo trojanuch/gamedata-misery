@@ -31,7 +31,7 @@
 		<text>7.62x51 mm NATO rounds</text>
 	</string>
 	<string id="ammo-7.62x51_fmj_descr">
-		<text>The 7.62x51 NATO round is a military variant of the .308 round which was used as a standard-issue by the NATO forces until 5.56 ammunition was introduced in the 70s in the Vietnam War. At present, it is most commonly employed by private military contractors all over the world. The 7.62x51 round is a very common machine gun caliber, and can also be used in sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+		<text>The 7.62x51 NATO round is a military variant of the .308 round which was used as a standard-issue by the NATO forces until 5.56 ammunition was introduced in the '70s in the Vietnam War. At present, it is most commonly employed by private military contractors all over the world. The 7.62x51 round is a very common machine gun caliber, and can also be used in sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	</string>
 	<string id="ammo-7.62x51_fmj_s">
 		<text>7.62x51 NATO rounds</text>
@@ -322,7 +322,7 @@
  		<text>7.92x57 mm SA rounds</text>
  	</string>
  	<string id="ammo-7.92x33_ap_descr">
- 		<text>7.92x57 SA is a round used by the British military against armored targets. It features a hardened steel core which gives it higher piercing capabilities. Used primarily for long range shots, the grain quality of this round is higher than the standard. This cartridge is supported by several sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
+ 		<text>7.92x57 SA is a round that was used by the British military against armored targets. It features a hardened steel core which gives it higher piercing capabilities. Used primarily for long range shots, the grain quality of this round is higher than the standard. This cartridge is supported by several sniper rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium</text>
 	 </string>
  	<string id="ammo-7.92x33_ap_s">
  		<text>7.62x57 SA rounds</text>
@@ -1304,6 +1304,12 @@
 	</string>
 	<string id="st_wpn_svd_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Originally intended for designated marksmen in every basic Soviet infantry unit, the Dragunov SVD was not designed for specialized sniper teams. Relatively light for a sniper rifle but well balanced and having semiautomatic fire, its precision is good but not exceptional. It has an effective range of up to 800 meters.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] POSP 4x24 M scope (permanent)</text>
+	</string>
+	<string id="st_wpn_svd_alt">
+		<text>Dragunov SVD (alternative)</text>
+	</string>
+	<string id="st_wpn_svd_alt_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Alternative version of SVU sniper rifle. Higher quality materials allowed for improved performance and durability and it is visible that this production batch left the factory significantly later than in case of the most common SVD pieces found in the Zone. Scope is attachable allowing for more versatile usage. Ironsights mode makes the rifle an efficient hunting weapon.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes</text>
 	</string>
 	<string id="st_wpn_svd_nimble">
 		<text>Dragunov SVD "Lynx"</text>
