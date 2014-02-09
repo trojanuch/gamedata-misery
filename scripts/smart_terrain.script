@@ -331,8 +331,8 @@ function se_smart_terrain:read_params()
 
 	local smart_control_section = utils.cfg_get_string(ini, SMART_TERRAIN_SECT, "smart_control", self, false, "", nil)
 
-	self.death_idle_time = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "death_idle_time", 	self, false, 3600)
-	self.respawn_idle = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "respawn_idle", 	self, false, 3600)
+	self.death_idle_time = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "death_idle_time", 	self, false, 2700)
+	self.respawn_idle = utils.cfg_get_number(ini, SMART_TERRAIN_SECT, "respawn_idle", 	self, false, 2700)
 	self.respawn_only_level = utils.cfg_get_bool(ini, SMART_TERRAIN_SECT, "respawn_only_level", self, false, false)
 
 	if smart_control_section ~= nil then
