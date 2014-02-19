@@ -8,29 +8,51 @@
    it under the terms of the Open S.T.A.L.K.E.R. Mod License version 1.0.
 -]]
 -------------------------------------------------------------------
-	-- This table based on "species" of mutants 
+-- This table based on "species" of mutants 
 killed_mutant_tbl =
 	{
-	cat				= {file="ui\\ui_actor_monsters_pda_2",x="0",y="0",sound="inv_mutant_loot_smaller"},
-	fracture			= {file="ui\\ui_actor_monsters_pda_2",x="393",y="200",sound="inv_mutant_loot_rotten"},
-	bird				= {file="ui\\ui_actor_monsters_pda_2",x="393",y="0",sound="inv_mutant_loot_crow"},
-	zombie				= {file="ui\\ui_actor_monsters_pda_2",x="0",y="200",sound="inv_mutant_loot_rotten"},
+	cat				= {file="ui\\ui_actor_monsters_pda_2",x="0",y="0",type="small"},
+	fracture			= {file="ui\\ui_actor_monsters_pda_2",x="393",y="200",type="human"},
+	bird				= {file="ui\\ui_actor_monsters_pda_2",x="393",y="0",type="small"},
+	zombie				= {file="ui\\ui_actor_monsters_pda_2",x="0",y="200",type="human"},
 
-	snork				= {file="ui\\ui_actor_monsters_pda",x="393",y="0",sound="inv_mutant_loot_human"},
-	dog				= {file="ui\\ui_actor_monsters_pda",x="0",y="800",sound="inv_mutant_loot_animal2"},
-	pseudodog			= {file="ui\\ui_actor_monsters_pda",x="393",y="200",sound="inv_mutant_loot_animal2"},
-	psy_dog				= {file="ui\\ui_actor_monsters_pda",x="393",y="200",sound="inv_mutant_loot_animal2"},
-	poltergeist			= {file="ui\\ui_actor_monsters_pda",x="0",y="400",sound="inv_mutant_loot_animal2"},
-	bloodsucker			= {file="ui\\ui_actor_monsters_pda",x="393",y="400",sound="inv_mutant_loot_human"},
-	controller			= {file="ui\\ui_actor_monsters_pda",x="393",y="800",sound="inv_mutant_loot_human2"},
-	chimera				= {file="ui\\ui_actor_monsters_pda",x="0",y="600",sound="inv_mutant_loot_animal"},
-	tushkano			= {file="ui\\ui_actor_monsters_pda",x="0",y="0",sound="inv_mutant_loot_smaller"},
-	rat				= {file="ui\\ui_actor_monsters_pda",x="0",y="0",sound="inv_mutant_loot_smaller"},
-	flesh				= {file="ui\\ui_actor_monsters_pda",x="393",y="600",sound="inv_mutant_loot_grease"},
+	snork				= {file="ui\\ui_actor_monsters_pda",x="393",y="0",type="human"},
+	dog				= {file="ui\\ui_actor_monsters_pda",x="0",y="800",type="small"},
+	pseudodog			= {file="ui\\ui_actor_monsters_pda",x="393",y="200",type="small"},
+	psy_dog				= {file="ui\\ui_actor_monsters_pda",x="393",y="200",type="small"},
+	poltergeist			= {file="ui\\ui_actor_monsters_pda",x="0",y="400",type="small"},
+	bloodsucker			= {file="ui\\ui_actor_monsters_pda",x="393",y="400",type="human"},
+	controller			= {file="ui\\ui_actor_monsters_pda",x="393",y="800",type="human"},
+	chimera				= {file="ui\\ui_actor_monsters_pda",x="0",y="600",type="large"},
+	tushkano			= {file="ui\\ui_actor_monsters_pda",x="0",y="0",type="small"},
+	rat				= {file="ui\\ui_actor_monsters_pda",x="0",y="0",type="small"},
+	flesh				= {file="ui\\ui_actor_monsters_pda",x="393",y="600",type="large"},
 
-	burer				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="0",sound="inv_mutant_loot_grease"},
-	boar				= {file="ui\\ui_actor_monsters_pda_1",x="393",y="0",sound="inv_mutant_loot_animal"},
-	giant				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="200",sound="inv_mutant_loot_animal"},
+	burer				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="0",type="large"},
+	boar				= {file="ui\\ui_actor_monsters_pda_1",x="393",y="0",type="large"},
+	giant				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="200",type="large"},
+	}
+
+-- Sound table for randomize
+small_mutant_snd_tbl =
+	{
+	small_1	= {sound="inv_mutant_loot_smaller"},
+	small_2	= {sound="inv_mutant_loot_animal2"},
+	small_3	= {sound="inv_mutant_loot_crow"},
+	}
+
+large_mutant_snd_tbl =
+	{
+	large_1	= {sound="inv_mutant_loot_animal"},
+	large_2	= {sound="inv_mutant_loot_grease"},
+	large_3	= {sound="inv_mutant_loot_grease2"},
+	}
+
+human_mutant_snd_tbl =
+	{
+	human_1	= {sound="inv_mutant_loot_human"},
+	human_2	= {sound="inv_mutant_loot_human2"},
+	human_3	= {sound="inv_mutant_loot_rotten"},
 	}
 --------------------------------------------------------------------
 class "load_item" (CUIListBoxItem)
@@ -128,6 +150,13 @@ function loot_ui:SetMutantImageAndSound()
 	self.image:InitTexture(tostring(mutant_f))
 	self.image:SetTextureRect(Frect():set(x1,y1,x2,y2))
 
+	-- For randomize
+	math.randomseed (device():time_global())
+	self.rnd = math.random(3)
+	-- TEST
+	--self.caption_icon 		= self.xml:InitTextWnd("loot:form:caption",self.form)
+	--self.caption_icon:SetText(tostring(self.rnd))
+
 	actor_effects.use_weapon(0)
 end
 	
@@ -209,7 +238,7 @@ function loot_ui:OnListItemClicked()
 	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
 	-- TEST
 	--self.caption_icon 		= self.xml:InitTextWnd("loot:form:caption",self.form)
-	--self.caption_icon:SetText(tostring(self.mutant_id))
+	--self.caption_icon:SetText(tostring(math.random(3)))
 end
 
 
@@ -220,7 +249,16 @@ end
 function loot_ui:OnButton_ok()
 	self:HideDialog()
 
-	local mutant_s = tostring(killed_mutant_tbl[self.mutant_id].sound)
+	-- Randomized looting sounds
+	local mutant_t = tostring(killed_mutant_tbl[self.mutant_id].type)
+	local mutant_s = nil
+	if (mutant_t=="small") then
+	mutant_s = tostring(small_mutant_snd_tbl["small_"..self.rnd].sound)
+	elseif (mutant_t=="large") then
+	mutant_s = tostring(large_mutant_snd_tbl["large_"..self.rnd].sound)
+	elseif (mutant_t=="human") then
+	mutant_s = tostring(human_mutant_snd_tbl["human_"..self.rnd].sound)
+	end
 	xr_sound.set_sound_play(db.actor:id(),mutant_s)
 
 	actor_effects.use_item("mutant_looting")

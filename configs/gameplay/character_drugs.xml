@@ -7,90 +7,90 @@ stimpack					= 1, prob=0.55 \n
 stimpack_army					= 1, prob=0.12 \n
 stimpack_scientic					= 1, prob=0.03 \n
 
-survival_kit		= 1, prob=0.003 \n
+survival_kit		= 1, prob=0.001 \n
 
-antirad					= 1, prob=0.003 \n
+antirad					= 1, prob=0.0015 \n
 
-drug_booster					= 1, prob=0.001 \n
-drug_coagulant4					= 1, prob=0.001 \n
-drug_coagulant5					= 1, prob=0.002 \n
-drug_psy_blockade4					= 1, prob=0.001 \n
-drug_psy_blockade5					= 1, prob=0.002 \n
-drug_antidot3					= 1, prob=0.003 \n
-drug_radioprotector2					= 1, prob=0.003 \n
-drug_sleepingpills4					= 1, prob=0.002 \n
-drug_sleepingpills5					= 1, prob=0.003 \n
-akvatab3					= 1, prob=0.002 \n
-akvatab4					= 1, prob=0.003 \n
-cocaine2					= 1, prob=0.001 \n
-cocaine3					= 1, prob=0.002 \n
-tetanus					= 1, prob=0.001 \n
-salicidic_acid					= 1, prob=0.002 \n
-caffeine4					= 1, prob=0.003 \n
-caffeine5					= 1, prob=0.003 \n
+drug_booster					= 1, prob=0.0005 \n
+drug_coagulant4					= 1, prob=0.0005 \n
+drug_coagulant5					= 1, prob=0.001 \n
+drug_psy_blockade4					= 1, prob=0.0005 \n
+drug_psy_blockade5					= 1, prob=0.001 \n
+drug_antidot3					= 1, prob=0.0015 \n
+drug_radioprotector2					= 1, prob=0.0015 \n
+drug_sleepingpills4					= 1, prob=0.001 \n
+drug_sleepingpills5					= 1, prob=0.0015 \n
+akvatab3					= 1, prob=0.001 \n
+akvatab4					= 1, prob=0.0015 \n
+cocaine2					= 1, prob=0.0005 \n
+cocaine3					= 1, prob=0.001 \n
+tetanus					= 1, prob=0.0005 \n
+salicidic_acid					= 1, prob=0.001 \n
+caffeine4					= 1, prob=0.0015 \n
+caffeine5					= 1, prob=0.0015 \n
 
 roubles					= 1, prob=0.5 \n
 
-bread					= 2, prob=0.001 \n
-breadold				= 2, prob=0.002 \n
-kolbasa					= 1, prob=0.001 \n
-conserva				= 1, prob=0.001 \n
-protein					= 1, prob=0.001 \n
+bread					= 2, prob=0.0005 \n
+breadold				= 2, prob=0.001 \n
+kolbasa					= 1, prob=0.0005 \n
+conserva				= 1, prob=0.0005 \n
+protein					= 1, prob=0.0005 \n
 
-tomato				= 1, prob=0.001 \n
-sausage				= 1, prob=0.001 \n
-corn				= 1, prob=0.001 \n
-beans				= 1, prob=0.001 \n
-chili				= 1, prob=0.001 \n
-salmon				= 1, prob=0.001 \n
-raisins				= 1, prob=0.001 \n
-chocolate			= 1, prob=0.001 \n
-nuts				= 1, prob=0.001 \n
+tomato				= 1, prob=0.0005 \n
+sausage				= 1, prob=0.0005 \n
+corn				= 1, prob=0.0005 \n
+beans				= 1, prob=0.0005 \n
+chili				= 1, prob=0.0005 \n
+salmon				= 1, prob=0.0005 \n
+raisins				= 1, prob=0.0005 \n
+chocolate			= 1, prob=0.0005 \n
+nuts				= 1, prob=0.0005 \n
 
-mint4				= 1, prob=0.001 \n
-mint5				= 1, prob=0.002 \n
+mint4				= 1, prob=0.0005 \n
+mint5				= 1, prob=0.001 \n
 
-mineral_water2				= 1, prob=0.001 \n
-mineral_water3				= 1, prob=0.002 \n
+mineral_water2				= 1, prob=0.0005 \n
+mineral_water3				= 1, prob=0.001 \n
 
-vodka_2				= 1, prob=0.001 \n
-vodka_3				= 1, prob=0.002 \n
-vodka2_2				= 1, prob=0.001 \n
-vodka2_3				= 1, prob=0.002 \n
-vodka_quality2				= 1, prob=0.001 \n
-vodka_quality3				= 1, prob=0.002 \n
-tea2				= 1, prob=0.001 \n
-tea3				= 1, prob=0.002 \n
-bottle_metal2				= 1, prob=0.001 \n
-bottle_metal3				= 1, prob=0.002 \n
-flask				= 1, prob=0.002 \n
-flask2				= 1, prob=0.003 \n
-flask3				= 1, prob=0.004 \n
+vodka_2				= 1, prob=0.0005 \n
+vodka_3				= 1, prob=0.001 \n
+vodka2_2				= 1, prob=0.0005 \n
+vodka2_3				= 1, prob=0.001 \n
+vodka_quality2				= 1, prob=0.0005 \n
+vodka_quality3				= 1, prob=0.001 \n
+tea2				= 1, prob=0.0005 \n
+tea3				= 1, prob=0.001 \n
+bottle_metal2				= 1, prob=0.0005 \n
+bottle_metal3				= 1, prob=0.001 \n
+flask				= 1, prob=0.001 \n
+flask2				= 1, prob=0.0015 \n
+flask3				= 1, prob=0.002 \n
 
-hand_rolling_tobacco4				= 1, prob=0.001 \n
-hand_rolling_tobacco5				= 1, prob=0.002 \n
-cigar1_2				= 1, prob=0.001 \n
-cigar1_3				= 1, prob=0.002 \n
-cigar2_2				= 1, prob=0.001 \n
-cigar2_3				= 1, prob=0.002 \n
-cigar3_2				= 1, prob=0.001 \n
-cigar3_3				= 1, prob=0.002 \n
-cigarettes_lucky3				= 1, prob=0.001 \n
-cigarettes_lucky4				= 1, prob=0.002 \n
-cigarettes_russian2				= 1, prob=0.002 \n
-cigarettes_russian3				= 1, prob=0.003 \n
-cigarettes 						= 1, prob=0.001 \n
-cigarettes2 					= 1, prob=0.001 \n
-cigarettes3 					= 1, prob=0.002 \n
-tobacco4				= 1, prob=0.001 \n
-tobacco5				= 1, prob=0.001 \n
-marijuana2				= 1, prob=0.001 \n
-marijuana3				= 1, prob=0.002 \n
+hand_rolling_tobacco4				= 1, prob=0.0005 \n
+hand_rolling_tobacco5				= 1, prob=0.001 \n
+cigar1_2				= 1, prob=0.0005 \n
+cigar1_3				= 1, prob=0.001 \n
+cigar2_2				= 1, prob=0.0005 \n
+cigar2_3				= 1, prob=0.001 \n
+cigar3_2				= 1, prob=0.0005 \n
+cigar3_3				= 1, prob=0.001 \n
+cigarettes_lucky3				= 1, prob=0.0005 \n
+cigarettes_lucky4				= 1, prob=0.001 \n
+cigarettes_russian2				= 1, prob=0.001 \n
+cigarettes_russian3				= 1, prob=0.0015 \n
+cigarettes 						= 1, prob=0.0005 \n
+cigarettes2 					= 1, prob=0.0005 \n
+cigarettes3 					= 1, prob=0.001 \n
+tobacco4				= 1, prob=0.0005 \n
+tobacco5				= 1, prob=0.0005 \n
+marijuana2				= 1, prob=0.0005 \n
+marijuana3				= 1, prob=0.001 \n
 
-beer					= 1, prob=0.002 \n
+beer					= 2, prob=0.001 \n
 
-energy_drink			= 1, prob=0.001 \n
-water_drink			    = 2, prob=0.002 \n
+energy_drink			= 1, prob=0.0005 \n
+water_drink			    = 2, prob=0.001 \n
 
 meat_tushkano			= 2, prob=0.003 \n
 meat_dog				= 2, prob=0.003 \n
@@ -102,6 +102,8 @@ meat_snork				= 1, prob=0.002 \n
 meat_chimera			= 1, prob=0.002 \n
 
 itm_sleepbag = 1, prob=0.005 \n
+
+joint = 1, prob=0.007 \n
 
 porn = 1, prob=0.008 \n
 
@@ -196,27 +198,27 @@ textile_patch_m = 2, prob=0.004 \n
 textile_patch_e = 2, prob=0.003 \n
 
 fieldcooker = 1, prob=0.0005 \n
-wood_stove = 1, prob=0.001 \n
-kerosene3 = 1, prob=0.001 \n
-kerosene4 = 1, prob=0.001 \n
-kerosene5 = 1, prob=0.002 \n
-charcoal2 = 1, prob=0.002 \n
-charcoal3 = 1, prob=0.003 \n
+wood_stove = 1, prob=0.0005 \n
+kerosene3 = 1, prob=0.0005 \n
+kerosene4 = 1, prob=0.0005 \n
+kerosene5 = 1, prob=0.001 \n
+charcoal2 = 1, prob=0.001 \n
+charcoal3 = 1, prob=0.0015 \n
 
-explo_jerrycan_fuel7 = 1, prob=0.001 \n
-explo_jerrycan_fuel8 = 1, prob=0.002 \n
-explo_metalcan_powder = 1, prob=0.001 \n
-explo_balon_gas7 = 1, prob=0.001 \n
-explo_balon_gas8 = 1, prob=0.002 \n
+explo_jerrycan_fuel7 = 1, prob=0.0005 \n
+explo_jerrycan_fuel8 = 1, prob=0.001 \n
+explo_metalcan_powder = 1, prob=0.0005 \n
+explo_balon_gas7 = 1, prob=0.0005 \n
+explo_balon_gas8 = 1, prob=0.001 \n
 
 hide_pseudodog = 1, prob=0.005 \n
 hide_bloodsucker = 1, prob=0.005 \n
 hide_boar = 2, prob=0.005 \n
 hide_flesh = 2, prob=0.005 \n
 
-tushonka	= 2, prob=0.001 \n
-glucose		= 1, prob=0.002 \n
-glucose_s	= 1, prob=0.003 \n
+tushonka	= 2, prob=0.0005 \n
+glucose		= 1, prob=0.001 \n
+glucose_s	= 1, prob=0.0015 \n
 
 mine	= 2, prob=0.002 \n
 
