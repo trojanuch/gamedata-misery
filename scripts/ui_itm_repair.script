@@ -581,6 +581,18 @@ function repair_ui:OnButton_repair()
 		    		end
 
 				-- WEAPON REPAIR ITEMS
+				-- swiss knife
+				if(se_parts)and(se_parts:section_name()=="swiss")then
+				alife():create("swiss", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- hammer
+				if(se_parts)and(se_parts:section_name()=="hammer_inv")then
+				alife():create("hammer_inv", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- crowbar
+				if(se_parts)and(se_parts:section_name()=="crowbar")then
+				alife():create("crowbar", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
 				-- gun_oil x2
 				if(se_parts)and(se_parts:section_name()=="gun_oil")then
 				alife():create("gun_oil2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
