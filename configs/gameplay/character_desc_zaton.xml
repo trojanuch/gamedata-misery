@@ -1088,6 +1088,7 @@
 		<supplies>
 
         [spawn] \n
+		letter_mercenary = 1 \n
 
 #include "gameplay\character_items_nd.xml"
 #include "gameplay\character_items_4_merc.xml"
@@ -1589,7 +1590,7 @@
 		<supplies>
 
       [spawn] \n
-
+	  letter_military_log = 1 \n
 
 #include "gameplay\character_items_nd.xml"
 #include "gameplay\character_items_4_army.xml"
