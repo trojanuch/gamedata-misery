@@ -228,6 +228,18 @@ function enable_nv_and_imput(actor, npc, p)
 	enable_actor_torch(nil,nil)
 end
 
+function enable_imput(actor, npc, p)
+	--db.actor:restore_weapon()
+
+	if not p or (p and p[1] ~= "true") then
+		if ui_active_slot ~= 0 and db.actor:item_in_slot(ui_active_slot) ~= nil then
+			db.actor:activate_slot(ui_active_slot)
+		end
+	end
+
+	level.enable_input()
+end
+
 function enable_nv(actor, npc, p)
 	--db.actor:restore_weapon()
 
