@@ -28,8 +28,15 @@ function on_game_start()
 	local ini = ini_file("ai_tweaks\\xrs_facer.ltx")
 	local Enabled = read_from_ini(ini,"plugin","enable","bool",false)
 	if not (Enabled) then return end
+
+	if (state_mgr.combat_action_ids) then
+		state_mgr.combat_action_ids[actid_facer] = true
+		state_mgr.combat_action_ids[actid_steal_up_facer] = true
+	end
+
 	load_scheme("xrs_facer","facer",0)
 	callback_register("scheme_set",set_scheme)
+	callback_register("scheme_disable",disable_scheme)
 	callback_register("npc_on_hit_callback",hit_callback)
 	callback_register("npc_add_precondition",npc_add_precondition)
 
@@ -461,12 +468,12 @@ function add_to_binder(npc,ini,scheme,section,storage)
 	end
 end
 
-function set_scheme(npc,ini,scheme,section)
+function set_scheme(npc, ini, scheme, section, gulag_name, stype)
 	local st = xr_logic.assign_storage_and_bind(npc,ini,"facer",section)
 end
 
-function disable_scheme(npc,scheme)
-	local st = db.storage[npc:id()][scheme]
+function disable_scheme(npc,stype)
+	local st = db.storage[npc:id()]["facer"]
 	if st then
 		st.enabled = false
 	end

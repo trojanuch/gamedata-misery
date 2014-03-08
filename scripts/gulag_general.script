@@ -1,60 +1,221 @@
-local ltx
-local ini = ini_file("beh_gulag_jobs.ltx")
-function load_job(smart)
-		printf("LOAD JOB %s", smart:name())
-		-- Иерархия задается таблицей вида:
 --[[
-		self.jobs = {
-				{
-				_precondition_is_monster = true,
-				_precondition_function   = function(se_obj) ... end,
-				_prior = ...,
-				jobs =  {
-								_precondition_function   = function(se_obj) ... end,
-								_prior = ...
-								job_id = ...
-								},
-								{
-								_precondition_function   = function(se_obj) ... end,
-								_prior = ...
-								job_id = ...
-								}
-				},
-				{
-				_precondition_is_monster = false,
-				_prior = ...
-				job_id = ...
-				},
+Edited by Alundaio (original: ??? GSC)
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
+local ltx
+local beh_ini
 
-				...
-				{},
-		}
-]]
+local function precond_surge(se_obj, smart, precond_params)
+	return xr_conditions.surge_started()
+end
 
-		local gname = smart:name()
-		local t
-		local board = sim_board.get_sim_board()
-		local job_table = {}
+local function precond_safe_job_sleeper(se_obj, smart, precond_params)
+	if se_obj:community() == "zombied" then
+		return false
+	end
 
-		local name, job_ltx, _jobs, beh_data
+	if not in_time_interval(21,7) then
+		return false
+	end
 
+	if smart.smart_alarm_time == nil then
+		return true
+	end
+
+	if smart.safe_restr == nil then
+		return true
+	end
+
+	if precond_params.is_safe_job == nil then
+		precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
+	end
+
+	return precond_params.is_safe_job ~= false
+end
+
+local function precond_safe_job(se_obj, smart, precond_params)
+	if smart.smart_alarm_time == nil then
+		return true
+	end
+
+	if smart.safe_restr == nil then
+		return true
+	end
+
+	if precond_params.is_safe_job == nil then
+		precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
+	end
+
+	return precond_params.is_safe_job ~= false
+end
+
+local function precond_safe_job_patrol(se_obj, smart, precond_params)
+	if se_obj:community() == "zombied" then
+		return false
+	end
+
+
+	if smart.smart_alarm_time == nil then
+		return true
+	end
+
+	if smart.safe_restr == nil then
+		return true
+	end
+
+	if precond_params.is_safe_job == nil then
+		precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
+	end
+
+	return precond_params.is_safe_job ~= false
+end
+
+local function precond_collector(se_obj, smart, precond_params)
+	local st = db.storage[se_obj.id]
+	local npc = st and st.object or level.object_by_id(se_obj.id)
+
+	if npc == nil then
+		return false
+	end
+
+	if se_obj:community() == "zombied" then
+		return false
+	end
+
+	local detectors = { "detector_simple", "detector_advanced", "detector_elite", "detector_scientific" }
+
+	local obj
+	for k,v in pairs(detectors) do
+		obj = npc:object(v)
+		if obj ~= nil then
+			return true
+		end
+	end
+	return false
+end
+
+local function precond_animpoint(se_obj, smart, precond_params)
+	--if smart.smart_alarm_time == nil then
+		--return true
+	--end
+
+	--if smart.safe_restr == nil then
+	--	return true
+	--end
+
+	if se_obj:community() == "zombied" then
+		return false
+	end
+
+	--if precond_params.is_safe_job == nil then
+	--	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
+	--end
+
+	--return precond_params.is_safe_job ~= false
+	return true
+end
+
+local function precond_safe_job_guard(se_obj, smart, precond_params)
+	if smart.smart_alarm_time == nil then
+		return true
+	end
+
+	if smart.safe_restr == nil then
+		return true
+	end
+
+	if precond_params.is_safe_job == nil then
+		precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
+	end
+
+	return precond_params.is_safe_job ~= false
+end
+
+local function precond_guard_follower(se_obj, smart, precond_params, npc_info)
+	return npc_info.need_job == precond_params.changing_job
+ end
+
+local function precond_sniper(se_obj, smart, precond_params)
+	if se_obj:community() == "zombied" then
+		return false
+	end
+
+	return combat_restrictor.accessible_job(se_obj, precond_params.name)
+end
+
+local function precond_camper(se_obj, smart, precond_params)
+	return combat_restrictor.accessible_job(se_obj, precond_params.name)
+end
+
+local function precond_trade_job(se_obj,smart,precond_params)
+	if not (axr_trade_manager) then
+		return false
+	end
+
+	if not (axr_trade_manager.open_trader()) then
+		return false
+	end
+
+	local squad = se_obj.group_id and se_obj.group_id ~= 65535 and alife():object(se_obj.group_id)
+	if not (squad) then
+		return false
+	end
+
+	return squad.has_items_to_sell == true
+end
+
+
+function load_job(smart)
+
+	if not (beh_ini) then
+		local fs = getFS()
+		if (fs:exist("$game_config$","beh_gulag_jobs.ltx")) then
+			beh_ini = ini_file("beh_gulag_jobs.ltx")
+		end
+	end
+
+
+	local gname = smart:name()
+
+
+	local generate_ltx = true
+
+	local function file_exists(name)
+	   local f=io.open(name,"r")
+	   if f~=nil then io.close(f) return true else return false end
+	end
+
+	if (file_exists(alun_utils.fspath("$game_gulag$")..gname..".ltx")) then
+		generate_ltx = false
+		--alun_utils.printf("Not generating dynamic ltx")
+	end
+
+
+	local t
+	local board = sim_board.get_sim_board()
+	local job_table = {}
+
+	local name, job_ltx, _jobs, beh_data, job1_ltx, follower_ltx
+
+	if (generate_ltx) then
 		ltx =  "" ..
 
 				"[meet@generic_lager]\n"..
-				"close_distance 		= {=is_wounded} 0, 2\n"..
-				"close_anim 			= {=is_wounded} nil, {!is_squad_commander} nil, {=actor_has_weapon} threat_na, talk_default\n"..
-				"close_snd_hello 		= {=is_wounded} nil, {!is_squad_commander} nil, {=actor_enemy} nil, {=actor_has_weapon} meet_hide_weapon, meet_hello\n"..
-				"close_snd_bye 			= {=is_wounded} nil, {!is_squad_commander} nil, {=actor_enemy} nil, {=actor_has_weapon} nil, meet_hello\n"..
+				"close_distance 		= {=is_wounded} 0, {!surge_started !after_first_meet !actor_friend =is_squad_commander =actor_has_weapon} 10, 2\n"..
+				"close_anim 			= {=is_wounded} nil, {!is_squad_commander} nil, {!actor_friend =actor_has_weapon} threat_na, talk_default\n"..
+				"close_snd_hello 		= {=is_wounded} nil, {!is_squad_commander} nil, {=actor_enemy} nil, {!after_first_meet !actor_friend =actor_has_weapon} meet_hide_weapon, meet_hello\n"..
+				"close_snd_bye 			= {=is_wounded} nil, {!is_squad_commander} nil, {=actor_enemy} nil, {!after_first_meet !actor_friend =actor_has_weapon} nil, meet_hello\n"..
 				"close_victim 			= {=is_wounded} nil, {!is_squad_commander} nil, actor\n"..
 				"far_distance 			= 0\n"..
 				"far_anim 				= nil\n"..
 				"far_snd 				= nil\n"..
 				"far_victim 			= nil\n"..
-				"use					= {=is_wounded} false, {!is_squad_commander} false, {=actor_enemy} false, {=has_enemy} false,  {=dist_to_actor_le(3)} true, false\n"..
+				"use					= {=npc_surrendered} true, {=is_wounded} false, {!is_squad_commander} false, {=actor_enemy} false, {=has_enemy} false,  {=dist_to_actor_le(3)} true, false\n"..
 				"snd_on_use 			= {=is_wounded} nil, {=actor_enemy} nil, {!is_squad_commander} meet_use_no_talk_leader,  {=has_enemy} meet_use_no_fight, {=dist_to_actor_le(3)} meet_use_no_default, nil\n"..
 				"meet_dialog			= nil\n"..
 				"abuse					= {=has_enemy} false, true\n"..
-				"trade_enable			= true\n"..
+				"trade_enable			= {=actor_enemy} false, true\n"..
 				"allow_break			= true\n"..
 				"use_text				= nil\n"..
 
@@ -68,7 +229,7 @@ function load_job(smart)
 				"far_anim 				= nil\n"..
 				"far_snd 				= nil\n"..
 				"far_victim 			= nil\n"..
-				"use					= {=is_wounded} false, {!is_squad_commander} false, {=actor_enemy} false, {=has_enemy} false,  {=dist_to_actor_le(3)} true, false\n"..
+				"use					= {=npc_surrendered} true, {=is_wounded} false, {!is_squad_commander} false, {=actor_enemy} false, {=has_enemy} false,  {=dist_to_actor_le(3)} true, false\n"..
 				"snd_on_use 			= {=is_wounded} nil, {=actor_enemy} nil, {!is_squad_commander} meet_use_no_talk_leader,  {=has_enemy} meet_use_no_fight, {=dist_to_actor_le(3)} meet_use_no_default, nil\n"..
 				"meet_dialog			= nil\n"..
 				"abuse					= {=has_enemy} false, true\n"..
@@ -76,7 +237,7 @@ function load_job(smart)
 				"allow_break			= true\n"..
 				"meet_on_talking 		= false\n"..
 				"use_text				= nil\n"
-
+	end
 
 --'------------------------------------------------------------------------
 --'         РАБОТЫ СТАЛКЕРОВ
@@ -102,8 +263,9 @@ function load_job(smart)
 								}
 
 
-						table.insert(stalker_generic_point.jobs, t)
+					table.insert(stalker_generic_point.jobs, t)
 
+					if (generate_ltx) then
 						-- добавляем описание должности в лтх.
 						job_ltx = "[logic@"..name.."]\n"..
 										"active = cover@"..name.."\n"..
@@ -127,7 +289,8 @@ function load_job(smart)
 												"combat_ignore_keep_when_attacked = true \n"
 						end
 
-						ltx = ltx..job_ltx
+						ltx = ltx.."\n"..job_ltx
+					end
 				end
 				table.insert(stalker_jobs.jobs, stalker_generic_point)
 
@@ -147,12 +310,11 @@ function load_job(smart)
 								job_id = {  section = "logic@"..name,
 											job_type = "path_job" },
 								_precondition_params = { },
-								_precondition_function =    function(se_obj, smart, precond_params)
-																return xr_conditions.surge_started()
-															end
+								_precondition_function = precond_surge
 								}
 						table.insert(stalker_surge.jobs, t)
 
+					if (generate_ltx) then
 						-- добавляем описание должности в лтх.
 						job_ltx = "[logic@"..name.."]\n"..
 														"active = walker@"..name.."\n"..
@@ -181,7 +343,8 @@ function load_job(smart)
 												"combat_ignore_keep_when_attacked = true \n"
 						end
 
-						ltx = ltx..job_ltx
+						ltx = ltx.."\n"..job_ltx
+					end
 						it = it + 1
 				end
 				if it > 1 then table.insert(stalker_jobs.jobs, stalker_surge) end
@@ -201,57 +364,36 @@ function load_job(smart)
 								job_id = {  section = "logic@"..name,
 											job_type = "path_job" },
 								_precondition_params = { },
-								_precondition_function =    function(se_obj, smart, precond_params)
-																if se_obj:community() == "zombied" then
-																	return false
-																end
-
-
-																if not in_time_interval(21,7) then
-																	return false
-																end
-
-																if smart.smart_alarm_time == nil then
-																	return true
-																end
-
-																if smart.safe_restr == nil then
-																	return true
-																end
-
-																if precond_params.is_safe_job == nil then
-																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
-																end
-
-																return precond_params.is_safe_job ~= false
-															end
+								_precondition_function =  precond_safe_job_sleeper
 								}
 						table.insert(_jobs.jobs, t)
 
-						-- добавляем описание должности в лтх.
-						job_ltx = "[logic@"..name.."]\n"..
-														"active = sleeper@"..name.."\n"..
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+															"active = sleeper@"..name.."\n"..
 
-														"[sleeper@"..name.."]\n"..
-														"path_main = sleep_"..it.."\n"
+															"[sleeper@"..name.."]\n"..
+															"path_main = sleep_"..it.."\n"
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
+
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
+
+							if smart.base_on_actor_control ~= nil and
+								 smart.base_on_actor_control.ignore_zone ~= nil and
+								 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
+							then
+								job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
+													"combat_ignore_keep_when_attacked = true \n"
+							end
+
+							ltx = ltx.."\n"..job_ltx
 						end
-
-						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
-						end
-
-						if smart.base_on_actor_control ~= nil and
-							 smart.base_on_actor_control.ignore_zone ~= nil and
-							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
-						then
-							job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
-												"combat_ignore_keep_when_attacked = true \n"
-						end
-
-						ltx = ltx..job_ltx
 						it = it + 1
 				end
 				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
@@ -271,69 +413,44 @@ function load_job(smart)
 								job_id = {  section = "logic@"..name,
 											job_type = "path_job" },
 								_precondition_params = { },
-								_precondition_function =    function(se_obj, smart, precond_params)
-																if se_obj:community() == "zombied" then
-																	return false
-																end
-
-																-- Проверяем, что у НПС есть детектор.
-																local st = db.storage[se_obj.id]
-
-																if st == nil then
-																	return false
-																end
-
-																local npc = st.object
-
-																if npc == nil then
-																	return false
-																end
-
-																local detectors = { "detector_simple", "detector_advanced", "detector_elite", "detector_scientific" }
-
-																for k,v in pairs(detectors) do
-																	local obj = npc:object(v)
-																	if obj ~= nil then
-																		return true
-																	end
-																end
-																return false
-															end
-								}
+								_precondition_function = precond_collector
+						}
 						table.insert(_jobs.jobs, t)
 
-						-- добавляем описание должности в лтх.
-						job_ltx = "[logic@"..name.."]\n"..
-														"active = walker@"..name.."\n"..
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+															"active = walker@"..name.."\n"..
 
-														"[walker@"..name.."]\n"..
-														"sound_idle = state\n"..
-														"meet = meet@generic_lager\n"..
-														"path_walk = collector_"..it.."_walk\n"..
-														"def_state_standing = guard\n"..
-														"def_state_moving = patrol\n"
+															"[walker@"..name.."]\n"..
+															"sound_idle = state\n"..
+															"meet = meet@generic_lager\n"..
+															"path_walk = collector_"..it.."_walk\n"..
+															"def_state_standing = guard\n"..
+															"def_state_moving = patrol\n"
 
-						if level.patrol_path_exists(gname.."_collector_"..it.."_look") then
-								job_ltx = job_ltx.."path_look = collector_"..it.."_look\n"
+							if level.patrol_path_exists(gname.."_collector_"..it.."_look") then
+									job_ltx = job_ltx.."path_look = collector_"..it.."_look\n"
+							end
+
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
+
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
+
+							if smart.base_on_actor_control ~= nil and
+								 smart.base_on_actor_control.ignore_zone ~= nil and
+								 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
+							then
+								job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
+													"combat_ignore_keep_when_attacked = true \n"
+							end
+
+							ltx = ltx.."\n"..job_ltx
 						end
-
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
-						end
-
-						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
-						end
-
-						if smart.base_on_actor_control ~= nil and
-							 smart.base_on_actor_control.ignore_zone ~= nil and
-							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
-						then
-							job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
-												"combat_ignore_keep_when_attacked = true \n"
-						end
-
-						ltx = ltx..job_ltx
 						it = it + 1
 				end
 				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
@@ -355,56 +472,44 @@ function load_job(smart)
 								job_id = {  section = "logic@"..name,
 											job_type = "path_job" },
 								_precondition_params = { },
-								_precondition_function =    function(se_obj, smart, precond_params)
-																if smart.smart_alarm_time == nil then
-																	return true
-																end
-
-																if smart.safe_restr == nil then
-																	return true
-																end
-
-																if precond_params.is_safe_job == nil then
-																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
-																end
-
-																return precond_params.is_safe_job ~= false
-															end
-								}
+								_precondition_function = precond_safe_job
+							}
 						table.insert(_jobs.jobs, t)
 
-						-- добавляем описание должности в лтх.
-						job_ltx = "[logic@"..name.."]\n"..
-														"active = walker@"..name.."\n"..
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+															"active = walker@"..name.."\n"..
 
-														"[walker@"..name.."]\n"..
-														"sound_idle = state\n"..
-														"meet = meet@generic_lager\n"..
-														"path_walk = walker_"..it.."_walk\n"..
-														"def_state_standing = guard\n"..
-														"def_state_moving = patrol\n"
+															"[walker@"..name.."]\n"..
+															"sound_idle = state\n"..
+															"meet = meet@generic_lager\n"..
+															"path_walk = walker_"..it.."_walk\n"..
+															"def_state_standing = guard\n"..
+															"def_state_moving = patrol\n"
 
-						if level.patrol_path_exists(gname.."_walker_"..it.."_look") then
-								job_ltx = job_ltx.."path_look = walker_"..it.."_look\n"
+							if level.patrol_path_exists(gname.."_walker_"..it.."_look") then
+									job_ltx = job_ltx.."path_look = walker_"..it.."_look\n"
+							end
+
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
+
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
+
+							if smart.base_on_actor_control ~= nil and
+								 smart.base_on_actor_control.ignore_zone ~= nil and
+								 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
+							then
+								job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
+													"combat_ignore_keep_when_attacked = true \n"
+							end
+
+							ltx = ltx.."\n"..job_ltx
 						end
-
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
-						end
-
-						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
-						end
-
-						if smart.base_on_actor_control ~= nil and
-							 smart.base_on_actor_control.ignore_zone ~= nil and
-							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
-						then
-							job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
-												"combat_ignore_keep_when_attacked = true \n"
-						end
-
-						ltx = ltx..job_ltx
 						it = it + 1
 				end
 				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
@@ -436,53 +541,36 @@ function load_job(smart)
 										job_id = { section = "logic@"..name,
 													 job_type = "path_job" },
 										_precondition_params = { },
-										_precondition_function =    function(se_obj, smart, precond_params)
-																		if se_obj:community() == "zombied" then
-																			return false
-																		end
-
-
-																		if smart.smart_alarm_time == nil then
-																			return true
-																		end
-
-																		if smart.safe_restr == nil then
-																			return true
-																		end
-
-																		if precond_params.is_safe_job == nil then
-																			precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
-																		end
-
-																		return precond_params.is_safe_job ~= false
-																	end
+										_precondition_function = precond_safe_job_patrol
 										}
 								table.insert(_jobs.jobs, t)
 						end
 
-						-- добавляем описание должности в лтх.
-						job_ltx = "[logic@"..name.."]\n"..
-														"active = patrol@"..name.."\n"..
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+															"active = patrol@"..name.."\n"..
 
-														"[patrol@"..name.."]\n"..
-														"meet = meet@generic_lager\n"..
-														"formation = back\n"..
-														"path_walk = patrol_"..it.."_walk\n"..
-														"on_signal = end| %=search_gulag_job%\n"
+															"[patrol@"..name.."]\n"..
+															"meet = meet@generic_lager\n"..
+															"formation = back\n"..
+															"path_walk = patrol_"..it.."_walk\n"..
+															"on_signal = end| %=search_gulag_job%\n"
 
-						if level.patrol_path_exists(gname.."_patrol_"..it.."_look") then
-								job_ltx = job_ltx.."path_look = patrol_"..it.."_look\n"
+							if level.patrol_path_exists(gname.."_patrol_"..it.."_look") then
+									job_ltx = job_ltx.."path_look = patrol_"..it.."_look\n"
+							end
+
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
+
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
+
+							ltx = ltx.."\n"..job_ltx
 						end
-
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
-						end
-
-						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
-						end
-
-						ltx = ltx..job_ltx
 						it = it + 1
 				end
 				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
@@ -502,54 +590,37 @@ function load_job(smart)
 								job_id = { section = "logic@"..name,
 											 job_type = "smartcover_job" },
 								_precondition_params = { },
-								_precondition_function =    function(se_obj, smart, precond_params)
-																--if smart.smart_alarm_time == nil then
-																	--return true
-																--end
-
-																--if smart.safe_restr == nil then
-																--	return true
-																--end
-
-																if se_obj:community() == "zombied" then
-																	return false
-																end
-
-																--if precond_params.is_safe_job == nil then
-																--	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
-																--end
-
-																--return precond_params.is_safe_job ~= false
-																return true
-															end
+								_precondition_function = precond_animpoint
 
 								}
 						table.insert(stalker_jobs.jobs, t)
 
-						-- добавляем описание должности в лтх.
-						job_ltx = "[logic@"..name.."]\n"..
-										"active = animpoint@"..name.."\n"..
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+											"active = animpoint@"..name.."\n"..
 
-										"[animpoint@"..name.."]\n"..
-										"meet = meet@generic_animpoint\n"..
-										"cover_name = "..name.."\n"
+											"[animpoint@"..name.."]\n"..
+											"meet = meet@generic_animpoint\n"..
+											"cover_name = "..name.."\n"
 
-						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
+
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
+
+							if smart.base_on_actor_control ~= nil and
+								 smart.base_on_actor_control.ignore_zone ~= nil
+							then
+								job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
+													"combat_ignore_keep_when_attacked = true \n"
+							end
+
+							ltx = ltx.."\n"..job_ltx
 						end
-
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
-						end
-
-						if smart.base_on_actor_control ~= nil and
-							 smart.base_on_actor_control.ignore_zone ~= nil
-						then
-							job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
-												"combat_ignore_keep_when_attacked = true \n"
-						end
-
-						ltx = ltx..job_ltx
 						it = it + 1
 				end
 
@@ -572,63 +643,51 @@ function load_job(smart)
 								job_id = { section = "logic@"..name,
 												 job_type = "path_job" },
 								_precondition_params = { },
-								_precondition_function =    function(se_obj, smart, precond_params)
-																if smart.smart_alarm_time == nil then
-																	return true
-																end
-
-																if smart.safe_restr == nil then
-																	return true
-																end
-
-																if precond_params.is_safe_job == nil then
-																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
-																end
-
-																return precond_params.is_safe_job ~= false
-															end
+								_precondition_function = precond_safe_job_guard
 								}
 						table.insert(_jobs.jobs, t)
 
-						-- добавляем описание должности в лтх.
-						job_ltx = "[logic@"..name.."]\n"..
-														"active = walker@"..name.."\n"..
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+															"active = walker@"..name.."\n"..
 
-														"[walker@"..name.."]\n"..
-														"meet = meet@generic_lager\n"..
-														"path_walk = guard_"..it.."_walk\n"..
-														"path_look = guard_"..it.."_look\n"
+															"[walker@"..name.."]\n"..
+															"meet = meet@generic_lager\n"..
+															"path_walk = guard_"..it.."_walk\n"..
+															"path_look = guard_"..it.."_look\n"
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
-						end
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
 
-						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
-						end
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
 
-						local job1_ltx ="[walker1@"..name.."]\n"..
-														"meet = meet@generic_lager\n"..
-														"path_walk = guard_"..it.."_walk\n"..
-														"path_look = guard_"..it.."_look\n"..
-														"def_state_standing = wait_na\n"..
-														"on_info = {!is_obj_on_job(logic@follower_"..name..":3)} walker@"..name.."\n"..
-														"on_info2 = {=distance_to_obj_on_job_le(logic@follower_"..name..":3)} remark@"..name.."\n"
+							job1_ltx ="[walker1@"..name.."]\n"..
+															"meet = meet@generic_lager\n"..
+															"path_walk = guard_"..it.."_walk\n"..
+															"path_look = guard_"..it.."_look\n"..
+															"def_state_standing = wait_na\n"..
+															"on_info = {!is_obj_on_job(logic@follower_"..name..":3)} walker@"..name.."\n"..
+															"on_info2 = {=distance_to_obj_on_job_le(logic@follower_"..name..":3)} remark@"..name.."\n"
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-							job1_ltx = job1_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
-						end
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job1_ltx = job1_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
 
-						if smart.def_restr ~= nil then
-								job1_ltx = job1_ltx .."out_restr = "..smart.def_restr.."\n"
-						end
+							if smart.def_restr ~= nil then
+									job1_ltx = job1_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
 
-						job1_ltx = job1_ltx .. "[remark@"..name.."]\n"..
-																		"anim = wait_na\n"..
-																		"target = logic@follower_"..name.."\n"
+							job1_ltx = job1_ltx .. "[remark@"..name.."]\n"..
+																			"anim = wait_na\n"..
+																			"target = logic@follower_"..name.."\n"
 
-						if smart.def_restr ~= nil then
-								job1_ltx = job1_ltx .."out_restr = "..smart.def_restr.."\n"
+							if smart.def_restr ~= nil then
+									job1_ltx = job1_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
 						end
 
 						--' настройки фоловера для каждого гварда!!!!!!!!!!!!!!!!!
@@ -636,34 +695,35 @@ function load_job(smart)
 								job_id = { section = "logic@follower_"..name,
 											 job_type = "path_job" },
 								_precondition_params = { changing_job = "logic@"..name },
-								_precondition_function = function(se_obj, smart, precond_params, npc_info)
-																return npc_info.need_job == precond_params.changing_job
-														 end }
+								_precondition_function = precond_guard_follower
+						}
 						table.insert(_jobs.jobs, t)
 
-						local follower_ltx = "[logic@follower_"..name.."]\n"..
-																"active = walker@follow_"..name.."\n"..
+						if (generate_ltx) then
+							follower_ltx = "[logic@follower_"..name.."]\n"..
+																	"active = walker@follow_"..name.."\n"..
 
-																"[walker@follow_"..name.."]\n"..
-																"meet = meet@generic_lager\n"..
-																"path_walk = guard_"..it.."_walk\n"..
-																"path_look = guard_"..it.."_look\n"..
-																"on_info = {=distance_to_obj_on_job_le(logic@"..name..":3)} remark@follower_"..name.."\n"
+																	"[walker@follow_"..name.."]\n"..
+																	"meet = meet@generic_lager\n"..
+																	"path_walk = guard_"..it.."_walk\n"..
+																	"path_look = guard_"..it.."_look\n"..
+																	"on_info = {=distance_to_obj_on_job_le(logic@"..name..":3)} remark@follower_"..name.."\n"
 
-						if smart.def_restr ~= nil then
-								follower_ltx = follower_ltx .."out_restr = "..smart.def_restr.."\n"
+							if smart.def_restr ~= nil then
+									follower_ltx = follower_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
+
+							follower_ltx = follower_ltx .. "[remark@follower_"..name.."]\n"..
+																							"anim = wait_na\n"..
+																							"target = logic@"..name.."\n"..
+																							"on_timer = 2000 | %=switch_to_desired_job%\n"
+
+							if smart.def_restr ~= nil then
+									follower_ltx = follower_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
+
+							ltx = ltx.."\n"..job_ltx..job1_ltx..follower_ltx
 						end
-
-						follower_ltx = follower_ltx .. "[remark@follower_"..name.."]\n"..
-																						"anim = wait_na\n"..
-																						"target = logic@"..name.."\n"..
-																						"on_timer = 2000 | %=switch_to_desired_job%\n"
-
-						if smart.def_restr ~= nil then
-								follower_ltx = follower_ltx .."out_restr = "..smart.def_restr.."\n"
-						end
-
-						ltx = ltx..job_ltx..job1_ltx..follower_ltx
 						it = it + 1
 				end
 				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
@@ -698,33 +758,29 @@ function load_job(smart)
 										job_id = { section = "logic@"..name,
 													 job_type = "path_job" },
 										_precondition_params = { name = name },
-										_precondition_function =    function(se_obj, smart, precond_params)
-																		if se_obj:community() == "zombied" then
-																			return false
-																		end
-
-																		return combat_restrictor.accessible_job(se_obj, precond_params.name)
-																	end
+										_precondition_function = precond_sniper
 								}
 						table.insert(_jobs.jobs, t)
 
-						-- добавляем описание должности в лтх.
-						job_ltx = "[logic@"..name.."]\n"..
-										"active = camper@"..name.."\n"..
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+											"active = camper@"..name.."\n"..
 
-										"[camper@"..name.."]\n"..
-										"meet = meet@generic_lager\n"..
-										"path_walk = sniper_"..it.."_walk\n"..
-										"path_look = sniper_"..it.."_look\n"..
-										"sniper = true\n"..
-										"def_state_campering ="..state.."\n"..
-										"def_state_campering_fire ="..state.."_fire\n"
+											"[camper@"..name.."]\n"..
+											"meet = meet@generic_lager\n"..
+											"path_walk = sniper_"..it.."_walk\n"..
+											"path_look = sniper_"..it.."_look\n"..
+											"sniper = true\n"..
+											"def_state_campering ="..state.."\n"..
+											"def_state_campering_fire ="..state.."_fire\n"
 
-						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
+							end
+
+							ltx = ltx.."\n"..job_ltx
 						end
-
-						ltx = ltx..job_ltx
 						it = it + 1
 				end
 				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
@@ -757,33 +813,33 @@ function load_job(smart)
 										job_id = { section = "logic@"..name,
 													 job_type = "path_job" },
 										_precondition_params = { name = name },
-										_precondition_function =    function(se_obj, smart, precond_params)
-																		return combat_restrictor.accessible_job(se_obj, precond_params.name)
-																	end
+										_precondition_function = precond_camper
 								}
 						table.insert(_jobs.jobs, t)
 
-						-- добавляем описание должности в лтх.
-						job_ltx = "[logic@"..name.."]\n"..
-										"active = camper@"..name.."\n"..
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+											"active = camper@"..name.."\n"..
 
-										"[camper@"..name.."]\n"..
-										"meet = meet@generic_lager\n"..
-										"radius = "..tostring(radius).."\n"..
-										"path_walk = camper_"..it.."_walk\n"..
-										"def_state_moving = rush\n"..
-										"def_state_campering ="..state.."\n"..
-										"def_state_campering_fire ="..state.."_fire\n"
+											"[camper@"..name.."]\n"..
+											"meet = meet@generic_lager\n"..
+											"radius = "..tostring(radius).."\n"..
+											"path_walk = camper_"..it.."_walk\n"..
+											"def_state_moving = rush\n"..
+											"def_state_campering ="..state.."\n"..
+											"def_state_campering_fire ="..state.."_fire\n"
 
-						if level.patrol_path_exists(gname.."_camper_"..it.."_look") then
-								job_ltx = job_ltx.."path_look = camper_"..it.."_look\n"
+							if level.patrol_path_exists(gname.."_camper_"..it.."_look") then
+									job_ltx = job_ltx.."path_look = camper_"..it.."_look\n"
+							end
+
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
+							end
+
+							ltx = ltx.."\n"..job_ltx
 						end
-
-						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
-						end
-
-						ltx = ltx..job_ltx
 						it = it + 1
 				end
 				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
@@ -792,122 +848,98 @@ function load_job(smart)
 				--'------------------------------------------------------------------------
 				--'                              BEH
 				--'------------------------------------------------------------------------
+				if (beh_ini) then
+					_jobs = {_prior = 35, jobs = {}}
+					it = 1
+					while beh_ini:section_exist(gname.."_beh_"..it) do
 
-				_jobs = {_prior = 35, jobs = {}}
-				it = 1
-				while ini:section_exist(gname.."_beh_"..it) do
+						name = gname.."_beh_"..it
 
-					name = gname.."_beh_"..it
+						t = { 	_prior = 35,
+								job_id = { section = "logic@"..name,
+												 job_type = "point_job" },
+								_precondition_params = { },
+								_precondition_function = precond_safe_job
+						}
+						table.insert(_jobs.jobs, t)
 
-					t = { 	_prior = 35,
-							job_id = { section = "logic@"..name,
-											 job_type = "point_job" },
-							_precondition_params = { },
-							_precondition_function =    function(se_obj, smart, precond_params)
-															if smart.smart_alarm_time == nil then
-																return true
-															end
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+															"active = beh@"..name.."\n"..
 
-															if smart.safe_restr == nil then
-																return true
-															end
+															"[beh@"..name.."]\n"..
+															"meet = meet@generic_lager\n"
 
-															if precond_params.is_safe_job == nil then
-																precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
-															end
+							beh_data = alun_utils.collect_section(beh_ini,name,true)
 
-															return precond_params.is_safe_job ~= false
-														end
-							}
-					table.insert(_jobs.jobs, t)
+							if (beh_data) then
+								for k,v in pairs(beh_data) do
+									job_ltx = job_ltx .. k .. " = " .. v .. "\n"
+								end
+							end
 
-					-- добавляем описание должности в лтх.
-					job_ltx = "[logic@"..name.."]\n"..
-													"active = beh@"..name.."\n"..
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
 
-													"[beh@"..name.."]\n"..
-													"meet = meet@generic_lager\n"
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
 
-					beh_data = alun_utils.collect_section(ini,name,true)
-
-					if (beh_data) then
-						for k,v in pairs(beh_data) do
-							job_ltx = job_ltx .. k .. " = " .. v .. "\n"
+							ltx = ltx.."\n"..job_ltx
 						end
+						it = it + 1
 					end
+					if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
+					-----------------------------
+					-- beh surge
+					-----------------------------
+					_jobs = {_prior = 50, jobs = {}}
+					it = 1
+					while beh_ini:section_exist(gname.."_beh_"..it.."_surge") do
+						name = gname.."_beh_"..it.."_surge"
 
-					if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-						job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
-					end
+						t = { 	_prior = 50,
+								job_id = { section = "logic@"..name,
+												 job_type = "point_job" },
+								_precondition_params = { },
+								_precondition_function = precond_surge
+								}
+						table.insert(_jobs.jobs, t)
 
-					if smart.def_restr ~= nil then
-							job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
-					end
+						if (generate_ltx) then
+							-- добавляем описание должности в лтх.
+							job_ltx = "[logic@"..name.."]\n"..
+															"active = beh@"..name.."\n"..
 
-					ltx = ltx..job_ltx
-					it = it + 1
-				end
-				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
-				-----------------------------
-				-- beh surge
-				-----------------------------
-				_jobs = {_prior = 50, jobs = {}}
-				it = 1
-				while ini:section_exist(gname.."_beh_"..it.."_surge") do
-					name = gname.."_beh_"..it.."_surge"
+															"[beh@"..name.."]\n"..
+															"meet = meet@generic_lager\n"
 
-					t = { 	_prior = 50,
-							job_id = { section = "logic@"..name,
-											 job_type = "point_job" },
-							_precondition_params = { },
-							_precondition_function = 		function(se_obj, smart, precond_params)
-																return xr_conditions.surge_started()
-															end
-							}
-					table.insert(_jobs.jobs, t)
+							beh_data = alun_utils.collect_section(ini,name,true)
 
-					-- добавляем описание должности в лтх.
-					job_ltx = "[logic@"..name.."]\n"..
-													"active = beh@"..name.."\n"..
+							if (beh_data) then
+								for k,v in pairs(beh_data) do
+									job_ltx = job_ltx .. k .. " = " .. v .. "\n"
+								end
+							end
 
-													"[beh@"..name.."]\n"..
-													"meet = meet@generic_lager\n"
+							if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+								job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+							end
 
-					beh_data = alun_utils.collect_section(ini,name,true)
+							if smart.def_restr ~= nil then
+									job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+							end
 
-					if (beh_data) then
-						for k,v in pairs(beh_data) do
-							job_ltx = job_ltx .. k .. " = " .. v .. "\n"
+							ltx = ltx.."\n"..job_ltx
 						end
+						it = it + 1
 					end
-
-					if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
-						job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
-					end
-
-					if smart.def_restr ~= nil then
-							job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
-					end
-
-					ltx = ltx..job_ltx
-					it = it + 1
+					if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
 				end
-				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
-
 
 		table.insert(job_table, stalker_jobs)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -921,18 +953,19 @@ function load_job(smart)
 		--'------------------------------------------------------------------------
 
 		for it = 1,20 do
-				-- Необходимо вычитать количество работ из названия точки пути.
-				name = gname.."_home_"..it
-				local home_min_radius = 10
-				local home_mid_radius = 20
-				local home_max_radius = 70
+			-- Необходимо вычитать количество работ из названия точки пути.
+			name = gname.."_home_"..it
+			local home_min_radius = 10
+			local home_mid_radius = 20
+			local home_max_radius = 70
 
-				t = {   _prior = 40,
-						job_id = { 	section = "logic@"..name,
-									job_type = "point_job" }
-								}
-				table.insert(monster_jobs.jobs, t)
+			t = {   _prior = 40,
+					job_id = { 	section = "logic@"..name,
+								job_type = "point_job" }
+							}
+			table.insert(monster_jobs.jobs, t)
 
+			if (generate_ltx) then
 				-- добавляем описание должности в лтх.
 				job_ltx = "[logic@"..name.."]\n"..
 												"active = mob_home@"..name.."\n"..
@@ -947,7 +980,8 @@ function load_job(smart)
 						job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 				end
 
-				ltx = ltx..job_ltx
+				ltx = ltx.."\n"..job_ltx
+			end
 		end
 
 
@@ -960,26 +994,25 @@ function load_job(smart)
 --'------------------------------------------------------------------------
 --'                      ЭКСКЛЮЗИВНЫЕ РАБОТЫ
 --'------------------------------------------------------------------------
-		local smart_ini = smart.ini
-		if smart_ini:section_exist(smart_terrain.SMART_TERRAIN_SECT) then
-				if smart_ini:section_exist("exclusive") then
-						local n = smart_ini:line_count("exclusive")
-						local id, value = "",""
-						for i=0,n-1 do
-								result, id, value  = smart_ini:r_line("exclusive",i,"","")
-								add_exclusive_job("exclusive", id, smart_ini, job_table)
-						end
-				else
-						local num = 1
-						while smart_ini:line_exist(smart_terrain.SMART_TERRAIN_SECT, "work"..num) do
-								add_exclusive_job(smart_terrain.SMART_TERRAIN_SECT, "work"..num, smart_ini, job_table)
-								num = num + 1
-						end
-				end
+	local smart_ini = smart.ini
+	if smart_ini:section_exist(smart_terrain.SMART_TERRAIN_SECT) then
+		if smart_ini:section_exist("exclusive") then
+			local n = smart_ini:line_count("exclusive")
+			local id, value = "",""
+			for i=0,n-1 do
+					result, id, value  = smart_ini:r_line("exclusive",i,"","")
+					add_exclusive_job("exclusive", id, smart_ini, job_table)
+			end
+		else
+			local num = 1
+			while smart_ini:line_exist(smart_terrain.SMART_TERRAIN_SECT, "work"..num) do
+					add_exclusive_job(smart_terrain.SMART_TERRAIN_SECT, "work"..num, smart_ini, job_table)
+					num = num + 1
+			end
 		end
+	end
 
-
-		return job_table
+	return job_table
 end
 
 local job_type_by_scheme = {
@@ -1002,7 +1035,6 @@ function add_exclusive_job(sect, work_field, smart_ini, job_table)
 		local work = utils.cfg_get_string(smart_ini, sect, work_field, nil, false, "")
 		if work == nil then return end
 		local ini_path = "\scripts\\"..work
-
 		local fs = getFS()
 		if fs:exist("$game_config$",ini_path) == nil then
 				abort("there is no configuration file [%s]", ini_path)
@@ -1074,8 +1106,10 @@ end
 -- Dynamic ltx
 --------------------------------------------------------------------------
 function load_ltx(gname)
-	--local cfg = io.open("gulag.ltx","a+")
-	--cfg:write(ltx)
-	--cfg:close()
+	local cfg = io.open(alun_utils.fspath("$game_config$").."gulag\\"..gname..".ltx","wb")
+	if (cfg) then
+		cfg:write(ltx)
+		cfg:close()
+	end
 	return ltx
 end

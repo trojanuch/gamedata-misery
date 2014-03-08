@@ -130,7 +130,7 @@ function move_mgr:reset(path_walk, path_walk_info, path_look, path_look_info, te
 	printf("move_mgr:reset() [%s]", self.object:name())
 
 	--' сколько ждать в точке, где играем анимацию
-	self.pt_wait_time = default_wait_time
+	self.pt_wait_time = not self.pt_wait_time and default_wait_time or self.pt_wait_time
 
 	--' «апоминаем массив целиком на случай, если придетс€ себ€ сбросить, повторно
 	--' вызвав reset():
@@ -142,10 +142,10 @@ function move_mgr:reset(path_walk, path_walk_info, path_look, path_look_info, te
 		self.default_state_moving2 = default_state_moving2
 		self.default_state_moving3 = default_state_moving3
 	else
-		self.default_state_standing = if_then_else(suggested_state.standing, suggested_state.standing, default_state_standing)
-		self.default_state_moving1 = if_then_else(suggested_state.moving, suggested_state.moving, default_state_moving1)
-		self.default_state_moving2 = if_then_else(suggested_state.moving, suggested_state.moving, default_state_moving2)
-		self.default_state_moving3 = if_then_else(suggested_state.moving, suggested_state.moving, default_state_moving3)
+		self.default_state_standing = suggested_state.standing or default_state_standing
+		self.default_state_moving1 = suggested_state.moving or default_state_moving1
+		self.default_state_moving2 = suggested_state.moving or default_state_moving2
+		self.default_state_moving3 = suggested_state.moving or default_state_moving3
 	end
 
 	self.default_state_standing = xr_logic.parse_condlist(self.object, "move_mgr", "def_state", self.default_state_standing)
@@ -297,19 +297,6 @@ function move_mgr:sync_ok()
 end
 
 function move_mgr:update()
-	--printf("move_mgr:update(self.state == %s)", utils.to_str(self.state))
-	--printf("move_mgr:update(self.object:anims == %d)", self.object:animation_count())
-
-	--[[
-	local tg = time_global()
-	if (self.play_sound and self.play_sound_idle and tg > self.play_sound_idle) then
-		--alun_utils.printf("move_mgr: Playing sound")
-		xr_sound.set_sound_play(self.object:id(),self.play_sound)
-		self.play_sound = nil
-		self.play_sound_idle = nil
-	end
-	--]]
-
 	if self.syn_signal and time_global() >= self.syn_signal_set_tm then
 		if self:sync_ok() then
 			self:scheme_set_signal(self.syn_signal)
@@ -618,10 +605,7 @@ function move_mgr:waypoint_callback(obj, action_type, index)
 				self.pt_wait_time = nil -- -1
 			else
 				local tm = tonumber(suggested_wait_time)
-				if tm ~= 0 and (tm < 1000 or tm > 45000) then
-					abort("object '%s': path_look '%s': flag 't': incorrect time specified (* or number in interval [1000, 45000] is expected)",
-						self.object:name(), self.path_look)
-				end
+				tm = tm and tm > 0 and tm or 0
 				self.pt_wait_time = tm
 			end
 		else

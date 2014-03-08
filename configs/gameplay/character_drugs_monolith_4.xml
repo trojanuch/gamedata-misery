@@ -1,7 +1,7 @@
 shovel_old		= 1, prob=0.027 \n
 shovel_mili		= 1, prob=0.012 \n
-ied_rpg			= 2, prob=0.015 \n
-ied			= 1, prob=0.009 \n
+ied_rpg			= 2, prob=0.030 \n
+ied			= 1, prob=0.018 \n
 meinkampf		= 1, prob=0.027 \n
 jar			= 2, prob=0.03 \n
 grooming		= 1, prob=0.036 \n
@@ -41,6 +41,8 @@ synthrope		= 1, prob=0.027 \n
 cutlery		= 2, prob=0.045 \n
 radio		= 1, prob=0.03 \n
 radio2		= 1, prob=0.03 \n
+
+mine			= 1, prob=0.060 \n
 
 letter_monolith_prayer_1_of_3					= 1, prob=0.020 \n
 letter_monolith_prayer_2_of_3					= 1, prob=0.020 \n

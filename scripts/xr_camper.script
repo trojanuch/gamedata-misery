@@ -83,6 +83,7 @@ function action_patrol:__init (npc,action_name,storage) super (nil,action_name)
 end
 function action_patrol:initialize()
 	action_base.initialize(self)
+	state_mgr.set_state(self.object,"idle")
 	self.object:set_desired_position()
 	self.object:set_desired_direction()
 
@@ -279,7 +280,8 @@ function action_patrol:execute()
 end
 
 function action_patrol:process_danger()
-	if not xr_danger.is_danger(self.object) then
+	if not (db.storage[self.object:id()].danger_flag) then
+	--if not xr_danger.is_danger(self.object) then
 		return false
 	end
 	local best_danger = self.object:best_danger()

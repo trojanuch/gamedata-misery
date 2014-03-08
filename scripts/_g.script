@@ -874,3 +874,8 @@ function empty_table(t)
 	end
 	return t
 end
+
+function get_dbstorage(id)
+	local st = db.storage[id]
+	return st and st.object and st
+end

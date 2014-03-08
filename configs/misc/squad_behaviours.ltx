@@ -7,7 +7,7 @@
 actor 				= 1
 resource 			= 1
 resource_hard 		= 0
-surge				= 2
+surge				= 1
 base				= 1
 base_hostile		= 0
 base_freedom		= 0
@@ -18,6 +18,7 @@ base_hostile_safe	= 0
 base_freedom_safe	= 0
 base_duty_safe		= 0
 base_monolith		= 0
+base_monolith_safe	= 0
 territory			= 1
 territory_hostile	= 0
 territory_monolith	= 0
@@ -31,18 +32,33 @@ hunting_ground 		= 0
 
 [stalker]:default_behaviour
 resource 			= 2
-base_safe			= 1
+base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
+base_freedom		= 1
+base_duty			= 1
 territory			= 1
 ;squad				= 0
 
 [stalker_hostile]:default_behaviour
 resource 			= 2
-base_safe			= 1
+base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
+base_freedom		= 1
+base_duty			= 1
 territory			= 1
 ;squad				= 0
 
 [stalker_sci]:default_behaviour
 base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
+base_freedom		= 1
+base_duty			= 1
 territory			= 1
 resource 			= 2
 resource_hard 		= 2
@@ -50,6 +66,11 @@ surge				= 0
 
 [stalker_sci_hostile]:default_behaviour
 base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
+base_freedom		= 1
+base_duty			= 1
 territory			= 1
 resource 			= 2
 resource_hard 		= 2
@@ -58,6 +79,11 @@ surge				= 0
 [stalker_hunter_day]:default_behaviour
 resource 			= 0
 base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
+base_freedom		= 1
+base_duty			= 1
 territory			= 0
 lair				= 0
 lair_night			= 0
@@ -67,6 +93,11 @@ hunting_ground 		= 2
 [stalker_hunter_day_hostile]:default_behaviour
 resource 			= 0
 base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
+base_freedom		= 1
+base_duty			= 1
 territory			= 0
 lair				= 0
 lair_night			= 0
@@ -75,7 +106,10 @@ hunting_ground 		= 2
 
 [stalker_hunter_night]:default_behaviour
 resource 			= 0
-base				= 2
+base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
 base_freedom		= 1
 base_duty			= 1
 territory			= 0
@@ -86,7 +120,10 @@ hunting_ground 		= 2
 
 [stalker_hunter_night_hostile]:default_behaviour
 resource 			= 0
-base				= 2
+base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
 base_freedom		= 1
 base_duty			= 1
 territory			= 0
@@ -97,25 +134,31 @@ hunting_ground 		= 2
 
 [stalker_elite]:default_behaviour
 resource 			= 0
-base				= 2
+base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
 base_freedom		= 1
 base_duty			= 1
-base_hostile		= 1
+base_hostile		= 2
 base_monolith		= 1
 territory			= 1
-territory_hostile	= 2
+territory_hostile	= 1
 territory_monolith	= 1
 ;squad				= 1
 
 [stalker_elite_hostile]:default_behaviour
 resource 			= 0
-base				= 2
+base_safe			= 2
+base_freedom_safe	= 1
+base_duty_safe		= 1
+base				= 1
 base_freedom		= 1
 base_duty			= 1
-base_hostile		= 1
+base_hostile		= 2
 base_monolith		= 1
 territory			= 1
-territory_hostile	= 2
+territory_hostile	= 1
 territory_monolith	= 1
 ;squad				= 1
 actor				= 1
@@ -128,7 +171,9 @@ base_duty			= 2
 [freedom]:default_behaviour
 resource 			= 2
 base_freedom_safe	= 2
-base 				= 1
+base_freedom		= 1
+base_safe			= 1
+base				= 1
 territory_hostile	= 1
 territory			= 2
 ;squad				= 1
@@ -136,13 +181,18 @@ territory			= 2
 [freedom_hostile]:default_behaviour
 resource 			= 2
 base_freedom_safe	= 2
-base 				= 1
+base_freedom		= 1
+base_safe			= 1
+base				= 1
 territory_hostile	= 1
 territory			= 2
 ;squad				= 1
 
 [freedom_sci]:default_behaviour
 base_freedom_safe	= 2
+base_freedom		= 1
+base_safe			= 1
+base				= 1
 territory_hostile	= 0
 territory			= 1
 ;squad				= 0
@@ -152,6 +202,9 @@ surge				= 0
 
 [freedom_sci_hostile]:default_behaviour
 base_freedom_safe	= 2
+base_freedom		= 1
+base_safe			= 1
+base				= 1
 territory_hostile	= 0
 territory			= 1
 ;squad				= 0
@@ -160,20 +213,27 @@ resource 			= 2
 surge				= 0
 
 [freedom_elite]:default_behaviour
-base_freedom		= 2
+base_freedom_safe	= 2
+base_freedom		= 1
+base_safe			= 1
+base				= 1
 resource 			= 1
 base_hostile		= 1
-base_monolith		= 1
+base_monolith		= 2
 territory			= 0
 territory_hostile	= 1
 territory_monolith	= 2
 ;squad				= 1
+actor				= 1
 
 [freedom_elite_hostile]:default_behaviour
-base_freedom		= 2
+base_freedom_safe	= 2
+base_freedom		= 1
+base_safe			= 1
+base				= 1
 resource 			= 1
 base_hostile		= 1
-base_monolith		= 1
+base_monolith		= 2
 territory			= 0
 territory_hostile	= 1
 territory_monolith	= 2
@@ -182,6 +242,8 @@ actor				= 1
 
 [dolg]:default_behaviour
 base_duty_safe		= 2
+base_safe			= 1
+base_duty			= 1
 base				= 1
 territory			= 2
 territory_hostile	= 1
@@ -190,6 +252,9 @@ resource 			= 1
 
 [dolg_hostile]:default_behaviour
 base_duty_safe		= 2
+base_safe			= 1
+base_duty			= 1
+base				= 1
 territory			= 2
 territory_hostile	= 1
 ;squad				= 1
@@ -197,6 +262,9 @@ resource 			= 1
 
 [dolg_hunter_day]:default_behaviour
 base_duty_safe		= 2
+base_safe			= 1
+base_duty			= 1
+base				= 1
 resource 			= 0
 territory			= 0
 lair				= 0
@@ -206,6 +274,9 @@ hunting_ground 		= 2
 
 [dolg_hunter_day_hostile]:default_behaviour
 base_duty_safe		= 2
+base_safe			= 1
+base_duty			= 1
+base				= 1
 resource 			= 0
 territory			= 0
 lair				= 0
@@ -214,7 +285,10 @@ lair_night			= 0
 hunting_ground 		= 2
 
 [dolg_hunter_night]:default_behaviour
-base_duty			= 2
+base_duty_safe		= 2
+base_safe			= 1
+base_duty			= 1
+base				= 1
 resource 			= 0
 territory			= 0
 lair				= 0
@@ -223,7 +297,10 @@ lair_night			= 0
 hunting_ground 		= 2
 
 [dolg_hunter_night_hostile]:default_behaviour
-base_duty			= 2
+base_duty_safe		= 2
+base_safe			= 1
+base_duty			= 1
+base				= 1
 resource 			= 0
 territory			= 0
 lair				= 0
@@ -232,7 +309,10 @@ lair_night			= 0
 hunting_ground 		= 2
 
 [dolg_elite]:default_behaviour
-base_duty			= 2
+base_duty_safe		= 2
+base_safe			= 1
+base_duty			= 1
+base				= 1
 resource 			= 0
 base_hostile		= 2
 base_monolith		= 2
@@ -242,7 +322,10 @@ territory_monolith	= 2
 ;squad				= 1
 
 [dolg_elite_hostile]:default_behaviour
-base_duty			= 2
+base_duty_safe		= 2
+base_safe			= 1
+base_duty			= 1
+base				= 1
 resource 			= 0
 base_hostile		= 2
 base_monolith		= 2
@@ -250,17 +333,22 @@ territory			= 0
 territory_hostile	= 2
 territory_monolith	= 2
 ;squad				= 1
-actor				= 2
 
 [bandit]:default_behaviour
 base_hostile_safe	= 2
+base_safe			= 1
+base_hostile		= 1
+base				= 1
 territory			= 1
 territory_hostile	= 2
 ;squad				= 2
 resource 			= 0
 
 [bandit_elite]:default_behaviour
-base_hostile		= 2
+base_hostile_safe	= 2
+base_safe			= 1
+base_hostile		= 1
+base				= 1
 territory			= 1
 territory_hostile	= 2
 ;squad				= 1
@@ -268,8 +356,10 @@ resource 			= 0
 actor				= 1
 
 [killer]:default_behaviour
-base				= 0
-base_hostile		= 2
+base_hostile_safe	= 2
+base_safe			= 1
+base_hostile		= 1
+base				= 1
 territory			= 2
 territory_hostile	= 2
 ;squad				= 2
@@ -277,6 +367,7 @@ resource 			= 0
 actor				= 2
 
 [army]:default_behaviour
+base_safe			= 2
 base_hostile		= 1
 territory_hostile	= 2
 territory			= 0
@@ -285,7 +376,8 @@ resource 			= 0
 
 [monolith]:default_behaviour
 base				= 0
-base_monolith		= 2
+base_monolith_safe	= 2
+base_monolith		= 1
 territory			= 0
 territory_monolith 	= 2
 ;squad				= 2
@@ -296,7 +388,8 @@ actor				= 2
 
 [monolith_sci]:default_behaviour
 base				= 0
-base_monolith		= 2
+base_monolith_safe	= 2
+base_monolith		= 1
 territory			= 0
 territory_monolith 	= 0
 ;squad				= 1
@@ -305,7 +398,8 @@ surge				= 0
 
 [monolith_pripyat]:default_behaviour
 base				= 0
-base_monolith		= 2
+base_monolith_safe	= 2
+base_monolith		= 1
 territory			= 0
 territory_monolith 	= 2
 ;squad				= 1
@@ -315,7 +409,8 @@ surge				= 0
 
 [monolith_sci_pripyat]:default_behaviour
 base				= 0
-base_monolith		= 2
+base_monolith_safe	= 2
+base_monolith		= 1
 territory			= 0
 territory_monolith 	= 0
 ;squad				= 1

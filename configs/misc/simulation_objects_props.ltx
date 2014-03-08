@@ -127,7 +127,7 @@ sim_avail = true
 ;Zaton
 ;base
 [zat_stalker_base_smart]:default
-surge = 2
+surge = 1
 base = 2
 base_safe = 2
 base_freedom_safe = 1
@@ -144,7 +144,7 @@ sim_avail = false
 ;technical, but with sim available, surge too
 [zat_b33]:default
 sim_avail = false ; true ; {-zat_b33_task_gived -zat_b33_find_package} true, {+zat_b33_task_gived -zat_b33_find_package} false, {-zat_b33_task_gived +zat_b33_find_package} true, false
-;surge = 2
+;surge = 1
 ;hunting_ground = 1
 
 [zat_a23_smart_terrain]:default_lair_night
@@ -153,7 +153,7 @@ territory = 1
 territory_hostile = 2
 territory_monolith = 2
 base = 1
-surge = 2
+surge = 1
 
 ;surge
 [zat_b7]:default
@@ -164,11 +164,11 @@ base_safe = 1
 territory = 1
 territory_monolith = 2
 territory_hostile = 2
-surge = 2
+surge = 1
 sim_avail = {+zat_b7_victims_disappeared} true, {+zat_b7_task_end} true, false
 
 [zat_b40_smart_terrain]:default_base_monolith
-surge = 2
+surge = 1
 territory_hostile = 1
 lair = 1
 lair_night = 1
@@ -179,14 +179,15 @@ sim_avail = {+zat_b38_failed} true, {+zat_b57_bloodsucker_lair_clear} true, fals
 
 ;!!!
 [zat_b42_smart_terrain]:default
-surge = 2
-lair_night = 1
+surge = 1
+lair_night = 2
+lair = 2
 territory = 1
 hunting_ground 	= 2
 sim_avail = {+zat_b42_controller_dead} true, false
 
 [zat_b18]:default
-surge = 2
+surge = 1
 base = 1
 base_duty = 1
 base_freedom = 1
@@ -201,7 +202,7 @@ lair = 1
 sim_avail = {+zat_b18_noah_dead} true, false
 
 [zat_b101]:default_base_duty
-surge = 2
+surge = 1
 territory = 2
 territory_hostile = 1
 lair_night = 1
@@ -214,13 +215,13 @@ sim_avail = true
 sim_avail = false ; {+zat_b57_bloodsucker_lair_clear} true, false
 
 [zat_b38]:default
-surge = 2
+surge = 1
 lair_night_rest = 1
 sim_avail = {+zat_b38_failed} true, {+zat_b57_bloodsucker_lair_clear} true, false
 
 ;regular smarts
 [zat_b5_smart_terrain]:default
-surge = 2
+surge = 1
 base_hostile = 2
 base_hostile_safe = 2
 lair = 1
@@ -256,7 +257,7 @@ base = 1
 sim_avail = {+zat_b52_actor_go_offline} true, {-zat_b52_port_bandits_spawn} true, false
 
 [zat_b103_merc_smart]:default
-surge = 2
+surge = 1
 base_hostile = 2
 base_hostile_safe = 2
 territory_monolith = 1
@@ -427,6 +428,7 @@ base = 2
 
 [zat_sim_12]:default
 territory_hostile = 2
+hunting_ground = 2
 base_hostile = 1
 territory = 1
 lair_night = 1
@@ -509,6 +511,7 @@ sim_avail = true
 territory = 2
 territory_hostile = 2
 territory_monolith = 1
+hunting_ground = 2
 base_hostile = 2
 base_hostile_safe = 2
 ;lair = 1
@@ -564,6 +567,7 @@ sim_avail = true
 lair = 2
 lair_night = 1
 lair_night_rest = 2
+hunting_ground = 2
 sim_avail = true
 
 [zaton_smrter_sim_4]:default
@@ -3391,14 +3395,14 @@ territory_hostile = 1
 lair = 2
 lair_night = 2
 sim_avail = {+jup_a10_vano_give_task_end} true, {+jup_a10_fals} true, false
-surge = 2
+surge = 1
 
 [jup_a12]:default
 sim_avail = {+jup_a12_task_done} true, false
 territory_hostile = 1
 territory = 1
 base_hostile = 2
-surge = 2
+surge = 1
 base_hostile_safe = 2
 lair = 1
 lair_night = 1
@@ -3414,7 +3418,7 @@ sim_avail = {+jup_b1_controller_is_dead} true, false
 territory = 1
 territory_hostile = 1
 base_duty = 2
-surge = 2
+surge = 1
 lair = 1
 lair_night = 1
 base_safe = 1
@@ -3426,7 +3430,7 @@ base_safe = 1
 
 [jup_b200]:default
 sim_avail = true ;{+jup_b200_tech_materials_brought_some} true, {+jup_b200_tech_materials_brought_all} true, false
-surge = 2
+surge = 1
 base_freedom = 2
 base_freedom_safe = 2
 lair_night = 1
@@ -3448,7 +3452,7 @@ base_hostile = 1
 territory_hostile = 1
 base_hostile_safe = 2
 territory = 1
-surge = 2
+surge = 1
 lair = 1
 lair_night = 1
 
@@ -3477,7 +3481,7 @@ lair_night = 2
 
 [jup_b207]:default
 sim_avail = {+jup_b207_task_end} true, false ; {-jup_b207_morgan_gived_depot -jup_b207_freedom_knows_about_depot -jup_b207_duty_knows_about_depot} false, true ; {+jup_b207_freedom_knows_about_depot -jup_b207_task_end} false {+jup_b207_duty_knows_about_depot -jup_b207_task_end} false, true
-surge = 2
+surge = 1
 base = 2
 lair_night = 1
 territory = 1
@@ -3486,7 +3490,7 @@ territory_hostile = 1
 [jup_b208]:default
 sim_avail = {+jup_b208_burers_dead} true,  false
 territory_monolith = 1
-surge = 2
+surge = 1
 lair_night = 1
 lair_night_rest = 2
 hunting_ground = 2
@@ -3827,7 +3831,7 @@ territory_zombied = 2
 [pri_a16]:default
 sim_avail = {+pri_a28_actor_in_zone_stay} true, false
 base = 2
-surge = 2
+surge = 1
 territory = 1
 
 [pri_a17]:default
@@ -3846,13 +3850,13 @@ territory_zombied = 2
 
 [pri_a18_smart_terrain]:default
 sim_avail = {+pri_a18_use_idol_done} true, false
-surge = 2
+surge = 1
 base_hostile = 2
 lair_night = 1
 
 [pri_a21_smart_terrain]:default
 sim_avail = {-pri_a21_sentry_task_done +zat_a23_actor_has_gauss_rifle_documentation +pri_a20_talk_with_colonel_complete} false, true
-surge = 2
+surge = 1
 ;territory_monolith = 2
 ;territory_hostile = 2
 ;territory = 2
@@ -3892,7 +3896,7 @@ territory_zombied = 2
 
 [pri_b301]:default
 sim_avail = {+pri_b301_zulus_dead} true, {+pri_b301_save_zulus_complete} true, false
-surge = 2
+surge = 1
 territory_monolith = 2
 territory_hostile = 2
 territory = 2
@@ -3914,7 +3918,7 @@ territory_zombied = 1
 
 [pri_b303]:default
 sim_avail = {+pri_b303_door_is_open} true, false
-surge = 2
+surge = 1
 territory_monolith = 1
 territory_hostile = 1
 territory = 1
@@ -3929,7 +3933,7 @@ territory_zombied = 2
 
 [pri_b304]:default
 sim_avail = {+pri_b304_actor_take_toolkit} true, false
-surge = 2
+surge = 1
 territory_monolith = 2
 territory_hostile = 2
 territory = 2
@@ -3943,7 +3947,7 @@ territory_zombied = 2
 
 [pri_b306]:default
 sim_avail = {+pri_b306_task_end} true, false
-surge = 2
+surge = 1
 territory_monolith = 2
 territory_hostile = 2
 territory = 2
@@ -3965,7 +3969,7 @@ territory_zombied = 1
 
 [pri_b35_mercs]:default
 sim_avail = {+pri_b35_task_end} true, false
-surge = 2
+surge = 1
 ;territory_monolith = 2
 ;territory_hostile = 2
 territory = 2
@@ -3979,7 +3983,7 @@ territory_zombied = 2
 
 [pri_b36_smart_terrain]:default_base
 sim_avail = {+pri_b36_master_dead} true, false
-surge = 2
+surge = 1
 territory_monolith = 2
 territory_hostile = 2
 territory = 2
@@ -3993,7 +3997,7 @@ territory_zombied = 2
 
 [pri_sim_1]:default
 sim_avail = true ; {+pri_a18_use_idol_done} true, false
-surge = 2
+surge = 1
 territory_monolith = 1
 territory_hostile = 1
 territory = 1
@@ -4084,7 +4088,7 @@ territory_zombied = 1
 
 [pri_b35_military]:default_base
 sim_avail = {+pri_b35_task_end} true, false
-surge = 2
+surge = 1
 ;territory_monolith = 2
 ;territory_hostile = 2
 territory = 2

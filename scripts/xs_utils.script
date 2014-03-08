@@ -1,0 +1,446 @@
+--[[-----------------------------------------------------------------------\\--
+	:: PRIVATE ::
+--\\-----------------------------------------------------------------------]]--
+
+local type, tostring, getmetatable, setmetatable, rawset, srepeat, sprintf
+	= type, tostring, getmetatable, setmetatable, rawset, string.rep, string.format
+local insert, remove, concat
+	= table.insert, table.remove, table.concat
+
+-- TODO Remove stuff that isn't used. So a lot.
+
+--[[-----------------------------------------------------------------------\\--
+	:: PUBLIC ::
+--\\-----------------------------------------------------------------------]]--
+
+__FILE__ = "xs_utils"
+
+--[[-------------------------------------------------------------------\\--
+	:: Category: Type Converters
+--\\-------------------------------------------------------------------]]--
+
+function vec2tbl(v)
+	local t = { x = v.x, y = v.y, z = v.z, }
+	return t
+end
+
+function tbl2vec(t)
+	local v = vector():set(t.x, t.y, t.z)
+	return v
+end
+
+
+--[[-------------------------------------------------------------------\\--
+	:: Category: Number Handling
+--\\-------------------------------------------------------------------]]--
+
+function clamp(num, min, max)
+	if num < min then
+		return min
+	elseif num > max then
+		return max
+	else
+		return num
+	end
+end
+
+
+--[[-------------------------------------------------------------------\\--
+	:: Category: String Handling
+--\\-------------------------------------------------------------------]]--
+
+function extractNo(text, offset, count)
+	if not text or text:len() == 0 then
+		return nil
+	end
+	count = tonumber(count) or math.huge
+	local index  = offset or 0
+	local length = text:len() + 1
+	local number = {}
+	while index < length and #number < count do
+		local digit = tonumber(text:sub(index, index))
+		if digit ~= nil then
+			insert(number, digit)
+		end
+		index = index + 1
+	end
+	return tonumber(concat(number, ""))
+end
+
+-- Concatinates all passed in strings into a single string.
+-- Note that this function only expects string as arguments and assumes that.
+-- @param string delimiter  The delimiter with which to concatenate.
+-- @param string ...		The strings to be concatenated.
+-- @return string
+function join(delimiter, ...)
+	local p, t = { ... }, {}
+	for _, v in ipairs(p) do
+		insert(t, v)
+	end
+	return concat(t, delimiter)
+end
+
+function split(separator, text)
+	if text:len() <= 1 then
+		return { text }
+	end
+
+	local result, offset, current = {}, 0, 0
+	while true do
+		current = text:find(separator, offset, true)
+		if current ~= nil then
+			insert(result, text:sub(offset, current - 1))
+			offset = current + 1
+		else
+			insert(result, text:sub(offset))
+			break
+		end
+	end
+
+	return result
+end
+
+-- @see http://lua-users.org/wiki/StringTrim (trim12)
+function trim(s)
+	local from = s:match('^%s*()')
+	return from > #s and '' or s:match('.*%S', from)
+end
+
+
+--[[-------------------------------------------------------------------\\--
+	:: Category: Table Handling
+--\\-------------------------------------------------------------------]]--
+
+function lmake(initial_capacity)
+	local list = table.create((initial_capacity or 0) + 1, 0)
+	list[0] = 0
+	return list
+end
+
+function llen(list)
+	return list[0]
+end
+
+function clone(t, deep, seen)
+	seen = seen or {}
+
+	if t == nil then
+		return nil
+	end
+	if seen[t] then
+		return seen[t]
+	end
+
+	local nt = {}
+	seen[t] = nt
+	for k, v in pairs(t) do
+		if deep and type(v) == 'table' then
+			nt[k] = clone(v, deep, seen)
+		else
+			nt[k] = v
+		end
+	end
+	setmetatable(nt, clone(getmetatable(t), deep, seen))
+
+	return nt
+end
+
+function toEnumTable(...)
+	local l = select('#', ...)
+	local table = {}
+	for i = 1, l do
+		table[v] = i
+	end
+	return toReadOnlyTable(table)
+end
+
+function toFlagsTable(...)
+	local l = select('#', ...)
+	local pow = math.pow
+	local table = {}
+	for i = 1, l do
+		table[v] = pow(2, select(i, ...) - 1)
+	end
+
+	return toReadOnlyTable(table)
+end
+
+function toWeakTable(table, mode)
+	local mt = getmetatable(table) or {}
+	mt.__mode = mode or 'kv'
+	setmetatable(table, mt)
+	return table
+end
+
+-- Using a metatable makes the specified table read only, by overloading
+-- __newindex. Note that table.insert will not be prevented with this.
+-- Also modifying a already specified key will be possible.
+-- @param table t  The table to made read-only.
+-- @return table
+function toReadOnlyTable(t)
+	return setmetatable(t, {
+		__index = t,
+		__newindex = function (self, k, v)
+			abort("Illegal attempt to modify a read-only table. [key: '%s', value = '%s']",
+				  tostring(k), tostring(v))
+		end,
+		__metatable = false
+	})
+end
+
+-- Creates a lookup-only table, a table where each value is true.
+-- @param number|string ...  The values you want to look-up.
+-- @return table  An lookup-optimized table.
+function toLookupTable(...)
+	local l, t = select('#', ...), {}
+	for i = 1, l do
+		rawset(t, select(i, ...), true)
+	end
+	return t
+end
+
+function map(table, func, iter)
+	iter = iter or pairs
+	for k, v in iter(table) do
+		table[k] = func(v, k)
+	end
+	return table
+end
+
+function count(table, selector, iter)
+	iter = iter or pairs
+	selector = selector or function (v, k) return true end
+	local c = 0
+	for k, v in iter(table) do
+		if selector(v, k) then
+			c = c + 1
+		end
+	end
+	return c
+end
+
+function sum(table, selector, iter)
+	iter = iter or pairs
+	selector = selector or function (v, k) return tonumber(v) end
+	local t = 0
+	for k, v in iter(table) do
+		t = t + selector(v, k)
+	end
+	return t
+end
+
+function min(table, selector, iter)
+	iter = iter or pairs
+	selector = selector or function (v, k) return tonumber(v) end
+	local n, i = nil, nil
+	for k, v in iter(table) do
+		local c = selector(v, k)
+		if n == nil or c < n then
+			n, i = c, k
+		end
+	end
+	return n, i
+end
+
+function max(table, selector, iter)
+	iter = iter or pairs
+	selector = selector or function (v, k) return tonumber(v) end
+	local n, i = nil, nil
+	for k, v in iter(table) do
+		local c = selector(v, k)
+		if n == nil or c > n then
+			n, i = c, k
+		end
+	end
+	return n, i
+end
+
+function find(table, value, selector, iter)
+	iter = iter or pairs
+	selector = selector or function (v, k) return v end
+	for k, v in iter(table) do
+		if value == selector(v, k) then
+			return k
+		end
+	end
+	return nil
+end
+
+function all(table, predicate, iter)
+	iter = iter or pairs
+	predicate = predicate or function (v, k) return true end
+	local results = {}
+	if iter == ipairs then
+		for k, v in iter(table) do
+			if predicate(v, k) then
+				insert(results, v)
+			end
+		end
+	else
+		for k, v in iter(table) do
+			if predicate(v, k) then
+				results[k] = v
+			end
+		end
+	end
+	return results
+end
+
+function any(table, predicate, iter)
+	iter = iter or pairs
+	predicate = predicate or function (v, k) return true end
+	for k, v in iter(table) do
+		if predicate(v, k) then
+			return k, v
+		end
+	end
+	return nil
+end
+
+function filter(table, selector, iter)
+	iter = iter or pairs
+	local r = {}
+	for k, v in iter(table) do
+		if selector(v, k) then
+			r[k] = v
+		end
+	end
+	return r
+end
+
+function retain(table, selector, iter)
+	iter = iter or pairs
+	for k, v in iter(table) do
+		if not selector(v, k) then
+			remove(table, k)
+		end
+	end
+	return table
+end
+
+-- Creates a new table that is a shallow copy of all tabled passed in.
+-- Note that the passed in arguments are traversed in reverse order,
+-- therefore the very first argument has the highest priority and the
+-- very last one has the lowest priority.
+-- @param table ...  Any table you want to merge.
+-- @return table
+function merge(...)
+	local t = {}
+	mergeInto(t, ...)
+	return t
+end
+
+-- Merges any number of tables in a provided target table.
+-- The shallow merge takes place in reverse order, meaning that
+-- the very first table has the highest priority and will be copied
+-- last.
+-- @param table target  The target table into which all the others
+--	 are merged into.
+-- @param table ...  All the tables to be merged into the target table.
+-- @return void
+function mergeInto(target, ...)
+	local a = { ... }
+	for i = #a, 1, -1 do
+		for k, v in pairs(a[i]) do
+			target[k] = v
+		end
+	end
+end
+
+-- Puts the content of some tables into a target table.
+-- @param table target  The target table into which all the other table
+--	 values are put into.
+-- @param table ...  All the tables to be 'put' into the target table.
+-- @return void
+function putInto(target, ...)
+	local a = { ... }
+	for i = #a, 1, -1 do
+		for _, v in pairs(a[i]) do
+			insert(target, v)
+		end
+	end
+end
+
+
+--[[-------------------------------------------------------------------\\--
+	:: Category: Callbacks
+--\\-------------------------------------------------------------------]]--
+
+-- TODO: test createCallback, parseCallback, combineCallbacks
+-- TODO: add class support
+function createCallback(file, func)
+	check(file == nil or type(file) == "string" and file:len() > 0,
+		  "[xs_utils.createCallback]: Invalid #1 argument: '%s'.", tostring(file))
+	check(type(func) == "string" and func:len() > 0,
+		  "[xs_utils.createCallback]: Invalid #2 argument: '%s'.", tostring(file))
+
+	return { file, func }
+end
+
+-- TODO: Check if its not better to use load or loadstring instead.
+--	   The JIT can inline code.
+function parseCallback(callback)
+	check(type(callback) == "table",
+		  "[xs_utils.parseCallback]: Invalid #1 argument must be a table.")
+	check(#callback >= 1 and #callback <= 2,
+		  "[xs_utils.parseCallback]: Invalid #1 argument must be a table with 1 to 2 values in it.")
+
+	local file, func = unpack(callback)
+	local result = (file ~= nil and _G[file][func]) or _G[func]
+
+	check(type(result) == "function",
+		  "[xs_utils.parseCallback]: Invalid callback '%s.%s', its not a function.",
+		  file, func)
+
+	return result
+end
+
+-- Note: This uses loadstring which has to parse and lex what's passed to it.
+-- And after that is gets JIT-ed, which all take their time, so result should be cached.
+function combineCallbacks(callInfos)
+	local buffer = {}
+	for _, callInfo in ipairs(callInfos) do
+		local file, func = unpack(callInfo)
+		if file then
+			insert(buffer, sprintf('%s.%s(...);\n', file, func))
+		else
+			insert(buffer, sprintf('%s(...);\n', func))
+		end
+	end
+	local res, err = loadstring(concat(buffer, ''), '=(combineCallbacks)')
+	if err then
+		abort("[xs_utils.combineCallbacks]: Failed to combine callbacks, see Lua error:", err)
+	end
+	return res
+end
+
+
+--[[-------------------------------------------------------------------\\--
+	:: Category: Miscellaneous
+--\\-------------------------------------------------------------------]]--
+
+function check(condition, fmt, ...)
+	if condition then
+		return
+	end
+
+	if xs and xs.logClose then
+		pcall(xs.logClose)
+	end
+
+	if ... == nil then
+		error(fmt, 2)
+	else
+		error(fmt:format(...), 2)
+	end
+end
+
+local m_refTypes = toLookupTable("table", "userdata", "function", "thread")
+
+function isRefType(obj)
+	return m_refTypes[type(obj)] == true
+end
+
+function isValueType(obj)
+	return m_refTypes[type(obj)] ~= true
+end

@@ -1,0 +1,453 @@
+[meet@generic_lager]
+close_distance 		= {=is_wounded} 0, {!surge_started !after_first_meet !actor_friend =is_squad_commander =actor_has_weapon} 10, 2
+close_anim 			= {=is_wounded} nil, {!is_squad_commander} nil, {!actor_friend =actor_has_weapon} threat_na, talk_default
+close_snd_hello 		= {=is_wounded} nil, {!is_squad_commander} nil, {=actor_enemy} nil, {!after_first_meet !actor_friend =actor_has_weapon} meet_hide_weapon, meet_hello
+close_snd_bye 			= {=is_wounded} nil, {!is_squad_commander} nil, {=actor_enemy} nil, {!after_first_meet !actor_friend =actor_has_weapon} nil, meet_hello
+close_victim 			= {=is_wounded} nil, {!is_squad_commander} nil, actor
+far_distance 			= 0
+far_anim 				= nil
+far_snd 				= nil
+far_victim 			= nil
+use					= {=is_wounded} false, {!is_squad_commander} false, {=actor_enemy} false, {=has_enemy} false,  {=dist_to_actor_le(3)} true, false
+snd_on_use 			= {=is_wounded} nil, {=actor_enemy} nil, {!is_squad_commander} meet_use_no_talk_leader,  {=has_enemy} meet_use_no_fight, {=dist_to_actor_le(3)} meet_use_no_default, nil
+meet_dialog			= nil
+abuse					= {=has_enemy} false, true
+trade_enable			= true
+allow_break			= true
+use_text				= nil
+[meet@generic_animpoint]
+close_distance 		= 0
+close_anim 			= {!is_squad_commander} nil, nil
+close_snd_hello 		= {!is_squad_commander} nil, nil
+close_snd_bye 			= {!is_squad_commander} nil, nil
+close_victim 			= {!is_squad_commander} nil, nil
+far_distance 			= 0
+far_anim 				= nil
+far_snd 				= nil
+far_victim 			= nil
+use					= {=is_wounded} false, {!is_squad_commander} false, {=actor_enemy} false, {=has_enemy} false,  {=dist_to_actor_le(3)} true, false
+snd_on_use 			= {=is_wounded} nil, {=actor_enemy} nil, {!is_squad_commander} meet_use_no_talk_leader,  {=has_enemy} meet_use_no_fight, {=dist_to_actor_le(3)} meet_use_no_default, nil
+meet_dialog			= nil
+abuse					= {=has_enemy} false, true
+trade_enable			= true
+allow_break			= true
+meet_on_talking 		= false
+use_text				= nil
+
+[logic@jup_sim_17_point_1]
+active = cover@jup_sim_17_point_1
+[cover@jup_sim_17_point_1]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_2]
+active = cover@jup_sim_17_point_2
+[cover@jup_sim_17_point_2]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_3]
+active = cover@jup_sim_17_point_3
+[cover@jup_sim_17_point_3]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_4]
+active = cover@jup_sim_17_point_4
+[cover@jup_sim_17_point_4]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_5]
+active = cover@jup_sim_17_point_5
+[cover@jup_sim_17_point_5]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_6]
+active = cover@jup_sim_17_point_6
+[cover@jup_sim_17_point_6]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_7]
+active = cover@jup_sim_17_point_7
+[cover@jup_sim_17_point_7]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_8]
+active = cover@jup_sim_17_point_8
+[cover@jup_sim_17_point_8]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_9]
+active = cover@jup_sim_17_point_9
+[cover@jup_sim_17_point_9]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_10]
+active = cover@jup_sim_17_point_10
+[cover@jup_sim_17_point_10]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_11]
+active = cover@jup_sim_17_point_11
+[cover@jup_sim_17_point_11]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_12]
+active = cover@jup_sim_17_point_12
+[cover@jup_sim_17_point_12]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_13]
+active = cover@jup_sim_17_point_13
+[cover@jup_sim_17_point_13]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_14]
+active = cover@jup_sim_17_point_14
+[cover@jup_sim_17_point_14]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_15]
+active = cover@jup_sim_17_point_15
+[cover@jup_sim_17_point_15]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_16]
+active = cover@jup_sim_17_point_16
+[cover@jup_sim_17_point_16]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_17]
+active = cover@jup_sim_17_point_17
+[cover@jup_sim_17_point_17]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_18]
+active = cover@jup_sim_17_point_18
+[cover@jup_sim_17_point_18]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_19]
+active = cover@jup_sim_17_point_19
+[cover@jup_sim_17_point_19]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_point_20]
+active = cover@jup_sim_17_point_20
+[cover@jup_sim_17_point_20]
+meet = meet@generic_lager
+smart = jup_sim_17
+radius_min = 3
+radius_max = 8
+use_attack_direction = false
+anim = {!npc_community(zombied)} sit, guard
+
+[logic@jup_sim_17_collector_1_walk]
+active = walker@jup_sim_17_collector_1_walk
+[walker@jup_sim_17_collector_1_walk]
+sound_idle = state
+meet = meet@generic_lager
+path_walk = collector_1_walk
+def_state_standing = guard
+def_state_moving = patrol
+path_look = collector_1_look
+
+[logic@jup_sim_17_walker_1_walk]
+active = walker@jup_sim_17_walker_1_walk
+[walker@jup_sim_17_walker_1_walk]
+sound_idle = state
+meet = meet@generic_lager
+path_walk = walker_1_walk
+def_state_standing = guard
+def_state_moving = patrol
+path_look = walker_1_look
+
+[logic@jup_sim_17_walker_2_walk]
+active = walker@jup_sim_17_walker_2_walk
+[walker@jup_sim_17_walker_2_walk]
+sound_idle = state
+meet = meet@generic_lager
+path_walk = walker_2_walk
+def_state_standing = guard
+def_state_moving = patrol
+path_look = walker_2_look
+
+[logic@jup_sim_17_guard_1_walk]
+active = walker@jup_sim_17_guard_1_walk
+[walker@jup_sim_17_guard_1_walk]
+meet = meet@generic_lager
+path_walk = guard_1_walk
+path_look = guard_1_look
+[walker1@jup_sim_17_guard_1_walk]
+meet = meet@generic_lager
+path_walk = guard_1_walk
+path_look = guard_1_look
+def_state_standing = wait_na
+on_info = {!is_obj_on_job(logic@follower_jup_sim_17_guard_1_walk:3)} walker@jup_sim_17_guard_1_walk
+on_info2 = {=distance_to_obj_on_job_le(logic@follower_jup_sim_17_guard_1_walk:3)} remark@jup_sim_17_guard_1_walk
+[remark@jup_sim_17_guard_1_walk]
+anim = wait_na
+target = logic@follower_jup_sim_17_guard_1_walk
+[logic@follower_jup_sim_17_guard_1_walk]
+active = walker@follow_jup_sim_17_guard_1_walk
+[walker@follow_jup_sim_17_guard_1_walk]
+meet = meet@generic_lager
+path_walk = guard_1_walk
+path_look = guard_1_look
+on_info = {=distance_to_obj_on_job_le(logic@jup_sim_17_guard_1_walk:3)} remark@follower_jup_sim_17_guard_1_walk
+[remark@follower_jup_sim_17_guard_1_walk]
+anim = wait_na
+target = logic@jup_sim_17_guard_1_walk
+on_timer = 2000 | %=switch_to_desired_job%
+
+[logic@jup_sim_17_home_1]
+active = mob_home@jup_sim_17_home_1
+[mob_home@jup_sim_17_home_1]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_2]
+active = mob_home@jup_sim_17_home_2
+[mob_home@jup_sim_17_home_2]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_3]
+active = mob_home@jup_sim_17_home_3
+[mob_home@jup_sim_17_home_3]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_4]
+active = mob_home@jup_sim_17_home_4
+[mob_home@jup_sim_17_home_4]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_5]
+active = mob_home@jup_sim_17_home_5
+[mob_home@jup_sim_17_home_5]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_6]
+active = mob_home@jup_sim_17_home_6
+[mob_home@jup_sim_17_home_6]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_7]
+active = mob_home@jup_sim_17_home_7
+[mob_home@jup_sim_17_home_7]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_8]
+active = mob_home@jup_sim_17_home_8
+[mob_home@jup_sim_17_home_8]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_9]
+active = mob_home@jup_sim_17_home_9
+[mob_home@jup_sim_17_home_9]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_10]
+active = mob_home@jup_sim_17_home_10
+[mob_home@jup_sim_17_home_10]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_11]
+active = mob_home@jup_sim_17_home_11
+[mob_home@jup_sim_17_home_11]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_12]
+active = mob_home@jup_sim_17_home_12
+[mob_home@jup_sim_17_home_12]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_13]
+active = mob_home@jup_sim_17_home_13
+[mob_home@jup_sim_17_home_13]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_14]
+active = mob_home@jup_sim_17_home_14
+[mob_home@jup_sim_17_home_14]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_15]
+active = mob_home@jup_sim_17_home_15
+[mob_home@jup_sim_17_home_15]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_16]
+active = mob_home@jup_sim_17_home_16
+[mob_home@jup_sim_17_home_16]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_17]
+active = mob_home@jup_sim_17_home_17
+[mob_home@jup_sim_17_home_17]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_18]
+active = mob_home@jup_sim_17_home_18
+[mob_home@jup_sim_17_home_18]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_19]
+active = mob_home@jup_sim_17_home_19
+[mob_home@jup_sim_17_home_19]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70
+
+[logic@jup_sim_17_home_20]
+active = mob_home@jup_sim_17_home_20
+[mob_home@jup_sim_17_home_20]
+gulag_point = true
+home_min_radius = 10
+home_mid_radius = 20
+home_max_radius = 70

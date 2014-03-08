@@ -327,13 +327,13 @@ function actor_on_save(se_actor,packet)  --Yasti: Adjusted for separation of obj
 		end
 	end
 	
-	for k,v in pairs(secret_stashes) do
-		alun_utils.printf("axr_dynamic_spawn.on_save: secret stash saved: %s | %s | %s", v.section, v.id, v.flag)
-	end
+--	for k,v in pairs(secret_stashes) do
+--		alun_utils.printf("axr_dynamic_spawn.on_save: secret stash saved: %s | %s | %s", v.section, v.id, v.flag)
+--	end
 	
-	for k,v in pairs(dynamic_story_id) do
-		alun_utils.printf("axr_dynamic_spawn.on_save: dynamic object saved: %s | %s", k, v)
-	end
+--	for k,v in pairs(dynamic_story_id) do
+--		alun_utils.printf("axr_dynamic_spawn.on_save: dynamic object saved: %s | %s", k, v)
+--	end
 end
 
 function actor_on_load(se_actor,packet) -- Yasti: Flag for items to be loaded only once
@@ -356,13 +356,13 @@ function actor_on_load(se_actor,packet) -- Yasti: Flag for items to be loaded on
 	
 	spawn_count = 1
 	
-	for k,v in pairs(secret_stashes) do
-		alun_utils.printf("axr_dynamic_spawn.on_save: secret stash loaded: %s | %s | %s", v.section, v.id, v.flag)
-	end
+--	for k,v in pairs(secret_stashes) do
+--		alun_utils.printf("axr_dynamic_spawn.on_load: secret stash loaded: %s | %s | %s", v.section, v.id, v.flag)
+--	end
 	
-	for k,v in pairs(dynamic_story_id) do
-		alun_utils.printf("axr_dynamic_spawn.on_save: dynamic object loaded: %s | %s", k, v)
-	end
+--	for k,v in pairs(dynamic_story_id) do
+--		alun_utils.printf("axr_dynamic_spawn.on_load: dynamic object loaded: %s | %s", k, v)
+--	end
 end
 
 
@@ -978,25 +978,7 @@ function dynamic_object_check(sec)
 	local sor = story_objects.get_story_objects_registry()
 	local t = alun_utils.collect_section(ini,sec,true)
 	local pos = alun_utils.string_to_vector(t.position)
-	local class = alun_utils.read_from_ini(nil,t.section,"class","string",nil)
-	
-	for i=1, 20000 do
-		id_check = alife():object(i)
-		story_check = sor:get_story_id(i)
-		if id_check and string.find(id_check:section_name(), t.section) and (sec ~= story_check) and old_check[i] == nil then
-			dynamic_story_id[sec] = i + 1
-			old_check[i] = true
-		--	if (class and m_classes[class] and dynamic[m_classes[class]]) then
-		--		dynamic[m_classes[class]](id_check,t,sec)
-				
-		--	end
-			return
-		
-		end
-	end
-
-
---[[	local id_check
+	local id_check
 	local story_check
 --	alun_utils.printf("test 0: "..tostring(sec))
 	local check = sor:get(sec)
@@ -1018,7 +1000,7 @@ function dynamic_object_check(sec)
 				end
 			end
 		end
-	end--]]
+	end
 end
 
 
