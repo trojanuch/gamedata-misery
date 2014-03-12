@@ -43,7 +43,7 @@ function ignore_enemy_by_overrides(obj,enemy)
 		end
 	end
 
-	if (ene_id == db.actor:id() and (xrs_debug_tools and xrs_debug_tools.debug_invis)) then
+	if (ene_id == db.actor:id() and xrs_debug_tools.debug_invis) then
 		return true
 	end
 

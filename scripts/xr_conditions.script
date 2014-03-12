@@ -2163,39 +2163,3 @@ function is_partly()
 		return false
 	end
 end
-
-function wants_to_trade(actor,npc,p)
-  if not (npc) then
-    return false
-  end
-
-  if (type(npc.id) == "number") then
-    return npc.has_items_to_sell == true
-  else
-    local se_npc = alife():object(npc:id())
-    if not (se_npc) then
-      return false
-    end
-    return se_npc.has_items_to_sell == true
-  end
-
-  return false
-end
-
-function after_first_meet(actor,npc,p)
-  local st = db.storage[npc:id()]
-  if not (st) then
-    return false
-  end
-
-  return st.after_first_meet == true
-end
-
-function squad_on_actor_map(actor,npc,p)
-  local squad = get_object_squad(npc)
-  if not (squad) then
-    return false
-  end
-  local gg = game_graph()
-  return gg:vertex(db.actor:game_vertex_id()):level_id() == gg:vertex(squad.m_game_vertex_id):level_id()
-end

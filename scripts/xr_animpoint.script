@@ -35,7 +35,6 @@ function action_reach_animpoint:__init (npc, action_name, storage) super(nil, ac
 end
 function action_reach_animpoint:initialize()
 	action_base.initialize(self)
-	state_mgr.set_state(self.object,"idle")
 	self.st.animpoint:calculate_position()
 end
 function action_reach_animpoint:execute()
@@ -68,7 +67,6 @@ function action_animpoint:__init (npc, action_name, storage) super(nil, action_n
 end
 function action_animpoint:initialize()
 	action_base.initialize(self)
-	state_mgr.set_state(self.object,"idle")
 	self.st.animpoint:start()
 end
 function action_animpoint:execute()
@@ -429,7 +427,6 @@ function add_to_binder(npc, ini, scheme, section, storage)
 	new_action:add_precondition(world_property(stalker_ids.property_alive, true))
 	new_action:add_precondition(world_property(stalker_ids.property_anomaly,false))
 	new_action:add_precondition(world_property(stalker_ids.property_enemy,false))
-	new_action:add_precondition(world_property(stalker_ids.property_danger,false))
 	new_action:add_precondition(world_property(properties["need_animpoint"], true))
 	new_action:add_precondition(world_property(properties["reach_animpoint"], false))
 	xr_motivator.addCommonPrecondition(new_action)
@@ -442,7 +439,6 @@ function add_to_binder(npc, ini, scheme, section, storage)
 	new_action:add_precondition(world_property(stalker_ids.property_alive, true))
 	new_action:add_precondition(world_property(stalker_ids.property_anomaly,false))
 	new_action:add_precondition(world_property(stalker_ids.property_enemy,false))
-	new_action:add_precondition(world_property(stalker_ids.property_danger,false))
 	new_action:add_precondition(world_property(properties["need_animpoint"], true))
 	new_action:add_precondition(world_property(properties["reach_animpoint"], true))
 	xr_motivator.addCommonPrecondition(new_action)

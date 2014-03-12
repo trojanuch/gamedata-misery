@@ -112,13 +112,11 @@ function day_radiation(time)
 		cur_outfit = db.actor:item_in_slot(7):section()
 		cur_outfit_id = db.actor:item_in_slot(7):id()
 		local data = stpk_utils.get_item_data(alife():object(db.actor:item_in_slot(7):id()))
-		if data and data.upgrades then
-			for k,v in pairs(data.upgrades) do
-				local upgrade_sect = alun_utils.read_from_ini(ini, tostring(v), "section", "string", nil)
-				if upgrade_sect then
-					local upgrade_rad = alun_utils.read_from_ini(ini, upgrade_sect, "radiation_protection", "float", 0)
-					rad_resist = rad_resist + upgrade_rad
-				end
+		for k,v in pairs(data.upgrades) do
+			local upgrade_sect = alun_utils.read_from_ini(ini, tostring(v), "section", "string", nil)
+			if upgrade_sect then
+				local upgrade_rad = alun_utils.read_from_ini(ini, upgrade_sect, "radiation_protection", "float", 0)
+				rad_resist = rad_resist + upgrade_rad
 			end
 		end
 		rad_resist = rad_resist + ini:r_float(cur_outfit, "radiation_protection") --Yasti: suits rad protection affects amount of rads actor gets hit with
@@ -160,7 +158,7 @@ function day_radiation(time)
 	end
 		
 	if day_rad_flag == true and (day_rad_count == 0 or day_rad_count == 2) then
-	--	alun_utils.printf("in cover")
+		alun_utils.printf("in cover")
 		change_inv_arts_rad(-old_day_rad)
 		old_day_rad = actor_rad
 		level.remove_pp_effector(1983)
@@ -242,7 +240,7 @@ function change_inv_arts_rad(delta)
 	if inv_arts_rad < 0.00000001 then -- Yasti: Makes sure values low enough return zero. May need to be further adjusted
 		inv_arts_rad = 0
 	end
---	alun_utils.printf("inventory_radiation.change_inv_arts_rad: inv_arts_rad= "..tostring(inv_arts_rad))
+	alun_utils.printf("inventory_radiation.change_inv_arts_rad: inv_arts_rad= "..tostring(inv_arts_rad))
 end
 
 ----------------------------------------------------
