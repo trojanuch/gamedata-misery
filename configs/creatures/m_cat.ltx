@@ -205,16 +205,16 @@ Morale_Despondent_Threashold	= 0.45
 ; Jump Parameters
 ;----------------------------------------------------------------------------
 ; jump parameters
-jump_delay					= 3000
+jump_delay					= 1500
 jump_factor					= 2.0
-jump_ground_trace_range		= 0.8
-jump_hit_trace_range		= 1.0
-jump_build_line_distance	= 0.0
-jump_min_distance			= 3.5
-jump_max_distance			= 6.0
-jump_max_angle				= 0.6
-jump_max_height			= 1.5
-jump_auto_aim_factor			= 0.5
+jump_ground_trace_range		= 1.5
+jump_hit_trace_range		= 2.0
+jump_build_line_distance	= 7.0
+jump_min_distance			= 0.5
+jump_max_distance			= 7.0
+jump_max_angle				= 0.55
+jump_max_height				= 7.5
+jump_auto_aim_factor		= 0.4
 
 ;-------------------------------------------------------------------------
 ; Other Stuff (refactoring needed)
@@ -262,8 +262,8 @@ vision_danger_section		= cat_vision_danger
 [cat_vision_free]
 min_view_distance   		= 1.4				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 1.8				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 200.0				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.95
+visibility_threshold	 	= 170.0				; значение, при достижении суммой которого объект считается видимым
+always_visible_distance 	= 0.7
 time_quant					= 0.0007
 decrease_value				= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
 velocity_factor		     	= 0.5
@@ -273,8 +273,8 @@ transparency_threshold		= 0.35
 [cat_vision_danger]
 min_view_distance   		= 1.4				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 1.8				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 100.0				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.95
+visibility_threshold	 	= 90.0				; значение, при достижении суммой которого объект считается видимым
+always_visible_distance 	= 0.7
 time_quant					= 0.0007
 decrease_value				= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
 velocity_factor		     	= 0.4

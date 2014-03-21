@@ -1,4 +1,9 @@
 [smart_terrain];zat_b40_smart_terrain
+respawn_idle = 21600
+respawn_only_level = true
+respawn_radius = 200
+death_idle_time = 21600
+
 squad_id = 38
 max_population = 4
 respawn_params = respawn@zat_b40_smart_terrain
@@ -10,11 +15,11 @@ spawn_monolith
 
 [spawn_bandits]
 spawn_squads = zat_b40_bandit_squad
-spawn_num = {=actor_on_level(zaton) !squad_exist(zat_b40_merc_squad) -pri_a17_actor_has_gauss_rifle} 3, 0
+spawn_num = {=actor_on_level(zaton) -pri_a17_actor_has_gauss_rifle} 3, 0 ; {=actor_on_level(zaton) !squad_exist(zat_b40_merc_squad) -pri_a17_actor_has_gauss_rifle} 3, 0
 
 [spawn_monolith]
 spawn_squads = zat_b40_monolith_squad
-spawn_num = {=actor_on_level(zaton) !squad_exist(zat_b40_merc_squad) !squad_exist(zat_b40_bandit_squad) +pri_a17_actor_has_gauss_rifle} 3, 0
+spawn_num = {=actor_on_level(zaton) +pri_a17_actor_has_gauss_rifle} 3, 0 ; {=actor_on_level(zaton) !squad_exist(zat_b40_merc_squad) !squad_exist(zat_b40_bandit_squad) +pri_a17_actor_has_gauss_rifle} 3, 0
 
 [exclusive]
 zat_b40_guard_leader_01 = zaton\zat_b40_mercs.ltx

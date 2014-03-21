@@ -72,60 +72,41 @@ function sleep_dialog:Initialize()
 	self.sleep_static2:SetWndPos(pos)
 end
 
-function sleep_dialog:TakeBag()
-	if self.sleepbag then -- Grab your sleeping bag if you're using it and you can't sleep.
-		self.sleepbag = nil
-		if (self.ph_sleepbag_id and self.item_section) then
-			alife():create(self.item_section,db.actor:position(),0,0,0)
-			alife():release( alife():object(self.ph_sleepbag_id) )
-			self.ph_sleepbag_id = nil
-		end
-	end
-end
-
 function sleep_dialog:TestAndShow()
-	-- Fallout not included. Fallout is included in the sleeping bag dialog, so you can sleep during fallout in a base, but need to get into cover to sleep during fallout if you've got your sleeping bag. Hope that makes sense.
-	if(db.actor.bleeding>0 or db.actor.radiation>0 or xr_logic.pstor_retrieve(db.actor,"drowse",0.3) < 0.2 or surge_manager.is_started() or psi_storm_manager.is_started()) then 
+	if(db.actor.bleeding>0 or db.actor.radiation>0 or xr_conditions.surge_started() == true) then
 		self.sleep_mb:InitMessageBox("message_box_ok")
 		if(db.actor.bleeding>0 and db.actor.radiation>0) then
 			if (itms_manager) then
 				itms_manager.show_message("I need a medic",25)
-				self:TakeBag()
 				return
 			end
 			self.sleep_mb:SetText("Sleep well")
 		elseif(db.actor.bleeding>0) then
 			if (itms_manager) then
 				itms_manager.show_message("I'll bleed to death",25)
-				self:TakeBag()
 				return
 			end
 			self.sleep_mb:SetText("You are hurt!")
-		elseif(db.actor.radiation>0) then
+		elseif(surge_manager.get_surge_manager().started == true) then
+			if (itms_manager) then
+				itms_manager.show_message("Not crazy enough to sleep during this shit",30)
+				return
+			end
+			self.sleep_mb:SetText("Blowout warning!")
+		else
 			if (itms_manager) then
 				itms_manager.show_message("I have radiation sickness",25)
-				self:TakeBag()
 				return
 			end
-			self.sleep_mb:SetText("Radiation warning!")
-		elseif(xr_logic.pstor_retrieve(db.actor,"drowse",0) < 0.2) then -- As you now need to be tired to sleep, sleeping pills are actually useful!
-			if (itms_manager) then
-				itms_manager.show_message("Not tired enough to sleep",25)
-				self:TakeBag()
-				return
-			end
-			self.sleep_mb:SetText("You're not tired enough!")
-		else
-			if(surge_manager.is_started() or psi_storm_manager.is_started()) then
-				if (itms_manager) then
-					itms_manager.show_message("Not crazy enough to sleep during this shit",30)
-					self:TakeBag()
-					return
-				end
-				self.sleep_mb:SetText("Blowout warning!")
-			end
+			self.sleep_mb:SetText("Radiation hazard!")
 		end
 		self.sleep_mb:ShowDialog(true)
+	--[[
+	elseif xr_logic.pstor_retrieve(db.actor,"drowse",0) < 0.2 then
+		self.sleep_mb:InitMessageBox("message_box_ok")
+		self.sleep_mb:SetText("You are not tired")
+		self.sleep_mb:ShowDialog(true)
+	--]]
 	else
 		self:Initialize()
 		self:ShowDialog(true)
@@ -149,7 +130,7 @@ function sleep_dialog:OnTrackButton()
 end
 
 function sleep_dialog:OnButtonSleep()
-	if (itms_manager and self.sleepbag) then -- Only applies to sleeping bag. This does not affect sleeping in bases at all, unless you use a sleeping bag in base, in which case you're an idiot and I can't help you. GET OUT OF MY HEAD.
+	if (itms_manager and self.sleepbag) then
 		local sm = surge_manager.get_surge_manager()
 		local safe
 		local zone
@@ -161,17 +142,27 @@ function sleep_dialog:OnButtonSleep()
 			end
 		end
 
-		-- This function is slightly irrelevant, as you can't sleep during a surge anyway. This is to safeguard in the unlikely scenario you bring up the sleep dialog, a surge breaks out before you click sleep, and you try to "sleep it out".
 		if not (safe) then
-			if (xr_conditions.surge_started()) then -- We can use the xr_conditions one here, as this also includes fallout. Sleeping in a sleeping bag during acid rain while not being in cover seems slightly stupid, no?
-				if (itms_manager) then itms_manager.show_message("Better get somewhere safe first",30) end
+			if (xr_conditions.surge_started()) then
+				if (itms_manager) then itms_manager.show_message("Not crazy enough to sleep during this shit",30) end
 				self:OnButtonCancel()
 				return
 			end
+
+			local t = {"zat_a2_sr_no_assault","jup_a6_sr_no_assault","jup_b41_sr_no_assault"}
+
+			for i=1,#t do
+				zone = db.zone_by_name[t[i]]
+				if (zone and zone:inside(db.actor:position())) then
+					safe = true
+					break
+				end
+			end
+			itms_manager.sleep_actor_safe = safe or nil
 		end
 	end
 	if self:IsShown() then
-		self:HideDialog() -- This can cause the "dialog already hidden" crash. The problem being that forced sleep can call this function, but in a way that doesn't actually display the dialog... so if it tries to call this during forced sleep, it will crash the game. This makes hiding the dialog conditional on there actually being "dialog" to hide.
+		self:HideDialog() -- Yasti: Crash Prevention from UP patch. Author = burguois
 	end
 	xr_effects.disable_ui(db.actor, nil)
 	level.add_cam_effector("camera_effects\\sleep.anm", 10, false, "ui_sleep_dialog.dream_callback")
@@ -180,6 +171,9 @@ function sleep_dialog:OnButtonSleep()
 	_G.amb_vol = get_console():get_float("snd_volume_eff")
 	get_console():execute("snd_volume_music 0")
 	get_console():execute("snd_volume_eff 0")
+	if (itms_manager.sleep_actor_safe) then
+		surge_manager.resurrect_skip_message()
+	end
 	if sleep_control.forced then
 		level.add_cam_effector("camera_effects\\surge_02.anm", 10, false, "ui_sleep_dialog.dream_callback")
 	else
@@ -195,6 +189,7 @@ function sleep_dialog:OnButtonCancel()
 	self:HideDialog()
 	db.actor:give_info_portion("tutorial_sleep")
 	disable_info("sleep_active")
+	if (itms_manager) then itms_manager.sleep_actor_not_safe = nil end
 	self.sleepbag = nil
 	if (self.ph_sleepbag_id and self.item_section) then
 		alife():create(self.item_section,db.actor:position(),0,0,0)
@@ -206,6 +201,7 @@ end
 function sleep_dialog:OnMessageBoxOk()
 	db.actor:give_info_portion("tutorial_sleep")
 	disable_info("sleep_active")
+	if (itms_manager) then itms_manager.sleep_actor_safe = nil end
 	self.sleepbag = nil
 	if (self.ph_sleepbag_id and self.item_section) then
 		alife():create(self.item_section,db.actor:position(),0,0,0)
@@ -225,22 +221,6 @@ function dream_callback()
 	local hours = sleep_control.forced or sleep_control.time_track:GetIValue()
 	local mins = 0
 --	rx_ai.printf("sleep %s: %s hours",tostring(in_cover),hours)
-	
-	local t = {"zat_a2_sr_no_assault","jup_a6_sr_no_assault","jup_b41_sr_no_assault"} -- I'm guessing these are "bases". Bunker, Yanov, Skadovsk? It's impossible to kill anyone in them, so you should in theory be safe.
-	local safe = nil -- Safe defaults to nil.
-	local zone
-
-	for i=1,#t do
-		zone = db.zone_by_name[t[i]]
-		if (zone and zone:inside(db.actor:position())) then
-			safe = true -- If you're in one of the above zones, sleep is "safe".
-			break
-		end
-	end
-	
-	itms_manager.sleep_actor_safe = safe -- Sets the sleep_actor_safe flag. Default is nil, but can be true if the above condition is met.
-
-	--Not entirely sure the purpose of this function. As you're not in cover, you wake up more frequently. I'm going to assume this is to simulate weather/various things disturbing your sleep. It could also be to wake you up if a surge is about to happen? Who knows, MDT don't like to comment - arrogant asses!
 	if not in_cover then
 		local sm = surge_manager.get_surge_manager()
 		local sde = game.get_game_time():diffSec(sm.last_surge_time)
@@ -257,26 +237,25 @@ function dream_callback()
 	level.change_game_time(0,hours,mins)
 	level_weathers.get_weather_manager():forced_weather_change()
 
-	-- Time forwarding happens when you sleep regardless of whether or not it's "safe". You sleeping in a little hole in the middle of nowhere doesn't affect time itself. Duh.
-	surge_manager.get_surge_manager().time_forwarded = true
-	psi_storm_manager.get_psi_storm_manager().time_forwarded = true
-	if(xr_conditions.surge_started() and level_weathers.get_weather_manager().weather_fx) then
-		level.stop_weather_fx()
---		level_weathers.get_weather_manager():select_weather(true)
-		level_weathers.get_weather_manager():forced_weather_change()
-	end
-	if not (safe) then -- If you're not in a "safe" area, chance of a forced surge. Ideally you should be woken up when a random surge is beginning if you're not in a safe area, rather than the Zone watching you while you sleep and springing one on you. That's slightly beyond the scope of this fix, though.
+	if (itms_manager.sleep_actor_safe) then
+		surge_manager.get_surge_manager().time_forwarded = true
+		if(surge_manager.is_started() and level_weathers.get_weather_manager().weather_fx) then
+			level.stop_weather_fx()
+	--		level_weathers.get_weather_manager():select_weather(true)
+			level_weathers.get_weather_manager():forced_weather_change()
+		end
+	else
 		surge_manager.get_surge_manager().skip_message = true
 		if (math.random() < 0.025 * hours) then
 			sleep_control.force_surge = true
 		end
 	end
+	sleep_control.forced = nil
 	db.actor.power = 1
     printf("dream_callback: time forwarded on [%d]", hours)
 	if postproces_mod then
-		postproces_mod.sleep_callback(hours,mins,sleep_control.forced) -- Changed to add a forced variable to the postprocess sleep callback. This was part of the original postprocess_mod, so I can't claim credit for anything but adding it.
+		postproces_mod.sleep_callback(hours,mins)
 	end
-	sleep_control.forced = nil -- Moved this here to make everything play nicer.
 end
 
 function dream_callback2()
@@ -288,7 +267,7 @@ function dream_callback2()
 	db.actor:give_info_portion("tutorial_sleep")
 	disable_info("actor_is_sleeping")
 	disable_info("sleep_active")
-	if (itms_manager) then itms_manager.sleep_actor_safe = nil end -- This is the logical place to set sleep_actor_safe to nil, when you've woken up.
+	if (itms_manager) then itms_manager.sleep_actor_safe = nil end
 	sleep_control.sleepbag = nil
 	if (sleep_control.force_surge) then
 		surge_manager.start_surge(true)

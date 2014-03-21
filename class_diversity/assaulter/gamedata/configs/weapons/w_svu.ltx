@@ -14,7 +14,7 @@ default_to_ruck         = false
 sprint_allowed          = true
 
 ;-------------------------------------------------------------------------------
-cost                    = 46420
+cost                    = 42420
 weapon_class			= sniper_rifle
 inv_weight              = 4.4
 
@@ -23,12 +23,12 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svu
 
 ;----TTX------------------------------------------------------------------------
-hit_power           	= 0.7, 0.7, 0.7, 0.7
+hit_power           	= 0.722, 0.722, 0.722, 0.722
 hit_impulse             = 40
 hit_type 				= fire_wound
-fire_distance           = 1200
-bullet_speed		 	= 805	;начальная скорость пули
-rpm                     = 65
+fire_distance           = 1190
+bullet_speed		 	= 797	;начальная скорость пули
+rpm                     = 74
 rpm_empty_click         = 200
 
 use_aim_bullet				= false		;Поддерживается ли первая суппер пуля
@@ -41,8 +41,8 @@ misfire_start_condition		= 0.96
 misfire_end_condition		= 0.1
 misfire_start_prob = 0.007 ;	     	= 0.0056
 misfire_end_prob = 0.11 ;	     	= 0.064
-condition_shot_dec      	= 0.0021
-condition_queue_shot_dec	= 0.0021
+condition_shot_dec      	= 0.0019
+condition_queue_shot_dec	= 0.0019
 
 ammo_elapsed			= 10
 ammo_mag_size			= 10
@@ -53,7 +53,7 @@ single_handed           = 0
 
 ;---дисперсия-------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.073   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base    = 0.102  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor = 2.06f
 crosshair_inertion		= 8.8
 
@@ -232,8 +232,8 @@ class               = WP_SVU
 inv_name				= st_wpn_svu_nimble
 description					= st_wpn_svu_nimble_descr
 
-cost                    = 60240
-inv_weight              = 4.7
+cost                    = 56240
+inv_weight              = 4.624
 
 inv_grid_width			= 5	 
 inv_grid_height			= 2	  
@@ -254,17 +254,17 @@ grenade_launcher_status	= 0
 launch_speed 		= 0
 
 ;----TTX------------------------------------------------------------------------
-hit_power           	= 0.7, 0.7, 0.7, 0.7
-hit_impulse             = 40
+hit_power           	= 0.749, 0.749, 0.749, 0.749
+hit_impulse             = 44
 hit_type 				= fire_wound
-fire_distance           = 1200
-bullet_speed		 	= 805	;начальная скорость пули
-rpm                     = 150
+fire_distance           = 1296
+bullet_speed		 	= 819	;начальная скорость пули
+rpm                     = 166
 rpm_empty_click         = 200
 
 grenade_flame_particles = weapons\generic_weapon01
 
-fire_dispersion_base    = 0.067
+fire_dispersion_base    = 0.091
 
 hud                     = wpn_swu_hud
 visual                  = dynamics\weapons\wpn_swu\wpn_swu.ogf

@@ -1,6 +1,13 @@
 ----------------------
 -- axr_dynamic_spawn
 -- Alundaio
+-- Modified by Yasti based on PR 1.12 mod:
+--										-Save\load functions separated between stashes and objects with custom data
+--										-Secret Stash table is now an array
+--										-When stash is looted it is removed from table and no longer saved/loaded
+--										-All spawns created at start
+--										-Objects with custom data E.g level changers/teleports get changed to a pstor variable and removed from table when on same level.
+--										 Pstor variable is then saved instead of table data
 --[[
 	Copyright (C) 2012 Alundaio
 	This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
@@ -136,9 +143,13 @@ local m_classes =
 }
 
 secret_stashes = {}
+dynamic_story_id = {}
+local spawn_count = 0
+
 
 function on_game_start()
-	callback_register("se_actor_on_register",on_register)
+--	callback_register("se_actor_on_register",on_register)
+	callback_register("on_game_load",on_game_load)
 	callback_register("actor_on_update",actor_on_update)
 	callback_register("actor_on_item_take_from_box",actor_on_item_take_from_box)
 	callback_register("actor_on_item_take",actor_on_item_take)
@@ -147,8 +158,9 @@ end
 ini = ini_file("dynamic_spawn.ltx")
 local dynamic = {}
 local on_info_sections
-function on_register(actor)
 
+function on_register()
+	
 	local file = io.open("gamedata\\configs\\dynamic_spawn.ltx","r")
 	if not (file) then
 		return
@@ -156,7 +168,7 @@ function on_register(actor)
 
 	local data = file:read("*all")
 	file:close()
-
+	local actor = alife():object(db.actor:id())
 	local sections = {}
 	local ltx,ltx_data
 
@@ -176,7 +188,44 @@ function on_register(actor)
 	interpret_spawn_data(sections)
 end
 
+function on_game_load()
+	local file = io.open("gamedata\\configs\\dynamic_spawn.ltx","r")
+	if not (file) then
+		return
+	end
+
+	local data = file:read("*all")
+	file:close()
+
+	local sections = {}
+
+	local actor = alife():object(db.actor:id())
+	-- Find all sections in dynamic_spawn.ltx as well as #include files
+	local deepest
+	local list = {}
+	while not deepest do
+		parse_ltx(actor,sections,data)
+		for fname in string.gmatch(data,[[%#include "(.-)%"]]) do
+			file = io.open("gamedata\\configs\\"..fname,"r")
+			if (file) then
+				table.insert(list,file:read("*all"))
+				file:close()
+			end
+		end
+
+		if (#list > 0) then
+			data = list[#list]
+			list[#list] = nil
+		else
+			deepest = true
+		end
+	end
+
+	interpret_spawn_data(sections)
+end
+
 local tmr
+
 function actor_on_update()
 	if not (on_info_sections) then
 		return
@@ -196,82 +245,133 @@ function actor_on_update()
 	interpret_spawn_data(on_info_sections)
 end
 
-function on_game_load()
-	local t = {}
-	for k,v in pairs(secret_stashes) do
-		if (v == true) then
-			table.insert(t,k)
-		end
-	end
-end
 
 function actor_on_item_take_from_box(box,obj)
-	local sid = story_objects.get_story_objects_registry():get_story_id(box:id())
-	if not (secret_stashes[sid]) then
-		return
-	end
-
 	if (box:is_inv_box_empty()) then
-		local hud = get_hud()
-		hud:HideActorMenu()
-		level.map_remove_object_spot(box:id(), "treasure")
-		--story_objects.get_story_objects_registry():unregister_by_story_id(sid)
-		--alife():release(alife():object(box:id()),true)
-		xr_statistic.inc_founded_secrets_counter()
-		news_manager.send_treasure(1)
-		secret_stashes[sid] = false
+		for k,v in pairs(secret_stashes) do
+			if v.id == box:id() then
+				local hud = get_hud()
+				hud:HideActorMenu()
+				level.map_remove_object_spot(box:id(), "treasure")
+				--story_objects.get_story_objects_registry():unregister_by_story_id(v.section)
+				--alife():release(alife():object(box:id()),true)
+				xr_statistic.inc_founded_secrets_counter()
+				news_manager.send_treasure(1)
 
-		local info = alun_utils.read_from_ini(ini,sid,"secret_info","string",nil)
-		if (info) then
-			give_info(info)
+
+				local info = alun_utils.read_from_ini(ini,v.section,"secret_info","string",nil)
+				if (info) then
+					give_info(info)
+				end
+				table.remove(secret_stashes, k)
+				return
+			end
 		end
 	end
 end
 
 function actor_on_item_take(item)
-	local sid = story_objects.get_story_objects_registry():get_story_id(item:id())
-	if not (secret_stashes[sid]) then
-		return
-	end
-
-	level.map_remove_object_spot(item:id(), "treasure")
-	xr_statistic.inc_founded_secrets_counter()
-	news_manager.send_treasure(1)
-	secret_stashes[sid] = false
-
-	local info = alun_utils.read_from_ini(ini,sid,"secret_info","string",nil)
-	if (info) then
-		give_info(info)
+	for k,v in pairs(secret_stashes) do
+		if v.id == item:id() then
+			level.map_remove_object_spot(item:id(), "treasure")
+			xr_statistic.inc_founded_secrets_counter()
+			news_manager.send_treasure(1)
+			local info = alun_utils.read_from_ini(ini,v.section,"secret_info","string",nil)
+			if (info) then
+				give_info(info)
+			end
+			table.remove(secret_stashes, k)
+			return
+		end
 	end
 end
 
-function actor_on_save(se_actor,packet)
+function actor_on_save(se_actor,packet)  --Yasti: Adjusted for separation of objects with custom data and stashes marked secret.
 	local num = 0
 	for k,v in pairs(secret_stashes) do
 		num = num + 1
 	end
 	packet:w_u16(num)
 	for k,v in pairs(secret_stashes) do
-		packet:w_stringZ(k)
-		packet:w_bool(v)
+		packet:w_stringZ(v.section)
+		packet:w_u16(v.id)
+		packet:w_bool(v.flag)
+	end
+	
+	local count = 0
+	
+	for story_id,id in pairs(dynamic_story_id) do
+		local t = alun_utils.collect_section(ini,story_id,true)
+		local se_obj = level.object_by_id(id)
+		local sobj = alife():object(id)
+		
+		if t.custom_data and sobj and not se_obj then
+			count = count + 1
+		end
+	end
+	packet:w_u16(count)
+	
+	for story_id,id in pairs(dynamic_story_id) do
+		local t = alun_utils.collect_section(ini,story_id,true)
+		local se_obj = level.object_by_id(id)
+		local sobj = alife():object(id)
+		
+		if t.custom_data then
+			if se_obj and sobj then
+				xr_logic.pstor_store(level.object_by_id(id),tostring(id),tostring(story_id))
+			
+			elseif sobj then
+				packet:w_stringZ(story_id)
+				packet:w_u16(id)
+			end
+		end
+	end
+	
+	for k,v in pairs(secret_stashes) do
+		alun_utils.printf("axr_dynamic_spawn.on_save: secret stash saved: %s | %s | %s", v.section, v.id, v.flag)
+	end
+	
+	for k,v in pairs(dynamic_story_id) do
+		alun_utils.printf("axr_dynamic_spawn.on_save: dynamic object saved: %s | %s", k, v)
 	end
 end
 
-function actor_on_load(se_actor,packet)
+function actor_on_load(se_actor,packet) -- Yasti: Flag for items to be loaded only once
 	local num = packet:r_u16()
 	for i=1,num do
-		local k = packet:r_stringZ()
-		local v = packet:r_bool()
-		secret_stashes[k] = v
+		local tmp = {}
+		tmp.section = packet:r_stringZ()
+		tmp.id = packet:r_u16()
+		tmp.flag = packet:r_bool()
+		table.insert(secret_stashes, tmp)
+		temp = {}
+	end
+	
+	local count = packet:r_u16()
+	if (count > 0 and count < 65535) then
+		for i=1,count do
+			dynamic_story_id[packet:r_stringZ()] = packet:r_u16()
+		end
+	end
+	
+	spawn_count = 1
+	
+	for k,v in pairs(secret_stashes) do
+		alun_utils.printf("axr_dynamic_spawn.on_save: secret stash loaded: %s | %s | %s", v.section, v.id, v.flag)
+	end
+	
+	for k,v in pairs(dynamic_story_id) do
+		alun_utils.printf("axr_dynamic_spawn.on_save: dynamic object loaded: %s | %s", k, v)
 	end
 end
+
 
 function parse_ltx(actor,sections,ltx_data)
 	local gvid,id
 	local sim = alife()
 	for sec in string.gmatch(ltx_data,"%[(.-)%]") do
 		gvid = alun_utils.read_from_ini(ini,sec,"game_vertex_id","float",nil)
-		if (gvid and is_on_the_same_level(actor,gvid)) then
+		if (gvid) then --and is_on_the_same_level(actor,gvid)) then  --Yasti: Forces all items to spawn instead of by level
 			if (ini:line_exist(sec,"on_info")) then
 				if not (on_info_sections) then
 					on_info_sections = {}
@@ -293,7 +393,9 @@ function interpret_spawn_data(sections)
 	for i=1, #sections do
 		sec = sections[i]
 
-		if not (sor:get(sec)) then
+		if spawn_count ~= 0 then --Yasti: Only allows dynamic objects to be spawned at game start. Any other time spawn_count = 1
+		--	alun_utils.printf("axr_dynamic_spawn. interpret_spawn_data: dynamic objects have been previously loaded")
+		else
 			t = alun_utils.collect_section(ini,sec,true)
 
 			enable = alun_utils.read_from_ini(ini,sec,"enable","string","true")
@@ -311,18 +413,27 @@ function interpret_spawn_data(sections)
 
 				if (section and pos and lvid and gvid) then
 					se_obj = alife():create(section,pos,lvid,gvid)
+					
+					-- set dynamic name
+					se_obj.dynamic_name = sec
 
 					-- dynamic section name as story_id
-					sor:register(se_obj.id,sec,nil,true)
-
+					dynamic_story_id[sec] = se_obj.id
+		
 					-- Keep track of objects marked secret
 					if (t.secret == "true" and secret_stashes[sec] ~= false) then
-						secret_stashes[sec] = true
+						--Yasti: Secret Stash Table is now an array--
+						local tmp = {}
+						tmp.section = sec
+						tmp.id = se_obj.id
+						tmp.flag = true
+						table.insert(secret_stashes, tmp)
+						--End Yasti--
 					end
 
 					-- Repack abstract properties
-					se_obj.repack = {}
-					se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
+				--	se_obj.repack = {}
+				--	se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
 
 					-- Alter packet properties
 					local class = alun_utils.read_from_ini(nil,section,"class","string",nil)
@@ -333,7 +444,6 @@ function interpret_spawn_data(sections)
 						if (m_classes[class] == "cse_alife_inventory_box" or m_classes[class] == "cse_alife_stalker") then
 							pid = se_obj.id
 						end
-
 						-- Spawn supplemental items
 						local i = 1
 						local itm
@@ -353,13 +463,15 @@ function interpret_spawn_data(sections)
 							i = i + 1
 						end
 					end
-
-					-- Set Map Spot
+						-- Set Map Spot
 					if (t.map_spot) then
 						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
 					end
-
-					alun_utils.printf("after create %s [%s]",se_obj:name(),sec)
+					
+					if (t.angle) then
+						se_obj.angle = alun_utils.string_to_vector(t.angle)
+					end
+					alun_utils.printf("axr_dynamic_spawn.interpet_spawn data: object loaded successfully %s [%s]",sec,se_obj:name())
 				else
 					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
 				end
@@ -368,12 +480,13 @@ function interpret_spawn_data(sections)
 	end
 end
 
+
 last_secret = nil
 function random_secret()
 	local t = {}
 	for k,v in pairs(secret_stashes) do
-		if (v == true) then
-			table.insert(t,k)
+		if (v.flag == true) then
+			table.insert(t,v.section)
 		end
 	end
 
@@ -383,7 +496,12 @@ function random_secret()
 	for i=index,#t do
 		secret = t[i]
 		if (secret) then
-			id = story_objects.get_story_objects_registry():get(secret)
+			for i=1, #secret_stashes do
+				if secret_stashes[i].section == secret then
+					id = secret_stashes[i].id
+					break
+				end
+			end
 			if (id and level.map_has_object_spot(id,"treasure") == 0) then
 				news_manager.send_treasure(0)
 				level.map_add_object_spot_ser(id, "treasure", "")
@@ -396,7 +514,12 @@ function random_secret()
 	for i=index,1 do
 		secret = t[i]
 		if (secret) then
-			id = story_objects.get_story_objects_registry():get(secret)
+			for i=1, #secret_stashes do
+				if secret_stashes[i].section == secret then
+					id = secret_stashes[i].id
+					break
+				end
+			end
 			if (id and level.map_has_object_spot(id,"treasure") == 0) then
 				news_manager.send_treasure(0)
 				level.map_add_object_spot_ser(id, "treasure", "")
@@ -499,7 +622,7 @@ end
 -------------------------------------------
 -- cse_alife_level_changer
 -------------------------------------------
-function dynamic.cse_alife_level_changer(se_obj,t)
+function dynamic.cse_alife_level_changer(se_obj,t,sec)
 	local data = stpk_utils.get_level_changer_data(se_obj)
 
 	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
@@ -534,9 +657,8 @@ function dynamic.cse_alife_level_changer(se_obj,t)
 	end
 
 	data.restrictor_type = t.restrictor_type and tonumber(t.restrictor_type) or 3
-
 	data.hint = "level_changer_invitation"
-
+	
 	stpk_utils.set_level_changer_data(data,se_obj)
 end
 
@@ -611,7 +733,7 @@ function dynamic.cse_alife_anomalous_zone(se_obj,t,sec)
 	data.offline_interactive_radius = 30
 	data.artefact_spawn_count = 32
 	data.artefact_position_offset = 0
-
+	
 	stpk_utils.set_anom_zone_data(data,se_obj)
 end
 
@@ -846,4 +968,119 @@ function dynamic.cse_alife_object_physic(se_obj,t)
 	data.source_id = t.source_id and tonumber(t.source_id) or data.source_id
 
 	stpk_utils.set_physic_data(data,se_obj)
+end
+
+local old_check = {}
+-------------------------------------------
+-- Yasti: function that attempts to repair corrupted dynamic_story_id table
+-------------------------------------------
+function dynamic_object_check(sec)
+	local sor = story_objects.get_story_objects_registry()
+	local t = alun_utils.collect_section(ini,sec,true)
+	local pos = alun_utils.string_to_vector(t.position)
+	local class = alun_utils.read_from_ini(nil,t.section,"class","string",nil)
+	
+	for i=1, 20000 do
+		id_check = alife():object(i)
+		story_check = sor:get_story_id(i)
+		if id_check and string.find(id_check:section_name(), t.section) and (sec ~= story_check) and old_check[i] == nil then
+			dynamic_story_id[sec] = i + 1
+			old_check[i] = true
+		--	if (class and m_classes[class] and dynamic[m_classes[class]]) then
+		--		dynamic[m_classes[class]](id_check,t,sec)
+				
+		--	end
+			return
+		
+		end
+	end
+
+
+--[[	local id_check
+	local story_check
+--	alun_utils.printf("test 0: "..tostring(sec))
+	local check = sor:get(sec)
+--	alun_utils.printf("test 1: "..tostring(sec).."|"..tostring(check))
+	if check and dynamic_story_id[sec] == nil then
+		dynamic_story_id[sec] = check
+		alun_utils.printf("axr_dynamic_spawn.object_checker: story object has been successfully repaired from corrupted load. id|section|section name: "..tostring(check).."|"..tostring(sec).."|"..tostring(t.section))
+		return
+	
+	elseif not check and dynamic_story_id[sec] == nil then
+		for i=1, 65535 do
+			id_check = alife():object(i)
+			story_check = sor:get_story_id(i)
+			for k,v in pairs(dynamic_story_id) do
+				if id_check and string.find(id_check:section_name(), t.section) and sec ~= story_check then
+					dynamic_story_id[sec] = i
+					alun_utils.printf("axr_dynamic_spawn.object_checker: dynamic object has been successfully recovered from corrupted load. id|section name: "..tostring(i).."|"..tostring(id_check:section_name()))
+					return
+				end
+			end
+		end
+	end--]]
+end
+
+
+--------------------------------------------
+--Yasti: Save Corruption Functions
+--------------------------------------------
+function is_bad_str(str, check)
+	local allowed_codes_for_sid = {}
+	local codes_intervals = { {"a", "z"}, {"A", "Z"}, {"0", "9"}, {"_", "_"}, {"-", "-"} }
+
+	for i = 1, #codes_intervals do
+		local code_start = codes_intervals[i][1]:byte()
+		local code_end = codes_intervals[i][2]:byte()
+		
+		for j = code_start, code_end do
+			allowed_codes_for_sid[j] = true
+		end
+	end			
+
+	local flag = false
+	--Yasti--
+	if not str then
+		alun_utils.printf("Warning! story_objects.is_bad_str: str = nil. You may be attempting to save too often.")
+		flag = true
+		return flag
+	end
+--	if check then
+--		if string.find(str, "zat") or string.find(str, "jup") or string.find(str, "pri") or string.find(str, "disel") then
+--			--alun_utils.printf("story_objects.is_bad_str: object string is correct: "..tostring(str))
+--		else
+--			flag = true
+--			return flag
+--		end
+--	end
+	--End Yasti--
+	for i = 1, #str do
+		if not allowed_codes_for_sid[str:sub(i, i):byte()] then
+			flag = true
+			break
+		end
+	end
+
+	--get_console():execute(tostring(flag) )
+	return flag
+end
+
+function give_quick_news(text)
+   if db.actor~=nil then
+      if text==true then
+         news_manager.send_tip(db.actor,"true",0,"diplomat",2000,nil,"Быстрое сообщение:")
+      elseif text==false then
+         news_manager.send_tip(db.actor,"false",0,"diplomat",2000,nil,"Быстрое сообщение:")
+      elseif text=="true" then
+         news_manager.send_tip(db.actor,"true в кавычках",0,"diplomat",2000,nil,"Быстрое сообщение:")
+      elseif text=="false" then
+         news_manager.send_tip(db.actor,"false в кавычках",0,"diplomat",2000,nil,"Быстрое сообщение:")
+      elseif text==nil then
+         news_manager.send_tip(db.actor,"nil",0,"diplomat",2000,nil,"Быстрое сообщение:")
+      elseif text=="nil" then
+         news_manager.send_tip(db.actor,"nil в кавычках",0,"diplomat",2000,nil,"Быстрое сообщение:")
+      else
+         news_manager.send_tip(db.actor,text,0,"diplomat",2000,nil,"Быстрое сообщение:")
+      end
+   end
 end

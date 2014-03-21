@@ -1,5 +1,6 @@
 -- ui_loot
 -- Alundaio
+-- ponney68
 --[[
    Copyright (C) 2012 Alundaio
 
@@ -7,6 +8,53 @@
    it under the terms of the Open S.T.A.L.K.E.R. Mod License version 1.0.
 -]]
 -------------------------------------------------------------------
+-- This table based on "species" of mutants 
+killed_mutant_tbl =
+	{
+	cat				= {file="ui\\ui_actor_monsters_pda_2",x="0",y="0",type="small"},
+	fracture			= {file="ui\\ui_actor_monsters_pda_2",x="393",y="200",type="human"},
+	bird				= {file="ui\\ui_actor_monsters_pda_2",x="393",y="0",type="small"},
+	zombie				= {file="ui\\ui_actor_monsters_pda_2",x="0",y="200",type="human"},
+
+	snork				= {file="ui\\ui_actor_monsters_pda",x="393",y="0",type="human"},
+	dog				= {file="ui\\ui_actor_monsters_pda",x="0",y="800",type="small"},
+	pseudodog			= {file="ui\\ui_actor_monsters_pda",x="393",y="200",type="small"},
+	psy_dog				= {file="ui\\ui_actor_monsters_pda",x="393",y="200",type="small"},
+	poltergeist			= {file="ui\\ui_actor_monsters_pda",x="0",y="400",type="small"},
+	bloodsucker			= {file="ui\\ui_actor_monsters_pda",x="393",y="400",type="human"},
+	controller			= {file="ui\\ui_actor_monsters_pda",x="393",y="800",type="human"},
+	chimera				= {file="ui\\ui_actor_monsters_pda",x="0",y="600",type="large"},
+	tushkano			= {file="ui\\ui_actor_monsters_pda",x="0",y="0",type="small"},
+	rat				= {file="ui\\ui_actor_monsters_pda",x="0",y="0",type="small"},
+	flesh				= {file="ui\\ui_actor_monsters_pda",x="393",y="600",type="large"},
+
+	burer				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="0",type="large"},
+	boar				= {file="ui\\ui_actor_monsters_pda_1",x="393",y="0",type="large"},
+	giant				= {file="ui\\ui_actor_monsters_pda_1",x="0",y="200",type="large"},
+	}
+
+-- Sound table for randomize
+small_mutant_snd_tbl =
+	{
+	small_1	= {sound="inv_mutant_loot_smaller"},
+	small_2	= {sound="inv_mutant_loot_animal2"},
+	small_3	= {sound="inv_mutant_loot_crow"},
+	}
+
+large_mutant_snd_tbl =
+	{
+	large_1	= {sound="inv_mutant_loot_animal"},
+	large_2	= {sound="inv_mutant_loot_grease"},
+	large_3	= {sound="inv_mutant_loot_grease2"},
+	}
+
+human_mutant_snd_tbl =
+	{
+	human_1	= {sound="inv_mutant_loot_human"},
+	human_2	= {sound="inv_mutant_loot_human2"},
+	human_3	= {sound="inv_mutant_loot_rotten"},
+	}
+--------------------------------------------------------------------
 class "load_item" (CUIListBoxItem)
 function load_item:__init(height) super(height)
 	self.file_name		= "filename"
@@ -60,10 +108,11 @@ function loot_ui:InitControls()
 	self.file_item_fd_sz	= vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
 
 	self.form				= self.xml:InitStatic("loot:form",self)
-	self.form:SetWndPos(vector2():set(device().width/2-(self.form:GetWidth()+70), device().height/2 - self.form:GetHeight()))
+	--self.form:SetWndPos(vector2():set(device().width/4-(self.form:GetWidth()/4), device().height/2 - self.form:GetHeight()))
 
 	-- Item Icon
 	self.picture 			= self.xml:InitStatic("loot:form:icon",self)
+
 
 	-- List Box
 	self.xml:InitFrame			("loot:form:list_frame",self.form)
@@ -73,13 +122,44 @@ function loot_ui:InitControls()
 	self.list_box:ShowSelectedItem	(true)
 	self:Register			(self.list_box, "list_window")
 
-	self.form:SetWndSize(vector2():set(self.list_box:GetWidth()+35, self.form:GetHeight()))
-
 	-- Button OK
 	ctrl = self.xml:Init3tButton("loot:form:btn_ok",self.form)
 	self:Register(ctrl, "button_ok")
 end
 
+function loot_ui:SetMutantImageAndSound()
+	self.mutant_id = game.translate_string(alun_utils.read_from_ini(nil,self.section,"species","string",nil))
+
+	local mutant_f = "ui\\ui_actor_monsters_pda_1"
+	local mutant_x = 0
+	local mutant_y = 0
+	
+	mutant_f = tostring(killed_mutant_tbl[self.mutant_id].file)
+	mutant_x = tostring(killed_mutant_tbl[self.mutant_id].x)
+	mutant_y = tostring(killed_mutant_tbl[self.mutant_id].y)
+
+	local x1 = mutant_x
+	local y1 = mutant_y
+	local mutant_width = 393
+	local mutant_height = 200
+
+	local x2 = x1 + mutant_width
+	local y2 = y1 + mutant_height
+
+	self.image			= self.xml:InitStatic("loot:form:image",self.form)
+	self.image:InitTexture(tostring(mutant_f))
+	self.image:SetTextureRect(Frect():set(x1,y1,x2,y2))
+
+	-- For randomize
+	math.randomseed (device():time_global())
+	self.rnd = math.random(3)
+	-- TEST
+	--self.caption_icon 		= self.xml:InitTextWnd("loot:form:caption",self.form)
+	--self.caption_icon:SetText(tostring(self.rnd))
+
+	actor_effects.use_weapon(0)
+end
+	
 function loot_ui:InitCallBacks()
 	self:AddCallback("button_ok",ui_events.BUTTON_CLICKED,self.OnButton_ok,self)
 
@@ -101,6 +181,9 @@ function loot_ui:FillList()
 
 	if (is_there_loot) then
 		self:ShowDialog(true)
+
+		-- Mutant image and looting sound
+		self:SetMutantImageAndSound()
 	else
 		local hud = get_hud()
 		hud:AddCustomStatic("can_use_weapon_now", true)
@@ -135,8 +218,13 @@ function loot_ui:OnListItemClicked()
 		return
 	end
 
-
+	-- Detect widescreen
 	local w,h = item.width,item.height
+	if (utils.is_widescreen()) then
+	w,h = w/1,h/0.85
+	else
+	w,h = w/0.85,h/0.85
+	end
 	self.picture:InitTexture("ui\\ui_icon_equipment")
 	self.picture:SetTextureRect(Frect():set(item.x1,item.y1,item.x2,item.y2))
 	self.picture:SetWndSize(vector2():set(w,h))
@@ -147,9 +235,12 @@ function loot_ui:OnListItemClicked()
 		self.picture.x = pos.x + posform.x
 		self.picture.y = pos.y + posform.y
 	end
-
 	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
+	-- TEST
+	--self.caption_icon 		= self.xml:InitTextWnd("loot:form:caption",self.form)
+	--self.caption_icon:SetText(tostring(math.random(3)))
 end
+
 
 function loot_ui:OnListItemDbClicked()
 
@@ -157,6 +248,20 @@ end
 
 function loot_ui:OnButton_ok()
 	self:HideDialog()
+
+	-- Randomized looting sounds
+	local mutant_t = tostring(killed_mutant_tbl[self.mutant_id].type)
+	local mutant_s = nil
+	if (mutant_t=="small") then
+	mutant_s = tostring(small_mutant_snd_tbl["small_"..self.rnd].sound)
+	elseif (mutant_t=="large") then
+	mutant_s = tostring(large_mutant_snd_tbl["large_"..self.rnd].sound)
+	elseif (mutant_t=="human") then
+	mutant_s = tostring(human_mutant_snd_tbl["human_"..self.rnd].sound)
+	end
+	xr_sound.set_sound_play(db.actor:id(),mutant_s)
+
+	actor_effects.use_item("mutant_looting")
 end
 
 function loot_ui:OnKeyboard(dik, keyboard_action)
@@ -211,5 +316,3 @@ function loot_ui:AddItemToList(sec,count)
 
 	self.list_box:AddExistingItem(_itm)
 end
-
-

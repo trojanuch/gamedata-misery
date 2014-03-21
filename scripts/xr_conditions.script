@@ -66,11 +66,11 @@ function is_enemy_fighting_actor(actor,npc,p)
 	return false
 end
 
--- Каждая функция в этом файле используется как условие xr_logic: {=функция !функция}
--- Если в функцию необходимо передавать параметры, то:  {=функция(парам1:парам2:...) !функция(парам1:парам2:...)}
--- Формат: function f(actor, npc). В случае передачи параметров: function f(actor, npc, p).
+-- Eaaдay фунeцey в эoоi фaйлa eniользуaony eae уnловea xr_logic: {=фунeцey !фунeцey}
+-- Anлe в фунeцe? нaобoодeiо ia?aдaвaoь ia?aiao?u, oо:  {=фунeцey(ia?ai1:ia?ai2:...) !фунeцey(ia?ai1:ia?ai2:...)}
+-- Фо?iao: function f(actor, npc). В nлучaa ia?aдaчe ia?aiao?ов: function f(actor, npc, p).
 -- ----------------------------------------------------------------------------------------------------
--- Функции для работы с combat_ignore_cond
+-- Фунeцee длy ?aбоou n combat_ignore_cond
 -- ----------------------------------------------------------------------------------------------------
 function is_enemy_actor(actor, npc, p)
 	local st = db.storage[npc:id()]
@@ -78,8 +78,8 @@ function is_enemy_actor(actor, npc, p)
 	return be and be:alive() and be:id() == db.actor:id()
 end
 
--- текущий враг на расстоянии больше или равном заданному расстоянию
--- для combat_ignore
+-- oaeуueй в?aa нa ?annoоyнee больoa eлe ?aвноi зaдaнноiу ?annoоyнe?
+-- длy combat_ignore
 function fighting_dist_ge(actor, npc, p)
 	local st = db.storage[npc:id()]
 	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
@@ -87,7 +87,7 @@ function fighting_dist_ge(actor, npc, p)
 	return be and be:alive() and be:position():distance_to_sqr(npc:position()) >= d * d
 end
 
--- расстояние до текущего реального врага меньше или равно заданного значения
+-- ?annoоyнea до oaeуuaaо ?aaльноaо в?aaa iaньoa eлe ?aвно зaдaнноaо знaчaнey
 function fighting_dist_le(actor, npc, p)
 	local st = db.storage[npc:id()]
 	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
@@ -104,13 +104,13 @@ end
 
 
 -- ----------------------------------------------------------------------------------------------------
--- Общие функции
+-- Обuea фунeцee
 -- ----------------------------------------------------------------------------------------------------
--- видим ли мы еще "черный экран" или нет?
+-- вeдei лe iu aua "чa?нuй эe?aн" eлe нao?
 function black_screen(actor, npc)
 	return device().precache_frame > 1
 end
---Проверка, встречается ли в имени чувака одна из строк .
+--I?овa?ea, вno?aчaaony лe в eiaнe чувaea однa eз no?оe .
 function check_npc_name (actor , npc , p)
 	if npc:name() == nil then return false end
 	for k,v in pairs(p) do
@@ -156,7 +156,7 @@ function is_playing_sound (actor, npc)
 	return xr_sound.sound_table[npc:id()] ~= nil
 end
 
--- проверка, что актер жив
+-- i?овa?ea, чoо aeoa? aeв
 function actor_alive(actor, npc)
 	if db.actor and db.actor:alive() then
 		return true
@@ -202,7 +202,7 @@ function dist_to_actor_ge(actor, npc, p)
 	return d and npc:position():distance_to_sqr(actor:position()) >= d * d
 end
 
--- Проверка выполняет ли кто указанную работу
+-- I?овa?ea вuiолнyao лe eoо уeaзaнну? ?aбоoу
 function is_obj_on_job(actor, npc, p)
 	if not (npc) then
 		return false
@@ -271,8 +271,8 @@ function enemy_smart(actor, npc, p)
 
 	return p and smart:name() == p[1]
 end
--- проверка того что дистанция до обьекта <= заданной
--- параметры: [sid,dist]
+-- i?овa?ea oоaо чoо дenoaнцey до обьaeoa <= зaдaнной
+-- ia?aiao?u: [sid,dist]
 function distance_to_obj_on_job_le(actor, npc, p)
 	if not (npc) then
 		return false
@@ -288,11 +288,11 @@ function distance_to_obj_on_job_le(actor, npc, p)
 	return false
 end
 
--- проверка того что npc находится в заданной зоне
--- !!! ВЫЗЫВАТЬ ТОЛЬКО ИЗ SPACE RESTRICTOR !!!
--- параметры: [sid1:sid2:...]
--- !!! НЕКОРРЕКТНО РАБОТАЕТ ДЛЯ ОБЬЕКТОВ В offline'e !!!
--- !!! ДЛЯ ГАРАНТИИ ИСПОЛЬЗОВАТЬ one_obj_in_zone !!!
+-- i?овa?ea oоaо чoо npc нaoодeony в зaдaнной зонa
+-- !!! ВUЗUВAOЬ OОЛЬEО EЗ SPACE RESTRICTOR !!!
+-- ia?aiao?u: [sid1:sid2:...]
+-- !!! НAEО??AEOНО ?AБОOAAO ДЛЯ ОБЬAEOОВ В offline'e !!!
+-- !!! ДЛЯ AA?AНOEE ENIОЛЬЗОВAOЬ one_obj_in_zone !!!
 function obj_in_zone(actor, zone, p)
 	local npc1, i, v = 0, 0, 0
 	for i, v in pairs(p) do
@@ -304,8 +304,8 @@ function obj_in_zone(actor, zone, p)
 	return false
 end
 
--- параметры: [sid:def*] def=true|false
--- * параметр не обязателен
+-- ia?aiao?u: [sid:def*] def=true|false
+-- * ia?aiao? нa обyзaoaлaн
 function one_obj_in_zone(actor, zone, p)
 	--local def_offline = (p[2] ~= "false") -- default (true) result if npc in offline
 	local obj1 = get_story_object_id(p[1])
@@ -350,26 +350,26 @@ function npc_in_zone(actor, npc, p)
 	return utils.npc_in_zone(npc_obj, zone)
 end
 
--- true, если здоровье npc <= заданному значению
--- false в противном случае
+-- true, anлe здо?овьa npc <= зaдaнноiу знaчaнe?
+-- false в i?оoeвноi nлучaa
 function health_le(actor, npc, p)
 	return p[1] and npc.health < p[1]
 end
 
--- true, если здоровье актера  <= заданному значению
--- false в противном случае
+-- true, anлe здо?овьa aeoa?a  <= зaдaнноiу знaчaнe?
+-- false в i?оoeвноi nлучaa
 function actor_health_le(actor, npc, p)
 	return p[1] and actor.health < p[1]
 end
 
 --[[
--- true, если здоровье вертолёта <= заданному значению
--- false в противном случае
+-- true, anлe здо?овьa вa?oолёoa <= зaдaнноiу знaчaнe?
+-- false в i?оoeвноi nлучaa
 function heli_health_le(actor, obj, p)
 	return p[1] and obj:get_helicopter():GetfHealth() < p[1]
 end
 
--- видит ли вертолёт npc (по story id)
+-- вeдeo лe вa?oолёo npc (iо story id)
 function heli_see_npc(actor, obj, p)
 	if p[1] then
 		local o = get_story_object( p[1] )
@@ -383,8 +383,8 @@ function heli_see_actor(actor, obj)
 	return actor ~= nil and obj:get_helicopter():isVisible( actor )
 end
 
--- Проверка на принадлежность врага к одной из групп
--- (можно задавать несколько через двоеточие)
+-- I?овa?ea нa i?eнaдлaaноnoь в?aaa e одной eз a?уii
+-- (iоaно зaдaвaoь нaneольeо чa?aз двоaoочea)
 function enemy_group(actor, npc, p)
 	local enemy_id = db.storage[npc:id()].enemy_id
 	local enemy = db.storage[enemy_id] and db.storage[enemy_id].object
@@ -451,8 +451,8 @@ function npc_profile(actor, npc, p)
 end
 ]]--
 
--- Проверка того что удар был нанесен кем-то из npc указанных в списке.
--- Параметры это story_id персонажей. Можно задавать несколько story_id.
+-- I?овa?ea oоaо чoо удa? бuл нaнanaн eai-oо eз npc уeaзaннuo в nienea.
+-- Ia?aiao?u эoо story_id ia?nонaaaй. Iоaно зaдaвaoь нaneольeо story_id.
 function hitted_by(actor, npc, p)
 	local npc1
 	local t = db.storage[npc:id()].hit
@@ -466,7 +466,7 @@ function hitted_by(actor, npc, p)
 	end
 	return false
 end
--- Функция проверки попадания в кость по её индексу.(Проверка только для секции hit)
+-- Фунeцey i?овa?ee iоiaдaнey в eоnoь iо aё eндaenу.(I?овa?ea oольeо длy naeцee hit)
 function hitted_on_bone(actor, npc, p)
 	for k,v in pairs (p) do
 		if db.storage[npc:id()].hit.bone_index == npc:get_bone_id(v) then
@@ -476,7 +476,7 @@ function hitted_on_bone(actor, npc, p)
 	return false
 end
 
--- Проверка, что лучшее оружие персонажа - пистолет
+-- I?овa?ea, чoо лучoaa о?уaea ia?nонaaa - ienoолao
 function best_pistol(actor, npc)
 	local pistol = npc:item_in_slot(1)
 	if pistol ~= nil then
@@ -486,7 +486,7 @@ function best_pistol(actor, npc)
 	end
 end
 
--- Проверка, что персонажу нанесли смертельный хит. Проверять ТОЛЬКО на on_hit
+-- I?овa?ea, чoо ia?nонaaу нaнanлe nia?oaльнuй oeo. I?овa?yoь OОЛЬEО нa on_hit
 function deadly_hit(actor, npc)
 	if db.storage[npc:id()] == nil or db.storage[npc:id()].hit == nil then
 		--printf("deadly hit false")
@@ -499,8 +499,8 @@ end
 
 
 
--- Проверка того что персонаж был убит кем-то из npc указанных в списке.
--- Параметры это story_id персонажей. Можно задавать несколько story_id.
+-- I?овa?ea oоaо чoо ia?nонaa бuл убeo eai-oо eз npc уeaзaннuo в nienea.
+-- Ia?aiao?u эoо story_id ia?nонaaaй. Iоaно зaдaвaoь нaneольeо story_id.
 function killed_by(actor, npc, p)
 	local npc1
 	local t = db.storage[npc:id()].death
@@ -516,9 +516,9 @@ function killed_by(actor, npc, p)
 	return false
 end
 
--- проверка (по story_id) все ли проверяемые сталкеры живы
--- TODO: исправить ситуацию, когда выдается неправильный результат для обьектов, которые
---       не успели проспавниться.
+-- i?овa?ea (iо story_id) вna лe i?овa?yaiua noaлea?u aeвu
+-- TODO: eni?aвeoь neoуaцe?, eоaдa вuдaaony нai?aвeльнuй ?aзульoao длy обьaeoов, eоoо?ua
+--       нa уniaлe i?оniaвнeoьny.
 function is_alive_all(actor, npc, p)
 	local npc1
 	for i, v in pairs(p) do
@@ -534,9 +534,9 @@ function is_alive_all(actor, npc, p)
 	return true
 end
 
--- проверка (по story_id) того, что чотя бы один из проверяемых сталкеров жив
--- TODO: исправить ситуацию, когда выдается неправильный результат для обьектов, которые
---       не успели проспавниться.
+-- i?овa?ea (iо story_id) oоaо, чoо чоoy бu одeн eз i?овa?yaiuo noaлea?ов aeв
+-- TODO: eni?aвeoь neoуaцe?, eоaдa вuдaaony нai?aвeльнuй ?aзульoao длy обьaeoов, eоoо?ua
+--       нa уniaлe i?оniaвнeoьny.
 function is_alive_one(actor, npc, p)
 	local npc1
 	for i, v in pairs(p) do
@@ -552,9 +552,9 @@ function is_alive_one(actor, npc, p)
 	return false
 end
 
--- проверка (по story_id) того, что проверяемыq npc жив
--- TODO: исправить ситуацию, когда выдается неправильный результат для обьектов, которые
---       не успели проспавниться.
+-- i?овa?ea (iо story_id) oоaо, чoо i?овa?yaiuq npc aeв
+-- TODO: eni?aвeoь neoуaцe?, eоaдa вuдaaony нai?aвeльнuй ?aзульoao длy обьaeoов, eоoо?ua
+--       нa уniaлe i?оniaвнeoьny.
 function is_alive(actor, npc, p)
 	local npc1
 
@@ -579,9 +579,9 @@ function is_alive(actor, npc, p)
 	return false
 end
 
--- проверка (по story_id) все ли проверяемые сталкеры мертвы
--- TODO: исправить ситуацию, когда выдается неправильный результат для обьектов, которые
---       не успели проспавниться.
+-- i?овa?ea (iо story_id) вna лe i?овa?yaiua noaлea?u ia?oвu
+-- TODO: eni?aвeoь neoуaцe?, eоaдa вuдaaony нai?aвeльнuй ?aзульoao длy обьaeoов, eоoо?ua
+--       нa уniaлe i?оniaвнeoьny.
 function is_dead_all(actor, npc, p)
 	local npc1
 	for i, v in pairs(p) do
@@ -599,9 +599,9 @@ function is_dead_all(actor, npc, p)
 	return true
 end
 
--- проверка (по story_id) того, что хотя бы один из проверяемых сталкеров мертв
--- TODO: исправить ситуацию, когда выдается неправильный результат для обьектов, которые
---       не успели проспавниться.
+-- i?овa?ea (iо story_id) oоaо, чoо oоoy бu одeн eз i?овa?yaiuo noaлea?ов ia?oв
+-- TODO: eni?aвeoь neoуaцe?, eоaдa вuдaaony нai?aвeльнuй ?aзульoao длy обьaeoов, eоoо?ua
+--       нa уniaлe i?оniaвнeoьny.
 function is_dead_one(actor, npc, p)
 	local npc1
 	for i, v in pairs(p) do
@@ -614,23 +614,23 @@ function is_dead_one(actor, npc, p)
 	return false
 end
 
--- проверка (по story_id) того, что хотя бы один из проверяемых сталкеров мертв
--- TODO: исправить ситуацию, когда выдается неправильный результат для обьектов, которые
---       не успели проспавниться.
+-- i?овa?ea (iо story_id) oоaо, чoо oоoy бu одeн eз i?овa?yaiuo noaлea?ов ia?oв
+-- TODO: eni?aвeoь neoуaцe?, eоaдa вuдaaony нai?aвeльнuй ?aзульoao длy обьaeoов, eоoо?ua
+--       нa уniaлe i?оniaвнeoьny.
 function is_dead(actor, npc, p)
 	local npc1
 	npc1 = get_story_object(p[1])
 	return not npc1 or not npc1:alive()
 end
 
--- Проверяет , существует ли обьект с заданным стори айди.
+-- I?овa?yao , nуuanoвуao лe обьaeo n зaдaннui noо?e aйдe.
 function story_object_exist(actor, npc, p)
 	local npc1 = get_story_object(p[1])
 	return npc1 ~= nil
 end
 
 --[[
--- проверка (по story_id) того, что нашим врагом есть хотя бы кото-то один из списка
+-- i?овa?ea (iо story_id) oоaо, чoо нaoei в?aaоi anoь oоoy бu eоoо-oо одeн eз nienea
 function check_fighting(actor, npc, p)
 	local enemy_id = db.storage[npc:id()].enemy_id
 	local enemy = db.storage[enemy_id] and db.storage[enemy_id].object
@@ -651,30 +651,33 @@ end
 ]]--
 
 
--- true, если у актёра в инвентаре есть указанный предмет
--- false, если нету, либо не задана секция предмета
+-- true, anлe у aeoё?a в eнвaнoa?a anoь уeaзaннuй i?aдiao
+-- false, anлe нaoу, лeбо нa зaдaнa naeцey i?aдiaoa
 function actor_has_item(actor, npc, p)
 	local story_actor  = get_story_object("actor")
+		
+	if p[1] == "jup_b1_half_artifact" then
+		local insulator_table =	{
+								"jup_b1_half_artifact_af_iam",
+								"jup_b1_half_artifact_af_aac",
+								"jup_b1_half_artifact_af_aam",
+								"jup_b1_half_artifact_lead_box"
+								}
+								
+		for k,v in pairs(insulator_table) do
+			if db.actor:object(v) then
+				return true
+			end
+		end
+	end
+	
 	return p[1] ~= nil and story_actor and story_actor:object( p[1] ) ~= nil
-end
-
-function actor_has_item_in_slot_1(actor, npc, p)
-	local story_actor  = get_story_object("actor")
-	return p[1] ~= nil and story_actor and story_actor:item_in_slot(1) and story_actor:item_in_slot(1):section()==p[1]
-end
-function actor_has_item_in_slot_2(actor, npc, p)
-	local story_actor  = get_story_object("actor")
-	return p[1] ~= nil and story_actor and story_actor:item_in_slot(2) and story_actor:item_in_slot(2):section()==p[1]
-end
-function actor_has_item_in_slot_7(actor, npc, p)
-	local story_actor  = get_story_object("actor")
-	return p[1] ~= nil and story_actor and story_actor:item_in_slot(7) and story_actor:item_in_slot(7):section()==p[1]
 end
 
 function npc_has_item(actor, npc, p)
 	return p[1] ~= nil and npc:object( p[1] ) ~= nil
 end
--- проверяет наличие заданого количества предметов в инвентаре игрока.
+-- i?овa?yao нaлeчea зaдaноaо eолeчanoвa i?aдiaoов в eнвaнoa?a ea?оea.
 function actor_has_item_count(actor, npc, p)
 	local item_section 	= p[1]
 	local need_count 	= tonumber(p[2])
@@ -689,7 +692,7 @@ function actor_has_item_count(actor, npc, p)
 	return has_count >= need_count
 end
 
--- возвращает true, если в текущей схеме персонажа взведён указанный сигнал.
+-- возв?auaao true, anлe в oaeуuaй noaia ia?nонaaa взвaдён уeaзaннuй neaнaл.
 function signal(actor, npc, p)
 	if p[1] then
 		local st   = db.storage[npc:id()]
@@ -701,7 +704,7 @@ function signal(actor, npc, p)
 	end
 end
 
--- возвращает true, если значение указанного счётчика актёра больше указанного числа
+-- возв?auaao true, anлe знaчaнea уeaзaнноaо nчёoчeea aeoё?a больoa уeaзaнноaо чenлa
 function counter_greater(actor, npc, p)
 	if p[1] and p[2] then
 		local c = xr_logic.pstor_retrieve(actor, p[1], 0)
@@ -721,13 +724,13 @@ function counter_equal(actor, npc, p)
 end
 
 --[[
--- определяет нечётность интервала игрового времени. интервал нужно передать в p[1]
+-- оi?aдaлyao нaчёoноnoь eнoa?вaлa ea?овоaо в?aiaнe. eнoa?вaл нуaно ia?aдaoь в p[1]
 function odd_time_interval(actor, npc, p)
 	return odd( game.time() / p[1] )
 end
 ]]--
 -------------------------------------------------------------------------------------------------------
--- Функции поддержки kamp
+-- Фунeцee iоддa?aee kamp
 function _kamp_talk(actor, npc)
 	if xr_kamp.kamp_stalkers[npc:id()] then
 		return xr_kamp.kamp_stalkers[npc:id()]
@@ -747,7 +750,7 @@ local alarm_statuses = {
 	alarm = smart_terrain_control.ALARM
 }
 
--- Функции поддержки безопасности баз
+-- Фунeцee iоддa?aee бaзоianноnoe бaз
 function check_smart_alarm_status(actor, npc, p)
 	local smart_name = p[1]
 	local status = alarm_statuses[p[2]]
@@ -904,7 +907,7 @@ function is_squad_neutral_to_actor(actor, npc, p)
 	return not(is_squad_enemy_to_actor(actor, npc, p) or is_squad_friend_to_actor(actor, npc, p))
 end
 
--- текущий враг актёр?
+-- oaeуueй в?aa aeoё??
 function fighting_actor(actor, npc)
 	local enemy_id = db.storage[npc:id()].enemy_id
 	local enemy = db.storage[enemy_id] and db.storage[enemy_id].object
@@ -944,14 +947,14 @@ function heavy_wounded(actor, npc)
 end
 
 --[[
-Проверка на заданный период времени
-Время задается в минутах
-Параметры: (time_shift:period_min)
-					 time_shift - периодичность срабатывания
-					 period - период срабатывания на котором мы получаем true
+I?овa?ea нa зaдaннuй ia?eод в?aiaнe
+В?aiy зaдaaony в ieнуoao
+Ia?aiao?u: (time_shift:period_min)
+					 time_shift - ia?eодeчноnoь n?aбaouвaнey
+					 period - ia?eод n?aбaouвaнey нa eоoо?оi iu iолучaai true
 
-Примеры:
-time_period(60:10) - возвращает true каждый час на протяжении первых 10 минут
+I?eia?u:
+time_period(60:10) - возв?auaao true eaaдuй чan нa i?оoyaaнee ia?вuo 10 ieнуo
 --]]
 function time_period(actor, npc, p)
 	local tshift, period = p[1], p[2]
@@ -1023,9 +1026,9 @@ end
 --'-----------------------------------------------------------------------------------
 --' Cover support
 --'-----------------------------------------------------------------------------------
---' Если возвращает true, то солдаты за каверами начинают стрелять.
+--' Anлe возв?auaao true, oо nолдaou зa eaвa?aie нaчeнa?o no?aлyoь.
 function cover_attack(actor, npc)
-	--' Берем сквад объекта
+	--' Бa?ai neвaд объaeoa
 	local squad = get_object_squad(npc)
 
 	if squad == nil then
@@ -1152,7 +1155,7 @@ function squads_in_zone_b41(actor, npc, p)
 end
 
 
---' Проверка в таргет кондлисте задания, соответствует ли имя сквада переданному
+--' I?овa?ea в oa?aao eондлenoa зaдaнey, nооoвaonoвуao лe eiy neвaдa ia?aдaнноiу
 function target_squad_name(actor, obj, p)
 	if p[1] == nil then
 		abort("Wrong parameters")
@@ -1173,7 +1176,7 @@ function target_squad_name(actor, obj, p)
 	return obj:section_name() == p[1]
 end
 
---' Проверка в таргет кондлисте задания, соответствует ли имя смарта переданному
+--' I?овa?ea в oa?aao eондлenoa зaдaнey, nооoвaonoвуao лe eiy nia?oa ia?aдaнноiу
 function target_smart_name(actor, smart, p)
 	if p[1] == nil then
 		abort("Wrong parameters")
@@ -1182,7 +1185,7 @@ function target_smart_name(actor, smart, p)
 	return smart:name() == p[1]
 end
 
---' Проверяет жив ли отряд с указанным ID
+--' I?овa?yao aeв лe оo?yд n уeaзaннui ID
 function squad_exist(actor, npc, p)
 	local story_id = p[1]
 	if story_id == nil then
@@ -1227,27 +1230,6 @@ end
 
 function surge_started()
 	return surge_manager.is_started() or psi_storm_manager and psi_storm_manager.is_started() or fallout_manager and fallout_manager.is_started()
-end
-
-function emission_started()
-	if surge_manager.is_started() then
-		return true
-	end
-	return false
-end
-
-function psysurge_started()
-	if psi_storm_manager.is_started() then
-		return true
-	end
-	return false
-end
-
-function fallout_started()
-	if fallout_manager.is_started() then
-		return true
-	end
-	return false
 end
 
 function surge_kill_all()
@@ -1308,8 +1290,8 @@ function npc_stay_offline(actor, npc, p)
 end
 ]]--
 
--- проверка того что дистанция до обьекта >= заданной
--- параметры: [sid,dist]
+-- i?овa?ea oоaо чoо дenoaнцey до обьaeoa >= зaдaнной
+-- ia?aiao?u: [sid,dist]
 function distance_to_obj_ge(actor, npc, p)
 	local npc_id = get_story_object_id(p[1])
 	local npc1 = npc_id and alife():object(npc_id)
@@ -1352,12 +1334,12 @@ function jup_b16_is_zone_active(actor, npc)
 	return has_alife_info(npc:name())
 end
 
---Функция проверки состояния видимости кровососа.
--- Возможный набор параметров --> story_id:visibility_state(можно вызывать откуда угодно) или visibility_state(если вызывается из кастомдаты кровососа)
+--Фунeцey i?овa?ee nоnoоyнey вeдeiоnoe e?овоnоna.
+-- Возiоaнuй нaбо? ia?aiao?ов --> story_id:visibility_state(iоaно вuзuвaoь оoeудa уaодно) eлe visibility_state(anлe вuзuвaaony eз eanoоiдaou e?овоnоna)
 --  visibility_state -->
---						0 - невидимый
---						1 - полувидимый
---						2 - полностью видимый
+--						0 - нaвeдeiuй
+--						1 - iолувeдeiuй
+--						2 - iолноnoь? вeдeiuй
 
 function check_bloodsucker_state(actor, npc, p)
 	if (p and p[1]) == nil then abort("Wrong parameters in function 'check_bloodsucker_state'!!!") end
@@ -1566,7 +1548,7 @@ function zat_b29_anomaly_has_af(actor, npc, p)
 	return false
 end
 
-function jup_b221_who_will_start(actor, npc, p) -- доступные параметры: ability - проверить есть ли доступные темы, choose - выбрать групировку которая начнет перепалку
+function jup_b221_who_will_start(actor, npc, p) -- доnoуiнua ia?aiao?u: ability - i?овa?eoь anoь лe доnoуiнua oaiu, choose - вuб?aoь a?уie?овeу eоoо?ay нaчнao ia?aiaлeу
 	local reachable_theme = {}
 	local faction_table = {}
 	local info_table = {
@@ -1585,7 +1567,7 @@ function jup_b221_who_will_start(actor, npc, p) -- доступные параметры: ability 
 		[11] = "jup_a6_freedom_leader_employ_work",
 		[12] = "jup_b207_freedom_wins"
 	}
---Составляем таблицу достыпных тем(тлько номера тем).
+--Nоnoaвлyai oaблeцу доnouiнuo oai(oльeо ноia?a oai).
 	for k,v in pairs(info_table) do
 		if k <= 6 then
 			faction_table[1] = "duty"
@@ -1603,10 +1585,10 @@ function jup_b221_who_will_start(actor, npc, p) -- доступные параметры: ability 
 		abort("No such parameters in function 'jup_b221_who_will_start'")
 	end
 	if tostring(p[1]) == "ability" then
-		return #reachable_theme ~= 0 -- если таблица пуста значит нет доступных тем и ненадо играть сцену
+		return #reachable_theme ~= 0 -- anлe oaблeцa iуnoa знaчeo нao доnoуiнuo oai e нaнaдо ea?aoь nцaну
 	elseif  tostring(p[1]) == "choose" then
----------Выберем рандомам елемент составленой таблицы и проверим к какой груперовки он пренадлежит :)
-		return reachable_theme[math.random(1, #reachable_theme)] <= 6 -- если меньше 6-ти значит ДОЛГ если больше 6-ти значит СВОБОДА
+---------Вuбa?ai ?aндоiai aлaiaнo nоnoaвлaной oaблeцu e i?овa?ei e eaeой a?уia?овee он i?aнaдлaaeo :)
+		return reachable_theme[math.random(1, #reachable_theme)] <= 6 -- anлe iaньoa 6-oe знaчeo ДОЛA anлe больoa 6-oe знaчeo NВОБОДA
 	else
 		abort("Wrong parameters in function 'jup_b221_who_will_start'")
 	end
@@ -2113,4 +2095,71 @@ end
 
 function is_squad_monster(actor,squad,p)
 	return sim_squad_scripted.is_squad_monster[squad.player_id] == true
+end
+
+--Yasti: Radio Music Logic Functions. Author =  burguois--
+function emission_finished() -- Yasti
+	if surge_manager.is_finished() then
+		return true
+	end
+	return false
+end
+
+function emission_started()
+	if surge_manager.is_started() then
+		return true
+	end
+	return false
+end
+
+function psysurge_started()
+	if psi_storm_manager.is_started() then
+		return true
+	end
+	return false
+end
+
+function psysurge_finished() --Yasti
+	if psi_storm_manager.is_finished() then
+		return true
+	end
+	return false
+end
+--End Yasti--
+
+----------------------------------------------------------------------------------------------------
+--Yasti day radiation function
+----------------------------------------------------------------------------------------------------
+
+local weather = level.get_weather()
+function is_storm()
+	if string.find(weather, "rain") or string.find(weather, "storm") or string.find(weather, "thunder") then
+		return true
+	else
+		return false
+	end
+end
+
+function is_cloudy()
+	if string.find(weather, "foggy") or string.find(weather, "cloudy") then
+		return true
+	else
+		return false
+	end
+end
+
+function is_clear()
+	if not is_storm() or not is_cloudy() or not is_partly() then
+		return true
+	else
+		return false
+	end
+end
+
+function is_partly()
+	if string.find(weather, "partly") then
+		return true
+	else
+		return false
+	end
 end

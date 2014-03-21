@@ -800,7 +800,7 @@ function get_object_story_id(obj_id)
 end
 
 function get_story_object_id(story_obj_id)
-	return story_objects.get_story_objects_registry().id_by_story_id[story_obj_id]
+	return story_objects.get_story_objects_registry():get(story_obj_id)
 end
 
 function unregister_story_object_by_id(obj_id)
@@ -861,4 +861,16 @@ function show_all_ui(show)
 --	    db.actor:hide_weapon()
 			db.actor:disable_hit_marks(true)
 	end
+end
+
+
+function empty_table(t)
+	if (t == nil or type(t) ~= "table") then
+		alun_utils.printf("_G.empty_table: trying to empty non-table %s",t)
+		return
+	end
+	for k,v in pairs(t) do
+		t[k] = nil
+	end
+	return t
 end

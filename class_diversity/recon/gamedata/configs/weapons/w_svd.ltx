@@ -15,7 +15,7 @@ default_to_ruck         = false
 sprint_allowed       	= true
 
 ;-------------------------------------------------------------------------------
-cost					= 40110
+cost					= 36110
 weapon_class			= sniper_rifle
 inv_weight				= 4.93
 
@@ -55,7 +55,7 @@ single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.055	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base	= 0.106	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor	= 2.92f
 crosshair_inertion      = 9.5
 
@@ -170,8 +170,8 @@ scope_zoom_factor			= 24
 
 scope_texture				= wpn_crosshair_pso1
 scope_name 					= wpn_addon_scope
-scope_x 						= 60
-scope_y 						= -2
+scope_x              	= 44
+scope_y              	= -3
 
 silencer_smoke_particles 	= weapons\generic_shoot_00
 silencer_light_color			= 0.6,0.5,0.3
@@ -246,36 +246,45 @@ $spawn                  = "weapons\wpn_svd_nimble"
 inv_name				= st_wpn_svd_nimble
 description					= st_wpn_svd_nimble_descr
 
-cost					= 53780
-inv_weight				= 5.2
+cost					= 49780
+inv_weight				= 5.243
 
 upgrades                = up_gr_firstab_svd, up_gr_seconab_svd, up_gr_thirdab_svd, up_gr_fourtab_svd, up_gr_fourtcd_svd, up_gr_fourtef_svd
-installed_upgrades      = up_secona_svd, up_second_svd
+installed_upgrades      = up_secona_svd, up_seconc_svd, up_thirda_svd
 upgrade_scheme          = upgrade_scheme_svd
-
 ;------TTX------------------------------------------------------------------------
-hit_power           	= 0.784, 0.784, 0.784, 0.784
-hit_impulse		 		= 40
+hit_power           	= 0.794, 0.794, 0.794, 0.794
+hit_impulse		 		= 45
 hit_type 				= fire_wound
-fire_distance           = 1400
-bullet_speed			= 850	;начальная скорость пули
-rpm                     = 48
+fire_distance           = 1464
+bullet_speed			= 839
+rpm                     = 69
 rpm_empty_click         = 200
 
-inv_grid_width			= 6
-inv_grid_height			= 2
-inv_grid_x			= 0
-inv_grid_y			= 0
+inv_grid_width     = 6
+inv_grid_height    = 2
+inv_grid_x         = 20
+inv_grid_y         = 40
+
+fire_dispersion_base	= 0.083
 
 hud                     = wpn_swd_hud
 
-misfire_start_condition		= 0.84
-misfire_end_condition		= 0.08
-misfire_start_prob = 0.007 ;	     	= 0.0046
-misfire_end_prob = 0.11 ;	     	= 0.027
-condition_shot_dec      	= 0.0015
-condition_queue_shot_dec	= 0.0015
+;addons
+scope_status			= 1
+silencer_status			= 0
+grenade_launcher_status		= 0
 
+zoom_enabled			= true
+scope_zoom_factor			= 24
+
+misfire_probability        	= 0.0042
+misfire_start_condition		= 0.89
+misfire_end_condition		= 0.05
+misfire_start_prob = 0.007 ;	     	= 0.0052
+misfire_end_prob = 0.11 ;	     	= 0.03
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0012
 fire_dispersion_base	= 0.051
 
 visual                  = dynamics\weapons\wpn_swd\wpn_swd.ogf
@@ -307,8 +316,8 @@ fire_bone               = wpn_body
 aim_hud_offset_pos				= -0.052500,0.016499,-0.123000
 aim_hud_offset_rot				= 0.000000,0.000000,0.000000
 
-aim_hud_offset_pos_16x9				= -0.053500,0.024000,-0.055500
-aim_hud_offset_rot_16x9				= 0.000000,0.000000,0.000000
+aim_hud_offset_pos_16x9			= -0.096160,0.066750,0.116500
+aim_hud_offset_rot_16x9			= 0.012000,0.011000,0.010000
 
 gl_hud_offset_pos			= 0,0,0
 gl_hud_offset_rot			= 0,0,0
@@ -325,3 +334,93 @@ anm_idle             	= svd_idle
 anm_idle_aim				= svd_idle_aim
 anm_idle_moving 			= svd_idle_moving
 anm_idle_sprint			= svd_idle_sprint_2
+
+;=====================================================================================================================================================
+[wpn_svd_alt]:wpn_svd
+
+cost              	 = 38400
+inv_weight        = 4.532
+inv_name				= st_wpn_svd_alt
+inv_name_short			= st_wpn_svd_alt
+description       		= st_wpn_svd_alt_descr
+
+upgrades                = up_gr_firstab_svd, up_gr_seconab_svd, up_gr_thirdab_svd
+upgrade_scheme          = upgrade_scheme_svd_nimble
+
+hit_power           	= 0.769, 0.769, 0.769, 0.769
+hit_impulse		 		= 40
+hit_type 				= fire_wound
+fire_distance           = 1364
+bullet_speed			= 828
+rpm                     = 64
+rpm_empty_click         = 200
+
+hud                     = wpn_svd_alt_hud
+
+scope_status			= 2
+
+scope_zoom_factor       = 58.6
+
+scopes_sect		= scope_svd, scope_svd_moist, scope_svd_worn, scope_x2.7_svd, scope_live_detector_svd, scope_night_svd, scope_vsk_svd
+
+misfire_probability        	= 0.0045
+misfire_start_condition		= 0.93
+misfire_end_condition		= 0.09
+misfire_start_prob = 0.007 ;	     	= 0.0052
+misfire_end_prob = 0.11 ;	     	= 0.03
+condition_shot_dec      	= 0.0015
+condition_queue_shot_dec	= 0.0015
+
+silencer_status            = 0
+
+ammo_mag_size        = 10
+fire_modes           = 1
+ammo_class		        = ammo_7.62x54_7h1, ammo_7.62x54_7h14
+
+fire_dispersion_base       	= 0.092
+
+inv_grid_width     = 6
+inv_grid_height    = 2
+inv_grid_x         = 20
+inv_grid_y         = 36
+
+visual                  = dynamics\weapons\wpn_swd\wpn_swd.ogf
+
+[scope_svd]
+scope_name 					= wpn_addon_scope
+scope_x              	= 44
+scope_y              	= -3
+
+[scope_svd_moist]
+scope_name 					= wpn_addon_scope_moist
+scope_x              	= 44
+scope_y              	= -3
+
+[scope_svd_worn]
+scope_name 					= wpn_addon_scope_worn
+scope_x              	= 44
+scope_y              	= -3
+
+[scope_x2.7_svd]
+scope_name 					= wpn_addon_scope_x2.7
+scope_x              	= 52
+scope_y                 = -3
+
+[scope_live_detector_svd]
+scope_name 					= wpn_addon_scope_detector
+scope_x              	= 44
+scope_y              	= -3
+
+[scope_night_svd]
+scope_name 					= wpn_addon_scope_night
+scope_x              	= 44
+scope_y              	= -3
+
+[scope_vsk_svd]
+scope_name 					= wpn_addon_scope_vsk
+scope_x              	= 44
+scope_y              	= -3
+
+[wpn_svd_alt_hud]:wpn_swd_hud
+
+item_visual					= dynamics\weapons\wpn_swd\wpn_swd_hud

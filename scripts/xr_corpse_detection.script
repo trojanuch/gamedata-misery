@@ -1,5 +1,4 @@
 ----------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------
 -- xr_corpse_detection
 -- Alundaio (original: Stohe)
 --[[
@@ -7,7 +6,18 @@ Copyright (C) 2012 Alundaio
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 --]]
 ----------------------------------------------------------------------------------------------------------------------
+
+--------------------
+local alife = alife
+local level = level
+local wp = world_property
+--------------------
+
+------------------------
+-- INI
+------------------------
 local ini = ini_file("ai_tweaks\\xr_corpse_detection.ltx")
+--local AlwaysDetectDistance = alun_utils.read_from_ini(ini,"settings","always_detect_dist","float",2500)
 local DeathTimeDanger = alun_utils.read_from_ini(ini,"settings","death_time_danger","string","60000")
 local AlwaysDetectDistanceFree = alun_utils.read_from_ini(ini,"settings","always_detect_dist_free","float",2500)
 local AlwaysDetectDistanceDanger = alun_utils.read_from_ini(ini,"settings","always_detect_dist_danger","float",125)
@@ -18,26 +28,30 @@ local MonsterLootCommunities = alun_utils.collect_section(ini,"loot_mutant_commu
 lootable_table = alun_utils.collect_section(ini,"lootable",true)
 ini = nil
 
-function on_game_start()
-	callback_register("npc_on_item_take",on_item_take)
-	callback_register("npc_on_item_drop",on_item_drop)
-	callback_register("npc_on_death_callback",on_death_callback)
-	callback_register("monster_on_death_callback",monster_on_death_callback)
-	callback_register("monster_on_net_spawn",monster_on_net_spawn)
+local HasValuableLoot = {}
+function has_valuable_loot(obj)
+	return HasValuableLoot[obj:id()] == true
 end
 
-local HasValuableLoot = {}
-function on_item_take(npc,item)
+function set_valuable_loot(id,val)
+	HasValuableLoot[id] = val
+end
+
+------------------------------------------
+-- Localized Functions
+------------------------------------------
+
+local function on_item_take(npc,item)
 	if (npc:alive()) then
 		return
 	end
-	if (lootable_table[item:section()]) then
+	if (item and lootable_table[item:section()] ~= nil) then
 		HasValuableLoot[npc:id()] = true
 		return
 	end
 end
 
-function on_item_drop(npc,item)
+local function on_item_drop(npc,item)
 	if (not npc or npc:alive()) then
 		return
 	end
@@ -46,7 +60,7 @@ function on_item_drop(npc,item)
 		local corpse_contain_any_valuable
 		HasValuableLoot[npc:id()] = nil
 		local function check_item(npc,item)
-			if (lootable_table[item:section()]) then
+			if (lootable_table[item:section()] ~= nil) then
 				corpse_contain_any_valuable = true
 			end
 		end
@@ -59,11 +73,11 @@ function on_item_drop(npc,item)
 	end
 end
 
-function on_death_callback(npc,who)
+local function on_death_callback(npc,who)
 	local corpse_contain_any_valuable
 	HasValuableLoot[npc:id()] = nil
 	local function check_item(npc,item)
-		if (lootable_table[item:section()]) then
+		if (lootable_table[item:section()] ~= nil) then
 			corpse_contain_any_valuable = true
 		end
 	end
@@ -73,7 +87,7 @@ function on_death_callback(npc,who)
 	if (corpse_contain_any_valuable) then
 		HasValuableLoot[npc:id()] = true
 	end
-
+	
 	alun_utils.save_var(npc,"death_by_id",who:id())
 	if (who:id() == db.actor:id()) then
 		local itm = db.actor:active_item()
@@ -81,16 +95,17 @@ function on_death_callback(npc,who)
 			alun_utils.save_var(npc,"death_by_knife",true)
 		end
 	end
+	--alun_utils.save_var(npc,"death_by_id",who:id())
 end
 
-function monster_on_death_callback(obj,who)
+local function monster_on_death_callback(obj,who)
 	if not (MonsterLoot) then
 		return
 	end
 	HasValuableLoot[obj:id()] = true
 end
 
-function monster_on_net_spawn(obj)
+local function monster_on_net_spawn(obj)
 	if not (MonsterLoot) then
 		return
 	end
@@ -103,275 +118,76 @@ function monster_on_net_spawn(obj)
 	HasValuableLoot[obj:id()] = se_obj and not se_obj.looted
 end
 
-function has_valuable_loot(obj)
-	return HasValuableLoot[obj:id()] == true
-end
-
-function set_valuable_loot(id,val)
-	HasValuableLoot[id] = val
-end
-----------------------------------------------------------------------------------------------------------------------
--- EVALUATORS
-----------------------------------------------------------------------------------------------------------------------
-class "evaluator_corpse" (property_evaluator)
-function evaluator_corpse:__init(name, storage, npc) super (nil, name)
-	self.a = storage
-	self.a.dtimer = 0
-	self.a.stage = 1
-end
-function evaluator_corpse:evaluate()
-	if (surge_manager.is_started() == true) then
-		return false
-	end
-
-	local enabled = xr_logic.pick_section_from_condlist(db.actor, self.object, self.a.corpse_detection_enabled)
-	if (enabled ~= "true") then
-		return false
-	end
-
-	local npc = self.object
-	if not npc:alive() or npc:best_enemy() or xr_wounded.is_wounded(npc) then
-		return false
-	end
-
-	if (alun_utils.get_squad_commander_action(npc) == stalker_ids.action_combat_planner) then
-		return false
-	end
-
-	if (xr_help_wounded.is_under_help_wounded(npc)) then
-		return false
-	end
-
-	return this["eval_stage_"..self.a.stage](self.a,npc)
-end
-
-function eval_stage_1(st,npc)
-	local tg = time_global()
-	if st.dtimer > tg then
-		return false
-	end
-	st.dtimer = tg+3500
-
-	local corpses = release_body_manager.get_release_body_manager().release_objects_table
-	local nearest_corpse_dist
-	local nearest_corpse_vertex
-	local nearest_corpse_position
-	local corpse_id
-	local corpse_pos
-	local dist
-	local corpse_vertex
-	local id
-	local corpse_npc
-	local detect_dist
-	local dt_threshold
-	local inertion
-
-	local se_npc = alife():object(npc:id())
-	if not (se_npc) then
-		alun_utils.printf("xr_corpse_detection: se_npc = nil! npc = %s",npc and npc:name())
+local function scheme_deactivate(npc,scheme,st)
+	if (scheme ~= "corpse_detection") then
 		return
 	end
-	local squad = se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
-	local can_loot_mutants = squad and squad.player_id and MonsterLootCommunities[squad.player_id] or MonsterLootCommunities[character_community(npc)]
 
-	local size = #corpses
-	for i=1,size do
-		id = corpses[i].id
-		corpse_npc = db.storage[id] and db.storage[id].object or level.object_by_id(id)
-		if corpse_npc and HasValuableLoot[id] and db.storage[id].corpse_already_selected == nil then
-			if (IsStalker(corpse_npc) or can_loot_mutants) then
-				corpse_pos = corpse_npc:bone_position("bip01_spine")
-				dist = npc:position():distance_to_sqr(corpse_pos)
-
-				if not (nearest_corpse_dist) then
-					nearest_corpse_dist = dist
-				end
-
-				dt_threshold = npc:relation(corpse_npc) == game_object.friend and tg - corpse_npc:death_time()
-				inertion = xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,"settings","death_time_danger",DeathTimeDanger))
-
-				detect_dist = alun_utils.load_var(corpse_npc,"death_by_knife") and 0 or dt_threshold and dt_threshold > tonumber(inertion) and AlwaysDetectDistanceDanger or AlwaysDetectDistanceFree
-
-				if (dist <= detect_dist) or (npc:see(corpse_npc) and dist < nearest_corpse_dist) then
-					corpse_vertex = level.vertex_id(corpse_pos)
-					if level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) > 16 then
-						corpse_vertex = corpse_npc:level_vertex_id()
-					end
-					if npc:accessible(corpse_vertex) and level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) <= 15 then
-						nearest_corpse_dist = dist
-						nearest_corpse_vertex = corpse_vertex
-						nearest_corpse_position = corpse_pos
-						corpse_id = id
-					end
-				end
-			end
-		end
-	end
-	if nearest_corpse_vertex ~= nil then
-		if (st.selected_corpse_id and db.storage[st.selected_corpse_id]) then
+	if (st.selected_corpse_id) then
+		if (db.storage[st.selected_corpse_id]) then
 			db.storage[st.selected_corpse_id].corpse_already_selected = nil
 		end
-		st.vertex_id = nearest_corpse_vertex
-		st.vertex_position = nearest_corpse_position
-		st.selected_corpse_id = corpse_id
-		st.stage = 2
-		--alun_utils.printf("%s Found lootable Corpse",npc:name())
-		return true
+		st.selected_corpse_id = nil
 	end
+	st.vertex_id = nil
+	st.vertex_position = nil
 end
 
-function eval_stage_2(st,npc)
-	local corpse = db.storage[st.selected_corpse_id] and db.storage[st.selected_corpse_id].object
-	if corpse and HasValuableLoot[st.selected_corpse_id] and (db.storage[st.selected_corpse_id].corpse_already_selected == nil or db.storage[st.selected_corpse_id].corpse_already_selected == npc:id()) then
-		if corpse:position():distance_to_sqr(st.vertex_position) > 15 then
-			st.stage = 1
-			return false
-		end
-		return true
-	else
-		st.stage = 1
-		return false
-	end
-end
-----------------------------------------------------------------------------------------------------------------------
---Actions
-----------------------------------------------------------------------------------------------------------------------
-class "action_search_corpse" (action_base)
-function action_search_corpse:__init (npc_name,action_name,storage) super (nil,action_name)
-	self.a = storage
-end
-function action_search_corpse:initialize()
-	action_base.initialize(self)
-	local npc = self.object
-	npc:set_desired_position()
-	npc:set_desired_direction()
-	npc:set_path_type(game_object.level_path)
-	npc:set_dest_level_vertex_id(self.a.vertex_id)
-	--utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id)
-
-	local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
-	local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
-
-	local inertion = xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,"settings","death_time_danger",DeathTimeDanger))
-	if (not dt_threshold or dt_threshold > tonumber(inertion)) then
-		self.a.dist_run = math.random(1,4)
-	else
-		self.a.dist_run = 1
-	end
-
-	db.storage[self.a.selected_corpse_id].corpse_already_selected = npc:id()
-end
-function action_search_corpse:execute()
-	action_base.execute(self)
-	local npc = self.object
-
-	local tg = time_global()
-
-
-	local dist = npc:position():distance_to(self.a.vertex_position)
-	if (dist < self.a.dist_run) then
-		state_mgr.set_state(self.object,"patrol")
-	else
-		state_mgr.set_state(self.object,"rush")
-	end
-
-	if (dist < 8 and not state_mgr.get_state(npc) == "search_corpse") then
-		if not (self.a.timer) then
-			self.a.timer = tg + 10000
-		end
-
-		if (self.a.timer and tg > self.a.timer) then
-			self.a.vertex_id = utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id)
-		end
-	end
-
-	if (dist < 1.3 or npc:level_vertex_id() == self.a.vertex_id) then
-		local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
-		local who = alun_utils.load_var(corpse,"death_by_id",nil)
-		who = who and level.object_by_id(who)
-
-		if (who and who:alive() and npc:relation(who) == game_object.enemy) then
-			local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and tg - corpse:death_time()
-			local inertion = xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,"settings","death_time_danger",DeathTimeDanger))
-			if (dt_threshold and dt_threshold < tonumber(inertion)) then
-				if not (self.a.danger_timer) then
-					self.a.danger_timer = tg + 5000
-				end
-
-				if (tg > self.a.danger_timer) then
-					if (xr_danger.set_script_danger) then
-						xr_danger.set_script_danger(npc,DeathTimeDanger-dt_threshold)
-					end
-
-					if not (self.say_search) then
-						if (math.random() > 0.5) then
-							xr_sound.set_sound_play(npc:id(),"search")
-						end
-						self.say_search = true
-					end
-
-					return
-				end
-
-				if (math.random() < 0.60 and ranks.get_obj_rank_name(npc) ~= "master") then
-					state_mgr.set_state(npc,"search")
-				end
-
-				if not (self.say_tolls) then
-					if (math.random() > 0.5) then
-						xr_sound.set_sound_play(npc:id(),"tolls")
-					end
-					self.say_tolls = true
-				end
-
-				return
-			end
-		end
-
-		if not self.sound then
-			if math.random() < 0.60 then
-				xr_sound.set_sound_play(npc:id(),"corpse_loot_begin")
-			end
-			self.sound = true
-		end
-
-		look_pos = corpse and corpse:bone_position("bip01_spine") or self.a.vertex_position
-
-		--self.object:clear_animations()
-		state_mgr.set_state(npc,"search_corpse",nil,nil,{look_position = look_pos})
-	else
-		if state_mgr.get_state(npc) == "search_corpse" then
-			state_mgr.set_state(npc,"rush")
-			npc:set_dest_level_vertex_id(self.a.vertex_id)
-		end
-	end
-end
-function action_search_corpse:finalize()
-	action_base.finalize(self)
-	if db.storage[self.a.selected_corpse_id] then
-		db.storage[self.a.selected_corpse_id].corpse_already_selected = nil
-	end
-	self.a.selected_corpse_id = nil
-	self.a.dist_run = nil
-	self.sound = nil
-	self.a.timer = nil
-
-	--self.object:set_item(object.strap,self.object:best_weapon()) -- fix freeze
-
---	state_mgr.set_state(self.object,"idle",nil,nil,nil,{fast_set = true})
+-----------------------------------
+-- Register Callbacks
+-----------------------------------
+function on_game_start()
+	callback_register("npc_on_item_take",on_item_take)
+	callback_register("npc_on_item_drop",on_item_drop)
+	callback_register("npc_on_death_callback",on_death_callback)
+	callback_register("monster_on_death_callback",monster_on_death_callback)
+	callback_register("monster_on_net_spawn",monster_on_net_spawn)
+	callback_register("scheme_deactivate",scheme_deactivate)
 end
 
 function get_all_from_corpse(npc)
+	state_mgr.set_state(npc,"idle",nil,nil,nil,{fast_set = true})
+
 	local id = npc:id()
-	db.storage[id].corpse_detection.active = nil
-	db.storage[id].corpse_detection.dtimer = time_global()+500
-	local corpse_npc_id = db.storage[id].corpse_detection.selected_corpse_id
-	local corpse_npc = db.storage[corpse_npc_id] and db.storage[corpse_npc_id].object
-	if corpse_npc == nil then
+	local st = db.storage[id] and db.storage[id].corpse_detection
+
+	-- sanity check, this should never happen
+	if not (st) then
+		return
+	end
+	st.dtimer = time_global()+500
+	local corpse_npc_id = st.selected_corpse_id
+	local corpse_npc = corpse_npc_id and db.storage[corpse_npc_id] and db.storage[corpse_npc_id].object or corpse_npc_id and level.object_by_id(corpse_npc_id)
+
+	-- reset all scheme dependent variables
+	if (st.selected_corpse_id) then
+		if (db.storage[st.selected_corpse_id]) then
+			db.storage[st.selected_corpse_id].corpse_already_selected = nil
+		end
+		HasValuableLoot[st.selected_corpse_id] = nil
+	end
+	st.vertex_id = nil
+	st.vertex_position = nil
+	st.selected_corpse_id = nil
+	st.state = nil
+	st.stage = 1
+	st.index = 1
+	st.nearest_corpse_dist = nil
+	st.nearest_corpse_vertex = nil
+	st.nearest_corpse_position = nil
+	st.nearest_id = nil
+
+	-- another sanity check, should never happen
+	if (corpse_npc == nil or corpse_npc:alive() == true) then
+		if not (corpse_npc) then
+			alun_utils.printf("corpse is nil id=%s ",corpse_npc_id)
+		else
+			alun_utils.printf("corpse %s id=%s alive?",corpse_npc:name(),corpse_npc_id)
+		end
 		return
 	end
 
-	HasValuableLoot[corpse_npc:id()] = nil
+	--alun_utils.printf("%s looting from %s",npc:name(),corpse_npc:name())
 
 	if not(IsStalker(corpse_npc)) then
 		local looted = alun_utils.load_var(corpse_npc,"looted",nil)
@@ -396,8 +212,9 @@ function get_all_from_corpse(npc)
 	end
 
 	local items_value = 0
+	local sec
 	local function get_item(corpse,item)
-		if (lootable_table[item:section()]) then
+		if (lootable_table[item:section()] ~= nil) then
 			if (items_value < 100) then
 				items_value = items_value+item:cost()*item:condition()/30
 			end
@@ -419,45 +236,313 @@ function get_all_from_corpse(npc)
 end
 
 ----------------------------------------------------------------------------------------------------------------------
+-- EVALUATORS
+----------------------------------------------------------------------------------------------------------------------
+class "evaluator_corpse" (property_evaluator)
+function evaluator_corpse:__init(name, storage, npc) super (nil, name)
+	self.a = storage
+	self.a.stage = 1
+	self.a.dtimer = 0
+end
+
+local function eval_stage_1(st,npc)
+	local se_npc = alife():object(npc:id())
+	local detect_dist
+	local dt_threshold
+	local inertion
+	
+	local tg = time_global()
+	if st.dtimer > tg then
+		return false
+	end
+	st.dtimer = tg+3500
+	
+	if not (se_npc) then
+	--	alun_utils.printf("xr_corpse_detection: se_npc = nil! npc = %s",npc and npc:name())
+		return false
+	end
+
+	if not (st.index) then
+		st.index = 1
+	end
+
+	if not (st.memory) then
+		st.memory = {}
+	end
+
+	local size = #st.memory
+	if (size == 0) then
+		local i = 0
+		local obj
+		for o in npc:memory_visible_objects() do
+			obj = o and o:object()
+			if (obj and obj:alive() ~= true) and (IsStalker(obj) or IsMonster(obj)) then
+				i = i + 1
+				table.insert(st.memory,obj:id())
+			end
+		end
+		size = i
+	end
+
+	if (size == 0 or st.index > size) then
+		if (st.nearest_id and HasValuableLoot[st.nearest_id] and db.storage[st.nearest_id] and db.storage[st.nearest_id].corpse_already_selected == nil) then
+			if (st.selected_corpse_id and db.storage[st.selected_corpse_id]) then
+				db.storage[st.selected_corpse_id].corpse_already_selected = nil
+			end
+			st.vertex_id = st.nearest_corpse_vertex
+			st.vertex_position = st.nearest_corpse_position
+			st.selected_corpse_id = st.nearest_id
+			st.state = st.nearest_state
+			st.stage = 2
+			db.storage[st.selected_corpse_id].corpse_already_selected = npc:id()
+
+			st.index = 1
+			st.nearest_corpse_dist = nil
+			st.nearest_corpse_vertex = nil
+			st.nearest_corpse_position = nil
+			st.nearest_id = nil
+			return true
+		end
+
+		st.index = 1
+		st.nearest_corpse_dist = nil
+		st.nearest_corpse_vertex = nil
+		st.nearest_corpse_position = nil
+		st.nearest_id = nil
+		clear_table(st.memory)
+		return false
+	end
+
+	local id = st.memory[st.index]
+	local corpse_npc = id  and (db.storage[id] and db.storage[id].object or level.object_by_id(id))
+
+	if (corpse_npc and corpse_npc:alive() ~= true and HasValuableLoot[id] and db.storage[id] and db.storage[id].corpse_already_selected == nil) then
+		local squad = se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
+		local can_loot_mutants = squad and squad.player_id and MonsterLootCommunities[squad.player_id] or MonsterLootCommunities[character_community(npc)]
+
+		if (IsStalker(corpse_npc) or can_loot_mutants) then
+			local corpse_pos = corpse_npc:bone_position("bip01_spine")
+			local dist = npc:position():distance_to_sqr(corpse_pos)
+			
+			dt_threshold = npc:relation(corpse_npc) == game_object.friend and tg - corpse_npc:death_time()
+			inertion = xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,"settings","death_time_danger",DeathTimeDanger))
+			detect_dist = alun_utils.load_var(corpse_npc,"death_by_knife") and 0 or dt_threshold and dt_threshold > tonumber(inertion) and AlwaysDetectDistanceDanger or AlwaysDetectDistanceFree
+
+
+			if (dist <= detect_dist) and (st.nearest_corpse_dist == nil or dist <= st.nearest_corpse_dist) then
+				local corpse_vertex = level.vertex_id(corpse_pos)
+				if level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) > 16 then
+					corpse_vertex = corpse_npc:level_vertex_id()
+				end
+				if npc:accessible(corpse_vertex) and level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) <= 15 then
+					st.nearest_corpse_dist = dist
+					st.nearest_corpse_vertex = corpse_vertex
+					st.nearest_corpse_position = corpse_pos
+					st.nearest_id = id
+					st.nearest_state = dist < math.random(5,30) and StateWalk or StateRun
+				end
+			end
+		end
+	end
+
+	st.index = st.index + 1
+
+	return false
+end
+
+local function eval_stage_2(st,npc)
+	local corpse = st.selected_corpse_id and (db.storage[st.selected_corpse_id] and db.storage[st.selected_corpse_id].object or level.object_by_id(st.selected_corpse_id))
+	if corpse and HasValuableLoot[st.selected_corpse_id] then -- and (db.storage[st.selected_corpse_id].corpse_already_selected == nil or db.storage[st.selected_corpse_id].corpse_already_selected == npc:id()) then
+		return true
+	end
+
+	if (st.selected_corpse_id) then
+		if (db.storage[st.selected_corpse_id]) then
+			db.storage[st.selected_corpse_id].corpse_already_selected = nil
+		end
+		st.selected_corpse_id = nil
+	end
+	st.vertex_id = nil
+	st.vertex_position = nil
+	st.stage = 1
+	return false
+end
+
+local function eval_reset(st)
+	if (st.selected_corpse_id and db.storage[st.selected_corpse_id]) then
+		db.storage[st.selected_corpse_id].corpse_already_selected = nil
+	end
+	st.vertex_id = nil
+	st.vertex_position = nil
+	st.selected_corpse_id = nil
+	st.state = nil
+	st.stage = 1
+	st.index = 1
+	st.nearest_corpse_dist = nil
+	st.nearest_corpse_vertex = nil
+	st.nearest_corpse_position = nil
+	st.nearest_id = nil
+	return false
+end
+
+function evaluator_corpse:evaluate()
+	if (xr_gather_items.is_under_gather_items(self.object) == true) then
+		return eval_reset(self.a)
+	end
+
+	if (db.storage[self.object:id()].danger_flag == true) then
+		return eval_reset(self.a)
+	end
+
+	if (xr_conditions.surge_started() == true) then
+		return eval_reset(self.a)
+	end
+
+	local enabled = xr_logic.pick_section_from_condlist(db.actor, self.object, self.a.corpse_detection_enabled)
+	if (enabled ~= "true") then
+		return eval_reset(self.a)
+	end
+
+	local npc = self.object
+	if (npc:alive() ~= true or xr_wounded.is_wounded(npc) or npc:best_enemy())then
+		return eval_reset(self.a)
+	end
+
+	if not (self.mgr) then
+		self.mgr = npc:motivation_action_manager()
+	end
+
+	if not self.mgr:initialized() then
+		return false
+	end
+
+	local cid = self.mgr:current_action_id()
+	if (cid == xr_actions_id.wounded_exist or cid == xr_actions_id.stohe_meet_base + 1 or cid == xr_gather_items.actid) then
+		return eval_reset(self.a)
+	end
+
+	if (alun_utils.get_squad_commander_action(npc) == stalker_ids.action_combat_planner) then
+		return eval_reset(self.a)
+	end
+
+	if (self.a.stage == 1) then
+		return eval_stage_1(self.a,npc) or false
+	elseif (self.a.stage == 2) then
+		return eval_stage_2(self.a,npc) or false
+	end
+
+	return eval_reset(self.a)
+end
+
+----------------------------------------------------------------------------------------------------------------------
+--Actions
+----------------------------------------------------------------------------------------------------------------------
+class "action_search_corpse" (action_base)
+function action_search_corpse:__init (npc_name,action_name,storage) super (nil,action_name)
+	self.a = storage
+end
+function action_search_corpse:initialize()
+	action_base.initialize(self)
+	local npc = self.object
+	state_mgr.set_state(npc,self.a.state)
+	npc:set_desired_position()
+	npc:set_desired_direction()
+	npc:set_path_type(game_object.level_path)
+	self.a.vertex_id = utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id,"corpse_detection")
+	db.storage[self.a.selected_corpse_id].corpse_already_selected = npc:id()
+end
+
+local function execute_search_corpse(npc,self)
+	if (state_mgr.get_state(npc) == "search_corpse") then
+		return
+	end
+
+	local tg = time_global()
+	if (npc:level_vertex_id() == self.a.vertex_id) then
+		if not self.sound then
+			if math.random() < 0.60 then
+				xr_sound.set_sound_play(npc:id(),"corpse_loot_begin")
+			end
+			self.sound = true
+		end
+
+		look_pos = corpse and corpse:bone_position("bip01_spine") or self.a.vertex_position
+
+		state_mgr.set_state(npc,"search_corpse",nil,nil,{look_position = look_pos},{fast_set = true})
+	else
+		state_mgr.set_state(npc,self.a.state)
+		self.a.vertex_id = utils.send_to_nearest_accessible_vertex(npc, self.a.vertex_id,"corpse_detection")
+	end
+end
+
+function action_search_corpse:execute()
+	action_base.execute(self)
+	execute_search_corpse(self.object,self)
+end
+
+function action_search_corpse:finalize()
+	state_mgr.set_state(self.object, "idle")
+	local st = self.a
+	if (st.selected_corpse_id and db.storage[st.selected_corpse_id]) then
+		db.storage[st.selected_corpse_id].corpse_already_selected = nil
+	end
+	st.vertex_id = nil
+	st.vertex_position = nil
+	st.selected_corpse_id = nil
+	st.state = nil
+	st.stage = 1
+	st.index = 1
+	st.nearest_corpse_dist = nil
+	st.nearest_corpse_vertex = nil
+	st.nearest_corpse_position = nil
+	st.nearest_id = nil
+	action_base.finalize(self)
+end
+
+---------------------------------------------------------------------------------------------------------------------
 -- BINDER
 ----------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, char_ini, scheme, section, st)
 	local manager = npc:motivation_action_manager()
 
-
 	if (character_community(npc) == "zombied" or npc:section() == "actor_visual_stalker") then
 		manager:add_evaluator(xr_evaluators_id.corpse_exist,property_evaluator_const(false))
+	else
+		manager:add_evaluator (xr_evaluators_id.corpse_exist, evaluator_corpse("corpse_exist", st))
 	end
 
-	-- Evaluators
-	manager:add_evaluator (xr_evaluators_id.corpse_exist, evaluator_corpse("corpse_exist", st))
-
-	local wp = world_property
 	-- Actions
 	local action = action_search_corpse (npc:name(),"action_search_corpse", st)
-	action:add_precondition(wp(stalker_ids.property_alive, true))
-	--action:add_precondition(wp(stalker_ids.property_enemy,	false))
-	action:add_precondition(wp(stalker_ids.property_danger,false))
-	action:add_precondition(wp(stalker_ids.property_anomaly,false))
-	--action:add_precondition(wp(stalker_ids.property_items,false))
 	action:add_precondition(wp(xr_evaluators_id.corpse_exist, true))
-	--action:add_precondition(wp(xr_evaluators_id.sidor_wounded_base, false))
-	action:add_precondition(wp(xr_evaluators_id.wounded_exist, false))
+	action:add_precondition( wp(stalker_ids.property_alive,true) )
+	action:add_precondition( wp(stalker_ids.property_enemy,	false) )
+	action:add_precondition( wp(stalker_ids.property_danger,false) )
+	action:add_precondition( wp(stalker_ids.property_anomaly,false) )
+
+	--action:add_precondition( wp(xr_gather_items.evaid, false))
+	--action:add_precondition( wp(stalker_ids.property_items, false) )
+	action:add_precondition( wp(xr_evaluators_id.wounded_exist,false) )
+	action:add_precondition( wp(xr_evaluators_id.stohe_meet_base + 1, false) )
+	action:add_precondition( wp(xr_evaluators_id.sidor_wounded_base, false) )
+	action:add_precondition( wp(xr_evaluators_id.abuse_base, false) )
+	--action:add_precondition( wp(xr_evaluators_id.state_mgr + 1,false) )
+
 	action:add_effect(wp(xr_evaluators_id.corpse_exist, false))
 	manager:add_action(xr_actions_id.corpse_exist, action)
 
 	local p = {
-				stalker_ids.action_smart_terrain_task,
-				xr_actions_id.alife,
-				--xr_actions_id.state_mgr + 1,
 				xr_actions_id.state_mgr + 2,
-				--xr_actions_id.state_mgr + 3,
-				--stalker_ids.action_alife_planner
+				xr_actions_id.alife
 	}
-	for i=1,#p,1 do
+	for i=1,#p do
 		action = manager:action(p[i])
-		action:add_precondition( wp(xr_evaluators_id.corpse_exist,false) )
+		if (action) then
+			action:add_precondition( wp(xr_evaluators_id.corpse_exist,false) )
+		else
+			alun_utils.printf("xr_corpse_detection: no action id p[%s]",i)
+		end
 	end
+
 end
 
 function set_corpse_detection(npc, ini, scheme, section)
@@ -466,6 +551,15 @@ end
 
 
 function reset_corpse_detection(npc, scheme, st, section)
+	if (st.corpse_detection.selected_corpse_id) then
+		if (db.storage[st.corpse_detection.selected_corpse_id]) then
+			db.storage[st.corpse_detection.selected_corpse_id].corpse_already_selected = nil
+		end
+		st.corpse_detection.selected_corpse_id = nil
+	end
+	st.corpse_detection.vertex_id = nil
+	st.corpse_detection.vertex_position = nil
+
 	st.corpse_detection.corpse_detection_enabled = xr_logic.parse_condlist(npc, section, "corpse_detection_enabled",utils.cfg_get_string(st.ini, section, "corpse_detection_enabled", npc, false,"","true"))
 end
 
@@ -478,4 +572,10 @@ function is_under_corpse_detection(npc)
 
 	local current_action_id = mgr:current_action_id()
 	return  current_action_id == xr_actions_id.corpse_exist
+end
+
+function clear_table (t)
+	while #t > 0 do
+		table.remove (t, #t)
+	end
 end

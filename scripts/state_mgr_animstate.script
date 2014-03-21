@@ -6,8 +6,8 @@ function eva_state_mgr_animstate:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_animstate:evaluate()
-	self.st.eval_states[self.st.properties["animstate"]] = state_lib.states[self.st.target_state].animstate == self.st.animstate.states.current_state
-	return self.st.eval_states[self.st.properties["animstate"]]
+	self.st.eval_states[state_mgr_goap.properties["animstate"]] = state_lib.states[self.st.target_state].animstate == self.st.animstate.states.current_state
+	return self.st.eval_states[state_mgr_goap.properties["animstate"]]
 end
 
 --' Заняли ли мы сейчас какое то скриптовое положение тела
@@ -38,8 +38,8 @@ function eva_state_mgr_animstate_locked:evaluate()
 --	if self.st.fast_set == true then
 --		return false
 --	end
-	self.st.eval_states[self.st.properties["animstate_locked"]] = self.st.animstate.states.anim_marker ~= nil and self.st.animstate.states.anim_marker ~= 3  -- MARKER_IDLE
-	return self.st.eval_states[self.st.properties["animstate_locked"]]
+	self.st.eval_states[state_mgr_goap.properties["animstate_locked"]] = self.st.animstate.states.anim_marker ~= nil and self.st.animstate.states.anim_marker ~= 3  -- MARKER_IDLE
+	return self.st.eval_states[state_mgr_goap.properties["animstate_locked"]]
 end
 
 

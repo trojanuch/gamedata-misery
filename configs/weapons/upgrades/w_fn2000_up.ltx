@@ -189,19 +189,19 @@ inv_weight              	= +0.14
 [up_sect_fourta_fn2000]
 ;Оптика 4x
 ;------------------
-cost		      		= 2240
+cost		      		= 1290
 
-scope_zoom_factor       = -32
+scope_zoom_factor       = -32.6
 inv_weight			= +0.1
 
 [up_sect_fourtc_fn2000]
-cost		      		= 3360
+cost		      		= 1860
 
 scope_nightvision = scope_contrast
 inv_weight			= +0.05
 
 [up_sect_fourte_fn2000]
-cost		      		= 5890
+cost		      		= 4190
 
 scope_nightvision = scope_nightvision
 inv_weight			= +0.27
@@ -595,10 +595,8 @@ icon                    = ui_inGame2_upgrade_FT200M_18
 [up_fourtf_fn2000]
 scheme_index            = 2, 7
 effects                 =
-section                 = up_sect_fourtf_fn2000
-property                = prop_scope
-
-known                   = 1
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -609,9 +607,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_opt_c3_name
-description             = st_up_opt_c3_descr
-icon                    = ui_inGame2_upgrade_FT200M_19
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
 
 ;[up_fiftha_fn2000]
 ;scheme_index            = 0, 4

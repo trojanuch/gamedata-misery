@@ -10,12 +10,12 @@ function eva_state_mgr_weapon:evaluate()
 
 	local weapon = state_lib.states[self.st.target_state].weapon
 	if (weapon == nil) then
-		self.st.eval_states[self.st.properties["weapon"]] = true
+		self.st.eval_states[state_mgr_goap.properties["weapon"]] = true
 		return true
 	end
 
 	if not isWeapon(self.object:best_weapon()) then
-		self.st.eval_states[self.st.properties["weapon"]] = true
+		self.st.eval_states[state_mgr_goap.properties["weapon"]] = true
 		return true
 	end
 	local bestweapon = self.object:best_weapon()
@@ -25,27 +25,27 @@ function eva_state_mgr_weapon:evaluate()
 	   ((strappable_weapon(bestweapon) and
 	   self.object:weapon_strapped() and self.object:is_weapon_going_to_be_strapped(bestweapon)) or
 	   (not strappable_weapon(bestweapon) and activeitem == nil))) then
-		self.st.eval_states[self.st.properties["weapon"]] = true
+		self.st.eval_states[state_mgr_goap.properties["weapon"]] = true
 		return true
 	end
 
 	if	( (weapon == "unstrapped") or (weapon == "fire") or	(weapon == "sniper_fire") ) and
 		(activeitem) and (bestweapon) and (activeitem:id() == bestweapon:id()) and
 		(not self.object:is_weapon_going_to_be_strapped(bestweapon) and self.object:weapon_unstrapped()) then
-		self.st.eval_states[self.st.properties["weapon"]] = true
+		self.st.eval_states[state_mgr_goap.properties["weapon"]] = true
 		return true
 	end
 
 	if (weapon == "none" and activeitem == nil) then
-		self.st.eval_states[self.st.properties["weapon"]] = true
+		self.st.eval_states[state_mgr_goap.properties["weapon"]] = true
 		return true
 	end
 
 	if (weapon == "drop" and activeitem == nil) then
-		self.st.eval_states[self.st.properties["weapon"]] = true
+		self.st.eval_states[state_mgr_goap.properties["weapon"]] = true
 		return true
 	end
-	self.st.eval_states[self.st.properties["weapon"]] = false
+	self.st.eval_states[state_mgr_goap.properties["weapon"]] = false
 	return false
 end
 --' Лочим ли мы все это для оружия или нет?
@@ -176,7 +176,9 @@ function act_state_mgr_weapon_unstrapp:__init(name, st) super (nil, name)
 end
 function act_state_mgr_weapon_unstrapp:initialize()
 	action_base.initialize(self)
-	self.object:set_item(get_idle_state(self.st.target_state), get_weapon(self.object, self.st.target_state))
+	local wpn = get_weapon(self.object, self.st.target_state)
+	if (axr_main) then axr_main.npc_on_weapon_unstrapped(self.object,wpn) end
+	self.object:set_item(get_idle_state(self.st.target_state), wpn)
 end
 function act_state_mgr_weapon_unstrapp:execute()
 	action_base.execute(self)

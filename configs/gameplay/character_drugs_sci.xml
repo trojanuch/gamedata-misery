@@ -4,29 +4,48 @@ stimpack_scientic = 1, prob=1 \n
 detector_advanced = 1, prob=1 \n
 detector_elite = 1, prob=0.002 \n
 
-af_cristall = 1, prob=0.010 \n
-af_fireball = 1, prob=0.006 \n
-af_dummy_glassbeads = 1, prob=0.004 \n
-af_eye = 1, prob=0.002 \n
-af_fire = 1, prob=0.002 \n
-af_medusa = 1, prob=0.010 \n
-af_cristall_flower = 1, prob=0.008 \n
-af_night_star = 1, prob=0.006 \n
-af_vyvert = 1, prob=0.004 \n
-af_gravi = 1, prob=0.004 \n
-af_gold_fish = 1, prob=0.002 \n
-af_blood = 1, prob=0.010 \n
-af_mincer_meat = 1, prob=0.006 \n
-af_soul = 1, prob=0.004 \n
-af_fuzz_kolobok = 1, prob=0.002 \n
-af_baloon = 1, prob=0.002 \n
-af_glass = 1, prob=0.002 \n
-af_electra_sparkler = 1, prob=0.010 \n
-af_electra_flash = 1, prob=0.006 \n
-af_electra_moonlight = 1, prob=0.004 \n
-af_dummy_battery = 1, prob=0.004 \n
-af_dummy_dummy = 1, prob=0.002 \n
-af_ice = 1, prob=0.002 \n
+lead_box = 3, prob=0.008
+
+af_medusa_lead_box = 1, prob=0.015\n
+af_cristall_lead_box = 1, prob=0.015\n
+af_blood_lead_box = 1, prob=0.015\n
+af_electra_sparkler_lead_box = 1, prob=0.015\n
+
+af_cristall_flower_lead_box = 1, prob=0.006 \n
+af_vyvert_lead_box = 1, prob=0.006 \n
+af_fireball_lead_box = 1, prob=0.006 \n
+af_dummy_glassbeads_lead_box = 1, prob=0.006 \n
+af_mincer_meat_lead_box = 1, prob=0.006 \n
+af_soul_lead_box = 1, prob=0.006 \n
+af_fuzz_kolobok_lead_box = 1, prob=0.006 \n
+af_electra_flash_lead_box = 1, prob=0.006 \n
+af_electra_moonlight_lead_box = 1, prob=0.006 \n
+af_dummy_battery_lead_box = 1, prob=0.006 \n
+af_dummy_dummy_lead_box = 1, prob=0.006 \n
+
+af_medusa_af_iam = 1, prob=0.01 \n
+af_cristall_af_iam = 1, prob=0.01 \n
+af_blood_af_iam = 1, prob=0.01 \n
+af_electra_sparkler_af_iam = 1, prob=0.01 \n
+
+af_cristall_flower_af_aac = 1, prob=0.006 \n
+af_vyvert_af_aac = 1, prob=0.006 \n
+af_fireball_af_aac = 1, prob=0.006 \n
+af_dummy_glassbeads_af_aac = 1, prob=0.006 \n
+af_mincer_meat_af_aac = 1, prob=0.006 \n
+af_soul_af_aac = 1, prob=0.006 \n
+af_electra_flash_af_aac = 1, prob=0.006 \n
+af_electra_moonlight_af_aac = 1, prob=0.006 \n
+af_dummy_battery_af_aac = 1, prob=0.006 \n
+
+af_gravi_af_aam = 1, prob=0.006 \n
+af_gold_fish_af_aam = 1, prob=0.006 \n
+af_eye_af_aam = 1, prob=0.006 \n
+af_fire_af_aam = 1, prob=0.006 \n
+af_baloon_af_aam = 1, prob=0.006 \n
+af_glass_af_aam = 1, prob=0.006 \n
+af_dummy_dummy_af_aam = 1, prob=0.006 \n
+af_ice_af_aam = 1, prob=0.006 \n
 
 roubles					= 2, prob=0.5 \n
 

@@ -242,7 +242,7 @@ function init_start_dialogs(dialog, str)
 					table.insert(p,get_id())
 				end
 
-				add_dialog(v.id,p[1],"st_surrender_query_victim_1",{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
+				add_dialog(v.id,p[1],tostring("st_surrender_query_victim_1_"..math.random(30)),{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
 				add_dialog(v.id,p[2],"st_surrender_query_victim_5",{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
 				add_dialog(v.id,p[3],"st_surrender_query_victim_2",{"dialogs.npc_is_surrendered","dialogs.victim_no_surrender"})
 				add_dialog(v.id,p[4],"dm_wounded_medkit",{"dialogs.victim_no_surrender","dialogs.actor_have_medkit","dialogs.npc_is_not_surrendered"},{"dialogs.transfer_medkit","dialogs.break_dialog"})

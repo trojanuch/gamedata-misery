@@ -6,6 +6,11 @@ function add_stalker(npc)
 	if not (db.OnlineStalkers) then
 		db.OnlineStalkers = {}
 	end
+	for i=#db.OnlineStalkers,1,-1 do
+		if (npc:id() == db.OnlineStalkers[i]) then
+			return
+		end
+	end
 	table.insert(db.OnlineStalkers,npc:id())
 end
 
@@ -20,6 +25,88 @@ function del_stalker(npc)
 		end
 	end
 end
+
+function release_object(p)
+	local sim = alife()
+	local se_obj = p[1] and sim:object(p[1])
+	if not (se_obj) then
+		return true
+	end
+
+	if (se_obj.online) then
+		se_obj:switch_offline()
+		return false
+	end
+
+	alun_utils.printf("safe released %s",se_obj:name())
+	sim:release(se_obj,true)
+
+	return true
+end
+
+-- Prints a formated lua table to print_table.txt for debugging purposes
+function print_table(tbl,header)
+	local txt = tostring(header) .. "\n{\n\n"
+	local depth = 1
+
+	local function tab(amt)
+		local str = ""
+		for i=1,amt, 1 do
+			str = str .. "\t"
+		end
+		return str
+	end
+
+	local function table_to_string(tbl)
+		local size = 0
+		for k,v in pairs(tbl) do
+			size = size + 1
+		end
+
+		local key
+		local i = 1
+
+		for k,v in pairs(tbl) do
+			if (type(k) == "number") then
+				key = "[" .. k .. "]"
+			else
+				key = "[\""..tostring(k) .. "\"]"
+			end
+
+			if (type(v) == "table") then
+				txt = txt .. tab(depth) .. key .. " =\n"..tab(depth).."{\n"
+				depth = depth + 1
+				table_to_string(v,tab(depth))
+				depth = depth - 1
+				txt = txt .. tab(depth) .. "}"
+			elseif (type(v) == "number" or type(v) == "boolean") then
+				txt = txt .. tab(depth) .. key .. " = " .. tostring(v)
+			elseif (type(v) == "userdata") then
+				txt = txt .. tab(depth) .. key .. " = \"userdata\""
+			else
+				txt = txt .. tab(depth) .. key .. " = \"" .. tostring(v) .. "\""
+			end
+
+			if (i == size) then
+				txt = txt .. "\n"
+			else
+				txt = txt .. ",\n"
+			end
+
+			i = i + 1
+		end
+	end
+
+	table_to_string(tbl)
+
+	txt = txt .. "\n}"
+
+	local file = io.open("print_table.txt","a+")
+	file:write(txt.."\n\n")
+	file:close()
+	printf("Table written to print_table.txt")
+end
+
 
 function is_in_same_squad(obj,npc)
 	local squad1 = get_object_squad(obj)
@@ -82,6 +169,88 @@ function str_explode(str,pattern)
 	return t
 end
 
+function hex2string(str)
+    return (str:gsub('..', function (cc)
+        return string.char(tonumber(cc, 16))
+    end))
+end
+
+function string2hex(str)
+    return (str:gsub('.', function (c)
+        return string.format('%02X', string.byte(c))
+    end))
+end
+
+function float2hex (n)
+    if n == 0.0 then return 0.0 end
+
+    local sign = 0
+    if n < 0.0 then
+        sign = 0x80
+        n = -n
+    end
+
+    local mant, expo = math.frexp(n)
+    local hext = {}
+
+    if mant ~= mant then
+        hext[#hext+1] = string.char(0xFF, 0x88, 0x00, 0x00)
+
+    elseif mant == math.huge or expo > 0x80 then
+        if sign == 0 then
+            hext[#hext+1] = string.char(0x7F, 0x80, 0x00, 0x00)
+        else
+            hext[#hext+1] = string.char(0xFF, 0x80, 0x00, 0x00)
+        end
+
+    elseif (mant == 0.0 and expo == 0) or expo < -0x7E then
+        hext[#hext+1] = string.char(sign, 0x00, 0x00, 0x00)
+
+    else
+        expo = expo + 0x7E
+        mant = (mant * 2.0 - 1.0) * math.ldexp(0.5, 24)
+        hext[#hext+1] = string.char(sign + math.floor(expo / 0x2),
+                                    (expo % 0x2) * 0x80 + math.floor(mant / 0x10000),
+                                    math.floor(mant / 0x100) % 0x100,
+                                    mant % 0x100)
+    end
+
+    return tonumber(string.gsub(table.concat(hext),"(.)",
+                                function (c) return string.format("%02X%s",string.byte(c),"") end), 16)
+end
+
+
+function hex2float (c)
+    if c == 0 then return 0.0 end
+    local c = string.gsub(string.format("%X", c),"(..)",function (x) return string.char(tonumber(x, 16)) end)
+    local b1,b2,b3,b4 = string.byte(c, 1, 4)
+    local sign = b1 > 0x7F
+    local expo = (b1 % 0x80) * 0x2 + math.floor(b2 / 0x80)
+    local mant = ((b2 % 0x80) * 0x100 + b3) * 0x100 + b4
+
+    if sign then
+        sign = -1
+    else
+        sign = 1
+    end
+
+    local n
+
+    if mant == 0 and expo == 0 then
+        n = sign * 0.0
+    elseif expo == 0xFF then
+        if mant == 0 then
+            n = sign * math.huge
+        else
+            n = 0.0/0.0
+        end
+    else
+        n = sign * math.ldexp(1.0 + mant / 0x800000, expo - 0x7F)
+    end
+
+    return n
+end
+
 function parse_list(ini,key,val,convert)
 	local str = read_from_ini(ini,key,val,"string","")
 	local t = str and str ~= "" and str_explode(str,",")
@@ -98,6 +267,46 @@ function parse_list(ini,key,val,convert)
 	return t
 end
 
+function eval_condlist(npc, condlist, p)
+	return xr_logic.pick_section_from_condlist(db.actor,npc, condlist, p)
+end
+
+function parse_condlist(str)
+	if not (str) then
+		printf("alun_utils.parse_condlist: Error no source string")
+		return
+	end
+
+	local src = str_explode(str,",")
+	local t = {}
+	local a,b,infop_check_lst,infop_set_lst,remainings,new_sect
+	for i=1,#src do
+		a, b, infop_check_lst = string.find(src[i], "{%s*(.*)%s*}")
+		if (infop_check_lst) then
+			remainings = string.sub(src[i], 1, a - 1) .. string.sub(src[i], b + 1)
+		else
+			remainings = src[i]
+		end
+
+		a, b, infop_set_lst = string.find(remainings, "%%%s*(.*)%s*%%")
+		if (infop_set_lst) then
+			new_sect = string.sub(remainings, 1, a - 1) .. string.sub(remainings, b + 1)
+		else
+			new_sect = remainings
+		end
+
+		new_sect = trim(new_sect)
+
+		t[i] = {}
+		t[i].infop_check = {}
+		t[i].infop_set = {}
+
+		t[i].section = new_sect
+		xr_logic.parse_infop(t[i].infop_check, infop_check_lst)
+		xr_logic.parse_infop(t[i].infop_set, infop_set_lst)
+	end
+	return t
+end
 
 function collect_sections(ini,sections)
 	local r,p = {},{}
@@ -232,9 +441,11 @@ function get_nearest_stalker(npc)
 	local dist
 	local nearest_stalker,nearest_dist
 	local pos
+	local st
 	for i=1, #db.OnlineStalkers do
-		stalker = db.storage[db.OnlineStalkers[i]] and db.storage[db.OnlineStalkers[i]].object or level.object_by_id(db.OnlineStalkers[i])
-		if (stalker:alive() and stalker:id()) then
+		st = db.storage[db.OnlineStalkers[i]]
+		stalker = st and st.object or level.object_by_id(db.OnlineStalkers[i])
+		if (stalker and stalker:alive()) then
 			pos = npc == "cam" and device().cam_pos or npc:position()
 			dist = pos:distance_to_sqr(stalker:position())
 			if not (nearest_dist) then
@@ -290,11 +501,37 @@ function get_squad_count(npc)
 	return c
 end
 
+function safe_release(p)
+	local sim = alife()
+	local se_obj = p[1] and sim:object(p[1])
+	if not (se_obj) then
+		return true
+	end
+
+	-- wait for it to switch offline
+	if (se_obj.online) then
+		--se_obj:switch_offline()
+		sim:set_switch_online(p[1],false)
+		sim:set_switch_offline(p[1],true)
+		return false
+	end
+
+	-- release stalker
+	sim:release(se_obj,true)
+
+	return true
+end
+
 function release(se_obj)
 	if (se_obj) then
 		local sim = alife()
 		sim:release(se_obj,true)
 	end
+end
+
+function create(p)
+	--printf("section=%s position=%s lvid=%s gvid=%s",p[1],vector_to_string(p[2]),p[3],p[4])
+	alife():create(p[1],p[2],p[3],p[4])
 end
 
 function get_current_action_id(npc)
@@ -429,10 +666,30 @@ function debug_write(text,...)
 	local p = {...}
 	local function sr(a)
 		i = i + 1
+		if (type(p[1]) == "userdata") then
+			return "userdata"
+		end
 		return tostring(p[i])
 	end
 	local output = string.gsub(text,"%%s",sr)
 	get_console():execute("load ~#I#:"..output)
+end
+
+function str_format(str,...)
+	if not (str) then
+		return
+	end
+	local p = {...}
+	local rep
+	local new_str = ""
+	for k,v in pairs(p) do
+		rep = str_explode(v,"=")
+
+		if (rep[1] and rep[2]) then
+			str = str:gsub("("..tostring(rep[1])..")",tostring(rep[2]))
+		end
+	end
+	return str
 end
 
 function is_trader(...)
@@ -632,7 +889,7 @@ function squad_in_los(npc)
 					er = 0
 				end
 				local mywho = vec_who:similar(vec_be,er)
-				if (myhwo == 1) then
+				if (mywho == 1) then
 					return true
 				end
 			end
@@ -931,25 +1188,27 @@ end
 
 local exec_queue = {}
 local exec_data = {}
+local remove_me = {}
 function execute_queue()
 	local id
 	local se_obj
 	local sim = alife()
+
 	for i=#exec_queue, 1, -1 do
 		id = exec_queue[i]
 		se_obj = id and sim:object(id)
 		if not (se_obj) then
 			-- object no longer exists
 			exec_data[id] = nil
-			table.remove(exec_queue,i)
+			table.insert(remove_me,i)
 		end
 
 		if not (se_obj.online) then
 			-- execute function and switch online
-			alun_utils.printf("offline execute 1")
+			--alun_utils.printf("offline execute 1")
 			exec_data[id].f(se_obj,exec_data[id].p)
 			exec_data[id] = nil
-			table.remove(exec_queue,i)
+			table.insert(remove_me,i)
 
 			local parent = se_obj.parent_id ~= 65535 and alife():object(se_obj.parent_id)
 			if (parent and not exec_data[se_obj.parent_id]) then
@@ -957,7 +1216,7 @@ function execute_queue()
 			else
 				se_obj:switch_online()
 			end
-			alun_utils.printf("offline execute 2")
+			--alun_utils.printf("offline execute 2")
 		else
 			local obj = level.object_by_id(id)
 			if (IsStalker(se_obj)) then
@@ -991,6 +1250,11 @@ function execute_queue()
 			end
 		end
 	end
+
+	for i=#remove_me,1,-1 do
+		table.remove(exec_queue,remove_me[i])
+		table.remove(remove_me,i)
+	end
 end
 
 function switch_offline_execute(id,func,...)
@@ -1020,7 +1284,8 @@ end
 
 --local loadstring = memoize(loadstring)
 
------------------------------------------ Path Nodes
+
+---------------------------------------- Path Nodes
 class "position_node"
 function position_node:__init(amt)
 	self.node = {}
@@ -1056,111 +1321,6 @@ function position_node:select_best_vertex_id(object,dir,lvid,distance)
 end
 
 -------------------------------------------- INI utils
-function read_ini(file,sec,key,typ,def)
-	local val = rw_ini(file,0,sec,key)
-	if not (val) then
-		return def
-	end
-
-	if (typ == 2) then
-		return val == "true"
-	elseif (typ == 1) then
-		return tonumber(val)
-	end
-end
-
-function write_ini(file,sec,key,val)
-	val = tostring(val)
-	return rw_ini(file,1,sec,key,val)
-end
-
-function rw_ini(file,mode,sec,key,val)
-
-	local ini = io.open(file, "r")
-	if not (ini) then
-		if (mode ~= 0) then
-			ini = io.open(file, "w")
-			ini:write("[" .. sec .. "]" .. "\n" .. key .. " = " .. val)
-			ini:close()
-			return true
-		end
-		return
-	end
-
-	local intAct = 0
-	local save = ""
-	local found, blnSection
-
-	while true do
-		local ln = ini:read()   -- Reads a line
-		if not (ln) then
-			break
-		end
-
-		if (intAct == 0) then
-			if not (blnSection) then
-				found = string.sub(ln,0,1)
-				if (found == "[") then -- found header
-					header = string.sub(ln,2,-2)
-					if (header == sec) then
-						blnSection = true
-					end
-				end
-			else
-				header = string.sub(ln,0,1)
-				if (header == "[") then
-					blnSection = nil
-					ln = key .. " = " .. val .. "\n" .. ln
-					intAct = 1
-				elseif (header == ";") or (ln == "") then
-					-- ignore
-				else
-					strFindEqual = string.find(ln,"=")
-					if (strFindEqual) then
-						strKeyname = string.sub(ln,0,strFindEqual - 1)
-						if (strKeyname == key) then
-							if (mode == 0) then
-								found = str_explode(string.sub(ln,strFindEqual+1),";")
-								return trim(found[1])
-							end
-							ln = key .. " = " .. val
-							intAct = 1
-						end
-					end
-				end
-			end
-		end
-		save = save .. ln .. "\n"
-	end
-
-	ini:close()
-
-	if (inAct ~= 1) then
-		if not (blnSection) then
-			save = save .. "[" .. sec .. "]" .. "\n" .. key .. " = " .. val
-		else
-			save = save .. key .. " = " .. val
-		end
-
-		if (mode ~= 0) then
-			ini = io.open(file, "w")
-			ini:write(save)
-			ini:close()
-			return true
-		end
-
-		if (mode == 0) then
-			return -- key not found in section
-		end
-	end
-end
-
-function cfg_file(name)
-
-end
-
-
-
 
 -- INI Reader
 function file_to_table(fname)
@@ -1205,11 +1365,15 @@ function file_to_table(fname)
 						links[sec] = v
 					end
 				end
-			elseif (not startsWith(line, ";") and sec) then
+			elseif (not startsWith(line, ";")) then
 				t = str_explode(line,";")
 				t = str_explode(t[1],"=")
-				root[sec] = root[sec] or {}
-				root[sec][t[1]] = t[2] or ""
+				if (sec) then
+					root[sec] = root[sec] or {}
+					root[sec][t[1]] = t[2] or ""
+				else
+					root[t[1]] = t[2] or ""
+				end
 			end
 		end
 	end
@@ -1230,9 +1394,9 @@ function cfg_file:GetValue(sec,key,typ,def)
 		return def
 	end
 
-	if (typ == 1) then
+	if (typ == 1 or typ == "bool") then
 		return val == "true"
-	elseif (typ == 2) then
+	elseif (typ == 2 or typ == "number") then
 		return tonumber(val)
 	end
 	return val
@@ -1320,7 +1484,7 @@ function cfg_file:Save()
 			if (val == nil or val == "") then
 				str = str .. key .. "\n"
 			else
-				str = str .. key .. " = " .. val .. "\n"
+				str = str .. key .. " = " .. tostring(val) .. "\n"
 			end
 		end
 	end
@@ -1429,11 +1593,15 @@ function w_stpk(stpk,typ,n,info)
 
 	elseif (typ == "stringZ") then
 		if (n and type(n) == "string") then
-			stpk:w_stringZ(n)
+			if (string.len(n) > 255) then
+				isError = true
+				info = info .. " |-> length of string is too long for stringZ"
+			end
+			stpk:w_stringZ( string.sub(n,0,255) )
 		elseif (n and type(n) ~= "userdata") then
 			stpk:w_stringZ(tostring(n))
 		else
-			isError = true
+			--isError = true
 			stpk:w_stringZ("nil")
 		end
 
@@ -1441,6 +1609,7 @@ function w_stpk(stpk,typ,n,info)
 		if (n and type(n) == "userdata" and n.timeToString) then
 			utils.w_CTime(stpk,n)
 		else
+			--printf("w_stpk:Debug: CTime is nil [%s]",info)
 			utils.w_CTime(stpk,nil)
 		end
 	else
@@ -1452,4 +1621,59 @@ function w_stpk(stpk,typ,n,info)
 	else
 		--printf("w_stpk:DEBUG: write %s (%s) TrueType=%s [%s]   | Packet:w_tell()=>%s",typ,type(n) ~= "userdata" and tostring(n) or "userdata",type(n),info,stpk:w_tell())
 	end
+end
+
+function findfunction(x,tbl)
+	assert(type(x) == "string")
+	local f=tbl
+	for v in x:gmatch("[^%.]+") do
+		if type(f) ~= "table" then
+			printf("looking for '%s' expected table, not %s",v,type(f))
+			return
+		end
+		f=f[v]
+	end
+	if type(f) == "function" then
+		return f
+	else
+		printf("expected function, not %s",type(f))
+		return nil
+	end
+end
+
+local fsgame
+function get_fsgame()
+	if (fsgame) then
+		return fsgame
+	end
+
+	local root = file_to_table("fsgame.ltx")
+
+	local fsgame = {}
+	fsgame["$fs_root$"] = ""
+	for k,v in pairs(root) do
+		local t = str_explode(v,"|")
+		local r = str_explode(root[t[3]],"|")
+		fsgame[k] = (r and r[4] or "") .. (t and t[4] or "")
+	end
+	return fsgame
+end
+
+function fspath(str)
+	local fsg = get_fsgame()
+	return fsg[str] or ""
+end
+
+function fsgame_append(str,ap)
+	if (fspath(str) ~= "" and fspath(str) ~= nil) then
+		return
+	end
+	fsgame = nil
+
+	local fsg = io.open("fsgame.ltx","a+")
+	local data = fsg:read("*all")
+	if not (string.find(data,str)) then
+		fsg:write("\n"..ap)
+	end
+	fsg:close()
 end

@@ -1,22 +1,14 @@
-shovel_mili		= 1, prob=0.006 \n
-ied_rpg			= 1, prob=0.012 \n
-maps_kit		= 1, prob=0.012 \n
+shovel_mili		= 1, prob=0.012 \n
+ied				= 1, prob=0.024 \n
+maps_kit		= 1, prob=0.024 \n
 
-radio2			= 1, prob=0.024 \n
+mine			= 1, prob=0.048 \n
 
-cocaine					= 2, prob=0.018 \n
-tetanus					= 1, prob=0.018 \n
-adrenalin				= 1, prob=0.009 \n
+radio2			= 1, prob=0.048 \n
 
-tarpaulin		= 2, prob=0.009 \n
-synthrope		= 1, prob=0.024 \n
-underwear		= 1, prob=0.018 \n
-cutlery			= 1, prob=0.021 \n
-fieldcooker		= 1, prob=0.012 \n
-swiss			= 1, prob=0.018 \n
+tarpaulin		= 2, prob=0.018 \n
+synthrope		= 1, prob=0.048 \n
+cutlery			= 1, prob=0.042 \n
+swiss			= 1, prob=0.036 \n
 
-mili_maps		= 1, prob=0.018 \n
-
-mre = 1, prob=0.001
-mre2 = 1, prob=0.001
-mre3 = 1, prob=0.001
+mili_maps		= 1, prob=0.036 \n

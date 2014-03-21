@@ -51,6 +51,7 @@ local intercepts = {
 	-- sim_board.script
 	squad_on_npc_creation		= {},
 	squad_on_add_npc			= {},
+	squad_can_switch_offline	= {},
 
 	-- sim_squad_scripted.script
 	squad_assign_new_target		= {},
@@ -820,5 +821,16 @@ end
 function physic_object_on_hit_callback(obj, amount, local_direction, who, bone_index)
 	for i=1, #intercepts.physic_object_on_hit_callback do
 		intercepts.physic_object_on_hit_callback[i](obj, amount, local_direction, who, bone_index)
+	end
+end
+
+-------------------
+-- squad_can_switch_offline(self)
+-------------------
+function squad_can_switch_offline(squad,npc)
+	for i=1, #intercepts.squad_can_switch_offline do
+		if (intercepts.squad_can_switch_offline[i](squad) == false) then
+			return false
+		end
 	end
 end

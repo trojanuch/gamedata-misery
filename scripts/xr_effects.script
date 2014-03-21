@@ -228,6 +228,18 @@ function enable_nv_and_imput(actor, npc, p)
 	enable_actor_torch(nil,nil)
 end
 
+function enable_imput(actor, npc, p)
+	--db.actor:restore_weapon()
+
+	if not p or (p and p[1] ~= "true") then
+		if ui_active_slot ~= 0 and db.actor:item_in_slot(ui_active_slot) ~= nil then
+			db.actor:activate_slot(ui_active_slot)
+		end
+	end
+
+	level.enable_input()
+end
+
 function enable_nv(actor, npc, p)
 	--db.actor:restore_weapon()
 
@@ -1366,6 +1378,11 @@ function spawn_object(actor, obj, p)
 	elseif se_obj:clsid() == clsid.script_phys then
 		se_obj:set_yaw(yaw * math.pi / 180)
 	end
+--	if spawn_sect == "zat_b38_stalker_cop_dead" then
+--		alun_utils.printf("test 1 dead body")
+--		story_objects.get_story_objects_registry():register(se_obj.id,spawn_sect,nil,true)
+	--	table.insert(story_objects.self.dynamic_story_ids, se_obj.id)
+--	end
 end
 
 local jup_b219_position
@@ -1597,103 +1614,83 @@ end
 --end
 
 function play_inv_repair_kit_use_fast_2p8()
-	local snd_obj = sound_object("interface\\inv_repair_kit_use_fast_2p8")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_repair_kit_use_fast_2p8")
 end
 
 function play_inv_repair_kit_use_fast()
-	local snd_obj = sound_object("interface\\inv_repair_kit_use_fast")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_repair_kit_use_fast")
 end
 
 function play_inv_repair_kit_with_brushes()
-	local snd_obj = sound_object("interface\\inv_repair_kit_with_brushes")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_repair_kit_with_brushes")
 end
 
 function play_inv_repair_sewing_kit()
-	local snd_obj = sound_object("interface\\inv_repair_sewing_kit")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_repair_sewing_kit")
 end
 
 function play_inv_repair_sewing_kit_fast()
-	local snd_obj = sound_object("interface\\inv_repair_sewing_kit_fast")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_repair_sewing_kit_fast")
 end
 
 function play_inv_repair_spray_oil()
-	local snd_obj = sound_object("interface\\inv_repair_spray_oil")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_repair_spray_oil")
 end
 
 function play_inv_repair_brushes()
-	local snd_obj = sound_object("interface\\inv_repair_brushes")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_repair_brushes")
 end
 
 function play_inv_repair_kit()
-	local snd_obj = sound_object("interface\\inv_repair_kit")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_repair_kit")
 end
 
 function play_inv_drink_flask_2()
-	local snd_obj = sound_object("interface\\inv_drink_flask_2")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_drink_flask_2")
 end
 
 function play_inv_cooking()
-	local snd_obj = sound_object("interface\\inv_cooking")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_cooking")
 end
 
 function play_inv_cooking_cooker()
-	local snd_obj = sound_object("interface\\inv_cooking_cooker")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_cooking_cooker")
 end
 
 function play_inv_cooking_stove()
-	local snd_obj = sound_object("interface\\inv_cooking_stove")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_cooking_stove")
 end
 
 function play_inv_aam_open()
-	local snd_obj = sound_object("interface\\inv_aam_open")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_aam_open")
 end
 
 function play_inv_aam_close()
-	local snd_obj = sound_object("interface\\inv_aam_close")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_aam_close")
 end
 
 function play_inv_aac_open()
-	local snd_obj = sound_object("interface\\inv_aac_open")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_aac_open")
 end
 
 function play_inv_aac_close()
-	local snd_obj = sound_object("interface\\inv_aac_close")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_aac_close")
 end
 
 function play_inv_iam_open()
-	local snd_obj = sound_object("interface\\inv_iam_open")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_iam_open")
 end
 
 function play_inv_iam_close()
-	local snd_obj = sound_object("interface\\inv_iam_close")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_iam_close")
 end
 
 function play_inv_lead_open()
-	local snd_obj = sound_object("interface\\inv_lead_open")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_lead_open")
 end
 
 function play_inv_lead_close()
-	local snd_obj = sound_object("interface\\inv_lead_close")
-	snd_obj:play(db.actor,0,sound_object.s2d)
+	xr_sound.set_sound_play(db.actor:id(),"inv_lead_close")
 end
 
 function play_sound(actor, obj, p)
@@ -3816,15 +3813,6 @@ function jup_b200_count_found(actor)
 
 	cnt = cnt + xr_logic.pstor_retrieve(actor, "jup_b200_tech_materials_brought_counter", 0)
 	xr_logic.pstor_store(actor, "jup_b200_tech_materials_found_counter", cnt)
-end
-
-function up_start()
-up.up_objects_spawn()
-up.up_stalkers_spawn()
-end
-
-function up_freeplay()
-up.freeplay_clean_territory()
 end
 
 function sr_teleport(actor,npc,p)

@@ -2,10 +2,21 @@
 squad_id = 29
 max_population = 1
 
-;active = walker@sim_8
+respawn_params = zaton_smrter_sim_8
 
-;[walker1@sim_8]
-;path_walk = zat_smrter_sim_8_walker_1_walk
+[zaton_smrter_sim_8]
+spawn_flesh
 
-;[walker2@sim_8]
-;path_walk = zat_smrter_sim_8_walker_2_walk
+;;; unused
+
+spawn_boar
+
+[spawn_flesh]
+spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog, simulation_flesh, simulation_flesh, simulation_boar, simulation_bloodsucker, simulation_gigant
+spawn_num = {=actor_on_level(zaton)} 1, 0
+
+;;; unused
+
+[spawn_boar]
+spawn_squads = simulation_dog, simulation_pseudodog, simulation_boar, simulation_flesh, simulation_flesh, simulation_snork
+spawn_num = 0 ; {=actor_on_level(zaton)} 1, 0

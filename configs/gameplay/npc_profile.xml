@@ -54,6 +54,12 @@
 	<character id="sim_default_duty_commando_2">
 		<class>sim_default_duty_commando_2</class>
 	</character>
+	<character id="sim_default_duty_sci_1">
+		<class>sim_default_duty_sci_1</class>
+	</character>
+	<character id="sim_default_duty_sci_2">
+		<class>sim_default_duty_sci_2</class>
+	</character>
 	<!-- sim monolith -->
 	<character id="sim_default_monolith_0">
 		<class>sim_default_monolith_0</class>
@@ -116,6 +122,12 @@
 	</character>
 	<character id="sim_default_bandit_4">
 		<class>sim_default_bandit_4</class>
+	</character>
+	<character id="sim_default_bandit_elite_sci_1">
+		<class>sim_default_bandit_elite_sci_1</class>
+	</character>
+	<character id="sim_default_bandit_elite_sci_2">
+		<class>sim_default_bandit_elite_sci_2</class>
 	</character>
 
 	<!-- sim stalker -->
@@ -185,6 +197,12 @@
 	</character>
 	<character id="sim_default_killer_4">
 		<class>sim_default_killer_4</class>
+	</character>
+	<character id="sim_default_killer_sci_1">
+		<class>sim_default_killer_sci_1</class>
+	</character>
+	<character id="sim_default_killer_sci_2">
+		<class>sim_default_killer_sci_2</class>
 	</character>
 
 	<!-- sim zombied -->

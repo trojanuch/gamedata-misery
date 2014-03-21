@@ -511,7 +511,7 @@ function jup_a12_transfer_8000_money_to_actor(first_speaker, second_speaker)
 end
 
 function jup_a12_transfer_artefact_to_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "af_gold_fish")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "af_vyvert_lead_box")
 	if has_alife_info("jup_a12_stalker_prisoner_free_dialog_done") then
 		treasure_manager.get_treasure_manager():give_treasure("jup_hiding_place_40")
 		treasure_manager.get_treasure_manager():give_treasure("jup_hiding_place_34")

@@ -723,7 +723,6 @@ animations = {
 						out		= nil,
 						rnd		= nil,
 						idle	= nil},
-
 		help_wounded	 = {prop	= { maxidle = 1,
 									sumidle = 1,
 									rnd 	= 100 },

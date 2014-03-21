@@ -2,17 +2,17 @@
 squad_id = 29
 max_population = 1
 
-;respawn_params = respawn@zat_smrter_sim_15
+respawn_params = respawn@zat_smrter_sim_15
 
-;[respawn@zat_smrter_sim_15]
-;spawn_flesh
-;spawn_boar
+[respawn@zat_smrter_sim_15]
+spawn_boar
+spawn_flesh
 
-;[spawn_flesh]
-;spawn_squads = simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_zombied_1, simulation_zombied_1, simulation_snork, simulation_bloodsucker
-;spawn_num = 0 ; 1
+[spawn_boar]
+spawn_squads = simulation_cat, simulation_flesh, simulation_flesh, simulation_boar, simulation_flesh, simulation_flesh, simulation_boar
+spawn_num = {=actor_on_level(zaton)} 1, 0
 
-;[spawn_boar]
-;spawn_squads = simulation_boar, simulation_boar, simulation_flesh, simulation_flesh, simulation_boar, simulation_flesh
-;spawn_num = 0 ; 1
+[spawn_flesh]
+spawn_squads = simulation_dog, simulation_pseudodog, simulation_flesh, simulation_flesh, simulation_boar, simulation_flesh, simulation_flesh, simulation_boar, simulation_bloodsucker
+spawn_num = {=actor_on_level(zaton)} 1, 0
 

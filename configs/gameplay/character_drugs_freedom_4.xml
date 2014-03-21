@@ -1,27 +1,20 @@
-journal			= 1, prob=0.03 \n
-geiger_dead		= 1, prob=0.03 \n
-welding_goggles		= 1, prob=0.03 \n
-book1			= 1, prob=0.03 \n
-book2			= 1, prob=0.03 \n
-book3			= 1, prob=0.03 \n
-drugs_kit		= 1, prob=0.036 \n
+journal			= 1, prob=0.06 \n
+geiger_dead		= 1, prob=0.06 \n
+welding_goggles		= 1, prob=0.06 \n
+book1			= 1, prob=0.06 \n
+book2			= 1, prob=0.06 \n
+book3			= 1, prob=0.06 \n
+drugs_kit		= 1, prob=0.072 \n
 
-hammer_inv		= 1, prob=0.036 \n
-spareparts		= 1, prob=0.018 \n
-beadspread		= 1, prob=0.036 \n
-cards		= 2, prob=0.045 \n
-ammo_bad		= 15, prob=0.021 \n
-swiss		= 1, prob=0.045 \n
-mirror		= 1, prob=0.045 \n
-fieldcooker		= 1, prob=0.036 \n
+mine			= 1, prob=0.06 \n
 
-cocaine					= 2, prob=0.008 \n
-tetanus					= 1, prob=0.007 \n
-adrenalin				= 1, prob=0.004 \n
+hammer_inv		= 1, prob=0.072 \n
+spareparts		= 1, prob=0.036 \n
+beadspread		= 1, prob=0.072 \n
+cards		= 2, prob=0.090 \n
+ammo_bad		= 15, prob=0.042 \n
+swiss		= 1, prob=0.090 \n
+mirror		= 1, prob=0.090 \n
 
-salicidic_acid			= 2, prob=0.012 \n
-morphine				= 1, prob=0.009 \n
-
-mre = 1, prob=0.004
-mre2 = 1, prob=0.004
-mre3 = 1, prob=0.004
+letter_freedom_manual_1_of_2		= 1, prob=0.028 \n
+letter_freedom_manual_2_of_2		= 1, prob=0.028 \n

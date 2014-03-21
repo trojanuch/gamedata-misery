@@ -467,62 +467,62 @@ story_id = zat_b22_stalker_hunter_dead
 ;---------------------------------------------------
 
 ;--------------------B103--------------------
-[zat_b103_lost_merc_leader]:stalker_veteran
+[zat_b103_lost_merc_leader]:stalker_master_exo
 $spawn                     = "respawn\zat_b103_lost_merc_leader"
 character_profile     = zat_b103_lost_merc_leader
 story_id = zat_b103_lost_merc_leader
 
 ;---------------------------------------------------
 
-;[VETERAN_PROFILE]
+;[MASTER_EXO_PROFILE]
 
 ;---------------------------------------------------
 
-[zat_b103_lost_merc_1]:bandit_stalker_veteran
+[zat_b103_lost_merc_1]:bandit_stalker_master
 $spawn                     = "respawn\zat_b103_lost_merc_1"
 character_profile     = zat_b103_lost_merc_1
 story_id = zat_b103_lost_merc_1
 
 ;---------------------------------------------------
 
-;[BANDIT_VETERAN_PROFILE]
+;[BANDIT_MASTER_PROFILE]
 
 ;---------------------------------------------------
 
-[zat_b103_lost_merc_2]:stalker_experienced
+[zat_b103_lost_merc_2]:stalker_master_exo
 $spawn                     = "respawn\zat_b103_lost_merc_2"
 character_profile     = zat_b103_lost_merc_2
 story_id = zat_b103_lost_merc_2
 
 ;---------------------------------------------------
 
-;[EXPERIENCED_PROFILE]
+;[MASTER_EXO_PROFILE]
 
 ;---------------------------------------------------
 
-[zat_b103_lost_merc_3]:stalker_duty_experienced
+[zat_b103_lost_merc_3]:stalker_duty_master
 $spawn                     = "respawn\zat_b103_lost_merc_3"
 character_profile     = zat_b103_lost_merc_3
 story_id = zat_b103_lost_merc_3
 
 ;---------------------------------------------------
 
-;[DUTY_EXPERIENCED_PROFILE]
+;[DUTY_MASTER_PROFILE]
 
 ;---------------------------------------------------
 
-[zat_b103_lost_merc_4]:stalker_freedom_exp
+[zat_b103_lost_merc_4]:stalker_freedom_vet
 $spawn                     = "respawn\zat_b103_lost_merc_4"
 character_profile     = zat_b103_lost_merc_4
 story_id = zat_b103_lost_merc_4
 
 ;---------------------------------------------------
 
-;[FREEDOM_EXPERIENCED_PROFILE]
+;[FREEDOM_VETERAN_PROFILE]
 
 ;---------------------------------------------------
 
-[zat_b103_lost_merc_5]:stalker_duty_regular
+[zat_b103_lost_merc_5]:stalker_freedom_vet
 $spawn                     = "respawn\zat_b103_lost_merc_5"
 character_profile     = zat_b103_lost_merc_5
 story_id = zat_b103_lost_merc_5
@@ -533,25 +533,25 @@ story_id = zat_b103_lost_merc_5
 
 ;---------------------------------------------------
 
-[zat_b103_lost_merc_6]:stalker_experienced
+[zat_b103_lost_merc_6]:stalker_veteran
 $spawn                     = "respawn\zat_b103_lost_merc_6"
 character_profile     = zat_b103_lost_merc_6
 story_id = zat_b103_lost_merc_6
 
 ;---------------------------------------------------
 
-;[BANDIT_REGULAR_PROFILE]
+;[STALKER_VETERAN_PROFILE]
 
 ;---------------------------------------------------
 
-[zat_b103_lost_merc_7]:stalker_duty_experienced
+[zat_b103_lost_merc_7]:stalker_duty_veteran
 $spawn                     = "respawn\zat_b103_lost_merc_7"
 character_profile     = zat_b103_lost_merc_7
 story_id = zat_b103_lost_merc_7
 
 ;---------------------------------------------------
 
-;[BANDIT_NOVICE_PROFILE]
+;[DUTY_VETERAN_PROFILE]
 
 ;---------------------------------------------------
 
@@ -951,15 +951,15 @@ jump_max_angle					= 3.15 ;0.8
 jump_max_height					= 3.5
 
 [chimera_immunities_wounded]
-burn_immunity     	= 0.5 				;коэффициенты иммунитета
+burn_immunity = 0.84 ;     	= 0.35 				;коэффициенты иммунитета
 strike_immunity     	= 0.0
-shock_immunity      	= 0.1
-wound_immunity      	= 0.35
+shock_immunity = 0.18 ;      	= 0.1
+wound_immunity      	= 0.14
 radiation_immunity   	= 0.0
 telepatic_immunity    	= 0.0
-chemical_burn_immunity  = 0.45
-explosion_immunity    	= 0.6
-fire_wound_immunity   	= 0.4
+chemical_burn_immunity = 0.98 ; = 3.0 ;  = 0.45
+explosion_immunity    	= 0.15
+fire_wound_immunity   	= 0.055
 
 [zat_b100_actor]:actor_visual_stalker
 $spawn				= "respawn\zat_b100_actor"

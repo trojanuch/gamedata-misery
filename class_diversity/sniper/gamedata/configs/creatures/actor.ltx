@@ -22,13 +22,13 @@ actor_class				= sniper				;Misery 2.0 Alundaio
 terrain                 = actor_terrain
 
 max_item_mass           = 33
-jump_speed              = 6.65
+jump_speed              = 6.85
 crouch_coef             = 0.65
 climb_coef              = 0.72
 run_coef                = 1.710	;4.1
 sprint_koef             = 1.685	;2.0
-run_back_coef           = 1.4
-walk_back_coef          = 0.66
+run_back_coef           = 1.33
+walk_back_coef          = 0.61
 air_control_param       = 0.15
 walk_accel              = 21.5	;16
 show_corpses_dist	= 10
@@ -41,12 +41,12 @@ ef_creature_type                = 17                                            
 ;attach params
 attachable_items        = device_torch,attachable_item,hand_radio
 
-ph_box0_center                          = 0.0,  0.9,  0.0
-ph_box0_size                            = 0.35, 0.9,  0.35
-ph_box1_center                          = 0.0,  0.75,  0.0
-ph_box1_size                            = 0.35, 0.75,  0.35
-ph_box2_center                          = 0.0,  0.6,  0.0
-ph_box2_size                            = 0.35, 0.6,  0.35
+ph_box0_center                          = 0.0,  0.93,  0.0
+ph_box0_size                            = 0.35, 0.93,  0.35
+ph_box1_center                          = 0.0,  0.68,  0.0
+ph_box1_size                            = 0.35, 0.68,  0.35
+ph_box2_center                          = 0.0,  0.32,  0.0
+ph_box2_size                            = 0.35, 0.32,  0.35
 stalker_restrictor_radius               = 0.1;0.1;0.1;0.1;0.1
 stalker_small_restrictor_radius         = .1
 medium_monster_restrictor_radius        = 0.1
@@ -128,7 +128,7 @@ strike_immunity 			= 1.29
 shock_immunity 				= 1.80
 wound_immunity				= 1.12
 radiation_immunity 			= 1.32
-telepatic_immunity 			= 3.46
+telepatic_immunity 			= 3.10
 chemical_burn_immunity 			= 2.27
 explosion_immunity 			= 0.85
 fire_wound_immunity  			= 0.72
@@ -139,7 +139,7 @@ strike_immunity 			= 1.29
 shock_immunity 				= 1.80
 wound_immunity				= 1.12
 radiation_immunity 			= 1.32
-telepatic_immunity 			= 3.46
+telepatic_immunity 			= 3.10
 chemical_burn_immunity 			= 2.27
 explosion_immunity 			= 0.85
 fire_wound_immunity  			= 0.72
@@ -150,7 +150,7 @@ strike_immunity 			= 1.29
 shock_immunity 				= 1.80
 wound_immunity				= 1.12
 radiation_immunity 			= 1.32
-telepatic_immunity 			= 3.46
+telepatic_immunity 			= 3.10
 chemical_burn_immunity 			= 2.27
 explosion_immunity 			= 0.85
 fire_wound_immunity  			= 0.72
@@ -161,7 +161,7 @@ strike_immunity 			= 1.29
 shock_immunity 				= 1.80
 wound_immunity				= 1.12
 radiation_immunity 			= 1.32
-telepatic_immunity 			= 3.46
+telepatic_immunity 			= 3.10
 chemical_burn_immunity 			= 2.27
 explosion_immunity 			= 0.85
 fire_wound_immunity  			= 0.72
@@ -180,9 +180,8 @@ health_hit_part			= 1.0		;процент хита, уходящий на отнимание здоровья
 power_hit_part			= 0.07		;процент хита, уходящий на отнимание силы
 max_power_leak_speed	= 0.000001		;накопление усталости (макс граница, до которой восстанавливается сила) в секунду игрового времени
 max_walk_weight			= 150 ; 950 ; wpn_test ; 150 ; 55 ;50 ;490 ;90
-health_restore_v              = 0
 
-bleeding_v 				= 0.0080	 ;0.0005	;потеря крови при номинальной ране в секунду
+bleeding_v 				= 0.0072	 ;0.0005	;потеря крови при номинальной ране в секунду
 
 wound_incarnation_v		= 0.0034 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления раны
 min_wound_size 			= 0.0074	;минимальный размер раны, после которого она считается зажившей
@@ -201,7 +200,7 @@ alcohol_v_sleep               	= -0.0005
 bleeding_v_sleep              	= 0.0
 wound_incarnation_v_sleep     	= 0.0
 max_power_leak_speed_sleep    	= -0.00001
-health_restore_v              	= 0.0		;0.0001
+health_restore_v              	= -0.000045		;0.0001
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LINEAR WEIGHT SYSTEM ;;
@@ -217,8 +216,8 @@ overweight_jump_k       = 1.03		;10                ;10                          
 
 stand_power             = -0.0069
 walk_power              = 0.00001 ;0.00002  ;0.000012                                ;Reduction of force for a second during walking without taking into account weight of a burden
-walk_weight_power       = 0.0045  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
-overweight_walk_k       = 1.07			;9        ;10                                ;Factor influence of an overload of a burden (it is multiplied on walk_weight_power)
+walk_weight_power       = 0.0040  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
+overweight_walk_k       = 1.06			;9        ;10                                ;Factor influence of an overload of a burden (it is multiplied on walk_weight_power)
 accel_k                 = 1.01			;5                                        ;Factor on run (it is multiplied walk_power, walk_weight_power)
 sprint_k                = 3.5 ;75        ;коэффициент на "sprint" бег (умножается walk_power, walk_weight_power)
 
@@ -318,11 +317,11 @@ bip01_r_finger2	 	 	 	= 0.01, -1, 0.01
 bip01_r_finger21	 		= 0.01, -1, 0.01
 bip01_r_finger22	 		= 0.01, -1, 0.01
 
-bip01_l_thigh	 	 		= 0.3, 4, 1.8
+bip01_l_thigh	 	 		= 0.4, 4, 1.45
 bip01_l_calf	 	 		= 0.17, 4, 0.85
 bip01_l_foot	 	 		= 0.05, 4, 0.09
 bip01_l_toe0	 	 		= 0.01, -1, 0.12
-bip01_r_thigh	 	 		= 0.3, 4, 1.8
+bip01_r_thigh	 	 		= 0.4, 4, 1.45
 bip01_r_calf	 	 		= 0.17, 4, 0.85
 bip01_r_foot	 	 		= 0.05, 4, 0.09
 bip01_r_toe0	 	 		= 0.01, -1, 0.12
@@ -378,3 +377,7 @@ visual         			= dynamics\weapons\wpn_hand\wpn_hand_07
 visual         			= dynamics\weapons\wpn_hand\wpn_hand_exo
 [actor_hud_ghillie]:actor_hud
 visual         			= dynamics\weapons\wpn_hand\wpn_hand_ghillie
+[actor_hud_ecolog_red]:actor_hud
+visual         			= dynamics\weapons\wpn_hand\wpn_hand_ecolog_red
+[actor_hud_ecolog_green]:actor_hud
+visual         			= dynamics\weapons\wpn_hand\wpn_hand_ecolog_green

@@ -113,7 +113,7 @@ function npc_on_hit_callback(npc,amount,local_direction,who,bone_index)
 				if (member and member:alive()) and db.storage[member:id()].combat_ignore.enabled then
 			--		alun_utils.printf("xr_combat_ignore.npc_on_hit_callback: safe zone squad hostile: "..member:character_name().." is now hostile to "..who:character_name())
 			--		db.storage[member:id()].enemy_id = ene_id
-			--		fighting_with_actor_npcs[member:id()] = true
+					fighting_with_actor_npcs[member:id()] = true
 					db.storage[member:id()].combat_ignore.enabled = false
 				end
 			end
@@ -159,6 +159,7 @@ function is_enemy(obj,enemy,no_memory)
 					st.enabled = true
 				end
 				fighting_with_actor_npcs[obj:id()] = nil
+				xr_logic.pstor_store(obj,"can_attack_actor",nil)
 			end
 
 			return false
@@ -219,7 +220,7 @@ function is_enemy(obj,enemy,no_memory)
 	end
 	
 	--Yasti ai_tweaks.override_combat_ignore--
-	if db.actor:id() == ene_id and st.enabled and fighting_with_actor_npcs[obj:id()] == nil then
+	if db.actor:id() == ene_id and st.enabled and fighting_with_actor_npcs[obj:id()] == nil and IsStalker(obj) then
 		if (ai_tweaks.override_combat_ignore(obj,enemy, 2) == true) then --Yasti: Check for Recon First
 			return false
 		
@@ -250,7 +251,7 @@ function action_process_enemy:__init( obj, storage )
 		return
 	end
 	--Yasti Ghillie Suit. Adjusted Values for inertion time--
-	if db.actor and (ai_tweaks.GhillieEnable == true) and db.actor:item_in_slot(7) and db.actor:item_in_slot(7):section() == "cs_heavy_outfit" then --Inertion Values for wearing a Ghillie Suit
+	if db.actor and (ai_tweaks.GhillieEnable == true) and ai_tweaks.wearing_ghillie() then --Inertion Values for wearing a Ghillie Suit
 		--alun_utils.printf("xr_combat_ignore.process_enemy_init: Ghillie Suit inertion values loaded")
 		local search = GhillieInertion[self.comm] or "60000"
 		local search_time = xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj, self.comm,"ghillie_inertion",search))

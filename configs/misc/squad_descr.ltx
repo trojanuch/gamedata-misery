@@ -662,6 +662,15 @@ npc_random = sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_3, s
 npc_in_squad = 2, 2
 ;target_smart = zat_b40_smart_terrain
 
+;--------------- bandit_elite_sci neutral squads -----------------------
+
+[bandit_sim_squad_elite_sci]:online_offline_group
+faction = bandit
+relationship = neutral
+npc_random = sim_default_bandit_elite_sci_1, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2
+npc_in_squad = 3, 4
+
+
 ;;;;;;;;; BANDIT NEUTRAL JUPITER ;;;;;;;;;
 
 ;--------------- bandits simulation squads -------------------------------
@@ -737,6 +746,14 @@ npc_random = sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_3, s
 npc_in_squad = 2, 2
 ;target_smart = zat_b40_smart_terrain
 
+;--------------- bandit_elite_sci neutral squads -----------------------
+
+[bandit_sim_squad_elite_sci_jupiter]:online_offline_group
+faction = bandit
+relationship = neutral
+npc_random = sim_default_bandit_elite_sci_1, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2
+npc_in_squad = 3, 4
+
 ;;;;;;;;; BANDIT HOSTILE ;;;;;;;;;
 
 ;--------------- bandit hostile squads -----------------------
@@ -795,6 +812,14 @@ npc_random = sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_3, s
 npc_in_squad = 2, 2
 ;target_smart = zat_b40_smart_terrain
 
+;--------------- bandit_elite_sci hostile squads -----------------------
+
+[bandit_sim_squad_hostile_elite_sci]:online_offline_group
+faction = bandit
+relationship = enemy
+npc_random = sim_default_bandit_elite_sci_1, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2
+npc_in_squad = 3, 4
+
 ;;;;;;;;; BANDIT JUPITER HOSTILE ;;;;;;;;;
 
 ;--------------- bandit hostile squads -----------------------
@@ -847,6 +872,14 @@ npc_random = sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_3, s
 npc_in_squad = 2, 2
 ;target_smart = zat_b40_smart_terrain
 
+;--------------- bandit_elite_sci hostile squads -----------------------
+
+[bandit_sim_squad_hostile_elite_sci_jupiter]:online_offline_group
+faction = bandit
+relationship = enemy
+npc_random = sim_default_bandit_elite_sci_1, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2, sim_default_bandit_elite_sci_2
+npc_in_squad = 3, 4
+
 ;;;;;;;;; MERC HOSTILE ;;;;;;;;;
 
 ;--------------- merks simulation squads -----------------------
@@ -854,6 +887,11 @@ npc_in_squad = 2, 2
 [simulation_killer]:online_offline_group
 faction = killer
 npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
+npc_in_squad = 3, 4
+
+[simulation_killer_sci]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_sci_1, sim_default_killer_sci_2, sim_default_killer_sci_2, sim_default_killer_sci_2, sim_default_killer_sci_2
 npc_in_squad = 3, 4
 
 [simulation_killer_jup_a12]:online_offline_group
@@ -946,6 +984,11 @@ faction = killer
 npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
 npc_in_squad = 3, 4
 
+[simulation_killer_sci_jupiter]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_sci_1, sim_default_killer_sci_2, sim_default_killer_sci_2, sim_default_killer_sci_2, sim_default_killer_sci_2
+npc_in_squad = 3, 4
+
 [simulation_killer_jup_a12_jupiter]:online_offline_group
 faction = killer
 npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
@@ -1028,6 +1071,12 @@ npc_in_squad = 4, 4
 faction = killer
 relationship = neutral
 npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
+npc_in_squad = 3, 4
+
+[simulation_killer_sci_neutral]:online_offline_group
+faction = killer
+relationship = neutral
+npc_random = sim_default_killer_sci_1, sim_default_killer_sci_2, sim_default_killer_sci_2, sim_default_killer_sci_2, sim_default_killer_sci_2
 npc_in_squad = 2, 4
 
 [simulation_killer_neutral_jup_a12]:online_offline_group
@@ -1130,6 +1179,12 @@ npc_in_squad = 4, 4
 faction = killer
 relationship = neutral
 npc_random = sim_default_killer_0, sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2,  sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
+npc_in_squad = 3, 4
+
+[simulation_killer_sci_jupiter_neutral]:online_offline_group
+faction = killer
+relationship = neutral
+npc_random = sim_default_killer_sci_1, sim_default_killer_sci_2, sim_default_killer_sci_2, sim_default_killer_sci_2, sim_default_killer_sci_2
 npc_in_squad = 2, 4
 
 [simulation_killer_jupiter_neutral_jup_a12]:online_offline_group
@@ -1332,6 +1387,13 @@ npc_random = sim_default_duty_commando_1, sim_default_duty_commando_1, sim_defau
 npc_in_squad = 4, 4
 ;target_smart = {=is_dark_night} zat_b103_merc_smart, nil
 
+;--------------- duty_sci squads -----------------------
+
+[duty_sci_simulation_squad]:online_offline_group
+faction = dolg
+npc_random = sim_default_duty_sci_1, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2
+npc_in_squad = 3, 4
+
 ;--------------- duty_hunter squads -----------------------
 
 [duty_hunter_day_simulation_squad_novice]:online_offline_group
@@ -1460,6 +1522,13 @@ faction = dolg_elite
 npc_random = sim_default_duty_commando_1, sim_default_duty_commando_1, sim_default_duty_commando_2
 npc_in_squad = 4, 4
 ;target_smart = {=is_dark_night} zat_b103_merc_smart, nil
+
+;--------------- duty_sci squads -----------------------
+
+[duty_sci_simulation_squad_jupiter]:online_offline_group
+faction = dolg
+npc_random = sim_default_duty_sci_1, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2
+npc_in_squad = 3, 4
 
 ;--------------- duty_hunter squads -----------------------
 
@@ -1605,6 +1674,13 @@ relationship = enemy
 npc_random = sim_default_duty_commando_1, sim_default_duty_commando_1, sim_default_duty_commando_2
 npc_in_squad = 4, 4
 ;target_smart = {=is_dark_night} zat_b103_merc_smart, nil
+
+;--------------- duty_sci squads -----------------------
+
+[duty_sci_simulation_squad_hostile]:online_offline_group
+faction = dolg_hostile
+npc_random = sim_default_duty_sci_1, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2
+npc_in_squad = 3, 4
 
 ;--------------- duty_hunter squads -----------------------
 
@@ -1753,6 +1829,13 @@ relationship = enemy
 npc_random = sim_default_duty_commando_1, sim_default_duty_commando_1, sim_default_duty_commando_2
 npc_in_squad = 4, 4
 ;target_smart = {=is_dark_night} zat_b103_merc_smart, nil
+
+;--------------- duty_sci squads -----------------------
+
+[duty_sci_simulation_squad_jupiter_hostile]:online_offline_group
+faction = dolg_hostile
+npc_random = sim_default_duty_sci_1, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2, sim_default_duty_sci_2
+npc_in_squad = 3, 4
 
 ;--------------- duty_hunter squads -----------------------
 
@@ -3989,7 +4072,7 @@ npc_in_squad = 1, 5
 faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 3, 4
-;target_smart = {=is_dark_night} nil, zaton_smrter_sim_13
+target_smart = zaton_smrter_sim_13
 
 [simulation_fracture_zaton_smrter_sim_3]:online_offline_group
 faction = monster_predatory_night
@@ -4002,6 +4085,12 @@ faction = monster_predatory_night
 npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
 npc_in_squad = 4, 5
 ;target_smart = {=is_dark_night} nil, jup_b205_smart_terrain
+
+[simulation_fracture_jup_b208]:online_offline_group
+faction = monster_predatory_night
+npc_random = fracture_weak, fracture_normal, fracture_normal, fracture_strong
+npc_in_squad = 3, 4
+;target_smart = {=is_dark_night} nil, jup_b208
 
 [simulation_fracture_jup_sim_18]:online_offline_group
 faction = monster_predatory_night
@@ -4126,7 +4215,7 @@ target_smart = jupiter_smrter_sim_8
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 4, 7
-target_smart = jupiter_sim_19
+target_smart = jup_sim_19
 
 [simulation_zombi_zat_sim_7]:online_offline_group
 faction = monster_predatory_night
@@ -4180,7 +4269,7 @@ npc_in_squad = 3, 7
 faction = monster_predatory_night
 npc_random = zombie_1_ghost, zombie_2_ghost, zombie_3_ghost, zombie_1, zombie_2, zombie_3, zombie_trup_1, zombie_trup_2
 npc_in_squad = 3, 7
-;target_smart = {=is_dark_night} nil, zaton_smrter_sim_13
+target_smart = zaton_smrter_sim_13
 
 [simulation_zombi_zaton_smrter_sim_3]:online_offline_group
 faction = monster_predatory_night

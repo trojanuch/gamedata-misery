@@ -1,20 +1,12 @@
-shovel_mili		= 1, prob=0.009 \n
-ied_rpg			= 1, prob=0.009 \n
-ied			= 1, prob=0.006 \n
-meinkampf		= 1, prob=0.015 \n
-maps_kit		= 1, prob=0.015 \n
+shovel_mili		= 1, prob=0.018 \n
+ied				= 1, prob=0.018 \n
+mine			= 1, prob=0.036 \n
+meinkampf		= 1, prob=0.070 \n
+maps_kit		= 1, prob=0.030 \n
 
-walkie		= 1, prob=0.036 \n
-tarpaulin		= 2, prob=0.018 \n
-rope		= 2, prob=0.024 \n
-cutlery		= 1, prob=0.036 \n
-fieldcooker		= 1, prob=0.024 \n
+walkie		= 1, prob=0.064 \n
+tarpaulin		= 2, prob=0.036 \n
+rope		= 2, prob=0.048 \n
+cutlery		= 1, prob=0.072 \n
 
-mili_maps		= 1, prob=0.024 \n
-
-ration_ukr = 1, prob=0.001
-ration_ukr2 = 1, prob=0.001
-ration_ukr3 = 1, prob=0.001
-ration_ukr4 = 1, prob=0.001
-ration_ukr5 = 1, prob=0.001
-ration_ukr6 = 1, prob=0.001
+mili_maps		= 1, prob=0.048 \n

@@ -266,24 +266,19 @@ end
 function zat_b7_give_stalker_reward_to_actor(first_speaker, second_speaker)
 	local reward = math.random(1,3)
 	if reward == 1 then
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage", 6)
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 4)
+		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage", 1)
 	end
  	if reward == 2 then
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit", 2)
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 4)
+		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit", 1)
 	end
  	if reward == 3 then
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad",3)
-		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 4)
+		dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "vodka", 1)
 	end
 	treasure_manager.get_treasure_manager():give_treasure("zat_hiding_place_29")
 end
 
 function zat_b7_give_stalker_reward_2_to_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage", 4)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit", 2)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad",2)
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad",1)
 end
 
 function zat_b7_rob_actor(first_speaker, second_speaker)
@@ -1187,7 +1182,7 @@ zat_b51_costs_table[3] = {prepay_agreed = 10760, 	prepay_refused = 21520,	cost =
 zat_b51_costs_table[4] = {prepay_agreed = 11310, 	prepay_refused = 22620,	cost = 44100}
 zat_b51_costs_table[5] = {prepay_agreed = 14420, 	prepay_refused = 28840,	cost = 65400}
 zat_b51_costs_table[6] = {prepay_agreed = 20150, 	prepay_refused = 40300,	cost = 80600}
-zat_b51_costs_table[7] = {prepay_agreed = 22650,	prepay_refused = 44300,	cost = 86200}
+zat_b51_costs_table[7] = {prepay_agreed = 22650,	prepay_refused = 44300,	cost = 68690}
 
 local zat_b51_buy_item_table = {}
 zat_b51_buy_item_table[1] = {		[1] = {item = {"wpn_desert_eagle_nimble"}},
@@ -1654,7 +1649,8 @@ end
 
 ----------------------	b53 ----------------------
 function zat_b53_if_actor_has_detector_advanced(first_speaker, second_speaker)
-	return db.actor:object("detector_advanced") ~= nil or
+	return db.actor:object("detector_simple") ~= nil or
+	db.actor:object("detector_advanced") ~= nil or
 	db.actor:object("detector_elite") ~= nil or
 	db.actor:object("detector_scientific") ~= nil
 end
@@ -1664,13 +1660,13 @@ function zat_b53_if_actor_hasnt_detector_advanced(first_speaker, second_speaker)
 end
 
 function zat_b53_transfer_detector_advanced_to_actor(first_speaker, second_speaker)
-	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
+	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 6840)
 	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "detector_simple",1)
 end
 
 function zat_b53_transfer_fireball_to_actor(first_speaker, second_speaker)
 	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
-	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "af_fireball",1)
+	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "af_fireball_lead_box",1)
 end
 
 function zat_b53_transfer_medkit_to_actor(first_speaker, second_speaker)
@@ -1822,20 +1818,20 @@ function zat_b103_actor_has_needed_food(first_speaker, second_speaker)
 end
 
 function zat_b5_stalker_transfer_money(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 6750)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5750)
 	treasure_manager.get_treasure_manager():give_treasure("zat_hiding_place_7")
 end
 
 function zat_b5_dealer_full_revard(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 7450)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 6450)
 end
 
 function zat_b5_dealer_easy_revard(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5450)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 4450)
 end
 
 function zat_b5_bandits_revard(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 6650)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5650)
 	treasure_manager.get_treasure_manager():give_treasure("zat_hiding_place_20")
 end
 
