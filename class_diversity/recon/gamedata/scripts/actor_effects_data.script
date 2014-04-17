@@ -3160,10 +3160,7 @@ item_fx = {
 		[379] = "xr_effects.disable_nv(db.actor, nil)",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8047, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[3980] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4780] = "actor_effects.use_helmet(1)",
-		[5380] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
-		[5980] = "actor_effects.use_weapon(1)"
+		[3980] = "axr_misery.anabiotic_use()" -- Including the other fixes doesn't work if you don't modify the actual item.
 	},
 	antirad = {
 		[0] = "actor_effects.use_weapon(0)",

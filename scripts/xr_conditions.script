@@ -2127,6 +2127,29 @@ function psysurge_finished() --Yasti
 end
 --End Yasti--
 
+----NEW SUIT STUFF
+function jup_b218_actor_has_outfit(actor, npc, p)
+local suits_tbl = {
+["scientific_outfit"] = true,
+["ecologist_red_outfit"] = true,
+["ecologist_green_outfit"] = true,
+}
+
+for k,v in pairs(suits_tbl) do
+if db.actor:object(k) ~= nil then
+return true
+end
+end
+
+return false
+end
+
+function jup_b218_actor_has_not_outfit(actor, npc, p)
+return jup_b218_actor_has_outfit(actor, npc, p) == false
+end
+---/NEW SUIT STUFF
+
+
 ----------------------------------------------------------------------------------------------------
 --Yasti day radiation function
 ----------------------------------------------------------------------------------------------------

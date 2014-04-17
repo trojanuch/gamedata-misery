@@ -126,71 +126,79 @@ quick_item_4 = stimpack_scientic
 burn_immunity 				= 9.6
 strike_immunity 			= 1.29
 shock_immunity 				= 1.80
-wound_immunity				= 1.12
+wound_immunity				= 1.34
 radiation_immunity 			= 1.32
 telepatic_immunity 			= 3.10
 chemical_burn_immunity 			= 2.27
 explosion_immunity 			= 0.85
-fire_wound_immunity  			= 0.72
+fire_wound_immunity  			= 0.76
 
 [actor_immunities_gd_stalker]
 burn_immunity 				= 9.6
 strike_immunity 			= 1.29
 shock_immunity 				= 1.80
-wound_immunity				= 1.12
+wound_immunity				= 1.34
 radiation_immunity 			= 1.32
 telepatic_immunity 			= 3.10
 chemical_burn_immunity 			= 2.27
 explosion_immunity 			= 0.85
-fire_wound_immunity  			= 0.72
+fire_wound_immunity  			= 0.76
 
 [actor_immunities_gd_veteran]
 burn_immunity 				= 9.6
 strike_immunity 			= 1.29
 shock_immunity 				= 1.80
-wound_immunity				= 1.12
+wound_immunity				= 1.34
 radiation_immunity 			= 1.32
 telepatic_immunity 			= 3.10
 chemical_burn_immunity 			= 2.27
 explosion_immunity 			= 0.85
-fire_wound_immunity  			= 0.72
+fire_wound_immunity  			= 0.76
 
 [actor_immunities_gd_master]
 burn_immunity 				= 9.6
 strike_immunity 			= 1.29
 shock_immunity 				= 1.80
-wound_immunity				= 1.12
+wound_immunity				= 1.34
 radiation_immunity 			= 1.32
 telepatic_immunity 			= 3.10
 chemical_burn_immunity 			= 2.27
 explosion_immunity 			= 0.85
-fire_wound_immunity  			= 0.72
+fire_wound_immunity  			= 0.76
 
 [actor_condition]
 satiety_v				= 0.0000165 	;скорость уменьшения сытости со временем
 radiation_v				= 0.000014	;скорость уменьшения радиации
 satiety_power_v			= 0.00385		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.0001    ;увеличение здоровья при уменьшении сытости
-satiety_critical		= 0.1       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
+satiety_critical		= 0.3       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
 radiation_health_v		= 0.0008	;0.002     ;уменьшение здоровья при воздействии радиации
 morale_v				= 0.0001	;скорость восстановления морали
 psy_health_v			= 0.0018 ;0.001		;скорость восстановления psy-здоровья
 alcohol_v				= -0.0008
 health_hit_part			= 1.0		;процент хита, уходящий на отнимание здоровья
-power_hit_part			= 0.07		;процент хита, уходящий на отнимание силы
+power_hit_part			= 0.035		;процент хита, уходящий на отнимание силы
 max_power_leak_speed	= 0.000001		;накопление усталости (макс граница, до которой восстанавливается сила) в секунду игрового времени
 max_walk_weight			= 150 ; 950 ; wpn_test ; 150 ; 55 ;50 ;490 ;90
 
-bleeding_v 				= 0.0072	 ;0.0005	;потеря крови при номинальной ране в секунду
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; PROLONGED BLEEDING SYSTEM ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-wound_incarnation_v		= 0.0034 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления раны
-min_wound_size 			= 0.0074	;минимальный размер раны, после которого она считается зажившей
+; Bullets and melee attacks can cause very severe bleeding but health loss is prolonged in time.
+
+bleeding_v 				= 0.0038	 ;0.0005	;потеря крови при номинальной ране в секунду
+
+wound_incarnation_v		= 0.0030 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления раны
+min_wound_size 			= 0.0078	;минимальный размер раны, после которого она считается зажившей
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;--when actor in sleep
 satiety_v_sleep          	= 0.0000110
 radiation_v_sleep        	= 0.000021		;0.0003
 satiety_power_v_sleep    	= 0.0001
-satiety_health_v_sleep   = 0.0
+satiety_health_v_sleep   = 0.00001
 radiation_health_v_sleep = 0.0007
 morale_v_sleep           	= 0.0
 psy_health_v_sleep       	= 0.0
@@ -200,7 +208,7 @@ alcohol_v_sleep               	= -0.0005
 bleeding_v_sleep              	= 0.0
 wound_incarnation_v_sleep     	= 0.0
 max_power_leak_speed_sleep    	= -0.00001
-health_restore_v              	= -0.000045		;0.0001
+health_restore_v              	= 0.0		;0.0001
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LINEAR WEIGHT SYSTEM ;;

@@ -1418,12 +1418,31 @@ function jup_b47_actor_not_enemy_to_dolg(first_speaker, second_speaker)
 	return not xr_conditions.is_faction_enemy_to_actor(actor, npc, {"dolg"})
 end
 
+--function jup_b15_actor_sci_outfit(first_speaker, second_speaker)
+--	return (db.actor:object("scientific_outfit") ~= nil)
+--end
+--
+--function jup_b15_no_actor_sci_outfit(first_speaker, second_speaker)
+--	return (db.actor:object("scientific_outfit") == nil)
+--end
+
 function jup_b15_actor_sci_outfit(first_speaker, second_speaker)
-	return (db.actor:object("scientific_outfit") ~= nil)
+local suits_tbl = {
+["scientific_outfit"] = true,
+["ecologist_red_outfit"] = true,
+["ecologist_green_outfit"] = true,
+}
+
+if db.actor:item_in_slot(7) ~= nil and suits_tbl[db.actor:item_in_slot(7):section()] then
+return true
+end
+
+return false
+
 end
 
 function jup_b15_no_actor_sci_outfit(first_speaker, second_speaker)
-	return (db.actor:object("scientific_outfit") == nil)
+return (jup_b15_actor_sci_outfit(first_speaker, second_speaker) == false)
 end
 
 function jup_b19_reward(first_speaker, second_speaker)

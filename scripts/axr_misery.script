@@ -138,12 +138,17 @@ end
 
 function on_game_load()
 
+	local con = get_console()
 	if (Config.GetValue("settings","hardcore_ai_aim",1)) then
-		local con = get_console()
 		con:execute("ai_aim_max_angle 25.0")
 		con:execute("ai_aim_min_angle 20.0")
 		con:execute("ai_aim_min_speed 2.50")
 		con:execute("ai_aim_predict_time 0.28")
+	else
+		con:execute("ai_aim_max_angle 0.7854")
+		con:execute("ai_aim_min_angle 0.19635")
+		con:execute("ai_aim_min_speed 0.19635")
+		con:execute("ai_aim_predict_time 0.44")
 	end
 
 	--alun_utils.printf("test config = %s",Config.GetValue("settings","test"))

@@ -9,11 +9,11 @@ spawn_burers
 
 [spawn_zombied]
 spawn_squads = simulation_zombied_1, simulation_zombied_1, simulation_poltergeist_tele_jup_b205_smart_terrain, simulation_poltergeist_flame_jup_b205_smart_terrain ;  simulation_zombi_jup_b205_smart_terrain
-spawn_num = {+jup_b205_evacuation_visited} 1, 0
+spawn_num = {+jup_b6_task_done +jup_b205_evacuation_visited} 1, 0
 
 [spawn_burers]
 spawn_squads = simulation_gigant_jup_b205_smart_terrain, simulation_controller_jup_b205_smart_terrain, simulation_burer_jup_b205_smart_terrain, simulation_psy_dog_jup_b205_smart_terrain ; simulation_chimera_jup_b205_smart_terrain, simulation_fracture_jup_b205_smart_terrain 
-spawn_num = {+jup_b205_evacuation_visited} 1, 0
+spawn_num = {+jup_b6_task_done +jup_b205_evacuation_visited} 1, 0
 
 [exclusive]
 zombie_work_01 = jupiter\jup_b205_zombie.ltx

@@ -616,17 +616,33 @@ function get_sound(snd)
 end
 
 function safe_bone_pos(npc,bone)
-	local pos
-	local cls = npc:clsid()
-	if cls == clsid.burer_s then
-		pos = npc:position()
-		pos.y = pos.y+1
-	elseif cls == clsid.gigant_s then
-		pos = npc:bone_position("bip01_spine")
-	else
-		pos = npc:bone_position(bone or "bip01_spine")
-	end
-	return pos
+    if not (npc) then
+    printf("safe_bone_pos: npc is nil!")
+    return
+    end
+
+  local pos
+
+  --[[
+  local cls = npc:clsid()
+  if (cls == clsid.burer_s) then
+    pos = utils.vector_copy_by_val(npc:position())
+    pos.y = pos.y + 1
+  elseif cls == clsid.gigant_s then
+    pos = npc:bone_position("bip01_spine")
+  else
+  --]]
+
+  if (IsStalker(npc)) then
+    pos = npc:bone_position(bone or "bip01_spine")
+  end
+
+  if not (pos) then
+    pos = utils.vector_copy_by_val(npc:position())
+    pos.y = pos.y + 1
+  end
+
+  return pos
 end
 --------------------------------------switch---------------------------------------
 function switch_online(id)
