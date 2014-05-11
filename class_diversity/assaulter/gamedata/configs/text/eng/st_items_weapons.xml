@@ -67,7 +67,7 @@
 		<text>.357 HP rounds</text>
 	</string>
 	<string id="ammo-357-hp_descr">
-		<text>The .357 HP round is a hollow-point bullet. The purpose of the round is to slow down upon impact, which decreases its penetration, but at the same time larger internal tissue damage. \n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>The .357 HP round is a hollow-point bullet. The purpose of the round is to slow down upon impact, which decreases its penetration, but at the same time causes larger internal tissue damage. \n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
 	</string>
 	<string id="ammo-357-hp_s">
 		<text>.357 HP</text>
@@ -247,7 +247,7 @@
 		<text>9x39 mm SP-6 rounds</text>
 	</string>
 	<string id="ammo-9x39-ap_descr">
-		<text>The SP-6 is a subsonic armor-piercing round with a jacketed soft point bullet with a hard steel core that protrudes from the casing. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries. Effective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>The SP-6 is a subsonic armor-piercing round with a jacketed soft point bullet with a hard steel core that protrudes from the casing. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries. Effective against body armor.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]IV\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,204,0,51] • %c[0,140,140,140] sub-sonic ammunition\n%c[0,93,0,116] • %c[0,140,140,140] greatly increased projectile drop with distance</text>
 	</string>
 	<string id="ammo-9x39-ap_s">
 		<text>9x39 SP-6</text>
@@ -256,7 +256,7 @@
 		<text>9x39 mm SP-5 rounds</text>
 	</string>
 	<string id="ammo-9x39-pab9_descr">
-		<text>The SP-5 is a subsonic rifle round with a bimetallic casing. The round contains a steel core with a gap behind it that is filled with lead. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high</text>
+		<text>The SP-5 is a subsonic rifle round with a bimetallic casing. The round contains a steel core with a gap behind it that is filled with lead. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries.\n \n%c[0,93,0,116] • %c[0,140,140,140] Highest pierced armor class: %c[0,170,170,170]III\n%c[0,93,0,116] • %c[0,140,140,140] Tissue damage rating: %c[0,170,170,170]medium - high\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,204,0,51] • %c[0,140,140,140] sub-sonic ammunition\n%c[0,93,0,116] • %c[0,140,140,140] greatly increased projectile drop with distance</text>
 	</string>
 	<string id="ammo-9x39-pab9_s">
 		<text>9x39 mm SP-5 rounds</text>
@@ -536,6 +536,12 @@
 	</string>
 	<string id="st_addon_silencer_1143x23_descr">
 		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] .45, .338, .357 caliber weapons\n \n%c[0,170,170,170]M100 is a result of a discarded US Army research project intended to develop a reliable flash and sound suppressor for higher-caliber rifles such as .50 or .338. Although the tests of the prototype were promising, the cost was too high to be acceptable for the purposes of mass production for regular troops. M100 design served as a basis for another model of suppressor, but it itself didn't ever see actual service. Nonetheless, a few hundred produced units suddenly "disappeared" from the warehouse they were stored in. Many of those have eventually ended up on the market in the Zone where large caliber weapons are sometimes the best choice, especially in light of constant danger prevailing in the area. Although the silencer has been designed for use on large caliber rifles, it is also quite often installed on top of .45 and .357 pistols and can almost completely suppress their shooting sounds.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppression: %c[0,170,170,170]low (rifle) / v. high (pistol)</text>
+	</string>
+	<string id="st_addon_silencer_svu">
+		<text>SVU supressor</text>
+	</string>
+	<string id="st_addon_silencer_svu_descr">
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] SVU rifles\n \n%c[0,170,170,170]This specially designed three-chambered supressor is not intended to completely silence the SVU rifle since the soldier would not be using subsonic ammunition. Its main purpose is to quiet and diffuse the noise enough to make detection by the enemy difficult. Its special feature is the very effective muzzle break placed on end of silencer, capable of reducing recoil by about 40%. Above capabilities come at the cost of reduced muzzle velocity and thus significantly lower the weapon's damage output.\n \n%c[0,93,0,116] • %c[0,140,140,140] Sound suppression: %c[0,170,170,170]low\n \n%c[0,170,170,170]SPECIAL:\n \n%c[0,204,0,51] • %c[0,140,140,140] enhanced recoil reduction</text>
 	</string>
 	<string id="st_grenade_f1">
 		<text>F1 grenade</text>
@@ -1321,10 +1327,10 @@
 		<text>OTs-03 SVU</text>
 	</string>
 	<string id="st_wpn_svu_nimble">
-		<text>OTs-03 SVU2-A</text>
+		<text>OTs-03 SVU-A</text>
 	</string>
 	<string id="st_wpn_svu_nimble_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]This shortened sniper rifle with increased rate of fire is the next step in the evolution of the SVU / Dragunov BP sniper rifle. This weapon used to belong to Max, the legendary guardian of Freedom.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] POSP 4x24 M scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] SVU suppressor (permanent upgrade)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]This shortened sniper rifle with is the most compact member of the SVU / Dragunov BP sniper rifles family. Its unique feature is an automatic fire mode added to regular SVU on special request by selected customers of Russian Federation Interior Ministry. Albeit the weapon is generally not suited for such purpose, the automatic fire has proven itself to be a reliable emergency solution for exposed marksman. Drawbacks of shortened size are lowered accuracy and lower muzzle velocity, which result in decreased kinetic energy of each fired projectile. To compensate for increased recoil in auto-fire mode, SVU-As have permenently installed suppressor which also serves as a very effective muzzle brake. This particular model of SVU-A used to belong to Max, the legendary guardian of Freedom.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] POSP 4x24 M scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] SVU suppressor (permanent)</text>
 	</string>
 	<string id="st_wpn_toz34">
 		<text>TOZ 34</text>
@@ -1522,7 +1528,7 @@
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]The SPAS-12 is a dual-mode shotgun, designed for combat and anti-riot measures. It is employed by many special military and police units around the world. With its distinctive heat shield and folding stock, the SPAS-12 is an iconic firearm. Notable for its reliability and tactical flexibility. Despite its heavy weight, complex mechanism and considerable cost, it is in demand in the Zone due to its effectiveness against mutants.</text>
 	</string>
 	<string id="st_wpn_svu_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]The OTs-03 SVU is a modified version of the SVD sniper rifle, created for use by the airborne infantry, but later employed mainly by the Russian Ministry of Internal Affairs. Designed in a compact bullpup configuration, the SVU utilizes a recoil absorbing muzzle brake and an affixed sound suppressor.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] POSP 4x24 M scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] SVU suppressor (permanent upgrade)</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]The OTs-03 SVU is a modified version of the SVD sniper rifle, created for use by the airborne infantry, but later employed mainly by the Russian Ministry of Internal Affairs. Designed in a compact bullpup configuration, the SVU can be equiped with a recoil absorbing muzzle brake with an affixed sound and flash suppressor.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] POSP 4x24 M scope (permanent)\n%c[0,93,0,116] • %c[0,140,140,140] SVU suppressor</text>
 	</string>
 	<string id="st_wpn_val_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,170,170,170]medium\n \n%c[0,170,170,170]Designed at the same time as VSS Vintorez sniper rifle, this assault rifle was intended as a weapon to be used exclusively by Spetsnaz and recon soldiers in the Soviet Army. The rifle's primary purpose is providing effective fire against enemies employing modern personal protection equipment without disclosing the shooter's location. Thanks to its integrated silencer and 9x39 caliber round with a heavy subsonic bullet, the weapon's noise and muzzle flash have been reduced to a minimum.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes\n%c[0,93,0,116] • %c[0,140,140,140] VSS silencer (permanent)</text>

@@ -51,17 +51,17 @@ function backpack_ui:InitCallBacks()
 	self:AddCallback("fld_input", ui_events.EDIT_TEXT_COMMIT, self.OnInput, self)
 end
 
-function backpack_ui:OnInput()
-	local txt = self.input:GetText()
-	if (txt == nil or txt == "") then
-		txt = level.name().." stash"
-	end
-
-	local se_obj = alife():object(self.box_id)
-
-	level.map_add_object_spot_ser(se_obj.id, self.box_spot, txt)
-
-	self:HideDialog()
+function backpack_ui:OnInput() -- Adjusted Plaargath
+ local txt = self.input:GetText()
+ if (txt == nil or txt == "") then
+  local level_name = level.name()
+  local backpack_number = xr_logic.pstor_retrieve(db.actor, level_name.."bpknum", 0)
+  xr_logic.pstor_store(db.actor, level_name.."bpknum", backpack_number+1)
+  txt = level_name.." backpack "..backpack_number+1
+ end
+ local se_obj = alife():object(self.box_id)
+ level.map_add_object_spot_ser(se_obj.id, self.box_spot, txt)
+ self:HideDialog()
 end
 
 function backpack_ui:OnCancel()
@@ -70,9 +70,3 @@ function backpack_ui:OnCancel()
 	alife():release( alife():object(self.box_id) ,true)
 	self:HideDialog()
 end
-
-
-
-
-
-

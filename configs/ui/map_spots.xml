@@ -174,19 +174,36 @@
         <treasure_spot_mini width="17" height="17" alignment="c" stretch="1">
                 <texture>ui_inGame2_PDA_icon_secret</texture>
         </treasure_spot_mini>
-
-		
-		<treasure_found hint="Cleared Stash">
-                <level_map spot="treasure_spot_1" pointer="quest_pointer"/>
-                <mini_map  spot="treasure_spot_mini_1"/>
+        <treasure_found hint="Cleared Stash">
+         <level_map spot="treasure_spot_1" pointer="quest_pointer"/>
+         <mini_map  spot="treasure_spot_mini_1"/>
         </treasure_found>
-        <treasure_spot_1 width="10" height="10" alignment="c" stretch="1">
-                <texture>ui_inGame2_PDA_icon_secret</texture>
+        <treasure_spot_1 width="15" height="15" alignment="c" stretch="1">
+         <texture>ui_inGame2_PDA_icon_secret_found</texture>
         </treasure_spot_1>
-        <treasure_spot_mini_1 width="08" height="08" alignment="c" stretch="1">
-                <texture>ui_inGame2_PDA_icon_secret</texture>
+        <treasure_spot_mini_1 width="10" height="10" alignment="c" stretch="1">
+         <texture>ui_inGame2_PDA_icon_secret_found</texture>
         </treasure_spot_mini_1>
-		
+        <treasure_backpakstash hint="st_ui_pda_secret">
+         <level_map spot="treasure_backpakstash_spot" pointer="quest_pointer"/>
+         <mini_map spot="treasure_backpakstash_mini"/>
+        </treasure_backpakstash>
+        <treasure_backpakstash_spot width="20" height="20" alignment="c" stretch="1">
+         <texture>ui_inGame2_PDA_icon_backpackstash</texture>
+        </treasure_backpakstash_spot>
+        <treasure_backpakstash_mini width="17" height="17" alignment="c" stretch="1">
+         <texture>ui_inGame2_PDA_icon_backpackstash</texture>
+        </treasure_backpakstash_mini>
+        <treasure_actorbackpack hint="st_ui_pda_secret">
+         <level_map spot="treasure_actorbackpack_spot" pointer="quest_pointer"/>
+         <mini_map spot="treasure_actorbackpack_mini"/>
+        </treasure_actorbackpack>
+        <treasure_actorbackpack_spot width="20" height="20" alignment="c" stretch="1">
+         <texture>ui_inGame2_PDA_icon_actorbackpack</texture>
+        </treasure_actorbackpack_spot>
+        <treasure_actorbackpack_mini width="17" height="17" alignment="c" stretch="1">
+         <texture>ui_inGame2_PDA_icon_actorbackpack</texture>
+        </treasure_actorbackpack_mini>
 
         <alife_combat_fight>
                 <level_map spot="alife_combat_fight_spot" pointer="combat_pointer"/>

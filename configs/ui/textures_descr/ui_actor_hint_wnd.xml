@@ -24,7 +24,6 @@
 	    <texture id="ui_inGame2_hint_wnd_Properties" x="284" y="21" width="242" height="7" />
 	    <texture id="ui_inGame2_hint_wnd_upgrades" x="284" y="33" width="242" height="7" />
 
-
 	    <texture id="ui_inGame2_Radar_main_window" x="529" y="7" width="226" height="226" />
 	    <texture id="ui_inGame2_Radar_blue_bar" x="540" y="235" width="206" height="206" />
 	    <texture id="ui_inGame2_Radar_green_bar" x="1020" y="0" width="4" height="4" />
@@ -45,7 +44,6 @@
 	    <texture id="ui_inGame2_blood_icon_part_1" x="505" y="153" width="13" height="20" />
 	    <texture id="ui_inGame2_blood_icon_part_2" x="503" y="218" width="17" height="26" />
 	    <texture id="ui_inGame2_blood_icon_part_3" x="500" y="289" width="23" height="33" />
-
 
 	    <texture id="ui_inGame2_circle_hunger_green" x="546" y="983" width="33" height="35" />
 	    <texture id="ui_inGame2_circle_hunger_yellow" x="11" y="886" width="33" height="35" />
@@ -113,5 +111,9 @@
 	    <texture id="ui_inGame2_radiation_inv_green" 	x="865" y="933" width="45" height="45" />
 	    <texture id="ui_inGame2_radiation_inv_yellow" 	x="773" y="933" width="45" height="45" />
 	    <texture id="ui_inGame2_radiation_inv_red" 		x="589" y="933" width="45" height="45" />
+
+	    <texture id="ui_inGame2_PDA_icon_backpackstash" x="932" y="932" width="27" height="27" />
+	    <texture id="ui_inGame2_PDA_icon_actorbackpack" x="962" y="932" width="27" height="27" />
+	    <texture id="ui_inGame2_PDA_icon_secret_found"  x="932" y="962" width="27" height="27" />
 	</file>
 </w>

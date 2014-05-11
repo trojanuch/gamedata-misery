@@ -307,15 +307,17 @@ function repair_ui:OnButton_back_clicked()
 end
 
 function repair_ui:OnKeyboard(dik, keyboard_action)
-	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
-	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-		if (dik == DIK_keys.DIK_RETURN) then
-
-		elseif (dik == DIK_keys.DIK_ESCAPE) then
-			self:OnButton_back_clicked()
-		end
-	end
-	return true
+ local bind = dik_to_bind(dik)
+ CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+ if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
+  if (dik == DIK_keys.DIK_RETURN) then
+  elseif (dik == DIK_keys.DIK_ESCAPE) then
+   self:OnButton_back_clicked()
+  elseif (bind == key_bindings.kUSE) then
+   self:OnButton_back_clicked()
+  end
+ end
+ return true
 end
 
 function repair_ui:OnButton_repair()
@@ -581,7 +583,7 @@ function repair_ui:OnButton_repair()
 		    		end
 
 				-- WEAPON REPAIR ITEMS
-				-- swiss knife
+								-- swiss knife
 				if(se_parts)and(se_parts:section_name()=="swiss")then
 				alife():create("swiss", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end

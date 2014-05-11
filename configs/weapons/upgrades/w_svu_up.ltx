@@ -97,12 +97,17 @@ inv_weight			= +0.2
 cost		      		= 8860
 value					= +1
 
+inv_grid_x         = 22
+inv_grid_y         = 22
+
 silencer_status             = 1
-silencer_name           = wpn_addon_silencer_762x54
-silencer_x              = 224
-silencer_y              = 13
+silencer_name           = wpn_addon_silencer_svu
+silencer_x              = 198                ; offset in inventory icon
+silencer_y              = 19
 snd_silncer_shot        = weapons\silencers\silencer_545x39
 silencer_smoke_particles   = weapons\generic_shoot_00
+
+light_disabled          = true
 
 cam_dispersion          = -0.069 ;увеличения угла (в градусах) с каждым выстрелом
 cam_dispersion_inc		= -0.069	;увеличениe cam_dispersion с каждым выстрелом
@@ -300,7 +305,7 @@ icon                    = ui_inGame2_upgrade_SVUmk2_5
 [up_seconc_svu]
 scheme_index            = 1, 1
 known                   = 1
-effects                 = up_gr_seconef_svu
+effects                 = up_gr_seconf_svu
 section                 = up_sect_seconc_svu
 property                = prop_recoil
 
@@ -321,7 +326,7 @@ icon                    = ui_inGame2_upgrade_SVUmk2_6
 [up_second_svu]
 scheme_index            = 1, 2
 known                   = 1
-effects                 = up_gr_seconef_svu
+effects                 = up_gr_seconf_svu
 section                 = up_sect_second_svu
 property                = prop_reliability
 
@@ -545,8 +550,11 @@ elements                = up_secona_svu
 [up_gr_seconcd_svu]
 elements                = up_seconc_svu, up_second_svu
 
-[up_gr_seconef_svu]
-elements                = up_secone_svu, up_seconf_svu
+[up_gr_secone_svu]
+elements                = up_secone_svu
+
+[up_gr_seconf_svu]
+elements                = up_seconf_svu
 
 [up_gr_thirdab_svu]
 elements                = up_thirda_svu

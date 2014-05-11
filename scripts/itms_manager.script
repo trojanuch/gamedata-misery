@@ -11,7 +11,7 @@ local ini = ini_file("plugins\\itms_manager.ltx")
 	--Backpack stash mod
 	local BackPackStashEnable = alun_utils.read_from_ini(ini,"backpack_stash","enable","bool",true)
 	local BackPackStashAllowInBase = BackPackStashEnable and alun_utils.read_from_ini(ini,"backpack_stash","allow_in_base","bool",false)
-	local BackPackStashSpot = BackPackStashEnable and alun_utils.read_from_ini(ini,"backpack_stash","map_spot","string","treasure")
+	local BackPackStashSpot = BackPackStashEnable and alun_utils.read_from_ini(ini,"backpack_stash","map_spot","string","treasure_backpakstash")
 	local BackPackStashEnableTip = BackPackStashEnable and alun_utils.read_from_ini(ini,"backpack_stash","enable_news_tip","bool",true)
 	local BackPackStashEnableUi = BackPackStashEnable and alun_utils.read_from_ini(ini,"backpack_stash","enable_ui","bool",true)
 
@@ -26,7 +26,7 @@ local ini = ini_file("plugins\\itms_manager.ltx")
 
 	-- Actor backpack mod
 	local ActorBackPackEnable = alun_utils.read_from_ini(ini,"actor_backpack","enable","bool",true)
-	local ActorBackPackSpot = ActorBackPackEnable and alun_utils.read_from_ini(ini,"actor_backpack","map_spot","string","treasure")
+	local ActorBackPackSpot = ActorBackPackEnable and alun_utils.read_from_ini(ini,"actor_backpack","map_spot","string","treasure_actorbackpack")
 	local ActorBackPackSlot = ActorBackPackEnable and alun_utils.read_from_ini(ini,"actor_backpack","quick_slot","string","slot_3")
 	local ActorBackPackKeep = ActorBackPackEnable and alun_utils.collect_section(ini,"actor_backpack_keep_items",true)
 	local ActorBackPackForced = ActorBackPackEnable and alun_utils.read_from_ini(ini,"actor_backpack","actor_backpack_always_have","bool",true)

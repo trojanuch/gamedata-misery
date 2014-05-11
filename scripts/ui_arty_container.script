@@ -232,15 +232,17 @@ function arty_ui:OnButton_back_clicked()
 end
 
 function arty_ui:OnKeyboard(dik, keyboard_action)
-	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
-	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-		if (dik == DIK_keys.DIK_RETURN) then
-
-		elseif (dik == DIK_keys.DIK_ESCAPE) then
-			self:OnButton_back_clicked()
-		end
-	end
-	return true
+ local bind = dik_to_bind(dik)
+ CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+ if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
+  if (dik == DIK_keys.DIK_RETURN) then
+  elseif (dik == DIK_keys.DIK_ESCAPE) then
+   self:OnButton_back_clicked()
+  elseif (bind == key_bindings.kUSE) then
+   self:OnButton_back_clicked()
+  end
+ end
+ return true
 end
 
 function arty_ui:OnButton_ok()
@@ -277,7 +279,7 @@ function arty_ui:OnButton_ok()
 		end
 		
 		alife():create(break_con, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		local se_obj = alife():create(break_arty, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				local se_obj = alife():create(break_arty, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 		last_art_spawn = se_obj.id
 	else
 		local new_item = tostring(sec.."_"..self.section)
