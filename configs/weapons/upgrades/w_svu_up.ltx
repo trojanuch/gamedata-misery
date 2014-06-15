@@ -347,11 +347,11 @@ icon                    = ui_inGame2_upgrade_SVUmk2_7
 scheme_index            = 2, 2
 known                   = 1
 effects                 =
-section                 = up_sect_secone_svu
-property                = prop_silencer
+section                 = up_sect_empty ;up_sect_secone_svu
+property                = prop_not_available_no_reason ;prop_silencer
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+precondition_parameter  = true ;a & b
 
 effect_functor          = inventory_upgrades.effect_functor_a
 effect_parameter        = something_here
@@ -360,9 +360,9 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_stvs_c1_name
-description             = st_up_stvs_c1_descr
-icon                    = ui_inGame2_upgrade_SVUmk2_8
+name                    = st_up_upgrade_not_available_name ;st_up_stvs_c1_name
+description             = st_up_upgrade_not_available_descr ;st_up_stvs_c1_descr
+icon                    = ui_inGame2_upgrade_unavailable ;ui_inGame2_upgrade_SVUmk2_8
 
 [up_seconf_svu]
 scheme_index            = 2, 3

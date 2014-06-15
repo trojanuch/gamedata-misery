@@ -764,13 +764,13 @@
 <intro_game>
    <global_wnd width="1024" height="768">
      <pause_state>on</pause_state>
-     <sound>music\miserysound</sound>
+     <sound>music\miseryintro</sound>
 
    <auto_static width="1024" height="768" stretch="1">
      <texture>intro\intro_back</texture>
    </auto_static>
     <auto_static x="0" y="32" width="1024" height="576" stretch="1">
-      <texture x="1" y="1"  width="638" height="358">intro\cop_intro_movie</texture>
+      <texture x="1" y="1"  width="1275" height="715">intro\misery720</texture>
     </auto_static>
   </global_wnd>
 

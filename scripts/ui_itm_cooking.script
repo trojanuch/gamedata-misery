@@ -292,17 +292,17 @@ function cooking_ui:OnButton_back_clicked()
 end
 
 function cooking_ui:OnKeyboard(dik, keyboard_action)
- local bind = dik_to_bind(dik)
- CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
- if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-  if (dik == DIK_keys.DIK_RETURN) then
-  elseif (dik == DIK_keys.DIK_ESCAPE) then
-   self:OnButton_back_clicked()
-  elseif (bind == key_bindings.kUSE) then
-   self:OnButton_back_clicked()
-  end
- end
- return true
+	local bind = dik_to_bind(dik)
+	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
+		if (dik == DIK_keys.DIK_RETURN) then
+		elseif (dik == DIK_keys.DIK_ESCAPE) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kUSE) then
+			self:OnButton_back_clicked()
+		end
+	end
+	return true
 end
 
 function cooking_ui:OnButton_cooking()
