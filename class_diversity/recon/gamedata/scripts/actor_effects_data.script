@@ -46,7 +46,7 @@ options = {
 		huge_anm = {"head_shot","fusker"},
 		huge_snd = {"pain_4","pain_1","hit_5","hit_6"},
 		-- hit drop weapon probability (0-1)
-		drop_wnp_prob = 0.1,
+		drop_wnp_prob = 0.12,
 		-- non dropable items
 		no_drop_wnp = {bolt = true,wpn_binoc = true,wpn_knife = true},
 		injury_snd = {
@@ -2845,14 +2845,14 @@ item_fx = {
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	glucose = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	stimpack = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2866,14 +2866,14 @@ item_fx = {
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	stimpack_scientic = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	rebirth = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -2900,28 +2900,28 @@ item_fx = {
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	salicidic_acid = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	morphine = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	adrenalin = {
 		[0] = "actor_effects.use_weapon(0)",
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	drug_booster = {
 		[0] = "actor_effects.use_weapon(0)",
@@ -3190,7 +3190,7 @@ item_fx = {
 --		[380] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8030, false,'')",
 		[840] = "xr_effects.disable_ui_inventory(db.actor, nil)",
 		[841] = "xr_effects.enable_ui_lite(db.actor, nil)",
-		[4150] = "actor_effects.use_weapon(1)"
+		[3550] = "actor_effects.use_weapon(1)"
 	},
 	vodka = {
 		[0] = "actor_effects.use_weapon(0)",
