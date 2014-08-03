@@ -151,9 +151,7 @@ function hit_effect()
 				sounds = opt.health.middle_snd
 			end
 
-			if not shott then
 				level.add_cam_effector("camera_effects\\"..cameffs[math.random(#cameffs)]..".anm",999,false,"")
-			end
 
 			local snd_obj = sound_object("actor\\"..sounds[math.random(#sounds)])
 			snd_obj:play(db.actor,0,sound_object.s2d)
