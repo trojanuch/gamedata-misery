@@ -204,7 +204,7 @@ sim_avail = {+zat_b18_noah_dead} true, false
 [zat_b101]:default_base_duty
 surge = 1
 territory = 2
-territory_hostile = 1
+territory_hostile = 2
 lair_night = 1
 base = 1
 base_freedom_safe = 1
@@ -235,7 +235,7 @@ territory_monolith = 1
 base_hostile = 1
 base_hostile_safe = 1
 territory_hostile = 1
-territory = 1
+territory = 2
 ;hunting_ground 	= 2
 ;lair = 2
 ;lair_night = 2
@@ -261,7 +261,7 @@ surge = 1
 base_hostile = 2
 base_hostile_safe = 2
 territory_monolith = 1
-territory_hostile = 1
+territory_hostile = 2
 territory = 1
 lair = 1
 lair_night = 1
@@ -278,7 +278,7 @@ base_freedom = 1
 base_duty = 1
 base = 1
 territory = 2
-territory_hostile = 1
+territory_hostile = 2
 lair_night = 1
 sim_avail = {+zat_b14_smart_terrain_open} true, false
 
@@ -3390,8 +3390,8 @@ sim_avail = true
 ;Jupiter
 [jup_a10_smart_terrain]:default
 base_hostile = 1
-territory_monolith = 1
-territory_hostile = 1
+territory_monolith = 2
+territory_hostile = 2
 lair = 2
 lair_night = 2
 sim_avail = {+jup_a10_vano_give_task_end} true, {+jup_a10_fals} true, false
@@ -3399,8 +3399,9 @@ surge = 1
 
 [jup_a12]:default
 sim_avail = {+jup_a12_task_done} true, false
-territory_hostile = 1
-territory = 1
+territory_hostile = 2
+territory = 2
+territory_monolith = 2
 base_hostile = 2
 surge = 1
 base_hostile_safe = 2
@@ -3427,6 +3428,10 @@ base_safe = 1
 sim_avail = {-jup_b19_agreed_to_go} true, {+jup_b19_complete} true, {+jup_b19_yar_enemy_or_dead} true, false
 base_duty = 1
 base_safe = 1
+territory_hostile = 1
+territory = 1
+lair = 1
+lair_night = 1
 
 [jup_b200]:default
 sim_avail = true ;{+jup_b200_tech_materials_brought_some} true, {+jup_b200_tech_materials_brought_all} true, false
@@ -3434,8 +3439,9 @@ surge = 1
 base_freedom = 2
 base_freedom_safe = 2
 lair_night = 1
-territory = 1
+territory = 2
 territory_hostile = 1
+territory_monolith = 2
 
 [jup_b202]:default_base
 sim_avail =	{-jup_b52_actor_items_can_be_stolen} true, {+jup_b202_actor_items_returned} true, false
@@ -3449,7 +3455,8 @@ territory_hostile = 1
 [jup_b203]:default
 sim_avail = {+jup_b16_oasis_artifact_spawn} true, false
 base_hostile = 1
-territory_hostile = 1
+territory_hostile = 2
+territory_monolith = 2
 base_hostile_safe = 2
 territory = 1
 surge = 1
@@ -3457,9 +3464,9 @@ lair = 1
 lair_night = 1
 
 [jup_b204]:default
-territory_monolith = 1
-territory_hostile = 1
-territory = 1
+territory_monolith = 2
+territory_hostile = 2
+territory = 2
 base_hostile = 2
 lair = 1
 lair_night = 1
@@ -3483,13 +3490,17 @@ lair_night = 2
 sim_avail = {+jup_b207_task_end} true, false ; {-jup_b207_morgan_gived_depot -jup_b207_freedom_knows_about_depot -jup_b207_duty_knows_about_depot} false, true ; {+jup_b207_freedom_knows_about_depot -jup_b207_task_end} false {+jup_b207_duty_knows_about_depot -jup_b207_task_end} false, true
 surge = 1
 base = 2
+base_safe = 2
 lair_night = 1
-territory = 1
-territory_hostile = 1
+territory = 2
+territory_hostile = 2
+lair = 1
+lair_night = 1
 
 [jup_b208]:default
 sim_avail = {+jup_b208_burers_dead} true,  false
 territory_monolith = 1
+territory_hostile = 1
 surge = 1
 lair_night = 1
 lair_night_rest = 2
@@ -3506,6 +3517,7 @@ sim_avail = {+jup_b211_scene_done} true,  false
 resource = 2
 resource_hard = 2
 territory = 2
+territory_hostile = 2
 
 [jup_b212]:default
 sim_avail = {+zat_b106_chimera_dead -jup_b212_jupiter_chimera_dead} false, true ;{+jup_b212_jupiter_chimera_hunt_done} true,  false
@@ -3515,7 +3527,6 @@ territory = 1
 lair = 1
 lair_night = 1
 base_hostile = 1
-territory_hostile = 1
 
 [jup_b25]:default_resource_hard
 sim_avail = {+jup_b25_senya_dead} true, false
@@ -3527,14 +3538,17 @@ lair_night = 1
 [jup_b32]:default
 sim_avail = true
 resource = 2
+resource_hard = 2
 territory_hostile = 1
-territory = 2
+territory = 1
+lair = 1
+lair_night = 1
 
 [jup_b4]:default_lair_night
 sim_avail = {+jup_b4_monolith_squad_out +jup_a12_task_done} true, {+jup_b4_task_end +jup_a12_task_done} true, false
-hunting_ground = 1
-;territory_hostile = 1
-;territory = 1
+hunting_ground = 2
+territory_hostile = 1
+territory = 1
 lair = 1
 lair_night = 1
 lair_night_rest = 2
@@ -3552,6 +3566,7 @@ territory_hostile = 1
 [jup_b47]:default
 sim_avail = {+jup_b47_products_info_complite} true, {+jup_b47_all_merc_dead} true, false
 base_monolith = 2
+territory_monolith = 1
 territory_hostile = 1
 territory = 1
 territory_zombied = 2
@@ -3560,6 +3575,7 @@ territory_zombied = 2
 sim_avail = {-jup_b6_give_task} true, {+jup_b6_task_fail} true, {+jup_b6_anom_2_count_end} true, false
 lair = 1
 lair_night_rest = 1
+resource_hard = 2
 
 ;technical
 
@@ -3587,10 +3603,12 @@ sim_avail = false
 
 [jup_a9]:default
 sim_avail = {+jup_a9_tech_way_info +jup_a9_conservation_info +jup_a9_way_info +jup_a9_power_info} true, false
-territory_hostile = 1
-territory = 1
+territory_hostile = 2
+territory = 2
 base_monolith = 2
+territory_monolith = 1
 territory_zombied = 2
+hunting_ground = 1
 
 ;---------	SIMULATION	--------
 
@@ -3604,6 +3622,7 @@ lair_night = 2
 sim_avail = true
 base_hostile = 2
 base_hostile_safe = 2
+territory_monolith = 1
 territory = 1
 lair_night_rest = 1
 ;lair_night = 1
@@ -3618,6 +3637,7 @@ lair_night = 2
 [jup_sim_4]:default
 sim_avail = true
 hunting_ground 	= 2
+territory_monolith = 2
 lair = 2
 lair_night = 1
 lair_night_rest = 1
@@ -3632,6 +3652,7 @@ lair_night_rest = 1
 [jup_sim_6]:default
 sim_avail = true
 hunting_ground = 1
+territory_monolith = 2
 lair = 2
 lair_night = 2
 
@@ -3717,6 +3738,7 @@ base_hostile = 2
 
 [jup_sim_19]:default
 base_monolith = 2
+territory_monolith = 1
 territory_hostile = 1
 lair_night = 1
 lair_night_rest = 1
