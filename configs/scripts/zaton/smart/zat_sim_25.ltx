@@ -1,8 +1,8 @@
 [smart_terrain];zat_sim_25
-respawn_idle = 10800
+respawn_idle = 14400
 respawn_only_level = true
 respawn_radius = 200
-death_idle_time = 10800
+death_idle_time = 14400
 
 squad_id = 10
 max_population = 2
@@ -27,7 +27,7 @@ spawn_num = {=actor_on_level(zaton) +kingpin_gained} 0, 1
 ; Merc sentry neutral squads
 
 [spawn_merc@novice_sentry_neutral]
-spawn_squads = merc_sim_squad_novice, bandit_sim_squad_advanced, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork ; merc_sim_squad_novice_zat_sim_25_sentry_neutral, bandit_sim_squad_advanced_zat_sim_25
+spawn_squads = merc_sim_squad_novice_neutral, bandit_sim_squad_advanced, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork ; merc_sim_squad_novice_zat_sim_25_sentry_neutral, bandit_sim_squad_advanced_zat_sim_25
 spawn_num = {=actor_on_level(zaton) -kingpin_gained} 0, 1
 
 ;;; unused

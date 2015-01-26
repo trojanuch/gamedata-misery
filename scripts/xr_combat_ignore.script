@@ -251,8 +251,9 @@ function action_process_enemy:__init( obj, storage )
 		return
 	end
 	--Yasti Ghillie Suit. Adjusted Values for inertion time--
-	if db.actor and (ai_tweaks.GhillieEnable == true) and ai_tweaks.wearing_ghillie() then --Inertion Values for wearing a Ghillie Suit
-		--alun_utils.printf("xr_combat_ignore.process_enemy_init: Ghillie Suit inertion values loaded")
+	--if db.actor and (ai_tweaks.GhillieEnable == true) and ai_tweaks.wearing_ghillie() then --Inertion Values for wearing a Ghillie Suit
+	if db.actor and (ai_tweaks.GhillieEnable == true) and ai_tweaks.wearing_ghillie() and ai_tweaks.old_wearing_ghillie() then -- KCS - another check needed becouse wearing_ghillie always return true
+	  	 --alun_utils.printf("xr_combat_ignore.process_enemy_init: Ghillie Suit inertion values loaded")
 		local search = GhillieInertion[self.comm] or "60000"
 		local search_time = xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj, self.comm,"ghillie_inertion",search))
 		self.st.combat_inertion = search_time and tonumber(search_time) or 60000

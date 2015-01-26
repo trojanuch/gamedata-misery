@@ -131,7 +131,7 @@ radiation_immunity 			= 1.03
 telepatic_immunity 			= 2.50
 chemical_burn_immunity 			= 2.42
 explosion_immunity 			= 0.79
-fire_wound_immunity  			= 0.88
+fire_wound_immunity  			= 0.84
 
 [actor_immunities_gd_stalker]
 burn_immunity 				= 10.9
@@ -142,7 +142,7 @@ radiation_immunity 			= 1.03
 telepatic_immunity 			= 2.50
 chemical_burn_immunity 			= 2.42
 explosion_immunity 			= 0.79
-fire_wound_immunity  			= 0.88
+fire_wound_immunity  			= 0.84
 
 [actor_immunities_gd_veteran]
 burn_immunity 				= 10.9
@@ -153,7 +153,7 @@ radiation_immunity 			= 1.03
 telepatic_immunity 			= 2.50
 chemical_burn_immunity 			= 2.42
 explosion_immunity 			= 0.79
-fire_wound_immunity  			= 0.88
+fire_wound_immunity  			= 0.84
 
 [actor_immunities_gd_master]
 burn_immunity 				= 10.9
@@ -164,12 +164,12 @@ radiation_immunity 			= 1.03
 telepatic_immunity 			= 2.50
 chemical_burn_immunity 			= 2.42
 explosion_immunity 			= 0.79
-fire_wound_immunity  			= 0.88
+fire_wound_immunity  			= 0.84
 
 [actor_condition]
 satiety_v				= 0.0000105 	;скорость уменьшения сытости со временем
 radiation_v				= 0.000018	;скорость уменьшения радиации
-satiety_power_v			= 0.00325		;увеличение силы при уменьшении сытости
+satiety_power_v			= 0.00375		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.000005    ;увеличение здоровья при уменьшении сытости
 satiety_critical		= 0.3       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
 radiation_health_v		= 0.0011	;0.002     ;уменьшение здоровья при воздействии радиации
@@ -178,7 +178,7 @@ psy_health_v			= 0.0028 ;0.001		;скорость восстановления psy-здоровья
 alcohol_v				= -0.00052
 health_hit_part			= 1.0		;процент хита, уходящий на отнимание здоровья
 power_hit_part			= 0.025		;процент хита, уходящий на отнимание силы
-max_power_leak_speed	= 0.000001		;накопление усталости (макс граница, до которой восстанавливается сила) в секунду игрового времени
+max_power_leak_speed	= 0.0 ; 0.000001		;накопление усталости (макс граница, до которой восстанавливается сила) в секунду игрового времени
 max_walk_weight			= 150 ; 950 ; wpn_test ; 150 ; 55 ;50 ;490 ;90
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -222,7 +222,7 @@ jump_power 				= 0.018 ;умешьшение силы с прыжком без учета веса ноши
 jump_weight_power       = 0.2  ;0.045                                        ;умешьшение силы с прыжком с учетом веса ноши, для максимального допустимого веса
 overweight_jump_k       = 1.04		;10                ;10                                        ;коэффициент влияние перегрузки прыжок с весом (умножается на jump_weight_power)
 
-stand_power             = -0.0075
+stand_power             = -0.0081
 walk_power              = 0.00001 ;0.00002  ;0.000012                                ;Reduction of force for a second during walking without taking into account weight of a burden
 walk_weight_power       = 0.0044  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
 overweight_walk_k       = 1.10			;9        ;10                                ;Factor influence of an overload of a burden (it is multiplied on walk_weight_power)

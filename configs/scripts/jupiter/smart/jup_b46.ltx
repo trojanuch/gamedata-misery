@@ -1,8 +1,8 @@
 [smart_terrain];jup_b46
-respawn_idle = 10800
+respawn_idle = 14400
 respawn_only_level = true
 respawn_radius = 200
-death_idle_time = 10800
+death_idle_time = 14400
 
 squad_id = 25
 max_population = 1
@@ -24,13 +24,13 @@ spawn_duty@master_sentry_hostile
 ; Duty assault squads
 
 [spawn_duty@veteran_assault]
-spawn_squads = duty_sim_squad_veteran_jupiter, duty_sim_squad_veteran_jupiter, duty_sim_squad_veteran_jup_a12_assault_jupiter, duty_sim_squad_veteran_jup_b47_assault_jupiter
+spawn_squads = duty_sim_squad_veteran_jupiter ; duty_sim_squad_veteran_jup_a12_assault_jupiter, duty_sim_squad_veteran_jup_b47_assault_jupiter
 spawn_num = {=actor_on_level(jupiter) -sim_freedom_help_harder +jup_b207_task_end} 1, {=actor_on_level(jupiter) -sim_freedom_help_harder +jup_a12_task_done} 1, {=actor_on_level(jupiter) -sim_freedom_help_harder +jup_b46_task_done} 1, {=actor_on_level(jupiter) -sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) -sim_freedom_help_harder +jup_b209_task_done} 1, {=actor_on_level(jupiter) -sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
 
 ; Duty assault hostile squads
 
 [spawn_duty@veteran_assault_hostile]
-spawn_squads = duty_sim_squad_veteran_jupiter_hostile, duty_sim_squad_veteran_jupiter_hostile, duty_sim_squad_veteran_jup_a12_assault_hostile_jupiter, duty_sim_squad_veteran_jup_b47_assault_hostile_jupiter
+spawn_squads = duty_sim_squad_veteran_jupiter_hostile ; duty_sim_squad_veteran_jup_a12_assault_hostile_jupiter, duty_sim_squad_veteran_jup_b47_assault_hostile_jupiter
 spawn_num = {=actor_on_level(jupiter) +sim_freedom_help_harder +jup_b207_task_end} 1, {=actor_on_level(jupiter) +sim_freedom_help_harder +jup_a12_task_done} 1, {=actor_on_level(jupiter) +sim_freedom_help_harder +jup_b46_task_done} 1, {=actor_on_level(jupiter) +sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) +sim_freedom_help_harder +jup_b209_task_done} 1, {=actor_on_level(jupiter) +sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
 
 ;;; unused

@@ -3,28 +3,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;Written By Yastiandrie 15/10/2013 For Misery 2.1
+;;Reworked By Ponney68 11/1/2015 For Misery 2.1.2
 
 ;------------------------------------------------------------------------------------------
-;----------------------EMPTY AC---------------------------------------------------
+;----------------------ARTIFACT CONTAINER BASE---------------------------------------------
 ;------------------------------------------------------------------------------------------
 
-[af_iam]:aa_base
-$spawn				= "artefacts\af_iam"
+[artycon_base]:aa_base
 class 				= II_ANTIR    ;  class				= SCRPTART  --Yasti Artefact Containers
-visual				= dynamics\equipments\aa\iam
-description			= st_af_iam_descr
-inv_name			= st_af_iam_name
-inv_name_short			= st_af_iam_name
-inv_weight			= 3.64
-
-inv_grid_x			= 9
-inv_grid_y			= 43
-inv_grid_width			= 1
-inv_grid_height			= 1
 
 belt				= false ;; Yasti Artefact Containers
 
-cost				= 7590
+inv_grid_width			= 1
+inv_grid_height			= 1
 
 eat_health              = 0
 eat_satiety             = 0
@@ -50,91 +41,19 @@ auto_attach			= false
 
 ;скорости увеличения (уменьшения)
 health_restore_speed		= 0
-radiation_restore_speed		= -0.00013
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-hit_absorbation_sect		= af_iam_absorbation
-
-additional_inventory_weight	= 1.86
-additional_inventory_weight2	= 1.86
-
-artefact_activation_seq		= af_activation_bold
-
-repair_part_bonus	 	= 0.06
-
-[af_iam_absorbation]
-burn_immunity 			= 0				;коэффициенты иммунитета
-strike_immunity 		= 0
-shock_immunity 			= 0     ;0.007 --Yasti Artefact Containers
-wound_immunity 			= 0
-radiation_immunity 		= 0
-telepatic_immunity 		= 0
-chemical_burn_immunity 		= 0
-explosion_immunity 			= 0
-fire_wound_immunity  		= 0
-
-;------------------------------------------------------------------------------------------
-
-[af_aac]:aa_base
-$spawn				= "artefacts\af_aac"
-class 				= II_ANTIR    ;  class				= SCRPTART  --Yasti Artefact Containers
-visual				= dynamics\equipments\aa\aac
-description			= st_af_aac_descr
-inv_name			= st_af_aac_name
-inv_name_short			= st_af_aac_name
-inv_weight			= 4.14
-
-inv_grid_x			= 10
-inv_grid_y			= 43
-inv_grid_width			= 1
-inv_grid_height			= 1
-
-belt				= false ;; Yasti Artefact Containers
-
-cost				= 12940
-
-eat_health              = 0
-eat_satiety             = 0
-eat_power               = 0
-eat_radiation           = 0
-wounds_heal_perc        = 0
-eat_portions_num        = 1
-
-jump_height			= 0.0
-;particles		        = artefact\af_thermal_idle
-det_show_particles		= artefact\af_thermal_show
-det_hide_particles		= artefact\af_thermal_hide
-particles_bone			= joint2
-af_rank				= 0
-lights_enabled                  = false
-trail_light_color 		= 0.9,0.4,0.2
-trail_light_range 		= 2.0
-
-attach_angle_offset		= 1.922,1.551,-0.740   
-attach_position_offset          = 0.15,0.002,0.25
-attach_bone_name		= bip01_r_hand
-auto_attach			= false
-
-;скорости увеличения (уменьшения)
-health_restore_speed		= 0
-radiation_restore_speed		= -0.00025
+radiation_restore_speed		= 0
 satiety_restore_speed		= 0
 power_restore_speed		= 0
 bleeding_restore_speed		= 0
-hit_absorbation_sect		= af_aac_absorbation
-
-additional_inventory_weight	= 2.34
-additional_inventory_weight2	= 2.34
+hit_absorbation_sect		= artycon_absorbation
 
 artefact_activation_seq		= af_activation_bold
 
-repair_part_bonus	 	= 0.10
 
-[af_aac_absorbation]
-burn_immunity 			= 0				;коэффициенты иммунитета
+[artycon_absorbation]
+burn_immunity 			= 0
 strike_immunity 		= 0
-shock_immunity 			= 0		;0.009 --Yasti Artefact Containers
+shock_immunity 			= 0
 wound_immunity 			= 0
 radiation_immunity 		= 0
 telepatic_immunity 		= 0
@@ -143,10 +62,55 @@ explosion_immunity 		= 0
 fire_wound_immunity  		= 0
 
 ;------------------------------------------------------------------------------------------
+;----------------------EMPTY AC------------------------------------------------------------
+;------------------------------------------------------------------------------------------
 
-[af_aam]:aa_base
+[af_iam]:artycon_base
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
+description			= st_af_iam_descr
+inv_name			= st_af_iam_name
+inv_name_short			= st_af_iam_name
+inv_weight			= 3.64
+
+inv_grid_x			= 9
+inv_grid_y			= 43
+
+cost				= 7590
+
+radiation_restore_speed		= -0.00013
+
+additional_inventory_weight	= 1.86
+additional_inventory_weight2	= 1.86
+
+repair_part_bonus	 	= 0.06
+
+;------------------------------------------------------------------------------------------
+
+[af_aac]:artycon_base
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
+description			= st_af_aac_descr
+inv_name			= st_af_aac_name
+inv_name_short			= st_af_aac_name
+inv_weight			= 4.14
+
+inv_grid_x			= 10
+inv_grid_y			= 43
+
+cost				= 12940
+
+radiation_restore_speed		= -0.00025
+
+additional_inventory_weight	= 2.34
+additional_inventory_weight2	= 2.34
+
+repair_part_bonus	 	= 0.10
+
+;------------------------------------------------------------------------------------------
+
+[af_aam]:artycon_base
 $spawn				= "artefacts\af_aam"
-class 				= II_ANTIR    ;  class				= SCRPTART  --Yasti Artefact Containers
 visual				= dynamics\equipments\aa\aam
 description			= st_af_aam_descr
 inv_name			= st_af_aam_name
@@ -155,65 +119,19 @@ inv_weight			= 4.63
 
 inv_grid_x			= 11
 inv_grid_y			= 43
-inv_grid_width			= 1
-inv_grid_height			= 1
-
-belt				= false ;; Yasti Artefact Containers
 
 cost				= 20990
 
-eat_health              = 0
-eat_satiety             = 0
-eat_power               = 0
-eat_radiation           = 0
-wounds_heal_perc        = 0
-eat_portions_num        = 1
-
-jump_height			= 0.0
-;particles		        = artefact\af_thermal_idle
-det_show_particles		= artefact\af_thermal_show
-det_hide_particles		= artefact\af_thermal_hide
-particles_bone			= joint2
-af_rank				= 0
-lights_enabled                  = false
-trail_light_color 		= 0.9,0.4,0.2
-trail_light_range 		= 2.0
-
-attach_angle_offset		= 1.922,1.551,-0.740   
-attach_position_offset          = 0.15,0.002,0.25
-attach_bone_name		= bip01_r_hand
-auto_attach			= false
-
-;скорости увеличения (уменьшения)
-health_restore_speed		= 0
 radiation_restore_speed		= -0.00047
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-hit_absorbation_sect		= af_aam_absorbation
 
 additional_inventory_weight	= 2.77
 additional_inventory_weight2	= 2.77
 
-artefact_activation_seq		= af_activation_bold
-
 repair_part_bonus	 	= 0.14
-
-[af_aam_absorbation]
-burn_immunity 			= 0				;коэффициенты иммунитета
-strike_immunity 		= 0
-shock_immunity 			= 0		;0.012  --Yasti Artefact Containers
-wound_immunity 			= 0
-radiation_immunity 		= 0
-telepatic_immunity 		= 0
-chemical_burn_immunity 		= 0
-explosion_immunity 			= 0
-fire_wound_immunity  		= 0
 
 ;------------------------------------------------------------------------------------------
 
 [lead_box]:af_iam
-class 				= II_ANTIR
 inv_weight 			= 5.48
 cost				= 2420
 description			= st_lead_box_descr
@@ -240,8 +158,11 @@ inv_grid_y			= 42
 ;------------------------------------------------------------------------------------------
 
 [lead_box_closed]:lead_box
+class				= S_PDA
 inv_weight 			= 5.48
 cost 				= 0
+can_trade 			= false
+
 description			= st_lead_box_closed_descr
 inv_name			= st_lead_box_closed_name
 inv_name_short		= st_lead_box_closed_name
@@ -249,13 +170,19 @@ inv_name_short		= st_lead_box_closed_name
 visual				= dynamics\equipments\lead_box_closed.ogf
 inv_grid_width			= 1
 inv_grid_height			= 2
-inv_grid_x			= 25
+inv_grid_x			= 21;25
 inv_grid_y			= 42
 
-radiation_restore_speed = 0 ; -0.00500
+radiation_restore_speed 	= 0 ; -0.00500
 
 additional_inventory_weight	= 0
 additional_inventory_weight2	= 0
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+radius				= 68; 50
 
 [lead_box_closed_dummy]:lead_box_closed
 inv_grid_x			= 24
@@ -297,15 +224,840 @@ quest_item = true
 can_trade = false
 
 ;------------------------------------------------------------------------------------------
-;----------------------IAM WITH ARTEFACT---------------------------------------------------
+;----------------------ARTIFACT EFFECTS IN CONTAINER---------------------------------------
 ;------------------------------------------------------------------------------------------
+;;Only this section is affected by the class diversity -- ponney68
 
-[af_medusa_af_iam]:af_iam
+;Negative artifact effects (except radiation_restore_speed);
+;Recon: reduce to 70%
+;Sniper: reduce to 85%
+;Assaulter: 100% pure artifact effects
+
+;Positive artifact effects;
+;Recon: 100% pure artifact effects
+;Sniper: reduce to 85%
+;Assaulter: reduce to 70%
+
+[af_medusa_artycon]:artycon_base
 class				= SCRPTART
-inv_weight			= 8.29
 cost				= 0
 can_trade 			= false
 belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+
+additional_inventory_weight	= 2.691
+additional_inventory_weight2	= 2.691
+
+hit_absorbation_sect		= af_medusa_artycon_absorbation
+
+[af_medusa_artycon_absorbation]
+burn_immunity 			= 0.00066;0.00078				;коэффициенты иммунитета
+strike_immunity 		= 0.02941;0.03460
+shock_immunity 			= 0
+wound_immunity 			= 0.0111;0.01306
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0.00005;0.00006
+explosion_immunity 		= 0.01327;0.01562
+fire_wound_immunity  		= 0.01156;0.01360
+
+;------------------------------------------------------------------------------------------
+
+[af_cristall_flower_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+
+additional_inventory_weight	= 3.287
+additional_inventory_weight2	= 3.287
+
+hit_absorbation_sect 		= af_cristall_flower_artycon_absorbation
+
+[af_cristall_flower_artycon_absorbation]
+burn_immunity 			= 0.00094;0.001112				;коэффициенты иммунитета
+strike_immunity 		= 0.04428;0.05210
+shock_immunity 			= 0
+wound_immunity 			= 0.01669;0.01964
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0.00007;0.00009
+explosion_immunity 		= 0.02366;0.02784
+fire_wound_immunity  		= 0.01993;0.02345
+
+;------------------------------------------------------------------------------------------
+
+[af_night_star_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00009
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+
+additional_inventory_weight	= 4.844
+additional_inventory_weight2	= 4.844
+
+hit_absorbation_sect 		= af_night_star_artycon_absorbation
+
+[af_night_star_artycon_absorbation]
+burn_immunity 			= 0.00111;0.00131		;коэффициенты иммунитета
+strike_immunity 		= 0.06341;0.07460
+shock_immunity 			= 0
+wound_immunity 			= 0.02329;0.02740
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0.0001;0.00012
+explosion_immunity 		= 0.031;0.03648
+fire_wound_immunity  		= 0.0267;0.03142
+
+;------------------------------------------------------------------------------------------
+
+[af_vyvert_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00015
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+
+additional_inventory_weight	= 5.194
+additional_inventory_weight2	= 5.194
+
+hit_absorbation_sect 		= af_vyvert_artycon_absorbation
+
+[af_vyvert_artycon_absorbation]
+burn_immunity 			= 0.00118;0.00139				;коэффициенты иммунитета
+strike_immunity 		= 0.70839;0.8334
+shock_immunity 			= 0
+wound_immunity 			= 0.04879;0.05740
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0.00012;0.00015
+explosion_immunity 		= 0.05281;0.06214
+fire_wound_immunity  		= 0.04663;0.05486
+
+;------------------------------------------------------------------------------------------
+
+[af_gravi_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00023
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+
+additional_inventory_weight	= 5.417
+additional_inventory_weight2	= 5.417
+
+hit_absorbation_sect = af_gravi_artycon_absorbation
+
+[af_gravi_artycon_absorbation]
+burn_immunity 			= 0.00168;0.00198				;коэффициенты иммунитета
+strike_immunity 		= 0.08366;0.09843
+shock_immunity 			= 0
+wound_immunity 			= 0.05284;0.06217
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0.00019;0.00023
+explosion_immunity 		= 0.0643;0.07565
+fire_wound_immunity  		= 0.06641;0.07814
+
+;------------------------------------------------------------------------------------------
+
+[af_gold_fish_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00031
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+
+additional_inventory_weight	= 6.302
+additional_inventory_weight2	= 6.302
+
+hit_absorbation_sect = af_gold_fish_artycon_absorbation
+
+[af_gold_fish_artycon_absorbation]
+burn_immunity 			= 0.00202;0.002384			;коэффициенты иммунитета
+strike_immunity 		= 0.11169;0.13141
+shock_immunity 			= 0
+wound_immunity 			= 0.07208;0.08481
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0.00028;0.00033
+explosion_immunity 		= 0.09237;0.10868
+fire_wound_immunity  		= 0.08837;0.10397
+
+;------------------------------------------------------------------------------------------
+
+[af_cristall_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0.00033;0.00039
+
+additional_inventory_weight	= 2.24
+additional_inventory_weight2	= 2.24
+
+hit_absorbation_sect		= af_cristall_artycon_absorbation
+
+[af_cristall_artycon_absorbation]
+burn_immunity 			= 0.00129;0.00152				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.08114;-0.09546
+wound_immunity 			= 0.02245;0.02642
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= -0.00011;-0.00014
+explosion_immunity 		= 0.02764;0.03252
+fire_wound_immunity  		= 0.02771;0.03261
+
+;------------------------------------------------------------------------------------------
+
+[af_fireball_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00003
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0.00062;0.00074
+
+additional_inventory_weight	= 2.59
+additional_inventory_weight2	= 2.59
+
+hit_absorbation_sect = af_fireball_artycon_absorbation
+
+[af_fireball_artycon_absorbation]
+burn_immunity 			= 0.00162;0.00191		;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.12166;-0.14314
+wound_immunity 			= 0.03675;0.04324
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= -0.00019;-0.00023
+explosion_immunity 		= 0.0443;0.05212
+fire_wound_immunity  		= 0.04014;0.04723
+
+;------------------------------------------------------------------------------------------
+
+[af_dummy_glassbeads_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00009
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0.00091;0.00108
+
+additional_inventory_weight	= 3.26
+additional_inventory_weight2	= 3.26
+
+hit_absorbation_sect = af_dummy_glassbeads_artycon_absorbation
+
+[af_dummy_glassbeads_artycon_absorbation]
+burn_immunity 			= 0.0021;0.00248			;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.15211;-0.17896
+wound_immunity 			= 0.04472;0.05262
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= -0.00026;-0.00031
+explosion_immunity 		= 0.05853;0.06887
+fire_wound_immunity  		= 0.05226;0.06149
+
+;------------------------------------------------------------------------------------------
+
+[af_eye_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00023
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0.00192;0.00226
+
+additional_inventory_weight	= 3.79
+additional_inventory_weight2	= 3.79
+
+hit_absorbation_sect = af_eye_artycon_absorbation
+
+[af_eye_artycon_absorbation]
+burn_immunity 			= 0.00334;0.00393				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.24162;-0.28427
+wound_immunity 			= 0.10003;0.11769
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= -0.00053;-0.00063
+explosion_immunity 		= 0.09248;0.10881
+fire_wound_immunity  		= 0.09071;0.10672
+
+;------------------------------------------------------------------------------------------
+
+[af_fire_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00031
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0.00245;0.00289
+
+additional_inventory_weight	= 4.41
+additional_inventory_weight2	= 4.41
+
+hit_absorbation_sect = af_fire_artycon_absorbation
+
+[af_fire_artycon_absorbation]
+burn_immunity 			= 0.00282;0.00332				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.23992;-0.28227
+wound_immunity 			= 0.09555;0.11242
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= -0.00054;-0.00064
+explosion_immunity 		= 0.11489;0.13517
+fire_wound_immunity  		= 0.1141;0.13424
+
+;------------------------------------------------------------------------------------------
+
+[af_blood_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= -0.00021;-0.00025
+bleeding_restore_speed		= 0.0005;0.00059
+
+additional_inventory_weight	= 2.14
+additional_inventory_weight2	= 2.14
+
+hit_absorbation_sect = af_blood_artycon_absorbation
+
+[af_blood_artycon_absorbation]
+burn_immunity 			= -0.00117;-0.00138				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.01435;-0.01689
+wound_immunity 			= 0.0092;0.01083
+radiation_immunity 		= 0
+telepatic_immunity 		= -0.00045;-0.00053
+chemical_burn_immunity 		= 0.00017;0.00021
+explosion_immunity 		= 0.01519;0.01788
+fire_wound_immunity  		= 0.01262;0.01485
+
+;------------------------------------------------------------------------------------------
+
+[af_mincer_meat_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00003
+satiety_restore_speed		= 0
+power_restore_speed		= -0.00022;-0.00027
+bleeding_restore_speed		= 0.00087;0.00103
+
+additional_inventory_weight	= 2.22
+additional_inventory_weight2	= 2.22
+
+hit_absorbation_sect = af_mincer_meat_artycon_absorbation
+
+[af_mincer_meat_artycon_absorbation]
+burn_immunity 			= -0.00151;-0.00178					;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.02708;-0.03187
+wound_immunity 			= 0.01883;0.02216
+radiation_immunity 		= 0
+telepatic_immunity 		= -0.00068;-0.00081
+chemical_burn_immunity 		= 0.00026;0.00031
+explosion_immunity 		= 0.02199;0.02588
+fire_wound_immunity  		= 0.01998;0.02351
+
+;------------------------------------------------------------------------------------------
+
+[af_soul_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00009
+satiety_restore_speed		= 0
+power_restore_speed		= -0.00032;-0.00038
+bleeding_restore_speed		= 0.00169;0.00199
+
+additional_inventory_weight	= 2.4
+additional_inventory_weight2	= 2.4
+
+hit_absorbation_sect = af_soul_artycon_absorbation
+
+[af_soul_artycon_absorbation]
+burn_immunity 			= -0.00167;-0.00197				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.05034;-0.05923
+wound_immunity 			= 0.02377;0.02797
+radiation_immunity 		= 0
+telepatic_immunity 		= -0.00113;-0.00134
+chemical_burn_immunity 		= 0.00038;0.00045
+explosion_immunity 		= 0.03144;0.03699
+fire_wound_immunity  		= 0.02815;0.03312
+
+;------------------------------------------------------------------------------------------
+
+[af_fuzz_kolobok_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00023
+satiety_restore_speed		= 0
+power_restore_speed		= -0.00035;-0.00042
+bleeding_restore_speed		= 0.0023;0.00271
+
+additional_inventory_weight	= 2.74
+additional_inventory_weight2	= 2.74
+
+hit_absorbation_sect = af_fuzz_kolobok_artycon_absorbation
+
+[af_fuzz_kolobok_artycon_absorbation]
+burn_immunity 			= -0.00191;-0.00225				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.08453;-0.09945
+wound_immunity 			= 0.03508;0.04128
+radiation_immunity 		= 0
+telepatic_immunity 		= -0.00146;-0.00172
+chemical_burn_immunity 		= 0.00049;0.00058
+explosion_immunity 		= 0.0438;0.05154
+fire_wound_immunity  		= 0.0377;0.04436
+
+;------------------------------------------------------------------------------------------
+
+[af_baloon_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00031
+satiety_restore_speed		= 0
+power_restore_speed		= -0.00952;-0.0112
+bleeding_restore_speed		= 0.00275;0.00324
+
+additional_inventory_weight	= 1.919
+additional_inventory_weight2	= 1.919
+
+hit_absorbation_sect = af_baloon_artycon_absorbation
+
+[af_baloon_artycon_absorbation]
+burn_immunity 			= -0.00256;-0.00302				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.12722;-0.14968
+wound_immunity 			= 0.0488;0.05742
+radiation_immunity 		= 0
+telepatic_immunity 		= -0.00228;-0.00269
+chemical_burn_immunity 		= 0.00063;0.00075
+explosion_immunity 		= 0.059;0.06942
+fire_wound_immunity  		= 0.05645;0.06642
+
+;------------------------------------------------------------------------------------------
+
+[af_glass_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00034
+satiety_restore_speed		= 0
+power_restore_speed		= -0.013;-0.0153
+bleeding_restore_speed		= 0.00324;0.00382
+
+additional_inventory_weight	= 3.73
+additional_inventory_weight2	= 3.73
+
+hit_absorbation_sect = af_glass_artycon_absorbation
+
+[af_glass_artycon_absorbation]
+burn_immunity 			= -0.00234;-0.00276			;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.16943;-0.19934
+wound_immunity 			= 0.0601;0.07071
+radiation_immunity 		= 0
+telepatic_immunity 		= -0.00187;-0.00220
+chemical_burn_immunity 		= 0.00078;0.00092
+explosion_immunity 		= 0.07855;0.09242
+fire_wound_immunity  		= 0.07601;0.08943
+
+;------------------------------------------------------------------------------------------
+
+[af_electra_sparkler_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0.0001;0.000124
+bleeding_restore_speed		= -0.00049;-0.00058
+
+additional_inventory_weight	= 2.022
+additional_inventory_weight	= 2.022
+
+hit_absorbation_sect = af_electra_sparkler_artycon_absorbation
+
+[af_electra_sparkler_artycon_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0.0929;0.1093
+wound_immunity 			= -0.00804;-0.00946
+radiation_immunity 		= 0
+telepatic_immunity 		= 0.00047;0.00056
+chemical_burn_immunity 		= 0
+explosion_immunity 		= -0.0131;-0.01542
+fire_wound_immunity  		= -0.01152;-0.01356
+
+;------------------------------------------------------------------------------------------
+
+[af_electra_flash_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00003
+satiety_restore_speed		= 0
+power_restore_speed		= 0.00012;0.00015
+bleeding_restore_speed		= -0.00052;-0.00062
+
+additional_inventory_weight	= 2.053
+additional_inventory_weight2	= 2.053
+
+hit_absorbation_sect = af_electra_flash_artycon_absorbation
+
+[af_electra_flash_artycon_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0.07157;0.0842
+wound_immunity 			= -0.01424;-0.01676
+radiation_immunity 		= 0
+telepatic_immunity 		= 0.00073;0.00087
+chemical_burn_immunity 		= 0
+explosion_immunity 		= -0.01963;-0.02310
+fire_wound_immunity  		= -0.01786;-0.02102
+
+;------------------------------------------------------------------------------------------
+
+[af_electra_moonlight_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00009
+satiety_restore_speed		= 0
+power_restore_speed		= 0.00021;0.00025
+bleeding_restore_speed		= -0.00083;-0.00098
+
+additional_inventory_weight	= 2.076
+additional_inventory_weight2	= 2.076
+
+hit_absorbation_sect = af_electra_moonlight_artycon_absorbation
+
+[af_electra_moonlight_artycon_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0.10999;0.1294
+wound_immunity 			= -0.02363;-0.02781
+radiation_immunity 		= 0
+telepatic_immunity 		= 0.001;0.00118
+chemical_burn_immunity 		= 0
+explosion_immunity 		= -0.02912;-0.03426
+fire_wound_immunity  		= -0.02878;-0.03386
+
+;------------------------------------------------------------------------------------------
+
+[af_dummy_battery_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00023
+satiety_restore_speed		= 0
+power_restore_speed		= 0.00052;0.00062
+bleeding_restore_speed		= -0.00144;-0.00170
+
+additional_inventory_weight	= 2.247
+additional_inventory_weight2	= 2.247
+
+hit_absorbation_sect = af_dummy_battery_artycon_absorbation
+
+[af_dummy_battery_artycon_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0.16147;0.18997
+wound_immunity 			= -0.0308;-0.03624
+radiation_immunity 		= 0
+telepatic_immunity 		= 0.00126;0.00149
+chemical_burn_immunity 		= 0
+explosion_immunity 		= -0.02569;-0.03023
+fire_wound_immunity  		= -0.03751;-0.04413
+
+;------------------------------------------------------------------------------------------
+
+[af_dummy_dummy_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00031
+satiety_restore_speed		= 0
+power_restore_speed		= 0.00078;0.00092
+bleeding_restore_speed		= -0.00217;-0.00256
+
+additional_inventory_weight	= 2.282
+additional_inventory_weight2	= 2.282
+
+hit_absorbation_sect = af_dummy_dummy_artycon_absorbation
+
+[af_dummy_dummy_artycon_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0.23655;0.2783
+wound_immunity 			= -0.04012;-0.04721
+radiation_immunity 		= 0
+telepatic_immunity 		= 0.00167;0.00197
+chemical_burn_immunity 		= 0
+explosion_immunity 		= -0.0497;-0.05848
+fire_wound_immunity  		= -0.04897;-0.05762
+
+;------------------------------------------------------------------------------------------
+
+[af_ice_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00034
+satiety_restore_speed		= 0
+power_restore_speed		= 0.00103;0.00122
+bleeding_restore_speed		= -0.00237;-0.00279
+
+additional_inventory_weight	= 2.481
+additional_inventory_weight2	= 2.481
+
+hit_absorbation_sect = af_ice_artycon_absorbation
+
+[af_ice_artycon_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0.25029;0.29446
+wound_immunity 			= -0.05055;-0.05948
+radiation_immunity 		= 0
+telepatic_immunity 		= 0.00247;0.002914
+chemical_burn_immunity 		= 0
+explosion_immunity 		= -0.0614;-0.07224
+fire_wound_immunity  		= -0.06112;-0.07191
+
+;------------------------------------------------------------------------------------------
+
+[af_compass_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+quest_item 			= true
+
+health_restore_speed 		= 0
+radiation_restore_speed 	= 0.00069
+satiety_restore_speed 		= 0
+power_restore_speed 		= 0.00174;0.00205
+bleeding_restore_speed 		= 0
+
+additional_inventory_weight	= 3.18
+additional_inventory_weight2	= 3.18
+
+hit_absorbation_sect 		= af_compass_artycon_absorbation
+
+[af_compass_artycon_absorbation]
+burn_immunity 			= 0.00281;0.00331			;коэффициенты иммунитета
+strike_immunity 		= 0.1124;0.13224
+shock_immunity 			= -0.27103;-0.31887
+wound_immunity 			= 0.05224;0.06146
+radiation_immunity 		= 0
+telepatic_immunity 		= -0.00282;-0.00332
+chemical_burn_immunity 		= 0.00418;0.00492
+explosion_immunity 		= 0.0658;0.07742
+fire_wound_immunity  		= 0.0585;0.06883
+
+;------------------------------------------------------------------------------------------
+
+[af_oasis_heart_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+quest_item 			= true
+
+health_restore_speed		= 0
+radiation_restore_speed 	= 0.00063
+satiety_restore_speed 		= 0
+power_restore_speed		= 0.00132;0.00156
+bleeding_restore_speed		= 0.00523;0.00616
+
+additional_inventory_weight	= 7.18
+additional_inventory_weight2	= 7.18
+
+hit_absorbation_sect 		= af_oasis_heart_artycon_absorbation
+
+[af_oasis_heart_artycon_absorbation]
+burn_immunity 			= -0.00234;-0.00276				;коэффициенты иммунитета
+strike_immunity 		= 0.10188;0.11987
+shock_immunity 			= -0.17731;-0.20861
+wound_immunity 			= 0.10092;0.11874
+radiation_immunity 		= 0
+telepatic_immunity 		= -0.00193;-0.00228
+chemical_burn_immunity 		= 0.00635;0.00748
+explosion_immunity 		= 0.04715;0.05548
+fire_wound_immunity  		= 0.10341;0.12166
+
+;------------------------------------------------------------------------------------------
+
+[jup_b1_half_artifact_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+quest_item 			= true
+
+health_restore_speed		= 0
+radiation_restore_speed		= 0.00081
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+
+additional_inventory_weight	= 1.86
+additional_invenotry_weight2 = 1.86
+
+hit_absorbation_sect = jup_b1_half_artifact_artycon_absorbation
+
+[jup_b1_half_artifact_artycon_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0.3134;0.36871
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0.00292;0.00344
+chemical_burn_immunity 		= 0
+explosion_immunity 		= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_quest_b14_twisted_artycon]:artycon_base
+class				= SCRPTART
+cost				= 0
+can_trade 			= false
+belt				= true
+quest_item 			= true
+
+health_restore_speed 		= 0
+radiation_restore_speed 	= 0.0009
+satiety_restore_speed 		= 0
+power_restore_speed 		= 0.00166;0.00196
+bleeding_restore_speed 		= 0
+
+additional_inventory_weight = 1.86
+addition_inventory_weight2 = 1.86
+
+hit_absorbation_sect 		= af_control_artycon_absorbation
+
+[af_control_artycon_absorbation]
+burn_immunity 			= 0
+strike_immunity 		= 0
+shock_immunity 			= 0.29599;0.34823
+wound_immunity 			= 0
+radiation_immunity 		= -0.07346;-0.24822
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 		= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+;----------------------IAM WITH ARTIFACT---------------------------------------------------
+;------------------------------------------------------------------------------------------
+
+[af_medusa_af_iam]:af_medusa_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
+inv_weight			= 8.29
 description			= st_af_medusa_af_iam_descr
 inv_name			= st_af_medusa_af_iam_name
 inv_name_short			= st_af_medusa_af_iam_name
@@ -313,24 +1065,14 @@ inv_name_short			= st_af_medusa_af_iam_name
 inv_grid_x			= 24
 inv_grid_y			= 56
 
-health_restore_speed		= 0
-radiation_restore_speed		= 0.000
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-hit_absorbation_sect		= af_medusa_absorbation
-
-additional_inventory_weight	= 2.691
-additional_inventory_weight2	= 2.691
+radiation_restore_speed		= 0
 
 ;------------------------------------------------------------------------------------------
 
-[af_cristall_flower_af_iam]:af_iam
-class				= SCRPTART
+[af_cristall_flower_af_iam]:af_cristall_flower_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 10.42
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_cristall_flower_af_iam_descr
 inv_name			= st_af_cristall_flower_af_iam_name
 inv_name_short			= st_af_cristall_flower_af_iam_name
@@ -338,25 +1080,14 @@ inv_name_short			= st_af_cristall_flower_af_iam_name
 inv_grid_x			= 25
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 3.287
-additional_inventory_weight2	= 3.287
-
-hit_absorbation_sect 		= af_cristall_flower_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_night_star_af_iam]:af_iam
-class				= SCRPTART
+[af_night_star_af_iam]:af_night_star_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 10.28
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_night_star_af_iam_descr
 inv_name			= st_af_night_star_af_iam_name
 inv_name_short			= st_af_night_star_af_iam_name
@@ -364,25 +1095,14 @@ inv_name_short			= st_af_night_star_af_iam_name
 inv_grid_x			= 26
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00009
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 4.844
-additional_inventory_weight2	= 4.844
-
-hit_absorbation_sect 		= af_night_star_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_vyvert_af_iam]:af_iam
-class				= SCRPTART
+[af_vyvert_af_iam]:af_vyvert_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 10.41
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_vyvert_af_iam_descr
 inv_name			= st_af_vyvert_af_iam_name
 inv_name_short			= st_af_vyvert_af_iam_name
@@ -390,25 +1110,14 @@ inv_name_short			= st_af_vyvert_af_iam_name
 inv_grid_x			= 27
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00015
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 5.194
-additional_inventory_weight2	= 5.194
-
-hit_absorbation_sect 		= af_vyvert_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_gravi_af_iam]:af_iam
-class				= SCRPTART
+[af_gravi_af_iam]:af_gravi_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 10.52
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_gravi_af_iam_descr
 inv_name			= st_af_gravi_af_iam_name
 inv_name_short			= st_af_gravi_af_iam_name
@@ -416,25 +1125,14 @@ inv_name_short			= st_af_gravi_af_iam_name
 inv_grid_x			= 28
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00023
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 5.417
-additional_inventory_weight2	= 5.417
-
-hit_absorbation_sect = af_gravi_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_gold_fish_af_iam]:af_iam
-class				= SCRPTART
+[af_gold_fish_af_iam]:af_gold_fish_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 11.13
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_gold_fish_af_iam_descr
 inv_name			= st_af_gold_fish_af_iam_name
 inv_name_short			= st_af_gold_fish_af_iam_name
@@ -442,25 +1140,14 @@ inv_name_short			= st_af_gold_fish_af_iam_name
 inv_grid_x			= 29
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00031
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 6.302
-additional_inventory_weight2	= 6.302
-
-hit_absorbation_sect = af_gold_fish_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_cristall_af_iam]:af_iam
-class				= SCRPTART
+[af_cristall_af_iam]:af_cristall_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 7.37
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_cristall_af_iam_descr
 inv_name			= st_af_cristall_af_iam_name
 inv_name_short			= st_af_cristall_af_iam_name
@@ -468,24 +1155,14 @@ inv_name_short			= st_af_cristall_af_iam_name
 inv_grid_x			= 30
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0.00051
-hit_absorbation_sect		= af_cristall_absorbation
-
-additional_inventory_weight	= 2.24
-additional_inventory_weight2	= 2.24
 
 ;------------------------------------------------------------------------------------------
 
-[af_fireball_af_iam]:af_iam
-class				= SCRPTART
+[af_fireball_af_iam]:af_fireball_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 7.61
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fireball_af_iam_descr
 inv_name			= st_af_fireball_af_iam_name
 inv_name_short			= st_af_fireball_af_iam_name
@@ -493,25 +1170,14 @@ inv_name_short			= st_af_fireball_af_iam_name
 inv_grid_x			= 31
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00003
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00045
-bleeding_restore_speed		= 0.00099
-
-additional_inventory_weight	= 2.59
-additional_inventory_weight2	= 2.59
-
-hit_absorbation_sect = af_fireball_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_glassbeads_af_iam]:af_iam
-class				= SCRPTART
+[af_dummy_glassbeads_af_iam]:af_dummy_glassbeads_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 7.67
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_glassbeads_af_iam_descr
 inv_name			= st_af_dummy_glassbeads_af_iam_name
 inv_name_short			= st_af_dummy_glassbeads_af_iam_name
@@ -519,25 +1185,14 @@ inv_name_short			= st_af_dummy_glassbeads_af_iam_name
 inv_grid_x			= 32
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00009
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00081
-bleeding_restore_speed		= 0.00144
-
-additional_inventory_weight	= 3.26
-additional_inventory_weight2	= 3.26
-
-hit_absorbation_sect = af_dummy_glassbeads_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_eye_af_iam]:af_iam
-class				= SCRPTART
+[af_eye_af_iam]:af_eye_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 7.76
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_eye_af_iam_descr
 inv_name			= st_af_eye_af_iam_name
 inv_name_short			= st_af_eye_af_iam_name
@@ -545,25 +1200,14 @@ inv_name_short			= st_af_eye_af_iam_name
 inv_grid_x			= 33
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00023
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00134
-bleeding_restore_speed		= 0.00278
-
-additional_inventory_weight	= 3.79
-additional_inventory_weight2	= 3.79
-
-hit_absorbation_sect = af_eye_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_fire_af_iam]:af_iam
-class				= SCRPTART
+[af_fire_af_iam]:af_fire_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 7.82
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fire_af_iam_descr
 inv_name			= st_af_fire_af_iam_name
 inv_name_short			= st_af_fire_af_iam_name
@@ -571,25 +1215,14 @@ inv_name_short			= st_af_fire_af_iam_name
 inv_grid_x			= 34
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00031
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00194
-bleeding_restore_speed		= 0.00340
-
-additional_inventory_weight	= 4.41
-additional_inventory_weight2	= 4.41
-
-hit_absorbation_sect = af_fire_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_blood_af_iam]:af_iam
-class				= SCRPTART
+[af_blood_af_iam]:af_blood_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 5.36
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_blood_af_iam_descr
 inv_name			= st_af_blood_af_iam_name
 inv_name_short			= st_af_blood_af_iam_name
@@ -597,25 +1230,14 @@ inv_name_short			= st_af_blood_af_iam_name
 inv_grid_x			= 35
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00025
-bleeding_restore_speed		= 0.00072
-
-additional_inventory_weight	= 2.14
-additional_inventory_weight2	= 2.14
-
-hit_absorbation_sect = af_blood_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_mincer_meat_af_iam]:af_iam
-class				= SCRPTART
+[af_mincer_meat_af_iam]:af_mincer_meat_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 5.38
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_mincer_meat_af_iam_descr
 inv_name			= st_af_mincer_meat_af_iam_name
 inv_name_short			= st_af_mincer_meat_af_iam_name
@@ -623,25 +1245,14 @@ inv_name_short			= st_af_mincer_meat_af_iam_name
 inv_grid_x			= 36
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00003
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00033
-bleeding_restore_speed		= 0.00124
-
-additional_inventory_weight	= 2.22
-additional_inventory_weight2	= 2.22
-
-hit_absorbation_sect = af_mincer_meat_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_soul_af_iam]:af_iam
-class				= SCRPTART
+[af_soul_af_iam]:af_soul_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 5.48
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_soul_af_iam_descr
 inv_name			= st_af_soul_af_iam_name
 inv_name_short			= st_af_soul_af_iam_name
@@ -649,25 +1260,14 @@ inv_name_short			= st_af_soul_af_iam_name
 inv_grid_x			= 37
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00009
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00046
-bleeding_restore_speed		= 0.00199
-
-additional_inventory_weight	= 2.4
-additional_inventory_weight2	= 2.4
-
-hit_absorbation_sect = af_soul_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_fuzz_kolobok_af_iam]:af_iam
-class				= SCRPTART
+[af_fuzz_kolobok_af_iam]:af_fuzz_kolobok_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 5.52
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fuzz_kolobok_af_iam_descr
 inv_name			= st_af_fuzz_kolobok_af_iam_name
 inv_name_short			= st_af_fuzz_kolobok_af_iam_name
@@ -675,25 +1275,14 @@ inv_name_short			= st_af_fuzz_kolobok_af_iam_name
 inv_grid_x			= 38
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00023
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00058
-bleeding_restore_speed		= 0.00271
-
-additional_inventory_weight	= 2.74
-additional_inventory_weight2	= 2.74
-
-hit_absorbation_sect = af_fuzz_kolobok_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_baloon_af_iam]:af_iam
-class				= SCRPTART
+[af_baloon_af_iam]:af_baloon_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 5.58
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_baloon_af_iam_descr
 inv_name			= st_af_baloon_af_iam_name
 inv_name_short			= st_af_baloon_af_iam_name
@@ -701,25 +1290,14 @@ inv_name_short			= st_af_baloon_af_iam_name
 inv_grid_x			= 39
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00031
-satiety_restore_speed		= 0
-power_restore_speed			= -0.0136
-bleeding_restore_speed		= 0.00324
-
-additional_inventory_weight	= 1.919
-additional_inventory_weight2	= 1.919
-
-hit_absorbation_sect = af_baloon_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_glass_af_iam]:af_iam
-class				= SCRPTART
+[af_glass_af_iam]:af_glass_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 5.55
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_glass_af_iam_descr
 inv_name			= st_af_glass_af_iam_name
 inv_name_short			= st_af_glass_af_iam_name
@@ -727,25 +1305,14 @@ inv_name_short			= st_af_glass_af_iam_name
 inv_grid_x			= 40
 inv_grid_y			= 56
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00034
-satiety_restore_speed		= 0
-power_restore_speed			= -0.0177
-bleeding_restore_speed		= 0.00382
-
-additional_inventory_weight	= 3.73
-additional_inventory_weight2	= 3.73
-
-hit_absorbation_sect = af_glass_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_sparkler_af_iam]:af_iam
-class				= SCRPTART
+[af_electra_sparkler_af_iam]:af_electra_sparkler_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 3.82
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_sparkler_af_iam_descr
 inv_name			= st_af_electra_sparkler_af_iam_name
 inv_name_short			= st_af_electra_sparkler_af_iam_name
@@ -753,25 +1320,14 @@ inv_name_short			= st_af_electra_sparkler_af_iam_name
 inv_grid_x			= 22
 inv_grid_y			= 59
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00016
-bleeding_restore_speed		= -0.00073
-
-additional_inventory_weight	= 2.022
-additional_inventory_weight	= 2.022
-
-hit_absorbation_sect = af_electra_sparkler_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_flash_af_iam]:af_iam
-class				= SCRPTART
+[af_electra_flash_af_iam]:af_electra_flash_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 3.84
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_flash_af_iam_descr
 inv_name			= st_af_electra_flash_af_iam_name
 inv_name_short			= st_af_electra_flash_af_iam_name
@@ -779,25 +1335,14 @@ inv_name_short			= st_af_electra_flash_af_iam_name
 inv_grid_x			= 23
 inv_grid_y			= 59
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00003
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00021
-bleeding_restore_speed		= -0.00076
-
-additional_inventory_weight	= 2.053
-additional_inventory_weight2	= 2.053
-
-hit_absorbation_sect = af_electra_flash_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_moonlight_af_iam]:af_iam
-class				= SCRPTART
+[af_electra_moonlight_af_iam]:af_electra_moonlight_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 3.86
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_moonlight_af_iam_descr
 inv_name			= st_af_electra_moonlight_af_iam_name
 inv_name_short			= st_af_electra_moonlight_af_iam_name
@@ -805,25 +1350,14 @@ inv_name_short			= st_af_electra_moonlight_af_iam_name
 inv_grid_x			= 24
 inv_grid_y			= 59
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00009
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00032
-bleeding_restore_speed		= -0.00114
-
-additional_inventory_weight	= 2.076
-additional_inventory_weight2	= 2.076
-
-hit_absorbation_sect = af_electra_moonlight_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_battery_af_iam]:af_iam
-class				= SCRPTART
+[af_dummy_battery_af_iam]:af_dummy_battery_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 4.06
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_battery_af_iam_descr
 inv_name			= st_af_dummy_battery_af_iam_name
 inv_name_short			= st_af_dummy_battery_af_iam_name
@@ -831,25 +1365,14 @@ inv_name_short			= st_af_dummy_battery_af_iam_name
 inv_grid_x			= 25
 inv_grid_y			= 59
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00023
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00071
-bleeding_restore_speed		= -0.00170
-
-additional_inventory_weight	= 2.247
-additional_inventory_weight2	= 2.247
-
-hit_absorbation_sect = af_dummy_battery_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_dummy_af_iam]:af_iam
-class				= SCRPTART
+[af_dummy_dummy_af_iam]:af_dummy_dummy_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 4.073
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_dummy_af_iam_descr
 inv_name			= st_af_dummy_dummy_af_iam_name
 inv_name_short			= st_af_dummy_dummy_af_iam_name
@@ -857,25 +1380,14 @@ inv_name_short			= st_af_dummy_dummy_af_iam_name
 inv_grid_x			= 26
 inv_grid_y			= 59
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00031
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00116
-bleeding_restore_speed		= -0.00256
-
-additional_inventory_weight	= 2.282
-additional_inventory_weight2	= 2.282
-
-hit_absorbation_sect = af_dummy_dummy_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_ice_af_iam]:af_iam
-class				= SCRPTART
+[af_ice_af_iam]:af_ice_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 4.307
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_ice_af_iam_descr
 inv_name			= st_af_ice_af_iam_name
 inv_name_short			= st_af_ice_af_iam_name
@@ -883,26 +1395,14 @@ inv_name_short			= st_af_ice_af_iam_name
 inv_grid_x			= 27
 inv_grid_y			= 59
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00034
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00154
-bleeding_restore_speed		= -0.00321
-
-additional_inventory_weight	= 2.481
-additional_inventory_weight2	= 2.481
-
-hit_absorbation_sect = af_ice_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_compass_af_iam]:af_iam
-class				= SCRPTART
+[af_compass_af_iam]:af_compass_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 8.881
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_compass_af_iam_descr
 inv_name			= st_af_compass_af_iam_name
 inv_name_short			= st_af_compass_af_iam_name
@@ -910,25 +1410,14 @@ inv_name_short			= st_af_compass_af_iam_name
 inv_grid_x			= 28
 inv_grid_y			= 59
 
-health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00069
-satiety_restore_speed 		= 0
-power_restore_speed 		= 0.00250
-bleeding_restore_speed 		= 0
-hit_absorbation_sect 		= af_compass_absorbation
-
-additional_inventory_weight	= 3.18
-additional_inventory_weight2	= 3.18
 
 ;------------------------------------------------------------------------------------------
 
-[af_oasis_heart_af_iam]:af_iam
-class				= SCRPTART
+[af_oasis_heart_af_iam]:af_oasis_heart_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 7.334
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_oasis_heart_af_iam_descr
 inv_name			= st_af_oasis_heart_af_iam_name
 inv_name_short			= st_af_oasis_heart_af_iam_name
@@ -936,25 +1425,14 @@ inv_name_short			= st_af_oasis_heart_af_iam_name
 inv_grid_x			= 29
 inv_grid_y			= 59
 
-health_restore_speed		= 0
 radiation_restore_speed 	= 0.00063
-satiety_restore_speed 		= 0
-power_restore_speed			= 0.00196
-bleeding_restore_speed		= 0.00726
-hit_absorbation_sect 		= af_oasis_heart_absorbation
-
-additional_inventory_weight	= 7.18
-additional_inventory_weight2	= 7.18
 
 ;------------------------------------------------------------------------------------------
 
-[jup_b1_half_artifact_af_iam]:af_iam
-class				= SCRPTART
+[jup_b1_half_artifact_af_iam]:jup_b1_half_artifact_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 9.068
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_jup_b1_half_artifact_af_iam_descr
 inv_name			= st_jup_b1_half_artifact_af_iam_name
 inv_name_short		= st_jup_b1_half_artifact_af_iam_name
@@ -962,26 +1440,14 @@ inv_name_short		= st_jup_b1_half_artifact_af_iam_name
 inv_grid_x			= 30
 inv_grid_y			= 59
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00081
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 1.86
-additional_invenotry_weight2 = 1.86
-
-hit_absorbation_sect = jup_b1_half_artifact_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_quest_b14_twisted_af_iam]:af_iam
-class				= SCRPTART
+[af_quest_b14_twisted_af_iam]:af_quest_b14_twisted_artycon
+$spawn				= "artefacts\af_iam"
+visual				= dynamics\equipments\aa\iam
 inv_weight			= 8.264
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_quest_b14_twisted_af_iam_descr
 inv_name			= st_af_quest_b14_twisted_af_iam_name
 inv_name_short			= st_af_quest_b14_twisted_af_iam_name
@@ -989,26 +1455,16 @@ inv_name_short			= st_af_quest_b14_twisted_af_iam_name
 inv_grid_x			= 31
 inv_grid_y			= 59
 
-health_restore_speed 		= 0
 radiation_restore_speed 	= 0.0009
-satiety_restore_speed 		= 0
-power_restore_speed 		= 0.00246
-bleeding_restore_speed 		= 0
-hit_absorbation_sect 		= af_control_absorbation
-
-additional_inventory_weight = 1.86
-addition_inventory_weight2 = 1.86
 
 ;------------------------------------------------------------------------------------------
-;---------------------------AAC WITH ARTEFACT----------------------------------------------
+;----------------------AAC WITH ARTIFACT---------------------------------------------------
 ;------------------------------------------------------------------------------------------
 
-[af_medusa_af_aac]:af_aac
-class				= SCRPTART
+[af_medusa_af_aac]:af_medusa_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 8.79
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_medusa_af_aac_descr
 inv_name			= st_af_medusa_af_aac_name
 inv_name_short			= st_af_medusa_af_aac_name
@@ -1016,24 +1472,14 @@ inv_name_short			= st_af_medusa_af_aac_name
 inv_grid_x			= 24
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-hit_absorbation_sect		= af_medusa_absorbation
-
-additional_inventory_weight	= 2.691
-additional_inventory_weight2	= 2.691
 
 ;------------------------------------------------------------------------------------------
 
-[af_cristall_flower_af_aac]:af_aac
-class				= SCRPTART
+[af_cristall_flower_af_aac]:af_cristall_flower_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 10.92
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_cristall_flower_af_aac_descr
 inv_name			= st_af_cristall_flower_af_aac_name
 inv_name_short			= st_af_cristall_flower_af_aac_name
@@ -1041,25 +1487,14 @@ inv_name_short			= st_af_cristall_flower_af_aac_name
 inv_grid_x			= 25
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 3.287
-additional_inventory_weight2	= 3.287
-
-hit_absorbation_sect 		= af_cristall_flower_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_night_star_af_aac]:af_aac
-class				= SCRPTART
+[af_night_star_af_aac]:af_night_star_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 10.78
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_night_star_af_aac_descr
 inv_name			= st_af_night_star_af_aac_name
 inv_name_short			= st_af_night_star_af_aac_name
@@ -1067,25 +1502,14 @@ inv_name_short			= st_af_night_star_af_aac_name
 inv_grid_x			= 26
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 4.844
-additional_inventory_weight2	= 4.844
-
-hit_absorbation_sect 		= af_night_star_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_vyvert_af_aac]:af_aac
-class				= SCRPTART
+[af_vyvert_af_aac]:af_vyvert_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 10.91
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_vyvert_af_aac_descr
 inv_name			= st_af_vyvert_af_aac_name
 inv_name_short			= st_af_vyvert_af_aac_name
@@ -1093,25 +1517,14 @@ inv_name_short			= st_af_vyvert_af_aac_name
 inv_grid_x			= 27
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00003
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 5.194
-additional_inventory_weight2	= 5.194
-
-hit_absorbation_sect 		= af_vyvert_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_gravi_af_aac]:af_aac
-class				= SCRPTART
+[af_gravi_af_aac]:af_gravi_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 11.02
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_gravi_af_aac_descr
 inv_name			= st_af_gravi_af_aac_name
 inv_name_short			= st_af_gravi_af_aac_name
@@ -1119,25 +1532,14 @@ inv_name_short			= st_af_gravi_af_aac_name
 inv_grid_x			= 28
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00011
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 5.417
-additional_inventory_weight2	= 5.417
-
-hit_absorbation_sect = af_gravi_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_gold_fish_af_aac]:af_aac
-class				= SCRPTART
+[af_gold_fish_af_aac]:af_gold_fish_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 11.63
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_gold_fish_af_aac_descr
 inv_name			= st_af_gold_fish_af_aac_name
 inv_name_short			= st_af_gold_fish_af_aac_name
@@ -1145,25 +1547,14 @@ inv_name_short			= st_af_gold_fish_af_aac_name
 inv_grid_x			= 29
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00019
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 6.302
-additional_inventory_weight2	= 6.302
-
-hit_absorbation_sect = af_gold_fish_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_cristall_af_aac]:af_aac
-class				= SCRPTART
+[af_cristall_af_aac]:af_cristall_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 7.87
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_cristall_af_aac_descr
 inv_name			= st_af_cristall_af_aac_name
 inv_name_short			= st_af_cristall_af_aac_name
@@ -1171,25 +1562,14 @@ inv_name_short			= st_af_cristall_af_aac_name
 inv_grid_x			= 30
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0.00051
-
-hit_absorbation_sect		= af_cristall_absorbation
-
-additional_inventory_weight	= 2.24
-additional_inventory_weight2	= 2.24
 
 ;------------------------------------------------------------------------------------------
 
-[af_fireball_af_aac]:af_aac
-class				= SCRPTART
+[af_fireball_af_aac]:af_fireball_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 8.11
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fireball_af_aac_descr
 inv_name			= st_af_fireball_af_aac_name
 inv_name_short			= st_af_fireball_af_aac_name
@@ -1197,25 +1577,14 @@ inv_name_short			= st_af_fireball_af_aac_name
 inv_grid_x			= 31
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00045
-bleeding_restore_speed		= 0.00099
-
-additional_inventory_weight	= 2.59
-additional_inventory_weight2	= 2.59
-
-hit_absorbation_sect = af_fireball_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_glassbeads_af_aac]:af_aac
-class				= SCRPTART
+[af_dummy_glassbeads_af_aac]:af_dummy_glassbeads_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 8.17
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_glassbeads_af_aac_descr
 inv_name			= st_af_dummy_glassbeads_af_aac_name
 inv_name_short			= st_af_dummy_glassbeads_af_aac_name
@@ -1223,25 +1592,14 @@ inv_name_short			= st_af_dummy_glassbeads_af_aac_name
 inv_grid_x			= 32
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00081
-bleeding_restore_speed		= 0.00144
-
-additional_inventory_weight	= 3.26
-additional_inventory_weight2	= 3.26
-
-hit_absorbation_sect = af_dummy_glassbeads_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_eye_af_aac]:af_aac
-class				= SCRPTART
-inv_weight			= 8.26
-cost				= 0
-can_trade 			= false
-belt				= true
+[af_eye_af_aac]:af_eye_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
+inv_weight			= 7.76
 description			= st_af_eye_af_aac_descr
 inv_name			= st_af_eye_af_aac_name
 inv_name_short			= st_af_eye_af_aac_name
@@ -1249,25 +1607,14 @@ inv_name_short			= st_af_eye_af_aac_name
 inv_grid_x			= 33
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00011
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00134
-bleeding_restore_speed		= 0.00278
-
-additional_inventory_weight	= 3.79
-additional_inventory_weight2	= 3.79
-
-hit_absorbation_sect = af_eye_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_fire_af_aac]:af_aac
-class				= SCRPTART
+[af_fire_af_aac]:af_fire_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 8.32
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fire_af_aac_descr
 inv_name			= st_af_fire_af_aac_name
 inv_name_short			= st_af_fire_af_aac_name
@@ -1275,25 +1622,14 @@ inv_name_short			= st_af_fire_af_aac_name
 inv_grid_x			= 34
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00019
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00194
-bleeding_restore_speed		= 0.00340
-
-additional_inventory_weight	= 4.41
-additional_inventory_weight2	= 4.41
-
-hit_absorbation_sect = af_fire_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_blood_af_aac]:af_aac
-class				= SCRPTART
+[af_blood_af_aac]:af_blood_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 5.86
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_blood_af_aac_descr
 inv_name			= st_af_blood_af_aac_name
 inv_name_short			= st_af_blood_af_aac_name
@@ -1301,25 +1637,14 @@ inv_name_short			= st_af_blood_af_aac_name
 inv_grid_x			= 35
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00025
-bleeding_restore_speed		= 0.00072
-
-additional_inventory_weight	= 2.14
-additional_inventory_weight2	= 2.14
-
-hit_absorbation_sect = af_blood_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_mincer_meat_af_aac]:af_aac
-class				= SCRPTART
+[af_mincer_meat_af_aac]:af_mincer_meat_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 5.88
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_mincer_meat_af_aac_descr
 inv_name			= st_af_mincer_meat_af_aac_name
 inv_name_short			= st_af_mincer_meat_af_aac_name
@@ -1327,25 +1652,14 @@ inv_name_short			= st_af_mincer_meat_af_aac_name
 inv_grid_x			= 36
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00033
-bleeding_restore_speed		= 0.00124
-
-additional_inventory_weight	= 2.22
-additional_inventory_weight2	= 2.22
-
-hit_absorbation_sect = af_mincer_meat_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_soul_af_aac]:af_aac
-class				= SCRPTART
+[af_soul_af_aac]:af_soul_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 5.98
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_soul_af_aac_descr
 inv_name			= st_af_soul_af_aac_name
 inv_name_short			= st_af_soul_af_aac_name
@@ -1353,25 +1667,14 @@ inv_name_short			= st_af_soul_af_aac_name
 inv_grid_x			= 37
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00046
-bleeding_restore_speed		= 0.00199
-
-additional_inventory_weight	= 2.4
-additional_inventory_weight2	= 2.4
-
-hit_absorbation_sect = af_soul_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_fuzz_kolobok_af_aac]:af_aac
-class				= SCRPTART
+[af_fuzz_kolobok_af_aac]:af_fuzz_kolobok_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 6.02
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fuzz_kolobok_af_aac_descr
 inv_name			= st_af_fuzz_kolobok_af_aac_name
 inv_name_short			= st_af_fuzz_kolobok_af_aac_name
@@ -1379,25 +1682,14 @@ inv_name_short			= st_af_fuzz_kolobok_af_aac_name
 inv_grid_x			= 38
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00011
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00058
-bleeding_restore_speed		= 0.00271
-
-additional_inventory_weight	= 2.74
-additional_inventory_weight2	= 2.74
-
-hit_absorbation_sect = af_fuzz_kolobok_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_baloon_af_aac]:af_aac
-class				= SCRPTART
+[af_baloon_af_aac]:af_baloon_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 6.08
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_baloon_af_aac_descr
 inv_name			= st_af_baloon_af_aac_name
 inv_name_short			= st_af_baloon_af_aac_name
@@ -1405,25 +1697,14 @@ inv_name_short			= st_af_baloon_af_aac_name
 inv_grid_x			= 39
 inv_grid_y			= 57
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00019
-satiety_restore_speed		= 0
-power_restore_speed			= -0.0136
-bleeding_restore_speed		= 0.00324
-
-additional_inventory_weight	= 1.919
-additional_inventory_weight2	= 1.919
-
-hit_absorbation_sect = af_baloon_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_glass_af_aac]:af_aac
-class				= SCRPTART
+[af_glass_af_aac]:af_glass_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 6.05
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_glass_af_aac_descr
 inv_name			= st_af_glass_af_aac_name
 inv_name_short			= st_af_glass_af_aac_name
@@ -1431,25 +1712,14 @@ inv_name_short			= st_af_glass_af_aac_name
 inv_grid_x			= 40
 inv_grid_y			= 57
 
-health_restore_speed		= 0
-radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.0177
-bleeding_restore_speed		= 0.00382
-
-additional_inventory_weight	= 3.73
-additional_inventory_weight2	= 3.73
-
-hit_absorbation_sect = af_glass_absorbation
+radiation_restore_speed		= 0.00022
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_sparkler_af_aac]:af_aac
-class				= SCRPTART
+[af_electra_sparkler_af_aac]:af_electra_sparkler_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 4.32
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_sparkler_af_aac_descr
 inv_name			= st_af_electra_sparkler_af_aac_name
 inv_name_short			= st_af_electra_sparkler_af_aac_name
@@ -1457,25 +1727,14 @@ inv_name_short			= st_af_electra_sparkler_af_aac_name
 inv_grid_x			= 22
 inv_grid_y			= 60
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00016
-bleeding_restore_speed		= -0.00073
-
-additional_inventory_weight	= 2.022
-additional_inventory_weight	= 2.022
-
-hit_absorbation_sect = af_electra_sparkler_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_flash_af_aac]:af_aac
-class				= SCRPTART
+[af_electra_flash_af_aac]:af_electra_flash_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 4.342
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_flash_af_aac_descr
 inv_name			= st_af_electra_flash_af_aac_name
 inv_name_short			= st_af_electra_flash_af_aac_name
@@ -1483,25 +1742,14 @@ inv_name_short			= st_af_electra_flash_af_aac_name
 inv_grid_x			= 23
 inv_grid_y			= 60
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00021
-bleeding_restore_speed		= -0.00076
-
-additional_inventory_weight	= 2.053
-additional_inventory_weight2	= 2.053
-
-hit_absorbation_sect = af_electra_flash_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_moonlight_af_aac]:af_aac
-class				= SCRPTART
+[af_electra_moonlight_af_aac]:af_electra_moonlight_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 4.362
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_moonlight_af_aac_descr
 inv_name			= st_af_electra_moonlight_af_aac_name
 inv_name_short			= st_af_electra_moonlight_af_aac_name
@@ -1509,25 +1757,14 @@ inv_name_short			= st_af_electra_moonlight_af_aac_name
 inv_grid_x			= 24
 inv_grid_y			= 60
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00032
-bleeding_restore_speed		= -0.00114
-
-additional_inventory_weight	= 2.076
-additional_inventory_weight2	= 2.076
-
-hit_absorbation_sect = af_electra_moonlight_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_battery_af_aac]:af_aac
-class				= SCRPTART
+[af_dummy_battery_af_aac]:af_dummy_battery_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 4.566
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_battery_af_aac_descr
 inv_name			= st_af_dummy_battery_af_aac_name
 inv_name_short			= st_af_dummy_battery_af_aac_name
@@ -1535,25 +1772,14 @@ inv_name_short			= st_af_dummy_battery_af_aac_name
 inv_grid_x			= 25
 inv_grid_y			= 60
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00011
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00071
-bleeding_restore_speed		= -0.00170
-
-additional_inventory_weight	= 2.247
-additional_inventory_weight2	= 2.247
-
-hit_absorbation_sect = af_dummy_battery_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_dummy_af_aac]:af_aac
-class				= SCRPTART
+[af_dummy_dummy_af_aac]:af_dummy_dummy_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 4.573
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_dummy_af_aac_descr
 inv_name			= st_af_dummy_dummy_af_aac_name
 inv_name_short			= st_af_dummy_dummy_af_aac_name
@@ -1561,25 +1787,14 @@ inv_name_short			= st_af_dummy_dummy_af_aac_name
 inv_grid_x			= 26
 inv_grid_y			= 60
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00019
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00116
-bleeding_restore_speed		= -0.00256
-
-additional_inventory_weight	= 2.282
-additional_inventory_weight2	= 2.282
-
-hit_absorbation_sect = af_dummy_dummy_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_ice_af_aac]:af_aac
-class				= SCRPTART
+[af_ice_af_aac]:af_ice_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 4.807
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_ice_af_aac_descr
 inv_name			= st_af_ice_af_aac_name
 inv_name_short			= st_af_ice_af_aac_name
@@ -1587,26 +1802,14 @@ inv_name_short			= st_af_ice_af_aac_name
 inv_grid_x			= 27
 inv_grid_y			= 60
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00022
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00154
-bleeding_restore_speed		= -0.00321
-
-additional_inventory_weight	= 2.481
-additional_inventory_weight2	= 2.481
-
-hit_absorbation_sect = af_ice_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_compass_af_aac]:af_aac
-class				= SCRPTART
+[af_compass_af_aac]:af_compass_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 9.381
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_compass_af_aac_descr
 inv_name			= st_af_compass_af_aac_name
 inv_name_short			= st_af_compass_af_aac_name
@@ -1614,25 +1817,14 @@ inv_name_short			= st_af_compass_af_aac_name
 inv_grid_x			= 28
 inv_grid_y			= 60
 
-health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00057
-satiety_restore_speed 		= 0
-power_restore_speed 		= 0.00250
-bleeding_restore_speed 		= 0
-hit_absorbation_sect 		= af_compass_absorbation
-
-additional_inventory_weight	= 3.18
-additional_inventory_weight2	= 3.18
 
 ;------------------------------------------------------------------------------------------
 
-[af_oasis_heart_af_aac]:af_aac
-class				= SCRPTART
+[af_oasis_heart_af_aac]:af_oasis_heart_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 7.834
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_oasis_heart_af_aac_descr
 inv_name			= st_af_oasis_heart_af_aac_name
 inv_name_short			= st_af_oasis_heart_af_aac_name
@@ -1640,52 +1832,29 @@ inv_name_short			= st_af_oasis_heart_af_aac_name
 inv_grid_x			= 29
 inv_grid_y			= 60
 
-health_restore_speed		= 0
 radiation_restore_speed 	= 0.00051
-satiety_restore_speed 		= 0
-power_restore_speed			= 0.00196
-bleeding_restore_speed		= 0.00726
-hit_absorbation_sect 		= af_oasis_heart_absorbation
-
-additional_inventory_weight	= 7.8
-additional_inventory_weight2	= 7.8
 
 ;------------------------------------------------------------------------------------------
 
-[jup_b1_half_artifact_af_aac]:af_aac
-class				= SCRPTART
+[jup_b1_half_artifact_af_aac]:jup_b1_half_artifact_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 9.568
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_jup_b1_half_artifact_af_aac_descr
 inv_name			= st_jup_b1_half_artifact_af_aac_name
-inv_name_short			= st_jup_b1_half_artifact_af_aac_name
+inv_name_short		= st_jup_b1_half_artifact_af_aac_name
 
 inv_grid_x			= 30
 inv_grid_y			= 60
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00069
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 2.34
-additional_inventory_weight2 = 2.34
-
-hit_absorbation_sect = jup_b1_half_artifact_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_quest_b14_twisted_af_aac]:af_aac
-class				= SCRPTART
+[af_quest_b14_twisted_af_aac]:af_quest_b14_twisted_artycon
+$spawn				= "artefacts\af_aac"
+visual				= dynamics\equipments\aa\aac
 inv_weight			= 8.764
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_quest_b14_twisted_af_aac_descr
 inv_name			= st_af_quest_b14_twisted_af_aac_name
 inv_name_short			= st_af_quest_b14_twisted_af_aac_name
@@ -1693,26 +1862,16 @@ inv_name_short			= st_af_quest_b14_twisted_af_aac_name
 inv_grid_x			= 31
 inv_grid_y			= 60
 
-health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00078
-satiety_restore_speed 		= 0
-power_restore_speed 		= 0.00246
-bleeding_restore_speed 		= 0
-hit_absorbation_sect 		= af_control_absorbation
-
-additional_inventory_weight	= 2.34
-additional_inventory_weight2	= 2.34
 
 ;------------------------------------------------------------------------------------------
-;---------------------------AAM WITH ARTEFACT----------------------------------------------
+;----------------------AAM WITH ARTIFACT---------------------------------------------------
 ;------------------------------------------------------------------------------------------
 
-[af_medusa_af_aam]:af_aam
-class				= SCRPTART
+[af_medusa_af_aam]:af_medusa_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 9.28
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_medusa_af_aam_descr
 inv_name			= st_af_medusa_af_aam_name
 inv_name_short			= st_af_medusa_af_aam_name
@@ -1720,24 +1879,14 @@ inv_name_short			= st_af_medusa_af_aam_name
 inv_grid_x			= 24
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-hit_absorbation_sect		= af_medusa_absorbation
-
-additional_inventory_weight	= 4.081
-additional_inventory_weight2	= 4.081
 
 ;------------------------------------------------------------------------------------------
 
-[af_cristall_flower_af_aam]:af_aam
-class				= SCRPTART
+[af_cristall_flower_af_aam]:af_cristall_flower_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 11.41
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_cristall_flower_af_aam_descr
 inv_name			= st_af_cristall_flower_af_aam_name
 inv_name_short			= st_af_cristall_flower_af_aam_name
@@ -1745,25 +1894,14 @@ inv_name_short			= st_af_cristall_flower_af_aam_name
 inv_grid_x			= 25
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 4.677
-additional_inventory_weight2	= 4.677
-
-hit_absorbation_sect 		= af_cristall_flower_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_night_star_af_aam]:af_aam
-class				= SCRPTART
+[af_night_star_af_aam]:af_night_star_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 11.27
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_night_star_af_aam_descr
 inv_name			= st_af_night_star_af_aam_name
 inv_name_short			= st_af_night_star_af_aam_name
@@ -1771,25 +1909,14 @@ inv_name_short			= st_af_night_star_af_aam_name
 inv_grid_x			= 26
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 6.234
-additional_inventory_weight2	= 6.234
-
-hit_absorbation_sect 		= af_night_star_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_vyvert_af_aam]:af_aam
-class				= SCRPTART
+[af_vyvert_af_aam]:af_vyvert_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 11.40
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_vyvert_af_aam_descr
 inv_name			= st_af_vyvert_af_aam_name
 inv_name_short			= st_af_vyvert_af_aam_name
@@ -1797,25 +1924,14 @@ inv_name_short			= st_af_vyvert_af_aam_name
 inv_grid_x			= 27
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 6.584
-additional_inventory_weight2	= 6.584
-
-hit_absorbation_sect 		= af_vyvert_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_gravi_af_aam]:af_aam
-class				= SCRPTART
+[af_gravi_af_aam]:af_gravi_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 11.51
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_gravi_af_aam_descr
 inv_name			= st_af_gravi_af_aam_name
 inv_name_short			= st_af_gravi_af_aam_name
@@ -1823,25 +1939,14 @@ inv_name_short			= st_af_gravi_af_aam_name
 inv_grid_x			= 28
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 6.807
-additional_inventory_weight2	= 6.807
-
-hit_absorbation_sect = af_gravi_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_gold_fish_af_aam]:af_aam
-class				= SCRPTART
+[af_gold_fish_af_aam]:af_gold_fish_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 12.12
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_gold_fish_af_aam_descr
 inv_name			= st_af_gold_fish_af_aam_name
 inv_name_short			= st_af_gold_fish_af_aam_name
@@ -1849,25 +1954,14 @@ inv_name_short			= st_af_gold_fish_af_aam_name
 inv_grid_x			= 29
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 7.692
-additional_inventory_weight2	= 7.692
-
-hit_absorbation_sect = af_gold_fish_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_cristall_af_aam]:af_aam
-class				= SCRPTART
+[af_cristall_af_aam]:af_cristall_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 8.36
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_cristall_af_aam_descr
 inv_name			= st_af_cristall_af_aam_name
 inv_name_short			= st_af_cristall_af_aam_name
@@ -1875,25 +1969,14 @@ inv_name_short			= st_af_cristall_af_aam_name
 inv_grid_x			= 30
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0.00051
-
-hit_absorbation_sect		= af_cristall_absorbation
-
-additional_inventory_weight	= 3.63
-additional_inventory_weight2	= 3.63
 
 ;------------------------------------------------------------------------------------------
 
-[af_fireball_af_aam]:af_aam
-class				= SCRPTART
+[af_fireball_af_aam]:af_fireball_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 8.60
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fireball_af_aam_descr
 inv_name			= st_af_fireball_af_aam_name
 inv_name_short			= st_af_fireball_af_aam_name
@@ -1901,25 +1984,14 @@ inv_name_short			= st_af_fireball_af_aam_name
 inv_grid_x			= 31
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00045
-bleeding_restore_speed		= 0.00099
-
-additional_inventory_weight	= 3.98
-additional_inventory_weight2	= 3.98
-
-hit_absorbation_sect = af_fireball_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_glassbeads_af_aam]:af_aam
-class				= SCRPTART
+[af_dummy_glassbeads_af_aam]:af_dummy_glassbeads_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 8.66
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_glassbeads_af_aam_descr
 inv_name			= st_af_dummy_glassbeads_af_aam_name
 inv_name_short			= st_af_dummy_glassbeads_af_aam_name
@@ -1927,25 +1999,14 @@ inv_name_short			= st_af_dummy_glassbeads_af_aam_name
 inv_grid_x			= 32
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00081
-bleeding_restore_speed		= 0.00144
-
-additional_inventory_weight	= 4.65
-additional_inventory_weight2	= 4.65
-
-hit_absorbation_sect = af_dummy_glassbeads_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_eye_af_aam]:af_aam
-class				= SCRPTART
+[af_eye_af_aam]:af_eye_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 8.75
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_eye_af_aam_descr
 inv_name			= st_af_eye_af_aam_name
 inv_name_short			= st_af_eye_af_aam_name
@@ -1953,25 +2014,14 @@ inv_name_short			= st_af_eye_af_aam_name
 inv_grid_x			= 33
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00134
-bleeding_restore_speed		= 0.00278
-
-additional_inventory_weight	= 5.18
-additional_inventory_weight2	= 5.18
-
-hit_absorbation_sect = af_eye_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_fire_af_aam]:af_aam
-class				= SCRPTART
+[af_fire_af_aam]:af_fire_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 8.81
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fire_af_aam_descr
 inv_name			= st_af_fire_af_aam_name
 inv_name_short			= st_af_fire_af_aam_name
@@ -1979,25 +2029,14 @@ inv_name_short			= st_af_fire_af_aam_name
 inv_grid_x			= 34
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00194
-bleeding_restore_speed		= 0.00340
-
-additional_inventory_weight	= 5.8
-additional_inventory_weight2	= 5.8
-
-hit_absorbation_sect = af_fire_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_blood_af_aam]:af_aam
-class				= SCRPTART
+[af_blood_af_aam]:af_blood_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 6.35
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_blood_af_aam_descr
 inv_name			= st_af_blood_af_aam_name
 inv_name_short			= st_af_blood_af_aam_name
@@ -2005,25 +2044,14 @@ inv_name_short			= st_af_blood_af_aam_name
 inv_grid_x			= 35
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00025
-bleeding_restore_speed		= 0.00126
-
-additional_inventory_weight	= 3.53
-additional_inventory_weight2	= 3.53
-
-hit_absorbation_sect = af_blood_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_mincer_meat_af_aam]:af_aam
-class				= SCRPTART
+[af_mincer_meat_af_aam]:af_mincer_meat_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 6.37
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_mincer_meat_af_aam_descr
 inv_name			= st_af_mincer_meat_af_aam_name
 inv_name_short			= st_af_mincer_meat_af_aam_name
@@ -2031,25 +2059,14 @@ inv_name_short			= st_af_mincer_meat_af_aam_name
 inv_grid_x			= 36
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00033
-bleeding_restore_speed		= 0.00124
-
-additional_inventory_weight	= 3.61
-additional_inventory_weight2	= 3.61
-
-hit_absorbation_sect = af_mincer_meat_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_soul_af_aam]:af_aam
-class				= SCRPTART
+[af_soul_af_aam]:af_soul_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 6.47
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_soul_af_aam_descr
 inv_name			= st_af_soul_af_aam_name
 inv_name_short			= st_af_soul_af_aam_name
@@ -2057,25 +2074,14 @@ inv_name_short			= st_af_soul_af_aam_name
 inv_grid_x			= 37
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00038
-bleeding_restore_speed		= 0.00199
-
-additional_inventory_weight	= 3.79
-additional_inventory_weight2	= 3.79
-
-hit_absorbation_sect = af_soul_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_fuzz_kolobok_af_aam]:af_aam
-class				= SCRPTART
+[af_fuzz_kolobok_af_aam]:af_fuzz_kolobok_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 6.51
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_fuzz_kolobok_af_aam_descr
 inv_name			= st_af_fuzz_kolobok_af_aam_name
 inv_name_short			= st_af_fuzz_kolobok_af_aam_name
@@ -2083,25 +2089,14 @@ inv_name_short			= st_af_fuzz_kolobok_af_aam_name
 inv_grid_x			= 38
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00042
-bleeding_restore_speed		= 0.00271
-
-additional_inventory_weight	= 4.13
-additional_inventory_weight2	= 4.13
-
-hit_absorbation_sect = af_fuzz_kolobok_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_baloon_af_aam]:af_aam
-class				= SCRPTART
+[af_baloon_af_aam]:af_baloon_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 6.57
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_baloon_af_aam_descr
 inv_name			= st_af_baloon_af_aam_name
 inv_name_short			= st_af_baloon_af_aam_name
@@ -2109,25 +2104,14 @@ inv_name_short			= st_af_baloon_af_aam_name
 inv_grid_x			= 39
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.0136
-bleeding_restore_speed		= 0.00324
-
-additional_inventory_weight	= 3.309
-additional_inventory_weight2	= 3.309
-
-hit_absorbation_sect = af_baloon_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_glass_af_aam]:af_aam
-class				= SCRPTART
+[af_glass_af_aam]:af_glass_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 6.54
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_glass_af_aam_descr
 inv_name			= st_af_glass_af_aam_name
 inv_name_short			= st_af_glass_af_aam_name
@@ -2135,25 +2119,14 @@ inv_name_short			= st_af_glass_af_aam_name
 inv_grid_x			= 40
 inv_grid_y			= 58
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.0177
-bleeding_restore_speed		= 0.00382
-
-additional_inventory_weight	= 5.12
-additional_inventory_weight2	= 5.12
-
-hit_absorbation_sect = af_glass_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_sparkler_af_aam]:af_aam
-class				= SCRPTART
+[af_electra_sparkler_af_aam]:af_electra_sparkler_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 4.81
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_sparkler_af_aam_descr
 inv_name			= st_af_electra_sparkler_af_aam_name
 inv_name_short			= st_af_electra_sparkler_af_aam_name
@@ -2161,25 +2134,14 @@ inv_name_short			= st_af_electra_sparkler_af_aam_name
 inv_grid_x			= 22
 inv_grid_y			= 61
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00016
-bleeding_restore_speed		= -0.00073
-
-additional_inventory_weight	= 3.412
-additional_inventory_weight	= 3.412
-
-hit_absorbation_sect = af_electra_sparkler_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_flash_af_aam]:af_aam
-class				= SCRPTART
+[af_electra_flash_af_aam]:af_electra_flash_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 4.832
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_flash_af_aam_descr
 inv_name			= st_af_electra_flash_af_aam_name
 inv_name_short			= st_af_electra_flash_af_aam_name
@@ -2187,25 +2149,14 @@ inv_name_short			= st_af_electra_flash_af_aam_name
 inv_grid_x			= 23
 inv_grid_y			= 61
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00021
-bleeding_restore_speed		= -0.00076
-
-additional_inventory_weight	= 3.443
-additional_inventory_weight2	= 3.443
-
-hit_absorbation_sect = af_electra_flash_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_electra_moonlight_af_aam]:af_aam
-class				= SCRPTART
+[af_electra_moonlight_af_aam]:af_electra_moonlight_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 4.852
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_electra_moonlight_af_aam_descr
 inv_name			= st_af_electra_moonlight_af_aam_name
 inv_name_short			= st_af_electra_moonlight_af_aam_name
@@ -2213,25 +2164,14 @@ inv_name_short			= st_af_electra_moonlight_af_aam_name
 inv_grid_x			= 24
 inv_grid_y			= 61
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00032
-bleeding_restore_speed		= -0.00114
-
-additional_inventory_weight	= 3.466
-additional_inventory_weight2	= 3.466
-
-hit_absorbation_sect = af_electra_moonlight_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_battery_af_aam]:af_aam
-class				= SCRPTART
+[af_dummy_battery_af_aam]:af_dummy_battery_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 5.056
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_battery_af_aam_descr
 inv_name			= st_af_dummy_battery_af_aam_name
 inv_name_short			= st_af_dummy_battery_af_aam_name
@@ -2239,25 +2179,14 @@ inv_name_short			= st_af_dummy_battery_af_aam_name
 inv_grid_x			= 25
 inv_grid_y			= 61
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00071
-bleeding_restore_speed		= -0.00170
-
-additional_inventory_weight	= 3.637
-additional_inventory_weight2	= 3.637
-
-hit_absorbation_sect = af_dummy_battery_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_dummy_dummy_af_aam]:af_aam
-class				= SCRPTART
+[af_dummy_dummy_af_aam]:af_dummy_dummy_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 5.063
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_dummy_dummy_af_aam_descr
 inv_name			= st_af_dummy_dummy_af_aam_name
 inv_name_short			= st_af_dummy_dummy_af_aam_name
@@ -2265,25 +2194,14 @@ inv_name_short			= st_af_dummy_dummy_af_aam_name
 inv_grid_x			= 26
 inv_grid_y			= 61
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.000116
-bleeding_restore_speed		= -0.00256
-
-additional_inventory_weight	= 3.672
-additional_inventory_weight2	= 3.672
-
-hit_absorbation_sect = af_dummy_dummy_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_ice_af_aam]:af_aam
-class				= SCRPTART
+[af_ice_af_aam]:af_ice_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 5.297
-cost				= 0
-can_trade 			= false
-belt				= true
 description			= st_af_ice_af_aam_descr
 inv_name			= st_af_ice_af_aam_name
 inv_name_short			= st_af_ice_af_aam_name
@@ -2291,26 +2209,14 @@ inv_name_short			= st_af_ice_af_aam_name
 inv_grid_x			= 27
 inv_grid_y			= 61
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00154
-bleeding_restore_speed		= -0.00321
-
-additional_inventory_weight	= 3.871
-additional_inventory_weight2	= 3.871
-
-hit_absorbation_sect = af_ice_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_compass_af_aam]:af_aam
-class				= SCRPTART
+[af_compass_af_aam]:af_compass_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 9.871
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_compass_af_aam_descr
 inv_name			= st_af_compass_af_aam_name
 inv_name_short			= st_af_compass_af_aam_name
@@ -2318,25 +2224,14 @@ inv_name_short			= st_af_compass_af_aam_name
 inv_grid_x			= 28
 inv_grid_y			= 61
 
-health_restore_speed 		= 0
 radiation_restore_speed 	= 0.00035
-satiety_restore_speed 		= 0
-power_restore_speed 		= 0.0025
-bleeding_restore_speed 		= 0
-hit_absorbation_sect 		= af_compass_absorbation
-
-additional_inventory_weight	= 4.57
-additional_inventory_weight2	= 4.57
 
 ;------------------------------------------------------------------------------------------
 
-[af_oasis_heart_af_aam]:af_aam
-class				= SCRPTART
+[af_oasis_heart_af_aam]:af_oasis_heart_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 8.324
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_oasis_heart_af_aam_descr
 inv_name			= st_af_oasis_heart_af_aam_name
 inv_name_short			= st_af_oasis_heart_af_aam_name
@@ -2344,52 +2239,29 @@ inv_name_short			= st_af_oasis_heart_af_aam_name
 inv_grid_x			= 29
 inv_grid_y			= 61
 
-health_restore_speed		= 0
 radiation_restore_speed 	= 0.00029
-satiety_restore_speed 		= 0
-power_restore_speed			= 0.00196
-bleeding_restore_speed		= 0.00726
-hit_absorbation_sect 		= af_oasis_heart_absorbation
-
-additional_inventory_weight	= 7.66
-additional_inventory_weight2	= 7.66
 
 ;------------------------------------------------------------------------------------------
 
-[jup_b1_half_artifact_af_aam]:af_aam
-class				= SCRPTART
+[jup_b1_half_artifact_af_aam]:jup_b1_half_artifact_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 10.058
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_jup_b1_half_artifact_af_aam_descr
 inv_name			= st_jup_b1_half_artifact_af_aam_name
-inv_name_short			= st_jup_b1_half_artifact_af_aam_name
+inv_name_short		= st_jup_b1_half_artifact_af_aam_name
 
 inv_grid_x			= 30
 inv_grid_y			= 61
 
-health_restore_speed		= 0
 radiation_restore_speed		= 0.00047
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 2.77
-addition_inventory_weight2 = 2.77
-
-hit_absorbation_sect = jup_b1_half_artifact_absorbation
 
 ;------------------------------------------------------------------------------------------
 
-[af_quest_b14_twisted_af_aam]:af_aam
-class				= SCRPTART
+[af_quest_b14_twisted_af_aam]:af_quest_b14_twisted_artycon
+$spawn				= "artefacts\af_aam"
+visual				= dynamics\equipments\aa\aam
 inv_weight			= 9.254
-cost				= 0
-can_trade 			= false
-belt				= true
-quest_item 			= true
 description			= st_af_quest_b14_twisted_af_aam_descr
 inv_name			= st_af_quest_b14_twisted_af_aam_name
 inv_name_short			= st_af_quest_b14_twisted_af_aam_name
@@ -2397,859 +2269,229 @@ inv_name_short			= st_af_quest_b14_twisted_af_aam_name
 inv_grid_x			= 31
 inv_grid_y			= 61
 
-health_restore_speed 		= 0
-radiation_restore_speed 	= 0.00054
-satiety_restore_speed 		= 0
-power_restore_speed 		= 0.00246
-bleeding_restore_speed 		= 0
-hit_absorbation_sect 		= af_control_absorbation
-
-additional_inventory_weight	= 2.77
-additional_inventory_weight2	= 2.77
+radiation_restore_speed 	= 0.00056
 
 ;------------------------------------------------------------------------------------------
 ;---------------------------LEAD BOX WITH ARTEFACT----------------------------------------------
 ;------------------------------------------------------------------------------------------
 
 [af_medusa_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 10.13
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_medusa_lead_box_descr
 inv_name			= st_af_medusa_lead_box_name
 inv_name_short			= st_af_medusa_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-radiation_restore_speed		= 0.000
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-hit_absorbation_sect		= af_medusa_absorbation
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_cristall_flower_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 12.26
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_cristall_flower_lead_box_descr
 inv_name			= st_af_cristall_flower_lead_box_name
 inv_name_short			= st_af_cristall_flower_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect 		= af_cristall_flower_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_night_star_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 12.12
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_night_star_lead_box_descr
 inv_name			= st_af_night_star_lead_box_name
 inv_name_short			= st_af_night_star_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect 		= af_night_star_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_vyvert_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 12.27
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_vyvert_lead_box_descr
 inv_name			= st_af_vyvert_lead_box_name
 inv_name_short			= st_af_vyvert_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect 		= af_vyvert_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_gravi_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 12.36
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_gravi_lead_box_descr
 inv_name			= st_af_gravi_lead_box_name
 inv_name_short			= st_af_gravi_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_gravi_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_gold_fish_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 12.97
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_gold_fish_lead_box_descr
 inv_name			= st_af_gold_fish_lead_box_name
 inv_name_short			= st_af_gold_fish_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_gold_fish_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_cristall_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 9.21
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_cristall_lead_box_descr
 inv_name			= st_af_cristall_lead_box_name
 inv_name_short			= st_af_cristall_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-hit_absorbation_sect		= af_cristall_absorbation
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_fireball_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 9.45
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_fireball_lead_box_descr
 inv_name			= st_af_fireball_lead_box_name
 inv_name_short			= st_af_fireball_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00045
-bleeding_restore_speed		= 0.00099
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_fireball_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_dummy_glassbeads_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 9.51
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_dummy_glassbeads_lead_box_descr
 inv_name			= st_af_dummy_glassbeads_lead_box_name
 inv_name_short			= st_af_dummy_glassbeads_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00081
-bleeding_restore_speed		= 0.00144
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_dummy_glassbeads_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_eye_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 9.6
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_eye_lead_box_descr
 inv_name			= st_af_eye_lead_box_name
 inv_name_short			= st_af_eye_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00134
-bleeding_restore_speed		= 0.00278
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_eye_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_fire_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 9.66
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_fire_lead_box_descr
 inv_name			= st_af_fire_lead_box_name
 inv_name_short			= st_af_fire_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0 ; -0.00194
-bleeding_restore_speed		= 0.00340
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_fire_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_blood_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 7.20
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_blood_lead_box_descr
 inv_name			= st_af_blood_lead_box_name
 inv_name_short			= st_af_blood_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00025
-bleeding_restore_speed		= 0.00126
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_blood_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_mincer_meat_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 7.22
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_mincer_meat_lead_box_descr
 inv_name			= st_af_mincer_meat_lead_box_name
 inv_name_short			= st_af_mincer_meat_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00033
-bleeding_restore_speed		= 0.00124
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_mincer_meat_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_soul_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 7.32
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_soul_lead_box_descr
 inv_name			= st_af_soul_lead_box_name
 inv_name_short			= st_af_soul_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00038
-bleeding_restore_speed		= 0.00199
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_soul_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_fuzz_kolobok_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 7.36
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_fuzz_kolobok_lead_box_descr
 inv_name			= st_af_fuzz_kolobok_lead_box_name
 inv_name_short			= st_af_fuzz_kolobok_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00042
-bleeding_restore_speed		= 0.00271
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_fuzz_kolobok_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_baloon_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 7.42
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_baloon_lead_box_descr
 inv_name			= st_af_baloon_lead_box_name
 inv_name_short			= st_af_baloon_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.0136
-bleeding_restore_speed		= 0.00454
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_baloon_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_glass_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 7.39
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_glass_lead_box_descr
 inv_name			= st_af_glass_lead_box_name
 inv_name_short			= st_af_glass_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= -0.00077
-bleeding_restore_speed		= 0.00432
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_glass_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_electra_sparkler_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 5.66
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_electra_sparkler_lead_box_descr
 inv_name			= st_af_electra_sparkler_lead_box_name
 inv_name_short			= st_af_electra_sparkler_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-radiation_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00016
-bleeding_restore_speed		= -0.00073
-
-additional_inventory_weight	= 0
-additional_inventory_weight	= 0
-
-hit_absorbation_sect = af_electra_sparkler_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_electra_flash_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 5.68
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_electra_flash_lead_box_descr
 inv_name			= st_af_electra_flash_lead_box_name
 inv_name_short			= st_af_electra_flash_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00021
-bleeding_restore_speed		= -0.00076
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_electra_flash_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_electra_moonlight_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 5.70
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_electra_moonlight_lead_box_descr
 inv_name			= st_af_electra_moonlight_lead_box_name
 inv_name_short			= st_af_electra_moonlight_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00032
-bleeding_restore_speed		= -0.00114
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_electra_moonlight_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_dummy_battery_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 5.90
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_dummy_battery_lead_box_descr
 inv_name			= st_af_dummy_battery_lead_box_name
 inv_name_short			= st_af_dummy_battery_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00071
-bleeding_restore_speed		= -0.00170
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_dummy_battery_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_dummy_dummy_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 5.913
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_dummy_dummy_lead_box_descr
 inv_name			= st_af_dummy_dummy_lead_box_name
 inv_name_short			= st_af_dummy_dummy_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00116
-bleeding_restore_speed		= -0.00256
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_dummy_dummy_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_ice_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 6.147
-cost				= 0
-can_trade 			= false
-belt				= false
 description			= st_af_ice_lead_box_descr
 inv_name			= st_af_ice_lead_box_name
 inv_name_short			= st_af_ice_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0.00154
-bleeding_restore_speed		= -0.00321
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-hit_absorbation_sect = af_ice_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_compass_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 10.721
-cost				= 0
-can_trade 			= false
-belt				= false
 quest_item 			= true
 description			= st_af_compass_lead_box_descr
 inv_name			= st_af_compass_lead_box_name
 inv_name_short			= st_af_compass_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed 		= 0
-satiety_restore_speed 		= 0
-power_restore_speed 		= 0.00250
-bleeding_restore_speed 		= 0
-hit_absorbation_sect 		= af_compass_absorbation
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [af_oasis_heart_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 9.174
-cost				= 0
-can_trade 			= false
-belt				= false
 quest_item 			= true
 description			= st_af_oasis_heart_lead_box_descr
 inv_name			= st_af_oasis_heart_lead_box_name
 inv_name_short			= st_af_oasis_heart_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed 		= 0
-power_restore_speed			= 0.00196
-bleeding_restore_speed		= 0.00726
-hit_absorbation_sect 		= af_oasis_heart_absorbation
-
-additional_inventory_weight	= 0
-additional_inventory_weight2	= 0
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
 [jup_b1_half_artifact_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 10.908
-cost				= 0
-can_trade 			= false
-belt				= false
 quest_item 			= true
 description			= st_jup_b1_half_artifact_lead_box_descr
 inv_name			= st_jup_b1_half_artifact_lead_box_name
 inv_name_short			= st_jup_b1_half_artifact_lead_box_name
 
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed		= 0
-satiety_restore_speed		= 0
-power_restore_speed			= 0
-bleeding_restore_speed		= 0
-
-additional_inventory_weight	= 0
-additional_invenotry_weight2 = 0
-
-hit_absorbation_sect = jup_b1_half_artifact_absorbation
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
-
 ;------------------------------------------------------------------------------------------
 
-
 [af_quest_b14_twisted_lead_box]:lead_box_closed
-class				= S_PDA
 inv_weight			= 10.104
-cost				= 0
-can_trade 			= false
-belt				= false
 quest_item 			= true
 description			= st_af_quest_b14_twisted_lead_box_descr
 inv_name			= st_af_quest_b14_twisted_lead_box_name
 inv_name_short			= st_af_quest_b14_twisted_lead_box_name
-
-inv_grid_x			= 21
-inv_grid_y			= 42
-
-health_restore_speed 		= 0
-satiety_restore_speed 		= 0
-power_restore_speed 		= 0.00246
-bleeding_restore_speed 		= 0
-hit_absorbation_sect 		= af_control_absorbation
-
-additional_inventory_weight = 0
-addition_inventory_weight2 = 0
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-radius				= 68; 50
 
 ;------------------------------------------------------------------------------------------
 ;------------------------------------------------------------------------------------------

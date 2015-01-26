@@ -236,7 +236,8 @@ function cooking_ui:OnPartsListItemClicked()
 
 	self.picture_parts:SetWndPos(vector2():set(self.picture_parts.x-w/2, self.picture_parts.y-h/2))
 
-	self.caption_parts:SetText("Selected")
+	self.caption_parts:SetText(string.format("Selected (x%d)",self:GetPartCount(sec)))
+
 end
 
 function cooking_ui:OnPartsListItemDbClicked()
@@ -277,7 +278,7 @@ function cooking_ui:OnListItemClicked()
 
 	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
 
-	self.caption_cooking:SetText("Selected")
+	self.caption_cooking:SetText(string.format("Selected (x%d)",self:GetFuelCharges(se_item)))
 
 	if (self.use_parts) then
 		self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
@@ -292,18 +293,108 @@ function cooking_ui:OnButton_back_clicked()
 end
 
 function cooking_ui:OnKeyboard(dik, keyboard_action)
-	local bind = dik_to_bind(dik)
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
 		if (dik == DIK_keys.DIK_RETURN) then
+
 		elseif (dik == DIK_keys.DIK_ESCAPE) then
-			self:OnButton_back_clicked()
-		elseif (bind == key_bindings.kUSE) then
 			self:OnButton_back_clicked()
 		end
 	end
 	return true
 end
+
+-- Drengor - multi-cook
+function cooking_ui:GetPartCount(part_name)
+	local cnt = 0
+
+	local function countparts(npc, item)
+		if item:section() == part_name then
+			cnt = cnt + 1
+		end
+	end
+
+	db.actor:iterate_inventory(countparts, nil)
+
+	alun_utils.printf("Counted %d %s",cnt,part_name);
+
+	return cnt
+end
+
+function cooking_ui:GetFuelCharges(fuel_item)
+	-- fuel_name begins with fuel type, and optionally has a 2-8 on the end indicating reduced charges
+	local fuel_name = fuel_item:section_name()
+	local last_char = fuel_name:byte(fuel_name:len())
+	local base_charges = 1
+	local charge_adjust = 0
+
+	if(last_char > 49) and (last_char < 57) then
+		charge_adjust = last_char - 49
+	end
+
+	if(alun_utils.startsWith(fuel_name,"kerosene")) then base_charges = 5 end
+	if(alun_utils.startsWith(fuel_name,"charcoal")) then base_charges = 3 end
+	if(alun_utils.startsWith(fuel_name,"explo_jerrycan_fuel"))	then base_charges = 8 end
+	if(alun_utils.startsWith(fuel_name,"explo_balon_gas"))	then base_charges = 8 end
+
+	return base_charges - charge_adjust
+end
+
+function cooking_ui:MakeFuelCharges(fuel_item,charges)
+	-- fuel_name begins with fuel type, and optionally has a 2-8 on the end indicating reduced charges, or _empty
+	local fuel_name = fuel_item:section_name()
+	local last_char = fuel_name:byte(fuel_name:len())
+	local base_charges = 1
+
+	if(last_char > 49) and (last_char < 57) then
+		fuel_name = fuel_name:sub(1,fuel_name:len()-1)
+	end
+
+	if(fuel_name == "kerosene") then base_charges = 5 end
+	if(fuel_name == "charcoal") then base_charges = 3 end
+	if(fuel_name == "explo_jerrycan_fuel") then base_charges = 8 end
+	if(fuel_name == "explo_balon_gas") then base_charges = 8 end
+
+	if (charges > 0) then
+		fuel_name = string.format("%s%d",fuel_name,base_charges + 1 - charges)
+	else
+		fuel_name = string.format("%s%s",fuel_name,"_empty")
+	end
+
+	alife():create(fuel_name, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+end
+
+function cooking_ui:ConsumeFuel(fuel_item, charges)
+	local c = self:GetFuelCharges(fuel_item) - charges
+	local fuel_name = fuel_item:section_name()
+
+	if(c > 0 or (alun_utils.startsWith(fuel_name,"explo_jerrycan_fuel") or alun_utils.startsWith(fuel_name,"explo_balon_gas"))) then
+		self:MakeFuelCharges(fuel_item,c)
+	end
+
+	alife():release(fuel_item,true)
+end
+
+function cooking_ui:ConsumePart(part, count)
+	local part_name = part:section_name()
+	local cnt = 0
+
+	local function consumeparts(npc, item)
+		if cnt < count and item:section() == part_name then
+			alife():release(alife():object(item:id()),true)
+			cnt = cnt + 1
+		end
+	end
+
+	db.actor:iterate_inventory(consumeparts, nil)
+end
+
+function cooking_ui:CreateMeal(part_name,count)
+	for i=1,count,1 do
+		alife():create(part_name, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+	end
+end
+-- end Drengor - multi-cook
 
 function cooking_ui:OnButton_cooking()
 	index = self.list_box_parts:GetSelectedIndex()
@@ -322,92 +413,26 @@ function cooking_ui:OnButton_cooking()
 	local obj = item and level.object_by_id(item.item_id)
 	local se_obj = item and item.item_id and alife():object(item.item_id)
 
-	-- ponney68 multi usage cooking fuel
-	-- kerosene x5
-	if(obj)and(se_obj:section_name()=="kerosene")then
-	alife():create("kerosene2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="kerosene2")then
-	alife():create("kerosene3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="kerosene3")then
-	alife():create("kerosene4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="kerosene4")then
-	alife():create("kerosene5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	-- charcoal x3
-	if(obj)and(se_obj:section_name()=="charcoal")then
-	alife():create("charcoal2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="charcoal2")then
-	alife():create("charcoal3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	-- explo_jerrycan_fuel x8
-	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel")then
-	alife():create("explo_jerrycan_fuel2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel2")then
-	alife():create("explo_jerrycan_fuel3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel3")then
-	alife():create("explo_jerrycan_fuel4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel4")then
-	alife():create("explo_jerrycan_fuel5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel5")then
-	alife():create("explo_jerrycan_fuel6", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel6")then
-	alife():create("explo_jerrycan_fuel7", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel7")then
-	alife():create("explo_jerrycan_fuel8", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_jerrycan_fuel8")then
-	alife():create("explo_jerrycan_fuel_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	-- explo_explo_balon_gas x8
-	if(obj)and(se_obj:section_name()=="explo_balon_gas")then
-	alife():create("explo_balon_gas2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_balon_gas2")then
-	alife():create("explo_balon_gas3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_balon_gas3")then
-	alife():create("explo_balon_gas4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_balon_gas4")then
-	alife():create("explo_balon_gas5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_balon_gas5")then
-	alife():create("explo_balon_gas6", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_balon_gas6")then
-	alife():create("explo_balon_gas7", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_balon_gas7")then
-	alife():create("explo_balon_gas8", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-	if(obj)and(se_obj:section_name()=="explo_balon_gas8")then
-	alife():create("explo_balon_gas_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-	end
-
 	if not (obj) then
 		return
-	
-	else alife():release(se_obj,true)
-	
 	end
 
 	if (self.list_box_parts) then
-		index = self.list_box_parts:GetSelectedIndex()
 		if (index ~= -1) then
+			index = self.list_box_parts:GetSelectedIndex()
 			item = self.list_box_parts:GetItemByIndex(index)
 			local se_parts = item and item.item_id and alife():object(item.item_id)
+			local sec = se_parts:section_name()
+
 			if (se_parts) then
-				local sec = se_parts:section_name()
+
+				-- Drengor - multi-cook
+				local part_count = self:GetPartCount(sec)
+				local fuel_charges = self:GetFuelCharges(se_obj)
+				local cook_count = part_count
+
+				if(part_count >= fuel_charges) then cook_count = fuel_charges end
+				-- end Drengor - multi-cook
 
 				-- ponney68 cooking item
 				if self.section =="fieldcooker" then
@@ -418,51 +443,35 @@ function cooking_ui:OnButton_cooking()
 				end
 				-- End ponney68
 
-				-- ponny68 cooking meat
+				-- Drengor - multi-cook
 				-- mutant_part_tushkano_meat
-				if(se_parts)and(se_parts:section_name()=="mutant_part_tushkano_meat")then
-		      		alife():create("meat_tushkano", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				if(sec=="mutant_part_tushkano_meat")then self:CreateMeal("meat_tushkano",cook_count) end
 				-- mutant_part_flesh_meat
-				if(se_parts)and(se_parts:section_name()=="mutant_part_flesh_meat")then
-		      		alife():create("meat_flesh", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				if(sec=="mutant_part_flesh_meat")then self:CreateMeal("meat_flesh",cook_count) end
 				-- mutant_part_boar_chop
-				if(se_parts)and(se_parts:section_name()=="mutant_part_boar_chop")then
-		      		alife():create("meat_boar", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				if(sec=="mutant_part_boar_chop")then self:CreateMeal("meat_boar",cook_count) end
 				-- mutant_part_dog_meat
-				if(se_parts)and(se_parts:section_name()=="mutant_part_dog_meat")then
-		      		alife():create("meat_dog", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				if(sec=="mutant_part_dog_meat")then self:CreateMeal("meat_dog",cook_count) end
 				-- mutant_part_psevdodog_meat
-				if(se_parts)and(se_parts:section_name()=="mutant_part_psevdodog_meat")then
-		      		alife():create("meat_pseudodog", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				if(sec=="mutant_part_psevdodog_meat")then self:CreateMeal("meat_pseudodog",cook_count) end
 				-- mutant_part_krovosos_meat
-				if(se_parts)and(se_parts:section_name()=="mutant_part_krovosos_meat")then
-		      		alife():create("meat_bloodsucker", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				if(sec=="mutant_part_krovosos_meat")then self:CreateMeal("meat_bloodsucker",cook_count) end
 				-- mutant_part_snork_hand
-				if(se_parts)and(se_parts:section_name()=="mutant_part_snork_hand")then
-		      		alife():create("meat_snork", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				if(sec=="mutant_part_snork_hand")then self:CreateMeal("meat_snork",cook_count) end
 				-- mutant_part_chimera_meat
-				if(se_parts)and(se_parts:section_name()=="mutant_part_chimera_meat")then
-		      		alife():create("meat_chimera", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				if(sec=="mutant_part_chimera_meat")then self:CreateMeal("meat_chimera",cook_count) end
 				-- mutant_part_crow_beak
-				if(se_parts)and(se_parts:section_name()=="mutant_part_crow_beak")then
-		      		alife():create("drink_crow", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				-- End ponney68
-				alife():release(se_parts,true)
+				if(sec=="mutant_part_crow_beak")then self:CreateMeal("drink_crow",cook_count) end
+
+				self:ConsumeFuel(se_obj,cook_count)
+				self:ConsumePart(se_parts,cook_count)
+				-- end Drengor - multi-cook
 			end
 		end
 	end
 
 	self:HideDialog()
-	
+
 	if (self.use_actor_effects and actor_effects) then
 		actor_effects.use_item(self.section.."_dummy")
 		level_weathers.get_weather_manager():forced_weather_change()

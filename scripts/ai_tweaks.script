@@ -6,6 +6,9 @@
 	This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 -]]
 
+local ini_range = system_ini() -- KCS
+local sw_factor = ini_range:r_float("alife","switch_distance") / 300 -- KCS factor to raise or lower overall range by percent of change from default alife switch range
+
 local ini = ini_file("ai_tweaks\\ai_tweaks.ltx")
 local InfiniteAmmoPrimary = alun_utils.read_from_ini(ini,"weapon_reload","infinite_ammo_primary","bool",true)
 local InfiniteAmmoSecondary = alun_utils.read_from_ini(ini,"weapon_reload","infinite_ammo_secondary","bool",true)
@@ -14,31 +17,32 @@ local LIOSRange = alun_utils.read_from_ini(ini,"lios","range_add","float",0.30)
 local LIOSFov = alun_utils.read_from_ini(ini,"lios","fov_add","float",-0.30)
 
 local NpcHelpEnable = alun_utils.read_from_ini(ini,"npc_help","enable","bool",true)
-local NpcHelpDistanceClose = alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_close","float",225)
+local NpcHelpDistanceClose = sw_factor * alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_close","float",225) -- KCS - added alife switch distance factor
 local NpcHelpTimerClose = alun_utils.read_from_ini(ini,"npc_help","npc_help_timer_close","float",3500)
-local NpcHelpDistanceMedium = alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_medium","float",900)
+local NpcHelpDistanceMedium = sw_factor * alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_medium","float",900) -- KCS - added alife switch distance factor
 local NpcHelpTimerMedium = alun_utils.read_from_ini(ini,"npc_help","npc_help_timer_medium","float",15000)
-local NpcHelpDistanceFar = alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_far","float",2500)
+local NpcHelpDistanceFar = sw_factor * alun_utils.read_from_ini(ini,"npc_help","npc_help_distance_far","float",2500) -- KCS - added alife switch distance factor
 local NpcHelpTimerFar = alun_utils.read_from_ini(ini,"npc_help","npc_help_timer_far","float",20000)
 
 GhillieEnable = alun_utils.read_from_ini(ini,"ghillie_settings","enable","bool",true)
-local GhillieSightRange = alun_utils.read_from_ini(ini,"ghillie_settings","detect_range_factor","float",0.8)
-local GhillieAimTime = alun_utils.read_from_ini(ini,"ghillie_settings","aim_time_factor","float",2)
-local GhillieHelpTimeFactor = alun_utils.read_from_ini(ini,"ghillie_settings","help_timer_factor","float",2)
-local GhillieHelpDistanceFactor = alun_utils.read_from_ini(ini,"ghillie_settings","help_distance_factor","float",0.9)
+local GhillieSightRange = 1.0 -- = alun_utils.read_from_ini(ini,"ghillie_settings","detect_range_factor","float",0.8) -- KCS - values are read from items_outfit.ltx
+local GhillieAimTime = 1.0 -- = alun_utils.read_from_ini(ini,"ghillie_settings","aim_time_factor","float",2) -- KCS - values are read from items_outfit.ltx
+local GhillieHelpTimeFactor = 1.0 -- = alun_utils.read_from_ini(ini,"ghillie_settings","help_timer_factor","float",2) -- KCS - values are read from items_outfit.ltx
+local GhillieHelpDistanceFactor = 1.0 -- = alun_utils.read_from_ini(ini,"ghillie_settings","help_distance_factor","float",0.9) -- KCS - values are read from items_outfit.ltx
 
 local NightEnable = alun_utils.read_from_ini(ini,"night_settings","enable","bool",true)
-local NightSightRange = alun_utils.read_from_ini(ini,"night_settings","detect_range_factor","float",0.85)
-local NightAimTime = alun_utils.read_from_ini(ini,"night_settings","aim_time_factor","float",1.5)
-local NightHelpTimeFactor = alun_utils.read_from_ini(ini,"night_settings","help_timer_factor","float",1.2)
-local NightHelpDistanceFactor = alun_utils.read_from_ini(ini,"night_settings","help_distance_factor","float",0.8)
+local NightSightRange = sw_factor * 0.85 -- * alun_utils.read_from_ini(ini,"night_settings","detect_range_factor","float",0.85) -- KCS - added alife switch distance factor  - values are read from items_outfit.ltx
+local NightAimTime = 1.5 -- alun_utils.read_from_ini(ini,"night_settings","aim_time_factor","float",1.5)
+local NightHelpTimeFactor = 1.2 -- alun_utils.read_from_ini(ini,"night_settings","help_timer_factor","float",1.2)
+local NightHelpDistanceFactor = sw_factor * 0.8 -- * alun_utils.read_from_ini(ini,"night_settings","help_distance_factor","float",0.8) -- KCS - added alife switch distance factor
 
 local ReconEnable = alun_utils.read_from_ini(ini,"recon_settings","enable","bool",true)
-local ReconSightRange = alun_utils.read_from_ini(ini,"recon_settings","detect_range_factor","float",0.8)
+local ReconSightRange = sw_factor * alun_utils.read_from_ini(ini,"recon_settings","detect_range_factor","float",0.8) -- KCS - added alife switch distance factor
 local ReconAimTime = alun_utils.read_from_ini(ini,"recon_settings","aim_time_factor","float",1.5)
 local ReconHelpTimeFactor = alun_utils.read_from_ini(ini,"recon_settings","help_timer_factor","float",1.2)
-local ReconHelpDistanceFactor = alun_utils.read_from_ini(ini,"recon_settings","help_distance_factor","float",0.8)
+local ReconHelpDistanceFactor = sw_factor * alun_utils.read_from_ini(ini,"recon_settings","help_distance_factor","float",0.8) -- KCS - added alife switch distance factor
 ini = nil
+ini_range = nil
 
 local is_night = xr_conditions.is_dark_night()
 local act_class = axr_misery.ActorClass
@@ -334,7 +338,6 @@ function npc_on_update(obj,st)
 					
 						elseif NightEnable and is_night then
 							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose * NightHelpTimeFactor)
-					
 						else
 							set_timer_close(db.storage[hostile_npc:id()], NpcHelpTimerClose)
 						end
@@ -577,19 +580,119 @@ end
 --------------------------------------------------------
 
 function wearing_ghillie()
-	local cur_outfit
-	if db.actor:item_in_slot(7) ~= nil then
+-- KCS - commented Yasti's code - left for reference only
+	-- local cur_outfit
+	-- if db.actor:item_in_slot(7) ~= nil then
+	--	cur_outfit = db.actor:item_in_slot(7):section()
+	-- end
+	
+	-- local ghillie_sec = "ghillie_outfit"
+	
+	-- if cur_outfit == ghillie_sec then
+	--	return true
+	-- else
+	--	return false
+	-- end
+-- --- end of Yasti code
+	
+	outfit_bonus() -- calling new function for reading variable from outfit
+	return true -- this function always return true like ghillie is always weared, so AI calculations is triggered and rest of the script can be untouched
+	
+end
+
+-- KCS - old Yasti's code for wearing ghillie - becouse code for inertion from outfit give error (always nil value as result of function instead of innertion section value)
+function old_wearing_ghillie()
+
+	 local cur_outfit
+	 if db.actor:item_in_slot(7) ~= nil then
 		cur_outfit = db.actor:item_in_slot(7):section()
-	end
+	 end
 	
-	local ghillie_sec = "ghillie_outfit"
+	 local ghillie_sec = "ghillie_outfit"
 	
-	if cur_outfit == ghillie_sec then
+	 if cur_outfit == ghillie_sec then
 		return true
-	else
+	 else
 		return false
+	 end
+
+end
+
+
+--------------------------------------------------------
+--Function to Read Ghillie values from any outfit
+--------------------------------------------------------
+
+function outfit_bonus()
+-- local outfit_ini = ini_file("misc\\items\\items_outfit.ltx") -- example for reference only
+
+-- Yasti's suggestions for reading values because outfit.ltx is already included in system_ini
+-- local ini = system_ini()
+-- local sec = item:section()
+-- local GhillieAimTime = ini:r_float(sec, "aim_time_factor")
+-- local GhillieSightRange = ini:r_float(sec,"detect_range_factor")
+-- -----------
+	local weared_outfit
+	-- KCS - new factors to nullfill changes for NPC AI in "m_stalker.ltx" files, all factors in outfit files should now work based on default 300 m range values
+	-- if eye_range is raised or lowered this new factor should raise or lower overall detection to return values on planed 300 m default
+	-- also if someone use other alife switch distance then default, overall AI detection is raised or lowered by the same % of distance change
+	-- this is used only for NPC unalerted free view state, in alerted combat state NPC eye_range have the same effect as planed
+	
+	local ini_s = system_ini()
+	local eye_factor = 150 / ini_s:r_float("stalker","eye_range") -- factor to calculate default NPC eye range, outfits values are calculated for 2 x eye_range = 300 (default alife_switch distance)
+	local switch_factor = ini_s:r_float("alife","switch_distance") / 300 -- factor to raise or lower overall visibility if someone use higher or lower alife switch distance other then default 300, if someone use 250 instead of 300, overall detection is lowered by 16%
+	
+	-- debug_write("Eye factor for NPC is %s ",eye_factor)
+	-- debug_write("Alife switch factor is %s ",switch_factor)
+	
+	if db.actor:item_in_slot(7) ~= nil then
+	  weared_outfit = db.actor:item_in_slot(7):section()
+
+	  GhillieSightRange = switch_factor * eye_factor * alun_utils.read_from_ini(nil,weared_outfit,"detect_range_factor","float",1)           -- KCS - values are read from items_outfit.ltx with included class bonus
+	  GhillieAimTime = alun_utils.read_from_ini(nil,weared_outfit,"aim_time_factor","float",1)                  -- KCS - values are read from items_outfit.ltx with included class bonus
+      GhillieHelpDistanceFactor = switch_factor * eye_factor * alun_utils.read_from_ini(nil,weared_outfit,"help_distance_factor","float",1)  -- KCS - values are read from items_outfit.ltx with included class bonus
+	  GhillieHelpTimeFactor = alun_utils.read_from_ini(nil,weared_outfit,"help_timer_factor","float",1)         -- KCS - values are read from items_outfit.ltx with included class bonus
+	  -- debug_write("GhillieSightRange is %s ",GhillieSightRange)
+	  -- debug_write("GhillieHelpDistanceFactor is %s ",GhillieHelpDistanceFactor)
+	  
+	  -- night factor values also read from items_outfit.ltx
+	  NightSightRange = switch_factor * eye_factor * alun_utils.read_from_ini(nil,weared_outfit,"n_detect_range_factor","float",0.85)
+	  NightAimTime = alun_utils.read_from_ini(nil,weared_outfit,"n_aim_time_factor","float",1.5)
+	  NightHelpTimeFactor = alun_utils.read_from_ini(nil,weared_outfit,"n_help_timer_factor","float",1.2)
+	  NightHelpDistanceFactor = switch_factor * eye_factor * alun_utils.read_from_ini(nil,weared_outfit,"n_help_distance_factor","float",0.8)	  
+	  -- debug_write("NightSightRange is %s ",NightSightRange)
+	  -- debug_write("NightHelpDistanceFactor is %s ",NightHelpDistanceFactor)
+	else
+  	  -- if actor doesn't wear any outfit all factors is "1"
+	  -- because of changes in "ai_tweaks.ltx" new default values for timers are 2
+	  GhillieSightRange = switch_factor * eye_factor * 1
+	  GhillieAimTime = 2
+	  GhillieHelpDistanceFactor = switch_factor * eye_factor * 1
+	  GhillieHelpTimeFactor = 2
+	  -- default values for night if actor doesn't wear any outfit
+	  NightSightRange = switch_factor * eye_factor * 0.85
+	  NightAimTime = 1.5
+	  NightHelpTimeFactor = 1.2
+	  NightHelpDistanceFactor = switch_factor * eye_factor * 0.8
 	end
 end
+
+
+--------------------------------------------------------
+--Function to Read Combat Ignore Inertion values from any outfit - gives proper section for "xr_combat_ignore.ltx"
+--------------------------------------------------------
+function outfit_inertion()
+	local act_outfit
+	local outfit_inert
+	if db.actor:item_in_slot(7) ~= nil then
+	  weared_outfit = db.actor:item_in_slot(7):section()
+	  outfit_inert = alun_utils.read_from_ini(nil,act_outfit,"xr_combat_ignore","string","combat_inertion") -- new value in "items_outfit.ltx" possible values: ghillie_inertion, light_inertion, combat_inertion
+	else
+	  outfit_inert = "combat_inertion"
+	end
+	return outfit_inert
+end
+
 
 
 --------------------------------------------------------

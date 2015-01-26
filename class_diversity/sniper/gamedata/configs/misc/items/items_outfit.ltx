@@ -89,7 +89,7 @@ chemical_burn_protection 		= 0.008 ; 26 C1 ppm eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.075
-wound_protection			= 0.20
+wound_protection			= 0.26
 fire_wound_protection  			= 0.085
 
 hit_fraction_actor			= 0.5
@@ -101,6 +101,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_novice_outfit
 
 repair_part_bonus	 	= 0.22
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: MEDIUM
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: HIGH
+
+n_detect_range_factor = 0.35	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.5	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 4.0 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.5			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_novice_outfit_immunities]
 burn_immunity				= 0.75			;коэффициенты иммунитета самого костюма
@@ -165,7 +189,7 @@ chemical_burn_protection 		= 0.014 ; 46 C1 ppm eq.
 telepatic_protection 			= 0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.12
-wound_protection			= 0.24
+wound_protection			= 0.31
 fire_wound_protection  			= 0.12
 
 hit_fraction_actor				= 0.90
@@ -177,6 +201,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_novice_outfit
 
 repair_part_bonus	 	= 0.24
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: MEDIUM
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: HIGH
+
+n_detect_range_factor = 0.35	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.5	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 4.0 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.5			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_coat_outfit_immunities]
 burn_immunity				= 0.40			;коэффициенты иммунитета самого костюма
@@ -241,7 +289,7 @@ chemical_burn_protection 		= 0.015 ; 50 C1 ppm eq.
 telepatic_protection 			= 0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.18
-wound_protection			= 0.24
+wound_protection			= 0.39
 fire_wound_protection  			= 0.16
 
 hit_fraction_actor			= 0.48
@@ -253,6 +301,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_stalker_outfit
 
 repair_part_bonus	 	= 0.28
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: MEDIUM
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: HIGH
+
+n_detect_range_factor = 0.35	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.5	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 4.0 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.5			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_coat_heavy_outfit_immunities]
 burn_immunity				= 0.28			;коэффициенты иммунитета самого костюма
@@ -318,7 +390,7 @@ chemical_burn_protection 		= 0.013 ; 44 C1 ppm. eq.
 telepatic_protection 			= 0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.24
-wound_protection			= 0.30
+wound_protection			= 0.45
 fire_wound_protection  			= 0.20
 
 hit_fraction_actor				= 0.4 ;0.6
@@ -333,11 +405,35 @@ upgrade_scheme          = upgrade_scheme_stalker_outfit
 
 repair_part_bonus	 	= 0.30
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: HIGH
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: MEDIUM
+
+n_detect_range_factor = 0.5	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.65	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 3.5 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.1			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [sect_stalker_outfit_immunities]
 burn_immunity				= 0.65			;коэффициенты иммунитета самого костюма
 strike_immunity				= 0
 shock_immunity				= 0.027
-wound_immunity				= 0.046
+wound_immunity				= 0.051
 radiation_immunity = 0.0 ;			= 0.05
 telepatic_immunity			= 0.0
 chemical_burn_immunity		= 0.045
@@ -381,7 +477,7 @@ fire_wound_immunity			= -0.0
 burn_immunity				= -0.0			;коэффициенты иммунитета самого костюма
 strike_immunity				= -0.0
 shock_immunity				= -0.0
-wound_immunity				= -0.0023
+wound_immunity				= -0.0026
 radiation_immunity = 0.0 ;			= -0.0
 telepatic_immunity			= -0.0
 chemical_burn_immunity		= -0.0
@@ -392,7 +488,7 @@ fire_wound_immunity			= -0.0016
 burn_immunity				= -0.0			;коэффициенты иммунитета самого костюма
 strike_immunity				= -0.0
 shock_immunity				= -0.0
-wound_immunity				= -0.0046
+wound_immunity				= -0.0051
 radiation_immunity = 0.0 ;			= -0.0
 telepatic_immunity			= -0.0
 chemical_burn_immunity		= -0.0
@@ -450,7 +546,7 @@ chemical_burn_protection 		= 0.015 ; 45 C1 ppm eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.24
-wound_protection			= 0.30
+wound_protection			= 0.41
 fire_wound_protection  			= 0.20
 
 hit_fraction_actor				= 0.4
@@ -465,6 +561,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svoboda_light_outfit
 
 repair_part_bonus	 	= 0.32
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: HIGH
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: MEDIUM
+
+n_detect_range_factor = 0.5	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.65	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 3.5 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.1			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_svoboda_light_outfit_immunities]
 burn_immunity				= 0.55			;коэффициенты иммунитета самого костюма
@@ -528,7 +648,7 @@ chemical_burn_protection 		= 0.013 ; 38 C1 ppm eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.33
-wound_protection				= 0.33
+wound_protection				= 0.48
 fire_wound_protection  			= 0.25
 
 hit_fraction_actor				= 0.38
@@ -546,6 +666,30 @@ additional_inventory_weight2 	= 7
 additional_inventory_weight 	= 7
 
 repair_part_bonus	 	= 0.34
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: LOW
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 0.9			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 0.9			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: HIGH
+
+n_detect_range_factor = 0.35	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.5	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 4.0 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.5			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_dolg_outfit_immunities]
 burn_immunity				= 0.60			;коэффициенты иммунитета самого костюма
@@ -611,7 +755,7 @@ chemical_burn_protection 		= 0.1240 ; 3606 C1 ppm eq.
 telepatic_protection 			= 0.1250 ; 57 mT
 strike_protection 			= 0
 explosion_protection 			= 0.32
-wound_protection			= 0.36
+wound_protection			= 0.45
 fire_wound_protection  			= 0.28
 
 hit_fraction_actor				= 0.33
@@ -628,6 +772,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_scientific_outfit
 
 repair_part_bonus	 	= 0.44
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: LOW
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 0.9			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 0.9			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: HIGH
+
+n_detect_range_factor = 0.35	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.5	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 4.0 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.5			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_scientific_outfit_immunities]
 burn_immunity				= 0.040		;коэффициенты иммунитета самого костюма
@@ -747,7 +915,7 @@ chemical_burn_protection 		= 0.015 ; 46 C1 ppm eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.35
-wound_protection				= 0.38
+wound_protection				= 0.48
 fire_wound_protection  			= 0.30
 
 hit_fraction_actor				= 0.28
@@ -761,6 +929,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_cs_heavy_outfit
 
 repair_part_bonus	 	= 0.38
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: LOW
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 0.9			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 0.9			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: LOW
+
+n_detect_range_factor = 0.6	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.7	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 3.1 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.85			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_cs_heavy_outfit_immunities]
 burn_immunity				= 0.35			;коэффициенты иммунитета самого костюма
@@ -824,7 +1016,7 @@ chemical_burn_protection 		= 0.012 ; 37 C1 ppm eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.45
-wound_protection				= 0.40
+wound_protection				= 0.50
 fire_wound_protection  			= 0.32
 
 hit_fraction_actor				= 0.26
@@ -838,6 +1030,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svoboda_heavy_outfit
 
 repair_part_bonus	 	= 0.42
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: HIGH
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: MEDIUM
+
+n_detect_range_factor = 0.5	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.65	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 3.5 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.1			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_svoboda_heavy_outfit_immunities]
 burn_immunity				= 0.45			;коэффициенты иммунитета самого костюма
@@ -901,7 +1117,7 @@ chemical_burn_protection 		= 0.01 ; 30 C1 ppm. eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.5
-wound_protection				= 0.40
+wound_protection				= 0.55
 fire_wound_protection  			= 0.32
 
 hit_fraction_actor				= 0.26
@@ -915,6 +1131,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_specops
 
 repair_part_bonus	 	= 0.40
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: MEDIUM
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: MEDIUM
+
+n_detect_range_factor = 0.5	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.65	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 3.5 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.1			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_specops_outfit_immunities]
 burn_immunity				= 0.50			;коэффициенты иммунитета самого костюма
@@ -1033,7 +1273,7 @@ chemical_burn_protection 		= 0.011 ; 34 C1 ppm eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.65
-wound_protection				= 0.42
+wound_protection				= 0.61
 fire_wound_protection  			= 0.38
 
 hit_fraction_actor				= 0.2
@@ -1047,6 +1287,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_military_outfit
 
 repair_part_bonus	 	= 0.48
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: MEDIUM
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: MEDIUM
+
+n_detect_range_factor = 0.5	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.65	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 3.5 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.1			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_military_outfit_immunities]
 burn_immunity				= 0.40			;коэффициенты иммунитета самого костюма
@@ -1165,7 +1429,7 @@ chemical_burn_protection 		= 0.011 ; 34 C1 ppm eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 				= 0
 explosion_protection 			= 0.70
-wound_protection				= 0.46
+wound_protection				= 0.66
 fire_wound_protection  			= 0.44
 
 hit_fraction_actor				= 0.18
@@ -1180,6 +1444,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_dolg_heavy_outfit
 
 repair_part_bonus	 	= 0.50
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: LOW
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 0.9			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 0.9			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: HIGH
+
+n_detect_range_factor = 0.35	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.5	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 4.0 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.5			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_dolg_heavy_outfit_immunities]
 burn_immunity				= 0.40			;коэффициенты иммунитета самого костюма
@@ -1240,7 +1528,7 @@ chemical_burn_protection 		= 0.013 ; 54 C1 ppm eq.
 telepatic_protection 			= 0.0 ; 0 mT
 strike_protection 			= 0.55
 explosion_protection 			= 0.95
-wound_protection			= 0.64
+wound_protection			= 0.72
 fire_wound_protection  			= 0.58
 
 hit_fraction_actor				= 0.105
@@ -1261,6 +1549,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_exo_outfit
 
 repair_part_bonus	 	= 0.60
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: LOW
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 0.9			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 0.9			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: LOW
+
+n_detect_range_factor = 0.6	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.7	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 3.1 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.85			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_exo_outfit_immunities]
 burn_immunity				= 0.14		;коэффициенты иммунитета самого костюма
@@ -1400,7 +1712,7 @@ chemical_burn_protection 		= 0.1490 ; 4333 C1 ppm eq.
 telepatic_protection 			= 0.1620 ; 74 mT
 strike_protection 				= 0
 explosion_protection 			= 0.22
-wound_protection				= 0.16
+wound_protection				= 0.24
 fire_wound_protection  			= 0.24
 
 power_loss						= 0.82
@@ -1408,6 +1720,30 @@ power_loss						= 0.82
 power_restore_speed				= -0.0014
 
 repair_part_bonus	 	= 0.28
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: VERY LOW
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 1.15 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 0.83			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.1		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 0.8			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: VERY LOW
+
+n_detect_range_factor = 0.68	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.75	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 2.9 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.78			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_ecologist_red_outfit_immunities]
 burn_immunity				= 0.035	;коэффициенты иммунитета самого костюма
@@ -1485,7 +1821,7 @@ chemical_burn_protection 		= 0.1490 ; 4333 C1 ppm. eq.
 telepatic_protection 			= 0.1620 ; 74 mT
 strike_protection 				= 0
 explosion_protection 			= 0.32
-wound_protection				= 0.23
+wound_protection				= 0.36
 fire_wound_protection  			= 0.28
 
 power_loss				= 0.82
@@ -1493,6 +1829,30 @@ power_loss				= 0.82
 power_restore_speed				= -0.0014
 
 repair_part_bonus	 	= 0.30
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: LOW
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 0.9			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 0.9			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: MEDIUM
+
+n_detect_range_factor = 0.5	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.65	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 3.5 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 2.1			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [sect_ecologist_green_outfit_immunities]
 burn_immunity				= 0.028	;коэффициенты иммунитета самого костюма
@@ -1518,6 +1878,7 @@ fire_wound_immunity			= -0.006
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;---------------------------------------------------------------------------------------------
 ;		Маскировочный костюм "Леший"
 ;---------------------------------------------------------------------------------------------
@@ -1572,7 +1933,7 @@ chemical_burn_protection 		= 0.015 ; 50 C1 ppm eq.
 telepatic_protection 			= 0 ; 0 mT
 strike_protection 			= 0
 explosion_protection 			= 0.18
-wound_protection			= 0.24
+wound_protection			= 0.42
 fire_wound_protection  			= 0.16
 
 hit_fraction_actor			= 0.48
@@ -1586,6 +1947,30 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_stalker_outfit
 
 repair_part_bonus	 	= 0.24
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; CAMO MOD by KCS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;; original scripts: yastiandrie & alundaio ;;;;;
+;;;;;;;;;;;;; implementation: trojanuch ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DAY PRESET: GHILLIE
+
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
+detect_range_factor = 0.5 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 2.8			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+help_distance_factor = 0.4		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+help_timer_factor = 2.5			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
+
+; NIGHT PRESET: GHILLIE
+
+n_detect_range_factor = 0.3	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.25	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 5.5 ;2.0	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 4.6			; Multiplier for time it take for NPC's to aim during night hours
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 immunities_sect		= sect_ghillie_outfit_immunities
 

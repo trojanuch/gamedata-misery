@@ -1,8 +1,8 @@
 [smart_terrain];zat_b5
-respawn_idle = 10800
+respawn_idle = 14400
 respawn_only_level = true
 respawn_radius = 200
-death_idle_time = 10800
+death_idle_time = 14400
 
 squad_id = 36
 max_population = 3
@@ -17,10 +17,12 @@ spawn_bandit@veteran
 spawn_bandit@hostile
 spawn_bandit@veteran_hostile
 
-spawn_merc@novice
 spawn_merc@veteran
+spawn_merc@veteran_nuetral
 
 ;;; unused
+
+spawn_merc@novice
 
 ;spawn_bandit@advanced_sentry
 ;spawn_bandit@hostile_sentry
@@ -30,34 +32,42 @@ spawn_merc@veteran
 ; Bandit squads
 
 [spawn_bandit@advanced]
-spawn_squads = bandit_sim_squad_novice
+spawn_squads = bandit_sim_squad_novice, bandit_sim_squad_advanced, bandit_sim_squad_novice, bandit_sim_squad_advanced, bandit_sim_squad_novice, bandit_sim_squad_advanced, bandit_sim_squad_hostile, bandit_sim_squad_hostile, merc_sim_squad_novice_neutral
 spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(zaton) +kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(zaton) +kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(zaton) +kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(zaton) +kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) +kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(zaton) +kingpin_gained -jup_b218_gather_squad_complete} 1, 0
 
 [spawn_bandit@veteran]
-spawn_squads = bandit_sim_squad_advanced, bandit_sim_squad_veteran
+spawn_squads = bandit_sim_squad_novice, bandit_sim_squad_advanced, bandit_sim_squad_veteran, bandit_sim_squad_novice, bandit_sim_squad_advanced, bandit_sim_squad_veteran, bandit_sim_squad_novice, bandit_sim_squad_advanced, bandit_sim_squad_veteran, bandit_sim_squad_hostile, bandit_sim_squad_advanced_hostile, bandit_sim_squad_hostile_elite, merc_sim_squad_veteran_neutral, merc_sim_squad_advanced_neutral
 spawn_num = {=actor_on_level(zaton) +kingpin_gained +jup_b207_task_end} 1, {=actor_on_level(zaton) +kingpin_gained +jup_a12_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b46_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b209_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b218_gather_squad_complete} 1, 0
 
 ; Bandit hostile squads
 
 [spawn_bandit@hostile]
-spawn_squads = bandit_sim_squad_hostile
+spawn_squads = bandit_sim_squad_hostile, bandit_sim_squad_hostile, bandit_sim_squad_hostile, bandit_sim_squad_novice, merc_sim_squad_novice
 spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(zaton) -kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(zaton) -kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(zaton) -kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(zaton) -kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) -kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(zaton) -kingpin_gained -jup_b218_gather_squad_complete} 1, 0
 
 [spawn_bandit@veteran_hostile]
-spawn_squads = bandit_sim_squad_advanced_hostile, bandit_sim_squad_hostile_elite
+spawn_squads = bandit_sim_squad_hostile, bandit_sim_squad_advanced_hostile, bandit_sim_squad_hostile_elite, bandit_sim_squad_hostile, bandit_sim_squad_advanced_hostile, bandit_sim_squad_hostile_elite, bandit_sim_squad_hostile, bandit_sim_squad_advanced_hostile, bandit_sim_squad_hostile_elite, bandit_sim_squad_novice, bandit_sim_squad_advanced, bandit_sim_squad_veteran, merc_sim_squad_veteran, merc_sim_squad_advanced
 spawn_num = {=actor_on_level(zaton) -kingpin_gained +jup_b207_task_end} 1, {=actor_on_level(zaton) -kingpin_gained +jup_a12_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b46_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b209_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+; Merc hostile squads
+
+[spawn_merc@veteran]
+spawn_squads = merc_sim_squad_advanced, merc_sim_squad_veteran ; merc_sim_squad_veteran_zaton_smrter_sim_9_assault
+spawn_num = {=actor_on_level(zaton) -kingpin_gained +jup_b207_task_end} 1, {=actor_on_level(zaton) -kingpin_gained +jup_a12_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b46_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b209_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+; Merc neutral squads
+
+[spawn_merc@veteran_nuetral]
+spawn_squads = merc_sim_squad_advanced_neutral, merc_sim_squad_veteran_neutral ; merc_sim_squad_veteran_zaton_smrter_sim_9_assault
+spawn_num = {=actor_on_level(zaton) +kingpin_gained +jup_b207_task_end} 1, {=actor_on_level(zaton) +kingpin_gained +jup_a12_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b46_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b209_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+;;; unused
 
 ; Merc hostile squads
 
 [spawn_merc@novice]
 spawn_squads = merc_sim_squad_novice
-spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(zaton) -jup_b207_task_end} 1, {=actor_on_level(zaton) -jup_a12_task_done} 1, {=actor_on_level(zaton) -jup_b46_task_done} 1, {=actor_on_level(zaton) -jup_b209_task_done} 1, {=actor_on_level(zaton) -jup_b218_gather_squad_complete} 1, 0
-
-[spawn_merc@veteran]
-spawn_squads = merc_sim_squad_advanced, merc_sim_squad_veteran, merc_sim_squad_advanced, merc_sim_squad_veteran, merc_sim_squad_veteran_zaton_smrter_sim_9_assault
-spawn_num = {=actor_on_level(zaton) +jup_b207_task_end} 1, {=actor_on_level(zaton) +jup_a12_task_done} 1, {=actor_on_level(zaton) +jup_b46_task_done} 1, {=actor_on_level(zaton) +jup_b209_task_done} 1, {=actor_on_level(zaton) +jup_b218_gather_squad_complete} 1, 0
-
-;;; unused
+spawn_num = 0 ; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(zaton) -jup_b207_task_end} 1, {=actor_on_level(zaton) -jup_a12_task_done} 1, {=actor_on_level(zaton) -jup_b46_task_done} 1, {=actor_on_level(zaton) -jup_b209_task_done} 1, {=actor_on_level(zaton) -jup_b218_gather_squad_complete} 1, 0
 
 ; Bandit sentry squads
 

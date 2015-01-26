@@ -71,31 +71,31 @@ shape_edge_color		= 32, 32, 32, 255
 
 [zone_mine_acidic_weak]:zone_mine_acidic
 $spawn 						= "zones\mine_acidic_weak"
-max_start_power		= 0.1
+max_start_power		= 0.05
 attenuation			= 1
 use_secondary_hit = true
-secondary_hit_power = 0.012
+secondary_hit_power = 0.006
 
 [zone_mine_acidic_average]:zone_mine_acidic
 $spawn 						= "zones\mine_acidic_average"
-max_start_power		= 0.12
-attenuation			= 1
-use_secondary_hit = true
-secondary_hit_power = 0.015
-
-[zone_mine_acidic_strong]:zone_mine_acidic
-$spawn 						= "zones\mine_acidic_strong"
-max_start_power		= 0.15
-attenuation			= 1
-use_secondary_hit = true
-secondary_hit_power = 0.018
-
-[zone_mine_acidic_big]:zone_mine_acidic_strong
-$spawn 						= "zones\scenes\mine_acidic_big"
-max_start_power		= 0.07
+max_start_power		= 0.06
 attenuation			= 1
 use_secondary_hit = true
 secondary_hit_power = 0.007
+
+[zone_mine_acidic_strong]:zone_mine_acidic
+$spawn 						= "zones\mine_acidic_strong"
+max_start_power		= 0.075
+attenuation			= 1
+use_secondary_hit = true
+secondary_hit_power = 0.009
+
+[zone_mine_acidic_big]:zone_mine_acidic_strong
+$spawn 						= "zones\scenes\mine_acidic_big"
+max_start_power		= 0.075
+attenuation			= 1
+use_secondary_hit = true
+secondary_hit_power = 0.009
 
 ;----------- Anomaly settings -----------------------
 $def_sphere = 7.5
@@ -146,7 +146,7 @@ $spawn 						= "zones\scenes\mine_chemical_strong"
 
 [zone_buzz]:zone_mine_acidic
 postprocess					= postprocess_flame
-max_start_power		= 1.35
+max_start_power		= 0.05
 
 idle_particles				= anomaly2\studen_idle_bottom
 blowout_particles			= anomaly2\studen_blowout
@@ -159,12 +159,12 @@ idle_big_particles			= anomaly2\studen_idle_bottom_00
 
 [zone_buzz_weak]:zone_buzz
 $spawn 						= "zones\mp\buzz_weak"
-max_start_power		= 0.3
+max_start_power		= 0.06
 
 [zone_buzz_average]:zone_buzz
 $spawn 						= "zones\mp\buzz_average"
-max_start_power		= 0.35
+max_start_power		= 0.07
 
 [zone_buzz_strong]:zone_buzz
 $spawn 						= "zones\mp\buzz_strong"
-max_start_power		= 0.4
+max_start_power		= 0.075

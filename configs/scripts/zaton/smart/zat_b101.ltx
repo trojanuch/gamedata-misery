@@ -1,9 +1,4 @@
 [smart_terrain];zat_b101
-respawn_idle = 10800
-respawn_only_level = true
-respawn_radius = 200
-death_idle_time = 10800
-
 squad_id = 51
 max_population = 2
 
@@ -58,7 +53,7 @@ spawn_num = {=actor_on_level(zaton) -sim_freedom_help_harder +jup_b207_task_end}
 ; Duty assault squads
 
 [spawn_duty@veteran_assault]
-spawn_squads = duty_sim_squad_veteran, duty_sim_squad_veteran, duty_sim_squad_veteran, duty_sim_squad_veteran_zat_b5_smart_terrain_assault, duty_sim_squad_veteran_zat_b40_assault_2, duty_sim_squad_veteran_zat_b103_merc_smart_assault
+spawn_squads = duty_sim_squad_veteran ; duty_sim_squad_veteran_zat_b5_smart_terrain_assault, duty_sim_squad_veteran_zat_b40_assault_2, duty_sim_squad_veteran_zat_b103_merc_smart_assault
 spawn_num = {=actor_on_level(zaton) -sim_freedom_help_harder +jup_b207_task_end} 1, {=actor_on_level(zaton) -sim_freedom_help_harder +jup_a12_task_done} 1, {=actor_on_level(zaton) -sim_freedom_help_harder +jup_b46_task_done} 1, {=actor_on_level(zaton) -sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) -sim_freedom_help_harder +jup_b209_task_done} 1, {=actor_on_level(zaton) -sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
 
 ; Duty hostile squads
@@ -74,27 +69,27 @@ spawn_num = {=actor_on_level(zaton) +sim_freedom_help_harder +jup_b207_task_end}
 ; Duty assault hostile squads
 
 [spawn_duty@veteran_assault_hostile]
-spawn_squads = duty_sim_squad_veteran_hostile, duty_sim_squad_veteran_hostile, duty_sim_squad_veteran_hostile, duty_sim_squad_veteran_zat_b5_smart_terrain_assault_hostile, duty_sim_squad_veteran_zat_b40_assault_2_hostile, duty_sim_squad_veteran_zat_b103_merc_smart_assault_hostile
+spawn_squads = duty_sim_squad_veteran_hostile ; duty_sim_squad_veteran_zat_b5_smart_terrain_assault_hostile, duty_sim_squad_veteran_zat_b40_assault_2_hostile, duty_sim_squad_veteran_zat_b103_merc_smart_assault_hostile
 spawn_num = {=actor_on_level(zaton) +sim_freedom_help_harder +jup_b207_task_end} 1, {=actor_on_level(zaton) +sim_freedom_help_harder +jup_a12_task_done} 1, {=actor_on_level(zaton) +sim_freedom_help_harder +jup_b46_task_done} 1, {=actor_on_level(zaton) +sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) +sim_freedom_help_harder +jup_b209_task_done} 1, {=actor_on_level(zaton) +sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
 
 ; Stalker squads
 
 [spawn_stalker@advanced]
-spawn_squads = stalker_sim_squad_novice, stalker_sim_squad_novice, stalker_hunter_day_simulation_squad, stalker_hunter_day_simulation_squad, stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad, stalker_hunter_day_zat_sim_2_assault_simulation_squad
+spawn_squads = stalker_sim_squad_novice, stalker_hunter_day_simulation_squad ; stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad
 spawn_num = {=actor_on_level(zaton) -kingpin_gained} 1, 0 ; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(zaton) -kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(zaton) -kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(zaton) -kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(zaton) -kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) -kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(zaton) -kingpin_gained -jup_b218_gather_squad_complete} 1, 0
 
 [spawn_stalker@veteran]
-spawn_squads = stalker_sim_squad_veteran, stalker_sim_squad_veteran, stalker_sim_squad_veteran, stalker_hunter_night_simulation_squad, stalker_hunter_night_zaton_smrter_sim_8_assault_simulation_squad, stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad
+spawn_squads = stalker_sim_squad_veteran, stalker_sim_squad_veteran, stalker_hunter_night_simulation_squad ; stalker_hunter_night_zaton_smrter_sim_8_assault_simulation_squad, stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad
 spawn_num = {=actor_on_level(zaton) -kingpin_gained +jup_b207_task_end} 1, {=actor_on_level(zaton) -kingpin_gained +jup_a12_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b46_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b209_task_done} 1, {=actor_on_level(zaton) -kingpin_gained +jup_b218_gather_squad_complete} 1, 0
 
 ; Stalker hostile squads
 
 [spawn_stalker@advanced_hostile]
-spawn_squads = stalker_sim_squad_novice_hostile, stalker_sim_squad_novice_hostile, stalker_hunter_day_simulation_squad_hostile, stalker_hunter_day_simulation_squad_hostile, stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad_hostile, stalker_hunter_day_zat_sim_2_assault_simulation_squad_hostile
+spawn_squads = stalker_sim_squad_novice_hostile, stalker_hunter_day_simulation_squad_hostile ; stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad_hostile
 spawn_num = {=actor_on_level(zaton) +kingpin_gained} 1, 0 ; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(zaton) +kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(zaton) +kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(zaton) +kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(zaton) +kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) +kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(zaton) +kingpin_gained -jup_b218_gather_squad_complete} 1, 0
 
 [spawn_stalker@veteran_hostile]
-spawn_squads = stalker_sim_squad_veteran_hostile, stalker_sim_squad_veteran_hostile, stalker_sim_squad_veteran_hostile, stalker_hunter_night_simulation_squad_hostile, stalker_hunter_night_zaton_smrter_sim_8_assault_simulation_squad_hostile, stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad_hostile
+spawn_squads = stalker_sim_squad_veteran_hostile, stalker_sim_squad_veteran_hostile, stalker_hunter_night_simulation_squad_hostile ; stalker_hunter_night_zaton_smrter_sim_8_assault_simulation_squad_hostile, stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad_hostile
 spawn_num = {=actor_on_level(zaton) +kingpin_gained +jup_b207_task_end} 1, {=actor_on_level(zaton) +kingpin_gained +jup_a12_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b46_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b8_heli_4_searched} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b209_task_done} 1, {=actor_on_level(zaton) +kingpin_gained +jup_b218_gather_squad_complete} 1, 0
 
 ;;; unused

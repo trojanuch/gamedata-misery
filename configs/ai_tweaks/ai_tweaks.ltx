@@ -8,31 +8,32 @@ range_add 	=  0.6							;Percent increase to NPC range
 fov_add		= -0.4							;Percent increase to NPC FOV (negative to reduce)
 
 [npc_help]
+; KCS - lower values for timer for easier control trough outfit.ltx (closer gameplay feel to value of "aim_time_factor" - easier tweak trough "outfit.ltx")
 enable = true						; Enables NPC informing allies of your location
 npc_help_distance_close = 25		; Sets distance that an NPC who has "seen" the player can alert other NPC's to the players location. Value is distance squared
-npc_help_timer_close = 10000			; Sets time before the NPC inform allies in ms
+npc_help_timer_close = 5000 ;10000			; Sets time before the NPC inform allies in ms
 npc_help_distance_medium = 625 
-npc_help_timer_medium = 15000
+npc_help_timer_medium = 7500 ;15000
 npc_help_distance_far = 1600
-npc_help_timer_far = 30000
+npc_help_timer_far = 15000 ;30000
 
 [ghillie_settings]
 enable = true   				; Enables reduced detection of the Ghillie Suit.
-detect_range_factor = 0.30 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
-help_distance_factor = 0.6		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
-help_timer_factor = 3.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
-aim_time_factor = 3.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+;detect_range_factor = 0.30 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - moved to "items_outfit.ltx"
+;help_distance_factor = 0.6		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - moved to "items_outfit.ltx"
+;help_timer_factor = 3.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - moved to "items_outfit.ltx"
+;aim_time_factor = 3.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - moved to "items_outfit.ltx"
 
 [night_settings]
 enable = true
-detect_range_factor = 0.80				; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
-help_distance_factor = 0.8				; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
-help_timer_factor = 2.0					; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
-aim_time_factor = 1.5					; Multiplier for time it take for NPC's to aim during night hours
+;detect_range_factor = 0.80				; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am) ; KCS - moved to "items_outfit.ltx"
+;help_distance_factor = 0.8				; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help ; KCS - moved to "items_outfit.ltx"
+;help_timer_factor = 4.0 ;2.0			; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help ; KCS - moved to "items_outfit.ltx"
+;aim_time_factor = 1.5					; Multiplier for time it take for NPC's to aim during night hours ; KCS - moved to "items_outfit.ltx"
 
 [recon_settings]
 enable = true
-detect_range_factor = 0.70				; Factor of range that a NPC no longer ignores a player if he is Recon during night. (10pm to 3am)
-help_distance_factor = 0.75				; Factor for Decreasing Distance for NPC's informing allies of your position during night hours as Recon. Used in conjuction with npc_help
-help_timer_factor = 2.5					; Factor for Increasing Timer for NPC's informing allies of your position during night hours Recon. Used in conjunction with npc_help
+detect_range_factor = 0.90				; Factor of range that a NPC no longer ignores a player if he is Recon during night. (10pm to 3am)
+help_distance_factor = 0.95				; Factor for Decreasing Distance for NPC's informing allies of your position during night hours as Recon. Used in conjuction with npc_help
+help_timer_factor = 1.2 ;2.5					; Factor for Increasing Timer for NPC's informing allies of your position during night hours Recon. Used in conjunction with npc_help
 aim_time_factor = 1.4					; Multiplier for time it take for NPC's to aim during night hours as recon

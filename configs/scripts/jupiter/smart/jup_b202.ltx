@@ -1,8 +1,8 @@
 [smart_terrain];jup_b202
-respawn_idle = 10800
+respawn_idle = 14400
 respawn_only_level = true
 respawn_radius = 200
-death_idle_time = 10800
+death_idle_time = 14400
 
 squad_id = 10
 max_population = 1
@@ -13,7 +13,7 @@ respawn_params = respawn@jup_b202
 spawn_bandit@hostile
 
 [spawn_bandit@hostile]
-spawn_squads = bandit_sim_squad_hostile, stalker_sim_squad_novice, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork
+spawn_squads = bandit_sim_squad_advanced, stalker_sim_squad_novice, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork
 spawn_num = {=actor_on_level(jupiter) -jup_b52_actor_items_can_be_stolen} 1, {=actor_on_level(jupiter) +jup_b202_actor_items_returned} 1, 0
 
 [exclusive]

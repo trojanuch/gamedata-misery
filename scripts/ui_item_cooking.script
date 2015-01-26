@@ -236,7 +236,8 @@ function cooking_ui:OnPartsListItemClicked()
 
 	self.picture_parts:SetWndPos(vector2():set(self.picture_parts.x-w/2, self.picture_parts.y-h/2))
 
-	self.caption_parts:SetText("Selected")
+	self.caption_parts:SetText(string.format("Selected (x%d)",self:GetPartCount(sec)))
+
 end
 
 function cooking_ui:OnPartsListItemDbClicked()
@@ -277,7 +278,7 @@ function cooking_ui:OnListItemClicked()
 
 	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
 
-	self.caption_cooking:SetText("Selected")
+	self.caption_cooking:SetText(string.format("Selected (x%d)",self:GetFuelCharges(se_item)))
 
 	if (self.use_parts) then
 		self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
@@ -304,9 +305,8 @@ function cooking_ui:OnKeyboard(dik, keyboard_action)
 end
 
 -- Drengor - multi-cook
-function cooking_ui:GetPartCount(part)
+function cooking_ui:GetPartCount(part_name)
 	local cnt = 0
-	local part_name = part:section_name()
 
 	local function countparts(npc, item)
 		if item:section() == part_name then
@@ -315,6 +315,8 @@ function cooking_ui:GetPartCount(part)
 	end
 
 	db.actor:iterate_inventory(countparts, nil)
+
+	alun_utils.printf("Counted %d %s",cnt,part_name);
 
 	return cnt
 end
@@ -339,7 +341,7 @@ function cooking_ui:GetFuelCharges(fuel_item)
 end
 
 function cooking_ui:MakeFuelCharges(fuel_item,charges)
-	-- fuel_name begins with fuel type, and optionally has a 2-8 on the end indicating reduced charges
+	-- fuel_name begins with fuel type, and optionally has a 2-8 on the end indicating reduced charges, or _empty
 	local fuel_name = fuel_item:section_name()
 	local last_char = fuel_name:byte(fuel_name:len())
 	local base_charges = 1
@@ -353,16 +355,21 @@ function cooking_ui:MakeFuelCharges(fuel_item,charges)
 	if(fuel_name == "explo_jerrycan_fuel") then base_charges = 8 end
 	if(fuel_name == "explo_balon_gas") then base_charges = 8 end
 
-	fuel_name = string.format("%s%d",fuel_name,base_charges + 1 - charges)
+	if (charges > 0) then
+		fuel_name = string.format("%s%d",fuel_name,base_charges + 1 - charges)
+	else
+		fuel_name = string.format("%s%s",fuel_name,"_empty")
+	end
 
 	alife():create(fuel_name, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 end
 
 function cooking_ui:ConsumeFuel(fuel_item, charges)
-	local c = self:GetFuelCharges(fuel_item)
+	local c = self:GetFuelCharges(fuel_item) - charges
+	local fuel_name = fuel_item:section_name()
 
-	if(c > charges) then
-		self:MakeFuelCharges(fuel_item,c-charges)
+	if(c > 0 or (alun_utils.startsWith(fuel_name,"explo_jerrycan_fuel") or alun_utils.startsWith(fuel_name,"explo_balon_gas"))) then
+		self:MakeFuelCharges(fuel_item,c)
 	end
 
 	alife():release(fuel_item,true)
@@ -406,30 +413,26 @@ function cooking_ui:OnButton_cooking()
 	local obj = item and level.object_by_id(item.item_id)
 	local se_obj = item and item.item_id and alife():object(item.item_id)
 
-	item = self.list_box_parts:GetItemByIndex(index)
-	local se_parts = item and item.item_id and alife():object(item.item_id)
-	local sec = se_parts:section_name()
-
-	-- Drengor - multi-cook
-	local part_count = self:GetPartCount(se_parts)
-	local fuel_charges = self:GetFuelCharges(se_obj)
-	local cook_count = 1
-
-	if(part_count >= fuel_charges) then cook_count = fuel_charges end
-	if(fuel_charges > part_count) then cook_count = part_count end
-	-- end Drengor - multi-cook
-
 	if not (obj) then
 		return
 	end
 
 	if (self.list_box_parts) then
-		index = self.list_box_parts:GetSelectedIndex()
 		if (index ~= -1) then
+			index = self.list_box_parts:GetSelectedIndex()
 			item = self.list_box_parts:GetItemByIndex(index)
 			local se_parts = item and item.item_id and alife():object(item.item_id)
+			local sec = se_parts:section_name()
+
 			if (se_parts) then
-				local sec = se_parts:section_name()
+
+				-- Drengor - multi-cook
+				local part_count = self:GetPartCount(sec)
+				local fuel_charges = self:GetFuelCharges(se_obj)
+				local cook_count = part_count
+
+				if(part_count >= fuel_charges) then cook_count = fuel_charges end
+				-- end Drengor - multi-cook
 
 				-- ponney68 cooking item
 				if self.section =="fieldcooker" then

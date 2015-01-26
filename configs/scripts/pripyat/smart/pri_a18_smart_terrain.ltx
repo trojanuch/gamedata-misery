@@ -2,7 +2,7 @@
 respawn_idle = 10800
 respawn_only_level = true
 respawn_radius = 100
-death_idle_time = 10800
+death_idle_time = 16800
 
 squad_id = 24
 max_population = 1
@@ -13,6 +13,7 @@ spawn_bandit
 spawn_bandit@hostile
 
 spawn_killer
+spawn_killer@neutral
 
 ;;; unused
 
@@ -30,11 +31,17 @@ spawn_num = {=actor_on_level(pripyat) +kingpin_gained +pri_a28_actor_in_zone_sta
 spawn_squads = bandit_sim_squad_hostile_elite_pripyat
 spawn_num = {=actor_on_level(pripyat) -kingpin_gained +pri_a28_actor_in_zone_stay} 1, 0
 
-; Merc squads
+; Merc hostile squads
 
 [spawn_killer]
 spawn_squads = merc_sim_squad_veteran
-spawn_num = {=actor_on_level(pripyat) +pri_a18_use_idol_done} 1, 0
+spawn_num = {=actor_on_level(pripyat) +kingpin_gained +pri_a28_actor_in_zone_stay} 1, 0
+
+; Merc neutral squads
+
+[spawn_killer@neutral]
+spawn_squads = merc_sim_squad_veteran_neutral
+spawn_num = {=actor_on_level(pripyat) -kingpin_gained +pri_a28_actor_in_zone_stay} 1, 0
 
 ;;; unused
 
