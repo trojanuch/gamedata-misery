@@ -1,5 +1,5 @@
 if (jit == nil) then
-	profiler.setup_hook	()
+    profiler.setup_hook	()
 end
 
 
@@ -39,6 +39,7 @@ sim_debug = false
 mus_vol = 0
 amb_vol = 0
 b_discard_settings_shown = false
+
 ----------------------------------------------------------------------
 function printf(fmt,...)
 	if (dev_debug) then
@@ -592,6 +593,10 @@ function start_game_callback()
 	-- Tестирование оптимизации
 	--local test_object = test_object.test_object_class()
 	--test_object:test()
+	-- --------- KCS - new commands for check and increase stack size
+	coroutine.cstacksize(73728) -- old default found trough debug was "36864"
+	-- alun_utils.printf("CStack size is %s",coroutine.cstacksize()) -- copy this command end execute in advanced settings trough debug menu, open console to see actual value
+	-- ---------
 end
 
 --' Lсталость
