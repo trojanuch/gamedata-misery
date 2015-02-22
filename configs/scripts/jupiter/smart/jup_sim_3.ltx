@@ -1,4 +1,5 @@
-[smart_terrain]
+[smart_terrain];jup_sim_3
+respawn_only_level = true
 squad_id = 41
 max_population = 1
 respawn_params = respawn@jup_sim_3
@@ -8,4 +9,4 @@ spawn_flesh
 
 [spawn_flesh]
 spawn_squads = simulation_flesh, simulation_boar
-spawn_num = {+jup_b6_task_done =actor_on_level(jupiter)} 1, 0
+spawn_num = {=actor_on_level(jupiter) +jup_b6_task_done} 1, 0

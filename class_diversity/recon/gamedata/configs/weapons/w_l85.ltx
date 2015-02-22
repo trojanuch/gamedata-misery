@@ -188,7 +188,7 @@ snd_holster             = weapons\generic\rifle_holster
 snd_shoot		= weapons\l85\l85_shot
 snd_shoot1		= weapons\l85\l85_shot
 snd_empty               = weapons\generic\rifle_modern_empty, 0.5
-snd_reload		= weapons\l85\l85_reload
+snd_reload				= weapons\Auto\l85\l85_reload
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade	= weapons\l85_grenload
 snd_switch		= weapons\groza_switch, 1.0, 0.5
@@ -212,69 +212,70 @@ zoom_hide_crosshair		= true
 attach_place_idx			= 0
 item_visual					= dynamics\weapons\wpn_l85\wpn_l85_hud.ogf
 
-hands_position				= -0.076000,-0.167000,0.237499
-hands_orientation			= -2.449999,2.899998,-3.149999
-hands_position_16x9				= -0.080000,-0.176500,0.244999
-hands_orientation_16x9			= -3.099998,3.949998,-4.449999
+hands_position				= 0.09,-0.05,0.2
+hands_orientation			= 0,0,0
+hands_position_16x9			= 0.09,-0.05,0.2
+hands_orientation_16x9			= 0,0,0
 
-item_position				= 0.002926,0.000089,0.001182
-item_orientation			= 1.598515,-1.348796,363.621826
+item_position				= 0,0,0
+item_orientation			= 0,0,0
 
-shell_point					= 0.02,0.06,-0.119
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone					= wpn_body
+shell_point		= 0,0,0
+shell_dir               = 0,0,0
+shell_bone		= eject
 
-fire_point		= 0,0.054,0.469
-fire_bone      	      = wpn_body
-fire_point2					= 0.0,-0.029,0.525
-fire_bone2					= wpn_body
-
-anm_show             	= l85_draw
-anm_hide             	= l85_holster
-anm_idle             	= l85_idle
-anm_idle_sprint         = svu_idle_sprint_2
-anm_idle_moving 	= l85_idle_moving
-anm_shots               = l85_shoot
-anm_reload              = l85_reload
-anm_idle_aim           	= l85_idle_aim
-
-anm_switch              = l85_switch_off
-anm_switch_g            = l85_switch_on
-anm_bore						= l85_idle_bore
-
-anm_hide_w_gl           = l85_holster_w_gl
-anm_show_w_gl           = l85_draw_w_gl
-anm_idle_w_gl           = l85_idle_w_gl
-anm_shots_w_gl          = l85_shoot_w_gl
-anm_reload_w_gl         = l85_reload_w_gl
-anm_idle_w_gl_aim       = l85_idle_w_gl_aim
-anm_idle_sprint_w_gl		= svu_idle_sprint_2
-anm_idle_moving_w_gl		= l85_idle_moving_w_gl
-anm_bore_w_gl				= l85_idle_bore_w_gl
-
-anm_show_g         		= l85_draw_grenade
-anm_hide_g       		  	= l85_holster_grenade
-anm_idle_g         		= l85_idle_grenade
-anm_reload_g       		= l85_reload_grenade
-anm_idle_g_aim     		= l85_idle_grenade
-anm_shots_g        		= l85_shoot_grenade
-anm_idle_sprint_g			= svu_idle_sprint_2
-anm_idle_moving_g			= l85_idle_moving_grenade
-anm_bore_g					= l85_idle_bore_grenade
+fire_point		= 0,0,0
+fire_bone      	      = muzzle
+fire_point2					= 0,0,0
+fire_bone2					= grenade
 
 
-aim_hud_offset_pos		= -0.102000,0.019500,-0.148000
-aim_hud_offset_rot		= 0.010000,0.002500,-0.010000
+anm_show             	= l86_draw
+anm_hide             	= l86_holster
+anm_idle             	= l86_idle
+anm_idle_sprint         = l86_idle_sprint
+anm_idle_moving 	= l86_idle_moving
+anm_shots               = l86_shoot, l85_shoot_w
+anm_reload              = l86_reload, l85_reload_w
+anm_idle_aim           	= l86_idle_aim
 
-aim_hud_offset_pos_16x9		= -0.092500,0.019000,-0.126500
-aim_hud_offset_rot_16x9		= 0.015000,0.010000,-0.067500
+anm_switch              = l86_switch, l85_idle_gl
+anm_switch_g            = l86_switch, l85_idle_gl
+anm_bore		= l86_idle_bore
+
+anm_hide_w_gl           = l86_holster_w_gl, l85_idle_gl
+anm_show_w_gl           = l86_draw_w_gl, l85_idle_gl
+anm_idle_w_gl           = l86_idle_w_gl, l85_idle_gl
+anm_shots_w_gl          = l86_shoot_w_gl, l85_shoot_gl
+anm_reload_w_gl         = l86_reload_w_gl, l85_reload_gl
+anm_idle_w_gl_aim       = l86_idle_aim_w_gl, l85_idle_gl
+anm_idle_sprint_w_gl		= l86_idle_sprint_w_gl, l85_idle_gl
+anm_idle_moving_w_gl		= l86_idle_moving_w_gl, l85_idle_gl
+anm_bore_w_gl			= l86_idle_bore_w_gl, l85_idle_gl
+
+anm_show_g         		= l86_draw_w_gl, l85_idle_gl
+anm_hide_g       		  = l86_holster_w_gl, l85_idle_gl
+anm_idle_g         		= l86_idle_w_gl, l85_idle_gl
+anm_reload_g       		= l86_reload_grenade
+anm_idle_g_aim     		= l86_idle_aim_w_gl, l85_idle_gl
+anm_shots_g        		= l86_shoot_grenade, l85_idle_gl
+anm_idle_sprint_g		= l86_idle_sprint_w_gl, l85_idle_gl
+anm_idle_moving_g		= l86_idle_moving_w_gl, l85_idle_gl
+anm_bore_g			= l86_idle_bore_w_gl, l85_idle_gl
 
 
-gl_hud_offset_pos			= 0,0,0;-0.053000,-0.059000,0.000000
-gl_hud_offset_rot			= 0,0,0;-0.145000,0.000000,0.000000
+aim_hud_offset_pos		= -0.09,0.05,-0.2
+aim_hud_offset_rot		= 0,0,0
 
-gl_hud_offset_pos_16x9			= 0,0,0;-0.053000,-0.059000,0.000000
-gl_hud_offset_rot_16x9			= 0,0,0;-0.145000,0.000000,0.000000
+aim_hud_offset_pos_16x9		= -0.09,0.05,-0.2
+aim_hud_offset_rot_16x9		= 0,0,0
+
+
+gl_hud_offset_pos = 0.018000,0.077000,0.105000
+gl_hud_offset_rot = -0.062000,-0.074000,0.000000
+
+gl_hud_offset_pos_16x9 = 0.018000,0.077000,0.105000
+gl_hud_offset_rot_16x9 = -0.062000,-0.074000,0.000000
 
 lean_hud_offset_pos		= 0,0,0
 lean_hud_offset_rot		= 0,0,0
@@ -332,8 +333,6 @@ inv_grid_y           	= 65
 
 visual                  = dynamics\weapons\wpn_l85\wpn_l8a.ogf
 
-snd_reload		= weapons\l85\l85_reload
-
 scope_texture				= wpn_crosshair_susat
 
 [wpn_l85_custom_hud]:wpn_l85_hud
@@ -376,8 +375,6 @@ inv_grid_y           	= 71
 
 visual                  = dynamics\weapons\wpn_l85\wpn_l8b.ogf
 
-snd_reload		= weapons\l85\l85_reload
-
 scope_texture				= wpn_crosshair_susat
 
 [wpn_l85_camo_hud]:wpn_l85_hud
@@ -419,8 +416,6 @@ inv_grid_x           	= 15
 inv_grid_y           	= 67
 
 visual                  = dynamics\weapons\wpn_l85\wpn_l8c.ogf
-
-snd_reload		= weapons\l85\l85_reload
 
 scope_texture				= wpn_crosshair_susat_moist
 

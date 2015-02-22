@@ -1,4 +1,5 @@
-[smart_terrain]
+[smart_terrain];jup_sim_9
+respawn_only_level = true
 squad_id = 47
 max_population = 1
 respawn_only_smart = true
@@ -24,7 +25,7 @@ spawn_stalker@master_hostile
 
 [spawn_mutants]
 spawn_squads = simulation_pseudodog, simulation_dog, simulation_dog, simulation_cat_normal, simulation_flesh, simulation_flesh, simulation_flesh, simulation_boar, simulation_boar
-spawn_num = {+jup_b6_task_done =actor_on_level(jupiter)} 1, 0
+spawn_num = {=actor_on_level(jupiter) +jup_b6_task_done} 1, 0
 
 ;;; unused
 

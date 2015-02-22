@@ -157,16 +157,21 @@ function numpad:OnButton_OK_clicked()
 	self.owner:OnNumberReceive(text)
 end
 
-function numpad:OnKeyboard(dik, keyboard_action)  --virtual function
+function numpad:OnKeyboard(dik, keyboard_action)  --virtual function + Plaargath keyboard convenience addition
+	local bind = dik_to_bind(dik)
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
- local bind = dik_to_bind(dik)
+	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
 
- if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
-  if dik == DIK_keys.DIK_ESCAPE then
-   self:HideDialog()
-  elseif (bind == key_bindings.kUSE) then
-   self:HideDialog()
-  end
+		if (dik == DIK_keys.DIK_RETURN) then
+		elseif (dik == DIK_keys.DIK_ESCAPE) then
+			self:HideDialog()
+		elseif (bind == key_bindings.kUSE) then
+			self:HideDialog()
+		elseif (bind == key_bindings.kJUMP) then
+			self:HideDialog()
+		elseif (bind == key_bindings.kDROP) then
+			self:HideDialog()
+		end
 
 		if dik == DIK_keys.DIK_0 or dik == DIK_keys.DIK_NUMPAD0 then
 			self:AddNumber(0)

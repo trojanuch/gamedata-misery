@@ -1007,7 +1007,7 @@
 		<text>UMP45</text>
 	</string>
 	<string id="st_wpn_ump45_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Providing greater stopping power than the MP5, the UMP45 also produces more recoil. This makes controlling full automatic fire more difficult. The UMP45's cyclic rate of fire was lowered significantly to combat this problem.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 11.43x23 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]Providing greater stopping power than the MP5, the UMP45 also produces more recoil. This makes controlling full automatic fire more difficult. The UMP45's cyclic rate of fire was lowered significantly to combat this problem.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] ACOG series scopes\n%c[0,93,0,116] • %c[0,140,140,140] 11.43x23 compatible silencer</text>
 	</string>
 	<string id="st_wpn_aps">
 		<text>Stechkin APS</text>
@@ -1073,7 +1073,7 @@
 		<text>Karabiner 98 Kurz</text>
 	</string>
 	<string id="st_wpn_k98_descr">
-		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]During World War II, certain Karabiner 98k rifles were selected for their exceptional accuracy and fitted with the ZF39 telescopic sight. These rifles were used by Nazi Germany as sniper rifles. In skilled hands, they had an effective range of up to 1000 meters.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] ZF series scopes\n%c[0,93,0,116] • %c[0,140,140,140] 7.62x54 compatible silencer</text>
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]During World War II, certain Karabiner 98k rifles were selected for their exceptional accuracy and fitted with the ZF39 telescopic sight. These rifles were used by Nazi Germany as sniper rifles. In skilled hands, they had an effective range of up to 1000 meters.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] ZF series scopes</text>
 	</string>
 	<string id="st_wpn_g36">
 		<text>G36K</text>
@@ -1456,6 +1456,9 @@
 	<string id="st_wpn_ak74_worn_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A more accurate and reliable rifle than the AKM, the AK-74 is still used by the majority of countries of the former USSR. The AKS-74 is equipped with a side-folding metal shoulder stock and is designed primarily for use with air assault infantry.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes (after upgrade)\n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
 	</string>
+	<string id="st_wpn_ak74_rusty_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A more accurate and reliable rifle than the AKM, the AK-74 is still used by the majority of countries of the former USSR. The AKS-74 is equipped with a side-folding metal shoulder stock and is designed primarily for use with air assault infantry.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher\n%c[0,204,0,51] • %c[0,204,0,51] mounting PSO scopes not possible\n%c[0,204,0,51] • %c[0,204,0,51] mounting silencer not possible</text>
+	</string>
 	<string id="st_wpn_ak74u_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,51,255,102]high\n \n%c[0,170,170,170]The AKS-74U was intended for use mainly with Spetsnaz units, airborne infantry, rear-echelon support units and armored vehicle crews, which required compact but relatively powerful individual automatic weapon. The AKS-74U is significantly more maneuverable in tight quarters than the AKS-74, however, a significant decline in muzzle velocity resulted in a decrease in effective range.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.45x39 compatible silencer</text>
 	</string>
@@ -1602,5 +1605,11 @@
 	</string>
 	<string id="st_wpn_aug_descr">
 		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]Steyr AUG A1 in standard rifle configuration (military green colour). The AUG is an Austrian bullpup 5.56mm assault rifle, designed in the 1960s by Steyr Mannlicher GmbH & Co KG (formerly Steyr-Daimler-Puch). The AUG (Armee-Universal-Gewehr—"universal army rifle") was adopted by the Austrian Army as the StG 77 (Sturmgewehr 77) in 1978, where it replaced the 7.62mm StG 58 automatic rifle (a licence-built FN FAL). In production since 1978, it is the standard small arm of the Austrian Bundesheer and various national police units. The rifle and its variants have also been adopted by the armed forces of Argentina, Australia, Malaysia, New Zealand, Bolivia, Ecuador, Ireland, Luxembourg, Saudi Arabia, Tunisia, Pakistan, and the U.S. Immigration and Customs Enforcement agency.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 5.56x45 compatible silencer\n \n%c[0,93,0,116] • %c[0,140,140,140] Permanent x2.5 Scope.</text>
+	</string>
+	<string id="st_wpn_svd_fluffy">
+		<text>Dragunov SVD Ghillie</text>
+	</string>
+	<string id="st_wpn_svd_fluffy_descr">
+		<text>\n \n%c[0,153,255,255] • %c[0,140,140,140] Class proficiency: %c[0,204,0,51]low\n \n%c[0,170,170,170]A modified version of the well-known Dragunov sniper rifle. Muzzle and barrel were manufactured with the use of advanced machining processes resulting in improved accuracy and increased effective range of the gun (exceeding 800 meters). This design is intended for specialized sniper teams and for this purpose features a ghillie camouflage allowing the user to blend in with the environment and sneak up behind unsuspecting targets. Best used together with the ghillie suit in order to achieve maximum concealing effectiveness.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] POSP 4x24 M scope (permanent)</text>
 	</string>
 </string_table>

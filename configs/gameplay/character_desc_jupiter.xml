@@ -2978,7 +2978,7 @@
     <rank>100</rank>
     <reputation>0</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg4c</visual>
+    <visual>actors\stalker_zombied\stalker_zombied4d</visual>
     <supplies>
       [spawn] \n
 	  jup_b46_duty_founder_pda \n
@@ -3002,7 +3002,7 @@
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="100" max="3000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <visual>actors\stalker_zombied\stalker_zombied2f_face1</visual>
 	<supplies>
       [spawn] \n
 #include "gameplay\character_items_4_duty.xml"
@@ -3022,7 +3022,7 @@
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="100" max="3000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg2a</visual>
+    <visual>actors\stalker_zombied\stalker_zombied2e_face2</visual>
 	<supplies>
       [spawn] \n
 #include "gameplay\character_items_4_duty.xml"
@@ -3042,7 +3042,7 @@
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="100" max="3000" infinitive="0"/>
-    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <visual>actors\stalker_zombied\stalker_zombied4d</visual>
 	<supplies>
       [spawn] \n
 #include "gameplay\character_items_4_duty.xml"
@@ -3062,7 +3062,7 @@
     <rank>50</rank>
     <reputation>0</reputation>
 	<money min="100" max="3000" infinitive="0"/>
-    <visual>actors\stalker_soldier\stalker_soldier_4</visual>
+    <visual>actors\stalker_zombied\stalker_zombied2e</visual>
   </specific_character>
 
 		<!-- Лидер "Свободы" Локи-->

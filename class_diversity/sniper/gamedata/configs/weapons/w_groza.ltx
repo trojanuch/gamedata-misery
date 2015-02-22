@@ -189,7 +189,7 @@ snd_shoot		= weapons\groza\groza_shot
 snd_shoot1		= weapons\groza\groza_shot
 snd_shoot2		= weapons\groza\groza_shot
 snd_empty               = weapons\generic\rifle_modern_empty, 0.6
-snd_reload              = weapons\groza_reload, 0.7
+snd_reload              = weapons\Auto\groza\groza_reload
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade      = weapons\gen_grenload, 1.0, 1.2
 snd_switch              = weapons\groza_switch, 1.0, 0.5
@@ -213,79 +213,77 @@ zoom_hide_crosshair	= true
 attach_place_idx	= 0
 item_visual					= dynamics\weapons\wpn_groza\wpn_groza_hud.ogf
 
-hands_position				= -0.057500,-0.182500,0.254500
-hands_orientation			= -0.650000,0.599990,1.749998
+hands_position				= 0.09,-0.02,0.2
+hands_orientation			= 0,0,0
 
 
-hands_position_16x9				= -0.033000,-0.188499,0.209999
-hands_orientation_16x9			= 0.400000,3.199998,0.299999
+hands_position_16x9			= 0.09,-0.02,0.2
+hands_orientation_16x9			= 0,0,0
 
-;item_position				= -0.004407,0.006848,-0.002564
-;item_orientation			= -15.517174,-2.455023,362.066071
+item_position				= 0,0,0
+item_orientation			= 0,0,0
 
-item_position				= -0.006247,0.007542,-0.008760
-item_orientation			= -15.517174,-2.455023,362.066071
+shell_point                = 0,0,0
+shell_dir               = 0,0,0
+shell_bone                = eject
 
-
-shell_point					= 0.025,0.063,-0.109
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone					= wpn_body
-
-
-fire_point		= 0,0.047,0.349
-fire_bone      	      = wpn_body
-fire_point2					= 0.0,0.003,0.321
-fire_bone2					= wpn_body
-
-anm_show             	= groza_draw
-anm_hide             	= groza_holster
-anm_idle             	= groza_idle
-anm_idle_sprint         = groza_idle_sprint
-anm_idle_moving 			= groza_idle_moving
-anm_shots               = groza_shoot
-anm_reload              = groza_reload
-anm_idle_aim           	= groza_idle_aim
-
-anm_switch              = groza_switch_off
-anm_switch_g            = groza_switch_on
-anm_bore						= groza_idle_bore
-
-anm_show_w_gl					= groza_draw
-anm_hide_w_gl					= groza_holster
-anm_idle_w_gl					= groza_idle
-anm_shots_w_gl					= groza_shoot
-anm_reload_w_gl					= groza_reload
-anm_idle_w_gl_aim				= groza_idle_aim
-anm_idle_sprint_w_gl			= groza_idle_sprint
-anm_idle_moving_w_gl			= groza_idle_moving
-anm_bore_w_gl					= groza_idle_bore
-
-anm_show_g						= groza_draw_grenade
-anm_hide_g						= groza_holster_grenade
-anm_idle_g						= groza_idle_grenade
-anm_reload_g					= groza_reload_grenade
-anm_idle_g_aim					= groza_idle_aim_grenade
-anm_shots_g						= groza_shoot_grenade
-anm_idle_sprint_g				= groza_idle_sprint_grenade
-anm_idle_moving_g				= groza_idle_moving_grenade
-anm_bore_g						= groza_idle_grenade
+fire_point			= 0,0,0
+fire_bone                            = muzzle
+fire_point2			= 0,0,0
+fire_bone2                = grenade
 
 
-aim_hud_offset_pos				= -0.095000,-0.026400,-0.014000
-aim_hud_offset_rot				= -0.020000, 0.002500, 0.007500
-
-gl_hud_offset_pos				= -0.093100,-0.054900, 0.000000
-gl_hud_offset_rot				= -0.050000, 0.000400, 0.010000
-
-aim_hud_offset_pos_16x9			= -0.118700,-0.010500, 0.126500
-aim_hud_offset_rot_16x9			=  0.025000, 0.021000,-0.022500
-
-gl_hud_offset_pos_16x9			= -0.117300,-0.088750, 0.000000
-gl_hud_offset_rot_16x9			= -0.100000, 0.017000,-0.015000
 
 
-lean_hud_offset_pos	= 0,0,0
-lean_hud_offset_rot	= 0,0,0
+anm_show             		= groz2_draw
+anm_hide             		= groz2_holster
+anm_idle             		= groz2_idle
+anm_idle_sprint         	= groz2_idle_sprint
+anm_idle_moving 		= groz2_idle_moving
+anm_shots               	= groz2_shoot, groza_shoot_w
+anm_reload              	= groz2_reload, groza_reload_W
+anm_idle_aim           		= groz2_idle_aim
+
+anm_switch              	= groz2_switch_off
+anm_switch_g            	= groz2_switch_on
+anm_bore			= groz2_idle_bore
+
+anm_show_w_gl           	= groz2_draw
+anm_hide_w_gl           	= groz2_holster
+anm_idle_w_gl           	= groz2_idle
+anm_shots_w_gl          	= groz2_shoot, groza_shoot_w
+anm_reload_w_gl         	= groz2_reload, groza_reload_w
+anm_idle_w_gl_aim       	= groz2_idle_aim
+anm_idle_sprint_w_gl		= groz2_idle_sprint
+anm_idle_moving_w_gl		= groz2_idle_moving
+anm_bore_w_gl			= groz2_idle_bore
+
+anm_show_g         		= groz2_draw
+anm_hide_g         		= groz2_holster
+anm_idle_g          		= groz2_idle
+anm_reload_g       		= groz2_reload_grenade
+anm_idle_g_aim      		= groz2_idle_aim
+anm_shots_g         		= groz2_shoot_grenade
+anm_idle_sprint_g		= groz2_idle_sprint
+anm_idle_moving_g		= groz2_idle_moving
+anm_bore_g			= groz2_idle
+
+
+
+aim_hud_offset_pos				= -0.0898,-0.001,-0.1
+aim_hud_offset_rot				= -0.03,0,0
+
+aim_hud_offset_pos_16x9				= -0.0898,-0.001,-0.1
+aim_hud_offset_rot_16x9				= -0.03,0,0
+
+gl_hud_offset_pos       	= 0,0,0
+gl_hud_offset_rot       	= 0,0,0
+
+gl_hud_offset_pos_16x9    	= 0,0,0
+gl_hud_offset_rot_16x9    	= 0,0,0
+
+lean_hud_offset_pos        = 0,0,0
+lean_hud_offset_rot        = 0,0,0
 
 [scope_groza]
 scope_name 					= wpn_addon_scope
@@ -374,100 +372,10 @@ condition_queue_shot_dec	= 0.0009
 fire_dispersion_base    = 0.3
 
 hud                     = wpn_groz1_hud
-visual                  = dynamics\weapons\wpn_groz1\wpn_groz1.ogf
-hands_position				= -0.057500,-0.182500,0.254500
-hands_orientation			= -0.650000,0.599990,1.749998
 
-hands_position				= -0.057500,-0.182500,0.254500
-hands_orientation			= -0.650000,0.599990,1.749998
+[wpn_groz1_hud]:wpn_groza_hud
 
-hands_position_16x9				= -0.033000,-0.188499,0.209999
-hands_orientation_16x9			= 0.400000,3.199998,0.299999
-
-;item_position				= -0.004407,0.006848,-0.002564
-;item_orientation			= -15.517174,-2.455023,362.066071
-
-item_position				= -0.006247,0.007542,-0.008760
-item_orientation			= -15.517174,-2.455023,362.066071
-
-[wpn_groz1_hud]:hud_base
-zoom_hide_crosshair	= true
-attach_place_idx	= 0
 item_visual					= dynamics\weapons\wpn_groz1\wpn_groz1_hud.ogf
-
-hands_position				= -0.057500,-0.182500,0.254500
-hands_orientation			= -0.650000,0.599990,1.749998
-
-
-hands_position_16x9				= -0.033000,-0.188499,0.209999
-hands_orientation_16x9			= 0.400000,3.199998,0.299999
-
-;item_position				= -0.004407,0.006848,-0.002564
-;item_orientation			= -15.517174,-2.455023,362.066071
-
-item_position				= -0.006247,0.007542,-0.008760
-item_orientation			= -15.517174,-2.455023,362.066071
-
-
-shell_point					= 0.025,0.063,-0.109
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone					= wpn_body
-
-
-fire_point		= 0,0.047,0.349
-fire_bone      	      = wpn_body
-fire_point2					= 0.0,0.003,0.321
-fire_bone2					= wpn_body
-
-anm_show             	= groza_draw
-anm_hide             	= groza_holster
-anm_idle             	= groza_idle
-anm_idle_sprint         = groza_idle_sprint
-anm_idle_moving 			= groza_idle_moving
-anm_shots               = groza_shoot
-anm_reload              = groza_reload
-anm_idle_aim           	= groza_idle_aim
-
-anm_switch              = groza_switch_off
-anm_switch_g            = groza_switch_on
-anm_bore						= groza_idle_bore
-
-anm_show_w_gl           = groza_draw
-anm_hide_w_gl           = groza_holster
-anm_idle_w_gl           = groza_idle
-anm_shots_w_gl          = groza_shoot
-anm_reload_w_gl         = groza_reload
-anm_idle_w_gl_aim       = groza_idle_aim
-anm_idle_sprint_w_gl		= groza_idle_sprint
-anm_idle_moving_w_gl		= groza_idle_moving
-anm_bore_w_gl				= groza_idle_bore
-
-anm_show_g         		= groza_draw_grenade
-anm_hide_g         		= groza_holster_grenade
-anm_idle_g          		= groza_idle_grenade
-anm_reload_g       		= groza_reload_grenade
-anm_idle_g_aim      		= groza_idle_aim_grenade
-anm_shots_g         		= groza_shoot_grenade
-anm_idle_sprint_g			= groza_idle_sprint_grenade
-anm_idle_moving_g			= groza_idle_moving_grenade
-anm_bore_g				= groza_idle_grenade
-
-aim_hud_offset_pos				= -0.095000,-0.026400,-0.014000
-aim_hud_offset_rot				= -0.020000, 0.002500, 0.007500
-
-gl_hud_offset_pos				= -0.093100,-0.054900, 0.000000
-gl_hud_offset_rot				= -0.050000, 0.000400, 0.010000
-
-aim_hud_offset_pos_16x9			= -0.118700,-0.010500, 0.126500
-aim_hud_offset_rot_16x9			=  0.025000, 0.021000,-0.022500
-
-gl_hud_offset_pos_16x9			= -0.117300,-0.088750, 0.000000
-gl_hud_offset_rot_16x9			= -0.100000, 0.017000,-0.015000
-
-
-lean_hud_offset_pos	= 0,0,0
-lean_hud_offset_rot	= 0,0,0
-
 
 [wpn_groza_specops]:wpn_groza_nimble
 

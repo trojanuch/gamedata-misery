@@ -99,7 +99,7 @@ position                 	= -0.024, -0.097, 0.
 orientation              	= 0, -4, 0      ;значение устанавливается в градусах
 
 shell_point				= 0.0, 0.180, 0.647
-shell_particles         = weapons\generic_shells_shotgun
+;shell_particles         = weapons\generic_shells_shotgun
 
 fire_point              = 0.0, 0.158, 0.647
 fire_point2				= 0.0, 0.158, 0.647
@@ -160,57 +160,65 @@ scope_zoom_factor       = 58.6 ; 	    	= 85
 ;звуки
 snd_draw			= weapons\generic\rifle_draw
 snd_holster			= weapons\generic\rifle_holster
-snd_shoot			= weapons\winchester1300\winchester1300_shot
+snd_shoot		= weapons\shotguns\win\win_shoot
+snd_shoot1		= weapons\shotguns\win\win_shoot1
 snd_empty			= weapons\generic\shotgun_empty
-snd_reload			= weapons\winchester1300\winchester1300_reload_end
-snd_shoot_duplet		= weapons\winchester1300\winchester1300_shot
-snd_open_weapon            	= weapons\draw_silent
-snd_add_cartridge		= weapons\w1300_load
-snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end ;spas12_reload_end
+snd_reload			= weapons\spas12_reload_end
+snd_shoot_duplet		= weapons\n_spas12_shot
+snd_open_weapon         = weapons\draw_silent
+snd_add_cartridge	= weapons\shotguns\win\win_reload
+snd_add_cartridge1	= weapons\shotguns\win\win_reload1
+snd_close_weapon        = weapons\shotguns\win\win_pump
 
 [wpn_winchester1300_hud]:hud_base
 zoom_hide_crosshair		= true
 
-shell_point			= 0.02,0.072,0.228
-shell_dir                     	= 0.0, 1.0, 0.0
-shell_bone			= wpn_body
-
-
-fire_point			= 0, 0.075, 0.937
-fire_bone			= wpn_body
-
-
 attach_place_idx		= 0
 item_visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester1300_hud.ogf
+hands_position				= 0.08,-0.06,0.2
+hands_orientation			= 0,0,0
 
-hands_position				= -0.119500,-0.120500,0.185001
-hands_orientation			= 1.050001,1.700001,3.449997
+hands_position_16x9			= 0.08,-0.06,0.2
+hands_orientation_16x9			= 0,0,0
 
-hands_position_16x9				= -0.131500,-0.138500, 0.187499
-hands_orientation_16x9			=  1.699999, 2.999999, 3.449998
+item_position				= 0,0,0
+item_orientation			= 0,0,0
 
-item_position					=  0.003519, 0.010573,-0.003368
-item_orientation				=  0.045015, 1.047468, 0.056850
+shell_point               = 0,0,0
+shell_dir                 = 0.0, 1.0, 0.0
+shell_bone                = eject
 
-aim_hud_offset_pos				= -0.110500, 0.095000, 0.050000
-aim_hud_offset_rot				=  0.040000, 0.012300,-0.020500
+fire_point		  = 0,0,0
+fire_bone                 = muzzle
 
-aim_hud_offset_pos_16x9			= -0.100400, 0.116700, 0.050000
-aim_hud_offset_rot_16x9			=  0.062500, 0.023500,-0.017500
+aim_hud_offset_pos		= -0.08,0.06,-0
+aim_hud_offset_rot		= 0,0,0
 
-anm_show			= winchester1300_draw
-anm_hide			= winchester1300_holster
-anm_idle			= winchester1300_idle
-anm_idle_aim			= winchester1300_idle_aim
-anm_idle_moving			= winchester1300_idle_moving
-anm_idle_sprint			= winchester1300_idle_sprint
-anm_bore			= winchester1300_idle_bore
+aim_hud_offset_pos_16x9		= -0.08,0.06,-0
+aim_hud_offset_rot_16x9		= 0,0,0
 
-anm_shots			= winchester1300_shoot
+gl_hud_offset_pos               = 0,0,0
+gl_hud_offset_rot               = 0,0,0
 
-anm_open			= winchester1300_reload_start
-anm_add_cartridge		= winchester1300_reload
-anm_close			= winchester1300_reload_end
+gl_hud_offset_pos_16x9          = 0,0,0
+gl_hud_offset_rot_16x9          = 0,0,0
+
+lean_hud_offset_pos             = 0,0,0
+lean_hud_offset_rot             = 0,0,0
+
+anm_show			= winchester1303_draw
+anm_hide			= winchester1303_holster
+anm_idle			= winchester1303_idle
+anm_idle_aim			= winchester1303_idle_aim
+anm_idle_moving			= winchester1303_idle_moving
+anm_idle_sprint			= winchester1303_idle_sprint
+anm_bore			= winchester1303_idle_bore
+
+anm_shots			= winchester1303_shoot, winchester1300_shoot_w
+
+anm_open			= winchester1303_reload_start
+anm_add_cartridge		= winchester1303_reload, winchester1300_reload_w
+anm_close			= winchester1303_reload_end
 
 ;-----------------------------------------------------------------------------
 ; "Хищник" Зверобоя
@@ -251,48 +259,9 @@ condition_queue_shot_dec	= 0.0007
 
 visual                   	= dynamics\weapons\wpn_winchester1301\wpn_winchester1301.ogf
 
-[wpn_winchester1301_hud]:hud_base
+[wpn_winchester1301_hud]:wpn_winchester1300_hud
 
-shell_point			= 0.02,0.072,0.228
-shell_dir                     	= 0.0, 1.0, 0.0
-shell_bone			= wpn_body
-
-
-fire_point		= 0, 0.075, 0.937
-fire_bone			= wpn_body
-
-
-attach_place_idx		= 0
 item_visual                   	= dynamics\weapons\wpn_winchester1301\wpn_winchester1301_hud.ogf
-
-hands_position				= -0.119500,-0.120500,0.185001
-hands_orientation			= 1.050001,1.700001,3.449997
-
-hands_position_16x9				= -0.131500,-0.138500, 0.187499
-hands_orientation_16x9			=  1.699999, 2.999999, 3.449998
-
-item_position					=  0.003519, 0.010573,-0.003368
-item_orientation				=  0.045015, 1.047468, 0.056850
-
-aim_hud_offset_pos				= -0.110500, 0.095000, 0.050000
-aim_hud_offset_rot				=  0.040000, 0.012300,-0.020500
-
-aim_hud_offset_pos_16x9			= -0.100400, 0.116700, 0.050000
-aim_hud_offset_rot_16x9			=  0.062500, 0.023500,-0.017500
-
-anm_show			= winchester1300_draw
-anm_hide			= winchester1300_holster
-anm_idle			= winchester1300_idle
-anm_idle_aim			= winchester1300_idle_aim
-anm_idle_moving			= winchester1300_idle_moving
-anm_idle_sprint			= winchester1300_idle_sprint
-anm_bore			= winchester1300_idle_bore
-
-anm_shots			= winchester1300_shoot
-
-anm_open			= winchester1300_reload_start
-anm_add_cartridge		= winchester1300_reload
-anm_close			= winchester1300_reload_end
 
 ;---------------------------
 ;AP Weapon Section for NPCs
@@ -343,11 +312,6 @@ inv_grid_y					= 54
 
 visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130a.ogf
 
-snd_reload			= weapons\winchester1300\winchester1300_reload_end
-snd_open_weapon            	= weapons\draw_silent
-snd_add_cartridge		= weapons\w1300_load
-snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end ;spas12_reload_end
-
 [wpn_winchester1300_camo_hud]:wpn_winchester1300_hud
 
 item_visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130a_hud.ogf
@@ -385,11 +349,6 @@ inv_grid_x					= 12
 inv_grid_y					= 53
 
 visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130b.ogf
-
-snd_reload			= weapons\winchester1300\winchester1300_reload_end
-snd_open_weapon            	= weapons\draw_silent
-snd_add_cartridge		= weapons\w1300_load
-snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end ;spas12_reload_end
 
 [wpn_winchester1300_alt_hud]:wpn_winchester1300_hud
 
@@ -429,11 +388,6 @@ inv_grid_y					= 54
 
 visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130c.ogf
 
-snd_reload			= weapons\winchester1300\winchester1300_reload_end
-snd_open_weapon            	= weapons\draw_silent
-snd_add_cartridge		= weapons\w1300_load
-snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end
-
 [wpn_winchester1300_worn_hud]:wpn_winchester1300_hud
 
 item_visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130c_hud.ogf
@@ -471,11 +425,6 @@ inv_grid_x					= 16
 inv_grid_y					= 53
 
 visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130d.ogf
-
-snd_reload			= weapons\winchester1300\winchester1300_reload_end
-snd_open_weapon            	= weapons\draw_silent
-snd_add_cartridge		= weapons\w1300_load
-snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end ;spas12_reload_end
 
 [wpn_winchester1300_rusty_hud]:wpn_winchester1300_hud
 

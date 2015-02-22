@@ -191,7 +191,7 @@ snd_draw                = weapons\generic\rifle_draw_02
 snd_holster             = weapons\generic\rifle_holster_02
 snd_shoot               = weapons\abakan\abakan_shot
 snd_empty               = weapons\generic\rifle_historic_empty, 0.9
-snd_reload              = weapons\generic\type1_reload, 0.7
+snd_reload              = weapons\Auto\Abakan\abakan_reload
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade      = weapons\gen_grenload
 snd_switch              = weapons\groza_switch
@@ -214,69 +214,73 @@ zoom_hide_crosshair				= true
 attach_place_idx				= 0
 item_visual						= dynamics\weapons\wpn_abakan\wpn_abakan_hud.ogf
 
-hands_position					= -0.073500,-0.146000,0.192000
-hands_orientation				= -2.799999,0.600000,3.099998
-
-hands_position_16x9				= -0.079500,-0.149500,0.131500
-hands_orientation_16x9			= -1.450001,2.199999,2.849998
-
-item_position					= 0.002869,0.003757,-0.006812
-item_orientation				= -16.124039,-3.597800,1.014648
-
-shell_point						= 0.019,0.073,0.234
-shell_dir						= 0.0, 1.0, 0.0
-shell_bone						= wpn_body
-
-fire_point						= 0,0.049,0.716
-fire_bone						= wpn_body
-fire_point2						= 0.0,-0.027,0.603
-fire_bone2						= wpn_body
-
-anm_show						= abakan_draw
-anm_hide						= abakan_holster
-anm_idle						= abakan_idle
-anm_idle_sprint					= vintorez_idle_sprint
-anm_idle_moving					= abakan_idle_moving
-anm_shots						= abakan_shoot
-anm_reload						= abakan_reload
-anm_idle_aim					= abakan_idle_aim
-
-anm_switch						= abakan_switch_off	;abakan_switch_off
-anm_switch_g					= abakan_switch_on	;abakan_switch_on
-anm_bore						= abakan_idle_bore
-
-anm_hide_w_gl					= abakan_holster_w_gl
-anm_show_w_gl					= abakan_draw_w_gl
-anm_idle_w_gl					= abakan_idle_w_gl
-anm_shots_w_gl					= abakan_shoot_w_gl
-anm_reload_w_gl					= abakan_reload_w_gl
-anm_idle_w_gl_aim				= abakan_idle_aim_w_gl
-anm_idle_sprint_w_gl			= abakan_idle_sprint_w_gl
-anm_idle_moving_w_gl			= abakan_idle_moving_w_gl
-anm_bore_w_gl					= abakan_idle_bore_w_gl
-
-anm_show_g						= abakan_draw_w_gl			;abakan_draw_grenade
-anm_hide_g						= abakan_holster_w_gl		;abakan_holster_grenade
-anm_idle_g						= abakan_idle_w_gl			;abakan_idle_grenade
-anm_reload_g					= abakan_reload_grenade
-anm_idle_g_aim					= abakan_idle_aim_w_gl		;abakan_idle_grenade
-anm_shots_g						= abakan_shoot_grenade
-anm_idle_sprint_g				= abakan_idle_sprint_w_gl	;abakan_idle_sprint_grenade
-anm_idle_moving_g				= abakan_idle_moving_w_gl	;abakan_idle_moving_grenade
-anm_bore_g						= abakan_idle_bore_w_gl		;abakan_idle_bore_grenade
+hands_position				= 0.09,-0.05,0.1
+hands_orientation			= 0,0,0
 
 
-aim_hud_offset_pos				= -0.083560, 0.039600,-0.066000
-aim_hud_offset_rot				= -0.005000,-0.045000, 0.002500
+hands_position_16x9			= 0.09,-0.05,0.1
+hands_orientation_16x9			= 0,0,0
 
-gl_hud_offset_pos				= -0.044590,0.007500,0.00000
-gl_hud_offset_rot				= -0.100000,-0.0550000,0.000000
+item_position				= 0,0,0
+item_orientation			= 0,0,0
 
-aim_hud_offset_pos_16x9			= -0.082800, 0.046200, 0.040000
-aim_hud_offset_rot_16x9			=  0.023000,-0.021800, 0.005000
+shell_point                = 0,0,0
+shell_dir               = 0,0,0
+shell_bone                = eject
 
-gl_hud_offset_pos_16x9			= -0.054500,-0.043280, 0.000000
-gl_hud_offset_rot_16x9			= -0.150000,-0.020000, 0.000000
+fire_point			= 0,0,0
+fire_bone                            = muzzle
+fire_point2			= 0,0,0
+fire_bone2                = grenade
+
+anm_show                = abaka2_draw
+anm_hide                = abaka2_holster
+anm_idle                = abaka2_idle
+anm_idle_sprint         = abaka2_idle_sprint
+anm_idle_moving         = abaka2_idle_moving
+anm_shots               = abaka2_shoot, abakan_shoot_w
+anm_reload              = abaka2_reload, abakan_reload_w
+anm_idle_aim            = abaka2_idle_aim
+
+anm_switch              = abaka2_switch, abakan_idle_w_g 
+anm_switch_g            = abaka2_switch, abakan_idle_w_g 
+anm_bore                = abaka2_idle_bore
+
+anm_hide_w_gl           = abaka2_holster_w_gl, abakan_idle_w_g
+anm_show_w_gl           = abaka2_draw_w_gl, abakan_idle_w_g
+anm_idle_w_gl           = abaka2_idle_w_gl,abakan_idle_w_g
+anm_shots_w_gl          = abaka2_shoot_w_gl, abakan_shoot_w_gl_w
+anm_reload_w_gl         = abaka2_reload_w_gl, abakan_reload_w_gl_w
+anm_idle_w_gl_aim       = abaka2_idle_aim_w_gl,abakan_idle_w_g
+anm_idle_sprint_w_gl    = abaka2_idle_sprint_w_gl, abakan_idle_w_g
+anm_idle_moving_w_gl    = abaka2_idle_moving_w_gl,abakan_idle_w_g
+anm_bore_w_gl           = abaka2_idle_w_gl,abakan_idle_w_g
+
+anm_show_g                         = abaka2_draw_w_gl, abakan_idle_w_g											;abakan_draw_grenade
+anm_hide_g                         = abaka2_holster_w_gl, abakan_idle_w_g										;abakan_holster_grenade
+anm_idle_g                         = abaka2_idle_w_gl, abakan_idle_w_g											;abakan_idle_grenade
+anm_reload_g                       = abaka2_reload_grenade, abakan_reload_g
+anm_idle_g_aim                     = abaka2_idle_aim_w_gl, abakan_idle_w_g									;abakan_idle_grenade
+anm_shots_g                        = abaka2_shoot_grenade
+anm_idle_sprint_g                  = abaka2_idle_sprint_w_gl, abakan_idle_w_g						;abakan_idle_sprint_grenade
+anm_idle_moving_g                  = abaka2_idle_moving_w_gl, abakan_idle_w_g						;abakan_idle_moving_grenade
+anm_bore_g                         = abaka2_idle_w_gl, abakan_idle_w_g           ;abakan_idle_bore_grenade
+
+
+aim_hud_offset_pos				= -0.09,0.05,-0
+aim_hud_offset_rot				= 0,0,0
+
+aim_hud_offset_pos_16x9				= -0.09,0.05,-0
+aim_hud_offset_rot_16x9				= 0,0,0
+
+gl_hud_offset_pos = -0.015000,0.076000,0.091000
+gl_hud_offset_rot = -0.035000,-0.047000,0.000000
+
+gl_hud_offset_pos_16x9 = -0.015000,0.076000,0.091000
+gl_hud_offset_rot_16x9 = -0.035000,-0.047000,0.000000
+
+lean_hud_offset_pos        = 0,0,0
+lean_hud_offset_rot        = 0,0,0
 
 [scope_abakan]
 scope_name 					= wpn_addon_scope
@@ -364,8 +368,6 @@ inv_grid_y           = 67
 
 visual                  = dynamics\weapons\wpn_abakan\wpn_abaka1.ogf
 
-snd_reload              = weapons\generic\type1_reload, 0.7
-
 [wpn_abakan_custom_hud]:wpn_abakan_hud
 
 item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka1_hud.ogf
@@ -404,8 +406,6 @@ inv_grid_y           = 2
 
 visual                  = dynamics\weapons\wpn_abakan\wpn_abaka2.ogf
 
-snd_reload              = weapons\generic\type1_reload, 0.7
-
 [wpn_abakan_alt_hud]:wpn_abakan_hud
 
 item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka2_hud.ogf
@@ -443,8 +443,6 @@ inv_grid_x           = 0
 inv_grid_y           = 73
 
 visual                  = dynamics\weapons\wpn_abakan\wpn_abaka3.ogf
-
-snd_reload              = weapons\generic\type1_reload, 0.7
 
 [wpn_abakan_camo_hud]:wpn_abakan_hud
 
@@ -485,8 +483,6 @@ inv_grid_x           = 0
 inv_grid_y           = 71
 
 visual                  = dynamics\weapons\wpn_abakan\wpn_abaka4.ogf
-
-snd_reload              = weapons\generic\type1_reload, 0.7
 
 [wpn_abakan_worn_hud]:wpn_abakan_hud
 
@@ -529,8 +525,6 @@ inv_grid_x           = 0
 inv_grid_y           = 69
 
 visual                  = dynamics\weapons\wpn_abakan\wpn_abaka5.ogf
-
-snd_reload              = weapons\generic\type1_reload, 0.7
 
 [wpn_abakan_rusty_hud]:wpn_abakan_hud
 

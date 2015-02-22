@@ -48,7 +48,7 @@ $spawn 			= "outfit\novice_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\novice_outfit
-actor_visual	= actors\stalker_neutral\stalker_neutral1d.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\black_cloak\stalker_hero_black_cloak_no_helmet.ogf
 player_hud_section	= actor_hud_01
 
 ef_equipment_type	= 3
@@ -148,7 +148,7 @@ $spawn 			= "outfit\novice_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\novice_outfit
-actor_visual	= actors\stalker_bandit\stalker_bandit4b.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\black_cloak\stalker_hero_black_cloak_no_helmet.ogf
 player_hud_section	= actor_hud_05
 
 ef_equipment_type	= 3
@@ -248,7 +248,7 @@ $spawn 			= "outfit\novice_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\novice_outfit
-actor_visual	= actors\stalker_bandit\stalker_bandit_8.ogf ; actors\stalker_neutral\stalker_neutral_2.ogf ; 
+actor_visual	= actors\stalker_hero\dynamic_helmets\black_cloak\stalker_hero_black_cloak_no_helmet.ogf
 player_hud_section	= actor_hud_02
 
 ef_equipment_type	= 3
@@ -348,7 +348,7 @@ $spawn 			= "outfit\stalker_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\stalker_outfit
-actor_visual	= actors\stalker_neutral\stalker_neutral_2.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\neutral_outfit\stalker_hero_stalker_no_helmet.ogf
 player_hud_section	= actor_hud_06
 
 ef_equipment_type	= 3
@@ -414,8 +414,8 @@ repair_part_bonus	 	= 0.30
 ; DAY PRESET: HIGH
 
 ; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
-detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
-aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+detect_range_factor = 0.7 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.1			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
 help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
 help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
 xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
@@ -506,7 +506,7 @@ $spawn 			= "outfit\svoboda_light_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\svoboda_light_outfit
-actor_visual	= actors\stalker_freedom\stalker_freedom_1.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\freedom_outfit\stalker_hero_freedom_no_helmet.ogf
 player_hud_section	= actor_hud_03
 
 ef_equipment_type	= 6
@@ -571,8 +571,8 @@ repair_part_bonus	 	= 0.32
 ; DAY PRESET: HIGH
 
 ; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
-detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
-aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+detect_range_factor = 0.7 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.1			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
 help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
 help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
 xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
@@ -608,7 +608,7 @@ $spawn 			= "outfit\dolg_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\dolg_outfit
-actor_visual	= actors\stalker_dolg\stalker_dolg_2.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\dolg_outfit\stalker_hero_dolg_no_helmet.ogf
 player_hud_section	= actor_hud_02
 
 ef_equipment_type	= 3
@@ -976,7 +976,7 @@ $spawn 			= "outfit\svoboda_heavy_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\svoboda_heavy_outfit
-actor_visual	= actors\stalker_freedom\stalker_freedom_3.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\freedom_heavy_outfit\stalker_hero_svoboda_heavy_no_helmet.ogf
 player_hud_section	= actor_hud_03
 
 ef_equipment_type	= 3
@@ -1040,8 +1040,8 @@ repair_part_bonus	 	= 0.42
 ; DAY PRESET: HIGH
 
 ; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus; max range factor 1.2 larger number have little effect
-detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
-aim_time_factor = 1.0			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
+detect_range_factor = 0.7 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 0.3 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
+aim_time_factor = 1.1			; Multiplier for time it take for NPC's to aim while wearing a Ghillie ; KCS - new cammo variable for outfit - Ghillie default = 3.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
 help_distance_factor = 1.0		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 0.6 ; sniper class bonus = 0.2 ; recon class bonus = 0.1
 help_timer_factor = 1.0			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help ; KCS - new cammo variable for outfit - Ghillie default = 6.0 ; sniper class bonus = 0.1 ; recon class bonus = 0.2
 xr_combat_ignore = light_inertion ; section in "xr_combat_ignore.ltx" that is used for this outfit; NOT WORKING - left in file for future usage
@@ -1077,7 +1077,7 @@ $spawn 			= "outfit\specops_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\specops_outfit
-actor_visual	= actors\stalker_soldier\stalker_soldier_3.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\specops_outfit\stalker_hero_specops_no_helmet.ogf
 player_hud_section	= actor_hud_06
 
 ef_equipment_type	= 3
@@ -1233,7 +1233,7 @@ $spawn 			= "outfit\military_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\military_outfit
-actor_visual	= actors\stalker_soldier\stalker_soldier_4.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\military_outfit\stalker_hero_military_no_helmet.ogf
 player_hud_section	= actor_hud_06
 
 ef_equipment_type	= 4
@@ -1389,7 +1389,7 @@ $prefetch 		= 32
 class			= E_STLK
 cform           = skeleton
 visual          = dynamics\outfit\dolg_heavy_outfit
-actor_visual	= actors\stalker_dolg\stalker_dolg_3.ogf
+actor_visual	= actors\stalker_hero\dynamic_helmets\dolg_heavy_outfit\stalker_hero_dolg_heavy_no_helmet.ogf
 player_hud_section	= actor_hud_07
 
 ef_equipment_type	= 4

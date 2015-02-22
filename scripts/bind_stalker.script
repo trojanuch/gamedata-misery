@@ -730,6 +730,10 @@ function actor_binder:update(delta)
 		spawn_music.spawn_music_01()
 		spawn_music.save_variable("spawn_music_p_",true)
 	end
+	
+	-- обновление визуалов актора
+	m_visuals.update()
+
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:save(packet)

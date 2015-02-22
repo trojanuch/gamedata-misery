@@ -170,5 +170,27 @@ auto_attach				= false
 snd_draw                = weapons\ak74_draw
 snd_holster             = weapons\generic_holster
 
+;; Equipment condition checker
+[con_checker]:booster
+$spawn 				= "devices\repair_kit_10"
+can_trade	= false
+quest_item      	= true
+visual	= dynamics\equipments\con_checker.ogf
+
+inv_weight      = 0.0001
+
+description     = st_con_checker_descr
+inv_name      = st_con_checker_name
+inv_name_short      = st_con_checker_name
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 27
+inv_grid_y		= 2
+
+cost      		  = 0
+
+repair_type		= all
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -155,7 +155,7 @@ snd_draw					= weapons\generic\pistol_draw
 snd_holster					= weapons\generic\pistol_holster
 snd_shoot					= weapons\fort\fort_shot
 snd_empty					= weapons\generic\pistol_empty
-snd_reload					= weapons\generic\pistol2_reload, 0.8
+snd_reload						= weapons\pistols\fort\fort_reload
 snd_close					= weapons\generic_close
 snd_silncer_shot				= weapons\silencers\silencer_9x18
 
@@ -181,56 +181,66 @@ silencer_light_time 			= 0.2
 [wpn_fort_hud]:hud_base
 zoom_hide_crosshair			= true
 
-hands_position					= -0.021000,-0.160000, 0.002500
-hands_orientation				= -0.500000, 1.000000, 1.149999
-hands_position_16x9				=  0.033000,-0.189500, 0.039000
-hands_orientation_16x9			=  2.349998, 2.749999, 2.849998
-
-item_position					=  0.000494,-0.000025,-0.003510
-item_orientation				=  1.239378,-0.134046,-2.052052
+hands_position				= 0.033,-0.155,0.1	
+hands_orientation			= 0,0,0
+hands_position_16x9			= 0.033,-0.155,0.1
+hands_orientation_16x9			= 0,0,0
 
 
-item_visual						= dynamics\weapons\wpn_fort\wpn_fort_hud
+item_position				= 0,0,0
+item_orientation			= 17.2,0,0
+
+item_visual             	= dynamics\weapons\wpn_fort\wpn_fort_hud
 attach_place_idx				= 0
 
-shell_point						= 0.013,0.041,0.474
-shell_bone              	= wpn_body
+shell_point			= 0,0,0
+shell_bone              	= eject
 
-fire_point			= 0,0.04,0.149
-fire_bone               	= wpn_body
+fire_point			= 0,0,0
+fire_bone               	= muzzle
 
-anm_show					= fort_draw
-anm_show_empty				= fort_draw, fort_opened
+;-delme begin
+anm_empty             			= walter99_idle, walter99_opened
+anm_close				= walter99_holster
+;-delme end
+anm_show				= pistol_draw
+anm_show_empty				= pistol_draw, fort_opened
 
-anm_hide             		= fort_holster
-anm_hide_empty        		= fort_holster, fort_opened
+anm_hide             			= pistol_holster
+anm_hide_empty        			= pistol_holster, fort_opened
 
-anm_idle             		= fort_idle
-anm_idle_empty         		= fort_idle, fort_opened
+anm_idle             			= pistol_idle
+anm_idle_empty         			= pistol_idle, fort_opened
 
-anm_shots					= fort_shoot
-anm_shot_l					= fort_shoot,  fort_open
+anm_shots				= pistol_9x18_shoot, fort_shoot
+anm_shot_l				= pistol_9x18_shoot, fort_shoot_last
 
-anm_idle_aim				= fort_idle_aim
-anm_idle_aim_empty			= fort_idle_aim, fort_opened
+anm_idle_aim				= pistol_idle_aim
+anm_idle_aim_empty			= pistol_idle_aim, fort_opened
 
-anm_reload					= fort_reload
-anm_reload_empty			= fort_reload,    fort_close
+anm_reload				= pistol_reload, fort_reload
+anm_reload_empty			= pistol_reload_last, fort_reload_empty
 
-anm_idle_moving 			= fort_idle_moving
-anm_idle_moving_empty 		= fort_idle_moving, fort_opened
+anm_idle_moving 			= pistol_idle_moving
+anm_idle_moving_empty 			= pistol_idle_moving, fort_opened
 
-anm_idle_sprint					= colt1911_idle_sprint
-anm_idle_sprint_empty			= colt1911_idle_sprint, colt1911_opened
+anm_idle_sprint				= pistol_idle_sprint
+anm_idle_sprint_empty			= pistol_idle_sprint, fort_opened
 
-anm_bore					= fort_idle_bore
-anm_bore_empty				= fort_idle_bore, fort_opened
+anm_bore				= pistol_idle_bore, fort_idle_bore
+anm_bore_empty				= pistol_idle_bore, fort_idle_bore
 
-aim_hud_offset_pos				= -0.108300, 0.044000, 0.050000
-aim_hud_offset_rot				=  0.003000, 0.006300,-0.025000
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
 
-aim_hud_offset_pos_16x9			= -0.170200, 0.074400, 0.000000
-aim_hud_offset_rot_16x9			=  0.034000, 0.057500, 0.010000
+lean_hud_offset_pos			= 0,0,0
+lean_hud_offset_rot			= 0,0,0
+
+aim_hud_offset_pos = -0.136400,0.053900,-0.001500
+aim_hud_offset_rot = 0.002000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9 = -0.136400,0.053900,-0.001500
+aim_hud_offset_rot_16x9 = 0.002000,0.000000,0.000000
 
 ;-----------------------------------------------------------------------------
 ; ”никальные
@@ -284,8 +294,6 @@ inv_grid_y				= 63
 
 visual                   	= dynamics\weapons\wpn_fort\wpn_for1.ogf
 
-snd_reload					= weapons\generic\pistol2_reload, 0.8
-
 [wpn_fort_custom_hud]:wpn_fort_hud
 
 item_visual						= dynamics\weapons\wpn_fort\wpn_for1_hud
@@ -325,8 +333,6 @@ inv_grid_x				= 6
 inv_grid_y				= 66
 
 visual                   	= dynamics\weapons\wpn_fort\wpn_for2.ogf
-
-snd_reload					= weapons\generic\pistol2_reload, 0.8
 
 [wpn_fort_camo_hud]:wpn_fort_hud
 
@@ -369,8 +375,6 @@ inv_grid_y				= 65
 
 visual                   	= dynamics\weapons\wpn_fort\wpn_for3.ogf
 
-snd_reload					= weapons\generic\pistol2_reload, 0.8
-
 [wpn_fort_rusty_hud]:wpn_fort_hud
 
 item_visual						= dynamics\weapons\wpn_fort\wpn_for3_hud
@@ -411,8 +415,6 @@ inv_grid_x				= 6
 inv_grid_y				= 64
 
 visual                   	= dynamics\weapons\wpn_fort\wpn_for4.ogf
-
-snd_reload					= weapons\generic\pistol2_reload, 0.8
 
 [wpn_fort_worn_hud]:wpn_fort_hud
 

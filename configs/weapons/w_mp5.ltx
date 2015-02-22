@@ -184,7 +184,7 @@ snd_draw                = weapons\generic\rifle_draw
 snd_holster             = weapons\generic\rifle_holster
 snd_shoot               = weapons\mp5\mp5_shot
 snd_empty               = weapons\generic\rifle_modern_empty, 0.5
-snd_reload              = weapons\mp5\mp5_reload
+snd_reload              = weapons\Auto\mp5\mp5_reload
 snd_shoot_grenade       = weapons\gen_grenshoot
 snd_reload_grenade      = weapons\gen_grenload, 1.0, 0.8
 snd_switch              = weapons\groza_switch, 1.0, 0.5
@@ -207,72 +207,47 @@ zoom_hide_crosshair     = true
 attach_place_idx        = 0
 item_visual             = dynamics\weapons\wpn_mp5\wpn_mp5_hud.ogf
 
-hands_position				= -0.106500,-0.162000,0.113001
-hands_orientation			= -6.700007,-0.800001,-5.400002
-hands_position_16x9				= -0.100500,-0.191500,0.135500
-hands_orientation_16x9			= -3.999999,3.199998,-6.000006
+hands_position				= 0.09,-0.04,0.2
+hands_orientation			=  0,0,0
+hands_position_16x9			= 0.09,-0.04,0.2
+hands_orientation_16x9			=  0,0,0
 
-item_position				= 0.014173,-0.001619,-0.004513
-item_orientation			= 4.899572,0.078592,366.138245
+item_position				=  0,0,0
+item_orientation			=  0,0,0
 
-shell_point             = 0.021,0.099,0.286
+shell_point             =  0,0,0
 shell_dir               = 0.0, 1.0, 0.0
-shell_bone              = wpn_body
+shell_bone              = eject
 
-fire_point				= 0,0.068,0.439
-fire_bone               = wpn_body
-fire_point2			= -0.030000,0.074500,-0.037000
-fire_bone2                = wpn_body
+fire_point				=  0,0,0
+fire_bone               = muzzle
+fire_point2			=  0,0,0
+fire_bone2                = muzzle
 
-anm_show                     = mp5_draw
-anm_hide                     = mp5_holster
-anm_idle                     = mp5_idle
-anm_idle_sprint         = svu_idle_sprint_2
-anm_idle_moving         = mp5_idle_moving
-anm_shots               = mp5_shoot
-anm_reload              = mp5_reload
-anm_idle_aim            = mp5_idle_aim
-anm_bore                = mp5_idle_bore
+anm_show                = np5_draw
+anm_hide                = np5_holster
+anm_idle                = np5_idle
+anm_idle_sprint         = np5_idle_sprint
+anm_idle_moving         = np5_idle_moving
+anm_shots               = np5_shoot, mp5_shoot_w
+anm_reload              = np5_reload, mp5_reload_w
+anm_idle_aim            = np5_idle_aim
+anm_bore                = np5_idle_bore
 
-;anm_switch              = mp5_switch_off ;mp5_switch_off
-;anm_switch_g            = mp5_switch_on ;mp5_switch_on
+aim_hud_offset_pos = -0.089000,0.020500,-0.100000
+aim_hud_offset_rot = -0.040000,-0.002000,0.000000
 
+aim_hud_offset_pos_16x9 = -0.089000,0.020500,-0.100000
+aim_hud_offset_rot_16x9 = -0.040000,-0.002000,0.000000
 
-;anm_hide_w_gl           = mp5_holster_w_gl
-;anm_show_w_gl           = mp5_draw_w_gl
-;anm_idle_w_gl           = mp5_idle_w_gl
-;anm_shots_w_gl          = mp5_shoot_w_gl
-;anm_reload_w_gl         = mp5_reload_w_gl
-;anm_idle_w_gl_aim       = mp5_idle_aim_w_gl
-;anm_idle_sprint_w_gl                = mp5_idle_sprint_w_gl
-;anm_idle_moving_w_gl                = mp5_idle_moving_w_gl
-;anm_bore_w_gl                                = mp5_idle_bore_w_gl
+gl_hud_offset_pos       	= 0,0,0
+gl_hud_offset_rot       	= 0,0,0
 
-;anm_show_g                         = mp5_draw_w_gl;mp5_draw_grenade
-;anm_hide_g                         = mp5_holster_w_gl;mp5_holster_grenade
-;anm_idle_g                         = mp5_idle_w_gl;mp5_idle_grenade
-;anm_reload_g                       = mp5_reload_grenade
-;anm_idle_g_aim                     = mp5_idle_aim_w_gl;mp5_idle_grenade
-;anm_shots_g                        = mp5_shoot_grenade
-;anm_idle_sprint_g                        = mp5_idle_sprint_w_gl;mp5_idle_sprint_grenade
-;anm_idle_moving_g                        = mp5_idle_moving_w_gl;mp5_idle_moving_grenade
-;anm_bore_g                                        = mp5_idle_bore_grenade
+gl_hud_offset_pos_16x9    	= 0,0,0
+gl_hud_offset_rot_16x9    	= 0,0,0
 
-
-aim_hud_offset_pos				= -0.080400, 0.005500,-0.018000
-aim_hud_offset_rot				= -0.032000,-0.032500, 0.010000
-
-aim_hud_offset_pos_16x9			= -0.088700, 0.042400, 0.029000
-aim_hud_offset_rot_16x9			=  0.036000, 0.014500,-0.017500
-
-gl_hud_offset_pos				= 0,0,0
-gl_hud_offset_rot				= 0,0,0
-
-gl_hud_offset_pos_16x9			= 0,0,0
-gl_hud_offset_rot_16x9			= 0,0,0
-
-lean_hud_offset_pos				= 0,0,0
-lean_hud_offset_rot				= 0,0,0
+lean_hud_offset_pos        = 0,0,0
+lean_hud_offset_rot        = 0,0,0
 
 ;-----------------------------------------------------------------------------
 ; Уникальный MP5A3 «Фрезер»
@@ -321,13 +296,6 @@ condition_queue_shot_dec	= 0.0007
 fire_dispersion_base    = 0.51
 
 visual                  = dynamics\weapons\wpn_mp6\wpn_mp6.ogf
-hands_position				= -0.106500,-0.162000,0.113001
-hands_orientation			= -6.700007,-0.800001,-5.400002
-hands_position_16x9				= -0.100500,-0.191500,0.135500
-hands_orientation_16x9			= -3.999999,3.199998,-6.000006
-
-item_position				= 0.014173,-0.001619,-0.004513
-item_orientation			= 4.899572,0.078592,366.138245
 
 snd_silncer_shot        = weapons\silencers\silencer_1143x23
 
@@ -335,78 +303,9 @@ silencer_name  			= wpn_addon_silencer_1143x23		; section name for the attachabl
 silencer_x 						= 129
 silencer_y 						= -16
 
-[wpn_mp6_hud]
-zoom_hide_crosshair     = true
-attach_place_idx        = 0
+[wpn_mp6_hud]:wpn_mp5_hud
 
 item_visual             = dynamics\weapons\wpn_mp6\wpn_mp6_hud.ogf
-
-hands_position				= -0.106500,-0.162000,0.113001
-hands_orientation			= -6.700007,-0.800001,-5.400002
-hands_position_16x9				= -0.100500,-0.191500,0.135500
-hands_orientation_16x9			= -3.999999,3.199998,-6.000006
-
-item_position				= 0.014173,-0.001619,-0.004513
-item_orientation			= 4.899572,0.078592,366.138245
-
-shell_point             = 0.021,0.099,0.286
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone              = wpn_body
-
-fire_point				= 0,0.068,0.439
-fire_bone               = wpn_body
-fire_point2			= -0.030000,0.074500,-0.037000
-fire_bone2                = wpn_body
-
-anm_show                     = mp5_draw
-anm_hide                     = mp5_holster
-anm_idle                     = mp5_idle
-anm_idle_sprint         = svu_idle_sprint_2
-anm_idle_moving         = mp5_idle_moving
-anm_shots               = mp5_shoot
-anm_reload              = mp5_reload
-anm_idle_aim            = mp5_idle_aim
-anm_bore                = mp5_idle_bore
-
-;anm_switch              = mp5_switch_off ;mp5_switch_off
-;anm_switch_g            = mp5_switch_on ;mp5_switch_on
-
-
-;anm_hide_w_gl           = mp5_holster_w_gl
-;anm_show_w_gl           = mp5_draw_w_gl
-;anm_idle_w_gl           = mp5_idle_w_gl
-;anm_shots_w_gl          = mp5_shoot_w_gl
-;anm_reload_w_gl         = mp5_reload_w_gl
-;anm_idle_w_gl_aim       = mp5_idle_aim_w_gl
-;anm_idle_sprint_w_gl                = svu_idle_sprint_2
-;anm_idle_moving_w_gl                = mp5_idle_moving_w_gl
-;anm_bore_w_gl                                = mp5_idle_bore_w_gl
-
-;anm_show_g                         = mp5_draw_w_gl;mp5_draw_grenade
-;anm_hide_g                         = mp5_holster_w_gl;mp5_holster_grenade
-;anm_idle_g                         = mp5_idle_w_gl;mp5_idle_grenade
-;anm_reload_g                       = mp5_reload_grenade
-;anm_idle_g_aim                     = mp5_idle_aim_w_gl;mp5_idle_grenade
-;anm_shots_g                        = mp5_shoot_grenade
-;anm_idle_sprint_g                        = mp5_idle_sprint_w_gl;mp5_idle_sprint_grenade
-;anm_idle_moving_g                        = mp5_idle_moving_w_gl;mp5_idle_moving_grenade
-;anm_bore_g                                        = mp5_idle_bore_grenade
-
-
-aim_hud_offset_pos				= -0.080400, 0.005500,-0.018000
-aim_hud_offset_rot				= -0.032000,-0.032500, 0.010000
-
-aim_hud_offset_pos_16x9			= -0.088700, 0.042400, 0.029000
-aim_hud_offset_rot_16x9			=  0.036000, 0.014500,-0.017500
-
-gl_hud_offset_pos				= 0,0,0
-gl_hud_offset_rot				= 0,0,0
-
-gl_hud_offset_pos_16x9			= 0,0,0
-gl_hud_offset_rot_16x9			= 0,0,0
-
-lean_hud_offset_pos				= 0,0,0
-lean_hud_offset_rot				= 0,0,0
 
 ;---------------------------
 ;AP Weapon Section for NPCs
@@ -456,8 +355,6 @@ inv_grid_y        = 75
 
 visual                  = dynamics\weapons\wpn_mp5\wpn_mpa.ogf
 
-snd_reload              = weapons\mp5\mp5_reload
-
 [wpn_mp5_custom_hud]:wpn_mp5_hud
 
 item_visual             = dynamics\weapons\wpn_mp5\wpn_mpa_hud.ogf
@@ -496,8 +393,6 @@ inv_grid_x        = 7
 inv_grid_y        = 77
 
 visual                  = dynamics\weapons\wpn_mp5\wpn_mpb.ogf
-
-snd_reload              = weapons\mp5\mp5_reload
 
 [wpn_mp5_alt_hud]:wpn_mp5_hud
 
@@ -539,8 +434,6 @@ inv_grid_x        = 7
 inv_grid_y        = 76
 
 visual                  = dynamics\weapons\wpn_mp5\wpn_mpc.ogf
-
-snd_reload              = weapons\mp5\mp5_reload
 
 [wpn_mp5_worn_hud]:wpn_mp5_hud
 

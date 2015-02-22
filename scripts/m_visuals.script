@@ -1,0 +1,248 @@
+----------------------
+-- File:   Visuals
+-- Author: Shoker, Mechanic
+-- Правки: Antnigm
+-- Меняет визуал ГГ в зависимости от одетого на него шлема
+----------------------
+
+
+-- Таблица секций брони, а также визуалов
+--[[
+local visuals = {
+	секция_брони = {
+		секция_шлема = путь к моделе 
+		...
+				}
+	...
+}
+]] 
+-- Если шлем не нужен, то ничего не пишем
+
+local visuals = {
+	without_outfit = { 
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\without_outfit\\stalker_hero_respi",
+		helm_respirator_joker	= "actors\\stalker_hero\\dynamic_helmets\\without_outfit\\stalker_hero_respi",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\without_outfit\\stalker_hero_hardh",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\without_outfit\\stalker_hero_hardh",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\without_outfit\\stalker_hero_tacti",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\without_outfit\\stalker_hero_battl",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\without_outfit\\stalker_hero_prote",
+				},
+	novice_outfit = { 
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_respirator",
+		helm_respirator_joker	= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_protective",
+				},
+	coat_outfit = { 
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_respirator",
+		helm_respirator_joker	= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_protective",
+				},
+	coat_heavy_outfit = { 
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_respirator",
+		helm_respirator_joker	= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\black_cloak\\stalker_hero_black_cloak_protective",
+				},
+	stalker_outfit = {
+		helm_respirator         = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_respirator",
+		helm_respirator_joker   = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_respirator",
+		helm_hardhat            = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_hardhat",
+		helm_hardhat_snag       = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_protective",
+				},
+	stalker_outfit_barge = {
+		helm_respirator         = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_respirator",
+		helm_respirator_joker   = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_respirator",
+		helm_hardhat            = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_hardhat",
+		helm_hardhat_snag       = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_battle",
+		helm_protective	        = "actors\\stalker_hero\\dynamic_helmets\\neutral_outfit\\stalker_hero_neutral_protective",
+				},
+	svoboda_light_outfit = {
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\freedom_outfit\\stalker_hero_freedom_respirator",
+		helm_respirator_joker   = "actors\\stalker_hero\\dynamic_helmets\\freedom_outfit\\stalker_hero_freedom_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\freedom_outfit\\stalker_hero_freedom_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\freedom_outfit\\stalker_hero_freedom_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\freedom_outfit\\stalker_hero_freedom_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\freedom_outfit\\stalker_hero_freedom_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\freedom_outfit\\stalker_hero_freedom_protective"
+				},
+	dolg_outfit = {
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\dolg_outfit\\stalker_hero_dolg_respirator",
+		helm_respirator_joker   = "actors\\stalker_hero\\dynamic_helmets\\dolg_outfit\\stalker_hero_dolg_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\dolg_outfit\\stalker_hero_dolg_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\dolg_outfit\\stalker_hero_dolg_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\dolg_outfit\\stalker_hero_dolg_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\dolg_outfit\\stalker_hero_dolg_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\dolg_outfit\\stalker_hero_dolg_protective",
+				},		
+	cs_heavy_outfit = {
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\cs_heavy_outfit\\stalker_hero_cs_heavy_respirator",
+		helm_respirator_joker   = "actors\\stalker_hero\\dynamic_helmets\\cs_heavy_outfit\\stalker_hero_cs_heavy_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\cs_heavy_outfit\\stalker_hero_cs_heavy_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\cs_heavy_outfit\\stalker_hero_cs_heavy_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\cs_heavy_outfit\\stalker_hero_cs_heavy_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\cs_heavy_outfit\\stalker_hero_cs_heavy_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\cs_heavy_outfit\\stalker_hero_cs_heavy_protective",
+				},	
+	svoboda_heavy_outfit = {
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\freedom_heavy_outfit\\stalker_hero_freedom_heavy_respirator",
+		helm_respirator_joker	= "actors\\stalker_hero\\dynamic_helmets\\freedom_heavy_outfit\\stalker_hero_freedom_heavy_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\freedom_heavy_outfit\\stalker_hero_freedom_heavy_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\freedom_heavy_outfit\\stalker_hero_freedom_heavy_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\freedom_heavy_outfit\\stalker_hero_freedom_heavy_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\freedom_heavy_outfit\\stalker_hero_freedom_heavy_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\freedom_heavy_outfit\\stalker_hero_freedom_heavy_protective",
+				},
+	specops_outfit = {
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\specops_outfit\\stalker_hero_specops_respirator",
+		helm_respirator_joker   = "actors\\stalker_hero\\dynamic_helmets\\specops_outfit\\stalker_hero_specops_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\specops_outfit\\stalker_hero_specops_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\specops_outfit\\stalker_hero_specops_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\specops_outfit\\stalker_hero_specops_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\specops_outfit\\stalker_hero_specops_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\specops_outfit\\stalker_hero_specops_protective",
+				},			
+	military_outfit = {
+		helm_respirator 		= "actors\\stalker_hero\\dynamic_helmets\\military_outfit\\stalker_hero_military_respirator",
+		helm_respirator_joker   = "actors\\stalker_hero\\dynamic_helmets\\military_outfit\\stalker_hero_military_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\military_outfit\\stalker_hero_military_hardhat",
+		helm_hardhat_snag       = "actors\\stalker_hero\\dynamic_helmets\\military_outfit\\stalker_hero_military_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\military_outfit\\stalker_hero_military_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\military_outfit\\stalker_hero_military_battle",
+		helm_protective			= "actors\\stalker_hero\\dynamic_helmets\\military_outfit\\stalker_hero_military_protective",
+				},		
+	dolg_heavy_outfit = {
+		helm_respirator			= "actors\\stalker_hero\\dynamic_helmets\\dolg_heavy_outfit\\stalker_hero_dolg_heavy_respirator",
+		helm_respirator_joker   = "actors\\stalker_hero\\dynamic_helmets\\dolg_heavy_outfit\\stalker_hero_dolg_heavy_respirator",
+		helm_hardhat			= "actors\\stalker_hero\\dynamic_helmets\\dolg_heavy_outfit\\stalker_hero_dolg_heavy_hardhat",
+		helm_hardhat_snag		= "actors\\stalker_hero\\dynamic_helmets\\dolg_heavy_outfit\\stalker_hero_dolg_heavy_hardhat",
+		helm_tactic				= "actors\\stalker_hero\\dynamic_helmets\\dolg_heavy_outfit\\stalker_hero_dolg_heavy_tactic",
+		helm_battle				= "actors\\stalker_hero\\dynamic_helmets\\dolg_heavy_outfit\\stalker_hero_dolg_heavy_battle",
+				},					
+}
+
+local otf  
+local helm
+local curent_vis
+local helm_tbl
+local new_model
+
+function update()
+otf = db.actor:item_in_slot(7)
+helm = db.actor:item_in_slot(12)
+curent_vis = db.actor:get_visual_name()
+
+if otf==nil and helm==nil then 
+	db.actor:set_visual_name("actors\\stalker_hero\\stalker_hero_1")
+	return
+end
+
+if otf~=nil and helm==nil then
+	local otf_vis_name = str_explode(".", get_ltx(otf:section(), "actor_visual", "str"))[1]
+	if otf_vis_name~=curent_vis then
+		db.actor:set_visual_name(otf_vis_name)
+	end
+else
+-------------------------------------
+	if otf==nil and helm~=nil then 
+		helm_tbl = visuals["without_outfit"]
+	else 
+		helm_tbl = visuals[otf:section()]
+	end
+	if helm_tbl~=nil then
+		new_model = helm_tbl[helm:section()]
+		if new_model~=nil then
+			if new_model~=curent_vis then
+				db.actor:set_visual_name(new_model)
+			end
+		end
+	end
+-------------------------------------
+end
+
+end
+
+
+-- Получить строку из LTX файла
+function get_ltx(l_name,l_string,type)
+if system_ini():section_exist(l_name) and system_ini():line_exist(l_name, l_string) then
+
+	if type=="bol" then
+		return system_ini():r_bool(l_name, l_string)
+	end
+	if type=="num" then   -- целое число
+		return tonumber(system_ini():r_u32(l_name, l_string))
+	end
+	if type=="num_float" then   -- число с запятой
+		return tonumber(system_ini():r_float(l_name, l_string))
+	end
+	if type=="str" then
+		return tostring(system_ini():r_string(l_name, l_string))
+	end
+	if type==nil then
+		return system_ini():r_u32(l_name, l_string)
+	end
+
+end
+
+return nil
+end
+
+function str_explode(div,str,pos1,pos2,clear, conv)
+	local t={}
+	local cpt, pos
+
+	if pos1 == nil then pos1 = 1 end
+	if pos2 == nil then pos2 = pos1 end
+
+	local cpt1 = string.find (str, div, pos1, true)
+	local cpt2 = string.find (str, div, pos2, true)
+
+	if cpt1 and cpt2 then
+
+		if cpt2-cpt1 > 5 then
+			cpt = cpt1
+			pos = pos1
+		else
+			cpt = cpt2
+			pos = pos2
+		end
+
+		repeat
+			if clear then
+				table.insert( t, trim(string.sub(str, 1, cpt-1)) )
+			else
+				table.insert( t, string.sub(str, 1, cpt-1) )
+			end
+			str = string.sub( str, cpt+string.len(div) )
+			cpt = string.find (str, div, pos, true)
+		until cpt==nil
+	end
+	if clear then
+		table.insert(t, trim(str))
+	else
+		table.insert(t, str)
+	end
+
+	if conv then 
+		t = convert_tbl(t)
+	end
+
+	return t
+end

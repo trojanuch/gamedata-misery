@@ -132,7 +132,7 @@ smoke_particles         = weapons\generic_shoot_00
 
 shell_point		 				= 0.0, 0.133, 0.047
 shell_dir		 				= 0.0, 0.0, 0.4
-shell_particles	 			= weapons\generic_shells
+shell_particles	 			= amik\weapons\data\45\45_r
 
 ;-------------------------------------------------------------------------------
 light_color		 				= 0.6,0.5,0.3
@@ -157,7 +157,7 @@ snd_draw					= weapons\generic\pistol_draw
 snd_holster					= weapons\generic\pistol_holster
 snd_shoot					= weapons\deserteagle\desert_eagle_shot
 snd_empty					= weapons\generic\pistol_empty
-snd_reload					= weapons\generic\pistol2_reload, 0.8
+snd_reload						= weapons\pistols\deagle\deagle_reload
 snd_close					= weapons\generic_close
 snd_silncer_shot				= weapons\silencers\silencer_1143x23
 
@@ -183,59 +183,66 @@ silencer_light_time 			= 0.2
 [wpn_desert_eagle_hud]:hud_base
 zoom_hide_crosshair			= true
 
-hands_position					= -0.021000,-0.160000,0.002500
-hands_orientation				= -0.350000,0.650000,0.849999
-hands_position_16x9				= -0.010000,-0.176500,0.039000
-hands_orientation_16x9			= -1.500000,0.800000,2.449998
+hands_position				= 0.033,-0.155,0.1
+hands_orientation			= 0,0,0
+hands_position_16x9			= 0.033,-0.155,0.1
+hands_orientation_16x9			= 0,0,0
 
-item_position					= 0.000746,-0.000321,0.003479
-item_orientation				= 1.239378,-0.134046,-2.052052
+
+item_position				= 0,0,0
+item_orientation			= 17.2,0,0
 
 item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl2_hud.ogf
 attach_place_idx				= 0
 
-shell_point						= 0.021,0.057,0.456
-shell_bone              	= wpn_body
+shell_point						= 0,0,0
+shell_bone              	= eject
 
-fire_point			= 0,0.048,0.222
-fire_bone               	= wpn_body
+fire_point			= 0,0,0
+fire_bone               	= muzzle
 
-anm_show					= desert_eagle_draw
-anm_show_empty				= desert_eagle_draw, desert_eagle_opened
+;-delme begin
+anm_empty             	= walter99_idle, walter99_opened
+anm_close				= walter99_holster
+;-delme end
+anm_show			= pistol_draw
+anm_show_empty			= pistol_draw, deagle_opened
 
-anm_hide             		= desert_eagle_holster
-anm_hide_empty         		= desert_eagle_holster, desert_eagle_opened
+anm_hide             		= pistol_holster
+anm_hide_empty         		= pistol_holster, deagle_opened
 
-anm_idle             		= desert_eagle_idle
-anm_idle_empty         		= desert_eagle_idle, desert_eagle_opened
+anm_idle             		= pistol_idle
+anm_idle_empty         		= pistol_idle, deagle_opened
 
-anm_shots					= desert_eagle_shoot
-anm_shot_l					= desert_eagle_shoot, desert_eagle_open
+anm_shots			= pistol_50_shoot, deagle_shoot
+anm_shot_l			= pistol_50_shoot, deagle_shoot_last
 
-anm_idle_aim				= desert_eagle_idle_aim
-anm_idle_aim_empty			= desert_eagle_idle_aim, desert_eagle_opened
+anm_idle_aim			= pistol_idle_aim
+anm_idle_aim_empty		= pistol_idle_aim, deagle_opened
 
-anm_reload					= desert_eagle_reload
-anm_reload_empty			= desert_eagle_reload, desert_eagle_close
+anm_reload			= pistol_reload, deagle_reload
+anm_reload_empty		= pistol_reload_last, deagle_reload_last
 
-anm_idle_moving 			= desert_eagle_idle_moving
-anm_idle_moving_empty		= desert_eagle_idle_moving, desert_eagle_opened
-anm_idle_sprint				= desert_eagle_idle_sprint
-anm_idle_sprint_empty		= desert_eagle_idle_sprint, desert_eagle_opened
-anm_bore					= desert_eagle_idle_bore
-anm_bore_empty				= desert_eagle_idle_bore, desert_eagle_opened
+anm_idle_moving 		= pistol_idle_moving
+anm_idle_moving_empty		= pistol_idle_moving, deagle_opened
 
-aim_hud_offset_pos				= -0.104700, 0.016500, 0.050000
-aim_hud_offset_rot				= -0.022500, 0.007500,-0.035000
+anm_idle_sprint			= pistol_idle_sprint
+anm_idle_sprint_empty		= pistol_idle_sprint, deagle_opened
 
-gl_hud_offset_pos				= 0,0,0
-gl_hud_offset_rot				= 0,0,0
+anm_bore			= pistol_idle_bore
+anm_bore_empty			= pistol_idle_bore, deagle_opened
+
+aim_hud_offset_pos			= -0.1364,0.036,-0.001500
+aim_hud_offset_rot			= 0,0,0
+
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
 
 lean_hud_offset_pos			= 0,0,0
 lean_hud_offset_rot			= 0,0,0
 
-aim_hud_offset_pos_16x9			= -0.120800, 0.033800, 0.000000
-aim_hud_offset_rot_16x9			= -0.019200,-0.010000,-0.010000
+aim_hud_offset_pos_16x9			= -0.1364,0.036,-0.001500
+aim_hud_offset_rot_16x9			= -0.016,0,0
 
 ;-----------------------------------------------------------------------------
 ; Уникальный  Desert Eagle «Степной орёл»
@@ -289,8 +296,6 @@ inv_grid_y				= 25
 
 visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle.ogf
 
-snd_reload					= weapons\generic\pistol2_reload, 0.8
-
 [wpn_desert_eagle_custom_hud]:wpn_desert_eagle_hud
 
 item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_hud.ogf
@@ -329,8 +334,6 @@ inv_grid_x				= 5
 inv_grid_y				= 67
 
 visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl1.ogf
-
-snd_reload					= weapons\generic\pistol2_reload, 0.8
 
 [wpn_desert_eagle_alt_hud]:wpn_desert_eagle_hud
 
@@ -371,8 +374,6 @@ inv_grid_x				= 5
 inv_grid_y				= 69
 
 visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl3.ogf
-
-snd_reload					= weapons\generic\pistol2_reload, 0.8
 
 [wpn_desert_eagle_camo_hud]:wpn_desert_eagle_hud
 
@@ -415,8 +416,6 @@ inv_grid_y				= 68
 
 visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl4.ogf
 
-snd_reload					= weapons\generic\pistol2_reload, 0.8
-
 [wpn_desert_eagle_worn_hud]:wpn_desert_eagle_hud
 
 item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl4_hud.ogf
@@ -426,6 +425,9 @@ item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl4_hu
 $spawn                  	= "weapons\wpn_desert_eagle_nimble"
 inv_name				= st_wpn_desert_eagle_nimble
 description					= st_wpn_desert_eagle_nimble_descr
+
+inv_grid_x				= 24
+inv_grid_y				= 24
 
 cost					= 19940
 
@@ -444,8 +446,8 @@ rpm                     = 225
 fire_dispersion_base		= 0.54
 
 hud                     	= wpn_desert_eagle_nimble_hud
-visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle.ogf
+visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_nimble.ogf
 
 [wpn_desert_eagle_nimble_hud]:wpn_desert_eagle_hud
 
-item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_hud.ogf
+item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_nimble_hud.ogf

@@ -42,7 +42,7 @@ installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_toz34
 
 scope_status		= 2
-silencer_status		= 2
+silencer_status		= 0
 grenade_launcher_status	= 0
 zoom_enabled		= true
 zoom_rotate_time	= 0.25
@@ -66,11 +66,8 @@ snd_draw		= weapons\generic\rifle_historic_draw
 snd_holster		= weapons\generic\rifle_historic_holster
 snd_shoot		= weapons\k98\kar98k_shoot
 snd_empty		= weapons\generic\rifle_historic_empty, 0.5
-snd_reload		= weapons\k98\kar98k_reload
+snd_reload		= weapons\mosin\mosin_reload
 snd_close		= weapons\generic_close
-snd_open_weapon         = weapons\k98\kar98k_reload_start
-snd_add_cartridge	= weapons\k98\kar98k_reload
-snd_close_weapon        = weapons\k98\kar98k_reload_end
 snd_silncer_shot        = weapons\k98\kar98k_shoot_sil
 
 ;silencer_flame_particles = weapons\generic_weapon01
@@ -156,7 +153,7 @@ smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 rpm_empty_click 	    = 200
 shell_point		 		= 0.0, 0.129, 0.192
-shell_dir		 		= 0.0, 0.0, 0.44
+shell_dir		 		= 0.0, 0.0, 0.4
 shell_particles         = ;amik\weapons\val_shells_r
 startup_ammo            = 10
 visual                  = dynamics\weapons\wpn_kar98k\wpn_kar98k.ogf
@@ -178,44 +175,37 @@ zoom_hide_crosshair	    = true
 attach_place_idx	    = 0
 item_visual		        = dynamics\weapons\wpn_kar98k\wpn_kar98k_hud.ogf
 
-hands_position			= -0.085500,-0.185999,0.149000
-hands_orientation		= -4.049999,-0.250000,1.550001
+hands_position				= -0.05,-0.145,0.125
+hands_orientation			= 0.0,0.0,0.0
 
-hands_position_16x9		= -0.058500,-0.180999,0.065000
-hands_orientation_16x9	= -4.650000,-2.200000,0.800001
+hands_position_16x9			= -0.0500,-0.145,0.125
+hands_orientation_16x9		= 0.0,0.0,0.0
 
-item_position			= 0.026,-0.022,0.015
-item_orientation		= 5.8,1.25,0
+item_position				= 0,0,0
+item_orientation			= 0,0,0
 
-shell_point				= 0.025,0.055,0.221
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone				= wpn_body
+shell_point					= 0.025,0.055,0.221
+shell_dir               	= 0.0, 1.0, 0.0
+shell_bone					= wpn_body
 
-fire_point		        = 0,0.043,1.002
-fire_bone               = wpn_body
+fire_point					= 0,0.07204,1.02;0,0.043,1.002
+fire_bone              		 = wpn_body
 
-anm_show				= kar98_draw
-anm_hide             	= kar98_holster
-anm_shots				= kar98_shoot
-anm_bore				= kar98_idle_bore
-anm_idle             	= kar98_idle
-anm_idle_aim			= kar98_idle_aim
-anm_idle_moving 		= kar98_idle_move
-anm_idle_sprint			= kar98_idle_sprint
-anm_reload              = kar98_reload
+aim_hud_offset_pos = -0.105200,0.045400,-0.050000
+aim_hud_offset_rot = 0.008400,0.000000,0.005000
 
-anm_open				= kar98_reload_start
-anm_add_cartridge		= kar98_reload
-anm_close				= kar98_reload_end
+aim_hud_offset_pos_16x9 = -0.105200,0.045400,-0.050000
+aim_hud_offset_rot_16x9 = 0.008400,0.000000,0.005000
 
-aim_hud_offset_pos      = -0.136000,0.111000,-0.043000
-aim_hud_offset_rot      = 0.069000,0.036500,0.040000 
-
-;aim_hud_offset_pos_16x9	= -0.096220,0.125500,0.060500
-;aim_hud_offset_rot_16x9	= 0.099000,0.014000,0.000000
-
-aim_hud_offset_pos_16x9 = -0.154000,0.102000,0.060500 
-aim_hud_offset_rot_16x9 = 0.034000,0.027000,0.000000 
+anm_show				= mosin_draw
+anm_hide             	= mosin_holster
+anm_shots				= mosin_shoot, shoot
+anm_reload				= mosin_reload, reload
+anm_bore				= mosin_aim
+anm_idle             	= mosin_idle
+anm_idle_aim			= mosin_aim
+anm_idle_moving 		= mosin_move
+anm_idle_sprint			= mosin_sprint
 
 
 gl_hud_offset_pos		= 0,0,0

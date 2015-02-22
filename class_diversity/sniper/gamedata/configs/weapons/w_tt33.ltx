@@ -116,12 +116,10 @@ kill_msg_height			= 27
 ;-------------------------------------------------------------------------------
 visual                  	= dynamics\weapons\wpn_tt33\wpn_tt33.ogf
 
-position                	= -0.005, 0.085, -0.469
+position                	= -0.021, -0.085, 0.0
 orientation             	= 0, 0, 0
 
-fire_point		= 0.0, -0.043, 0.636
-;fire_point			= 0.0, 0.133, 0.179
-;fire_point              	= 0.0, 0.133, 0.22
+fire_point              	= 0.0, 0.133, 0.161
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;strap_position         	= -0.1,-0.45,0.2			; position (offset) and orientation of the weapon when it is strapped
@@ -166,7 +164,7 @@ snd_shoot4					= weapons\tt33\tt33_shot
 snd_shoot5					= weapons\tt33\tt33_shot_3
 snd_shoot6					= weapons\tt33\tt33_shot
 snd_empty					= weapons\generic\pistol_empty
-snd_reload					= weapons\tt33\tt_reload, 0.8
+snd_reload						= weapons\pistols\PM\pm_reload
 snd_close					= weapons\generic_close
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -199,64 +197,66 @@ silencer_light_time 			= 0.2
 zoom_hide_crosshair			= true
 
 
-;hands_position				= -0.021000,-0.160000,0.002500
-;hands_orientation			= -0.500000,1.000000,1.149999
-;hands_position_16x9				= 0.033000,-0.189500,0.039000
-;hands_orientation_16x9			= 2.349998,2.749999,2.849998
+hands_position				= 0.033,-0.155,0.1
+hands_orientation			= 0,0,0
+hands_position_16x9			= 0.033,-0.155,0.1
+hands_orientation_16x9			= 0,0,0
 
-hands_position				= -0.021000,-0.160000,0.002500
-hands_orientation			= -0.350000,0.650000,0.849999
-hands_position_16x9				= -0.010000,-0.176500,0.039000
-hands_orientation_16x9			= -1.500000,0.800000,2.449998
 
-item_position					= 0.000746,-0.000321,0.003479
-item_orientation				= 1.239378,-0.134046,-2.052052
+item_position				= 0,0,0
+item_orientation			= 17.2,0,0
 
 item_visual             	= dynamics\weapons\wpn_tt33\wpn_tt33_hud.ogf
 attach_place_idx				= 0
 
-shell_point						= 0.015,0.062,0.155  ; 0.021,0.057,0.456
-shell_bone              	= wpn_body
+shell_point						= 0,0,0
+shell_bone              	= eject
 
-fire_point			= 0,0.048,0.222
-fire_bone               	= wpn_body
+fire_point			= 0,0,0
+fire_bone               	= muzzle
 
-anm_show					= desert_eagle_draw
-anm_show_empty				= desert_eagle_draw, desert_eagle_opened
 
-anm_hide             		= desert_eagle_holster
-anm_hide_empty         		= desert_eagle_holster, desert_eagle_opened
+anm_empty             			= walter99_idle, walter99_opened
+anm_close				= walter99_holster
 
-anm_idle             		= desert_eagle_idle
-anm_idle_empty         		= desert_eagle_idle, desert_eagle_opened
+anm_show				= pistol_draw
+anm_show_empty				= pistol_draw, pm_opened
 
-anm_shots					= desert_eagle_shoot
-anm_shot_l					= desert_eagle_shoot, desert_eagle_open
+anm_hide             			= pistol_holster
+anm_hide_empty             		= pistol_holster, pm_opened
 
-anm_idle_aim				= desert_eagle_idle_aim
-anm_idle_aim_empty			= desert_eagle_idle_aim, desert_eagle_opened
+anm_idle             			= pistol_idle
+anm_idle_empty             		= pistol_idle, pm_opened
 
-anm_reload					= desert_eagle_reload
-anm_reload_empty			= desert_eagle_reload, desert_eagle_close
+anm_shots				= pistol_9x18_shoot, pm_shoot
+anm_shot_l				= pistol_9x18_shoot, pm_opened
 
-anm_idle_moving 			= desert_eagle_idle_moving
-anm_idle_moving_empty		= desert_eagle_idle_moving, desert_eagle_opened
-anm_idle_sprint					= 1911_sprint
-anm_idle_sprint_empty			= 1911_sprint, 1911_opened
-anm_bore					= desert_eagle_idle_bore
-anm_bore_empty				= desert_eagle_idle_bore, desert_eagle_opened
+anm_idle_aim				= pistol_idle_aim
+anm_idle_aim_empty			= pistol_idle_aim, pm_opened
 
-aim_hud_offset_pos    = -0.10400,0.0400,-0.063500
- aim_hud_offset_rot    = 0.0005,0.007500,-0.035000 
+anm_reload				= pistol_reload_euro, pm_reload
+anm_reload_empty			= pistol_reload_euro_last, pm_reload_empty
 
-gl_hud_offset_pos				= 0,0,0
-gl_hud_offset_rot				= 0,0,0
+anm_idle_moving 			= pistol_idle_moving
+anm_idle_moving_empty 			= pistol_idle_moving, pm_opened
+
+anm_idle_sprint				= pistol_idle_sprint
+anm_idle_sprint_empty			= pistol_idle_sprint, pm_opened
+
+anm_bore				= pistol_idle_bore, pm_bore
+anm_bore_empty				= pistol_idle_bore, pm_bore
+
+aim_hud_offset_pos			= -0.1364,0.05,-0.001500
+aim_hud_offset_rot			= 0,0,0
+
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
 
 lean_hud_offset_pos			= 0,0,0
 lean_hud_offset_rot			= 0,0,0
 
-aim_hud_offset_pos_16x9 = -0.119001,0.058900,0.000000
-aim_hud_offset_rot_16x9 = 0.003900,-0.012300,-0.010000
+aim_hud_offset_pos_16x9			= -0.1364,0.05,-0.001500
+aim_hud_offset_rot_16x9			= 0,0,0
 
 ;---------------------------
 ;AP Weapon Section for NPCs

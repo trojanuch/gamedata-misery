@@ -225,6 +225,7 @@ function dynamic_actor_loadout()
 	if (ActorClass == "assaulter") then
 		create_items("identity_card_assaulter")
 		create_items("container_tool")
+		create_items("con_checker")
 		if (MiseryBlackRoad) then
 			create_items("wpn_knife_inv_2")
 		else
@@ -266,6 +267,7 @@ function dynamic_actor_loadout()
 	elseif (ActorClass == "sniper") then
 		create_items("identity_card_sniper")
 		create_items("container_tool")
+		create_items("con_checker")
 		if (MiseryBlackRoad) then
 			create_items("wpn_knife_inv_5")
 		else
@@ -308,6 +310,7 @@ function dynamic_actor_loadout()
 	elseif (ActorClass == "recon") then
 		create_items("identity_card_recon")
 		create_items("container_tool")
+		create_items("con_checker")
 		if (MiseryBlackRoad) then
 			create_items("wpn_knife_inv_4")
 		else

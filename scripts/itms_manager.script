@@ -39,6 +39,9 @@ local ini = ini_file("plugins\\itms_manager.ltx")
 	local CookingModEnable = alun_utils.read_from_ini(ini,"cooking_mod","enable","bool",true)
 	local CookingTools = CookingModEnable and alun_utils.collect_section(ini,"cooking_mod_tools",true)
 
+	-- Condition checker mod
+	local ConditionCheckerModEnable = alun_utils.read_from_ini(ini_file("plugins\\con_checker.ltx"),"con_checker_mod","enable","bool",true)
+	local ConditionCheckerTools = ConditionCheckerModEnable and alun_utils.collect_section(ini_file("plugins\\con_checker.ltx"),"con_checker_mod_tools",true)
 
 	-- Loot Mutant mod
 	local MutantLootEnable = alun_utils.read_from_ini(ini,"mutant_loot_mod","enable","bool",true)
@@ -293,6 +296,16 @@ function actor_on_item_use(obj)
 		end
 	end
 
+	-- Condition Checker mod
+	if (ConditionCheckerModEnable and ConditionCheckerTools[obj:section()]) then
+		local hud = get_hud()
+		--hud:HideActorMenu()
+		local ui = ui_con_checker and ui_con_checker.con_checker_ui(hud,obj:section())
+		if (ui) then
+			ui:ShowDialog(true)
+			ui:FillList()
+		end
+	end
 
 	-- Dummy Torch for Flashlight
 	if (FlashlightModEnable and obj:section() == "device_torch_dummy") then

@@ -2,14 +2,93 @@
 
 immunities_sect				= stalker_zat_b18_noah_immunities
 
+;---CRITICAL WOUND------------------------------------------------------------------
+critical_wound_threshold		= 0.01;0.05 ; try to make critical wounds less often
+critical_wound_decrease_quant		= 0.1
+body_parts_section_id			= critical_wound_body_parts_section_b18_noah
+critical_wound_weights			= 100,50,10
+
+;---OFFLINE ALIFE------------------------------------------------------------------
+Health							= 200					; option for ALife Simulator
+MaxHealthValue					= 200				; option for ALife Simulator, range [0..200]
+
+
+[critical_wound_head_section_b18_noah]
+;	bip01_head
+;	eyelid_1
+;	eye_left
+;	eye_right
+;	jaw_1
+;	bip01_l_hand
+;	bip01_l_finger0
+;	bip01_l_finger01
+;	bip01_l_finger02
+;	bip01_l_finger1
+;	bip01_l_finger11
+;	bip01_l_finger12
+;	bip01_l_finger2
+;	bip01_l_finger21
+;	bip01_l_finger22
+;	bip01_r_hand
+;	bip01_r_finger0
+;	bip01_r_finger01
+;	bip01_r_finger02
+;	bip01_r_finger1
+;	bip01_r_finger11
+;	bip01_r_finger12
+;	bip01_r_finger2
+;	bip01_r_finger21
+;	bip01_r_finger22
+;	bip01_neck
+
+
+[critical_wound_torso_section_b18_noah]
+;	bip01_pelvis
+;	bip01_tail
+;	bip01_spine
+;	bip01_spine1
+;	bip01_spine2
+
+[critical_wound_hand_left_section_b18_noah]
+;	bip01_l_upperarm
+;	bip01_l_forearm
+;	bip01_l_clavicle
+
+[critical_wound_hand_right_section_b18_noah]
+;	bip01_r_upperarm
+;	bip01_r_forearm
+;	bip01_r_clavicle
+
+[critical_wound_leg_left_section_b18_noah]
+;	bip01_l_thigh
+;	bip01_l_calf
+;	bip01_l_foot
+;	bip01_l_toe0
+
+[critical_wound_leg_right_section_b18_noah]
+;	bip01_r_thigh
+;	bip01_r_calf
+;	bip01_r_foot
+;	bip01_r_toe0
+
+[critical_wound_body_parts_section_b18_noah]
+	head				= critical_wound_head_section_b18_noah
+	torso				= critical_wound_torso_section_b18_noah
+	hand_left			= critical_wound_hand_left_section_b18_noah
+	hand_right			= critical_wound_hand_right_section_b18_noah
+	leg_left			= critical_wound_leg_left_section_b18_noah
+	leg_right			= critical_wound_leg_right_section_b18_noah
+
+
+
 [stalker_zat_b18_noah_immunities]
-burn_immunity 				= 0.5
-strike_immunity 			= 0.01
-shock_immunity 				= 0.5
-wound_immunity				= 0.01
-radiation_immunity 			= 0.5
-telepatic_immunity 			= 0.5
-chemical_burn_immunity 		= 0.5
-explosion_immunity 			= 0.01
-fire_wound_immunity  		= 0.2
-wound_2_immunity  			= 0.01
+burn_immunity 				= 0.0
+strike_immunity 			= -0.5
+shock_immunity 				= 0.0
+wound_immunity				= -0.5
+radiation_immunity 			= 0.0
+telepatic_immunity 			= 0.0
+chemical_burn_immunity 			= 0.0
+explosion_immunity 			= 1.0
+fire_wound_immunity  			= 1.0
+wound_2_immunity  			= -0.5

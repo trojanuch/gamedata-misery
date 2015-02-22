@@ -307,17 +307,22 @@ function repair_ui:OnButton_back_clicked()
 end
 
 function repair_ui:OnKeyboard(dik, keyboard_action)
- local bind = dik_to_bind(dik)
- CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
- if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-  if (dik == DIK_keys.DIK_RETURN) then
-  elseif (dik == DIK_keys.DIK_ESCAPE) then
-   self:OnButton_back_clicked()
-  elseif (bind == key_bindings.kUSE) then
-   self:OnButton_back_clicked()
-  end
- end
- return true
+-- Plaargath keyboard convenience addition
+	local bind = dik_to_bind(dik)
+	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
+		if (dik == DIK_keys.DIK_RETURN) then
+		elseif (dik == DIK_keys.DIK_ESCAPE) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kUSE) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kJUMP) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kDROP) then
+			self:OnButton_back_clicked()
+		end
+	end
+	return true
 end
 
 function repair_ui:OnButton_repair()
@@ -649,7 +654,8 @@ function repair_ui:OnButton_repair()
 				end
 				-- cleaning_kit_u x3
 				if(se_parts)and(se_parts:section_name()=="cleaning_kit_u")then
-				alife():create("cleaning_kit_u2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())						end
+				alife():create("cleaning_kit_u2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
 				if(se_parts)and(se_parts:section_name()=="cleaning_kit_u2")then
 				alife():create("cleaning_kit_u3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end

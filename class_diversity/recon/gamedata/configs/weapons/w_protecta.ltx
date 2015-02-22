@@ -170,11 +170,12 @@ snd_draw		= weapons\generic\rifle_draw
 snd_holster		= weapons\generic\rifle_holster
 snd_shoot		= weapons\protecta\protecta_shot
 snd_empty		= weapons\generic\shotgun_empty
-snd_reload		= weapons\protecta\protecta_reload_end
+snd_reload		= weapons\spas12_reload_end
 snd_shoot_duplet	= weapons\protecta\protecta_shot
 
 snd_open_weapon         = weapons\draw_silent
-snd_add_cartridge	= weapons\spas12_reload
+snd_add_cartridge	= weapons\shotguns\protecta\protecta_reload
+snd_add_cartridge1	= weapons\shotguns\protecta\protecta_reload1
 snd_close_weapon        = weapons\protecta\protecta_reload_end
 
 [wpn_protecta_hud]:hud_base
@@ -183,40 +184,42 @@ shell_point			= 0.020000,0.072000,0.228000
 shell_dir                     	= 0.0, 1.0, 0.0
 shell_bone			= wpn_body
 
-fire_point			= -0.000000,0.059500,0.650487
-fire_bone			= wpn_body
+fire_point		  = 0,0,0
+fire_bone                 = muzzle
+
+
+
 
 attach_place_idx		= 0
 item_visual                   	= dynamics\weapons\wpn_protecta\wpn_protecta_hud
 
-hands_position				= -0.035000,-0.183000,0.112002
-hands_orientation			= -6.850007,-3.649996,3.449997
+hands_position				= 0.08,-0.04,0.2
+hands_orientation			= 0,0,0
 
-hands_position_16x9			= 0.027000,-0.207499,0.137000
-hands_orientation_16x9			= -4.099998,-2.199999,2.499999
+hands_position_16x9			= 0.08,-0.04,0.2
+hands_orientation_16x9			= 0,0,0
 
-item_position				= 0.000075,-0.004612,0.001283
-item_orientation			= 0.045015,1.047468,0.056850
+item_position				= 0,0,0
+item_orientation			= 0,0,0
 
-aim_hud_offset_pos				= -0.130000, 0.019100,-0.001500
-aim_hud_offset_rot				= -0.018500, 0.040000, 0.020000
+aim_hud_offset_pos		= -0.08,0.04,-0.1
+aim_hud_offset_rot		= 0,0,0
 
-aim_hud_offset_pos_16x9			= -0.192500, 0.059000, 0.050000
-aim_hud_offset_rot_16x9			=  0.025000, 0.085000,-0.007500
+aim_hud_offset_pos_16x9		= -0.08,0.04,-0.1
+aim_hud_offset_rot_16x9		= 0,0,0
 
-anm_show			= protecta_draw
-anm_hide			= protecta_holster
-anm_idle			= protecta_idle
-anm_idle_aim			= protecta_idle_aim
-anm_idle_moving			= protecta_idle_moving
-anm_idle_sprint			= protecta_idle_sprint
-anm_bore			= protecta_idle_bore
 
-anm_shots			= protecta_shoot
-
-anm_open			= protecta_reload_start
-anm_add_cartridge		= protecta_reload
-anm_close			= protecta_reload_end
+anm_show			= protect2_draw
+anm_hide			= protect2_holster
+anm_idle			= protect2_idle
+anm_idle_aim			= protect2_idle_aim
+anm_idle_moving			= protect2_idle_moving
+anm_idle_sprint			= protect2_idle_sprint
+anm_bore			= protect2_idle_bore
+anm_shots			= protect2_shoot
+anm_open			= protect2_reload_start
+anm_add_cartridge		= protect2_reload, protecta_reload_w
+anm_close			= protect2_reload_end
 
 [scope_susat_proecta]
 scope_name 					= wpn_addon_scope_susat
@@ -301,8 +304,6 @@ inv_grid_y					= 66
 
 visual                   	= dynamics\weapons\wpn_protecta\wpn_protect1
 
-snd_reload		= weapons\protecta\protecta_reload_end
-
 [wpn_protecta_custom_hud]:wpn_protecta_hud
 
 item_visual                   	= dynamics\weapons\wpn_protecta\wpn_protect1_hud
@@ -343,8 +344,6 @@ inv_grid_y					= 68
 
 visual                   	= dynamics\weapons\wpn_protecta\wpn_protect2
 
-snd_reload		= weapons\protecta\protecta_reload_end
-
 [wpn_protecta_camo_hud]:wpn_protecta_hud
 
 item_visual                   	= dynamics\weapons\wpn_protecta\wpn_protect2_hud
@@ -382,8 +381,6 @@ inv_grid_x					= 12
 inv_grid_y					= 67
 
 visual                   	= dynamics\weapons\wpn_protecta\wpn_protect3
-
-snd_reload		= weapons\protecta\protecta_reload_end
 
 [wpn_protecta_worn_hud]:wpn_protecta_hud
 

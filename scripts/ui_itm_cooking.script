@@ -22,6 +22,8 @@ end
 -------------------------------------------------------------------
 class "cooking_ui" (CUIScriptWnd)
 
+local fuel_cnt -- legibility tweak, Plaargath
+
 function cooking_ui:__init(owner,section) super()
 	self.owner = owner
 	self.section = section
@@ -236,7 +238,13 @@ function cooking_ui:OnPartsListItemClicked()
 
 	self.picture_parts:SetWndPos(vector2():set(self.picture_parts.x-w/2, self.picture_parts.y-h/2))
 
-	self.caption_parts:SetText(string.format("Selected (x%d)",self:GetPartCount(sec)))
+	-- Plaargath legibility tweak
+	local prts_cnt = self:GetPartCount(sec)
+	local fuel_cnt = fuel_cnt
+	local display_cnt
+	if prts_cnt > fuel_cnt then display_cnt = fuel_cnt else display_cnt = prts_cnt end
+	self.caption_parts:SetText(string.format("Selected (x%d)",display_cnt))
+	-- end Plaargath
 
 end
 
@@ -293,11 +301,18 @@ function cooking_ui:OnButton_back_clicked()
 end
 
 function cooking_ui:OnKeyboard(dik, keyboard_action)
+-- Plaargath keyboard convenience addition
+	local bind = dik_to_bind(dik)
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
 		if (dik == DIK_keys.DIK_RETURN) then
-
 		elseif (dik == DIK_keys.DIK_ESCAPE) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kUSE) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kJUMP) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kDROP) then
 			self:OnButton_back_clicked()
 		end
 	end
@@ -337,7 +352,10 @@ function cooking_ui:GetFuelCharges(fuel_item)
 	if(alun_utils.startsWith(fuel_name,"explo_jerrycan_fuel"))	then base_charges = 8 end
 	if(alun_utils.startsWith(fuel_name,"explo_balon_gas"))	then base_charges = 8 end
 
-	return base_charges - charge_adjust
+	-- Plaargath legibility tweak
+	fuel_cnt = base_charges - charge_adjust
+	return fuel_cnt
+	-- end Plaargath
 end
 
 function cooking_ui:MakeFuelCharges(fuel_item,charges)

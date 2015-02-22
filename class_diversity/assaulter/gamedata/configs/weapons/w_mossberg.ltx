@@ -100,7 +100,7 @@ orientation              	= 0, -4, 0      ;значение устанавливается в градусах
 
 shell_point				= 0.0, 0.180, 0.647
 ;shell_particles         = weapons\generic_shells_shotgun
-shell_particles         = amik\weapons\data\shells_12x70_r
+;shell_particles         = amik\weapons\data\shells_12x70_r
 
 fire_point              = 0.0, 0.158, 0.647
 fire_point2				= 0.0, 0.158, 0.647
@@ -159,56 +159,65 @@ zoom_enabled				= true
 scope_zoom_factor       = 58.6 ; 	    		= 85
 
 ;звуки
-snd_draw				= weapons\mossberg\mossberg_draw
-snd_holster				= weapons\generic\rifle_holster
-snd_shoot				= weapons\mossberg\mossberg_shot
-snd_empty				= weapons\generic\shotgun_empty
-snd_reload				= weapons\mossberg\mossberg_insertshell
-snd_shoot_duplet			= weapons\mossberg\mossberg_shot
-
-snd_add_cartridge			= weapons\mossberg\mossberg_insertshell
-snd_close_weapon        		= weapons\mossberg\mossberg_pump
+snd_draw			= weapons\generic\rifle_draw
+snd_holster			= weapons\generic\rifle_holster
+snd_shoot		= weapons\shotguns\win\win_shoot
+snd_shoot1		= weapons\shotguns\win\win_shoot1
+snd_empty			= weapons\generic\shotgun_empty
+snd_reload			= weapons\spas12_reload_end
+snd_shoot_duplet		= weapons\n_spas12_shot
+snd_open_weapon         = weapons\draw_silent
+snd_add_cartridge	= weapons\shotguns\win\win_reload
+snd_add_cartridge1	= weapons\shotguns\win\win_reload1
+snd_close_weapon        = weapons\shotguns\win\win_pump
 
 [wpn_m3_hud]:hud_base
 zoom_hide_crosshair = true
 
-shell_point			= 0.018,0.035,0.54  ;0.028,0.052,0.0147
-shell_dir                     	= 0.0, 1.0, 0.0
-shell_bone			= wpn_body
-
-
-fire_point		= 0, 0.051, 0.808
-fire_bone			= wpn_body
-
-
 attach_place_idx		= 0
 item_visual                   	= dynamics\weapons\wpn_m3\wpn_m3_hud.ogf
 
-hands_position				= -0.131000,-0.084001,0.197000
-hands_orientation			= 1.950000,-0.999998,3.349998
+hands_position				= 0.08,-0.06,0.2
+hands_orientation			= 0,0,0
 
-hands_position_16x9				= -0.122000,-0.142500,0.234499
-hands_orientation_16x9			= 3.149998,1.050001,2.349999
+hands_position_16x9			= 0.08,-0.06,0.2
+hands_orientation_16x9			= 0,0,0
 
-item_position				= 0.001394,0.007643,0.003674
-item_orientation			= -0.194673,-0.83 9747,-0.116095
+item_position				= 0,0,0
+item_orientation			= 0,0,0
 
-aim_hud_offset_pos = -0.095000,0.098000,0.000000
-aim_hud_offset_rot = 0.044700,0.025000,-0.022500
+shell_point               = 0,0,0
+shell_dir                 = 0.0, 1.0, 0.0
+shell_bone                = eject
 
-aim_hud_offset_pos_16x9 = -0.104400,0.168000,0.000000
-aim_hud_offset_rot_16x9 = 0.084000,0.047000,-0.045000
+fire_point		  = 0,0,0
+fire_bone                 = muzzle
 
-anm_show						= spas12_draw
-anm_hide						= spas12_holster
-anm_idle						= spas12_idle
-anm_idle_aim				= spas12_idle_aim
-anm_idle_moving			= spas12_idle_moving
-anm_idle_sprint	= svu_idle_sprint_2
-anm_bore						= spas12_idle_bore
+aim_hud_offset_pos		= -0.08,0.06,-0
+aim_hud_offset_rot		= 0,0,0
 
-anm_shots					= spas12_shoot
+aim_hud_offset_pos_16x9		= -0.08,0.06,-0
+aim_hud_offset_rot_16x9		= 0,0,0
 
-anm_open						= spas12_reload_start
-anm_add_cartridge			= spas12_reload
-anm_close					= spas12_reload_end
+gl_hud_offset_pos               = 0,0,0
+gl_hud_offset_rot               = 0,0,0
+
+gl_hud_offset_pos_16x9          = 0,0,0
+gl_hud_offset_rot_16x9          = 0,0,0
+
+lean_hud_offset_pos             = 0,0,0
+lean_hud_offset_rot             = 0,0,0
+
+anm_show			= winchester1303_draw
+anm_hide			= winchester1303_holster
+anm_idle			= winchester1303_idle
+anm_idle_aim			= winchester1303_idle_aim
+anm_idle_moving			= winchester1303_idle_moving
+anm_idle_sprint			= winchester1303_idle_sprint
+anm_bore			= winchester1303_idle_bore
+
+anm_shots			= winchester1303_shoot, winchester1300_shoot_w
+
+anm_open			= winchester1303_reload_start
+anm_add_cartridge		= winchester1303_reload, winchester1300_reload_w
+anm_close			= winchester1303_reload_end

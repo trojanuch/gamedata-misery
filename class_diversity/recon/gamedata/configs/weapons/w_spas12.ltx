@@ -164,57 +164,55 @@ snd_draw		= weapons\generic\rifle_draw
 snd_holster		= weapons\generic\rifle_holster
 snd_shoot		= weapons\spas12\spas12_shot
 snd_empty		= weapons\generic\shotgun_empty
-snd_reload		= weapons\spas12\spas12_reload_end
+snd_reload		= weapons\shotguns\spas12\spas12_reload_end
 snd_shoot_duplet	= weapons\spas12\spas12_shot
 snd_open_weapon         = weapons\draw_silent
-snd_add_cartridge	= weapons\spas12\spas12_reload
-snd_close_weapon        = weapons\spas12\spas12_reload_end
+snd_add_cartridge	= weapons\shotguns\spas12\spas12_reload
+snd_close_weapon        = weapons\shotguns\spas12\spas12_reload_end
 
 [wpn_spas12_hud]:hud_base
 zoom_hide_crosshair		= true
 
-shell_point			= 0.028,0.052,0.0147
-shell_dir                     	= 0.0, 1.0, 0.0
-shell_bone			= wpn_body
-
-
-fire_point			= 0, 0.051, 0.808
-fire_bone			= wpn_body
-
-
 attach_place_idx		= 0
 item_visual                   	= dynamics\weapons\wpn_spas12\wpn_spas12_hud.ogf
 
-hands_position				= -0.131000,-0.084001,0.197000
-hands_orientation			= 1.950000,-0.999998,3.349998
+hands_position				= -0.075,-0.15,0.2
+hands_orientation			= 2,2,0
 
-hands_position_16x9				= -0.122000,-0.142500, 0.234499
-hands_orientation_16x9			=  3.149998, 1.050001, 2.349999
+hands_position_16x9			= -0.075,-0.15,0.2
+hands_orientation_16x9		= 2,2,0
 
-item_position					=  0.001394, 0.007643, 0.003674
-item_orientation				= -0.194673,-0.839747,-0.116095
+item_position				= 0,0,0
+item_orientation			= 0,0,0
 
-aim_hud_offset_pos				= -0.097600, 0.090200, 0.050000
-aim_hud_offset_rot				=  0.051000, 0.025000,-0.022500
+shell_point                 = 0,0,0
+shell_dir               	= 0.0, 1.0, 0.0
+shell_bone                	= gilza
 
-aim_hud_offset_pos_16x9			= -0.106600, 0.158000, 0.050000
-aim_hud_offset_rot_16x9			=  0.087000, 0.046500,-0.045000
+fire_point					= 0,0,0
+fire_bone                   = muzzle
 
-anm_show						= spas12_draw
-anm_hide						= spas12_holster
-anm_idle						= spas12_idle
-anm_idle_aim				= spas12_idle_aim
-anm_idle_moving			= spas12_idle_moving
-anm_idle_sprint			= spas12_idle_sprint
-anm_bore						= spas12_idle_bore
+aim_hud_offset_pos			= -0.1505,0.044,-0.075
+aim_hud_offset_rot			= 0.033,0.03475,0.0
 
-anm_shots					= spas12_shoot
+aim_hud_offset_pos_16x9		= -0.1505,0.044,-0.075
+aim_hud_offset_rot_16x9		= 0.033,0.03475,0.0
 
-anm_open						= spas12_reload_start
-anm_add_cartridge			= spas12_reload
-anm_close					= spas12_reload_end
+anm_show						= spas_draw
+anm_hide						= spas_holster
+anm_idle						= spas_idle
+anm_idle_aim					= spas_aim
+anm_idle_moving					= spas_move
+anm_idle_sprint					= spas_sprint
+anm_bore						= spas_aim
 
-anm_reload = spas12_reload
+anm_shots						= spas_shoot, shoot
+
+anm_open						= spas_reload_start, reload_start
+anm_add_cartridge				= spas_reload, reload
+anm_close						= spas_reload_end, reload_end
+
+anm_reload 						= spas_reload, reload
 
 ;-----------------------------------------------------------------------------
 ; ”никальные
@@ -260,50 +258,9 @@ condition_queue_shot_dec	= 0.0009
 
 visual                     	= dynamics\weapons\wpn_spas13\wpn_spas13.ogf
 
-[wpn_spas13_hud]:hud_base
+[wpn_spas13_hud]:wpn_spas12_hud
 
-shell_point			= 0.028,0.052,0.0147
-shell_dir                     	= 0.0, 1.0, 0.0
-shell_bone			= wpn_body
-
-
-fire_point		= 0, 0.051, 0.808
-fire_bone			= wpn_body
-
-
-attach_place_idx		= 0
 item_visual                   	= dynamics\weapons\wpn_spas13\wpn_spas13_hud.ogf
-
-hands_position				= -0.131000,-0.084001,0.197000
-hands_orientation			= 1.950000,-0.999998,3.349998
-
-hands_position_16x9				= -0.122000,-0.142500, 0.234499
-hands_orientation_16x9			=  3.149998, 1.050001, 2.349999
-
-item_position					=  0.001394, 0.007643, 0.003674
-item_orientation				= -0.194673,-0.839747,-0.116095
-
-aim_hud_offset_pos				= -0.097600, 0.090200, 0.050000
-aim_hud_offset_rot				=  0.051000, 0.025000,-0.022500
-
-aim_hud_offset_pos_16x9			= -0.106600, 0.158000, 0.050000
-aim_hud_offset_rot_16x9			=  0.087000, 0.046500,-0.045000
-
-anm_show						= spas12_draw
-anm_hide						= spas12_holster
-anm_idle						= spas12_idle
-anm_idle_aim				= spas12_idle_aim
-anm_idle_moving			= spas12_idle_moving
-anm_idle_sprint			= spas12_idle_sprint
-anm_bore						= spas12_idle_bore
-
-anm_shots					= spas12_shoot
-
-anm_open						= spas12_reload_start
-anm_add_cartridge			= spas12_reload
-anm_close					= spas12_reload_end
-
-anm_reload = spas12_reload
 
 ;---------------------------
 ;AP Weapon Section for NPCs
@@ -353,10 +310,6 @@ inv_grid_y          	= 79
 
 visual                     	= dynamics\weapons\wpn_spas12\wpn_spas1a.ogf
 
-snd_reload		= weapons\spas12\spas12_reload_end
-snd_add_cartridge	= weapons\spas12\spas12_reload
-snd_close_weapon        = weapons\spas12\spas12_reload_end
-
 [wpn_spas12_custom_hud]:wpn_spas12_hud
 
 item_visual                   	= dynamics\weapons\wpn_spas12\wpn_spas1a_hud.ogf
@@ -396,10 +349,6 @@ inv_grid_y          	= 79
 
 visual                     	= dynamics\weapons\wpn_spas12\wpn_spas1b.ogf
 
-snd_reload		= weapons\spas12\spas12_reload_end
-snd_add_cartridge	= weapons\spas12\spas12_reload
-snd_close_weapon        = weapons\spas12\spas12_reload_end
-
 [wpn_spas12_alt_hud]:wpn_spas12_hud
 
 item_visual                   	= dynamics\weapons\wpn_spas12\wpn_spas1b_hud.ogf
@@ -437,10 +386,6 @@ inv_grid_x          	= 11
 inv_grid_y          	= 79
 
 visual                     	= dynamics\weapons\wpn_spas12\wpn_spas1c.ogf
-
-snd_reload		= weapons\spas12\spas12_reload_end
-snd_add_cartridge	= weapons\spas12\spas12_reload
-snd_close_weapon        = weapons\spas12\spas12_reload_end
 
 [wpn_spas12_worn_hud]:wpn_spas12_hud
 

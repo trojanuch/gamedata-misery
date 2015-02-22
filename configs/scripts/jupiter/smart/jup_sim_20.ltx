@@ -1,6 +1,6 @@
-[smart_terrain]
-respawn_idle = 14400
+[smart_terrain];jup_sim_20
 respawn_only_level = true
+respawn_idle = 14400
 respawn_radius = 200
 death_idle_time = 14400
 
@@ -31,7 +31,7 @@ spawn_chimera
 
 [spawn_stalker@hunter_day]
 spawn_squads = stalker_hunter_day_simulation_squad_jupiter
-spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) -kingpin_gained} 1, 0 ; {=actor_on_level(jupiter) -kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_b218_gather_squad_complete} 1, 0
+spawn_num = {=actor_on_level(jupiter) +jup_b207_task_end} 0, {=actor_on_level(jupiter) +jup_a12_task_done} 0, {=actor_on_level(jupiter) +jup_b46_task_done} 0, {=actor_on_level(jupiter) +jup_b8_heli_4_searched} 0, {=actor_on_level(jupiter) +jup_b209_task_done} 0, {=actor_on_level(jupiter) +jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) -kingpin_gained} 1, 0 ; {=actor_on_level(jupiter) -kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(jupiter) -kingpin_gained -jup_b218_gather_squad_complete} 1, 0
 
 [spawn_stalker@hunter_night]
 spawn_squads = stalker_hunter_day_simulation_squad_jupiter, stalker_hunter_night_simulation_squad_jupiter
@@ -41,7 +41,7 @@ spawn_num = {=actor_on_level(jupiter) -kingpin_gained +jup_b207_task_end} 1, {=a
 
 [spawn_stalker@hunter_day_hostile]
 spawn_squads = stalker_hunter_day_simulation_squad_jupiter_hostile
-spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) +kingpin_gained} 1, 0 ; {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) +kingpin_gained} 1, 0 ; {=actor_on_level(jupiter) +kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b218_gather_squad_complete} 1, 0
+spawn_num = {=actor_on_level(jupiter) +jup_b207_task_end} 0, {=actor_on_level(jupiter) +jup_a12_task_done} 0, {=actor_on_level(jupiter) +jup_b46_task_done} 0, {=actor_on_level(jupiter) +jup_b8_heli_4_searched} 0, {=actor_on_level(jupiter) +jup_b209_task_done} 0, {=actor_on_level(jupiter) +jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) +kingpin_gained} 1, 0 ; {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) +kingpin_gained} 1, 0 ; {=actor_on_level(jupiter) +kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b218_gather_squad_complete} 1, 0
 
 [spawn_stalker@hunter_night_hostile]
 spawn_squads = stalker_hunter_day_simulation_squad_jupiter_hostile, stalker_hunter_night_simulation_squad_jupiter_hostile
@@ -51,7 +51,7 @@ spawn_num = {=actor_on_level(jupiter) +kingpin_gained +jup_b207_task_end} 1, {=a
 
 [spawn_stalker@advanced_hostile]
 spawn_squads = stalker_sim_squad_novice_jupiter_hostile
-spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) +kingpin_gained} 1, 0 ; {=actor_on_level(jupiter) +kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b218_gather_squad_complete} 1, 0
+spawn_num = {=actor_on_level(jupiter) +jup_b207_task_end} 0, {=actor_on_level(jupiter) +jup_a12_task_done} 0, {=actor_on_level(jupiter) +jup_b46_task_done} 0, {=actor_on_level(jupiter) +jup_b8_heli_4_searched} 0, {=actor_on_level(jupiter) +jup_b209_task_done} 0, {=actor_on_level(jupiter) +jup_b218_gather_squad_complete} 0, {=actor_on_level(jupiter) +kingpin_gained} 1, 0 ; {=actor_on_level(jupiter) +kingpin_gained -jup_b207_task_end} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_a12_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b46_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b8_heli_4_searched} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b209_task_done} 1, {=actor_on_level(jupiter) +kingpin_gained -jup_b218_gather_squad_complete} 1, 0
 
 [spawn_stalker@master_hostile]
 spawn_squads = stalker_sim_squad_veteran_jupiter_hostile, stalker_sci_simulation_squad_jupiter_hostile

@@ -160,7 +160,7 @@ snd_draw					= weapons\generic\pistol_draw
 snd_holster					= weapons\generic\pistol_holster
 snd_shoot					= weapons\pm\pm_shot
 snd_empty					= weapons\generic\pistol_empty
-snd_reload					= weapons\generic\pistol_reload, 0.8
+snd_reload						= weapons\pistols\PM\pm_reload
 snd_close					= weapons\generic_close
 snd_silncer_shot				= weapons\silencers\silencer_9x18
 
@@ -186,61 +186,66 @@ silencer_light_time 			= 0.2
 [wpn_pm_hud]:hud_base
 zoom_hide_crosshair			= true
 
-hands_position				= -0.021000,-0.160000,0.002500
-hands_orientation			= -0.500000,1.000000,1.149999
-hands_position_16x9				= 0.033000,-0.189500,0.039000
-hands_orientation_16x9			= 2.349998,2.749999,2.849998
+hands_position				= 0.033,-0.155,0.1
+hands_orientation			= 0,0,0
+hands_position_16x9			= 0.033,-0.155,0.1
+hands_orientation_16x9			= 0,0,0
 
-item_position					= 0.000481,-0.000050,-0.004011
-item_orientation				= 1.239378,-0.134046,-2.052052
 
-item_visual						= dynamics\weapons\wpn_pm\wpn_pm_hud.ogf
+item_position				= 0,0,0
+item_orientation			= 17.2,0,0
+
+item_visual             	= dynamics\weapons\wpn_pm\wpn_pm_hud.ogf
 attach_place_idx				= 0
 
-shell_point						= 0.013,0.046,0.463
-shell_bone              	= wpn_body
+shell_point						= 0,0,0
+shell_bone              	= eject
 
-fire_point			= 0,0.045,0.142
-fire_bone               	= wpn_body
+fire_point			= 0,0,0
+fire_bone               	= muzzle
 
-anm_show						= pm_draw
-anm_show_empty					= pm_draw, pm_opened
 
-anm_hide             			= pm_holster
-anm_hide_empty             		= pm_holster
+anm_empty             			= walter99_idle, walter99_opened
+anm_close				= walter99_holster
 
-anm_idle             			= pm_idle
-anm_idle_empty             		= pm_idle, pm_opened
+anm_show				= pistol_draw
+anm_show_empty				= pistol_draw, pm_opened
 
-anm_shots						= pm_shoot
-anm_shot_l						= pm_shoot, pm_open
+anm_hide             			= pistol_holster
+anm_hide_empty             		= pistol_holster, pm_opened
 
-anm_idle_aim					= pm_idle_aim
-anm_idle_aim_empty				= pm_idle_aim, pm_opened
+anm_idle             			= pistol_idle
+anm_idle_empty             		= pistol_idle, pm_opened
 
-anm_reload						= pm_reload
-anm_reload_empty				= pm_reload, pm_close
+anm_shots				= pistol_9x18_shoot, pm_shoot
+anm_shot_l				= pistol_9x18_shoot, pm_opened
 
-anm_idle_moving 				= pm_idle_moving
-anm_idle_moving_empty 			= pm_idle_moving, pm_opened
+anm_idle_aim				= pistol_idle_aim
+anm_idle_aim_empty			= pistol_idle_aim, pm_opened
 
-anm_idle_sprint					= pm_idle_sprint
-anm_idle_sprint_empty			= pm_idle_sprint, pm_opened
+anm_reload				= pistol_reload_euro, pm_reload
+anm_reload_empty			= pistol_reload_euro_last, pm_reload_empty
 
-anm_bore						= pm_idle_bore
-anm_bore_empty					= pm_idle_bore, pm_opened
+anm_idle_moving 			= pistol_idle_moving
+anm_idle_moving_empty 			= pistol_idle_moving, pm_opened
 
-aim_hud_offset_pos				= -0.106150, 0.040000, 0.050000
-aim_hud_offset_rot				= -0.001000, 0.005400,-0.033600
+anm_idle_sprint				= pistol_idle_sprint
+anm_idle_sprint_empty			= pistol_idle_sprint, pm_opened
 
-gl_hud_offset_pos				= 0,0,0
-gl_hud_offset_rot				= 0,0,0
+anm_bore				= pistol_idle_bore, pm_bore
+anm_bore_empty				= pistol_idle_bore, pm_bore
+
+aim_hud_offset_pos			= -0.1364,0.05,-0.001500
+aim_hud_offset_rot			= 0,0,0
+
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
 
 lean_hud_offset_pos			= 0,0,0
 lean_hud_offset_rot			= 0,0,0
 
-aim_hud_offset_pos_16x9			= -0.167000, 0.071000, 0.000000
-aim_hud_offset_rot_16x9			=  0.030000, 0.055800, 0.000000
+aim_hud_offset_pos_16x9			= -0.1364,0.05,-0.001500
+aim_hud_offset_rot_16x9			= 0,0,0
 
 ;-----------------------------------------------------------------------------
 ; ”никальные
@@ -290,79 +295,12 @@ misfire_end_prob = 0.085 ;	     	= 0.037
 
 visual                  	= dynamics\weapons\wpn_pu\wpn_pu.ogf
 
-position                	= -0.021, -0.085, 0.0
-orientation             	= 0, 0, 0
-
 silencer_x 						= 37
 silencer_y 						= -17
 
-[wpn_pu_hud]:hud_base
-zoom_hide_crosshair			= true
-
-hands_position				= -0.021000,-0.160000,0.002500
-hands_orientation			= -0.500000,1.000000,1.149999
-hands_position_16x9				= 0.033000,-0.189500,0.039000
-hands_orientation_16x9			= 2.349998,2.749999,2.849998
-
-
-;hands_position				= -0.025000,-0.155500,0.002500
-;hands_orientation			= 0.450000,1.300000,0.749999
-;hands_position_16x9				= 0.007500,-0.168500,0.039000
-;hands_orientation_16x9			= 0.700000,1.699999,2.8499983
-
-;item_position					= 0.000746,-0.000321,0.003479
-;item_orientation				= 1.239378,-0.134046,-2.052052
-
-item_position				= 0.000481,-0.000050,-0.004011
-item_orientation			= 1.239378,-0.134046,-2.052052
+[wpn_pu_hud]:wpn_pm_hud
 
 item_visual             	= dynamics\weapons\wpn_pu\wpn_pu_hud.ogf
-attach_place_idx				= 0
-
-shell_point						= 0.013,0.046,0.463
-shell_bone              	= wpn_body
-
-fire_point			= 0,0.045,0.142
-fire_bone               	= wpn_body
-
-anm_show						= pm_draw
-anm_show_empty					= pm_draw, pm_opened
-
-anm_hide             			= pm_holster
-anm_hide_empty             		= pm_holster
-
-anm_idle             			= pm_idle
-anm_idle_empty             		= pm_idle, pm_opened
-
-anm_shots						= pm_shoot
-anm_shot_l						= pm_shoot, pm_open
-
-anm_idle_aim					= pm_idle_aim
-anm_idle_aim_empty				= pm_idle_aim, pm_opened
-
-anm_reload						= pm_reload
-anm_reload_empty				= pm_reload, pm_close
-
-anm_idle_moving 				= pm_idle_moving
-anm_idle_moving_empty 			= pm_idle_moving, pm_opened
-
-anm_idle_sprint					= pm_idle_sprint
-anm_idle_sprint_empty			= pm_idle_sprint, pm_opened
-
-anm_bore						= pm_idle_bore
-anm_bore_empty					= pm_idle_bore, pm_opened
-
-aim_hud_offset_pos				= -0.106150, 0.040000, 0.050000
-aim_hud_offset_rot				= -0.001000, 0.005400,-0.033600
-
-gl_hud_offset_pos				= 0,0,0
-gl_hud_offset_rot				= 0,0,0
-
-lean_hud_offset_pos			= 0,0,0
-lean_hud_offset_rot			= 0,0,0
-
-aim_hud_offset_pos_16x9			= -0.167000, 0.071000, 0.000000
-aim_hud_offset_rot_16x9			=  0.030000, 0.055800, 0.000000
 
 ;---------------------------
 ;AP Weapon Section for NPCs
@@ -412,8 +350,6 @@ inv_grid_y				= 77
 
 visual                  	= dynamics\weapons\wpn_pm\wpn_p1.ogf
 
-snd_reload					= weapons\generic\pistol_reload, 0.8
-
 [wpn_pm_custom_hud]:wpn_pm_hud
 
 item_visual						= dynamics\weapons\wpn_pm\wpn_p1_hud.ogf
@@ -452,8 +388,6 @@ inv_grid_x				= 6
 inv_grid_y				= 75
 
 visual                  	= dynamics\weapons\wpn_pm\wpn_p2.ogf
-
-snd_reload					= weapons\generic\pistol_reload, 0.8
 
 [wpn_pm_alt_hud]:wpn_pm_hud
 
@@ -495,8 +429,6 @@ inv_grid_x				= 6
 inv_grid_y				= 76
 
 visual                  	= dynamics\weapons\wpn_pm\wpn_p3.ogf
-
-snd_reload					= weapons\generic\pistol_reload, 0.8
 
 [wpn_pm_worn_hud]:wpn_pm_hud
 

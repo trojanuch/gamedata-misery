@@ -145,6 +145,15 @@ function arty_ui:InitControls()
 	self.pic:SetTextureRect(Frect():set(x1,y1,x2,y2))
 	self.pic:SetWndSize(vector2():set(w,h))
 
+	if not (self.pic.x) then
+		local pos = self.pic:GetWndPos()
+		local posform = self.form:GetWndPos()
+		self.pic.x = pos.x + posform.x
+		self.pic.y = pos.y + posform.y
+	end
+
+	self.pic:SetWndPos(vector2():set(self.pic.x-w/2, self.pic.y-h/2))
+
 	-- Caption
 	self.caption_parts 		= self.xml:InitTextWnd("itm_arty:form:caption_parts",self.form)
 	self.list_box_parts			= self.xml:InitListBox("itm_arty:form:list_parts",self.form)
@@ -232,17 +241,22 @@ function arty_ui:OnButton_back_clicked()
 end
 
 function arty_ui:OnKeyboard(dik, keyboard_action)
- local bind = dik_to_bind(dik)
- CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
- if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-  if (dik == DIK_keys.DIK_RETURN) then
-  elseif (dik == DIK_keys.DIK_ESCAPE) then
-   self:OnButton_back_clicked()
-  elseif (bind == key_bindings.kUSE) then
-   self:OnButton_back_clicked()
-  end
- end
- return true
+-- Plaargath keyboard convenience addition
+	local bind = dik_to_bind(dik)
+	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
+		if (dik == DIK_keys.DIK_RETURN) then
+		elseif (dik == DIK_keys.DIK_ESCAPE) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kUSE) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kJUMP) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kDROP) then
+			self:OnButton_back_clicked()
+		end
+	end
+	return true
 end
 
 function arty_ui:OnButton_ok()

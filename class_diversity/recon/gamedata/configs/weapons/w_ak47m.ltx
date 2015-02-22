@@ -188,7 +188,7 @@ snd_shoot2					= weapons\ak47m\aks47_shot
 snd_shoot3					= weapons\ak47m\aks47_shot_2
 snd_shoot4					= weapons\ak47m\aks47_shot
 snd_empty					= weapons\generic\rifle_historic_empty, 0.9
-snd_reload					= weapons\ak47m\ak_reload_right
+snd_reload              = weapons\generic\type2_reload, 0.7
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade				= weapons\gen_grenload, 1.0, 0.8
 snd_switch					= weapons\groza_switch, 1.0, 0.5
@@ -238,24 +238,22 @@ anm_idle						= ak74_idle
 anm_idle_sprint					= ak74_idle_sprint
 anm_idle_moving					= ak74_idle_moving
 anm_shots						= ak74_shoot
-;anm_reload              				= ak74_reload_right_w_rot, ak74_reload
-anm_reload              				= aek971_reload
+anm_reload              				= ak74_reload_right_w_rot, ak74_reload
 anm_idle_aim					= ak74_idle_aim
 
 anm_switch						= ak74_switch_off	;abakan_switch_off
 anm_switch_g					= ak74_switch_on	;abakan_switch_on
-anm_bore						= ak74_idle_bore
+anm_bore                = ak74_idle_bore_no_z, ak74_idle_bore
 
 anm_hide_w_gl					= ak74_holster_w_gl
 anm_show_w_gl					= ak74_draw_w_gl
 anm_idle_w_gl					= ak74_idle_w_gl
 anm_shots_w_gl					= ak74_shoot_w_gl
-;anm_reload_w_gl         				= ak74_reload_right_w_gl_rot, ak74_reload_w_gl
-anm_reload_w_gl         				= aek971_reload_w_gl
+anm_reload_w_gl         				= ak74_reload_right_w_gl_rot, ak74_reload_w_gl
 anm_idle_w_gl_aim				= ak74_idle_aim_w_gl
 anm_idle_sprint_w_gl			= ak74_idle_sprint_w_gl
 anm_idle_moving_w_gl			= ak74_idle_moving_w_gl
-anm_bore_w_gl					= ak74_idle_bore_w_gl
+anm_bore_w_gl           = ak74_idle_bore_w_gl_no_z, ak74_idle_bore_w_gl
 
 anm_show_g						= ak74_draw_w_gl		;abakan_draw_grenade
 anm_hide_g						= ak74_holster_w_gl		;abakan_holster_grenade
@@ -265,19 +263,17 @@ anm_idle_g_aim					= ak74_idle_aim_w_gl	;abakan_idle_grenade
 anm_shots_g						= ak74_shoot_grenade
 anm_idle_sprint_g				= ak74_idle_sprint_w_gl	;abakan_idle_sprint_grenade
 anm_idle_moving_g				= ak74_idle_moving_w_gl	;abakan_idle_moving_grenade
-anm_bore_g						= ak74_idle_bore_w_gl
+anm_bore_g              = ak74_idle_bore_w_gl_no_z, ak74_idle_bore_w_gl
 
-aim_hud_offset_pos    = -0.10200, 0.03900,-0.018000
-aim_hud_offset_rot    = -0.01000,-0.032450, 0.02000
+aim_hud_offset_pos = -0.101990,0.039820,-0.022500
+aim_hud_offset_rot = -0.010500,-0.032500,0.011400
+gl_hud_offset_pos = -0.000400,-0.000300,0.000000
+gl_hud_offset_rot = 0.000000,0.000000,0.000000
 
-gl_hud_offset_pos				= -0.077100,-0.047800, 0.000000
-gl_hud_offset_rot				= -0.145000,-0.030000, 0.000000
-
-aim_hud_offset_pos_16x9			= -0.101000, 0.052500, -0.116000
-aim_hud_offset_rot_16x9			=  0.014800,-0.001700, -0.007500
-
-gl_hud_offset_pos_16x9			= -0.101000, 0.051900, -0.116000
-gl_hud_offset_rot_16x9			=  0.015400,-0.001000, -0.007500
+aim_hud_offset_pos_16x9 = -0.101800,0.057100,-0.116000
+aim_hud_offset_rot_16x9 = 0.019300,-0.000800,-0.007500
+gl_hud_offset_pos_16x9 = -0.075900, 0.041500, -0.074000
+gl_hud_offset_rot_16x9 = -0.030400,-0.001000, -0.007500
 
 [scope_akm]
 scope_name						= wpn_addon_scope
@@ -358,7 +354,7 @@ inv_grid_y           	= 77
 
 visual                  = dynamics\weapons\wpn_akm\wpn_aka.ogf
 
-snd_reload					= weapons\ak47m\ak_reload_right
+snd_reload              = weapons\generic\type2_reload, 0.7
 
 [wpn_ak47m_modern_hud]:wpn_akm_hud
 
@@ -403,7 +399,7 @@ inv_grid_y           	= 75
 
 visual                  = dynamics\weapons\wpn_akm\wpn_akb.ogf
 
-snd_reload					= weapons\ak47m\ak_reload_right
+snd_reload              = weapons\generic\type2_reload, 0.7
 
 [wpn_ak47m_camo_hud]:wpn_akm_hud
 
@@ -448,7 +444,7 @@ inv_grid_y           	= 77
 
 visual                  = dynamics\weapons\wpn_akm\wpn_akc.ogf
 
-snd_reload					= weapons\ak47m\ak_reload_right
+snd_reload              = weapons\generic\type2_reload, 0.7
 
 [wpn_ak47m_alt_hud]:wpn_akm_hud
 
@@ -495,7 +491,7 @@ inv_grid_y						= 38
 
 visual                  = dynamics\weapons\wpn_akm\wpn_akd.ogf
 
-snd_reload					= weapons\ak47m\ak_reload_right
+snd_reload              = weapons\generic\type2_reload, 0.7
 
 [wpn_ak47m_worn_hud]:wpn_akm_hud
 
@@ -540,7 +536,7 @@ inv_grid_y           	= 73
 
 visual                  = dynamics\weapons\wpn_akm\wpn_ake.ogf
 
-snd_reload					= weapons\ak47m\ak_reload_right
+snd_reload              = weapons\generic\type2_reload, 0.7
 
 [wpn_ak47m_custom_hud]:wpn_akm_hud
 

@@ -85,7 +85,7 @@
 		<text>"Abakan" beef tushonka (imported)</text>
 	</string>
 	<string id="st_tushonka_descr">
-		<text>Tushonka is a common name of canned, stewed meat produced in the Soviet Union and other Warsaw Pact countries. The irony is that the idea originally came to Russia in a form of World War II aid transports from the United States. Since then, various kinds of tushonkas have become a primary means of long-time meat preservation, used both by the civilian population and as a standard-issue Red Army food ration. Despite their long expiry date, tushonkas are known for their high nutrition value (mostly owing to high fat content) and a relatively good taste. The Chernobyl Exclusion Zone has seen hundreds of types and tastes of tushonkas. In the spring of 2013 'Abakan' minced-meat brand remains the unquestionable king, and certainly the Zone has seen worse than that.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] food\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source</text>
+		<text>Tushonka is a common name of canned, stewed meat produced in the Soviet Union and other Warsaw Pact countries. The irony is that the idea originally came to Russia in a form of World War II aid transports from the United States. Since then, various kinds of tushonkas have become a primary means of long-time meat preservation, used both by the civilian population and as a standard-issue Red Army food ration. Despite their long expiry date, tushonkas are known for their high nutrition value (mostly owing to high fat content) and a relatively good taste. The Chernobyl Exclusion Zone has seen hundreds of types and tastes of tushonkas. In the spring of 2015 'Abakan' minced-meat brand remains the unquestionable king, and certainly the Zone has seen worse than that.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] food\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source</text>
 	</string>
 	<string id="st_meat_tushkano">
 		<text>Rat skewers (Zone-produced)</text>
@@ -1709,5 +1709,11 @@
 	</string>
 	<string id="st_lead_box_closed_descr">	
 		<text>The lead-lined metal container (LLMC) is a simple metal box with thick walls and foam inserts as well as a heavy lid with pressure-sealing mechanism. Specifically designed for transporting radioactive materials, in the Zone LLMC is most commonly employed as artifact storage and transportation device. It stops all radiation from leaking, thus ensuring safety of the user when in possession of artifacts. However, the device cannot be attached to the belt, which means that both positive and negative properties of artifacts won't apply. The contents can be manipulated with an artifact handling tool.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD\n%c[0,225,225,225] • %c[0,140,140,140] artifact storage device\n%c[0,225,225,225] • %c[0,140,140,140] capacity:%c[0,170,170,170] 1\n%c[0,225,225,225] • %c[0,140,140,140] state:%c[0,170,170,170] full\n \n%c[0,204,0,51]WARNING:\n \n%c[default]You have to remove artifacts from the container prior to selling them.</text>
+	</string>
+	<string id="st_con_checker_name">
+		<text>Memo "Equipment conditions"</text>
+	</string>
+	<string id="st_con_checker_descr">
+		<text>A scrap of paper with your equipment condition written on it.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] equipment condition assessment</text>
 	</string>
 </string_table>

@@ -126,11 +126,11 @@ kill_msg_width          = 78
 kill_msg_height      	= 21
 
 ;-------------------------------------------------------------------------------
-position        	    = -0.026, 0.001, 0.0
-orientation             = 0, 0, 0
+position        	    			= -0.026, -0.131, 0.0
+orientation            			 	= 0, 0, 0
 
-fire_point              = 0.000000,0.104,0.562
-fire_point2             = 0.0, 0.097, 0.722
+fire_point              				= 0.000000,0.174,0.562
+fire_point2             				= 0.0, 0.097, 0.722
 
 ;flame_particles         = weapons\generic_weapon05
 smoke_particles         = weapons\generic_shoot_00
@@ -192,7 +192,7 @@ snd_shoot1               = weapons\vsk94\vsk94_shot_1
 snd_shoot2               = weapons\vsk94\vsk94_shot
 snd_shoot3               = weapons\vsk94\vsk94_shot_1
 snd_empty               = weapons\generic\rifle_historic_empty, 0.5
-snd_reload              = weapons\vsk94\vsk94_reload, 0.7
+snd_reload              = weapons\9a91\9a91_reload
 snd_close               = weapons\generic_close
 snd_reload_grenade      = weapons\gen_grenload, 1.0, 0.8
 snd_switch              = weapons\groza_switch, 1.0, 0.5
@@ -218,64 +218,39 @@ attach_place_idx	= 0
 item_visual		= dynamics\weapons\wpn_vsk94\wpn_vsk94_hud.ogf
 
 
-hands_position				= -0.033000,-0.194000,0.311998
-hands_orientation			= -2.100000,0.050000,-2.000000
+hands_position				= -0.042000,-0.140,0.195500
+hands_orientation				= 0.55,2.39,0.1499993
 
-hands_position_16x9				= -0.022000,-0.215000,0.311998
-hands_orientation_16x9			= 1.599999,2.099999,-2.000000
+hands_position_16x9				= -0.042000,-0.140,0.195500
+hands_orientation_16x9			= 0.55,2.39,0.1499993
 
-aim_hud_offset_pos = -0.111600,0.036500,-0.035500
-aim_hud_offset_rot = -0.017500,-0.042500,-0.023500
+item_position				= 0.0,0.0,0.0
+item_orientation				= 0.0,0.0,0.0
 
-aim_hud_offset_pos_16x9				= -0.143900,0.071700,-0.279700
-aim_hud_offset_rot_16x9				= 0.020900,0.024700,-0.029600
+aim_hud_offset_pos = -0.114800,0.057800,-0.194000
+aim_hud_offset_rot = 0.031400,0.008000,-0.008000
 
-item_position				= 0.007119,0.019630,0.009658
-item_orientation			= -15.646272,-3.230760,364.546112
+aim_hud_offset_pos_16x9 = -0.114800,0.057800,-0.194000
+aim_hud_offset_rot_16x9 = 0.031400,0.008000,-0.008000
 
-;shell_point					= 0.02,0.04,0.131
-;shell_dir               = 0.0, 0.0, 1.0
-shell_point					= 0.023,0.042,0.129
-shell_dir               = 0.0, 1.0, 0.0
+shell_point					= 0.02,0.04,0.131
+shell_dir             	  			= 0.0, 1.0, 0.0
 shell_bone					= wpn_body
 
-fire_point		= 0,0.037,0.626
-fire_bone      	      = wpn_body
+fire_point					= 0,0.047854,0.618059
+fire_bone      	      			= wpn_body
 fire_point2					= -0.014000,0.010000,-0.037000
 fire_bone2					= wpn_body
 
-anm_show             	= vintorez_draw
-anm_hide             	= vintorez_holster
-anm_idle             	= vintorez_idle
-anm_idle_sprint         = vintorez_idle_sprint
-anm_idle_moving 	= vintorez_idle_moving
-anm_shots               = val_shoot
-anm_reload              = aek971_reload
-anm_idle_aim           	= val_idle_aim
-
-anm_switch              = vintorez_idle_w_gl ;vintorez_switch_off
-anm_switch_g            = vintorez_idle_w_gl; vintorez_switch_on
-anm_bore						= vintorez_idle_bore
-
-;anm_hide_w_gl           = vintorez_holster_w_gl
-;anm_show_w_gl           = vintorez_draw_w_gl
-;anm_idle_w_gl           = vintorez_idle_w_gl
-;anm_shots_w_gl          = vintorez_shoot_w_gl, vintorez_shoot_w_gl
-;anm_reload_w_gl         = vintorez_reload_r_w_gl ;, vintorez_w_gl_reload
-;anm_idle_w_gl_aim       = vintorez_idle_w_gl
-;anm_idle_sprint_w_gl		= vintorez_idle_w_gl
-;anm_idle_moving_w_gl		= vintorez_idle_w_gl
-;anm_bore_w_gl				= vintorez_idle_w_gl
-
-;anm_show_g         	   = vintorez_draw_w_gl
-;anm_hide_g         	   = vintorez_holster_w_gl
-;anm_idle_g         	   = vintorez_idle_w_gl
-;anm_reload_g       	   = vintorez_reload_grenade ;
-;anm_idle_g_aim     	   = vintorez_idle_w_gl
-;anm_shots_g        	   = vintorez_shoot_w_gl, vintorez_shoot_w_gl
-;anm_idle_sprint_g			= vintorez_idle_w_gl
-;anm_idle_moving_g			= vintorez_idle_w_gl
-;anm_bore_g					= vintorez_idle_w_gl
+anm_show             				= lancew_vsk94_draw
+anm_hide             				= lancew_vsk94_holster
+anm_idle             				= lancew_vsk94_idle
+anm_idle_sprint         				= lancew_vsk94_sprint
+anm_idle_moving 				= lancew_vsk94_moving
+anm_shots               				= lancew_vsk94_shoot, shoot
+anm_reload              				= lancew_vsk94_reload, reload
+anm_idle_aim           				= lancew_vsk94_idle_aim, idle_aim
+anm_bore					= lancew_vsk94_no_reload
 
 
 gl_hud_offset_pos	= -0.053000,-0.059000,0.000000
