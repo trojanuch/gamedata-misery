@@ -52,6 +52,31 @@ local ini = ini_file("plugins\\itms_manager.ltx")
 	local FlashlightModEnable = alun_utils.read_from_ini(ini,"flashlight_mod","enable","bool",true)
 	local FlashlightSections = FlashlightModEnable and alun_utils.collect_section(ini,"flashlight_sections",true)
 
+	-- Items refunct mods, Plaargath
+	-- Mutant Loot With Tools Only
+	local MutantLootWithToolsOnlyEnable = alun_utils.read_from_ini(ini,"mutant_loot_mod","tools_only","bool",true)
+	local SharpenToolsEnable = alun_utils.read_from_ini(ini,"items_refunct_mod","sharpen_tools_enable","bool",true)
+	local QuickSharpenItems = SharpenToolsEnable and alun_utils.collect_section(ini,"quick_sharpen_items_list",true)
+
+	-- Canned Food mod
+	local CannedFoodEnable = alun_utils.read_from_ini(ini,"items_refunct_mod","canned_food_enable","bool",true)
+	local CanFoodItems = CannedFoodEnable and alun_utils.collect_section(ini,"food_in_cans_list",true)
+
+	-- Lighter mod
+	local LighterModEnable = alun_utils.read_from_ini(ini,"items_refunct_mod","lighter_enable","bool",true)
+	local SmokingRefillers = LighterModEnable and alun_utils.collect_section(ini,"lighter_refillers_list",true)
+	local SmokingItems = LighterModEnable and alun_utils.collect_section(ini,"smoking_items_list",true)
+
+	-- Tent mod
+	local TentModEnable = alun_utils.read_from_ini(ini,"items_refunct_mod","tent_enable","bool",true)
+	local TentItems = TentModEnable and alun_utils.collect_section(ini,"tent_items",true)
+	local TentPhSections = TentModEnable and alun_utils.collect_section(ini,"tent_ph_sections",true)
+
+	-- Dismantle mod
+	local DismantleModEnable = alun_utils.read_from_ini(ini,"items_refunct_mod","dismantle_enable","bool",true)
+	local DismantlingTools = DismantleModEnable and alun_utils.collect_section(ini,"dismantle_tools",true)
+	-- end Plaargath
+
 -- Static Message
 ShowMessage = nil
 ShowMessageInit = nil
@@ -96,6 +121,7 @@ local torch_delay
 local actor_fill_backpack
 function actor_on_update()
 	check_actor_backpack()
+
 	if (ShowMessage and ShowMessageInit) then
 		local hud = get_hud()
 		local custom_static = hud:GetCustomStatic("can_use_weapon_now")
@@ -106,7 +132,6 @@ function actor_on_update()
 			ShowMessageInit = nil
 		end
 	end
-
 
 	if (FlashlightModEnable) then
 		local obj = db.actor:active_detector()
@@ -140,16 +165,15 @@ function actor_on_update()
 			end
 		end
 	end
+
 end
 
 -- bind_stalker on_trade
 function actor_on_trade(obj,sell_bye,money)
-
 end
 
 -- bind_stalker on_item_take
 function actor_item_take(obj)
-
 end
 
 -- bind_stalker on_item_drop
@@ -172,9 +196,12 @@ function actor_on_item_drop(obj)
 end
 
 function monster_on_actor_use_callback(obj,who)
-	if not (MutantLootEnable) then
-		return
-	end
+	if not (MutantLootEnable) then return end
+	-- Mutant Loot With Tools Only, Plaargath
+	if not MutantLootWithToolsOnlyEnable then return end
+	local halt = itms_refunct.use_tools_on_mutant(obj)
+	if halt == true then return end
+	-- end Plaargath
 
 	local looted = xr_logic.pstor_retrieve(obj,"looted",nil)
 	if (looted) then
@@ -195,7 +222,6 @@ function monster_on_actor_use_callback(obj,who)
 		end
 	end
 end
-
 
 -- bind_stalker on_item_use
 function actor_on_item_use(obj)
@@ -285,7 +311,7 @@ function actor_on_item_use(obj)
 		end
 	end
 
-	-- Cooking mod
+	-- Cooking mod    --    Lighter mod included in ui_itm_cooking, Plaargath
 	if (CookingModEnable and CookingTools[obj:section()]) then
 		local hud = get_hud()
 		--hud:HideActorMenu()
@@ -318,6 +344,56 @@ function actor_on_item_use(obj)
 			show_message("Equipped headlamp",25)
 		end
 	end
+
+	-- Items refunct mods, Plaargath
+	-- Canned Food mod
+	if (CannedFoodEnable and CanFoodItems[obj:section()]) then
+		itms_refunct.open_and_eat(obj)
+	end
+
+	-- Lighter mod
+	if (LighterModEnable and SmokingRefillers[obj:section()]) then
+		itms_refunct.refuel_target(obj)
+	end
+	if (LighterModEnable and SmokingItems[obj:section()]) then
+		itms_refunct.light_up_and_eat(obj)
+	end
+
+	-- Sharpening Tools mod
+	if (SharpenToolsEnable and QuickSharpenItems[obj:section()]) then
+		itms_refunct.sharpen_tools(obj)
+	elseif not SharpenToolsEnable then
+		local sec = obj:section()
+		alife():create(sec,db.actor:position(),0,0,0)
+		show_message("sharpening mod disabled",10)
+	end
+
+	-- Tent mod, Plaargath
+	if (TentModEnable and TentItems[obj:section()]) then
+		local hud = get_hud()
+		local ui = ui_tent and ui_tent.tent_ui(hud,obj:section())
+		if (ui) then
+			ui:ShowDialog(true)
+			ui:FillToolsList()
+		end
+	elseif not TentModEnable then
+		alife():create(obj:section(),db.actor:position(),0,0,0)
+		show_message("tent mod disabled",10)
+	end
+
+	-- Dismantle mod
+	if (DismantleModEnable and DismantlingTools[obj:section()]) then
+		local hud = get_hud()
+		local ui = ui_dismantle and ui_dismantle.dismantle_ui(hud,obj:section())
+		if (ui) then
+			ui:ShowDialog(true)
+			ui:FillTargetsList()
+		end
+	elseif not DismantleModEnable then
+		show_message("dismantle mod disabled",10)
+	end
+
+	-- end Plaargath
 end
 
 function check_actor_backpack()
@@ -419,6 +495,14 @@ function physic_object_on_use_callback(obj,who)
 		local se_obj = alife():object(obj:id())
 		local ui = ui_sleep_dialog.sleep_bag(obj:id(),se_obj.sleepbag_section)
 	end
+	-- Tent, Items refunct mod, Plaargath
+	if (TentModEnable and obj:section() == "ph_tent") then
+		local hud = get_hud()
+		hud:HideActorMenu()
+		local se_obj = alife():object(obj:id())
+		local ui = ui_sleep_dialog.sleep_in_tent(obj:id())
+	end
+	-- end Plaargath
 end
 
 sleep_actor_safe = nil

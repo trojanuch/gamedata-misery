@@ -22,7 +22,10 @@ end
 -------------------------------------------------------------------
 class "cooking_ui" (CUIScriptWnd)
 
-local fuel_cnt -- legibility tweak, Plaargath
+-- legibility fix, Plaargath
+local fuel_cnt, feedback1, feedback2, feedback_override
+local has_lighter, has_bonus_item, bonus_item_section
+-- end Plaargath
 
 function cooking_ui:__init(owner,section) super()
 	self.owner = owner
@@ -39,6 +42,16 @@ function cooking_ui:__init(owner,section) super()
 
 	self.use_actor_effects = alun_utils.read_from_ini(nil,section,"cooking_use_actor_effects","bool",false)
 
+	-- Plaargath
+	if db.actor:object("cooking") then
+		has_bonus_item = true
+		bonus_item_section = "cooking"
+	end
+	if db.actor:object("lighter") then
+		has_lighter = true
+	end
+	-- end Plaargath
+
 	self:InitControls()
 	self:InitCallBacks()
 end
@@ -50,16 +63,33 @@ function cooking_ui:FillList()
 	self.list_box:RemoveAll()
 
 	local function fill_list(actor,obj)
+		local sct = obj:section()
 		if (obj) and (self.cooking_only and self.cooking_only[obj:section()]) or (self.cooking_refuse == nil) or (self.cooking_refuse[obj:section()] == nil) then
-			if (self.cooking_type == "fuel" and alun_utils.item_is_explosive(obj)) then
-
-					self:AddItemToList(obj,self.list_box)
-
+			-- Items refunct mod, Plaargath
+			if (self.cooking_type == "fuel" and alun_utils.item_is_explosive(obj))
+			or (sct == "porn" and self.section == "wood_stove")
+			or (sct == "porn2" and self.section == "wood_stove")
+			or (sct == "meinkampf" and self.section == "wood_stove")
+			or (sct == "journal" and self.section == "wood_stove")
+			or (sct == "mili_maps" and self.section == "wood_stove")
+			or (sct == "book1" and self.section == "wood_stove")
+			or (sct == "book2" and self.section == "wood_stove")
+			or (sct == "book3" and self.section == "wood_stove")
+			or (sct == "book4" and self.section == "wood_stove")
+			or (sct == "survivalguide" and self.section == "wood_stove")
+			or (sct == "guitar_a" and self.section == "wood_stove")
+			then
+			-- end Plaargath
+				self:AddItemToList(obj,self.list_box)
 			end
 		end
 	end
 
 	db.actor:iterate_inventory(fill_list,db.actor)
+	-- Plaargath
+	if has_bonus_item then self.caption_cooking:SetText("%c[0,0,128,32]using auxiliary item") end
+	if not has_lighter then self.caption_cooking:SetText("%c[0,151,21,66]lighter needed") end
+	-- end Plaargath
 end
 
 function cooking_ui:FillPartsList()
@@ -119,69 +149,144 @@ function cooking_ui:InitControls()
 	self.picture			= self.xml:InitStatic("itm_cooking:form:icon",self.form)
 	self.picture_parts		= self.xml:InitStatic("itm_cooking:form:icon_parts",self.form)
 
-	-- cooking tool picture
+	-- cooking tool icon
 	self.pic = self.xml:InitStatic("itm_cooking:form:icon_tool",self.form)
-
 	local inv_grid_width = alun_utils.read_from_ini(ini,self.section,"inv_grid_width","float",0)
 	local inv_grid_height = alun_utils.read_from_ini(ini,self.section,"inv_grid_height","float",0)
 	local inv_grid_x = alun_utils.read_from_ini(ini,self.section,"inv_grid_x","float",0)
 	local inv_grid_y = alun_utils.read_from_ini(ini,self.section,"inv_grid_y","float",0)
-
 	local x1 = inv_grid_x*50
 	local y1 = inv_grid_y*50
-
 	local w = inv_grid_width*50
 	local h = inv_grid_height*50
-
 	local x2 = x1 + w
 	local y2 = y1 + h
-
 	local w,h = w,h
 	if (utils.is_widescreen()) then
-	w,h = w/1.5,h/1.2
+		w,h = w/1.5,h/1.2
 	else
-	w,h = w/1.3,h/1.3
+		w,h = w/1.3,h/1.3
 	end
 	self.pic:InitTexture("ui\\ui_icon_equipment")
 	self.pic:SetTextureRect(Frect():set(x1,y1,x2,y2))
 	self.pic:SetWndSize(vector2():set(w,h))
-
 	if not (self.pic.x) then
 		local pos = self.pic:GetWndPos()
 		local posform = self.form:GetWndPos()
 		self.pic.x = pos.x + posform.x
 		self.pic.y = pos.y + posform.y
 	end
-
 	self.pic:SetWndPos(vector2():set(self.pic.x-w/2, self.pic.y-h/2))
 
-	-- Caption
+	-- lighter icon, Plaargath
+	if has_lighter then
+		self.picl = self.xml:InitStatic("itm_cooking:form:icon_lighter",self.form)
+		local linv_grid_width = alun_utils.read_from_ini(ini,"lighter","inv_grid_width","float",0)
+		local linv_grid_height = alun_utils.read_from_ini(ini,"lighter","inv_grid_height","float",0)
+		local linv_grid_x = alun_utils.read_from_ini(ini,"lighter","inv_grid_x","float",0)
+		local linv_grid_y = alun_utils.read_from_ini(ini,"lighter","inv_grid_y","float",0)
+		x1 = linv_grid_x*50
+		y1 = linv_grid_y*50
+		w = linv_grid_width*50
+		h = linv_grid_height*50
+		x2 = x1 + w
+		y2 = y1 + h
+		local w,h = w,h
+		if (utils.is_widescreen()) then
+			w,h = w/1.5,h/1.2
+		else
+			w,h = w/1.3,h/1.3
+		end
+		self.picl:InitTexture("ui\\ui_icon_equipment")
+		self.picl:SetTextureRect(Frect():set(x1,y1,x2,y2))
+		self.picl:SetWndSize(vector2():set(w,h))
+		if not (self.picl.x) then
+			local pos = self.picl:GetWndPos()
+			local posform = self.form:GetWndPos()
+			self.picl.x = pos.x + posform.x
+			self.picl.y = pos.y + posform.y
+		end
+			self.picl:SetWndPos(vector2():set(self.picl.x-w/2, self.picl.y-h/2))
+	end
+
+	-- bonus item icon, Plaargath
+	if has_bonus_item then
+		-- background square
+		self.picbb = self.xml:InitStatic("itm_cooking:form:icon_bonus_bckgrnd",self.form)
+		x1 = 600
+		y1 = 300
+		w = 104
+		h = 106
+		x2 = x1 + w
+		y2 = y1 + h
+		local w,h = w,h
+		if (utils.is_widescreen()) then
+			w,h = 0.84*w,h
+		else
+			w,h = 0.84*w,h
+		end
+		self.picbb:InitTexture("ui\\ui_cooking_interface")
+		self.picbb:SetTextureRect(Frect():set(x1,y1,x2,y2))
+		self.picbb:SetWndSize(vector2():set(w,h))
+		if not (self.picbb.x) then
+			local pos = self.picbb:GetWndPos()
+			local posform = self.form:GetWndPos()
+			self.picbb.x = pos.x + posform.x
+			self.picbb.y = pos.y + posform.y
+		end
+		self.picbb:SetWndPos(vector2():set(self.picbb.x-w/2, self.picbb.y-h/2))
+		-- bonus item
+		self.picb = self.xml:InitStatic("itm_cooking:form:icon_bonus",self.form)
+		local binv_grid_width = alun_utils.read_from_ini(ini,bonus_item_section,"inv_grid_width","float",0)
+		local binv_grid_height = alun_utils.read_from_ini(ini,bonus_item_section,"inv_grid_height","float",0)
+		local binv_grid_x = alun_utils.read_from_ini(ini,bonus_item_section,"inv_grid_x","float",0)
+		local binv_grid_y = alun_utils.read_from_ini(ini,bonus_item_section,"inv_grid_y","float",0)
+		x1 = binv_grid_x*50
+		y1 = binv_grid_y*50
+		w = binv_grid_width*50
+		h = binv_grid_height*50
+		x2 = x1 + w
+		y2 = y1 + h
+		local w,h = w,h
+		if (utils.is_widescreen()) then
+			w,h = w/1.5,h/1.2
+		else
+			w,h = w/1.3,h/1.3
+		end
+		self.picb:InitTexture("ui\\ui_icon_equipment")
+		self.picb:SetTextureRect(Frect():set(x1,y1,x2,y2))
+		self.picb:SetWndSize(vector2():set(w,h))
+		if not (self.picb.x) then
+			local pos = self.picb:GetWndPos()
+			local posform = self.form:GetWndPos()
+			self.picb.x = pos.x + posform.x
+			self.picb.y = pos.y + posform.y
+		end
+		self.picb:SetWndPos(vector2():set(self.picb.x-w/2, self.picb.y-h/2))
+	end
+	-- captions
 	self.caption_parts 		= self.xml:InitTextWnd("itm_cooking:form:caption_parts",self.form)
 	self.caption_cooking		= self.xml:InitTextWnd("itm_cooking:form:caption_cooking",self.form)
 
 	-- List Box
 	self.xml:InitFrame			("itm_cooking:form:list_frame",self.form)
-
 	self.list_box			= self.xml:InitListBox("itm_cooking:form:list",self.form)
-
 	self.list_box:ShowSelectedItem	(true)
 	self:Register			(self.list_box, "list_window")
 
 	if (self.use_parts) then
 		-- Parts List Box
 		self.list_pos = self.list_box:GetWndPos()
-
 		self.list_box_parts			= self.xml:InitListBox("itm_cooking:form:list_parts",self.form)
 		--self.list_box_parts:SetWndPos(vector2():set(self.list_pos.x+self.list_box:GetWidth()+5, self.list_pos.y))
-
 		local frame = self.xml:InitFrame("itm_cooking:form:list_frame_parts",self.form)
 		--frame:SetWndPos(vector2():set(self.list_pos.x+self.list_box:GetWidth()+5, self.list_pos.y))
-
 		self.list_box_parts:ShowSelectedItem(true)
 		self:Register(self.list_box_parts, "list_window_parts")
 	else
 		--self.form:SetWndSize(vector2():set(self.list_box:GetWidth()+35, self.form:GetHeight()))
 	end
+
 	-- Button cooking
 	ctrl					= self.xml:Init3tButton("itm_cooking:form:btn_cooking",	self.form)
 	self:Register			(ctrl, "button_cooking")
@@ -203,12 +308,12 @@ function cooking_ui:InitCallBacks()
 end
 
 function cooking_ui:OnPartsListItemClicked()
+	feedback2 = true -- Legibiliy fix, Plaargath
 	if self.list_box_parts:GetSize()==0 then return end
 
 	local item = self.list_box_parts:GetSelectedItem()
 	if not (item) then
 		self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
-		self.caption_parts:SetText("")
 		return
 	end
 
@@ -238,12 +343,46 @@ function cooking_ui:OnPartsListItemClicked()
 
 	self.picture_parts:SetWndPos(vector2():set(self.picture_parts.x-w/2, self.picture_parts.y-h/2))
 
-	-- Plaargath legibility tweak
+	-- legibility fix, Plaargath
 	local prts_cnt = self:GetPartCount(sec)
 	local fuel_cnt = fuel_cnt
-	local display_cnt
-	if prts_cnt > fuel_cnt then display_cnt = fuel_cnt else display_cnt = prts_cnt end
-	self.caption_parts:SetText(string.format("Selected (x%d)",display_cnt))
+	local display_prts_cnt
+
+	if feedback_override then fuel_cnt = 2 end
+
+	if prts_cnt > fuel_cnt then
+		display_prts_cnt = fuel_cnt
+	else
+		display_prts_cnt = prts_cnt
+	end
+
+	if (prts_cnt >= fuel_cnt) and feedback_override then
+		display_prts_cnt = 2
+	elseif (prts_cnt < fuel_cnt) and feedback_override then
+		display_prts_cnt = 1
+	end
+
+	if has_bonus_item then
+		if (prts_cnt > fuel_cnt) then
+			display_prts_cnt = display_prts_cnt + 1
+		elseif (prts_cnt == fuel_cnt) and (fuel_cnt > 1) then
+			fuel_cnt = fuel_cnt - 1
+		elseif (prts_cnt < fuel_cnt) and (prts_cnt > 1) then
+			fuel_cnt = prts_cnt - 1
+		end
+	end
+
+	self.caption_parts:SetText(string.format("Selected (x%d)",display_prts_cnt))
+
+	self.caption_cooking:SetText(string.format("Selected (x%d)",fuel_cnt))
+
+	if feedback_override then
+		self.caption_cooking:SetText("x2")
+	else
+		if prts_cnt < fuel_cnt then
+			self.caption_cooking:SetText(string.format("Selected (x%d)",prts_cnt))
+		end
+	end
 	-- end Plaargath
 
 end
@@ -253,8 +392,20 @@ function cooking_ui:OnPartsListItemDbClicked()
 end
 
 function cooking_ui:OnListItemClicked()
-	if self.list_box:GetSize()==0 then return end
+	-- Lighter mod, Plaargath
+	if not has_lighter then
+		self:OnButton_back_clicked()
+		has_lighter = false
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message("You need a lighter to start a fire",25)
+		return
+	end
+	-- legibility fix, Plaargath
+	feedback1 = true
+	feedback_override = false
+	-- end Plaargath
 
+	if self.list_box:GetSize()==0 then return end
 	local item = self.list_box:GetSelectedItem()
 
 	if not (item) then
@@ -286,34 +437,50 @@ function cooking_ui:OnListItemClicked()
 
 	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
 
-	self.caption_cooking:SetText(string.format("Selected (x%d)",self:GetFuelCharges(se_item)))
+	if has_lighter then
+		if (se_item:section_name() == "guitar_a") then
+			feedback_override = true
+			self.caption_cooking:SetText("x2")
+		else
+			self.caption_cooking:SetText(string.format("max (x%d)",self:GetFuelCharges(se_item)))
+		end
+	else
+		self.caption_cooking:SetText("lighter needed")
+	end
+	self.caption_parts:SetText("")
+
 
 	if (self.use_parts) then
 		self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
-		self.caption_parts:SetText("")
 		self:FillPartsList()
 	end
+end
+
+function cooking_ui:OnListItemDbClicked()
+	self:OnButton_cooking()
 end
 
 function cooking_ui:OnButton_back_clicked()
 	alife():create(self.section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
 	self:HideDialog()
+	-- legibility fix, Plaargath
+	feedback1 = false
+	feedback2 = false
+	feedback_override = false
+	has_lighter = false
+	has_bonus_item = false
+	-- end Plaargath
 end
 
 function cooking_ui:OnKeyboard(dik, keyboard_action)
--- Plaargath keyboard convenience addition
+-- Plaargath input convenience addition
 	local bind = dik_to_bind(dik)
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-		if (dik == DIK_keys.DIK_RETURN) then
-		elseif (dik == DIK_keys.DIK_ESCAPE) then
+		if (bind ~= key_bindings.kUSE) and (dik ~= nil) and (dik ~= DIK_keys.MOUSE_1) then
 			self:OnButton_back_clicked()
 		elseif (bind == key_bindings.kUSE) then
-			self:OnButton_back_clicked()
-		elseif (bind == key_bindings.kJUMP) then
-			self:OnButton_back_clicked()
-		elseif (bind == key_bindings.kDROP) then
-			self:OnButton_back_clicked()
+			self:OnButton_cooking()
 		end
 	end
 	return true
@@ -351,10 +518,30 @@ function cooking_ui:GetFuelCharges(fuel_item)
 	if(alun_utils.startsWith(fuel_name,"charcoal")) then base_charges = 3 end
 	if(alun_utils.startsWith(fuel_name,"explo_jerrycan_fuel"))	then base_charges = 8 end
 	if(alun_utils.startsWith(fuel_name,"explo_balon_gas"))	then base_charges = 8 end
-
-	-- Plaargath legibility tweak
-	fuel_cnt = base_charges - charge_adjust
-	return fuel_cnt
+	-- Items refunct mod, Plaargath
+	if(alun_utils.startsWith(fuel_name,"porn2")) then
+		base_charges = 1
+		charge_adjust = 0
+	end
+	if(alun_utils.startsWith(fuel_name,"book2")) then
+		base_charges = 1
+		charge_adjust = 0
+	end
+	if(alun_utils.startsWith(fuel_name,"book3")) then
+		base_charges = 1
+		charge_adjust = 0
+	end
+	if(alun_utils.startsWith(fuel_name,"book4")) then
+		base_charges = 1
+		charge_adjust = 0
+	end
+	if(alun_utils.startsWith(fuel_name,"guitar_a")) then
+		base_charges = 2
+		charge_adjust = 0
+	end
+	-- legibility fix, Plaargath
+		fuel_cnt = base_charges - charge_adjust
+		return fuel_cnt
 	-- end Plaargath
 end
 
@@ -386,7 +573,8 @@ function cooking_ui:ConsumeFuel(fuel_item, charges)
 	local c = self:GetFuelCharges(fuel_item) - charges
 	local fuel_name = fuel_item:section_name()
 
-	if(c > 0 or (alun_utils.startsWith(fuel_name,"explo_jerrycan_fuel") or alun_utils.startsWith(fuel_name,"explo_balon_gas"))) then
+	if (fuel_name == "guitar_a") then -- Items refunct mod, Plaargath
+	elseif(c > 0 or (alun_utils.startsWith(fuel_name,"explo_jerrycan_fuel") or alun_utils.startsWith(fuel_name,"explo_balon_gas"))) then
 		self:MakeFuelCharges(fuel_item,c)
 	end
 
@@ -415,6 +603,43 @@ end
 -- end Drengor - multi-cook
 
 function cooking_ui:OnButton_cooking()
+	-- Lighter mod, Plaargath
+	local sect = self.section
+	local has_one_lighter, has_lighters
+
+	local amount = itms_refunct.how_many_items("lighter")
+	if amount >= 1 then has_lighters = true end
+	if amount == 1 then has_one_lighter = true end
+
+	local chosen_lighter = itms_refunct.choose_lighter(sect)
+
+	if not has_lighters then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message("You need a lighter to start a fire",25)
+		return
+	elseif has_one_lighter and not chosen_lighter then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message("You need your lighter to be fueled",25)
+		return
+	elseif has_lighters and not chosen_lighter then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message("One of your lighters needs to be fueled",25)
+		return
+	end
+
+	if not feedback1 and not feedback2 then
+		self.caption_cooking:SetText("%c[0,140,140,140]choose fuel")
+	end
+	if feedback1 then
+		self.caption_parts:SetText("%c[0,140,140,140]choose ingredients")
+		feedback1 = false
+		feedback2 = true
+	end
+	-- end Plaargath
+
 	index = self.list_box_parts:GetSelectedIndex()
 	if (index ~= -1) then
 		item = self.list_box_parts:GetItemByIndex(index)
@@ -425,7 +650,10 @@ function cooking_ui:OnButton_cooking()
 	end
 
 	local index = self.list_box:GetSelectedIndex()
- 	if index == -1 then return end
+ 	if index == -1 then
+		
+		return
+	end
 	local item  = self.list_box:GetItemByIndex(index)
 
 	local obj = item and level.object_by_id(item.item_id)
@@ -444,13 +672,30 @@ function cooking_ui:OnButton_cooking()
 
 			if (se_parts) then
 
-				-- Drengor - multi-cook
+				-- Drengor - multi-cook + Items refunct mod, Plaargath
 				local part_count = self:GetPartCount(sec)
 				local fuel_charges = self:GetFuelCharges(se_obj)
 				local cook_count = part_count
+				local getrid_parts = part_count
+				local getrid_fuel = part_count
 
-				if(part_count >= fuel_charges) then cook_count = fuel_charges end
-				-- end Drengor - multi-cook
+				if (part_count >= fuel_charges) then
+					cook_count = fuel_charges
+					getrid_parts = fuel_charges
+					getrid_fuel = fuel_charges
+				end
+
+				if has_bonus_item then
+					if (part_count > fuel_charges) then
+						cook_count = cook_count + 1
+						getrid_parts = getrid_parts + 1
+					elseif (part_count == fuel_charges) and (fuel_charges > 1) then
+						getrid_fuel = fuel_charges - 1
+					elseif (part_count < fuel_charges) and (part_count > 1) then
+						getrid_fuel = part_count - 1
+					end
+				end
+				-- end Drengor - multi-cook, end Plaargath
 
 				-- ponney68 cooking item
 				if self.section =="fieldcooker" then
@@ -462,28 +707,27 @@ function cooking_ui:OnButton_cooking()
 				-- End ponney68
 
 				-- Drengor - multi-cook
-				-- mutant_part_tushkano_meat
 				if(sec=="mutant_part_tushkano_meat")then self:CreateMeal("meat_tushkano",cook_count) end
-				-- mutant_part_flesh_meat
 				if(sec=="mutant_part_flesh_meat")then self:CreateMeal("meat_flesh",cook_count) end
-				-- mutant_part_boar_chop
 				if(sec=="mutant_part_boar_chop")then self:CreateMeal("meat_boar",cook_count) end
-				-- mutant_part_dog_meat
 				if(sec=="mutant_part_dog_meat")then self:CreateMeal("meat_dog",cook_count) end
-				-- mutant_part_psevdodog_meat
 				if(sec=="mutant_part_psevdodog_meat")then self:CreateMeal("meat_pseudodog",cook_count) end
-				-- mutant_part_krovosos_meat
 				if(sec=="mutant_part_krovosos_meat")then self:CreateMeal("meat_bloodsucker",cook_count) end
-				-- mutant_part_snork_hand
 				if(sec=="mutant_part_snork_hand")then self:CreateMeal("meat_snork",cook_count) end
-				-- mutant_part_chimera_meat
 				if(sec=="mutant_part_chimera_meat")then self:CreateMeal("meat_chimera",cook_count) end
-				-- mutant_part_crow_beak
 				if(sec=="mutant_part_crow_beak")then self:CreateMeal("drink_crow",cook_count) end
 
-				self:ConsumeFuel(se_obj,cook_count)
-				self:ConsumePart(se_parts,cook_count)
+				self:ConsumeFuel(se_obj,getrid_fuel) -- Items refunct mod, Plaargath
+				self:ConsumePart(se_parts,getrid_parts) -- Items refunct mod, Plaargath
 				-- end Drengor - multi-cook
+				-- Lighter mod, legibility fix, Plaargath
+				itms_refunct.drain_lighter(chosen_lighter,sect)
+				feedback1 = false
+				feedback2 = false
+				feedback_override = false
+				has_lighter = false
+				has_bonus_item = false
+				-- end Plaargath
 			end
 		end
 	end
@@ -525,13 +769,6 @@ function cooking_ui:AddItemToList(item,listbox)
 		_itm.x2 = _itm.x1 + _itm.width
 		_itm.y2 = _itm.y1 + _itm.height
 	end
-
-	--[[
-	_itm.picture = self.xml:InitStatic("itm_cooking:form:picture",self.form)
-	_itm.picture:InitTexture("ui\\ui_icon_equipment")
-	_itm.picture:SetTextureRect(Frect():set(_itm.x1,_itm.y1,_itm.x2,_itm.y2))
-	_itm.picture:SetWndSize(vector2():set(inv_grid_width*50,inv_grid_height*50))
-	--]]
 
 	listbox:AddExistingItem(_itm)
 end

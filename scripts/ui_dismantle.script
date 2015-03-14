@@ -1,0 +1,731 @@
+---------------------------------------------------------------------------------
+-- dismantle UI, Items refunct mod by Plaargath, based on previous work by MDT --
+---------------------------------------------------------------------------------
+
+class "load_item" (CUIListBoxItem)
+function load_item:__init(height) super(height)
+	self.file_name		= "filename"
+	self:SetTextColor(GetARGB(255, 170, 170, 170))
+	self.fn = self:GetTextItem()
+	self.fn:SetFont(GetFontLetterica18Russian())
+	self.fn:SetEllipsis(true)
+end
+function load_item:__finalize()
+end
+-------------------------------------------------------------------
+class "dismantle_ui" (CUIScriptWnd)
+
+function dismantle_ui:__init(owner,section) super()
+	self.owner = owner
+	self.section = section
+	local ini = ini_file("plugins\\itms_manager.ltx")
+	self.hammer_targets = alun_utils.collect_section(ini,"hammer_targets",true)
+	self.crowbar_targets = alun_utils.collect_section(ini,"crowbar_targets",true)
+	self.shovels_targets = alun_utils.collect_section(ini,"shovels_targets",true)
+	self.swiss_sharp_targets = alun_utils.collect_section(ini,"swiss_sharp_targets",true)
+	self.weapon_small_targets = alun_utils.collect_section(ini,"weapon_small_targets",true)
+	self.weapon_big_targets = alun_utils.collect_section(ini,"weapon_big_targets",true)
+	self.helmet_targets = alun_utils.collect_section(ini,"helmet_targets",true)
+	
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function dismantle_ui:__finalize()
+end
+
+function dismantle_ui:FillTargetsList()
+	self.list_box_parts:RemoveAll()
+
+	local function choose_targets(actor,obj)
+		if self.section == "hammer_inv" then
+			if (obj) then
+				if self.hammer_targets[obj:section()] then
+					self:AddItemToList(obj,self.list_box_parts)
+				end
+				if self.weapon_small_targets[obj:section()] or self.weapon_big_targets[obj:section()] or self.helmet_targets[obj:section()] then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_parts,con)
+				end
+			end
+		elseif self.section == "crowbar" then
+			if (obj) then
+				if self.crowbar_targets[obj:section()] then
+					self:AddItemToList(obj,self.list_box_parts)
+				end
+				if self.weapon_small_targets[obj:section()] or self.weapon_big_targets[obj:section()] or self.helmet_targets[obj:section()] then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_parts,con)
+				end
+			end
+		elseif self.section == "swiss_sharp" then
+			if (obj) then
+				if self.swiss_sharp_targets[obj:section()] then
+					self:AddItemToList(obj,self.list_box_parts)
+				end
+				if self.weapon_small_targets[obj:section()] then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_parts,con)
+				end
+			end
+		elseif self.section == "shovel_mili_sharp" or "shovel_old_sharp" then
+			if (obj) then
+				if self.shovels_targets[obj:section()] then
+					self:AddItemToList(obj,self.list_box_parts)
+				end
+			end
+		end
+	end
+	db.actor:iterate_inventory(choose_targets,db.actor)
+
+end
+
+function dismantle_ui:InitControls()
+	self:SetWndRect			(Frect():set(0,0,1024,768))
+	self:SetAutoDelete(true)
+	self.xml				= CScriptXmlInit()
+	local ctrl
+	self.xml:ParseFile		("ui_itm_main.xml")
+	ctrl					= CUIWindow()
+	self.xml:InitWindow		("dismantle:file_item:main",0,ctrl)
+	self.file_item_main_sz	= vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
+	self.xml:InitWindow		("dismantle:file_item:fn",0,ctrl)
+	self.file_item_fn_sz	= vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
+	self.xml:InitWindow		("dismantle:file_item:fd",0,ctrl)
+	self.file_item_fd_sz	= vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
+	self.form				= self.xml:InitStatic("dismantle:form",self)
+	self.form:SetWndPos(vector2():set(0, 0))
+
+	-- icons
+	self.picture			= self.xml:InitStatic("dismantle:form:icon",self.form)
+	self.picture_parts		= self.xml:InitStatic("dismantle:form:icon_parts",self.form)
+	-- names
+	local used_name = game.translate_string(alun_utils.read_from_ini(nil,self.section,"inv_name","string","error"))
+	self.caption_item_used = self.xml:InitTextWnd("dismantle:form:caption_item_used",self.form)
+	self.caption_item_used:SetText(used_name)
+	-- parts title
+	self.caption_parts_title = self.xml:InitTextWnd("dismantle:form:caption_parts_title",self.form)
+	self.caption_parts_title:SetText("Viable targets")
+	self.pic = self.xml:InitStatic("dismantle:form:icon_tool",self.form)
+	-- tool icon
+	local inv_grid_width = alun_utils.read_from_ini(ini,self.section,"inv_grid_width","float",0)
+	local inv_grid_height = alun_utils.read_from_ini(ini,self.section,"inv_grid_height","float",0)
+	local inv_grid_x = alun_utils.read_from_ini(ini,self.section,"inv_grid_x","float",0)
+	local inv_grid_y = alun_utils.read_from_ini(ini,self.section,"inv_grid_y","float",0)
+	local x1 = inv_grid_x*50
+	local y1 = inv_grid_y*50
+	local w = inv_grid_width*50
+	local h = inv_grid_height*50
+	local x2 = x1 + w
+	local y2 = y1 + h
+	local w,h = w,h
+	if (utils.is_widescreen()) then
+		w,h = w/1.2,h/1
+	else
+		w,h = w/1,h/1
+	end
+	self.pic:InitTexture("ui\\ui_icon_equipment")
+	self.pic:SetTextureRect(Frect():set(x1,y1,x2,y2))
+	self.pic:SetWndSize(vector2():set(w,h))
+	if not (self.pic.x) then
+		local pos = self.pic:GetWndPos()
+		local posform = self.form:GetWndPos()
+		self.pic.x = pos.x + posform.x
+		self.pic.y = pos.y + posform.y
+	end
+	self.pic:SetWndPos(vector2():set(self.pic.x-w/2, self.pic.y-h/2))
+
+	-- caption
+	self.caption_parts = self.xml:InitTextWnd("dismantle:form:caption_parts",self.form)
+	self.list_box_parts = self.xml:InitListBox("dismantle:form:list_parts",self.form)
+	local frame = self.xml:InitFrame("dismantle:form:list_frame_parts",self.form)
+	self.list_box_parts:ShowSelectedItem(true)
+	self:Register(self.list_box_parts, "list_window_parts")
+
+	-- buttons
+	ctrl							= self.xml:Init3tButton("dismantle:form:btn_ok",self.form)
+	self:Register					(ctrl, "button_ok")
+	ctrl = self.xml:Init3tButton	("dismantle:form:btn_cancel",self.form)
+	self:Register					(ctrl, "button_back")
+end
+
+function dismantle_ui:InitCallBacks()
+	self:AddCallback("button_ok",			ui_events.BUTTON_CLICKED,			self.OnButton_ok,				self)
+	self:AddCallback("button_back",			ui_events.BUTTON_CLICKED,			self.OnButton_back_clicked,		self)
+	self:AddCallback("list_window",			ui_events.LIST_ITEM_CLICKED,		self.OnListItemClicked,			self)
+	self:AddCallback("list_window",			ui_events.WINDOW_LBUTTON_DB_CLICK,	self.OnListItemDbClicked,		self)
+	self:AddCallback("list_window_parts",	ui_events.LIST_ITEM_CLICKED,		self.OnPartsListItemClicked,	self)
+	self:AddCallback("list_window_parts",	ui_events.WINDOW_LBUTTON_DB_CLICK,	self.OnPartsListItemDbClicked,	self)
+end
+
+function dismantle_ui:OnPartsListItemClicked()
+	if self.list_box_parts:GetSize()==0 then return end
+
+	local item = self.list_box_parts:GetSelectedItem()
+
+	if not (item) then
+		self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
+		self.caption_parts:SetText("")
+		return
+	end
+
+	local se_item = item.item_id and alife():object(item.item_id)
+	if (se_item == nil or not db.actor:object(se_item:section_name())) then
+		self.list_box_parts:RemoveItem(item)
+		return
+	end
+
+	local sec = se_item:section_name()
+	local w,h = item.width,item.height
+	if (utils.is_widescreen()) then
+		w,h = item.width/1.2,item.height/1
+	else
+		w,h = item.width/1,item.height/1
+	end
+	if item.width > 299 then
+		w,h = w*0.66,h*0.66
+	elseif item.width > 199 then
+		w,h = w*0.85,h*0.85
+	end
+	self.picture_parts:InitTexture("ui\\ui_icon_equipment")
+	self.picture_parts:SetTextureRect(Frect():set(item.x1,item.y1,item.x2,item.y2))
+	self.picture_parts:SetWndSize(vector2():set(w,h))
+
+	if not (self.picture_parts.x) then
+		local pos = self.picture_parts:GetWndPos()
+		self.picture_parts.x = pos.x
+		self.picture_parts.y = pos.y
+	end
+	self.picture_parts:SetWndPos(vector2():set(self.picture_parts.x-w/2, self.picture_parts.y-h/2))
+
+		self.caption_parts:SetText("destroy to salvage")
+
+end
+
+function dismantle_ui:OnPartsListItemDbClicked()
+	self:OnButton_ok()
+end
+
+function dismantle_ui:OnButton_back_clicked()
+	alife():create(self.section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	self:HideDialog()
+end
+
+function dismantle_ui:OnKeyboard(dik, keyboard_action)
+	local bind = dik_to_bind(dik)
+	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
+		if (bind ~= key_bindings.kUSE) and (dik ~= nil) and (dik ~= DIK_keys.MOUSE_1) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kUSE) then
+			self:OnButton_ok()
+		end
+	end
+	return true
+end
+
+function dismantle_ui:OnButton_ok()
+	self.caption_parts:SetText("%c[0,140,140,140]choose target")
+
+	local blunt_swiss, hammer_break, no_anim, wpn_small, wpn_big, wpn_bigass
+	local give_shit, give_one_small, give_two_small, give_one_big, give_two_big
+
+	if (self.list_box_parts) then
+		index = self.list_box_parts:GetSelectedIndex()
+		if (index ~= -1) then
+			item = self.list_box_parts:GetItemByIndex(index)
+			local se_parts = item and item.item_id and alife():object(item.item_id)
+			if (se_parts) then
+				sec = se_parts:section_name()
+
+				-- 100% chance (not for hammer)
+				if (se_parts) and (sec == "boots") then
+					alife():create("textile_patch_m",db.actor:position(),0,0,0)
+					blunt_swiss = true
+				end
+				if (se_parts) and (sec == "af_camelbak") then
+					alife():create("textile_patch_m",db.actor:position(),0,0,0)
+					blunt_swiss = true
+				end
+				if (se_parts) and (sec == "helm_protective") then
+					if self.section == "hammer_inv" then
+						if itms_refunct.test_on_probab(66) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
+							hammer_break = true
+							alife():create("helm_protective",db.actor:position(),0,0,0)
+						end
+					else
+						alife():create("textile_patch_e",db.actor:position(),0,0,0)
+					end
+				end
+				if (se_parts) and (sec == "helm_tactic") then
+					if self.section == "hammer_inv" then
+						if itms_refunct.test_on_probab(66) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
+							hammer_break = true
+							alife():create("helm_tactic",db.actor:position(),0,0,0)
+						end
+					else
+						alife():create("textile_patch_e",db.actor:position(),0,0,0)
+					end
+				end
+				if (se_parts) and (sec == "helm_battle") then
+					if self.section == "hammer_inv" then
+						if itms_refunct.test_on_probab(66) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
+							hammer_break = true
+							alife():create("helm_battle",db.actor:position(),0,0,0)
+						end
+					else
+						alife():create("textile_patch_e",db.actor:position(),0,0,0)
+					end
+				end
+
+				-- 90% chance
+				if (se_parts) and (sec == "detector_simple") then
+					if itms_refunct.test_on_probab(90) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "af_cooler") then
+					if itms_refunct.test_on_probab(90) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "detector_advanced") then
+					if itms_refunct.test_on_probab(90) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "af_surge") then
+					if itms_refunct.test_on_probab(90) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "detector_elite") then
+					if itms_refunct.test_on_probab(90) then alife():create("batteries_ccell",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "geiger_dead") then
+					if itms_refunct.test_on_probab(90) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "detector_scientific") then
+					if itms_refunct.test_on_probab(90) then alife():create("batteries_ccell",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "af_freon") then
+					if itms_refunct.test_on_probab(90) then alife():create("batteries_ccell",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+
+				-- 75% chance
+				if (se_parts) and (sec == "walkie") then
+					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end 
+				if (se_parts) and (sec == "radio") then
+					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "radio2") then
+					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "headlamp") then
+					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+
+				-- 65% chance
+				if (se_parts) and (sec == "flashlight_broken") then
+					if itms_refunct.test_on_probab(65) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "flashlight_old") then
+					if itms_refunct.test_on_probab(65) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+
+				-- 50% chance
+				if (se_parts) and (sec == "wpn_addon_scope_night") then
+					if itms_refunct.test_on_probab(50) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "wpn_addon_scope_susat_night") then
+					if itms_refunct.test_on_probab(50) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+				end
+				if (se_parts) and (sec == "wpn_addon_scope_acog_night") then
+					if itms_refunct.test_on_probab(50) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) endalife():create("batteries_dead",db.actor:position(),0,0,0) end
+				end
+
+				-- injury (death with low-tier outfits) chances
+				if (se_parts) and (sec == "ied_rpg") then
+					if itms_refunct.test_on_probab(60) then alife():create("ammo_og-7b",db.actor:position(),0,0,0) else
+						no_anim = true
+						itms_refunct.get_effect("blast")
+					end
+				end
+				if (se_parts) and (sec == "ied") then
+					if itms_refunct.test_on_probab(50) then alife():create("explo_metalcan_powder",db.actor:position(),0,0,0) else
+						no_anim = true
+						itms_refunct.get_effect("blast")
+					end
+				end
+				if (se_parts) and (sec == "mine") then
+					if itms_refunct.test_on_probab(40) then alife():create("explo_metalcan_powder",db.actor:position(),0,0,0) else
+						no_anim = true
+						itms_refunct.get_effect("blast")
+					end
+				end
+
+				-- weapons small
+				if (se_parts) and (sec == "wpn_aps") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_beretta") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_beretta_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_beretta_alt") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_beretta_camo") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_beretta_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_bm16") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_bm16_gold") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_bm16_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_bm16_rusty") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_bm16_silver") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_colt1911") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_colt1911_camo") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_colt1911_alt1") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_colt1911_alt2") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_colt1911_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_desert_eagle") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_desert_eagle_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_desert_eagle_alt") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_desert_eagle_camo") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_desert_eagle_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_desert_eagle_nimble") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_fort") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_fort_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_fort_camo") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_fort_rusty") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_fort_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_fort_snag") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_gp100") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_gsh18") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_hpsa") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_hpsa_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_hpsa_alt") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_hpsa_camo") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_hpsa_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_mp5") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_mp5_nimble") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_mp5_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_mp5_alt") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_mp5_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_oc33") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_pb") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_personal_1") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_pm") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_pm_actor") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_pm_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_pm_alt") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_pm_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_scorpion") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_scorpion_camo") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_sig220") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_sig220_nimble") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_sig220_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_sig220_camo") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_sig220_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_sig220_rusty") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_tt33") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_ump45") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_usp") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_usp_nimble") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_usp_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_usp_alt1") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_usp_alt2") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_usp_worn") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_walther") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_walther_custom") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_walther_alt1") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_walther_alt2") then wpn_small = true end
+				if (se_parts) and (sec == "wpn_walther_worn") then wpn_small = true end
+				-- weapons big
+				if (se_parts) and (sec == "wpn_abakan") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_abakan_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_abakan_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_abakan_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_abakan_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_abakan_rusty") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_aek973") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak105") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak47m") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak47m_modern") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak47m_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak47m_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak47m_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak47m_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74_custom1") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74_custom2") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74_rusty") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74u") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74u_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74u_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74u_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74u_rusty") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ak74u_snag") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_aks74_cobra") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_aug") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_bm16_full") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_famas3") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_far15") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fn2000") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fn2000_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fn2000_alt1") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fn2000_alt2") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fn2000_alt3") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fn2000_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fn2000_nimble") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fnfal") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fnfallelcan") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fnfallelcan_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fnfallelcan_modern") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fnfallelcan_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_fr2000") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_g36") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_g36_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_g36_nimble") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_g43") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_galil") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_groza") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_groza_nimble") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_k98") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ksvk") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_l85") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_l85_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_l85_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_l85_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_lr300") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_lr300_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_lr300_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_lr300_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_lr300_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_m16a1") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_m1891") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_m1891_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_m21") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_m24") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_m4a1") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_mossberg") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_obrez") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ppsh41") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ppsh41_woodnew") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ppsh41_woodworn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ppsh41_rednew") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_ppsh41_redworn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_protecta") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_protecta_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_protecta_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_protecta_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_protecta_nimble") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_rpk74") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_saiga") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sako") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sig550") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sig550_luckygun") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sig550_sniper") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sig550_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sig550_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sig550_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sig552") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sks") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_sks_modern") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_spas12") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_spas12_nimble") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_spas12_custom") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_spas12_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_spas12_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_stg44") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_stg44_new") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_stg44_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_stg44_old") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_stg44_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_svd") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_svd_nimble") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_svd_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_svd_ghillie") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_svu") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_svu_nimble") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_toz34") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_toz34_new") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_toz34_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_toz34_decor") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_toz34_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_trg") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_val") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_vintorez") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_vintorez_nimble") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_vsk94") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_wincheaster1300") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_wincheaster1300_trapper") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_wincheaster1300_camo") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_wincheaster1300_alt") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_wincheaster1300_worn") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_wincheaster1300_rusty") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_xm8") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_rg-6") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_rpg7") then wpn_big = true end
+				if (se_parts) and (sec == "wpn_pkm") then wpn_big = true end
+				-- weapons bigass
+				if (se_parts) and (sec == "wpn_pkm_zulus") then wpn_bigass = true end
+				if (se_parts) and (sec == "wpn_gauss") then
+					alife():create(self.section,db.actor:position(),0,0,0)
+					no_anim = true
+					itms_refunct.get_effect("gauss")
+				end
+
+				local item = self.list_box_parts:GetSelectedItem()
+				local obj = item and level.object_by_id(item.item_id)
+				local con = obj:condition()
+				if wpn_small then
+					if con < 0.2 then
+						give_shit = true
+					elseif con < 0.96 then
+						give_one_small = true
+					elseif con >= 0.96 then
+						give_two_small = true
+					end
+				elseif wpn_big then
+					if con < 0.2 then
+						give_shit = true
+					elseif con < 0.4 then
+						give_one_small = true
+					elseif con < 0.96 then
+						give_one_small = true
+						give_one_big = true
+					elseif con >= 0.96 then
+						give_two_small = true
+						give_one_big = true
+					end
+				elseif wpn_bigass then
+					if con < 0.2 then
+						give_shit = true
+					elseif con < 0.4 then
+						give_one_small = true
+						give_one_big = true
+					elseif con < 0.96 then
+						give_two_small = true
+						give_one_big = true
+					elseif con >= 0.96 then
+						give_two_small = true
+						give_two_big = true
+					end
+				end
+
+				alife():release(se_parts,true)
+			else
+				return
+			end
+		end
+	end
+
+	if (self.section == "swiss_sharp" and blunt_swiss) then
+		alife():create("swiss",db.actor:position(),0,0,0)
+		self:HideDialog()
+		actor_effects.use_item("dismantle_item")
+	elseif (self.section == "swiss_sharp" and wpn_small) then
+		if itms_refunct.test_on_probab(75) then
+			alife():create(self.section,db.actor:position(),0,0,0)
+			if give_shit then
+				alife():create("ammo_bad",db.actor:position(),0,0,0)
+			elseif give_one_small then
+				alife():create("spareparts_small",db.actor:position(),0,0,0)
+			elseif give_two_small then
+				alife():create("spareparts_small",db.actor:position(),0,0,0)
+				alife():create("spareparts_small",db.actor:position(),0,0,0)
+			end
+			self:HideDialog()
+			actor_effects.use_item("dismantle_item")
+		else
+			db.actor:hide_weapon()
+			alife():create("swiss",db.actor:position(),0,0,0)
+			alife():create("ammo_bad",db.actor:position(),0,0,0)
+			self:HideDialog()
+			xr_effects.disable_ui_inventory(db.actor, nil)
+			itms_refunct.get_effect("swiss_fail")
+			itms_manager.show_message("Failed to successfully dismantle the weapon",25)
+		end
+	elseif (self.section == "hammer_inv" and hammer_break) then
+		db.actor:hide_weapon()
+		self:HideDialog()
+		xr_effects.disable_ui_inventory(db.actor, nil)
+		itms_refunct.get_effect("hammer_break")
+		itms_manager.show_message("Your hammer broke",25)
+	elseif wpn_small then
+		alife():create(self.section,db.actor:position(),0,0,0)
+		if give_shit then
+			alife():create("ammo_bad",db.actor:position(),0,0,0)
+		elseif give_one_small then
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+		elseif give_two_small then
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+		end
+		self:HideDialog()
+		actor_effects.use_item("dismantle_item")
+	elseif wpn_big then
+		alife():create(self.section,db.actor:position(),0,0,0)
+		if give_shit then
+			alife():create("ammo_bad",db.actor:position(),0,0,0)
+		elseif give_one_small then
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+		elseif give_two_small then
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+		end
+		if give_one_big then
+			alife():create("spareparts",db.actor:position(),0,0,0)
+		end
+		self:HideDialog()
+		actor_effects.use_item("toolkit_u_dummy")
+	elseif wpn_bigass then
+		alife():create(self.section,db.actor:position(),0,0,0)
+		if give_shit then
+			alife():create("ammo_bad",db.actor:position(),0,0,0)
+		elseif give_one_small then
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+		elseif give_two_small then
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+			alife():create("spareparts_small",db.actor:position(),0,0,0)
+		end
+		if give_one_big then
+			alife():create("spareparts",db.actor:position(),0,0,0)
+		elseif give_two_big then
+			alife():create("spareparts",db.actor:position(),0,0,0)
+			alife():create("spareparts",db.actor:position(),0,0,0)
+		end
+		self:HideDialog()
+		actor_effects.use_item("toolkit_u_dummy")
+	elseif no_anim then
+		xr_effects.disable_ui_inventory(db.actor, nil)
+		self:HideDialog()
+	else
+		alife():create(self.section,db.actor:position(),0,0,0)
+		self:HideDialog()
+		actor_effects.use_item("dismantle_item")
+	end
+end
+
+function dismantle_ui:AddItemToList(item,listbox,condition)
+	local _itm = load_item(self.file_item_main_sz.y)
+	local sec = item and item:section()
+	local inv_name = item and game.translate_string(alun_utils.read_from_ini(nil,sec,"inv_name","string","error")) or "none"
+
+	_itm:SetWndSize (self.file_item_main_sz)
+	_itm.fn:SetWndPos(vector2():set(0,0))
+	_itm.fn:SetWndSize (self.file_item_fn_sz)
+	_itm.fn:SetText (inv_name)
+
+	if (item) then
+		_itm.item_id = item:id()
+		if condition then
+			condition = math.ceil(condition*100)
+			_itm.fage = _itm:AddTextField(condition.."%", self.file_item_fd_sz.x)
+			_itm.fage:SetWndPos	(vector2():set(self.file_item_fn_sz.x-14, 0))
+
+		end
+		local inv_grid_width = alun_utils.read_from_ini(ini,sec,"inv_grid_width","float",0)
+		local inv_grid_height = alun_utils.read_from_ini(ini,sec,"inv_grid_height","float",0)
+		local inv_grid_x = alun_utils.read_from_ini(ini,sec,"inv_grid_x","float",0)
+		local inv_grid_y = alun_utils.read_from_ini(ini,sec,"inv_grid_y","float",0)
+		_itm.x1 = inv_grid_x*50
+		_itm.y1 = inv_grid_y*50
+		_itm.width = inv_grid_width*50
+		_itm.height = inv_grid_height*50
+		_itm.x2 = _itm.x1 + _itm.width
+		_itm.y2 = _itm.y1 + _itm.height
+	end
+
+	listbox:AddExistingItem(_itm)
+end

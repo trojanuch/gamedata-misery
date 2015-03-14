@@ -1693,6 +1693,30 @@ function play_inv_lead_close()
 	xr_sound.set_sound_play(db.actor:id(),"inv_lead_close")
 end
 
+function play_dismantle_shock()
+	xr_sound.set_sound_play(db.actor:id(),"dismantle_shock")
+end
+
+function play_dismantle_blast()
+	xr_sound.set_sound_play(db.actor:id(),"dismantle_blast")
+end
+
+function play_dismantle_hammer_break()
+	xr_sound.set_sound_play(db.actor:id(),"dismantle_hammer_break")
+end
+
+function play_dismantle_swiss_wpn_fail()
+	xr_sound.set_sound_play(db.actor:id(),"dismantle_swiss_wpn_fail")
+end
+
+function play_dismantle_item()
+	xr_sound.set_sound_play(db.actor:id(),"dismantle_item")
+end
+
+function play_inv_lighter_refiller()
+	xr_sound.set_sound_play(db.actor:id(),"inv_lighter_refiller")
+end
+
 function play_sound(actor, obj, p)
 	local theme = p[1]
 	local faction = p[2]

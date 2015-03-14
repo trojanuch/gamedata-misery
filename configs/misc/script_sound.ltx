@@ -120,6 +120,12 @@ inv_mutant_loot_human2
 inv_mutant_loot_rotten
 inv_mutant_loot_smaller
 
+dismantle_shock
+dismantle_blast
+dismantle_hammer_break
+dismantle_swiss_wpn_fail
+dismantle_item
+inv_lighter_refiller
 ;***************************************************************
 ; Yasti: Repair, Cooking and Artifact Containers
 ;***************************************************************
@@ -798,3 +804,39 @@ type = 3d
 path = anomaly\steam_blowout
 shuffle = rnd
 idle = 0,0,100
+
+[dismantle_shock]
+type = actor
+path = anomaly\electra_blast
+shuffle = rnd
+volume = 1
+
+[dismantle_blast]
+type = actor
+path = weapons\f1_explode
+shuffle = rnd
+volume = 1
+
+[dismantle_hammer_break]
+type = actor
+path = material\wood\wood_big_hard_2
+shuffle = rnd
+volume = 1
+
+[dismantle_swiss_wpn_fail]
+type = actor
+path = material\large_metal_trash\collide\large_metal_trash_2
+shuffle = rnd
+volume = 1
+
+[dismantle_item]
+type = actor
+path = interface\inv_dismantle_items
+shuffle = rnd
+volume = 1
+
+[inv_lighter_refiller]
+type = actor
+path = interface\inv_lighter_refiller
+shuffle = rnd
+volume = 1

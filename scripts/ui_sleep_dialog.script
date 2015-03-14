@@ -196,6 +196,13 @@ function sleep_dialog:OnButtonCancel()
 		alife():release( alife():object(self.ph_sleepbag_id) )
 		self.ph_sleepbag_id = nil
 	end
+	-- Items refunct mod, Plaargath
+	if (self.ph_tent_id) then
+		alife():create("tarpaulin",db.actor:position(),0,0,0)
+		alife():release(alife():object(self.ph_tent_id))
+		self.ph_tent_id = nil
+	end
+	-- end Plaargath
 end
 
 function sleep_dialog:OnMessageBoxOk()
@@ -278,6 +285,13 @@ function dream_callback2()
 		alife():release( alife():object(sleep_control.ph_sleepbag_id) )
 		sleep_control.ph_sleepbag_id = nil
 	end
+	-- Items refunct mod, Plaargath
+	if (sleep_control.ph_tent_id) then
+		alife():create("tarpaulin",db.actor:position(),0,0,0)
+		alife():release(alife():object(sleep_control.ph_tent_id))
+		sleep_control.ph_tent_id = nil
+	end
+	-- end Plaargath
 end
 
 function sleep()
@@ -314,3 +328,18 @@ function sleep_bag(ph_sleepbag_id,sec)
 	give_info("sleep_active")
 	return sleep_control
 end
+
+-- Items refunct mod, Plaargath
+function sleep_in_tent(ph_tent_id)
+	if(sleep_control==nil) then
+		sleep_control = ui_sleep_dialog.sleep_dialog()
+		sleep_control:Initialize()
+	end
+	sleep_control.sleepbag = true
+	sleep_control.ph_tent_id = ph_tent_id
+	sleep_control.time_track:SetCurrentValue()
+	sleep_control:TestAndShow()
+	give_info("sleep_active")
+	return sleep_control
+end
+-- end Plaargath

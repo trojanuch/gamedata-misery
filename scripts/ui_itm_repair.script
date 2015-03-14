@@ -62,8 +62,22 @@ function repair_ui:FillList()
 			end
 		end
 	end
-
 	db.actor:iterate_inventory(fill_list,db.actor)
+
+	-- Items refunct mod, Plaargath
+	if string.find(self.section,"sharpening_stones") then
+		for i = 0, db.actor:object_count() - 1 do
+			if db.actor:object(i):section() == "swiss"
+			or (db.actor:object(i):section() == "shovel_mili" and self.section ~= "sharpening_stones4")
+			or (db.actor:object(i):section() == "shovel_old" and self.section ~= "sharpening_stones4")
+			or db.actor:object(i):section() == "cutlery"
+			or db.actor:object(i):section() == "grooming"
+			then
+				self:AddItemToList(db.actor:object(i),self.list_box)
+			end
+		end
+	end
+	-- end Plaargath
 end
 
 function repair_ui:FillPartsList()
@@ -268,6 +282,23 @@ function repair_ui:OnListItemClicked()
 		return
 	end
 
+	-- Items refunct mod, Plaargath
+	self.list_box_parts:RemoveAll()
+	self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
+	self.caption_parts:SetText("")
+	local is_refunct_1, is_refunct_2
+	if se_item:section_name() == "swiss"
+	or se_item:section_name() == "cutlery"
+	or se_item:section_name() == "grooming"
+	then
+		is_refunct_1 = true
+	elseif se_item:section_name() == "shovel_mili"
+	or se_item:section_name() == "shovel_old"
+	then
+		is_refunct_2 = true
+	end
+	-- Plaargath
+
 	local w,h = item.width,item.height
 	if (utils.is_widescreen()) then
 	w,h = item.width/1.5,item.height/1.2
@@ -286,11 +317,17 @@ function repair_ui:OnListItemClicked()
 
 	self.picture:SetWndPos(vector2():set(self.picture.x-w/2, self.picture.y-h/2))
 
-
 	local con = self.add_condition*100
-	self.caption_repair:SetText("+"..con.."%")
-
-	if (self.use_parts) then
+	-- Items refunct mod, Plaargath
+	if is_refunct_1 then
+		self.caption_repair:SetText("uses x1")
+	elseif is_refunct_2 then
+		self.caption_repair:SetText("uses x2")
+	else
+		self.caption_repair:SetText("+"..con.."%")
+	end
+	if (not is_refunct_1 and not is_refunct_2) and (self.use_parts) then
+	-- end Plaargath
 		self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
 		self.caption_parts:SetText("")
 		self:FillPartsList()
@@ -307,34 +344,47 @@ function repair_ui:OnButton_back_clicked()
 end
 
 function repair_ui:OnKeyboard(dik, keyboard_action)
--- Plaargath keyboard convenience addition
+-- Plaargath input convenience addition
 	local bind = dik_to_bind(dik)
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-		if (dik == DIK_keys.DIK_RETURN) then
-		elseif (dik == DIK_keys.DIK_ESCAPE) then
+		if (bind ~= key_bindings.kUSE) and (dik ~= nil) and (dik ~= DIK_keys.MOUSE_1) then
 			self:OnButton_back_clicked()
 		elseif (bind == key_bindings.kUSE) then
-			self:OnButton_back_clicked()
-		elseif (bind == key_bindings.kJUMP) then
-			self:OnButton_back_clicked()
-		elseif (bind == key_bindings.kDROP) then
-			self:OnButton_back_clicked()
+			self:OnButton_repair()
 		end
 	end
 	return true
 end
 
 function repair_ui:OnButton_repair()
+	-- legibility tweak, Plaargath
+	if string.find(self.section,"gun_oil")
+	or string.find(self.section,"solvent")
+	or string.find(self.section,"cleaning_kit")
+	or string.find(self.section,"toolkit_p")
+	or string.find(self.section,"toolkit_s")
+	or string.find(self.section,"toolkit_r") then
+		self.caption_repair:SetText("%c[0,140,140,140]choose weapon")
+	elseif string.find(self.section,"sharpening_stones") then
+		self.caption_repair:SetText("%c[0,140,140,140]choose object")
+	elseif string.find(self.section,"helmet_repair_kit") then
+		self.caption_repair:SetText("%c[0,140,140,140]choose headgear")
+	elseif string.find(self.section,"sewing_kit")
+	or string.find(self.section,"glue")
+	or string.find(self.section,"armor_repair")
+	or string.find(self.section,"toolkit_u") then
+		self.caption_repair:SetText("%c[0,140,140,140]choose gear")
+	end
+	-- end Plaargath
 
 	local index = self.list_box:GetSelectedIndex()
- 	if index == -1 then return end
+	if index == -1 then return end
 	local item  = self.list_box:GetItemByIndex(index)
 
 	local obj = item and level.object_by_id(item.item_id)
-	if not (obj) then
-		return
-	end
+	if not (obj) then return end
+	local sect = obj:section() -- Plaargath
 
 	local bonus = 0
 	if (self.list_box_parts) then
@@ -342,15 +392,34 @@ function repair_ui:OnButton_repair()
 		-- ponney68 repair item multi usage
 		-- WEAPON REPAIR ITEMS
 		-- sharpening_stones x4
-		if self.section =="sharpening_stones" then
-		alife():create("sharpening_stones2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+
+		-- Items refunct mod, Plaargath
+		if (sect == "shovel_mili") then
+			if self.section =="sharpening_stones" then
+				alife():create("sharpening_stones3", db.actor:position(),0,0,0)
+			end
+			if self.section =="sharpening_stones2" then
+				alife():create("sharpening_stones4", db.actor:position(),0,0,0)
+			end
+		elseif (sect == "shovel_old") then
+			if self.section =="sharpening_stones" then
+				alife():create("sharpening_stones3", db.actor:position(),0,0,0)
+			end
+			if self.section =="sharpening_stones2" then
+				alife():create("sharpening_stones4", db.actor:position(),0,0,0)
+			end
+		else
+			if self.section =="sharpening_stones" then
+				alife():create("sharpening_stones2", db.actor:position(),0,0,0)
+			end
+			if self.section =="sharpening_stones2" then
+				alife():create("sharpening_stones3", db.actor:position(),0,0,0)
+			end
+			if self.section =="sharpening_stones3" then
+				alife():create("sharpening_stones4", db.actor:position(),0,0,0)
+			end
 		end
-		if self.section =="sharpening_stones2" then
-		alife():create("sharpening_stones3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
-		if self.section =="sharpening_stones3" then
-		alife():create("sharpening_stones4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		end
+		-- end Plaargath
 
 		-- gun_oil x2
 		if self.section =="gun_oil" then
@@ -544,52 +613,56 @@ function repair_ui:OnButton_repair()
 				-- IMPORTED DRINK
 				-- vodka x3
 				if(se_parts)and(se_parts:section_name()=="vodka")then
-		      		alife():create("vodka_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				if(se_parts)and(se_parts:section_name()=="vodka_2")then
-		      		alife():create("vodka_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				-- vodka2 x3
-				if(se_parts)and(se_parts:section_name()=="vodka2")then
-		      		alife():create("vodka2_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				if(se_parts)and(se_parts:section_name()=="vodka2_2")then
-		      		alife():create("vodka2_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				-- vodka_quality x3
-				if(se_parts)and(se_parts:section_name()=="vodka_quality")then
-		      		alife():create("vodka_quality2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				if(se_parts)and(se_parts:section_name()=="vodka_quality2")then
-		      		alife():create("vodka_quality3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				-- mineral_water x3
-				if(se_parts)and(se_parts:section_name()=="mineral_water")then
-		      		alife():create("mineral_water2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				if(se_parts)and(se_parts:section_name()=="mineral_water2")then
-		      		alife():create("mineral_water3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+				alife():create("vodka_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			if(se_parts)and(se_parts:section_name()=="vodka_2")then
+				alife():create("vodka_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			-- vodka2 x3
+			if(se_parts)and(se_parts:section_name()=="vodka2")then
+				alife():create("vodka2_2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			if(se_parts)and(se_parts:section_name()=="vodka2_2")then
+				alife():create("vodka2_3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			-- vodka_quality x3
+			if(se_parts)and(se_parts:section_name()=="vodka_quality")then
+				alife():create("vodka_quality2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			if(se_parts)and(se_parts:section_name()=="vodka_quality2")then
+				alife():create("vodka_quality3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			-- mineral_water x3
+			if(se_parts)and(se_parts:section_name()=="mineral_water")then
+				alife():create("mineral_water2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			if(se_parts)and(se_parts:section_name()=="mineral_water2")then
+				alife():create("mineral_water3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
 
-				-- ZONE-PRODUCED DRINK
-				-- bottle_metal x3
-				if(se_parts)and(se_parts:section_name()=="bottle_metal")then
-		      		alife():create("bottle_metal2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				if(se_parts)and(se_parts:section_name()=="bottle_metal2")then
-		      		alife():create("bottle_metal3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				-- flask x3
-				if(se_parts)and(se_parts:section_name()=="flask")then
-		      		alife():create("flask2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
-				if(se_parts)and(se_parts:section_name()=="flask2")then
-		      		alife():create("flask3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
-		    		end
+			-- ZONE-PRODUCED DRINK
+			-- bottle_metal x3
+			if(se_parts)and(se_parts:section_name()=="bottle_metal")then
+				alife():create("bottle_metal2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			if(se_parts)and(se_parts:section_name()=="bottle_metal2")then
+				alife():create("bottle_metal3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			-- flask x3
+			if(se_parts)and(se_parts:section_name()=="flask")then
+				alife():create("flask2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+			if(se_parts)and(se_parts:section_name()=="flask2")then
+				alife():create("flask3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
 
 				-- WEAPON REPAIR ITEMS
-								-- swiss knife
+				-- swiss knife
 				if(se_parts)and(se_parts:section_name()=="swiss")then
+				alife():create("swiss", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				-- sharpened swiss knife blunting -- Plaargath
+				if(se_parts)and(se_parts:section_name()=="swiss_sharp")then
 				alife():create("swiss", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
 				-- hammer
@@ -821,6 +894,18 @@ function repair_ui:OnButton_repair()
 		end
 	end
 
+	-- Items refunct mod, Plaargath
+	if (sect == "swiss")
+	or (sect == "cutlery")
+	or (sect == "grooming")
+	or (sect == "shovel_mili")
+	or (sect == "shovel_old") then
+		alife():create(sect.."_sharp",db.actor:position(),0,0,0)
+		local getrid = (db.actor:object(sect))
+		alife():release(alife():object(getrid:id()), true)
+	end
+	-- end Plaargath
+
 	local con = obj:condition()
 	con = con + self.add_condition + bonus
 	con = con <= 1 and con or 1
@@ -830,7 +915,13 @@ function repair_ui:OnButton_repair()
 
 	if (self.use_actor_effects and actor_effects) then
 		actor_effects.use_item(self.section.."_dummy")
-		level_weathers.get_weather_manager():forced_weather_change()
+		-- Plaargath
+		if (string.find(self.section,"toolkit") and not string.find(self.section,"toolkit_u"))
+		or string.find(self.section,"sewing_kit")
+		or string.find(self.section,"helmet_repair_kit")
+		or string.find(self.section,"armor_repair_pro") then
+			level_weathers.get_weather_manager():forced_weather_change()
+		end -- end Plaargath
 	end
 end
 
@@ -846,12 +937,14 @@ function repair_ui:AddItemToList(item,listbox,condition)
 	_itm.fn:SetWndSize	(self.file_item_fn_sz)
 	_itm.fn:SetText		(inv_name)
 
-	condition = math.ceil(condition*100)
+	if condition then condition = math.ceil(condition*100) end -- Plaargath
 	if (item) then
-		_itm.fage     = _itm:AddTextField("+"..condition.."%", self.file_item_fd_sz.x)
-		_itm.fage:SetFont	(GetFontLetterica16Russian())
-		_itm.fage:SetWndPos	(vector2():set(self.file_item_fn_sz.x+4, 0))
-		_itm.fage:SetWndSize(self.file_item_fd_sz)
+		if condition then -- Items refunct mod, Plaargath
+			_itm.fage = _itm:AddTextField("+"..condition.."%", self.file_item_fd_sz.x)
+			_itm.fage:SetFont	(GetFontLetterica16Russian())
+			_itm.fage:SetWndPos	(vector2():set(self.file_item_fn_sz.x+4, 0))
+			_itm.fage:SetWndSize(self.file_item_fd_sz)
+		end -- Plaargath
 
 		_itm.item_id = item:id()
 
@@ -869,13 +962,6 @@ function repair_ui:AddItemToList(item,listbox,condition)
 		_itm.x2 = _itm.x1 + _itm.width
 		_itm.y2 = _itm.y1 + _itm.height
 	end
-
-	--[[
-	_itm.picture = self.xml:InitStatic("itm_repair:form:picture",self.form)
-	_itm.picture:InitTexture("ui\\ui_icon_equipment")
-	_itm.picture:SetTextureRect(Frect():set(_itm.x1,_itm.y1,_itm.x2,_itm.y2))
-	_itm.picture:SetWndSize(vector2():set(inv_grid_width*50,inv_grid_height*50))
-	--]]
 
 	listbox:AddExistingItem(_itm)
 end

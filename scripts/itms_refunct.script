@@ -1,0 +1,508 @@
+---------------------------------------------------------------------------
+---- Items refunct mod ---- scripting by Plaargath ---- for MISERY mod ----
+---------------------------------------------------------------------------
+
+function how_many_items(section)
+	local amount = 0
+	for i = 0, db.actor:object_count() - 1 do -- thx tt44
+		if db.actor:object(i):section() == section then
+			amount = amount + 1
+		end
+	end
+	return amount
+end
+
+function release_amount(section, amount)
+	for i = 0, db.actor:object_count() - 1 do -- thx tt44
+		if amount > 0 and db.actor:object(i):section() == section then
+			alife():release(alife():object(db.actor:object(i):id()))
+			amount = amount - 1
+		end
+	end
+end
+
+function hit_obj(target, strength, hit_type)
+	local h = hit()
+	h.draftsman	= target
+	h.direction	= vector():set(0,0,0)
+	h.power		= strength  
+	h.impulse	= 1
+	h.type		= hit_type
+	target:hit(h)
+end
+
+function sharpen_tools(obj)
+	local sec = obj:section()
+	local sec_sharp = tostring(sec.."_sharp")
+	local has_any_tools, has_only_weak_tools, tools_wear
+
+	local t_tools = {
+		[1] = "sharpening_stones",  -- 4 uses left
+		[2] = "sharpening_stones2", -- 3 uses left
+		[3] = "sharpening_stones3", -- 2 uses left
+		[4] = "sharpening_stones4"  -- 1 use  left
+	}
+
+	for i = 1,#t_tools do
+		if i <= #t_tools -1 then
+			if db.actor:object(t_tools[i]) then
+				has_any_tools = true
+			end
+		else
+			if db.actor:object(t_tools[i]) and not has_any_tools then
+				has_any_tools = true
+				has_only_weak_tools = true
+			end
+		end
+	end
+
+	if not has_any_tools then
+		xr_effects.disable_ui_inventory(db.actor, nil)
+		itms_manager.show_message("You need sharpening stones to sharpen this item",25)
+		return alife():create(sec,db.actor:position(),0,0,0)
+	end
+
+	if (not string.find(sec, "shovel")) then
+		tools_wear = 1
+
+		for i = #t_tools,1,-1 do
+			if i <= 3 then
+				if db.actor:object(t_tools[i]) then 
+					alife():create(t_tools[i+tools_wear],db.actor:position(),0,0,0)
+					local getrid = (db.actor:object(t_tools[i]))
+					alife():release(alife():object(getrid:id()), true)
+					alife():create(sec_sharp,db.actor:position(),0,0,0)
+					actor_effects.use_item("sharpening_stones_dummy")
+					break
+				end
+			else
+				if db.actor:object(t_tools[i]) then 
+					local getrid = (db.actor:object(t_tools[i]))
+					alife():release(alife():object(getrid:id()), true)
+					alife():create(sec_sharp,db.actor:position(),0,0,0)
+					actor_effects.use_item("sharpening_stones_dummy")
+					break
+				end
+			end
+		end
+
+	else
+		tools_wear = 2
+
+		for i = #t_tools,1,-1 do
+			if i <= 2 then
+				if db.actor:object(t_tools[i]) then
+					alife():create(t_tools[i+tools_wear],db.actor:position(),0,0,0)
+					local getrid = (db.actor:object(t_tools[i]))
+					alife():release(alife():object(getrid:id()), true)
+					alife():create(sec_sharp,db.actor:position(),0,0,0)
+					actor_effects.use_item("sharpening_stones_dummy")
+					break
+				end
+			elseif i == 3 then
+				if db.actor:object(t_tools[i]) then
+					local getrid = (db.actor:object(t_tools[i]))
+					alife():release(alife():object(getrid:id()), true)
+					alife():create(sec_sharp,db.actor:position(),0,0,0)
+					actor_effects.use_item("sharpening_stones_dummy")
+					break
+				end
+			elseif i == 4 then
+				if db.actor:object(t_tools[i]) then
+					local amount = how_many_items(t_tools[i])
+					if amount >= 2 then
+						local getrid = (db.actor:object(t_tools[i]))
+						release_amount(t_tools[i], 2)
+						alife():create(sec_sharp,db.actor:position(),0,0,0)
+						actor_effects.use_item("sharpening_stones_dummy")
+						break
+					elseif has_only_weak_tools and amount == 1 then
+						xr_effects.disable_ui_inventory(db.actor, nil)
+						itms_manager.show_message("You need another or a better sharpening stone to sharpen a shovel's edge",25)
+						alife():create(sec,db.actor:position(),0,0,0)
+						break
+					end
+				end
+			end
+		end
+	end
+end
+
+local chosen_knife
+function choose_knife(purpose)
+	chosen_knife = nil
+	local compare_con = 1.1
+	local purpose_lowest_con
+
+	if purpose == "foodcan" then
+		purpose_lowest_con = 0.01
+	elseif purpose == "mutantloot" then
+		purpose_lowest_con = 0.1
+	end
+
+	for i = 0, db.actor:object_count() - 1 do
+		if string.find(db.actor:object(i):section(), "wpn_knife_") then
+			local next_con = db.actor:object(i):condition()
+			if (next_con > purpose_lowest_con) and (next_con < compare_con) then
+				compare_con = next_con
+				chosen_knife = db.actor:object(i)
+			end
+		end
+	end
+	return chosen_knife
+end
+
+function blunt_knife(used_knife,purpose)
+	local cond = used_knife:condition()
+	local sect = used_knife:section()
+
+	if purpose == "mutantloot" then
+		if sect == "wpn_knife_inv_3" then
+			cond = cond - 0.02
+		elseif sect == "wpn_knife_inv" then
+			cond = cond - 0.02
+		elseif sect == "wpn_knife_inv_2" then
+			cond = cond - 0.03
+		elseif sect == "wpn_knife_m" then
+			cond = cond - 0.03
+		elseif sect == "wpn_knife_inv_5" then
+			cond = cond - 0.04
+		elseif sect == "wpn_knife_inv_4" then
+			cond = cond - 0.04
+		end
+	elseif purpose == "foodcan" then
+		cond = cond - 0.01
+	end
+
+	used_knife:set_condition(cond)
+end
+
+function use_tools_on_mutant(obj)
+	local getrid
+	chosen_knife = choose_knife("mutantloot")
+
+	-- hunting kit (no penalty)
+	if db.actor:object("kit_hunt") ~= nil then
+
+	-- knives (% condition penalty, in tiers)
+	elseif (chosen_knife ~= nil) then
+		blunt_knife(chosen_knife,"mutantloot")
+
+	-- sharpened tools (blunting penalty)
+	elseif db.actor:object("swiss_sharp") ~= nil then
+		local getrid = (db.actor:object("swiss_sharp"))
+		alife():release(alife():object(getrid:id()), true)
+		alife():create("swiss",db.actor:position(),0,0,0)
+	elseif db.actor:object("shovel_mili_sharp") ~= nil then
+		local getrid = (db.actor:object("shovel_mili_sharp"))
+		alife():release(alife():object(getrid:id()), true)
+		alife():create("shovel_mili",db.actor:position(),0,0,0)
+	elseif db.actor:object("shovel_old_sharp") ~= nil then
+		local getrid = (db.actor:object("shovel_old_sharp"))
+		alife():release(alife():object(getrid:id()), true)
+		alife():create("shovel_old",db.actor:position(),0,0,0)
+
+	-- sharpened tools (item loss penalty)
+	elseif db.actor:object("cutlery_sharp") ~= nil then
+		local getrid = (db.actor:object("cutlery_sharp"))
+		alife():release(alife():object(getrid:id()), true)
+	elseif db.actor:object("grooming_sharp") ~= nil then
+		local getrid = (db.actor:object("grooming_sharp"))
+		alife():release(alife():object(getrid:id()), true)
+
+	-- no tools
+	else
+		itms_manager.show_message("You need something sharp to cut out mutant body parts",25)
+		local halt = true
+		return halt
+	end
+end
+
+local chosen_lighter
+function choose_lighter(purpose)
+	chosen_lighter = nil
+	local compare_con = 1.1
+	local purpose_lowest_con
+	if purpose == "smoke" then
+		purpose_lowest_con = 0.02
+	elseif purpose == "wood_stove" then
+		purpose_lowest_con = 0.06
+	elseif purpose == "fieldcooker" then
+		purpose_lowest_con = 0.04
+	else
+		return
+	end
+	for i = 0, db.actor:object_count() - 1 do
+		if db.actor:object(i):section() == "lighter" then
+			local next_con = db.actor:object(i):condition()
+			if (next_con >= purpose_lowest_con) and (next_con < compare_con) then
+				compare_con = next_con
+				chosen_lighter = db.actor:object(i)
+			end
+		end
+	end
+	return chosen_lighter
+end
+
+function drain_lighter(used_lighter,purpose)
+	local cond = used_lighter:condition()
+	if purpose == "smoke" then
+		cond = cond - 0.02
+	elseif purpose == "fieldcooker" then
+		cond = cond - 0.04
+	elseif purpose == "wood_stove" then
+		cond = cond - 0.06
+	end
+	used_lighter:set_condition(cond)
+end
+
+function refuel_target(obj)
+
+	local getback = obj:section()
+	local target = db.actor:object("lighter")
+	local target_sec = "lighter"
+	local chosen_target, chosen_target_con
+
+	if target == nil then
+		xr_effects.disable_ui_inventory(db.actor, nil)
+		itms_manager.show_message("You don't have a lighter to refill",25)
+		alife():create(getback,db.actor:position(),0,0,0)
+		return
+	elseif how_many_items(target_sec) == 1 then
+		chosen_target = target
+		chosen_target_con = target:condition()
+		if chosen_target_con >= 0.94 then
+			xr_effects.disable_ui_inventory(db.actor, nil)
+			itms_manager.show_message("Your lighter is already fueled",25)
+			alife():create(getback,db.actor:position(),0,0,0)
+			return
+		end
+	elseif how_many_items(target_sec) > 1 then
+		local lowest_con = 1
+		for i = 0, db.actor:object_count() - 1 do
+			if db.actor:object(i):section() == target_sec then
+				local next_con = db.actor:object(i):condition()
+				if (next_con >= 0) and (next_con < lowest_con) then
+					lowest_con = next_con
+					chosen_target = db.actor:object(i)
+					chosen_target_con = lowest_con
+				end
+			end
+		end
+		if lowest_con >= 0.94 then
+			xr_effects.disable_ui_inventory(db.actor, nil)
+			itms_manager.show_message("All your lighters are fueled",25)
+			alife():create(getback,db.actor:position(),0,0,0)
+			return
+		end
+	end
+
+	local tools_wear = 1
+	local tools_gain = 1
+	local set_con
+	local t_tools = {
+		[1] = "lighter_refiller1",
+		[2] = "lighter_refiller2",
+		[3] = "lighter_refiller3",
+		[4] = "lighter_refiller4",
+		[5] = "lighter_refiller5"
+	}
+
+	for i = 1,#t_tools do
+		if getback == t_tools[i] then
+			if i ~= 1 then
+				alife():create(t_tools[i-tools_wear],db.actor:position(),0,0,0)
+			end
+		end
+	end
+
+	set_con = chosen_target_con + tools_gain
+	chosen_target:set_condition(set_con)
+	actor_effects.use_item("lighter_refillers")
+end
+
+function reduce_smoke_portion(obj)
+	local sec = obj:section()
+	if sec == "marijuana"				then alife():create("marijuana2",db.actor:position(),0,0,0) end
+	if sec == "marijuana2"				then alife():create("marijuana3",db.actor:position(),0,0,0) end
+	if sec == "cigarettes"				then alife():create("cigarettes2",db.actor:position(),0,0,0) end
+	if sec == "cigarettes2"				then alife():create("cigarettes3",db.actor:position(),0,0,0) end
+	if sec == "cigarettes3"				then alife():create("cigarettes4",db.actor:position(),0,0,0) end
+	if sec == "cigar1"					then alife():create("cigar1_2",db.actor:position(),0,0,0) end
+	if sec == "cigar1_2"				then alife():create("cigar1_3",db.actor:position(),0,0,0) end
+	if sec == "cigar2"					then alife():create("cigar2_2",db.actor:position(),0,0,0) end
+	if sec == "cigar2_2"				then alife():create("cigar2_3",db.actor:position(),0,0,0) end
+	if sec == "cigar3"					then alife():create("cigar3_2",db.actor:position(),0,0,0) end
+	if sec == "cigar3_2"				then alife():create("cigar3_3",db.actor:position(),0,0,0) end
+	if sec == "tobacco"					then alife():create("tobacco2",db.actor:position(),0,0,0) end
+	if sec == "tobacco2"				then alife():create("tobacco3",db.actor:position(),0,0,0) end
+	if sec == "tobacco3"				then alife():create("tobacco4",db.actor:position(),0,0,0) end
+	if sec == "tobacco4"				then alife():create("tobacco5",db.actor:position(),0,0,0) end
+	if sec == "hand_rolling_tobacco"	then alife():create("hand_rolling_tobacco2",db.actor:position(),0,0,0) end
+	if sec == "hand_rolling_tobacco2"	then alife():create("hand_rolling_tobacco3",db.actor:position(),0,0,0) end
+	if sec == "hand_rolling_tobacco3"	then alife():create("hand_rolling_tobacco4",db.actor:position(),0,0,0) end
+	if sec == "hand_rolling_tobacco4"	then alife():create("hand_rolling_tobacco5",db.actor:position(),0,0,0) end
+	if sec == "cigarettes_lucky"		then alife():create("cigarettes_lucky2",db.actor:position(),0,0,0) end
+	if sec == "cigarettes_lucky2"		then alife():create("cigarettes_lucky3",db.actor:position(),0,0,0) end
+	if sec == "cigarettes_lucky3"		then alife():create("cigarettes_lucky4",db.actor:position(),0,0,0) end
+	if sec == "cigarettes_russian"		then alife():create("cigarettes_russian2",db.actor:position(),0,0,0) end
+	if sec == "cigarettes_russian2"		then alife():create("cigarettes_russian3",db.actor:position(),0,0,0) end
+end
+
+function light_up_and_eat(obj)
+	local sec = obj:section()
+	local sec_smoke = tostring(sec.."_smoke")
+	local has_one_lighter, has_lighters
+
+	local amount = how_many_items("lighter")
+	if amount >= 1 then has_lighters = true end
+	if amount == 1 then has_one_lighter = true end
+
+	chosen_lighter = choose_lighter("smoke")
+
+	if not has_lighters then
+		xr_effects.disable_ui_inventory(db.actor, nil)
+		itms_manager.show_message("You need a lighter to light up your smoke",25)
+		alife():create(sec,db.actor:position(),0,0,0)
+	elseif has_one_lighter and not chosen_lighter then
+		xr_effects.disable_ui_inventory(db.actor, nil)
+		itms_manager.show_message("You need your lighter to be fueled",25)
+		alife():create(sec,db.actor:position(),0,0,0)
+	elseif has_lighters and not chosen_lighter then
+		xr_effects.disable_ui_inventory(db.actor, nil)
+		itms_manager.show_message("One of your lighters needs to be fueled",25)
+		alife():create(sec,db.actor:position(),0,0,0)
+	elseif chosen_lighter then
+		drain_lighter(chosen_lighter,"smoke")
+		alife():create(sec_smoke,db.actor:position(),0,0,0)
+		db.actor:eat(db.actor:object(sec_smoke))
+		reduce_smoke_portion(obj)
+	end
+end
+
+function open_and_eat(obj)
+	local sec_display
+	local sec = obj:section()
+	local sec_opened = tostring(sec.."_opened")
+	chosen_knife = choose_knife("foodcan")
+
+	if (db.actor:object("swiss") ~= nil) then
+		alife():create(sec_opened,db.actor:position(),0,0,0)
+		db.actor:eat(db.actor:object(sec_opened))
+		sec_display = "swiss"
+
+	elseif (db.actor:object("swiss_sharp") ~= nil) then
+		alife():create(sec_opened,db.actor:position(),0,0,0)
+		db.actor:eat(db.actor:object(sec_opened))
+		sec_display = "swiss_sharp"
+
+	elseif (db.actor:object("kit_hunt") ~= nil) then
+		alife():create(sec_opened,db.actor:position(),0,0,0)
+		db.actor:eat(db.actor:object(sec_opened))
+		sec_display = "kit_hunt"
+
+	elseif (chosen_knife ~= nil) then
+		blunt_knife(chosen_knife,"foodcan")
+		alife():create(sec_opened,db.actor:position(),0,0,0)
+		db.actor:eat(db.actor:object(sec_opened))
+		sec_display = chosen_knife:section()
+
+	elseif (db.actor:object("cutlery_sharp") ~= nil) then
+		local getrid = (db.actor:object("cutlery_sharp"))
+		alife():release(alife():object(getrid:id()), true)
+		alife():create("cutlery",db.actor:position(),0,0,0)
+		alife():create(sec_opened,db.actor:position(),0,0,0)
+		db.actor:eat(db.actor:object(sec_opened))
+		sec_display = "cutlery_sharp"
+
+	elseif (db.actor:object("grooming_sharp") ~= nil) then
+		local getrid = (db.actor:object("grooming_sharp"))
+		alife():release(alife():object(getrid:id()), true)
+		alife():create("grooming",db.actor:position(),0,0,0)
+		alife():create(sec_opened,db.actor:position(),0,0,0)
+		db.actor:eat(db.actor:object(sec_opened))
+		sec_display = "grooming_sharp"
+
+	else
+		xr_effects.disable_ui_inventory(db.actor, nil)
+		itms_manager.show_message("You need something sharp to open the can",25)
+		alife():create(sec,db.actor:position(),0,0,0)
+	end
+
+	if sec_display then
+		itms_manager.show_message("Using: "..game.translate_string(alun_utils.read_from_ini(nil,sec_display,"inv_name","string","error")),25)
+	end
+end
+
+function initial_dummies_spawn()
+	alife():create("conserva_opened",db.actor:position(),0,0,0)
+	alife():create("tushonka_opened",db.actor:position(),0,0,0)
+	alife():create("tomato_opened",db.actor:position(),0,0,0)
+	alife():create("beans_opened",db.actor:position(),0,0,0)
+	alife():create("corn_opened",db.actor:position(),0,0,0)
+	alife():create("chili_opened",db.actor:position(),0,0,0)
+	alife():create("joint_smoke",db.actor:position(),0,0,0)
+	alife():create("marijuana_smoke",db.actor:position(),0,0,0)
+	alife():create("marijuana2_smoke",db.actor:position(),0,0,0)
+	alife():create("marijuana3_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes2_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes3_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes4_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar1_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar1_2_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar1_3_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar2_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar2_2_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar2_3_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar3_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar3_2_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar3_3_smoke",db.actor:position(),0,0,0)
+	alife():create("tobacco_smoke",db.actor:position(),0,0,0)
+	alife():create("tobacco2_smoke",db.actor:position(),0,0,0)
+	alife():create("tobacco3_smoke",db.actor:position(),0,0,0)
+	alife():create("tobacco4_smoke",db.actor:position(),0,0,0)
+	alife():create("tobacco5_smoke",db.actor:position(),0,0,0)
+	alife():create("hand_rolling_tobacco_smoke",db.actor:position(),0,0,0)
+	alife():create("hand_rolling_tobacco2_smoke",db.actor:position(),0,0,0)
+	alife():create("hand_rolling_tobacco3_smoke",db.actor:position(),0,0,0)
+	alife():create("hand_rolling_tobacco4_smoke",db.actor:position(),0,0,0)
+	alife():create("hand_rolling_tobacco5_smoke",db.actor:position(),0,0,0)
+	alife():create("cigar_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes_lucky_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes_lucky2_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes_lucky3_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes_lucky4_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes_russian_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes_russian2_smoke",db.actor:position(),0,0,0)
+	alife():create("cigarettes_russian3_smoke",db.actor:position(),0,0,0)
+end
+
+function test_on_probab(treshold)
+	math.randomseed(device():time_global())
+	return treshold >= math.random(0,100)
+end
+
+function get_effect(eff)
+	if eff == "gauss" then
+		xr_effects.play_dismantle_shock()
+		hit_obj(db.actor, 0.1, hit.shock)
+		level.add_cam_effector("camera_effects\\fusker.anm",1002,false)
+	end
+	if eff == "blast" then
+		xr_effects.play_dismantle_blast()
+		hit_obj(db.actor, 1.2, hit.explosion)
+		level.add_pp_effector("thermal_mine.ppe",2017, true)
+		level.set_pp_effector_factor(1120, 1)
+	end
+	if eff == "hammer_break" then
+		xr_effects.play_dismantle_hammer_break()
+		db.actor:restore_weapon()
+		level.add_cam_effector("camera_effects\\shell_shock.anm",1002,false)
+	end
+	if eff == "swiss_fail" then
+		xr_effects.play_dismantle_swiss_wpn_fail()
+		db.actor:restore_weapon()
+		level.add_cam_effector("camera_effects\\shell_shock.anm",1002,false)
+	end
+end

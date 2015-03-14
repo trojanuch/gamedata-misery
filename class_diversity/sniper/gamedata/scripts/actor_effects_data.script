@@ -2113,13 +2113,13 @@ item_fx = {
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 --		[378] = "actor_effects.use_helmet(0)",
 --		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[50] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8063, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[1460] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 --		[8480] = "actor_effects.use_helmet(1)",
-		[9080] = "xr_effects.enable_imput(db.actor, nil)",
+		[9280] = "xr_effects.enable_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
 	sharpening_stones2_dummy = {
@@ -2127,13 +2127,13 @@ item_fx = {
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 --		[378] = "actor_effects.use_helmet(0)",
 --		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[50] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8063, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[1460] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 --		[8480] = "actor_effects.use_helmet(1)",
-		[9080] = "xr_effects.enable_imput(db.actor, nil)",
+		[9280] = "xr_effects.enable_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
 	sharpening_stones3_dummy = {
@@ -2141,13 +2141,13 @@ item_fx = {
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 --		[378] = "actor_effects.use_helmet(0)",
 --		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[50] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8063, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[1460] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 --		[8480] = "actor_effects.use_helmet(1)",
-		[9080] = "xr_effects.enable_imput(db.actor, nil)",
+		[9280] = "xr_effects.enable_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
 	sharpening_stones4_dummy = {
@@ -2155,13 +2155,13 @@ item_fx = {
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 --		[378] = "actor_effects.use_helmet(0)",
 --		[379] = "xr_effects.disable_nv(db.actor, nil)",
+		[50] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8063, false,'')",
 		[1040] = "xr_effects.disable_ui_inventory(db.actor, nil)",
-		[1460] = "xr_effects.play_inv_repair_kit_with_brushes()",
 		[3020] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
 		[7681] = "xr_effects.enable_ui_lite(db.actor, nil)",
 --		[8480] = "actor_effects.use_helmet(1)",
-		[9080] = "xr_effects.enable_imput(db.actor, nil)",
+		[9280] = "xr_effects.enable_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
 	gun_oil_ru_d_dummy = {
@@ -3674,7 +3674,7 @@ item_fx = {
 		[5750] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[6350] = "actor_effects.use_weapon(1)"
 	},
-	conserva = {
+	conserva_opened = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -3739,7 +3739,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	tomato = {
+	tomato_opened = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -3765,7 +3765,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	corn = {
+	corn_opened = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -3778,7 +3778,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	beans = {
+	beans_opened = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -3791,7 +3791,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	chili = {
+	chili_opened = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -3804,7 +3804,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	tushonka = {
+	tushonka_opened = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4285,7 +4285,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes = {
+	cigarettes_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4298,7 +4298,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes2 = {
+	cigarettes2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4311,7 +4311,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes3 = {
+	cigarettes3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4324,7 +4324,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes4 = {
+	cigarettes4_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4337,7 +4337,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar1 = {
+	cigar1_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4350,7 +4350,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar1_2 = {
+	cigar1_2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4363,7 +4363,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar1_3 = {
+	cigar1_3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4376,7 +4376,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar2 = {
+	cigar2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4389,7 +4389,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar2_2 = {
+	cigar2_2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4402,7 +4402,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar2_3 = {
+	cigar2_3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4415,7 +4415,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar3 = {
+	cigar3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4428,7 +4428,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar3_2 = {
+	cigar3_2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4441,7 +4441,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar3_3 = {
+	cigar3_3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4454,7 +4454,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigar = {
+	cigar_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4467,7 +4467,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes_lucky = {
+	cigarettes_lucky_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4480,7 +4480,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes_lucky2 = {
+	cigarettes_lucky2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4493,7 +4493,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes_lucky3 = {
+	cigarettes_lucky3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4506,7 +4506,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes_lucky4 = {
+	cigarettes_lucky4_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4519,7 +4519,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes_russian = {
+	cigarettes_russian_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4532,7 +4532,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes_russian2 = {
+	cigarettes_russian2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4545,7 +4545,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	cigarettes_russian3 = {
+	cigarettes_russian3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4558,7 +4558,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	joint = {
+	joint_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4571,7 +4571,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	marijuana = {
+	marijuana_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4584,7 +4584,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	marijuana2 = {
+	marijuana2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4597,7 +4597,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	marijuana3 = {
+	marijuana3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4610,7 +4610,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	tobacco = {
+	tobacco_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4623,7 +4623,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	tobacco2 = {
+	tobacco2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4636,7 +4636,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	tobacco3 = {
+	tobacco3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4649,7 +4649,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	tobacco4 = {
+	tobacco4_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4662,7 +4662,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	tobacco5 = {
+	tobacco5_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4675,7 +4675,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	hand_rolling_tobacco = {
+	hand_rolling_tobacco_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4688,7 +4688,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	hand_rolling_tobacco2 = {
+	hand_rolling_tobacco2_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4701,7 +4701,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	hand_rolling_tobacco3 = {
+	hand_rolling_tobacco3_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4714,7 +4714,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	hand_rolling_tobacco4 = {
+	hand_rolling_tobacco4_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4727,7 +4727,7 @@ item_fx = {
 		[9080] = "xr_effects.enable_nv_and_imput(db.actor, nil)",
 		[9680] = "actor_effects.use_weapon(1)"
 	},
-	hand_rolling_tobacco5 = {
+	hand_rolling_tobacco5_smoke = {
 		[0] = "actor_effects.use_weapon(0)",
 		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
 		[378] = "actor_effects.use_helmet(0)",
@@ -4905,11 +4905,27 @@ item_fx = {
 		[30] = "level.add_pp_effector(\"helm_battle.ppe\",3000,true)",
 	},
 	mutant_looting = {
-	        [0] = "level.disable_input()",
-	        [1] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8053, false,'')",
-	        [10] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
-	        [5570] = "level.enable_input()",
-	        [5571] = "actor_effects.use_weapon(1)"
-	}, 
+		[0] = "level.disable_input()",
+		[1] = "level.add_cam_effector('camera_effects\\\\item_use_slow.anm', 8053, false,'')",
+		[10] = "level.add_cam_effector('camera_effects\\\\item_use.anm', 8064, false,'')",
+		[5570] = "level.enable_input()",
+		[5571] = "actor_effects.use_weapon(1)"
+	},
+	dismantle_item = {
+		[0] = "actor_effects.use_weapon(0)",
+		[1] = "xr_effects.disable_ui_lite_with_imput(db.actor, nil)",
+		[380] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[550] = "level.add_cam_effector('camera_effects\\\\item_use_fast.anm', 8024, false,'')",
+		[800] = "xr_effects.play_dismantle_item()",
+		[5500] = "xr_effects.enable_ui_lite_with_imput(db.actor, nil)",
+		[5700] = "actor_effects.use_weapon(1)"
+	},
+	lighter_refillers = {
+		[0] = "level.disable_input()",
+		[1] = "actor_effects.use_weapon(0)",
+		[30] = "xr_effects.disable_ui_inventory(db.actor, nil)",
+		[31] = "xr_effects.play_inv_lighter_refiller()",
+		[3300] = "level.enable_input()",
+		[3500] = "actor_effects.use_weapon(1)"
+	}
 }
-

@@ -594,7 +594,7 @@ function start_game_callback()
 	--local test_object = test_object.test_object_class()
 	--test_object:test()
 	-- --------- KCS - new commands for check and increase stack size
-	coroutine.cstacksize(73728) -- old default found trough debug was "36864"
+	coroutine.cstacksize(131072) --128k-- old default found trough debug was "36864"
 	-- alun_utils.printf("CStack size is %s",coroutine.cstacksize()) -- copy this command end execute in advanced settings trough debug menu, open console to see actual value
 	-- ---------
 end

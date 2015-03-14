@@ -241,25 +241,28 @@ function arty_ui:OnButton_back_clicked()
 end
 
 function arty_ui:OnKeyboard(dik, keyboard_action)
--- Plaargath keyboard convenience addition
+-- Plaargath input convenience addition
 	local bind = dik_to_bind(dik)
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-		if (dik == DIK_keys.DIK_RETURN) then
-		elseif (dik == DIK_keys.DIK_ESCAPE) then
+		if (bind ~= key_bindings.kUSE) and (dik ~= nil) and (dik ~= DIK_keys.MOUSE_1) then
 			self:OnButton_back_clicked()
 		elseif (bind == key_bindings.kUSE) then
-			self:OnButton_back_clicked()
-		elseif (bind == key_bindings.kJUMP) then
-			self:OnButton_back_clicked()
-		elseif (bind == key_bindings.kDROP) then
-			self:OnButton_back_clicked()
+			self:OnButton_ok()
 		end
 	end
 	return true
 end
 
 function arty_ui:OnButton_ok()
+	-- legibility tweak, Plaargath
+	if self.section == "container_tool" then
+		self.caption_parts:SetText("%c[0,140,140,140]choose container")
+	else
+		self.caption_parts:SetText("%c[0,140,140,140]choose artifact")
+	end
+	-- end Plaargath
+
 	local break_con
 	local break_arty
 	
@@ -308,12 +311,12 @@ function arty_ui:OnButton_ok()
 	if self.section == "container_tool" then
 		if (actor_effects.use_item(self.section.."_"..break_con.."_dummy")) then
 			actor_effects.use_item(self.section.."_"..break_con.."_dummy")
-			level_weathers.get_weather_manager():forced_weather_change()
+			-- level_weathers.get_weather_manager():forced_weather_change()
 		end
 	else
 		if (actor_effects.use_item(self.section.."_dummy")) then
 			actor_effects.use_item(self.section.."_dummy")
-			level_weathers.get_weather_manager():forced_weather_change()
+			-- level_weathers.get_weather_manager():forced_weather_change()
 		end
 	end
 end
@@ -361,13 +364,6 @@ function arty_ui:AddItemToList(item,listbox,condition)
 		_itm.x2 = _itm.x1 + _itm.width
 		_itm.y2 = _itm.y1 + _itm.height
 	end
-
-	--[[
-	_itm.picture = self.xml:InitStatic("itm_arty:form:picture",self.form)
-	_itm.picture:InitTexture("ui\\ui_icon_equipment")
-	_itm.picture:SetTextureRect(Frect():set(_itm.x1,_itm.y1,_itm.x2,_itm.y2))
-	_itm.picture:SetWndSize(vector2():set(inv_grid_width*50,inv_grid_height*50))
-	--]]
 
 	listbox:AddExistingItem(_itm)
 end

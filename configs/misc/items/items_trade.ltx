@@ -64,14 +64,14 @@ animation_slot  = 4
 $spawn 				= "devices\repair_kit_10"
 description			= st_repair_kit_descr
 inv_name			= st_repair_kit
-inv_name_short			= st_repair_kit
+inv_name_short		= st_repair_kit
 can_trade			= true
-quest_item      		= false
+quest_item      	= false
 cost				= 5800
 inv_weight			= 3.65
 visual				= dynamics\devices\dev_instrument_1\dev_instrument_1.ogf
-inv_grid_width			= 2
-inv_grid_height			= 2
+inv_grid_width		= 2
+inv_grid_height		= 2
 inv_grid_x			= 10
 inv_grid_y			= 25
 
@@ -79,89 +79,84 @@ inv_grid_y			= 25
 ;;;;;;;; TRADE ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[shovel_old]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\shovel.ogf
-radius				= 68; 50
-
+[shovel_old]:booster
+$spawn 				= "devices\repair_kit_10"
 description			= st_shovel_old_descr
 inv_name			= st_shovel_old
-inv_name_short			= st_shovel_old
-
-inv_grid_width			= 1
-inv_grid_height			= 2
+inv_name_short		= st_shovel_old
+can_trade			= true
+quest_item 			= false
+cost				= 260
+inv_weight			= 1.54
+visual				= dynamics\equipments\trade\shovel.ogf
+inv_grid_width		= 1
+inv_grid_height		= 2
 inv_grid_x			= 8
 inv_grid_y			= 43
+repair_use_actor_effects = true
 
-cost				= 260
-
-;box_size			= 1
-
+[shovel_old_sharp]:booster
+$spawn 				= "devices\repair_kit_10"
+description			= st_shovel_old_sharp_descr
+inv_name			= st_shovel_old_sharp
+inv_name_short		= st_shovel_old_sharp
+can_trade			= true
+quest_item 			= false
+cost				= 360
 inv_weight			= 1.54
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
-[shovel_mili]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
 visual				= dynamics\equipments\trade\shovel.ogf
-radius				= 68; 50
+inv_grid_width		= 1
+inv_grid_height		= 2
+inv_grid_x			= 22
+inv_grid_y			= 48
+repair_use_actor_effects = true
 
+[shovel_mili]:booster
+$spawn 				= "devices\repair_kit_10"
 description			= st_shovel_mili_descr
 inv_name			= st_shovel_mili
-inv_name_short			= st_shovel_mili
-
-inv_grid_width			= 1
-inv_grid_height			= 2
+inv_name_short		= st_shovel_mili
+can_trade			= true
+quest_item 			= false
+cost				= 390
+inv_weight			= 1.36
+visual				= dynamics\equipments\trade\shovel.ogf
+inv_grid_width		= 1
+inv_grid_height		= 2
 inv_grid_x			= 7
 inv_grid_y			= 43
+repair_use_actor_effects = true
 
-cost				= 390
-
-;box_size			= 1
-
+[shovel_mili_sharp]:booster
+$spawn 				= "devices\repair_kit_10"
+description			= st_shovel_mili_sharp_descr
+inv_name			= st_shovel_mili_sharp
+inv_name_short		= st_shovel_mili_sharp
+can_trade			= true
+quest_item 			= false
+cost				= 490
 inv_weight			= 1.36
+visual				= dynamics\equipments\trade\shovel.ogf
+inv_grid_width		= 1
+inv_grid_height		= 2
+inv_grid_x			= 21
+inv_grid_y			= 48
+repair_use_actor_effects = true
 
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
-[hammer_inv]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\hammer.ogf
-radius				= 68; 50
-
+[hammer_inv]:booster
+$spawn 				= "devices\repair_kit_10"
 description			= st_hammer_descr
 inv_name			= st_hammer
 inv_name_short		= st_hammer
-
+can_trade			= true
+quest_item 			= false
+cost				= 370
+inv_weight			= 1.8
+visual				= dynamics\equipments\trade\hammer.ogf
 inv_grid_width			= 1
 inv_grid_height			= 2
 inv_grid_x			= 7
 inv_grid_y			= 47
-
-cost				= 370
-
-;box_size			= 1
-
-inv_weight			= 1.8
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
 
 repair_part_bonus	 	= 0.03
 
@@ -223,37 +218,41 @@ attach_position_offset		= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-[crowbar]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\crowbar.ogf
-radius				= 68; 50
-
+[crowbar]:booster
+$spawn 				= "devices\repair_kit_10"
 description			= st_crowbar_descr
 inv_name			= st_crowbar
 inv_name_short			= st_crowbar
-
+can_trade			= true
+quest_item 			= false
+cost				= 390
+inv_weight			= 1.35
+visual				= dynamics\equipments\trade\crowbar.ogf
 inv_grid_width			= 1
 inv_grid_height			= 2
 inv_grid_x			= 6
 inv_grid_y			= 47
 
-cost				= 390
-
-;box_size			= 1
-
-inv_weight			= 1.35
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
 repair_part_bonus	 	= 0.03
 
-[grooming]:identity_immunities
+[grooming]:booster
+$spawn 				= "devices\repair_kit_10"
+description			= st_grooming_descr
+inv_name			= st_grooming
+inv_name_short		= st_grooming
+can_trade			= true
+quest_item 			= false
+cost				= 420
+inv_weight			= 0.13
+visual				= dynamics\equipments\trade\grooming.ogf
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 2
+inv_grid_y			= 44
+repair_part_bonus	= 0.02
+repair_use_actor_effects = true
+
+[grooming_sharp]:identity_immunities
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_PDA
@@ -261,19 +260,17 @@ cform				= skeleton
 visual				= dynamics\equipments\trade\grooming.ogf
 radius				= 68; 50
 
-description			= st_grooming_descr
-inv_name			= st_grooming
-inv_name_short			= st_grooming
+description			= st_grooming_sharp_descr
+inv_name			= st_grooming_sharp
+inv_name_short		= st_grooming_sharp
 
-inv_grid_width			= 1
-inv_grid_height			= 1
-inv_grid_x			= 2
-inv_grid_y			= 44
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 5
+inv_grid_y			= 39
 
-cost				= 420
-
+cost				= 520
 ;box_size			= 1
-
 inv_weight			= 0.13
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
@@ -288,7 +285,7 @@ $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_PDA
 cform				= skeleton
-visual				= dynamics\equipments\trade\parts.ogf
+visual				= dynamics\equipments\trade\large_parts.ogf
 radius				= 68; 50
 
 description			= st_wpn_spareparts_descr
@@ -313,35 +310,52 @@ auto_attach				= false
 
 repair_part_bonus	 	= 0.10
 
-[beadspread]:identity_immunities
+[spareparts_small]:identity_immunities
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_PDA
 cform				= skeleton
-visual				= dynamics\equipments\trade\bedspread.ogf
-radius				= 68; 50
+visual				= dynamics\equipments\trade\small_parts.ogf
+radius				= 68
 
-description			= st_beadspread_descr
-inv_name			= st_beadspread
-inv_name_short			= st_beadspread
+description			= st_wpn_spareparts_small_descr
+inv_name			= st_wpn_spareparts_small
+inv_name_short		= st_wpn_spareparts_small
 
-inv_grid_width			= 2
-inv_grid_height			= 1
-inv_grid_x			= 4
-inv_grid_y			= 51
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 28
+inv_grid_y			= 2
 
-cost				= 430
+cost				= 620
 
 ;box_size			= 1
 
-inv_weight			= 0.75
+inv_weight			= 1.15
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_position_offset	= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-repair_part_bonus	 	= 0.03
+repair_part_bonus	 	= 0.08
+
+[beadspread]:booster
+$spawn 				= "devices\repair_kit_10"
+description			= st_beadspread_descr
+inv_name			= st_beadspread
+inv_name_short		= st_beadspread
+inv_weight			= 0.75
+can_trade			= true
+quest_item 			= false
+cost				= 430
+visual				= dynamics\equipments\trade\bedspread.ogf
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 4
+inv_grid_y			= 51
+
+repair_part_bonus	= 0.03
 
 [walkie]:identity_immunities
 $spawn 				= "devices\roubles"
@@ -545,35 +559,40 @@ auto_attach				= false
 
 repair_part_bonus	 	= 0.03
 
-[swiss]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\swiss.ogf
-radius				= 68; 50
-
+[swiss]:booster
+$spawn 				= "devices\repair_kit_10"
 description			= st_swiss_descr
 inv_name			= st_swiss
-inv_name_short			= st_swiss
-
-inv_grid_width			= 1
-inv_grid_height			= 1
+inv_name_short		= st_swiss
+can_trade			= true
+quest_item 			= false
+cost				= 666
+inv_weight			= 0.1
+visual				= dynamics\equipments\trade\swiss.ogf
+inv_grid_width		= 1
+inv_grid_height		= 1
 inv_grid_x			= 8
 inv_grid_y			= 51
+repair_part_bonus	= 0.02
+repair_use_actor_effects = true
 
-cost				= 330
-
-;box_size			= 1
-
+[swiss_sharp]:booster
+$spawn 				= "devices\repair_kit_10"
+description			= st_swiss_sharp_descr
+inv_name			= st_swiss_sharp
+inv_name_short		= st_swiss_sharp
+can_trade			= true
+quest_item 			= false
+cost				= 766
 inv_weight			= 0.1
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
-repair_part_bonus	 	= 0.02
+visual				= dynamics\equipments\trade\swiss.ogf
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 12
+inv_grid_y			= 52
+repair_part_bonus	= 0.02
+repair_part_bonus	= 0.02
+repair_use_actor_effects = true
 
 [headlamp]:identity_immunities
 $spawn 				= "devices\roubles"
@@ -631,36 +650,6 @@ attach_position_offset		= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-[kit_hunt]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\kit_hunt.ogf
-radius				= 68; 50
-
-description			= st_kit_hunt_descr
-inv_name			= st_kit_hunt
-inv_name_short			= st_kit_hunt
-
-inv_grid_width			= 2
-inv_grid_height			= 2
-inv_grid_x			= 0
-inv_grid_y			= 49
-
-cost				= 1090
-
-;box_size			= 1
-
-inv_weight			= 3.685
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
-repair_part_bonus	 	= 0.07
-
 [geiger_dead]:identity_immunities
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
@@ -675,8 +664,8 @@ inv_name_short			= st_geiger_dead
 
 inv_grid_width			= 1
 inv_grid_height			= 1
-inv_grid_x			= 9
-inv_grid_y			= 52
+inv_grid_x			= 5
+inv_grid_y			= 33
 
 cost				= 790
 
@@ -854,6 +843,33 @@ cost				= 430
 
 ;box_size			= 1
 
+inv_weight			= 0.17
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+repair_part_bonus	 	= 0.02
+
+[book4]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\book4.ogf
+radius				= 68
+
+description			= st_book4_descr
+inv_name			= st_book4
+inv_name_short		= st_book4
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 30
+inv_grid_y			= 1
+cost				= 366
+;box_size			= 1
 inv_weight			= 0.17
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
@@ -1193,28 +1209,22 @@ attach_position_offset	= 0.081856, -0.035081, 0.011694
 attach_bone_name		= bip01_l_hand
 auto_attach				= false
 
-[tarpaulin]:identity_immunities
-GroupControlSection		= spawn_group
-discovery_dependency	=
-$spawn					= "food and drugs\harmonica_a"
-cform                   = skeleton
-class					= II_ATTCH
-visual					= dynamics\equipments\trade\tarp.ogf
-cost					= 630
-inv_name				= st_tarpaulin
-inv_name_short				= st_tarpaulin
-description				= st_tarpaulin_descr
-inv_weight				= 1.2
-inv_grid_width			= 2
-inv_grid_height			= 1
-inv_grid_x				= 0
-inv_grid_y				= 51
-attach_angle_offset		= 0.000000, -1.204452, -1.262921
-attach_position_offset	= 0.081856, -0.035081, 0.011694
-attach_bone_name		= bip01_l_hand
-auto_attach				= false
+[tarpaulin]:booster
+$spawn 				= "devices\repair_kit_10"
+description			= st_tarpaulin_descr
+inv_name			= st_tarpaulin
+inv_name_short		= st_tarpaulin
+inv_weight			= 1.2
+can_trade			= true
+quest_item 			= false
+cost				= 630
+visual				= dynamics\equipments\trade\tarp.ogf
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 0
+inv_grid_y			= 51
 
-repair_part_bonus	 	= 0.05
+repair_part_bonus	= 0.05
 
 [rope]:identity_immunities
 GroupControlSection		= spawn_group
@@ -1262,27 +1272,43 @@ auto_attach				= false
 
 repair_part_bonus	 	= 0.04
 
-[cutlery]:identity_immunities
+[cutlery]:booster
+$spawn 				= "devices\repair_kit_10"
+description			= st_cutlery_descr
+inv_name			= st_cutlery
+inv_name_short		= st_cutlery
+can_trade			= true
+quest_item 			= false
+cost				= 370
+inv_weight			= 0.2
+visual				= dynamics\equipments\trade\cutlery.ogf
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 8
+inv_grid_y			= 47
+repair_part_bonus	= 0.02
+repair_use_actor_effects = true
+
+[cutlery_sharp]:identity_immunities
 GroupControlSection		= spawn_group
 discovery_dependency	=
 $spawn					= "food and drugs\harmonica_a"
-cform                   = skeleton
+cform					= skeleton
 class					= II_ATTCH
 visual					= dynamics\equipments\trade\cutlery.ogf
-cost					= 370
-inv_name				= st_cutlery
-inv_name_short				= st_cutlery
-description				= st_cutlery_descr
+cost					= 470
+inv_name				= st_cutlery_sharp
+inv_name_short			= st_cutlery_sharp
+description				= st_cutlery_descr_sharp
 inv_weight				= 0.2
 inv_grid_width			= 1
 inv_grid_height			= 1
-inv_grid_x				= 8
-inv_grid_y				= 47
+inv_grid_x				= 13
+inv_grid_y				= 52
 attach_angle_offset		= 0.000000, -1.204452, -1.262921
 attach_position_offset	= 0.081856, -0.035081, 0.011694
 attach_bone_name		= bip01_l_hand
 auto_attach				= false
-
 repair_part_bonus	 	= 0.02
 
 [radio]:identity_immunities
@@ -1491,5 +1517,188 @@ wounds_heal_perc		= 0
 eat_portions_num 		= 1
 animation_slot  		= 4
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[kit_hunt]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\kit_hunt.ogf
+radius				= 68; 50
+
+description			= st_kit_hunt_descr
+inv_name			= st_kit_hunt
+inv_name_short		= st_kit_hunt
+
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 0
+inv_grid_y			= 49
+
+cost				= 1090
+
+;box_size			= 1
+
+inv_weight			= 3.685
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+repair_part_bonus	 	= 0.07
+
+[lighter]:identity_immunities,weapon_probability,default_weapon_params
+visual					= dynamics\equipments\trade\lighter.ogf
+ammo_class		 		= ammo_lighter
+description				= st_lighter_descr
+inv_name				= st_lighter
+inv_name_short			= st_lighter
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 5
+inv_grid_y				= 38
+cost					= 528
+inv_weight				= 0.02
+ammo_mag_size			= 0
+
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn					= "weapons\knife"
+$npc			 		= on
+$prefetch 				= 8
+scheduled				= off
+cform					= skeleton
+class					= WP_BINOC
+min_radius				= 0
+max_radius				= 50
+ef_weapon_type			= 1
+zoom_dof				= 0.5, 1.0, 180
+reload_dof				= 0.0, 0.5, 5, 1.7
+holder_range_modifier	= 1.0
+holder_fov_modifier		= 1.0
+ammo_limit		 		= 120
+ammo_current			= 96
+ammo_elapsed			= 16
+hand_dependence			= 1
+single_handed			= 1
+slot 			 		= 4
+animation_slot			= 5
+default_to_ruck			= true
+sprint_allowed			= true
+control_inertion_factor	= 0
+upgr_icon_x				= 875
+upgr_icon_y				= 556
+upgr_icon_width			= 148
+upgr_icon_height		= 52
+kill_msg_x				= 197
+kill_msg_y				= 177
+kill_msg_width			= 53
+kill_msg_height			= 16
+show_ammo				= false
+show_condition			= false
+fire_dispersion_base	= 9999
+crosshair_inertion		= 9999
+cam_return				= 0 
+cam_relax_speed			= 0
+cam_relax_speed_ai		= 0
+cam_dispersion			= 0
+cam_dispersion_inc		= 0
+cam_dispersion_frac		= 0
+cam_max_angle			= 0
+cam_max_angle_horz		= 0
+cam_step_angle_horz		= 0
+fire_dispersion_condition_factor	= 0
+misfire_probability		= 0
+misfire_start_condition	= 0
+misfire_end_condition	= 0
+misfire_start_prob		= 0
+misfire_end_prob		= 0
+condition_shot_dec		= 0
+condition_queue_shot_dec = 0
+hit_power				= 0
+hit_impulse				= 0
+hit_type				= wound
+hit_probability_gd_novice	= 1.0
+hit_probability_gd_stalker	= 1.0
+hit_probability_gd_veteran	= 1.0
+hit_probability_gd_master	= 1.0
+PDM_disp_base 				= 9999
+PDM_disp_vel_factor 		= 9999
+PDM_disp_accel_factor 		= 9999
+PDM_disp_crouch 			= 9999
+PDM_disp_crouch_no_acc		= 9999
+use_aim_bullet			= false
+time_to_aim				= 0
+fire_distance			= 0
+bullet_speed			= 0
+rpm						= 0
+rpm_empty_click 		= 0
+splash1_direction		= 0.0, -0.3, 1.0
+splash2_direction		= 0.0, 0.0, 1.0
+spash1_dist				= 1.2
+spash2_dist				= 1
+spash1_radius			= 0.5	;0.7
+spash2_radius			= 0.25
+splash1_hits_count		= 3
+splash1_pervictim_hcount	= 1
+splash2_hits_count			= 2
+splash_hit_divide_factor	= 0.75
+hud						= wpn_lighter_hud
+position                		= -0.021, -0.085, 0.024
+orientation             		= 0, 90, 0
+fire_point              		= 0.0, 0.133, 0.161
+flame_particles		   		=
+smoke_particles		   		=
+shell_point		 		= 0.0, 0.133, 0.047
+shell_dir		 		= 0.0, 0.0, 0.4
+shell_particles	 			= weapons\generic_shells
+startup_ammo           			= 1000
+wm_size                  		= 0.10
+light_disabled				= true
+ph_mass			 		= 4
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status			= 0
+zoom_enabled				= false
+snd_draw				= weapons\walther_draw
+snd_holster				= weapons\generic_holster
+snd_shoot				= weapons\knife\knife_1
+snd_empty				= weapons\pistol_empty
+snd_reload				= weapons\pm_reload, 0.8
+snd_close				= weapons\generic_close
+vision_present				= false
+vis_frame_speed				= 0
+vis_frame_color				= 0.7,0.7,0.7,1.0
+
+[wpn_lighter_hud]:hud_base
+zoom_hide_crosshair		= true
+hands_position			= -0.021000,-0.160000,0.002500
+hands_orientation		= -0.500000,1.000000,1.149999
+hands_position_16x9		= 0.033000,-0.189500,0.039000
+hands_orientation_16x9	= 2.349998,2.749999,2.849998
+item_position			= 0.003164,-0.002989,0.000906
+item_orientation		= 175.276352,-184.681427,-545.486328
+item_visual				= dynamics\devices\dev_upd\dev_universalpowerdevice.ogf
+attach_place_idx		= 0
+shell_point				= 0,0,0
+shell_bone				= wpn_body
+fire_point				= 0.004500,0.062500,-0.178499
+fire_bone				= knife
+anm_show				= knife_draw
+anm_show_empty			= knife_draw
+anm_hide				= knife_holster
+anm_idle				= knife_idle
+anm_idle_aim			= knife_idle
+anm_attack				= knife_kick_1
+anm_attack_e			= knife_kick_end1
+anm_attack2				= knife_kick_2
+anm_attack2_e			= knife_kick_end2
+anm_idle_moving 		= knife_idle_moving
+anm_idle_sprint			= knife_idle_sprint
+anm_bore				= knife_idle_bore
+aim_hud_offset_pos		= -0.077000,0.022000,0.000000
+aim_hud_offset_rot		= 0.000000,0.005000,-0.015000
+gl_hud_offset_pos		= 0,0,0
+gl_hud_offset_rot		= 0,0,0
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0

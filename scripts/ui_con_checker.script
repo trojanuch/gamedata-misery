@@ -106,18 +106,10 @@ function con_checker_ui:OnButton_ok_clicked()
 end
 
 function con_checker_ui:OnKeyboard(dik, keyboard_action)
--- Plaargath keyboard convenience addition
-	local bind = dik_to_bind(dik)
+-- Plaargath input convenience addition
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-		if (dik == DIK_keys.DIK_RETURN) then
-		elseif (dik == DIK_keys.DIK_ESCAPE) then
-			self:OnButton_ok_clicked()
-		elseif (bind == key_bindings.kUSE) then
-			self:OnButton_ok_clicked()
-		elseif (bind == key_bindings.kJUMP) then
-			self:OnButton_ok_clicked()
-		elseif (bind == key_bindings.kDROP) then
+		if (dik ~= nil) then
 			self:OnButton_ok_clicked()
 		end
 	end

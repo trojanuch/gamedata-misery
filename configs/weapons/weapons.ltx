@@ -2878,4 +2878,33 @@ tracer				= off
 wm_size         	= 1
 k_air_resistance 	= 1
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;END;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[ammo_lighter]:ammo_base	; dummy ammo section to be diplayed in lighter UI
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_9x19_fmj" ; option for Level Editor
+class			= AMMO_S
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_9x19_fmj.ogf
+description		= Carcinoleum
+slot 			= -1
+$prefetch 		= 64
+cost			= 0
+box_size		= 1 ;50
+inv_name		= Carcinoleum
+inv_name_short	= Carcinoleum
+inv_weight		= .1
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 29
+inv_grid_y			= 1
+k_dist				= 1
+k_disp				= 1
+k_hit				= 1
+k_impulse			= 1
+k_pierce			= 1
+k_ap				= 1
+impair				= 1
+buck_shot			= 1
+tracer				= off
+wm_size         	= 1
+k_air_resistance 	= 1

@@ -212,14 +212,14 @@ function dynamic_actor_loadout()
 		create_items("wpn_pm",4)
 		create_items("wpn_fort",4)
 		create_items("wpn_lr300",4)
---		create_items("itm_gunsmith_toolkit",4)
 	end
+
+	-- Items refunct dummies - must have for Canned Food mod and Lighter mod to work, Plaargath
+	itms_refunct.initial_dummies_spawn()
 
 	-- Items all classes should have
 	create_items("device_flashlight")
 	create_items("device_torch")
---	create_items("wpn_binoc_inv")
---	create_items("wpn_binoc")
 
 	---- Class specific items
 	if (ActorClass == "assaulter") then
@@ -228,18 +228,17 @@ function dynamic_actor_loadout()
 		create_items("con_checker")
 		if (MiseryBlackRoad) then
 			create_items("wpn_knife_inv_2")
+
 		else
 			create_items("wpn_upd")
 			create_items("roubles",7)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv")
-			
+
 			create_items("gun_oil2")
 			create_items("cleaning_kit_r7_3")
 			create_items("glue_a2")
 			create_items("textile_patch_m")
-			
-			create_items("swiss")
 
 			create_items("flask")
 			create_items("ration_ukr5")
@@ -252,9 +251,9 @@ function dynamic_actor_loadout()
 
 			create_items("wpn_stg44_new")
 			create_items("wpn_gsh18")
-            create_ammunition("ammo_9x19_fmj")
 			create_ammunition("ammo_9x19_fmj")
-            create_ammunition("ammo_9x19_pbp")
+			create_ammunition("ammo_9x19_fmj")
+			create_ammunition("ammo_9x19_pbp")
 			create_ammunition("ammo_7.92x33_fmj")
 			create_ammunition("ammo_7.92x33_fmj")
 			create_ammunition("ammo_7.92x33_ap")
@@ -264,19 +263,20 @@ function dynamic_actor_loadout()
 			create_items("grenade_f1")
 			create_items("grenade_rgd5",2)
 		end
+
 	elseif (ActorClass == "sniper") then
 		create_items("identity_card_sniper")
 		create_items("container_tool")
 		create_items("con_checker")
 		if (MiseryBlackRoad) then
 			create_items("wpn_knife_inv_5")
+
 		else
 			create_items("wpn_upd")
 			create_items("roubles",3)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
-			create_items("swiss")
-			
+
 			create_items("gun_oil_ru_d2")
 			create_items("cleaning_kit_r7_3")
 			create_items("sewing_kit_a3")
@@ -292,12 +292,12 @@ function dynamic_actor_loadout()
 			create_items("medkit_army",2)
 			create_items("stimpack_army")
 			create_items("itm_backpack")
-			
+
 			create_items("helm_cloth_mask")
 
 			create_items("wpn_m1891_alt")
 			create_items("wpn_bm16")
-           	create_ammunition("ammo_12x70_buck")
+			create_ammunition("ammo_12x70_buck")
 			create_ammunition("ammo_12x70_buck")
 			create_ammunition("ammo_12x70_buck")
 			create_ammunition("ammo_12x70_buck")
@@ -307,19 +307,21 @@ function dynamic_actor_loadout()
 			create_items("itm_sleepbag")
 			create_items("wpn_addon_scope_ww2")
 		end
+
 	elseif (ActorClass == "recon") then
 		create_items("identity_card_recon")
 		create_items("container_tool")
 		create_items("con_checker")
 		if (MiseryBlackRoad) then
 			create_items("wpn_knife_inv_4")
+
 		else
 			create_items("wpn_upd")
 			create_items("wpn_binoc_inv")
 			create_items("roubles",2)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
-			
+
 			create_items("gun_oil_ru_d2")
 			create_items("cleaning_kit_p3")
 
@@ -338,9 +340,9 @@ function dynamic_actor_loadout()
 
 			create_items("wpn_pb")
 			create_items("wpn_scorpion_camo")
-         	create_ammunition("ammo_9x18_fmj")
 			create_ammunition("ammo_9x18_fmj")
-           	create_ammunition("ammo_9x18_pbp")
+			create_ammunition("ammo_9x18_fmj")
+			create_ammunition("ammo_9x18_pbp")
 			create_ammunition("ammo_9x18_pbp")
 			create_ammunition("ammo_9x18_ap")
 			create_ammunition("ammo_9x18_ap")
