@@ -48,8 +48,8 @@
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="110" y="57" width="195" height="20">
-				<text font="letterica18"/>
+			<caption_parts x="32" y="57" width="195" height="20">
+				<text font="letterica18" align="c"/>
 			</caption_parts>
 			<list_frame_parts x="265" y="48" width="284" height="107">
 				<texture>ui_inGame2_servers_list_frame</texture>
@@ -240,7 +240,7 @@
 			</image>
 			<icon x="149" y="220" width="128" height="128" stretch="1">
 			</icon>
-			<caption x="6" y="131" width="245" height="30">
+			<caption x="9" y="161" width="290" height="30">
 				<text font="letterica18" align="c"/>
 			</caption>
 			<list_frame x="6" y="285" width="295" height="145">
@@ -249,7 +249,7 @@
 			<list x="9" y="285" width="290" height="143" item_height="18" can_select="1">
 				<font font="letterica16"/>
 			</list>
-			<btn_ok x="18" y="430" width="80" height="26">
+			<btn_ok x="109" y="430" width="80" height="26">
 				<texture>ui_button_main01</texture>
 				<text font="letterica18">OK</text>
 			</btn_ok>
@@ -275,7 +275,7 @@
 			</icon_parts>
 			<icon_tool x="300" y="418" width="128" height="128" stretch="1">
 			</icon_tool>
-			<icon_tent_mat x="390" y="418" width="43" height="43" stretch="1">
+			<icon_tent_mat x="414" y="418" width="43" height="43" stretch="1">
 			</icon_tent_mat>
 
 			<caption_down x="32" y="264" width="195" height="50" complex_mode="1">

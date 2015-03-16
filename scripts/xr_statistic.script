@@ -322,7 +322,7 @@ end
 function one_of_the_lads_functor()
 	if not has_alife_info("one_of_the_lads_gained") then
 		if has_alife_info("zat_b7_actor_help_stalkers")
-				or has_alife_info("+zat_b5_actor_help_stalkers")
+				or has_alife_info("zat_b5_actor_help_stalkers")
 				or has_alife_info("zat_b30_sultan_loose") then
 			db.actor:give_info_portion("one_of_the_lads_gained")
 			news_manager.send_tip(db.actor, "st_ach_one_of_the_lads", nil, "one_of_the_lads", nil, nil)
@@ -334,7 +334,7 @@ end
 function kingpin_functor()
 	if not has_alife_info("kingpin_gained") then
 		if has_alife_info("zat_b7_actor_help_bandits")
-				or has_alife_info("+zat_b5_actor_help_bandits")
+				or has_alife_info("zat_b5_actor_help_bandits")
 				or has_alife_info("zat_b30_barmen_under_sultan") then
 			db.actor:give_info_portion("kingpin_gained")
 			news_manager.send_tip(db.actor, "st_ach_kingpin", nil, "kingpin", nil, nil)
@@ -346,7 +346,7 @@ end
 function stalker_enemy_functor()
 	if not has_alife_info("stalker_enemy") then
 		if has_alife_info("zat_b7_actor_help_bandits")
-				or has_alife_info("+zat_b5_actor_help_bandits")
+				or has_alife_info("zat_b5_actor_help_bandits")
 				or has_alife_info("zat_b30_barmen_under_sultan") then
 			db.actor:give_info_portion("stalker_enemy")
 --			news_manager.send_tip(db.actor, "st_ach_kingpin", nil, "kingpin", nil, nil)
@@ -489,6 +489,9 @@ function friend_of_freedom_functor()
 		if has_alife_info("jup_b4_monolith_squad_in_freedom")
 				or has_alife_info("jup_b207_freedom_knows_about_depot")
 --				and has_alife_info("jup_b25_flint_blame_done_to_freedom")
+				or has_alife_info("zat_b7_actor_help_bandits")
+				or has_alife_info("zat_b5_actor_help_bandits")
+				or has_alife_info("zat_b30_barmen_under_sultan")
 				or has_alife_info("jup_b46_duty_founder_pda_to_freedom") then
 			db.actor:give_info_portion("sim_freedom_help_harder")
 			news_manager.send_tip(db.actor, "st_ach_friend_of_freedom", nil, "friend_of_freedom", nil, nil)

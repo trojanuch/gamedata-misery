@@ -48,8 +48,8 @@
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="94" y="60" width="187" height="30">
-				<text font="letterica18"/>
+			<caption_parts x="16" y="60" width="187" height="30">
+				<text font="letterica18" align="c"/>
 			</caption_parts>
 			<list_frame_parts x="217" y="50" width="241" height="117">
 				<texture>ui_inGame2_servers_list_frame</texture>
@@ -248,7 +248,7 @@
 			<list x="6" y="245" width="197" height="143" item_height="18" can_select="1">
 				<font font="letterica16"/>
 			</list>
-			<btn_ok x="18" y="390" width="80" height="26">
+			<btn_ok x="62" y="390" width="80" height="26">
 				<texture>ui_button_main01</texture>
 				<text font="letterica18">OK</text>
 			</btn_ok>

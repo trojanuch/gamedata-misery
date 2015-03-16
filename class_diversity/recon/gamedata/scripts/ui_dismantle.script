@@ -254,7 +254,7 @@ function dismantle_ui:OnButton_ok()
 				end
 				if (se_parts) and (sec == "helm_protective") then
 					if self.section == "hammer_inv" then
-						if itms_refunct.test_on_probab(66) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
+						if itms_refunct.test_on_probab(86) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
 							hammer_break = true
 							alife():create("helm_protective",db.actor:position(),0,0,0)
 						end
@@ -264,7 +264,7 @@ function dismantle_ui:OnButton_ok()
 				end
 				if (se_parts) and (sec == "helm_tactic") then
 					if self.section == "hammer_inv" then
-						if itms_refunct.test_on_probab(66) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
+						if itms_refunct.test_on_probab(86) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
 							hammer_break = true
 							alife():create("helm_tactic",db.actor:position(),0,0,0)
 						end
@@ -274,7 +274,7 @@ function dismantle_ui:OnButton_ok()
 				end
 				if (se_parts) and (sec == "helm_battle") then
 					if self.section == "hammer_inv" then
-						if itms_refunct.test_on_probab(66) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
+						if itms_refunct.test_on_probab(86) then alife():create("textile_patch_e",db.actor:position(),0,0,0) else
 							hammer_break = true
 							alife():create("helm_battle",db.actor:position(),0,0,0)
 						end
@@ -283,9 +283,9 @@ function dismantle_ui:OnButton_ok()
 					end
 				end
 
-				-- 90% chance
+				-- 90% chance + 10% CHANCE RECON BONUS
 				if (se_parts) and (sec == "detector_simple") then
-					if itms_refunct.test_on_probab(90) then
+					if itms_refunct.test_on_probab(100) then
 						alife():create("batteries_dead",db.actor:position(),0,0,0)
 						alife():create("geiger_dead",db.actor:position(),0,0,0)
 					else
@@ -293,7 +293,7 @@ function dismantle_ui:OnButton_ok()
 					end
 				end
 				if (se_parts) and (sec == "detector_advanced") then
-					if itms_refunct.test_on_probab(90) then
+					if itms_refunct.test_on_probab(100) then
 						alife():create("batteries",db.actor:position(),0,0,0)
 						alife():create("geiger_dead",db.actor:position(),0,0,0)
 					else
@@ -301,7 +301,7 @@ function dismantle_ui:OnButton_ok()
 					end
 				end
 				if (se_parts) and (sec == "detector_elite") then
-					if itms_refunct.test_on_probab(90) then
+					if itms_refunct.test_on_probab(100) then
 						alife():create("batteries_ccell",db.actor:position(),0,0,0)
 						alife():create("geiger_dead",db.actor:position(),0,0,0)
 					else
@@ -309,7 +309,7 @@ function dismantle_ui:OnButton_ok()
 					end
 				end
 				if (se_parts) and (sec == "detector_scientific") then
-					if itms_refunct.test_on_probab(90) then
+					if itms_refunct.test_on_probab(100) then
 						alife():create("batteries_ccell",db.actor:position(),0,0,0)
 						alife():create("geiger_dead",db.actor:position(),0,0,0)
 					else
@@ -317,57 +317,57 @@ function dismantle_ui:OnButton_ok()
 					end
 				end
 				if (se_parts) and (sec == "geiger_dead") then
-					if itms_refunct.test_on_probab(90) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(100) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "af_surge") then
-					if itms_refunct.test_on_probab(90) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(100) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "af_cooler") then
-					if itms_refunct.test_on_probab(90) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(100) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "af_freon") then
-					if itms_refunct.test_on_probab(90) then alife():create("batteries_ccell",db.actor:position(),0,0,0) else alife():create("batteries_ccell_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(100) then alife():create("batteries_ccell",db.actor:position(),0,0,0) else alife():create("batteries_ccell_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "maps_kit") then
-					if itms_refunct.test_on_probab(90) then alife():create("batteries_ccell",db.actor:position(),0,0,0) else alife():create("batteries_ccell_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(100) then alife():create("batteries_ccell",db.actor:position(),0,0,0) else alife():create("batteries_ccell_empty",db.actor:position(),0,0,0) end
 				end
 
-				-- 75% chance
+				-- 75% chance + 15% CHANCE RECON BONUS
 				if (se_parts) and (sec == "walkie") then
-					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(90) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end 
 				if (se_parts) and (sec == "radio") then
-					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(90) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "radio2") then
-					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(90) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "headlamp") then
-					if itms_refunct.test_on_probab(75) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(90) then alife():create("batteries",db.actor:position(),0,0,0) else alife():create("batteries_empty",db.actor:position(),0,0,0) end
 				end
 
-				-- 65% chance
+				-- 65% chance + 20% CHANCE RECON BONUS
 				if (se_parts) and (sec == "flashlight_broken") then
-					if itms_refunct.test_on_probab(65) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(85) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "flashlight_old") then
-					if itms_refunct.test_on_probab(65) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(85) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end
 
-				-- 50% chance
+				-- 50% chance + 25% CHANCE RECON BONUS
 				if (se_parts) and (sec == "wpn_addon_scope_night") then
-					if itms_refunct.test_on_probab(50) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "wpn_addon_scope_susat_night") then
-					if itms_refunct.test_on_probab(50) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end
 				if (se_parts) and (sec == "wpn_addon_scope_acog_night") then
-					if itms_refunct.test_on_probab(50) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
+					if itms_refunct.test_on_probab(75) then alife():create("batteries_dead",db.actor:position(),0,0,0) else alife():create("batteries_dead_empty",db.actor:position(),0,0,0) end
 				end
 
-				-- injury (death with low-tier outfits) chances
+				-- injury (death with low-tier outfits) chances VARIED RECON CHANCE BONUS
 				if (se_parts) and (sec == "ied_rpg") then
-					if itms_refunct.test_on_probab(80) then
+					if itms_refunct.test_on_probab(95) then
 						alife():create("ammo_og-7b",db.actor:position(),0,0,0)
 						alife():create("radio",db.actor:position(),0,0,0)
 					else
@@ -376,7 +376,7 @@ function dismantle_ui:OnButton_ok()
 					end
 				end
 				if (se_parts) and (sec == "ied") then
-					if itms_refunct.test_on_probab(75) then
+					if itms_refunct.test_on_probab(90) then
 						alife():create("explo_metalcan_powder",db.actor:position(),0,0,0)
 						alife():create("radio2",db.actor:position(),0,0,0)
 					else
@@ -385,7 +385,7 @@ function dismantle_ui:OnButton_ok()
 					end
 				end
 				if (se_parts) and (sec == "mine") then
-					if itms_refunct.test_on_probab(70) then alife():create("explo_metalcan_powder",db.actor:position(),0,0,0) else
+					if itms_refunct.test_on_probab(85) then alife():create("explo_metalcan_powder",db.actor:position(),0,0,0) else
 						no_anim = true
 						itms_refunct.get_effect("blast")
 					end
@@ -618,305 +618,305 @@ function dismantle_ui:OnButton_ok()
 				local obj = item and level.object_by_id(item.item_id)
 				local con = obj:condition()
 				if wpn_small then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 					end
 				elseif wpn_big then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 					end
 				elseif wpn_big_scope_wp then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_wp_moist = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_wp = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_wp = true
 					end
 				elseif wpn_big_scope_wp_moist then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_wp_broken = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_wp_moist = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_wp_moist = true
 					end
 				elseif wpn_big_scope_wp_broken then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_wp_broken = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_wp_broken = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_wp_broken = true
 					end
 				elseif wpn_big_scope_wp_special then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_wp_special = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_wp_special = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_wp_special = true
 					end
 				elseif wpn_big_scope_zf then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_zf_moist = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_zf = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_zf = true
 					end
 				elseif wpn_big_scope_zf_moist then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_zf_broken = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_zf_moist = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_zf_moist = true
 					end
 				elseif wpn_big_scope_zf_broken then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_zf_broken = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_zf_broken = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_zf_broken = true
 					end
 				elseif wpn_big_scope_susat then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_susat_moist = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_susat = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_susat = true
 					end
 				elseif wpn_big_scope_susat_moist then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_susat_broken = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_susat_moist = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_susat_moist = true
 					end
 				elseif wpn_big_scope_susat_broken then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
 						give_scope_susat_broken = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_susat_broken = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_susat_broken = true
 					end
 				elseif wpn_big_scope_acog then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_acog = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_acog = true
 					end
 				elseif wpn_big_scope_m16 then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.5 then
+					elseif con < 0.4 then
 						give_one_small = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_m16 = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_m16 = true
 					end
 				elseif wpn_bigass then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.66 then
+					elseif con < 0.56 then
 						give_one_small = true
 						give_one_big = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_two_small = true
 						give_one_big = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_two_big = true
 					end
 				elseif wpn_bigass_scope_wp then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.66 then
+					elseif con < 0.56 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_wp_moist = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_wp = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_two_big = true
 						give_scope_wp = true
 					end
 				elseif wpn_bigass_scope_wp_moist then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.66 then
+					elseif con < 0.56 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_wp_broken = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_wp_moist = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_two_big = true
 						give_scope_wp_moist = true
 					end
 				elseif wpn_bigass_scope_wp_broken then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.66 then
+					elseif con < 0.56 then
 						give_one_small = true
 						give_one_big = true
 						give_scope_wp_broken = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_wp_broken = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_two_big = true
 						give_scope_wp_broken = true
 					end
 				elseif wpn_bigass_scope_acog then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.66 then
+					elseif con < 0.56 then
 						give_one_small = true
 						give_one_big = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_acog = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_two_big = true
 						give_scope_acog = true
 					end
 				elseif wpn_bigass_scope_trg then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.66 then
+					elseif con < 0.56 then
 						give_one_small = true
 						give_one_big = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_trg = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_two_big = true
 						give_scope_trg = true
 					end
 				elseif wpn_bigass_scope_wp_ksvk then
-					if con < 0.35 then
+					if con < 0.25 then
 						give_shit = true
-					elseif con < 0.66 then
+					elseif con < 0.56 then
 						give_one_small = true
 						give_one_big = true
-					elseif con < 0.96 then
+					elseif con < 0.86 then
 						give_two_small = true
 						give_one_big = true
 						give_scope_ksvk = true
-					elseif con >= 0.96 then
+					elseif con >= 0.86 then
 						give_two_small = true
 						give_two_big = true
 						give_scope_ksvk = true

@@ -66,34 +66,34 @@ reload_dof              = 0.0, 0.5, 5, 2
 
 ;базовая дисперсия
 fire_dispersion_base    = 0.31        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.35f
-crosshair_inertion		= 6.3
+control_inertion_factor = 1.22f
+crosshair_inertion	= 5.8
 
 ;отдача
 cam_return = 0 ;				= 0
-cam_relax_speed         = 10	;скорость возврата в исходное положение
+cam_relax_speed         = 12	;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	        = 0.86
-cam_dispersion_inc      = 0.88
-cam_dispersion_frac     = 0.7	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle        	= 50.0 	;максимальный угол отдачи
-cam_max_angle_horz      = 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.82	;(degree) size of step camera moved in horizontal position while shooting
+cam_dispersion	        = 0.88
+cam_dispersion_inc      = 0.63
+cam_dispersion_frac     = 1.0	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle        	= 59.0 	;максимальный угол отдачи
+cam_max_angle_horz      = 59.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.72	;(degree) size of step camera moved in horizontal position while shooting
 
-PDM_disp_base 				= 0.84
-PDM_disp_vel_factor 		= 1.71
-PDM_disp_accel_factor 		= 1.71
-PDM_disp_crouch = 1.0 ; 			= 2.235
-PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
+PDM_disp_base 				= 0.9
+PDM_disp_vel_factor 		= 2.3
+PDM_disp_accel_factor 		= 2.3
+PDM_disp_crouch = 1.0 ;  			= 1.165
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
 
-zoom_cam_relax_speed        = 10    ; scope & ironsight
+zoom_cam_relax_speed        = 12    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 360
-zoom_cam_dispersion         = 0.77
-zoom_cam_dispersion_inc     = 0.78
+zoom_cam_dispersion         = 0.79
+zoom_cam_dispersion_inc     = 0.54
 zoom_cam_dispersion_frac    = 1.0
-zoom_cam_max_angle          = 50.0
-zoom_cam_max_angle_horz     = 50.0
-zoom_cam_step_angle_horz    = 1.77
+zoom_cam_max_angle          = 59.0
+zoom_cam_max_angle_horz     = 59.0
+zoom_cam_step_angle_horz    = 1.67
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 5        
 
@@ -174,7 +174,7 @@ grenade_launcher_status     = 2	; 1
 
 zoom_enabled                = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time            = 0.25
-scope_zoom_factor       = 49.6 ;            = 85
+scope_zoom_factor       = 58.6 ;            = 85
 
 scopes_sect				   = scope_acog_m4a1, scope_acog_trijicon_m4a1, scope_acog_night_m4a1
 silencer_name               = wpn_addon_silencer_556x45         ; section name for the attachable silencer

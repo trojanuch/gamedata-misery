@@ -60,34 +60,34 @@ single_handed           = 0
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
 fire_dispersion_base    = 0.18        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.7f
-crosshair_inertion		= 7.3
+control_inertion_factor = 1.48f
+crosshair_inertion		= 6.8
 
 ;отдача
-cam_return = 0 ;				= 0
+cam_return = 0 ;				= 1
 cam_relax_speed         = 8		; скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
 cam_dispersion          = 1.55       ; увеличения угла (в градусах) при первом выстреле
-cam_dispersion_inc      = 1.55       ; увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_inc      = 1.35       ; увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
 cam_max_angle           = 50.0       ; максимальный угол отдачи
 cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.15       ; (degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 1.1       ; (degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.15
-PDM_disp_vel_factor 		= 2.25
-PDM_disp_accel_factor 		= 2.255
-PDM_disp_crouch = 1.0 ; 			= 2.465
-PDM_disp_crouch_no_acc = 1.0 ; 		= 2.845
+PDM_disp_vel_factor 		= 2.75
+PDM_disp_accel_factor 		= 2.75
+PDM_disp_crouch = 1.0 ;  			= 1.225
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.425
 
 zoom_cam_relax_speed         = 8     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 1.3
-zoom_cam_dispersion_inc      = 1.25
-zoom_cam_dispersion_frac      = 0.7
+zoom_cam_dispersion          = 1.35
+zoom_cam_dispersion_inc      = 1.15
+zoom_cam_dispersion_frac     = 0.7
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.05
+zoom_cam_step_angle_horz     = 1.0
 
 fire_dispersion_condition_factor = 0.015 ; 7        ;увеличение дисперсии в процентах при максимальном износе
 ;---DOF-------------------------------------------------------------------------
@@ -171,7 +171,7 @@ grenade_launcher_status = 2
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time		= 0.25                                               ; fov for zoom mode
-scope_zoom_factor       = 49.6
+scope_zoom_factor       = 58.6
 
 silencer_name           = wpn_addon_silencer_762x51
 silencer_x              = 232
@@ -316,7 +316,7 @@ scope_y 					= -2
 [wpn_fnfallelcan_custom]:wpn_fnfallelcan
 
 upgrades                = up_gr_firstab_fnfallelcan_custom, up_gr_seconab_fnfallelcan_custom, up_gr_thirdab_fnfallelcan_custom, up_gr_fourtab_fnfallelcan_custom, up_gr_fifthab_fnfallelcan_custom
-installed_upgrades      = up_firsta_fnfallelcan_custom, up_firstd_fnfallelcan_custom, up_firste_fnfallelcan_custom, up_fiftha_fnfallelcan_custom
+installed_upgrades      = up_firsta_fnfallelcan_custom, up_firstd_fnfallelcan_custom, up_firste_fnfallelcan_custom, up_thirda_fnfallelcan_custom, up_fiftha_fnfallelcan_custom
 
 cost                    = 61640
 inv_weight              = 4.244

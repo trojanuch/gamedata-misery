@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
+	<string id="st_nrc_foil">
+		<text>NRC emergency foil</text>
+	</string>
+	<string id="st_nrc_foil_descr">
+		<text>Strange are the ways in which the Zone works and it's influence on those who dare to sleep in it is much greater than on those who stay awake. However Stalkers have found an unexpected solution: sheets of Mylar-aluminium foil (NRC) when stretched below the tent's cover turned out to succesfully prevent sipping of background radiation and psy influence covering the surroundings like a dense, invisible fog. Use this foil along with tarpaulin, rope and beadspread to create an effective shelter anywhere in the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item \n%c[0,153,255,255] • %c[0,140,140,140] basic tent material (use to start pitching a tent) \n%c[0,18,18,165] • %c[0,140,140,140] usable as:%c[0,170,170,170] envirnomental protective layer for tent</text>
+	</string>
 	<string id="st_antirad">
 		<text>Anti-radiation drugs (imported)</text>
 	</string>

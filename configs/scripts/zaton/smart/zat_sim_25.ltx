@@ -13,6 +13,9 @@ respawn_params = respawn@zat_sim_25
 spawn_merc@novice_sentry
 spawn_merc@novice_sentry_neutral
 
+spawn_stalker@novice_sentry
+spawn_stalker@novice_sentry_hostile
+
 ;;; unused
 
 ;spawn_bandit@advanced_sentry
@@ -21,14 +24,26 @@ spawn_merc@novice_sentry_neutral
 ; Merc sentry squads
 
 [spawn_merc@novice_sentry]
-spawn_squads = merc_sim_squad_novice, bandit_sim_squad_advanced_hostile, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork ; merc_sim_squad_novice_zat_sim_25_sentry, bandit_sim_squad_advanced_zat_sim_25_hostile
+spawn_squads = simulation_zombied_1_zat_sim_25, simulation_zombied_1_zat_sim_25, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork, merc_sim_squad_novice_zat_sim_25_sentry, bandit_sim_squad_advanced_zat_sim_25_hostile, bandit_sim_squad_advanced_zat_sim_25_hostile
 spawn_num = {=actor_on_level(zaton) +kingpin_gained} 0, 1
 
 ; Merc sentry neutral squads
 
 [spawn_merc@novice_sentry_neutral]
-spawn_squads = merc_sim_squad_novice_neutral, bandit_sim_squad_advanced, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork ; merc_sim_squad_novice_zat_sim_25_sentry_neutral, bandit_sim_squad_advanced_zat_sim_25
+spawn_squads = simulation_zombied_1_zat_sim_25, simulation_zombied_1_zat_sim_25, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork, merc_sim_squad_novice_zat_sim_25_sentry_neutral, bandit_sim_squad_advanced_zat_sim_25, bandit_sim_squad_advanced_zat_sim_25
 spawn_num = {=actor_on_level(zaton) -kingpin_gained} 0, 1
+
+; Stalker sentry squads
+
+[spawn_stalker@novice_sentry]
+spawn_squads = simulation_zombied_1_zat_sim_25, simulation_zombied_1_zat_sim_25, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork, stalker_sim_squad_advanced_zat_sim_25, stalker_sim_squad_advanced_zat_sim_25, stalker_sim_squad_advanced_zat_sim_25
+spawn_num = {=actor_on_level(zaton) -kingpin_gained} 1, 0
+
+; Stalker sentry hostile squads
+
+[spawn_stalker@novice_sentry_hostile]
+spawn_squads = simulation_zombied_1_zat_sim_25, simulation_zombied_1_zat_sim_25, simulation_boar, simulation_flesh, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork, stalker_sim_squad_advanced_zat_sim_25_hostile, stalker_sim_squad_advanced_zat_sim_25_hostile, stalker_sim_squad_advanced_zat_sim_25_hostile
+spawn_num = {=actor_on_level(zaton) +kingpin_gained} 1, 0
 
 ;;; unused
 

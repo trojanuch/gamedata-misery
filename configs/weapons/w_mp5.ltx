@@ -61,34 +61,34 @@ reload_dof           = 0.0, 0.5, 5, 2
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
 fire_dispersion_base    = 0.47  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.14f
-crosshair_inertion		= 4.8
+control_inertion_factor = 1.09f
+crosshair_inertion   	= 4.3
 
 ;отдача
 cam_return = 0 ;				= 0
 cam_relax_speed      = 12		;скорость возврата в исходное положение
 cam_relax_speed_ai   = 120.75
-cam_dispersion       = 0.82		;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc   = 0.59		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion       = 0.68		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc   = 0.47		;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac  = 1.1		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle        = 45.0		;максимальный угол отдачи
-cam_max_angle_horz   = 45.0		;(degree) maximum shot horizontal degree
-cam_step_angle_horz  = 1.43		;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle        = 40.0		;максимальный угол отдачи
+cam_max_angle_horz   = 40.0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz  = 1.4		;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.65
-PDM_disp_vel_factor 		= 1.58
-PDM_disp_accel_factor 		= 1.58
-PDM_disp_crouch = 1.0 ; 			= 2.235
-PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
+PDM_disp_vel_factor 		= 1.855
+PDM_disp_accel_factor 		= 1.855
+PDM_disp_crouch = 1.0 ;  			= 1.165
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
 
 zoom_cam_relax_speed        = 12    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 120.75
-zoom_cam_dispersion         = 0.62
-zoom_cam_dispersion_inc     = 0.38
+zoom_cam_dispersion         = 0.51
+zoom_cam_dispersion_inc     = 0.26
 zoom_cam_dispersion_frac    = 1.0
-zoom_cam_max_angle          = 45.0
-zoom_cam_max_angle_horz     = 45.0
-zoom_cam_step_angle_horz    = 1.43
+zoom_cam_max_angle          = 40.0
+zoom_cam_max_angle_horz     = 40.0
+zoom_cam_step_angle_horz    = 1.4
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 9        
 
@@ -167,7 +167,7 @@ grenade_launcher_status = 0                   ; 2 - attachable
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time        = 0.25
-scope_zoom_factor       = 49.6 ;        = 85                                                ; fov for zoom mode
+scope_zoom_factor       = 58.6 ;        = 85                                                ; fov for zoom mode
 
 scope_name              = wpn_addon_scope       ; section name for the attachable scope
 scope_x              	= 47                 ; offset in inventory icon

@@ -64,33 +64,33 @@ reload_dof           = 0.0, 0.5, 5, 2
 ;---дисперсия---------------------------------------------------------------------------
 ;базовая дисперсия
 fire_dispersion_base	= 0.325	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor	= 1.26f
-crosshair_inertion		= 5.8
+control_inertion_factor	= 1.18f
+crosshair_inertion		= 5.3
 
 ;отдача
 cam_return = 0 ;				= 0
 cam_relax_speed         = 12	;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	        = 0.82
-cam_dispersion_inc      = 0.66
-cam_dispersion_frac     = 1.05	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle        	= 60.0 	;максимальный угол отдачи
-cam_max_angle_horz      = 60.0	;(degree) maximum shot horizontal degree
+cam_dispersion	        = 0.84
+cam_dispersion_inc      = 0.56
+cam_dispersion_frac     = 1.0	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle        	= 53.0 	;максимальный угол отдачи
+cam_max_angle_horz      = 53.0	;(degree) maximum shot horizontal degree
 cam_step_angle_horz     = 1.45	;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.9
-PDM_disp_vel_factor 		= 1.71
-PDM_disp_accel_factor 		= 1.71
-PDM_disp_crouch = 1.0 ; 			= 2.235
-PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
+PDM_disp_vel_factor 		= 2.3
+PDM_disp_accel_factor 		= 2.3
+PDM_disp_crouch = 1.0 ;  			= 1.165
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
 
 zoom_cam_relax_speed        = 12    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 360
-zoom_cam_dispersion         = 0.71
-zoom_cam_dispersion_inc     = 0.56
+zoom_cam_dispersion         = 0.73
+zoom_cam_dispersion_inc     = 0.46
 zoom_cam_dispersion_frac    = 1.0
-zoom_cam_max_angle          = 60.0
-zoom_cam_max_angle_horz     = 60.0
+zoom_cam_max_angle          = 53.0
+zoom_cam_max_angle_horz     = 53.0
 zoom_cam_step_angle_horz    = 1.3
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 17        
@@ -171,7 +171,7 @@ grenade_launcher_status    = 2                   ; 2 - attachable
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time        = 0.25
-scope_zoom_factor       = 49.6 ;        = 85                                                ; fov for zoom mode
+scope_zoom_factor       = 58.6 ;        = 85                                                ; fov for zoom mode
 scope_texture				= wpn_crosshair_susat
 
 silencer_name              = wpn_addon_silencer_556x45    ; section name for the attachable silencer
@@ -228,7 +228,6 @@ fire_point				= 0,0,0
 fire_bone                            = muzzle
 fire_point2			= 0,0,0
 fire_bone2                = grenade
-
 
 
 anm_show                = lr302_draw

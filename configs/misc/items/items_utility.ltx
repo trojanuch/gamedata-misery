@@ -97,10 +97,10 @@ custom_data 		    = models\objects\ignore_static.ltx
 fixed_bones = bone01_(1),bone01_(2),bone01_(3),bone02_(1),bone02_(2),bone02_(3),bone03
 
 [ph_tent]:physic_destroyable_object
-visual 			= dynamics\equipments\mattress02.ogf
+visual 			= dynamics\equipments\tent.ogf
 script_binding	= bind_physic_object.init
 custom_data 	= scripts\ph_tent.ltx
-
+fixed_bones = bone01_(1),bone01_(2),bone01_(3),bone02_(1),bone02_(2),bone02_(3),bone03
 
 ;;; TEST FLASHLIGHT ;;;
 
@@ -199,4 +199,661 @@ cost      		  = 0
 repair_type		= all
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; FAKE ITEMS FOR SLEEP FEATURE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; sleeping bag only
+
+[sleep_sb_1h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_2h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_3h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_4h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_5h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_6h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_7h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_8h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_9h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_10h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_11h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_12h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_13h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_14h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_15h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_16h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_17h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_18h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_19h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_20h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_21h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_22h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_23h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_24h]:medkit ; sleeping bag only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+; tent only
+
+[sleep_tent_1h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_2h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_3h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_4h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_5h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_6h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_7h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_8h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_9h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_10h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_11h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_12h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_13h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_14h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_15h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_16h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_17h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_18h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_19h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_20h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_21h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_22h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_23h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_tent_24h]:medkit ; tent only hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+; tent and sleeping bag
+
+[sleep_sb_tent_1h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_2h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_3h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_4h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_5h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_6h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_7h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_8h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_9h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_10h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_11h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_12h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_13h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_14h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_15h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_16h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_17h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_18h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_19h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_20h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_21h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_22h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_23h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
+[sleep_sb_tent_24h]:medkit ; sleeping bag + tent hourly boost
+inv_grid_width		= 0
+inv_grid_height		= 0
+inv_weight			= 0
+eat_satiety			= -0.026
+eat_sleepiness		= 0.0026
+eat_radiation		= 0.006
+use_sound			= none
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
