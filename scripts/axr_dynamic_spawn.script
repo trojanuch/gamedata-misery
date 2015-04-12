@@ -593,6 +593,7 @@ end
 function del_distant_squad(all)
 	local obj,sec
 	local sor = story_objects.get_story_objects_registry()
+	local level_name
 	
 	alun_utils.printf("Despawning ditant NPC squads")
 	for i =0,65534 do
@@ -605,9 +606,13 @@ function del_distant_squad(all)
 				if (not simulation_objects.is_on_the_same_level(obj, alife():actor())) or all == true then -- additional check, so same function can be used to despawn NPC on all maps
 					-- if (obj:clsid() == clsid.online_offline_group_s) and (not (sor:get(sec))) then
 					if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
-						alun_utils.printf("Distant NPC squad deleted: %s %s",tostring(i),sec)
-						-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
-						alun_utils.release(obj) -- safe way to delete simulation object
+						-- excluded some important NPCs that were in log despite being marked as story objects
+						if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") then
+							level_name = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id()) -- OK gives level name
+							alun_utils.printf("Distant NPC squad deleted: %s %s",level_name,sec)
+							-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
+							alun_utils.release(obj) -- safe way to delete simulation object
+						end
 					end
 				end
 			end
@@ -624,11 +629,15 @@ function del_distant_squad(all)
 					if (not simulation_objects.is_on_the_same_level(obj, alife():actor())) or all == true then -- additional check, so same function can be used to despawn NPC on all maps
 						-- if (obj:clsid() == clsid.online_offline_group_s) and (not (sor:get(sec))) then
 						if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
-							alun_utils.printf("NPC squad deleted: %s %s",tostring(i),sec)
-							-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
-							-- alun_utils.release(obj) -- safe way to delete simulation object
-							-- alun_utils.release_object(obj) -- can release online objects too
-							alun_utils.safe_release(obj) -- have additional check to force object offline and then despawn
+							-- excluded some important NPCs that were in log despite being marked as story objects
+							if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") then
+								level_name = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id()) -- OK gives level name
+								alun_utils.printf("NPC squad deleted: %s %s",level_name,sec)
+								-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
+								-- alun_utils.release(obj) -- safe way to delete simulation object
+								-- alun_utils.release_object(obj) -- can release online objects too
+								alun_utils.safe_release(obj) -- have additional check to force object offline and then despawn
+							end
 						end
 					end
 				end
@@ -641,6 +650,7 @@ end
 -- KCS - new function to spawn special quest items
 -- example of function call:
 -- axr_dynamic_spawn.spawn_special("pri_a25_explosive")
+-- axr_dynamic_spawn.spawn_special("pri_a25_soldier")
 function spawn_special(sec)
 	local t,section,pos,lvid,gvid,se_obj
 	

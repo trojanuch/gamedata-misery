@@ -71,6 +71,17 @@ item3				= beadspread
 ;========================================
 ; Anomalies
 ;========================================
+[zat_lab_blocker]
+; KCS - added to prevent acess to secret labaratory too early in game, it will be despawned once you get gauss rifle
+section				= zone_mine_gravitational_big
+; behind lab door
+position 		= -418.59918212891,36.198417663574,-384.69226074219
+level_vertex_id = 149992
+game_vertex_id 	= 306
+despawn			= true ; KCS - new variable for despawnable object
+; -pri_a17_actor_bring_gauss_rifle - condition when player talks to kovalski after mission with gauss rifle
+enable				= {=-pri_a17_actor_bring_gauss_rifle} true, false
+
 [zat_grav_mine_block_way]
 section				= zone_mine_gravitational_big
 position 			= 502.10452270508,36.512924194336,-68.209075927734

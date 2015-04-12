@@ -1,0 +1,22 @@
+;KCS - special section used to spawn quest items in certain story plot line, not imediately on starting new game
+; intended to use with axr_dynamic_spawn.script and new functions in it
+
+[pri_a25_explosive]
+section 			= inv_backpack
+position 		= 11.587577819824,-0.95120489597321,18.046211242676
+level_vertex_id = 210654
+game_vertex_id 	= 705
+direction			= 0,0,1
+;tip 				= Use Stash
+
+; secret_info give actor "info" variable, so game engine can calulate conditions trough scripts, unfortunately does not trigger quest line properly
+;secret_info = pri_a22_task_gived 
+;secret_info = pri_b35_actor_is_guided
+;secret_info = pri_a22_rfi_source
+;secret_info  = +pri_a22_task_gived
+;secret_info  = +pri_a22_colonel_give_task
+
+item1				= pri_a25_explosive_charge_item,1
+;item2				= pri_a22_cutscene_actor_find_squad,1
+
+
