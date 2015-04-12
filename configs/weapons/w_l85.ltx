@@ -139,7 +139,7 @@ grenade_flame_particles = weapons\generic_weapon01
 
 shell_point             = -0.020000,0.167000,0.082000
 shell_dir               = 0.0, 0.0, 0.4
-shell_particles         = weapons\generic_shells
+shell_particles         = amik\weapons\data\5_45x39\5_45x39_r
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
@@ -188,7 +188,7 @@ snd_holster             = weapons\generic\rifle_holster
 snd_shoot		= weapons\l85\l85_shot
 snd_shoot1		= weapons\l85\l85_shot
 snd_empty               = weapons\generic\rifle_modern_empty, 0.5
-snd_reload				= weapons\Auto\l85\l85_reload
+snd_reload					= weapons\l85\l85_reload
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade	= weapons\l85_grenload
 snd_switch		= weapons\groza_switch, 1.0, 0.5
@@ -212,69 +212,66 @@ zoom_hide_crosshair		= true
 attach_place_idx			= 0
 item_visual					= dynamics\weapons\wpn_l85\wpn_l85_hud.ogf
 
-hands_position				= 0.09,-0.05,0.2
+hands_position				= -0.080000,-0.13,0.25
 hands_orientation			= 0,0,0
-hands_position_16x9			= 0.09,-0.05,0.2
-hands_orientation_16x9			= 0,0,0
+hands_position_16x9			= -0.080000,-0.13,0.25
+hands_orientation_16x9		= 0,0,0
 
 item_position				= 0,0,0
 item_orientation			= 0,0,0
 
-shell_point		= 0,0,0
-shell_dir               = 0,0,0
-shell_bone		= eject
+shell_point					= 0,0,0
+shell_dir               	= 0,0,0
+shell_bone					= gilza
 
-fire_point		= 0,0,0
-fire_bone      	      = muzzle
+fire_point					= 0,0,0
+fire_bone      	      		= muzzle
 fire_point2					= 0,0,0
-fire_bone2					= grenade
+fire_bone2					= muzzle_gl
 
-anm_show             	= l86_draw
-anm_hide             	= l86_holster
-anm_idle             	= l86_idle
-anm_idle_sprint         = l86_idle_sprint
-anm_idle_moving 	= l86_idle_moving
-anm_shots               = l86_shoot, l85_shoot_w
-anm_reload              = l86_reload, l85_reload_w
-anm_idle_aim           	= l86_idle_aim
+anm_show             	= lee85_draw
+anm_hide             	= lee85_holster
+anm_idle             	= lee85_idle
+anm_idle_sprint         = lee85_sprint
+anm_idle_moving 		= lee85_move
+anm_shots               = lee85_shoot, shoot
+anm_reload              = lee85_reload, reload
+anm_idle_aim           	= lee85_aim
 
-anm_switch              = l86_switch, l85_idle_gl
-anm_switch_g            = l86_switch, l85_idle_gl
-anm_bore		= l86_idle_bore
+anm_switch              = lee85_switch_off, switch_off
+anm_switch_g            = lee85_switch_on, switch_on
+anm_bore				= lee85_aim
 
-anm_hide_w_gl           = l86_holster_w_gl, l85_idle_gl
-anm_show_w_gl           = l86_draw_w_gl, l85_idle_gl
-anm_idle_w_gl           = l86_idle_w_gl, l85_idle_gl
-anm_shots_w_gl          = l86_shoot_w_gl, l85_shoot_gl
-anm_reload_w_gl         = l86_reload_w_gl, l85_reload_gl
-anm_idle_w_gl_aim       = l86_idle_aim_w_gl, l85_idle_gl
-anm_idle_sprint_w_gl		= l86_idle_sprint_w_gl, l85_idle_gl
-anm_idle_moving_w_gl		= l86_idle_moving_w_gl, l85_idle_gl
-anm_bore_w_gl			= l86_idle_bore_w_gl, l85_idle_gl
+anm_hide_w_gl           = lee85_holster_w_gl
+anm_show_w_gl           = lee85_draw_w_gl
+anm_idle_w_gl           = lee85_idle_w_gl
+anm_shots_w_gl          = lee85_shoot_w_gl, shoot_w_gl
+anm_reload_w_gl         = lee85_reload_w_gl, reload_w_gl
+anm_idle_w_gl_aim       = lee85_aim_w_gl
+anm_idle_sprint_w_gl	= lee85_sprint_w_gl
+anm_idle_moving_w_gl	= lee85_move_w_gl
+anm_bore_w_gl			= lee85_aim_w_gl
 
-anm_show_g         		= l86_draw_w_gl, l85_idle_gl
-anm_hide_g       		  = l86_holster_w_gl, l85_idle_gl
-anm_idle_g         		= l86_idle_w_gl, l85_idle_gl
-anm_reload_g       		= l86_reload_grenade
-anm_idle_g_aim     		= l86_idle_aim_w_gl, l85_idle_gl
-anm_shots_g        		= l86_shoot_grenade, l85_idle_gl
-anm_idle_sprint_g		= l86_idle_sprint_w_gl, l85_idle_gl
-anm_idle_moving_g		= l86_idle_moving_w_gl, l85_idle_gl
-anm_bore_g			= l86_idle_bore_w_gl, l85_idle_gl
-
-
-aim_hud_offset_pos		= -0.09,0.05,-0.2
-aim_hud_offset_rot		= 0,0,0
-
-aim_hud_offset_pos_16x9		= -0.09,0.05,-0.2
-aim_hud_offset_rot_16x9		= 0,0,0
+anm_show_g         		= lee85_draw_g, idle_g
+anm_hide_g       		= lee85_holster_g, idle_g
+anm_idle_g         		= lee85_idle_g, idle_g
+anm_reload_g       		= lee85_reload_g, reload_g
+anm_idle_g_aim     		= lee85_aim_g, idle_g
+anm_shots_g        		= lee85_shoot_g, shoot_g
+anm_idle_sprint_g		= lee85_sprint_g, idle_g
+anm_idle_moving_g		= lee85_move_g, idle_g
+anm_bore_g				= lee85_aim_g, idle_g
 
 
-gl_hud_offset_pos = 0.018000,0.077000,0.105000
-gl_hud_offset_rot = -0.062000,-0.074000,0.000000
+aim_hud_offset_pos_16x9 = -0.07,0.019,-0.2
+aim_hud_offset_rot_16x9 = 0.05,0.0,0.0
+gl_hud_offset_pos_16x9 	= -0.071,-0.1,0.0
+gl_hud_offset_rot_16x9 	= -0.131,-0.0002,0.0
 
-gl_hud_offset_pos_16x9 = 0.018000,0.077000,0.105000
-gl_hud_offset_rot_16x9 = -0.062000,-0.074000,0.000000
+aim_hud_offset_pos 		= -0.07,0.019,-0.2
+aim_hud_offset_rot 		= 0.05,0.0,0.0
+gl_hud_offset_pos 		= -0.071,-0.1,0.0
+gl_hud_offset_rot 		= -0.131,-0.0002,0.0
 
 lean_hud_offset_pos		= 0,0,0
 lean_hud_offset_rot		= 0,0,0
@@ -340,6 +337,21 @@ item_visual					= dynamics\weapons\wpn_l85\wpn_l8a_hud.ogf
 ;=========================================================================================
 [wpn_l85_camo]:wpn_l85
 
+; Cammo preset HIGH
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 0.95 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.95		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 1.05			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 0.95	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.95	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 1.05	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim during night hours
 cost                    = 40760
 inv_weight           	= 4.3
 
@@ -382,6 +394,21 @@ item_visual					= dynamics\weapons\wpn_l85\wpn_l8b_hud.ogf
 ;=========================================================================================
 [wpn_l85_worn]:wpn_l85
 
+; Cammo preset LOW
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
 cost                    = 29980
 inv_weight           	= 4.4
 

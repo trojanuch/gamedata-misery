@@ -1096,13 +1096,91 @@
 		<text>Small weapon spare parts</text>
 	</string>
 	<string id="st_wpn_spareparts_small_descr">
-		<text>A handful of small weapon spare parts. Usually comprises some springs, screws, triggers, short barrels, hammers, strikers, breechblocks and such. Maybe won't sell for a fortune, but the parts are in a quite good shape, which makes them perfectly usable as reliable replacements for the purposes of weapon repairs and maintenance.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+8%)</text>
+		<text>A handful of small weapon spare parts. Usually comprises some springs, screws, triggers, short barrels, hammers, strikers, breechblocks and such. Maybe won't sell for a fortune, but the parts are in a quite good shape, which makes them perfectly usable as reliable replacements for the purposes of weapon repairs and maintenance. When used in such role they can replace those few crucial parts of even the most damaged weapon mechanism allowing to commence a larger scale repair attempt.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[255,238,153,26] • %c[0,140,140,140] usable for repairing equipment\n%c[255,238,153,26] • %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]1%\n%c[255,238,153,26] • %c[0,140,140,140] base condition gain: %c[0,170,170,170]3%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n%c[255,238,153,26] • %c[0,140,140,140] additional weapon spare parts %c[0,170,170,170]+1-3%</text>
 	</string>
 	<string id="st_wpn_spareparts">
 		<text>Large weapon spare parts</text>
 	</string>
 	<string id="st_wpn_spareparts_descr">
-		<text>A bunch of sizable weapon spare parts. Usually it consists mainly of bigger pieces like stocks, long barrels, beddings, barrel shrouds, forestocks, grips, extractors, recievers and such. Maybe won't sell for a fortune, but the parts are in a quite good shape, which makes them perfectly usable as reliable replacements for the purposes of weapon repairs and maintenance.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] maintenance of large weapons (+10%)</text>
+		<text>A bunch of sizable weapon spare parts. Usually it consists mainly of bigger pieces like stocks, long barrels, beddings, barrel shrouds, forestocks, grips, extractors, recievers and such. Maybe won't sell for a fortune, but the parts are in a quite good shape, which makes them perfectly usable as reliable replacements for the purposes of weapon repairs and maintenance. When used in such role they can replace those few crucial parts of even the most damaged weapon mechanism allowing to commence a larger scale repair attempt.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[255,238,153,26] • %c[0,140,140,140] usable for repairing equipment\n%c[255,238,153,26] • %c[0,140,140,140] not usable below condition level: %c[0,170,170,170]1%\n%c[255,238,153,26] • %c[0,140,140,140] base condition gain: %c[0,170,170,170]3%\n \n%c[0,140,140,140]SUPPORTED MATERIALS:\n%c[255,238,153,26] • %c[0,140,140,140] additional weapon spare parts %c[0,170,170,170]+1-3%</text>
+	</string>
+	<string id="st_wpn_waste_light">
+		<text>Light weapon debris</text>
+	</string>
+	<string id="st_wpn_waste_light_descr">
+		<text>Few pieces of very damaged, small elements of firearm. Its difficult do distinguish the exact origin of the individual pieces. Parts are now mostly useless but a keen and skilled eye can still find one or two in better shape and reuse for small-time weapon maintenance. Otherwise it can be sold for few roubles to most traders present in the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+1%)</text>
+	</string>
+	<string id="st_wpn_waste_heavy">
+		<text>Heavy weapon debris</text>
+	</string>
+	<string id="st_wpn_waste_heavy_descr">
+		<text>A bunch of larger weapon construction and mechanical parts in very damaged state. Not much can be made out of them but those capable might still be able to make use of those few pieces still mountable into the firearm. Due to relatively large ammount of metal and other materials such parts are usually priced higher in trade than lighter debris.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] maintenance of large weapons (+2%)</text>
+	</string>
+	<string id="st_outfit_waste_light">
+		<text>Fabric scraps</text>
+	</string>
+	<string id="st_outfit_waste_light_descr">
+		<text>Loose conglomerate of light fabric scraps which is most probably a result of cutting or tearing of clothing or body armor pieces. Not much can be done with these scraps at this stage other then attempting to sew small clothing fractures or selling them for small profit margin.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs (+1%)</text>
+	</string>
+	<string id="st_outfit_waste_heavy">
+		<text>Armor scraps</text>
+	</string>
+	<string id="st_outfit_waste_heavy_descr">
+		<text>Bunch of small pieces of protective materials - such as kevlar or steel - utilized in modern body armor or headgear sets. Individual elements are too small to support any significant repair attempt so its more beneficial to sell them for the sheer price of materials they are made from.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs (+2%)</text>
+	</string>
+	<string id="st_tech_waste">
+		<text>Electrical debris</text>
+	</string>
+	<string id="st_tech_waste_descr">
+		<text>Small electrical and electronic pieces taken out of various devices found in the Zone. Individual elements are too damaged to serve as direct replacement parts but they can still be sold to those skilled enough to be able to make practical use out of them.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item</text>
+	</string>
+	<string id="st_outfit_dismantler">
+		<text>Outfit dismantle set (5 uses left)</text>
+	</string>
+	<string id="st_outfit_dismantler2">
+		<text>Outfit dismantle set (4 uses left)</text>
+	</string>
+	<string id="st_outfit_dismantler3">
+		<text>Outfit dismantle set (3 uses left)</text>
+	</string>
+	<string id="st_outfit_dismantler4">
+		<text>Outfit dismantle set (2 uses left)</text>
+	</string>
+	<string id="st_outfit_dismantler5">
+		<text>Outfit dismantle set (1 use left)</text>
+	</string>
+	<string id="st_outfit_dismantler_descr">
+		<text>Professional kit of tools comprising everything which is needed to succesfully dismantle of most modern military clothing or armor sets. It's contents include a set of sharp blades (also toothed ones), scisors, large and small pliers, chissels and many more. When utilized properly it allows to salvage maximum ammount of valuable material pieces and elements of suits without damaging them in the process. Effectivity of this opertaion can be further enhanced by using of larger blades (as the kit contains only compact ones) - such as those of utility or military-grade knices.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling all clothing, armor and headgear sets</text>
+	</string>
+	<string id="st_outfit_dismantler_empty">
+		<text>Outfit dismantle set (empty box)</text>
+	</string>
+	<string id="st_outfit_dismantler_empty_descr">
+		<text>Empty box left after contents of outfit dismantle kit have been used. It's made of soft metal and is quite heavy allowing to utilize it as a material source in heavy outfit repairs as well as relatively valuable trade commodity.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs (+3%)</text>
+	</string>
+	<string id="st_wpn_dismantler">
+		<text>Firearm dismantle set (5 uses left)</text>
+	</string>
+	<string id="st_wpn_dismantler2">
+		<text>Firearm dismantle set (4 uses left)</text>
+	</string>
+	<string id="st_wpn_dismantler3">
+		<text>Firearm dismantle set (3 uses left)</text>
+	</string>
+	<string id="st_wpn_dismantler4">
+		<text>Firearm dismantle set (2 uses left)</text>
+	</string>
+	<string id="st_wpn_dismantler5">
+		<text>Firearm dismantle set (1 use left)</text>
+	</string>
+	<string id="st_wpn_dismantler_descr">
+		<text>This heavy metal box contains everything which is needed to salvage usable elemetns out of even the most damaged and rusty firearm. This effect is achieved due to inclusion of high-grade elements being able to operate on most modern appliances of firearm mechanisms and construction elements - be it western or eastern design. However these elements - although being high-grade - get damaged with each operation making the kit having only a finite ammount of usages.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling of firearms</text>
+	</string>
+	<string id="st_wpn_dismantler_empty">
+		<text>Firearm dismantle set (empty box)</text>
+	</string>
+	<string id="st_wpn_dismantler_empty_descr">
+		<text>Empty box left after contents of weapon dismantle kit have been used. It's made of soft metal and is quite heavy allowing to utilize it as a material source in heavy outfit repairs as well as relatively valuable trade commodity.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs (+3%)</text>
 	</string>
 	<string id="st_beadspread">
 		<text>Foam mattress</text>

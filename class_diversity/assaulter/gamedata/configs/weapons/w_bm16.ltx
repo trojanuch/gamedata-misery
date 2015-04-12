@@ -33,8 +33,8 @@ hud                      		= wpn_bm16_hud
 
 misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
-misfire_start_prob = 0.007 ;	     	= 0.008
-misfire_end_prob = 0.085 ;	     	= 0.08
+misfire_start_prob = 0.0045 ;	     	= 0.008
+misfire_end_prob = 0.005 ;	     	= 0.08
 condition_shot_dec      	= 0.0022
 condition_queue_shot_dec	= 0.0012
 
@@ -73,7 +73,7 @@ zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 50.0
 zoom_cam_step_angle_horz    = 3.93
 
-fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 2	
+fire_dispersion_condition_factor = 0.060 ; 0.001 ; = 0.01 ; 2	
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier	= 1.0     ; во сколько раз увеличивается eye_range
@@ -258,8 +258,8 @@ hud                      		= wpn_bm16_gold_hud
 
 misfire_start_condition		= 0.84
 misfire_end_condition		= 0.11
-misfire_start_prob = 0.007 ;	     	= 0.0052
-misfire_end_prob = 0.085 ;	     	= 0.063
+misfire_start_prob = 0.0045 ;	     	= 0.008
+misfire_end_prob = 0.005 ;	     	= 0.08
 condition_shot_dec      	= 0.0020
 condition_queue_shot_dec	= 0.0008
 
@@ -282,6 +282,21 @@ item_visual               		= dynamics\weapons\wpn_bm16\wpn_bm1a_hud.ogf
 
 ;======================================================================================================
 [wpn_bm16_worn]:wpn_bm16
+; Cammo preset LOW
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
 inv_name				= st_wpn_bm16_worn
 inv_name_short			= st_wpn_bm16_worn
 
@@ -301,8 +316,8 @@ hud                      		= wpn_bm16_worn_hud
 
 misfire_start_condition		= 0.91
 misfire_end_condition		= 0.15
-misfire_start_prob = 0.007 ;	     	= 0.0074
-misfire_end_prob = 0.085 ;	     	= 0.071
+misfire_start_prob = 0.0045 ;	     	= 0.008
+misfire_end_prob = 0.005 ;	     	= 0.08
 condition_shot_dec      	= 0.0040
 condition_queue_shot_dec	= 0.0019
 
@@ -325,6 +340,22 @@ item_visual               		= dynamics\weapons\wpn_bm16\wpn_bm1b_hud.ogf
 
 ;======================================================================================================
 [wpn_bm16_rusty]:wpn_bm16
+
+; Cammo preset LOW
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
 inv_name				= st_wpn_bm16_rusty
 inv_name_short			= st_wpn_bm16_rusty
 description				= st_wpn_bm16_irishrampage_descr
@@ -345,8 +376,8 @@ hud                      		= wpn_bm16_rusty_hud
 
 misfire_start_condition		= 0.95
 misfire_end_condition		= 0.14
-misfire_start_prob = 0.007 ;	     	= 0.0083
-misfire_end_prob = 0.085 ;	     	= 0.076
+misfire_start_prob = 0.0045 ;	     	= 0.008
+misfire_end_prob = 0.005 ;	     	= 0.08
 condition_shot_dec      	= 0.0050
 condition_queue_shot_dec	= 0.0025
 
@@ -387,8 +418,8 @@ hud                      		= wpn_bm16_silver_hud
 
 misfire_start_condition		= 0.85
 misfire_end_condition		= 0.1
-misfire_start_prob = 0.007 ;	     	= 0.007
-misfire_end_prob = 0.085 ;	     	= 0.07
+misfire_start_prob = 0.0045 ;	     	= 0.008
+misfire_end_prob = 0.005 ;	     	= 0.08
 condition_shot_dec      	= 0.0020
 condition_queue_shot_dec	= 0.0009
 

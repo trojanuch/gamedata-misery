@@ -253,10 +253,10 @@
 				<texture>ui_button_main01</texture>
 				<text font="letterica18">OK</text>
 			</btn_ok>
-			<btn_later x="101" y="430" width="80" height="26">
+			<btn_cancel x="101" y="430" width="80" height="26">
 				<texture>ui_button_main01</texture>
-				<text font="letterica18">Later</text>
-			</btn_later>
+				<text font="letterica18">Cancel</text>
+			</btn_cancel>
 		</form>
 	</loot>
 
@@ -273,10 +273,12 @@
 			</icon>
 			<icon_parts x="128" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="300" y="418" width="128" height="128" stretch="1">
+			<icon_tool x="286" y="418" width="128" height="128" stretch="1">
 			</icon_tool>
-			<icon_tent_mat x="414" y="418" width="43" height="43" stretch="1">
+			<icon_tent_mat x="395" y="418" width="43" height="43" stretch="1">
 			</icon_tent_mat>
+			<icon_protection x="508" y="418" width="43" height="43" stretch="1">
+			</icon_protection>
 
 			<caption_down x="32" y="264" width="195" height="50" complex_mode="1">
 				<text font="letterica18" align="c"/>

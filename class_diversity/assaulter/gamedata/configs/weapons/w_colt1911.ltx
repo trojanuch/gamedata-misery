@@ -204,8 +204,8 @@ fire_point			= 0,0,0
 fire_bone               	= muzzle
 
 ;-delme begin
-anm_empty             	= walter99_idle, walter99_opened
-anm_close				= walter99_holster
+anm_empty             	= pistol_idle
+anm_close				= pistol_idle, fort_opened
 ;-delme end
 anm_show			= pistol_draw
 anm_show_empty			= pistol_draw, colt_opened
@@ -266,6 +266,21 @@ ammo_class		 		= ammo_11.43x23_hydro, ammo_11.43x23_ap, ammo_11.43x23_fmj
 
 ;===========================================================================================
 [wpn_colt1911_camo]:wpn_colt1911
+; Cammo preset HIGH - pistol
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 0.98 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 1.02			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.98		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 1.02			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 0.98	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.98	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 1.02	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.02			; Multiplier for time it take for NPC's to aim during night hours
 inv_name			= st_wpn_colt1911_camo
 inv_name_short			= st_wpn_colt1911_camo
 description			= st_wpn_colt1911_camo_descr
@@ -305,6 +320,21 @@ visual                   	= dynamics\weapons\wpn_colt1911\wpn_colt191a.ogf
 item_visual						= dynamics\weapons\wpn_colt1911\wpn_colt191a_hud.ogf
 ;===========================================================================================
 [wpn_colt1911_alt1]:wpn_colt1911
+; Cammo preset LOW - pistol
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.02 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.98			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.02		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.98			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.02	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.02	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.98	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.98			; Multiplier for time it take for NPC's to aim during night hours
 inv_name				= st_wpn_colt1911_alt
 inv_name_short			= st_wpn_colt1911_alt
 
@@ -382,6 +412,21 @@ visual                   	= dynamics\weapons\wpn_colt1911\wpn_colt191c.ogf
 item_visual						= dynamics\weapons\wpn_colt1911\wpn_colt191c_hud.ogf
 ;===========================================================================================
 [wpn_colt1911_worn]:wpn_colt1911
+; Cammo preset LOW - pistol
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.02 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.98			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.02		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.98			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.02	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.02	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.98	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.98			; Multiplier for time it take for NPC's to aim during night hours
 inv_name				= st_wpn_colt1911_worn
 inv_name_short			= st_wpn_colt1911_worn
 description       		= st_wpn_colt1911_worn_descr

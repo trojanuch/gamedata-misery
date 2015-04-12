@@ -227,7 +227,7 @@ function dynamic_actor_loadout()
 		create_items("container_tool")
 		create_items("con_checker")
 		if (MiseryBlackRoad) then
-			create_items("wpn_knife_inv_2")
+			create_items("wpn_axe")
 
 		else
 			create_items("wpn_upd")
@@ -269,7 +269,7 @@ function dynamic_actor_loadout()
 		create_items("container_tool")
 		create_items("con_checker")
 		if (MiseryBlackRoad) then
-			create_items("wpn_knife_inv_5")
+			create_items("wpn_axe")
 
 		else
 			create_items("wpn_upd")
@@ -313,7 +313,7 @@ function dynamic_actor_loadout()
 		create_items("container_tool")
 		create_items("con_checker")
 		if (MiseryBlackRoad) then
-			create_items("wpn_knife_inv_4")
+			create_items("wpn_axe")
 
 		else
 			create_items("wpn_upd")

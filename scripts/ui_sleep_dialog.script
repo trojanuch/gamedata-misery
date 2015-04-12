@@ -6,49 +6,59 @@ function sleep_dialog:__init() super()
 	if(device().width/device().height>(1024/768+0.01)) then
 		wide = true
 	end
-
 	local xml = CScriptXmlInit()
 	xml:ParseFile("ui_sleep_dialog.xml")
-
 	self.back = xml:InitStatic("background", self)
---	self.sleep_static = xml:InitSleepStatic("sleep_static", self.back)
-
 	self.sleep_static = xml:InitStatic("sleep_static", self.back)
 	self.sleep_static2 = xml:InitStatic("sleep_static", self.back)
 	self.static_cover = xml:InitStatic("static_cover", self.back)
 	self.st_marker = xml:InitStatic("st_marker", self.static_cover)
-
+	self.caption_hint = xml:InitStatic("caption_hint", self)
+	self.caption_info1 = xml:InitStatic("caption_info1", self)
+	self.caption_info2 = xml:InitStatic("caption_info2", self)
 	sleep_st_tbl = {}
 		for i = 1, 24 do
 		sleep_st_tbl[i] = xml:InitStatic("sleep_st_"..i, self.back)
 		end
-
 	self.time_track = xml:InitTrackBar("time_track", self.back)
 	self:Register(self.time_track, "time_track")
-
 	self.btn_sleep = xml:Init3tButton("btn_sleep", self.back)
 	self:Register(self.btn_sleep, "btn_sleep")
-
 	self.btn_cancel = xml:Init3tButton("btn_cancel", self.back)
 	self:Register(self.btn_cancel, "btn_cancel")
-
 	self.sleep_mb = CUIMessageBoxEx()
 	self:Register(self.sleep_mb, "sleep_mb")
---------------------------------------------------------------------------------
+	--------------------------------------------------------------------------------
 	self:AddCallback("btn_sleep", ui_events.BUTTON_CLICKED, self.OnButtonSleep, self)
 	self:AddCallback("btn_cancel", ui_events.BUTTON_CLICKED, self.OnButtonCancel, self)
 	self:AddCallback("sleep_mb", ui_events.MESSAGE_BOX_OK_CLICKED, self.OnMessageBoxOk, self)
+	self:AddCallback("time_track", ui_events.WINDOW_LBUTTON_DB_CLICK, self.OnButtonSleep, self) -- Plaargath
 end
 
 function sleep_dialog:Initialize()
 	local cur_hours = level.get_time_hours()
 	for i = 1, 24 do
-	local hours = cur_hours + i
-	if(hours>=24) then
-		hours = hours - 24
+	-- Legibility tweak, Plaargath
+		sleep_st_tbl[i]:TextControl():SetText(i.."h")
 	end
-	sleep_st_tbl[i]:TextControl():SetText(hours..game.translate_string("st_sleep_hours"))
+	-- Captions
+	self.caption_hint:TextControl():SetText("%c[0,100,100,100]Set maximal sleeping time")
+	self.caption_info1:TextControl():SetText("%c[0,100,100,100]Sleeping in:")
+	local hidezone = surge_manager.actor_in_cover()
+	if hidezone == true then
+		self.caption_info2:TextControl():SetText("%c[0,120,160,120] safe zone")
+	else
+		if sleep_control.tent_and_sb then
+			self.caption_info2:TextControl():SetText("%c[0,120,160,120] tent + sleeping bag")
+		elseif sleep_control.tent then
+			self.caption_info2:TextControl():SetText("%c[0,120,140,120] tent")
+		elseif sleep_control.sleepbag then
+			self.caption_info2:TextControl():SetText("%c[0,120,120,120] sleeping bag")
+		else
+			self.caption_info2:TextControl():SetText("%c[0,200,100,100] (!) bug encountered: ui_sleep_dialog.script")
+		end
 	end
+	-- end Plaargath
 
 	local delta = math.floor(591/24*cur_hours)
 	local r = Frect():set(delta,413,591,531)
@@ -197,11 +207,12 @@ function sleep_dialog:OnButtonCancel()
 		self.ph_sleepbag_id = nil
 	end
 	-- Items refunct mod, Plaargath
-	if (self.ph_tent_id) then
-		alife():create("tarpaulin",db.actor:position(),0,0,0)
-		alife():release(alife():object(self.ph_tent_id))
-		self.ph_tent_id = nil
-	end
+	sleep_control.item_section = nil
+	sleep_control.ph_sleepbag_id = nil
+	sleep_control.ph_tent_id = nil
+	sleep_control.sleepag = nil
+	sleep_control.tent = nil
+	sleep_control.tent_and_sb = nil
 	-- end Plaargath
 end
 
@@ -215,8 +226,93 @@ function sleep_dialog:OnMessageBoxOk()
 		alife():release( alife():object(self.ph_sleepbag_id) )
 		self.ph_sleepbag_id = nil
 	end
+	-- Items refunct mod, Plaargath
+	sleep_control.item_section = sec
+	sleep_control.sleepbag = nil
+	sleep_control.ph_sleepbag_id = nil
+	sleep_control.tent = nil
+	sleep_control.ph_tent_id = nil
+	sleep_control.tent_and_sb = nil
+	-- end Plaargath
 end
 
+function sleep_dialog:OnKeyboard(dik, keyboard_action)
+-- Plaargath input convenience addition
+	if sleep_control.sleepbag or sleep_control.tent then
+		local bind = dik_to_bind(dik)
+		CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+		if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
+			if (bind == key_bindings.kUSE) then
+				self:OnButtonSleep()
+			elseif (dik ~= DIK_keys.MOUSE_1) then
+				self:OnButtonCancel()
+			end
+		end
+		return true
+	else
+		local bind = dik_to_bind(dik)
+		if (dik == DIK_keys.DIK_RETURN) then
+			self:OnButtonSleep()
+		elseif (bind == key_bindings.kACCEL) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kBACK) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kCROUCH) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kDOWN) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kDROP) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kFWD) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kINVENTORY) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kJUMP) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kLEFT) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kL_LOOKOUT) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kL_STRAFE) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kNIGHT_VISION) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kQUIT) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_RELOAD) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kRIGHT) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kR_LOOKOUT) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kR_STRAFE) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kTORCH) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kUP) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_1) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_2) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_3) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_4) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_5) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_6) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_FUNC) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_NEXT) then
+			self:OnButtonCancel()
+		elseif (bind == key_bindings.kWPN_ZOOM) then
+			self:OnButtonCancel()
+		end
+		return true
+	end
+end
 --------------------------------------------------------------------------------
 function dream_callback()
 	if sleep_control.forced then
@@ -263,6 +359,29 @@ function dream_callback()
 	if postproces_mod then
 		postproces_mod.sleep_callback(hours,mins)
 	end
+
+	-- Items refunct mod, Plaargath
+	if hours ~= 0 then
+		local gear, penalty
+		if in_cover == false then
+			if sleep_control.tent_and_sb then
+				gear = "sb_tent"
+			elseif sleep_control.tent then
+				gear = "tent"
+			elseif sleep_control.sleepbag then
+				gear = "sb"
+			end
+		elseif in_cover == true then
+			gear = "hidezone"
+		end
+		penalty = "sleep_"..gear.."_"..hours.."h"
+		db.actor:eat(db.actor:object(penalty))
+		alife():create(penalty,db.actor:position(),0,0,0)
+		-- news_manager.send_tip(db.actor, penalty or "nil", nil, nil, nil)
+	else
+		itms_manager.show_message("I wasn't sleepy enough to doze off", 25)
+	end
+	-- end Plaargath
 end
 
 function dream_callback2()
@@ -275,7 +394,6 @@ function dream_callback2()
 	disable_info("actor_is_sleeping")
 	disable_info("sleep_active")
 	if (itms_manager) then itms_manager.sleep_actor_safe = nil end
-	sleep_control.sleepbag = nil
 	if (sleep_control.force_surge) then
 		surge_manager.start_surge(true)
 		sleep_control.force_surge = nil
@@ -283,14 +401,14 @@ function dream_callback2()
 	if (sleep_control.ph_sleepbag_id and sleep_control.item_section) then
 		alife():create(sleep_control.item_section,db.actor:position(),0,0,0)
 		alife():release( alife():object(sleep_control.ph_sleepbag_id) )
-		sleep_control.ph_sleepbag_id = nil
 	end
 	-- Items refunct mod, Plaargath
-	if (sleep_control.ph_tent_id) then
-		alife():create("tarpaulin",db.actor:position(),0,0,0)
-		alife():release(alife():object(sleep_control.ph_tent_id))
-		sleep_control.ph_tent_id = nil
-	end
+	sleep_control.item_section = nil
+	sleep_control.ph_sleepbag_id = nil
+	sleep_control.ph_tent_id = nil
+	sleep_control.sleepbag = nil
+	sleep_control.tent = nil
+	sleep_control.tent_and_sb = nil
 	-- end Plaargath
 end
 
@@ -323,6 +441,9 @@ function sleep_bag(ph_sleepbag_id,sec)
 	sleep_control.item_section = sec
 	sleep_control.sleepbag = true
 	sleep_control.ph_sleepbag_id = ph_sleepbag_id
+	sleep_control.tent = nil -- Plaargath
+	sleep_control.ph_tent_id = nil -- Plaargath
+	sleep_control.tent_and_sb = nil -- Plaargath
 	sleep_control.time_track:SetCurrentValue()
 	sleep_control:TestAndShow()
 	give_info("sleep_active")
@@ -335,8 +456,13 @@ function sleep_in_tent(ph_tent_id)
 		sleep_control = ui_sleep_dialog.sleep_dialog()
 		sleep_control:Initialize()
 	end
-	sleep_control.sleepbag = true
+	sleep_control.item_section = nil
+	sleep_control.sleepbag = nil
+	sleep_control.ph_sleepbag_id = nil
+	sleep_control.tent = true
 	sleep_control.ph_tent_id = ph_tent_id
+	sleep_control.tent_and_sb = nil
+	if db.actor:object("itm_sleepbag") then sleep_control.tent_and_sb = true end
 	sleep_control.time_track:SetCurrentValue()
 	sleep_control:TestAndShow()
 	give_info("sleep_active")

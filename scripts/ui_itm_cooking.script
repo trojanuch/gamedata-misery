@@ -67,15 +67,15 @@ function cooking_ui:FillList()
 		if (obj) and (self.cooking_only and self.cooking_only[obj:section()]) or (self.cooking_refuse == nil) or (self.cooking_refuse[obj:section()] == nil) then
 			-- Items refunct mod, Plaargath
 			if (self.cooking_type == "fuel" and alun_utils.item_is_explosive(obj))
---			or (sct == "porn" and self.section == "wood_stove")
---			or (sct == "porn2" and self.section == "wood_stove")
+			-- or (sct == "porn" and self.section == "wood_stove")
+			-- or (sct == "porn2" and self.section == "wood_stove")
 			or (sct == "meinkampf" and self.section == "wood_stove")
 			or (sct == "journal" and self.section == "wood_stove")
---			or (sct == "mili_maps" and self.section == "wood_stove")
---			or (sct == "book1" and self.section == "wood_stove")
---			or (sct == "book2" and self.section == "wood_stove")
---			or (sct == "book3" and self.section == "wood_stove")
---			or (sct == "book4" and self.section == "wood_stove")
+			-- or (sct == "mili_maps" and self.section == "wood_stove")
+			or (sct == "book1" and self.section == "wood_stove")
+			or (sct == "book2" and self.section == "wood_stove")
+			or (sct == "book3" and self.section == "wood_stove")
+			or (sct == "book4" and self.section == "wood_stove")
 			or (sct == "survivalguide" and self.section == "wood_stove")
 			or (sct == "guitar_a" and self.section == "wood_stove")
 			then
@@ -395,14 +395,14 @@ function cooking_ui:OnListItemClicked()
 	-- Lighter mod, Plaargath
 	if not has_lighter then
 		self:OnButton_back_clicked()
-		has_lighter = false
+		has_lighter = nil
 		xr_effects.disable_ui_inventory(db.actor,nil)
 		itms_manager.show_message("You need a lighter to start a fire",25)
 		return
 	end
 	-- legibility fix, Plaargath
 	feedback1 = true
-	feedback_override = false
+	feedback_override = nil
 	-- end Plaargath
 
 	if self.list_box:GetSize()==0 then return end
@@ -464,11 +464,11 @@ function cooking_ui:OnButton_back_clicked()
 	alife():create(self.section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
 	self:HideDialog()
 	-- legibility fix, Plaargath
-	feedback1 = false
-	feedback2 = false
-	feedback_override = false
-	has_lighter = false
-	has_bonus_item = false
+	feedback1 = nil
+	feedback2 = nil
+	feedback_override = nil
+	has_lighter = nil
+	has_bonus_item = nil
 	-- end Plaargath
 end
 
@@ -635,7 +635,7 @@ function cooking_ui:OnButton_cooking()
 	end
 	if feedback1 then
 		self.caption_parts:SetText("%c[0,140,140,140]choose ingredients")
-		feedback1 = false
+		feedback1 = nil
 		feedback2 = true
 	end
 	-- end Plaargath
@@ -722,11 +722,11 @@ function cooking_ui:OnButton_cooking()
 				-- end Drengor - multi-cook
 				-- Lighter mod, legibility fix, Plaargath
 				itms_refunct.drain_lighter(chosen_lighter,sect)
-				feedback1 = false
-				feedback2 = false
-				feedback_override = false
-				has_lighter = false
-				has_bonus_item = false
+				feedback1 = nil
+				feedback2 = nil
+				feedback_override = nil
+				has_lighter = nil
+				has_bonus_item = nil
 				-- end Plaargath
 			end
 		end

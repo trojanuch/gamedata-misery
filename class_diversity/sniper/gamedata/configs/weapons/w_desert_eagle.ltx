@@ -202,8 +202,8 @@ fire_point			= 0,0,0
 fire_bone               	= muzzle
 
 ;-delme begin
-anm_empty             	= walter99_idle, walter99_opened
-anm_close				= walter99_holster
+anm_empty             	= pistol_idle
+anm_close				= pistol_idle, fort_opened
 ;-delme end
 anm_show			= pistol_draw
 anm_show_empty			= pistol_draw, deagle_opened
@@ -232,8 +232,8 @@ anm_idle_sprint_empty		= pistol_idle_sprint, deagle_opened
 anm_bore			= pistol_idle_bore
 anm_bore_empty			= pistol_idle_bore, deagle_opened
 
-aim_hud_offset_pos			= -0.1364,0.036,-0.001500
-aim_hud_offset_rot			= 0,0,0
+aim_hud_offset_pos = -0.136400,0.036000,-0.001500
+aim_hud_offset_rot = -0.015000,0.000000,0.000000
 
 gl_hud_offset_pos			= 0,0,0
 gl_hud_offset_rot			= 0,0,0
@@ -341,6 +341,23 @@ item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl1_hu
 ;============================================================================================
 [wpn_desert_eagle_camo]:wpn_desert_eagle
 
+; Cammo preset HIGH - pistol
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 0.98 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 1.02			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.98		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 1.02			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 0.98	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.98	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 1.02	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.02			; Multiplier for time it take for NPC's to aim during night hours
+
+
 cost					= 18460
 inv_weight				= 1.556
 
@@ -380,6 +397,22 @@ visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl3.og
 item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl3_hud.ogf
 ;============================================================================================
 [wpn_desert_eagle_worn]:wpn_desert_eagle
+
+; Cammo preset LOW - pistol
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.02 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.98			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.02		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.98			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.02	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.02	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.98	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.98			; Multiplier for time it take for NPC's to aim during night hours
 
 cost					= 12740
 inv_weight				= 1.73
@@ -422,6 +455,25 @@ item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl4_hu
 
 ;============================================================================================
 [wpn_desert_eagle_nimble]:wpn_desert_eagle_custom
+
+; Cammo preset Very LOW - pistol
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
+
+
+
 $spawn                  	= "weapons\wpn_desert_eagle_nimble"
 inv_name				= st_wpn_desert_eagle_nimble
 description					= st_wpn_desert_eagle_nimble_descr

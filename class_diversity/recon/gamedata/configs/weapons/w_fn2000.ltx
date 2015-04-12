@@ -193,7 +193,7 @@ snd_draw                = weapons\generic\generic_draw
 snd_holster             = weapons\generic\generic_holster
 snd_shoot         	= weapons\fn2000\fn2000_shot
 snd_empty               = weapons\generic\rifle_modern_empty
-snd_reload        	= weapons\auto\fn2000\fn2000_reload
+snd_reload        	= weapons\fn2000_reload
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade      = weapons\fn2000_grenload, 1.0
 snd_switch              = weapons\groza_switch, 1.0, 0.5
@@ -213,72 +213,75 @@ zoom_hide_crosshair	= true
 attach_place_idx	= 0
 item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2000_hud.ogf
 
-hands_position				= 0.09,-0.06,0.2
-hands_orientation			= 0,0,0
-hands_position_16x9			= 0.09,-0.06,0.2
-hands_orientation_16x9			= 0,0,0
+hands_position				= -0.081500,-0.204000,0.288000
+hands_orientation			= 0.250001,0.649990,1.849998
 
-item_position				= 0,0,0
-item_orientation			= 0,0,0
-
-shell_point               = 0,0,0
-shell_dir                 = 0,0,0
-shell_bone                = wpn_body
-
-fire_point		  = 0,0,0
-fire_bone                 = muzzle
-fire_point2               = 0,0,0
-fire_bone2                = grenade
-
-anm_show             	= fn2002_draw
-anm_hide             	= fn2002_holster
-anm_idle             	= fn2002_idle
-anm_idle_sprint         = fn2002_idle_sprint
-anm_idle_moving 	= fn2002_idle_moving
-anm_shots               = fn2002_shoot, fn2000_shoot_w
-anm_reload              = fn2002_reload, fn2000_reload_w
-anm_idle_aim           	= fn2002_idle_aim
-
-anm_switch              = fn2002_switch_off
-anm_switch_g            = fn2002_switch_on
-anm_bore		= fn2002_idle_bore
-
-anm_show_w_gl           = fn2002_draw
-anm_hide_w_gl           = fn2002_holster
-anm_idle_w_gl           = fn2002_idle
-anm_shots_w_gl          = fn2002_shoot, fn2000_shoot_w
-anm_reload_w_gl         = fn2002_reload, fn2000_reload_w
-anm_idle_w_gl_aim       = fn2002_idle_aim
-anm_idle_sprint_w_gl	= fn2002_idle_sprint
-anm_idle_moving_w_gl	= fn2002_idle_moving
-anm_bore_w_gl		= fn2002_idle_bore
-
-anm_show_g         	= fn2002_draw
-anm_hide_g         	= fn2002_holster
-anm_idle_g          	= fn2002_idle
-anm_reload_g       	= fn2002_reload, fn2000_reload_w
-anm_idle_g_aim      	= fn2002_idle_aim
-anm_shots_g         	= fn2002_shoot, fn2000_shoot_w
-anm_idle_sprint_g	= fn2002_idle_sprint
-anm_idle_moving_g	= fn2002_idle_moving
-anm_bore_g		= fn2002_idle_bore
+hands_position_16x9				= -0.032000,-0.214499,0.299498
+hands_orientation_16x9			= 2.149999,0.250000,1.399999
 
 
+item_position				= 0.005280,0.016463,-0.003394
+item_orientation			= -16.844534,-2.475593,361.820557
 
-aim_hud_offset_pos				= -0.09,0.04,-0.2
-aim_hud_offset_rot				= 0.0,0,0
 
-aim_hud_offset_pos_16x9				= -0.09,0.04,-0.2
-aim_hud_offset_rot_16x9				= -0.0,0,0
+shell_point					= 0.037,0.063,0.118
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone					= wpn_body
 
-gl_hud_offset_pos = -0.017000,0.031000,0.000000
-gl_hud_offset_rot = -0.072000,-0.031000,0.000000
 
-gl_hud_offset_pos_16x9 = -0.017000,0.031000,0.000000
-gl_hud_offset_rot_16x9 = -0.072000,-0.031000,0.000000
+fire_point		= 0,0.054,0.358
+fire_bone      	      = wpn_body
+fire_point2					= 0.0,-0.008,0.408
+fire_bone2					= wpn_body
 
-lean_hud_offset_pos        = 0,0,0
-lean_hud_offset_rot        = 0,0,0
+anm_show             	= fn_2000_draw
+anm_hide             	= fn_2000_holster
+anm_idle             	= fn_2000_idle
+anm_idle_sprint         = fn_2000_idle_sprint_gl
+anm_idle_moving 			= fn_2000_idle_moving
+anm_shots               = fn_2000_shoot
+anm_reload              = fn_2000_reload
+anm_idle_aim           	= fn_2000_idle_aim
+
+anm_switch              = fn_2000_switch_off
+anm_switch_g            = fn_2000_switch_on
+anm_bore						= fn_2000_idle_bore
+
+anm_show_w_gl           = fn_2000_draw
+anm_hide_w_gl           = fn_2000_holster
+anm_idle_w_gl           = fn_2000_idle
+anm_shots_w_gl          = fn_2000_shoot
+anm_reload_w_gl         = fn_2000_reload
+anm_idle_w_gl_aim       = fn_2000_idle_aim
+anm_idle_sprint_w_gl		= fn_2000_idle_sprint
+anm_idle_moving_w_gl		= fn_2000_idle_moving
+anm_bore_w_gl				= fn_2000_idle_bore
+
+anm_show_g         		= fn_2000_draw_gl
+anm_hide_g         		= fn_2000_holster_gl
+anm_idle_g          		= fn_2000_idle_gl
+anm_reload_g       		= fn_2000_reload_gl
+anm_idle_g_aim      		= fn_2000_idle_aim_gl
+anm_shots_g         		= fn_2000_shoot_gl
+anm_idle_sprint_g			= fn_2000_idle_sprint_gl
+anm_idle_moving_g			= fn_2000_idle_moving_gl
+anm_bore_g					= fn_2000_idle_bore_gl
+
+
+aim_hud_offset_pos	= -0.112000,0.029500,-0.318000
+aim_hud_offset_rot	= 0.010000,0.002500,-0.010000
+
+gl_hud_offset_pos				= -0.068500,-0.091000,0.000000
+gl_hud_offset_rot				= -0.162500,0.000000,0.000000
+
+lean_hud_offset_pos	= 0,0,0
+lean_hud_offset_rot	= 0,0,0
+
+aim_hud_offset_pos_16x9     = -0.112000,0.019500,-0.3018000
+aim_hud_offset_rot_16x9  	= 0.010000,0.002500,-0.010000
+
+gl_hud_offset_pos_16x9				= -0.124500,-0.084000,0.000000
+gl_hud_offset_rot_16x9				= -0.170000,0.030000,0.000000
 
 ;-----------------------------------------------------------------------------
 ; ”никальнvе
@@ -460,6 +463,21 @@ item_visual					= dynamics\weapons\wpn_fn2000\wpn_fn2004_hud.ogf
 ;=================================================================================================
 [wpn_fn2000_worn]:wpn_fn2000
 
+; Cammo preset LOW
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
 cost              		= 36920
 inv_weight              = 4.6
 

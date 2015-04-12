@@ -128,11 +128,11 @@ kill_msg_width          = 78
 kill_msg_height            = 31
 
 ;-------------------------------------------------------------------------------
-position                = -0.026, -0.132, 0.0
-orientation             = 0, -8 , 0
+position				= -0.026, -0.130, 0.0
+orientation				= 0.0, 0.0, 0.0
 
-fire_point              =  0.0, 0.21, 0.58
-fire_point2             =  0.0, 0.21, 0.71
+fire_point              = 0.000000,0.137000,0.649000
+fire_point2             = 0.0, 0.097, 0.722
 
 ;flame_particles         = weapons\generic_weapon05
 smoke_particles         = weapons\generic_shoot_00
@@ -187,7 +187,7 @@ snd_draw                = weapons\generic\rifle_draw
 snd_holster             = weapons\generic\rifle_holster
 snd_shoot               = weapons\g36\g36_shot
 snd_empty               = weapons\generic\rifle_modern_empty, 0.7
-snd_reload              = weapons\Auto\g36\g36_reload
+snd_reload				= weapons\sg550\sg550_reload
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade      = weapons\g36_grenload
 snd_switch              = weapons\groza_switch, 1.0, 0.5
@@ -210,70 +210,63 @@ zoom_hide_crosshair	= true
 attach_place_idx	= 0
 item_visual		= dynamics\weapons\wpn_g36\wpn_g36_hud.ogf
 
-hands_position				= 0.09,-0.06,0.2
-hands_orientation			= 0,0,0
+hands_position			= -0.044000,-0.191999,0.135500
+hands_orientation		= 0.549999,2.399999,0.1499993
+hands_position_16x9		= -0.044000,-0.191999,0.135500
+hands_orientation_16x9	= 0.549999,2.399999,0.1499993
+
+item_position			= 0.0,0.0,0.0
+item_orientation		= 0.0,0.0,0.0
+
+shell_point				= 0.028,0.075,0.156
+shell_dir				= 0.0, 1.0, 0.0
+shell_bone				= wpn_body
+
+fire_point				= 0.0006,0.053148,0.672638
+fire_bone				= wpn_body
+fire_point2				= 0.0,-0.028,0.678
+fire_bone2				= wpn_body
+
+anm_show             	= lancew_sg550_draw
+anm_hide             	= lancew_sg550_holster
+anm_idle             	= lancew_sg550_idle
+anm_idle_sprint         = lancew_sg550_sprint
+anm_idle_moving 		= lancew_sg550_moving
+anm_shots               = lancew_sg550_shoot, shoot
+anm_reload              = lancew_sg550_reload, reload
+anm_idle_aim           	= lancew_sg550_idle_aim, idle_aim
+anm_bore				= lancew_sg550_no_reload
+anm_switch              = lancew_sg550_switch_off
+anm_switch_g            = lancew_sg550_switch_on
+anm_show_w_gl           = lancew_sg550_draw_w_gl
+anm_hide_w_gl           = lancew_sg550_holster_w_gl
+anm_idle_w_gl           = lancew_sg550_idle_w_gl
+anm_shots_w_gl          = lancew_sg550_shoot_w_gl, shoot
+anm_reload_w_gl         = lancew_sg550_reload_w_gl, reload
+anm_idle_w_gl_aim       = lancew_sg550_idle_aim_w_gl, idle_aim
+anm_idle_sprint_w_gl	= lancew_sg550_sprint_w_gl
+anm_idle_moving_w_gl	= lancew_sg550_moving_w_gl
+anm_bore_w_gl			= lancew_sg550_no_reload_w_gl
+anm_show_g         		= lancew_sg550_draw_g
+anm_hide_g         		= lancew_sg550_holster_g
+anm_idle_g         		= lancew_sg550_idle_g
+anm_reload_g       		= lancew_sg550_reload_g, reload_g
+anm_idle_g_aim     		= lancew_sg550_idle_g
+anm_shots_g        		= lancew_sg550_shoot_g
+anm_idle_sprint_g		= lancew_sg550_sprint_g
+anm_idle_moving_g		= lancew_sg550_moving_g
+anm_bore_g				= lancew_sg550_no_reload_g
+
+aim_hud_offset_pos = -0.107700,0.078300,-0.079500
+aim_hud_offset_rot = 0.031300,0.009200,-0.010000
+aim_hud_offset_pos_16x9 = -0.107700,0.078300,-0.079500
+aim_hud_offset_rot_16x9 = 0.031300,0.009200,-0.010000
 
 
-hands_position_16x9			= 0.09,-0.06,0.2
-hands_orientation_16x9			= 0,0,0
-
-item_position				= 0,0,0
-item_orientation			= 0,0,0
-
-shell_point                = 0,0,0
-shell_dir               = 0,0,0
-shell_bone                = eject
-
-fire_point			= 0,0,0
-fire_bone                            = muzzle
-fire_point2			= 0,0,0
-fire_bone2                = grenade
-
-
-anm_show             	= g37_draw
-anm_hide             	= g37_holster
-anm_idle             	= g37_idle
-anm_idle_sprint         = g37_idle_sprint
-anm_idle_moving 	= g37_idle_moving
-anm_shots               = g37_shoot, g36_shoot_w
-anm_reload              = g37_reload, g36_reload_w
-anm_idle_aim           	= g37_idle
-
-anm_switch              = g37_switch_off, g36_gl
-anm_switch_g            = g37_switch_on, g36_gl
-anm_bore		= g37_idle_bore
-
-anm_hide_w_gl           = g37_holster_w_gl, g36_gl
-anm_show_w_gl           = g37_draw_w_gl, g36_gl
-anm_idle_w_gl           = g37_idle_w_gl, g36_gl
-anm_shots_w_gl          = g37_shoot_w_gl, g36_shoot_w_gl_w
-anm_reload_w_gl         = g37_reload_w_gl, g36_reload_w_gl_w
-anm_idle_w_gl_aim       = g37_idle_w_gl, g36_gl
-anm_idle_sprint_w_gl	= g37_idle_sprint_w_gl, g36_gl
-anm_idle_moving_w_gl	= g37_idle_moving_w_gl, g36_gl
-anm_bore_w_gl		= g37_idle_bore_w_gl, g36_gl
-
-anm_show_g         		= g37_draw_w_gl, g36_gl
-anm_hide_g         		= g37_holster_w_gl, g36_gl
-anm_idle_g         		= g37_idle_w_gl, g36_gl
-anm_reload_g       		= g37_reload_grenade
-anm_idle_g_aim     		= g37_idle_w_gl, g36_gl
-anm_shots_g        		= g37_shoot_grenade, g36_gl
-anm_idle_sprint_g		= g37_idle_sprint_w_gl, g36_gl
-anm_idle_moving_g		= g37_idle_moving_w_gl, g36_gl
-anm_bore_g			= g37_idle_bore_w_gl, g36_gl
-
-aim_hud_offset_pos				= -0.09,0.04,-0.2
-aim_hud_offset_rot				= 0,0,0
-
-aim_hud_offset_pos_16x9				= -0.09,0.04,-0.2
-aim_hud_offset_rot_16x9				= 0,0,0
-
-gl_hud_offset_pos = 0.001000,0.106000,-0.064000
-gl_hud_offset_rot = -0.053000,-0.041000,0.000000
-
-gl_hud_offset_pos_16x9 = 0.001000,0.106000,-0.064000
-gl_hud_offset_rot_16x9 = -0.053000,-0.041000,0.000000
+gl_hud_offset_pos = -0.107700,0.078300,-0.079500
+gl_hud_offset_rot = 0.031300,0.009200,-0.010000
+gl_hud_offset_pos_16x9 = -0.107700,0.078300,-0.079500
+gl_hud_offset_rot_16x9 = 0.031300,0.009200,-0.010000
 
 lean_hud_offset_pos        = 0,0,0
 lean_hud_offset_rot        = 0,0,0

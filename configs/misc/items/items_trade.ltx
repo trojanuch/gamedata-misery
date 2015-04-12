@@ -79,22 +79,6 @@ inv_grid_y			= 25
 ;;;;;;;; TRADE ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[nrc_foil]:booster
-$spawn 				= "devices\repair_kit_10"
-description			= st_nrc_foil_descr
-inv_name			= st_nrc_foil
-inv_name_short		= st_nrc_foil
-can_trade			= true
-quest_item 			= false
-cost				= 1880
-inv_weight			= 0.362
-visual 				= dynamics\devices\dev_rukzak\dev_rukzak.ogf
-inv_grid_width     	= 2
-inv_grid_height    	= 2
-inv_grid_x         	= 0
-inv_grid_y         	= 47
-repair_use_actor_effects = true
-
 [shovel_old]:booster
 $spawn 				= "devices\repair_kit_10"
 description			= st_shovel_old_descr
@@ -268,93 +252,22 @@ inv_grid_y			= 44
 repair_part_bonus	= 0.02
 repair_use_actor_effects = true
 
-[grooming_sharp]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\grooming.ogf
-radius				= 68; 50
-
+[grooming_sharp]:booster
+$spawn 				= "devices\repair_kit_10"
 description			= st_grooming_sharp_descr
 inv_name			= st_grooming_sharp
 inv_name_short		= st_grooming_sharp
-
+can_trade			= true
+quest_item 			= false
+cost				= 520
+inv_weight			= 0.13
+visual				= dynamics\equipments\trade\grooming.ogf
 inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 5
 inv_grid_y			= 39
-
-cost				= 520
-;box_size			= 1
-inv_weight			= 0.13
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
-repair_part_bonus	 	= 0.02
-
-[spareparts]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\large_parts.ogf
-radius				= 68; 50
-
-description			= st_wpn_spareparts_descr
-inv_name			= st_wpn_spareparts
-inv_name_short		= st_wpn_spareparts
-
-inv_grid_width			= 2
-inv_grid_height			= 1
-inv_grid_x			= 2
-inv_grid_y			= 52
-
-cost				= 1240
-
-;box_size			= 1
-
-inv_weight			= 1.08
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
-repair_part_bonus	 	= 0.10
-
-[spareparts_small]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\small_parts.ogf
-radius				= 68
-
-description			= st_wpn_spareparts_small_descr
-inv_name			= st_wpn_spareparts_small
-inv_name_short		= st_wpn_spareparts_small
-
-inv_grid_width		= 2
-inv_grid_height		= 1
-inv_grid_x			= 28
-inv_grid_y			= 2
-
-cost				= 620
-
-;box_size			= 1
-
-inv_weight			= 0.234
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset	= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
-repair_part_bonus	 	= 0.08
+repair_part_bonus	= 0.02
+repair_use_actor_effects = true
 
 [beadspread]:booster
 $spawn 				= "devices\repair_kit_10"
@@ -687,7 +600,7 @@ cost				= 790
 
 ;box_size			= 1
 
-inv_weight			= 0.231
+inv_weight			= 0.484
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset		= 0.096910, -0.013594, 0.107925
@@ -1305,26 +1218,22 @@ inv_grid_y			= 47
 repair_part_bonus	= 0.02
 repair_use_actor_effects = true
 
-[cutlery_sharp]:identity_immunities
-GroupControlSection		= spawn_group
-discovery_dependency	=
-$spawn					= "food and drugs\harmonica_a"
-cform					= skeleton
-class					= II_ATTCH
-visual					= dynamics\equipments\trade\cutlery.ogf
-cost					= 470
-inv_name				= st_cutlery_sharp
-inv_name_short			= st_cutlery_sharp
-description				= st_cutlery_descr_sharp
-inv_weight				= 0.2
-inv_grid_width			= 1
-inv_grid_height			= 1
-inv_grid_x				= 13
-inv_grid_y				= 52
-attach_angle_offset		= 0.000000, -1.204452, -1.262921
-attach_position_offset	= 0.081856, -0.035081, 0.011694
-attach_bone_name		= bip01_l_hand
-auto_attach				= false
+[cutlery_sharp]:booster
+$spawn 				= "devices\repair_kit_10"
+inv_name			= st_cutlery_sharp
+inv_name_short		= st_cutlery_sharp
+description			= st_cutlery_descr_sharp
+can_trade			= true
+quest_item 			= false
+cost				= 370
+inv_weight			= 0.2
+visual				= dynamics\equipments\trade\cutlery.ogf
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 13
+inv_grid_y			= 52
+repair_part_bonus	= 0.02
+repair_use_actor_effects = true
 repair_part_bonus	 	= 0.02
 
 [radio]:identity_immunities
@@ -1573,7 +1482,7 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x				= 5
 inv_grid_y				= 38
-cost					= 528
+cost					= 1580
 inv_weight				= 0.02
 ammo_mag_size			= 0
 
@@ -1718,3 +1627,154 @@ gl_hud_offset_pos		= 0,0,0
 gl_hud_offset_rot		= 0,0,0
 lean_hud_offset_pos		= 0,0,0
 lean_hud_offset_rot		= 0,0,0
+
+[nrc_foil]:booster
+$spawn				= "devices\repair_kit_10"
+description			= st_nrc_foil_descr
+inv_name			= st_nrc_foil
+inv_name_short		= st_nrc_foil
+can_trade			= true
+quest_item			= false
+cost				= 1880
+inv_weight			= 0.362
+visual 				= dynamics\equipments\nrc_foil.ogf
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x         	= 30
+inv_grid_y         	= 2
+repair_use_actor_effects = true
+
+[wpn_waste_light]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\kit_hunt.ogf
+radius				= 68
+
+description			= st_wpn_waste_light_descr
+inv_name			= st_wpn_waste_light
+inv_name_short		= st_wpn_waste_light
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 27
+inv_grid_y			= 3
+
+cost				= 221
+inv_weight			= 0.226
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+repair_part_bonus	 	= 0.01
+
+[wpn_waste_heavy]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\waste_large.ogf
+radius				= 68
+
+description			= st_wpn_waste_heavy_descr
+inv_name			= st_wpn_waste_heavy
+inv_name_short		= st_wpn_waste_heavy
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 26
+inv_grid_y			= 3
+
+cost				= 345
+inv_weight			= 0.774
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+repair_part_bonus	 	= 0.02
+
+[outfit_waste_light]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\waste_small.ogf
+radius				= 68
+
+description			= st_outfit_waste_light_descr
+inv_name			= st_outfit_waste_light
+inv_name_short		= st_outfit_waste_light
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 31
+inv_grid_y         = 1
+
+cost				= 185
+inv_weight			= 0.138
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+repair_part_bonus	 	= 0.01
+
+[outfit_waste_heavy]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\kit_hunt.ogf
+radius				= 68
+
+description			= st_outfit_waste_heavy_descr
+inv_name			= st_outfit_waste_heavy
+inv_name_short		= st_outfit_waste_heavy
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 32
+inv_grid_y         = 2
+
+cost				= 1090
+inv_weight			= 0.422
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+repair_part_bonus	 	= 0.02
+
+[tech_waste]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\kit_hunt.ogf
+radius				= 68
+
+description			= st_tech_waste_descr
+inv_name			= st_tech_waste
+inv_name_short		= st_tech_waste
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 28
+inv_grid_y         = 2
+
+cost				= 235
+inv_weight			= 0.122
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+repair_part_bonus	 	= 0.01

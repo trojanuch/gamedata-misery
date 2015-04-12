@@ -638,6 +638,11 @@ function outfit_bonus()
 	-- also if someone use other alife switch distance then default, overall AI detection is raised or lowered by the same % of distance change
 	-- this is used only for NPC unalerted free view state, in alerted combat state NPC eye_range have the same effect as planed
 	
+	-- aditional variables to determine weapons used in slot one and slot two (default keys "2" and "3") and also helmet
+	local weapon_slot_one
+	local weapon_slot_two
+	local helmet_slot
+	
 	local ini_s = system_ini()
 	local eye_factor = 150 / ini_s:r_float("stalker","eye_range") -- factor to calculate default NPC eye range, outfits values are calculated for 2 x eye_range = 300 (default alife_switch distance)
 	local switch_factor = ini_s:r_float("alife","switch_distance") / 300 -- factor to raise or lower overall visibility if someone use higher or lower alife switch distance other then default 300, if someone use 250 instead of 300, overall detection is lowered by 16%
@@ -645,6 +650,7 @@ function outfit_bonus()
 	-- debug_write("Eye factor for NPC is %s ",eye_factor)
 	-- debug_write("Alife switch factor is %s ",switch_factor)
 	
+	-- First have to determine base values for cammo variable from weared outfit/no outfit and eye_factor and switch_factor
 	if db.actor:item_in_slot(7) ~= nil then
 	  weared_outfit = db.actor:item_in_slot(7):section()
 
@@ -675,6 +681,70 @@ function outfit_bonus()
 	  NightHelpTimeFactor = 1.2
 	  NightHelpDistanceFactor = switch_factor * eye_factor * 0.8
 	end
+	
+	-- KCS - additional checking for cammo values from equiped weapons and helmet
+	-- additional checkings are now mulitiplires based on already calculated cammo variables
+	-- info for possible future updates, helmets use slot "12" in similar way
+	
+	
+	--; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+    --; variables in weapon sesctions are multipliers on already determinated values from outfits.
+	--; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+	
+	if db.actor:item_in_slot(2) ~= nil then
+		weapon_slot_one = db.actor:item_in_slot(2):section()
+		-- debug_write("Slot one section name is %s ",weapon_slot_one) -- OK
+		
+		GhillieSightRange = GhillieSightRange * alun_utils.read_from_ini(nil,weapon_slot_one,"detect_range_factor","float",1) 
+		GhillieAimTime = GhillieAimTime * alun_utils.read_from_ini(nil,weapon_slot_one,"aim_time_factor","float",1)           
+		GhillieHelpDistanceFactor = GhillieHelpDistanceFactor * alun_utils.read_from_ini(nil,weapon_slot_one,"help_distance_factor","float",1)
+		GhillieHelpTimeFactor = GhillieHelpTimeFactor * alun_utils.read_from_ini(nil,weapon_slot_one,"help_timer_factor","float",1)
+		-- debug_write("GhillieSightRange after weapon cammo 2 is %s ",GhillieSightRange) -- OK - values are properly read from weapon.ltx file if exist, doesn't cause CTD if variable don't exist in weapon section
+		-- debug_write("GhillieHelpDistanceFactor after weapon cammo 2 is %s ",GhillieHelpDistanceFactor) -- OK
+	  
+		-- night factor values also read from items_outfit.ltx
+		NightSightRange = NightSightRange * alun_utils.read_from_ini(nil,weapon_slot_one,"n_detect_range_factor","float",1)
+		NightAimTime = NightAimTime * alun_utils.read_from_ini(nil,weapon_slot_one,"n_aim_time_factor","float",1)
+		NightHelpTimeFactor = NightHelpTimeFactor * alun_utils.read_from_ini(nil,weapon_slot_one,"n_help_timer_factor","float",1)
+		NightHelpDistanceFactor = NightHelpDistanceFactor * switch_factor * eye_factor * alun_utils.read_from_ini(nil,weapon_slot_one,"n_help_distance_factor","float",1)	
+		
+	end
+	if db.actor:item_in_slot(3)~= nil then
+		weapon_slot_two = db.actor:item_in_slot(3):section()
+		-- debug_write("Slot one section name is %s ",weapon_slot_two) -- OK
+		
+		GhillieSightRange = GhillieSightRange * alun_utils.read_from_ini(nil,weapon_slot_two,"detect_range_factor","float",1) 
+		GhillieAimTime = GhillieAimTime * alun_utils.read_from_ini(nil,weapon_slot_two,"aim_time_factor","float",1)           
+		GhillieHelpDistanceFactor = GhillieHelpDistanceFactor * alun_utils.read_from_ini(nil,weapon_slot_two,"help_distance_factor","float",1)
+		GhillieHelpTimeFactor = GhillieHelpTimeFactor * alun_utils.read_from_ini(nil,weapon_slot_two,"help_timer_factor","float",1)
+		-- debug_write("GhillieSightRange after weapon cammo 3 is %s ",GhillieSightRange) -- OK - values are properly read from weapon.ltx file if exist, doesn't cause CTD if variable don't exist in weapon section
+		-- debug_write("GhillieHelpDistanceFactor after weapon cammo 3 is %s ",GhillieHelpDistanceFactor) -- OK
+	  
+		-- night factor values also read from items_outfit.ltx
+		NightSightRange = NightSightRange * alun_utils.read_from_ini(nil,weapon_slot_two,"n_detect_range_factor","float",1)
+		NightAimTime = NightAimTime * alun_utils.read_from_ini(nil,weapon_slot_two,"n_aim_time_factor","float",1)
+		NightHelpTimeFactor = NightHelpTimeFactor * alun_utils.read_from_ini(nil,weapon_slot_two,"n_help_timer_factor","float",1)
+		NightHelpDistanceFactor = NightHelpDistanceFactor * switch_factor * eye_factor * alun_utils.read_from_ini(nil,weapon_slot_two,"n_help_distance_factor","float",1)	
+	end
+	
+	if db.actor:item_in_slot(12) ~= nil then
+		helmet_slot = db.actor:item_in_slot(12):section()
+		-- debug_write("Slot 12 section name is %s ",helmet_slot) -- OK
+		
+		GhillieSightRange = GhillieSightRange * alun_utils.read_from_ini(nil,helmet_slot,"detect_range_factor","float",1) 
+		GhillieAimTime = GhillieAimTime * alun_utils.read_from_ini(nil,helmet_slot,"aim_time_factor","float",1)           
+		GhillieHelpDistanceFactor = GhillieHelpDistanceFactor * alun_utils.read_from_ini(nil,helmet_slot,"help_distance_factor","float",1)
+		GhillieHelpTimeFactor = GhillieHelpTimeFactor * alun_utils.read_from_ini(nil,helmet_slot,"help_timer_factor","float",1)
+		-- debug_write("GhillieSightRange after helmet cammo is %s ",GhillieSightRange) -- OK - values are properly read from weapon.ltx file if exist, doesn't cause CTD if variable don't exist in weapon section
+		-- debug_write("GhillieHelpDistanceFactor after helmet cammo is %s ",GhillieHelpDistanceFactor) -- OK
+	  
+		-- night factor values also read from items_outfit.ltx
+		NightSightRange = NightSightRange * alun_utils.read_from_ini(nil,helmet_slot,"n_detect_range_factor","float",1)
+		NightAimTime = NightAimTime * alun_utils.read_from_ini(nil,helmet_slot,"n_aim_time_factor","float",1)
+		NightHelpTimeFactor = NightHelpTimeFactor * alun_utils.read_from_ini(nil,helmet_slot,"n_help_timer_factor","float",1)
+		NightHelpDistanceFactor = NightHelpDistanceFactor * switch_factor * eye_factor * alun_utils.read_from_ini(nil,helmet_slot,"n_help_distance_factor","float",1)	
+	end
+	
 end
 
 

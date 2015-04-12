@@ -55,35 +55,35 @@ single_handed           = 0
 
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.084	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor	= 2.06f
-crosshair_inertion		= 8.65
+fire_dispersion_base	= 0.106	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor	= 2.42f
+crosshair_inertion      = 9.3
 
 ;отдача
 cam_return = 0 ;				= 0
 cam_relax_speed         = 4.5	;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	;скорость возврата в исходное положение
-cam_dispersion          = 2.24	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 2.24	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          = 2.78	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 2.78	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac		= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle			= 50.0	;максимальный угол отдачи
 cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 0.64	;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz		= 0.8	;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.45
-PDM_disp_vel_factor 		= 2.355
-PDM_disp_accel_factor 		= 2.355
-PDM_disp_crouch = 1.0 ; 			= 2.465
-PDM_disp_crouch_no_acc = 1.0 ; 		= 2.845
+PDM_disp_vel_factor 		= 3.05
+PDM_disp_accel_factor 		= 3.05
+PDM_disp_crouch = 1.0 ;  			= 1.225
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.425
 
 zoom_cam_relax_speed        = 0.75    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 120.75
-zoom_cam_dispersion         = 1.54
-zoom_cam_dispersion_inc     = 1.54
+zoom_cam_dispersion         = 1.97
+zoom_cam_dispersion_inc     = 1.97
 zoom_cam_dispersion_frac    = 1.0
 zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 50.0
-zoom_cam_step_angle_horz    = 0.49
+zoom_cam_step_angle_horz    = 0.65
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 8	;увеличение дисперсии в процентах при максимальном износе
 
@@ -268,7 +268,7 @@ inv_grid_height    = 2
 inv_grid_x         = 20
 inv_grid_y         = 40
 
-fire_dispersion_base	= 0.064
+fire_dispersion_base	= 0.083
 
 hud                     = wpn_swd_hud
 
@@ -360,7 +360,7 @@ hud                     = wpn_svd_alt_hud
 
 scope_status			= 2
 
-scope_zoom_factor       = 49.6
+scope_zoom_factor       = 58.6
 
 scopes_sect		= scope_svd, scope_svd_moist, scope_svd_worn, scope_x2.7_svd, scope_live_detector_svd, scope_night_svd, scope_vsk_svd
 
@@ -378,7 +378,7 @@ ammo_mag_size        = 10
 fire_modes           = 1
 ammo_class		        = ammo_7.62x54_7h1, ammo_7.62x54_7h14
 
-fire_dispersion_base       	= 0.072
+fire_dispersion_base       	= 0.092
 
 inv_grid_width     = 6
 inv_grid_height    = 2
@@ -434,6 +434,23 @@ aim_hud_offset_rot_16x9 = 0.030400,0.035000,-0.002000
 ;========================================================
 [wpn_svd_ghillie]:wpn_svd
 
+; Cammo preset VERY HIGH
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 1.1			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.9		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 1.1			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 0.9	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.9	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 1.1	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.1			; Multiplier for time it take for NPC's to aim during night hours
+
+
 inv_grid_width     = 6
 inv_grid_height    = 2
 inv_grid_x         = 26
@@ -448,35 +465,35 @@ inv_weight				= 5.543
 
 ;---дисперсия-------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base	= 0.022   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.79f
-crosshair_inertion		= 8.3
+fire_dispersion_base	= 0.028  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 2.06f
+crosshair_inertion		= 8.8
 
 ;отдача
 cam_return = 0 ;				= 0
 cam_relax_speed         = 3.0   ;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	;скорость возврата в исходное положение
-cam_dispersion          = 1.38 ;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 1.38	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          = 1.94 ;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.94	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac		= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle           = 50.0   ;максимальный угол отдачи
 cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 2.41 ;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 2.92 ;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.33
-PDM_disp_vel_factor 		= 2.355
-PDM_disp_accel_factor 		= 2.355
-PDM_disp_crouch = 1.0 ; 			= 2.465
-PDM_disp_crouch_no_acc = 1.0 ; 		= 2.845
+PDM_disp_vel_factor 		= 3.05
+PDM_disp_accel_factor 		= 3.05
+PDM_disp_crouch = 1.0 ;  			= 1.225
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.425
 
 zoom_cam_relax_speed        = 0.7    ; scope & ironsight
 zoom_cam_relax_speed_ai     = 120.75
-zoom_cam_dispersion         = 1.18
-zoom_cam_dispersion_inc     = 1.18
+zoom_cam_dispersion         = 1.48
+zoom_cam_dispersion_inc     = 1.48
 zoom_cam_dispersion_frac    = 1.0
 zoom_cam_max_angle          = 50.0
 zoom_cam_max_angle_horz     = 50.0
-zoom_cam_step_angle_horz    = 2.03
+zoom_cam_step_angle_horz    = 2.56
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 10	;увеличение дисперсии в процентах при максимальном износе
 

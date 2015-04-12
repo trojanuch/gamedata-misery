@@ -1,0 +1,217 @@
+[wpn_axe]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection			= spawn_group
+discovery_dependency 			=
+$spawn                  		= "weapons\knife"
+$npc			 		= on	;off
+$prefetch 				= 8
+scheduled         			= off
+cform             			= skeleton
+class                   		= WP_KNIFE
+min_radius = 0 ;              		= 0
+max_radius = 500 ; = 250 ;              		= 50
+
+inv_name				= st_axe
+inv_name_short			= st_axe
+description				= st_axe_descr
+
+ef_main_weapon_type     = 2
+ef_weapon_type          = 8
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof				= 0.5, 1.0, 180
+reload_dof				= 0.0, 0.5, 5, 1.7
+;-------------------------------------------------------------------------------
+
+;--- scope weapons -------------------------------------------------------------
+holder_range_modifier			= 1.0
+holder_fov_modifier			= 1.0
+;-------------------------------------------------------------------------------
+
+cost					= 7390
+inv_weight				= 1.079
+
+quest_item			= false
+can_trade			= true
+
+ammo_limit		 		= 120
+ammo_current		 		= 96
+ammo_elapsed		 		= 16
+
+ammo_mag_size		 		= 1
+ammo_class		 			= ammo_knife
+
+hand_dependence		 		= 1
+single_handed				= 0
+
+slot                    = 2                ; // secondary
+animation_slot          = 2                ; type of the animation that will be used
+default_to_ruck				= false
+sprint_allowed				= true
+control_inertion_factor			= 1
+
+inv_grid_width     = 3
+inv_grid_height    = 1
+inv_grid_x         = 20
+inv_grid_y         = 79
+
+upgr_icon_x				= 1717
+upgr_icon_y				= 631
+upgr_icon_width				= 185
+upgr_icon_height   			= 140
+
+kill_msg_x				= 197
+kill_msg_y				= 177
+kill_msg_width				= 53
+kill_msg_height				= 16
+
+show_ammo				= false
+
+;-------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base			= 0.5
+crosshair_inertion   			= 0.01
+
+;отдача
+cam_relax_speed         		= 8
+cam_dispersion          		= 0.65
+cam_dispersion_inc			= 0.0
+cam_dispersion_frac			= 1.0
+cam_max_angle				= 20.0
+cam_max_angle_horz			= 10.0
+cam_step_angle_horz			= 0.9
+
+fire_dispersion_condition_factor = 0.015 ; 0.001 ;	= 0.01 ; 5
+misfire_probability        		= 0.001
+misfire_start_condition			= 0.002
+misfire_end_condition			= 0.001
+misfire_start_prob = 0.007 ;	     		= 0.002
+misfire_end_prob = 0.085 ;	     		= 0.001
+condition_shot_dec      		= 0.012
+condition_queue_shot_dec		= 0.012
+
+;-------------------------------------------------------------------------------
+; ttc
+hit_power               		= 0.571, 0.571, 0.571, 0.571
+hit_impulse		        	= 20.5	;10
+hit_type				= wound
+
+hit_power_2             		= 0.87, 0.87, 0.87, 0.87
+hit_power_critical_2    		= 1.22, 1.22, 1.22, 1.22
+hit_impulse_2	        		= 11.5	;50
+hit_type_2				= wound
+
+hit_probability_gd_novice = 1.00 ;		= 0.80
+hit_probability_gd_stalker = 1.00 ;		= 0.80
+hit_probability_gd_veteran = 1.00 ;		= 0.80
+hit_probability_gd_master = 1.00 ;		= 0.80
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 			= 0.8
+PDM_disp_accel_factor 			= 0.8
+PDM_disp_crouch = 1.0 ; 			= 1.0
+PDM_disp_crouch_no_acc = 1.0 ; 			= 1.0
+
+use_aim_bullet				= false ;true
+time_to_aim				= 1.0
+
+fire_distance           		= 6.75	;1.9
+bullet_speed		 		= 5000
+rpm                     		= 1000
+rpm_empty_click 	 		= 1000
+; end ttc
+
+;-------------------------------------------------------------------------------
+; splash parameters
+
+splash1_direction			= 0.0, -0.3, 1.0
+splash2_direction			= 0.0, 0.0, 1.0
+
+spash1_dist					= 2.1
+spash2_dist					= 1.7
+
+spash1_radius				= 0.7
+spash2_radius				= 0.5
+
+splash1_hits_count			= 3
+splash1_pervictim_hcount	= 1
+splash2_hits_count			= 2
+splash_hit_divide_factor	= 0.75
+;-------------------------------------------------------------------------------
+visual					= dynamics\weapons\wpn_axe\wpn_axe.ogf
+hud						= wpn_axe_hud
+
+position                		= -0.021, -0.085, 0.024
+orientation             		= 0, 90, 0
+
+fire_point				= 0.0, 0.133, 0.161	; Позиция огня из основного ствола
+fire_point2				= 0, 0, 0
+
+flame_particles		   		=
+smoke_particles		   		=
+
+shell_point		 		= 0.0, 0.133, 0.047
+shell_dir		 		= 0.0, 0.0, 0.4
+shell_particles	 			= 
+
+;-------------------------------------------------------------------------------
+startup_ammo           			= 1000
+wm_size                  		= 0.0058
+
+light_disabled				= true
+
+ph_mass			 		= 4
+
+;addons
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status			= 0
+zoom_enabled				= false
+
+;звуки
+snd_draw				= weapons\walther_draw
+snd_holster				= weapons\generic_holster
+snd_shoot				= weapons\axe\knife_1
+snd_bore 				= weapons\draw_silent
+snd_empty				= weapons\pistol_empty
+snd_reload				= weapons\pm_reload, 0.8
+snd_close				= weapons\generic_close
+
+[wpn_axe_hud]:hud_base
+zoom_hide_crosshair		= true
+
+item_visual				= dynamics\weapons\wpn_axe\wpn_axe_hud.ogf
+attach_place_idx		= 0
+
+hands_position			= -0.021000,-0.180000,0.08
+hands_orientation		= -0.500000,1.000000,10
+hands_position_16x9		= -0.021000,-0.180000,0.08
+hands_orientation_16x9	= -0.500000,1.000000,10
+
+item_position			= 0.003164,-0.002989,0.000906
+item_orientation		= 175, 0, -360
+
+shell_point				= 0,0,0
+shell_bone				= wpn_body
+
+fire_point				= 0.004500,0.062500,-0.178499
+fire_bone				= knife
+
+anm_show				= lancew_knife1_draw
+anm_show_empty			= lancew_knife1_draw
+anm_hide				= lancew_knife1_holster
+anm_idle				= lancew_knife1_idle
+anm_idle_aim			= lancew_knife1_idle
+anm_attack				= lancew_knife1_kick_2
+anm_attack2				= lancew_knife1_kick_1
+anm_idle_moving 		= lancew_knife1_moving
+anm_idle_sprint			= lancew_knife1_sprint
+anm_bore				= lancew_knife1_no_reload
+
+aim_hud_offset_pos		= -0.077000,0.022000,0.000000
+aim_hud_offset_rot		= 0.000000,0.005000,-0.015000
+
+gl_hud_offset_pos		= 0,0,0
+gl_hud_offset_rot		= 0,0,0
+
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0

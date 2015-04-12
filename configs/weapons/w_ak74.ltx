@@ -110,18 +110,18 @@ hit_probability_gd_master = 1.00 ;  = 0.80
 slot                    = 2                ; // secondary
 animation_slot          = 2                ; type of the animation that will be used
 
-position                = -0.026, -0.175, 0.0
-orientation             = 0, 0, 0
+position        	    			= -0.026, -0.180, 0.0
+orientation             				= 0, 0, 0
 
-fire_point              =  0,0.218,0.656        ; position (3rd person view) for particles of fire
-fire_point2             =  0,0.161,0.583        ; position (3rd person view) for particles of fire (when shooting with secondary fire)
+fire_point              				= 0.000000, 0.174, 0.562
+fire_point2             				= 0.0, 0.097, 0.722        ; position (3rd person view) for particles of fire (when shooting with secondary fire)
 
 ;flame_particles         = weapons\generic_weapon05 ; particles for shooting effects
 smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
 shell_point             = 0,0.216,0.174            ; position (3rd person view) for shell to throw out
-shell_particles         = weapons\generic_shells
+shell_particles         = amik\weapons\data\5_45x39\5_45x39_r
 
 ;-------------------------------------------------------------------------------
 inv_name          = st_wpn_ak74
@@ -144,7 +144,7 @@ kill_msg_height   = 28
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
-strap_position          = -0.26,-0.11,0.25                                ; position (offset) and orientation of the weapon when it is strapped
+strap_position					= -0.2,-0.13,0.1                               ; position (offset) and orientation of the weapon when it is strapped
 strap_orientation       = -15,-9,110                                        ; (3rd person view in degrees)
 strap_bone0             = bip01_spine2
 strap_bone1             = bip01_spine1
@@ -183,7 +183,7 @@ snd_draw                = weapons\generic\eastern_draw
 snd_holster             = weapons\generic\generic_holster
 snd_shoot               = weapons\ak74\ak74_shot
 snd_empty               = weapons\generic\rifle_historic_empty, 0.9
-snd_reload              = weapons\Auto\ak74\ak74_reload
+snd_reload              = weapons\ak47\ak47_reload
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade      = weapons\gen_grenload, 1.0, 0.8
 snd_switch              = weapons\groza_switch, 1.0, 0.5
@@ -204,68 +204,71 @@ zoom_hide_crosshair        = true
 attach_place_idx        = 0
 item_visual                = dynamics\weapons\wpn_ak74\wpn_ak74_hud.ogf
 
-hands_position				= 0.09,-0.04,0.2
-hands_orientation			= 0,0,0
-hands_position_16x9			= 0.09,-0.04,0.2
+hands_position				= -0.042,-0.14,0.21
+hands_orientation				= 0,0,0
+
+hands_position_16x9			= -0.042,-0.14,0.21
 hands_orientation_16x9			= 0,0,0
 
 item_position				= 0,0,0
-item_orientation			= 0,0,0
+item_orientation				= 0,0,0
 
-shell_point               = 0,0,0
-shell_dir                 = 0,0,0
-shell_bone                = eject
+aim_hud_offset_pos = -0.111100,0.008700,-0.172000
+aim_hud_offset_rot = -0.019300,-0.001500,0.000000
 
-fire_point		  = 0,0,0
-fire_bone                 = muzzle
-fire_point2               = 0,0,0
-fire_bone2                = grenade
+aim_hud_offset_pos_16x9 = -0.111100,0.008700,-0.172000
+aim_hud_offset_rot_16x9 = -0.019300,-0.001500,0.000000
 
-anm_show		= ak76_draw
-anm_hide                = ak76_holster
-anm_idle                = ak76_idle
-anm_idle_sprint         = ak76_idle_sprint
-anm_idle_moving         = ak76_idle_moving
-anm_shots               = ak76_shoot, ak74_shoot_w
-anm_reload              = ak76_reload, ak74_reload_w
-anm_idle_aim            = ak76_idle_aim
+gl_hud_offset_pos 				= -0.073,-0.04,-0.125
+gl_hud_offset_rot 				= -0.115,-0.008,0.0
 
-anm_switch              = ak76_switch_off, ak74_idle_w_gl_w         ;abakan_switch_off
-anm_switch_g            = ak76_switch_on, ak74_idle_w_gl_w           ;abakan_switch_on
-anm_bore                = ak76_idle_bore
+gl_hud_offset_pos_16x9 			= -0.073,-0.04,-0.125
+gl_hud_offset_rot_16x9 			= -0.115,-0.008,0.0
 
-anm_hide_w_gl           = ak76_holster_w_gl, ak74_idle_w_gl_w
-anm_show_w_gl           = ak76_draw_w_gl, ak74_idle_w_gl_w
-anm_idle_w_gl           = ak76_idle_w_gl, ak74_idle_w_gl_w
-anm_shots_w_gl          = ak76_shoot_w_gl, ak74_shoot_wg
-anm_reload_w_gl         = ak76_reload_w_gl, ak74_reload_w_gl_w
-anm_idle_w_gl_aim       = ak76_idle_aim_w_gl, ak74_idle_w_gl_w
-anm_idle_sprint_w_gl    = ak76_idle_sprint_w_gl, ak74_idle_w_gl_w
-anm_idle_moving_w_gl    = ak76_idle_moving_w_gl, ak74_idle_w_gl_w
-anm_bore_w_gl           = ak76_idle_bore_w_gl, ak74_idle_w_gl_w
+shell_point                				= 0,0,0
+shell_dir              	 			= 0,0,0
+shell_bone                				= gilza
 
-anm_show_g              = ak76_draw_w_gl, ak74_idle_w_gl_w							;abakan_draw_grenade
-anm_hide_g              = ak76_holster_w_gl, ak74_idle_w_gl_w						;abakan_holster_grenade
-anm_idle_g              = ak76_idle_w_gl, ak74_idle_w_gl_w							;abakan_idle_grenade
-anm_reload_g            = ak76_reload_grenade
-anm_idle_g_aim          = ak76_idle_aim_w_gl, ak74_idle_w_gl_w						;abakan_idle_grenade
-anm_shots_g             = ak76_shoot_grenade
-anm_idle_sprint_g       = ak76_idle_sprint_w_gl, ak74_idle_w_gl_w					;abakan_idle_sprint_grenade
-anm_idle_moving_g       = ak76_idle_moving_w_gl, ak74_idle_w_gl_w					;abakan_idle_moving_grenade
-anm_bore_g              = ak76_idle_bore_w_gl, ak74_idle_w_gl_w
+fire_point					= 0,0,0
+fire_bone                   				= muzzle
 
+fire_point2					= 0.0,-0.011,0.553
+fire_bone2					= wpn_body
 
-aim_hud_offset_pos = -0.089900,0.028850,-0.200000
-aim_hud_offset_rot = -0.018000,0.000400,0.000000
+anm_show				= akm_draw
+anm_hide                				= akm_holster
+anm_idle                				= akm_idle
+anm_idle_sprint         				= akm_sprint
+anm_idle_moving         			= akm_move
+anm_shots               				= akm_shoot, shoot
+anm_reload              				= akm_reload, reload
+anm_reload_empty              				= akm_reload, reload
+anm_idle_aim           	 			= akm_aim
+anm_bore                				= akm_aim
 
-aim_hud_offset_pos_16x9 = -0.089900,0.028850,-0.200000
-aim_hud_offset_rot_16x9 = -0.018000,0.000400,0.000000
+anm_switch              				= akm_aim_w_gl           
+anm_switch_g            				= akm_aim_w_gl           
+anm_bore                				= akm_aim
 
-gl_hud_offset_pos = -0.047000,0.038200,0.000000
-gl_hud_offset_rot = -0.050000,-0.018000,0.000000
+anm_hide_w_gl           				= akm_holster_w_gl
+anm_show_w_gl           			= akm_draw_w_gl
+anm_idle_w_gl           				= akm_idle_w_gl
+anm_shots_w_gl          			= akm_shoot_w_gl, shoot
+anm_reload_w_gl        			= akm_reload_w_gl, reload
+anm_idle_w_gl_aim       			= akm_aim_w_gl
+anm_idle_sprint_w_gl    			= akm_sprint_w_gl
+anm_idle_moving_w_gl    			= akm_move_w_gl
+anm_bore_w_gl           			= akm_aim_w_gl
 
-gl_hud_offset_pos_16x9 = -0.047000,0.038200,0.000000
-gl_hud_offset_rot_16x9 = -0.050000,-0.018000,0.000000
+anm_show_g              				= akm_draw_w_gl			
+anm_hide_g              				= akm_holster_w_gl			
+anm_idle_g              				= akm_idle_w_gl			
+anm_reload_g            				= akm_reload_g, reload_g
+anm_idle_g_aim          			= akm_aim_w_gl				
+anm_shots_g             				= akm_shoot_g, shoot_g
+anm_idle_sprint_g       			= akm_sprint_w_gl			
+anm_idle_moving_g       			= akm_move_w_gl			
+anm_bore_g              				= akm_aim_w_gl
 
 
 lean_hud_offset_pos        = 0,0,0
@@ -451,6 +454,21 @@ item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7c_hud.ogf
 ;=====================================================================================================================================================
 [wpn_ak74_camo]:wpn_ak74
 
+; Cammo preset HIGH
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 0.95 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.95		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 1.05			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 0.95	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.95	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 1.05	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim during night hours
 cost              	 = 30260
 inv_weight        = 3.24
 inv_name          = st_wpn_ak74_camo

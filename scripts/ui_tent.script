@@ -13,17 +13,22 @@ function load_item:__finalize()
 end
 -------------------------------------------------------------------
 class "tent_ui" (CUIScriptWnd)
-local feedback1, feedback2, has_tent_fabric, has_tent_mat
+local feedback1, feedback2
+local has_tent_fabric, has_tent_mat, has_protection, missing_two
 function tent_ui:__init(owner,section) super()
 	self.owner = owner
 	self.section = section
 	local ini = ini_file("plugins\\itms_manager.ltx")
 	self.tent_support = alun_utils.collect_section(ini,"tent_support",true)
 	self.tent_tools = alun_utils.collect_section(ini,"tent_tools",true)
+
 	if self.section == "tarpaulin" then
 		has_tent_fabric = true
 		if db.actor:object("beadspread") then
 			has_tent_mat = true
+		end
+		if db.actor:object("nrc_foil") then
+			has_protection = true
 		end
 	end
 	if self.section == "beadspread" then
@@ -31,7 +36,23 @@ function tent_ui:__init(owner,section) super()
 		if db.actor:object("tarpaulin") then
 			has_tent_fabric = true
 		end
+		if db.actor:object("nrc_foil") then
+			has_protection = true
+		end
 	end
+	if self.section == "nrc_foil" then
+		has_protection = true
+		if db.actor:object("tarpaulin") then
+			has_tent_fabric = true
+		end
+		if db.actor:object("beadspread") then
+			has_tent_mat = true
+		end
+	end
+	if not has_tent_fabric and not has_tent_mat then missing_two = true end
+	if not has_tent_fabric and not has_protection then missing_two = true end
+	if not has_tent_mat and not has_protection then missing_two = true end
+
 	self:InitControls()
 	self:InitCallBacks()
 end
@@ -66,8 +87,10 @@ function tent_ui:FillToolsList()
 		end
 	end
 	db.actor:iterate_inventory(fill_tent_tools_list,db.actor)
-	if not has_tent_mat then self.caption_down:SetText("%c[0,151,21,66]tent mat needed") end
 	if not has_tent_fabric then self.caption_down:SetText("%c[0,151,21,66]tent fabric needed") end
+	if not has_tent_mat then self.caption_down:SetText("%c[0,151,21,66]tent mat needed") end
+	if not has_protection then self.caption_down:SetText("%c[0,151,21,66]protection foil needed") end
+	if missing_two then self.caption_down:SetText("%c[0,151,21,66]components missing") end
 end
 
 function tent_ui:InitControls()
@@ -152,6 +175,37 @@ function tent_ui:InitControls()
 			self.picm:SetWndPos(vector2():set(self.picm.x-w/2, self.picm.y-h/2))
 	end
 
+	-- NRC foil icon
+	if has_protection then
+		self.picf = self.xml:InitStatic("itm_tent:form:icon_protection",self.form)
+		local linv_grid_width = alun_utils.read_from_ini(ini,"nrc_foil","inv_grid_width","float",0)
+		local linv_grid_height = alun_utils.read_from_ini(ini,"nrc_foil","inv_grid_height","float",0)
+		local linv_grid_x = alun_utils.read_from_ini(ini,"nrc_foil","inv_grid_x","float",0)
+		local linv_grid_y = alun_utils.read_from_ini(ini,"nrc_foil","inv_grid_y","float",0)
+		x1 = linv_grid_x*50
+		y1 = linv_grid_y*50
+		w = linv_grid_width*50
+		h = linv_grid_height*50
+		x2 = x1 + w
+		y2 = y1 + h
+		local w,h = w,h
+		if (utils.is_widescreen()) then
+			w,h = w/1.5,h/1.2
+		else
+			w,h = w/1.3,h/1.3
+		end
+		self.picf:InitTexture("ui\\ui_icon_equipment")
+		self.picf:SetTextureRect(Frect():set(x1,y1,x2,y2))
+		self.picf:SetWndSize(vector2():set(w,h))
+		if not (self.picf.x) then
+			local pos = self.picf:GetWndPos()
+			local posform = self.form:GetWndPos()
+			self.picf.x = pos.x + posform.x
+			self.picf.y = pos.y + posform.y
+		end
+			self.picf:SetWndPos(vector2():set(self.picf.x-w/2, self.picf.y-h/2))
+	end
+
 	-- Captions
 	self.caption_up = self.xml:InitTextWnd("itm_tent:form:caption_up",self.form)
 	self.caption_down = self.xml:InitTextWnd("itm_tent:form:caption_down",self.form)
@@ -229,6 +283,12 @@ function tent_ui:OnPartsListItemDbClicked()
 end
 
 function tent_ui:OnListItemClicked()
+	if missing_two then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message("You need more components to put up a tent",25)
+		return
+	end
 	if not has_tent_mat then
 		self:OnButton_back_clicked()
 		xr_effects.disable_ui_inventory(db.actor,nil)
@@ -241,8 +301,14 @@ function tent_ui:OnListItemClicked()
 		itms_manager.show_message("You need tent fabric to put up a tent",25)
 		return
 	end
+	if not has_protection then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message("You need a protection foil to put up a tent",25)
+		return
+	end
 	feedback1 = true
-	feedback2 = false
+	feedback2 = nil
 	self.list_box_parts:RemoveAll()
 	self.picture_parts:SetTextureRect(Frect():set(0,0,0,0))
 	self.caption_up:SetText("")
@@ -292,10 +358,12 @@ end
 
 function tent_ui:OnButton_back_clicked()
 	alife():create(self.section,db.actor:position(),0,0,0)
-	feedback1 = false
-	feedback2 = false
-	has_tent_mat = false
-	has_tent_fabric = false
+	feedback1 = nil
+	feedback2 = nil
+	has_tent_fabric = nil
+	has_tent_mat = nil
+	has_protection = nil
+	missing_two = nil
 	self:HideDialog()
 end
 
@@ -313,6 +381,12 @@ function tent_ui:OnKeyboard(dik, keyboard_action)
 end
 
 function tent_ui:OnButton_ok()
+	if missing_two then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message("You need more components to put up a tent",25)
+		return
+	end
 	if not has_tent_mat then
 		self:OnButton_back_clicked()
 		xr_effects.disable_ui_inventory(db.actor,nil)
@@ -323,6 +397,12 @@ function tent_ui:OnButton_ok()
 		self:OnButton_back_clicked()
 		xr_effects.disable_ui_inventory(db.actor,nil)
 		itms_manager.show_message("You need tent fabric to put up a tent",25)
+		return
+	end
+	if not has_protection then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message("You need a protection foil to put up a tent",25)
 		return
 	end
 	if not feedback1 and not feedback2 then
@@ -341,14 +421,21 @@ function tent_ui:OnButton_ok()
 	local obj = item and level.object_by_id(item.item_id)
 	if not (obj) then return end
 
-	local getrid
-	if self.section == "beadspread" then
-		getrid = db.actor:object("tarpaulin")
-	end
+	local getrid1, getrid2
 	if self.section == "tarpaulin" then
-		getrid = db.actor:object("beadspread")
+		getrid1 = db.actor:object("beadspread")
+		getrid2 = db.actor:object("nrc_foil")
 	end
-	alife():release(alife():object(getrid:id()), true)
+	if self.section == "beadspread" then
+		getrid1 = db.actor:object("tarpaulin")
+		getrid2 = db.actor:object("nrc_foil")
+	end
+	if self.section == "nrc_foil" then
+		getrid1 = db.actor:object("tarpaulin")
+		getrid2 = db.actor:object("beadspread")
+	end
+	alife():release(alife():object(getrid1:id()), true)
+	alife():release(alife():object(getrid2:id()), true)
 
 	if (self.list_box_parts) then
 		local sect = obj:section()
@@ -371,12 +458,17 @@ function tent_ui:OnButton_ok()
 		end
 	end
 
+	-- actor_effects.use_item("toolkit_u_dummy") -- change to proper anim, "put_up_tent" already in place in actor_effects_data.script
 	local tent = alife():create("ph_tent",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+	local TentMapSpot = alun_utils.read_from_ini(system_ini(),"items_refunct_mod","tent_map_spot","string","ui_pda2_tent_location")
+	level.map_add_object_spot_ser(tent.id, TentMapSpot, "st_ui_pda_tent")
 
-	feedback1 = false
-	feedback2 = false
-	has_tent_mat = false
-	has_tent_fabric = false
+	feedback1 = nil
+	feedback2 = nil
+	has_tent_fabric = nil
+	has_tent_mat = nil
+	has_protection = nil
+	missing_two = nil
 	local hud = get_hud()
 	hud:HideActorMenu()
 	self:HideDialog()

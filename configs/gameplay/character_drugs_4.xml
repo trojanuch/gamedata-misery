@@ -445,4 +445,20 @@ shovel_mili_sharp		= 1, prob=0.007 \n
 shovel_old_sharp		= 1, prob=0.007 \n
 spareparts_small		= 3, prob=0.008 \n
 
+wpn_waste_light			= 8 prob=0.005 \n
+wpn_waste_heavy			= 8, prob=0.005 \n
+outfit_waste_light			= 8, prob=0.005 \n
+outfit_waste_heavy			= 8, prob=0.005 \n
+tech_waste			= 8, prob=0.005 \n
+wpn_dismantler = 1, prob=0.0005 \n
+wpn_dismantler2 = 1, prob=0.001 \n
+wpn_dismantler3 = 1, prob=0.0015 \n
+wpn_dismantler4 = 1, prob=0.002 \n
+wpn_dismantler5 = 1, prob=0.0025 \n
+outfit_dismantler = 1, prob=0.0005 \n
+outfit_dismantler2 = 1, prob=0.001 \n
+outfit_dismantler3 = 1, prob=0.0015 \n
+outfit_dismantler4 = 1, prob=0.002\n
+outfit_dismantler5 = 1, prob=0.0025 \n
+
 nrc_foil		= 4, prob=0.007 \n

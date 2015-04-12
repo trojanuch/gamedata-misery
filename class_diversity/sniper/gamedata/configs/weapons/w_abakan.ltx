@@ -67,34 +67,34 @@ reload_dof           = 0.0, 0.5, 5, 2
 
 ;базовая дисперсия
 fire_dispersion_base    = 0.265
-control_inertion_factor = 1.55f
-crosshair_inertion		= 7.3
+control_inertion_factor = 1.4f
+crosshair_inertion		= 6.8
 
 ;отдача
-cam_return = 0 ;				= 0
+cam_return = 0 ;				= 1
 cam_relax_speed         = 10     ;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion	        = 1.09
-cam_dispersion_inc      = 0.77
+cam_dispersion	        = 1.05
+cam_dispersion_inc      = 0.65
 cam_dispersion_frac     = 1.1    ;ствол будет подvматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle           = 50.0       ;максимальнvй угол отдачи
 cam_max_angle_horz      = 50.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.25   ;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 1.1    ;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.2
-PDM_disp_vel_factor 		= 2.25
-PDM_disp_accel_factor 		= 2.255
-PDM_disp_crouch = 1.0 ; 			= 2.465
-PDM_disp_crouch_no_acc = 1.0 ; 		= 2.845
+PDM_disp_vel_factor 		= 2.75
+PDM_disp_accel_factor 		= 2.75
+PDM_disp_crouch = 1.0 ;  			= 1.225
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.425
 
 zoom_cam_relax_speed         = 10	    ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 0.98
-zoom_cam_dispersion_inc      = 0.77
+zoom_cam_dispersion          = 0.95
+zoom_cam_dispersion_inc      = 0.65
 zoom_cam_dispersion_frac     = 1.0
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.1
+zoom_cam_step_angle_horz     = 0.95
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 9        
 
@@ -175,7 +175,7 @@ grenade_launcher_status    = 0                   ; 2 - attachable
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time        = 0.25
-scope_zoom_factor       = 49.6                                              ; fov for zoom mode
+scope_zoom_factor       = 58.6                                              ; fov for zoom mode
 
 scope_texture			= wpn_crosshair_pso1
 silencer_name              = wpn_addon_silencer_545x39    ; section name for the attachable silencer
@@ -412,6 +412,22 @@ item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka2_hud.ogf
 ;==================================================================================================================================================
 [wpn_abakan_camo]:wpn_abakan
 
+; Cammo preset HIGH
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 0.95 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.95		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 1.05			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 0.95	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.95	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 1.05	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim during night hours
+
 cost				 = 36920
 inv_weight           = 3.75
 inv_name             = st_wpn_abakan_camo
@@ -449,6 +465,22 @@ visual                  = dynamics\weapons\wpn_abakan\wpn_abaka3.ogf
 item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka3_hud.ogf
 ;==================================================================================================================================================
 [wpn_abakan_worn]:wpn_abakan
+
+; Cammo preset LOW
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
 
 cost				 = 27360
 inv_weight           = 3.85
@@ -489,6 +521,22 @@ visual                  = dynamics\weapons\wpn_abakan\wpn_abaka4.ogf
 item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka4_hud.ogf
 ;==================================================================================================================================================
 [wpn_abakan_rusty]:wpn_abakan
+
+; Cammo preset LOW
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
 
 upgrades                = up_gr_firstab_abakan_rusty, up_gr_seconab_abakan_rusty, up_gr_thirdab_abakan_rusty, up_gr_fourtab_abakan_rusty, up_gr_fifthab_abakan_rusty
 

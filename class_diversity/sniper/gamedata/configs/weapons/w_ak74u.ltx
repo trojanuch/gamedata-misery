@@ -62,36 +62,36 @@ reload_dof           = 0.0, 0.5, 5, 2
 
 ;----Дисперсия---------------------------------------------------------------------------
 fire_dispersion_base       = 0.56 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor    = 1.24f
-crosshair_inertion		= 5.3
+control_inertion_factor    = 1.11f
+crosshair_inertion		   = 4.8
 
 ;params of weapon recoil
 cam_return = 0 ;				= 0
 cam_relax_speed         = 12			;скорость возврата в исходное положение
 cam_relax_speed_ai     	= 120.75
-cam_dispersion	        = 0.98
-cam_dispersion_inc      = 0.76
+cam_dispersion	        = 0.94
+cam_dispersion_inc      = 0.64
 cam_dispersion_frac     = 1.1	    ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 58.0      ;максимальный угол отдачи
-cam_max_angle_horz      = 58.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.36		;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle			= 52.0      ;максимальный угол отдачи
+cam_max_angle_horz      = 52.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.26		;(degree) size of step camera moved in horizontal position while shooting
 
 zoom_cam_relax_speed         = 12	    ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 0.83
-zoom_cam_dispersion_inc      = 0.68
+zoom_cam_dispersion          = 0.87
+zoom_cam_dispersion_inc      = 0.57
 zoom_cam_dispersion_frac     = 1.0
-zoom_cam_max_angle           = 55.0
-zoom_cam_max_angle_horz      = 55.0
-zoom_cam_step_angle_horz     = 1.26
+zoom_cam_max_angle           = 52.0
+zoom_cam_max_angle_horz      = 52.0
+zoom_cam_step_angle_horz     = 1.16
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ;    = 0.01 ; 10         
 
 PDM_disp_base 				= 0.7
-PDM_disp_vel_factor 		= 1.58
-PDM_disp_accel_factor 		= 1.58
-PDM_disp_crouch = 1.0 ; 			= 2.235
-PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
+PDM_disp_vel_factor 		= 1.855
+PDM_disp_accel_factor 		= 1.855
+PDM_disp_crouch = 1.0 ;  			= 1.165
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
 
 ;------- for AI ------------------------------------------------------------------------
 holder_range_modifier   = 1.0              ; во сколько раз увеличивается eye_range
@@ -165,7 +165,7 @@ grenade_launcher_status    = 0                   ; 2 - attachable
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time        = 0.25
-scope_zoom_factor       = 49.6 ;        = 85                                                ; fov for zoom mode
+scope_zoom_factor       = 58.6 ;        = 85                                                ; fov for zoom mode
 
 silencer_name           = wpn_addon_silencer_545x39    ; section name for the attachable silencer
 silencer_x 					= 178							; offset in inventory icon
@@ -319,6 +319,23 @@ item_visual						= dynamics\weapons\wpn_ak74u\wpn_ak741_hud.ogf
 ;=========================================================================================================================================
 [wpn_ak74u_camo]:wpn_ak74u
 
+; Cammo preset HIGH
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 0.95 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.95		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 1.05			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 0.95	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.95	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 1.05	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim during night hours
+
+
 cost              		= 28480
 inv_weight				= 2.676
 inv_name          	= st_wpn_ak74u_camo
@@ -357,6 +374,22 @@ visual                  = dynamics\weapons\wpn_ak74u\wpn_ak742.ogf
 item_visual						= dynamics\weapons\wpn_ak74u\wpn_ak742_hud.ogf
 ;=========================================================================================================================================
 [wpn_ak74u_worn]:wpn_ak74u
+
+; Cammo preset LOW
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
 
 cost              		= 16100
 inv_weight				= 2.72
@@ -397,6 +430,22 @@ visual                  = dynamics\weapons\wpn_ak74u\wpn_ak743.ogf
 item_visual						= dynamics\weapons\wpn_ak74u\wpn_ak743_hud.ogf
 ;=========================================================================================================================================
 [wpn_ak74u_rusty]:wpn_ak74u
+
+; Cammo preset LOW
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.05 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.05		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.95			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.05	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.05	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.95	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.95			; Multiplier for time it take for NPC's to aim during night hours
 
 cost              		= 9840
 inv_weight				= 2.8

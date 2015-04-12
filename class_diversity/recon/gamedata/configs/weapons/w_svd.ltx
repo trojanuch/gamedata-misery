@@ -434,6 +434,21 @@ aim_hud_offset_rot_16x9 = 0.030400,0.035000,-0.002000
 ;========================================================
 [wpn_svd_ghillie]:wpn_svd
 
+; Cammo preset VERY HIGH
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 0.9 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 1.1			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 0.9		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 1.1			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 0.9	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 0.9	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 1.1	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 1.1			; Multiplier for time it take for NPC's to aim during night hours
 inv_grid_width     = 6
 inv_grid_height    = 2
 inv_grid_x         = 26

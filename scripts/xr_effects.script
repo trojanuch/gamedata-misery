@@ -1709,8 +1709,24 @@ function play_dismantle_swiss_wpn_fail()
 	xr_sound.set_sound_play(db.actor:id(),"dismantle_swiss_wpn_fail")
 end
 
+function play_inv_dismantle_cutlery_wpn_fail()
+	xr_sound.set_sound_play(db.actor:id(),"dismantle_cutlery_wpn_fail")
+end
+
 function play_dismantle_item()
 	xr_sound.set_sound_play(db.actor:id(),"dismantle_item")
+end
+
+function play_spareparts()
+	xr_sound.set_sound_play(db.actor:id(),"inv_spareparts")
+end
+
+function play_spareparts_small()
+	xr_sound.set_sound_play(db.actor:id(),"inv_spareparts_small")
+end
+
+function play_salvage_cloth()
+	xr_sound.set_sound_play(db.actor:id(),"inv_salvagecloth")
 end
 
 function play_inv_lighter_refiller()
@@ -3005,21 +3021,21 @@ end
 function zat_b202_spawn_random_loot(actor, npc, p)
 	local si_table = {}
 	si_table[1] = {
-		[1] = {item = {"bandage","bandage","bandage","bandage","bandage","medkit","medkit","medkit","conserva","conserva"}},
-		[2] = {item = {"medkit","medkit","medkit","medkit","medkit","vodka","vodka","vodka","kolbasa","kolbasa"}},
+		[1] = {item = {"bandage","bandage","bandage","bandage","bandage","medkit","medkit","medkit"}},
+		[2] = {item = {"medkit","medkit","medkit","medkit","medkit","vodka","vodka","kolbasa"}},
 		[3] = {item = {"antirad","antirad","antirad","medkit","medkit","bandage","kolbasa","kolbasa","conserva"}},
 	}
 	si_table[2] = {
 		[1] = {item = {"grenade_f1","grenade_f1","grenade_f1"}},
-		[2] = {item = {"grenade_rgd5","grenade_rgd5","grenade_rgd5","grenade_rgd5","grenade_rgd5"}}
+		[2] = {item = {"antirad","antirad","antirad","medkit","medkit","bandage","conserva"}}
 	}
 	si_table[3] = {
-		[1] = {item = {"detector_elite"}},
-		[2] = {item = {"detector_advanced"}}
+		[1] = {item = {"medkit","medkit","medkit","medkit","medkit","vodka","vodka"}},
+		[2] = {item = {"grenade_rgd5","grenade_rgd5","grenade_rgd5","grenade_rgd5","grenade_rgd5"}}
 	}
 	si_table[4] = {
-		[1] = {item = {"helm_hardhat"}},
-		[2] = {item = {"helm_respirator"}}
+		[1] = {item = {"bandage","bandage","bandage","bandage","bandage","medkit","medkit","medkit"}},
+		[2] = {item = {"grenade_f1","grenade_f1","grenade_f1"}}
 	}
 	si_table[5] = {
 		[1] = {item = {"wpn_val","ammo_9x39_ap","ammo_9x39_ap","ammo_9x39_ap"}},
@@ -3031,8 +3047,8 @@ function zat_b202_spawn_random_loot(actor, npc, p)
 		[7] = {item = {"wpn_l85","ammo_5.56x45_ss190","ammo_5.56x45_ss190"}}
 	}
 	si_table[6] = {
-		[1] = {item = {"specops_outfit"}},
-		[2] = {item = {"stalker_outfit"}}
+		[1] = {item = {"antirad","antirad","antirad","medkit","medkit","bandage","conserva"}},
+		[2] = {item = {"grenade_rgd5","grenade_rgd5","grenade_rgd5","grenade_rgd5","grenade_rgd5"}}
 	}
 	weight_table = {}
 	weight_table[1] = 2
@@ -3455,6 +3471,8 @@ end
 
 function pri_a22_kovalski_speak(actor, npc)
 	db.actor:give_info_portion("pri_a22_kovalski_speak")
+	-- KCS - spawn backpack with explosives next to bodies to prevent questline break
+	axr_dynamic_spawn.spawn_special("pri_a25_explosive")
 end
 
 function zat_b38_underground_door_open(actor, npc)
