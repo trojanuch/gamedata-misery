@@ -781,6 +781,17 @@
                 <texture>ui_inGame2_PDA_icon_Place_to_rest_small</texture>
         </ui_pda2_actor_sleep_location_mini_spot>
 
+		<ui_pda2_tent_location hint="st_ui_pda_tent">
+			<level_map spot="ui_pda2_tent_location_spot" />
+			<mini_map spot="ui_pda2_tent_location_mini_spot" />
+		</ui_pda2_tent_location>
+		<ui_pda2_tent_location_spot width="19" height="19" stretch="1" alignment="c" location_level="-1" scale_min="3">
+			<texture>ui_inGame2_PDA_icon_tent</texture>
+		</ui_pda2_tent_location_spot>
+		<ui_pda2_tent_location_mini_spot width="15" height="15" stretch="1" alignment="c" location_level="-1">
+			<texture>ui_inGame2_PDA_icon_tent_small</texture>
+		</ui_pda2_tent_location_mini_spot>
+
         <primary_object>
                 <level_map spot="primary_object_spot"/>
 <!--                <mini_map spot="primary_object_spot_mini"/> -->
@@ -807,34 +818,3 @@
         	<texture>ui_pda2_stask_last_01</texture>
 	    </secondary_task_on_guider_spot>
 </map_spots>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
