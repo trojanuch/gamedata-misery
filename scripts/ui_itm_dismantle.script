@@ -1,0 +1,2800 @@
+--#####################################################################################
+--## dismantle UI, Items refunct mod #### scripting by Plaargath #### for MISERY mod ##
+--#####################################################################################
+
+---------------------------------------------------------------------------------------
+-- thx: tt44, CrommCruac - especially for help with addon-detach, kcs123 for support --
+---------------------------------------------------------------------------------------
+
+--------------------------------------------------
+class "load_item" (CUIListBoxItem)
+function load_item:__init(height) super(height)
+	self.file_name		= "filename"
+	self:SetTextColor(GetARGB(255, 170, 170, 170))
+	self.fn = self:GetTextItem()
+	self.fn:SetFont(GetFontLetterica18Russian())
+	self.fn:SetEllipsis(true)
+end
+function load_item:__finalize()
+end
+--------------------------------------------------
+class "dismantle_ui" (CUIScriptWnd)
+
+function dismantle_ui:__init(owner,section) super()
+	math.randomseed(device():time_global())
+
+	self.owner = owner
+	self.tool = section
+	local ini = ini_file("plugins\\dismantle.ltx")
+
+	-- TOOLS LISTS
+	-- tools: dismantle kits lists
+	self.tools_all_dismantle_kits = alun_utils.collect_section(ini,"tools_all_dismantle_kits",true)
+		self.tools_outfit_dismantlers = alun_utils.collect_section(ini,"tools_outfit_dismantlers",true)
+		self.tools_weapon_dismantlers = alun_utils.collect_section(ini,"tools_weapon_dismantlers",true)
+	self.tools_all_without_kits = alun_utils.collect_section(ini,"tools_all_without_kits",true)
+		self.tools_probabs_group_1 = alun_utils.collect_section(ini,"tools_probabs_group_1",true)
+		self.tools_probabs_group_2 = alun_utils.collect_section(ini,"tools_probabs_group_2",true)
+		self.tools_probabs_group_3 = alun_utils.collect_section(ini,"tools_probabs_group_3",true)
+
+	-- TARGETS LISTS
+	-- targets: helmets lists
+	self.all_helmet_targets = alun_utils.collect_section(ini,"all_helmets_list",true)
+		self.helmet_targets_waste_light = alun_utils.collect_section(ini,"helmet_waste_light",true)
+		self.helmet_targets_waste_heavy = alun_utils.collect_section(ini,"helmet_waste_heavy",true)
+		self.helmet_targets_good = alun_utils.collect_section(ini,"helmet_good_targets",true)
+	self.helmets_hard_all = alun_utils.collect_section(ini,"helmets_all_hard",true)
+		self.helmets_hard_tier1 = alun_utils.collect_section(ini,"helmets_hard_tier1",true)
+		self.helmets_hard_tier2 = alun_utils.collect_section(ini,"helmets_hard_tier2",true)
+	self.helmets_not_hard = alun_utils.collect_section(ini,"helmets_not_hard",true)
+
+	-- targets: outfits lists
+	self.all_outfit_targets = alun_utils.collect_section(ini,"all_outfits_lists",true)
+		self.outfit_targets_light = alun_utils.collect_section(ini,"outfit_light",true)
+		self.outfit_targets_medium = alun_utils.collect_section(ini,"outfit_medium",true)
+		self.outfit_targets_heavy = alun_utils.collect_section(ini,"outfit_heavy",true)
+		self.outfit_targets_ssp = alun_utils.collect_section(ini,"outfit_ssp",true)
+		self.outfit_targets_seva = alun_utils.collect_section(ini,"outfit_seva",true)
+		self.outfit_targets_exo = alun_utils.collect_section(ini,"outfit_exo",true)
+
+	-- targets: firearms lists
+	self.all_firearms_targets = alun_utils.collect_section(ini,"all_wpn_firearms_lists",true)
+		self.weapon_targets_handgun = alun_utils.collect_section(ini,"weapon_handgun",true)
+		self.weapon_targets_smg = alun_utils.collect_section(ini,"weapon_smg",true)
+		self.weapon_targets_smgscope = alun_utils.collect_section(ini,"weapon_smgscope",true)
+		self.weapon_targets_rifle = alun_utils.collect_section(ini,"weapon_rifle",true)
+		self.weapon_targets_riflescope = alun_utils.collect_section(ini,"weapon_riflescope",true)
+		self.weapon_targets_heavy = alun_utils.collect_section(ini,"weapon_heavy",true)
+		self.weapon_targets_heavyscope = alun_utils.collect_section(ini,"weapon_heavyscope",true)
+
+	-- targets: weapon with fixed scopes lists
+	self.all_wpn_fixed_scopes = alun_utils.collect_section(ini,"all_wpn_fixed_scopes",true)
+		self.weapon_has_fixed_scope_wp = alun_utils.collect_section(ini,"fixed_scope_wp",true)
+		self.weapon_has_fixed_scope_wp_special = alun_utils.collect_section(ini,"fixed_scope_wp_special",true)
+		self.weapon_has_fixed_scope_zf = alun_utils.collect_section(ini,"fixed_scope_zf",true)
+		self.weapon_has_fixed_scope_susat = alun_utils.collect_section(ini,"fixed_scope_susat",true)
+		self.weapon_has_fixed_scope_susat_moist = alun_utils.collect_section(ini,"fixed_scope_susat_moist",true)
+		self.weapon_has_fixed_scope_snag = alun_utils.collect_section(ini,"fixed_scope_snag",true)
+		self.weapon_has_fixed_scope_m16 = alun_utils.collect_section(ini,"fixed_scope_m16",true)
+		self.weapon_has_fixed_scope_m24 = alun_utils.collect_section(ini,"fixed_scope_m24",true)
+		self.weapon_has_fixed_scope_ksvk = alun_utils.collect_section(ini,"fixed_scope_ksvk",true)
+		self.weapon_has_fixed_scope_trg = alun_utils.collect_section(ini,"fixed_scope_trg",true)
+		self.weapon_has_fixed_scope_sig_sniper = alun_utils.collect_section(ini,"fixed_scope_sig_sniper",true)
+		self.weapon_has_fixed_scope_fnfalpara = alun_utils.collect_section(ini,"fixed_scope_fnfalpara",true)
+		self.weapon_has_fixed_scope_rpg7 = alun_utils.collect_section(ini,"fixed_scope_rpg7",true)
+
+	-- targets: weapons with fixed silencers lists
+	self.all_wpn_fixed_silencers = alun_utils.collect_section(ini,"all_wpn_fixed_silencers",true)
+		self.weapon_has_fixed_silencer_9x18 = alun_utils.collect_section(ini,"fixed_silencer_9x18",true)
+		self.weapon_has_fixed_silencer_9x39 = alun_utils.collect_section(ini,"fixed_silencer_9x39",true)
+		self.weapon_has_fixed_silencer_svu = alun_utils.collect_section(ini,"fixed_silencer_svu",true)
+
+	-- targets: weapons with fixed grenade launchers lists
+	self.all_wpn_fixed_grndlnch = alun_utils.collect_section(ini,"all_wpn_fixed_grndlnch",true)
+		self.weapon_has_fixed_grndlnch_east = alun_utils.collect_section(ini,"fixed_grndlnch_east",true)
+		self.weapon_has_fixed_grndlnch_west = alun_utils.collect_section(ini,"fixed_grndlnch_west",true)
+
+	-- targets: weapons - not firearms: knives and gauss guns lists
+	self.weapon_targets_gauss = alun_utils.collect_section(ini,"weapon_gauss",true)
+	self.weapon_targets_knives = alun_utils.collect_section(ini,"wpn_knives_list",true)
+
+	-- targets: weapon-related: explosives, wpn_addons lists
+	self.all_wpn_related_targets = alun_utils.collect_section(ini,"all_wpn_related_targets",true)
+		self.targets_explo = alun_utils.collect_section(ini,"explo_targets",true)
+		self.all_wpn_addon_targets = alun_utils.collect_section(ini,"all_wpn_addon_targets",true)
+			self.addon_targets_grndlnch = alun_utils.collect_section(ini,"addon_grndlnch_targets",true)
+			self.addon_targets_nightscope = alun_utils.collect_section(ini,"addon_nightscope_targets",true)
+
+	-- targets: outfit-related: boots, camelback, electric belt devices lists
+	self.all_outftit_related_targets = alun_utils.collect_section(ini,"all_outftit_related_targets",true)
+		self.outfitlike_trgts = alun_utils.collect_section(ini,"outfitlike_targets",true)
+		self.targets_electr_belt = alun_utils.collect_section(ini,"electric_belt_items",true)
+
+	-- targets: detectors and other electric devices lists
+	self.all_electric_items = alun_utils.collect_section(ini,"all_electric_items",true)
+		self.targets_detectors = alun_utils.collect_section(ini,"detectors",true)
+		self.targets_electric_all_tiers = alun_utils.collect_section(ini,"electric_items_all_tiers",true)
+			self.targets_electric_tier1 = alun_utils.collect_section(ini,"electric_items_tier1",true)
+			self.targets_electric_tier2 = alun_utils.collect_section(ini,"electric_items_tier2",true)
+			self.targets_electric_tier3 = alun_utils.collect_section(ini,"electric_items_tier3",true)
+			self.targets_electric_tier4 = alun_utils.collect_section(ini,"electric_items_tier4",true)
+
+	-- targets: aux tool needed
+	self.both_outfit_outfitlike_aux = alun_utils.collect_section(ini,"both_outfit_groups_for_aux",true)
+
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function dismantle_ui:__finalize()
+end
+
+function dismantle_ui:FillTargetsList()
+	self.list_box_trgts:RemoveAll()
+
+	local function choose_targets(actor,obj)
+		if (obj) then
+			local tool = self.tool
+			local trgt_sec = obj:section()
+			if (self.tools_outfit_dismantlers[tool]) then
+				if (self.all_outfit_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_helmet_targets[trgt_sec]) then -- aux (axe) needed (for: hard tier)
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfitlike_trgts[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+			end
+			if (self.tools_weapon_dismantlers[tool]) then
+				if (self.all_firearms_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.weapon_targets_gauss[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_wpn_related_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+			end
+			if (tool == "hammer_inv") then
+				if (self.all_outfit_targets[trgt_sec]) then -- aux needed
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_firearms_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_helmet_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.weapon_targets_gauss[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_wpn_addon_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_outftit_related_targets[trgt_sec]) then -- aux needed (for: outfitlike)
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_electric_items[trgt_sec]) then
+					if trgt_sec == "wpn_binoc_inv" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					elseif trgt_sec == "wpn_upd" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+			end
+			if (tool == "crowbar") then
+				if (self.all_outfit_targets[trgt_sec]) then -- aux needed
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_firearms_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_helmet_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.weapon_targets_gauss[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_wpn_addon_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_outftit_related_targets[trgt_sec]) then -- aux needed (for: outfitlike)
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_electric_items[trgt_sec]) then
+					if trgt_sec == "wpn_binoc_inv" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					elseif trgt_sec == "wpn_upd" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+			end
+			if (tool == "swiss_sharp") then
+				if (self.outfit_targets_light[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_medium[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_heavy[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_seva[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_ssp[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_firearms_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_helmet_targets[trgt_sec]) then -- aux (axe) needed (for: hard tier)
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.weapon_targets_gauss[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_outftit_related_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_wpn_related_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_electric_items[trgt_sec]) then
+					if trgt_sec == "wpn_binoc_inv" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					elseif trgt_sec == "wpn_upd" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+			end
+			if (tool == "cutlery_sharp") then
+				if (self.outfit_targets_light[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_medium[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_firearms_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_helmet_targets[trgt_sec]) then -- aux (axe) needed (for: hard tier)
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.weapon_targets_gauss[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_outftit_related_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_wpn_related_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.targets_detectors[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.targets_electric_tier1[trgt_sec]) then
+					if trgt_sec == "wpn_binoc_inv" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+				if (self.targets_electric_tier3[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.targets_electric_tier4[trgt_sec]) then
+					if trgt_sec == "wpn_upd" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+			end
+			if (tool == "shovel_mili_sharp") then
+				if (self.outfit_targets_light[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_medium[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_heavy[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_seva[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_firearms_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_helmet_targets[trgt_sec]) then -- aux (axe) possible (for: hard tier)
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.weapon_targets_gauss[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_wpn_addon_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_outftit_related_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_electric_items[trgt_sec]) then
+					if trgt_sec == "wpn_binoc_inv" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					elseif trgt_sec == "wpn_upd" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+			end
+			if (tool == "shovel_old_sharp") then
+				if (self.outfit_targets_light[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_medium[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfit_targets_heavy[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_firearms_targets[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_helmet_targets[trgt_sec]) then -- aux (axe) needed (for: hard tier)
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.weapon_targets_gauss[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.all_wpn_addon_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_outftit_related_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_electric_items[trgt_sec]) then
+					if trgt_sec == "wpn_binoc_inv" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					elseif trgt_sec == "wpn_upd" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+			end
+			if (tool == "grooming_sharp") then
+				if (self.outfit_targets_light[trgt_sec]) then
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.helmets_hard_all[trgt_sec]) then -- aux (axe) needed
+					local con = obj:condition()
+					self:AddItemToList(obj,self.list_box_trgts,con)
+				end
+				if (self.outfitlike_trgts[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.all_wpn_addon_targets[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.targets_electric_tier1[trgt_sec]) then
+					if trgt_sec == "wpn_binoc_inv" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+				if (self.targets_electric_tier3[trgt_sec]) then
+					self:AddItemToList(obj,self.list_box_trgts)
+				end
+				if (self.targets_electric_tier4[trgt_sec]) then
+					if trgt_sec == "wpn_upd" then
+						local con = obj:condition()
+						self:AddItemToList(obj,self.list_box_trgts,con)
+					else
+						self:AddItemToList(obj,self.list_box_trgts)
+					end
+				end
+			end
+		end
+	end
+
+	db.actor:iterate_inventory(choose_targets,db.actor)
+
+	if self.list_box_trgts:GetSize() == 0 then
+		self.caption_trgts:SetText(game.translate_string("st_dismantle_ui_no_trgts"))
+		self.ui_futile_no_trgts_override = true
+	end
+end
+
+function dismantle_ui:InitControls()
+	self:SetWndRect(Frect():set(0,0,1024,768))
+	self:SetAutoDelete(true)
+	self.xml = CScriptXmlInit()
+	local ctrl
+	self.xml:ParseFile("ui_itm_main.xml")
+	ctrl = CUIWindow()
+	self.xml:InitWindow("dismantle:file_item:main",0,ctrl)
+	self.file_item_main_sz = vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
+	self.xml:InitWindow("dismantle:file_item:fn",0,ctrl)
+	self.file_item_fn_sz = vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
+	self.xml:InitWindow("dismantle:file_item:fd",0,ctrl)
+	self.file_item_fd_sz = vector2():set(ctrl:GetWidth(),ctrl:GetHeight())
+	self.form = self.xml:InitStatic("dismantle:form",self)
+	self.form:SetWndPos(vector2():set(0, 0))
+
+	-- icons
+	self.icon_trgt = self.xml:InitStatic("dismantle:form:icon_trgt",self.form)
+	-- tools name
+	local tool_name = game.translate_string(alun_utils.read_from_ini(nil,self.tool,"inv_name","string","error"))
+	self.caption_tool = self.xml:InitTextWnd("dismantle:form:caption_tool",self.form)
+	self.caption_tool:SetText(tool_name)
+	-- targets title
+	self.caption_trgts_title = self.xml:InitTextWnd("dismantle:form:caption_trgts_title",self.form)
+	self.caption_trgts_title:SetText(game.translate_string("st_dismantle_ui_caption_trgts_title"))
+	-- tool icon
+	self.uiic = self.xml:InitStatic("dismantle:form:icon_tool",self.form)
+	local inv_grid_width = alun_utils.read_from_ini(ini,self.tool,"inv_grid_width","float",0)
+	local inv_grid_height = alun_utils.read_from_ini(ini,self.tool,"inv_grid_height","float",0)
+	local inv_grid_x = alun_utils.read_from_ini(ini,self.tool,"inv_grid_x","float",0)
+	local inv_grid_y = alun_utils.read_from_ini(ini,self.tool,"inv_grid_y","float",0)
+	local x1 = inv_grid_x*50
+	local y1 = inv_grid_y*50
+	local w = inv_grid_width*50
+	local h = inv_grid_height*50
+	local x2 = x1 + w
+	local y2 = y1 + h
+	local w,h = w,h
+	if (utils.is_widescreen()) then
+		w,h = w/1.2,h/1
+	else
+		w,h = w/1,h/1
+	end
+	self.uiic:InitTexture("ui\\ui_icon_equipment")
+	self.uiic:SetTextureRect(Frect():set(x1,y1,x2,y2))
+	self.uiic:SetWndSize(vector2():set(w,h))
+	if not (self.uiic.x) then
+		local pos = self.uiic:GetWndPos()
+		local posform = self.form:GetWndPos()
+		self.uiic.x = pos.x + posform.x
+		self.uiic.y = pos.y + posform.y
+	end
+	self.uiic:SetWndPos(vector2():set(self.uiic.x-w/2, self.uiic.y-h/2))
+
+	-- captions
+	-- target caption
+	self.caption_trgts = self.xml:InitTextWnd("dismantle:form:caption_trgts",self.form)
+	self.list_box_trgts = self.xml:InitListBox("dismantle:form:list_trgts",self.form)
+	local frame = self.xml:InitFrame("dismantle:form:list_frame_trgts",self.form)
+	self.list_box_trgts:ShowSelectedItem(true)
+	self:Register(self.list_box_trgts,"list_window_trgts")
+	-- hint captions
+	self.caption_left_inner_title = self.xml:InitTextWnd("dismantle:form:caption_left_inner_title",self.form)
+	self.caption_warning = self.xml:InitTextWnd("dismantle:form:caption_warning",self.form)
+	self.caption_aux_title = self.xml:InitTextWnd("dismantle:form:caption_aux_title",self.form)
+	self.caption_aux = self.xml:InitTextWnd("dismantle:form:caption_aux",self.form)
+
+	-- buttons
+	ctrl = self.xml:Init3tButton("dismantle:form:btn_ok",self.form)
+	self:Register(ctrl,"button_ok")
+	ctrl = self.xml:Init3tButton("dismantle:form:btn_cancel",self.form)
+	self:Register(ctrl,"button_back")
+end
+
+function dismantle_ui:InitCallBacks()
+	self:AddCallback("button_ok",			ui_events.BUTTON_CLICKED,			self.OnButton_ok,				self)
+	self:AddCallback("button_back",			ui_events.BUTTON_CLICKED,			self.OnButton_back_clicked,		self)
+	self:AddCallback("list_window",			ui_events.LIST_ITEM_CLICKED,		self.OnListItemClicked,			self)
+	self:AddCallback("list_window",			ui_events.WINDOW_LBUTTON_DB_CLICK,	self.OnListItemDbClicked,		self)
+	self:AddCallback("list_window_trgts",	ui_events.LIST_ITEM_CLICKED,		self.OnTargetsListItemClicked,	self)
+	self:AddCallback("list_window_trgts",	ui_events.WINDOW_LBUTTON_DB_CLICK,	self.OnTargetsListItemDbClicked,self)
+end
+
+function dismantle_ui:ShowAuxTool(scope,trgt_sec)
+	if scope ~= true then self.caption_left_inner_title:SetText("") end
+	self.caption_aux_title:SetText("")
+	self.caption_aux:SetText("")
+
+	local need_aux, aux_axe_yes, aux_knife_yes
+
+	if self.helmets_hard_all[trgt_sec] then
+		if (not self.tools_probabs_group_1[self.tool]) then
+			need_aux = true
+			if itms_refunct.choose_axe("dismantle") then aux_axe_yes = true end
+		end
+	end
+	if self.tools_probabs_group_1[self.tool] then
+		if self.both_outfit_outfitlike_aux[trgt_sec] then
+			need_aux = true
+			if itms_refunct.choose_knife("dismantle") then aux_knife_yes = true end
+			if itms_refunct.choose_axe("dismantle") then aux_axe_yes = true end
+		end
+	end
+
+	if need_aux then
+		if aux_knife_yes then
+			if not scope then
+				self.caption_left_inner_title:SetText(game.translate_string("st_dismantle_ui_is_aux_left"))
+			end
+			self.caption_aux_title:SetText(game.translate_string("st_dismantle_ui_is_aux_title"))
+			local aux_obj_knife = itms_refunct.choose_knife("dismantle")
+			self.caption_aux:SetText(game.translate_string(alun_utils.read_from_ini(nil,aux_obj_knife:section(),"inv_name","string","error")))
+		elseif aux_axe_yes then
+			if not scope then
+				self.caption_left_inner_title:SetText(game.translate_string("st_dismantle_ui_is_aux_left"))
+			end
+			self.caption_aux_title:SetText(game.translate_string("st_dismantle_ui_is_aux_title"))
+			local aux_obj_axe = itms_refunct.choose_axe("dismantle")
+			self.caption_aux:SetText(game.translate_string(alun_utils.read_from_ini(nil,aux_obj_axe:section(),"inv_name","string","error")))
+		else
+			self.caption_left_inner_title:SetText(game.translate_string("st_dismantle_ui_need_aux_left"))
+			self.caption_trgts:SetText(game.translate_string(""))
+		end
+	end
+end
+
+function dismantle_ui:OnTargetsListItemClicked()
+	if self.list_box_trgts:GetSize()==0 then return end
+
+	local item = self.list_box_trgts:GetSelectedItem()
+
+	if not (item) then
+		self.icon_trgt:SetTextureRect(Frect():set(0,0,0,0))
+		self.caption_trgts:SetText("")
+		return
+	end
+
+	local se_item = item.item_id and alife():object(item.item_id)
+	if (se_item == nil or not db.actor:object(se_item:section_name())) then
+		self.list_box_trgts:RemoveItem(item)
+		return
+	end
+
+	local sec = se_item:section_name()
+	local w,h = item.width,item.height
+	if (utils.is_widescreen()) then
+		w,h = item.width/1.2,item.height/1
+	else
+		w,h = item.width/1,item.height/1
+	end
+	if item.width > 299 then
+		w,h = w*0.66,h*0.66
+	elseif item.width > 199 then
+		w,h = w*0.85,h*0.85
+	end
+	if item.height > 149 then
+		w,h = w*0.66,h*0.66
+	end
+	self.icon_trgt:InitTexture("ui\\ui_icon_equipment")
+	self.icon_trgt:SetTextureRect(Frect():set(item.x1,item.y1,item.x2,item.y2))
+	self.icon_trgt:SetWndSize(vector2():set(w,h))
+
+	if not (self.icon_trgt.x) then
+		local pos = self.icon_trgt:GetWndPos()
+		self.icon_trgt.x = pos.x
+		self.icon_trgt.y = pos.y
+	end
+	self.icon_trgt:SetWndPos(vector2():set(self.icon_trgt.x-w/2, self.icon_trgt.y-h/2))
+
+	if not self.ui_futile_no_trgts_override then
+		self.caption_trgts:SetText(game.translate_string("st_dismantle_ui_hint1"))
+	end
+
+	self.caption_left_inner_title:SetText("")
+	self.caption_warning:SetText("")
+	self.caption_aux:SetText("")
+
+	-- scope warning + aux feedback call      --// scope warning is to be removed after finishing dismantle_ui:RecognizeScope(wpn) //--
+	if self.all_firearms_targets[sec] then
+		local item_by_id = level.object_by_id(item.item_id)
+		local trgt = alife():object(item_by_id:id())
+		local wpn_data = stpk_utils.get_weapon_data(trgt)
+		local addon_flags = wpn_data.addon_flags
+		for i = 1,7,2 do
+			if addon_flags == i then
+				self.caption_left_inner_title:SetText(game.translate_string("st_dismantle_ui_warning_title"))
+				self.caption_warning:SetText(game.translate_string("st_dismantle_ui_warning"))
+			end
+		end
+		self:ShowAuxTool(true,sec)
+	else
+		self:ShowAuxTool(false,sec)
+	end
+end
+
+function dismantle_ui:OnTargetsListItemDbClicked()
+	self:OnButton_ok()
+end
+
+function dismantle_ui:OnButton_back_clicked()
+	give(self.tool)
+	self.ui_futile_no_trgts_override = nil
+	if self:IsShown() then self:HideDialog() end
+end
+
+function dismantle_ui:OnKeyboard(dik, keyboard_action)
+	local bind = dik_to_bind(dik)
+	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
+		if (bind ~= key_bindings.kUSE) and (dik ~= nil) and (dik ~= DIK_keys.MOUSE_1) then
+			self:OnButton_back_clicked()
+		elseif (bind == key_bindings.kUSE) then
+			self:OnButton_ok()
+		end
+	end
+	return true
+end
+
+function dismantle_ui:RecognizeAmmo(wpn,ammo_type)
+	local ammo
+	local wpn_sec = wpn:section_name()
+	local ammo_for_wpns = {
+		["ammo_9x18"] 		= {"wpn_aps", "wpn_pb", "wpn_personal_1", "wpn_pm", "wpn_pm_actor", "wpn_pm_custom", "wpn_pm_alt", "wpn_pm_worn", "wpn_fort", "wpn_fort_custom", "wpn_fort_camo", "wpn_fort_rusty", "wpn_fort_worn", "wpn_fort_snag", "wpn_oc33", "wpn_ppsh41", "wpn_ppsh41_woodnew", "wpn_ppsh41_woodworn", "wpn_ppsh41_rednew", "wpn_ppsh41_redworn", "wpn_scorpion", "wpn_scorpion_camo", "wpn_tt33"},
+		["ammo_9x19"] 		= {"wpn_beretta", "wpn_beretta_custom", "wpn_beretta_alt", "wpn_beretta_camo", "wpn_beretta_worn", "wpn_gsh18", "wpn_hpsa", "wpn_hpsa_custom", "wpn_hpsa_alt", "wpn_hpsa_camo", "wpn_hpsa_worn", "wpn_mp5", "wpn_mp5_custom", "wpn_mp5_alt", "wpn_mp5_worn", "wpn_walther", "wpn_walther_custom", "wpn_walther_alt1", "wpn_walther_alt2", "wpn_walther_worn"},
+		["ammo_11.43"] 		= {"wpn_colt1911", "wpn_colt1911_camo", "wpn_colt1911_alt1", "wpn_colt1911_alt2", "wpn_colt1911_worn", "wpn_ump45", "wpn_mp5_nimble", "wpn_sig220", "wpn_sig220_nimble", "wpn_sig220_custom", "wpn_sig220_camo", "wpn_sig220_worn", "wpn_sig220_rusty", "wpn_usp", "wpn_usp_nimble", "wpn_usp_custom", "wpn_usp_alt1", "wpn_usp_alt2", "wpn_usp_worn"},
+		["ammo_5.45x39"] 	= {"wpn_abakan", "wpn_abakan_custom", "wpn_abakan_alt", "wpn_abakan_camo", "wpn_abakan_worn", "wpn_abakan_rusty", "wpn_ak105", "wpn_ak74", "wpn_ak74_custom1", "wpn_ak74_custom2", "wpn_ak74_alt", "wpn_ak74_camo", "wpn_ak74_worn", "wpn_ak74_rusty", "wpn_aks74_cobra", "wpn_ak74u", "wpn_ak74u_custom", "wpn_ak74u_camo", "wpn_ak74u_worn", "wpn_ak74u_rusty", "wpn_ak74u_snag", "wpn_rpk74", "wpn_ak47", "wpn_ak47_camo", "wpn_ak47_worn", "wpn_ak47_rusty"},
+		["ammo_5.56x45"] 	= {"wpn_aug", "wpn_far15", "wpn_famas3", "wpn_fn2000", "wpn_fn2000_custom", "wpn_fn2000_alt1", "wpn_fn2000_alt2", "wpn_fn2000_alt3", "wpn_fn2000_worn", "wpn_fn2000_nimble", "wpn_fr2000", "wpn_g36", "wpn_g36_custom", "wpn_g36_nimble", "wpn_l85", "wpn_l85_custom", "wpn_l85_camo", "wpn_l85_worn", "wpn_lr300", "wpn_lr300_custom", "wpn_lr300_alt", "wpn_lr300_camo", "wpn_lr300_worn", "wpn_m16a1", "wpn_m4a1", "wpn_sig550", "wpn_sig550_luckygun", "wpn_sig550_sniper", "wpn_sig550_custom", "wpn_sig550_alt", "wpn_sig550_worn", "wpn_sig552", "wpn_xm8"},
+		["ammo_9x39_pab9"] 	= {"wpn_groza", "wpn_val", "wpn_vintorez", "wpn_vintorez_nimble", "wpn_vsk94"},
+		["ammo_12x7x"] 		= {"wpn_bm16_full", "wpn_bm16", "wpn_bm16_gold", "wpn_bm16_worn", "wpn_bm16_rusty", "wpn_bm16_silver", "wpn_mossberg", "wpn_protecta", "wpn_protecta_custom", "wpn_protecta_camo", "wpn_protecta_worn", "wpn_protecta_nimble", "wpn_saiga", "wpn_spas12", "wpn_spas12_nimble", "wpn_spas12_custom", "wpn_spas12_alt", "wpn_spas12_worn", "wpn_toz34", "wpn_toz34_new", "wpn_toz34_worn", "wpn_toz34_decor", "wpn_toz34_alt", "wpn_wincheaster1300", "wpn_wincheaster1300_trapper", "wpn_wincheaster1300_camo", "wpn_wincheaster1300_alt", "wpn_wincheaster1300_worn", "wpn_wincheaster1300_rusty"},
+		["ammo_7.62x39"] 	= {"wpn_aek973", "wpn_ak47m", "wpn_ak47m_modern", "wpn_ak47m_camo", "wpn_ak47m_alt", "wpn_ak47m_worn", "wpn_ak47m_custom", "wpn_groza_nimble", "wpn_sako", "wpn_sks", "wpn_sks_modern", "wpn_akm_freedom", "wpn_akm_dolg", "wpn_akms", "wpn_akms_camo", "wpn_akms_mono", "wpn_akms_worn", "wpn_akms_merc"},
+		["ammo_7.92x33_fmj"]= {"wpn_g43", "wpn_k98", "wpn_stg44", "wpn_stg44_new", "wpn_stg44_alt", "wpn_stg44_old", "wpn_stg44_worn"},
+		["ammo_7.62x51"] 	= {"wpn_fnfal", "wpn_fnfallelcan", "wpn_fnfallelcan_custom", "wpn_fnfallelcan_modern", "wpn_fnfallelcan_camo", "wpn_galil", "wpn_m21"},
+		["ammo_12.7x108"] 	= {"wpn_ksvk"},
+		["ammo_magnum"] 	= {"wpn_m24", "wpn_trg"},
+		["ammo_357_hp_mag"] = {"wpn_desert_eagle", "wpn_desert_eagle_custom", "wpn_desert_eagle_alt", "wpn_desert_eagle_camo", "wpn_desert_eagle_worn", "wpn_desert_eagle_nimble", "wpn_gp100", "wpn_mp412"},
+		["ammo_7.62x54"] 	= {"wpn_svd", "wpn_svd_nimble", "wpn_svd_alt", "wpn_svd_ghillie", "wpn_svu", "wpn_svu_nimble"},
+		["ammo_7.62x54_ap"] = {"wpn_m1891", "wpn_m1891_alt", "wpn_obrez"}, -- don't add PKM's here
+		["ammo_pkm"] 		= {"wpn_pkm", "wpn_pkm_zulus"},
+		["ammo_og-7b"] 		= {"wpn_rpg7"},
+		["ammo_vog"] 		= {"wpn_rg-6"},
+		["ammo_m209"] 		= {},
+		["ammo_gauss"] 		= {"wpn_gauss", "pri_a17_gauss_rifle"}
+	}
+
+	for k, v in pairs(ammo_for_wpns) do
+		for i = 1, #v do
+			if v[i] == wpn_sec then
+				ammo = k
+			end
+		end
+	end
+
+	local ammo_types = {
+		["ammo_9x18"] 		= {"ammo_9x18_fmj", 		"ammo_9x18_pmm", 		"ammo_9x18_ap"},
+		["ammo_9x19"] 		= {"ammo_9x19_fmj", 		"ammo_9x19_pbp", 		"ammo_9x19_ap"},
+		["ammo_11.43"] 		= {"ammo_11.43x23_fmj", 	"ammo_11.43x23_hydro", 	"ammo_11.43x23_ap"},
+		["ammo_5.45x39"] 	= {"ammo_5.45x39_fmj", 		"ammo_5.45x39_ap"},
+		["ammo_5.56x45"] 	= {"ammo_5.56x45_ss190", 	"ammo_5.56x45_ap"},
+		["ammo_9x39_pab9"] 	= {"ammo_9x39_pab9", 		"ammo_9x39_ap"},
+		["ammo_12x7x"] 		= {"ammo_12x70_buck", 		"ammo_12x76_zhekan"},
+		["ammo_7.62x39"] 	= {"ammo_7.62x39_fmj", 		"ammo_7.62x39_ap"},
+		["ammo_7.92x33_fmj"]= {"ammo_7.92x33_fmj", 		"ammo_7.92x33_ap"},
+		["ammo_7.62x51"] 	= {"ammo_7.62x51_fmj", 		"ammo_7.62x51_ap"},
+		["ammo_12.7x108"] 	= {"ammo_12.7x108_ap", 		"ammo_12.7x108_fmj"},
+		["ammo_magnum"] 	= {"ammo_magnum_300", 		"ammo_magnum_300_ap"},
+		["ammo_357_hp_mag"] = {"ammo_357_hp_mag", 		"ammo_357_hp_mag_ap"},
+		["ammo_7.62x54"] 	= {"ammo_7.62x54_7h1", 		"ammo_7.62x54_7h14"},
+		["ammo_7.62x54_ap"] = {"ammo_7.62x54_ap"},
+		["ammo_og-7b"] 		= {"ammo_og-7b"},
+		["ammo_pkm"] 		= {"ammo_pkm_100"},
+		["ammo_vog"] 		= {"ammo_vog-25"},
+		["ammo_m209"] 		= {"ammo_m209"},
+		["ammo_gauss"] 		= {"ammo_gauss", 			"ammo_gauss_cardan"}
+	}
+
+	for k, v in pairs(ammo_types) do
+		if k == ammo then
+			if ammo_type == 0 then
+				return v[1]
+			elseif ammo_type == 1 then
+				return v[2]
+			elseif ammo_type == 2 then
+				return v[3]
+			end
+		end
+	end
+end
+
+function dismantle_ui:RecognizeSilencer(wpn)
+	local wpn_sec = wpn:section_name()
+
+	local silencers_for_wpns = {
+		["wpn_addon_silencer"] = {"wpn_far15", "wpn_gp100"},
+		["wpn_addon_silencer_svu"] = {"wpn_svu"},
+		["wpn_addon_silencer_9x18"] = {"wpn_aps", "wpn_fort", "wpn_fort_custom", "wpn_fort_camo", "wpn_oc33", "wpn_pm", "wpn_pm_actor", "wpn_pm_custom", "wpn_pm_alt", "wpn_ppsh41", "wpn_ppsh41_woodnew", "wpn_ppsh41_rednew", "wpn_scorpion", "wpn_scorpion_camo", "wpn_tt33"},
+		["wpn_addon_silencer_9x19"] = {"wpn_hpsa", "wpn_hpsa_custom", "wpn_hpsa_alt", "wpn_hpsa_camo", "wpn_mp5", "wpn_mp5_nimble", "wpn_mp5_custom", "wpn_mp5_alt"},
+		["wpn_addon_silencer_9x39"] = {"wpn_groza", "wpn_groza_nimble", "wpn_groza_specops", "wpn_saiga"},
+		["wpn_addon_silencer_545x39"] = {"wpn_abakan","wpn_abakan_custom", "wpn_abakan_alt", "wpn_abakan_camo", "wpn_ak105", "wpn_ak47", "wpn_ak47_camo", "wpn_ak74", "wpn_ak74_custom1", "wpn_ak74_custom2", "wpn_ak74_alt", "wpn_ak74_camo", "wpn_ak74u", "wpn_ak74u_custom", "wpn_ak74u_camo", "wpn_ak74u_snag", "wpn_aks74_cobra", "wpn_rpk74"},
+		["wpn_addon_silencer_556x45"] = {"wpn_aug", "wpn_famas3", "wpn_fn2000", "wpn_fn2000_custom", "wpn_fn2000_alt1", "wpn_fn2000_alt2", "wpn_fn2000_alt3", "wpn_fn2000_nimble", "wpn_fr2000", "wpn_g36", "wpn_g36_custom", "wpn_g36_nimble", "wpn_lr300", "wpn_lr300_custom", "wpn_lr300_alt", "wpn_lr300_camo", "wpn_m16a1", "wpn_m4a1", "wpn_sig550", "wpn_sig550_luckygun", "wpn_sig550_sniper", "wpn_sig550_custom", "wpn_sig550_alt", "wpn_sig552", "wpn_xm8"},
+		["wpn_addon_silencer_762x39"] = {"wpn_aek973", "wpn_ak47m", "wpn_ak47m_modern", "wpn_ak47m_camo", "wpn_ak47m_alt", "wpn_ak47m_custom", "wpn_akms", "wpn_akm_dolg", "wpn_akm_freedom", "wpn_akms_merc", "wpn_akms_mono", "wpn_sako", "wpn_sks", "wpn_sks_modern", "wpn_stg44", "wpn_stg44_new", "wpn_stg44_alt"},
+		["wpn_addon_silencer_762x51"] = {"wpn_fnfal", "wpn_fnfallelcan", "wpn_fnfallelcan_custom", "wpn_fnfallelcan_modern", "wpn_fnfallelcan_camo", "wpn_galil"},
+		["wpn_addon_silencer_762x54"] = {"wpn_k98", "wpn_m24"},
+		["wpn_addon_silencer_1143x23"] = {"wpn_colt1911", "wpn_colt1911_camo", "wpn_colt1911_alt1", "wpn_colt1911_alt2", "wpn_desert_eagle","wpn_desert_eagle_custom", "wpn_desert_eagle_alt", "wpn_desert_eagle_camo", "wpn_desert_eagle_nimble", "wpn_sig220", "wpn_sig220_nimble", "wpn_sig220_custom", "wpn_sig220_camo", "wpn_trg", "wpn_ump45", "wpn_usp", "wpn_usp_nimble", "wpn_usp_custom", "wpn_usp_alt1", "wpn_usp_alt2"}
+		}
+
+	for k, v in pairs(silencers_for_wpns) do
+		for _, i in pairs(v) do
+			if i == wpn_sec then
+				return k
+			end
+		end
+	end
+end
+
+function dismantle_ui:RecognizeGrndlnchr(wpn)
+	local wpn_sec = wpn:section_name()
+
+	local grndlnchrs_for_wpn = {
+	["wpn_addon_grenade_launcher"] = {"wpn_aek973", "wpn_abakan_custom", "wpn_ak105", "wpn_ak47", "wpn_ak47_camo", "wpn_ak47m", "wpn_ak47m_modern", "wpn_ak47m_camo", "wpn_ak47m_alt", "wpn_ak47m_worn", "wpn_ak47m_custom", "wpn_ak47_rusty", "wpn_ak47_worn", "wpn_ak74", "wpn_ak74_custom1", "wpn_ak74_custom2", "wpn_ak74_alt", "wpn_ak74_camo", "wpn_ak74_worn", "wpn_ak74_rusty", "wpn_akm_dolg", "wpn_akm_freedom", "wpn_akms", "wpn_akms_merc", "wpn_akms_mono", "wpn_aks74_cobra"},
+	["wpn_addon_grenade_launcher_m203"] = {"wpn_famas3", "wpn_far15", "wpn_fnfal", "wpn_fnfallelcan", "wpn_fnfallelcan_custom", "wpn_fnfallelcan_modern", "wpn_fnfallelcan_camo", "wpn_g36", "wpn_g36_custom", "wpn_g36_nimble", "wpn_l85", "wpn_l85_custom", "wpn_l85_camo", "wpn_l85_worn", "wpn_lr300", "wpn_lr300_custom", "wpn_lr300_alt", "wpn_lr300_camo", "wpn_lr300_worn", "wpn_m4a1", "wpn_sig550", "wpn_sig550_luckygun", "wpn_sig550_custom", "wpn_sig550_alt", "wpn_sig550_worn", "wpn_sig552"}
+	}
+
+	for k, v in pairs(grndlnchrs_for_wpn) do
+		for _, i in pairs(v) do
+			if i == wpn_sec then
+				return k
+			end
+		end
+	end
+end
+
+function dismantle_ui:RecognizeScope(wpn) -- // not ready for this release //
+	-- this function is not called anywhere, it is not ready
+	-- nothing          0
+	-- sco only         1
+	-- gre only         2
+	-- gre + sco        3
+	-- sil only         4
+	-- sil + sco        5
+	-- sil + gre        6
+	-- sil + gre + sco  7
+	-- sco 				1 3 5 7
+	-- gre 				2 3 6 7
+	-- sil 				4 5 6 7
+	local scope
+	local wpn_sec = wpn:section_name()
+
+	local scopes_for_wpns = {
+		["scopes_wp"] = {"wpn_abakan", "wpn_abakan_custom", "wpn_abakan_alt", "wpn_abakan_camo", "wpn_abakan_worn", "wpn_abakan_rusty", "wpn_aek973", "wpn_ak47m", "wpn_ak47m_modern", "wpn_ak47m_camo", "wpn_ak47m_alt", "wpn_ak47m_worn", "wpn_ak47m_custom", "wpn_ak74", "wpn_ak74_custom1","wpn_ak74_custom2", "wpn_ak74_alt", "wpn_ak74_camo", "wpn_ak74_worn", "wpn_ak74_rusty", "wpn_sako", "wpn_ak105", "wpn_saiga", "wpn_svd_alt", "wpn_val", "wpn_vsk94", "wpn_groza", "wpn_groza_nimble", "wpn_groza_specops", "wpn_akms", "wpn_akm_dolg", "wpn_akm_freedom", "wpn_akms_worn", "wpn_ak47", "wpn_ak47_camo ", "wpn_akms_mono", "wpn_ak47_worn", "wpn_akms_merc"},
+		["scopes_susat"] = {"wpn_fnfallelcan", "wpn_fnfallelcan_custom", "wpn_fnfallelcan_modern", "wpn_fnfallelcan_camo", "wpn_protecta", "wpn_protecta_custom", "wpn_protecta_camo", "wpn_protecta_worn", "wpn_protecta_nimble", "wpn_sig550", "wpn_sig550_luckygun", "wpn_sig550_custom", "wpn_sig550_alt", "wpn_sig550_worn", "wpn_lr300", "wpn_lr300_custom", "wpn_lr300_alt", "wpn_lr300_camo", "wpn_lr300_worn"},
+		["scopes_ww2"] = {"wpn_stg44", "wpn_stg44_new", "wpn_stg44_alt", "wpn_stg44_old", "wpn_stg44_worn", "wpn_k98", "wpn_m1891", "wpn_m1891_alt"},
+		["scopes_acog"] = {"wpn_famas3", "wpn_sks", "wpn_sks_modern", "wpn_ump45", "wpn_galil", "wpn_m4a1"},
+		["scopes_special"]= {}
+		}
+
+	local scopes_for_scope_family = {
+		["scopes_wp"] = {"wpn_addon_scope", "wpn_addon_scope_moist", "wpn_addon_scope_worn", "wpn_addon_scope_x2.7", "wpn_addon_scope_detector", "wpn_addon_scope_night"},
+		["scopes_susat"] = {"wpn_addon_scope_susat", "wpn_addon_scope_susat_moist", "wpn_addon_scope_susat_worn", "wpn_addon_scope_susat_x1.6", "wpn_addon_scope_susat_custom", "wpn_addon_scope_susat_dusk", "wpn_addon_scope_susat_night"},
+		["scopes_acog"] = {"wpn_addon_scope_acog", "wpn_addon_scope_acog_night", "wpn_addon_scope_acog_trijicon"},
+		["scopes_zf"]= {"wpn_addon_scope_zf4", "wpn_addon_scope_zf4_moist", "wpn_addon_scope_zf4_worn"},
+		["scopes_ww2"] = {"wpn_addon_scope_ww2", "wpn_addon_scope_ww2_moist", "wpn_addon_scope_ww2_worn"},
+		["scopes_wp_vsk"] = {"wpn_addon_scope_vsk"},
+		["scopes_wp_kvsk"] = {"wpn_addon_scope_ksvk"},
+		["scopes_m16"] = {"wpn_addon_scope_m16"},
+		["soceps_m24"] = {"wpn_addon_scope_m24"},
+		["scopes_trg"] = {"wpn_addon_scope_trg"},
+		["scopes_snag"] = {"wpn_addon_scope_snag"},
+		["scopes_sigsnip"] = {"wpn_addon_scope_sig550_sniper"},
+		["scopes_pu"] = {"wpn_addon_scope_pu9130"},
+		["scopes_fal"] = {"wpn_addon_scope_fn_fal_para"},
+		["scopes_zf9"] = {"wpn_addon_scope_zf9"},
+		["scopes_rpg"] = {"wpn_addon_scope_rpg7"}
+		}
+end
+
+function dismantle_ui:OnButton_ok()
+	if self.ui_futile_no_trgts_override then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		hud_caption("st_dismantle_screen_no_trgts")
+		return
+	end
+	self.caption_trgts:SetText(game.translate_string("st_dismantle_ui_hint2"))
+
+	-- SET: actor class bonus
+	local class_bonus, class_fail_bonus = 0, 0
+	if ((alun_utils.read_from_ini(nil,"actor","actor_class","string","recon")) == "recon") then
+		class_bonus = 5 		-- NOTE: it's added to /subtracted from various probabs
+		class_fail_bonus = 1 	-- NOTE: it's subtracted from tool-fail probabs, 1/100 of it is subtracted from target condition decrease on fail
+	end
+	-- SET: flags
+	-- tools
+	local tool_is_kit, tool_is_outfit_kit, tool_is_weapon_kit, tool_is_not_kit
+	local tool_is_probab1, tool_is_hammer, tool_is_crowbar
+	local has_aux_tool, has_aux_tool_knife, aux_obj_knife, aux_tool_is_knife, has_aux_tool_axe, aux_obj_axe, aux_tool_is_axe
+	local tool_is_probab2, tool_is_swiss_sharp, tool_is_cutlery_sharp
+	local tool_is_probab3, tool_is_shovel_old_sharp, tool_is_shovel_mili_sharp, tool_is_grooming_sharp
+	-- tools bhv
+	local tool_keep, tool_zeroone_blunt, tool_drop, tool_aux_blunt, aux_blunt_percent, aux_cancel_override, tool_fail_override
+	local hammer_on_wpn_fail, decrease_wpn_con_on_hammer_fail
+	local swiss_sharp_on_wpn_fail, decrease_wpn_con_on_swiss_fail
+	local cutlery_sharp_on_wpn_fail, decrease_wpn_con_on_cutlery_fail
+	local hammer_on_helm_fail, hammer_fail_on_helm_probab, decrease_helm_con_on_hammer_fail
+	-- target ops, eff's, UI hints
+	local trgt_obj, trgt_con, get_trgt_con, decrease_trgt_con, keep_target
+	local no_act_eff, act_eff_outfit, act_eff_dismanlte_long
+	local hammer_wpn_fail_eff, swiss_sharp_wpn_fail_eff, cutlery_sharp_wpn_fail_eff, hammer_helm_fail_eff
+	local xplo_fail, blast_eff, gauss_fail, gauss_eff, aux_axe_hint
+	-- family "A" targets: outfits genus
+	local trgt_is_family_a
+	local trgt_is_outfit, trgt_is_outfit_light, trgt_is_outfit_medium, trgt_is_outfit_heavy
+	local trgt_is_outfit_ssp, trgt_is_outfit_seva, trgt_is_outfit_exo
+	local trgt_is_ouftit_blunt_tier_1, trgt_is_ouftit_blunt_tier_2, trgt_is_ouftit_blunt_tier_3
+	local outfit_con_tier_1, outfit_con_tier_2, outfit_con_tier_3, outfit_con_tier_4, outfit_slot_probab, outfit_patch_amt
+	local outfit_slot_fabric1_amt, outfit_slot_fabric2_amt, outfit_slot_fabric3_amt
+	local outfit_slot_protect1_amt, outfit_slot_protect2_amt, outfit_slot_helmet_amt
+	local outfit_subslot_gear_amt, outfit_subslot_device_amt
+	-- family "A" targets: firearms genus
+	local trgt_is_wpn, trgt_can_unload, trgt_can_detach
+	local trgt_is_wpn_handgun, trgt_is_wpn_smg, trgt_is_wpn_smgscope
+	local trgt_is_wpn_rifle, trgt_is_wpn_riflescope, trgt_is_wpn_heavy, trgt_is_wpn_heavyscope
+	local wpn_slot_probab, wpn_con_tier_1, wpn_con_tier_2, wpn_con_tier_3, wpn_con_tier_4
+	local trgt_has_fixed_scope, fix_scope_variety1, fix_scope_variety2, fix_scope_variety3
+	local trgt_has_fixed_silencer, trgt_has_fixed_silencer_9x18, trgt_has_fixed_silencer_9x39, trgt_has_fixed_silencer_svu
+	local trgt_has_fixed_grndlnch, trgt_has_fixed_grndlnch_east, trgt_has_fixed_grndlnch_west
+	local wpn_slot_light_amt, wpn_slot_heavy_amt, wpn_slot_scope_amt, wpn_slot_silencer_amt, wpn_slot_grndlnch_amt
+	-- family "B" targets
+	local trgt_is_family_b
+	local trgt_is_helm, trgt_is_helm_good, trgt_is_helm_waste_heavy, trgt_is_helm_waste_light
+	local helm_is_hard, helm_is_hard_tier1, helm_is_hard_tier2, helm_is_not_hard
+	local trgt_is_gauss, trgt_is_wpn_related, trgt_is_explo, trgt_is_wpn_addon, trgt_is_grndlnch, trgt_is_nightscope
+	local trgt_is_outfit_related, trgt_is_outfitlike, trgt_is_electr_belt
+	local trgt_is_all_electr, trgt_is_dtctr, trgt_is_electr, trgt_is_electr1, trgt_is_electr2, trgt_is_electr3, trgt_is_electr4
+	-- slots/subslots for: outfits genus
+	local outfit_slot_fabric1_succ, outfit_slot_fabric1_fail, outfit_slot_fabric2_succ, outfit_slot_fabric2_fail
+	local outfit_slot_fabric3_succ, outfit_slot_fabric3_fail, outfit_slot_protect1_succ, outfit_slot_protect1_fail
+	local outfit_slot_protect2_succ, outfit_slot_protect2_fail, outfit_slot_helmet_succ, outfit_slot_helmet_fail
+	local outfit_subslot_gear1_succ, outfit_subslot_gear2_succ, outfit_subslot_gear3_succ, outfit_subslot_gear_fail
+	local outfit_subslot_device1_succ, outfit_subslot_device2_succ, outfit_subslot_device3_succ, outfit_subslot_device_fail
+	-- slots for: firearms genus
+	local wpn_slot_light_succ, wpn_slot_light_fail, wpn_slot_heavy_succ, wpn_slot_heavy_fail, wpn_slot_scope_succ, wpn_slot_scope_fail
+	local wpn_slot_silencer_succ, wpn_slot_silencer_fail, wpn_slot_grndlnch_succ, wpn_slot_grndlnch_fail
+	-- taxonomy probabs
+	local helm_probab, xplo_probab, xplo_probab_diff, wpn_addon_probab, outfitlike_probab, electr_belt_probab
+	local dtctr_probab, geiger_from_dtctr_probab, electr1_probab, electr2_probab, electr3_probab, electr4_probab
+
+	if (self.list_box_trgts) then
+		index = self.list_box_trgts:GetSelectedIndex()
+		if (index ~= -1) then
+			item = self.list_box_trgts:GetItemByIndex(index)
+			local se_trgt = item and item.item_id and alife():object(item.item_id)
+			if (se_trgt) then
+				sec = se_trgt:section_name()
+
+				-- [ SECTION (1) ] - RECOGNIZE: TOOL, AUXILIARY TOOL, TARGET;   SETTINGS: TOOL FAILURE
+				if true then
+					-- [ SECTION (1.1) ] - RECOGNIZE: TOOL
+					if (self.tool) then
+						if self.tools_all_without_kits[self.tool] then
+							tool_is_not_kit = true
+							if self.tools_probabs_group_1[self.tool] then
+								tool_is_probab1 = true
+								if self.tool == "hammer_inv" then
+									tool_is_hammer = true
+								elseif self.tool == "crowbar" then
+									tool_is_crowbar = true
+								end
+							elseif self.tools_probabs_group_2[self.tool] then
+								tool_is_probab2 = true
+								if self.tool == "swiss_sharp" then
+									tool_is_swiss_sharp = true
+								elseif self.tool == "cutlery_sharp" then
+									tool_is_cutlery_sharp = true
+								end
+							elseif self.tools_probabs_group_3[self.tool] then
+								tool_is_probab3 = true
+								if self.tool == "shovel_old_sharp" then
+									tool_is_shovel_old_sharp = true
+								elseif self.tool == "shovel_mili_sharp" then
+									tool_is_shovel_mili_sharp = true
+								elseif self.tool == "grooming_sharp" then
+									tool_is_grooming_sharp = true
+								end
+							end
+						elseif self.tools_all_dismantle_kits[self.tool] then
+							tool_is_kit = true
+							if self.tools_outfit_dismantlers[self.tool] then
+								tool_is_outfit_kit = true
+							elseif self.tools_weapon_dismantlers[self.tool] then
+								tool_is_weapon_kit = true
+							end
+						end
+					end
+
+					-- [ SECTION (1.2) ] - RECOGNIZE: AUXILIARY TOOL
+					if (self.tool) then
+						aux_obj_knife = itms_refunct.choose_knife("dismantle")
+						aux_obj_axe = itms_refunct.choose_axe("dismantle")
+						if aux_obj_knife then
+							has_aux_tool = true
+							has_aux_tool_knife = true
+						end
+						if aux_obj_axe then
+							has_aux_tool = true
+							has_aux_tool_axe = true
+						end
+					end
+
+					-- [ SECTION (1.3) ] - RECOGNIZE: TARGET (family, genus, species, subspecies, variety, basic operations)
+					if (self.tool) then
+						-- [SUBSECTION (1.3)-("A") ] - RECOGNIZE: OUTFITS AND FIREARMS (family "A" targets)
+						if true then
+							-- RECOGNIZE: target: genus (outfit), species
+							if self.outfit_targets_light[sec] then
+								trgt_is_outfit = true
+								trgt_is_outfit_light = true
+								trgt_is_ouftit_blunt_tier_1 = true
+							elseif self.outfit_targets_medium[sec] then
+								trgt_is_outfit = true
+								trgt_is_outfit_medium = true
+								trgt_is_ouftit_blunt_tier_1 = true
+							elseif self.outfit_targets_heavy[sec] then
+								trgt_is_outfit = true
+								trgt_is_outfit_heavy = true
+								trgt_is_ouftit_blunt_tier_2 = true
+							elseif self.outfit_targets_seva[sec] then
+								trgt_is_outfit = true
+								trgt_is_outfit_seva = true
+								trgt_is_ouftit_blunt_tier_2 = true
+							elseif self.outfit_targets_ssp[sec] then
+								trgt_is_outfit = true
+								trgt_is_outfit_ssp = true
+								trgt_is_ouftit_blunt_tier_3 = true
+							elseif self.outfit_targets_exo[sec] then
+								trgt_is_outfit = true
+								trgt_is_outfit_exo = true
+								trgt_is_ouftit_blunt_tier_3 = true
+							end
+							-- RECOGNIZE: target: genus (firearm), species (x7), subspecies (with fixed scopes)
+							if self.weapon_targets_handgun[sec] then
+								trgt_is_wpn = true
+								trgt_is_wpn_handgun = true
+							elseif self.weapon_targets_smg[sec] then
+								trgt_is_wpn = true
+								trgt_is_wpn_smg = true
+							elseif self.weapon_targets_smgscope[sec] then
+								trgt_is_wpn = true
+								trgt_is_wpn_smgscope = true
+								trgt_has_fixed_scope = true
+							elseif self.weapon_targets_rifle[sec] then
+								trgt_is_wpn = true
+								trgt_is_wpn_rifle = true
+							elseif self.weapon_targets_riflescope[sec] then
+								trgt_is_wpn = true
+								trgt_is_wpn_riflescope = true
+								trgt_has_fixed_scope = true
+							elseif self.weapon_targets_heavy[sec] then
+								trgt_is_wpn = true
+								trgt_is_wpn_heavy = true
+							elseif self.weapon_targets_heavyscope[sec] then
+								trgt_is_wpn = true
+								trgt_is_wpn_heavyscope = true
+								trgt_has_fixed_scope = true
+							end
+							-- RECOGNIZE: target: genus (firearm): subspecies (with fixed silencers/grndlnch), variety (addon type)
+							if trgt_is_wpn then
+								-- RECOGNIZE: target: subspecies (wpn with fixed silencers), variety (silencer type)
+								if self.all_wpn_fixed_silencers[sec] then
+										trgt_has_fixed_silencer = true
+									-- RECOGNIZE: target: variety (silencer type)
+									if self.weapon_has_fixed_silencer_9x18[sec] then
+										trgt_has_fixed_silencer_9x18 = true
+									elseif self.weapon_has_fixed_silencer_9x39[sec] then
+										trgt_has_fixed_silencer_9x39 = true
+									elseif self.weapon_has_fixed_silencer_svu[sec] then
+										trgt_has_fixed_silencer_svu = true
+									end
+								end
+								-- RECOGNIZE: target: subspecies (wpn with fixed grenade launchers), variety (grndlnch type)
+								if self.weapon_has_fixed_grndlnch_east[sec] then
+									trgt_has_fixed_grndlnch = true
+									trgt_has_fixed_grndlnch_east = true
+								elseif self.weapon_has_fixed_grndlnch_west[sec] then
+									trgt_has_fixed_grndlnch = true
+									trgt_has_fixed_grndlnch_west = true
+								end
+							end
+							-- RECOGNIZE BASIC OPERATION: target: family ("A"), genus (outfit), SET: basic operations (get_con)
+							if trgt_is_outfit then
+								trgt_is_family_a = true
+								get_trgt_con = true
+							end
+							-- RECOGNIZE BASIC OPERATION: target: family ("A"), genus (firearm), SET: basic operations (get_con, can_unld, can_dtch)
+							if trgt_is_wpn then
+								trgt_is_family_a = true
+								get_trgt_con = true
+								trgt_can_unload = true
+								trgt_can_detach = true
+							end
+						end
+						-- [SUBSECTION (1.3)-("B") ] - RECOGNIZE: OHTER TARGETS (family "B" targets)
+						if true then
+							-- RECOGNIZE: target: family ("B")
+							if not trgt_is_family_a then
+								trgt_is_family_b = true
+							end
+							-- RECOGNIZE: target: genus (helmet), species (x3)
+							if self.helmet_targets_waste_light[sec] then
+								trgt_is_helm = true
+								trgt_is_helm_waste_light = true
+							elseif self.helmet_targets_waste_heavy[sec] then
+								trgt_is_helm = true
+								trgt_is_helm_waste_heavy = true
+							elseif self.helmet_targets_good[sec] then
+								trgt_is_helm = true
+								trgt_is_helm_good = true
+							end
+							-- RECOGNIZE: target: genus (helmet): tiers (x3 (on hardness)), SET: basic operation (get_con)
+							if trgt_is_helm then
+								get_trgt_con = true
+								if self.helmets_hard_all[sec] then
+									helm_is_hard = true
+									if self.helmets_hard_tier1[sec] then
+										helm_is_hard_tier1 = true
+									elseif self.helmets_hard_tier2[sec] then
+										helm_is_hard_tier2 = true
+									end
+								elseif self.helmets_not_hard[sec] then
+									helm_is_not_hard = true
+								end
+							end
+							-- RECOGNIZE: target: genus (gauss), SET: basic operation (get_con)
+							if self.weapon_targets_gauss[sec] then
+								trgt_is_gauss = true
+								get_trgt_con = true
+							end
+							-- RECOGNIZE: target: genus (weapon related)
+							if self.all_wpn_related_targets[sec] then
+								trgt_is_wpn_related = true
+								-- RECOGNIZE species (explosive devices)
+								if self.targets_explo[sec] then
+									trgt_is_explo = true
+								end
+								-- RECOGNIZE species (weapon addons)
+								if self.all_wpn_addon_targets[sec] then
+									trgt_is_wpn_addon = true
+									-- RECOGNIZE subspecies (grenade launchers)
+									if self.addon_targets_grndlnch[sec] then
+										trgt_is_grndlnch = true
+									end
+									-- RECOGNIZE subspecies (night vision scopes)
+									if self.addon_targets_nightscope[sec] then
+										trgt_is_nightscope = true
+									end
+								end
+							end
+							-- RECOGNIZE: target: genus (outfit related)
+							if self.all_outftit_related_targets[sec] then
+								trgt_is_outfit_related = true
+								-- RECOGNIZE species (outfitlike , electric belt devices)
+								if self.outfitlike_trgts[sec] then
+									trgt_is_outfitlike = true
+								elseif self.targets_electr_belt[sec] then
+									trgt_is_electr_belt = true
+								end
+							end
+							-- RECOGNIZE: target: genus: other electic devices
+							if self.all_electric_items[sec] then
+								trgt_is_all_electr = true
+								-- RECOGNIZE species (detectors , independent electric devices), subspecies (x4), SET: basic operation (get_con)
+								if self.targets_detectors[sec] then
+									trgt_is_dtctr = true
+								elseif self.targets_electric_all_tiers[sec] then
+									trgt_is_electr = true
+									-- RECOGNIZE subspecies (x4), SET: basic operation (get_con) (on: specimen)
+									if self.targets_electric_tier1[sec] then
+										trgt_is_electr1 = true
+										if (sec == "wpn_binoc_inv") then
+											get_trgt_con = true
+										end
+									elseif self.targets_electric_tier2[sec] then
+										trgt_is_electr2 = true
+									elseif self.targets_electric_tier3[sec] then
+										trgt_is_electr3 = true
+									elseif self.targets_electric_tier4[sec] then
+										trgt_is_electr4 = true
+										if (sec == "wpn_upd") then
+											get_trgt_con = true
+										end
+									end
+								end
+							end
+						end
+						-- [SUBSECTION (1.3)-(EXE) ] - EXECUTE: basic operation: get target condition
+						if get_trgt_con then
+							local item = self.list_box_trgts:GetSelectedItem()
+							trgt_obj = item and level.object_by_id(item.item_id)
+							trgt_con = trgt_obj:condition()
+						end
+					end
+
+					-- [ SECTION (1.4) ] - TOOL FAILURE OVERRIDE (for genus: wpn) : SETTINGS + EXECUTION FLAGS
+					if trgt_is_wpn then
+						-- SET: fail probab (for tools), % of condition loss (for: target, on: fail) (with class_fail_bonus)
+						local tool_fail_probab
+						if tool_is_hammer then
+							tool_fail_probab = 4 - class_fail_bonus
+							decrease_wpn_con_on_hammer_fail = 0.04 - (class_fail_bonus/100)
+						elseif tool_is_cutlery_sharp then
+							tool_fail_probab = 3 - class_fail_bonus
+							decrease_wpn_con_on_cutlery_fail = 0.03 - (class_fail_bonus/100)
+						elseif tool_is_swiss_sharp then
+							tool_fail_probab = 2 - class_fail_bonus
+							decrease_wpn_con_on_swiss_fail = 0.02 - (class_fail_bonus/100)
+						end
+						-- SET: fail override flag (on probab)
+						if tool_is_hammer then
+							if test_on_probab(tool_fail_probab) then
+								tool_fail_override = true
+								hammer_on_wpn_fail = true
+							end
+						elseif tool_is_swiss_sharp then
+							if test_on_probab(tool_fail_probab) then
+								tool_fail_override = true
+								swiss_sharp_on_wpn_fail = true
+							end
+						elseif tool_is_cutlery_sharp then
+							if test_on_probab(tool_fail_probab) then
+								tool_fail_override = true
+								cutlery_sharp_on_wpn_fail = true
+							end
+						end
+					end
+				end
+
+				-- [ SECTION (2) for ("A") ] - SETTINGS (for: family "A"): TIERS, SLOTS, PROBABS, CONTENT, TOOL BEHAVIOUR
+				if trgt_is_family_a then if not tool_fail_override then
+					-- [ SECTION (2.0)-("A") ] - SETTINGS: TOOL BEHAVIOUR, AUXILIARY TOOL BEHAVIOUR (for: family, on: not fail)
+					-- SET: TOOL BEHAVIOUR
+					if tool_is_not_kit then
+						if tool_is_probab1 then
+							tool_keep = true
+						elseif tool_is_probab2 then
+							tool_zeroone_blunt = true
+						elseif tool_is_probab3 then
+							if tool_is_shovel_mili_sharp then
+								tool_zeroone_blunt = true
+							elseif tool_is_shovel_old_sharp then
+								tool_zeroone_blunt = true
+							end
+						end
+					end
+					-- SET: AUXILIARY TOOL BEHAVIOUR (choose aux tool / set: blunt percent, for: genus in: tiers / cancel if not has aux)
+					if trgt_is_outfit then
+						if tool_is_probab1 then
+							if has_aux_tool then
+								if has_aux_tool_knife then -- (for outfits auto-choice is for knives)
+									aux_tool_is_knife = true
+								elseif has_aux_tool_axe then
+									aux_tool_is_axe = true
+								end
+								tool_aux_blunt = true
+								if trgt_is_ouftit_blunt_tier_1 then
+									aux_blunt_percent = 0.06 -- this is for knives, axe gets half of it
+								elseif trgt_is_ouftit_blunt_tier_2 then
+									aux_blunt_percent = 0.08 -- this is for knives, axe gets half of it
+								elseif trgt_is_ouftit_blunt_tier_3 then
+									aux_blunt_percent = 0.1 -- this is for knives, axe gets half of it
+								-- NOTE: synchronize these with: purpose_lowest_con in itms_refunct.choose_knife and itms_refunct.choose_axe
+								end
+							else
+								tool_fail_override = true
+								aux_cancel_override = true
+							end
+						end
+					end
+
+					-- [ SECTION (2.1)-("A") ] - SETTINGS: TIERS AND SLOTS
+					-- SET: tiers (for genus: outfits) (on con), eff
+					if trgt_is_outfit then
+						act_eff_outfit = true
+						if trgt_con <= 0.25 then
+							outfit_con_tier_1 = true
+						elseif trgt_con <= 0.5 then
+							outfit_con_tier_2 = true
+						elseif trgt_con <= 0.75 then
+							outfit_con_tier_3 = true
+						elseif trgt_con <= 1 then
+							outfit_con_tier_4 = true
+						end
+					end
+					-- SET: tiers (for genus, subspecies) (on con) + low_con override
+					if trgt_is_wpn then
+						-- SET: general wpn tiers (for genus: wpn) (on wpn condition)
+						if trgt_con <= 0.25 then
+							wpn_con_tier_1 = true
+						elseif trgt_con <= 0.5 then
+							wpn_con_tier_2 = true
+						elseif trgt_con <= 0.75 then
+							wpn_con_tier_3 = true
+						elseif trgt_con <= 1 then
+							wpn_con_tier_4 = true
+						end
+						-- SET: tiers for scope type (for subspecies: wpn with fixed scopes) (on wpn condition) (+ dismantle-kit override)
+						if trgt_has_fixed_scope then
+							if trgt_con <= 0.33 then
+								fix_scope_variety1 = true
+							elseif trgt_con <= 0.66 then
+								fix_scope_variety2 = true
+							elseif trgt_con <= 1 then
+								fix_scope_variety3 = true
+							end
+							-- dismantle kit tier for scope type override
+							if tool_is_kit then
+								fix_scope_variety3 = true
+							end
+						end
+						-- SET BASIC OPERATION OVERRIDE (for genus: wpn): no weapon unload & addon detach (on wpn condition)
+						if (trgt_con < 0.01) then
+							trgt_can_unload = nil -- set "true" to disable override, set "nil" to enable override
+							trgt_can_detach = nil -- set "true" to disable override, set "nil" to enable override
+						end
+					end
+					-- SET: slots, subslots (for species, subspecies)
+					if trgt_is_outfit then
+						-- SET: for species: outfit
+			--NOTE: outfit_slot_*_amt = x, where x = number of single fail/success (on probab) operations (x = 1 will create 1 item)
+			--NOTE: outfit_subslot_gear_amt = x, where x is number of f/s operations for ONE of items in subslot (x = 1 creates 1 item)
+			--NOTE: outfit_subslot_device_amt = x, where x = number of f/s operations for EACH item in subslot (x = 1 creates 3 items)
+						if trgt_is_outfit_light then
+							outfit_slot_fabric1_amt = 3
+							outfit_slot_fabric2_amt = 2
+							outfit_slot_fabric3_amt = 1
+							outfit_subslot_gear_amt = 1
+						elseif trgt_is_outfit_medium then
+							outfit_slot_fabric1_amt = 4
+							outfit_slot_fabric2_amt = 3
+							outfit_slot_fabric3_amt = 3
+							outfit_slot_protect1_amt = 1
+							outfit_subslot_gear_amt = 1
+						elseif trgt_is_outfit_heavy then
+							outfit_slot_fabric1_amt = 5
+							outfit_slot_fabric2_amt = 4
+							outfit_slot_fabric3_amt = 4
+							outfit_slot_protect1_amt = 1
+							outfit_slot_protect2_amt = 1
+							outfit_subslot_gear_amt = 1
+						elseif trgt_is_outfit_ssp then
+							outfit_slot_fabric1_amt = 2
+							outfit_slot_fabric2_amt = 8
+							outfit_slot_fabric3_amt = 3
+							outfit_subslot_gear_amt = 1
+							outfit_subslot_device_amt = 1
+							outfit_slot_helmet_amt = 1
+						elseif trgt_is_outfit_seva then
+							outfit_slot_fabric1_amt = 2
+							outfit_slot_fabric2_amt = 3
+							outfit_slot_fabric3_amt = 8
+							outfit_slot_protect1_amt = 1
+							outfit_slot_protect2_amt = 1
+							outfit_subslot_gear_amt = 1
+							outfit_subslot_device_amt = 1
+							outfit_slot_helmet_amt = 1
+						elseif trgt_is_outfit_exo then
+							outfit_slot_fabric2_amt = 4
+							outfit_slot_fabric3_amt = 10
+							outfit_slot_protect1_amt = 1
+							outfit_slot_protect2_amt = 3
+							outfit_subslot_gear_amt = 1
+						end
+					end
+					if trgt_is_wpn then
+						-- SET: for species: wpn
+						if trgt_is_wpn_handgun then
+							wpn_slot_light_amt = 2
+						elseif trgt_is_wpn_smg then
+							wpn_slot_light_amt = 3
+						elseif trgt_is_wpn_smgscope then
+							wpn_slot_light_amt = 3
+							wpn_slot_scope_amt = 1
+						elseif trgt_is_wpn_rifle then
+							wpn_slot_light_amt = 3
+							wpn_slot_heavy_amt = 1
+						elseif trgt_is_wpn_riflescope then
+							wpn_slot_light_amt = 3
+							wpn_slot_heavy_amt = 1
+							wpn_slot_scope_amt = 1
+						elseif trgt_is_wpn_heavy then
+							wpn_slot_light_amt = 3
+							wpn_slot_heavy_amt = 2
+						elseif trgt_is_wpn_heavyscope then
+							wpn_slot_light_amt = 3
+							wpn_slot_heavy_amt = 2
+							wpn_slot_scope_amt = 1
+						end
+						-- SET: for subspecies
+						if trgt_has_fixed_silencer then
+							wpn_slot_silencer_amt = 1
+						end
+						-- SET: for subspecies
+						if trgt_has_fixed_grndlnch then
+							wpn_slot_grndlnch_amt = 1
+						end
+					end
+
+					-- [ SECTION (2.2)-("A") ] - SETTINGS: SLOT PROBABS
+					-- SET: base slot probab (for: genus) (on tiers) + SET BASIC OPERATION: faction badges amount on condition
+					if trgt_is_outfit then
+						if outfit_con_tier_1 then
+							outfit_slot_probab = 10 + class_bonus
+							outfit_patch_amt = 0
+						elseif outfit_con_tier_2 then
+							outfit_slot_probab = 25 + class_bonus
+							outfit_patch_amt = 1
+						elseif outfit_con_tier_3 then
+							outfit_slot_probab = 40 + class_bonus
+							outfit_patch_amt = 2
+						elseif outfit_con_tier_4 then
+							outfit_slot_probab = 50 + class_bonus
+							outfit_patch_amt = 2
+						end
+					end
+					if trgt_is_wpn then
+						if wpn_con_tier_1 then
+							wpn_slot_probab = 5 + class_bonus
+						elseif wpn_con_tier_2 then
+							wpn_slot_probab = 15 + class_bonus
+						elseif wpn_con_tier_3 then
+							wpn_slot_probab = 30 + class_bonus
+						elseif wpn_con_tier_4 then
+							wpn_slot_probab = 45 + class_bonus
+						end
+					end
+					-- SET: tool probab (for: genus) (adjusting base probabs) (for: genus) (on: tool, aux tool)
+					if trgt_is_outfit then
+						if tool_is_outfit_kit then
+							outfit_slot_probab = outfit_slot_probab + 25
+						elseif tool_is_crowbar then
+							if aux_tool_is_knife then
+								outfit_slot_probab = outfit_slot_probab + 25
+							elseif aux_tool_is_axe then
+								outfit_slot_probab = outfit_slot_probab + 20
+							end
+						elseif tool_is_hammer then
+							if aux_tool_is_knife then
+								outfit_slot_probab = outfit_slot_probab + 25
+							elseif aux_tool_is_axe then
+								outfit_slot_probab = outfit_slot_probab + 20
+							end
+						elseif tool_is_swiss_sharp then
+							outfit_slot_probab = outfit_slot_probab + 10
+						elseif tool_is_shovel_mili_sharp then
+							outfit_slot_probab = outfit_slot_probab + 12
+						elseif tool_is_shovel_old_sharp then
+							outfit_slot_probab = outfit_slot_probab + 10
+						elseif tool_is_cutlery_sharp then
+							outfit_slot_probab = outfit_slot_probab + 3
+						elseif tool_is_grooming_sharp then
+							outfit_slot_probab = outfit_slot_probab - 3
+						end
+					end
+					if trgt_is_wpn then
+						if tool_is_weapon_kit then
+							wpn_slot_probab = wpn_slot_probab + 25
+						elseif tool_is_crowbar then
+							wpn_slot_probab = wpn_slot_probab + 5
+						elseif tool_is_hammer then
+							wpn_slot_probab = wpn_slot_probab + 5
+						elseif tool_is_swiss_sharp then
+							wpn_slot_probab = wpn_slot_probab + 15
+						elseif tool_is_shovel_mili_sharp then
+							wpn_slot_probab = wpn_slot_probab + 12
+						elseif tool_is_shovel_old_sharp then
+							wpn_slot_probab = wpn_slot_probab + 10
+						elseif tool_is_cutlery_sharp then
+							wpn_slot_probab = wpn_slot_probab + 7
+						elseif tool_is_grooming_sharp then
+							wpn_slot_probab = wpn_slot_probab - 3
+						end
+					end
+
+					-- [ SECTION (2.3)-("A") ] - SETTINGS: SLOT CONTENT
+					if true then
+						-- [ SUBSECTION (2.3.1)-("A") ] - SET: SLOT CONTENT (for subspecies: wpn with fixed addons)
+						if trgt_is_wpn then
+							-- SET: scopes slot: success content (subspecies: wpn with fixed scopes)
+							if trgt_has_fixed_scope then
+								-- SET: for variety
+								if fix_scope_variety3 then
+									if self.weapon_has_fixed_scope_wp[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope"
+									elseif self.weapon_has_fixed_scope_wp_special[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_vsk"
+									elseif self.weapon_has_fixed_scope_zf[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_zf4"
+									elseif self.weapon_has_fixed_scope_susat[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_susat"
+									elseif self.weapon_has_fixed_scope_susat_moist[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_susat_moist"
+									elseif self.weapon_has_fixed_scope_snag[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_snag"
+									elseif self.weapon_has_fixed_scope_m16[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_m16"
+									elseif self.weapon_has_fixed_scope_m24[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_m24"
+									elseif self.weapon_has_fixed_scope_ksvk[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_ksvk"
+									elseif self.weapon_has_fixed_scope_trg[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_trg"
+									elseif self.weapon_has_fixed_scope_sig_sniper[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_sig550_sniper"
+									elseif self.weapon_has_fixed_scope_fnfalpara[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_fn_fal_para"
+									elseif self.weapon_has_fixed_scope_rpg7[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_rpg7"
+									end
+								-- SET: for variety
+								elseif fix_scope_variety2 then
+									if self.weapon_has_fixed_scope_wp[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_moist"
+									elseif self.weapon_has_fixed_scope_wp_special[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_vsk"
+									elseif self.weapon_has_fixed_scope_zf[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_zf4_moist"
+									elseif self.weapon_has_fixed_scope_susat[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_susat_moist"
+									elseif self.weapon_has_fixed_scope_susat_moist[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_susat_moist"
+									elseif self.weapon_has_fixed_scope_snag[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_snag"
+									elseif self.weapon_has_fixed_scope_m16[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_m16"
+									elseif self.weapon_has_fixed_scope_m24[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_m24"
+									elseif self.weapon_has_fixed_scope_ksvk[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_ksvk"
+									elseif self.weapon_has_fixed_scope_trg[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_trg"
+									elseif self.weapon_has_fixed_scope_sig_sniper[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_sig550_sniper"
+									elseif self.weapon_has_fixed_scope_fnfalpara[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_fn_fal_para"
+									elseif self.weapon_has_fixed_scope_rpg7[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_rpg7"
+									end
+								-- SET: for variety
+								elseif fix_scope_variety1 then
+									if self.weapon_has_fixed_scope_wp[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_worn"
+									elseif self.weapon_has_fixed_scope_wp_special[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_vsk"
+									elseif self.weapon_has_fixed_scope_zf[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_zf4_worn"
+									elseif self.weapon_has_fixed_scope_susat[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_susat_worn"
+									elseif self.weapon_has_fixed_scope_susat_moist[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_susat_worn"
+									elseif self.weapon_has_fixed_scope_snag[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_snag"
+									elseif self.weapon_has_fixed_scope_m16[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_m16"
+									elseif self.weapon_has_fixed_scope_m24[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_m24"
+									elseif self.weapon_has_fixed_scope_ksvk[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_ksvk"
+									elseif self.weapon_has_fixed_scope_trg[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_trg"
+									elseif self.weapon_has_fixed_scope_sig_sniper[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_sig550_sniper"
+									elseif self.weapon_has_fixed_scope_fnfalpara[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_fn_fal_para"
+									elseif self.weapon_has_fixed_scope_rpg7[sec] then
+										wpn_slot_scope_succ = "wpn_addon_scope_rpg7"
+									end
+								end
+							end
+							-- SET: silencer slot: success content (subspecies: wpn with fixed silencers)
+							if trgt_has_fixed_silencer then
+								-- SET: for variety: 9x18 silencer
+								if trgt_has_fixed_silencer_9x18 then
+									wpn_slot_silencer_succ = "wpn_addon_silencer_9x18"
+								-- SET: for variety: 9x39 silencer
+								elseif trgt_has_fixed_silencer_9x39 then
+									wpn_slot_silencer_succ = "wpn_addon_silencer_9x39"
+								-- SET: for variety: SVU silencer
+								elseif trgt_has_fixed_silencer_svu then
+									wpn_slot_silencer_succ = "wpn_addon_silencer_svu"
+								end
+							end
+							-- SET: grenade launcher slot: success content (subspecies: wpn with fixed grndlnch)
+							if trgt_has_fixed_grndlnch then
+								-- SET: for variety: eastern grndlnchr
+								if trgt_has_fixed_grndlnch_east then
+									wpn_slot_grndlnch_succ = "wpn_addon_grenade_launcher"
+								-- SET: for variety: western grndlnchr
+								elseif trgt_has_fixed_grndlnch_west then
+									wpn_slot_grndlnch_succ = "wpn_addon_grenade_launcher_m203"
+								end
+							end
+						end
+						-- [ SUBSECTION (2.3.2)-("A") ] - SET: SLOT/SUBSLOT CONTENT (for: genus)
+						if trgt_is_outfit then
+							-- SET: slot content
+							outfit_slot_fabric1_succ 	= "textile_patch_b"
+							outfit_slot_fabric1_fail 	= "outfit_waste_light"
+							outfit_slot_fabric2_succ 	= "textile_patch_m"
+							outfit_slot_fabric2_fail 	= "outfit_waste_light"
+							outfit_slot_fabric3_succ 	= "textile_patch_e"
+							outfit_slot_fabric3_fail 	= "outfit_waste_heavy"
+							outfit_slot_protect1_succ 	= "af_kevlar"
+							outfit_slot_protect1_fail 	= "outfit_waste_heavy"
+							outfit_slot_protect2_succ 	= "af_plates"
+							outfit_slot_protect2_fail 	= "outfit_waste_heavy"
+							outfit_slot_helmet_succ 	= "helm_protective"
+							outfit_slot_helmet_fail 	= "outfit_waste_heavy"
+							-- SET: subslot(device) content
+							outfit_subslot_device1_succ = "af_surge"
+							outfit_subslot_device2_succ = "af_cooler"
+							outfit_subslot_device3_succ = "af_freon"
+							outfit_subslot_device_fail 	= "tech_waste"
+							-- SET: subslot(gear) content possibilities
+							outfit_subslot_gear1_succ 	= "af_camelbak"
+							outfit_subslot_gear2_succ 	= "af_frames"
+							outfit_subslot_gear3_succ 	= "af_grid"
+							outfit_subslot_gear_fail 	= "outfit_waste_light"
+						end
+						if trgt_is_wpn then
+							-- SET: slot content
+							wpn_slot_light_succ 	= "spareparts_small"
+							wpn_slot_light_fail 	= "wpn_waste_light"
+							wpn_slot_heavy_succ 	= "spareparts"
+							wpn_slot_heavy_fail 	= "wpn_waste_heavy"
+							wpn_slot_scope_succ 	= wpn_slot_scope_succ
+							wpn_slot_scope_fail 	= "wpn_waste_light"
+							wpn_slot_silencer_succ 	= wpn_slot_silencer_succ
+							wpn_slot_silencer_fail 	= "wpn_waste_light"
+							wpn_slot_grndlnch_succ 	= wpn_slot_grndlnch_succ
+							wpn_slot_grndlnch_fail 	= "wpn_waste_light"
+						end
+					end
+				end end
+
+				-- [ SECTION (3) for ("A") ] - EXECUTION (for: family "A")
+				if trgt_is_family_a then if not tool_fail_override then
+					-- EXECUTE: slots (family A) (build table)
+					local execute_slots_t = {
+						["outfit_slots"] = {
+							["fabric1"] = {
+								["amt"] = outfit_slot_fabric1_amt or 0,
+								["succ"] = outfit_slot_fabric1_succ,
+								["fail"] = outfit_slot_fabric1_fail
+								},
+							["fabric2"] = {
+								["amt"] = outfit_slot_fabric2_amt or 0,
+								["succ"] = outfit_slot_fabric2_succ,
+								["fail"] = outfit_slot_fabric2_fail
+								},
+							["fabric3"] = {
+								["amt"] = outfit_slot_fabric3_amt or 0,
+								["succ"] = outfit_slot_fabric3_succ,
+								["fail"] = outfit_slot_fabric3_fail
+								},
+							["protect1"] = {
+								["amt"] = outfit_slot_protect1_amt or 0,
+								["succ"] = outfit_slot_protect1_succ,
+								["fail"] = outfit_slot_protect1_fail
+								},
+							["protect2"] = {
+								["amt"] = outfit_slot_protect2_amt or 0,
+								["succ"] = outfit_slot_protect2_succ,
+								["fail"] = outfit_slot_protect2_fail
+								},
+							["device1"] = {
+								["amt"] = outfit_subslot_device_amt or 0,
+								["succ"] = outfit_subslot_device1_succ,
+								["fail"] = outfit_subslot_device_fail
+								},
+							["device2"] = {
+								["amt"] = outfit_subslot_device_amt or 0,
+								["succ"] = outfit_subslot_device2_succ,
+								["fail"] = outfit_subslot_device_fail
+								},
+							["device3"] = {
+								["amt"] = outfit_subslot_device_amt or 0,
+								["succ"] = outfit_subslot_device3_succ,
+								["fail"] = outfit_subslot_device_fail
+								},
+							["helm"] = {
+								["amt"] = outfit_slot_helmet_amt or 0,
+								["succ"] = outfit_slot_helmet_succ,
+								["fail"] = outfit_slot_helmet_fail
+								},
+							},
+						["wpn_slots"] = {
+							["light"] = {
+								["amt"] = wpn_slot_light_amt or 0,
+								["succ"] = wpn_slot_light_succ,
+								["fail"] = wpn_slot_light_fail
+								},
+							["heavy"] = {
+								["amt"] = wpn_slot_heavy_amt or 0,
+								["succ"] = wpn_slot_heavy_succ,
+								["fail"] = wpn_slot_heavy_fail
+								},
+							["scope"] = {
+								["amt"] = wpn_slot_scope_amt or 0,
+								["succ"] = wpn_slot_scope_succ,
+								["fail"] = wpn_slot_scope_fail
+								},
+							["silencer"] = {
+								["amt"] = wpn_slot_silencer_amt or 0,
+								["succ"] = wpn_slot_silencer_succ,
+								["fail"] = wpn_slot_silencer_fail
+								},
+							["grndlnch"] = {
+								["amt"] = wpn_slot_grndlnch_amt or 0,
+								["succ"] = wpn_slot_grndlnch_succ,
+								["fail"] = wpn_slot_grndlnch_fail
+								},
+							}
+						}
+					-- EXECUTE: slots (genus: outfit) (extract table)
+					if trgt_is_outfit then
+						for k, v in pairs(execute_slots_t.outfit_slots) do
+							for i = 1, v.amt do
+								if test_on_probab(outfit_slot_probab) then
+									give(v.succ)
+								else
+									give(v.fail)
+								end
+							end
+						end
+					end
+					-- EXECUTE: gear-subslot (genus: outfit) (build & extract table)
+					if trgt_is_outfit then
+						if outfit_subslot_gear_amt >= 1 then
+							-- EXECUTE: randomize gear-subslot success output (based on content) (build table)
+							local execute_outfit_subslot_gear_t = {
+								["succ"] = {},
+								["fail"] = outfit_subslot_gear_fail
+								}
+							local outfit_subslot_gear_succ
+							for i = 1, outfit_subslot_gear_amt do
+								local rnd = math.random(3)
+								if rnd == 1 then
+									outfit_subslot_gear_succ = outfit_subslot_gear1_succ
+								elseif rnd == 2 then
+									outfit_subslot_gear_succ = outfit_subslot_gear2_succ
+								elseif rnd == 3 then
+									outfit_subslot_gear_succ = outfit_subslot_gear3_succ
+								end
+								table.insert(execute_outfit_subslot_gear_t.succ, outfit_subslot_gear_succ)
+							end
+							-- EXECUTE: randomized gear-subslot (extract table)
+							for k, v in pairs(execute_outfit_subslot_gear_t.succ) do
+								if test_on_probab(outfit_slot_probab) then
+									give(v)
+								else
+									give(outfit_subslot_gear_fail)
+								end
+							end
+						end
+					end
+					-- EXECUTE: slots (genus: wpn) (extract table)
+					if trgt_is_wpn then
+						for k, v in pairs(execute_slots_t.wpn_slots) do
+							for i = 1, v.amt do
+								if test_on_probab(wpn_slot_probab) then
+									give(v.succ)
+								else
+									give(v.fail)
+								end
+							end
+						end
+					end
+					-- EXECUTE BASIC OPERATIONS (genus: wpn): unload, detach (succ/fail + lowcon override included)
+					if trgt_is_wpn then
+						local item = self.list_box_trgts:GetSelectedItem()
+						local item_by_id = level.object_by_id(item.item_id)
+						local trgt = alife():object(item_by_id:id())
+						local wpn_data = stpk_utils.get_weapon_data(trgt)
+						-- EXECUTE: unload weapon ammo
+						if trgt_can_unload then
+							local amount_loaded = wpn_data.ammo_elapsed
+							local type_number = wpn_data.ammo_type
+							local ammo_section = self:RecognizeAmmo(trgt,type_number)
+							if ammo_section ~= nil then
+								if amount_loaded ~= 0 then
+									local ltx = system_ini()
+									local box_size = ltx:r_u32(ammo_section, "box_size")
+									if amount_loaded > box_size then
+										local boxes_in_elapsed, remainder
+										boxes_in_elapsed = math.floor(amount_loaded / box_size)
+										remainder = amount_loaded % box_size
+										for i = 1, boxes_in_elapsed do
+											alife():create_ammo(ammo_section,db.actor:position(),0,0,0,box_size)
+										end
+										if remainder ~= 0 then
+											alife():create_ammo(ammo_section,db.actor:position(),0,0,0,remainder)
+										end
+									else
+										alife():create_ammo(ammo_section,db.actor:position(),0,0,0,amount_loaded)
+									end
+								end
+							else
+								alun_utils.printf("ammo recognized as nil, check dismantle_ui:RecognizeAmmo tables","")
+							end
+						else
+							give("ammo_bad")
+						end
+						-- EXECUTE: detach weapon addons
+						if trgt_can_detach then -- // scopes auto-detach is not ready for this release //
+							local addon_flags = wpn_data.addon_flags
+							if (addon_flags ~= 0) then
+								if (addon_flags == 1) then
+									-- give(disamantle_ui:RecognizeScope(trgt))
+								elseif (addon_flags == 2) then
+									give(self:RecognizeGrndlnchr(trgt))
+								elseif (addon_flags == 3) then
+									give(dismantle_ui:RecognizeGrndlnchr(trgt))
+									-- give(disamantle_ui:RecognizeScope(trgt))
+								elseif (addon_flags == 4) then
+									give(dismantle_ui:RecognizeSilencer(trgt))
+								elseif (addon_flags == 5) then
+									give(dismantle_ui:RecognizeSilencer(trgt))
+									-- give(disamantle_ui:RecognizeScope(trgt))
+								elseif (addon_flags == 6) then
+									give(dismantle_ui:RecognizeGrndlnchr(trgt))
+									give(dismantle_ui:RecognizeSilencer(trgt))
+								elseif (addon_flags == 7) then
+									give(dismantle_ui:RecognizeGrndlnchr(trgt))
+									give(dismantle_ui:RecognizeSilencer(trgt))
+									-- give(disamantle_ui:RecognizeScope(trgt))
+								end
+							end
+						else
+							give("wpn_waste_light")
+						end
+					end
+					-- EXECUTE BASIC OPERATION (genus: outfit): unseam faction badge (on specimen)
+					if trgt_is_outfit then
+						for i = 1, outfit_patch_amt do
+							if (sec == "cs_heavy_outfit") then
+								give("csky_patch")
+							elseif (sec == "dolg_outfit") then
+								give("dolg_patch")
+							elseif (sec == "dolg_heavy_outfit") then
+								give("dolg_patch")
+							elseif (sec == "svoboda_light_outfit") then
+								give("freedom_patch")
+							elseif (sec == "svoboda_heavy_outfit") then
+								give("freedom_patch")
+							elseif (sec == "stalker_outfit") then
+								give("stalker_patch")
+							elseif (sec == "stalker_outfit_barge") then
+								give("stalker_patch")
+							elseif (sec == "specops_outfit") then
+								give("army_patch")
+							elseif (sec == "military_outfit") then
+								give("army_patch")
+							end
+						end
+					end
+				end end
+
+				-- [ SECTION (2) for ("B") ] - SETTINGS (for: family "B"): PROBABS, TOOL BEHAVIOUR (some), AUX TOOL BEHAVIOUR
+				if trgt_is_family_b then
+					-- [ TARGET GENUS (helmets)] 					 SET: probabs (genus), tool bhv, aux tool choose/bhv/cancel
+					if trgt_is_helm then
+						-- SET: base probab (species)
+						if trgt_is_helm_waste_light then
+							helm_probab = 90 + class_bonus
+						elseif trgt_is_helm_waste_heavy then
+							helm_probab = 85 + class_bonus
+						elseif trgt_is_helm_good then
+							helm_probab = 80 + class_bonus
+						end
+						-- SET: tool probab (adjusting base probabs) (species, tiers), aux tool (choose/bhv/cancel) (tiers)
+						-- SET: tool probab (tiers: not hard)
+						if helm_is_not_hard then
+							-- SET: tier inside species: probab, tool bhv, aux tool: choose, bhv (no cancel)
+							if trgt_is_helm_waste_light then
+								if tool_is_not_kit then
+									if tool_is_probab1 then
+										tool_keep = true
+										if has_aux_tool then
+											if has_aux_tool_knife then -- (for helm-not-hard auto-choice is for knives)
+												aux_tool_is_knife = true
+												helm_probab = helm_probab + 5
+												aux_blunt_percent = 0.04
+												-- NOTE: synchronize with: purpose_lowest_con in itms_refunct.choose_knife
+											elseif has_aux_tool_axe then
+												aux_tool_is_axe = true
+												helm_probab = helm_probab + 3
+												aux_blunt_percent = 0.02
+												-- NOTE: synchronize with: purpose_lowest_con in itms_refunct.choose_axe
+											end
+											tool_aux_blunt = true
+										else
+											helm_probab = helm_probab
+										end
+									elseif tool_is_probab2 then
+										helm_probab = helm_probab + 2
+										tool_zeroone_blunt = true
+									elseif tool_is_probab3 then
+										if tool_is_shovel_mili_sharp then
+											helm_probab = helm_probab - 35
+										elseif tool_is_shovel_old_sharp then
+											helm_probab = helm_probab - 40
+										end
+										tool_keep = true
+									end
+								elseif tool_is_kit then
+									helm_probab = 100
+								end
+							-- SET: tier inside species: probab, tool bhv, aux tool: choose, bhv (no cancel)
+							elseif trgt_is_helm_waste_heavy then
+								if tool_is_not_kit then
+									if tool_is_probab1 then
+										tool_keep = true
+										if has_aux_tool then
+											if has_aux_tool_knife then -- (for helm-not-hard auto-choice is for knives)
+												aux_tool_is_knife = true
+												helm_probab = helm_probab + 5
+												aux_blunt_percent = 0.04
+												-- NOTE: synchronize with: purpose_lowest_con in itms_refunct.choose_knife
+											elseif has_aux_tool_axe then
+												aux_tool_is_axe = true
+												helm_probab = helm_probab + 3
+												aux_blunt_percent = 0.02
+												-- NOTE: synchronize with: purpose_lowest_con in itms_refunct.choose_axe
+											end
+											tool_aux_blunt = true
+										else
+											helm_probab = helm_probab
+										end
+									elseif tool_is_probab2 then
+										helm_probab = helm_probab + 2
+										tool_zeroone_blunt = true
+									elseif tool_is_probab3 then
+										if tool_is_shovel_mili_sharp then
+											helm_probab = helm_probab - 25
+										elseif tool_is_shovel_old_sharp then
+											helm_probab = helm_probab - 30
+										end
+										tool_zeroone_blunt = true
+									end
+								elseif tool_is_kit then
+									helm_probab = 100
+								end
+							end
+						end
+						-- SET: tool probab (adjusting base probabs) / bhv / fail (hammer) (species, tier), aux tool (species, tiers: hard 1 & 2)
+						if helm_is_hard then
+							tool_keep = true
+							-- SET: aux tool probab boost and aux tool bhv
+							-- NOTE: only axe can be aux tool for hard helmets, and it can be aux tool most of tools
+							if not tool_is_probab1 then
+								if has_aux_tool_axe then
+									aux_tool_is_axe = true
+									tool_aux_blunt = true
+									aux_blunt_percent = 0.01 -- NOTE: synchronize with: purpose_lowest_con itms_refunct.choose_axe
+									helm_probab = 100
+									if tool_is_kit then
+										tool_keep = nil
+									end
+								end
+							end
+							-- SET: tool probabs (without aux tool)
+							if tool_is_probab1 then
+								if tool_is_hammer then
+									-- SET: hammer fail probab + target condition decrease
+									if helm_is_hard_tier1 then
+										hammer_fail_on_helm_probab = 66 - class_bonus
+										decrease_helm_con_on_hammer_fail = 0.06 - (class_fail_bonus/100)
+									elseif helm_is_hard_tier2 then
+										hammer_fail_on_helm_probab = 55 - class_bonus
+										decrease_helm_con_on_hammer_fail = 0.08 - (class_fail_bonus/100)
+									end
+								end
+							elseif tool_is_grooming_sharp then
+								tool_keep = nil
+								tool_zeroone_blunt = true
+							else
+								if not aux_tool_is_axe then
+									aux_cancel_override = true
+									aux_axe_hint = true
+								end
+							end
+						end
+					end
+					-- [ TARGET GENUS (weapon related targets)] 	 SET: probabs (genus), tool bhv
+					if trgt_is_wpn_related then
+						-- SET: base probab, tool probab (species, specimen), tool fail probab (subspecies)
+						if trgt_is_explo then
+							-- NOTE: xplo_probab = middle value for species, xplo_probab_diff will be added/subtracted for specimens, this way:
+							-- NOTE: (ied_rpg/ied/mine)=(xplo_probab+xplo_probab_diff/xplo_probab/xplo_probab-xplo_probab_diff)
+							if tool_is_swiss_sharp then
+								xplo_probab = 75 + class_bonus
+							elseif tool_is_kit then
+								xplo_probab = 65 + class_bonus
+								-- SET: probab exception (specimen: mine, tool: dismantling kits): fixed high probabs
+								if (sec == "mine") then
+									xplo_probab = 99
+								end
+							elseif tool_is_cutlery_sharp then
+								xplo_probab = 60 + class_bonus
+							end
+							xplo_probab_diff = 6
+						-- SET: base probab (species)
+						elseif trgt_is_wpn_addon then
+							-- SET: base probab (subspecies)
+							if trgt_is_nightscope then
+								wpn_addon_probab = 70 + class_bonus
+							-- SET: base probab, fail probab (subspecies)
+							elseif trgt_is_grndlnch then
+								wpn_addon_probab = 80 + class_bonus
+								local tool_fail_probab
+								if tool_is_hammer then
+									tool_fail_probab = 4 - class_fail_bonus
+								elseif tool_is_cutlery_sharp then
+									tool_fail_probab = 3 - class_fail_bonus
+								elseif tool_is_swiss_sharp then
+									tool_fail_probab = 2 - class_fail_bonus
+								end
+								-- SET: fail override flags (for tools: hammer, swiss_sharp, cutlery_sharp)
+								if tool_is_hammer then
+									if test_on_probab(tool_fail_probab) then
+										tool_fail_override = true
+										hammer_on_wpn_fail = true
+									end
+								elseif tool_is_swiss_sharp then
+									if test_on_probab(tool_fail_probab) then
+										tool_fail_override = true
+										swiss_sharp_on_wpn_fail = true
+									end
+								elseif tool_is_cutlery_sharp then
+									if test_on_probab(tool_fail_probab) then
+										tool_fail_override = true
+										cutlery_sharp_on_wpn_fail = true
+									end
+								end
+							end
+						end
+						-- SET: tool probabs (adjusting base probabs) (species), tool bhv
+						if tool_is_not_kit then
+							-- SET: tool probabs (adjusting base probabs) (subspecies), tool bhv
+							if trgt_is_nightscope then
+								if tool_is_probab1 then
+									wpn_addon_probab = wpn_addon_probab - 5
+									tool_keep = true
+								elseif tool_is_probab2 then
+									wpn_addon_probab = wpn_addon_probab + 15
+									tool_keep = true
+								elseif tool_is_probab3 then
+									if tool_is_shovel_mili_sharp then
+										wpn_addon_probab = wpn_addon_probab - 10
+										tool_keep = true
+									elseif tool_is_shovel_old_sharp then
+										wpn_addon_probab = wpn_addon_probab - 12
+										tool_keep = true
+									elseif tool_is_grooming_sharp then
+										wpn_addon_probab = wpn_addon_probab + 5
+										tool_zeroone_blunt = true
+									end
+								end
+							-- SET: tool probabs (adjusting base probabs) (subspecies), tool bhv
+							elseif trgt_is_grndlnch then
+								if not tool_fail_override then
+									if tool_is_probab1 then
+										wpn_addon_probab = wpn_addon_probab + 7
+										tool_keep = true
+									elseif tool_is_probab2 then
+										wpn_addon_probab = wpn_addon_probab + 5
+										tool_zeroone_blunt = true
+									elseif tool_is_probab3 then
+										if tool_is_shovel_mili_sharp then
+											wpn_addon_probab = wpn_addon_probab + 4
+											tool_zeroone_blunt = true
+										elseif tool_is_shovel_old_sharp then
+											wpn_addon_probab = wpn_addon_probab + 3
+											tool_zeroone_blunt = true
+										elseif tool_is_grooming_sharp then
+											wpn_addon_probab = wpn_addon_probab - 3
+										end
+									end
+								else
+									if tool_is_swiss_sharp then
+										tool_zeroone_blunt = true
+									end
+								end
+							end
+						elseif tool_is_kit then
+							wpn_addon_probab = 100
+						end
+					end
+					-- [ TARGET GENUS (outfit related targets)] 	 SET: probabs (genus), tool bhv, aux tool bhv
+					if trgt_is_outfit_related then
+						-- SET: base probabs (genus)
+						if trgt_is_outfitlike then
+							outfitlike_probab = 85 + class_bonus
+						elseif trgt_is_electr_belt then
+							electr_belt_probab = 90 + class_bonus
+						end
+						-- SET: tool probabs (species) (adjusting base probabs), tool bhv, aux tool choose/bhv/cancel
+						if trgt_is_outfitlike then
+							if tool_is_not_kit then
+								if tool_is_probab1 then
+									if has_aux_tool then
+										if has_aux_tool_knife then -- (for outfitlike's auto-choice is for knives)
+											aux_tool_is_knife = true
+											outfitlike_probab = outfitlike_probab + 10
+										elseif has_aux_tool_axe then
+											aux_tool_is_axe = true
+											outfitlike_probab = outfitlike_probab - 2
+										end
+										tool_keep = true
+										tool_aux_blunt = true
+										aux_blunt_percent = 0.03 -- this is for knives and axe both
+										-- NOTE: synch with purpose_lowest_con in itms_refunct.choose_knife and itms_refunct.choose_axe
+									else
+										aux_cancel_override = true
+									end
+								elseif tool_is_probab2 then
+									outfitlike_probab = outfitlike_probab + 5
+									tool_zeroone_blunt = true
+								elseif tool_is_probab3 then
+									if tool_is_shovel_mili_sharp then
+										outfitlike_probab = outfitlike_probab
+										tool_zeroone_blunt = true 
+									elseif tool_is_shovel_old_sharp then
+										outfitlike_probab = outfitlike_probab - 2
+										tool_zeroone_blunt = true 
+									elseif tool_is_grooming_sharp then
+										outfitlike_probab = outfitlike_probab - 30
+									end
+								end
+							elseif tool_is_kit then
+								outfitlike_probab = 100
+							end
+						end
+						-- SET: tool probabs (species) (adjusting base probabs), tool bhv
+						if trgt_is_electr_belt then
+							if tool_is_not_kit then
+								if tool_is_probab1 then
+									electr_belt_probab = electr_belt_probab
+									tool_keep = true
+								elseif tool_is_probab2 then
+									electr_belt_probab = electr_belt_probab + 8
+									tool_zeroone_blunt = true
+								elseif tool_is_probab3 then
+									if tool_is_shovel_mili_sharp then
+										electr_belt_probab = electr_belt_probab - 15
+										tool_keep = true
+									elseif tool_is_shovel_old_sharp then
+										electr_belt_probab = electr_belt_probab - 20
+										tool_keep = true
+									elseif tool_is_grooming_sharp then
+										electr_belt_probab = electr_belt_probab - 30
+									end
+								end
+							elseif tool_is_kit then
+								electr_belt_probab = 100
+							end
+						end
+					end
+					-- [ TARGET GENUS (electric devices)] 			 SET: probabs (genus), tool bhv
+					if trgt_is_all_electr then
+						-- SET: base probabs (species)
+						if trgt_is_dtctr then
+							geiger_from_dtctr_probab = 85 + class_bonus
+							dtctr_probab = 90 + class_bonus
+						end
+						-- SET: base probabs (species)
+						if trgt_is_electr then
+							-- SET: base probabs (subspecies)
+							if trgt_is_electr1 then
+								electr1_probab = 90 + class_bonus
+							-- SET: base probabs (subspecies)
+							elseif trgt_is_electr2 then
+								electr2_probab = 75 + class_bonus
+							-- SET: base probabs (subspecies)
+							elseif trgt_is_electr3 then
+								electr3_probab = 50 + class_bonus -- this one is final, not adjusted by any tools
+							-- SET: base probabs (subspecies)
+							elseif trgt_is_electr4 then
+								electr4_probab = 80 + class_bonus
+							end
+						end
+						-- SET: tool probabs (species) (adjusting base probabs), tool bhv
+						if trgt_is_dtctr then
+							if tool_is_not_kit then
+								if tool_is_probab1 then
+									dtctr_probab = dtctr_probab
+									geiger_from_dtctr_probab = geiger_from_dtctr_probab + 5
+									tool_keep = true
+								elseif tool_is_probab2 then
+									dtctr_probab = dtctr_probab + 5
+									geiger_from_dtctr_probab = geiger_from_dtctr_probab + 10
+									tool_zeroone_blunt = true
+								elseif tool_is_probab3 then
+									if tool_is_shovel_mili_sharp then
+										dtctr_probab = dtctr_probab
+										geiger_from_dtctr_probab = geiger_from_dtctr_probab + 5
+										tool_keep = true
+									elseif tool_is_shovel_old_sharp then
+										dtctr_probab = dtctr_probab
+										geiger_from_dtctr_probab = geiger_from_dtctr_probab + 4
+										tool_keep = true
+									elseif tool_is_grooming_sharp then
+										dtctr_probab = dtctr_probab + 5
+										geiger_from_dtctr_probab = geiger_from_dtctr_probab
+									end
+								end
+							elseif tool_is_kit then
+								dtctr_probab = 100
+								geiger_from_dtctr_probab = 100
+							end
+						end
+						-- SET: tool probabs (subspecies) (adjusting base probabs), tool bhv
+						if trgt_is_electr1 then
+							if tool_is_not_kit then
+								if tool_is_probab1 then
+									electr1_probab = electr1_probab + 4
+									tool_keep = true
+								elseif tool_is_probab2 then
+									electr1_probab = electr1_probab + 8
+									tool_zeroone_blunt = true
+								elseif tool_is_probab3 then
+									if tool_is_shovel_mili_sharp then
+										electr1_probab = electr1_probab - 5
+										tool_keep = true
+									elseif tool_is_shovel_old_sharp then
+										electr1_probab = electr1_probab - 7
+										tool_keep = true
+									elseif tool_is_grooming_sharp then
+										electr1_probab = electr1_probab
+									end
+								end
+							elseif tool_is_kit then
+								electr1_probab = 100
+							end
+						end
+						-- SET: tool probabs (subspecies) (adjusting base probabs), tool bhv
+						if trgt_is_electr2 then
+							if tool_is_not_kit then
+								if tool_is_probab1 then
+									electr2_probab = electr2_probab + 5
+									tool_keep = true
+								elseif tool_is_probab2 then
+									electr2_probab = electr2_probab + 10
+									tool_zeroone_blunt = true
+								elseif tool_is_probab3 then
+									if tool_is_shovel_mili_sharp then
+										electr2_probab = electr2_probab + 2
+										tool_keep = true
+									elseif tool_is_shovel_old_sharp then
+										electr2_probab = electr2_probab
+										tool_keep = true
+									elseif tool_is_grooming_sharp then
+										electr2_probab = electr2_probab + 5
+									end
+								end
+							elseif tool_is_kit then
+								electr2_probab = 100
+							end
+						end
+						-- SET: tool bhv (subspecies)
+						if trgt_is_electr3 then
+							if tool_is_not_kit then
+								if tool_is_probab1 then
+									tool_keep = true
+								elseif tool_is_probab2 then
+									tool_zeroone_blunt = true
+								elseif tool_is_probab3 then
+									if tool_is_shovel_mili_sharp then
+										tool_keep = true
+									elseif tool_is_shovel_old_sharp then
+										tool_keep = true
+									end
+								end
+							end
+						end
+						-- SET: tool probabs (subspecies) (adjusting base probabs), tool bhv
+						if trgt_is_electr4 then
+							if tool_is_not_kit then
+								if tool_is_probab1 then
+									electr4_probab = electr4_probab + 10
+									tool_keep = true
+								elseif tool_is_probab2 then
+									electr4_probab = electr4_probab + 15
+									tool_zeroone_blunt = true
+								elseif tool_is_probab3 then
+									if tool_is_shovel_mili_sharp then
+										electr4_probab = electr4_probab + 7
+										tool_zeroone_blunt = true
+									elseif tool_is_shovel_old_sharp then
+										electr4_probab = electr4_probab + 5
+										tool_zeroone_blunt = true
+									elseif tool_is_grooming_sharp then
+										electr4_probab = electr4_probab
+									end
+								end
+							elseif tool_is_kit then
+								electr4_probab = 100
+							end
+						end
+					end
+				end
+
+				-- [ SECTION (3) for ("B") ] - SETTINGS (for: family "B"): CONTENT , TOOL BEHAVIOUR (some);   EXECUTION (for: family)
+				if trgt_is_family_b then
+					-- [ TARGET GENUS (helmets) ] 						 SET: content, fail flag, eff, tool bhv, EXECUTE
+					if trgt_is_helm then if not aux_cancel_override then
+						-- SET: tool bhv (hammer : fail on hard)
+						if helm_is_hard then
+							if tool_is_hammer then
+								if test_on_probab(hammer_fail_on_helm_probab) then
+									tool_fail_override = true
+									hammer_on_helm_fail = true
+									tool_keep = nil
+								end
+							end
+						end
+						-- SET AND EXECUTE: content
+						if not tool_fail_override then
+							if trgt_is_helm_good then
+								if test_on_probab(helm_probab) then
+									give("textile_patch_e")
+								else
+									give("outfit_waste_light")
+								end
+								give("tech_waste")
+							elseif trgt_is_helm_waste_heavy then
+								if test_on_probab(helm_probab) then
+									give("textile_patch_m")
+								else
+									give("outfit_waste_heavy")
+								end
+							elseif trgt_is_helm_waste_light then
+								if test_on_probab(helm_probab) then
+									give("textile_patch_b")
+								else
+									give("outfit_waste_light")
+								end
+							end
+						end
+					end end
+					-- [ TARGET GENUS (gauss guns) ] 					 SET: content, fail flag, EXECUTE (+ storyline safeguard override)
+					if trgt_is_gauss then
+						gauss_fail = true -- tool bhv is set later inside this flag
+						if (sec == "pri_a17_gauss_rifle") then
+							keep_target = true -- breaking storyline prevention
+							decrease_trgt_con = 0.36
+						else
+							give("tech_waste")
+							give("wpn_waste_light")
+							-- unloading ammo
+							local item = self.list_box_trgts:GetSelectedItem()
+							local item_by_id = level.object_by_id(item.item_id)
+							local trgt = alife():object(item_by_id:id())
+							local wpn_data = stpk_utils.get_weapon_data(trgt)
+							local amount_loaded = wpn_data.ammo_elapsed
+							local type_number = wpn_data.ammo_type
+							local ammo_section = self:RecognizeAmmo(trgt,type_number)
+							if ammo_section ~= nil then
+								if amount_loaded ~= 0 then
+									local ltx = system_ini()
+									local box_size = ltx:r_u32(ammo_section, "box_size")
+									if amount_loaded > box_size then
+										local boxes_in_elapsed, remainder
+										boxes_in_elapsed = math.floor(amount_loaded / box_size)
+										remainder = amount_loaded % box_size
+										for i = 1, boxes_in_elapsed do
+											alife():create_ammo(ammo_section,db.actor:position(),0,0,0,box_size)
+										end
+										if remainder ~= 0 then
+											alife():create_ammo(ammo_section,db.actor:position(),0,0,0,remainder)
+										end
+									else
+										alife():create_ammo(ammo_section,db.actor:position(),0,0,0,amount_loaded)
+									end
+								end
+							else
+								alun_utils.printf("ammo recognized as nil, check dismantle_ui:RecognizeAmmo tables","")
+							end
+						end
+					end
+					-- [ TARGET GENUS (weapon related targets) ] 		 SET: content, fail flag, eff, tool bhv, EXECUTE
+					if trgt_is_wpn_related then
+						-- [ TARGET SPECIES (explosive devices)] (content, fail flag, tool bhv)
+						if trgt_is_explo then
+							-- SET: content, fail flag
+							if (sec == "ied_rpg") then
+								if test_on_probab(xplo_probab + xplo_probab_diff) then
+									give("ammo_og-7b")
+									give("tech_waste")
+								else
+									xplo_fail = true
+								end
+							end
+							if (sec == "ied") then
+								if test_on_probab(xplo_probab) then
+									give("explo_metalcan_powder")
+									give("tech_waste",2)
+								else
+									xplo_fail = true
+								end
+							end
+							if (sec == "mine") then
+								if test_on_probab(xplo_probab - xplo_probab_diff) then
+									give("explo_metalcan_powder")
+									give("tech_waste",2)
+								else
+									xplo_fail = true
+								end
+							end
+							-- SET: tool bhv
+							if not xplo_fail then -- tool bhv on fail is set later inside this flag
+								if not tool_is_kit then
+									tool_keep = true
+								end
+							end
+						end
+						-- [ TARGET SPECIES (weapon addons) ] (content)
+						if trgt_is_wpn_addon then
+							-- [TARGET SUBSPECIES: night vision scopes] SET and EXECUTE: content
+							if trgt_is_nightscope then
+								if test_on_probab(wpn_addon_probab) then
+									give("batteries_dead")
+								else
+									give("batteries_dead_empty")
+								end
+							-- [TARGET SUBSPECIES: grenade launchers] SET and EXECUTE: content
+							elseif trgt_is_grndlnch then
+								if not tool_fail_override then
+									if test_on_probab(wpn_addon_probab) then
+										give("spareparts_small")
+									else
+										give("wpn_waste_light")
+									end
+								end
+							end
+						end
+					end
+					-- [ TARGET GENUS (outfit related targets) ] 		 SET: content, EXECUTE
+					if trgt_is_outfit_related then
+						-- [ TARGET SPECIES (outfitlike targets) ]
+						if trgt_is_outfitlike then if not aux_cancel_override then
+							if test_on_probab(outfitlike_probab) then
+								-- (species/specimen)
+								if (sec == "itm_backpack") then
+									give("textile_patch_b")
+									give("textile_patch_m",2)
+								else
+									give("textile_patch_m")
+								end
+							else
+								give("outfit_waste_light")
+							end
+						end end
+						-- [ TARGET SPECIES (electric devices for belt) ]
+						if trgt_is_electr_belt then
+							if (sec == "af_cooler") then
+								if test_on_probab(electr_belt_probab) then
+									give("batteries_dead")
+								else
+									give("batteries_dead_empty")
+								end
+							end
+							if (sec == "geiger_dead") then
+								if test_on_probab(electr_belt_probab) then
+									give("batteries")
+								else
+									give("batteries_empty")
+								end
+							end
+							if (sec == "af_surge") then
+								if test_on_probab(electr_belt_probab) then
+									give("batteries")
+								else
+									give("batteries_empty")
+								end
+							end
+							if (sec == "af_freon") then
+								if test_on_probab(electr_belt_probab) then
+									give("batteries_ccell")
+								else
+									give("batteries_ccell_empty")
+								end
+							end
+						end
+					end
+					-- [ TARGET GENUS (independent electric devices) ] 	 SET: content, EXECUTE
+					if trgt_is_all_electr then
+						-- [ TARGET SPECIES (detectors) ]
+						if trgt_is_dtctr then
+							-- EXECUTE: waste for all
+							give("tech_waste")
+							-- EXECUTE: geiger/waste on probab
+							if test_on_probab(geiger_from_dtctr_probab) then
+								give("geiger_dead")
+							else
+								give("tech_waste")
+							end
+							-- EXECUTE: batteries on probabs
+							if (sec == "detector_simple") then
+								if test_on_probab(dtctr_probab) then
+									give("batteries_dead")
+								else
+									give("batteries_dead_empty")
+								end
+							end
+							if (sec == "detector_advanced") then
+								if test_on_probab(dtctr_probab) then
+									give("batteries")
+								else
+									give("batteries_empty")
+								end
+							end
+							if (sec == "detector_elite") then
+								if test_on_probab(dtctr_probab) then
+									give("batteries_ccell")
+								else
+									give("batteries_ccell_empty")
+								end
+							end
+							if (sec == "detector_scientific") then
+								if test_on_probab(dtctr_probab) then
+									give("batteries_ccell")
+								else
+									give("batteries_ccell_empty")
+								end
+							end
+						end
+						-- [ TARGET SPECIES (other electric devices) ]
+						if trgt_is_electr then
+							-- EXECUTE: give waste for all
+							give("tech_waste")
+							-- [TARGET SUBSPECIES: orientation] EXECUTE: batteries on probab
+							if trgt_is_electr1 then
+								if (sec ~= "wpn_binoc_inv") then
+									if test_on_probab(electr1_probab) then
+										give("batteries_ccell")
+									else
+										give("batteries_ccell_empty")
+									end
+								else
+									-- get batteries according to binoculars condition, NOTE: keep these synched with axr_battery.ltx
+									if trgt_con <= 0.14 then
+										give("batteries_ccell_empty")
+									elseif trgt_con <= 0.52 then
+										give("batteries_dead")
+									elseif trgt_con <= 0.93 then
+										give("batteries")
+									elseif trgt_con <= 1 then
+										give("batteries_ccell")
+									end
+								end
+							-- [TARGET SUBSPECIES: communication] EXECUTE: batteries on probab
+							elseif trgt_is_electr2 then
+								if test_on_probab(electr2_probab) then
+									give("batteries_dead")
+								else
+									give("batteries_dead_empty")
+								end
+							-- [TARGET SUBSPECIES: broken flashlights] EXECUTE: batteries on probab
+							elseif trgt_is_electr3 then
+								if test_on_probab(electr3_probab) then
+									give("batteries")
+								else
+									give("batteries_empty")
+								end
+							-- [TARGET SUBSPECIES: electric waste only] EXECUTE: 2nd waste on probab / batteries (for: variety / specimen)
+							elseif trgt_is_electr4 then
+								if (sec ~= "device_flashlight") then
+									if (sec ~= "wpn_upd") then
+										if test_on_probab(electr4_probab) then
+											give("tech_waste")
+										end
+									end
+								end
+								-- get batteries according to UPD power level, NOTE: keep these synched with axr_battery.ltx
+								if (sec == "wpn_upd") then
+									if trgt_con <= 0.14 then
+										give("batteries_dead_empty")
+									elseif trgt_con <= 0.52 then
+										give("batteries_dead")
+									elseif trgt_con <= 0.93 then
+										give("batteries")
+									elseif trgt_con <= 1 then
+										give("batteries_ccell")
+									end
+								end
+							end
+						end
+					end
+				end
+
+				-- [ SECTION (4) ] - SET/EXECUTE: TOOL, AUXILIARY TOOL AND TARGET BEHAVIOUR;   SET: EFFECTS
+				if true then
+					-- SET: tool bhv: keep/dispose/drop/blunt/multi-use, target: keep/decrease-condition, effects
+					if tool_fail_override then
+						keep_target = true
+						no_act_eff = true
+						if hammer_on_wpn_fail then
+							decrease_trgt_con = decrease_wpn_con_on_hammer_fail
+							hammer_wpn_fail_eff = true
+						elseif swiss_sharp_on_wpn_fail then
+							decrease_trgt_con = decrease_wpn_con_on_swiss_fail
+							swiss_sharp_wpn_fail_eff = true
+							tool_drop = true
+						elseif cutlery_sharp_on_wpn_fail then
+							decrease_trgt_con = decrease_wpn_con_on_cutlery_fail
+							cutlery_sharp_wpn_fail_eff = true
+						elseif hammer_on_helm_fail then
+							decrease_trgt_con = decrease_helm_con_on_hammer_fail
+							hammer_helm_fail_eff = true
+						end
+					end
+					-- SET: aux tool cancel override
+					if aux_cancel_override then
+						tool_keep = true
+						keep_target = true
+						no_act_eff = true
+					end
+					-- EXECUTE: aux tool bhv
+					if tool_aux_blunt then
+						if has_aux_tool then
+							if aux_tool_is_knife then
+								itms_refunct.blunt_knife(aux_obj_knife,"dismantle",aux_blunt_percent)
+							elseif aux_tool_is_axe then
+								if trgt_is_outfit then
+									itms_refunct.blunt_axe(aux_obj_axe,"dismantle",aux_blunt_percent/2)
+								else
+									itms_refunct.blunt_axe(aux_obj_axe,"dismantle",aux_blunt_percent)
+								end
+							end
+						end
+					end
+					-- SET: tool bhv, eff (for: target genus: gauss guns, target species: explosive devices)
+					if gauss_fail then
+						no_act_eff = true 
+						gauss_eff = true
+						tool_drop = true
+					elseif xplo_fail then
+						no_act_eff = true
+						blast_eff = true
+						tool_drop = true
+					end
+					-- EXECUTE: target bhv (release / keep / damage)
+					if not keep_target then
+						alife():release(se_trgt,true)
+					end
+					if decrease_trgt_con then
+						trgt_obj:set_condition(trgt_con - decrease_trgt_con)
+					end
+					-- EXECUTE: tool bhv (keep / zero-one blunt / drop in quadrant)
+					if tool_keep then
+						give(self.tool)
+					end
+					if tool_zeroone_blunt then
+						give(self.tool:gsub("_sharp",""))
+					end
+					if tool_drop then -- (drops zero-one bluned for: tool_is_probab2, tool_is_probab3, drops 1-usage-less for: kits)
+						local drop_section
+						if tool_is_not_kit then
+							if tool_is_probab1 then
+								drop_section = self.tool
+							else
+								drop_section = self.tool:gsub("_sharp","")
+							end
+						else
+							local t_kit_w = {
+								[0] = "wpn_dismantler_empty",
+								[1] = "wpn_dismantler5",
+								[2] = "wpn_dismantler4",
+								[3] = "wpn_dismantler3",
+								[4] = "wpn_dismantler2",
+								[5] = "wpn_dismantler"
+								}
+							for i = 1,#t_kit_w do
+								if self.tool == t_kit_w[i] then
+									drop_section = t_kit_w[i-1]
+								end
+							end
+						end
+						if drop_section then
+							itms_refunct.spawn_in_front_quadrant(drop_section)
+						end
+					end
+					-- EXECUTE: tool bhv (multi-use for dismantle kits), SET: eff
+					if tool_is_kit then if not aux_cancel_override then if not tool_drop then
+						act_eff_dismanlte_long = true
+						if tool_is_outfit_kit then
+							local t_kit_o = {
+								[0] = "outfit_dismantler_empty",
+								[1] = "outfit_dismantler5",
+								[2] = "outfit_dismantler4",
+								[3] = "outfit_dismantler3",
+								[4] = "outfit_dismantler2",
+								[5] = "outfit_dismantler"
+								}
+							for i = 1,#t_kit_o do
+								if self.tool == t_kit_o[i] then
+									give(t_kit_o[i-1])
+								end
+							end
+						end
+						if tool_is_weapon_kit then
+							local t_kit_w = {
+								[0] = "wpn_dismantler_empty",
+								[1] = "wpn_dismantler5",
+								[2] = "wpn_dismantler4",
+								[3] = "wpn_dismantler3",
+								[4] = "wpn_dismantler2",
+								[5] = "wpn_dismantler"
+								}
+							for i = 1,#t_kit_w do
+								if self.tool == t_kit_w[i] then
+									give(t_kit_w[i-1])
+								end
+							end
+						end
+					end end end
+				end
+
+				-- [ SECTION (5) ] EXECUTE: effects (sound/display operations)
+				if self:IsShown() then self:HideDialog() end
+				-- actor effects / quick effects
+				if no_act_eff then
+					xr_effects.disable_ui_inventory(db.actor, nil)
+					if aux_cancel_override then
+						if aux_axe_hint then
+							hud_caption("st_dismantle_screen_need_aux_axe")
+						else
+							hud_caption("st_dismantle_screen_need_aux")
+						end
+					else
+						-- db.actor:hide_weapon() -- undone in itms_refunct --// OBSOLETE
+					end
+					if (gauss_eff) then
+						itms_refunct.quick_actor_effect("electro_shock")
+					end
+					if (blast_eff) then
+						itms_refunct.quick_actor_effect("blast")
+					end
+					if (hammer_wpn_fail_eff) then
+						itms_refunct.quick_actor_effect("hammer_wpn_fail")
+						hud_caption("st_dismantle_screen_fail_hammer")
+					end
+					if (swiss_sharp_wpn_fail_eff) then
+						itms_refunct.quick_actor_effect("swiss_sharp_wpn_fail")
+						hud_caption("st_dismantle_screen_swiss_wpn_fail")
+					end
+					if (cutlery_sharp_wpn_fail_eff) then
+						itms_refunct.quick_actor_effect("cutlery_sharp_wpn_fail")
+						hud_caption("st_dismantle_screen_cutlery_wpn_fail")
+					end
+					if (hammer_helm_fail_eff) then
+						itms_refunct.quick_actor_effect("hammer_helm_fail")
+						hud_caption("st_dismantle_screen_fail_hammer")
+					end
+				else
+					if act_eff_outfit then
+						actor_effects.use_item("dismantle_outfit")
+						itms_manager.show_message("//sound not ready//",30) -- PLAA remove this line after assets arrive
+					elseif act_eff_dismanlte_long then
+						actor_effects.use_item("dismantle_long")
+					else
+						actor_effects.use_item("dismantle_short")
+					end
+				end
+
+			end
+		else
+			return
+		end
+	end
+
+	self.ui_futile_no_trgts_override = nil
+end
+
+function dismantle_ui:AddItemToList(item,listbox,condition)
+	local _itm = load_item(self.file_item_main_sz.y)
+	local sec = item and item:section()
+	local inv_name = item and game.translate_string(alun_utils.read_from_ini(nil,sec,"inv_name","string","error")) or "none"
+
+	_itm:SetWndSize(self.file_item_main_sz)
+	_itm.fn:SetWndPos(vector2():set(0,0))
+	_itm.fn:SetWndSize(self.file_item_fn_sz)
+	_itm.fn:SetText(inv_name)
+
+	if (item) then
+		_itm.item_id = item:id()
+		if condition then
+			condition = math.ceil(condition*100)
+			_itm.fage = _itm:AddTextField(condition.."%", self.file_item_fd_sz.x)
+			_itm.fage:SetWndPos	(vector2():set(self.file_item_fn_sz.x-14, 0))
+		end
+		local inv_grid_width = alun_utils.read_from_ini(ini,sec,"inv_grid_width","float",0)
+		local inv_grid_height = alun_utils.read_from_ini(ini,sec,"inv_grid_height","float",0)
+		local inv_grid_x = alun_utils.read_from_ini(ini,sec,"inv_grid_x","float",0)
+		local inv_grid_y = alun_utils.read_from_ini(ini,sec,"inv_grid_y","float",0)
+		_itm.x1 = inv_grid_x*50
+		_itm.y1 = inv_grid_y*50
+		_itm.width = inv_grid_width*50
+		_itm.height = inv_grid_height*50
+		_itm.x2 = _itm.x1 + _itm.width
+		_itm.y2 = _itm.y1 + _itm.height
+	end
+
+	listbox:AddExistingItem(_itm)
+end
+
+function give(section,amount)
+	if not amount then amount = 1 end
+	for i = 1, amount do
+		alife():create(section,db.actor:position(),0,0,0)
+	end
+end
+
+function test_on_probab(treshold)
+	return treshold >= math.random(0,100)
+end
+
+function hud_caption(xml_id)
+	itms_manager.show_message(game.translate_string(xml_id),25)
+end

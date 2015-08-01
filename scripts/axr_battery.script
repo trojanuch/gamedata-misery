@@ -95,7 +95,7 @@ function use_battery(obj)
 
 		db.actor:transfer_item(upd,db.actor)
 	else
-		if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+		if (itms_manager) then itms_manager.show_message(game.translate_string("st_battery_need_upd"),35) end
 		alife():create(name, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 	end
 end
@@ -121,7 +121,7 @@ function updateLight(battery)
 		if (battery and batcon > 0.1) then
 			updateBatteryCondition(battery, batcon, "fl")
 		elseif (battery) then
-			if (itms_manager) then itms_manager.show_message("Low battery power",25) end
+			if (itms_manager) then itms_manager.show_message(game.translate_string("st_battery_low_power"),25) end
 			db.actor:object("device_torch"):enable_torch(false)
 		else
 			db.actor:object("device_torch"):enable_torch(false)
@@ -142,7 +142,7 @@ function updateNV(battery)
 		nnEffectIsOn = 1
 		-- battery check
 		if not (battery) then
-			if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+			if (itms_manager) then itms_manager.show_message(game.translate_string("st_battery_need_upd"),35) end
 			nv:enable_night_vision(false)
 			return
 		end
@@ -168,7 +168,7 @@ function updateNV(battery)
 			level.add_pp_effector("nightvision_mis_20.ppe", nnEffectId, true)
 		else
 			level.add_pp_effector("nightvision_mis_10.ppe", nnEffectId, true)
-			if (itms_manager) then itms_manager.show_message("Low battery power",35) end
+			if (itms_manager) then itms_manager.show_message(game.translate_string("st_battery_low_power"),35) end
 			nv:enable_night_vision(false)
 		end
 		updateBatteryCondition(battery, batcon, "nv")
@@ -185,11 +185,11 @@ function updatePDA(battery)
 			if batcon > 0.1 then
 				updateBatteryCondition(battery, batcon, "pda")
 			else
-				if (itms_manager) then itms_manager.show_message("Low battery power",25) end
+				if (itms_manager) then itms_manager.show_message(game.translate_string("st_battery_low_power"),25) end
 				hud:HidePdaMenu()
 			end
 		else
-			if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+			if (itms_manager) then itms_manager.show_message(game.translate_string("st_battery_need_upd"),35) end
 			hud:HidePdaMenu()
 		end
 	end

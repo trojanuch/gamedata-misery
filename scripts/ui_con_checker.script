@@ -52,9 +52,17 @@ function con_checker_ui:FillList()
 	end
 
 	db.actor:iterate_inventory(fill_list,db.actor)
+
+	-- Plaargath
+	if self.list_box_outfits:GetSize() == 0 then
+		if self.list_box_weapons:GetSize() == 0 then
+			self:OnButton_ok_clicked()
+			itms_manager.show_message(game.translate_string("st_con_checker_futile"),25)
+		end
+	end
+	-- end Plaargath
+
 end
-
-
 
 function con_checker_ui:InitControls()
 	self:SetWndRect			(Frect():set(0,0,1024,768))

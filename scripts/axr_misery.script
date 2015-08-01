@@ -214,7 +214,7 @@ function dynamic_actor_loadout()
 		create_items("wpn_lr300",4)
 	end
 
-	-- Items refunct dummies - must have for Canned Food mod and Lighter mod to work, Plaargath
+	-- Dummies for Items refunct mod, Plaargath
 	itms_refunct.initial_dummies_spawn()
 
 	-- Items all classes should have

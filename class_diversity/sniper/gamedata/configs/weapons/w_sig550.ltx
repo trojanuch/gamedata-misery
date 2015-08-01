@@ -58,34 +58,34 @@ single_handed           = 0
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
 fire_dispersion_base    = 0.249        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.54f
-crosshair_inertion	= 6.8
+control_inertion_factor = 1.65f
+crosshair_inertion		= 7.3
 
 ;отдача
-cam_return = 0 ;				= 1
+cam_return = 0 ;				= 0
 cam_relax_speed         = 9		; скорость возврата в исходное положение
 cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
-cam_dispersion	        = 1.15
-cam_dispersion_inc      = 0.95
+cam_dispersion	        = 1.01
+cam_dispersion_inc      = 0.71
 cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
 cam_max_angle           = 50.0       ; максимальный угол отдачи
 cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 1.65       ; (degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 1.04
-PDM_disp_vel_factor 		= 2.5
-PDM_disp_accel_factor 		= 2.5
-PDM_disp_crouch = 1.0 ;  			= 1.165
-PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
+PDM_disp_vel_factor 		= 2.105
+PDM_disp_accel_factor 		= 2.105
+PDM_disp_crouch = 1.0 ; 			= 2.235
+PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
 
 zoom_cam_relax_speed         = 9     ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 0.95
-zoom_cam_dispersion_inc      = 0.75
+zoom_cam_dispersion          = 0.81
+zoom_cam_dispersion_inc      = 0.61
 zoom_cam_dispersion_frac     = 0.7
 zoom_cam_max_angle           = 50.0
 zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.3
+zoom_cam_step_angle_horz     = 1.45
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 7        
 ;---DOF-------------------------------------------------------------------------

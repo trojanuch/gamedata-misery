@@ -99,31 +99,31 @@
 	<string id="st_meat_tushkano_descr">
 		<text>2 small skewered tushkanos, grilled and seasoned with salt and chili pepper. The cheapest hot meal available in the Zone. Wrapped in thick brown paper to prevent the fat from dripping.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +41 mSv</text>
 	</string>
-		<string id="st_meat_dog">
+	<string id="st_meat_dog">
 		<text>Dog chops (Zone-produced)</text>
 	</string>
 	<string id="st_meat_dog_descr">
 		<text>A small hot meal of grilled dog chops mixed with garlic, peppers and mushrooms. Served in an old tin box. A cheap alternative to the more popular boar beef.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +136 mSv</text>
 	</string>
-		<string id="st_meat_pseudodog">
+	<string id="st_meat_pseudodog">
 		<text>Pseudodog chops (Zone-produced)</text>
 	</string>
 	<string id="st_meat_pseudodog_descr">
 		<text>Portion of grilled pseudodog meat chops. Good nutrition value due to thick muscles of the animal.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +177 mSv</text>
 	</string>
-		<string id="st_meat_flesh">
+	<string id="st_meat_flesh">
 		<text>Fat bacon (Zone-produced)</text>
 	</string>
 	<string id="st_meat_flesh_descr">
 		<text>2 slices of fat and greasy bacon made from mutated pigs commonly known as fleshes. Wrapped in thick brown paper to prevent the fat from dripping.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +385 mSv</text>
 	</string>
-		<string id="st_meat_boar">
+	<string id="st_meat_boar">
 		<text>Boar chops (Zone-produced)</text>
 	</string>
 	<string id="st_meat_boar_descr">
 		<text>A small portion of boar meat, grilled and seasoned with salt and mixed with peppers. The most popular warm meal among stalkers. Wrapped in brown paper.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +394 mSv</text>
 	</string>
-		<string id="st_meat_bloodsucker">
+	<string id="st_meat_bloodsucker">
 		<text>Bloodsucker goulash (Zone-produced)</text>
 	</string>
 	<string id="st_meat_bloodsucker_descr">
@@ -135,7 +135,7 @@
 	<string id="st_meat_snork_descr">
 		<text>Grilled snork hand, ready to be eaten. WARNING: Most Zoners consider eating snork's meat cannibalistic and immoral. However, certain factions, such as bandits and mercenaries, include it in their meals so as to show their superiority over other groups.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,204,0,51] • %c[0,140,140,140] unhealthy food\n%c[0,204,0,51] • %c[0,140,140,140] radiation poisoning: %c[0,170,170,170] +224 mSv</text>
 	</string>
-		<string id="st_meat_chimera">
+	<string id="st_meat_chimera">
 		<text>The Masculine Meal (Zone-produced)</text>
 	</string>
 	<string id="st_meat_chimera_descr">
@@ -483,7 +483,7 @@
 	<string id="st_cleaning_kit_p">
 		<text>"Progress" handgun cleaning kit (3 usages, unused)</text>
 	</string>
-		<string id="st_cleaning_kit_p2">
+	<string id="st_cleaning_kit_p2">
 		<text>"Progress" handgun cleaning kit (2 usages left)</text>
 	</string>
 	<string id="st_cleaning_kit_p3">
@@ -495,7 +495,7 @@
 	<string id="st_cleaning_kit_s">
 		<text>"Aurora A108/12" 12ga cleaning kit (3 usages, unused)</text>
 	</string>
-		<string id="st_cleaning_kit_s2">
+	<string id="st_cleaning_kit_s2">
 		<text>"Aurora A108/12" 12ga cleaning kit (2 usages left)</text>
 	</string>
 	<string id="st_cleaning_kit_s3">
@@ -507,7 +507,7 @@
 	<string id="st_cleaning_kit_r5">
 		<text>"ValuPro III" smallbore rifle cleaning kit (3 usages, unused)</text>
 	</string>
-		<string id="st_cleaning_kit_r5_2">
+	<string id="st_cleaning_kit_r5_2">
 		<text>"ValuPro III" smallbore rifle cleaning kit (2 usages left)</text>
 	</string>
 	<string id="st_cleaning_kit_r5_3">
@@ -519,7 +519,7 @@
 	<string id="st_cleaning_kit_r7">
 		<text>Medium and large caliber rifle cleaning kit (3 usages, unused)</text>
 	</string>
-		<string id="st_cleaning_kit_r7_2">
+	<string id="st_cleaning_kit_r7_2">
 		<text>Medium and large caliber rifle cleaning kit (2 usages left)</text>
 	</string>
 	<string id="st_cleaning_kit_r7_3">
@@ -531,7 +531,7 @@
 	<string id="st_cleaning_kit_u">
 		<text>Universal weapon cleaning kit (3 usages, unused)</text>
 	</string>
-		<string id="st_cleaning_kit_u2">
+	<string id="st_cleaning_kit_u2">
 		<text>Universal weapon cleaning kit (2 usages left)</text>
 	</string>
 	<string id="st_cleaning_kit_u3">
@@ -543,7 +543,7 @@
 	<string id="st_repair_kit_p">
 		<text>Handgun repair kit (4 usages, unused)</text>
 	</string>
-		<string id="st_repair_kit_p2">
+	<string id="st_repair_kit_p2">
 		<text>Handgun repair kit (3 usages left)</text>
 	</string>
 	<string id="st_repair_kit_p3">
@@ -865,7 +865,7 @@
 		<text>Metal shovel (sharp)</text>
 	</string>
 	<string id="st_shovel_old_sharp_descr">
-		<text>An old metal shovel. Its edges have been sharpened so in absence of more precise tools it can be used to remove animal and mutant parts. It is also a crude dismantling tool, with a somewhat limited usefulness due to it's unwieldiness. Suitable for destroying various electrical devices.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] salvaging tool\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (blunts on use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices (reusable)</text>
+		<text>An old metal shovel. Its edges have been sharpened so in absence of more precise tools it can be used to remove animal and mutant parts. It is also a crude dismantling tool, not very precise, but definitely a hardy one. Suitable for dismantling various electronic devices, firearms and weapon addons, most outfits, gasmasks, and - when aided with an axe - for dismantling hard helmets.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] makeshift salvaging tool\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling gasmasks (reusable, blunts on PMK), most outfits (blunts on use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfit related targets: boots, backpacks, camelbacks (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling hard helmets (reusable) - with an auxiliary tool only (axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling weapon addons: grenade launchers, nightvision scopes (reusable) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices (reusable)</text>
 	</string>
 	<string id="st_shovel_mili">
 		<text>Military field shovel</text>
@@ -877,7 +877,7 @@
 		<text>Military field shovel (sharp)</text>
 	</string>
 	<string id="st_shovel_mili_sharp_descr">
-		<text>High-quality field shovel. Its edges have been sharpened so in absence of more precise tools it can be used to remove animal and mutant parts. It is also a crude dismantling tool, with a somewhat limited usefulness due to its unwieldiness. Suitable for destroying various electrical devices. \n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,153,255,255] • %c[0,140,140,140] salvaging tool\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (blunts on use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices (reusable)</text>
+		<text>High-quality field shovel. Its edges have been sharpened so in absence of more precise tools it can be used to remove animal and mutant parts. It is also a crude dismantling tool, not very precise, but definitely a hardy one. Suitable for dismantling various electronic devices, firearms and weapon addons, most outfits, gasmasks, and - when aided with an axe - for dismantling hard helmets.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[0,153,255,255] • %c[0,140,140,140] makeshift salvaging tool\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling gasmasks (reusable, blunts on PMK), most outfits (blunts on use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfit related targets: boots, backpacks, camelbacks (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling hard helmets (reusable) - with an auxiliary tool only (axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling weapon addons: grenade launchers, nightvision scopes (reusable) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices (reusable)</text>
 	</string>
 	<string id="st_meinkampf">
 		<text>Mein Kampf</text>
@@ -895,13 +895,13 @@
 		<text>Grooming kit</text>
 	</string>
 	<string id="st_grooming_descr">
-		<text>Grooming kit that packs a ballistic nylon travel case with a beard and moustache comb and detail facial scissors, featuring man-sized finger rings, cutting blades of stainless steel, non-slip rubberized grip, and a precision trimming tip. The utensils are blunt, but can be easily sharpened with the use of a sharpening stone. Some stalkers do in fact care about their appearance enough to use the kit according to its intended purpose. However, the set is most commonly used as an auxiliary and disposable weapon maintenance tool or, if sharpened, even for skinning and gutting animals and mutants.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item \n%c[0,153,255,255] • %c[0,140,140,140] can be sharpened (use to quick-sharp) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%) (single use)</text>
+		<text>Grooming kit that packs a ballistic nylon travel case with a beard and moustache comb and detail facial scissors, featuring man-sized finger rings, cutting blades of stainless steel, non-slip rubberized grip, and a precision trimming tip. The utensils are blunt, but can be easily sharpened with the use of a sharpening stone. Some stalkers do in fact care about their appearance enough to use the kit according to its intended purpose. However, the set is most commonly used as an auxiliary and disposable weapon maintenance tool or, if sharpened, as a disposable tool for dismantling various equipment or even skinning and gutting animals and mutants.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item \n%c[0,153,255,255] • %c[0,140,140,140] can be sharpened (use to quick-sharp) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%) (single use)</text>
 	</string>
 	<string id="st_grooming_sharp">
 		<text>Groomig kit (sharp)</text>
 	</string>
 	<string id="st_grooming_sharp_descr">
-		<text>Some stalkers do in fact care about their appearance enough to use the kit according to its intended purpose, not only as an auxiliary and disposable weapon maintenance tool. Since the utensils comprising this grooming kit have been sharpened, it can also be utilized for opening food cans or skinning and gutting animals and mutants in absence of more suitable instruments. However, since this isn't the original function of the set, it is bound to break apart after a single use.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans (blunts on use) \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (single use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%) (single use)</text>
+		<text>Some stalkers do in fact care about their appearance enough to use the kit according to its intended purpose, not only as a disposable weapon maintenance tool. Since the utensils comprising this grooming kit have been sharpened, it can also be utilized for opening food cans and for dismantling a limited range of targets: the lightest outfits, weapon addons, some electronic devices, and - when aided with an axe - for dismantling hard helmets. Another possible use is skinning and gutting animals and mutants in absence of more suitable instruments. However, since these are not the original functions of the set, in most cases it will break apart after a single use.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] makeshift salvaging tool \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans (blunts on use) \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (single use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%) (single use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling simplest outfits (single use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfit related targets: boots, backpacks, camelbacks (single use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling hard helmets (blunts on use) - with an auxiliary tool only (axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling weapon addons: grenade launchers, nightvision scopes (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling most electronic devices (single use)</text>
 	</string>
 	<string id="st_journal">
 		<text>Personal journal</text>
@@ -1024,7 +1024,7 @@
 		<text>Crowbar (reusable)</text>
 	</string>
 	<string id="st_crowbar_descr">
-		<text>A very reliable and virtually indestructible tool. Perfect for dismantling weapons, some helmets and various electrical devices. It can also be of assist for outfit repairs and weapon maintenance. Due to its versatility some stalkers appreciate keeping it in their backpacks in spite of its heavy weight. A common find in industrial and urban areas of the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] salvaging tool\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling some field gear\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs, weapon maintenance (+3%)\n%c[255,238,153,26] • %c[0,140,140,140] reusable tool</text>
+		<text>A very reliable and virtually indestructible tool. Perfect for dismantling weapons, some helmets and various electronic devices. It can also be of assist for outfit repairs and weapon maintenance. Due to its versatility some stalkers appreciate keeping it in their backpacks in spite of its heavy weight. A common find in industrial and urban areas of the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] makeshift salvaging tool\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs, weapon maintenance (+3%) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling gasmasks, helmets \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfits - with an auxiliary tool only (knife or axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfit related targets: boots, backpacks, camelbacks - with an auxiliary tool only (knife or axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling weapon addons: grenade launchers, nightvision scopes \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices \n%c[255,238,153,26] • %c[0,140,140,140] reusable tool</text>
 	</string>
 	<string id="st_tobacco">
 		<text>Russian tobacco (5 batches left, imported)</text>
@@ -1150,7 +1150,7 @@
 		<text>Outfit dismantle set (1 use left)</text>
 	</string>
 	<string id="st_outfit_dismantler_descr">
-		<text>Professional kit of tools comprising everything which is needed to succesfully dismantle of most modern military clothing or armor sets. It's contents include a set of sharp blades (also toothed ones), scisors, large and small pliers, chissels and many more. When utilized properly it allows to salvage maximum ammount of valuable material pieces and elements of suits without damaging them in the process. Effectivity of this opertaion can be further enhanced by using of larger blades (as the kit contains only compact ones) - such as those of utility or military-grade knices.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling all clothing, armor and headgear sets</text>
+		<text>Professional kit of tools comprising everything which is needed to succesfully dismantle of most modern military clothing, armor sets, boots, backpacks, camelbacks and gasmasks. It's contents include a set of sharp blades (also toothed ones), scisors, large and small pliers, chissels and many more. It allows to salvage maximum ammount of valuable material pieces and elements of the target without damaging them in the process. Also its sharp elements can be used for opening food cans or skinning and gutting animals and mutants in absence of more suitable instruments. For these purposes however, the kit should be a tool of last resort, due to its high value.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] salvaging tool\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] valuable \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling all outfits, gasmasks\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfit related targets: boots, backpacks, camelbacks\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling hard helmets - with an auxiliary tool only (axe)</text>
 	</string>
 	<string id="st_outfit_dismantler_empty">
 		<text>Outfit dismantle set (empty box)</text>
@@ -1174,7 +1174,7 @@
 		<text>Firearm dismantle set (1 use left)</text>
 	</string>
 	<string id="st_wpn_dismantler_descr">
-		<text>This heavy metal box contains everything which is needed to salvage usable elemetns out of even the most damaged and rusty firearm. This effect is achieved due to inclusion of high-grade elements being able to operate on most modern appliances of firearm mechanisms and construction elements - be it western or eastern design. However these elements - although being high-grade - get damaged with each operation making the kit having only a finite ammount of usages.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling of firearms</text>
+		<text>This heavy metal box contains everything which is needed to salvage usable elemetns out of even the most damaged and rusty firearm. This effect is achieved due to inclusion of high-grade elements being able to operate on most modern appliances of firearm mechanisms and construction elements - be it western or eastern design. However these elements - although being high-grade - get damaged with each operation making the kit having only a finite ammount of usages.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] salvaging tool\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] valuable\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms, IED's and mines \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling weapon addons: grenade launchers, nightvision scopes</text>
 	</string>
 	<string id="st_wpn_dismantler_empty">
 		<text>Firearm dismantle set (empty box)</text>
@@ -1222,19 +1222,19 @@
 		<text>Military maps</text>
 	</string>
 	<string id="st_mili_maps_descr">
-		<text>Maps showing the location of military camps around the Zone. Each PDA comes with these maps installed, so this item is of little use other than as disposable fuel for the wood stove.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+3%)\n%c[0,0,255,30] • %c[0,140,140,140] usable as:%c[0,170,170,170] fuel for the wood stove</text>
+		<text>Maps showing the location of military camps around the Zone. Each PDA comes with these maps installed, so this item is of little use.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] military item\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+3%)</text>
 	</string>
 	<string id="st_swiss">
 		<text>Swiss Army knife (reusable)</text>
 	</string>
 	<string id="st_swiss_descr">
-		<text>A Swiss Army knife with a blunted cutting edge. This kind of EDC pocket knife is well known for its versatility that allows it to be used in a variety of situations. It's always ready to open your can of food and can be utilized as a supportive tool in both weapon and outfit repairs. It can be sharpened quickly, which increases its usefullness in the Zone even further. When sharpened, it can also be used to skin and gut mutants or serve as a dismantling tool for smaller firearms, various electronic devices, some field gear, IED's and mines.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] can be sharpened (use to quick-sharp)\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans (reusable) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs, weapon maintenance (+2%) (reusable)</text>
+		<text>A Swiss Army knife with a blunted cutting edge. This kind of EDC pocket knife is well known for its versatility that allows it to be used in a variety of situations. It's always ready to open your can of food and can be utilized as a supportive tool in both weapon and outfit repairs. It can be sharpened quickly, which increases its usefullness in the Zone even further. When sharpened, it can also be used to skin and gut mutants or serve as a dismantling tool for firearms, electronic devices, some field gear, IED's and mines.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] can be sharpened (use to quick-sharp)\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans (reusable) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs, weapon maintenance (+2%) (reusable)</text>
 	</string>
 	<string id="st_swiss_sharp">
 		<text>Swiss Army knife (sharp)</text>
 	</string>
 	<string id="st_swiss_sharp_descr">
-		<text>A Swiss Army knife with sharpened cutting edge. This kind of EDC pocket knife is well known for its versatility that allows it to be used in a variety of situations. It's always ready to open your can of food and can be utilized as a supportive tool in both weapon and outfit repairs. The edge has been sharpened, so you can use it to skin and gut mutants or to dismantle various electronic devices and some field gear. If you feel confident you can use it to disarm mines and IED's in your possession. It can also serve as a reasonably reliable dismantling tool for smaller firearms.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] salvaging tool\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans (reusable) \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (blunts on use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs, weapon maintenance (+2%) (blunts on use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling smaller firearms, mines and IED's (reusable)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices (reusable)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling some field gear (blunts on use)</text>
+		<text>A Swiss Army knife with sharpened cutting edge. This kind of EDC pocket knife is well known for its versatility that allows it to be used in a variety of situations. It's always ready to open your can of food and can be utilized as a supportive tool in both weapon and outfit repairs. The edge has been sharpened, so you can use it to skin and gut mutants or to dismantle firearms, weapon addons nad various electronic devices. If you feel confident you can use it to disarm mines and IED's in your possession. It will also help you dismantle lighter outfits, gasmasks, and - when aided with an axe - hard helmets. \n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] makeshift salvaging tool\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans (reusable) \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (blunts on use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs, weapon maintenance (+2%) (blunts on use)\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling gasmasks, most outfits (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfit related targets: boots, backpacks, camelbacks (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling hard helmets (reusable) - with an auxiliary tool only (axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms (blunts on use), mines and IED's (reusable) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling weapon addons: grenade launchers, nightvision scopes (reusable) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices (blunts on use)</text>
 	</string>
 	<string id="st_headlamp">
 		<text>Old head lamp</text>
@@ -1276,7 +1276,7 @@
 		<text>Old hammer (reusable)</text>
 	</string>
 	<string id="st_hammer_descr">
-		<text>Hammer with a wooden handle and an iron head. A hardy and very reliable tool. It can easily withstand extensive use, but a few stalkers reported that the handle might break once it absorbs too much water. Perfect for dismantling weapons, some helmets and various electrical devices. It can also be of assist for outfit repairs and weapon maintenance. Despite its heavy weight, stalkers often carry it in their backpacks due to its versatility. A common sight in industrial areas of the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] salvaging tool\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling some field gear\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs, weapon maintenance (+3%)\n%c[255,238,153,26] • %c[0,140,140,140] reusable tool</text>
+		<text>Hammer with a wooden handle and an iron head. A hardy and very reliable tool. It can easily withstand extensive use, but a few stalkers reported that the handle might break once it absorbs too much water. Perfect for dismantling weapons, some helmets and various electronic devices. It can also be of assist for outfit repairs and weapon maintenance. Despite its heavy weight, stalkers often carry it in their backpacks due to its versatility. A common sight in industrial areas of the Zone.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] makeshift salvaging tool\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] outfit repairs, weapon maintenance (+3%) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling gasmasks, helmets \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfits - with an auxiliary tool only (knife or axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfit related targets: boots, backpacks, camelbacks - with an auxiliary tool only (knife or axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling weapon addons: grenade launchers, nightvision scopes \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling electronic devices \n%c[255,238,153,26] • %c[0,140,140,140] reusable tool</text>
 	</string>
 	<string id="st_tetanus">
 		<text>Tetanus vaccine (imported)</text>
@@ -1306,13 +1306,13 @@
 		<text>Field cutlery</text>
 	</string>
 	<string id="st_cutlery_descr">
-		<text>A heavy steel spoon, knife and fork held together by a copper cord. A robust and reasonably light cutlery set, ideal for backpacking and field exploration. The knife and fork are blunted, but can be sharpened quickly. Since the Zoners don't usually follow any table manners whatsoever, the set is most commonly used as an auxiliary and disposable weapon maintenance tool or, if sharpened, even for skinning and gutting animals and mutants.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item \n%c[0,153,255,255] • %c[0,140,140,140] can be sharpened (use to quick-sharp) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%) (single use)</text>
+		<text>Light aluminium spoon, knife and fork held together by a copper cord. A handy and reasonably light cutlery set, ideal for backpacking and field exploration. The knife and fork are blunted, but can be sharpened quickly. Since the Zoners don't usually follow any table manners whatsoever, the set is most commonly used as an auxiliary and disposable weapon maintenance tool or, if sharpened, for dismantling various equipment and even for skinning and gutting animals and mutants.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item \n%c[0,153,255,255] • %c[0,140,140,140] can be sharpened (use to quick-sharp) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%) (single use)</text>
 	</string>
 	<string id="st_cutlery_sharp">
 		<text>Field cutlery (sharp)</text>
 	</string>
-	<string id="st_cutlery_descr_sharp">
-		<text>A heavy steel spoon, knife and fork held together by a copper cord. The knife and fork have been sharpened, which allows them to be used as food can openers. Also, beside serving as an auxiliary and disposable weapon maintenance tool it can be used for skinning and gutting animals and mutants in absence of more suitable instruments. However you shouldn't expect it to endure since the set is visibly unfit for this purpose.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans (blunts on use) \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (single use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%) (single use)</text>
+	<string id="st_cutlery_sharp_descr">
+		<text>Light aluminium spoon, knife and fork held together by a copper cord. The knife and fork have been sharpened, which allows them to be used as food can openers. Also, beside serving as an auxiliary and disposable weapon maintenance tool it can be used for skinning and gutting animals and mutants in absence of more suitable instruments. However you shouldn't expect it to endure since the set is visibly unfit for this purpose. Also it can be used for dismantling wide scope of targets: lighter outfits, gasmasks, firearms and weapon addons, IED's and mines, various electronic devices and - when aided with an axe - for dismantling hard helmets.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] everyday item\n%c[0,153,255,255] • %c[0,140,140,140] makeshift salvaging tool\n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] opening food cans (blunts on use) \n%c[0,109,117,7] • %c[0,140,140,140] usable for:%c[0,170,170,170] removing animal and mutant parts (single use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+2%) (single use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling gasmasks, light outfits (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling outfit related targets: boots, backpacks, camelbacks (blunts on use) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling hard helmets (reusable) - with an auxiliary tool only (axe) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling firearms (blunts on use), mines and IED's (reusable) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling weapon addons: grenade launchers, nightvision scopes (reusable) \n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] dismantling most electronic devices (blunts on use)</text>
 	</string>
 	<string id="st_adrenalin">
 		<text>Epinephrine shot (imported)</text>
@@ -1356,12 +1356,12 @@
 	<string id="st_identity_card_assaulter_descr">
 		<text>As a USS Assaulter you have unique strengths and weaknesses.\n\n%c[0,153,255,255]EQUIPMENT\n%c[default]Heavy armor agility: %c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Closed breathing agility: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Artifact handling: %c[255,230,150,30]C\n\n%c[0,153,255,255]WEAPONS\n%c[0,153,255,255]%c[default]Knife fighting: %c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Handling speciality: %c[255,230,150,30]High recoils\n%c[0,153,255,255]%c[default]Maintenance speciality: %c[255,230,150,30]Heavy weapons\n\n%c[0,153,255,255]MEDICINE\n%c[0,153,255,255]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Medic skills: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Drug handling skills: %c[255,230,150,30]C\n\n%c[0,153,255,255]ATHLETICS\n%c[0,153,255,255]%c[default]Endurance: %c[255,230,150,30]very high\n%c[0,153,255,255]%c[default]Sprinting speed: %c[255,230,150,30]slow\n%c[0,153,255,255]%c[default]Jump height: %c[255,230,150,30]low\n%c[0,153,255,255]%c[default]Fall/jump agility: %c[255,230,150,30]low\n%c[0,153,255,255]%c[default]Base stamina: %c[255,230,150,30]low\n%c[0,153,255,255]%c[default]Maximum carry weight: %c[255,230,150,30]high\n\n%c[0,153,255,255]HEALTH PROFILE\n%c[0,153,255,255]%c[default]Food consumption rate: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Need for sleep: %c[255,230,150,30]high\n\n%c[0,153,255,255]IMMMUNE SYSTEM RESISTANCE\n%c[0,153,255,255]%c[default]Drugs/alcohol:%c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Unhealthy food: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Artifacts: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Radiation: %c[255,230,150,30]C</text>
 	</string>
-    <string id="st_identity_card_recon_descr">
-        <text>As a USS Recon you have unique strengths and weaknesses.\n\n%c[0,153,255,255]EQUIPMENT\n%c[default]Heavy armor agility: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Closed breathing agility: %c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Artifact handling: %c[255,230,150,30]A+\n\n%c[0,153,255,255]WEAPONS\n%c[0,153,255,255]%c[default]Knife fighting: %c[255,230,150,30]A\n%c[0,153,255,255]%c[default]Handling speciality: %c[255,230,150,30]SMG's\n%c[0,153,255,255]%c[default]Maintenance speciality: %c[255,230,150,30]SMG's\n\n%c[0,153,255,255]MEDICINE\n%c[0,153,255,255]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Medic skills: %c[255,230,150,30]A\n%c[0,153,255,255]%c[default]Drug handling skills: %c[255,230,150,30]A\n\n%c[0,153,255,255]ATHLETICS\n%c[0,153,255,255]%c[default]Endurance: %c[255,230,150,30]low\n%c[0,153,255,255]%c[default]Sprinting speed: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Jump height: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Fall/jump agility: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Base stamina: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Maximum carry weight: %c[255,230,150,30]low\n\n%c[0,153,255,255]HEALTH PROFILE\n%c[0,153,255,255]%c[default]Food consumption rate: %c[255,230,150,30]slow\n%c[0,153,255,255]%c[default]Need for sleep: %c[255,230,150,30]medium\n\n%c[0,153,255,255]IMMMUNE SYSTEM RESISTANCE\n%c[0,153,255,255]%c[default]Drugs/alcohol: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Unhealthy food: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Artifacts: %c[255,230,150,30]A\n%c[0,153,255,255]%c[default]Radiation: %c[255,230,150,30]A</text>
-    </string>
-    <string id="st_identity_card_sniper_descr">
-        <text>As a USS Sniper your attributes are extremely well balanced.\n\n%c[0,153,255,255]EQUIPMENT\n%c[default]Heavy armor agility: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Closed breathing agility: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Artifact handling: %c[255,230,150,30]B\n\n%c[0,153,255,255]WEAPONS\n%c[0,153,255,255]%c[default]Knife fighting: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Handling speciality: %c[255,230,150,30]sniper rifles\n%c[0,153,255,255]%c[default]Maintenance speciality: %c[255,230,150,30]sniper rifles \n\n%c[0,153,255,255]MEDICINE\n%c[0,153,255,255]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Medic skills: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Drug handling skills: %c[255,230,150,30]B+\n\n%c[0,153,255,255]ATHLETICS\n%c[0,153,255,255]%c[default]Endurance: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Sprinting speed: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Jump height: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Fall/jump agility: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Stamina running: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Stamina sprinting: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Maximum carry weight: %c[255,230,150,30]medium\n\n%c[0,153,255,255]HEALTH PROFILE\n%c[0,153,255,255]%c[default]Food consumption rate: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Need for sleep: %c[255,230,150,30]low\n\n%c[0,153,255,255]IMMMUNE SYSTEM RESISTANCE\n%c[0,153,255,255]%c[default]Drugs/alcohol: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Unhealthy food: %c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Artifacts: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Radiation: %c[255,230,150,30]B</text>
-    </string>
+	<string id="st_identity_card_recon_descr">
+		<text>As a USS Recon you have unique strengths and weaknesses.\n\n%c[0,153,255,255]EQUIPMENT\n%c[default]Heavy armor agility: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Closed breathing agility: %c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Artifact handling: %c[255,230,150,30]A+\n\n%c[0,153,255,255]WEAPONS\n%c[0,153,255,255]%c[default]Knife fighting: %c[255,230,150,30]A\n%c[0,153,255,255]%c[default]Handling speciality: %c[255,230,150,30]SMG's\n%c[0,153,255,255]%c[default]Maintenance speciality: %c[255,230,150,30]SMG's\n\n%c[0,153,255,255]MEDICINE\n%c[0,153,255,255]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Medic skills: %c[255,230,150,30]A\n%c[0,153,255,255]%c[default]Drug handling skills: %c[255,230,150,30]A\n\n%c[0,153,255,255]ATHLETICS\n%c[0,153,255,255]%c[default]Endurance: %c[255,230,150,30]low\n%c[0,153,255,255]%c[default]Sprinting speed: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Jump height: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Fall/jump agility: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Base stamina: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Maximum carry weight: %c[255,230,150,30]low\n\n%c[0,153,255,255]HEALTH PROFILE\n%c[0,153,255,255]%c[default]Food consumption rate: %c[255,230,150,30]slow\n%c[0,153,255,255]%c[default]Need for sleep: %c[255,230,150,30]medium\n\n%c[0,153,255,255]IMMMUNE SYSTEM RESISTANCE\n%c[0,153,255,255]%c[default]Drugs/alcohol: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Unhealthy food: %c[255,230,150,30]C\n%c[0,153,255,255]%c[default]Artifacts: %c[255,230,150,30]A\n%c[0,153,255,255]%c[default]Radiation: %c[255,230,150,30]A</text>
+	</string>
+	<string id="st_identity_card_sniper_descr">
+		<text>As a USS Sniper your attributes are extremely well balanced.\n\n%c[0,153,255,255]EQUIPMENT\n%c[default]Heavy armor agility: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Closed breathing agility: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Artifact handling: %c[255,230,150,30]B\n\n%c[0,153,255,255]WEAPONS\n%c[0,153,255,255]%c[default]Knife fighting: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Handling speciality: %c[255,230,150,30]sniper rifles\n%c[0,153,255,255]%c[default]Maintenance speciality: %c[255,230,150,30]sniper rifles \n\n%c[0,153,255,255]MEDICINE\n%c[0,153,255,255]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Medic skills: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Drug handling skills: %c[255,230,150,30]B+\n\n%c[0,153,255,255]ATHLETICS\n%c[0,153,255,255]%c[default]Endurance: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Sprinting speed: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Jump height: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Fall/jump agility: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Stamina running: %c[255,230,150,30]high\n%c[0,153,255,255]%c[default]Stamina sprinting: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Maximum carry weight: %c[255,230,150,30]medium\n\n%c[0,153,255,255]HEALTH PROFILE\n%c[0,153,255,255]%c[default]Food consumption rate: %c[255,230,150,30]medium\n%c[0,153,255,255]%c[default]Need for sleep: %c[255,230,150,30]low\n\n%c[0,153,255,255]IMMMUNE SYSTEM RESISTANCE\n%c[0,153,255,255]%c[default]Drugs/alcohol: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Unhealthy food: %c[255,230,150,30]A+\n%c[0,153,255,255]%c[default]Artifacts: %c[255,230,150,30]B\n%c[0,153,255,255]%c[default]Radiation: %c[255,230,150,30]B</text>
+	</string>
 	<string id="st_morphine">
 		<text>Morphine ampoule (imported)</text>
 	</string>
@@ -1404,19 +1404,19 @@
 	<string id="st_mineral_water_descr">
 		<text>Mineral water from Ukrainian springs. Carbonated and with additional calcium.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] drink\n%c[0,153,255,255] • %c[0,140,140,140] high quality\n%c[0,153,255,255] • %c[0,140,140,140] mild alcohol sobering effect\n%c[0,153,255,255] • %c[0,140,140,140] clean nutrition source\n%c[255,238,153,26] • %c[0,140,140,140] usable for:%c[0,170,170,170] weapon maintenance (+1%)</text>
 	</string>
-    <string id="st_hand_rolling_tobacco">
+	<string id="st_hand_rolling_tobacco">
 		<text>Hand-rolling tobacco (5 batches, imported)</text>
 	</string>
 	<string id="st_hand_rolling_tobacco2">
 		<text>Hand-rolling tobacco (4 batches left, imported)</text>
 	</string>
-    <string id="st_hand_rolling_tobacco3">
+	<string id="st_hand_rolling_tobacco3">
 		<text>Hand-rolling tobacco (3 batches left, imported)</text>
 	</string>
-    <string id="st_hand_rolling_tobacco4">
+	<string id="st_hand_rolling_tobacco4">
 		<text>Hand-rolling tobacco (2 batches left, imported)</text>
 	</string>
-    <string id="st_hand_rolling_tobacco5">
+	<string id="st_hand_rolling_tobacco5">
 		<text>Hand-rolling tobacco (1 batch left, imported)</text>
 	</string>
 	<string id="st_hand_rolling_tobacco_descr">
@@ -1821,19 +1821,19 @@
 	<string id="st_lead_box_name">
 		<text>Lead-lined metal container (empty)</text>
 	</string>
-	<string id="st_lead_box_descr">	
+	<string id="st_lead_box_descr">
 		<text>The lead-lined metal container (LLMC) is a simple metal box with thick walls and foam inserts as well as a heavy lid with pressure-sealing mechanism. Specifically designed for transporting radioactive materials, in the Zone LLMC is most commonly employed as artifact storage and transportation device. It stops all radiation from leaking, thus ensuring safety of the user when in possession of artifacts. However, the device cannot be attached to the belt, which means that both positive and negative properties of artifacts won't apply. The contents can be manipulated with an artifact handling tool.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD\n%c[0,225,225,225] • %c[0,140,140,140] artifact storage device\n%c[0,225,225,225] • %c[0,140,140,140] capacity:%c[0,170,170,170] 1\n%c[0,225,225,225] • %c[0,140,140,140] state:%c[0,170,170,170] empty\n \n%c[0,204,0,51]WARNING:\n \n%c[default]You have to remove artifacts from the container prior to selling them.</text>
 	</string>
 	<string id="st_lead_box_half_name">
 		<text>Lead-Lined Metal Container (full)</text>
 	</string>
-	<string id="st_lead_box_half_descr">	
+	<string id="st_lead_box_half_descr">
 		<text>The lead-lined metal container (LLMC) is a simple metal box with thick walls and foam inserts as well as a heavy lid with pressure-sealing mechanism. Specifically designed for transporting radioactive materials, in the Zone LLMC is most commonly employed as artifact storage and transportation device. It stops all radiation from leaking, thus ensuring safety of the user when in possession of artifacts. However, the device cannot be attached to the belt, which means that both positive and negative properties of artifacts won't apply. The contents can be manipulated with an artifact handling tool.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD\n%c[0,225,225,225] • %c[0,140,140,140] artifact storage device\n%c[0,225,225,225] • %c[0,140,140,140] capacity:%c[0,170,170,170] 1\n%c[0,225,225,225] • %c[0,140,140,140] state:%c[0,170,170,170] 50% full\n \n%c[0,204,0,51]WARNING:\n \n%c[default]You have to remove artifacts from the container prior to selling them.</text>
 	</string>
 	<string id="st_lead_box_closed_name">
 		<text>Lead-Lined Metal Container (full)</text>
 	</string>
-	<string id="st_lead_box_closed_descr">	
+	<string id="st_lead_box_closed_descr">
 		<text>The lead-lined metal container (LLMC) is a simple metal box with thick walls and foam inserts as well as a heavy lid with pressure-sealing mechanism. Specifically designed for transporting radioactive materials, in the Zone LLMC is most commonly employed as artifact storage and transportation device. It stops all radiation from leaking, thus ensuring safety of the user when in possession of artifacts. However, the device cannot be attached to the belt, which means that both positive and negative properties of artifacts won't apply. The contents can be manipulated with an artifact handling tool.\n \n%c[0,140,140,140]PROPERTIES:\n%c[0,153,255,255] • %c[0,140,140,140] technological item\n%c[0,153,255,255] • %c[0,140,140,140] does not require UPD\n%c[0,225,225,225] • %c[0,140,140,140] artifact storage device\n%c[0,225,225,225] • %c[0,140,140,140] capacity:%c[0,170,170,170] 1\n%c[0,225,225,225] • %c[0,140,140,140] state:%c[0,170,170,170] full\n \n%c[0,204,0,51]WARNING:\n \n%c[default]You have to remove artifacts from the container prior to selling them.</text>
 	</string>
 	<string id="st_con_checker_name">

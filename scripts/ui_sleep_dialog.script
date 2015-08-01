@@ -1,3 +1,7 @@
+----------------------------------------------------------------
+-- ui_sleep_dialog, reworked for Items refunct mod, Plaargath --
+----------------------------------------------------------------
+
 local sleep_control = nil
 local wide = false
 class "sleep_dialog" (CUIScriptWnd)
@@ -6,29 +10,26 @@ function sleep_dialog:__init() super()
 	if(device().width/device().height>(1024/768+0.01)) then
 		wide = true
 	end
-	local xml = CScriptXmlInit()
-	xml:ParseFile("ui_sleep_dialog.xml")
-	self.back = xml:InitStatic("background", self)
-	self.sleep_static = xml:InitStatic("sleep_static", self.back)
-	self.sleep_static2 = xml:InitStatic("sleep_static", self.back)
-	self.static_cover = xml:InitStatic("static_cover", self.back)
-	self.st_marker = xml:InitStatic("st_marker", self.static_cover)
-	self.caption_hint = xml:InitStatic("caption_hint", self)
-	self.caption_info1 = xml:InitStatic("caption_info1", self)
-	self.caption_info2 = xml:InitStatic("caption_info2", self)
+	self.xml = CScriptXmlInit() -- Plaargath
+	self.xml:ParseFile("ui_sleep_dialog.xml")
+	self.back = self.xml:InitStatic("background", self)
+	self.sleep_static = self.xml:InitStatic("sleep_static", self.back)
+	self.static_cover = self.xml:InitStatic("static_cover", self.back)
+	self.caption_hint = self.xml:InitStatic("caption_hint", self)
+	self.caption_info1 = self.xml:InitStatic("caption_info1", self)
+	self.caption_info2 = self.xml:InitStatic("caption_info2", self)
 	sleep_st_tbl = {}
-		for i = 1, 24 do
-		sleep_st_tbl[i] = xml:InitStatic("sleep_st_"..i, self.back)
-		end
-	self.time_track = xml:InitTrackBar("time_track", self.back)
+	for i = 1, 24 do
+		sleep_st_tbl[i] = self.xml:InitStatic("sleep_st_"..i, self.back)
+	end
+	self.time_track = self.xml:InitTrackBar("time_track", self.back)
 	self:Register(self.time_track, "time_track")
-	self.btn_sleep = xml:Init3tButton("btn_sleep", self.back)
+	self.btn_sleep = self.xml:Init3tButton("btn_sleep", self.back)
 	self:Register(self.btn_sleep, "btn_sleep")
-	self.btn_cancel = xml:Init3tButton("btn_cancel", self.back)
+	self.btn_cancel = self.xml:Init3tButton("btn_cancel", self.back)
 	self:Register(self.btn_cancel, "btn_cancel")
 	self.sleep_mb = CUIMessageBoxEx()
 	self:Register(self.sleep_mb, "sleep_mb")
-	--------------------------------------------------------------------------------
 	self:AddCallback("btn_sleep", ui_events.BUTTON_CLICKED, self.OnButtonSleep, self)
 	self:AddCallback("btn_cancel", ui_events.BUTTON_CLICKED, self.OnButtonCancel, self)
 	self:AddCallback("sleep_mb", ui_events.MESSAGE_BOX_OK_CLICKED, self.OnMessageBoxOk, self)
@@ -37,49 +38,71 @@ end
 
 function sleep_dialog:Initialize()
 	local cur_hours = level.get_time_hours()
+
+	-- legibility, captions, art rework - Items refunct mod, Plaargath
 	for i = 1, 24 do
-	-- Legibility tweak, Plaargath
 		sleep_st_tbl[i]:TextControl():SetText(i.."h")
 	end
-	-- Captions
-	self.caption_hint:TextControl():SetText("%c[0,100,100,100]Set maximal sleeping time")
-	self.caption_info1:TextControl():SetText("%c[0,100,100,100]Sleeping in:")
-	local hidezone = surge_manager.actor_in_cover()
-	if hidezone == true then
-		self.caption_info2:TextControl():SetText("%c[0,120,160,120] safe zone")
+
+	-- UI background arts, captions
+	self.caption_hint:TextControl():SetText(game.translate_string("st_sleep_hint_max"))
+	self.caption_info1:TextControl():SetText(game.translate_string("st_sleep_hint_where"))
+	local background_art = 1200
+
+	local hideout = surge_manager.actor_in_cover()
+	if hideout == true then
+		self.caption_info2:TextControl():SetText(game.translate_string("st_sleep_hint_where_hideout"))
+		background_art = 720
+		t_zone_to_ui = {
+			["zat_a2_sr_sleep"] = {
+				["caption"] = game.translate_string("st_sleep_hint_where_zaton"),
+				["art"] = 840 },
+			["jup_a6_sr_sleep"] = {
+				["caption"] = game.translate_string("st_sleep_hint_where_jupiter"),
+				["art"] = 960 },
+			["pri_a16_sr_sleep"] = {
+				["caption"] = game.translate_string("st_sleep_hint_where_pripyat"),
+				["art"] = 1080 }
+			}
+		for k,v in pairs(t_zone_to_ui) do
+			if db.zone_by_name[k] then
+				if db.zone_by_name[k]:inside(db.actor:position()) then
+					background_art = v.art
+					self.caption_info2:TextControl():SetText(v.caption)
+				end
+			end
+		end
 	else
-		if sleep_control.tent_and_sb then
-			self.caption_info2:TextControl():SetText("%c[0,120,160,120] tent + sleeping bag")
+		if sleep_control.sleepbag then
+			self.caption_info2:TextControl():SetText(game.translate_string("st_sleep_hint_sb"))
+			background_art = 0
+		elseif sleep_control.nrc then
+			self.caption_info2:TextControl():SetText(game.translate_string("st_sleep_hint_nrc"))
+			background_art = 120
 		elseif sleep_control.tent then
-			self.caption_info2:TextControl():SetText("%c[0,120,140,120] tent")
-		elseif sleep_control.sleepbag then
-			self.caption_info2:TextControl():SetText("%c[0,120,120,120] sleeping bag")
+			self.caption_info2:TextControl():SetText(game.translate_string("st_sleep_hint_tent"))
+			background_art = 240
+		elseif sleep_control.tent_and_sb then
+			self.caption_info2:TextControl():SetText(game.translate_string("st_sleep_hint_tent_sb"))
+			background_art = 360
+		elseif sleep_control.tent_and_nrc then
+			self.caption_info2:TextControl():SetText(game.translate_string("st_sleep_hint_tent_nrc"))
+			background_art = 480
+		elseif sleep_control.tent_and_both then
+			self.caption_info2:TextControl():SetText(game.translate_string("st_sleep_hint_tent_sb_nrc"))
+			background_art = 600
 		else
-			self.caption_info2:TextControl():SetText("%c[0,200,100,100] (!) bug encountered: ui_sleep_dialog.script")
+			self.caption_info2:TextControl():SetText("%c[0,200,100,100] (!) bug encountered: sleep_dialog:Initialize()")
 		end
 	end
-	-- end Plaargath
 
-	local delta = math.floor(591/24*cur_hours)
-	local r = Frect():set(delta,413,591,531)
+	self.sleep_static:InitTexture("ui\\ui_actor_sleeparts")
+	local r = Frect():set(0,background_art,591,background_art+118)
 	self.sleep_static:SetTextureRect(r)
-	local width = 591-delta
-	if(wide) then
-		width = width*0.8
-	end
+	local width = 591
+	if (wide) then width = width*0.8 end
 	self.sleep_static:SetWndSize(vector2():set(width, 118))
-
-	r = Frect():set(0,413,delta,531)
-	self.sleep_static2:SetTextureRect(r)
-	local width = delta
-	if(wide) then
-		width = width*0.8
-	end
-	self.sleep_static2:SetWndSize(vector2():set(width, 118))
-
-	local pos = self.sleep_static2:GetWndPos()
-	pos.x = self.sleep_static:GetWndPos().x+self.sleep_static:GetWidth()
-	self.sleep_static2:SetWndPos(pos)
+	-- end Plaargath
 end
 
 function sleep_dialog:TestAndShow()
@@ -87,53 +110,40 @@ function sleep_dialog:TestAndShow()
 		self.sleep_mb:InitMessageBox("message_box_ok")
 		if(db.actor.bleeding>0 and db.actor.radiation>0) then
 			if (itms_manager) then
-				itms_manager.show_message("I need a medic",25)
+				itms_manager.show_message(game.translate_string("st_sleep_testandshow_medic"),25) --
 				return
 			end
-			self.sleep_mb:SetText("Sleep well")
+			self.sleep_mb:SetText(game.translate_string("st_sleep_testandshow_ok")) --
 		elseif(db.actor.bleeding>0) then
 			if (itms_manager) then
-				itms_manager.show_message("I'll bleed to death",25)
+				itms_manager.show_message(game.translate_string("st_sleep_testandshow_bleed"),25) --
 				return
 			end
-			self.sleep_mb:SetText("You are hurt!")
+			self.sleep_mb:SetText(game.translate_string("st_sleep_testandshow_hurt")) --
 		elseif(surge_manager.get_surge_manager().started == true) then
 			if (itms_manager) then
-				itms_manager.show_message("Not crazy enough to sleep during this shit",30)
+				itms_manager.show_message(game.translate_string("st_sleep_testandshow_surge"),30) --
 				return
 			end
-			self.sleep_mb:SetText("Blowout warning!")
+			self.sleep_mb:SetText(game.translate_string("st_sleep_testandshow_bw")) --
 		else
 			if (itms_manager) then
-				itms_manager.show_message("I have radiation sickness",25)
+				itms_manager.show_message(game.translate_string("st_sleep_testandshow_rad"),25) --
 				return
 			end
-			self.sleep_mb:SetText("Radiation hazard!")
+			self.sleep_mb:SetText(game.translate_string("st_sleep_testandshow_radh")) --
 		end
 		self.sleep_mb:ShowDialog(true)
 	--[[
 	elseif xr_logic.pstor_retrieve(db.actor,"drowse",0) < 0.2 then
 		self.sleep_mb:InitMessageBox("message_box_ok")
-		self.sleep_mb:SetText("You are not tired")
+		self.sleep_mb:SetText(game.translate_string("st_sleep_testandshow_not")) --
 		self.sleep_mb:ShowDialog(true)
 	--]]
 	else
 		self:Initialize()
 		self:ShowDialog(true)
 	end
-end
-
-function sleep_dialog:Update()
-	CUIScriptWnd.Update(self)
-	local sleep_time = self.time_track:GetIValue()-1
-	local x = math.floor(591/24*sleep_time)
-	if(x==0) then
-		x = 5
-	end
-	if(wide) then
-		x = x*0.8
-	end
-	self.st_marker:SetWndPos(vector2():set(x, 0))
 end
 
 function sleep_dialog:OnTrackButton()
@@ -154,7 +164,7 @@ function sleep_dialog:OnButtonSleep()
 
 		if not (safe) then
 			if (xr_conditions.surge_started()) then
-				if (itms_manager) then itms_manager.show_message("Not crazy enough to sleep during this shit",30) end
+				if (itms_manager) then itms_manager.show_message(game.translate_string("st_sleep_testandshow_surge"),30) end --
 				self:OnButtonCancel()
 				return
 			end
@@ -191,7 +201,7 @@ function sleep_dialog:OnButtonSleep()
 		get_console():execute("snd_volume_music 0")
 		get_console():execute("snd_volume_eff 0")
 	end
-	level.add_pp_effector("surge_fade.ppe", 11, false) --sleep_fade.ppe
+	level.add_pp_effector("surge_fade.ppe", 11, false)
 	db.actor:give_info_portion("actor_is_sleeping")
 end
 
@@ -207,12 +217,21 @@ function sleep_dialog:OnButtonCancel()
 		self.ph_sleepbag_id = nil
 	end
 	-- Items refunct mod, Plaargath
+	if (self.ph_nrc_id and self.item_section) then
+		alife():create(self.item_section,db.actor:position(),0,0,0)
+		alife():release(alife():object(self.ph_nrc_id))
+		self.ph_nrc_id = nil
+	end
 	sleep_control.item_section = nil
+	sleep_control.sleepbag = nil
 	sleep_control.ph_sleepbag_id = nil
-	sleep_control.ph_tent_id = nil
-	sleep_control.sleepag = nil
+	sleep_control.nrc = nil
+	sleep_control.ph_nrc_id = nil
 	sleep_control.tent = nil
+	sleep_control.ph_tent_id = nil
 	sleep_control.tent_and_sb = nil
+	sleep_control.tent_and_nrc = nil
+	sleep_control.tent_and_both = nil
 	-- end Plaargath
 end
 
@@ -223,22 +242,31 @@ function sleep_dialog:OnMessageBoxOk()
 	self.sleepbag = nil
 	if (self.ph_sleepbag_id and self.item_section) then
 		alife():create(self.item_section,db.actor:position(),0,0,0)
-		alife():release( alife():object(self.ph_sleepbag_id) )
+		alife():release(alife():object(self.ph_sleepbag_id))
 		self.ph_sleepbag_id = nil
 	end
 	-- Items refunct mod, Plaargath
-	sleep_control.item_section = sec
+	if (self.ph_nrc_id and self.item_section) then
+		alife():create(self.item_section,db.actor:position(),0,0,0)
+		alife():release(alife():object(self.ph_nrc_id))
+		self.ph_nrc_id = nil
+	end
+	sleep_control.item_section = nil
 	sleep_control.sleepbag = nil
 	sleep_control.ph_sleepbag_id = nil
+	sleep_control.nrc = nil
+	sleep_control.ph_nrc_id = nil
 	sleep_control.tent = nil
 	sleep_control.ph_tent_id = nil
 	sleep_control.tent_and_sb = nil
+	sleep_control.tent_and_nrc = nil
+	sleep_control.tent_and_both = nil
 	-- end Plaargath
 end
 
 function sleep_dialog:OnKeyboard(dik, keyboard_action)
 -- Plaargath input convenience addition
-	if sleep_control.sleepbag or sleep_control.tent then
+	if sleep_control.sleepbag or sleep_control.nrc or sleep_control.tent then
 		local bind = dik_to_bind(dik)
 		CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 		if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
@@ -361,25 +389,41 @@ function dream_callback()
 	end
 
 	-- Items refunct mod, Plaargath
-	if hours ~= 0 then
-		local gear, penalty
+	if hours >= 1 then
+		local penalty_tier, penalty_section
+		local hours_to_penalty = math.ceil(hours)
+		if hours_to_penalty > 24 then hours_to_penalty = 24 end
 		if in_cover == false then
-			if sleep_control.tent_and_sb then
-				gear = "sb_tent"
+			if sleep_control.sleepbag then
+				penalty_tier = "t1"
+			elseif sleep_control.nrc then
+				penalty_tier = "t1"
 			elseif sleep_control.tent then
-				gear = "tent"
-			elseif sleep_control.sleepbag then
-				gear = "sb"
+				penalty_tier = "t1"
+			elseif sleep_control.tent_and_sb then
+				penalty_tier = "t2"
+			elseif sleep_control.tent_and_nrc then
+				penalty_tier = "t2"
+			elseif sleep_control.tent_and_both then
+				penalty_tier = "t3"
 			end
 		elseif in_cover == true then
-			gear = "hidezone"
+				penalty_tier = "t3"
 		end
-		penalty = "sleep_"..gear.."_"..hours.."h"
-		db.actor:eat(db.actor:object(penalty))
-		alife():create(penalty,db.actor:position(),0,0,0)
-		-- news_manager.send_tip(db.actor, penalty or "nil", nil, nil, nil)
+		if not penalty_tier then
+			penalty_tier = "t1"
+		end
+		penalty_section = "sleep_"..penalty_tier.."_"..hours_to_penalty.."h"
+		db.actor:eat(db.actor:object(penalty_section))
+		alife():create(penalty_section,db.actor:position(),0,0,0)
+	elseif hours < 1 then
+		if minutes ~= 0 then
+			db.actor:eat(db.actor:object("sleep_t3_1h"))
+			alife():create("sleep_t3_1h",db.actor:position(),0,0,0)
+			news_manager.send_tip(db.actor,game.translate_string("st_sleep_tip_short"),nil,nil,nil)
+		end
 	else
-		itms_manager.show_message("I wasn't sleepy enough to doze off", 25)
+		news_manager.send_tip(db.actor,game.translate_string("st_sleep_tip_not_sleepy"),nil,nil,nil)
 	end
 	-- end Plaargath
 end
@@ -403,12 +447,20 @@ function dream_callback2()
 		alife():release( alife():object(sleep_control.ph_sleepbag_id) )
 	end
 	-- Items refunct mod, Plaargath
+	if (sleep_control.ph_nrc_id and sleep_control.item_section) then
+		alife():create(sleep_control.item_section,db.actor:position(),0,0,0)
+		alife():release(alife():object(sleep_control.ph_nrc_id))
+	end
 	sleep_control.item_section = nil
-	sleep_control.ph_sleepbag_id = nil
-	sleep_control.ph_tent_id = nil
 	sleep_control.sleepbag = nil
+	sleep_control.nrc = nil
+	sleep_control.ph_nrc_id = nil
+	sleep_control.ph_sleepbag_id = nil
 	sleep_control.tent = nil
+	sleep_control.ph_tent_id = nil
 	sleep_control.tent_and_sb = nil
+	sleep_control.tent_and_nrc = nil
+	sleep_control.tent_and_both = nil
 	-- end Plaargath
 end
 
@@ -441,9 +493,15 @@ function sleep_bag(ph_sleepbag_id,sec)
 	sleep_control.item_section = sec
 	sleep_control.sleepbag = true
 	sleep_control.ph_sleepbag_id = ph_sleepbag_id
-	sleep_control.tent = nil -- Plaargath
-	sleep_control.ph_tent_id = nil -- Plaargath
-	sleep_control.tent_and_sb = nil -- Plaargath
+	-- Itms refunct mod, Plaargath
+	sleep_control.nrc = nil
+	sleep_control.ph_nrc_id = nil
+	sleep_control.tent = nil
+	sleep_control.ph_tent_id = nil
+	sleep_control.tent_and_sb = nil
+	sleep_control.tent_and_nrc = nil
+	sleep_control.tent_and_both = nil
+	-- end Plaargath
 	sleep_control.time_track:SetCurrentValue()
 	sleep_control:TestAndShow()
 	give_info("sleep_active")
@@ -451,6 +509,27 @@ function sleep_bag(ph_sleepbag_id,sec)
 end
 
 -- Items refunct mod, Plaargath
+function sleep_in_nrc(ph_nrc_id,sec)
+	if(sleep_control==nil) then
+		sleep_control = ui_sleep_dialog.sleep_dialog()
+		sleep_control:Initialize()
+	end
+	sleep_control.item_section = sec
+	sleep_control.sleepbag = nil
+	sleep_control.ph_sleepbag_id = nil
+	sleep_control.nrc = true
+	sleep_control.ph_nrc_id = ph_nrc_id
+	sleep_control.tent = nil
+	sleep_control.ph_tent_id = nil
+	sleep_control.tent_and_sb = nil
+	sleep_control.tent_and_nrc = nil
+	sleep_control.tent_and_both = nil
+	sleep_control.time_track:SetCurrentValue()
+	sleep_control:TestAndShow()
+	give_info("sleep_active")
+	return sleep_control
+end
+
 function sleep_in_tent(ph_tent_id)
 	if(sleep_control==nil) then
 		sleep_control = ui_sleep_dialog.sleep_dialog()
@@ -459,13 +538,38 @@ function sleep_in_tent(ph_tent_id)
 	sleep_control.item_section = nil
 	sleep_control.sleepbag = nil
 	sleep_control.ph_sleepbag_id = nil
+	sleep_control.nrc = nil
+	sleep_control.ph_nrc_id = nil
 	sleep_control.tent = true
 	sleep_control.ph_tent_id = ph_tent_id
 	sleep_control.tent_and_sb = nil
-	if db.actor:object("itm_sleepbag") then sleep_control.tent_and_sb = true end
+	sleep_control.tent_and_nrc = nil
+	sleep_control.tent_and_both = nil
+
+	if db.actor:object("itm_sleepbag") then
+		sleep_control.tent = nil
+		sleep_control.ph_tent_id = nil
+		sleep_control.tent_and_sb = true
+	end
+	if db.actor:object("nrc_foil") then
+		sleep_control.tent = nil
+		sleep_control.ph_tent_id = nil
+		sleep_control.tent_and_sb = nil
+		sleep_control.tent_and_nrc = true
+	end
+	if db.actor:object("itm_sleepbag") then
+		if db.actor:object("nrc_foil") then
+			sleep_control.tent = nil
+			sleep_control.ph_tent_id = nil
+			sleep_control.tent_and_nrc = nil
+			sleep_control.tent_and_both = true
+		end
+	end
+
 	sleep_control.time_track:SetCurrentValue()
 	sleep_control:TestAndShow()
 	give_info("sleep_active")
 	return sleep_control
 end
+
 -- end Plaargath

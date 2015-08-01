@@ -20,7 +20,6 @@ n_help_distance_factor = 1.1	; Factor for Decreasing Distance for NPC's informin
 n_help_timer_factor = 0.9	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
 n_aim_time_factor = 0.9			; Multiplier for time it take for NPC's to aim during night hours
 
-
 GroupControlSection			= spawn_group
 discovery_dependency 		=
 $spawn                  	= "weapons\rpg-7"					; option for Level Editor
@@ -30,7 +29,7 @@ scheduled            		= off              ; option for ALife Simulator
 cform                    	= skeleton
 class                    	= WP_RPG7
 max_zoom_factor				= 5
-sprint_allowed				= false
+sprint_allowed				= true
 description					= st_wpn_rpg7_descr
 
 ef_main_weapon_type		= 4

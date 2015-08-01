@@ -1548,89 +1548,87 @@ inv_grid_x			= 25
 inv_grid_y			= 21
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;; DEDICATED DISMANTLE SETS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; DEDICATED DISMANTLE KITS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;------Weapon dismantle set-----
+;------ Weapon dismantle kit -----
 
 [wpn_dismantler]:booster ;x5
-$spawn 				= "devices\repair_kit_10"
+$spawn				= "devices\repair_kit_10"
 description			= st_wpn_dismantler_descr
 inv_name			= st_wpn_dismantler
 inv_name_short		= st_wpn_dismantler
 can_trade			= true
-quest_item      	= false
+quest_item			= false
 cost				= 10068
 inv_weight			= 3.313
 visual				= dynamics\equipments\dismantle_box_large.ogf
 
 inv_grid_width		= 2
 inv_grid_height		= 1
-inv_grid_x         = 22
-inv_grid_y         = 63
-
-;use_sound			= interface\inv_repair_kit
+inv_grid_x			= 22
+inv_grid_y			= 63
 
 [wpn_dismantler2]:wpn_dismantler
 inv_name			= st_wpn_dismantler2
-inv_name_short			= st_wpn_dismantler2
+inv_name_short		= st_wpn_dismantler2
 cost				= 8502
 inv_weight			= 2.956
-inv_grid_x         = 24
-inv_grid_y         = 63
+inv_grid_x			= 24
+inv_grid_y			= 63
 
 [wpn_dismantler3]:wpn_dismantler
 inv_name			= st_wpn_dismantler3
-inv_name_short			= st_wpn_dismantler3
+inv_name_short		= st_wpn_dismantler3
 cost				= 6763
 inv_weight			= 2.571
-inv_grid_x         = 26
-inv_grid_y         = 63
+inv_grid_x			= 26
+inv_grid_y			= 63
 
 [wpn_dismantler4]:wpn_dismantler
 inv_name			= st_wpn_dismantler4
-inv_name_short			= st_wpn_dismantler4
+inv_name_short		= st_wpn_dismantler4
 cost				= 4831
 inv_weight			= 2.201
-inv_grid_x         = 28
-inv_grid_y         = 63
+inv_grid_x			= 28
+inv_grid_y			= 63
 
 [wpn_dismantler5]:wpn_dismantler
 inv_name			= st_wpn_dismantler5
-inv_name_short			= st_wpn_dismantler5
+inv_name_short		= st_wpn_dismantler5
 cost				= 2684
 inv_weight			= 1.841
-inv_grid_x         = 30
-inv_grid_y         = 63
+inv_grid_x			= 30
+inv_grid_y			= 63
 
 [wpn_dismantler_empty]:identity_immunities ; empty container
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_PDA
 cform				= skeleton
-radius				= 68; 50
+radius				= 68
 
 description			= st_wpn_dismantler_empty_descr
 inv_name			= st_wpn_dismantler_empty
-inv_name_short			= st_wpn_dismantler_empty
+inv_name_short		= st_wpn_dismantler_empty
 
 cost				= 421
 inv_weight			= 1.472
 visual				= dynamics\equipments\dismantle_box_large.ogf
 
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 32
-inv_grid_y         = 63
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 32
+inv_grid_y			= 63
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_position_offset	= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-repair_part_bonus	 	= 0.03
+repair_part_bonus		= 0.03
 
-;------Armor dismantle set-----
+;------ Outfit dismantle kit -----
 
 [outfit_dismantler]:booster ;x5
 $spawn 				= "devices\repair_kit_10"
@@ -1646,42 +1644,38 @@ visual				= dynamics\equipments\dismantle_box_outfits.ogf
 
 inv_grid_width		= 2
 inv_grid_height		= 1
-inv_grid_x         = 22
-inv_grid_y         = 62
+inv_grid_x			= 22
+inv_grid_y			= 64
 
 ;use_sound			= interface\inv_repair_kit
 
 [outfit_dismantler2]:outfit_dismantler
 inv_name			= st_outfit_dismantler2
-inv_name_short			= st_outfit_dismantler2
+inv_name_short		= st_outfit_dismantler2
 cost				= 9777
 inv_weight			= 3.251
-inv_grid_x         = 24
-inv_grid_y         = 62
+inv_grid_x			= 24
 
 [outfit_dismantler3]:outfit_dismantler
 inv_name			= st_outfit_dismantler3
-inv_name_short			= st_outfit_dismantler3
+inv_name_short		= st_outfit_dismantler3
 cost				= 7777
 inv_weight			= 2.828
-inv_grid_x         = 26
-inv_grid_y         = 62
+inv_grid_x			= 26
 
 [outfit_dismantler4]:outfit_dismantler
 inv_name			= st_outfit_dismantler4
-inv_name_short			= st_outfit_dismantler4
+inv_name_short		= st_outfit_dismantler4
 cost				= 5555
 inv_weight			= 2.421
-inv_grid_x         = 28
-inv_grid_y         = 62
+inv_grid_x			= 28
 
 [outfit_dismantler5]:outfit_dismantler
 inv_name			= st_outfit_dismantler5
-inv_name_short			= st_outfit_dismantler5
+inv_name_short		= st_outfit_dismantler5
 cost				= 3220
 inv_weight			= 2.025
-inv_grid_x         = 30
-inv_grid_y         = 62
+inv_grid_x			= 30
 
 [outfit_dismantler_empty]:identity_immunities ; empty container
 $spawn 				= "devices\roubles"
@@ -1692,23 +1686,23 @@ radius				= 68; 50
 
 description			= st_outfit_dismantler_empty_descr
 inv_name			= st_outfit_dismantler_empty
-inv_name_short			= st_outfit_dismantler_empty
+inv_name_short		= st_outfit_dismantler_empty
 
 cost				= 486
 inv_weight			= 1.619
 visual				= dynamics\equipments\dismantle_box_outfits.ogf
 
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 32
-inv_grid_y         = 62
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 32
+inv_grid_y			= 64
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_position_offset	= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-repair_part_bonus	 	= 0.03
+repair_part_bonus		= 0.03
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; WEAPON SPARE PARTS  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1726,10 +1720,10 @@ quest_item			= false
 cost				= 1640
 inv_weight			= 0.774
 visual				= dynamics\equipments\trade\large_parts.ogf
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 26
-inv_grid_y         = 3
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 26
+inv_grid_y			= 3
 
 repair_min_condition 	= 0.01		;Min required condition to use
 repair_max_condition 	= 0.99		;Max required condition to use
@@ -1755,10 +1749,10 @@ quest_item			= false
 cost				= 720
 inv_weight			= 0.226
 visual				= dynamics\equipments\trade\small_parts.ogf
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 28
-inv_grid_y         = 3
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 28
+inv_grid_y			= 3
 
 repair_min_condition 	= 0.01		;Min required condition to use
 repair_max_condition 	= 0.99		;Max required condition to use

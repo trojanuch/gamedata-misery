@@ -120,12 +120,17 @@ inv_mutant_loot_human2
 inv_mutant_loot_rotten
 inv_mutant_loot_smaller
 
-dismantle_shock
-dismantle_blast
-dismantle_hammer_break
-dismantle_swiss_wpn_fail
-dismantle_item
 inv_lighter_refiller
+inv_put_up_tent
+inv_dismantle_electro_shock
+inv_dismantle_blast
+inv_dismantle_hammer_wpn_fail
+inv_dismantle_swiss_wpn_fail
+inv_dismantle_cutlery_wpn_fail
+inv_dismantle_hammer_helm_fail
+;inv_dismantle_outfit
+inv_dismantle_long
+inv_dismantle_short
 ;***************************************************************
 ; Yasti: Repair, Cooking and Artifact Containers
 ;***************************************************************
@@ -805,41 +810,9 @@ path = anomaly\steam_blowout
 shuffle = rnd
 idle = 0,0,100
 
-[dismantle_shock]
-type = actor
-path = anomaly\electra_blast
-shuffle = rnd
-volume = 1
-
-[dismantle_blast]
-type = actor
-path = interface\inv_dismantle_blast
-shuffle = rnd
-volume = 1
-
-[dismantle_hammer_break]
-type = actor
-path = material\wood\wood_big_hard_2
-shuffle = rnd
-volume = 1
-
-[dismantle_swiss_wpn_fail]
-type = actor
-path = material\large_metal_trash\collide\large_metal_trash_2
-shuffle = rnd
-volume = 1
-
-[inv_dismantle_cutlery_wpn_fail]
-type = actor
-path = interface\inv_dismantle_cutlery_wpn_fail.ogg
-shuffle = rnd
-volume = 1
-
-[dismantle_item]
-type = actor
-path = interface\inv_dismantle_items
-shuffle = rnd
-volume = 1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Items refunct mod, Plaargath ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [inv_lighter_refiller]
 type = actor
@@ -847,20 +820,62 @@ path = interface\inv_lighter_refiller
 shuffle = rnd
 volume = 1
 
-[inv_salvagecloth]
+[inv_put_up_tent]
 type = actor
-path = interface\inv_salvagecloth
+path = interface\inv_put_up_tent
 shuffle = rnd
 volume = 1
 
-[inv_spareparts_small]
+[inv_dismantle_electro_shock]
 type = actor
-path = interface\inv_spareparts_small
+path = interface\inv_dismantle_electro_shock
 shuffle = rnd
 volume = 1
 
-[inv_spareparts]
+[inv_dismantle_blast]
 type = actor
-path = interface\inv_spareparts
+path = interface\inv_dismantle_blast
+shuffle = rnd
+volume = 1
+
+[inv_dismantle_hammer_wpn_fail]
+type = actor
+path = interface\inv_dismantle_hammer_wpn_fail
+shuffle = rnd
+volume = 1
+
+[inv_dismantle_swiss_wpn_fail]
+type = actor
+path = interface\inv_dismantle_swiss_wpn_fail
+shuffle = rnd
+volume = 1
+
+[inv_dismantle_cutlery_wpn_fail]
+type = actor
+path = interface\inv_dismantle_cutlery_wpn_fail
+shuffle = rnd
+volume = 1
+
+[inv_dismantle_hammer_helm_fail]
+type = actor
+path = interface\inv_dismantle_hammer_helm_fail
+shuffle = rnd
+volume = 1
+
+;[inv_dismantle_outfit]
+;type = actor
+;path = interface\inv_dismantle_outfit
+;shuffle = rnd
+;volume = 1
+
+[inv_dismantle_long]
+type = actor
+path = interface\inv_dismantle_long
+shuffle = rnd
+volume = 1
+
+[inv_dismantle_short]
+type = actor
+path = interface\inv_dismantle_short
 shuffle = rnd
 volume = 1

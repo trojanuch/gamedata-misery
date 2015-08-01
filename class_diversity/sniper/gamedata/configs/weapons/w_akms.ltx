@@ -62,7 +62,7 @@ reload_dof						= 0.0, 0.5, 5, 2;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       	= 0.45    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.38    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor    	= 1.69f
 crosshair_inertion			= 6.8
 
@@ -345,22 +345,6 @@ n_help_distance_factor = 0.95	; Factor for Decreasing Distance for NPC's informi
 n_help_timer_factor = 1.05	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
 n_aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim during night hours
 
-; Cammo preset HIGH
-; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
-; variables in weapon sesctions are multipliers on already determinated values from outfits.
-; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
-
-detect_range_factor = 0.95 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
-aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
-help_distance_factor = 0.95		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
-help_timer_factor = 1.05			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
-
-; night values
-n_detect_range_factor = 0.95	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
-n_help_distance_factor = 0.95	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
-n_help_timer_factor = 1.05	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
-n_aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim during night hours
-
 cost							= 35780
 
 inv_weight						= 3.27
@@ -390,7 +374,7 @@ condition_queue_shot_dec	= 0.0006
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
 
-fire_dispersion_base       	= 0.39
+fire_dispersion_base       	= 0.28
 
 inv_grid_width     = 5
 inv_grid_height    = 2
@@ -433,7 +417,7 @@ condition_queue_shot_dec	= 0.0008
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
 
-fire_dispersion_base       	= 0.5    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.34    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 
 inv_grid_width     = 5
 inv_grid_height    = 2
@@ -495,7 +479,9 @@ silencer_status            = 0
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
 
-fire_dispersion_base       	= 0.75    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+scopes_sect						= scope_akms_moist, scope_akms, scope_akms_worn, scope_x2.7_akms, scope_live_detector_akms, scope_night_akms, scope_vsk_akms
+
+fire_dispersion_base       	= 0.68    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 
 inv_grid_width     = 5
 inv_grid_height    = 2
@@ -539,7 +525,7 @@ condition_queue_shot_dec	= 0.0007
 ammo_mag_size					= 30			; clip (magazine) size
 fire_modes						= 1, -1
 
-fire_dispersion_base       	= 0.38    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base       	= 0.35    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 
 inv_grid_width     = 5
 inv_grid_height    = 2

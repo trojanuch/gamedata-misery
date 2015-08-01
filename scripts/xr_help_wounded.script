@@ -175,7 +175,10 @@ function eval_stage_2(st,npc)
 
 		return true
 	end
-	db.storage[st.selected_id].wounded_already_selected = nil
+	
+	if vo and vo ~= nil then -- KCS extra line check to prevent CTD if st.selected_id is nil
+		db.storage[st.selected_id].wounded_already_selected = nil
+	end
 	st.stage = 1
 	return false
 end

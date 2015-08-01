@@ -61,37 +61,37 @@ zoom_dof             = 0.5, 1.0, 180
 reload_dof           = 0.0, 0.5, 5, 2
 
 ;----Дисперсия---------------------------------------------------------------------------
-fire_dispersion_base       = 0.56 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor    = 1.11f
-crosshair_inertion		   = 4.8
+fire_dispersion_base       = 0.51 ;0.19      ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor    = 1.24f
+crosshair_inertion		= 5.3
 
 ;params of weapon recoil
 cam_return = 0 ;				= 0
 cam_relax_speed         = 12			;скорость возврата в исходное положение
 cam_relax_speed_ai     	= 120.75
-cam_dispersion	        = 0.94
-cam_dispersion_inc      = 0.64
+cam_dispersion	        = 0.98
+cam_dispersion_inc      = 0.76
 cam_dispersion_frac     = 1.1	    ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 52.0      ;максимальный угол отдачи
-cam_max_angle_horz      = 52.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.26		;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle			= 58.0      ;максимальный угол отдачи
+cam_max_angle_horz      = 58.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.36		;(degree) size of step camera moved in horizontal position while shooting
 
 zoom_cam_relax_speed         = 12	    ; scope & ironsight
 zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 0.87
-zoom_cam_dispersion_inc      = 0.57
+zoom_cam_dispersion          = 0.83
+zoom_cam_dispersion_inc      = 0.68
 zoom_cam_dispersion_frac     = 1.0
-zoom_cam_max_angle           = 52.0
-zoom_cam_max_angle_horz      = 52.0
-zoom_cam_step_angle_horz     = 1.16
+zoom_cam_max_angle           = 55.0
+zoom_cam_max_angle_horz      = 55.0
+zoom_cam_step_angle_horz     = 1.26
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ;    = 0.01 ; 10         
 
 PDM_disp_base 				= 0.7
-PDM_disp_vel_factor 		= 1.855
-PDM_disp_accel_factor 		= 1.855
-PDM_disp_crouch = 1.0 ;  			= 1.165
-PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
+PDM_disp_vel_factor 		= 1.58
+PDM_disp_accel_factor 		= 1.58
+PDM_disp_crouch = 1.0 ; 			= 2.235
+PDM_disp_crouch_no_acc = 1.0 ; 		= 2.745
 
 ;------- for AI ------------------------------------------------------------------------
 holder_range_modifier   = 1.0              ; во сколько раз увеличивается eye_range
@@ -137,7 +137,7 @@ smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
 shell_point		 		= 0.00, 0.262, 0.189			; position (3rd person view) for shell to throw out
-shell_particles	 		= weapons\generic_shells	; name of the particles for shells
+shell_particles	 		= ;weapons\generic_shells	; name of the particles for shells
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
@@ -170,20 +170,21 @@ scope_zoom_factor       = 58.6 ;        = 85                                    
 silencer_name           = wpn_addon_silencer_545x39    ; section name for the attachable silencer
 silencer_x 					= 178							; offset in inventory icon
 silencer_y 					= -2
+scopes_sect		= scope_ak74u, scope_ak74u_moist, scope_ak74u_worn, scope_x2.7_ak74u, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
 
 ;звуки
-snd_draw                = weapons\generic\rifle_draw_03
+snd_draw                = weapons\aks74u\ak74u_draw
 snd_holster             = weapons\generic\rifle_holster_02
 snd_shoot               = weapons\ak74u\ak74u_shot
 snd_shoot1              = weapons\ak74u\ak74u_shot1
 snd_shoot2              = weapons\ak74u\ak74u_shot2
 snd_empty               = weapons\generic\rifle_historic_empty, 0.9
-snd_reload              = weapons\Auto\Ak74U\ak74u_reload
+snd_reload              = weapons\aks74u\ak74u_reload
 snd_shoot_grenade       = weapons\gen_grenshoot
 snd_reload_grenade      = weapons\gen_grenload, 1.0, 0.8
 snd_switch              = weapons\groza_switch, 1.0, 0.5
 snd_bore = weapons\draw_silent;		= weapons\generic\eastern_bore, 0.7
-snd_silncer_shot        = weapons\silencers\silencer_545x39
+snd_silncer_shot        = weapons\aks74u\ak74u_shot_sil
 
 ;silencer_flame_particles  = weapons\generic_weapon01
 silencer_smoke_particles   = weapons\generic_shoot_00
@@ -200,61 +201,39 @@ zoom_hide_crosshair				= true
 attach_place_idx				= 0
 item_visual						= dynamics\weapons\wpn_ak74u\wpn_ak74u_hud.ogf
 
-hands_position				= 0.09,-0.04,0.2
-hands_orientation			= 0,0,0
+hands_position = 0.034000,-0.024999,0.260000
+hands_orientation = 3.450002,4.000000,-1.099998
 
-hands_position_16x9			= 0.09,-0.04,0.2
-hands_orientation_16x9			= 0,0,0
+hands_position_16x9 = 0.050500,-0.020000,0.251500
+hands_orientation_16x9 = 0.000000,2.299999,-0.729800
 
-item_position				= 0,0,0
-item_orientation			= 0,0,0
-
-shell_point                = 0,0,0
+item_position = -0.008889,0.016527,0.003094
+item_orientation = 0.100000,0.000000,0.700000
+shell_point                = 0.018,0.06,0.188
 shell_dir               = 0.0, 1.0, 0.0
-shell_bone                = eject
+shell_bone                = wpn_body
 
-fire_point			= 0,0,0
-fire_bone                            = muzzle
-fire_point2                        = 0,0,0
-fire_bone2                = muzzle
+fire_point			= 0,0.048,0.466
+fire_bone                            = wpn_body
+fire_point2                        = 0.0,-0.011,0.553
+fire_bone2                = wpn_body
 
-anm_show		= ak76u_draw
-anm_hide                = ak76u_holster
-anm_idle                = ak76u_idle
-anm_idle_sprint         = ak76u_idle_sprint
-anm_idle_moving         = ak76u_idle_moving
-anm_shots               = ak76u_shoot, ak74u_shoot_w
-anm_reload              = ak76u_reload, ak74u_reload_w
-anm_idle_aim            = ak76u_idle_aim
-;anm_switch             = ak76u_switch_off
-;anm_switch_g           = ak76u_switch_on
-anm_bore                = ak76u_idle_bore
-
-;anm_hide_w_gl           = ak76_holster_w_gl
-;anm_show_w_gl           = ak76_draw_w_gl
-;anm_idle_w_gl           = ak76_idle_w_gl
-;anm_shots_w_gl          = ak76_shoot_w_gl
-;anm_reload_w_gl         = ak76_reload_w_gl
-;anm_idle_w_gl_aim       = ak76_idle_aim_w_gl
-;anm_idle_sprint_w_gl    = ak76_idle_sprint_w_gl
-;anm_idle_moving_w_gl    = ak76_idle_moving_w_gl
-;anm_bore_w_gl           = ak76_idle_bore_w_gl
-
-;anm_show_g              = ak76_draw_w_gl							;abakan_draw_grenade
-;anm_hide_g              = ak76_holster_w_gl						;abakan_holster_grenade
-;anm_idle_g              = ak76_idle_w_gl							;abakan_idle_grenade
-;anm_reload_g            = ak76_reload_grenade
-;anm_idle_g_aim          = ak76_idle_aim_w_gl						;abakan_idle_grenade
-;anm_shots_g             = ak76_shoot_grenade
-;anm_idle_sprint_g       = ak76_idle_sprint_w_gl					;abakan_idle_sprint_grenade
-;anm_idle_moving_g       = ak76_idle_moving_w_gl					;abakan_idle_moving_grenade
-;anm_bore_g              = ak76_idle_bore_w_gl
+anm_show						= aks74u_draw
+anm_hide                = aks74u_holster
+anm_idle                = aks74u_idle
+anm_idle_sprint         = aks74u_idle_sprint
+anm_idle_moving         = aks74u_idle_move
+anm_shots               = aks74u_shoot
+anm_reload              = aks74u_reload
+anm_idle_aim            = aks74u_idle_aim
+anm_bore                = aks74u_idle_bore
 
 
-aim_hud_offset_pos				= -0.09,0.04,-0.2
-aim_hud_offset_rot				= 0,0,0
+aim_hud_offset_pos = -0.112900,0.054500,-0.130100
+aim_hud_offset_rot = 0.046600,-0.004800,-0.013800
 
-aim_hud_offset_pos_16x9				= -0.09,0.04,-0.2
+aim_hud_offset_pos_16x9 = -0.112900,0.054500,-0.130100
+aim_hud_offset_rot_16x9 = 0.046600,-0.004800,-0.013800
 aim_hud_offset_rot_16x9				= 0,0,0
 
 gl_hud_offset_pos               = 0,0,0
@@ -266,6 +245,40 @@ gl_hud_offset_rot_16x9            = 0,0,0
 lean_hud_offset_pos        = 0,0,0
 lean_hud_offset_rot        = 0,0,0
 
+[scope_ak74u]
+scope_name 					= wpn_addon_scope
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_ak74u_moist]
+scope_name 					= wpn_addon_scope_moist
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_ak74u_worn]
+scope_name 					= wpn_addon_scope_worn
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_x2.7_ak74u]
+scope_name 					= wpn_addon_scope_x2.7
+scope_x              	= 72                 ; offset in inventory icon
+scope_y                 = -2
+
+[scope_live_detector_ak74u]
+scope_name 					= wpn_addon_scope_detector
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_night_ak74u]
+scope_name 					= wpn_addon_scope_night
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_vsk_ak74u]
+scope_name 					= wpn_addon_scope_vsk
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
 ;---------------------------
 ;AP Weapon Section for NPCs
 ;---------------------------
@@ -304,7 +317,7 @@ misfire_end_prob = 0.085 ;	     	= 0.055
 condition_shot_dec      	= 0.0007
 condition_queue_shot_dec	= 0.0007
 
-fire_dispersion_base       = 0.512
+fire_dispersion_base       = 0.474
 
 inv_grid_width		= 4	
 inv_grid_height		= 2	
@@ -335,7 +348,6 @@ n_help_distance_factor = 0.95	; Factor for Decreasing Distance for NPC's informi
 n_help_timer_factor = 1.05	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
 n_aim_time_factor = 1.05			; Multiplier for time it take for NPC's to aim during night hours
 
-
 cost              		= 28480
 inv_weight				= 2.676
 inv_name          	= st_wpn_ak74u_camo
@@ -360,7 +372,7 @@ misfire_end_prob = 0.085 ;	     	= 0.052
 condition_shot_dec      	= 0.00065
 condition_queue_shot_dec	= 0.00065
 
-fire_dispersion_base       = 0.482
+fire_dispersion_base       = 0.454
 
 inv_grid_width		= 4	
 inv_grid_height		= 2	
@@ -416,7 +428,7 @@ condition_queue_shot_dec	= 0.0013
 
 silencer_status            = 0
 
-fire_dispersion_base       = 0.72
+fire_dispersion_base       = 0.66
 
 inv_grid_width		= 4	
 inv_grid_height		= 2	
@@ -473,7 +485,7 @@ condition_queue_shot_dec	= 0.0016
 
 silencer_status            = 0
 
-fire_dispersion_base       = 0.85
+fire_dispersion_base       = 0.78
 
 inv_grid_width		= 4	
 inv_grid_height		= 2	

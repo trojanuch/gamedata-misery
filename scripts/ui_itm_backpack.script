@@ -52,16 +52,20 @@ function backpack_ui:InitCallBacks()
 end
 
 function backpack_ui:OnInput() -- Adjusted Plaargath
- local txt = self.input:GetText()
- if (txt == nil or txt == "") then
-  local level_name = level.name()
-  local backpack_number = xr_logic.pstor_retrieve(db.actor, level_name.."bpknum", 0)
-  xr_logic.pstor_store(db.actor, level_name.."bpknum", backpack_number+1)
-  txt = level_name.." backpack "..backpack_number+1
- end
- local se_obj = alife():object(self.box_id)
- level.map_add_object_spot_ser(se_obj.id, self.box_spot, txt)
- self:HideDialog()
+	local txt = self.input:GetText()
+
+	if (txt == nil or txt == "") then
+		local level_name = level.name()
+		local backpack_number = xr_logic.pstor_retrieve(db.actor, level_name.."bpknum", 0)
+		xr_logic.pstor_store(db.actor, level_name.."bpknum", backpack_number+1)
+		txt = level_name.." "..game.translate_string("st_backapck_for_stash_name").." "..backpack_number+1
+	end
+
+	itms_manager.show_message(game.translate_string("st_backapck_stash_created").." "..txt,15)
+
+	local se_obj = alife():object(self.box_id)
+	level.map_add_object_spot_ser(se_obj.id, self.box_spot, txt)
+	self:HideDialog()
 end
 
 function backpack_ui:OnCancel()

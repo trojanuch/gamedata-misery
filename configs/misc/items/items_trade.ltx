@@ -880,8 +880,8 @@ inv_name_short			= st_flashlight_broken
 
 inv_grid_width			= 1
 inv_grid_height			= 1
-inv_grid_x			= 8
-inv_grid_y			= 49
+inv_grid_x			= 9
+inv_grid_y			= 51
 
 cost				= 560
 
@@ -1222,7 +1222,7 @@ repair_use_actor_effects = true
 $spawn 				= "devices\repair_kit_10"
 inv_name			= st_cutlery_sharp
 inv_name_short		= st_cutlery_sharp
-description			= st_cutlery_descr_sharp
+description			= st_cutlery_sharp_descr
 can_trade			= true
 quest_item 			= false
 cost				= 370
@@ -1628,22 +1628,6 @@ gl_hud_offset_rot		= 0,0,0
 lean_hud_offset_pos		= 0,0,0
 lean_hud_offset_rot		= 0,0,0
 
-[nrc_foil]:booster
-$spawn				= "devices\repair_kit_10"
-description			= st_nrc_foil_descr
-inv_name			= st_nrc_foil
-inv_name_short		= st_nrc_foil
-can_trade			= true
-quest_item			= false
-cost				= 1880
-inv_weight			= 0.362
-visual 				= dynamics\equipments\nrc_foil.ogf
-inv_grid_width		= 2
-inv_grid_height		= 1
-inv_grid_x         	= 30
-inv_grid_y         	= 2
-repair_use_actor_effects = true
-
 [wpn_waste_light]:identity_immunities
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
@@ -1656,10 +1640,10 @@ description			= st_wpn_waste_light_descr
 inv_name			= st_wpn_waste_light
 inv_name_short		= st_wpn_waste_light
 
-inv_grid_width		= 1
+inv_grid_width		= 2
 inv_grid_height		= 1
-inv_grid_x			= 27
-inv_grid_y			= 3
+inv_grid_x			= 31
+inv_grid_y			= 1
 
 cost				= 221
 inv_weight			= 0.226
@@ -1683,10 +1667,10 @@ description			= st_wpn_waste_heavy_descr
 inv_name			= st_wpn_waste_heavy
 inv_name_short		= st_wpn_waste_heavy
 
-inv_grid_width		= 1
+inv_grid_width		= 2
 inv_grid_height		= 1
-inv_grid_x			= 26
-inv_grid_y			= 3
+inv_grid_x			= 32
+inv_grid_y			= 2
 
 cost				= 345
 inv_weight			= 0.774
@@ -1703,17 +1687,17 @@ $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_PDA
 cform				= skeleton
-visual				= dynamics\equipments\waste_small.ogf
+visual				= dynamics\equipments\trade\outfit_waste_light.ogf
 radius				= 68
 
 description			= st_outfit_waste_light_descr
 inv_name			= st_outfit_waste_light
 inv_name_short		= st_outfit_waste_light
 
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 31
-inv_grid_y         = 1
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 32
+inv_grid_y			= 3
 
 cost				= 185
 inv_weight			= 0.138
@@ -1730,17 +1714,17 @@ $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_PDA
 cform				= skeleton
-visual				= dynamics\equipments\trade\kit_hunt.ogf
+visual				= dynamics\equipments\trade\outfit_waste_heavy.ogf
 radius				= 68
 
 description			= st_outfit_waste_heavy_descr
 inv_name			= st_outfit_waste_heavy
 inv_name_short		= st_outfit_waste_heavy
 
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 32
-inv_grid_y         = 2
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 34
+inv_grid_y			= 2
 
 cost				= 1090
 inv_weight			= 0.422
@@ -1757,17 +1741,17 @@ $spawn 				= "devices\roubles"
 $prefetch 			= 16
 class				= S_PDA
 cform				= skeleton
-visual				= dynamics\equipments\trade\kit_hunt.ogf
+visual				= dynamics\equipments\trade\tech_waste.ogf
 radius				= 68
 
 description			= st_tech_waste_descr
 inv_name			= st_tech_waste
 inv_name_short		= st_tech_waste
 
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 28
-inv_grid_y         = 2
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 30
+inv_grid_y			= 3
 
 cost				= 235
 inv_weight			= 0.122

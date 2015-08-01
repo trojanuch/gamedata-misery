@@ -209,7 +209,8 @@ function drop_manager:create_release_item()
 
 	--' Äîniaâíeâaai íaîáoîäeiîa eîëe÷anoâî eoaiîâ:
 	--' Íaîáoîäeiî nînoaâeoü nienîe îáúaeoîâ eîoî?ua iîaóo áuoü çaniaâíaíu äëy ia?nîíaaa
-
+	-- KCS disabled create new items on death - request from Trojanuch - to increase performance and stability
+--[[
 	local spawn_ammo = item_by_community[character_community(self.npc)]
 	if spawn_ammo == nil then
 		return
@@ -219,7 +220,7 @@ function drop_manager:create_release_item()
 		if check_item_dependence(self.npc, k) == true then
 
 			local number = (math.random(ammo_drop_counts[k].min, ammo_drop_counts[k].max))
-			create_items(self.npc, k, number, v)
+			create_items(self.npc, k, number, v) -- KCS - need to be disabled as it it is not used, to increase stability and performance
 
 		end
 	end
@@ -230,10 +231,10 @@ function drop_manager:create_release_item()
 	for k,v in pairs(spawn_item) do
 
 		local number = (math.random(item_drop_counts[k].min, item_drop_counts[k].max))
-		create_items(self.npc, k, number, v)
+		create_items(self.npc, k, number, v) -- KCS - need to be disabled as it it is not used, to increase stability and performance
 
 	end
-
+]]--
 end
 
 --' Ôóíeöey âuçuâaaony äëy eaaäîaî i?aäiaoa, anëe âa?íao false oî i?aäiao óäaëeony.

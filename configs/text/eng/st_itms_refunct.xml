@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!-- Items refunct mod + legibility/convenience fixes/tweaks; for MISERY mod, Plaargath -->
+<string_table>
+
+<!-- condition checker   (ui_arty_container.script) -->
+	<string id="st_con_checker_futile">
+		<text>I don't have anything worth noting</text>
+	</string>
+
+<!-- backpack mod legibility tweak   (ui_itm_backpack.script) -->
+	<string id="st_backapck_stash_created">
+		<text>Stash created:</text>
+	</string>
+	<string id="st_backapck_for_stash_name">
+		<text>backpack</text>
+	</string>
+
+<!-- Tools sharpening   (itms_refunct.script) -->
+	<string id="st_sharp_need_stones">
+		<text>You need sharpening stones to sharpen this item</text>
+	</string>
+	<string id="st_sharp_need_more_stones">
+		<text>You need another or a better sharpening stone to sharpen a shovel's edge</text>
+	</string>
+
+<!-- Mutant Loot With Tools Only   (itms_refunct.script) -->
+	<string id="st_mutloot_need_tool">
+		<text>You need something sharp to cut out mutant body parts</text>
+	</string>
+	<string id="st_mutloot_tool_fdbck">
+		<text>Using:</text>
+	</string>
+
+<!-- Mutant looting tweak   (ui_mutant_loot.script) -->
+	<string id="st_mutloot_wasted">
+		<text>Mutant parts wasted</text>
+	</string>
+	<string id="st_mutloot_damaged">
+		<text>Mutant parts proved to be too damaged to be of any use</text>
+	</string>
+
+<!-- Canned Food mod   (itms_refunct.script) -->
+	<string id="st_canfood_nosharp">
+		<text>You need something sharp to open the can</text>
+	</string>
+	<string id="st_canfood_screen_hint">
+		<text>Using:</text>
+	</string>
+
+<!-- Lighter mod   (itms_refunct.script) -->
+	<string id="st_lighter_no">
+		<text>You need a lighter to light up your smoke</text>
+	</string>
+	<string id="st_lighter_dead">
+		<text>You need your lighter to be fueled</text>
+	</string>
+	<string id="st_lighter_all_dead">
+		<text>One of your lighters needs to be fueled</text>
+	</string>
+	<string id="st_lighter_refill_target_full">
+		<text>Your lighter is already fueled</text>
+	</string>
+	<string id="st_lighter_refill_all_targets_full">
+		<text>All your lighters are fueled</text>
+	</string>
+	<string id="st_lighter_refill_no_target">
+		<text>You don't have a lighter to refill</text>
+	</string>
+
+<!-- varia: itms_manager.script -->
+	<string id="st_itms_manager_headlamp_out">
+		<text>Head lamp disconnected from UPD</text>
+	</string>
+	<string id="st_itms_manager_mutant_bad">
+		<text>Body is badly decayed</text>
+	</string>
+	<string id="st_itms_manager_backpack_no">
+		<text>Not safe to place it here</text>
+	</string>
+	<string id="st_itms_manager_stash_count">
+		<text>stash</text>
+	</string>
+	<string id="st_itms_manager_qrs_already">
+		<text>I've already left my rucksack someplace</text>
+	</string>
+	<string id="st_itms_manager_backpack_mapspot">
+		<text>'s backpack</text>
+	</string>
+	<string id="st_itms_manager_headlamp_on">
+		<text>Equipped headlamp</text>
+	</string>
+
+<!-- Cooking mod legibility tweak   (ui_itm_cooking.script) -->
+	<string id="st_cooking_confirm">
+		<text>Selected</text>
+	</string>
+	<string id="st_cooking_2count">
+		<text>x2</text>
+	</string>
+	<string id="st_cooking_max">
+		<text>max</text>
+	</string>
+	<string id="st_cooking_fuel_hint">
+		<text>%c[0,140,140,140]choose fuel</text>
+	</string>
+	<string id="st_cooking_fuel_no">
+		<text>%c[0,151,21,66]no fuel</text>
+	</string>
+	<string id="st_cooking_ingredient_hint">
+		<text>%c[0,140,140,140]choose ingredients</text>
+	</string>
+	<string id="st_cooking_ingredient_no">
+		<text>%c[0,151,21,66]no ingredients</text>
+	</string>
+	<string id="st_cooking_is_aux">
+		<text>%c[0,0,128,32]using auxiliary item</text>
+	</string>
+	<string id="st_cooking_lighter_hint_colour">
+		<text>%c[0,151,21,66]lighter needed</text>
+	</string>
+	<string id="st_cooking_lighter_hint">
+		<text>lighter needed</text>
+	</string>
+	<string id="st_cooking_screen_lighter_no">
+		<text>You need a lighter to start a fire</text>
+	</string>
+	<string id="st_cooking_screen_lighter_dead">
+		<text>You need your lighter to be fueled</text>
+	</string>
+	<string id="st_cooking_screen_lighters_dead">
+		<text>One of your lighters needs to be fueled</text>
+	</string>
+	<string id="st_cooking_screen_no_fuel">
+		<text>You can't cook without fuel</text>
+	</string>
+	<string id="st_cooking_screen_no_meat">
+		<text>You don't have any meat to cook</text>
+	</string>
+
+<!-- Repair mod legibility tweak   (ui_itm_repair.script) -->
+	<string id="st_repair_utilize">
+		<text>Utilize</text>
+	</string>
+	<string id="st_repair_iru1">
+		<text>uses x1</text>
+	</string>
+	<string id="st_repair_iru2">
+		<text>uses x2</text>
+	</string>
+	<string id="st_repair_hint_wpn">
+		<text>%c[0,140,140,140]choose weapon</text>
+	</string>
+	<string id="st_repair_hint_obj">
+		<text>%c[0,140,140,140]choose object</text>
+	</string>
+	<string id="st_repair_hint_helm">
+		<text>%c[0,140,140,140]choose headgear</text>
+	</string>
+	<string id="st_repair_hint_gear">
+		<text>%c[0,140,140,140]choose gear</text>
+	</string>
+	<string id="st_repair_hint_no_target">
+		<text>%c[0,151,21,66]no gear</text>
+	</string>
+	<string id="st_repair_screen_no_target">
+		<text>No gear to repair</text>
+	</string>
+	<string id="st_repair_support">
+		<text>%c[0,140,140,140]supportive material?</text>
+	</string>
+	<string id="st_repair_support_no">
+		<text>%c[0,140,140,140]no supportive materials</text>
+	</string>
+
+<!-- Artifact containers legibility tweak   (ui_arty_container.script) -->
+	<string id="st_arty_con">
+		<text>Containers</text>
+	</string>
+	<string id="st_arty_art">
+		<text>Artifacts</text>
+	</string>
+	<string id="st_arty_hint_out">
+		<text>Remove from Container</text>
+	</string>
+	<string id="st_arty_hint_in">
+		<text>Place in Container</text>
+	</string>
+	<string id="st_arty_hint_ch_con">
+		<text>%c[0,140,140,140]choose container</text>
+	</string>
+	<string id="st_arty_hint_ch_art">
+		<text>%c[0,140,140,140]choose artifact</text>
+	</string>
+	<string id="st_arty_hint_no_con">
+		<text>%c[0,151,21,66]no containers</text>
+	</string>
+	<string id="st_arty_hint_no_art">
+		<text>%c[0,151,21,66]no artifacts</text>
+	</string>
+	<string id="st_arty_screen_no_con">
+		<text>You don't have any containers with artifacts</text>
+	</string>
+	<string id="st_arty_screen_no_art">
+		<text>You don't have any loose artifacts</text>
+	</string>
+
+<!-- Class selector convenience tweak   (ui_class_selector.script) -->
+	<string id="st_class_select_restart">
+		<text>Changing your class requires the game to restart. Proceed?</text>
+	</string>
+	<string id="st_class_select_wtf">
+		<text>This is already the current class selected.</text>
+	</string>
+
+<!-- Tent mod   (ui_tent.script) -->
+	<string id="st_tent_ui_need_fabric">
+		<text>%c[0,151,21,66]tent fabric needed</text>
+	</string>
+	<string id="st_tent_ui_need_mat">
+		<text>%c[0,151,21,66]tent mat needed</text>
+	</string>
+	<string id="st_tent_ui_need_tool">
+		<text>%c[0,151,21,66]tool needed</text>
+	</string>
+	<string id="st_tent_ui_need_support">
+		<text>%c[0,151,21,66]support material needed</text>
+	</string>
+	<string id="st_tent_ui_utilize">
+		<text>Utilize</text>
+	</string>
+	<string id="st_tent_ui_hint_tool">
+		<text>%c[0,140,140,140]choose your tool</text>
+	</string>
+	<string id="st_tent_ui_hint_support">
+		<text>%c[0,140,140,140]choose tent support</text>
+	</string>
+	<string id="st_tent_screen_need_mat">
+		<text>You need a tent mat to put up a tent</text>
+	</string>
+	<string id="st_tent_screen_need_fabric">
+		<text>You need tent fabric to put up a tent</text>
+	</string>
+	<string id="st_tent_screen_need_tool">
+		<text>You need a viable tool to put up a tent</text>
+	</string>
+	<string id="st_tent_screen_need_support">
+		<text>You need some support material to put up a tent</text>
+	</string>
+
+<!-- sleep UI rework   (ui_sleep_dialog.script) -->
+	<string id="st_sleep_hint_max">
+		<text>%c[0,100,100,100]Set maximal sleeping time</text>
+	</string>
+	<string id="st_sleep_hint_where">
+		<text>%c[0,100,100,100]Sleeping in:</text>
+	</string>
+	<string id="st_sleep_hint_where_hideout">
+		<text>%c[0,120,160,120] surge hideout</text>
+	</string>
+	<string id="st_sleep_hint_where_zaton">
+		<text>%c[0,120,160,120] Zaton safe zone</text>
+	</string>
+	<string id="st_sleep_hint_where_jupiter">
+		<text>%c[0,120,160,120] Jupiter safe zone</text>
+	</string>
+	<string id="st_sleep_hint_where_pripyat">
+		<text>%c[0,120,160,120] Pripyat safe zone</text>
+	</string>
+	<string id="st_sleep_hint_sb">
+		<text>%c[0,120,120,120] sleeping bag</text>
+	</string>
+	<string id="st_sleep_hint_nrc">
+		<text>%c[0,120,120,120] NRC foil</text>
+	</string>
+	<string id="st_sleep_hint_tent">
+		<text>%c[0,120,140,120] tent</text>
+	</string>
+	<string id="st_sleep_hint_tent_sb">
+		<text>%c[0,120,160,120] tent + sleeping bag</text>
+	</string>
+	<string id="st_sleep_hint_tent_nrc">
+		<text>%c[0,120,160,120] tent + NRC foil</text>
+	</string>
+	<string id="st_sleep_hint_tent_sb_nrc">
+		<text>%c[0,120,160,120] tent + sleeping bag + NRC foil</text>
+	</string>
+	<string id="st_sleep_testandshow_medic">
+		<text>I need a medic</text>
+	</string>
+	<string id="st_sleep_testandshow_ok">
+		<text>Sleep well</text>
+	</string>
+	<string id="st_sleep_testandshow_bleed">
+		<text>I'll bleed to death</text>
+	</string>
+	<string id="st_sleep_testandshow_hurt">
+		<text>You are hurt!</text>
+	</string>
+	<string id="st_sleep_testandshow_surge">
+		<text>Not crazy enough to sleep during this shit</text>
+	</string>
+	<string id="st_sleep_testandshow_bw">
+		<text>Blowout warning!</text>
+	</string>
+	<string id="st_sleep_testandshow_rad">
+		<text>I have radiation sickness</text>
+	</string>
+	<string id="st_sleep_testandshow_radh">
+		<text>Radiation hazard!</text>
+	</string>
+	<string id="st_sleep_testandshow_not">
+		<text>You are not tired</text>
+	</string>
+	<string id="st_sleep_tip_short">
+		<text>I wasn't sleepy enough to doze off even for an hour</text>
+	</string>
+	<string id="st_sleep_tip_not_sleepy">
+		<text>I wasn't sleepy enough to doze off</text>
+	</string>
+
+<!-- batteries tweak   (axr_battery.script) -->
+	<string id="st_battery_need_upd">
+		<text>You don't have a Universal Power Device (UPD)</text>
+	</string>
+	<string id="st_battery_low_power">
+		<text>Low battery power</text>
+	</string>
+
+<!-- Dismantle Mod   (ui_itm_dismantle.script) -->
+	<string id="st_dismantle_ui_caption_trgts_title">
+		<text>Viable targets</text>
+	</string>
+	<string id="st_dismantle_ui_no_trgts">
+		<text>%c[0,151,21,66]no viable targets</text>
+	</string>
+	<string id="st_dismantle_ui_hint1">
+		<text>%c[0,180,180,180]dismantle to salvage</text>
+	</string>
+	<string id="st_dismantle_ui_hint2">
+		<text>%c[0,140,140,140]choose target</text>
+	</string>
+	<string id="st_dismantle_ui_warning_title">
+		<text>WARNING</text>
+	</string>
+	<string id="st_dismantle_ui_warning">
+		<text>You might want to detach the scope first in order to avoid losing it in the process.</text>
+	</string>
+	<string id="st_dismantle_ui_need_aux_left">
+		<text>%c[0,151,21,66]auxiliary tool needed</text>
+	</string>
+	<string id="st_dismantle_ui_is_aux_left">
+		<text>%c[0,0,128,32]using auxiliary tool</text>
+	</string>
+	<string id="st_dismantle_ui_is_aux_title">
+		<text>Auxiliary tool is:</text>
+	</string>
+	<string id="st_dismantle_screen_no_trgts">
+		<text>No viable targets for this tool</text>
+	</string>
+	<string id="st_dismantle_screen_need_aux_axe">
+		<text>You need a sharp axe as an auxiliary tool to do that</text>
+	</string>
+	<string id="st_dismantle_screen_need_aux">
+		<text>You need a sharp knife or axe as an auxiliary tool to do that</text>
+	</string>
+	<string id="st_dismantle_screen_fail_hammer">
+		<text>Your hammer broke</text>
+	</string>
+	<string id="st_dismantle_screen_swiss_wpn_fail">
+		<text>Your Swiss Army knife slipped and scratched the weapon</text>
+	</string>
+	<string id="st_dismantle_screen_cutlery_wpn_fail">
+		<text>Your field cutlery broke</text>
+	</string>
+
+</string_table>

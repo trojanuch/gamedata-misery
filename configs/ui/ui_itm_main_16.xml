@@ -48,7 +48,7 @@
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="16" y="60" width="187" height="30">
+			<caption_parts x="16" y="60" width="187" height="30" complex_mode="1">
 				<text font="letterica18" align="c"/>
 			</caption_parts>
 			<list_frame_parts x="217" y="50" width="241" height="117">
@@ -190,7 +190,7 @@
 			</icon_tool>
 			<icon_tool_lead x="395" y="298" width="128" height="128" stretch="1">
 			</icon_tool_lead>
-			
+
 			<caption_item_used x="317" y="210" width="150" height="50" complex_mode="1">
 				<text font="letterica16" align="c"/>
 			</caption_item_used>
@@ -272,12 +272,10 @@
 			</icon>
 			<icon_parts x="108" y="112" width="128" height="128" stretch="1">
 			</icon_parts>
-			<icon_tool x="237" y="418" width="128" height="128" stretch="1">
-			</icon_tool>
-			<icon_tent_mat x="328" y="418" width="128" height="128" stretch="1">
+			<icon_fabric x="249" y="418" width="128" height="128" stretch="1">
+			</icon_fabric>
+			<icon_tent_mat x="344" y="418" width="128" height="128" stretch="1">
 			</icon_tent_mat>
-			<icon_protection x="422" y="418" width="128" height="128" stretch="1">
-			</icon_protection>
 
 			<caption_down x="16" y="264" width="187" height="50" complex_mode="1">
 				<text font="letterica18" align="c"/>
@@ -319,16 +317,14 @@
 		<form x="100" y="150" width="469" height="509" stretch="1">
 			<texture>ui_dismantle_window</texture>
 
-			<icon x="105" y="245" width="128" height="128" stretch="1">
-			</icon>
-			<icon_parts x="105" y="123" width="128" height="128" stretch="1">
-			</icon_parts>
-			<icon_tool x="395" y="298" width="128" height="128" stretch="1">
+			<icon_trgt x="105" y="123" width="128" height="128" stretch="1">
+			</icon_trgt>
+			<icon_tool x="400" y="298" width="128" height="128" stretch="1">
 			</icon_tool>
 
-			<caption_item_used x="313" y="216" width="150" height="50" complex_mode="1">
+			<caption_tool x="313" y="216" width="150" height="50" complex_mode="1">
 				<text font="letterica16" align="c"/>
-			</caption_item_used>
+			</caption_tool>
 			<list_frame x="217" y="202" width="241" height="107">
 				<texture>ui_inGame2_servers_list_frame</texture>
 			</list_frame>
@@ -336,18 +332,31 @@
 				<font font="letterica16"/>
 			</list>
 
-			<caption_parts x="10" y="60" width="200" height="30" complex_mode="1">
+			<caption_trgts x="10" y="60" width="200" height="30" complex_mode="1">
 				<text font="letterica18" align="c"/>
-			</caption_parts>
-			<caption_parts_title x="216" y="25" width="108" height="50" complex_mode="1">
+			</caption_trgts>
+			<caption_trgts_title x="216" y="25" width="108" height="50" complex_mode="1">
 				<text font="letterica16" align="c"/>
-			</caption_parts_title>
-			<list_frame_parts x="219" y="50" width="226" height="145">
+			</caption_trgts_title>
+			<list_frame_trgts x="219" y="50" width="226" height="145">
 				<texture>ui_inGame2_servers_list_frame</texture>
-			</list_frame_parts>
-			<list_parts x="228" y="53" width="231" height="145" item_height="18" can_select="1">
+			</list_frame_trgts>
+			<list_trgts x="228" y="53" width="231" height="145" item_height="18" can_select="1">
 				<font font="letterica16"/>
-			</list_parts>
+			</list_trgts>
+
+			<caption_left_inner_title x="10" y="160" width="200" height="30" complex_mode="1">
+				<text font="letterica18" align="c" />
+			</caption_left_inner_title>
+			<caption_warning x="24" y="220" width = "175" height="150" complex_mode="1">
+				<text font="letterica16" align="c" />
+			</caption_warning>
+			<caption_aux_title x="124" y="220" width = "175" height="150" complex_mode="1">
+				<text font="letterica16" align="c" />
+			</caption_aux_title>
+			<caption_aux x="124" y="234" width = "175" height="150" complex_mode="1">
+				<text font="letterica16" align="c" />
+			</caption_aux>
 
 			<btn_ok x="25" y="338" width="67" height="40">
 				<texture>ui_button_main01</texture>

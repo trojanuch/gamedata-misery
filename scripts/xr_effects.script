@@ -1693,29 +1693,41 @@ function play_inv_lead_close()
 	xr_sound.set_sound_play(db.actor:id(),"inv_lead_close")
 end
 
-function play_dismantle_shock()
-	xr_sound.set_sound_play(db.actor:id(),"dismantle_shock")
+-- Items refunct mod, Plaargath
+function play_inv_lighter_refiller()
+	xr_sound.set_sound_play(db.actor:id(),"inv_lighter_refiller")
 end
-
-function play_dismantle_blast()
-	xr_sound.set_sound_play(db.actor:id(),"dismantle_blast")
+function play_inv_dismantle_electro_shock()
+	xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_electro_shock")
 end
-
-function play_dismantle_hammer_break()
-	xr_sound.set_sound_play(db.actor:id(),"dismantle_hammer_break")
+function play_inv_dismantle_blast()
+	xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_blast")
 end
-
-function play_dismantle_swiss_wpn_fail()
-	xr_sound.set_sound_play(db.actor:id(),"dismantle_swiss_wpn_fail")
+function play_inv_dismantle_hammer_wpn_fail()
+	xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_hammer_wpn_fail")
 end
-
-function play_inv_dismantle_cutlery_wpn_fail()
-	xr_sound.set_sound_play(db.actor:id(),"dismantle_cutlery_wpn_fail")
+function play_inv_dismantle_swiss_sharp_wpn_fail()
+	xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_swiss_wpn_fail")
 end
-
-function play_dismantle_item()
-	xr_sound.set_sound_play(db.actor:id(),"dismantle_item")
+function play_inv_dismantle_cutlery_sharp_wpn_fail()
+	xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_cutlery_wpn_fail")
 end
+function play_inv_dismantle_hammer_helm_fail()
+	xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_hammer_helm_fail")
+end
+function play_inv_dismantle_outfit()
+	-- xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_outfit")
+end
+function play_inv_dismantle_long()
+	xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_long")
+end
+function play_inv_dismantle_short()
+	xr_sound.set_sound_play(db.actor:id(),"inv_dismantle_short")
+end
+function play_inv_put_up_tent()
+	xr_sound.set_sound_play(db.actor:id(),"inv_put_up_tent")
+end
+-- end Plaargath
 
 function play_spareparts()
 	xr_sound.set_sound_play(db.actor:id(),"inv_spareparts")
@@ -1723,14 +1735,6 @@ end
 
 function play_spareparts_small()
 	xr_sound.set_sound_play(db.actor:id(),"inv_spareparts_small")
-end
-
-function play_salvage_cloth()
-	xr_sound.set_sound_play(db.actor:id(),"inv_salvagecloth")
-end
-
-function play_inv_lighter_refiller()
-	xr_sound.set_sound_play(db.actor:id(),"inv_lighter_refiller")
 end
 
 function play_sound(actor, obj, p)
@@ -3473,6 +3477,11 @@ function pri_a22_kovalski_speak(actor, npc)
 	db.actor:give_info_portion("pri_a22_kovalski_speak")
 	-- KCS - spawn backpack with explosives next to bodies to prevent questline break
 	axr_dynamic_spawn.spawn_special("pri_a25_explosive")
+	-- Clearing whole map from unimportant NPCs, to prevent CTD once player opens fridge at the end of questline,
+	-- all s_t are dissabled at this point, new spawns on map should start only after finishing questline
+	axr_dynamic_spawn.del_distant_squad(true) -- KCS function call to delete unwanted NPCs on all maps, online and offline
+	--itms_manager.show_message("Make a hard save and go to quest location imediately. Otherwise you may not be able to finish quest.",30)
+	--news_manager.send_tip(db.actor, "pri_a22_quest_broken_tip", nil, nil, 5000) -- OK - gives info on cinematics, text need to be in "st_quests_pripyat.xml"
 end
 
 function zat_b38_underground_door_open(actor, npc)

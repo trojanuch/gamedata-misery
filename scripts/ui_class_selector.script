@@ -73,11 +73,11 @@ end
 function class_ui:OnAccept()
 	if (self.current_class ~= axr_misery.ActorClass) then
 		self.selector_mb:InitMessageBox("message_box_yes_no")
-		self.selector_mb:SetText("Changing your class requires the game to restart. Proceed?")
+		self.selector_mb:SetText(game.translate_string("st_class_select_restart"))
 		self.selector_mb:ShowDialog(true)
 	else
 		self.selector_mb:InitMessageBox("message_box_ok")
-		self.selector_mb:SetText("This is already the current class selected.")
+		self.selector_mb:SetText(game.translate_string("st_class_select_wtf"))
 		self.selector_mb:ShowDialog(true)
 	end
 end

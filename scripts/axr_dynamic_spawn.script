@@ -335,6 +335,8 @@ function actor_on_save(se_actor,packet)  --Yasti: Adjusted for separation of obj
 	for k,v in pairs(dynamic_story_id) do
 		alun_utils.printf("axr_dynamic_spawn.on_save: dynamic object saved: %s | %s", k, v)
 	end
+	
+	axr_dynamic_spawn.del_distant_squad(false) -- KCS - function call to delete unwanted NPCs on distant maps - true value delete NPCs on all maps
 end
 
 function actor_on_load(se_actor,packet) -- Yasti: Flag for items to be loaded only once
@@ -358,11 +360,11 @@ function actor_on_load(se_actor,packet) -- Yasti: Flag for items to be loaded on
 	spawn_count = 1
 	
 	for k,v in pairs(secret_stashes) do
-		alun_utils.printf("axr_dynamic_spawn.on_save: secret stash loaded: %s | %s | %s", v.section, v.id, v.flag)
+		alun_utils.printf("axr_dynamic_spawn.on_load: secret stash loaded: %s | %s | %s", v.section, v.id, v.flag) -- KCS changed "on_save" string to "on_load" for proper marking in log
 	end
 	
 	for k,v in pairs(dynamic_story_id) do
-		alun_utils.printf("axr_dynamic_spawn.on_save: dynamic object loaded: %s | %s", k, v)
+		alun_utils.printf("axr_dynamic_spawn.on_load: dynamic object loaded: %s | %s", k, v) -- KCS changed "on_save" string to "on_load" for proper marking in log
 	end
 end
 
@@ -593,8 +595,14 @@ end
 function del_distant_squad(all)
 	local obj,sec
 	local sor = story_objects.get_story_objects_registry()
+	local level_name
 	
-	alun_utils.printf("Despawning ditant NPC squads")
+	if all== true then
+		alun_utils.printf("Despawning NPC squads on all maps")
+	else
+		alun_utils.printf("Despawning distant NPC squads")
+	end
+	
 	for i =0,65534 do
 		-- obj = level.object_by_id(i) -- checking online objects
 		obj = alife():object(i) -- check server object - can be online or offline
@@ -605,30 +613,39 @@ function del_distant_squad(all)
 				if (not simulation_objects.is_on_the_same_level(obj, alife():actor())) or all == true then -- additional check, so same function can be used to despawn NPC on all maps
 					-- if (obj:clsid() == clsid.online_offline_group_s) and (not (sor:get(sec))) then
 					if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
-						alun_utils.printf("Distant NPC squad deleted: %s %s",tostring(i),sec)
-						-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
-						alun_utils.release(obj) -- safe way to delete simulation object
+						-- excluded some important NPCs that were in log despite being marked as story objects
+						if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") then
+							level_name = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id()) -- OK gives level name
+							alun_utils.printf("Distant NPC squad deleted: %s %s",level_name,sec)
+							-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
+							alun_utils.release(obj) -- safe way to delete simulation object
+						end
 					end
 				end
 			end
 		end
 	end
+	
 	if all == true then
-		alun_utils.printf("Despawning NPC squads on current level")
+		alun_utils.printf("Despawning Online NPC squads on current level")
 		for i =0,65534 do
 			obj = level.object_by_id(i) -- checking online objects
 			if (obj) and obj ~= nil then
 				sec = obj:name() -- OK - gives name of object
 				-- sec = obj:section_name() -- gives class section where object is defined - CTD for online objects
 				if (sec ~= nil) and (sec ~= "") then
-					if (not simulation_objects.is_on_the_same_level(obj, alife():actor())) or all == true then -- additional check, so same function can be used to despawn NPC on all maps
+					if (simulation_objects.is_on_the_same_level(obj, alife():actor())) then -- additional check, so same function can be used to despawn NPC on all maps
 						-- if (obj:clsid() == clsid.online_offline_group_s) and (not (sor:get(sec))) then
 						if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
-							alun_utils.printf("NPC squad deleted: %s %s",tostring(i),sec)
-							-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
-							-- alun_utils.release(obj) -- safe way to delete simulation object
-							-- alun_utils.release_object(obj) -- can release online objects too
-							alun_utils.safe_release(obj) -- have additional check to force object offline and then despawn
+							-- excluded some important NPCs that were in log despite being marked as story objects
+							if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") then
+								level_name = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id()) -- OK gives level name
+								alun_utils.printf("Level NPC squad deleted: %s %s",level_name,sec)
+								-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
+								-- alun_utils.release(obj) -- safe way to delete simulation object
+								-- alun_utils.release_object(obj) -- can release online objects too
+								alun_utils.safe_release(obj) -- have additional check to force object offline and then despawn
+							end
 						end
 					end
 				end
@@ -694,6 +711,64 @@ function spawn_special(sec)
 		alun_utils.printf("axr_dynamic_spawn special: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
 	end
 			
+end
+-- -------
+
+-- KCS - new function to interpret special spawn data
+-- example for function call outside of axr_dynamic_spawn.script
+-- axr_dynamic_spawn.interpret_special_spawn(box)
+function interpret_special_spawn(box)
+    -- collecting all sections for special spawns
+	local sections = {}
+	-- alun_utils.printf("Collecting special sections data - start")	
+	-- alun_utils.collect_sections(ini_special,sections) -- searching for all sections inside ini
+	-- alun_utils.printf("Collecting special sections data - end %s ",tostring(#sections)) -- total number of sections is "0" ???
+	-- function to collect and enumerate sections does not work properly for unknown reason, that is why each section need to be listed in table
+	sections = {"pri_a25_explosive", -- kindergarthen quest fix stash
+				"zat_hiding_place_62_start", -- stash for starting Alun's riddle quest
+				"zat_hiding_place_aj7", -- Bloodsucker lair
+				"zat_hiding_place_aj8", -- Big bridge
+				"zat_hiding_place_59", -- Burning farm
+				"zat_hiding_place_aj3", -- Dam at wpp
+				"zat_hiding_place_69", -- Cranes
+				"zat_hiding_place_aj4", -- Noah boat
+				"zat_hiding_place_aj1"} -- River east of big bridge
+		
+	-- all special sections are known now, need to search trough them to find out if taken object position match object defined in section
+	local sec,section,pos,lvid,gvid
+	local t,on_info,spawn_next
+	local gv1 -- KCS - new variable to get already spawned object data
+	for i=1, #sections do
+		sec = sections[i]
+		--sec = "pri_a25_explosive"
+		t = alun_utils.collect_section(ini_special,sec,true)
+
+		section = t.section
+		pos = alun_utils.string_to_vector(t.position)
+			
+		lvid = tonumber(t.level_vertex_id)
+		gvid = tonumber(t.game_vertex_id)
+		
+		gv1 = box:game_vertex_id() -- OK - gives proper gvid for online objects
+		
+		-- alun_utils.printf("Interpret special despawn data - checking %s gvid=%s gv1=%s - %s",sec,gvid,gv1,box:section())
+		if (section and pos and lvid and gvid) and (box:section() == section) and (gvid == gv1) then
+			-- found same position in section and object in game
+			-- alun_utils.printf("Interpret special despawn data - creating info from %s",sec)
+			on_info = alun_utils.read_from_ini(ini_special,sec,"on_info","string",nil)
+			-- special info portion given to actor to properly trigger next quest line (kindergarthen)
+			if on_info ~= nil then
+				give_info(on_info)
+				alun_utils.printf("Special info given %s ",on_info)
+			end
+			-- new feature for use to spawn next item in quest line if needed - similar to Alun's quest
+			-- but none of "on_info" data is stored in actor pstor, so it can't become corrupted in save game files
+			spawn_next = alun_utils.read_from_ini(ini_special,sec,"spawn_next","string",nil) -- OK, spawn properly next section
+			if spawn_next ~= nil then
+				axr_dynamic_spawn.spawn_special(spawn_next)
+			end
+		end -- end of position exist in section condition check	
+	end -- of for loop trough all sections
 end
 -- -------
 

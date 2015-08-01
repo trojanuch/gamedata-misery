@@ -23,7 +23,7 @@ end
 class "cooking_ui" (CUIScriptWnd)
 
 -- legibility fix, Plaargath
-local fuel_cnt, feedback1, feedback2, feedback_override
+local fuel_cnt, feedback1, feedback2, feedback_override, feedback_no_fuel, feedback_no_meat
 local has_lighter, has_bonus_item, bonus_item_section
 -- end Plaargath
 
@@ -67,8 +67,8 @@ function cooking_ui:FillList()
 		if (obj) and (self.cooking_only and self.cooking_only[obj:section()]) or (self.cooking_refuse == nil) or (self.cooking_refuse[obj:section()] == nil) then
 			-- Items refunct mod, Plaargath
 			if (self.cooking_type == "fuel" and alun_utils.item_is_explosive(obj))
-			-- or (sct == "porn" and self.section == "wood_stove")
-			-- or (sct == "porn2" and self.section == "wood_stove")
+			or (sct == "porn" and self.section == "wood_stove")
+			or (sct == "porn2" and self.section == "wood_stove")
 			or (sct == "meinkampf" and self.section == "wood_stove")
 			or (sct == "journal" and self.section == "wood_stove")
 			-- or (sct == "mili_maps" and self.section == "wood_stove")
@@ -87,8 +87,12 @@ function cooking_ui:FillList()
 
 	db.actor:iterate_inventory(fill_list,db.actor)
 	-- Plaargath
-	if has_bonus_item then self.caption_cooking:SetText("%c[0,0,128,32]using auxiliary item") end
-	if not has_lighter then self.caption_cooking:SetText("%c[0,151,21,66]lighter needed") end
+	if has_bonus_item then self.caption_cooking:SetText(game.translate_string("st_cooking_is_aux")) end
+	if self.list_box:GetSize() == 0 then
+		self.caption_cooking:SetText(game.translate_string("st_cooking_fuel_no"))
+		feedback_no_fuel = true
+	end
+	if not has_lighter then self.caption_cooking:SetText(game.translate_string("st_cooking_lighter_hint_colour")) end
 	-- end Plaargath
 end
 
@@ -112,6 +116,13 @@ function cooking_ui:FillPartsList()
 	end
 
 	db.actor:iterate_inventory(fill_list,db.actor)
+
+	-- Plaargath
+	if self.list_box_parts:GetSize() == 0 then
+		self.caption_parts:SetText(game.translate_string("st_cooking_ingredient_no"))
+		feedback_no_meat = true
+	end
+	-- end Plaargath
 end
 
 function cooking_ui:InitControls()
@@ -372,15 +383,15 @@ function cooking_ui:OnPartsListItemClicked()
 		end
 	end
 
-	self.caption_parts:SetText(string.format("Selected (x%d)",display_prts_cnt))
+	self.caption_parts:SetText(game.translate_string("st_cooking_confirm")..string.format(" (x%d)",display_prts_cnt))
 
-	self.caption_cooking:SetText(string.format("Selected (x%d)",fuel_cnt))
+	self.caption_cooking:SetText(game.translate_string("st_cooking_confirm")..string.format(" (x%d)",fuel_cnt))
 
 	if feedback_override then
-		self.caption_cooking:SetText("x2")
+		self.caption_cooking:SetText(game.translate_string("st_cooking_2count"))
 	else
 		if prts_cnt < fuel_cnt then
-			self.caption_cooking:SetText(string.format("Selected (x%d)",prts_cnt))
+			self.caption_cooking:SetText(game.translate_string("st_cooking_confirm")..string.format(" (x%d)",prts_cnt))
 		end
 	end
 	-- end Plaargath
@@ -395,9 +406,8 @@ function cooking_ui:OnListItemClicked()
 	-- Lighter mod, Plaargath
 	if not has_lighter then
 		self:OnButton_back_clicked()
-		has_lighter = nil
 		xr_effects.disable_ui_inventory(db.actor,nil)
-		itms_manager.show_message("You need a lighter to start a fire",25)
+		itms_manager.show_message(game.translate_string("st_cooking_screen_lighter_no"),25)
 		return
 	end
 	-- legibility fix, Plaargath
@@ -440,12 +450,12 @@ function cooking_ui:OnListItemClicked()
 	if has_lighter then
 		if (se_item:section_name() == "guitar_a") then
 			feedback_override = true
-			self.caption_cooking:SetText("x2")
+			self.caption_cooking:SetText(game.translate_string("st_cooking_2count"))
 		else
-			self.caption_cooking:SetText(string.format("max (x%d)",self:GetFuelCharges(se_item)))
+			self.caption_cooking:SetText(game.translate_string("st_cooking_max")..string.format(" (x%d)",self:GetFuelCharges(se_item)))
 		end
 	else
-		self.caption_cooking:SetText("lighter needed")
+		self.caption_cooking:SetText(game.translate_string("st_cooking_lighter_hint"))
 	end
 	self.caption_parts:SetText("")
 
@@ -467,6 +477,8 @@ function cooking_ui:OnButton_back_clicked()
 	feedback1 = nil
 	feedback2 = nil
 	feedback_override = nil
+	feedback_no_fuel = nil
+	feedback_no_meat = nil
 	has_lighter = nil
 	has_bonus_item = nil
 	-- end Plaargath
@@ -616,27 +628,39 @@ function cooking_ui:OnButton_cooking()
 	if not has_lighters then
 		self:OnButton_back_clicked()
 		xr_effects.disable_ui_inventory(db.actor,nil)
-		itms_manager.show_message("You need a lighter to start a fire",25)
+		itms_manager.show_message(game.translate_string("st_cooking_screen_lighter_no"),25)
 		return
 	elseif has_one_lighter and not chosen_lighter then
 		self:OnButton_back_clicked()
 		xr_effects.disable_ui_inventory(db.actor,nil)
-		itms_manager.show_message("You need your lighter to be fueled",25)
+		itms_manager.show_message(game.translate_string("st_cooking_screen_lighter_dead"),25)
 		return
 	elseif has_lighters and not chosen_lighter then
 		self:OnButton_back_clicked()
 		xr_effects.disable_ui_inventory(db.actor,nil)
-		itms_manager.show_message("One of your lighters needs to be fueled",25)
+		itms_manager.show_message(game.translate_string("st_cooking_screen_lighters_dead"),25)
 		return
 	end
 
 	if not feedback1 and not feedback2 then
-		self.caption_cooking:SetText("%c[0,140,140,140]choose fuel")
+		if not feedback_no_fuel then
+			self.caption_cooking:SetText(game.translate_string("st_cooking_fuel_hint"))
+		else
+			self:OnButton_back_clicked()
+			xr_effects.disable_ui_inventory(db.actor,nil)
+			itms_manager.show_message(game.translate_string("st_cooking_screen_no_fuel"),25)
+		end
 	end
 	if feedback1 then
-		self.caption_parts:SetText("%c[0,140,140,140]choose ingredients")
-		feedback1 = nil
-		feedback2 = true
+		if not feedback_no_meat then
+			self.caption_parts:SetText(game.translate_string("st_cooking_ingredient_hint"))
+			feedback1 = nil
+			feedback2 = true
+		else
+			self:OnButton_back_clicked()
+			xr_effects.disable_ui_inventory(db.actor,nil)
+			itms_manager.show_message(game.translate_string("st_cooking_screen_no_meat"),25)
+		end
 	end
 	-- end Plaargath
 
@@ -725,6 +749,8 @@ function cooking_ui:OnButton_cooking()
 				feedback1 = nil
 				feedback2 = nil
 				feedback_override = nil
+				feedback_no_fuel = nil
+				feedback_no_meat = nil
 				has_lighter = nil
 				has_bonus_item = nil
 				-- end Plaargath

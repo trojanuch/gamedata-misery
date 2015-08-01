@@ -580,10 +580,10 @@ inv_name		= st_addon_scope_rpg7
 inv_name_short	= st_addon_scope_rpg7
 inv_weight		= 0.64
 
-inv_grid_width		= 2
+inv_grid_width		= 1
 inv_grid_height		= 1
-inv_grid_x		= 18
-inv_grid_y		= 2
+inv_grid_x		= 19
+inv_grid_y		= 32
 scope_texture		= wpn_crosshair_findot
 ;scope_nightvision = scope_nightvision
 scope_zoom_factor	= 39
@@ -863,4 +863,27 @@ inv_grid_y         = 80
 scope_texture		= wpn_crosshair_m24
 scope_zoom_factor	= 20		;оян-1 5X
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[wpn_addon_scope_sig550_sniper]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope" ; option for Level Editor
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\equipments\trade\aks74u_special_scope.ogf
+$prefetch		= 32
+description		= st_addon_scope_sig550_sniper_descr
+cost			= 2240
+
+holder_range_modifier	= 1.55
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_sig550_sniper
+inv_name_short	= st_addon_scope_sig550_sniper
+inv_weight		= .48
+
+inv_grid_width		= 3
+inv_grid_height		= 1
+inv_grid_x			= 24
+inv_grid_y			= 80
+scope_texture		= wpn_crosshair_findot
+scope_zoom_factor	= 56

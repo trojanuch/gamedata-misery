@@ -23,6 +23,10 @@ end
 -------------------------------------------------------------------
 class "repair_ui" (CUIScriptWnd)
 
+-- Plaargath
+local feedback_no_target
+-- end Plaargath
+
 function repair_ui:__init(owner,section) super()
 	self.owner = owner
 	self.section = section
@@ -77,6 +81,11 @@ function repair_ui:FillList()
 			end
 		end
 	end
+
+	if self.list_box:GetSize() == 0 then
+		self.caption_repair:SetText(game.translate_string("st_repair_hint_no_target"),25)
+		feedback_no_target = true
+	end
 	-- end Plaargath
 end
 
@@ -100,6 +109,14 @@ function repair_ui:FillPartsList()
 	end
 
 	db.actor:iterate_inventory(fill_list,db.actor)
+
+	-- Plaargath
+	if self.list_box_parts:GetSize() == 0 then
+		self.caption_parts:SetText(game.translate_string("st_repair_support_no"))
+	else
+		self.caption_parts:SetText(game.translate_string("st_repair_support"))
+	end
+	-- end Plaargath
 end
 
 function repair_ui:InitControls()
@@ -259,7 +276,7 @@ function repair_ui:OnPartsListItemClicked()
 
 	self.picture_parts:SetWndPos(vector2():set(self.picture_parts.x-w/2, self.picture_parts.y-h/2))
 
-	self.caption_parts:SetText("Utilize")
+	self.caption_parts:SetText(game.translate_string("st_repair_utilize"))
 end
 
 function repair_ui:OnPartsListItemDbClicked()
@@ -297,7 +314,7 @@ function repair_ui:OnListItemClicked()
 	then
 		is_refunct_2 = true
 	end
-	-- Plaargath
+	-- end Plaargath
 
 	local w,h = item.width,item.height
 	if (utils.is_widescreen()) then
@@ -320,9 +337,9 @@ function repair_ui:OnListItemClicked()
 	local con = self.add_condition*100
 	-- Items refunct mod, Plaargath
 	if is_refunct_1 then
-		self.caption_repair:SetText("uses x1")
+		self.caption_repair:SetText(game.translate_string("st_repair_iru1"))
 	elseif is_refunct_2 then
-		self.caption_repair:SetText("uses x2")
+		self.caption_repair:SetText(game.translate_string("st_repair_iru2"))
 	else
 		self.caption_repair:SetText("+"..con.."%")
 	end
@@ -339,6 +356,7 @@ function repair_ui:OnListItemDbClicked()
 end
 
 function repair_ui:OnButton_back_clicked()
+	feedback_no_target = nil -- Plaargath
 	alife():create(self.section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
 	self:HideDialog()
 end
@@ -359,22 +377,28 @@ end
 
 function repair_ui:OnButton_repair()
 	-- legibility tweak, Plaargath
+	if feedback_no_target then
+		self:OnButton_back_clicked()
+		xr_effects.disable_ui_inventory(db.actor,nil)
+		itms_manager.show_message(game.translate_string("st_repair_screen_no_target"),25)
+	end
+
 	if string.find(self.section,"gun_oil")
 	or string.find(self.section,"solvent")
 	or string.find(self.section,"cleaning_kit")
 	or string.find(self.section,"toolkit_p")
 	or string.find(self.section,"toolkit_s")
 	or string.find(self.section,"toolkit_r") then
-		self.caption_repair:SetText("%c[0,140,140,140]choose weapon")
+		self.caption_repair:SetText(game.translate_string("st_repair_hint_wpn"))
 	elseif string.find(self.section,"sharpening_stones") then
-		self.caption_repair:SetText("%c[0,140,140,140]choose object")
+		self.caption_repair:SetText(game.translate_string("st_repair_hint_obj"))
 	elseif string.find(self.section,"helmet_repair_kit") then
-		self.caption_repair:SetText("%c[0,140,140,140]choose headgear")
+		self.caption_repair:SetText(game.translate_string("st_repair_hint_helm"))
 	elseif string.find(self.section,"sewing_kit")
 	or string.find(self.section,"glue")
 	or string.find(self.section,"armor_repair")
 	or string.find(self.section,"toolkit_u") then
-		self.caption_repair:SetText("%c[0,140,140,140]choose gear")
+		self.caption_repair:SetText(game.translate_string("st_repair_hint_gear"))
 	end
 	-- end Plaargath
 
@@ -661,7 +685,7 @@ function repair_ui:OnButton_repair()
 				if(se_parts)and(se_parts:section_name()=="swiss")then
 				alife():create("swiss", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
-				-- sharpened swiss knife blunting -- Plaargath
+				-- sharpened swiss knife blunting, Items refunct mod -- Plaargath
 				if(se_parts)and(se_parts:section_name()=="swiss_sharp")then
 				alife():create("swiss", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
@@ -904,6 +928,8 @@ function repair_ui:OnButton_repair()
 		local getrid = (db.actor:object(sect))
 		alife():release(alife():object(getrid:id()), true)
 	end
+
+	feedback_no_target = nil
 	-- end Plaargath
 
 	local con = obj:condition()

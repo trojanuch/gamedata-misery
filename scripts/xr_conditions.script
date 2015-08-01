@@ -1684,8 +1684,15 @@ function check_enemy_smart(actor , npc , p)
 	return false
 end
 
+-- KCS - this function must be defined, otherwise CTD at line 613 in xr_logic.script
+-- cause large FPS drops with lot of food items defined
 function zat_b103_actor_has_needed_food(actor, npc, p)
-	return (dialogs_zaton.zat_b103_actor_has_needed_food(actor, npc)) or (has_alife_info("zat_b103_merc_task_done"))
+	-- KCS - restricted function execute to smart terain with mercs, outside of "zat_b103_merc_smart" FPS will be normal
+	if actor_in_zone(actor, nil, {"zat_b103_merc_smart"}) then
+		return (dialogs_zaton.zat_b103_actor_has_needed_food(actor, npc)) or (has_alife_info("zat_b103_merc_task_done")) -- can be commented, but no proper condition given for task
+	else
+		return (has_alife_info("zat_b103_merc_task_done"))
+	end
 end
 
 function zat_b29_rivals_dialog_precond(actor, npc)
