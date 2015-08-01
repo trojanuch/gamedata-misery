@@ -1,22 +1,223 @@
 ;KCS - special section used to spawn quest items in certain story plot line, not imediately on starting new game
 ; intended to use with axr_dynamic_spawn.script and new functions in it
+; axr_dynamic_spawn.spawn_special("pri_a25_explosive") ;example for command line to execute trough debugger or script
 
 [pri_a25_explosive]
-section 			= inv_backpack
+;inv_rucksack - permanent stash in game, inv_backpack - can be picked up, but also abused if player place his own backpack on same spot
+section 			= inv_rucksack; inv_backpack
+
 position 		= 11.587577819824,-0.95120489597321,18.046211242676
 level_vertex_id = 210654
 game_vertex_id 	= 705
 direction			= 0,0,1
+on_info = pri_a22_yarmoshuk_body_search
+;spawn_next - new variable readed when actor pick up items in box - at that moment new stash is created if stated
+;spawn_next = zat_hiding_place_62_start
 ;tip 				= Use Stash
 
-; secret_info give actor "info" variable, so game engine can calulate conditions trough scripts, unfortunately does not trigger quest line properly
-;secret_info = pri_a22_task_gived 
-;secret_info = pri_b35_actor_is_guided
-;secret_info = pri_a22_rfi_source
-;secret_info  = +pri_a22_task_gived
-;secret_info  = +pri_a22_colonel_give_task
-
 item1				= pri_a25_explosive_charge_item,1
-;item2				= pri_a22_cutscene_actor_find_squad,1
+;item2				= pri_a25_explosive_charge_item,1
 
 
+
+; stashes to recreate Alun's quest, vanilla Misery last one become first stash that generate other stashes from Alun's riddle quest
+; Here are all the riddles, first two does not have Alun's journal descriptons, others are in order of spawns:
+
+;People go to me and so do boats.The boats bring the people,and the people bring the boats.
+;I drift forever with the current down these long canals they've made tame, yet wild, I run elusive multitasking to your aid. Before I came, the world was darker, colder, sometimes rougher, true but though I might make living easy, I'm good at killing people too.
+; -------------
+;st_alun_riddle_7_desc;Final resting place for men who sought fame, whose blood was drained by feelers red stained.
+;st_alun_riddle_8_desc;Often the home of those who ask riddles in exchange for passage.
+;st_alun_riddle_5_desc;I am always hungry,I must always be fed,The finger I touch,Will soon turn red
+;st_alun_riddle_3_desc;Damned if you do,damned if you don't
+;st_alun_riddle_9_desc;Lifts you up, when you are down.
+;st_alun_riddle_4_desc;Weight in my belly;trees on my back;nails in my ribs;feet I do lack.
+;st_alun_riddle_1_desc;What always runs but never walks,often murmurs,never talks,has a bed but never sleeps,has a mouth but never eats?
+
+;Answers
+;No description in XML; Doc or Dock
+;No description in XML; Electricity (Ranger station)
+; -------------
+;Bloodsucker lair
+;Bridge
+;Fire (burnt farm stead)
+;Dam (dredge station)
+;Crane
+;Ship (Noah's)
+;River (look for a stash in the water east of the big bridge)
+
+
+; Stash on top Fuel station - previous last stash item, now first stash that triggers riddle quest spawns
+; need to be enumerated in this file for "spawn_next" value, items for stash were determinated in "dynamic_spawn_zaton_secrets"
+;axr_dynamic_spawn.spawn_special("zat_hiding_place_62_start")
+[zat_hiding_place_62_start]
+section				= inv_rucksack
+position 			= -155.86804199219,23.829479217529,-162.23162841797
+level_vertex_id 	= 603797
+game_vertex_id 		= 57
+
+;secret				= true
+;hint				= st_zat_hiding_place_62
+
+spawn_next = zat_hiding_place_aj7
+
+;item1				= itm_alun_journal_7 ; clue item for next stash
+;item2				= gun_oil_ru
+;item3				= af_fireball
+;item4				= caffeine
+;item5				= cigarettes_russian
+;item6				= wpn_ak47m_custom
+
+; Bloodsucker lair - across pipe hole on lair exit
+;st_alun_riddle_7_desc;7)Final resting place for men who sought fame, whose blood was drained by feelers red stained.
+;clue_item8				= itm_alun_journal_7
+;axr_dynamic_spawn.spawn_special("zat_hiding_place_aj7")
+[zat_hiding_place_aj7]
+section				= inv_rucksack
+position 		= -467.2917175293,5.0883212089539,57.648670196533
+level_vertex_id = 105027
+game_vertex_id 	= 14
+
+;secret				= true
+;hint				= st_zat_hiding_place_57
+
+spawn_next = zat_hiding_place_aj8
+
+item1				= itm_alun_journal_8
+item2				= vodka_quality
+item3				= roubles,3
+item4				= mineral_water
+item5				= chocolate
+item6				= wpn_pm_actor ; Honorary Makarov, unique weapon - can't be found elsewhere in game, re-added
+
+;Big bridge
+;st_alun_riddle_8_desc;8)Often the home of those who ask riddles in exchange for passage.
+;clue_item8				= itm_alun_journal_8
+;axr_dynamic_spawn.spawn_special("zat_hiding_place_aj8")
+[zat_hiding_place_aj8]
+section				= inv_sumka7 ; share same game_vertex_id with Dam section, must be different item
+position 		= 432.14178466797,38.054618835449,-234.77587890625
+level_vertex_id = 1673226
+game_vertex_id 	= 35
+
+;secret				= true
+;hint				= st_zat_hiding_place_60
+
+spawn_next = zat_hiding_place_59
+
+item1				= itm_alun_journal_5
+item2				= vodka
+item3				= mineral_water
+item4				= cards
+item5				= nuts
+item6				= ecologist_red_outfit ; Added to help with next quest item, as fubar, this suit is bullet magnet due to new cammouflage system, less likely that someone buy it
+
+; Burning farm
+;st_alun_riddle_5_desc;3)I am always hungry,I must always be fed,The finger I touch,Will soon turn red
+;clue_item8				= itm_alun_journal_5
+;axr_dynamic_spawn.spawn_special("zat_hiding_place_59")
+[zat_hiding_place_59]
+section				= inv_rucksack
+position 			= -20.244529724121,24.657531738281,319.75875854492
+level_vertex_id 	= 1157371
+game_vertex_id 		= 316
+
+;secret				= true
+;hint				= st_zat_hiding_place_58
+
+spawn_next = zat_hiding_place_aj3
+
+item1				= itm_alun_journal_3
+item2				= cocaine3
+item3				= roubles,2
+item4				= ammo_9x18_pmm
+item5				= corn
+item6				= wpn_pb
+
+
+; Dam near WPP
+;st_alun_riddle_3_desc;4)Damned if you do,damned if you don't
+;clue_item8				= itm_alun_journal_3
+;axr_dynamic_spawn.spawn_special("zat_hiding_place_aj3")
+[zat_hiding_place_aj3]
+section				= inv_rucksack
+position 		= 376.74053955078,27.910297393799,-329.5129699707
+level_vertex_id = 1666890
+game_vertex_id 	= 35
+
+;secret 				= true
+;hint				= st_zat_hiding_place_59
+
+spawn_next = zat_hiding_place_69
+
+; Heavy fight needed for this, also hard to find stash
+ 
+item1				= itm_alun_journal_9
+item2				= ammo_7.62x39_fmj
+item2				= wpn_ak47_camo;wpn_ak47_rusty
+
+; cranes
+;st_alun_riddle_9_desc;9)Lifts you up, when you are down.
+;clue_item				= itm_alun_journal_9
+;axr_dynamic_spawn.spawn_special("zat_hiding_place_69")
+[zat_hiding_place_69]
+section				= inv_sumka7
+position 			= 211.1230, 17.0049, 3.0769
+level_vertex_id 	= 1328942
+game_vertex_id 		= 55
+
+;secret				= true
+;hint				= st_zat_hiding_place_69
+
+spawn_next = zat_hiding_place_aj4
+
+item1				= itm_alun_journal_4
+item2				= shovel_old
+item3				= ammo_bad
+item4				= conserva
+item5				= glue_b
+item6				= drug_anabiotic
+item7				= adrenalin
+
+
+
+; Noah boat - cabin below steering wheel
+;st_alun_riddle_4_desc;5)Weight in my belly;trees on my back;nails in my ribs;feet I do lack.
+;clue_item8				= itm_alun_journal_4
+;axr_dynamic_spawn.spawn_special("zat_hiding_place_aj4")
+[zat_hiding_place_aj4]
+section				= inv_rucksack
+
+position 		= 166.81652832031,-3.479367017746,-140.10148620605
+level_vertex_id = 1562660
+game_vertex_id 	= 219
+
+
+;secret				= true
+;hint				= st_zat_hiding_place_62
+
+spawn_next = zat_hiding_place_aj1
+
+item1				= itm_alun_journal_1
+item2				= gun_oil_ru
+item3				= af_fireball
+item4				= caffeine
+item5				= cigarettes_russian
+item6				= antirad
+
+
+;River
+;clue_item				= itm_alun_journal_1
+;axr_dynamic_spawn.spawn_special("zat_hiding_place_aj1")
+[zat_hiding_place_aj1]
+section				= inv_rucksack
+position 		= 568.13,-7.36,-197.75
+level_vertex_id = 1836530
+game_vertex_id 	= 220
+
+item1				= itm_alun_journal_end
+item2				= gun_oil_ru
+item3				= conserva
+item4				= caffeine
+item5				= cigarettes_russian
+item6				= wpn_m24 ; Green Dragon
