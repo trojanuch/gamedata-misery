@@ -25,7 +25,7 @@ options = {
 	helmet_no_respi = {
 		-- helmets that doesn't provide respirator (no gasmask breath sounds)
 		helm_hardhat = true,
-		;helm_ghillie = true, ; now features a build-in brathing mask
+		-- helm_ghillie = true,
 	},
 	health = {
 		-- health level for heavy injuring sounds
