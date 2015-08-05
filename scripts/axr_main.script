@@ -430,6 +430,16 @@ function actor_on_load(se_actor,packet)
 		axr_dynamic_spawn.actor_on_load(se_actor,packet)
 		--story_objects.get_story_objects_registry():load(packet)
 	end
+	-- KCS - additional commands to force weather change on previously saved value
+	-- at this point everything regarding atmosfear is initialized
+	if (atmosfear) then
+		-- alun_utils.printf("Forced weather name is %s", level_weathers.stored_weather) -- OK
+		-- level_weathers.get_weather_manager():forced_weather_change()
+		-- level.set_weather(level_weathers.stored_weather,true) -- this command forcing weather from named weather.ltx file, not working properly from saved weather state
+		level_weathers.get_weather_manager():reset() -- KCS - necessary function call to properly fill weather condition list based on actor, map level, time of day etc.
+		level_weathers.get_weather_manager():set_state_as_string(level_weathers.stored_weather) -- KCS - prepare weather state change
+		level_weathers.get_weather_manager():select_weather(true) -- execute weather change
+	end
 end
 
 -------------------

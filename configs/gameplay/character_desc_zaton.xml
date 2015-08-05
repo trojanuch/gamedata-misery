@@ -390,7 +390,7 @@
 		<community>dolg</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\dolg\</snd_config>
-		<rank>60</rank>
+		<rank>40</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_dolg\stalker_dolg3b</visual>
 		<supplies>
@@ -429,7 +429,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
 
-		<rank>35</rank>
+		<rank>30</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_dolg\stalker_dolg2a_mask</visual>
@@ -460,7 +460,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\dolg\</snd_config>
 
-		<rank>25</rank>
+		<rank>20</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_dolg\stalker_dolg1c</visual>
@@ -649,7 +649,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
 
-		<rank>85</rank>
+		<rank>35</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_bandit\stalker_bandit_4</visual>
@@ -766,7 +766,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\stalker\</snd_config>
 
-		<rank>55</rank>
+		<rank>35</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral_3</visual>
@@ -805,7 +805,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-		<rank>45</rank>
+		<rank>35</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral2dmask1</visual>
@@ -1207,7 +1207,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>30</rank>
+		<rank>20</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_bandit\stalker_bandit2a_mask</visual>
 		<supplies>
@@ -1233,7 +1233,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>30</rank>
+		<rank>20</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_bandit\stalker_bandit_1</visual>
 		<supplies>
@@ -1259,7 +1259,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>30</rank>
+		<rank>20</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_bandit\stalker_bandit1c</visual>
 		<supplies>
@@ -1282,7 +1282,7 @@
 		<community>killer</community>
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
-		<rank>30</rank>
+		<rank>20</rank>
 		<reputation>0</reputation>
 		<visual>actors\stalker_merc\stalker_merc_7</visual>
 		<supplies>
@@ -1312,7 +1312,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
 
-		<rank>55</rank>
+		<rank>35</rank>
 		<money min="1500" max="3500" infinitive="0"/>
 		<reputation>0</reputation>
 
@@ -1350,7 +1350,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
     	<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-    	<rank>45</rank>
+    	<rank>30</rank>
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
@@ -1381,7 +1381,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
     	<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-    	<rank>30</rank>
+    	<rank>20</rank>
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
@@ -1413,7 +1413,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
     	<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-    	<rank>25</rank>
+    	<rank>20</rank>
 		<money min="1500" max="3500" infinitive="0"/>
     	<reputation>0</reputation>
 
@@ -1444,7 +1444,7 @@
 		<terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 
-		<rank>55</rank>
+		<rank>35</rank>
 		<money min="1500" max="3500" infinitive="0"/>
 		<reputation>0</reputation>
 

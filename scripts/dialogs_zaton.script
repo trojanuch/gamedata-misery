@@ -464,7 +464,8 @@ function zat_b33_actor_hasnt_habar(first_speaker, second_speaker)
 end
 
 function zat_b33_actor_has_needed_money(first_speaker, second_speaker)
-	local zat_b33_tech_money = 500
+	-- local zat_b33_tech_money = 500 -- KCS - this is value from vanilla game, need to be changed for new value for Cardan opening Snags container
+	local zat_b33_tech_money = 3800
 	return db.actor:money() >= zat_b33_tech_money
 end
 

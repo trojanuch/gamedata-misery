@@ -489,13 +489,40 @@ function actor_on_item_take_from_box(box,obj)
 		end
 	end
 
+	-- KCS - additional code to close UI if box is empty - hard cases that remains in game
+	if (box:section() == "inv_case")
+	or (box:section() == "inv_blue_box")
+	or (box:section() == "inv_dev_merger")
+	or (box:section() == "inv_box_metall_01")
+	or (box:section() == "inv_expl_dinamit")
+	or (box:section() == "inv_green_box")
+	or (box:section() == "inv_micro")
+	or (box:section() == "dropoff_assaulter")
+	or (box:section() == "dropoff_recon")
+	or (box:section() == "dropoff_sniper")
+	or (box:section() == "delivery_noah")
+	or (box:section() == "delivery_nimble")
+	or (box:section() == "delivery_bunker")
+	or (box:section() == "delivery_freedom")
+	or (box:section() == "delivery_duty")
+	or (box:section() == "delivery_bonesetter")
+	or (box:section() == "vertel_boar")	
+	or (box:section() == "inventory_box")
+	or (box:section() == "transiver_01") then
+		if (box:is_inv_box_empty()) then
+			local hud = get_hud()
+			hud:HideActorMenu()
+		end
+	end
+	-- ------
+	
 	-- Backpack section
 	if (BackPackStashEnable and box:section() == "inv_backpack") then
 		if (box:is_inv_box_empty()) then
 			local hud = get_hud()
 			hud:HideActorMenu()
 			-- KCS - check additional info on picking up backpack
-			-- this can be abused if player drop down his own backpack on the same spot
+			-- this can be abused if player drop down his own backpack on the same spot -- those functions are moved in condition check above
 			-- alun_utils.printf("Itms_manager: backpack taken to inventory") 
 			-- axr_dynamic_spawn.interpret_special_spawn(box) -- new function to check and give actor proper "on_info" value
 			level.map_remove_object_spot(box:id(), BackPackStashSpot)

@@ -5,6 +5,7 @@ local prev_sec = 0
 local diff_sec = 0
 local prev_sec_5 = 0
 local diff_game_2sec = 0
+local stored_weather = nil -- KCS, new variable used in axr_main.script to force weather change on loading game
 
 class "WeatherManager"
 function WeatherManager:__init()
@@ -551,7 +552,11 @@ function WeatherManager:load(F)
 		self.wfx_time = F:r_float()
 	end
 	set_save_marker(F, "load", true, "WeatherManager")
-	
+	-- KCS - storing readed weather name in "global" variable for later usage in axr_main.script,
+	-- self.levelWeather value is lost after loading and forcing weather must be done after atmosphear initialization in axr_main.script
+	-- alun_utils.printf("Saved weather name is %s", self.levelWeather) -- OK
+	-- level_weathers.stored_weather = self.levelWeather
+	level_weathers.stored_weather = state_string
 end
 
 function WeatherManager:save(F)
