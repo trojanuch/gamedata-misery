@@ -162,13 +162,13 @@ kill_msg_height					= 28
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
-strap_position					= -0.23,-0.13,0.1	; position (offset) and orientation of the weapon when it is strapped
+strap_position					= -0.2,-0.15,0.1	; position (offset) and orientation of the weapon when it is strapped
 strap_orientation				= -15,-9,110		; (3rd person view in degrees)
 strap_bone0						= bip01_spine2
 strap_bone1						= bip01_spine1
 
 startup_ammo					= 90
-visual							= dynamics\weapons\wpn_rpk74\wpn_rpk74.ogf
+visual							= dynamics\weapons\wpn_rpkpak\wpn_rpk74.ogf
 
 light_disabled					= false
 light_color						= 0.6,0.5,0.3
@@ -229,50 +229,72 @@ silencer_light_time				= 0.2
 [wpn_rpk74_hud]
 zoom_hide_crosshair				= true
 attach_place_idx				= 0
-item_visual						= dynamics\weapons\wpn_rpk74\wpn_rpk74_hud.ogf
+item_visual						= dynamics\weapons\wpn_rpkpak\wpn_rpk74_hud.ogf
 
-hands_position				= -0.11,-0.17,0.15
-hands_orientation				= -0.750000,1.700000,-4.199999
+hands_position					= -0.120500,-0.180999,0.132501
+hands_orientation				= -2.599998,0.000000,-2.549999
 
-hands_position_16x9				= -0.11,-0.17,0.15
+hands_position_16x9				= -0.119500,-0.199000,0.091000
 hands_orientation_16x9			= -0.750000,1.700000,-4.199999
 
-item_position				= -0.0,0.004,-0.0
+item_position					= 0.004111,0.008527,-0.005906
 item_orientation				= -15.488927,-3.320898,367.220154
 
-aim_hud_offset_pos				= -0.107,0.033,-0.14
-aim_hud_offset_rot				= 0.02,0.0,-0.006
+shell_point						= 0.03,0.054,0.35  ;0.017,0.054,0.17
+shell_dir						= 0.0, 1.0, 0.0
+shell_bone						= wpn_body
 
-aim_hud_offset_pos_16x9 			= -0.107,0.033,-0.14
-aim_hud_offset_rot_16x9 			= 0.02,0.0,-0.006
+fire_point						= 0,0.042,0.884
+fire_bone						= wpn_body
+fire_point2						= 0.0,-0.011,0.553
+fire_bone2						= wpn_body
 
-gl_hud_offset_pos				= 0,0,0
-gl_hud_offset_rot 				= 0,0,0
+anm_show						= ak74_draw
+anm_hide						= ak74_holster
+anm_idle						= ak74_idle
+anm_idle_sprint					= ak74_idle_sprint
+anm_idle_moving					= ak74_idle_moving
+anm_shots						= ak74_shoot
+;anm_reload						= ak74_reload
+anm_reload              = ak74_reload_right_w_rot, ak74_reload
+anm_idle_aim					= ak74_idle_aim
 
-gl_hud_offset_pos_16x9 			= 0,0,0
-gl_hud_offset_rot_16x9 			= 0,0,0
+anm_switch						= ak74_switch_off	;abakan_switch_off
+anm_switch_g					= ak74_switch_on	;abakan_switch_on
+anm_bore						= ak74_idle_bore
 
-anm_show					= rpk_draw
-anm_hide                				= rpk_holster
-anm_idle               		 		= rpk_idle
-anm_idle_sprint         				= rpk_sprint
-anm_idle_moving        	 			= rpk_move
-anm_shots               				= rpk_shoot, shoot
-anm_reload              				= rpk_reload, reload
-anm_idle_aim            				= rpk_aim
-anm_bore                				= rpk_aim
+anm_hide_w_gl					= ak74_holster_w_gl
+anm_show_w_gl					= ak74_draw_w_gl
+anm_idle_w_gl					= ak74_idle_w_gl
+anm_shots_w_gl					= ak74_shoot_w_gl
+;anm_reload_w_gl					= ak74_reload_w_gl
+anm_reload_w_gl         = ak74_reload_right_w_gl_rot, ak74_reload_w_gl
+anm_idle_w_gl_aim				= ak74_idle_aim_w_gl
+anm_idle_sprint_w_gl			= ak74_idle_sprint_w_gl
+anm_idle_moving_w_gl			= ak74_idle_moving_w_gl
+anm_bore_w_gl					= ak74_idle_bore_w_gl
 
-shell_point                				= 0,0,0
-shell_dir              	 			= 0,0,0
-shell_bone                				= gilza
+anm_show_g						= ak74_draw_w_gl		;abakan_draw_grenade
+anm_hide_g						= ak74_holster_w_gl		;abakan_holster_grenade
+anm_idle_g						= ak74_idle_w_gl		;abakan_idle_grenade
+anm_reload_g					= ak74_reload_grenade
+anm_idle_g_aim					= ak74_idle_aim_w_gl	;abakan_idle_grenade
+anm_shots_g						= ak74_shoot_grenade
+anm_idle_sprint_g				= ak74_idle_sprint_w_gl	;abakan_idle_sprint_grenade
+anm_idle_moving_g				= ak74_idle_moving_w_gl	;abakan_idle_moving_grenade
+anm_bore_g						= ak74_idle_bore_w_gl
 
-fire_point					= 0,0,0
-fire_bone                   				= muzzle
-fire_point2                 				= 0,0,0
-fire_bone2					= wpn_body
+aim_hud_offset_pos = -0.101600,0.016800,-0.018000
+aim_hud_offset_rot = -0.027800,-0.031950,0.020000
 
-lean_hud_offset_pos     			= 0,0,0
-lean_hud_offset_rot     			= 0,0,0
+gl_hud_offset_pos				= -0.077100,-0.047800, 0.000000
+gl_hud_offset_rot				= -0.145000,-0.030000, 0.000000
+
+aim_hud_offset_pos_16x9 = -0.103100,0.054000,-0.116000
+aim_hud_offset_rot_16x9 = 0.020000,0.001000,-0.007500
+
+gl_hud_offset_pos_16x9			= -0.077110,-0.057500, -0.050000
+gl_hud_offset_rot_16x9			= -0.150000, 0.000000, 0.000000
 
 [scope_rpk74]
 scope_name						= wpn_addon_scope
