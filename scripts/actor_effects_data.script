@@ -25,7 +25,7 @@ options = {
 	helmet_no_respi = {
 		-- helmets that doesn't provide respirator (no gasmask breath sounds)
 		helm_hardhat = true,
---		helm_ghillie = true,
+		-- helm_ghillie = true,
 	},
 	health = {
 		-- health level for heavy injuring sounds
@@ -936,15 +936,16 @@ wpn_fx = {
 		e = { {0.5}, {0.4, 0}, {0.6, 1}, {3.2, 0}, {2.5, 0}, {1.3} },
 		p = {blur = 0},
 	},
-	
-	wpn_aug = {
+
+
+	wpn_l85_worn = {
 		s = {2, 3, 3, 3},
 		r = 2,
 		e = { {0.5}, {0.4, 0}, {0.6, 1}, {3.2, 0}, {2.5, 0}, {1.3} },
 		p = {blur = 0},
 	},
 
-	wpn_l85_worn = {
+	wpn_aug = {
 		s = {2, 3, 3, 3},
 		r = 2,
 		e = { {0.5}, {0.4, 0}, {0.6, 1}, {3.2, 0}, {2.5, 0}, {1.3} },
@@ -1598,6 +1599,34 @@ wpn_fx = {
 	},
 	
 	wpn_akm_freedom = {
+		s = {3, 4, 3},
+		r = 2,
+		e = { {0.5, 1}, {1.2, 1}, {0.9, 1}, {1.2}, {4.3, 0}, {0.7} },
+		p = {blur = 0},
+	},
+
+	wpn_rpk74_worn = {
+		s = {3, 4, 3},
+		r = 2,
+		e = { {0.5, 1}, {1.2, 1}, {0.9, 1}, {1.2}, {4.3, 0}, {0.7} },
+		p = {blur = 0},
+	},
+
+	wpn_rpk74_alt = {
+		s = {3, 4, 3},
+		r = 2,
+		e = { {0.5, 1}, {1.2, 1}, {0.9, 1}, {1.2}, {4.3, 0}, {0.7} },
+		p = {blur = 0},
+	},
+
+	wpn_rpk_762 = {
+		s = {3, 4, 3},
+		r = 2,
+		e = { {0.5, 1}, {1.2, 1}, {0.9, 1}, {1.2}, {4.3, 0}, {0.7} },
+		p = {blur = 0},
+	},
+
+	wpn_rpk_762_worn = {
 		s = {3, 4, 3},
 		r = 2,
 		e = { {0.5, 1}, {1.2, 1}, {0.9, 1}, {1.2}, {4.3, 0}, {0.7} },

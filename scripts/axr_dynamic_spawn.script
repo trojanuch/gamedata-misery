@@ -504,15 +504,40 @@ function interpret_spawn_data(sections)
 						local itm
 						local sysini = system_ini()
 						local sim = alife()
+						local w_obj -- KCS - additional variable that can be used for comparison
 						while t["item"..i] do
 							itm = alun_utils.str_explode(t["item"..i],",")
 							if (itm[1] and sysini:section_exist(itm[1])) then
 								for n=1,itm[2] and tonumber(itm[2]) or 1 do
 									if (pid) then
-										sim:create(itm[1],se_obj.position,0,0,pid)
+										-- sim:create(itm[1],se_obj.position,0,0,pid) -- KCS commented, so it can be used trough additional local variable for comparison
+										w_obj = sim:create(itm[1],se_obj.position,0,0,pid) -- OK - weapon is sproperly spawned in stash
 									else
-										sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id)
+										-- sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id) -- KCS commented, so it can be used trough additional local variable for comparison
+										w_obj = sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id) -- OK - weapon is sproperly spawned in stash
 									end
+									-- KCS - additional check if object in stash is weapon, to lower it's condition, with some additional checks to exclude grenades and knifes
+									if isWeapon(w_obj)
+									and (itm[1]~= "grenade_f1")
+									and (itm[1]~= "grenade_gd-05")
+									and (itm[1]~= "wpn_personal_1")
+									and (itm[1]~= "wpn_personal_2")
+									and (itm[1]~= "wpn_personal_3")
+									and (itm[1]~= "wpn_personal_4")
+									and (itm[1]~= "wpn_personal_5")
+									and (itm[1]~= "wpn_personal_6")
+									then
+										--w_obj:set_condition(0.02) -- set weapon condition -- gives CTD attempt to call method 'set_condition' (a nil value)
+										alun_utils.printf("axr_dynamic_spawn weapon spawned: %s [%s]",itm[1],w_obj:name()) -- OK desired weapon sections, no CTD
+										axr_dynamic_spawn.new_w_object_condition(w_obj) -- function that set new object properties
+									end
+									
+									-- KCS additional check if spawned object is outfit
+									if (w_obj:clsid() == clsid.equ_stalker_s) or (w_obj:clsid() == clsid.equ_helmet_s) then -- info from class_registrator script, last name is for usage in scripts
+										alun_utils.printf("axr_dynamic_spawn - outfit spawned: %s ",w_obj:name()) 
+										axr_dynamic_spawn.new_outfit_object_condition(w_obj) -- setting new condition on outfit object
+									end
+									
 								end
 							end
 							i = i + 1
@@ -531,9 +556,98 @@ function interpret_spawn_data(sections)
 					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
 				end
 			end
+			
+			
 		end
 	end
 end
+
+-- KCS - new function for debug usage - spawns item in actors inventory and print info in log file
+function object_on_actor(sec_name)
+	local new_obj, sec_id
+	new_obj = alife():create(sec_name,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	sec_id = new_obj.id -- OK, gives ID, no CTD
+	
+	local w_data = packet_utils21.get_object_data(new_obj) -- read object data from binary package in datatabase
+	if w_data ~= nil then	
+		-- Printing all data from table in log, to get correct table index name
+		for k,v in pairs(w_data) do
+			alun_utils.printf("Object data(k,v): %s %s",k,v)
+		end
+	end
+	
+	-- Log has revealed two possible variables that could be changed for lowering condition
+	-- w_data.condition = 1
+	-- w_data.upd_condition = 255 -- this is proper variable for weapon degradation state - need to be intiger value
+	
+	-- w_data.upd_condition = 100 -- lowering down condition -- spawned weapon is still 100%
+	-- w_data.condition = 0.2 -- not working
+	
+	-- Info from GSC forum about this: You can set new properties for item in actor's backpack but you won't notice difference (unless you check saved packet data)
+	-- Items in actors inventory behave in special way, you need to drop weapon outside and put back in to see changes,
+	-- also you may need to put object offline, change data and then back online to be effective in game, if you don't alter data imediately after spawn trough script
+	-- possible reason is that object is not online until update function is caled on next game frame, so you don't need to put object offline first for everything to work
+	
+	-- packet_utils21.set_object_data(new_obj, w_data) -- write back new properties from table to object, no need in this function, but left for example of usage
+end
+
+function new_w_object_condition(weapon_obj,min_v,max_v)
+	local w_data = packet_utils21.get_object_data(weapon_obj) -- read object data from binary package in datatabase
+	
+	-- new checks, if min and max values are nil, to set default ones
+	if min_v == nil then
+		min_v = 2
+	end
+	
+	if max_v == nil then
+		max_v = 37
+	end
+	
+	-- additional variables for random condition instead of fixed one
+	local min_cond = (min_v / 100) * 255 -- 2% of 255 value
+	local max_cond = (max_v / 100) * 255 -- 37% of 255 value
+	local new_cond = math.random(min_cond, max_cond) -- new random value between 2% and 37% rounded to whole number
+	
+	-- checking if it is safe to use w_data table - can be used only if it is not nil
+	if w_data ~= nil then
+		-- w_data.upd_condition = 100 -- lowering down condition -- OK
+		w_data.upd_condition = math.floor(new_cond) -- lowering down condition to random integer value
+		-- for k,v in pairs(w_data) do
+		--	alun_utils.printf("Weapon data(k,v): %s %s",k,v)
+		-- end
+		packet_utils21.set_object_data(weapon_obj, w_data) -- write back new properties from table to object
+	end
+end
+
+
+function new_outfit_object_condition(outfit_obj,min_v,max_v)
+	local w_data = packet_utils21.get_object_data(outfit_obj) -- read object data from binary package in datatabase
+	
+	-- new checks, if min and max values are nil, to set default ones
+	if min_v == nil then
+		min_v = 37
+	end
+	
+	if max_v == nil then
+		max_v = 86
+	end
+	
+	-- additional variables for random condition instead of fixed one
+	local min_cond = (min_v / 100) * 255 -- 37% of 255 value
+	local max_cond = (max_v / 100) * 255 -- 86% of 255 value
+	local new_cond = math.random(min_cond, max_cond) -- new random value between 2% and 37% rounded to whole number
+	
+	-- checking if it is safe to use w_data table - can be used only if it is not nil
+	if w_data ~= nil then
+		-- w_data.upd_condition = 100 -- lowering down condition -- OK
+		w_data.upd_condition = math.floor(new_cond) -- lowering down condition to random integer value
+		-- for k,v in pairs(w_data) do
+		--	alun_utils.printf("Outfit data(k,v): %s %s",k,v)
+		-- end
+		packet_utils21.set_object_data(outfit_obj, w_data) -- write back new properties from table to object
+	end
+end
+
 
 
 last_secret = nil
@@ -612,7 +726,7 @@ function del_distant_squad(all)
 			if (sec ~= nil) and (sec ~= "") then
 				if (not simulation_objects.is_on_the_same_level(obj, alife():actor())) or all == true then -- additional check, so same function can be used to despawn NPC on all maps
 					-- if (obj:clsid() == clsid.online_offline_group_s) and (not (sor:get(sec))) then
-					if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
+					if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == clsid.script_stalker) or (obj:clsid() == clsid.bloodsucker_s) or (obj:clsid() == clsid.boar_s) or (obj:clsid() == clsid.dog_s) or (obj:clsid() == clsid.flesh_s) or (obj:clsid() == clsid.pseudodog_s) or (obj:clsid() == clsid.burer_s) or (obj:clsid() == clsid.cat_s) or (obj:clsid() == clsid.chimera_s) or (obj:clsid() == clsid.controller_s) or (obj:clsid() == clsid.fracture_s)	or (obj:clsid() == clsid.poltergeist_s) or (obj:clsid() == clsid.gigant_s) or (obj:clsid() == clsid.zombie_s) or (obj:clsid() == clsid.snork_s) or (obj:clsid() == clsid.tushkano_s) or (obj:clsid() == clsid.psy_dog_s) or (obj:clsid() == clsid.psy_dog_phantom_s)) and (not (sor:get(sec))) then
 						-- excluded some important NPCs that were in log despite being marked as story objects
 						if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") then
 							level_name = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id()) -- OK gives level name
@@ -636,7 +750,8 @@ function del_distant_squad(all)
 				if (sec ~= nil) and (sec ~= "") then
 					if (simulation_objects.is_on_the_same_level(obj, alife():actor())) then -- additional check, so same function can be used to despawn NPC on all maps
 						-- if (obj:clsid() == clsid.online_offline_group_s) and (not (sor:get(sec))) then
-						if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
+						--if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
+						if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == clsid.script_stalker) or (obj:clsid() == clsid.bloodsucker_s) or (obj:clsid() == clsid.boar_s) or (obj:clsid() == clsid.dog_s) or (obj:clsid() == clsid.flesh_s) or (obj:clsid() == clsid.pseudodog_s) or (obj:clsid() == clsid.burer_s) or (obj:clsid() == clsid.cat_s) or (obj:clsid() == clsid.chimera_s) or (obj:clsid() == clsid.controller_s) or (obj:clsid() == clsid.fracture_s)	or (obj:clsid() == clsid.poltergeist_s) or (obj:clsid() == clsid.gigant_s) or (obj:clsid() == clsid.zombie_s) or (obj:clsid() == clsid.snork_s) or (obj:clsid() == clsid.tushkano_s) or (obj:clsid() == clsid.psy_dog_s) or (obj:clsid() == clsid.psy_dog_phantom_s)) and (not (sor:get(sec))) then
 							-- excluded some important NPCs that were in log despite being marked as story objects
 							if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") then
 								level_name = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id()) -- OK gives level name
@@ -684,14 +799,37 @@ function spawn_special(sec)
 			local itm
 			local sysini = system_ini()
 			local sim = alife()
+			local w_obj -- KCS - additional variable that can be used for comparison
 			while t["item"..i] do
 				itm = alun_utils.str_explode(t["item"..i],",")
 				if (itm[1] and sysini:section_exist(itm[1])) then
 					for n=1,itm[2] and tonumber(itm[2]) or 1 do
 						if (pid) then
-							sim:create(itm[1],se_obj.position,0,0,pid)
+							-- sim:create(itm[1],se_obj.position,0,0,pid) -- KCS commented, so it can be used trough additional local variable for comparison
+							w_obj = sim:create(itm[1],se_obj.position,0,0,pid)
 						else
-							sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id)
+							-- sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id) -- KCS commented, so it can be used trough additional local variable for comparison
+							w_obj = sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id)
+						end
+						-- KCS - additional check if object in stash is weapon, to lower it's condition, with some additional checks to exclude grenades and knifes
+						if isWeapon(w_obj)
+						and (itm[1]~= "grenade_f1")
+						and (itm[1]~= "grenade_gd-05")
+						and (itm[1]~= "wpn_personal_1")
+						and (itm[1]~= "wpn_personal_2")
+						and (itm[1]~= "wpn_personal_3")
+						and (itm[1]~= "wpn_personal_4")
+						and (itm[1]~= "wpn_personal_5")
+						and (itm[1]~= "wpn_personal_6")
+						then
+							alun_utils.printf("axr_dynamic_spawn special - weapon spawned: %s [%s]",itm[1],w_obj:name()) -- OK desired weapon sections, no CTD
+							axr_dynamic_spawn.new_w_object_condition(w_obj) -- set new object properties
+						end
+									
+						-- KCS additional check if spawned object is outfit
+						if (w_obj:clsid() == clsid.equ_stalker_s) or (w_obj:clsid() == clsid.equ_helmet_s) then -- info from class_registrator script, last name is for usage in scripts
+							alun_utils.printf("axr_dynamic_spawn special - outfit spawned: %s [%s]",w_obj:name()) 
+							axr_dynamic_spawn.new_outfit_object_condition(w_obj) -- setting new condition on outfit object
 						end
 					end
 				end
