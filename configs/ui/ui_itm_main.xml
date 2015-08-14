@@ -367,6 +367,160 @@
 				<texture>ui_button_main01</texture>
 				<text font="letterica18">ui_mm_cancel</text>
 			</btn_cancel>
+			<btn_help x="180" y="338" width="67" height="40">
+				<texture>ui_button_main01</texture>
+				<text font="letterica18">HELP</text>
+			</btn_help>
+
+			<caption_hint x="24" y="280" width = "175" height="150" complex_mode="1">
+				<text font="letterica16" align="l" />
+			</caption_hint>
+
+			<help_bg x="472" y="0" width="380" height="750" stretch="1">
+				<texture>ui_dismantle_help_bg</texture>
+			</help_bg>
+
+			<tabs x="477" y="5" width="370" height="40">
+				<button x="5" y="0" width="90" height="20" id="row1col1">
+					<text font="letterica18" align="c" r="100" g="100" b="100">st_dismantle_help_tab_button_r1c1</text>
+				</button>
+				<button x="5" y="20" width="90" height="20" id="row2col1">
+					<text font="letterica18" align="c" r="100" g="100" b="100">st_dismantle_help_tab_button_r2c1</text>
+				</button>
+				<button x="95" y="0" width="90" height="20" id="row1col2">
+					<text font="letterica18" align="c" r="100" g="100" b="100">st_dismantle_help_tab_button_r1c2</text>
+				</button>
+				<button x="95" y="20" width="90" height="20" id="row2col2">
+					<text font="letterica18" align="c" r="100" g="100" b="100">st_dismantle_help_tab_button_r2c2</text>
+				</button>
+				<button x="185" y="0" width="90" height="20" id="row1col3">
+					<text font="letterica18" align="c" r="100" g="100" b="100">st_dismantle_help_tab_button_r1c3</text>
+				</button>
+				<button x="185" y="20" width="90" height="20" id="row2col3">
+					<text font="letterica18" align="c" r="100" g="100" b="100">st_dismantle_help_tab_button_r2c3</text>
+				</button>
+				<button x="275" y="0" width="90" height="20" id="row1col4">
+					<text font="letterica18" align="c" r="100" g="100" b="100">st_dismantle_help_tab_button_r1c4</text>
+				</button>
+				<button x="275" y="20" width="90" height="20" id="row2col4">
+					<text font="letterica18" align="c" r="100" g="100" b="100">st_dismantle_help_tab_button_r2c4</text>
+				</button>
+			</tabs>
+
+			<tab_row1col1 x="480" y="20" width="500" height="500">
+				<!-- <auto_static x="17" y="-13" width="60" height="25">
+					<text font="letterica18" align="c" r="200" g="200" b="100">st_dismantle_help_tab_button_r1c1</text>
+				</auto_static> ten tekst jest poprawnie wyalignowany tylko chowa sie za tekstem taba -->
+				<auto_static x="2" y="-15" width="360" height="40" stretch="1" >
+					<texture>ui_dismantle_tab_TEMP</texture>
+				</auto_static>
+				<auto_static x="2" y="-15" width="90" height="20" stretch="1" >
+					<texture>ui_dismantle_acttab_bg</texture>
+				</auto_static>
+				<auto_static x="140" y="35" width="500" height="20">
+					<text font="letterica18" align="l" r="240" g="130" b="130">SOME HEADER</text>
+				</auto_static>
+				<auto_static x="4" y="45" width="530" height="50" complex_mode="1">
+					<text font="letterica16" align="l" r="160" g="160" b="160">WIP r1c1</text>
+				</auto_static>
+				<auto_static x="10" y="80" width="37" height="75" stretch="1">
+					<texture>dh_tool_shovel_old_sharp</texture>
+				</auto_static>
+			</tab_row1col1>
+
+			<tab_row1col2 x="480" y="20" width="500" height="500">
+				<auto_static x="2" y="-15" width="360" height="40" stretch="1" >
+					<texture>ui_dismantle_tab_TEMP</texture>
+				</auto_static>
+				<auto_static x="92" y="-15" width="90" height="20" stretch="1" >
+					<texture>ui_dismantle_acttab_bg</texture>
+				</auto_static>
+				<auto_static x="4" y="45" width="530" height="50" complex_mode="1">
+					<text font="letterica16" align="l" r="160" g="160" b="160">WIP r1c2</text>
+				</auto_static>
+				<auto_static x="2" y="80" width="37" height="75" stretch="1">
+					<texture>dh_tool_shovel_mili_sharp</texture>
+				</auto_static>
+				<auto_static x="84" y="79" width="37" height="75" stretch="1">
+					<texture>ui_dismantle_uiic_bg_52x102</texture>
+				</auto_static>
+				<auto_static x="85" y="80" width="37" height="75" stretch="1">
+					<texture>dh_tool_shovel_mili_sharp</texture>
+				</auto_static>
+			</tab_row1col2>
+
+			<tab_row1col3 x="480" y="20" width="500" height="500">
+				<auto_static x="2" y="-15" width="360" height="40" stretch="1" >
+					<texture>ui_dismantle_tab_TEMP</texture>
+				</auto_static>
+				<auto_static x="182" y="-15" width="90" height="20" stretch="1" >
+					<texture>ui_dismantle_acttab_bg</texture>
+				</auto_static>
+				<auto_static x="4" y="45" width="530" height="50" complex_mode="1">
+					<text font="letterica16" align="l" r="160" g="160" b="160">WIP r1c3</text>
+				</auto_static>
+			</tab_row1col3>
+
+			<tab_row1col4 x="480" y="20" width="500" height="500">
+				<auto_static x="2" y="-15" width="360" height="40" stretch="1" >
+					<texture>ui_dismantle_tab_TEMP</texture>
+				</auto_static>
+				<auto_static x="272" y="-15" width="90" height="20" stretch="1" >
+					<texture>ui_dismantle_acttab_bg</texture>
+				</auto_static>
+				<auto_static x="4" y="45" width="530" height="50" complex_mode="1">
+					<text font="letterica16" align="l" r="160" g="160" b="160">WIP r1c4</text>
+				</auto_static>
+			</tab_row1col4>
+
+			<tab_row2col1 x="480" y="20" width="500" height="500">
+				<auto_static x="2" y="-15" width="360" height="40" stretch="1" >
+					<texture>ui_dismantle_tab_TEMP</texture>
+				</auto_static>
+				<auto_static x="2" y="5" width="90" height="20" stretch="1" >
+					<texture>ui_dismantle_acttab_bg</texture>
+				</auto_static>
+				<auto_static x="4" y="45" width="530" height="50" complex_mode="1">
+					<text font="letterica16" align="l" r="160" g="160" b="160">WIP r2c1</text>
+				</auto_static>
+			</tab_row2col1>
+
+			<tab_row2col2 x="480" y="20" width="500" height="500">
+				<auto_static x="2" y="-15" width="360" height="40" stretch="1" >
+					<texture>ui_dismantle_tab_TEMP</texture>
+				</auto_static>
+				<auto_static x="92" y="5" width="90" height="20" stretch="1" >
+					<texture>ui_dismantle_acttab_bg</texture>
+				</auto_static>
+				<auto_static x="4" y="45" width="530" height="50" complex_mode="1">
+					<text font="letterica16" align="l" r="160" g="160" b="160">WIP r2c2</text>
+				</auto_static>
+			</tab_row2col2>
+
+			<tab_row2col3 x="480" y="20" width="500" height="500">
+				<auto_static x="2" y="-15" width="360" height="40" stretch="1" >
+					<texture>ui_dismantle_tab_TEMP</texture>
+				</auto_static>
+				<auto_static x="182" y="5" width="90" height="20" stretch="1" >
+					<texture>ui_dismantle_acttab_bg</texture>
+				</auto_static>
+				<auto_static x="4" y="45" width="530" height="50" complex_mode="1">
+					<text font="letterica16" align="l" r="160" g="160" b="160">WIP r2c3</text>
+				</auto_static>
+			</tab_row2col3>
+
+			<tab_row2col4 x="480" y="20" width="500" height="500">
+				<auto_static x="2" y="-15" width="360" height="40" stretch="1" >
+					<texture>ui_dismantle_tab_TEMP</texture>
+				</auto_static>
+				<auto_static x="272" y="5" width="90" height="20" stretch="1" >
+					<texture>ui_dismantle_acttab_bg</texture>
+				</auto_static>
+				<auto_static x="4" y="45" width="530" height="50" complex_mode="1">
+					<text font="letterica16" align="l" r="160" g="160" b="160">WIP r2c4</text>
+				</auto_static>
+			</tab_row2col4>
+
 		</form>
 	</dismantle>
 </w>

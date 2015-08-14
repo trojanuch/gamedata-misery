@@ -448,25 +448,16 @@ function tent_ui:AddItemToList(item,listbox,condition)
 	listbox:AddExistingItem(_itm)
 end
 
-function put_up_tent() -- called from actor_affects_data in order to spawn during fadeout
-	local dir = db.actor:direction()
-	local dx = dir.x -- (+ on E - on W)
-	local dz = dir.z -- (+ on N - on S)
-	local sign_x, sign_z
-	if dx >= 0 then sign_x = 1 elseif dx < 0 then sign_x = -1 end
-	if dz >= 0 then sign_z = 1 elseif dz < 0 then sign_z = -1 end
-	local pos = db.actor:position()
-	local px = pos.x
-	local py = pos.y
-	local pz = pos.z
-	local add_on_x = 0.7 -- EW distance
-	local add_on_z = 0.7 -- NS distance
-	local npx = px + add_on_x * sign_x
-	local npz = pz + add_on_z * sign_z
-	local npy = py -- + 1 -- height
-	local spawn_position = vector():set(npx,npy,npz)
-
-	local tent = alife():create("ph_tent",spawn_position,db.actor:level_vertex_id(),db.actor:game_vertex_id())
+function put_up_tent() -- called from actor_affects_data in order to spawn during the fadeout effect
+	-- thx Alun for help with building this one
+	local base_point = db.actor:level_vertex_id()
+	local spawn_gvid = db.actor:game_vertex_id()
+	local dist = 1.5
+	local dir = device().cam_dir
+	local new_dir = vector_rotate_y(utils.vector_copy_by_val(dir),0)
+	local spawn_lvid = level.vertex_in_direction(base_point, new_dir, dist)
+	local spawn_pos = level.vertex_position(spawn_lvid)
+	local tent = alife():create("ph_tent",spawn_pos,spawn_lvid,spawn_gvid)
 	local TentMapSpot = alun_utils.read_from_ini(system_ini(),"items_refunct_mod","tent_map_spot","string","ui_pda2_tent_location")
 	level.map_add_object_spot_ser(tent.id, TentMapSpot, "st_ui_pda_tent")
 end

@@ -447,6 +447,12 @@
 	<string id="st_addon_scope_snag_descr">
 		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] Snag's AK74U rifle\n \n%c[0,170,170,170]Modified PSO scope taken from Snag's customized AK74u rifle. It has a single, brightened dot reticule allowing for precise traget aquisition regardless of lighting conditions. Due to universal dovetail mounting it can be installed on most other Warsaw Pact rifles.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]6.8x\n%c[0,93,0,116] • %c[0,140,140,140] Condition: %c[0,170,170,170]good\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]customized</text>
 	</string>
+	<string id="st_addon_scope_sig550_sniper">
+		<text>SG 550-S Sniper scope</text>
+	</string>
+	<string id="st_addon_scope_sig550_sniper_descr">
+		<text>\n \n%c[0,140,140,140]COMPATIBILITY:\n \n%c[0,153,255,255] • %c[0,140,140,140] SG 550-S Sniper\n \n%c[0,170,170,170]Modified PSO scope taken from a SG 550-S Sniper rifle. It has a single, brightened dot reticule allowing for precise traget aquisition regardless of lighting conditions.\n \n%c[0,93,0,116] • %c[0,140,140,140] Magnification: %c[0,170,170,170]6.8x\n%c[0,93,0,116] • %c[0,140,140,140] Condition: %c[0,170,170,170]good\n%c[0,93,0,116] • %c[0,140,140,140] Reticule pattern: %c[0,170,170,170]customized</text>
+	</string>
 	<string id="st_addon_scope_fn_fal_para">
 		<text>BSA TW4X30 scope</text>
 	</string>

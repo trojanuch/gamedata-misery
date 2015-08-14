@@ -157,6 +157,7 @@ end
 
 ini = ini_file("dynamic_spawn.ltx")
 ini_special = ini_file("dynamic_spawn_special.ltx") -- KCS - ini file thatn is needed only in special cases to prevent quest breaking
+
 local dynamic = {}
 local on_info_sections
 
@@ -563,9 +564,10 @@ function interpret_spawn_data(sections)
 end
 
 -- KCS - new function for debug usage - spawns item in actors inventory and print info in log file
-function object_on_actor(sec_name)
+function object_on_actor(sec_name,min_v,max_v)
 	local new_obj, sec_id
-	new_obj = alife():create(sec_name,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	-- new_obj = alife():create(sec_name,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	new_obj = alife():create(sec_name,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id()) -- spawns object out of Actor's inventory, so info about NPC can be in log
 	sec_id = new_obj.id -- OK, gives ID, no CTD
 	
 	local w_data = packet_utils21.get_object_data(new_obj) -- read object data from binary package in datatabase
@@ -574,6 +576,35 @@ function object_on_actor(sec_name)
 		for k,v in pairs(w_data) do
 			alun_utils.printf("Object data(k,v): %s %s",k,v)
 		end
+		
+		-- Extra check, only for weapon and outfit objects condition is lowered to random number, works only for objects outside of Actor inventory
+		if (new_obj:clsid() == clsid.equ_stalker_s) or (new_obj:clsid() == clsid.equ_helmet_s) or (isWeapon(new_obj)) then
+			if min_v == nil then
+				if isWeapon(new_obj) then
+					min_v = 2
+				else
+					min_v = 37
+				end
+			end
+	
+			if max_v == nil then
+				if isWeapon(new_obj) then
+					max_v = 37
+				else
+					max_v = 86
+				end
+			end
+		
+			-- additional variables for random condition instead of fixed one
+			local min_cond = (min_v / 100) * 255 -- 2% of 255 value
+			local max_cond = (max_v / 100) * 255 -- 37% of 255 value
+			local new_cond = math.random(min_cond, max_cond) -- new random value between 2% and 37% rounded to whole number
+			
+			w_data.upd_condition = math.floor(new_cond) -- lowering down condition to random integer value
+			
+			packet_utils21.set_object_data(new_obj, w_data) -- write back new properties from table to object, no need in this function, but left for example of usage
+		end
+		-- ---------
 	end
 	
 	-- Log has revealed two possible variables that could be changed for lowering condition
@@ -589,6 +620,7 @@ function object_on_actor(sec_name)
 	-- possible reason is that object is not online until update function is caled on next game frame, so you don't need to put object offline first for everything to work
 	
 	-- packet_utils21.set_object_data(new_obj, w_data) -- write back new properties from table to object, no need in this function, but left for example of usage
+	
 end
 
 function new_w_object_condition(weapon_obj,min_v,max_v)
@@ -710,6 +742,12 @@ function del_distant_squad(all)
 	local obj,sec
 	local sor = story_objects.get_story_objects_registry()
 	local level_name
+	-- new external conig file for protected spawn sections exluded from delete
+	local ini_protected = ini_file("dynamic_protected.ltx") -- new ltx file with section names protected from despawn
+	local protected_npc = alun_utils.collect_section(ini_protected,"protected_npc",true) -- reading all protected section spawns in table
+	-- for k,v in pairs(protected_npc) do
+	--	alun_utils.printf("Protected NPC from despawn: %s, %s %s",k,v,protected_npc[k])
+	-- end
 	
 	if all== true then
 		alun_utils.printf("Despawning NPC squads on all maps")
@@ -726,14 +764,18 @@ function del_distant_squad(all)
 			if (sec ~= nil) and (sec ~= "") then
 				if (not simulation_objects.is_on_the_same_level(obj, alife():actor())) or all == true then -- additional check, so same function can be used to despawn NPC on all maps
 					-- if (obj:clsid() == clsid.online_offline_group_s) and (not (sor:get(sec))) then
-					if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == clsid.script_stalker) or (obj:clsid() == clsid.bloodsucker_s) or (obj:clsid() == clsid.boar_s) or (obj:clsid() == clsid.dog_s) or (obj:clsid() == clsid.flesh_s) or (obj:clsid() == clsid.pseudodog_s) or (obj:clsid() == clsid.burer_s) or (obj:clsid() == clsid.cat_s) or (obj:clsid() == clsid.chimera_s) or (obj:clsid() == clsid.controller_s) or (obj:clsid() == clsid.fracture_s)	or (obj:clsid() == clsid.poltergeist_s) or (obj:clsid() == clsid.gigant_s) or (obj:clsid() == clsid.zombie_s) or (obj:clsid() == clsid.snork_s) or (obj:clsid() == clsid.tushkano_s) or (obj:clsid() == clsid.psy_dog_s) or (obj:clsid() == clsid.psy_dog_phantom_s)) and (not (sor:get(sec))) then
+					-- if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == clsid.script_stalker) or (obj:clsid() == clsid.bloodsucker_s) or (obj:clsid() == clsid.boar_s) or (obj:clsid() == clsid.dog_s) or (obj:clsid() == clsid.flesh_s) or (obj:clsid() == clsid.pseudodog_s) or (obj:clsid() == clsid.burer_s) or (obj:clsid() == clsid.cat_s) or (obj:clsid() == clsid.chimera_s) or (obj:clsid() == clsid.controller_s) or (obj:clsid() == clsid.fracture_s)	or (obj:clsid() == clsid.poltergeist_s) or (obj:clsid() == clsid.gigant_s) or (obj:clsid() == clsid.zombie_s) or (obj:clsid() == clsid.snork_s) or (obj:clsid() == clsid.tushkano_s) or (obj:clsid() == clsid.psy_dog_s) or (obj:clsid() == clsid.psy_dog_phantom_s)) and (not (sor:get(sec))) then -- include single stalker - can delete important NPCs in squad while Squad leader remains
+					if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == clsid.bloodsucker_s) or (obj:clsid() == clsid.boar_s) or (obj:clsid() == clsid.dog_s) or (obj:clsid() == clsid.flesh_s) or (obj:clsid() == clsid.pseudodog_s) or (obj:clsid() == clsid.burer_s) or (obj:clsid() == clsid.cat_s) or (obj:clsid() == clsid.chimera_s) or (obj:clsid() == clsid.controller_s) or (obj:clsid() == clsid.fracture_s)	or (obj:clsid() == clsid.poltergeist_s) or (obj:clsid() == clsid.gigant_s) or (obj:clsid() == clsid.zombie_s) or (obj:clsid() == clsid.snork_s) or (obj:clsid() == clsid.tushkano_s) or (obj:clsid() == clsid.psy_dog_s) or (obj:clsid() == clsid.psy_dog_phantom_s)) and (not (sor:get(sec))) then -- single stalker exluded
+						
 						-- excluded some important NPCs that were in log despite being marked as story objects
-						if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") then
+						-- if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") and (sec ~= "zat_b18_dog_noah") then
+						if protected_npc[sec] == nil then -- new condition check from table instead of enumeration of all possible sections
 							level_name = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id()) -- OK gives level name
 							alun_utils.printf("Distant NPC squad deleted: %s %s",level_name,sec)
 							-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
 							alun_utils.release(obj) -- safe way to delete simulation object
 						end
+						
 					end
 				end
 			end
@@ -745,15 +787,19 @@ function del_distant_squad(all)
 		for i =0,65534 do
 			obj = level.object_by_id(i) -- checking online objects
 			if (obj) and obj ~= nil then
-				sec = obj:name() -- OK - gives name of object
+				-- sec = obj:name() -- OK - gives name of object
 				-- sec = obj:section_name() -- gives class section where object is defined - CTD for online objects
+				sec = obj:section() -- OK - this must be for proper section compare
 				if (sec ~= nil) and (sec ~= "") then
 					if (simulation_objects.is_on_the_same_level(obj, alife():actor())) then -- additional check, so same function can be used to despawn NPC on all maps
 						-- if (obj:clsid() == clsid.online_offline_group_s) and (not (sor:get(sec))) then
-						--if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
-						if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == clsid.script_stalker) or (obj:clsid() == clsid.bloodsucker_s) or (obj:clsid() == clsid.boar_s) or (obj:clsid() == clsid.dog_s) or (obj:clsid() == clsid.flesh_s) or (obj:clsid() == clsid.pseudodog_s) or (obj:clsid() == clsid.burer_s) or (obj:clsid() == clsid.cat_s) or (obj:clsid() == clsid.chimera_s) or (obj:clsid() == clsid.controller_s) or (obj:clsid() == clsid.fracture_s)	or (obj:clsid() == clsid.poltergeist_s) or (obj:clsid() == clsid.gigant_s) or (obj:clsid() == clsid.zombie_s) or (obj:clsid() == clsid.snork_s) or (obj:clsid() == clsid.tushkano_s) or (obj:clsid() == clsid.psy_dog_s) or (obj:clsid() == clsid.psy_dog_phantom_s)) and (not (sor:get(sec))) then
+						-- if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == script_stalker) or (obj:clsid() == script_stalker) or (obj:clsid() == bloodsucker_s) or (obj:clsid() == boar_s) or (obj:clsid() == dog_s) or (obj:clsid() == flesh_s) or (obj:clsid() == pseudodog_s) or (obj:clsid() == burer_s) or (obj:clsid() == cat_s) or (obj:clsid() == chimera_s) or (obj:clsid() == controller_s) or (obj:clsid() == fracture_s)	or (obj:clsid() == poltergeist_s) or (obj:clsid() == gigant_s) or (obj:clsid() == zombie_s) or (obj:clsid() == snork_s) or (obj:clsid() == tushkano_s) or (obj:clsid() == psy_dog_s) or (obj:clsid() == psy_dog_phantom_s)) and (not (sor:get(sec))) then
+						-- if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == clsid.script_stalker) or (obj:clsid() == clsid.bloodsucker_s) or (obj:clsid() == clsid.boar_s) or (obj:clsid() == clsid.dog_s) or (obj:clsid() == clsid.flesh_s) or (obj:clsid() == clsid.pseudodog_s) or (obj:clsid() == clsid.burer_s) or (obj:clsid() == clsid.cat_s) or (obj:clsid() == clsid.chimera_s) or (obj:clsid() == clsid.controller_s) or (obj:clsid() == clsid.fracture_s)	or (obj:clsid() == clsid.poltergeist_s) or (obj:clsid() == clsid.gigant_s) or (obj:clsid() == clsid.zombie_s) or (obj:clsid() == clsid.snork_s) or (obj:clsid() == clsid.tushkano_s) or (obj:clsid() == clsid.psy_dog_s) or (obj:clsid() == clsid.psy_dog_phantom_s)) and (not (sor:get(sec))) then -- finds more NPCs for delete, but also deletes more important NPC sections (story_id didn't recognized - Spartakus OK, rest of squad deleted with this)
+						if ((obj:clsid() == clsid.online_offline_group_s) or (obj:clsid() == clsid.bloodsucker_s) or (obj:clsid() == clsid.boar_s) or (obj:clsid() == clsid.dog_s) or (obj:clsid() == clsid.flesh_s) or (obj:clsid() == clsid.pseudodog_s) or (obj:clsid() == clsid.burer_s) or (obj:clsid() == clsid.cat_s) or (obj:clsid() == clsid.chimera_s) or (obj:clsid() == clsid.controller_s) or (obj:clsid() == clsid.fracture_s)	or (obj:clsid() == clsid.poltergeist_s) or (obj:clsid() == clsid.gigant_s) or (obj:clsid() == clsid.zombie_s) or (obj:clsid() == clsid.snork_s) or (obj:clsid() == clsid.tushkano_s) or (obj:clsid() == clsid.psy_dog_s) or (obj:clsid() == clsid.psy_dog_phantom_s)) and (not (sor:get(sec))) then	-- properly tested and works OK, only few section in Pripyat need additional checks
+														
 							-- excluded some important NPCs that were in log despite being marked as story objects
-							if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") then
+							-- if (sec ~= "pri_a16_freedom_yar_squad") and (sec ~= "pri_a16_sokolov_squad_strong") and (sec ~= "pri_a16_vano_squad_strong") and (sec ~= "zat_b18_dog_noah") then
+							if protected_npc[sec] == nil then -- new condition check from table instead of enumeration of all possible sections
 								level_name = alife():level_name(game_graph():vertex(obj.m_game_vertex_id):level_id()) -- OK gives level name
 								alun_utils.printf("Level NPC squad deleted: %s %s",level_name,sec)
 								-- db.del_obj(obj) -- CTD on line 46: db.script:46: attempt to call method 'id' (a number value)
@@ -761,6 +807,7 @@ function del_distant_squad(all)
 								-- alun_utils.release_object(obj) -- can release online objects too
 								alun_utils.safe_release(obj) -- have additional check to force object offline and then despawn
 							end
+							
 						end
 					end
 				end

@@ -846,7 +846,7 @@ end
 Дать сталкеру небольшой пинок после смерти. Аналогично предыдущему, только направление хита теперь
 вычисляется через убийцу. Поэтому параметра direction нет.
 параметры: actor, npc, p[bone,power,impulse]
-FIXME: killer:position() isn't working <-(Because you are fucking stupid)
+FIXME: killer:position() isn't working
 --]]
 function hit_by_killer(actor, npc, p)
 	if not npc then return end

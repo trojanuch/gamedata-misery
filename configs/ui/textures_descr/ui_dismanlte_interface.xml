@@ -1,14 +1,57 @@
 <w>
 	<file name="ui\ui_dismantle_interface">
 		<texture id="ui_dismantle_window" x="0" y="0" width="563" height="509" />
-		<texture id="ui_arty_bad" x="757" y="54" width="184" height="7" />
-		<texture id="ui_arty_good" x="757" y="88" width="184" height="7" />
-		<texture id="ui_arty_bad1" x="757" y="54" width="150" height="6" />
-		<texture id="ui_arty_good1" x="757" y="88" width="150" height="6" />
-
-		<texture id="ui_arty_button_d" x="600" y="50" width="150" height="50" />
-		<texture id="ui_arty_button_e" x="600" y="100" width="150" height="50" />
-		<texture id="ui_arty_button_h" x="600" y="150" width="150" height="50" />
-		<texture id="ui_arty_button_t" x="600" y="200" width="150" height="50" />
+		<texture id="ui_dismantle_button_help" x="530" y="400" width="33" height="33" />
+		<texture id="ui_dismantle_help_bg" x="579" y="0" width="440" height="506" />
+	</file>
+	<file name="ui\ui_actor_sleeparts">
+		<texture id="ui_dismantle_uiic_bg_52x52" x="600" y="0" width="52" height="52" />
+		<texture id="ui_dismantle_uiic_bg_102x52" x="660" y="0" width="102" height="52" />
+		<texture id="ui_dismantle_uiic_bg_52x102" x="770" y="0" width="52" height="102" />
+		<texture id="ui_dismantle_tab_TEMP" x="620" y="120" width="360" height="40" />
+		<texture id="ui_dismantle_acttab_bg" x="830" y="0" width="90" height="20" />
+	</file>
+	<file name="ui\ui_icon_equipment">
+		<texture id="dh_tool_wpn_dismantler" x="1600" y="3150" width="100" height="50" />
+		<texture id="dh_tool_outfit_dismantler" x="1600" y="3200" width="100" height="50" />
+		<texture id="dh_tool_crowbar" x="300" y="2350" width="50" height="100" />
+		<texture id="dh_tool_hammer_inv" x="350" y="2350" width="50" height="100" />
+		<texture id="dh_tool_swiss_sharp" x="600" y="2600" width="50" height="50" />
+		<texture id="dh_tool_cutlery_sharp" x="650" y="2600" width="50" height="50" />
+		<texture id="dh_tool_shovel_old_sharp" x="1100" y="2400" width="50" height="100" />
+		<texture id="dh_tool_shovel_mili_sharp" x="1050" y="2400" width="50" height="100" />
+		<texture id="dh_tool_grooming_sharp" x="250" y="1950" width="50" height="50" />
+		<texture id="dh_auxtool_wpn_axe" x="1000" y="3950" width="150" height="50" />
+		<texture id="dh_auxtool_wpn_knife_inv" x="900" y="2450" width="100" height="50" /> <!-- Basic Utility knife -->
+		<texture id="dh_auxtool_wpn_knife_inv_2" x="900" y="2550" width="100" height="50" /> <!-- green -->
+		<texture id="dh_auxtool_wpn_knife_inv_3" x="900" y="2600" width="100" height="50" /> <!-- hunting, brown -->
+		<texture id="dh_auxtool_wpn_knife_inv_4" x="900" y="2400" width="100" height="50" /> <!-- folder -->
+		<texture id="dh_auxtool_wpn_knife_inv_5" x="900" y="2500" width="100" height="50" /> <!-- combat -->
+		<texture id="dh_auxtool_wpn_knife_m" x="700" y="2600" width="100" height="50" /> <!-- rus, brown -->
+		<texture id="dh_outfit_reward_textile_patch_b" x="650" y="3600" width="50" height="50" /> <!-- cloth sheet -->
+		<texture id="dh_outfit_reward_textile_patch_m" x="700" y="3600" width="50" height="50" /> <!-- textile sheet -->
+		<texture id="dh_outfit_reward_textile_patch_e" x="700" y="3550" width="50" height="50" /> <!-- reinforced t -->
+		<texture id="dh_outfit_reward_af_plates" x="500" y="2100" width="50" height="50" />
+		<texture id="dh_outfit_reward_af_kevlar" x="500" y="2200" width="50" height="50" />
+		<texture id="dh_outfit_reward_helm_protective" x="200" y="1000" width="100" height="100" />
+		<texture id="dh_outfit_reward_af_surge" x="550" y="2100" width="50" height="50" />
+		<texture id="dh_outfit_reward_af_cooler" x="550" y="2050" width="50" height="50" />
+		<texture id="dh_outfit_reward_af_freon" x="550" y="2200" width="50" height="50" />
+		<texture id="dh_outfit_reward_shit_outfit_waste_light" x="1600" y="100" width="100" height="100" />
+		<texture id="dh_outfit_reward_shit_outfit_waste_heavy" x="1700" y="100" width="100" height="100" />
+		<texture id="dh_reward_shit_tech_waste" x="1500" y="150" width="100" height="50" />
+		<texture id="dh_outfit_weapon_reward_af_camelbak" x="500" y="2050" width="50" height="50" />
+		<texture id="dh_outfit_weapon_reward_af_frames" x="450" y="2050" width="50" height="50" />
+		<texture id="dh_outfit_weapon_reward_af_grid" x="450" y="2100" width="50" height="50" />
+		<texture id="dh_weapon_reward_spareparts_small" x="1400" y="150" width="100" height="50" />
+		<texture id="dh_weapon_reward_spareparts" x="1300" y="150" width="100" height="50" />
+		<texture id="dh_weapon_reward_shit_wpn_waste_light" x="1550" y="50" width="100" height="50" />
+		<texture id="dh_weapon_reward_shit_wpn_waste_heavy" x="1700" y="100" width="100" height="50" />
+		<texture id="dh_reward_batteries_dead" x="600" y="950" width="50" height="50" />
+		<texture id="dh_reward_batteries" x="550" y="850" width="50" height="50" />
+		<texture id="dh_reward_batteries_ccell" x="500" y="850" width="50" height="50" />
+		<texture id="dh_reward_ammo_og-7b" x="750" y="950" width="150" height="50" />
+		<texture id="dh_reward_explo_metalcan_powder" x="1200" y="100" width="50" height="50" />
+		<texture id="dh_reward_geiger_dead" x="1250" y="150" width="50" height="50" />
 	</file>
 </w>

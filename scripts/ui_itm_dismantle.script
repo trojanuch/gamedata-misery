@@ -1,5 +1,5 @@
 --#####################################################################################
---## dismantle UI, Items refunct mod #### scripting by Plaargath #### for MISERY mod ##
+--## dismantle UI, Items Refunct Mod #### scripting by Plaargath #### for MISERY mod ##
 --#####################################################################################
 
 ---------------------------------------------------------------------------------------
@@ -22,6 +22,7 @@ class "dismantle_ui" (CUIScriptWnd)
 
 function dismantle_ui:__init(owner,section) super()
 	math.randomseed(device():time_global())
+	self:set_help_flags()
 
 	self.owner = owner
 	self.tool = section
@@ -485,7 +486,7 @@ function dismantle_ui:InitControls()
 	self.form = self.xml:InitStatic("dismantle:form",self)
 	self.form:SetWndPos(vector2():set(0, 0))
 
-	-- icons
+	-- ICONS
 	self.icon_trgt = self.xml:InitStatic("dismantle:form:icon_trgt",self.form)
 	-- tools name
 	local tool_name = game.translate_string(alun_utils.read_from_ini(nil,self.tool,"inv_name","string","error"))
@@ -523,7 +524,7 @@ function dismantle_ui:InitControls()
 	end
 	self.uiic:SetWndPos(vector2():set(self.uiic.x-w/2, self.uiic.y-h/2))
 
-	-- captions
+	-- CAPTIONS
 	-- target caption
 	self.caption_trgts = self.xml:InitTextWnd("dismantle:form:caption_trgts",self.form)
 	self.list_box_trgts = self.xml:InitListBox("dismantle:form:list_trgts",self.form)
@@ -535,25 +536,57 @@ function dismantle_ui:InitControls()
 	self.caption_warning = self.xml:InitTextWnd("dismantle:form:caption_warning",self.form)
 	self.caption_aux_title = self.xml:InitTextWnd("dismantle:form:caption_aux_title",self.form)
 	self.caption_aux = self.xml:InitTextWnd("dismantle:form:caption_aux",self.form)
+	self.caption_hint = self.xml:InitTextWnd("dismantle:form:caption_hint",self.form)
 
-	-- buttons
+	-- BUTTONS
 	ctrl = self.xml:Init3tButton("dismantle:form:btn_ok",self.form)
 	self:Register(ctrl,"button_ok")
 	ctrl = self.xml:Init3tButton("dismantle:form:btn_cancel",self.form)
 	self:Register(ctrl,"button_back")
+	ctrl = self.xml:Init3tButton("dismantle:form:btn_help",self.form)
+	self:Register(ctrl,"button_help")
+
+	-- HELP TABS --
+	self.help_bg = self.xml:InitStatic("dismantle:form:help_bg",self.form)
+	self.help_bg:Show(false)
+	self.helptabs = {}
+	self.helptabs.row1col1 = self.xml:InitStatic("dismantle:form:tab_row1col1", self)
+	self.helptabs.row2col1 = self.xml:InitStatic("dismantle:form:tab_row2col1", self)
+	self.helptabs.row1col2 = self.xml:InitStatic("dismantle:form:tab_row1col2", self)
+	self.helptabs.row2col2 = self.xml:InitStatic("dismantle:form:tab_row2col2", self)
+	self.helptabs.row1col3 = self.xml:InitStatic("dismantle:form:tab_row1col3", self)
+	self.helptabs.row2col3 = self.xml:InitStatic("dismantle:form:tab_row2col3", self)
+	self.helptabs.row1col4 = self.xml:InitStatic("dismantle:form:tab_row1col4", self)
+	self.helptabs.row2col4 = self.xml:InitStatic("dismantle:form:tab_row2col4", self)
+	self.helptabs["row1col1"]:Show(false)
+	self.helptabs["row2col1"]:Show(false)
+	self.helptabs["row1col2"]:Show(false)
+	self.helptabs["row2col2"]:Show(false)
+	self.helptabs["row1col3"]:Show(false)
+	self.helptabs["row2col3"]:Show(false)
+	self.helptabs["row1col4"]:Show(false)
+	self.helptabs["row2col4"]:Show(false)
+	self.tabs = self.xml:InitTab("dismantle:form:tabs", self)
+	self:Register(self.tabs,"tabs")
+	self.tabs:Show(false)
+
+	-- TEMPORARY (WIP) hint caption -- PLAA
+	self.caption_hint:SetText("%c[0,200,106,140]WIP - dismantle result hint placeholder")
 end
 
 function dismantle_ui:InitCallBacks()
-	self:AddCallback("button_ok",			ui_events.BUTTON_CLICKED,			self.OnButton_ok,				self)
-	self:AddCallback("button_back",			ui_events.BUTTON_CLICKED,			self.OnButton_back_clicked,		self)
+	self:AddCallback("button_ok",			ui_events.BUTTON_CLICKED,			self.OnButtonOk,				self)
+	self:AddCallback("button_back",			ui_events.BUTTON_CLICKED,			self.OnButtonBack,				self)
 	self:AddCallback("list_window",			ui_events.LIST_ITEM_CLICKED,		self.OnListItemClicked,			self)
 	self:AddCallback("list_window",			ui_events.WINDOW_LBUTTON_DB_CLICK,	self.OnListItemDbClicked,		self)
 	self:AddCallback("list_window_trgts",	ui_events.LIST_ITEM_CLICKED,		self.OnTargetsListItemClicked,	self)
 	self:AddCallback("list_window_trgts",	ui_events.WINDOW_LBUTTON_DB_CLICK,	self.OnTargetsListItemDbClicked,self)
+	self:AddCallback("button_help",			ui_events.BUTTON_CLICKED,			self.OnButtonHelp,				self)
+	self:AddCallback("tabs",				ui_events.TAB_CHANGED,				self.OnTabsClicked,				self)
 end
 
-function dismantle_ui:ShowAuxTool(scope,trgt_sec)
-	if scope ~= true then self.caption_left_inner_title:SetText("") end
+function dismantle_ui:ShowAuxTool(is_wpn_with_scope_addon,trgt_sec)
+	if is_wpn_with_scope_addon ~= true then self.caption_left_inner_title:SetText("") end
 	self.caption_aux_title:SetText("")
 	self.caption_aux:SetText("")
 
@@ -571,18 +604,23 @@ function dismantle_ui:ShowAuxTool(scope,trgt_sec)
 			if itms_refunct.choose_knife("dismantle") then aux_knife_yes = true end
 			if itms_refunct.choose_axe("dismantle") then aux_axe_yes = true end
 		end
+		if self.helmets_not_hard[trgt_sec] then
+			need_aux = true
+			if itms_refunct.choose_knife("dismantle") then aux_knife_yes = true end
+			if itms_refunct.choose_axe("dismantle") then aux_axe_yes = true end
+		end
 	end
 
 	if need_aux then
 		if aux_knife_yes then
-			if not scope then
+			if not is_wpn_with_scope_addon then
 				self.caption_left_inner_title:SetText(game.translate_string("st_dismantle_ui_is_aux_left"))
 			end
 			self.caption_aux_title:SetText(game.translate_string("st_dismantle_ui_is_aux_title"))
 			local aux_obj_knife = itms_refunct.choose_knife("dismantle")
 			self.caption_aux:SetText(game.translate_string(alun_utils.read_from_ini(nil,aux_obj_knife:section(),"inv_name","string","error")))
 		elseif aux_axe_yes then
-			if not scope then
+			if not is_wpn_with_scope_addon then
 				self.caption_left_inner_title:SetText(game.translate_string("st_dismantle_ui_is_aux_left"))
 			end
 			self.caption_aux_title:SetText(game.translate_string("st_dismantle_ui_is_aux_title"))
@@ -665,12 +703,13 @@ function dismantle_ui:OnTargetsListItemClicked()
 end
 
 function dismantle_ui:OnTargetsListItemDbClicked()
-	self:OnButton_ok()
+	self:OnButtonOk()
 end
 
-function dismantle_ui:OnButton_back_clicked()
+function dismantle_ui:OnButtonBack()
 	give(self.tool)
 	self.ui_futile_no_trgts_override = nil
+	self:clear_help_flags()
 	if self:IsShown() then self:HideDialog() end
 end
 
@@ -678,10 +717,19 @@ function dismantle_ui:OnKeyboard(dik, keyboard_action)
 	local bind = dik_to_bind(dik)
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 	if (keyboard_action == ui_events.WINDOW_KEY_PRESSED) then
-		if (bind ~= key_bindings.kUSE) and (dik ~= nil) and (dik ~= DIK_keys.MOUSE_1) then
-			self:OnButton_back_clicked()
+		if (bind ~= key_bindings.kUSE)
+		and (dik ~= nil)
+		and (dik ~= DIK_keys.MOUSE_1)
+		and (dik ~= DIK_keys.DIK_H)
+		and (bind ~= key_bindings.kJUMP)
+		then
+			self:OnButtonBack()
 		elseif (bind == key_bindings.kUSE) then
-			self:OnButton_ok()
+			self:OnButtonOk()
+		elseif (bind == key_bindings.kJUMP) then
+			self:OnButtonHelp()
+		elseif (dik == DIK_keys.DIK_H) then
+			self:OnButtonHelp()
 		end
 	end
 	return true
@@ -844,9 +892,9 @@ function dismantle_ui:RecognizeScope(wpn) -- // not ready for this release //
 		}
 end
 
-function dismantle_ui:OnButton_ok()
+function dismantle_ui:OnButtonOk()
 	if self.ui_futile_no_trgts_override then
-		self:OnButton_back_clicked()
+		self:OnButtonBack()
 		xr_effects.disable_ui_inventory(db.actor,nil)
 		hud_caption("st_dismantle_screen_no_trgts")
 		return
@@ -1920,6 +1968,24 @@ function dismantle_ui:OnButton_ok()
 									helm_probab = 100
 								end
 							end
+							if tool_is_probab1 then
+								if has_aux_tool_axe then
+									aux_tool_is_axe = true
+									tool_aux_blunt = true
+									aux_blunt_percent = 0.02 -- NOTE: synchronize with: purpose_lowest_con itms_refunct.choose_axe
+									helm_probab = 100
+								end
+								if has_aux_tool_knife then
+									aux_tool_is_axe = nil
+									aux_tool_is_knife = true
+									tool_aux_blunt = true
+									aux_blunt_percent = 0.04 -- NOTE: synchronize with: purpose_lowest_con itms_refunct.choose_axe
+									helm_probab = 100
+								end
+								if not has_aux_tool then
+									aux_cancel_override = true
+								end
+							end
 						end
 						-- SET: tool probab (adjusting base probabs) / bhv / fail (hammer) (species, tier), aux tool (species, tiers: hard 1 & 2)
 						if helm_is_hard then
@@ -2319,13 +2385,13 @@ function dismantle_ui:OnButton_ok()
 					end end
 					-- [ TARGET GENUS (gauss guns) ] 					 SET: content, fail flag, EXECUTE (+ storyline safeguard override)
 					if trgt_is_gauss then
-						gauss_fail = true -- tool bhv is set later inside this flag
+						gauss_fail = true -- tool bhv is set later inside SECTION 4
 						if (sec == "pri_a17_gauss_rifle") then
 							keep_target = true -- breaking storyline prevention
 							decrease_trgt_con = 0.36
 						else
-							give("tech_waste")
-							give("wpn_waste_light")
+							itms_refunct.spawn_in_front_quadrant("tech_waste")
+							itms_refunct.spawn_in_front_quadrant("wpn_waste_light")
 							-- unloading ammo
 							local item = self.list_box_trgts:GetSelectedItem()
 							local item_by_id = level.object_by_id(item.item_id)
@@ -2364,26 +2430,26 @@ function dismantle_ui:OnButton_ok()
 							-- SET: content, fail flag
 							if (sec == "ied_rpg") then
 								if test_on_probab(xplo_probab + xplo_probab_diff) then
+									xplo_fail = true
+								else
 									give("ammo_og-7b")
 									give("tech_waste")
-								else
-									xplo_fail = true
 								end
 							end
 							if (sec == "ied") then
 								if test_on_probab(xplo_probab) then
+									xplo_fail = true
+								else
 									give("explo_metalcan_powder")
 									give("tech_waste",2)
-								else
-									xplo_fail = true
 								end
 							end
 							if (sec == "mine") then
 								if test_on_probab(xplo_probab - xplo_probab_diff) then
+									xplo_fail = true
+								else
 									give("explo_metalcan_powder")
 									give("tech_waste",2)
-								else
-									xplo_fail = true
 								end
 							end
 							-- SET: tool bhv
@@ -2432,6 +2498,7 @@ function dismantle_ui:OnButton_ok()
 						end end
 						-- [ TARGET SPECIES (electric devices for belt) ]
 						if trgt_is_electr_belt then
+							give("tech_waste")
 							if (sec == "af_cooler") then
 								if test_on_probab(electr_belt_probab) then
 									give("batteries_dead")
@@ -2633,7 +2700,7 @@ function dismantle_ui:OnButton_ok()
 					if tool_zeroone_blunt then
 						give(self.tool:gsub("_sharp",""))
 					end
-					if tool_drop then -- (drops zero-one bluned for: tool_is_probab2, tool_is_probab3, drops 1-usage-less for: kits)
+					if tool_drop then -- (drops zero-one bluned for: tool_is_probab2, tool_is_probab3, drops one-usage-decreased for: kits)
 						local drop_section
 						if tool_is_not_kit then
 							if tool_is_probab1 then
@@ -2750,6 +2817,7 @@ function dismantle_ui:OnButton_ok()
 	end
 
 	self.ui_futile_no_trgts_override = nil
+	self:clear_help_flags()
 end
 
 function dismantle_ui:AddItemToList(item,listbox,condition)
@@ -2797,4 +2865,50 @@ end
 
 function hud_caption(xml_id)
 	itms_manager.show_message(game.translate_string(xml_id),25)
+end
+
+---------------
+-- HELP TABS --
+---------------
+local HelpTabState
+
+function dismantle_ui:set_help_flags()
+	if not HelpTabState then
+		HelpTabState = "row1col1"
+	end
+end
+
+function dismantle_ui:clear_help_flags()
+	--// comment the line below out to make the UI remember which tab was opened on previous help use (until next loadgame)
+	--// un-comment it to always load a certain tab (the one set in set_help_flags() ) on help button click
+	-- HelpTabState = nil
+end
+
+function dismantle_ui:OnButtonHelp()
+	if self.help_bg:IsShown() then
+		self.helptabs["row1col1"]:Show(false)
+		self.helptabs["row2col1"]:Show(false)
+		self.helptabs["row1col2"]:Show(false)
+		self.helptabs["row2col2"]:Show(false)
+		self.helptabs["row1col3"]:Show(false)
+		self.helptabs["row2col3"]:Show(false)
+		self.helptabs["row1col4"]:Show(false)
+		self.helptabs["row2col4"]:Show(false)
+		self.tabs:Show(false)
+		self.help_bg:Show(false)
+	else
+		self.help_bg:Show(true)
+		self.tabs:Show(true)
+		self.tabs:SetActiveTab(HelpTabState)
+	end
+end
+
+function dismantle_ui:OnTabsClicked()
+	local tab_selection = self.tabs:GetActiveId()
+	if not (self.helptabs[tab_selection]) then return end
+	for k,v in pairs(self.helptabs) do
+		v:Show(false)
+	end
+	self.helptabs[tab_selection]:Show(true)
+	HelpTabState = tab_selection
 end

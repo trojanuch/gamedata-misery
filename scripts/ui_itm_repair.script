@@ -911,6 +911,42 @@ function repair_ui:OnButton_repair()
 				if(se_parts)and(se_parts:section_name()=="explo_jerrycan_fuel7")then
 				alife():create("explo_jerrycan_fuel8", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 				end
+				
+				-- DISMANTLE SETS
+				-- outfit_dismantler x5
+				if(se_parts)and(se_parts:section_name()=="outfit_dismantler")then
+				alife():create("outfit_dismantler2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="outfit_dismantler2")then
+				alife():create("outfit_dismantler3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="outfit_dismantler3")then
+				alife():create("outfit_dismantler4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="outfit_dismantler4")then
+				alife():create("outfit_dismantler5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="outfit_dismantler5")then
+				alife():create("outfit_dismantler_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				
+				-- wpn_dismantler x5
+				if(se_parts)and(se_parts:section_name()=="wpn_dismantler")then
+				alife():create("wpn_dismantler2", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="wpn_dismantler2")then
+				alife():create("wpn_dismantler3", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="wpn_dismantler3")then
+				alife():create("wpn_dismantler4", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="wpn_dismantler4")then
+				alife():create("wpn_dismantler5", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				if(se_parts)and(se_parts:section_name()=="wpn_dismantler5")then
+				alife():create("wpn_dismantler_empty", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+				end
+				
 				-- End ponney68
 
 				alife():release(se_parts,true)
