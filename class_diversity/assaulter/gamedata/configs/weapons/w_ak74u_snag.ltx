@@ -125,18 +125,18 @@ kill_msg_y			= 123
 kill_msg_width			= 69
 kill_msg_height			= 30
 
-position           	= -0.026,0,-0.01        ; position (offset) and orientation of the weapon in the hands of character
+position           	= -0.026,-0.215,0        ; position (offset) and orientation of the weapon in the hands of character
 orientation         = 0,0,0                  ; (3rd person view)
 
-fire_point          =  0.0, 0.02, 0.447		; position (3rd person view) for particles of fire
-fire_point2         =  0.0, 0.02, 0.547		; position (3rd person view) for particles of fire (when shooting with secondary fire)
+fire_point          =  0.0, 0.262, 0.447		; position (3rd person view) for particles of fire
+fire_point2         =  0.0, 0.262, 0.547		; position (3rd person view) for particles of fire (when shooting with secondary fire)
 
 ;flame_particles         = weapons\generic_weapon05 ; particles for shooting effects
 smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
 shell_point		 		= 0.00, 0.262, 0.189			; position (3rd person view) for shell to throw out
-shell_particles	 		= ;weapons\generic_shells	; name of the particles for shells
+shell_particles         = amik\weapons\data\5_45x39\5_45x39_r	; name of the particles for shells
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
@@ -201,40 +201,37 @@ zoom_hide_crosshair		= true
 attach_place_idx		= 0
 item_visual			= dynamics\weapons\wpn_ak74u_snag\wpn_ak74u_snag_hud.ogf
 
+hands_position			= -0.042000,-0.172,0.165500
+hands_orientation		= 0.55,2.39,0.1499993
+hands_position_16x9		= -0.042000,-0.172,0.165500
+hands_orientation_16x9	= 0.55,2.39,0.1499993
 
-hands_position = 0.034000,-0.024999,0.260000
-hands_orientation = 3.450002,4.000000,-1.099998
+item_position				= 0.0,0.0,0.0
+item_orientation			= 0.0,0.0,0.0
 
-hands_position_16x9 = 0.050500,-0.020000,0.251500
-hands_orientation_16x9 = 0.000000,2.299999,-0.729800
+shell_point					= 0.028,0.078,0.113
+shell_dir               	= 0.0, 1.0, 0.0
+shell_bone              	= wpn_body
 
-item_position = -0.008889,0.016527,0.003094
-item_orientation = 0.100000,0.000000,0.700000
-shell_point                = 0.018,0.06,0.188
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone                = wpn_body
+fire_point					= 0,0.042782,0.441726
+fire_bone                   = wpn_body
+fire_point2                 = 0.0,-0.011,0.553
+fire_bone2                	= wpn_body
 
-fire_point			= 0,0.048,0.466
-fire_bone                            = wpn_body
-fire_point2                        = 0.0,-0.011,0.553
-fire_bone2                = wpn_body
+anm_show					= lancew_aks74u_draw
+anm_hide					= lancew_aks74u_holster
+anm_idle					= lancew_aks74u_idle
+anm_idle_sprint				= lancew_aks74u_sprint
+anm_idle_moving				= lancew_aks74u_moving
+anm_shots					= lancew_aks74u_shoot, shoot
+anm_reload					= lancew_aks74u_reload, reload
+anm_idle_aim				= lancew_aks74u_idle_aim
+anm_bore					= lancew_aks74u_no_reload
 
-anm_show						= aks74u_draw
-anm_hide                = aks74u_holster
-anm_idle                = aks74u_idle
-anm_idle_sprint         = aks74u_idle_sprint
-anm_idle_moving         = aks74u_idle_move
-anm_shots               = aks74u_shoot
-anm_reload              = aks74u_reload
-anm_idle_aim            = aks74u_idle_aim
-anm_bore                = aks74u_idle_bore
-
-
-aim_hud_offset_pos = -0.112900,0.054500,-0.130100
-aim_hud_offset_rot = 0.046600,-0.004800,-0.013800
-
-aim_hud_offset_pos_16x9 = -0.112900,0.054500,-0.130100
-aim_hud_offset_rot_16x9 = 0.046600,-0.004800,-0.013800
+aim_hud_offset_pos = -0.109800,0.062400,-0.167000
+aim_hud_offset_rot = 0.016700,0.009100,-0.011500
+aim_hud_offset_pos_16x9 = -0.109800,0.062400,-0.167000
+aim_hud_offset_rot_16x9 = 0.016700,0.009100,-0.011500
 
 gl_hud_offset_pos               = 0,0,0	;-0.053000,-0.059000,0.000000
 gl_hud_offset_rot               = 0,0,0	;-0.145000,0.000000,0.000000

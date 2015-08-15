@@ -12,15 +12,16 @@ local ignored_zone = {
 fighting_with_actor_npcs = {}
 safe_zone_npcs = {}
 
-local ini = ini_file("ai_tweaks\\xr_combat_ignore.ltx")
-local CombatDuringSurge = alun_utils.read_from_ini(ini,"settings","combat_during_surge","bool",false)
-local CombatInertion = alun_utils.collect_section(ini,"combat_inertion",true)
-local CombatInertionMult = alun_utils.collect_section(ini,"combat_inertion_mult",true)
-local ForbiddenNPCs = alun_utils.collect_section(ini,"forbidden_npcs",true)
+-- Yasti Ghillie Suit and regular CombatInertion -- used for "action_process_enemy" class
+local ini_ghillie = ini_file("ai_tweaks\\xr_combat_ignore.ltx")
+local CombatDuringSurge = alun_utils.read_from_ini(ini_ghillie,"settings","combat_during_surge","bool",false)
+-- local CombatInertion = alun_utils.collect_section(ini_ghillie,"combat_inertion",true) -- moved to lower part to read section per suit weared
+local CombatInertionMult = alun_utils.collect_section(ini_ghillie,"combat_inertion_mult",true)
+local ForbiddenNPCs = alun_utils.collect_section(ini_ghillie,"forbidden_npcs",true)
 --Yasti Ghillie Suit--
-local GhillieInertion = alun_utils.collect_section(ini,"ghillie_inertion",true)
+local GhillieInertion = alun_utils.collect_section(ini_ghillie,"ghillie_inertion",true)
 --End Yasti--
-TimeSafe = alun_utils.read_from_ini(ini,"settings","time_safe","float",120000)
+TimeSafe = alun_utils.read_from_ini(ini_ghillie,"settings","time_safe","float",120000)
 ini = nil
 
 function on_game_start()
@@ -150,6 +151,7 @@ function is_enemy(obj,enemy,no_memory)
 			time_in_memory = time_in_memory + xr_logic.pstor_retrieve(obj,"mem_time_offset",0)
 		end
 
+
 		if (time_in_memory > st.combat_inertion) then
 			--	obj:enable_memory_object(enemy,false)
 			xr_logic.pstor_store(obj,"mem_time_offset",tg)
@@ -199,6 +201,7 @@ function is_enemy(obj,enemy,no_memory)
 			end
 			--End Yasti--
 		end
+
 
 		if (db.actor:id() ~= ene_id) then
 			local ene_squad = get_object_squad(enemy)
@@ -262,6 +265,10 @@ function action_process_enemy:__init( obj, storage )
 		self.st.combat_inertion = self.st.combat_inertion * mult
 	else
 		--alun_utils.printf("xr_combat_ignore.process_enemy_init: Standard inertion values loaded")
+		local outfit_inert = ai_tweaks.outfit_inertion() 
+		-- alun_utils.printf("KCS - xr_combat_ignore - inertion from outfit is %s:",outfit_inert) -- KCS - additional info for debug - OK
+		-- local CombatInertion = alun_utils.collect_section(ini_ghillie,"combat_inertion",true) -- moved here instead on the begining of script - old code
+		local CombatInertion = alun_utils.collect_section(ini_ghillie,outfit_inert,true) -- section name for inertion is readed from weared outfit
 		local search = CombatInertion[self.comm] or "60000"
 		local search_time = xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj, self.comm,"combat_inertion",search))
 		self.st.combat_inertion = search_time and tonumber(search_time) or 60000

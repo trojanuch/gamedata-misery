@@ -143,7 +143,7 @@ grenade_flame_particles = weapons\generic_weapon01
 
 shell_point             = -0.020000,0.167000,0.082000
 shell_dir               = 0.0, 0.0, 0.4
-shell_particles         = weapons\generic_shells
+shell_particles         = amik\weapons\data\5_45x39\5_45x39_r
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
@@ -167,7 +167,7 @@ ph_mass                 = 4
 ;addons
 scope_status            = 2
 silencer_status         = 2
-grenade_launcher_status = 2
+grenade_launcher_status = 0
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time		= 0.25                                               ; fov for zoom mode
@@ -186,7 +186,7 @@ snd_draw		= weapons\generic\rifle_draw
 snd_holster		= weapons\generic\rifle_holster
 snd_shoot		= weapons\fnfallelcan\fallelcan_shot
 snd_empty               = weapons\generic\rifle_modern_empty, 0.5
-snd_reload              = weapons\fnfallelcan\fallelcan_reload
+snd_reload              = weapons\fal\fnfal_reload
 snd_shoot_grenade       = weapons\explo\grenade_launch_explo
 snd_reload_grenade      = weapons\sig550_grenload
 snd_switch              = weapons\groza_switch, 1.0, 0.5
@@ -210,69 +210,46 @@ zoom_hide_crosshair	= true
 attach_place_idx	= 0
 item_visual		= dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelcan_hud
 
-hands_position			= -0.094000,-0.156000,0.100000
-hands_orientation		= -0.500000,1.000000,-2.000000
+hands_position			= -0.03,-0.15,0.2
+hands_orientation		= 0,2,0
 
-hands_position_16x9     = -0.094000,-0.156000,0.100000
-hands_orientation_16x9  = -0.500000,1.000000,-2.000000
+hands_position_16x9     = -0.03,-0.15,0.2
+hands_orientation_16x9  = 0,2,0
 
-item_position		= 0.002866,-0.006395,0.000780
-item_orientation	= 0.642900,0.520562,361.843872
+item_position		= 0,0,0
+item_orientation	= 0,0,0
 
-shell_point		= 0.028,0.075,0.156
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone		= wpn_body
+shell_point		= 0,0,0
+shell_dir       = 0.0, 1.0, 0.0
+shell_bone		= gilza
 
-fire_point		= 0,0.056,0.746
-fire_bone      	      	= wpn_body
-fire_point2		= 0.0,-0.028,0.678
+fire_point		= 0,0,0
+fire_bone      	= muzzle
+fire_point2		= 0,0,0
 fire_bone2		= wpn_body
 
-anm_show             	= sig550_draw
-anm_hide             	= sig550_holster
-anm_idle             	= sig550_idle
-;anm_idle_sprint         = sig550_idle_sprint
-anm_idle_sprint		= m1891_idle_sprint
-anm_idle_moving 	= sig550_idle_moving
-anm_shots               = sig550_shoot
-anm_reload              = sig550_reload
-anm_idle_aim           	= sig550_idle_aim
+anm_show             	= fal_draw
+anm_hide             	= fal_holster
+anm_idle             	= fal_idle
+anm_idle_sprint         = fal_sprint
+anm_idle_moving 	= fal_move
+anm_shots               = fal_shoot, shoot
+anm_reload              = fal_reload, reload
+anm_reload_empty              = fal_reload, reload
+anm_idle_aim           	= fal_aim
+anm_bore		= fal_aim
 
-anm_switch              = sig550_switch_off
-anm_switch_g            = sig550_switch_on
-anm_bore		= sig550_idle_bore
+aim_hud_offset_pos = -0.121200,0.025100,-0.125000
+aim_hud_offset_rot = 0.022600,-0.000200,0.000000
 
-anm_hide_w_gl           = sig550_holster_w_gl
-anm_show_w_gl           = sig550_draw_w_gl
-anm_idle_w_gl           = sig550_idle_w_gl
-anm_shots_w_gl          = sig550_shoot_w_gl
-anm_reload_w_gl         = sig550_reload_w_gl
-anm_idle_w_gl_aim       = sig550_idle_w_gl_aim
-anm_idle_sprint_w_gl	= sig550_idle_sprint_w_gl
-anm_idle_moving_w_gl	= sig550_idle_moving_w_gl
-anm_bore_w_gl		= sig550_idle_bore_w_gl
+aim_hud_offset_pos_16x9 = -0.121200,0.025100,-0.125000
+aim_hud_offset_rot_16x9 = 0.022600,-0.000200,0.000000
 
-anm_show_g         	= sig550_draw_grenade
-anm_hide_g         	= sig550_holster_grenade
-anm_idle_g         	= sig550_idle_grenade
-anm_reload_g       	= sig550_reload_grenade
-anm_idle_g_aim     	= sig550_idle_grenade
-anm_shots_g        	= sig550_shoot_grenade
-anm_idle_sprint_g	= sig550_idle_sprint_grenade
-anm_idle_moving_g	= sig550_idle_moving_grenade
-anm_bore_g		= sig550_idle_bore_grenade
+gl_hud_offset_pos       = -0.122,-0.15,0.0
+gl_hud_offset_rot       = -0.1475,0.0002,0.0
 
-aim_hud_offset_pos_16x9 = -0.063150,0.050600,-0.000500
-aim_hud_offset_rot_16x9 = 0.026600,0.002100,-0.010000
-
-aim_hud_offset_pos = -0.063220,0.050800,-0.000500
-aim_hud_offset_rot = 0.026800,0.002100,-0.010000
-
-gl_hud_offset_pos	= -0.112000,0.027000,0.000500
-gl_hud_offset_rot	= 0.0145000,0.002500,-0.010000
-
-gl_hud_offset_pos_16x9            = -0.046500,-0.091000,0.000000
-gl_hud_offset_rot_16x9            = -0.162500,-0.040000,0.000000
+gl_hud_offset_pos_16x9  = -0.122,-0.15,0.0
+gl_hud_offset_rot_16x9  = -0.1475,0.0002,0.0
 
 lean_hud_offset_pos	= 0,0,0
 lean_hud_offset_rot	= 0,0,0
@@ -450,3 +427,17 @@ visual                  = dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelca4.ogf
 [wpn_fnfallelcan_camo_hud]:wpn_fnfallelcan_hud
 
 item_visual		= dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelca4_hud
+;=====================================================================================================================================================
+[wpn_fnfallelcan_sp]:wpn_fnfallelcan
+
+inv_name          = st_wpn_fnfallelcan_sp
+inv_name_short    = st_wpn_fnfallelcan_sp
+
+hud                     = wpn_fnfallelcan_sp_hud
+
+visual                  = dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelcan_special.ogf
+
+[wpn_fnfallelcan_sp_hud]:wpn_fnfallelcan_hud
+
+
+item_visual		= dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelcan_special_hud

@@ -650,6 +650,72 @@ function outfit_bonus()
 	-- debug_write("Eye factor for NPC is %s ",eye_factor)
 	-- debug_write("Alife switch factor is %s ",switch_factor)
 	
+	
+	-- Because of error in another function safety check is added here too - top prevent CTD
+	-- Trojanuch reported tis error:
+	-- Description : ...r. call of pripyat\gamedata\scripts\ai_tweaks.script:801: attempt to index field 'actor' (a nil value)
+	-- somehow NPC AI have triggered before actor is created, because of this additional checking was added
+	if not db.actor then
+  	  -- same default values as if actor doesn't wear any outfit all factors is "1"
+	  -- because of changes in "ai_tweaks.ltx" new default values for timers are 2
+	  GhillieSightRange = switch_factor * eye_factor * 1
+	  GhillieAimTime = 2
+	  GhillieHelpDistanceFactor = switch_factor * eye_factor * 1
+	  GhillieHelpTimeFactor = 2
+	  -- default values for night if actor doesn't wear any outfit
+	  NightSightRange = switch_factor * eye_factor * 0.85
+	  NightAimTime = 1.5
+	  NightHelpTimeFactor = 1.2
+	  NightHelpDistanceFactor = switch_factor * eye_factor * 0.8
+	  return
+	end
+	
+	
+	
+	-- Additional code to check if actor have turned on flashlight
+	local actor_light = nil
+	local torch = db.actor:object("device_torch")
+	-- local obj = db.actor:active_detector() -- for handheld flashlight - not needed here, check axr_battery.script for more info
+	
+	if (torch and not actor_light and torch:torch_enabled()) then
+		actor_light = true
+	elseif (torch and not torch:torch_enabled()) then
+		if (actor_light) then
+			actor_light = false
+		--	actor_on_torch_disabled() -- KCS - disabled temporary
+		end
+	end
+	
+	-- if light is turned on, that overrides any value set trough outfit, bonus from helmet and weapon is useless
+	if actor_light then
+		-- additional checking is needed because "night" variables are used only for atmosphear dark night and for times after midnight, is_day function checks time between 05:00 and 22:00 - differents scripts
+		if utils.is_day() then
+			-- daylight penalty with light turned on
+			GhillieSightRange = switch_factor * eye_factor * 1.5
+			GhillieAimTime = 0.2
+			GhillieHelpDistanceFactor = switch_factor * eye_factor * 1.5
+			GhillieHelpTimeFactor = 1
+			-- default values for night if actor doesn't wear any outfit
+			NightSightRange = switch_factor * eye_factor * 3
+			NightAimTime = 0.1
+			NightHelpTimeFactor = 0.2
+			NightHelpDistanceFactor = switch_factor * eye_factor * 3
+		else
+			-- night penalty with light turned on
+			GhillieSightRange = switch_factor * eye_factor * 3
+			GhillieAimTime = 0.1
+			GhillieHelpDistanceFactor = switch_factor * eye_factor * 3
+			GhillieHelpTimeFactor = 2
+			-- default values for night if actor doesn't wear any outfit
+			NightSightRange = switch_factor * eye_factor * 2
+			NightAimTime = 0.2
+			NightHelpTimeFactor = 0.2
+			NightHelpDistanceFactor = switch_factor * eye_factor * 2
+		end
+		return -- forcing exit of function without further calculation
+	end
+	-- end of checking light
+	-- debug_write("Actor light is %s ",actor_light) -- to check if override works - OK
 	-- First have to determine base values for cammo variable from weared outfit/no outfit and eye_factor and switch_factor
 	if db.actor:item_in_slot(7) ~= nil then
 	  weared_outfit = db.actor:item_in_slot(7):section()
@@ -754,8 +820,17 @@ end
 function outfit_inertion()
 	local act_outfit
 	local outfit_inert
+	-- Trojanuch reported tis error:
+	-- Description : ...r. call of pripyat\gamedata\scripts\ai_tweaks.script:801: attempt to index field 'actor' (a nil value)
+	-- somehow NPC AI have triggered before actor is created, because of this additional checking was added
+	if not db.actor then
+		outfit_inert = "combat_inertion"
+		return outfit_inert
+	end
+	
+	
 	if db.actor:item_in_slot(7) ~= nil then
-	  weared_outfit = db.actor:item_in_slot(7):section()
+	  act_outfit = db.actor:item_in_slot(7):section() -- here was mistake why it was not readed properly - copy paste error "weared_outfit" was instead of local "act_outfit" variable
 	  outfit_inert = alun_utils.read_from_ini(nil,act_outfit,"xr_combat_ignore","string","combat_inertion") -- new value in "items_outfit.ltx" possible values: ghillie_inertion, light_inertion, combat_inertion
 	else
 	  outfit_inert = "combat_inertion"

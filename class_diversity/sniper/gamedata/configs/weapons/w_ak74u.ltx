@@ -137,7 +137,7 @@ smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
 shell_point		 		= 0.00, 0.262, 0.189			; position (3rd person view) for shell to throw out
-shell_particles	 		= ;weapons\generic_shells	; name of the particles for shells
+shell_particles         = amik\weapons\data\5_45x39\5_45x39_r	; name of the particles for shells
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
@@ -159,7 +159,7 @@ light_time              = 0.2
 ph_mass                 = 4
 
 ;addons
-scope_status               = 0                   ; 0 - no addon
+scope_status               = 2                   ; 0 - no addon
 silencer_status            = 2                   ; 1 - permanent
 grenade_launcher_status    = 0                   ; 2 - attachable
 
@@ -170,7 +170,7 @@ scope_zoom_factor       = 58.6 ;        = 85                                    
 silencer_name           = wpn_addon_silencer_545x39    ; section name for the attachable silencer
 silencer_x 					= 178							; offset in inventory icon
 silencer_y 					= -2
-scopes_sect				= scope_ak74u_moist, scope_x2.7_ak74u, scope_ak74u, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
+scopes_sect		= scope_x2.7_ak74u, scope_ak74u, scope_ak74u_moist, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
 
 ;звуки
 snd_draw                = weapons\aks74u\ak74u_draw
@@ -201,40 +201,37 @@ zoom_hide_crosshair				= true
 attach_place_idx				= 0
 item_visual						= dynamics\weapons\wpn_ak74u\wpn_ak74u_hud.ogf
 
-hands_position = 0.034000,-0.024999,0.260000
-hands_orientation = 3.450002,4.000000,-1.099998
+hands_position			= -0.042000,-0.172,0.165500
+hands_orientation		= 0.55,2.39,0.1499993
+hands_position_16x9		= -0.042000,-0.172,0.165500
+hands_orientation_16x9	= 0.55,2.39,0.1499993
 
-hands_position_16x9 = 0.050500,-0.020000,0.251500
-hands_orientation_16x9 = 0.000000,2.299999,-0.729800
+item_position				= 0.0,0.0,0.0
+item_orientation			= 0.0,0.0,0.0
 
-item_position = -0.008889,0.016527,0.003094
-item_orientation = 0.100000,0.000000,0.700000
-shell_point                = 0.018,0.06,0.188
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone                = wpn_body
+shell_point					= 0.028,0.078,0.113
+shell_dir               	= 0.0, 1.0, 0.0
+shell_bone              	= wpn_body
 
-fire_point			= 0,0.048,0.466
-fire_bone                            = wpn_body
-fire_point2                        = 0.0,-0.011,0.553
-fire_bone2                = wpn_body
+fire_point					= 0,0.042782,0.441726
+fire_bone                   = wpn_body
+fire_point2                 = 0.0,-0.011,0.553
+fire_bone2                	= wpn_body
 
-anm_show						= aks74u_draw
-anm_hide                = aks74u_holster
-anm_idle                = aks74u_idle
-anm_idle_sprint         = aks74u_idle_sprint
-anm_idle_moving         = aks74u_idle_move
-anm_shots               = aks74u_shoot
-anm_reload              = aks74u_reload
-anm_idle_aim            = aks74u_idle_aim
-anm_bore                = aks74u_idle_bore
+anm_show					= lancew_aks74u_draw
+anm_hide					= lancew_aks74u_holster
+anm_idle					= lancew_aks74u_idle
+anm_idle_sprint				= lancew_aks74u_sprint
+anm_idle_moving				= lancew_aks74u_moving
+anm_shots					= lancew_aks74u_shoot, shoot
+anm_reload					= lancew_aks74u_reload, reload
+anm_idle_aim				= lancew_aks74u_idle_aim
+anm_bore					= lancew_aks74u_no_reload
 
-
-aim_hud_offset_pos = -0.112900,0.054500,-0.130100
-aim_hud_offset_rot = 0.046600,-0.004800,-0.013800
-
-aim_hud_offset_pos_16x9 = -0.112900,0.054500,-0.130100
-aim_hud_offset_rot_16x9 = 0.046600,-0.004800,-0.013800
-aim_hud_offset_rot_16x9				= 0,0,0
+aim_hud_offset_pos = -0.109800,0.062400,-0.167000
+aim_hud_offset_rot = 0.016700,0.009100,-0.011500
+aim_hud_offset_pos_16x9 = -0.109800,0.062400,-0.167000
+aim_hud_offset_rot_16x9 = 0.016700,0.009100,-0.011500
 
 gl_hud_offset_pos               = 0,0,0
 gl_hud_offset_rot               = 0,0,0
@@ -319,6 +316,8 @@ condition_queue_shot_dec	= 0.0007
 
 fire_dispersion_base       = 0.474
 
+scopes_sect		= scope_x2.7_ak74u, scope_ak74u, scope_ak74u_moist, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
+
 inv_grid_width		= 4	
 inv_grid_height		= 2	
 inv_grid_x			= 12 
@@ -373,6 +372,8 @@ condition_shot_dec      	= 0.00065
 condition_queue_shot_dec	= 0.00065
 
 fire_dispersion_base       = 0.454
+
+scopes_sect		= scope_x2.7_ak74u, scope_ak74u, scope_ak74u_moist, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
 
 inv_grid_width		= 4	
 inv_grid_height		= 2	
@@ -430,6 +431,8 @@ silencer_status            = 0
 
 fire_dispersion_base       = 0.66
 
+scopes_sect		= scope_ak74u_moist, scope_x2.7_ak74u, scope_ak74u, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
+
 inv_grid_width		= 4	
 inv_grid_height		= 2	
 inv_grid_x			= 12 
@@ -486,6 +489,8 @@ condition_queue_shot_dec	= 0.0016
 silencer_status            = 0
 
 fire_dispersion_base       = 0.78
+
+scopes_sect		= scope_ak74u_worn, scope_ak74u_moist, scope_x2.7_ak74u, scope_ak74u, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
 
 inv_grid_width		= 4	
 inv_grid_height		= 2	
