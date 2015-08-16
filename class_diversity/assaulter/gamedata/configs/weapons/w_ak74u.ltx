@@ -159,7 +159,7 @@ light_time              = 0.2
 ph_mass                 = 4
 
 ;addons
-scope_status               = 0                   ; 0 - no addon
+scope_status               = 2                   ; 0 - no addon
 silencer_status            = 2                   ; 1 - permanent
 grenade_launcher_status    = 0                   ; 2 - attachable
 
@@ -170,6 +170,7 @@ scope_zoom_factor       = 58.6 ;        = 85                                    
 silencer_name           = wpn_addon_silencer_545x39    ; section name for the attachable silencer
 silencer_x 					= 178							; offset in inventory icon
 silencer_y 					= -2
+scopes_sect		= scope_x2.7_ak74u, scope_ak74u, scope_ak74u_moist, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
 
 ;звуки
 snd_draw                = weapons\aks74u\ak74u_draw
@@ -227,10 +228,10 @@ anm_reload					= lancew_aks74u_reload, reload
 anm_idle_aim				= lancew_aks74u_idle_aim
 anm_bore					= lancew_aks74u_no_reload
 
-aim_hud_offset_pos = -0.109800,0.062400,-0.167000
-aim_hud_offset_rot = 0.016700,0.009100,-0.011500
-aim_hud_offset_pos_16x9 = -0.109800,0.062400,-0.167000
-aim_hud_offset_rot_16x9 = 0.016700,0.009100,-0.011500
+aim_hud_offset_pos = -0.109500,0.089000,-0.167000
+aim_hud_offset_rot = 0.045700,0.008770,-0.011500
+aim_hud_offset_pos_16x9 = -0.109500,0.089000,-0.167000
+aim_hud_offset_rot_16x9 = 0.045700,0.008770,-0.011500
 
 gl_hud_offset_pos               = 0,0,0
 gl_hud_offset_rot               = 0,0,0
@@ -315,6 +316,8 @@ condition_queue_shot_dec	= 0.0007
 
 fire_dispersion_base       = 0.518
 
+scopes_sect		= scope_x2.7_ak74u, scope_ak74u, scope_ak74u_moist, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
+
 inv_grid_width		= 4	
 inv_grid_height		= 2	
 inv_grid_x			= 12 
@@ -370,12 +373,16 @@ condition_queue_shot_dec	= 0.00065
 
 fire_dispersion_base       = 0.482
 
+scopes_sect		= scope_x2.7_ak74u, scope_ak74u, scope_ak74u_moist, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
+
 inv_grid_width		= 4	
 inv_grid_height		= 2	
 inv_grid_x			= 12 
 inv_grid_y			= 61
 
 visual                  = dynamics\weapons\wpn_ak74u\wpn_ak742.ogf
+
+;snd_reload              = weapons\generic\type2_reload, 0.7
 
 [wpn_ak74u_camo_hud]:wpn_ak74u_hud
 
@@ -425,6 +432,8 @@ condition_queue_shot_dec	= 0.0013
 silencer_status            = 0
 
 fire_dispersion_base       = 0.72
+
+scopes_sect		= scope_ak74u_moist, scope_x2.7_ak74u, scope_ak74u, scope_ak74u_worn, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
 
 inv_grid_width		= 4	
 inv_grid_height		= 2	
@@ -482,6 +491,8 @@ condition_queue_shot_dec	= 0.0016
 silencer_status            = 0
 
 fire_dispersion_base       = 0.85
+
+scopes_sect		= scope_ak74u_worn, scope_ak74u_moist, scope_x2.7_ak74u, scope_ak74u, scope_live_detector_ak74u, scope_night_ak74u, scope_vsk_ak74u
 
 inv_grid_width		= 4	
 inv_grid_height		= 2	
