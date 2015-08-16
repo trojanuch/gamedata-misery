@@ -159,7 +159,7 @@ light_time              	= 0.2
 ph_mass                 	= 4
 
 ;addons
-scope_status            	= 1 ; 0 - no addon
+scope_status            	= 2 ; 0 - no addon
 silencer_status         	= 2 ; 1 - permanent
 grenade_launcher_status		= 0 ; 2 - attachable
 
@@ -173,6 +173,7 @@ scope_zoom_factor       	= 56     ; fov for zoom mode
 silencer_name           	= wpn_addon_silencer_545x39    ; section name for the attachable silencer
 silencer_x 			= 178	; offset in inventory icon
 silencer_y 			= -2
+scopes_sect		= scope_ak74u_snag, scope_ak74u_snag_moist, scope_ak74u_snag_worn, scope_x2.7_ak74u_snag, scope_live_detector_ak74u_snag, scope_night_ak74u_snag, scope_vsk_ak74u_snag
 
 snd_draw                = weapons\aks74u\ak74u_draw
 snd_holster             = weapons\generic\rifle_holster_02
@@ -229,10 +230,10 @@ anm_reload					= lancew_aks74u_reload, reload
 anm_idle_aim				= lancew_aks74u_idle_aim
 anm_bore					= lancew_aks74u_no_reload
 
-aim_hud_offset_pos = -0.109800,0.062400,-0.167000
-aim_hud_offset_rot = 0.016700,0.009100,-0.011500
-aim_hud_offset_pos_16x9 = -0.109800,0.062400,-0.167000
-aim_hud_offset_rot_16x9 = 0.016700,0.009100,-0.011500
+aim_hud_offset_pos = -0.109500,0.089000,-0.167000
+aim_hud_offset_rot = 0.045700,0.008770,-0.011500
+aim_hud_offset_pos_16x9 = -0.109500,0.089000,-0.167000
+aim_hud_offset_rot_16x9 = 0.045700,0.008770,-0.011500
 
 gl_hud_offset_pos               = 0,0,0	;-0.053000,-0.059000,0.000000
 gl_hud_offset_rot               = 0,0,0	;-0.145000,0.000000,0.000000
@@ -242,3 +243,38 @@ gl_hud_offset_rot_16x9          = 0,0,0	;0.052500,0.045000,-0.010000
 
 lean_hud_offset_pos        	= 0,0,0
 lean_hud_offset_rot        	= 0,0,0
+
+[scope_ak74u_snag]
+scope_name 					= wpn_addon_scope
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_ak74u_snag_moist]
+scope_name 					= wpn_addon_scope_moist
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_ak74u_snag_worn]
+scope_name 					= wpn_addon_scope_worn
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_x2.7_ak74u_snag]
+scope_name 					= wpn_addon_scope_x2.7
+scope_x              	= 72                 ; offset in inventory icon
+scope_y                 = -2
+
+[scope_live_detector_ak74u_snag]
+scope_name 					= wpn_addon_scope_detector
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_night_ak74u_snag]
+scope_name 					= wpn_addon_scope_night
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+
+[scope_vsk_ak74u_snag]
+scope_name 					= wpn_addon_scope_vsk
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0

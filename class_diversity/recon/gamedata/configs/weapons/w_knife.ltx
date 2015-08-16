@@ -89,12 +89,12 @@ condition_queue_shot_dec		= 0.012
 ; ttc
 hit_power               		= 0.305, 0.305, 0.305, 0.305
 hit_impulse		        	= 3.3	;10
-hit_type				= wound
+hit_type				= fire_wound
 
 hit_power_2             		= 0.525, 0.525, 0.525, 0.525
 hit_power_critical_2    		= 0.75, 0.75, 0.75, 0.75
 hit_impulse_2	        		= 6.5	;50
-hit_type_2				= wound
+hit_type_2				= fire_wound
 
 hit_probability_gd_novice = 1.00 ;		= 0.80
 hit_probability_gd_stalker = 1.00 ;		= 0.80
@@ -314,12 +314,12 @@ condition_queue_shot_dec		= 0.012
 ; ttc
 hit_power               		= 0.305, 0.305, 0.305, 0.305
 hit_impulse		        	= 3.3	;10
-hit_type				= wound
+hit_type				= fire_wound
 
 hit_power_2             		= 0.525, 0.525, 0.525, 0.525
 hit_power_critical_2    		= 0.75, 0.75, 0.75, 0.75
 hit_impulse_2	        		= 6.5	;50
-hit_type_2				= wound
+hit_type_2				= fire_wound
 
 hit_probability_gd_novice = 1.00 ;		= 0.80
 hit_probability_gd_stalker = 1.00 ;		= 0.80
@@ -492,12 +492,12 @@ condition_queue_shot_dec		= 0.075
 ; ttc
 hit_power               		= 0.45, 0.45, 0.45, 0.45
 hit_impulse		        	= 4.0	;10
-hit_type				= wound
+hit_type				= fire_wound
 
 hit_power_2             		= 0.55, 0.55, 0.55, 0.55
 hit_power_critical_2    		= 0.67, 0.67, 0.67, 0.67
 hit_impulse_2	        		= 9.0	;50
-hit_type_2				= wound
+hit_type_2				= fire_wound
 
 hit_probability_gd_novice = 1.00 ;		= 0.80
 hit_probability_gd_stalker = 1.00 ;		= 0.80
@@ -580,12 +580,12 @@ condition_queue_shot_dec		= 0.065
 ; ttc
 hit_power               		= 0.42, 0.42, 0.42, 0.42
 hit_impulse		        	= 4.5	;10
-hit_type				= wound
+hit_type				= fire_wound
 
 hit_power_2             		= 0.71, 0.71, 0.71, 0.71
 hit_power_critical_2    		= 1.04, 1.04, 1.04, 1.04
 hit_impulse_2	        		= 11.5	;50
-hit_type_2				= wound
+hit_type_2				= fire_wound
 
 hit_probability_gd_novice = 1.00 ;		= 0.80
 hit_probability_gd_stalker = 1.00 ;		= 0.80
@@ -668,12 +668,12 @@ condition_queue_shot_dec		= 0.008
 ; ttc
 hit_power               		= 0.54, 0.54, 0.54, 0.54
 hit_impulse		        	= 10.5	;10
-hit_type				= wound
+hit_type				= fire_wound
 
 hit_power_2             		= 0.78, 0.78, 0.78, 0.78
 hit_power_critical_2    		= 1.09, 1.09, 1.09, 1.09
 hit_impulse_2	        		= 11	;50
-hit_type_2				= wound
+hit_type_2				= fire_wound
 
 hit_probability_gd_novice = 1.00 ;		= 0.80
 hit_probability_gd_stalker = 1.00 ;		= 0.80
@@ -758,12 +758,12 @@ condition_queue_shot_dec		= 0.025
 ; ttc
 hit_power               		= 0.48, 0.48, 0.48, 0.48
 hit_impulse		        	= 10.5	;10
-hit_type				= wound
+hit_type				= fire_wound
 
 hit_power_2             		= 0.87, 0.87, 0.87, 0.87
 hit_power_critical_2    		= 1.22, 1.22, 1.22, 1.22
 hit_impulse_2	        		= 11.5	;50
-hit_type_2				= wound
+hit_type_2				= fire_wound
 
 hit_probability_gd_novice = 1.00 ;		= 0.80
 hit_probability_gd_stalker = 1.00 ;		= 0.80
@@ -828,12 +828,12 @@ inv_grid_y         = 52
 ; ttc
 hit_power               		= 0.45, 0.45, 0.45, 0.45
 hit_impulse		        	= 4.0	;10
-hit_type				= wound
+hit_type				= fire_wound
 
 hit_power_2             		= 0.55, 0.55, 0.55, 0.55
 hit_power_critical_2    		= 0.67, 0.67, 0.67, 0.67
 hit_impulse_2	        		= 9.0	;50
-hit_type_2				= wound
+hit_type_2				= fire_wound
 
 hit_probability_gd_novice = 1.00 ;		= 0.80
 hit_probability_gd_stalker = 1.00 ;		= 0.80
@@ -866,3 +866,17 @@ wm_size                  		= 0.0073
 [wpn_knife_hud_m]:wpn_knife_inv_hud
 item_visual             	= dynamics\weapons\wpn_knife_m\wpn_knife_2_hud.ogf
 ;=======================================================
+
+[wpn_knife_modern]:wpn_knife_inv
+
+inv_name				= st_knife_modern
+inv_name_short				= st_knife_modern
+
+hud =		wpn_knife_modern_hud
+
+
+visual                  = dynamics\weapons\wpn_knife\wpn_knife_new.ogf
+
+[wpn_knife_modern_hud]:wpn_knife_inv_hud
+
+item_visual             	= dynamics\weapons\wpn_knife\wpn_knife_new_hud.ogf
