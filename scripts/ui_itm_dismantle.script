@@ -1429,13 +1429,13 @@ function dismantle_ui:OnButtonOk()
 							outfit_slot_probab = 10 + class_bonus
 							outfit_patch_amt = 0
 						elseif outfit_con_tier_2 then
-							outfit_slot_probab = 25 + class_bonus
+							outfit_slot_probab = 20 + class_bonus
 							outfit_patch_amt = 1
 						elseif outfit_con_tier_3 then
-							outfit_slot_probab = 40 + class_bonus
+							outfit_slot_probab = 30 + class_bonus
 							outfit_patch_amt = 2
 						elseif outfit_con_tier_4 then
-							outfit_slot_probab = 50 + class_bonus
+							outfit_slot_probab = 45 + class_bonus
 							outfit_patch_amt = 2
 						end
 					end
@@ -1453,7 +1453,7 @@ function dismantle_ui:OnButtonOk()
 					-- SET: tool probab (for: genus) (adjusting base probabs) (for: genus) (on: tool, aux tool)
 					if trgt_is_outfit then
 						if tool_is_outfit_kit then
-							outfit_slot_probab = outfit_slot_probab + 25
+							outfit_slot_probab = outfit_slot_probab + 45
 						elseif tool_is_crowbar then
 							if aux_tool_is_knife then
 								outfit_slot_probab = outfit_slot_probab + 25
@@ -1480,7 +1480,7 @@ function dismantle_ui:OnButtonOk()
 					end
 					if trgt_is_wpn then
 						if tool_is_weapon_kit then
-							wpn_slot_probab = wpn_slot_probab + 25
+							wpn_slot_probab = wpn_slot_probab + 45
 						elseif tool_is_crowbar then
 							wpn_slot_probab = wpn_slot_probab + 5
 						elseif tool_is_hammer then
