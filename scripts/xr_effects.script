@@ -1737,6 +1737,16 @@ function play_spareparts_small()
 	xr_sound.set_sound_play(db.actor:id(),"inv_spareparts_small")
 end
 
+-- new sounds for axe mutant loot & crow beak sharpening - trojanuch
+function play_inv_axe_dismember()
+	xr_sound.set_sound_play(db.actor:id(),"inv_axe_dismember")
+end
+
+function play_inv_crowbeak()
+	xr_sound.set_sound_play(db.actor:id(),"inv_crowbeak")
+end
+--- end trojanuch
+
 function play_sound(actor, obj, p)
 	local theme = p[1]
 	local faction = p[2]

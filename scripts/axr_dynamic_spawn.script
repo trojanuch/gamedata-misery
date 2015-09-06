@@ -156,7 +156,9 @@ function on_game_start()
 end
 
 ini = ini_file("dynamic_spawn.ltx")
-ini_special = ini_file("dynamic_spawn_special.ltx") -- KCS - ini file thatn is needed only in special cases to prevent quest breaking
+ini_special = ini_file("dynamic_spawn_spec.ltx") -- KCS - ini file thatn is needed only in special cases to prevent quest breaking
+special_sections = {} -- KCS - new table that can be used to track all special spawn section names
+
 
 local dynamic = {}
 local on_info_sections
@@ -222,7 +224,7 @@ function on_game_load()
 			deepest = true
 		end
 	end
-
+	fill_special_table() -- KCS - new function to dynamicaly fill section names from ltx file
 	interpret_spawn_data(sections)
 end
 
@@ -904,27 +906,27 @@ end
 -- axr_dynamic_spawn.interpret_special_spawn(box)
 function interpret_special_spawn(box)
     -- collecting all sections for special spawns
-	local sections = {}
+	-- local sections = {}
 	-- alun_utils.printf("Collecting special sections data - start")	
 	-- alun_utils.collect_sections(ini_special,sections) -- searching for all sections inside ini
 	-- alun_utils.printf("Collecting special sections data - end %s ",tostring(#sections)) -- total number of sections is "0" ???
 	-- function to collect and enumerate sections does not work properly for unknown reason, that is why each section need to be listed in table
-	sections = {"pri_a25_explosive", -- kindergarthen quest fix stash
-				"zat_hiding_place_62_start", -- stash for starting Alun's riddle quest
-				"zat_hiding_place_aj7", -- Bloodsucker lair
-				"zat_hiding_place_aj8", -- Big bridge
-				"zat_hiding_place_59", -- Burning farm
-				"zat_hiding_place_aj3", -- Dam at wpp
-				"zat_hiding_place_69", -- Cranes
-				"zat_hiding_place_aj4", -- Noah boat
-				"zat_hiding_place_aj1"} -- River east of big bridge
+	--sections = {"pri_a25_explosive", -- kindergarthen quest fix stash
+	--			"zat_hiding_place_62_start", -- stash for starting Alun's riddle quest
+	--			"zat_hiding_place_aj7", -- Bloodsucker lair
+	--			"zat_hiding_place_aj8", -- Big bridge
+	--			"zat_hiding_place_59", -- Burning farm
+	--			"zat_hiding_place_aj3", -- Dam at wpp
+	--			"zat_hiding_place_69", -- Cranes
+	--			"zat_hiding_place_aj4", -- Noah boat
+	--			"zat_hiding_place_aj1"} -- River east of big bridge
 		
 	-- all special sections are known now, need to search trough them to find out if taken object position match object defined in section
 	local sec,section,pos,lvid,gvid
 	local t,on_info,spawn_next
 	local gv1 -- KCS - new variable to get already spawned object data
-	for i=1, #sections do
-		sec = sections[i]
+	for i=1, #special_sections do
+		sec = special_sections[i]
 		--sec = "pri_a25_explosive"
 		t = alun_utils.collect_section(ini_special,sec,true)
 
@@ -956,6 +958,76 @@ function interpret_special_spawn(box)
 	end -- of for loop trough all sections
 end
 -- -------
+
+-- KCS - new function to fill all special dynamic spawns table
+function fill_special_table()
+	--special_sections = {"pri_a25_explosive", -- kindergarthen quest fix stash
+	--			"zat_hiding_place_62_start", -- stash for starting Alun's riddle quest
+	--			"zat_hiding_place_aj7", -- Bloodsucker lair
+	--			"zat_hiding_place_aj8", -- Big bridge
+	--			"zat_hiding_place_59", -- Burning farm
+	--			"zat_hiding_place_aj3", -- Dam at wpp
+	--			"zat_hiding_place_69", -- Cranes
+	--			"zat_hiding_place_aj4", -- Noah boat
+	--			"zat_hiding_place_aj1"} -- River east of big bridge
+	
+	-- start of on load code - different ltx name
+	local file = io.open("gamedata\\configs\\dynamic_spawn_spec.ltx","r")
+	if not (file) then
+		return
+	end
+
+	local data = file:read("*all")
+	file:close()
+
+	-- local sections = {}
+
+	local actor = alife():object(db.actor:id())
+	-- Find all sections in dynamic_spawn.ltx as well as #include files
+	local deepest
+	local list = {}
+	while not deepest do
+		-- parse_ltx(actor,sections,data) -- new parse_ltx function is needed
+		-- KCS - new code instead of parse_ltx function
+		local gvid,id
+		--local sim = alife()
+		local ini_spec = ini_file("dynamic_spawn_spec.ltx")
+		for sec in string.gmatch(data,"%[(.-)%]") do
+			gvid = alun_utils.read_from_ini(ini_spec,sec,"game_vertex_id","float",nil)
+			if (gvid) then
+				--printf("sec = %s",sec)
+				table.insert(special_sections,sec) -- inserting in global sections table
+			end
+		end
+		-- KCS end of new code instead of parse_ltx
+		
+		
+		for fname in string.gmatch(data,[[%#include "(.-)%"]]) do
+			file = io.open("gamedata\\configs\\"..fname,"r")
+			if (file) then
+				table.insert(list,file:read("*all"))
+				file:close()
+			end
+		end
+
+		if (#list > 0) then
+			data = list[#list]
+			list[#list] = nil
+		else
+			deepest = true
+		end
+	end
+	-- end of on load function code
+	
+	-- alun_utils.printf("Special section table filled") -- OK
+	
+	-- printing everything in log - debug purpose only
+	--for k,v in pairs(special_sections) do
+	--	alun_utils.printf("Special section table is (k,v): %s %s",k,v) -- OK - table is filled properly
+	--end
+	
+end
+-- ----------------
 
 function get_object_flag_name(fl)
 	local flags = {

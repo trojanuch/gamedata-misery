@@ -1,0 +1,361 @@
+[wpn_vis]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection	  		= spawn_group
+$spawn                  	= "weapons\colt1911"					; option for Level Editor
+$npc			 					= on				; option for Level Editor
+$prefetch 						= 8
+scheduled            		= off              ; option for ALife Simulator
+cform                   	= skeleton
+class                   	= WP_PM
+description					= st_wpn_vis_descr
+
+ef_weapon_type					= 5
+
+;-----------------------------------------------------------------------------
+cost					= 8160
+inv_weight				= 1.075
+
+upgrades                = up_gr_firstab_colt1911, up_gr_seconab_colt1911, up_gr_thirdab_colt1911, up_gr_fourtab_colt1911, up_gr_fifthab_colt1911
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_colt1911
+
+;-TTX-----------------------------------------------------------------------------
+hit_power           		= 0.4, 0.4, 0.4, 0.4
+hit_impulse		 			= 40
+hit_type 					= fire_wound
+fire_distance       		= 200
+bullet_speed				= 270
+rpm                     	= 400
+rpm_empty_click      		= 120
+
+use_aim_bullet				= false		;Поддерживается ли первая суппер пуля
+time_to_aim					= 1.0
+
+hud                      	= wpn_vis_hud
+
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.87
+misfire_end_condition		= 0.11
+misfire_start_prob = 0.007 ;	     	= 0.0074
+misfire_end_prob = 0.085 ;	     	= 0.079
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0018
+
+ammo_elapsed		 	= 8
+ammo_mag_size		 	= 8
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+hand_dependence		 	= 1
+single_handed			= 1
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof					= -1000, 1.0, 1000
+reload_dof				= 0.0, 0.5, 5, 1.7
+
+;---дисперсия---------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base	= 0.6 ; 0.15	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.0f
+crosshair_inertion		= 3.8
+
+;отдача
+cam_return = 0 ;				= 0
+cam_relax_speed         = 7		;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360
+cam_dispersion          = 1.22	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.28	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.1	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 50.0	;максимальный угол отдачи
+cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 0.76	;(degree) size of step camera moved in horizontal position while shooting
+
+PDM_disp_base 				= 0.7
+PDM_disp_vel_factor 		= 1.05
+PDM_disp_accel_factor 		= 1.055
+PDM_disp_crouch = 1.0 ; 				= 0.925
+PDM_disp_crouch_no_acc = 1.0 ; 			= 1.135
+
+fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 10	;увеличение дисперсии в процентах при максимальном износе
+
+;-------------------------------------------------------------------------------
+holder_range_modifier	= 1.0               ; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
+
+hit_probability_gd_novice = 1.00 ;	= 0.80
+hit_probability_gd_stalker = 1.00 ;	= 0.80
+hit_probability_gd_veteran = 1.00 ;	= 0.80
+hit_probability_gd_master = 1.00 ;	= 0.80
+
+min_radius = 0 ;              	= 5
+max_radius = 500 ; = 250 ;              	= 30
+
+;-------------------------------------------------------------------------------
+slot 			 		= 1
+animation_slot			= 1									; type of the animation that will be used
+default_to_ruck			= false
+sprint_allowed			= true
+control_inertion_factor = 1.0 ;	= 1
+
+inv_name				= st_wpn_vis
+inv_name_short			= st_wpn_vis
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 25
+inv_grid_y         = 79
+
+upgr_icon_x			= 1724 ; 268
+upgr_icon_y			= 802 ; 270
+upgr_icon_width		= 167 ; 192
+upgr_icon_height   	= 159 ; 123
+
+kill_msg_x				= 161
+kill_msg_y				= 153
+kill_msg_width			= 37
+kill_msg_height			= 24
+
+;-------------------------------------------------------------------------------
+visual                   	= dynamics\weapons\wpn_radom\wpn_radom.ogf
+
+position                 	= -0.021, -0.085, 0.0
+orientation              	= 0, 0, 0
+
+fire_point              	= 0.0, 0.133, 0.161
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;strap_position         	= -0.1,-0.45,0.2			; position (offset) and orientation of the weapon when it is strapped
+;strap_orientation      	= 1.57,0,0						; (3rd person view)
+;strap_bone0					= bip01_spine2
+;strap_bone1					= bip01_spine1
+
+;flame_particles		   	= weapons\generic_weapon03
+smoke_particles         = weapons\generic_shoot_00
+
+shell_point		 				= 0.0, 0.133, 0.047
+shell_dir		 				= 0.0, 0.0, 0.4
+shell_particles	 			= amik\weapons\data\45\45_r
+
+;-------------------------------------------------------------------------------
+;startup_ammo           	= 90
+
+light_color		 				= 0.6,0.5,0.3
+light_range		 				= 3.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 				= 0.2
+
+ph_mass			 				= 1
+
+;addons
+scope_status				= 0
+silencer_status				= 2
+grenade_launcher_status			= 0
+
+zoom_enabled					= true
+zoom_rotate_time				= 0.25
+scope_zoom_factor       = 74.8 ; 	    		= 85
+
+;звуки
+snd_draw				= weapons\radom\radom_draw
+snd_holster				= weapons\generic\pistol_holster
+snd_shoot				= weapons\radom\radom_shot
+snd_empty				= weapons\radom\radom_empty
+snd_reload						= weapons\radom\radom_reload
+snd_close				= weapons\radom\radom_close
+snd_silncer_shot			= weapons\radom\radom_shot_sil
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; silencer
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+silencer_name  			= wpn_addon_silencer_9x19		; section name for the attachable silencer
+silencer_x 				= 55						; offset in inventory icon
+silencer_y 				= -15
+
+;params when silencer is attached
+;similar to corresponding params without prefix silencer_
+
+;silencer_flame_particles 	= weapons\generic_weapon01
+silencer_smoke_particles 	= weapons\generic_shoot_00
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+[wpn_vis_hud]:hud_base
+zoom_hide_crosshair			= true
+
+item_visual						= dynamics\weapons\wpn_radom\wpn_radom_hud.ogf
+attach_place_idx				= 0
+
+hands_position				= -0.021,-0.15,0.0025
+hands_orientation				= -0.5,1.,1.149999
+
+hands_position_16x9				= -0.021,-0.15,0.0025
+hands_orientation_16x9			= -0.5,1.,1.149999
+
+item_position				= 0.000746,-0.000321,0.003479
+item_orientation				= 1.239378,-0.134046,-2.052052
+
+aim_hud_offset_pos			 = -0.108000,0.030000,-0.050000
+aim_hud_offset_rot			 = -0.015000,0.005200,-0.015000
+
+aim_hud_offset_pos_16x9		 = -0.108000,0.030000,-0.050000
+aim_hud_offset_rot_16x9		 = -0.015000,0.005200,-0.015000
+
+shell_point					= -0.015,0.048,0.071
+shell_bone					= wpn_body
+fire_point					= 0,0.030795,0.139536
+fire_bone					= wpn_body
+
+anm_show					= lancew_colt_draw
+anm_show_empty				= lancew_colt_draw, idle_2
+anm_hide            				= lancew_colt_holster
+anm_hide_empty				= lancew_colt_holster, idle_2
+anm_idle            				= lancew_colt_idle
+anm_idle_empty      				= lancew_colt_idle, idle_2
+anm_shots					= lancew_colt_shoot, shoot
+anm_shot_l					= lancew_colt_shoot, shoot_2
+anm_idle_aim				= lancew_colt_idle_aim
+anm_idle_aim_empty				= lancew_colt_idle_aim, idle_2
+anm_reload					= lancew_colt_reload, reload
+anm_reload_empty				= lancew_colt_reload_full, reload_full
+anm_idle_moving				= lancew_colt_moving
+anm_idle_moving_empty			= lancew_colt_moving, idle_2
+anm_idle_sprint				= lancew_colt_sprint
+anm_idle_sprint_empty				= lancew_colt_sprint, idle_2
+anm_bore					= lancew_colt_no_reload
+anm_bore_empty				= lancew_colt_no_reload, idle_2
+
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
+
+lean_hud_offset_pos			= 0,0,0
+lean_hud_offset_rot			= 0,0,0
+
+;-----------------------------------------------------------------------------
+; Уникальные
+;-----------------------------------------------------------------------------
+
+;---------------------------
+;AP Weapon Section for NPCs
+;---------------------------
+
+[wpn_vis_pbp]:wpn_vis
+
+ammo_class		 		= ammo_9x19_pbp, ammo_9x19_fmj, ammo_9x19_ap
+
+;---------------------------
+;End of AP section
+;---------------------------
+;==========================================================
+[wpn_vis_alt]:wpn_vis
+
+inv_name				= st_wpn_vis_alt
+inv_name_short			= st_wpn_vis_alt
+description				= st_wpn_vis_alt_descr
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 27
+inv_grid_y         = 79
+
+upgrades                = up_gr_firstab_colt1911_alt1, up_gr_seconab_colt1911_alt1, up_gr_thirdab_colt1911_alt1, up_gr_fourtab_colt1911_alt1, up_gr_fifthab_colt1911_alt1
+installed_upgrades      = up_fourta_colt1911_alt1, up_fourtc_colt1911_alt1
+
+misfire_start_condition		= 0.84
+misfire_end_condition		= 0.12
+misfire_start_prob = 0.007 ;	     	= 0.0066
+misfire_end_prob = 0.085 ;	     	= 0.069
+condition_shot_dec      	= 0.0015
+condition_queue_shot_dec	= 0.0015
+
+fire_dispersion_base	= 0.58
+
+hud				= wpn_vis_alt_hud
+
+visual                   	= dynamics\weapons\wpn_radom\wpn_radom_alt.ogf
+
+[wpn_vis_alt_hud]:wpn_vis_hud
+
+item_visual						= dynamics\weapons\wpn_radom\wpn_radom_alt_hud.ogf
+;==========================================================
+[wpn_vis_worn]:wpn_vis
+
+; Cammo preset LOW - pistol
+; KCS - new cammo variables - "1" - no bonus ; timer factor - above 1 bonus, below 1 penalty; distance factor - above 1 penalty, below 1 bonus;
+; variables in weapon sesctions are multipliers on already determinated values from outfits.
+; Number 1.1 means additonal 10% of bonus/penalty while 0.90 gives only 90% of previous calculated value, above comments is still valid for timer and distances what gives bonus and what penalty
+
+detect_range_factor = 1.02 		; Factor of eye_range that a NPC no longer ignores a player in a Ghillie
+aim_time_factor = 0.98			; Multiplier for time it take for NPC's to aim while wearing a Ghillie
+help_distance_factor = 1.02		; Factor for Decreasing Distance for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjuction with npc_help
+help_timer_factor = 0.98			; Factor for Increasing Timer for NPC's informing allies of your position if you are wearing a Ghillie. Used in conjunction with npc_help
+
+; night values
+n_detect_range_factor = 1.02	; Factor of range that a NPC no longer ignores a player at during night. (10pm to 3am)
+n_help_distance_factor = 1.02	; Factor for Decreasing Distance for NPC's informing allies of your position during night hours. Used in conjuction with npc_help
+n_help_timer_factor = 0.98	; Factor for Increasing Timer for NPC's informing allies of your position during night hours. Used in conjunction with npc_help
+n_aim_time_factor = 0.98			; Multiplier for time it take for NPC's to aim during night hours
+
+upgrades                = up_gr_firstab_colt1911_worn, up_gr_seconab_colt1911_worn, up_gr_thirdab_colt1911_worn, up_gr_fourtab_colt1911_worn, up_gr_fifthab_colt1911_worn
+
+misfire_start_condition		= 0.90
+misfire_end_condition		= 0.1
+misfire_start_prob = 0.007 ;	     	= 0.009
+misfire_end_prob = 0.085 ;	     	= 0.09
+condition_shot_dec      	= 0.0026
+condition_queue_shot_dec	= 0.0026
+
+fire_dispersion_base	= 0.81
+
+inv_name				= st_wpn_vis_worn
+inv_name_short			= st_wpn_vis_worn
+description				= st_wpn_vis_worn_descr
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 29
+inv_grid_y         = 79
+
+silencer_status				= 0
+
+hud				= wpn_vis_worn_hud
+
+visual                   	= dynamics\weapons\wpn_radom\wpn_radom_worn.ogf
+
+[wpn_vis_worn_hud]:wpn_vis_hud
+
+item_visual						= dynamics\weapons\wpn_radom\wpn_radom_worn_hud.ogf
+;==========================================================
+[wpn_vis_alun]:wpn_vis
+
+inv_name				= st_wpn_vis_alun
+inv_name_short			= st_wpn_vis_alun
+description				= st_wpn_vis_alun_descr
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 27
+inv_grid_y         = 80
+
+ammo_elapsed		 	= 7
+ammo_mag_size		 	= 7
+ammo_class		 		= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+silencer_name  			= wpn_addon_silencer_1143x23
+
+misfire_start_condition		= 0.84
+misfire_end_condition		= 0.12
+misfire_start_prob = 0.007 ;	     	= 0.0066
+misfire_end_prob = 0.085 ;	     	= 0.069
+condition_shot_dec      	= 0.0015
+condition_queue_shot_dec	= 0.0015
+
+fire_dispersion_base	= 0.58
+
+hud				= wpn_vis_alun_hud
+
+visual                   	= dynamics\weapons\wpn_radom\wpn_radom_alun.ogf
+
+[wpn_vis_alun_hud]:wpn_vis_hud
+
+item_visual						= dynamics\weapons\wpn_radom\wpn_radom_alun_hud.ogf
